@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab-in-a-Tab — Discover the World</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdf8f0;--white:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;
+  --border:rgba(0,0,0,0.08);
+  --sh:0 4px 24px rgba(0,0,0,0.07),0 1px 4px rgba(0,0,0,0.04);
+  --sh-h:0 14px 44px rgba(0,0,0,0.13),0 2px 8px rgba(0,0,0,0.05);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
+
+header{position:sticky;top:0;z-index:300;background:rgba(253,248,240,0.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,3rem);gap:1rem}
+.logo{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:6px}
+.logo span{width:10px;height:10px;border-radius:50%;background:#ff6b35;display:inline-block}
+.lvl-bar{display:flex;align-items:center;gap:4px;background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.lvl{border:none;cursor:pointer;border-radius:50px;padding:6px 15px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.77rem;transition:all .22s;background:transparent;color:var(--ink3)}
+.lvl:hover{background:rgba(0,0,0,0.04);color:var(--ink)}
+.lvl.on{color:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.16)}
+.lvl.on[data-l=junior]{background:linear-gradient(135deg,#ff9a3c,#ff6b35)}
+.lvl.on[data-l=student]{background:linear-gradient(135deg,#7c3aed,#5b21b6)}
+.lvl.on[data-l=scholar]{background:linear-gradient(135deg,#0ea5e9,#0369a1)}
+
+.hero{padding:clamp(3rem,8vw,5rem) clamp(1rem,4vw,3rem) clamp(2rem,5vw,3.5rem);text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 20% 50%,rgba(255,107,53,0.08),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 30%,rgba(124,58,237,0.07),transparent 60%),radial-gradient(ellipse 50% 40% at 60% 80%,rgba(22,163,74,0.06),transparent 60%);pointer-events:none}
+.hshapes{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hs{position:absolute;border-radius:50%;opacity:.4;animation:hfloat 9s ease-in-out infinite}
+.hs1{width:80px;height:80px;background:rgba(255,107,53,.13);top:10%;left:5%}
+.hs2{width:50px;height:50px;background:rgba(124,58,237,.11);top:20%;right:8%;animation-delay:1.5s}
+.hs3{width:110px;height:110px;background:rgba(22,163,74,.09);bottom:5%;left:12%;animation-delay:3s;border-radius:30% 70% 70% 30%/30% 30% 70% 70%}
+.hs4{width:60px;height:60px;background:rgba(14,165,233,.10);bottom:15%;right:6%;animation-delay:2s}
+@keyframes hfloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(7deg)}}
+.htag{display:inline-block;background:linear-gradient(135deg,#ff9a3c,#ff6b35);color:#fff;border-radius:50px;padding:6px 20px;font-size:.82rem;font-weight:800;letter-spacing:.04em;margin-bottom:1.4rem;box-shadow:0 4px 16px rgba(255,107,53,0.28)}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.5rem,7vw,4.8rem);font-weight:900;line-height:1.08;margin-bottom:1rem}
+.hero h1 em{font-style:italic;color:#ff6b35}
+.hero p{font-size:clamp(1rem,2.2vw,1.15rem);color:var(--ink2);max-width:560px;margin:0 auto 2rem;line-height:1.7;font-weight:600}
+.hlevel{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:8px 20px;font-size:.85rem;font-weight:700;color:var(--ink2);box-shadow:var(--sh)}
+.hdot{width:8px;height:8px;border-radius:50%;background:#ff6b35;animation:hdot 2s infinite}
+@keyframes hdot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.6}}
+
+.wrap{padding:0 clamp(1rem,4vw,3rem) 5rem;max-width:1340px;margin:0 auto}
+.glbl{font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin:2.5rem 0 1rem;padding-left:2px;display:flex;align-items:center;gap:.6rem}
+.glbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1.2rem}
+.scard{background:var(--white);border:1.5px solid var(--border);border-radius:22px;cursor:pointer;position:relative;overflow:hidden;box-shadow:var(--sh);opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s,box-shadow .3s,border-color .3s}
+.scard.vis{opacity:1;transform:none}
+.scard:hover{box-shadow:var(--sh-h);transform:translateY(-5px) scale(1.01)}
+.scard:hover .sc-emoji{transform:scale(1.1) rotate(-4deg)}
+.scard:hover .sc-arr{transform:translateX(5px)}
+.sc-stripe{position:absolute;top:0;left:0;right:0;height:5px;border-radius:22px 22px 0 0}
+.sc-body{padding:1.5rem 1.5rem 1.1rem}
+.sc-emoji{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.85rem;margin-bottom:.85rem;transition:transform .3s}
+.sc-tag{display:inline-block;font-size:.66rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;border-radius:50px;padding:2px 9px;margin-bottom:.4rem}
+.sc-title{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;line-height:1.2;margin-bottom:.4rem}
+.sc-teaser{font-size:.875rem;color:var(--ink2);line-height:1.6;font-weight:600}
+.sc-foot{padding:.8rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,.015)}
+.sc-chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{font-size:.66rem;font-weight:800;padding:2px 8px;border-radius:50px;background:rgba(0,0,0,.05);color:var(--ink3)}
+.sc-arr{font-size:1rem;color:var(--ink3);transition:transform .3s;font-weight:800}
+
+/* OVERLAY + PANEL */
+.overlay{position:fixed;inset:0;z-index:400;background:rgba(20,12,4,.52);backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity .28s;display:flex;align-items:flex-end;justify-content:center}
+.overlay.open{opacity:1;pointer-events:all}
+.panel{background:var(--white);border-radius:28px 28px 0 0;width:100%;max-width:880px;max-height:92vh;display:flex;flex-direction:column;transform:translateY(50px);transition:transform .38s cubic-bezier(.34,1.2,.64,1);overflow:hidden}
+.overlay.open .panel{transform:none}
+.phandle{width:42px;height:5px;background:rgba(0,0,0,.11);border-radius:3px;margin:12px auto 0;flex-shrink:0}
+.phdr{padding:1.1rem 1.8rem 1.2rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-shrink:0}
+.phdr-left{display:flex;align-items:center;gap:.85rem}
+.phdr-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.65rem;flex-shrink:0}
+.phdr-title{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;line-height:1.1}
+.phdr-sub{font-size:.8rem;font-weight:700;color:var(--ink3);margin-top:3px}
+.pclose{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-size:.95rem;color:var(--ink2);display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0}
+.pclose:hover{background:#fee2e2;color:#dc2626;border-color:#fca5a5}
+.ptabs{display:flex;border-bottom:1px solid var(--border);padding:0 1.8rem;flex-shrink:0;overflow-x:auto}
+.ptab{padding:10px 15px;font-weight:800;font-size:.83rem;border:none;background:transparent;cursor:pointer;color:var(--ink3);border-bottom:3px solid transparent;transition:.18s;white-space:nowrap;flex-shrink:0}
+.ptab.on{color:var(--ink);border-bottom-color:currentColor}
+.pbody{flex:1;overflow-y:auto;overflow-x:hidden;padding:1.4rem 1.8rem 2.5rem}
+.tpanel{display:none}
+.tpanel.on{display:block;animation:tup .28s ease}
+@keyframes tup{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+
+/* EXPLANATION */
+.eblock{border-radius:16px;padding:1.4rem;margin-bottom:1rem}
+.eicon{font-size:2.1rem;margin-bottom:.55rem}
+.etitle{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:700;margin-bottom:.7rem}
+.ebody{font-size:.93rem;line-height:1.88;font-weight:600;color:var(--ink2)}
+.ebody p{margin-bottom:.85rem}
+.ebody p:last-child{margin-bottom:0}
+.ebody ul,.ebody ol{margin:.5rem 0 .9rem 1.3rem}
+.ebody li{margin-bottom:.38rem}
+.ebody strong{color:var(--ink)}
+.ebody em{color:var(--ink);font-style:italic}
+.mk{font-family:'Courier New',monospace;font-size:.89em;background:rgba(0,0,0,.07);padding:1px 5px;border-radius:4px;color:var(--ink);white-space:nowrap}
+
+/* FORMULA BOX */
+.fsec{margin:1.1rem 0}
+.flbl{font-size:.71rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:.5rem}
+.fbox{background:#18140c;border-radius:10px;padding:1rem 1.3rem;overflow-x:auto}
+.frow{display:grid;grid-template-columns:minmax(0,auto) 1fr minmax(0,auto);gap:0 14px;align-items:baseline;padding:4px 0}
+.fname{color:#fbbf24;font-family:'Courier New',monospace;font-size:.87rem;font-weight:700;white-space:nowrap}
+.feq{color:#e2ffe8;font-family:'Courier New',monospace;font-size:.87rem;white-space:pre;line-height:1.6}
+.fcmt{color:rgba(255,255,255,.33);font-family:'Courier New',monospace;font-size:.77rem;font-style:italic;white-space:nowrap}
+.fsep{height:1px;background:rgba(255,255,255,.07);margin:5px 0;grid-column:1/-1}
+
+/* FACTS */
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:.7rem;margin-top:1rem}
+.fact{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.85rem}
+.fact-e{font-size:1.25rem;margin-bottom:.32rem}
+.fact-t{font-size:.82rem;font-weight:700;color:var(--ink2);line-height:1.55}
+
+/* SIMULATION — canvas sits alone; controls are siblings BELOW */
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+
+/* DEEPER */
+.dcard{background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:1.2rem;margin-bottom:.9rem}
+.dcard-title{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;margin-bottom:.55rem}
+.dcard-body{font-size:.88rem;font-weight:600;color:var(--ink2);line-height:1.72}
+.dcard-body ul{margin:.4rem 0 0 1.2rem}
+.dcard-body li{margin-bottom:.3rem}
+.dcard-body a{color:inherit;font-weight:800;text-decoration:underline}
+
+footer{text-align:center;padding:2.5rem 1rem;font-size:.85rem;font-weight:700;color:var(--ink3);border-top:1px solid var(--border)}
+
+@media(max-width:640px){
+  .panel{border-radius:22px 22px 0 0;max-height:95vh}
+  .phdr,.pbody{padding-left:1rem;padding-right:1rem}
+  .ptabs{padding:0 1rem}
+  header{height:58px}
+  .lvl{padding:5px 10px;font-size:.72rem}
+  .frow{grid-template-columns:1fr;gap:0}
+  .fcmt{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lab-in-a-Tab <span></span></div>
+  <nav class="lvl-bar">
+    <button class="lvl on" data-l="junior">🌱 Junior</button>
+    <button class="lvl" data-l="student">🔬 Student</button>
+    <button class="lvl" data-l="scholar">🎓 Scholar</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hshapes"><div class="hs hs1"></div><div class="hs hs2"></div><div class="hs hs3"></div><div class="hs hs4"></div></div>
+  <div class="htag">✨ The Interactive Science Experience</div>
+  <h1>Discover the world<br>with <em>curiosity</em></h1>
+  <p id="heroSub">Pick a topic that excites you — every card opens a world of interactive simulations and explanations that grow with your level.</p>
+  <div class="hlevel"><span class="hdot"></span><span id="hintTxt">Exploring as <strong>Junior</strong> 🌱 — tap any card!</span></div>
+</section>
+
+<main class="wrap" id="mainGrid"></main>
+<footer>Made with ❤️ for curious minds aged <strong>6 to 99</strong> · Switch level anytime at the top</footer>
+
+<div class="overlay" id="ov">
+  <div class="panel" id="panel">
+    <div class="phandle"></div>
+    <div class="phdr">
+      <div class="phdr-left">
+        <div class="phdr-ico" id="pico"></div>
+        <div><div class="phdr-title" id="ptitle"></div><div class="phdr-sub" id="psub"></div></div>
+      </div>
+      <button class="pclose" id="pclose">✕</button>
+    </div>
+    <div class="ptabs" id="ptabs"></div>
+    <div class="pbody" id="pbody"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// SUBJECTS  (all 9 topics, three levels each)
+// ═══════════════════════════════════════════════════════════════════
+const S=[
+
+// ── PHYSICS ─────────────────────────────────────────────────────
+{id:'gravity',group:'⚛️ Physics',emoji:'🪐',color:'#e05c1a',light:'#fff3ee',
+ title:'Gravity & Orbits',teaser:'Why does everything fall — and why do planets never crash into the Sun?',chips:['Gravity','Orbits','Space'],
+ lvls:{
+  junior:{icon:'🍎',title:'The invisible glue of the universe',
+   body:`<p>Imagine a giant invisible rubber band connecting you to everything around you — your chair, the Earth, the Moon, and even the distant Sun. That invisible pull is called <strong>gravity</strong>, and it is one of the four fundamental forces that govern all of physics.</p>
+<p>Gravity always pulls things <em>toward each other</em>. The Earth's gravity is pulling you down toward the floor right now — that's exactly why you don't float away! The key insight is this: the bigger and heavier an object is, the stronger its gravitational pull. The Earth is enormous, so its gravity is powerful enough to hold the entire atmosphere, all the oceans, and every living thing firmly to its surface.</p>
+<p>Now, why don't planets fall straight into the Sun? Think about spinning a ball on a string around your hand. The string pulls the ball inward, but the ball keeps moving sideways — it never actually hits your hand. Planets work exactly the same way! They move sideways so incredibly fast that even though the Sun's gravity pulls them inward, they keep "missing" and looping around. This curved path is called an <strong>orbit</strong>.</p>
+<p>Here's a fun way to picture it: if you stood on a very tall mountain and threw a cannonball horizontally, it would curve downward and land. Throw it a bit faster, and it lands further away. Throw it fast enough — about 28,000 km/h — and the curve of the ball's fall exactly matches the curve of the Earth's surface. It never lands. It orbits! That's precisely how satellites and the International Space Station (ISS) stay up.</p>`,
+   facts:[{e:'🌙',t:'On the Moon you weigh 6× less and could jump over 3 metres high — the same muscles, much weaker gravity!'},{e:'🏋️',t:'On Jupiter you\'d weigh 2.5× more — getting out of bed would feel like carrying a second person on your back.'},{e:'🌍',t:'Gravity keeps our atmosphere in place. Without it, all our air would escape into space and Earth would be like Mars.'}],
+   formula:null,sim:'orbit'},
+
+  student:{icon:'🔭',title:'Newton\'s Law of Universal Gravitation',
+   body:`<p>Every object in the universe that has mass attracts every other object with mass. The strength of this attraction depends on two things: the masses involved, and the distance between them. Isaac Newton captured this in one of the most celebrated equations in science: <span class="mk">F = GMm/r²</span>, published in his <em>Principia Mathematica</em> (1687).</p>
+<p>The inverse-square law is the key: force decreases with the <em>square</em> of distance, so doubling your distance from a planet makes gravity four times weaker, tripling it makes it nine times weaker. This means gravity never truly reaches zero — it stretches across the entire universe, growing ever fainter but never vanishing.</p>
+<p>An orbit forms when the inward gravitational pull is exactly balanced by the sideways momentum of the moving object. If a planet slowed down, it would spiral inward; if it sped up, it would fly away. At just the right speed it traces an ellipse. The orbital speed at distance <span class="mk">r</span> from a star of mass <span class="mk">M</span> is <span class="mk">v = √(GM/r)</span> — notice that heavier stars require faster orbits, and closer orbits are always faster.</p>
+<p>Johannes Kepler discovered empirically (from decades of Tycho Brahe's observations) that <strong>T² ∝ a³</strong>: the square of an orbit's period is proportional to the cube of its semi-major axis. Newton later proved this mathematically from his gravitational law — a stunning triumph that unified earthly and celestial mechanics for the first time.</p>`,
+   facts:[{e:'🛰️',t:'The ISS orbits at 7.66 km/s, completing a full lap of Earth every 92 minutes — it sees 16 sunrises per day!'},{e:'⚖️',t:'Weight = mg. On Earth g ≈ 9.81 m/s². On Mars g ≈ 3.72 m/s², which is why rovers can make long jumps.'},{e:'🌊',t:'Tides arise because the Moon pulls the near side of Earth harder than the far side, stretching the ocean into two bulges.'}],
+   formula:{rows:[
+    {n:'Gravitational force',e:'F  =  G · M · m  /  r²',c:'Newton 1687'},
+    {sep:1},
+    {n:'G (constant)',e:'G  =  6.674 × 10⁻¹¹  N·m²·kg⁻²'},
+    {n:'Orbital velocity',e:'v  =  √( G·M / r )'},
+    {n:'Kepler\'s 3rd law',e:'T²  =  ( 4π² / G·M ) · a³'},
+   ]},sim:'orbit'},
+
+  scholar:{icon:'📐',title:'From Newton to Einstein: curved spacetime and the geometry of gravity',
+   body:`<p>Newton's law works extraordinarily well for everyday astronomy, but it contains a conceptual flaw: it implies gravity acts instantaneously across arbitrarily large distances, with no mechanism. Einstein's <strong>General Relativity (GR, 1915)</strong> resolves this by reframing gravity entirely. Massive objects do not exert a force on one another; instead, mass-energy <em>curves the fabric of four-dimensional spacetime</em>, and other objects simply follow the straightest possible paths — called <em>geodesics</em> — through that curved geometry. What Newton called "the force of gravity" is, in GR, the inertial motion of an object through curved spacetime.</p>
+<p>The Einstein field equations <span class="mk">G_μν + Λg_μν = (8πG/c⁴)T_μν</span> are ten coupled nonlinear partial differential equations. The left-hand side encodes spacetime geometry via the Einstein tensor <span class="mk">G_μν</span> (derived from the Ricci curvature tensor and the Ricci scalar). The right-hand side encodes the distribution of mass-energy via the stress-energy tensor <span class="mk">T_μν</span>. The cosmological constant Λ, originally introduced by Einstein to achieve a static universe, now provides the best description of <em>dark energy</em> — the mysterious substance driving the universe's accelerating expansion.</p>
+<p>The predictions of GR differ from Newton's in measurable ways. The most famous early test was Mercury's perihelion precession: Newtonian mechanics predicted 531 arcseconds per century, but observations showed 574 — a discrepancy of 43 arcseconds. GR accounts for these 43 arcseconds exactly, from first principles, with no free parameters. Other confirmations include gravitational lensing (light bending around massive objects), frame dragging (rotating masses drag spacetime), <strong>gravitational time dilation</strong> (clocks run slower in stronger fields — GPS satellites must correct for +38 μs/day, or navigation errors would accumulate at ~10 km/day), and the direct detection of gravitational waves by LIGO in 2015.</p>
+<p>The Schwarzschild radius <span class="mk">r_s = 2GM/c²</span> defines the event horizon of a non-rotating black hole — the surface of no return. For the Sun, r_s ≈ 3 km; for Earth, ≈ 9 mm. The Kerr metric (1963) generalises Schwarzschild to rotating black holes and predicts the ergosphere — a region outside the event horizon where spacetime itself rotates, enabling energy extraction via the Penrose process. Black hole imaging by the Event Horizon Telescope (M87*, 2019; Sgr A*, 2022) confirmed these GR predictions with remarkable precision.</p>`,
+   facts:[{e:'⌛',t:'GPS clocks gain ~45μs/day from weaker gravity (GR) and lose ~7μs/day from orbital speed (SR). Without correction, GPS would drift ~10 km/day.'},{e:'🌀',t:'Gravitational waves were first detected by LIGO on 14 Sept 2015, from two black holes merging 1.3 billion light-years away.'},{e:'🔭',t:'The Event Horizon Telescope resolved a 40-μas shadow around M87* — equivalent to reading a newspaper in New York from Paris.'}],
+   formula:{rows:[
+    {n:'Einstein field eqs.',e:'G_μν  +  Λg_μν  =  (8πG/c⁴) T_μν'},
+    {sep:1},
+    {n:'Schwarzschild r_s',e:'r_s  =  2GM / c²'},
+    {n:'Perihelion prec.',e:'Δφ  =  6πGM / [ c²·a·(1−e²) ]',c:'per orbit'},
+    {n:'Time dilation (grav.)',e:'dτ/dt  =  √( 1 − r_s/r )',c:'Schwarzschild metric'},
+    {n:'Kepler III (Newt.)',e:'T²  =  ( 4π²/GM ) · a³  +  O(1/c²)'},
+   ]},sim:'orbit'},
+ }},
+
+{id:'waves',group:'⚛️ Physics',emoji:'〰️',color:'#7c3aed',light:'#f5f0ff',
+ title:'Waves & Interference',teaser:'Music, Wi-Fi, rainbows, and X-rays — they\'re all the same phenomenon at different scales.',chips:['Sound','Light','Optics'],
+ lvls:{
+  junior:{icon:'🎵',title:'Waves are energy in motion!',
+   body:`<p>Drop a stone in a pond and watch the ripples spread outward. That's a wave! A wave is a repeating disturbance that travels through space, carrying <strong>energy</strong> from one place to another — without carrying the material itself along with it. The water doesn't travel with the ripple; only the pattern does.</p>
+<p>Sound is a wave too! When you speak or clap, you squeeze the air back and forth, creating tiny pressure pushes that travel outward in all directions. Those pushes reach someone's eardrum, make it vibrate, and — sound! In space there's no air, so there can be no sound. Those dramatic explosions in sci-fi movies? Completely silent in reality.</p>
+<p>Here's where things get magical: when two waves meet, they interact. If two peaks arrive at the same spot at the same time, they add together and create an even bigger wave — this is called <strong>constructive interference</strong>. But if a peak meets a trough (a valley), they cancel each other out, making silence or darkness — that's <strong>destructive interference</strong>. Noise-cancelling headphones work exactly this way: they create a sound wave that is the precise mirror image of background noise, and the two waves cancel perfectly.</p>`,
+   facts:[{e:'🎸',t:'A guitar string vibrating at 440 Hz produces the note "A" — it completes 440 full back-and-forth cycles every single second!'},{e:'🌈',t:'White sunlight contains all colours. A raindrop bends each colour by a slightly different angle, spreading them into a rainbow.'},{e:'🦇',t:'Bats navigate in total darkness by emitting ultrasound pulses and listening for echoes — their brains build a 3D map from the timing.'}],
+   formula:null,sim:'waves'},
+
+  student:{icon:'📡',title:'Superposition, Standing Waves, and Young\'s Double Slit',
+   body:`<p>A wave is described mathematically as <span class="mk">y(x,t) = A·sin(kx − ωt + φ)</span>, where <span class="mk">A</span> is amplitude, <span class="mk">k = 2π/λ</span> is the wavenumber, <span class="mk">ω = 2πf</span> is the angular frequency, and <span class="mk">φ</span> is the phase. Wave speed is <span class="mk">v = ω/k = fλ</span>.</p>
+<p>The <strong>Superposition Principle</strong> states that the net displacement at any point where two waves overlap is simply the algebraic sum of the individual displacements. Unlike colliding billiard balls, waves can pass through each other completely unchanged. This leads to interference: <strong>constructive</strong> when the waves are in phase (Δφ = 0, 2π, 4π…), producing amplitude 2A; <strong>destructive</strong> when they are exactly out of phase (Δφ = π, 3π, 5π…), producing amplitude zero.</p>
+<p>Thomas Young's <strong>double-slit experiment (1801)</strong> was the decisive proof that light is a wave. When monochromatic light passes through two narrow slits separated by distance <span class="mk">d</span>, the waves from the two slits interfere to create alternating bright and dark bands on a screen — the intensity follows <span class="mk">I(θ) = 4I₀cos²(πd sinθ/λ)</span>. This was deeply controversial because Newton had argued light was made of particles. Both turned out to be true: quantum mechanics later showed that even individual photons and electrons produce interference patterns, one particle at a time.</p>
+<p><strong>Standing waves</strong> form when two identical waves travel in opposite directions. Rather than propagating, the pattern appears to stand still, with fixed <em>nodes</em> (zero amplitude) and <em>antinodes</em> (maximum amplitude). Guitar strings, organ pipes, and microwave ovens all rely on standing wave resonance.</p>`,
+   facts:[{e:'🎧',t:'Noise-cancelling headphones sample ambient sound 1000× per second and produce the exact inverted waveform — destructive interference in action.'},{e:'💡',t:'Radio waves, microwaves, visible light, UV, X-rays, and gamma rays are all electromagnetic waves — same physics, different frequency.'},{e:'🌊',t:'Tsunamis travel at 800 km/h in deep ocean with wavelengths of 500 km. In shallow coastal water they slow and their height explosively increases.'}],
+   formula:{rows:[
+    {n:'Wave function',e:'y(x,t)  =  A · sin( kx − ωt + φ )'},
+    {sep:1},
+    {n:'Wavenumber',e:'k  =  2π / λ'},
+    {n:'Angular frequency',e:'ω  =  2π · f'},
+    {n:'Wave speed',e:'v  =  f · λ  =  ω / k'},
+    {sep:1},
+    {n:'Superposition',e:'y_total  =  y₁  +  y₂'},
+    {n:'Constructive (cond.)',e:'Δφ  =  0, 2π, 4π, …   →   A_total = 2A'},
+    {n:'Destructive (cond.)',e:'Δφ  =  π, 3π, 5π, …   →   A_total = 0'},
+    {n:'Double-slit intensity',e:'I(θ)  =  4I₀ · cos²( πd·sinθ / λ )'},
+   ]},sim:'waves'},
+
+  scholar:{icon:'🌐',title:'Fourier Analysis, Wave Packets, and Quantum Duality',
+   body:`<p>Any periodic function — regardless of its shape — can be decomposed into an infinite sum of sinusoids via the <strong>Fourier Transform</strong>: <span class="mk">f̂(ξ) = ∫₋∞^∞ f(x) e^{−2πixξ} dx</span>. This mapping between the spatial/time domain and the frequency domain is arguably the most powerful tool in all of applied mathematics. It underlies audio compression (MP3), image compression (JPEG uses the related Discrete Cosine Transform), radio communication, MRI imaging, and quantum mechanics. Its computational implementation, the <em>Fast Fourier Transform</em> (Cooley-Tukey, 1965), runs in O(n log n) and is one of the most important algorithms ever devised.</p>
+<p>In quantum mechanics, the superposition principle is not just a property of classical waves — it is a fundamental postulate. The wavefunction ψ = ψ₁ + ψ₂ interferes, and the observable probability density is <span class="mk">I ∝ |ψ|² = |ψ₁ + ψ₂|²</span>. The interference cross terms — the quantum essence of the phenomenon — have no classical analogue. Even a single electron sent through the double-slit experiment one at a time produces, after many repetitions, the same interference pattern <span class="mk">I(θ) = 4I₀cos²(πd sinθ/λ)</span>. The electron interferes with <em>itself</em>, meaning it simultaneously traverses both slits as a probability amplitude.</p>
+<p>The <strong>Heisenberg Uncertainty Principle</strong> <span class="mk">Δx·Δp ≥ ℏ/2</span> emerges naturally from the Fourier relationship between position and momentum wavefunctions. A wave packet localised in position (small Δx) necessarily has a broad spread of wavevectors (large Δk ∝ Δp). This is not a limitation of measurement technology — it is a fundamental property of any wave-like object. Similarly, the energy-time uncertainty <span class="mk">ΔE·Δt ≥ ℏ/2</span> limits the precision with which an energy can be defined over a finite observation time, explaining the natural linewidth of spectral lines.</p>
+<p>The modern understanding of wave-particle duality is given by <strong>quantum field theory (QFT)</strong>: particles are quantised excitations of underlying fields that permeate all of space. The photon is a quantum of the electromagnetic field. Interference patterns arise because the field amplitude (not the particle count) obeys superposition, and detection probabilities are proportional to the squared field amplitude. This framework unifies Maxwell's equations, special relativity, and quantum mechanics into the Standard Model of particle physics.</p>`,
+   facts:[{e:'💻',t:'JPEG uses the Discrete Cosine Transform (closely related to the Fourier Transform) to compress images by discarding high-frequency detail the eye can\'t resolve.'},{e:'⚛️',t:'In a quantum eraser experiment, restoring "which-path" information destroys the interference pattern, even if this information is only available retroactively.'},{e:'🔬',t:'MRI uses radio-frequency pulses to excite hydrogen nuclei; the resulting signals are decoded with a 3D Fourier transform to produce anatomical images.'}],
+   formula:{rows:[
+    {n:'Fourier Transform',e:'f̂(ξ)  =  ∫₋∞^∞  f(x) · e^{−2πixξ} dx'},
+    {sep:1},
+    {n:'QM intensity',e:'I  ∝  |ψ|²  =  |ψ₁ + ψ₂|²'},
+    {n:'Double-slit',e:'I(θ)  =  4I₀ · cos²( πd·sinθ / λ )'},
+    {sep:1},
+    {n:'Heisenberg UP',e:'Δx · Δp  ≥  ℏ/2'},
+    {n:'Energy-time UP',e:'ΔE · Δt  ≥  ℏ/2'},
+    {n:'de Broglie',e:'λ  =  h / p  =  h / (mv)',c:'wave-particle duality'},
+   ]},sim:'waves'},
+ }},
+
+{id:'thermo',group:'⚛️ Physics',emoji:'🌡️',color:'#dc2626',light:'#fff0f0',
+ title:'Heat & Thermodynamics',teaser:'Why does ice always melt and coffee always cool down? The universe has a direction.',chips:['Entropy','Energy','Heat'],
+ lvls:{
+  junior:{icon:'☕',title:'Heat always flows from hot to cold — never backwards',
+   body:`<p>Have you ever left a hot chocolate on the table and come back to find it cold? Heat always moves from hot things to cold things, and never the other way around on its own. You've never seen a cold cup of water spontaneously heat itself up!</p>
+<p>Everything around you — the air, your hand, this screen — is made of trillions of tiny atoms and molecules that are constantly <strong>moving and vibrating</strong>. When something is hot, its particles move very fast; when something is cold, they move slowly. Heat is simply the energy of this motion being transferred. When a hot cup sits in a cool room, the fast-moving particles in the drink collide with the slower particles in the air, sharing their energy — the drink cools and the air warms slightly, until everything reaches the same temperature.</p>
+<p>This one-way flow of heat is connected to a concept called <strong>entropy</strong> — a measure of disorder or "spreadoutness." The universe always tends towards more disorder, never less. A tidy room left alone gradually gets messy; you've never seen a messy room tidy itself. A drop of ink in water spreads out and never spontaneously reconcentrates. This is entropy increasing. The same principle explains why we can never build a perfectly efficient engine, why time seems to have a direction, and ultimately, the fate of the entire universe.</p>`,
+   facts:[{e:'🧊',t:'Ice absorbs heat while melting but stays at 0°C throughout — all that energy is breaking molecular bonds, not raising temperature.'},{e:'🌡️',t:'The coldest possible temperature is −273.15°C (absolute zero, 0 K). At this point, atoms have minimum possible motion — quantum mechanics prevents them fully stopping.'},{e:'🚀',t:'Rockets work by thermodynamics: burning fuel creates extremely hot gas, which expands rapidly and exits at the back, generating thrust by Newton\'s 3rd law.'}],
+   formula:null,sim:'thermo'},
+
+  student:{icon:'⚙️',title:'The Four Laws of Thermodynamics',
+   body:`<p>Thermodynamics is built on four fundamental laws that govern all energy transformations in nature. Together they explain why no heat engine can ever be perfectly efficient, why a perpetual motion machine is physically impossible, and why the universe has an inexorable direction in time.</p>
+<p>The <strong>Zeroth Law</strong> defines temperature: if system A is in thermal equilibrium with B, and B with C, then A is in equilibrium with C. This transitivity allows us to use thermometers and to compare temperatures across different systems.</p>
+<p>The <strong>First Law</strong> is conservation of energy: <span class="mk">ΔU = Q − W</span>. The change in a system's internal energy equals the heat absorbed minus the work it does. Energy cannot be created or destroyed — only converted. A petrol engine converts chemical energy into heat and mechanical work; a battery converts chemical energy into electrical energy; the sun converts nuclear energy into light and heat. In every case, total energy is conserved.</p>
+<p>The <strong>Second Law</strong> is the most profound: the total entropy of an isolated system never decreases. Any spontaneous process increases entropy. This is the thermodynamic "arrow of time" — it distinguishes past from future. A dropped glass shatters (entropy increases); the shards never spontaneously reassemble. Carnot proved that even a theoretically perfect engine operating between temperatures <span class="mk">T_hot</span> and <span class="mk">T_cold</span> has a maximum efficiency of <span class="mk">η = 1 − T_cold/T_hot</span> — always less than 100% when <span class="mk">T_cold > 0</span>.</p>
+<p>The <strong>Third Law</strong> states that as temperature approaches absolute zero, entropy approaches a constant minimum value (zero for a perfect crystal). This makes it impossible to reach absolute zero in a finite number of steps.</p>`,
+   facts:[{e:'🏎️',t:'A car engine is typically only 25–35% efficient. The rest of the fuel\'s chemical energy is wasted as heat — a direct consequence of the 2nd law.'},{e:'❄️',t:'A refrigerator moves heat from cold (inside) to hot (room) — this requires external work (electricity), consistent with the 2nd law.'},{e:'🔥',t:'The Sun converts ~4 million tonnes of mass to energy per second via E = mc². It\'s been doing this for 4.6 billion years and has fuel for another ~5 billion.'}],
+   formula:{rows:[
+    {n:'First Law',e:'ΔU  =  Q  −  W',c:'energy conservation'},
+    {n:'Entropy change',e:'ΔS  =  Q_rev / T',c:'reversible process'},
+    {sep:1},
+    {n:'Ideal gas law',e:'P · V  =  n · R · T',c:'R = 8.314 J·mol⁻¹·K⁻¹'},
+    {n:'Carnot efficiency',e:'η_max  =  1  −  T_cold / T_hot'},
+    {sep:1},
+    {n:'Boltzmann constant',e:'k_B  =  1.381 × 10⁻²³  J·K⁻¹'},
+   ]},sim:'thermo'},
+
+  scholar:{icon:'∫',title:'Statistical Mechanics: entropy, microstates, and the arrow of time',
+   body:`<p>The macroscopic laws of thermodynamics emerge from the statistical behaviour of an astronomically large number of microscopic particles. Ludwig Boltzmann's key insight (1877) was that <strong>entropy is a measure of the number of microscopic configurations (microstates) consistent with a given macroscopic state</strong>: <span class="mk">S = k_B ln Ω</span>, where Ω is the number of accessible microstates. This is inscribed on Boltzmann's gravestone in Vienna. A gas fills a container not because of any force, but because the vast overwhelming majority of microstates have the gas distributed throughout the volume — the probability of finding all molecules in one corner is not zero, but is so fantastically small it never occurs in practice (for 10²³ molecules, about once in 10^{10²³} years).</p>
+<p>The <strong>canonical ensemble</strong> describes a system in thermal contact with a heat reservoir at temperature T. The probability of finding the system in microstate <span class="mk">i</span> with energy <span class="mk">E_i</span> follows the <strong>Boltzmann distribution</strong>: <span class="mk">P_i = e^{−E_i/k_BT}/Z</span>, where <span class="mk">Z = Σ e^{−E_i/k_BT}</span> is the <em>partition function</em> — the central object of equilibrium statistical mechanics. All thermodynamic quantities can be derived from Z: internal energy <span class="mk">U = −∂(ln Z)/∂β</span>, Helmholtz free energy <span class="mk">F = −k_BT ln Z</span>, entropy <span class="mk">S = −∂F/∂T</span>.</p>
+<p>Boltzmann's <strong>H-theorem</strong> (1872) provides a microscopic derivation of the Second Law: the quantity <span class="mk">H = ∫f ln f dv</span> (the negative of the Gibbs entropy of the velocity distribution) can only decrease over time for a gas evolving under classical mechanics, corresponding to entropy increasing. This raises the profound <em>Loschmidt paradox</em>: microscopic dynamics are time-reversible, so how can macroscopic entropy increase be irreversible? The resolution involves the statistical improbability of low-entropy initial conditions, the thermodynamic limit (N → ∞), and the fact that correlations between particles are ignored in the <em>Stosszahlansatz</em> (molecular chaos assumption). This remains an active area of research at the intersection of statistical mechanics, information theory, and quantum foundations.</p>
+<p><strong>Landauer's principle</strong> (1961) connects thermodynamics to information theory: erasing one bit of information from a computer necessarily dissipates at least <span class="mk">k_BT ln 2</span> of heat to the environment. This sets an absolute physical lower limit on computation energy, and was confirmed experimentally in 2012. Shannon entropy (information theory) and Boltzmann/Gibbs entropy (physics) are mathematically identical — their deep connection, first pointed out by von Neumann, remains one of the most beautiful links in all of theoretical physics.</p>`,
+   facts:[{e:'🌌',t:'The "heat death" of the universe is the theoretical maximum-entropy endpoint: temperature equilibrated everywhere, no gradients, no work possible — trillions of years away.'},{e:'💻',t:'Landauer\'s principle was confirmed experimentally by Bérut et al. (Nature, 2012) using a colloidal particle trapped in a bistable optical potential.'},{e:'⚛️',t:'Bose-Einstein and Fermi-Dirac statistics (quantum extensions of Boltzmann) explain superfluidity, superconductivity, lasers, and the structure of white dwarf stars.'}],
+   formula:{rows:[
+    {n:'Boltzmann entropy',e:'S  =  k_B · ln Ω'},
+    {n:'Boltzmann distrib.',e:'P_i  =  e^{−E_i / k_B T}  /  Z'},
+    {n:'Partition function',e:'Z  =  Σᵢ  exp(−βEᵢ),   β = 1/(k_B T)'},
+    {sep:1},
+    {n:'Helmholtz free energy',e:'F  =  U − T·S  =  −k_B T · ln Z'},
+    {n:'Gibbs entropy',e:'S  =  −k_B  Σᵢ  Pᵢ · ln Pᵢ'},
+    {sep:1},
+    {n:'Landauer limit',e:'E_min  =  k_B · T · ln 2  per bit erased'},
+    {n:'2nd Law (formal)',e:'dS_universe / dt  ≥  0'},
+   ]},sim:'thermo'},
+ }},
+
+// ── MATHEMATICS ──────────────────────────────────────────────────
+{id:'prob',group:'🔢 Mathematics',emoji:'🎲',color:'#0284c7',light:'#e8f7ff',
+ title:'Probability & The Bell Curve',teaser:'Why does everything cluster in the middle? The universe has a favourite shape.',chips:['Statistics','Probability','Normal distribution'],
+ lvls:{
+  junior:{icon:'🪣',title:'Why the middle always wins!',
+   body:`<p>Imagine a machine with lots of pegs arranged in a triangle. You drop a ball from the top, and at every peg it bounces randomly to the left or right — a perfectly fair coin flip each time. After falling through all the pegs, where does the ball land?</p>
+<p>Almost always <strong>somewhere near the middle!</strong> Here's the key idea: to land at the far right edge, the ball would have to go right at <em>every single peg</em>, one after another. That's like flipping heads ten times in a row — possible, but very rare. To land somewhere in the middle, the ball just needs roughly equal numbers of left and right bounces. And there are thousands of different combinations that get you close to the middle, but only one path that reaches the extreme edge.</p>
+<p>This beautiful mound shape — tallest in the middle, sloping down symmetrically on both sides — is called the <strong>bell curve</strong>. It shows up everywhere in nature: human heights, weather temperatures, measurement errors, test scores. The reason is always the same: when a result is the sum of many small random effects, the middle is always the most probable outcome.</p>`,
+   facts:[{e:'📏',t:'Most adults are near 170 cm tall. Very few are above 2 m or below 1.4 m — the bell curve at work in human biology!'},{e:'🎯',t:'Flipping a coin 100 times almost always gives between 40 and 60 heads. Getting fewer than 30 or more than 70 would be extraordinary.'},{e:'🌡️',t:'Daily temperature errors in weather forecasts follow a bell curve — forecasters use this to calculate confidence ranges.'}],
+   formula:null,sim:'prob'},
+
+  student:{icon:'📊',title:'The Binomial Distribution and the Normal Limit',
+   body:`<p>The physical device described above is called a <strong>Galton board</strong> (or quincunx), invented by Francis Galton in 1887. With <span class="mk">n</span> rows of pegs, a ball makes <span class="mk">n</span> independent binary decisions (left/right, each with probability p = 0.5). The final bin it lands in equals the number of rightward deflections, <span class="mk">k</span>, which follows a <strong>Binomial distribution</strong>: <span class="mk">P(k) = C(n,k)·(0.5)^n</span>.</p>
+<p>The factor <span class="mk">C(n,k) = n!/(k!(n−k)!)</span> counts the number of distinct paths leading to bin k. With 7 rows, there are 2⁷ = 128 equally likely paths total; bin k=3 (the middle) is reached by C(7,3) = 35 different paths — far more than the single path to either extreme. As n grows, the discrete binomial distribution converges to the <strong>Normal (Gaussian) distribution</strong> with mean μ = np = n/2 and standard deviation σ = √(n/4). This convergence is not an approximation — it is guaranteed by the Central Limit Theorem.</p>
+<p>The <strong>68-95-99.7 rule</strong> is enormously useful: for any normally distributed quantity, approximately 68% of values lie within 1σ of the mean, 95% within 2σ, and 99.7% within 3σ. This is why scientists often quote results as "3-sigma" or "5-sigma" detections: a 5-sigma result has less than a 1-in-3.5-million chance of occurring by random chance if the null hypothesis is true — the standard for claiming a new particle discovery in physics.</p>`,
+   facts:[{e:'📈',t:'Heights, blood pressure, IQ scores, and most biological measurements are approximately normally distributed, because they result from many independent genetic and environmental factors.'},{e:'🎰',t:'Casinos profit because the house edge, applied over millions of bets, converges to a reliable mean profit via the Law of Large Numbers.'},{e:'🏅',t:'Galton used the board to demonstrate "regression to the mean": tall parents tend to have children slightly shorter than themselves — extreme values regress toward average over generations.'}],
+   formula:{rows:[
+    {n:'Binomial probability',e:'P(k; n, p)  =  C(n,k) · pᵏ · (1−p)^{n−k}'},
+    {n:'Mean',e:'μ  =  n · p'},
+    {n:'Std. deviation',e:'σ  =  √( n · p · (1−p) )'},
+    {sep:1},
+    {n:'Gaussian (PDF)',e:'f(x)  =  (1/σ√2π) · exp(−(x−μ)²/2σ²)'},
+    {sep:1},
+    {n:'68-95-99.7 rule',e:'P(|X−μ| < σ)   ≈  0.6827',c:'0.9545 for 2σ, 0.9973 for 3σ'},
+   ]},sim:'prob'},
+
+  scholar:{icon:'∑',title:'Central Limit Theorem, Berry-Esséen, and the universality of Gaussian statistics',
+   body:`<p>The <strong>Central Limit Theorem (CLT)</strong> is one of the deepest results in probability theory. The standard statement: if <span class="mk">X₁, X₂, …, Xₙ</span> are i.i.d. random variables with mean μ and finite variance σ², then the standardised sample mean <span class="mk">Z_n = (X̄_n − μ)/(σ/√n)</span> converges in distribution to the standard normal <span class="mk">N(0,1)</span> as n → ∞, <em>regardless of the distribution of X_i</em>. This universality — the same limiting distribution for sums of random variables drawn from any finite-variance distribution — is what makes Gaussian statistics so pervasive in science and engineering.</p>
+<p>The CLT can be proved elegantly via <strong>characteristic functions</strong> (Fourier transforms of probability distributions). The characteristic function of Z_n is <span class="mk">φ_{Z_n}(t) = [φ_X(t/σ√n)]^n · e^{−iμt√n/σ}</span>. Expanding <span class="mk">log φ_X</span> in a Taylor series around zero and using the fact that the first cumulant is μ and second is σ² gives <span class="mk">log φ_{Z_n}(t) → −t²/2</span>, which is the log-characteristic function of N(0,1). This approach avoids all measure-theoretic subtleties of the direct proof.</p>
+<p>The <strong>Berry-Esséen theorem</strong> quantifies the convergence rate. Let ρ = E[|X−μ|³] be the third absolute central moment. Then the Kolmogorov-Smirnov distance between <span class="mk">F_n</span> (the CDF of Z_n) and the standard normal CDF Φ satisfies: <span class="mk">sup_x |F_n(x) − Φ(x)| ≤ C·ρ/(σ³·√n)</span>, with <span class="mk">C ≤ 0.4748</span> (Shevtsova, 2010). The convergence rate is O(1/√n), which is optimal. Heavy-tailed distributions (infinite variance, e.g. Cauchy) violate the CLT's conditions; their sums converge instead to <strong>Lévy stable distributions</strong>, the generalised class of which the Gaussian is a special case.</p>
+<p>The CLT underpins virtually all of frequentist statistics: t-tests, ANOVA, confidence intervals, and hypothesis testing all assume (explicitly or implicitly) that sample statistics are approximately normally distributed for large n. In physics, Gaussian statistics arise from the equipartition theorem in thermal systems, from shot noise in electronics, and from quantum measurement uncertainty. The <strong>Ornstein-Uhlenbeck process</strong> and its discrete analogue, the AR(1) process, describe mean-reverting Gaussian dynamics and are foundational in quantitative finance, neuroscience, and climatology.</p>`,
+   facts:[{e:'🔬',t:'Student\'s t-distribution is correct for small samples (n < 30) and converges to the Normal as n → ∞ — a direct consequence of the CLT.'},{e:'💹',t:'Black-Scholes option pricing assumes normally distributed log-returns — a CLT approximation that breaks down during market crashes (fat tails).'},{e:'🎲',t:'The Cauchy distribution (ratio of two normals) has undefined mean and infinite variance — its CLT fails, and the sample mean does NOT converge.'}],
+   formula:{rows:[
+    {n:'CLT (convergence)',e:'Z_n  =  (X̄_n − μ) / (σ/√n)  →  N(0,1)'},
+    {sep:1},
+    {n:'Berry-Esséen',e:'sup_x |F_n(x) − Φ(x)|  ≤  C·ρ / (σ³·√n)'},
+    {n:'Constant',e:'C  ≤  0.4748   (Shevtsova, 2010)'},
+    {sep:1},
+    {n:'Char. fn. proof',e:'log φ_{Z_n}(t)  =  n · log φ_X(t/σ√n) − iμt√n/σ'},
+    {n:'→ as n → ∞',e:'log φ_{Z_n}(t)  →  −t²/2   (std. normal)'},
+    {sep:1},
+    {n:'Lévy stable (heavy tail)',e:'P(X > x)  ~  x^{−α},   0 < α ≤ 2'},
+   ]},sim:'prob'},
+ }},
+
+{id:'fractal',group:'🔢 Mathematics',emoji:'🌀',color:'#0891b2',light:'#e0f9ff',
+ title:'Fractals & Infinity',teaser:'A coastline has infinite length. A snowflake contains itself forever. How is that possible?',chips:['Geometry','Self-similarity','Chaos'],
+ lvls:{
+  junior:{icon:'❄️',title:'Shapes that contain themselves!',
+   body:`<p>Look closely at a fern leaf. Now zoom in on one of its smaller branches. It looks almost like a tiny fern! Zoom in further on a branch of that branch — another tiny fern! This property, where a shape looks the same no matter how much you zoom in, is called <strong>self-similarity</strong>, and shapes with this property are called <strong>fractals</strong>.</p>
+<p>Snowflakes are fractals. So are coastlines, mountain ranges, and lightning bolts. Broccoli is a fractal too — look at Romanesco broccoli and you'll see a perfect spiral of spirals, each spiral made of smaller spirals. Your lungs are fractal: their endlessly branching structure packs an enormous surface area — as large as a tennis court! — into your chest.</p>
+<p>The most famous fractal is the <strong>Mandelbrot Set</strong> — a shape generated by one simple mathematical rule, repeated over and over. But when you zoom in on its edge, you find infinite complexity: swirling spirals, seahorse tails, tiny copies of the whole set, and always more detail, forever. It's the most complex object in mathematics, born from one of the simplest rules imaginable.</p>`,
+   facts:[{e:'🌿',t:'Romanesco broccoli is a near-perfect natural fractal — each floret is a miniature version of the entire head!'},{e:'🌊',t:'Britain\'s coastline gets longer the more precisely you measure it. There\'s no single "correct" answer — it\'s fractal!'},{e:'🫁',t:'Your lungs\' fractal branching creates ~70 m² of surface — enough to cover a tennis court, packed into your chest!'}],
+   formula:null,sim:'fractal'},
+
+  student:{icon:'📐',title:'Fractal Dimension and the Mandelbrot Set',
+   body:`<p>Classical geometry assigns integer dimensions: a point is 0D, a line is 1D, a square is 2D, a cube is 3D. Fractals break this rule — they have <strong>non-integer (fractional) dimensions</strong>, called the <em>Hausdorff dimension</em>. This measures how detail scales with magnification: if you scale a line by 3, you get 3 copies; if you scale a square by 3, you get 9 = 3² copies; if you scale a cube by 3, you get 27 = 3³ copies. For a self-similar fractal made of N copies scaled by 1/s, the Hausdorff dimension is <span class="mk">D = log N / log s</span>.</p>
+<p>The <strong>Koch snowflake</strong> (replace each line segment with a bump of 4 segments, each 1/3 the original) has N=4, s=3, so <span class="mk">D = log 4 / log 3 ≈ 1.26</span> — more than a line but less than a plane. Crucially, its perimeter is infinite (<span class="mk">L_n = (4/3)^n L₀ → ∞</span>) while its enclosed area is finite. This is why coastlines have paradoxically infinite length at infinite resolution.</p>
+<p>The <strong>Mandelbrot Set</strong> is defined by the iteration <span class="mk">z_{n+1} = z_n² + c</span>, starting from z₀ = 0. A complex number c belongs to the set if this sequence stays bounded (never escapes to infinity). Points outside the set escape at different rates — colouring them by escape speed produces the iconic psychedelic images. The Mandelbrot set boundary is infinitely complex: zooming into any point on its edge reveals new structures — spirals, mini-Mandelbrots, seahorse valleys — forever.</p>`,
+   facts:[{e:'🌀',t:'The boundary of the Mandelbrot Set has Hausdorff dimension exactly 2 — infinitely wrinkled. Zooming in always reveals new mini-Mandelbrot sets!'},{e:'📡',t:'Fractal antennas (used in modern smartphones) receive multiple frequencies because their self-similar structure resonates at multiple scales simultaneously.'},{e:'🩺',t:'Malignant tumours have measurably higher fractal dimension than healthy tissue — a quantitative cancer diagnostic tool.'}],
+   formula:{rows:[
+    {n:'Mandelbrot iteration',e:'z_{n+1}  =  z_n²  +  c,    z₀ = 0'},
+    {n:'Mandelbrot Set',e:'M  =  { c ∈ ℂ : sup_n |z_n| < ∞ }'},
+    {sep:1},
+    {n:'Hausdorff dimension',e:'D  =  log N  /  log s'},
+    {n:'Koch snowflake D',e:'D  =  log 4 / log 3  ≈  1.2619'},
+    {sep:1},
+    {n:'Koch perimeter',e:'L_n  =  (4/3)^n · L₀  →  ∞  as  n→∞',c:'finite area, infinite perimeter'},
+   ]},sim:'fractal'},
+
+  scholar:{icon:'ℂ',title:'Complex Dynamics, Julia Sets, and connections to chaos theory',
+   body:`<p>The Mandelbrot set is the parameter space of the quadratic family <span class="mk">f_c(z) = z² + c</span>. For each parameter c ∈ ℂ, the <strong>Julia set</strong> <span class="mk">J_c</span> is the boundary of the basin of attraction of infinity for the iteration <span class="mk">z ↦ f_c(z)</span>: it is the chaotic frontier separating initial conditions that escape to ∞ from those that remain bounded. The filled Julia set K_c = ℂ\{z : f_c^n(z) → ∞} contains all non-escaping initial conditions.</p>
+<p>The fundamental connection between M and J_c: <strong>c ∈ M if and only if J_c is connected</strong>; otherwise J_c is a totally disconnected Cantor set (topological dust). This dichotomy — connected or Cantor dust, with no intermediate possibility — is one of the most striking results in complex dynamics (proved by Douady and Hubbard, 1982). Their <strong>uniformisation theorem</strong> constructs a conformal isomorphism φ_M: ℂ\M → ℂ\D̄ (the complement of M is conformally equivalent to the complement of the closed unit disk), via the Böttcher coordinate <span class="mk">φ_c(z) = lim_{n→∞} [f_c^n(z)]^{2^{-n}}</span>. The <em>Mandelbrot Set Local Connectivity</em> (MLC) conjecture — whether M is locally connected — remains one of the central open problems in complex dynamics.</p>
+<p>The connection to chaos theory is deep. The <strong>bifurcation diagram</strong> of the real logistic map <span class="mk">x_{n+1} = r·x_n(1−x_n)</span> is a real cross-section of the Mandelbrot set. As r increases from 1 to 4, the fixed point undergoes a period-doubling cascade: period 1 → 2 → 4 → 8 → … → chaos. The ratio of successive bifurcation intervals converges to the <strong>Feigenbaum constant δ ≈ 4.6692</strong> — a universal constant that appears in the period-doubling cascade of any smooth unimodal map, from fluid dynamics to electronic circuits. Its universality was discovered by Mitchell Feigenbaum (1975-1976) using renormalisation group methods borrowed from statistical physics.</p>
+<p>The Hausdorff dimension of the Mandelbrot boundary equals exactly 2 — a deep theorem proved by Mitsuhiro Shishikura (1998), requiring sophisticated quasi-conformal mapping techniques. This means that despite looking one-dimensional, the boundary is so infinitely wrinkled that it is in some sense two-dimensional, filling area in the limit.</p>`,
+   facts:[{e:'🔢',t:'The MLC conjecture (Mandelbrot locally connected?) would imply the combinatorial description of M is complete — it has resisted proof for 40 years.'},{e:'📐',t:'Feigenbaum\'s constant δ ≈ 4.6692 appears in period-doubling cascades of dripping faucets, electronic circuits, and Rayleigh-Bénard convection — all the same number!'},{e:'🌊',t:'Turbulent fluid flow exhibits multifractal structure — different regions of space scale with different local Hölder exponents, described by the multifractal spectrum f(α).'}],
+   formula:{rows:[
+    {n:'Mandelbrot iteration',e:'f_c(z)  =  z²  +  c,    z₀ = 0'},
+    {n:'Mandelbrot Set M',e:'M  =  { c ∈ ℂ : sup_n |f_c^n(0)| < ∞ }'},
+    {sep:1},
+    {n:'Julia Set J_c',e:'J_c  =  ∂{ z : f_c^n(z) → ∞ }',c:'chaotic boundary'},
+    {n:'Böttcher coordinate',e:'φ_c(z)  =  lim_{n→∞}  [f_c^n(z)]^{2^{−n}}'},
+    {sep:1},
+    {n:'Feigenbaum constant',e:'δ  =  lim (r_{n+1}−r_n)/(r_{n+2}−r_{n+1})  ≈  4.6692'},
+    {n:'dim_H(∂M)',e:'dim_H(∂M)  =  2',c:'Shishikura 1998'},
+   ]},sim:'fractal'},
+ }},
+
+// ── BIOLOGY ──────────────────────────────────────────────────────
+{id:'life',group:'🧬 Biology',emoji:'🧬',color:'#16a34a',light:'#edfff5',
+ title:'The Rules of Life',teaser:'How do 37 trillion cells coordinate perfectly — with no one giving orders?',chips:['Cells','Emergence','Evolution'],
+ lvls:{
+  junior:{icon:'🌱',title:'Tiny cells building big life!',
+   body:`<p>Your entire body — your brain, your hands, your heart — is made of tiny living blocks called <strong>cells</strong>. They're so small you can't see them without a microscope. A single human hair is about 10 cells wide. Right now you have roughly <em>37 trillion</em> cells working together, every single moment, to keep you alive, thinking, feeling, and moving.</p>
+<p>Here's the truly amazing part: no single cell is "in charge." Every cell just follows simple rules based on chemical signals from its immediate neighbours. And yet together, they build hearts that beat for a hundred years, brains that dream, and immune systems that remember every illness you've ever had. This property — where simple individual rules produce astonishing collective complexity — is called <strong>emergence</strong>, and it's one of the deepest puzzles in science.</p>
+<p>In the simulation below, each coloured square is like a simple cell, following just four simple rules about its neighbours. Watch as gliders — patterns that travel across the grid — and oscillators that flicker between states emerge from nothing but those four rules. Now imagine how much richer things become with trillions of cell types, each with thousands of different chemical signals!</p>`,
+   facts:[{e:'🔴',t:'Your body makes 2 million new red blood cells every second to replace old ones — that\'s 170 billion per day!'},{e:'🧠',t:'Your brain has 86 billion neurons and an estimated 100 trillion connections — more than all the stars in the Milky Way galaxy.'},{e:'🦠',t:'The bacteria in your gut outnumber your human cells by about 1.3:1. You\'re literally more microbe than human, by cell count!'}],
+   formula:null,sim:'life'},
+
+  student:{icon:'🔬',title:'Conway\'s Game of Life and Emergent Complexity',
+   body:`<p>Cellular automata are mathematical models where a grid of cells evolves in discrete time steps according to local rules. John Conway's <strong>Game of Life (1970)</strong> uses just four rules, applied simultaneously to every cell:</p>
+<ul>
+<li><strong>Underpopulation:</strong> a live cell with fewer than 2 live neighbours dies</li>
+<li><strong>Survival:</strong> a live cell with 2 or 3 live neighbours survives</li>
+<li><strong>Overpopulation:</strong> a live cell with more than 3 live neighbours dies</li>
+<li><strong>Reproduction:</strong> a dead cell with exactly 3 live neighbours becomes alive</li>
+</ul>
+<p>These four rules produce extraordinary complexity. <strong>Gliders</strong> move diagonally across the grid; <strong>oscillators</strong> cycle through repeating patterns; <strong>glider guns</strong> emit an endless stream of gliders. Most remarkably, the Game of Life is <strong>Turing-complete</strong> — in 2000, Paul Rendell proved that a working universal Turing machine can be constructed entirely within the Life grid. This means that, in principle, any computation that can be performed by a modern computer can be performed by patterns in the Game of Life. An entire computer can be simulated inside another computer made of coloured squares.</p>
+<p>This result has profound implications for our understanding of complexity. Universal computational power can emerge from four local rules operating on a binary grid. If such simplicity can produce universal computation, it suggests that the breathtaking complexity of biology — of cells, organisms, and ecosystems — may not require any special "life force" or magic ingredient. It might be an inevitable consequence of local chemical rules interacting at scale.</p>`,
+   facts:[{e:'🐝',t:'Honeybee swarms collectively choose a new home with no central leader — scouts waggle-dance to advertise sites, and a quorum emerges naturally.'},{e:'🐚',t:'The patterns on seashells (stripes, spots, spirals) arise from 1D cellular automata-like reaction-diffusion in the mantle tissue.'},{e:'⚗️',t:'The Belousov-Zhabotinsky reaction produces spiralling chemical waves in a dish — a real-world continuous cellular automaton.'}],
+   formula:{rows:[
+    {n:'Live cell rule',e:'k=2 or 3 neighbours  →  survives',c:'else dies'},
+    {n:'Dead cell rule',e:'k=3 neighbours  →  born',c:'else stays dead'},
+    {sep:1},
+    {n:'Turing completeness',e:'Game of Life  ≡  Universal Turing Machine',c:'Rendell, 2000'},
+    {n:'Wolfram Class IV',e:'Rule 110 (1D)  also  ≡  UTM',c:'simplest known Turing-complete system'},
+   ]},sim:'life'},
+
+  scholar:{icon:'∂',title:'Turing Patterns, Reaction-Diffusion Systems, and Morphogenesis',
+   body:`<p>Alan Turing's landmark 1952 paper "The Chemical Basis of Morphogenesis" proposed that biological pattern formation arises from a <strong>reaction-diffusion instability</strong> between two chemical morphogens: an <em>activator</em> u (which promotes its own production and that of an inhibitor v) and an <em>inhibitor</em> v (which suppresses u), with the crucial asymmetry that D_v ≫ D_u — the inhibitor diffuses much faster than the activator. The system is described by coupled PDEs: <span class="mk">∂u/∂t = D_u∇²u + f(u,v)</span> and <span class="mk">∂v/∂t = D_v∇²v + g(u,v)</span>, where f and g encode the reaction kinetics.</p>
+<p>A spatially uniform steady state (u₀, v₀) that is stable in the absence of diffusion can become unstable to spatial perturbations when diffusion is added — the <strong>Turing instability</strong>. Linearising around (u₀, v₀) and substituting a plane-wave perturbation <span class="mk">∝ e^{σt + ikx}</span> yields the dispersion relation σ(k²). The instability condition requires that <span class="mk">det(J − k²D) = 0</span> has solutions with Re(σ) > 0 for some k ≠ 0, where J is the Jacobian of the reaction terms and D = diag(D_u, D_v). The dominant unstable wavenumber k* sets the characteristic pattern wavelength <span class="mk">λ* = 2π/k*</span>, explaining why stripes and spots have a preferred spatial scale.</p>
+<p>Experimental verification came decades after Turing's death. Leopard spot geometry was matched to Turing simulations by Shankaran et al. (2012); zebrafish stripe formation was shown to follow a Turing mechanism by Nakamasu et al. (2009); mouse digit spacing was shown to depend on the BMP-BMPR reaction-diffusion system by Sheth et al. (2012). The Turing mechanism has now been identified in hair follicle spacing, palate rugae formation, and the patterning of pigmentation in bird feathers.</p>
+<p>The connection to Conway's Life is through the lens of <strong>discrete vs continuous reaction-diffusion</strong>: Life operates on a binary grid with discrete time steps, while Turing systems work in continuous space and time with smooth chemical concentrations. Both belong to the broader class of excitable media. Wolfram's classification of cellular automata (Classes I-IV, analogous to fixed point, limit cycle, chaotic, and complex/edge-of-chaos dynamics) provides a unified framework. Class IV automata — including Life — are conjectured to be generically Turing-complete, suggesting that complexity and computation arise naturally at the "edge of chaos."</p>`,
+   facts:[{e:'🐆',t:'Leopard spot size is tuned by the Turing diffusion ratio — in knockin mice with altered morphogen diffusivity, spots predictably change to stripes.'},{e:'🤖',t:'A fully functional Game-of-Life computer (capable of running any program) was constructed within the simulation and is documented on the LifeWiki.'},{e:'🔬',t:'CRISPR knockout of specific morphogen receptors produces the exact stripe-to-spot transitions predicted by Turing models in zebrafish.'}],
+   formula:{rows:[
+    {n:'Activator PDE',e:'∂u/∂t  =  D_u·∇²u  +  f(u,v)'},
+    {n:'Inhibitor PDE',e:'∂v/∂t  =  D_v·∇²v  +  g(u,v)'},
+    {sep:1},
+    {n:'Turing instability',e:'det(J − k²D) = 0  for some  k ≠ 0'},
+    {n:'Condition (necessary)',e:'D_v / D_u  >>  1   (fast inhibitor)'},
+    {sep:1},
+    {n:'Pattern wavelength',e:'λ*  =  2π/k*   where  k* = argmax σ(k)'},
+    {n:'Dispersion relation',e:'σ(k)  =  ½[ tr(J) − (D_u+D_v)k²  ±  √Δ ]'},
+   ]},sim:'life'},
+ }},
+
+// ── COMPUTER SCIENCE ─────────────────────────────────────────────
+{id:'sorting',group:'💻 Computer Science',emoji:'🔀',color:'#6366f1',light:'#f0f0ff',
+ title:'Sorting Algorithms',teaser:'How does a computer sort a million numbers in milliseconds — and why does strategy matter?',chips:['Algorithms','Big-O','CS'],
+ lvls:{
+  junior:{icon:'📚',title:'Putting things in order — the clever way!',
+   body:`<p>Imagine you have a big stack of cards, each with a different number, all shuffled. Your job: put them in order from smallest to biggest. You could pick them up one by one, compare each to the others, and slot it into place. Simple! But if you had a million cards, this approach could take years.</p>
+<p>Computers face this exact problem constantly — sorting your emails by date, your photos by time, search results by relevance, contacts alphabetically. A <strong>sorting algorithm</strong> is a precise, step-by-step recipe a computer follows to sort things. The clever insight: some recipes are astronomically faster than others, even for the exact same task!</p>
+<p>The simplest method, called <strong>Bubble Sort</strong>, goes through the list comparing neighbours, swapping them if they're in the wrong order, and repeating until the list is sorted. It works, but it's slow — like checking every single pair of cards. The smarter method, <strong>Merge Sort</strong>, uses a brilliant divide-and-conquer idea: split the list in half, sort each half, then merge the two sorted halves together. By splitting and merging repeatedly, it sorts a million cards in seconds rather than years!</p>`,
+   facts:[{e:'📧',t:'Your email app sorts thousands of messages almost instantly using variants of Merge Sort and QuickSort.'},{e:'🗺️',t:'Google Maps finds the shortest route through billions of road segments in under a second — using specialised graph algorithms.'},{e:'🎮',t:'Video games sort thousands of 3D objects by distance every frame to render them in the correct depth order!'}],
+   formula:null,sim:'sorting'},
+
+  student:{icon:'⏱️',title:'Big-O Complexity: measuring algorithmic efficiency',
+   body:`<p>The efficiency of a sorting algorithm is described by how its running time grows as the input size n grows. We use <strong>Big-O notation</strong> to capture this growth rate, focusing on the worst case. The key insight is that absolute speed is hardware-dependent, but growth rate is intrinsic to the algorithm.</p>
+<p><strong>Bubble Sort</strong> compares adjacent pairs and bubbles large elements rightward. For n elements it performs up to n(n−1)/2 comparisons — O(n²). Double the input, quadruple the work. For n = 10⁶: ~500 billion comparisons. At 10⁹ comparisons/second, that's ~8 minutes.</p>
+<p><strong>Merge Sort</strong> uses divide-and-conquer: split into halves, recursively sort each, merge the sorted halves. The merge step takes O(n) work and the recursion tree has log₂n levels, giving total work O(n log n). For n = 10⁶: ~20 million comparisons — 25,000× faster than Bubble Sort! The trade-off is extra memory: Merge Sort needs O(n) auxiliary space for the merge step.</p>
+<p><strong>QuickSort</strong> selects a pivot element, partitions the array into "less than pivot" and "greater than pivot" halves, and recurses on each. Average case O(n log n) with excellent cache performance; worst case O(n²) for already-sorted input (mitigated by random pivot selection). Python and Java use <strong>TimSort</strong> — a hybrid of Merge Sort and Insertion Sort that exploits naturally occurring runs of sorted data, achieving O(n) on nearly-sorted inputs.</p>`,
+   facts:[{e:'⚡',t:'Sorting 1,000,000 elements: Bubble Sort ≈ 8 minutes; Merge Sort ≈ 0.02 seconds. Same problem, 25,000× faster — from pure strategy.'},{e:'🧮',t:'Comparison-based sorting has a proven lower bound of Ω(n log n) — no comparison sort can be asymptotically faster, ever.'},{e:'🔢',t:'Radix Sort bypasses the comparison lower bound by sorting digit-by-digit, achieving O(nk) for k-digit integers.'}],
+   formula:{rows:[
+    {n:'Bubble Sort',e:'T(n)  =  O(n²)',c:'stable; slow for large n'},
+    {n:'Merge Sort',e:'T(n)  =  O(n log n)',c:'stable; O(n) extra space'},
+    {n:'QuickSort',e:'T(n)  =  O(n log n) avg,  O(n²) worst',c:'in-place; fast in practice'},
+    {sep:1},
+    {n:'Comparison lower bound',e:'Any comparison sort:  Ω(n log n)',c:'information-theoretic proof'},
+    {sep:1},
+    {n:'Merge recurrence',e:'T(n)  =  2T(n/2)  +  O(n)',c:'Master Theorem → O(n log n)'},
+   ]},sim:'sorting'},
+
+  scholar:{icon:'Ω',title:'Computational Complexity, the Master Theorem, and lower bound proofs',
+   body:`<p>Algorithm analysis rigorously characterises the worst-case time T(n), average-case, and best-case complexity as functions of input size. The <strong>Master Theorem</strong> solves divide-and-conquer recurrences of the form <span class="mk">T(n) = a·T(n/b) + f(n)</span> (a subproblems of size n/b, with f(n) work at each level): <br>Case 1: if <span class="mk">f(n) = O(n^{log_b a − ε})</span>, then T(n) = Θ(n^{log_b a}); <br>Case 2: if <span class="mk">f(n) = Θ(n^{log_b a})</span>, then T(n) = Θ(n^{log_b a} log n); <br>Case 3: if <span class="mk">f(n) = Ω(n^{log_b a + ε})</span> and af(n/b) ≤ cf(n), then T(n) = Θ(f(n)).<br>For Merge Sort: a=2, b=2, f(n)=Θ(n), so f(n) = Θ(n^{log₂2}) = Θ(n) — Case 2 gives T(n) = Θ(n log n).</p>
+<p>The <strong>Ω(n log n) lower bound</strong> for comparison-based sorting follows from an information-theoretic argument. Any comparison-based sort can be modelled as a binary decision tree: each internal node represents a comparison (is A[i] ≤ A[j]?), and each leaf represents a complete sorted permutation. For n elements, there are n! distinct permutations, so the tree must have ≥ n! leaves. A binary tree of height h has at most 2^h leaves, so h ≥ log₂(n!). By Stirling's approximation, log₂(n!) = n log₂ n − n·log₂ e + O(log n) = Ω(n log n). Therefore any comparison sort must make Ω(n log n) comparisons in the worst case — Merge Sort and HeapSort achieve this and are thus optimal among comparison sorts.</p>
+<p>Non-comparison sorts circumvent this bound by exploiting structure. <strong>Counting Sort</strong> achieves O(n + k) for integers in [0,k]; <strong>Radix Sort</strong> achieves O(d(n+k)) for d-digit base-k numbers; <strong>Bucket Sort</strong> achieves expected O(n) for uniformly distributed data. These are not contradictions of the lower bound — they use operations other than pairwise comparisons.</p>
+<p>Sorting connects to deeper complexity theory. The <strong>P vs NP problem</strong> — whether every problem whose solution can be verified in polynomial time can also be solved in polynomial time — is the central open question of theoretical CS. Sorting is in P (efficiently solvable), but problems like the Travelling Salesman Problem are NP-hard (believed to require exponential time in the worst case). A polynomial-time sorting algorithm exists; a polynomial-time optimal TSP algorithm would imply P = NP, with revolutionary consequences for cryptography, AI, and mathematics.</p>`,
+   facts:[{e:'🔐',t:'RSA cryptography relies on the hardness of integer factorisation (believed NP-intermediate) — the best known algorithm runs in exp(O(n^{1/3})), not polynomial time.'},{e:'💾',t:'Cache-oblivious sorting algorithms (Frigo et al., 1999) achieve optimal cache performance at all cache sizes simultaneously using recursive structure.'},{e:'🧬',t:'Suffix array construction in O(n log n) (or O(n) with SA-IS) is the workhorse of genome assembly — sorting the ~3 billion suffixes of the human genome.'}],
+   formula:{rows:[
+    {n:'Master Theorem',e:'T(n)  =  a·T(n/b)  +  f(n)'},
+    {n:'Case 2 (Merge Sort)',e:'f(n)=Θ(n^{log_b a})  →  T=Θ(n^{log_b a} log n)'},
+    {sep:1},
+    {n:'Comparison lower bound',e:'h  ≥  log₂(n!)  =  Ω(n log n)'},
+    {n:'Stirling approx.',e:'log(n!)  =  n log n  −  n  +  O(log n)'},
+    {sep:1},
+    {n:'QuickSort average',e:'E[T(n)]  =  2n·H_n  −  2n  =  O(n log n)',c:'H_n: nth harmonic number'},
+    {n:'Radix Sort',e:'T(n)  =  O( d·(n+k) )',c:'d digits, base k'},
+   ]},sim:'sorting'},
+ }},
+
+// ── EARTH SCIENCE ────────────────────────────────────────────────
+{id:'climate',group:'🌍 Earth Science',emoji:'🌍',color:'#15803d',light:'#f0fdf4',
+ title:'Climate & the Atmosphere',teaser:'A 1°C rise in global temperature triggers hurricanes, droughts, and sea-level rise. Why so sensitive?',chips:['Greenhouse effect','CO₂','Climate'],
+ lvls:{
+  junior:{icon:'🌤️',title:'Earth\'s invisible blanket',
+   body:`<p>Earth is the perfect distance from the Sun — not scorching hot like Venus, not freezing cold like Mars. One major reason is our atmosphere, a thin layer of gases surrounding the planet. Without it, Earth's average temperature would be around −18°C and everything would be frozen solid!</p>
+<p>The atmosphere acts like an <strong>invisible blanket</strong>. Sunlight passes straight through it and warms the ground. The warm ground then radiates heat back upward as invisible infrared radiation — like how a hot road shimmers with heat haze. Some gases in the atmosphere, called <strong>greenhouse gases</strong> (mainly carbon dioxide CO₂ and water vapour), absorb this rising heat and send much of it back downward. This keeps us warm: the <strong>greenhouse effect</strong>. Without it, we'd all be frozen.</p>
+<p>Here's the problem: by burning coal, oil, and gas, humans are adding extra CO₂ to the atmosphere. More CO₂ means a thicker blanket, trapping more heat. Earth is warming. Even a seemingly small change of 1–2°C has enormous knock-on effects: ice sheets melt, sea levels rise, weather patterns shift, coral reefs bleach and die. The atmosphere is a finely tuned system, and we are changing it faster than it has ever changed in the last million years.</p>`,
+   facts:[{e:'🌡️',t:'Earth\'s average temperature has risen ~1.2°C since the Industrial Revolution. Small sounds big — but it changes everything.'},{e:'🐻‍❄️',t:'Arctic sea ice in summer has shrunk by ~40% since satellite measurements began in 1979.'},{e:'🌊',t:'Sea levels have risen ~20 cm since 1900. They are now rising faster each decade, due to ice melt and ocean thermal expansion.'}],
+   formula:null,sim:'climate'},
+
+  student:{icon:'📊',title:'Radiative Forcing, the Carbon Cycle, and Climate Sensitivity',
+   body:`<p>Earth's climate is a thermodynamic system maintained by the balance between incoming solar energy and outgoing infrared radiation. When this balance is disturbed — for example by adding CO₂ — the system must warm until a new balance is reached. The disturbance is quantified as <strong>radiative forcing</strong> ΔF (in W/m²): the change in energy flux at the top of the atmosphere before any temperature response. For CO₂, the forcing follows a logarithmic relationship: <span class="mk">ΔF = 5.35 · ln(C/C₀)</span>, where C₀ ≈ 280 ppm (pre-industrial) and C is the current concentration (~420 ppm). This gives ΔF ≈ 2.1 W/m² today — roughly equivalent to a small light bulb shining on every square metre of Earth's surface, continuously.</p>
+<p>The resulting temperature change is <span class="mk">ΔT = λ · ΔF</span>, where λ is the <strong>climate sensitivity parameter</strong>. Without feedback effects, λ₀ ≈ 0.3 K/(W/m²). But the climate system has feedbacks that amplify warming: as temperature rises, water vapour (itself a greenhouse gas) increases (+1.8 W/m²/K), ice melts and dark ocean absorbs more sunlight (+0.4 W/m²/K), and so on. These positive feedbacks roughly triple the sensitivity to λ ≈ 0.8–1.2 K/(W/m²), giving an <strong>Equilibrium Climate Sensitivity (ECS)</strong> of approximately 2.5–4°C per doubling of CO₂.</p>
+<p>The <strong>carbon cycle</strong> involves continuous exchange between the atmosphere (~900 GtC), land vegetation and soils (~2000 GtC), ocean surface and deep ocean (~38,000 GtC), and fossil fuel reserves (~5000 GtC accessible). Human emissions (~10 GtC/year) are partially offset: about 30% is absorbed by the ocean and 30% by land plants, leaving ~40% accumulating in the atmosphere — currently raising CO₂ at about 2.5 ppm/year, a rate unprecedented in the ice-core record.</p>`,
+   facts:[{e:'🌿',t:'The ocean absorbs ~30% of human CO₂ emissions, but this causes ocean acidification — pH has dropped 0.1 units, dissolving the shells of marine organisms.'},{e:'🏔️',t:'The Greenland and Antarctic ice sheets together hold enough water to raise sea levels by ~65 metres if fully melted — a very long-term risk.'},{e:'💨',t:'Aerosol particles from industry and volcanoes actually cool the climate by ~0.5°C, masking even more warming. Reducing air pollution could cause a short-term temperature spike.'}],
+   formula:{rows:[
+    {n:'Radiative forcing',e:'ΔF  =  5.35 · ln( C / C₀ )   [W/m²]'},
+    {n:'Pre-industrial C₀',e:'C₀  ≈  280 ppm;   C_now  ≈  420 ppm'},
+    {sep:1},
+    {n:'Temp. response',e:'ΔT  =  λ · ΔF'},
+    {n:'No-feedback λ₀',e:'λ₀  ≈  0.3  K·m²/W'},
+    {n:'With feedbacks λ',e:'λ  ≈  0.8–1.2  K·m²/W'},
+    {sep:1},
+    {n:'ECS (best estimate)',e:'ΔT_{2×CO₂}  ≈  3 °C   (IPCC AR6)'},
+   ]},sim:'climate'},
+
+  scholar:{icon:'∇',title:'Energy Balance Models, GCMs, and Climate Tipping Points',
+   body:`<p>At the top-of-atmosphere (TOA), Earth's energy balance requires that absorbed solar radiation equals emitted longwave radiation: <span class="mk">S₀(1−α)/4 = σT_eff⁴</span>, giving effective radiating temperature <span class="mk">T_eff = [S₀(1−α)/(4σ)]^{1/4} ≈ 255 K</span>. The surface is ~33 K warmer due to the natural greenhouse effect — the downward re-emission of longwave radiation by greenhouse gases. The current energy imbalance (more energy absorbed than emitted) is measured by satellites at +0.87 W/m², directly confirming the anthropogenic greenhouse forcing.</p>
+<p>The <strong>Planck feedback</strong> is the primary restoring force: as surface temperature T rises, emitted thermal radiation increases as 4σT³ (Stefan-Boltzmann), giving a stabilising feedback of λ_P = −1/(4σT³) ≈ −3.2 W·m⁻²·K⁻¹. Additional feedbacks contribute: water vapour (+1.8), lapse-rate (−0.6), surface albedo (+0.4), and cloud feedbacks (−0.4 to +0.4, the dominant uncertainty). The total feedback parameter γ = Σ f_i, and the Equilibrium Climate Sensitivity is <span class="mk">ECS = −ΔF_{2×} / γ</span>. The wide 2.5–4°C ECS range in IPCC AR6 reflects primarily cloud feedback uncertainty.</p>
+<p>Modern climate projections use <strong>General Circulation Models (GCMs)</strong> — coupled atmosphere-ocean models solving the primitive equations (Navier-Stokes + thermodynamics on a rotating sphere) on grids of ~25–100 km horizontal resolution. Subgrid processes (convection, cloud microphysics, ocean eddies) require parameterisation, introducing model uncertainty. The most advanced models in CMIP6 include interactive carbon cycles, aerosol chemistry, and ice-sheet dynamics.</p>
+<p>Perhaps most concerning are <strong>climate tipping points</strong> — thresholds at which positive feedbacks become self-sustaining, triggering large, irreversible state changes even after forcing is removed. Candidates include: West Antarctic Ice Sheet collapse (sea level +3 m), Greenland Ice Sheet collapse (+7 m), Amazon dieback (carbon source reversal), Atlantic Meridional Overturning Circulation (AMOC) collapse (European cooling), and permafrost carbon release (CH₄ feedback). Recent studies (Armstrong McKay et al., Science 2022) suggest some tipping points may be exceeded at 1.5–2°C of global warming, with cascading interactions — "tipping cascades" — potentially destabilising Earth's climate system at temperatures previously considered safe.</p>`,
+   facts:[{e:'💻',t:'The highest-resolution climate models run on petaflop supercomputers for months to simulate decades — yet still cannot resolve individual clouds.'},{e:'📡',t:'CERES satellite instruments measure Earth\'s energy imbalance at +0.87 ± 0.12 W/m² (NASA, 2022) — confirming the greenhouse forcing directly from space.'},{e:'🌊',t:'AMOC has weakened ~15% since the mid-20th century (Caesar et al., Nature 2018) and may cross a tipping point between 1.8°C and 4°C of global warming.'}],
+   formula:{rows:[
+    {n:'TOA energy balance',e:'S₀(1−α)/4  =  σ·T_eff⁴',c:'σ = 5.67×10⁻⁸ W·m⁻²·K⁻⁴'},
+    {n:'Effective temp.',e:'T_eff  ≈  255 K  (observed surface: 288 K)'},
+    {sep:1},
+    {n:'Planck feedback',e:'λ_P  =  −1/(4σT³)  ≈  −3.2  W·m⁻²·K⁻¹'},
+    {n:'ECS formula',e:'ECS  =  −ΔF_{2×CO₂} / γ,   γ = Σ feedbacks'},
+    {sep:1},
+    {n:'CO₂ forcing',e:'ΔF  =  5.35 · ln(C/C₀)   W/m²'},
+    {n:'Current forcing',e:'ΔF(420/280)  ≈  2.1  W/m²'},
+   ]},sim:'climate'},
+ }},
+
+]; // end SUBJECTS
+
+// ═══════════════════════════════════════════════════════════════════
+// STATE & LEVEL
+// ═══════════════════════════════════════════════════════════════════
+let LVL='junior', ACTIVE=null;
+
+const HERO_TXT={
+  junior:'Pick a topic that excites you — every card opens a world of interactive simulations and explanations made just for you.',
+  student:'Explore science with real equations, interactive simulations, and in-depth explanations. Click any card to dive in!',
+  scholar:'Rigorous derivations, precise mathematical notation, and full depth. Every topic from first principles.'
+};
+const HINT_TXT={
+  junior:'Exploring as <strong>Junior</strong> 🌱 — tap any card to start!',
+  student:'Exploring as <strong>Student</strong> 🔬 — equations and theory await!',
+  scholar:'Exploring as <strong>Scholar</strong> 🎓 — full mathematical depth!'
+};
+
+document.querySelectorAll('.lvl').forEach(b=>{
+  b.addEventListener('click',()=>{
+    LVL=b.dataset.l;
+    document.querySelectorAll('.lvl').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    document.getElementById('heroSub').textContent=HERO_TXT[LVL];
+    document.getElementById('hintTxt').innerHTML=HINT_TXT[LVL];
+    if(ACTIVE) openModal(ACTIVE, true);
+  });
+});
+
+// ═══════════════════════════════════════════════════════════════════
+// BUILD GRID
+// ═══════════════════════════════════════════════════════════════════
+(function buildGrid(){
+  const main=document.getElementById('mainGrid');
+  const groups={};
+  S.forEach(s=>{if(!groups[s.group])groups[s.group]=[];groups[s.group].push(s);});
+  let gi=0;
+  for(const[grp,subs] of Object.entries(groups)){
+    const lbl=document.createElement('div');lbl.className='glbl';lbl.textContent=grp;main.appendChild(lbl);
+    const grid=document.createElement('div');grid.className='cgrid';
+    subs.forEach((s,si)=>{
+      const c=document.createElement('div');c.className='scard';c.tabIndex=0;
+      c.innerHTML=`<div class="sc-stripe" style="background:linear-gradient(90deg,${s.color},${s.color}88)"></div>
+<div class="sc-body">
+  <div class="sc-emoji" style="background:${s.light}">${s.emoji}</div>
+  <div class="sc-tag" style="background:${s.light};color:${s.color}">${s.group.replace(/^./,'').trim()}</div>
+  <div class="sc-title">${s.title}</div>
+  <div class="sc-teaser">${s.teaser}</div>
+</div>
+<div class="sc-foot">
+  <div class="sc-chips">${s.chips.map(ch=>`<span class="chip">${ch}</span>`).join('')}</div>
+  <span class="sc-arr" style="color:${s.color}">→</span>
+</div>`;
+      c.addEventListener('click',()=>openModal(s));
+      c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')openModal(s);});
+      grid.appendChild(c);
+      setTimeout(()=>c.classList.add('vis'),120+(gi*4+si)*65);
+    });
+    main.appendChild(grid);gi++;
+  }
+})();
+
+// ═══════════════════════════════════════════════════════════════════
+// MODAL OPEN/CLOSE
+// ═══════════════════════════════════════════════════════════════════
+const OV=document.getElementById('ov');
+const PANEL=document.getElementById('panel');
+
+function openModal(s, refresh=false){
+  ACTIVE=s;
+  stopSims();
+
+  const lc=s.lvls[LVL];
+  document.getElementById('pico').textContent=s.emoji;
+  document.getElementById('pico').style.background=s.light;
+  document.getElementById('ptitle').textContent=s.title;
+  document.getElementById('psub').textContent=
+    s.group.replace(/^./,'').trim()+' · '+{junior:'Junior 🌱',student:'Student 🔬',scholar:'Scholar 🎓'}[LVL];
+  document.getElementById('psub').style.color=s.color;
+
+  // Tabs
+  const tabsEl=document.getElementById('ptabs');
+  tabsEl.innerHTML=['Discover','Simulate','Go Deeper'].map((t,i)=>
+    `<button class="ptab${i===0?' on':''}" data-i="${i}">${t}</button>`
+  ).join('');
+  tabsEl.querySelectorAll('.ptab').forEach(btn=>{
+    if(btn.classList.contains('on')){btn.style.color=s.color;btn.style.borderBottomColor=s.color;}
+    btn.addEventListener('click',function(){
+      tabsEl.querySelectorAll('.ptab').forEach(b=>{b.classList.remove('on');b.style.color='';b.style.borderBottomColor='';});
+      this.classList.add('on');this.style.color=s.color;this.style.borderBottomColor=s.color;
+      document.querySelectorAll('.tpanel').forEach(p=>p.classList.remove('on'));
+      document.getElementById('tp_'+s.id+'_'+this.dataset.i).classList.add('on');
+    });
+  });
+
+  const body=document.getElementById('pbody');
+  body.innerHTML='';
+
+  // Tab 0 — Discover
+  const t0=newEl('div','tpanel on','tp_'+s.id+'_0');
+  const eb=newEl('div','eblock');
+  eb.style.cssText=`background:${s.light};border:1.5px solid ${s.color}22`;
+  eb.innerHTML=`<div class="eicon">${lc.icon}</div><div class="etitle" style="color:${s.color}">${lc.title}</div><div class="ebody">${lc.body}</div>`;
+  t0.appendChild(eb);
+  if(lc.formula){
+    const fs=newEl('div','fsec');
+    fs.innerHTML='<div class="flbl">Key Formulas</div>';
+    const fb=newEl('div','fbox');
+    lc.formula.rows.forEach(r=>{
+      if(r.sep){const d=newEl('div','fsep');fb.appendChild(d);return;}
+      const row=newEl('div','frow');
+      row.innerHTML=`<span class="fname">${r.n}</span><span class="feq">${r.e}</span><span class="fcmt">${r.c||''}</span>`;
+      fb.appendChild(row);
+    });
+    fs.appendChild(fb);t0.appendChild(fs);
+  }
+  if(lc.facts&&lc.facts.length){
+    const fg=newEl('div','facts');
+    lc.facts.forEach(f=>{
+      const fc=newEl('div','fact');
+      fc.innerHTML=`<div class="fact-e">${f.e}</div><div class="fact-t">${f.t}</div>`;
+      fg.appendChild(fc);
+    });
+    t0.appendChild(fg);
+  }
+  body.appendChild(t0);
+
+  // Tab 1 — Simulate (built after append so container has width)
+  const t1=newEl('div','tpanel','tp_'+s.id+'_1');
+  const sh=newEl('div','sim-hint');sh.textContent='🕹️ Interactive simulation — use the controls below to explore';
+  t1.appendChild(sh);
+  body.appendChild(t1);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>buildSim(s.id,t1,s.color,LVL)));
+
+  // Tab 2 — Go Deeper
+  const t2=newEl('div','tpanel','tp_'+s.id+'_2');
+  t2.appendChild(buildDeeper(s,LVL));
+  body.appendChild(t2);
+
+  if(!refresh){
+    OV.classList.add('open');
+    document.body.style.overflow='hidden';
+    PANEL.scrollTop=0;body.scrollTop=0;
+  }
+}
+
+function buildDeeper(s,lvl){
+  const links={
+    gravity:{junior:'https://spaceplace.nasa.gov/what-is-gravity/en/',student:'https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation',scholar:'https://en.wikipedia.org/wiki/General_relativity'},
+    waves:{junior:'https://www.bbc.co.uk/bitesize/topics/zh44jxs',student:'https://en.wikipedia.org/wiki/Wave_interference',scholar:'https://en.wikipedia.org/wiki/Fourier_transform'},
+    thermo:{junior:'https://www.bbc.co.uk/bitesize/topics/z2p3b9q',student:'https://en.wikipedia.org/wiki/Laws_of_thermodynamics',scholar:'https://en.wikipedia.org/wiki/Statistical_mechanics'},
+    prob:{junior:'https://www.mathsisfun.com/probability/',student:'https://en.wikipedia.org/wiki/Normal_distribution',scholar:'https://en.wikipedia.org/wiki/Central_limit_theorem'},
+    fractal:{junior:'https://www.fractalfoundation.org/',student:'https://en.wikipedia.org/wiki/Mandelbrot_set',scholar:'https://en.wikipedia.org/wiki/Julia_set'},
+    life:{junior:'https://playgameoflife.com/',student:'https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life',scholar:'https://en.wikipedia.org/wiki/Turing_pattern'},
+    sorting:{junior:'https://visualgo.net/en/sorting',student:'https://en.wikipedia.org/wiki/Sorting_algorithm',scholar:'https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)'},
+    climate:{junior:'https://climatekids.nasa.gov/',student:'https://en.wikipedia.org/wiki/Climate_change',scholar:'https://en.wikipedia.org/wiki/Climate_sensitivity'},
+  };
+  const NL={junior:'Student 🔬',student:'Scholar 🎓',scholar:null};
+  const link=(links[s.id]||{})[lvl]||'https://en.wikipedia.org';
+  const d=document.createElement('div');
+  d.innerHTML=`
+<div class="dcard">
+  <div class="dcard-title">📚 Keep exploring!</div>
+  <div class="dcard-body">
+    <p>You've explored <strong>${s.title}</strong> at the <strong>${lvl}</strong> level.</p>
+    ${NL[lvl]?`<p style="margin-top:.5rem">Switch to <strong>${NL[lvl]}</strong> (top of page) to unlock deeper explanations and more advanced mathematics.</p>`:'<p style="margin-top:.5rem">You\'ve reached the deepest level — the full mathematical frontier! 🏔️</p>'}
+    <p style="margin-top:.8rem"><a href="${link}" target="_blank" rel="noopener">→ Read more on Wikipedia ↗</a></p>
+  </div>
+</div>
+<div class="dcard">
+  <div class="dcard-title">🎥 Recommended Videos</div>
+  <div class="dcard-body">
+    <p>Search these on YouTube for excellent visual explanations:</p>
+    <ul>
+      <li><strong>"${s.title}"</strong> by 3Blue1Brown</li>
+      <li><strong>"${s.title} explained"</strong> by Veritasium or Kurzgesagt</li>
+      <li><strong>"${s.title} MIT OpenCourseWare"</strong> for university lectures</li>
+    </ul>
+  </div>
+</div>
+<div class="dcard">
+  <div class="dcard-title">🧪 Experiment yourself</div>
+  <div class="dcard-body">
+    Go back to the <strong>Simulate</strong> tab and push every slider to its extreme. Note what changes and what stays constant. Science is about asking "what if?" — the simulation is your laboratory!
+  </div>
+</div>`;
+  return d;
+}
+
+document.getElementById('pclose').addEventListener('click',closeModal);
+OV.addEventListener('click',e=>{if(e.target===OV)closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+function closeModal(){OV.classList.remove('open');document.body.style.overflow='';stopSims();ACTIVE=null;}
+
+function newEl(tag,cls,id){const e=document.createElement(tag);if(cls)e.className=cls;if(id)e.id=id;return e;}
+
+// ═══════════════════════════════════════════════════════════════════
+// SIMULATION ENGINE
+// Key rule: canvas is sized ONCE. Controls live OUTSIDE canvas wrapper.
+// No layout-triggering calls inside rAF.
+// ═══════════════════════════════════════════════════════════════════
+const SIMS={};
+function stopSims(){
+  for(const k in SIMS){
+    const s=SIMS[k];
+    if(s.raf) cancelAnimationFrame(s.raf);
+    if(s.timer) clearTimeout(s.timer);
+    if(s.int) clearInterval(s.int);
+    delete SIMS[k];
+  }
+}
+
+// Setup canvas with fixed W×H, scaled for DPR. Returns {canvas,ctx,W,H,dpr}
+function mkCanvas(container, W, H){
+  const dpr=window.devicePixelRatio||1;
+  const wrap=newEl('div','sim-canvas-wrap');
+  wrap.style.width=W+'px'; wrap.style.height=H+'px';
+  const c=document.createElement('canvas');
+  c.width=W*dpr; c.height=H*dpr;
+  c.style.width=W+'px'; c.style.height=H+'px';
+  const ctx=c.getContext('2d');
+  ctx.scale(dpr,dpr);
+  wrap.appendChild(c);
+  container.appendChild(wrap);
+  return{canvas:c,ctx,W,H,dpr};
+}
+
+// Controls row (sibling of canvas wrap, inside container)
+function mkCtrl(container){
+  const d=newEl('div','sim-controls');
+  container.appendChild(d);
+  return d;
+}
+function mkPills(container){const d=newEl('div','sim-pills');container.appendChild(d);return d;}
+function pill(lbl){
+  const d=newEl('div','spill');d.innerHTML=lbl+': <b>—</b>';
+  return{el:d,set(v){d.querySelector('b').textContent=v}};
+}
+function mkBtn(txt,pri=false,clr=''){
+  const b=newEl('button','cbtn'+(pri?' pri':''));
+  b.textContent=txt;
+  if(pri&&clr)b.style.background=clr;
+  return b;
+}
+function mkRange(ctrl,lbl,min,max,val,step,clr){
+  const w=newEl('div','rng-wrap'); const top=newEl('div','rng-top');
+  const l=newEl('span','rng-lbl');l.textContent=lbl;
+  const v=newEl('span','rng-v');v.textContent=val;if(clr)v.style.color=clr;
+  top.appendChild(l);top.appendChild(v);
+  const inp=document.createElement('input');inp.type='range';
+  inp.min=min;inp.max=max;inp.value=val;inp.step=step||1;
+  w.appendChild(top);w.appendChild(inp);
+  ctrl.appendChild(w);
+  inp.addEventListener('input',()=>{v.textContent=parseFloat(inp.value).toFixed(step<1?2:0);});
+  return{inp,v,get val(){return+inp.value}};
+}
+
+function getSimWidth(container){
+  // Use the panel body width, capped at 800
+  const w=document.getElementById('pbody').offsetWidth||500;
+  return Math.min(w-4,820);
+}
+
+function buildSim(id,container,color,lvl){
+  const map={orbit:simOrbit,waves:simWaves,thermo:simThermo,prob:simGalton,
+             fractal:simFractal,life:simLife,sorting:simSorting,climate:simClimate};
+  if(map[id])map[id](container,color,lvl);
+}
+
+/* ── ORBIT ── */
+function simOrbit(container,color){
+  const W=getSimWidth(container),H=290;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pPer=pill('Period'); const pVel=pill('Speed');
+  pRow.appendChild(pPer.el); pRow.appendChild(pVel.el);
+  const rR=mkRange(ctrl,'Orbit Radius',40,130,80,1,color);
+  const rM=mkRange(ctrl,'Star Mass',0.5,5,2,0.1,color);
+
+  let angle=0, trail=[];
+  const S=SIMS.orbit={raf:null};
+
+  rR.inp.addEventListener('input',()=>trail=[]);
+  rM.inp.addEventListener('input',()=>trail=[]);
+
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    const cx=W/2, cy=H/2, r=rR.val, m=rM.val;
+    const spd=Math.sqrt(m*900/r);
+    angle+=spd/r*0.016;
+    const px=cx+r*Math.cos(angle), py=cy+r*Math.sin(angle);
+    trail.push({x:px,y:py}); if(trail.length>220)trail.shift();
+
+    // Star glow
+    const g=ctx.createRadialGradient(cx,cy,0,cx,cy,40+m*9);
+    g.addColorStop(0,'rgba(255,200,60,0.4)');g.addColorStop(1,'transparent');
+    ctx.beginPath();ctx.arc(cx,cy,40+m*9,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+    // Orbit ring
+    ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='rgba(0,0,0,0.07)';ctx.lineWidth=1.5;ctx.stroke();
+    // Trail
+    for(let i=1;i<trail.length;i++){
+      const t=i/trail.length;
+      const hex=Math.round(t*150+30).toString(16).padStart(2,'0');
+      ctx.beginPath();ctx.moveTo(trail[i-1].x,trail[i-1].y);ctx.lineTo(trail[i].x,trail[i].y);
+      ctx.strokeStyle=color+hex;ctx.lineWidth=2;ctx.stroke();
+    }
+    // Star
+    ctx.beginPath();ctx.arc(cx,cy,9+m*2.5,0,Math.PI*2);ctx.fillStyle='#f59e0b';ctx.fill();
+    // Planet
+    ctx.beginPath();ctx.arc(px,py,8,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
+    ctx.beginPath();ctx.arc(px,py,13,0,Math.PI*2);ctx.fillStyle=color+'33';ctx.fill();
+    // Gravity arrow
+    const dx=cx-px,dy=cy-py,dl=Math.sqrt(dx*dx+dy*dy);
+    ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+dx/dl*22,py+dy/dl*22);
+    ctx.strokeStyle='#f59e0b';ctx.lineWidth=2.5;ctx.stroke();
+
+    pPer.set(((2*Math.PI*r)/spd).toFixed(1)+'s');
+    pVel.set(spd.toFixed(1)+' u/s');
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── WAVES ── */
+function simWaves(container,color){
+  const W=getSimWidth(container),H=260;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pType=pill('Interference'); const pAmp=pill('Max amplitude');
+  pRow.appendChild(pType.el); pRow.appendChild(pAmp.el);
+  const rF=mkRange(ctrl,'Frequency 2',0.5,3,1,0.05,color);
+  const rP=mkRange(ctrl,'Phase Shift',0,6.28,0,0.05,color);
+
+  let t=0;
+  const S=SIMS.waves={raf:null};
+
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    const cy=H/2, A=Math.min(H/2-8,50);
+    const f2=rF.val, ph=rP.val;
+
+    // Centre line
+    ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);
+    ctx.strokeStyle='rgba(0,0,0,0.05)';ctx.lineWidth=1;ctx.stroke();
+
+    // Wave 1
+    ctx.beginPath();
+    for(let x=0;x<W;x++){const xi=x/W*Math.PI*8;const y=cy+A*Math.sin(xi-t);x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+    ctx.strokeStyle=color+'88';ctx.lineWidth=2;ctx.stroke();
+
+    // Wave 2
+    ctx.beginPath();
+    for(let x=0;x<W;x++){const xi=x/W*Math.PI*8;const y=cy+A*Math.sin(f2*xi-t+ph);x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+    ctx.strokeStyle='rgba(124,58,237,0.55)';ctx.lineWidth=2;ctx.stroke();
+
+    // Superposition
+    let maxA=0;
+    ctx.beginPath();
+    for(let x=0;x<W;x++){
+      const xi=x/W*Math.PI*8;
+      const sum=A*Math.sin(xi-t)+A*Math.sin(f2*xi-t+ph);
+      if(Math.abs(sum)>maxA)maxA=Math.abs(sum);
+      x?ctx.lineTo(x,cy+sum):ctx.moveTo(x,cy+sum);
+    }
+    ctx.strokeStyle=color;ctx.lineWidth=3;ctx.stroke();
+
+    pType.set(maxA>A*1.6?'Constructive ✓':maxA<A*0.4?'Destructive ✗':'Partial ~');
+    pAmp.set((maxA/A).toFixed(2)+'×');
+    t+=0.04; S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── THERMODYNAMICS ── */
+function simThermo(container,color){
+  const W=getSimWidth(container),H=280;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pHits=pill('Wall hits/s'); const pAvg=pill('Avg speed');
+  pRow.appendChild(pHits.el); pRow.appendChild(pAvg.el);
+  const rT=mkRange(ctrl,'Temperature (K)',50,1200,300,10,color);
+  const rN=mkRange(ctrl,'Particles',5,90,30,5,color);
+
+  let particles=[], wallHits=0, frames=0;
+  function initP(){
+    particles=[];
+    const n=rN.val;
+    for(let i=0;i<n;i++) particles.push({
+      x:18+Math.random()*(W-36),y:18+Math.random()*(H-36),
+      vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3
+    });
+  }
+  rN.inp.addEventListener('input',initP);
+  initP();
+
+  const S=SIMS.thermo={raf:null};
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle=color;ctx.lineWidth=2;ctx.strokeRect(10,10,W-20,H-20);
+    const sc=Math.sqrt(rT.val/300)*2;
+    let tv=0;
+    for(const p of particles){
+      p.x+=p.vx*sc; p.y+=p.vy*sc;
+      if(p.x<15){p.vx=Math.abs(p.vx);wallHits++;}
+      if(p.x>W-15){p.vx=-Math.abs(p.vx);wallHits++;}
+      if(p.y<15){p.vy=Math.abs(p.vy);wallHits++;}
+      if(p.y>H-15){p.vy=-Math.abs(p.vy);wallHits++;}
+      p.x=Math.max(15,Math.min(W-15,p.x));
+      p.y=Math.max(15,Math.min(H-15,p.y));
+      const spd=Math.sqrt(p.vx*p.vx+p.vy*p.vy)*sc; tv+=spd;
+      const h=Math.max(0,220-rT.val*0.18);
+      ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);
+      ctx.fillStyle=`hsl(${h},76%,58%)`;ctx.fill();
+    }
+    frames++;
+    if(frames%30===0){
+      pHits.set(wallHits);
+      pAvg.set((tv/particles.length).toFixed(2)+' u/s');
+      wallHits=0;
+    }
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── GALTON BOARD ── */
+function simGalton(container,color){
+  const W=getSimWidth(container),H=300;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pTot=pill('Total balls'); const pMean=pill('Mean bin');
+  pRow.appendChild(pTot.el); pRow.appendChild(pMean.el);
+
+  const bDrop=mkBtn('▶ Drop balls',true,color);
+  const bReset=mkBtn('↺ Reset');
+  const rRows=mkRange(ctrl,'Rows of pegs',4,10,7,1,color);
+  ctrl.prepend(bReset); ctrl.prepend(bDrop);
+
+  let numRows=7, bins, balls=[], total=0, dropping=false, dropInt;
+  function reset(){bins=new Array(numRows+1).fill(0);balls=[];total=0;pTot.set('0');pMean.set('—');}
+  reset();
+
+  rRows.inp.addEventListener('input',()=>{numRows=rRows.val;reset();});
+  bDrop.addEventListener('click',()=>{
+    dropping=!dropping;
+    bDrop.textContent=dropping?'⏸ Stop':'▶ Drop balls';
+    if(dropping)dropInt=setInterval(()=>{
+      balls.push({x:W/2,y:6,row:0,col:0,vy:0,hue:180+Math.random()*70});
+    },120);
+    else clearInterval(dropInt);
+  });
+  bReset.addEventListener('click',()=>{
+    dropping=false;clearInterval(dropInt);bDrop.textContent='▶ Drop balls';reset();
+  });
+
+  function pp(r,c){
+    const sp=Math.min(24,(W-60)/(numRows+1));
+    const sy=(H-90)/(numRows+2);
+    return{x:W/2+(c-r/2)*sp, y:26+r*sy};
+  }
+
+  const S=SIMS.prob={raf:null};
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    // Pegs
+    for(let r=0;r<=numRows;r++) for(let c=0;c<=r;c++){
+      const p=pp(r,c);
+      ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);
+      ctx.fillStyle='rgba(0,0,0,0.2)';ctx.fill();
+    }
+    // Bins
+    const maxB=Math.max(...bins,1);
+    const lastY=pp(numRows,0).y+14;
+    const maxBH=H-lastY-8;
+    const bw=Math.min(22,(W-60)/(numRows+1));
+    for(let i=0;i<=numRows;i++){
+      const p=pp(numRows,i), bx=p.x-bw/2;
+      // Gaussian ghost
+      const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(numRows*0.2),2));
+      ctx.fillStyle=color+'18'; ctx.fillRect(bx,H-8-g*maxBH,bw-2,g*maxBH);
+      // Data bar
+      if(bins[i]>0){
+        const bh=(bins[i]/maxB)*maxBH;
+        ctx.fillStyle=color+'cc'; ctx.fillRect(bx,H-8-bh,bw-2,bh);
+      }
+      ctx.strokeStyle='rgba(0,0,0,0.07)';ctx.lineWidth=1;
+      ctx.strokeRect(bx,lastY,bw-2,maxBH);
+    }
+    // Animate balls
+    const alive=[];
+    for(const b of balls){
+      b.vy+=0.65; b.y+=b.vy;
+      if(b.row<=numRows){
+        const pin=pp(b.row,b.col);
+        if(b.y>=pin.y){b.vy=2.5;b.col+=(Math.random()<.5?1:0);b.row++;b.x=pp(b.row,b.col).x+(Math.random()-.5)*3;}
+      }
+      if(b.row>numRows&&b.y>H-10){
+        bins[b.col]++; total++;
+        pTot.set(total);
+        pMean.set((bins.reduce((s,v,i)=>s+v*i,0)/total).toFixed(2));
+      } else {
+        ctx.beginPath();ctx.arc(b.x,b.y,5,0,Math.PI*2);
+        ctx.fillStyle=`hsl(${b.hue},76%,55%)`;ctx.fill();
+        alive.push(b);
+      }
+    }
+    balls=alive;
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── MANDELBROT ── */
+function simFractal(container,color,lvl){
+  const W=getSimWidth(container),H=300;
+  const {canvas,ctx,dpr}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pZoom=pill('Zoom level'); pRow.appendChild(pZoom.el);
+  let maxIter=lvl==='junior'?50:lvl==='student'?90:160;
+  const rI=mkRange(ctrl,'Detail (iterations)',20,240,maxIter,5,color);
+  const bR=mkBtn('↺ Reset view');
+  ctrl.appendChild(bR);
+
+  let cx=-0.5,cy=0,zoom=Math.min(W,H)*0.44, dirty=true;
+
+  rI.inp.addEventListener('input',()=>{maxIter=rI.val;dirty=true;});
+  bR.addEventListener('click',()=>{cx=-0.5;cy=0;zoom=Math.min(W,H)*0.44;pZoom.set('1×');dirty=true;});
+
+  canvas.style.cursor='crosshair';
+  canvas.addEventListener('click',e=>{
+    const rect=canvas.getBoundingClientRect();
+    const sx=canvas.width/(rect.width*dpr), sy=canvas.height/(rect.height*dpr);
+    const mx=(e.clientX-rect.left)*dpr*sx/dpr;
+    const my=(e.clientY-rect.top)*dpr*sy/dpr;
+    cx+=(mx-W/2)/zoom; cy+=(my-H/2)/zoom;
+    zoom*=2.2;
+    pZoom.set((zoom/(Math.min(W,H)*0.44)).toFixed(1)+'×');
+    dirty=true;
+  });
+
+  function drawM(){
+    const RW=W*dpr, RH=H*dpr;
+    const id=ctx.createImageData(RW,RH);
+    const d=id.data;
+    for(let py=0;py<RH;py++){
+      for(let px=0;px<RW;px++){
+        const cr=(px/dpr-W/2)/zoom+cx, ci=(py/dpr-H/2)/zoom+cy;
+        let zr=0,zi=0,it=0;
+        while(it<maxIter&&zr*zr+zi*zi<4){const t=zr*zr-zi*zi+cr;zi=2*zr*zi+ci;zr=t;it++;}
+        const idx=(py*RW+px)*4;
+        if(it===maxIter){d[idx]=10;d[idx+1]=8;d[idx+2]=20;d[idx+3]=255;}
+        else{
+          const t=it/maxIter;
+          d[idx]=Math.round(9+230*Math.pow(Math.sin(t*3.14),1.5));
+          d[idx+1]=Math.round(220*Math.pow(Math.sin(t*3.14+2.1),1.5));
+          d[idx+2]=Math.round(30+220*Math.pow(Math.sin(t*3.14+4.2),1.5));
+          d[idx+3]=255;
+        }
+      }
+    }
+    ctx.putImageData(id,0,0);
+    // overlay hint
+    ctx.save();ctx.scale(1/dpr,1/dpr);
+    ctx.font=`bold ${13*dpr}px Nunito,sans-serif`;
+    ctx.fillStyle='rgba(255,255,255,0.55)';
+    ctx.fillText('Click anywhere to zoom in',10*dpr,(H-10)*dpr);
+    ctx.restore();
+    dirty=false;
+  }
+
+  const S=SIMS.fractal={raf:null};
+  function frame(){if(dirty)drawM();S.raf=requestAnimationFrame(frame);}
+  frame();
+}
+
+/* ── GAME OF LIFE ── */
+function simLife(container,color){
+  const W=getSimWidth(container),H=290;
+  const {canvas,ctx,dpr}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pGen=pill('Generation'); const pAlive=pill('Alive cells');
+  pRow.appendChild(pGen.el); pRow.appendChild(pAlive.el);
+
+  const bTog=mkBtn('⏸ Pause');bTog.style.cssText=`border-color:${color};color:${color}`;
+  const bClear=mkBtn('✕ Clear');
+  const bRand=mkBtn('⚡ Random');
+  const bGlider=mkBtn('🛸 Glider',true,color);
+  [bTog,bClear,bRand,bGlider].forEach(b=>ctrl.appendChild(b));
+
+  const CELL=9;
+  const cols=Math.floor(W/CELL), rows=Math.floor(H/CELL);
+  let grid=new Uint8Array(cols*rows), next=new Uint8Array(cols*rows);
+  let running=true, gen=0;
+
+  const idx=(r,c)=>r*cols+c;
+  const N=(r,c)=>{ let n=0; for(let dr=-1;dr<=1;dr++) for(let dc=-1;dc<=1;dc++){if(!dr&&!dc)continue;n+=grid[idx((r+dr+rows)%rows,(c+dc+cols)%cols)];}return n;};
+
+  function randomize(){for(let i=0;i<grid.length;i++)grid[i]=Math.random()<0.28?1:0;gen=0;}
+  function clearG(){grid.fill(0);gen=0;}
+  function glider(r,c){[[0,1],[1,2],[2,0],[2,1],[2,2]].forEach(([dr,dc])=>{if(r+dr<rows&&c+dc<cols)grid[idx(r+dr,c+dc)]=1;});}
+  function step(){
+    let alive=0;
+    for(let r=0;r<rows;r++) for(let c=0;c<cols;c++){
+      const n=N(r,c), cur=grid[idx(r,c)];
+      next[idx(r,c)]=(cur&&(n===2||n===3))||(!cur&&n===3)?1:0;
+      if(next[idx(r,c)])alive++;
+    }
+    [grid,next]=[next,grid];gen++;
+    pGen.set(gen);pAlive.set(alive);
+  }
+
+  bTog.addEventListener('click',()=>{running=!running;bTog.textContent=running?'⏸ Pause':'▶ Play';});
+  bClear.addEventListener('click',clearG);
+  bRand.addEventListener('click',randomize);
+  bGlider.addEventListener('click',()=>{clearG();glider(2,2);glider(3,Math.floor(cols/2));glider(Math.floor(rows/2),Math.floor(cols/3));});
+  canvas.addEventListener('click',e=>{
+    const rect=canvas.getBoundingClientRect();
+    const c2=Math.floor((e.clientX-rect.left)/CELL), r2=Math.floor((e.clientY-rect.top)/CELL);
+    if(r2>=0&&r2<rows&&c2>=0&&c2<cols) grid[idx(r2,c2)]^=1;
+  });
+  randomize();
+
+  const S=SIMS.life={raf:null,timer:null};
+  function frame(){
+    ctx.fillStyle='#f4f9f4';ctx.fillRect(0,0,W*dpr,H*dpr);
+    for(let r=0;r<rows;r++) for(let c=0;c<cols;c++){
+      if(!grid[idx(r,c)])continue;
+      ctx.fillStyle=color+'e0';
+      ctx.fillRect((c*CELL+1)*dpr,(r*CELL+1)*dpr,(CELL-2)*dpr,(CELL-2)*dpr);
+    }
+    if(running) step();
+    S.timer=setTimeout(()=>{S.raf=requestAnimationFrame(frame);},72);
+  }
+  frame();
+}
+
+/* ── SORTING ── */
+function simSorting(container,color){
+  const W=getSimWidth(container),H=260;
+  const {canvas,ctx,dpr}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pAlgo=pill('Algorithm'); const pComp=pill('Comparisons'); const pSwap=pill('Swaps');
+  pRow.appendChild(pAlgo.el); pRow.appendChild(pComp.el); pRow.appendChild(pSwap.el);
+
+  const bBubble=mkBtn('Bubble Sort',true,color);
+  const bMerge=mkBtn('Merge Sort');
+  const bRand=mkBtn('↺ Shuffle');
+  const rN=mkRange(ctrl,'Array size',10,80,40,5,color);
+  [bBubble,bMerge,bRand].forEach(b=>ctrl.prepend(b));
+
+  let arr=[], n=40, gen=null, active=false, comps=0, swaps=0;
+  function shuffle(){n=rN.val;arr=Array.from({length:n},()=>Math.floor(Math.random()*95)+5);comps=0;swaps=0;active=false;gen=null;pComp.set(0);pSwap.set(0);}
+
+  function* bubble(a){
+    for(let i=0;i<a.length;i++) for(let j=0;j<a.length-i-1;j++){
+      comps++;if(a[j]>a[j+1]){[a[j],a[j+1]]=[a[j+1],a[j]];swaps++;}
+      yield;
+    }
+  }
+  function* merge(a){
+    function*ms(l,r){
+      if(l>=r)return;const m=(l+r)>>1;yield*ms(l,m);yield*ms(m+1,r);
+      const L=a.slice(l,m+1),R=a.slice(m+1,r+1);
+      let i=0,j=0,k=l;
+      while(i<L.length&&j<R.length){comps++;if(L[i]<=R[j])a[k++]=L[i++];else{a[k++]=R[j++];swaps++;}yield;}
+      while(i<L.length){a[k++]=L[i++];yield;}
+      while(j<R.length){a[k++]=R[j++];yield;}
+    }
+    yield*ms(0,a.length-1);
+  }
+
+  bBubble.addEventListener('click',()=>{shuffle();pAlgo.set('Bubble O(n²)');gen=bubble(arr);active=true;});
+  bMerge.addEventListener('click',()=>{shuffle();pAlgo.set('Merge O(n log n)');gen=merge(arr);active=true;});
+  bRand.addEventListener('click',shuffle);
+  rN.inp.addEventListener('input',shuffle);
+  shuffle();
+
+  const S=SIMS.sorting={raf:null,timer:null};
+  function frame(){
+    ctx.clearRect(0,0,W*dpr,H*dpr);
+    const bw=W/arr.length;
+    arr.forEach((v,i)=>{
+      const bh=(v/100)*(H-12)*dpr;
+      ctx.fillStyle=`hsl(${210+i*120/arr.length},65%,55%)`;
+      ctx.fillRect(i*bw*dpr,(H-6)*dpr-bh,Math.max(1,(bw-1.5)*dpr),bh);
+    });
+    if(active&&gen){
+      const steps=gen===bubble?4:10;
+      for(let i=0;i<steps;i++){const r=gen.next();if(r.done){active=false;break;}}
+      pComp.set(comps);pSwap.set(swaps);
+    }
+    S.timer=setTimeout(()=>{S.raf=requestAnimationFrame(frame);},16);
+  }
+  frame();
+}
+
+/* ── CLIMATE ── */
+function simClimate(container,color){
+  const W=getSimWidth(container),H=280;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pCO2=pill('CO₂'); const pF=pill('Forcing'); const pDT=pill('ΔT');
+  pRow.appendChild(pCO2.el); pRow.appendChild(pF.el); pRow.appendChild(pDT.el);
+
+  const rC=mkRange(ctrl,'CO₂ concentration (ppm)',280,800,280,5,color);
+  const bPre=mkBtn('↺ Pre-industrial (280)');
+  const bNow=mkBtn('Set to 2024 (420)',true,color);
+  ctrl.appendChild(bPre); ctrl.appendChild(bNow);
+
+  bPre.addEventListener('click',()=>{rC.inp.value=280;rC.v.textContent='280';});
+  bNow.addEventListener('click',()=>{rC.inp.value=420;rC.v.textContent='420';});
+
+  let t=0;
+  const S=SIMS.climate={raf:null};
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    t+=0.03;
+    const co2=rC.val;
+    const dF=5.35*Math.log(co2/280);
+    const dT=dF*0.8;
+
+    // Sky gradient
+    const skyH=H*0.72;
+    const g=ctx.createLinearGradient(0,0,0,skyH);
+    const warmth=Math.min((co2-280)/520,1);
+    g.addColorStop(0,`hsl(${200-warmth*30},${60+warmth*20}%,${70-warmth*15}%)`);
+    g.addColorStop(1,`hsl(${200-warmth*20},40%,85%)`);
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,skyH);
+
+    // Ground
+    const groundH=H*0.28;
+    const gh=ctx.createLinearGradient(0,skyH,0,H);
+    gh.addColorStop(0,`hsl(${120-warmth*40},${50+warmth*10}%,${35-warmth*8}%)`);
+    gh.addColorStop(1,`hsl(${100-warmth*40},40%,25%)`);
+    ctx.fillStyle=gh;ctx.fillRect(0,skyH,W,groundH);
+
+    // Sun
+    const sx=W*0.12,sy=H*0.17;
+    const sg=ctx.createRadialGradient(sx,sy,0,sx,sy,25);
+    sg.addColorStop(0,'rgba(255,240,80,1)');sg.addColorStop(1,'rgba(255,200,50,0)');
+    ctx.beginPath();ctx.arc(sx,sy,22,0,Math.PI*2);ctx.fillStyle='#fbbf24';ctx.fill();
+    for(let i=0;i<8;i++){const a=i/8*Math.PI*2+t*0.3;ctx.beginPath();ctx.moveTo(sx+26*Math.cos(a),sy+26*Math.sin(a));ctx.lineTo(sx+36*Math.cos(a),sy+36*Math.sin(a));ctx.strokeStyle='#fbbf24';ctx.lineWidth=2.5;ctx.stroke();}
+
+    // Atmosphere layer (thicker = more CO₂)
+    const atmoAlpha=0.08+(warmth*0.38);
+    const atmoY=H*0.24, atmoH=H*0.16;
+    ctx.fillStyle=`rgba(100,180,80,${atmoAlpha})`;
+    ctx.fillRect(0,atmoY,W,atmoH);
+    ctx.font='bold 11px Nunito,sans-serif';ctx.fillStyle=`rgba(0,80,0,${0.4+atmoAlpha})`;ctx.textAlign='center';
+    ctx.fillText(`Atmosphere  CO₂: ${co2} ppm`,W/2,atmoY+atmoH*0.62);
+
+    // Incoming solar rays (yellow dots)
+    for(let i=0;i<5;i++){
+      const prog=(t*0.38+i*0.2)%1;
+      const rx=W*0.2+W*0.6*(i/4.5);const ry=sy+prog*(skyH*0.88-sy);
+      ctx.beginPath();ctx.arc(rx,ry,3.5,0,Math.PI*2);ctx.fillStyle='rgba(255,220,40,0.85)';ctx.fill();
+    }
+
+    // Outgoing IR rays (orange) — some trapped
+    for(let i=0;i<5;i++){
+      const prog=(t*0.3+i*0.2)%1;
+      const rx=W*0.25+W*0.5*(i/4.5);const ry=skyH-prog*(skyH*0.75);
+      const trapped=warmth>0.3&&Math.random()<warmth*0.7;
+      ctx.beginPath();ctx.arc(rx,ry,3.5,0,Math.PI*2);
+      ctx.fillStyle=trapped?'rgba(255,80,30,0.85)':'rgba(255,160,60,0.65)';ctx.fill();
+    }
+
+    // Labels
+    ctx.textAlign='left';ctx.fillStyle='rgba(255,255,255,0.8)';ctx.font='bold 12px Nunito,sans-serif';
+    ctx.fillText('🟡 Solar radiation',W*0.02,H*0.55);
+    ctx.fillStyle='rgba(255,120,50,0.9)';
+    ctx.fillText('🔴 Trapped IR heat',W*0.02,H*0.62);
+
+    // Ground label
+    ctx.fillStyle='rgba(255,255,255,0.6)';ctx.textAlign='center';ctx.font='bold 11px Nunito,sans-serif';
+    ctx.fillText(`Earth surface — ΔT: ${dT>0?'+':''}${dT.toFixed(2)} °C vs pre-industrial`,W/2,H*0.88);
+
+    pCO2.set(co2+' ppm');pF.set(dF.toFixed(2)+' W/m²');pDT.set((dT>0?'+':'')+dT.toFixed(2)+'°C');
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+</script>
+</body>
+</html>
