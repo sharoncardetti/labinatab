@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lab-in-a-Tab — Discover the World</title>
+<link rel="icon" type="image/png" href="logo_radiant_infinity.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 <style>
@@ -19,7 +20,25 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);overf
 
 header{position:sticky;top:0;z-index:300;background:rgba(253,248,240,0.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,3rem);gap:1rem}
 .logo{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:6px}
-.logo span{width:10px;height:10px;border-radius:50%;background:#ff6b35;display:inline-block}
+/* --- NUOVO CSS PER IL LOGO E ACCENTI --- */
+
+.logo-img {
+  height: 32px; /* Altezza del logo per adattarsi all'header di 64px */
+  width: auto;  /* Mantiene le proporzioni */
+  display: block;
+}
+
+/* Aggiorniamo i punti e i titoli che usavano il vecchio arancione */
+.logo span { display: none; } /* Nascondiamo il vecchio punto arancione se non rimosso dall'HTML */
+
+/* Applichiamo il nuovo oro radiant agli elementi d'accento */
+.hero h1 em { color: var(--accent); }
+.htag { background: linear-gradient(135deg, #f3e5ab, var(--accent)); } /* Un gradiente oro più morbido */
+.hdot { background: var(--accent); }
+.lvl.on[data-l=junior] { background: linear-gradient(135deg, #f3e5ab, var(--accent)); }
+
+/* Assicuriamoci che i bordi e le ombre non usino colori vecchi */
+.htag { box-shadow: 0 4px 16px rgba(212, 175, 55, 0.28); } /* Ombra dorata */
 .lvl-bar{display:flex;align-items:center;gap:4px;background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 .lvl{border:none;cursor:pointer;border-radius:50px;padding:6px 15px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.77rem;transition:all .22s;background:transparent;color:var(--ink3)}
 .lvl:hover{background:rgba(0,0,0,0.04);color:var(--ink)}
@@ -157,7 +176,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-size:.85rem;font-weight:700;co
 <body>
 
 <header>
-  <div class="logo">Lab-in-a-Tab <span></span></div>
+  <div class="logo">Lab-in-a-Tab <span></span>
+    <img src="logo_radiant_infinity.png" alt="Lab-in-a-Tab Logo" class="logo-img">
+  </div>
   <nav class="lvl-bar">
     <button class="lvl on" data-l="junior">🌱 Junior</button>
     <button class="lvl" data-l="student">🔬 Student</button>
@@ -174,7 +195,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-size:.85rem;font-weight:700;co
 </section>
 
 <main class="wrap" id="mainGrid"></main>
-<footer>Made with ❤️ for curious minds aged <strong>6 to 99</strong> · Switch level anytime at the top</footer>
+<footer>Made with ❤️ for curious minds aged <strong>6 to 99</strong> </footer>
 
 <div class="overlay" id="ov">
   <div class="panel" id="panel">
