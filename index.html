@@ -176,8 +176,9 @@ footer{text-align:center;padding:2.5rem 1rem;font-size:.85rem;font-weight:700;co
 <body>
 
 <header>
-  <div class="logo">Lab-in-a-Tab <span></span>
+  <div class="logo"><span></span>
     <img src="logo_radiant_infinity.png" alt="Lab-in-a-Tab Logo" class="logo-img">
+    Lab-in-a-Tab 
   </div>
   <nav class="lvl-bar">
     <button class="lvl on" data-l="junior">🌱 Junior</button>
@@ -195,7 +196,7 @@ footer{text-align:center;padding:2.5rem 1rem;font-size:.85rem;font-weight:700;co
 </section>
 
 <main class="wrap" id="mainGrid"></main>
-<footer>Made with ❤️ for curious minds aged <strong>6 to 99</strong> </footer>
+<footer>Made with ❤️ for curious minds </footer>
 
 <div class="overlay" id="ov">
   <div class="panel" id="panel">
@@ -353,6 +354,48 @@ const S=[
    ]},sim:'thermo'},
  }},
 
+  // ── PARTICLE PHYSICS ──────────────────────────────────────────────
+{id:'particles',group:'⚛️ Physics',emoji:'⚛️',color:'#0369a1',light:'#e0f2fe',
+ title:'The Standard Model',teaser:'Everything you can see is made of just 17 fundamental particles. What are they — and what holds them together?',chips:['Quarks','Forces','Higgs'],
+ lvls:{
+  junior:{icon:'🔬',title:'The tiniest LEGO bricks of the universe!',
+   body:`<p>You know that everything is made of atoms. But atoms themselves are made of even tinier things! In the centre of every atom is a <strong>nucleus</strong> made of protons and neutrons, with electrons whizzing around outside. For a long time, scientists thought protons and neutrons were the smallest things possible. They were wrong!</p>
+<p>In the 1960s and 70s, physicists discovered that protons and neutrons are made of even tinier particles called <strong>quarks</strong>. Each proton is made of three quarks stuck tightly together by a force called the <strong>strong force</strong> — so powerful that no one has ever managed to pull a quark out alone. Quarks always come in groups, and trying to separate them just creates new quarks!</p>
+<p>The <strong>Standard Model</strong> is the complete list of all the fundamental building blocks of matter: 6 types of quark, 6 types of lepton (including the electron), and 4 force-carrying particles. Everything in the universe is built from these 17 fundamental particles. The last one to be discovered was the <strong>Higgs boson</strong> in 2012, at CERN\'s Large Hadron Collider — confirming a prediction made 48 years earlier!</p>`,
+   facts:[{e:'🎯',t:'The Large Hadron Collider (LHC) accelerates protons to 99.9999991% of the speed of light before smashing them together.'},{e:'🌌',t:'Antimatter is real — every particle has an antiparticle twin. When matter meets antimatter, they annihilate in a flash of pure energy.'},{e:'👻',t:'Neutrinos are so ghostly that trillions pass through your body every second without interacting with a single atom.'}],
+   formula:null,sim:'particles'},
+  student:{icon:'⚛️',title:'Quarks, leptons, gauge bosons, and the four fundamental forces',
+   body:`<p>The Standard Model classifies all fundamental particles into <strong>fermions</strong> (matter particles, spin ½) and <strong>bosons</strong> (force carriers, integer spin). Fermions divide into <em>quarks</em> (6 flavours: up, down, charm, strange, top, bottom — each in 3 colours) and <em>leptons</em> (electron, muon, tau, and three neutrinos). The <strong>Pauli exclusion principle</strong> prevents identical fermions from occupying the same quantum state, giving matter its solidity.</p>
+<p>The four fundamental forces are mediated by gauge bosons: <strong>photons</strong> (γ) carry electromagnetism; <strong>W± and Z⁰</strong> bosons carry the weak force (responsible for radioactive β-decay); <strong>gluons</strong> (g) carry the strong force (8 colour combinations); the <strong>graviton</strong> (hypothetical, spin-2) would carry gravity — not yet incorporated into the Standard Model. Forces arise from local gauge symmetry: EM from U(1), weak from SU(2), strong from SU(3), giving the gauge group U(1)×SU(2)×SU(3).</p>
+<p>The <strong>Higgs mechanism</strong> gives mass to the W and Z bosons via spontaneous symmetry breaking: the Higgs field φ has a Mexican-hat potential with a non-zero vacuum expectation value ⟨φ⟩ = 246 GeV. Particles moving through this field acquire mass proportional to their coupling. The associated quantum — the <strong>Higgs boson</strong> (125.25 GeV/c²) — was discovered at CERN in 2012. Fermion masses arise from separate Yukawa couplings to the Higgs field.</p>`,
+   facts:[{e:'🔴',t:'Quarks are permanently confined — the strong force\'s potential energy V(r) ~ kr grows with distance, so pulling quarks apart creates new quark-antiquark pairs.'},{e:'⏱️',t:'The top quark has a lifetime of ~5×10⁻²⁵ s — it decays before it can hadronise, making it the only quark whose bare properties can be measured.'},{e:'🌊',t:'Neutrino oscillations (Nobel 1998, 2002) prove neutrinos have mass — the only confirmed physics beyond the Standard Model.'}],
+   formula:{rows:[
+    {n:'QED Lagrangian',e:'L  =  ψ̄(iγ^μ D_μ − m)ψ − ¼F_{μν}F^{μν}'},
+    {n:'Covariant deriv.',e:'D_μ  =  ∂_μ + ieA_μ',c:'minimal coupling'},
+    {sep:1},
+    {n:'Higgs potential',e:'V(φ)  =  −μ²|φ|²  +  λ|φ|⁴'},
+    {n:'VEV',e:'⟨φ⟩  =  v  =  √(μ²/2λ)  ≈  246 GeV'},
+    {sep:1},
+    {n:'Gauge group',e:'U(1)_Y × SU(2)_L × SU(3)_c'},
+    {n:'Higgs boson mass',e:'m_H  =  125.25 ± 0.17  GeV/c²'},
+   ]},sim:'particles'},
+  scholar:{icon:'∞',title:'Quantum Field Theory, renormalisation, and physics beyond the Standard Model',
+   body:`<p>The Standard Model is a renormalisable quantum field theory (QFT) in which particles are excitations of underlying fields. The generating functional <span class="mk">Z[J] = ∫Dφ exp(i∫(L + Jφ)d⁴x)</span> encodes all scattering amplitudes via functional derivatives. Perturbative expansion in the coupling constant yields Feynman diagrams; loop integrals are UV-divergent and require <strong>renormalisation</strong> — the systematic absorption of infinities into redefined (physical) parameters via a renormalisation group (RG) flow. Wilsonian RG reveals that the Standard Model is an effective field theory valid up to some cutoff Λ; physics at higher scales decouples up to power corrections of order (E/Λ)².</p>
+<p><strong>QCD</strong> (strong force) exhibits two remarkable features: <em>asymptotic freedom</em> — the coupling α_s(μ) decreases logarithmically with energy scale μ (running coupling <span class="mk">α_s(μ) = 12π/[(33−2n_f)ln(μ²/Λ_QCD²)]</span>), allowing perturbative calculations at high energy (deep inelastic scattering, jet physics); and <em>confinement</em> at low energies, where the QCD vacuum forms a colour-electric flux tube (string tension σ ≈ 1 GeV/fm) between colour charges, linearly rising with separation. Lattice QCD — Monte Carlo simulation of QCD on a discretised Euclidean spacetime — provides non-perturbative predictions for hadron masses with ~1% precision.</p>
+<p><strong>Open problems</strong>: the hierarchy problem (why is m_H ≈ 125 GeV when radiative corrections from Planck-scale physics would naively push it to ~10¹⁹ GeV?); the matter-antimatter asymmetry (Sakharov conditions require CP violation, beyond what the SM provides); dark matter (no SM particle is a viable WIMP candidate); neutrino mass mechanism (Majorana vs Dirac, seesaw mechanism); and quantum gravity. Proposed extensions include Supersymmetry (SUSY), extra dimensions, and asymptotic safety. No new particles have been found at the LHC beyond the Higgs — a profound puzzle.</p>`,
+   facts:[{e:'🔬',t:'The anomalous magnetic moment of the electron (g−2) is the most precisely tested prediction in all of science: theory and experiment agree to 12 significant figures.'},{e:'🌑',t:'Dark matter is not in the Standard Model. Its gravitational effects are indisputable, but its particle nature remains entirely unknown after 50 years of searching.'},{e:'💥',t:'The LHC generates 600 million proton collisions per second; only ~1 in 10¹² produces a Higgs boson — requiring ~15 petabytes of data per year.'}],
+   formula:{rows:[
+    {n:'Path integral',e:'Z[J]  =  ∫Dφ  exp( i∫[L(φ) + Jφ] d⁴x )'},
+    {n:'Running coupling (QCD)',e:'α_s(μ)  =  12π / [(33−2n_f) ln(μ²/Λ²)]'},
+    {sep:1},
+    {n:'SM Lagrangian (schematic)',e:'L_SM  =  L_gauge + L_Higgs + L_Yukawa + L_GF+FP'},
+    {n:'Electroweak unification',e:'sin²θ_W  =  1 − M_W²/M_Z²  ≈  0.231'},
+    {sep:1},
+    {n:'Hierarchy problem',e:'δm_H²  ~  g²Λ²/(16π²)  >>  m_H²   (for Λ ~ M_Pl)'},
+    {n:'Sakharov conditions',e:'① B violation  ② C, CP violation  ③ non-equilibrium'},
+   ]},sim:'particles'},
+ }},
+
 // ── MATHEMATICS ──────────────────────────────────────────────────
 {id:'prob',group:'🔢 Mathematics',emoji:'🎲',color:'#0284c7',light:'#e8f7ff',
  title:'Probability & The Bell Curve',teaser:'Why does everything cluster in the middle? The universe has a favourite shape.',chips:['Statistics','Probability','Normal distribution'],
@@ -441,6 +484,89 @@ const S=[
    ]},sim:'fractal'},
  }},
 
+{id:'calculus',group:'🔢 Mathematics',emoji:'∫',color:'#b45309',light:'#fffbeb',
+ title:'Calculus & Change',teaser:'How do we measure the speed of something that never moves at constant speed? The answer changed science forever.',chips:['Derivatives','Integrals','Infinity'],
+ lvls:{
+  junior:{icon:'📈',title:'Measuring change — the maths of motion!',
+   body:`<p>Imagine you throw a ball into the air. At first it rises quickly, then slower and slower, stops for a split second at the top, then falls faster and faster. How do you measure its speed at any exact instant — not over a second, not a millisecond, but at a <em>single frozen point in time</em>?</p>
+<p>This seemingly impossible question puzzled mathematicians for centuries, until Isaac Newton and Gottfried Leibniz independently invented <strong>calculus</strong> in the 1600s. Their key idea: zoom in on any smooth curve closely enough, and it starts to look like a straight line. The slope of that invisible line <em>is</em> the instantaneous speed — or more generally, the <strong>derivative</strong>: the rate of change of anything at any instant.</p>
+<p>The reverse operation — adding up infinitely many infinitely small slices — is called the <strong>integral</strong>, and it lets you find areas, volumes, distances, and accumulated totals. Together, derivatives and integrals are the most powerful mathematical tools ever invented, underpinning physics, engineering, economics, biology, and virtually every field of science.</p>`,
+   facts:[{e:'🚀',t:'NASA\'s trajectory calculations for every space mission use calculus — specifically differential equations from Newton\'s laws.'},{e:'💊',t:'Pharmacokinetics (how drugs move through your body) is governed by differential equations — calculus tells doctors how often to prescribe.'},{e:'📱',t:'Every animation on your phone uses calculus to calculate smooth curves, motion paths, and real-time physics simulations.'}],
+   formula:null,sim:'calculus'},
+  student:{icon:'∂',title:'Derivatives, integrals, and the Fundamental Theorem of Calculus',
+   body:`<p>The <strong>derivative</strong> f′(x) is defined as the limit of the difference quotient: <span class="mk">f′(x) = lim_{h→0} [f(x+h) − f(x)] / h</span>. Geometrically, it is the slope of the tangent line to y = f(x) at point x. Physically, if f(t) is position, f′(t) is velocity and f″(t) is acceleration. The power rule gives <span class="mk">d/dx[xⁿ] = nxⁿ⁻¹</span>; chain rule: <span class="mk">d/dx[f(g(x))] = f′(g(x))·g′(x)</span>.</p>
+<p>The <strong>definite integral</strong> ∫_a^b f(x)dx is the signed area under the curve from a to b, defined as the limit of Riemann sums: <span class="mk">∫_a^b f(x)dx = lim_{n→∞} Σ f(xᵢ)·Δx</span>. The <strong>Fundamental Theorem of Calculus (FTC)</strong> — arguably the most important theorem in mathematics — connects differentiation and integration: if F′(x) = f(x), then <span class="mk">∫_a^b f(x)dx = F(b) − F(a)</span>. Differentiation and integration are exact inverse operations.</p>
+<p><strong>Differential equations</strong> (DEs) describe how quantities change over time. The simplest, <span class="mk">dy/dt = ky</span>, models exponential growth (k &gt; 0: populations, interest) or decay (k &lt; 0: radioactivity, drug clearance). Solution: <span class="mk">y(t) = y₀eᵏᵗ</span>. More complex DEs — Newton's second law, the wave equation, the heat equation — govern virtually all of physics and engineering.</p>`,
+   facts:[{e:'💹',t:'Compound interest A = Pe^{rt} is the solution to dA/dt = rA — exponential growth in finance is literally calculus.'},{e:'⚡',t:'Maxwell\'s four PDEs describe all of electromagnetism — from radio waves to light — using vector calculus notation.'},{e:'🌡️',t:'The heat equation ∂u/∂t = α∇²u was solved by Fourier using the series now bearing his name.'}],
+   formula:{rows:[
+    {n:'Derivative (limit def.)',e:'f′(x)  =  lim_{h→0}  [f(x+h) − f(x)] / h'},
+    {n:'Power rule',e:'d/dx[xⁿ]  =  n · xⁿ⁻¹'},
+    {sep:1},
+    {n:'FTC Part I',e:'d/dx[∫_a^x f(t)dt]  =  f(x)'},
+    {n:'FTC Part II',e:'∫_a^b f(x)dx  =  F(b) − F(a)'},
+    {sep:1},
+    {n:'Exponential growth',e:'dy/dt  =  ky   →   y(t) = y₀·eᵏᵗ'},
+    {n:'Taylor series',e:'f(x)  =  Σ_{n=0}^∞  f⁽ⁿ⁾(a)/n! · (x−a)ⁿ'},
+   ]},sim:'calculus'},
+  scholar:{icon:'∇',title:'Real analysis, measure theory, and the Lebesgue integral',
+   body:`<p>The Riemann integral — partitioning the domain into intervals — breaks down for highly discontinuous functions. The <strong>Lebesgue integral</strong> (1902) instead partitions the <em>range</em>: for a measurable function f on a measure space (X, Σ, μ), <span class="mk">∫f dμ = sup Σ yᵢ · μ(f⁻¹([yᵢ, yᵢ₊₁]))</span>. Lebesgue measure assigns lengths to subsets of ℝ with countable additivity, even for Cantor-like sets. The class L¹(μ) of integrable functions is a Banach space under ‖f‖₁.</p>
+<p>The <strong>Dominated Convergence Theorem (DCT)</strong> states: if f_n → f pointwise a.e. and |f_n| ≤ g for some integrable g, then <span class="mk">lim ∫f_n dμ = ∫f dμ</span> — limit and integral can be freely exchanged. This rigorously justifies the limit-integral swaps that physicists perform informally. The Dirichlet function (1 on rationals, 0 irrationals) is not Riemann integrable but Lebesgue integrates to 0, since the rationals have measure zero.</p>
+<p><strong>Fourier analysis</strong> on L²([−π,π]) decomposes any square-integrable function into complex exponentials <span class="mk">{eⁱⁿˣ/√(2π)}</span>. Parseval's identity ‖f‖² = Σ|ĉₙ|² equates signal energy with spectral energy. The <strong>Fourier transform</strong> on ℝ, <span class="mk">f̂(ξ) = ∫f(x)e^{−2πiξx}dx</span>, underpins signal processing, quantum mechanics (where |ψ̂(p)|² is the momentum probability density), and the proof of the Central Limit Theorem via characteristic functions.</p>`,
+   facts:[{e:'🎵',t:'MP3 and JPEG compression both rely on Fourier / cosine transforms — stripping frequencies humans can\'t perceive to compress files.'},{e:'🔬',t:'MRI machines reconstruct 3D images of the body by inverse Fourier-transforming nuclear magnetic resonance signals from millions of voxels.'},{e:'∞',t:'The Banach-Tarski paradox: using the Axiom of Choice, a sphere can be decomposed and reassembled into two identical spheres — measure theory is why this is paradoxical.'}],
+   formula:{rows:[
+    {n:'Lebesgue integral',e:'∫f dμ  =  sup Σ yᵢ · μ(f⁻¹[yᵢ, yᵢ₊₁])'},
+    {n:'DCT condition',e:'|f_n| ≤ g ∈ L¹   ⟹   lim ∫f_n = ∫lim f_n'},
+    {sep:1},
+    {n:'Fourier transform',e:'f̂(ξ)  =  ∫_{-∞}^{∞} f(x) · e^{−2πiξx} dx'},
+    {n:'Parseval\'s identity',e:'‖f‖²  =  Σ |ĉₙ|²'},
+    {sep:1},
+    {n:'Sobolev norm',e:'‖f‖_{H^k}²  =  Σ_{|α|≤k} ‖∂^α f‖_{L²}²'},
+   ]},sim:'calculus'},
+ }},
+
+{id:'graphs',group:'🔢 Mathematics',emoji:'🕸️',color:'#0891b2',light:'#ecfeff',
+ title:'Graph Theory & Networks',teaser:'Six handshakes separate any two people on Earth. The internet, your brain, and a virus outbreak all obey the same hidden mathematics.',chips:['Networks','Topology','Connections'],
+ lvls:{
+  junior:{icon:'🤝',title:'Everything is connected — but how?',
+   body:`<p>Imagine you want to pass a secret message to a famous celebrity you've never met. You tell a friend, who tells their friend, who tells their friend... How many steps does it take to reach anyone on Earth? The surprising answer, discovered by Stanley Milgram in 1967, is just <strong>six steps</strong> — the famous "six degrees of separation."</p>
+<p>This is the magic of <strong>networks</strong>. A network (mathematicians call it a <strong>graph</strong>) is simply a collection of <em>nodes</em> (things) connected by <em>edges</em> (links). Your friends form a network. Cities connected by roads form a network. Websites linked by hyperlinks form a network. Neurons in your brain form a network. Proteins in a cell form a network.</p>
+<p>The extraordinary discovery of the last 50 years is that wildly different networks — social, biological, technological — all share the same hidden mathematical structure. Understanding that structure lets scientists predict how diseases spread, how blackouts cascade through power grids, how a single airport closure disrupts global travel, and even how rumours go viral on social media. In the simulation below, watch information ripple through a network — and see how a single well-connected "hub" can change everything.</p>`,
+   facts:[{e:'🌐',t:'The entire World Wide Web has an average path length of just 19 clicks between any two pages — out of billions of possible routes.'},{e:'🦠',t:'COVID-19 spread so fast partly because air travel creates a "small-world" network — a single superspreader event in one city reaches every continent within days.'},{e:'⚡',t:'The 2003 Northeast blackout cascaded from a single Ohio power line failure to cut power for 55 million people in 8 states — pure network vulnerability.'}],
+   formula:null,sim:'graphs'},
+
+  student:{icon:'🕸️',title:'Small worlds, scale-free networks, and Euler\'s bridges',
+   body:`<p>Graph theory was born in 1736 when Leonhard Euler solved the <strong>Königsberg bridge problem</strong>: can you walk through the city crossing each of its seven bridges exactly once? Euler proved it impossible by observing that a such a path (an <em>Eulerian path</em>) exists if and only if the graph has exactly 0 or 2 vertices of odd degree. This abstraction — ignoring geometry and keeping only connectivity — founded a new branch of mathematics.</p>
+<p>A graph G = (V, E) has vertex set V and edge set E ⊆ V×V. Key metrics: the <strong>degree</strong> d(v) of vertex v is its number of neighbours; the <strong>degree distribution</strong> P(k) gives the probability a random node has degree k. Random graphs (Erdős-Rényi model) have Poisson-distributed degrees and a <strong>phase transition</strong>: at edge probability p = 1/n, a giant connected component suddenly emerges. Real networks look nothing like random graphs — they are <strong>small worlds</strong> (high clustering + short paths, Watts-Strogatz 1998) and <strong>scale-free</strong> (P(k) ~ k⁻ᵞ power law, Barabási-Albert 1999), arising from preferential attachment: new nodes link preferentially to already well-connected hubs.</p>
+<p>Scale-free networks have remarkable properties: they are <strong>robust to random failures</strong> (most nodes have low degree, so random removal rarely hits hubs) but <strong>fragile to targeted attacks</strong> (removing the top few hubs shatters connectivity). This duality explains why the internet survives router failures but is vulnerable to coordinated attacks, and why vaccination campaigns that target super-spreaders (high-degree nodes) are far more efficient than random vaccination.</p>`,
+   facts:[{e:'🧬',t:'The protein-interaction network of yeast is scale-free with γ ≈ 2.4 — removing the top 1% of hub proteins kills the cell; removing 99% of non-hubs does not.'},{e:'🔗',t:'Wikipedia\'s hyperlink network has average path length ~3.5 — you can reach almost any article from any other in 4 clicks.'},{e:'📊',t:'The Barabási-Albert preferential attachment model generates scale-free networks with γ = 3 — matching the exponent measured in the World Wide Web.'}],
+   formula:{rows:[
+    {n:'Handshaking lemma',e:'Σ_v d(v)  =  2|E|'},
+    {n:'Eulerian path condition',e:'exists  ⟺  exactly 0 or 2 vertices of odd degree'},
+    {sep:1},
+    {n:'Clustering coefficient',e:'C(v)  =  (edges among neighbours of v) / [d(v)(d(v)−1)/2]'},
+    {n:'Average path length',e:'L  =  (1/n²) Σ_{u,v} d(u,v)'},
+    {sep:1},
+    {n:'Scale-free degree dist.',e:'P(k)  ~  k^{−γ},   typically  2 < γ < 3'},
+    {n:'ER phase transition',e:'giant component emerges at  p_c  =  1/n'},
+   ]},sim:'graphs'},
+
+  scholar:{icon:'λ',title:'Spectral graph theory, random walks, and network epidemics',
+   body:`<p>The <strong>graph Laplacian</strong> L = D − A (where D is the diagonal degree matrix and A is the adjacency matrix) encodes the full connectivity structure. Its spectrum 0 = λ₁ ≤ λ₂ ≤ … ≤ λₙ carries rich information: λ₂ (the <em>algebraic connectivity</em> or <em>Fiedler value</em>) measures how well-connected the graph is — λ₂ → 0 implies the graph is near-disconnected. The <strong>Cheeger inequality</strong> relates λ₂ to the edge expansion h(G): <span class="mk">λ₂/2 ≤ h(G) ≤ √(2λ₂)</span>. Spectral clustering — partitioning nodes by the sign of the Fiedler eigenvector — is the theoretical basis of modern community detection algorithms.</p>
+<p>A <strong>random walk</strong> on a graph has transition matrix P = D⁻¹A. Its stationary distribution is π(v) = d(v)/(2|E|) — proportional to degree. The <strong>mixing time</strong> τ_mix (steps until the walk is close to stationary) satisfies <span class="mk">τ_mix ~ log n / λ₂</span>: expander graphs (λ₂ = Ω(1)) mix in O(log n) steps, while bottleneck graphs mix slowly. Google's original PageRank algorithm is a random walk with a teleportation term, stationary distribution giving page importance. The <strong>cover time</strong> (expected steps to visit all nodes) satisfies <span class="mk">C(G) ≤ 2|E|(n−1)</span> — tight for path graphs.</p>
+<p>Network epidemics on graphs are governed by the <strong>SIR model</strong>: susceptible (S) → infected (I) → recovered (R). On a network, the epidemic threshold is <span class="mk">β/μ = 1/λ_max(A)</span>, where λ_max is the spectral radius of the adjacency matrix and β, μ are infection and recovery rates. For scale-free networks with γ ≤ 3, λ_max grows with n and the threshold → 0 in the large-n limit: <em>epidemics always spread</em>, no matter how small β/μ. This is why SIR-type dynamics on the internet (computer viruses) or social networks (misinformation) are so difficult to eradicate — the scale-free topology eliminates any epidemic threshold.</p>`,
+   facts:[{e:'🔢',t:'The spectral gap λ₂ of the Petersen graph equals 2 — it is the smallest 3-regular expander, which is why it appears in so many extremal graph theory results.'},{e:'🌍',t:'The epidemic threshold on the internet (scale-free, γ≈2.1) is effectively zero — explaining why computer viruses persist indefinitely at any transmission rate.'},{e:'🏆',t:'The P vs NP problem is equivalent to asking whether the Hamiltonian path problem (does a graph have a path visiting every node once?) can be solved efficiently — still unsolved.'}],
+   formula:{rows:[
+    {n:'Graph Laplacian',e:'L  =  D − A   (D = diag degree matrix)'},
+    {n:'Spectrum',e:'0 = λ₁ ≤ λ₂ ≤ … ≤ λ_n'},
+    {sep:1},
+    {n:'Cheeger inequality',e:'λ₂/2  ≤  h(G)  ≤  √(2λ₂)'},
+    {n:'Mixing time',e:'τ_mix  ~  log(n) / λ₂'},
+    {sep:1},
+    {n:'SIR threshold',e:'epidemic spreads  iff  β/μ > 1/λ_max(A)'},
+    {n:'Scale-free threshold',e:'λ_max(A)  →  ∞  (γ ≤ 3)   ⟹   threshold → 0'},
+   ]},sim:'graphs'},
+ }},
+
 // ── BIOLOGY ──────────────────────────────────────────────────────
 {id:'life',group:'🧬 Biology',emoji:'🧬',color:'#16a34a',light:'#edfff5',
  title:'The Rules of Life',teaser:'How do 37 trillion cells coordinate perfectly — with no one giving orders?',chips:['Cells','Emergence','Evolution'],
@@ -489,6 +615,136 @@ const S=[
    ]},sim:'life'},
  }},
 
+{id:'dna',group:'🧬 Biology',emoji:'🧬',color:'#16a34a',light:'#f0fdf4',
+ title:'DNA & Genetics',teaser:'Every cell in your body carries a 2-metre-long instruction manual, written in a 4-letter alphabet, that makes you uniquely you.',chips:['DNA','Genes','Heredity'],
+ lvls:{
+  junior:{icon:'🔬',title:'The instruction manual inside every cell!',
+   body:`<p>Inside almost every single cell in your body — and you have 37 trillion of them — there is a complete set of instructions for building and running an entire human being. These instructions are written on a twisted ladder-shaped molecule called <strong>DNA</strong> (deoxyribonucleic acid). If you uncoiled all the DNA from just one of your cells and stretched it out, it would be about <strong>2 metres long</strong>. Yet it is so incredibly thin that it fits, neatly folded, inside a space far smaller than the full stop at the end of this sentence.</p>
+<p>DNA is written in an alphabet of just <strong>four letters</strong> — A, T, C, and G — representing four chemical building blocks called bases. The entire human genome contains about 3.2 billion of these letters. Specific stretches of this text are called <strong>genes</strong>, and each gene is an instruction for building one protein. Proteins do almost everything in your body: they form your muscles, carry oxygen in your blood, digest your food, and defend you from disease.</p>
+<p>The most remarkable thing is that every time a cell divides, the entire 3.2-billion-letter text is copied — accurately — in just a few hours. The machinery that does this makes roughly one error per billion letters copied. That's like copying out 3,000 books and making just three typos. In the simulation below, watch the DNA double helix unwind and replicate in real time.</p>`,
+   facts:[{e:'📏',t:'All the DNA in your body, laid end to end, would stretch from Earth to Pluto and back — twice. You carry about 70 billion kilometres of DNA.'},{e:'👯',t:'You share 99.9% of your DNA with every other human on Earth. The 0.1% difference — about 3 million letters — is what makes you unique.'},{e:'🍌',t:'You share 60% of your DNA with a banana. Life on Earth is surprisingly related — all organisms use the same 4-letter DNA code.'}],
+   formula:null,sim:'dna'},
+
+  student:{icon:'🧬',title:'DNA replication, transcription, translation, and Mendelian genetics',
+   body:`<p>DNA has a double-helix structure (Watson & Crick, 1953) — two antiparallel polynucleotide strands held together by complementary base pairing: A pairs with T (2 hydrogen bonds) and C pairs with G (3 hydrogen bonds). The sugar-phosphate backbone runs 5′→3′ on each strand. <strong>Replication</strong> is semi-conservative: helicase unwinds the helix, primase lays RNA primers, and DNA polymerase III synthesises the new strand 5′→3′, producing one continuous leading strand and a discontinuous lagging strand (Okazaki fragments joined by ligase). Fidelity is ~10⁻⁹ errors per base pair, achieved through polymerase proofreading (3′→5′ exonuclease activity) and mismatch repair.</p>
+<p>The <strong>central dogma</strong> (Crick, 1958): DNA → RNA → protein. <em>Transcription</em>: RNA polymerase II binds a promoter (TATA box, ~30 bp upstream), unwinds DNA, and synthesises pre-mRNA 5′→3′. Introns are spliced out by the spliceosome; the mature mRNA is 5′-capped and 3′-polyadenylated. <em>Translation</em>: ribosomes read codons (triplets) in the mRNA; each codon specifies one amino acid via the <strong>genetic code</strong> (64 codons → 20 amino acids + 3 stop codons). tRNAs deliver amino acids; the polypeptide grows from N- to C-terminus.</p>
+<p><strong>Mendelian genetics</strong> (Mendel, 1866): genes exist in two copies (alleles) — one inherited from each parent. <em>Dominant</em> alleles mask <em>recessive</em> ones. For a monohybrid cross Aa × Aa: genotype ratio 1 AA : 2 Aa : 1 aa; phenotype ratio 3 dominant : 1 recessive. The chi-squared test χ² = Σ(O−E)²/E assesses goodness of fit to expected Mendelian ratios. Modern genetics extends Mendel with codominance, incomplete dominance, polygenic traits, and epistasis.</p>`,
+   facts:[{e:'✂️',t:'CRISPR-Cas9 can edit a specific sequence among 3.2 billion base pairs with the precision of finding and changing one word in a 1,000-book library.'},{e:'👴',t:'Telomeres — protective caps on chromosome ends — shorten with each cell division. Their length is a molecular clock of ageing.'},{e:'🎨',t:'Eye colour, height, and IQ are all polygenic — influenced by hundreds of genes simultaneously, not a single dominant/recessive pair.'}],
+   formula:{rows:[
+    {n:'Base pairing',e:'A ≡ T  (2 H-bonds)     G ≡ C  (3 H-bonds)'},
+    {n:'Complementarity',e:'5′-ATCG-3′   pairs with   3′-TAGC-5′'},
+    {sep:1},
+    {n:'Replication fidelity',e:'~1 error / 10⁹ bp   (with proofreading)'},
+    {n:'Central dogma',e:'DNA  →  mRNA  →  protein'},
+    {sep:1},
+    {n:'Genetic code',e:'64 codons  →  20 amino acids + 3 stop'},
+    {n:'Mendelian F₂ ratio',e:'Aa × Aa  →  1 AA : 2 Aa : 1 aa   (3:1 phenotype)'},
+   ]},sim:'dna'},
+
+  scholar:{icon:'∂',title:'Population genetics, Hardy-Weinberg equilibrium, and molecular evolution',
+   body:`<p>The <strong>Hardy-Weinberg principle</strong> (1908) describes allele frequency dynamics in an idealised population (infinite size, random mating, no selection, mutation, or migration). For a biallelic locus with allele frequencies p and q = 1−p, genotype frequencies at equilibrium are p² (AA) : 2pq (Aa) : q² (aa), and remain constant across generations. Deviations from H-W equilibrium signal evolutionary forces at work. The <strong>fixation index</strong> F_ST = (H_T − H_S)/H_T measures genetic differentiation between subpopulations; F_ST = 0 implies panmixia, F_ST = 1 implies complete isolation.</p>
+<p><strong>Molecular evolution</strong> proceeds via mutation, genetic drift, and natural selection. The <strong>neutral theory</strong> (Kimura, 1968) proposes that most molecular variants are selectively neutral; fixation occurs by drift at rate equal to the mutation rate μ. Synonymous (silent) substitutions accumulate faster than nonsynonymous ones; the ratio dN/dS (ω) tests for selection: ω &lt; 1 indicates purifying selection, ω &gt; 1 positive selection, ω ≈ 1 neutrality. The <strong>molecular clock</strong> hypothesis states that neutral substitutions accumulate at a roughly constant rate, enabling phylogenetic dating.</p>
+<p><strong>Quantitative genetics</strong> decomposes phenotypic variance: V_P = V_A + V_D + V_I + V_E, where V_A is additive genetic variance (the component visible to selection), V_D dominance variance, V_I epistatic variance, V_E environmental variance. <strong>Heritability</strong> h² = V_A/V_P measures the proportion of phenotypic variation attributable to additive genetic effects. GWAS (genome-wide association studies) scan ~10⁷ SNPs across thousands of individuals; hits explain only a fraction of h² for complex traits — the "missing heritability" problem — attributable to rare variants, gene-environment interactions, and epistasis too complex for additive models.</p>`,
+   facts:[{e:'🌍',t:'Out-of-Africa bottleneck ~70,000 years ago reduced human genetic diversity so severely that chimpanzees in a single forest show more genetic variation than all 8 billion humans.'},{e:'🔬',t:'The first complete human genome (HGP, 2003) cost $2.7 billion and took 13 years. Today a genome costs ~$200 and takes one day.'},{e:'⚡',t:'Transposable elements ("jumping genes") constitute ~45% of the human genome — more than protein-coding genes (only ~1.5%).'}],
+   formula:{rows:[
+    {n:'Hardy-Weinberg',e:'p² + 2pq + q²  =  1,   p + q = 1'},
+    {n:'F_ST',e:'F_ST  =  (H_T − H_S) / H_T'},
+    {sep:1},
+    {n:'Neutral fixation rate',e:'k  =  μ   (Kimura 1968)'},
+    {n:'Selection test',e:'ω  =  dN/dS:   <1 purifying,  >1 positive'},
+    {sep:1},
+    {n:'Phenotypic variance',e:'V_P  =  V_A + V_D + V_I + V_E'},
+    {n:'Narrow heritability',e:'h²  =  V_A / V_P'},
+   ]},sim:'dna'},
+ }},
+
+{id:'evolution',group:'🧬 Biology',emoji:'🦕',color:'#ca8a04',light:'#fefce8',
+ title:'Evolution & Natural Selection',teaser:'Every living thing on Earth shares a common ancestor. Four billion years of trial and error, guided by one simple rule.',chips:['Selection','Adaptation','Speciation'],
+ lvls:{
+  junior:{icon:'🌱',title:'How life changes — one generation at a time!',
+   body:`<p>Imagine a population of beetles living on brown soil. Most are brown, but a few are bright green — a rare mutation. A bird flying overhead easily spots and eats the green beetles, but misses the brown ones. The brown beetles survive, reproduce, and pass their brown colour to their offspring. After many generations, almost every beetle is brown. This is <strong>natural selection</strong> at work — the single most powerful idea in all of biology.</p>
+<p>Charles Darwin realised in 1859 that all life on Earth is shaped by this simple process: individuals with traits that help them survive and reproduce have more offspring, passing those traits to the next generation. Over millions of years, this accumulates into breathtaking diversity — from bacteria to blue whales, from mushrooms to maple trees. Every living thing you have ever seen is the product of an unbroken chain of successful survival stretching back <strong>3.8 billion years</strong> to the very first cell.</p>
+<p>The evidence for evolution is overwhelming and comes from every direction: the fossil record shows gradual changes over time; DNA comparisons reveal exactly how closely related all organisms are; antibiotic-resistant bacteria and pesticide-resistant insects are evolution happening in real time, right now. In the simulation below, watch a population evolve before your eyes as selection pressure changes.</p>`,
+   facts:[{e:'🦠',t:'Bacteria can evolve antibiotic resistance in as little as 11 days — evolution is not a slow process when generations are short.'},{e:'🐋',t:'Whales evolved from land mammals about 50 million years ago. Their ancestors were four-legged, deer-like creatures that waded into rivers to feed.'},{e:'👁️',t:'The eye evolved independently at least 40 separate times in different animal lineages — the same useful solution, discovered over and over by natural selection.'}],
+   formula:null,sim:'evolution'},
+
+  student:{icon:'🦕',title:'Population genetics of selection, drift, and speciation',
+   body:`<p>Evolution is defined as <strong>change in allele frequencies over time</strong> in a population. Four mechanisms drive this: <em>natural selection</em> (differential survival/reproduction), <em>genetic drift</em> (random sampling in finite populations), <em>mutation</em> (new variation), and <em>gene flow</em> (migration between populations). Selection on a diploid locus with alleles A₁ (frequency p) and A₂ (frequency q = 1−p) with fitness w₁₁, w₁₂, w₂₂ changes p each generation by <span class="mk">Δp = pq[p(w₁₁−w₁₂) + q(w₁₂−w₂₂)] / w̄</span>, where w̄ = p²w₁₁ + 2pqw₁₂ + q²w₂₂ is mean population fitness. Mean fitness always increases under selection — <strong>Fisher's Fundamental Theorem</strong>: the rate of increase in mean fitness equals the additive genetic variance in fitness.</p>
+<p><strong>Genetic drift</strong> is the random change in allele frequencies due to finite population size N. In each generation, allele frequency changes by a random amount with variance p(1−p)/(2N). Over time, drift causes alleles to fix (p→1) or be lost (p→0); the expected time to fixation for a neutral allele starting at frequency p is −4N·[p·ln(p) + (1−p)·ln(1−p)] generations. In small populations, drift overpowers selection when the selective advantage s &lt; 1/(2N) — many mildly deleterious mutations can fix by drift alone.</p>
+<p><strong>Speciation</strong> occurs when populations diverge until they can no longer interbreed. <em>Allopatric speciation</em> (geographic isolation) is the most common route: separated populations accumulate different mutations and adaptations until reproductive isolation evolves. <em>Sympatric speciation</em> (in the same location) requires strong disruptive selection. The <strong>biological species concept</strong> (Mayr) defines a species as a group of actually or potentially interbreeding populations reproductively isolated from others — though it fails for asexual organisms and fossils, motivating phylogenetic and ecological species concepts.</p>`,
+   facts:[{e:'🐟',t:'The 500+ cichlid species in Lake Victoria evolved from a common ancestor in as little as 15,000 years — one of the fastest speciation events ever documented.'},{e:'🌺',t:'Darwin\'s finches on the Galápagos Islands show beak evolution measurable within a single human lifetime — Peter and Rosemary Grant documented it over 40 years of fieldwork.'},{e:'🦠',t:'The Lenski experiment has tracked E. coli evolution in real time since 1988 — over 80,000 generations, observing key innovations including the ability to consume citrate aerobically.'}],
+   formula:{rows:[
+    {n:'Selection (Δp)',e:'Δp  =  pq[p(w₁₁−w₁₂) + q(w₁₂−w₂₂)] / w̄'},
+    {n:'Mean fitness',e:'w̄  =  p²w₁₁ + 2pq·w₁₂ + q²·w₂₂'},
+    {sep:1},
+    {n:'Fisher\'s theorem',e:'Δw̄  =  V_A(w) / w̄   (≥ 0)'},
+    {n:'Drift variance',e:'Var(Δp)  =  p(1−p) / (2N)'},
+    {sep:1},
+    {n:'Fixation time (neutral)',e:'t̄_fix  =  −4N[p·ln p + (1−p)·ln(1−p)]'},
+    {n:'Selection vs drift',e:'selection dominates when  s >> 1/(2N)'},
+   ]},sim:'evolution'},
+
+  scholar:{icon:'∂',title:'Phylogenetics, the modern synthesis, and evo-devo',
+   body:`<p>The <strong>Modern Synthesis</strong> (1930s–50s, Fisher, Wright, Haldane, Dobzhansky, Mayr) unified Mendelian genetics with Darwinian natural selection into a coherent mathematical framework. The central result is that continuous phenotypic variation arises from many Mendelian loci, each with small effect. Population genetics provides the quantitative theory of allele dynamics; the coalescent (Kingman, 1982) traces the genealogy of a sample of alleles backwards in time — all copies of a gene in a population coalesce to a single ancestral copy (the <em>most recent common ancestor</em>, MRCA) on a timescale of ~4N_e generations for diploids. The coalescent is the standard null model for molecular population genetics and phylogenetic inference.</p>
+<p><strong>Phylogenetics</strong> reconstructs the tree of life from molecular data. Maximum likelihood methods find the tree topology T and branch lengths that maximise P(data|T, model). The GTR (general time-reversible) substitution model with Γ-distributed rate variation is the standard for nucleotide sequences. Bayesian phylogenetics (MrBayes, BEAST) samples from the posterior P(T, model|data) via MCMC, providing credible intervals on divergence times when combined with fossil calibrations. The <strong>molecular clock</strong>, corrected for rate variation (relaxed clock), places the origin of eukaryotes at ~2 Gya, animals ~750 Mya, and tetrapods ~375 Mya.</p>
+<p><strong>Evo-devo</strong> (evolutionary developmental biology) reveals that morphological diversity arises largely from changes in gene regulation rather than gene content. The <em>Hox genes</em> — a conserved cluster of transcription factors specifying body-axis identity — are present in all bilaterians; their expression boundaries, not their sequences, determine whether a segment grows a leg, a wing, or a vertebra. The concept of the <em>developmental toolkit</em> (Pax6 for eyes, Dlx for limbs, Nkx2.5 for heart) shows that evolution reuses the same molecular components in new contexts — explaining the convergent evolution of eyes, limbs, and hearts across vastly divergent lineages.</p>`,
+   facts:[{e:'🧬',t:'Hox genes are so conserved that a mouse Hox gene transplanted into a fruit fly can rescue the fly\'s development — separated by 600 million years of evolution.'},{e:'🌳',t:'The last universal common ancestor (LUCA) of all life lived ~3.8 billion years ago. It already had ribosomes, DNA replication, and a genetic code — implying a long prior evolution we cannot yet see.'},{e:'🔬',t:'Ancient DNA from Neanderthal bones sequenced in 2010 shows that all non-African humans carry 1–4% Neanderthal DNA — evidence of interbreeding ~50,000 years ago.'}],
+   formula:{rows:[
+    {n:'Coalescent time (diploid)',e:'E[T_MRCA]  ≈  4·N_e  generations'},
+    {n:'Watterson\'s θ',e:'θ_W  =  S / a_n,   a_n = Σ_{i=1}^{n-1} 1/i'},
+    {sep:1},
+    {n:'Maximum likelihood tree',e:'T*  =  argmax_T  P(data | T, model)'},
+    {n:'GTR model',e:'Q_{ij}  =  π_j · r_{ij}  (i≠j),   rows sum to 0'},
+    {sep:1},
+    {n:'dN/dS ratio',e:'ω < 1 purifying   ω = 1 neutral   ω > 1 positive'},
+    {n:'Tajima\'s D',e:'D  =  (π − θ_W) / SD   tests neutrality'},
+   ]},sim:'evolution'},
+ }},
+
+ // ── ECOSYSTEMS ────────────────────────────────────────────────────
+{id:'ecosystem',group:'🧬 Biology',emoji:'🌿',color:'#15803d',light:'#f0fdf4',
+ title:'Ecosystems & Food Webs',teaser:'Remove one species from a forest and the whole system can collapse. Every living thing is connected in a web of energy and dependency.',chips:['Food Webs','Energy','Biodiversity'],
+ lvls:{
+  junior:{icon:'🌍',title:'Nature\'s web — everything eats everything!',
+   body:`<p>Imagine a meadow in summer. Grass soaks up sunlight and grows. A grasshopper eats the grass. A frog eats the grasshopper. A snake eats the frog. A hawk eats the snake. Each creature depends on the ones below it for food and energy. This chain of eating and being eaten is called a <strong>food chain</strong> — and real ecosystems contain hundreds of overlapping food chains, woven together into a complex <strong>food web</strong>.</p>
+<p>All the energy in a food web comes originally from the Sun. Plants and algae capture sunlight through <strong>photosynthesis</strong> and convert it into sugars — they are called <strong>producers</strong>. Animals that eat plants are <strong>primary consumers</strong>; animals that eat those animals are <strong>secondary consumers</strong>, and so on. But here is the amazing and important rule: at each step, roughly <strong>90% of the energy is lost</strong> as heat. This is why there are always far more plants than herbivores, and far more herbivores than predators. You can never have more lions than wildebeest!</p>
+<p>The consequences of removing a species from a food web can be dramatic and unexpected. When wolves were hunted to extinction in Yellowstone National Park, elk populations exploded, overgrazing riverbanks. Rivers eroded and changed course. Fish populations crashed. The entire landscape transformed — all because one predator was removed. When wolves were reintroduced in 1995, the whole system slowly recovered. Ecologists call animals like wolves <strong>keystone species</strong> — their outsized effect on the ecosystem is far greater than their numbers suggest.</p>`,
+   facts:[{e:'🌳',t:'A single large oak tree can support over 500 species of insects, birds, and fungi — a one-tree ecosystem within an ecosystem.'},{e:'🐺',t:'After wolves returned to Yellowstone in 1995, they triggered a "trophic cascade" that changed the course of rivers — their effect rippled through the entire food web.'},{e:'🌊',t:'Phytoplankton in the oceans produce about 50% of all Earth\'s oxygen — more than all the world\'s rainforests combined.'}],
+   formula:null,sim:'ecosystem'},
+
+  student:{icon:'🌿',title:'Energy flow, trophic dynamics, and the Lotka-Volterra equations',
+   body:`<p>Ecosystems are open thermodynamic systems: energy enters as solar radiation, flows through trophic levels, and exits as heat. The <strong>10% rule</strong> (Lindeman, 1942) states that roughly 10% of energy at one trophic level is incorporated into biomass at the next — the rest is lost to respiration, excretion, and decomposition. Consequently, the number of trophic levels in a food chain is typically limited to 4–5. <strong>Net Primary Production</strong> (NPP) is the rate at which producers fix energy minus their own respiration; globally ~120 PgC/yr, with tropical forests and open ocean contributing most.</p>
+<p>Predator-prey dynamics are captured by the <strong>Lotka-Volterra equations</strong> (1925–26): prey population N grows at rate r but is consumed by predators P at rate aNP; predator population grows by consuming prey (efficiency e) but dies at rate d: <span class="mk">dN/dt = rN − aNP</span> and <span class="mk">dP/dt = eaNP − dP</span>. The system has a non-trivial equilibrium at N* = d/(ea), P* = r/a, around which populations oscillate neutrally. Real predator-prey cycles (lynx-hare in Canada, measured over 90 years via Hudson's Bay Company fur records) show these oscillations with a ~10-year period, though with additional stabilising mechanisms.</p>
+<p><strong>Food web structure</strong> can be quantified using network theory: connectance C = L/(S²) (where L = links, S = species) determines stability. May's stability criterion (1972) states a random community matrix is stable iff <span class="mk">(SC)^{1/2} · σ &lt; 1</span> (where σ is interaction strength), creating a diversity-stability paradox — larger, more connected webs are harder to stabilise. Empirical food webs are more stable than random because they have <em>weak interactions</em> (most links have low strength) and <em>compartmentalisation</em> (modular structure limits cascade propagation). Keystone species have high interaction strength but low biomass — their removal disproportionately increases connectance variance.</p>`,
+   facts:[{e:'🎣',t:'The collapse of the Grand Banks cod fishery in 1992 removed ~99% of the cod population in decades — despite the fish\'s 200-million-year evolutionary history in those waters.'},{e:'🌺',t:'Mycorrhizal fungal networks connect trees in a forest, transferring carbon and nutrients between individuals — the "Wood Wide Web" enables mother trees to feed seedlings.'},{e:'🦈',t:'Removing sharks from an ecosystem triggers a trophic cascade: their prey (rays) explode in number and devastate scallop populations — as documented off the US East Coast.'}],
+   formula:{rows:[
+    {n:'Lotka-Volterra (prey)',e:'dN/dt  =  rN  −  aNP'},
+    {n:'Lotka-Volterra (pred.)',e:'dP/dt  =  eaNP  −  dP'},
+    {sep:1},
+    {n:'Equilibrium',e:'N*  =  d/(ea),   P*  =  r/a'},
+    {n:'10% rule (Lindeman)',e:'NPP_{n+1}  ≈  0.1 × NPP_n'},
+    {sep:1},
+    {n:'Food web connectance',e:'C  =  L / S²'},
+    {n:'May\'s stability criterion',e:'(S·C)^{½} · σ  <  1   for stability'},
+   ]},sim:'ecosystem'},
+
+  scholar:{icon:'∂',title:'Metabolic theory of ecology, biodiversity, and tipping points',
+   body:`<p>The <strong>Metabolic Theory of Ecology</strong> (MTE, Brown et al. 2004) derives ecological patterns from first principles of metabolism. Individual metabolic rate B scales with body mass M and temperature T: <span class="mk">B = b₀ · M^{3/4} · e^{−E/kT}</span>, where E ≈ 0.65 eV is the average activation energy of metabolic reactions and k is Boltzmann's constant. The M^{3/4} scaling (Kleiber's law) arises from the fractal geometry of resource distribution networks (West, Brown & Enquist, 1997). MTE predicts how population density, growth rates, home range sizes, and evolutionary rates all scale with body mass and temperature — with remarkable empirical support across 27 orders of magnitude of body mass.</p>
+<p><strong>Species-area relationships</strong> and <strong>island biogeography theory</strong> (MacArthur & Wilson, 1967) predict species richness S on islands of area A: <span class="mk">S = cA^z</span>, where z ≈ 0.25–0.35 empirically. The dynamic equilibrium model balances immigration rate (decreasing with distance from mainland) against extinction rate (decreasing with island area). Species richness at equilibrium is determined by the intersection of these curves. The theory predicts that habitat fragmentation — converting continuous habitat into islands — reduces biodiversity predictably, providing the quantitative basis for conservation area design and the SLOSS debate (Single Large Or Several Small reserves).</p>
+<p><strong>Ecological tipping points</strong> arise from alternative stable states: ecosystems can exist in multiple stable configurations, and perturbations can push them past a bifurcation point into a qualitatively different regime. Classic examples include the regime shift from clear to turbid water in shallow lakes (driven by phosphorus loading and macrophyte-turbidity feedbacks), coral-algal phase transitions, and Amazon dieback. Early warning signals (critical slowing down: increasing variance and autocorrelation in time series near a tipping point) can in principle detect approaching transitions before they occur — a rapidly developing research area with urgent applications to climate and biodiversity policy.</p>`,
+   facts:[{e:'🐘',t:'Metabolic rate scales as M^{3/4} across 27 orders of magnitude of body size — from bacteria to blue whales — one of ecology\'s most precise and universal laws.'},{e:'🌳',t:'Deforestation of the Amazon beyond ~20–25% may trigger a self-reinforcing dieback — the forest stops generating its own rainfall and converts to savanna. Current deforestation stands at ~17%.'},{e:'🐠',t:'Coral reefs occupy &lt;1% of the ocean floor but harbour ~25% of all marine species — the highest biodiversity density of any ecosystem, maintained by a complex web of mutualisms.'}],
+   formula:{rows:[
+    {n:'Metabolic rate (MTE)',e:'B  =  b₀ · M^{3/4} · e^{−E/kT}',c:'E ≈ 0.65 eV'},
+    {n:'Kleiber\'s law',e:'B  ∝  M^{3/4}   across all life'},
+    {sep:1},
+    {n:'Species-area',e:'S  =  c · A^z,   z ≈ 0.25–0.35'},
+    {n:'Island biogeography',e:'Ŝ  =  intersection of immigration & extinction curves'},
+    {sep:1},
+    {n:'Critical slowing down',e:'return time  ~  1/(λ_1)   → ∞  near bifurcation'},
+    {n:'Lotka-Volterra extended',e:'dxᵢ/dt  =  xᵢ(rᵢ + Σⱼ αᵢⱼ xⱼ)   (community matrix)'},
+   ]},sim:'ecosystem'},
+ }},
+
 // ── COMPUTER SCIENCE ─────────────────────────────────────────────
 {id:'sorting',group:'💻 Computer Science',emoji:'🔀',color:'#6366f1',light:'#f0f0ff',
  title:'Sorting Algorithms',teaser:'How does a computer sort a million numbers in milliseconds — and why does strategy matter?',chips:['Algorithms','Big-O','CS'],
@@ -534,6 +790,135 @@ const S=[
    ]},sim:'sorting'},
  }},
 
+{id:'ml',group:'💻 Computer Science',emoji:'🤖',color:'#6366f1',light:'#eef2ff',
+ title:'Machine Learning & Neural Networks',teaser:'How does a computer learn to recognise your face, translate languages, and beat world champions at chess — without ever being explicitly programmed?',chips:['Neural Nets','Gradient Descent','AI'],
+ lvls:{
+  junior:{icon:'🧠',title:'Computers that learn from experience!',
+   body:`<p>Imagine teaching a dog to sit. You don't give it a rulebook — you show it examples, reward it when it gets things right, and correct it when it goes wrong. After enough repetitions, the dog just knows. <strong>Machine learning</strong> works almost exactly the same way — except the "dog" is a computer program, and the "treats" are mathematical scores called rewards or loss values.</p>
+<p>Traditional programming works by writing exact rules: "IF the email contains the word 'lottery' THEN mark it as spam." But what about emails that describe a lottery without using that word? A machine learning system instead looks at thousands of examples of real spam and real emails, finds hidden patterns humans would never think to write down, and builds its own internal rules automatically.</p>
+<p>The most powerful form of machine learning today uses <strong>neural networks</strong> — layers of simple mathematical units loosely inspired by neurons in the brain. Each unit receives numbers, multiplies them by learned weights, and passes the result forward. A deep neural network with millions of these units, trained on billions of examples, is what recognises your face on your phone, translates between 100 languages in real time, and generates images from text descriptions. In the simulation below, watch a tiny neural network learn to classify points in real time.</p>`,
+   facts:[{e:'👁️',t:'The neural network behind modern face recognition achieves 99.7% accuracy — surpassing the average human score of 97.5% on the same benchmark.'},{e:'♟️',t:'AlphaZero learned chess from scratch in 9 hours with no human knowledge except the rules — then defeated the world\'s best chess engine convincingly.'},{e:'🌡️',t:'Google\'s DeepMind reduced the energy used to cool its data centres by 40% using a neural network — saving the same energy as removing 100,000 cars from the road.'}],
+   formula:null,sim:'ml'},
+
+  student:{icon:'🤖',title:'Gradient descent, backpropagation, and the universal approximation theorem',
+   body:`<p>A neural network with L layers computes <span class="mk">f(x) = W_L · σ(W_{L-1} · σ(… σ(W_1 x + b_1) …) + b_{L-1}) + b_L</span>, where σ is a nonlinear activation function (ReLU: σ(z) = max(0,z); sigmoid: σ(z) = 1/(1+e⁻ᶻ)) and W_i, b_i are learned weight matrices and bias vectors. Training minimises a loss function L(θ) — e.g. cross-entropy for classification: <span class="mk">L = −Σᵢ yᵢ log(ŷᵢ)</span> — over parameters θ = {W_i, b_i}.</p>
+<p><strong>Gradient descent</strong> iteratively updates parameters in the direction of steepest descent: <span class="mk">θ ← θ − η·∇_θ L</span>, where η is the learning rate. Computing ∇_θ L requires <strong>backpropagation</strong>: the chain rule applied recursively backwards through the network. For a composition f = f_L ∘ … ∘ f_1, the gradient with respect to layer k parameters is <span class="mk">∂L/∂W_k = (∂L/∂f_L)(∂f_L/∂f_{L-1})…(∂f_{k+1}/∂f_k)(∂f_k/∂W_k)</span>. Stochastic gradient descent (SGD) uses mini-batches to estimate gradients noisily but cheaply; adaptive optimisers (Adam, RMSProp) maintain per-parameter learning rates for faster convergence.</p>
+<p>The <strong>Universal Approximation Theorem</strong> (Cybenko 1989, Hornik 1991) guarantees that a single hidden layer with enough units can approximate any continuous function on a compact domain to arbitrary precision. Depth (many layers) provides exponential efficiency: functions requiring exponentially many units in a shallow network can be represented compactly in a deep one. <strong>Regularisation</strong> (dropout, weight decay, batch normalisation) prevents overfitting — memorising training data at the expense of generalisation — which is the central challenge of practical deep learning.</p>`,
+   facts:[{e:'📊',t:'GPT-4 has an estimated 1.8 trillion parameters across 120 layers — trained on ~13 trillion tokens of text using roughly 25,000 A100 GPUs for 90 days.'},{e:'🎨',t:'Convolutional neural networks (CNNs) learn hierarchical features automatically: early layers detect edges, middle layers detect shapes, deep layers detect faces or objects.'},{e:'⚠️',t:'Vanishing gradients plagued deep networks until 2015: gradients shrink exponentially with depth, preventing learning. ReLU activations and residual connections (ResNets) solved this.'}],
+   formula:{rows:[
+    {n:'Forward pass',e:'a^{(l)}  =  σ(W^{(l)} a^{(l-1)} + b^{(l)})'},
+    {n:'Cross-entropy loss',e:'L  =  −Σᵢ yᵢ · log(ŷᵢ)'},
+    {sep:1},
+    {n:'Gradient descent',e:'θ  ←  θ  −  η · ∇_θ L'},
+    {n:'Backprop (chain rule)',e:'∂L/∂W^{(k)}  =  δ^{(k)} · (a^{(k-1)})ᵀ'},
+    {sep:1},
+    {n:'ReLU activation',e:'σ(z)  =  max(0, z)'},
+    {n:'UAT (Cybenko 1989)',e:'∀ε>0, ∃ shallow net f_θ: ‖f−f_θ‖_∞ < ε'},
+   ]},sim:'ml'},
+
+  scholar:{icon:'∂',title:'Optimisation landscape, generalisation theory, and transformers',
+   body:`<p>The loss surface L(θ) of a deep network is a non-convex function in millions of dimensions. Contrary to early fears, local minima are rarely a practical problem: in high dimensions, saddle points dominate, and most local minima have loss values close to the global minimum (Dauphin et al., 2014). The <strong>loss of sharpness</strong> — the largest eigenvalue λ_max of the Hessian ∂²L/∂θ² — correlates with generalisation: flat minima (small λ_max) generalise better than sharp ones. SAM (Sharpness-Aware Minimisation) explicitly seeks flat regions by solving <span class="mk">min_θ max_{‖ε‖≤ρ} L(θ+ε)</span>, consistently improving test accuracy.</p>
+<p><strong>Generalisation theory</strong> asks: why do overparameterised networks (parameters ≫ data points) not overfit catastrophically? Classical VC theory predicts disaster; the empirical reality shows "benign overfitting" — perfect training fit with good test performance. Modern understanding invokes the <em>implicit bias</em> of SGD (which finds minimum-norm solutions), the <em>double descent</em> phenomenon (test error decreases again beyond the interpolation threshold), and PAC-Bayes bounds: <span class="mk">L(f) ≤ L̂(f) + √[(KL(Q‖P) + ln(n/δ))/(2n)]</span>, which remain non-vacuous for deep networks when the prior P is chosen carefully.</p>
+<p>The <strong>Transformer architecture</strong> (Vaswani et al., 2017) replaced recurrence with <em>self-attention</em>: for queries Q, keys K, values V, the attention output is <span class="mk">Attention(Q,K,V) = softmax(QKᵀ/√d_k)·V</span>. Each token attends to all others in O(n²) time and O(1) sequential steps. Multi-head attention runs h parallel attention heads, each learning different relationship patterns. Positional encodings inject sequence order. Transformers scale predictably: the Chinchilla scaling laws (Hoffmann et al., 2022) show that optimal compute allocation follows N_params ∝ C^{0.5} and N_tokens ∝ C^{0.5} — model size and training data should scale equally with compute budget.</p>`,
+   facts:[{e:'🔢',t:'The "grokking" phenomenon: networks can suddenly jump from memorisation to genuine generalisation millions of training steps after achieving 100% training accuracy.'},{e:'🌐',t:'Transformer attention is equivalent to a single step of gradient descent on an associative memory (Hopfield network) — connecting modern LLMs to 1980s memory models.'},{e:'📉',t:'Neural scaling laws are remarkably precise power laws: loss decreases as L ∝ N^{-0.076} with parameters N, holding across 7 orders of magnitude of model size.'}],
+   formula:{rows:[
+    {n:'Self-attention',e:'Attention(Q,K,V)  =  softmax(QKᵀ/√d_k) · V'},
+    {n:'Multi-head',e:'MHA  =  concat(head_1,…,head_h) · W^O'},
+    {sep:1},
+    {n:'PAC-Bayes bound',e:'L(f)  ≤  L̂(f)  +  √[(KL(Q‖P) + ln(n/δ)) / 2n]'},
+    {n:'Double descent',e:'test error has two peaks: at underfitting & interpolation threshold'},
+    {sep:1},
+    {n:'Chinchilla scaling',e:'N_opt  =  C^{0.5},   D_opt  =  C^{0.5}   (tokens ∝ params)'},
+    {n:'SAM objective',e:'min_θ  max_{‖ε‖≤ρ}  L(θ + ε)'},
+   ]},sim:'ml'},
+ }},
+
+{id:'crypto',group:'💻 Computer Science',emoji:'🔐',color:'#0f766e',light:'#f0fdfa',
+ title:'Cryptography & Security',teaser:'Every time you buy something online, mathematics shields your data from the entire internet. How does a secret stay secret in public?',chips:['Encryption','RSA','Quantum'],
+ lvls:{
+  junior:{icon:'🔑',title:'Secret messages and unbreakable locks!',
+   body:`<p>Imagine you want to pass a secret note to a friend across a crowded room full of people who would love to read it. You could use a <strong>cipher</strong> — a secret code. The simplest cipher, used by Julius Caesar 2,000 years ago, shifts every letter by a fixed number: A becomes D, B becomes E, and so on. Your friend knows the shift and can decode it; everyone else just sees gibberish.</p>
+<p>But there is a problem: how do you tell your friend the secret shift in the first place, without anyone overhearing? For thousands of years this was the central puzzle of cryptography. The answer, discovered in the 1970s, is almost magical: <strong>public-key cryptography</strong>. Imagine a special padlock that anyone can snap shut, but only you have the key to open. You can send your open padlock to anyone in the world over a public channel. They lock their message inside and send it back. Only you can open it — even though you never shared any secret!</p>
+<p>This is how every secure website works today. When you see the little padlock icon in your browser, your computer and the server are using mathematics to create a shared secret in public, right in front of any eavesdropper — who still cannot figure it out. In the simulation below, watch the key exchange happen step by step.</p>`,
+   facts:[{e:'🌐',t:'HTTPS encrypts over 95% of web traffic today. The mathematics protecting your passwords was essentially non-existent before 1976.'},{e:'🏦',t:'The RSA algorithm, invented in 1977, derives its security from the fact that multiplying two large primes takes milliseconds, but factoring the result takes longer than the age of the universe.'},{e:'⚛️',t:'Quantum computers could break RSA encryption — which is why governments worldwide are already transitioning to "post-quantum" cryptography standards.'}],
+   formula:null,sim:'crypto'},
+
+  student:{icon:'🔐',title:'RSA, Diffie-Hellman, and the mathematics of one-way functions',
+   body:`<p><strong>RSA</strong> (Rivest-Shamir-Adleman, 1977) is based on the hardness of integer factorisation. Key generation: choose large primes p, q; compute n = pq and φ(n) = (p−1)(q−1); choose public exponent e with gcd(e, φ(n)) = 1; compute private key d ≡ e⁻¹ (mod φ(n)) via the extended Euclidean algorithm. Encryption: <span class="mk">c = mᵉ mod n</span>. Decryption: <span class="mk">m = cᵈ mod n</span>. Correctness follows from Euler's theorem: m^{φ(n)} ≡ 1 (mod n), so m^{ed} = m^{kφ(n)+1} ≡ m (mod n). Security rests on the assumption that computing d from (e, n) is as hard as factoring n — unproven but believed for n ≥ 2048 bits.</p>
+<p><strong>Diffie-Hellman key exchange</strong> (1976) solves the key distribution problem using the discrete logarithm problem. Alice and Bob agree publicly on a prime p and generator g. Alice chooses secret a, sends A = gᵃ mod p. Bob chooses secret b, sends B = gᵇ mod p. Both compute shared secret K = Bᵃ mod p = Aᵇ mod p = g^{ab} mod p. An eavesdropper sees g, p, A, B but cannot recover a, b, or K without solving the discrete logarithm problem (computing log_g(A) mod p) — believed to be computationally infeasible for large p.</p>
+<p><strong>Symmetric encryption</strong> (AES, ChaCha20) uses a shared secret key for bulk encryption — orders of magnitude faster than RSA. Modern TLS uses DH/ECDH for key exchange, then AES-GCM for the actual data: the hybrid approach combines the convenience of public-key cryptography with the speed of symmetric ciphers. <strong>Hash functions</strong> (SHA-256, SHA-3) map arbitrary data to a fixed-length digest: one-way (preimage resistance), collision-resistant, and avalanche-effect (flipping one input bit changes ~50% of output bits). They underpin digital signatures, certificate authorities, and blockchain.</p>`,
+   facts:[{e:'🔢',t:'The RSA-2048 encryption key has 617 decimal digits. Factoring it with the best known algorithm on all current computers would take longer than the age of the universe.'},{e:'📱',t:'Your phone\'s HTTPS connection uses Elliptic Curve Diffie-Hellman (ECDH) — providing RSA-equivalent security with keys 20× smaller, thanks to the hardness of the elliptic curve discrete log.'},{e:'🏛️',t:'NIST standardised its first post-quantum cryptography algorithms in 2024 — CRYSTALS-Kyber for key exchange and CRYSTALS-Dilithium for signatures — both based on lattice problems.'}],
+   formula:{rows:[
+    {n:'RSA encrypt',e:'c  =  mᵉ  mod  n'},
+    {n:'RSA decrypt',e:'m  =  cᵈ  mod  n,   d ≡ e⁻¹ (mod φ(n))'},
+    {sep:1},
+    {n:'Euler\'s theorem',e:'m^{φ(n)}  ≡  1  (mod n)   →   m^{ed} ≡ m'},
+    {n:'DH shared secret',e:'K  =  g^{ab}  mod  p'},
+    {sep:1},
+    {n:'Hash (SHA-256)',e:'H: {0,1}*  →  {0,1}^{256}   (one-way, collision-resistant)'},
+    {n:'Birthday bound',e:'collision found with prob ½ after ~√(2^{256}) ≈ 2^{128} queries'},
+   ]},sim:'crypto'},
+
+  scholar:{icon:'∞',title:'Information-theoretic security, lattice cryptography, and zero-knowledge proofs',
+   body:`<p><strong>Shannon's perfect secrecy</strong> (1949) provides the gold standard: a cipher is perfectly secret iff the ciphertext reveals zero information about the plaintext — formally, P(M=m | C=c) = P(M=m) for all m, c. The <strong>one-time pad</strong> (c = m ⊕ k, with |k| = |m| and k uniformly random, used once) achieves perfect secrecy. Shannon proved it is the <em>only</em> perfectly secret cipher, and its key must be at least as long as the message — making it impractical for most applications. Modern cryptography relaxes perfect secrecy to <em>computational security</em>: security holds against polynomial-time adversaries, with negligible advantage.</p>
+<p><strong>Lattice-based cryptography</strong> derives hardness from the <em>Shortest Vector Problem</em> (SVP) and <em>Learning With Errors</em> (LWE). In LWE, given many samples (aᵢ, bᵢ = aᵢ·s + eᵢ mod q) for secret vector s and small noise eᵢ, recovering s is believed hard even for quantum computers. The Ring-LWE variant works over polynomial rings ℤ_q[x]/(xⁿ+1), enabling efficient key exchange and fully homomorphic encryption. <strong>Fully homomorphic encryption</strong> (FHE, Gentry 2009) allows arbitrary computation on encrypted data — f(Enc(x)) = Enc(f(x)) — so a server can process sensitive data without ever seeing it. Practical FHE (CKKS, BFV schemes) is now within 100-1000× of plaintext computation speed.</p>
+<p><strong>Zero-knowledge proofs</strong> (ZKPs, Goldwasser-Micali-Rackoff, 1985) allow a prover to convince a verifier that a statement is true without revealing <em>why</em> it is true. Formally, a ZKP for language L satisfies: completeness (honest prover always convinces verifier), soundness (dishonest prover convinces verifier with negligible probability), and zero-knowledge (verifier learns nothing beyond the truth of the statement). zk-SNARKs (Succinct Non-interactive ARguments of Knowledge) produce O(1)-size proofs verifiable in milliseconds, regardless of computation complexity. They now underpin privacy-preserving blockchains (Zcash), anonymous credentials, and verifiable ML inference.</p>`,
+   facts:[{e:'🔮',t:'A zk-SNARK proof that a neural network produced a specific output can be generated and verified — without revealing the model weights or input data.'},{e:'🧮',t:'The LWE problem is so hard that even a quantum computer running Shor\'s algorithm (which breaks RSA) cannot solve it — no quantum speedup is known.'},{e:'🏆',t:'The 2012 Turing Award went to Silvio Micali and Shafi Goldwasser for inventing zero-knowledge proofs — originally considered a purely theoretical curiosity.'}],
+   formula:{rows:[
+    {n:'Perfect secrecy',e:'P(M=m | C=c)  =  P(M=m)   ∀ m,c'},
+    {n:'One-time pad',e:'c  =  m ⊕ k,   |k| = |m|,   k uniform & secret'},
+    {sep:1},
+    {n:'LWE sample',e:'b_i  =  ⟨a_i, s⟩  +  e_i   (mod q),   e_i small'},
+    {n:'Ring-LWE ring',e:'R_q  =  ℤ_q[x] / (xⁿ + 1)'},
+    {sep:1},
+    {n:'ZKP properties',e:'completeness  +  soundness  +  zero-knowledge'},
+    {n:'zk-SNARK proof size',e:'|π|  =  O(1)   regardless of circuit size'},
+   ]},sim:'crypto'},
+ }},
+
+{id:'complexity',group:'💻 Computer Science',emoji:'⚙️',color:'#7c3aed',light:'#f5f3ff',
+ title:'Computation & Complexity',teaser:'Some problems are easy. Some are hard. And some are provably impossible — no matter how fast your computer gets. Why?',chips:['Turing','P vs NP','Decidability'],
+ lvls:{
+  junior:{icon:'🤔',title:'What can computers actually do — and what can\'t they?',
+   body:`<p>Computers seem infinitely powerful. They can land rockets, beat grandmasters at chess, and generate photorealistic images from a sentence. But here is a profound surprise: there are problems that no computer — no matter how fast, how large, or how cleverly programmed — can ever solve. Not because we haven't built the right computer yet. Because it's <strong>mathematically impossible</strong>.</p>
+<p>Alan Turing proved in 1936 — before modern computers even existed! — that no program can ever be written to reliably tell whether any other program will finish running or loop forever. This is called the <strong>Halting Problem</strong>, and it's genuinely, provably unsolvable. Turing showed this using a brilliant logical trick: if such a program existed, you could use it to create a paradox, just like the sentence "This statement is false."</p>
+<p>Beyond what's impossible, there's the question of what's <em>hard</em>. Some problems are easy — sorting a list takes milliseconds. But others, like finding the shortest route through 1,000 cities, seem to require trying every possible combination — an astronomical number even for a supercomputer. The great unsolved question of computer science — and one of the most important open problems in all of mathematics — is whether these "hard" problems are genuinely hard, or whether we've just been too clever to find a shortcut yet. This is the famous <strong>P vs NP problem</strong>, with a $1,000,000 prize for whoever solves it.</p>`,
+   facts:[{e:'💰',t:'The Clay Mathematics Institute offers $1,000,000 for solving P vs NP — it has been open since 1971 and most experts believe P ≠ NP, but no one can prove it.'},{e:'🔐',t:'All of modern internet security assumes P ≠ NP. If P = NP, encryption could be broken instantly and the entire financial system would collapse.'},{e:'♟️',t:'Chess is computationally "solved" in principle — perfect play exists — but calculating it would require more operations than there are atoms in the observable universe.'}],
+   formula:null,sim:'complexity'},
+
+  student:{icon:'⚙️',title:'Turing machines, decidability, and the complexity zoo',
+   body:`<p>A <strong>Turing machine</strong> (TM) is a mathematical model of computation: an infinite tape, a read/write head, and a finite set of states with transition rules δ(state, symbol) → (new_state, new_symbol, direction). Despite its simplicity, the Church-Turing thesis conjectures that every effectively computable function is computable by some TM — i.e., Turing machines capture the full power of computation. The <strong>Universal Turing Machine</strong> (UTM) can simulate any other TM given its description as input: it is the theoretical basis of general-purpose computers.</p>
+<p>The <strong>Halting Problem</strong>: does TM M halt on input w? Turing proved this is <em>undecidable</em> by diagonalisation. Assume a decider H(M,w) exists. Construct D(M): run H(M,M); if H says "halt", loop forever; if H says "loop", halt. Then D(D) — the program applied to itself — creates a contradiction. By Rice's Theorem, every non-trivial semantic property of programs is undecidable, making general program verification impossible.</p>
+<p><strong>Complexity classes</strong>: P (decidable in polynomial time O(nᵏ)); NP (verifiable in polynomial time — the certificate can be checked efficiently, e.g. Sudoku, graph colouring, integer factorisation); co-NP (complement of NP problems); PSPACE (polynomial space); EXP (exponential time). A problem is <strong>NP-complete</strong> if it is in NP and every NP problem reduces to it in polynomial time. Cook-Levin (1971) proved SAT (boolean satisfiability) is NP-complete; over 3,000 natural problems are known NP-complete. If any NP-complete problem is in P, then P = NP.</p>`,
+   facts:[{e:'🗺️',t:'The Travelling Salesman Problem (TSP) is NP-hard: the best exact algorithms for 1,000 cities still require astronomical time — yet TSP drives real-world logistics for FedEx and UPS.'},{e:'🧬',t:'Protein folding was long considered computationally intractable — a PSPACE problem. DeepMind\'s AlphaFold solved it heuristically using deep learning, winning the 2024 Nobel Prize in Chemistry.'},{e:'🎮',t:'Many classic video games are NP-hard: Super Mario Bros., Tetris, Minesweeper, and Candy Crush are all provably as hard as SAT in the general case.'}],
+   formula:{rows:[
+    {n:'TM transition',e:'δ: Q × Γ  →  Q × Γ × {L, R}'},
+    {n:'Church-Turing thesis',e:'computable  ⟺  TM-computable   (conjecture)'},
+    {sep:1},
+    {n:'P',e:'L ∈ P  iff  ∃ TM M: M decides L in O(nᵏ) time'},
+    {n:'NP',e:'L ∈ NP  iff  certificates verifiable in poly time'},
+    {sep:1},
+    {n:'NP-completeness',e:'L is NP-complete  iff  L ∈ NP  and  ∀L\' ∈ NP: L\' ≤_p L'},
+    {n:'Cook-Levin',e:'SAT is NP-complete   (1971)'},
+   ]},sim:'complexity'},
+
+  scholar:{icon:'λ',title:'Circuit complexity, randomised computation, and the limits of proof',
+   body:`<p>The <strong>circuit complexity</strong> approach attacks P vs NP by asking: how large must a Boolean circuit be to compute a given function? A circuit is a DAG of AND, OR, NOT gates; its size is the number of gates. Every problem in P has polynomial-size circuits (P ⊆ P/poly), but the converse is open. <strong>Shannon counting</strong> shows most Boolean functions on n bits require circuits of size Ω(2ⁿ/n) — superpolynomial — proving that hard functions exist. The challenge is to exhibit a specific hard function. The strongest known lower bounds for explicit functions in NP reach only Ω(n log n) — exponentially far from proving P ≠ NP via this route.</p>
+<p><strong>Razborov-Rudich natural proofs</strong> barrier (1994) shows that any "natural" proof technique — one satisfying constructivity and largeness conditions — cannot prove super-polynomial circuit lower bounds unless one-way functions do not exist (which would break all cryptography). This suggests the P vs NP proof, if it exists, must use fundamentally non-natural techniques. The other main barriers are relativisation (most proof techniques relativise, but both P = NP and P ≠ NP hold in some oracle worlds) and algebrisation.</p>
+<p><strong>Randomised complexity</strong>: BPP is the class of problems solvable in polynomial time with two-sided error ≤ 1/3. Derandomisation conjectures (Impagliazzo-Wigderson, 1997) state that if hard functions exist, then BPP = P — randomness is not fundamentally necessary. <strong>Interactive proof systems</strong> extend NP: IP = PSPACE (Shamir, 1992), meaning any PSPACE computation can be verified interactively. <strong>MIP* = RE</strong> (Ji et al., 2020) — multi-prover interactive proofs with quantum entanglement equal the recursively enumerable sets — a 2020 result that simultaneously resolved Connes' embedding conjecture in operator algebras, showing computation complexity intersects with pure mathematics in the deepest ways.</p>`,
+   facts:[{e:'🎲',t:'The Schwartz-Zippel lemma underpins polynomial identity testing — the best known algorithm is randomised, and derandomising it would imply circuit lower bounds separating P from NP.'},{e:'🌀',t:'MIP* = RE (2020) means quantum-entangled provers can convince a verifier of undecidable facts — the most surprising result in complexity theory in decades.'},{e:'🔬',t:'The algebrisation barrier shows that techniques using algebraic methods — which proved IP=PSPACE — cannot alone resolve P vs NP, narrowing the space of possible proof strategies.'}],
+   formula:{rows:[
+    {n:'Circuit lower bound',e:'∃f ∈ NP: circuit size(f)  =  Ω(2ⁿ/n)   (Shannon counting)'},
+    {n:'Best explicit bound',e:'∃f ∈ NP: circuit size(f)  ≥  Ω(n log n)   (2021)'},
+    {sep:1},
+    {n:'Randomised class',e:'BPP: poly-time, error ≤ 1/3 both sides'},
+    {n:'Derandomisation',e:'hard functions exist  ⟹  BPP = P'},
+    {sep:1},
+    {n:'Interactive proofs',e:'IP  =  PSPACE   (Shamir 1992)'},
+    {n:'Quantum provers',e:'MIP*  =  RE   (Ji et al. 2020)'},
+   ]},sim:'complexity'},
+ }},
+
 // ── EARTH SCIENCE ────────────────────────────────────────────────
 {id:'climate',group:'🌍 Earth Science',emoji:'🌍',color:'#15803d',light:'#f0fdf4',
  title:'Climate & the Atmosphere',teaser:'A 1°C rise in global temperature triggers hurricanes, droughts, and sea-level rise. Why so sensitive?',chips:['Greenhouse effect','CO₂','Climate'],
@@ -577,6 +962,259 @@ const S=[
     {n:'CO₂ forcing',e:'ΔF  =  5.35 · ln(C/C₀)   W/m²'},
     {n:'Current forcing',e:'ΔF(420/280)  ≈  2.1  W/m²'},
    ]},sim:'climate'},
+ }},
+
+{id:'tectonics',group:'🌍 Earth Science',emoji:'🌍',color:'#b45309',light:'#fffbeb',
+ title:'Plate Tectonics & Earthquakes',teaser:'The ground beneath your feet is moving — slowly but unstoppably. Every mountain, ocean, and earthquake is a consequence.',chips:['Plates','Earthquakes','Seismology'],
+ lvls:{
+  junior:{icon:'🌋',title:'The Earth is alive — and moving!',
+   body:`<p>The ground beneath your feet feels completely solid and still. But if you could watch Earth from space in fast-forward over millions of years, you would see something extraordinary: the continents are slowly drifting across the surface like giant puzzle pieces floating on a very slow river of hot rock. This is called <strong>plate tectonics</strong>, and it is the single most important process shaping our planet's surface.</p>
+<p>Earth's outer shell is broken into about 15 large pieces called <strong>tectonic plates</strong>. They move at roughly the speed your fingernails grow — a few centimetres per year. But over millions of years, this adds up: 200 million years ago, all the continents were joined in one supercontinent called <strong>Pangaea</strong>. India was near Antarctica. The Atlantic Ocean didn't exist. The Himalayas — the tallest mountains on Earth — only began forming 50 million years ago when India crashed into Asia.</p>
+<p>When plates collide, slide past each other, or pull apart, the energy released can be devastating. <strong>Earthquakes</strong> occur when two plates that have been locked together by friction suddenly slip — releasing centuries of stored energy in seconds. The 2011 Japan earthquake was so powerful it shifted Earth's axis by 17 centimetres and shortened the day by 1.8 microseconds. In the simulation below, watch plates move and feel the consequences.</p>`,
+   facts:[{e:'🏔️',t:'The Himalayas grow about 5 mm taller every year — India is still crashing into Asia at 4.4 cm/year, and the collision that started 50 million years ago isn\'t over.'},{e:'🌊',t:'The 2004 Indian Ocean earthquake released energy equivalent to 23,000 Hiroshima bombs and triggered tsunamis that killed 230,000 people across 14 countries.'},{e:'🧲',t:'Earth\'s magnetic field — which protects us from solar radiation — is generated by churning liquid iron in the outer core, 2,900 km below the surface.'}],
+   formula:null,sim:'tectonics'},
+
+  student:{icon:'🌍',title:'Plate boundaries, seismic waves, and the Wilson cycle',
+   body:`<p>Earth's interior is layered: solid inner core (Fe-Ni, ~1,220 km radius, ~5,400 K), liquid outer core (convecting Fe, generates the geodynamo), mantle (silicate rock, viscosity ~10²¹ Pa·s, convecting over millions of years), and crust (oceanic: ~7 km basaltic; continental: ~35 km granitic). Tectonic plates are the rigid lithosphere (crust + uppermost mantle, ~100 km thick) floating on the ductile asthenosphere. Plate motion is driven by <strong>ridge push</strong> (new oceanic crust created at mid-ocean ridges slides downhill) and <strong>slab pull</strong> (cold, dense subducting slab pulls the plate behind it — the dominant force).</p>
+<p>Three boundary types: <strong>divergent</strong> (plates separate; mid-ocean ridges, continental rifts — e.g. East African Rift); <strong>convergent</strong> (plates collide; oceanic subduction producing volcanic arcs and deep ocean trenches, or continent-continent collision producing fold mountain belts); <strong>transform</strong> (plates slide laterally; e.g. San Andreas Fault). The <strong>Wilson cycle</strong> describes the ~500 Myr opening and closing of ocean basins: rifting → ocean opening → subduction initiation → ocean closing → continental collision → suturing.</p>
+<p><strong>Earthquakes</strong> nucleate at the <em>hypocenter</em> (focus) and radiate seismic waves: <em>P-waves</em> (compressional, travel through solids and liquids, ~6–8 km/s in crust) and <em>S-waves</em> (shear, solids only, ~3.5–4.5 km/s). The P–S arrival time difference at a seismometer gives distance to the earthquake; three stations triangulate location. Magnitude is measured on the <strong>moment magnitude scale</strong> M_w = (2/3)log₁₀(M₀) − 10.7, where M₀ = μAd is the seismic moment (shear modulus × rupture area × average slip). Each unit increase in M_w represents ~32× more energy released.</p>`,
+   facts:[{e:'🔍',t:'Seismologists discovered Earth\'s liquid outer core in 1906 by noticing that S-waves (which can\'t travel through liquids) disappear on the far side of the planet.'},{e:'📡',t:'GPS networks can now detect plate motion in real time — the Pacific plate moves northwest at 7 cm/year, measurable to millimetre precision.'},{e:'⚡',t:'The largest earthquake ever recorded was the 1960 Valdivia, Chile earthquake (M_w 9.5) — it ruptured a fault 1,000 km long and 200 km wide simultaneously.'}],
+   formula:{rows:[
+    {n:'Moment magnitude',e:'M_w  =  (2/3) log₁₀(M₀)  −  10.7'},
+    {n:'Seismic moment',e:'M₀  =  μ · A · d   (Pa·m²·m = N·m)'},
+    {sep:1},
+    {n:'Energy scaling',e:'ΔM_w = 1  →  32× more energy'},
+    {n:'P-wave velocity',e:'V_P  =  √[(K + 4G/3) / ρ]'},
+    {sep:1},
+    {n:'S-wave velocity',e:'V_S  =  √[G / ρ]'},
+    {n:'P−S time lag',e:'Δt  =  d · (1/V_S − 1/V_P)   →  distance d'},
+   ]},sim:'tectonics'},
+
+  scholar:{icon:'∂',title:'Mantle convection, geodynamics, and seismic tomography',
+   body:`<p>Mantle convection is governed by the equations of highly viscous (Stokes) flow with thermally driven buoyancy. The <strong>Rayleigh number</strong> Ra = αgΔTd³/(κν) — where α is thermal expansion, g gravity, ΔT temperature contrast, d mantle thickness, κ thermal diffusivity, ν kinematic viscosity — quantifies the vigour of convection. Earth's mantle has Ra ~ 10⁷, far above the critical value ~10³, indicating vigorous convection. The <strong>Nusselt number</strong> Nu ~ Ra^{1/3} relates the convective to conductive heat flux; Earth loses ~47 TW of heat, ~70% through oceanic crust creation at mid-ocean ridges.</p>
+<p><strong>Seismic tomography</strong> images Earth's interior by inverting thousands of seismogram arrival times for 3D velocity structure. Perturbations δV_P/V_P and δV_S/V_S correlate with temperature (cold slabs are fast, hot plumes slow) and composition. Global tomography models (e.g. LLSVP — Large Low Shear Velocity Provinces beneath Africa and the Pacific) reveal continent-scale anomalies at the core-mantle boundary, interpreted as hot, dense thermochemical piles possibly representing remnants of a magma ocean differentiation. The resolution limit of global tomography is ~200 km; regional models reach ~10 km.</p>
+<p>The <strong>geodynamo</strong> — Earth's magnetic field source — is maintained by convection in the liquid outer core. The induction equation <span class="mk">∂B/∂t = ∇×(u×B) + η∇²B</span> (where η = 1/(μ₀σ) is magnetic diffusivity) describes field evolution: the first term (advection) amplifies field via the dynamo mechanism; the second (diffusion) decays it. The magnetic Reynolds number Rm = UL/η ~ 500 for Earth's core, ensuring advection dominates. Paleomagnetic records show ~170 polarity reversals in the past 100 Myr, occurring irregularly every 0.1–50 Myr, with transitions lasting ~5,000 years — a process still not fully understood.</p>`,
+   facts:[{e:'🌐',t:'Seismic tomography revealed two continent-sized "blobs" at the base of the mantle (LLSVPs) — possibly remnants of a Mars-sized impactor that formed the Moon 4.5 billion years ago.'},{e:'🧲',t:'Earth\'s magnetic north pole is currently moving toward Siberia at ~55 km/year — 10× faster than in the 19th century — suggesting changes in core flow dynamics.'},{e:'🔬',t:'Diamond-anvil cell experiments can recreate pressures of 360 GPa and temperatures of 6,000 K — reproducing Earth\'s inner core conditions in a lab to measure iron\'s properties directly.'}],
+   formula:{rows:[
+    {n:'Rayleigh number',e:'Ra  =  αgΔTd³ / (κν)',c:'Earth\'s mantle: Ra ~ 10⁷'},
+    {n:'Nusselt number',e:'Nu  ~  Ra^{1/3}   (convective / conductive heat)'},
+    {sep:1},
+    {n:'Induction equation',e:'∂B/∂t  =  ∇×(u×B)  +  η∇²B'},
+    {n:'Magnetic Rm',e:'Rm  =  UL/η  ~  500   (advection dominates)'},
+    {sep:1},
+    {n:'Stokes flow',e:'∇P  =  η∇²u  +  ρg   (inertia negligible)'},
+    {n:'Heat flux',e:'Q  =  Nu · k · ΔT/d   (~47 TW total)'},
+   ]},sim:'tectonics'},
+ }},
+
+{id:'ocean',group:'🌍 Earth Science',emoji:'🌊',color:'#0369a1',light:'#e0f2fe',
+ title:'Oceanography & Ocean Currents',teaser:'The ocean is Earth\'s climate engine. A river of water wider than the Amazon and a thousand times deeper circles the entire planet — keeping Europe warm and oxygen in the air.',chips:['Currents','Thermohaline','Deep Ocean'],
+ lvls:{
+  junior:{icon:'🌊',title:'The ocean: Earth\'s giant climate machine!',
+   body:`<p>The ocean covers 71% of Earth's surface and contains 97% of all the water on our planet. But it is far more than a giant puddle — it is a vast, moving, living system that controls our climate, produces half our oxygen, and shapes the weather of every country on Earth. Without the ocean, Earth's surface temperature would swing from −100°C at night to +100°C in the daytime. The ocean acts as an enormous heat buffer, absorbing heat in summer and releasing it slowly in winter.</p>
+<p>The ocean is constantly in motion. Near the surface, <strong>wind-driven currents</strong> push water around the globe in great circular patterns called <strong>gyres</strong>. The Gulf Stream, for example, carries warm water from the Caribbean northward along the eastern coast of North America and then across to Europe — keeping cities like London and Dublin 5–10°C warmer than they would otherwise be at their latitude. Without it, Northern Europe would have the same climate as Canada.</p>
+<p>Deep beneath the surface, an even grander circulation operates: the <strong>thermohaline circulation</strong>, sometimes called the "ocean conveyor belt." Cold, salty water near the poles sinks to the ocean floor and slowly travels through the deep ocean, taking thousands of years to complete one circuit of the globe. This invisible river carries heat, nutrients, and dissolved gases to every corner of the ocean — and its disruption by climate change is one of scientists' greatest concerns.</p>`,
+   facts:[{e:'🌡️',t:'The Gulf Stream transports 30 million cubic metres of water per second — 150 times the combined flow of all rivers on Earth.'},{e:'🐋',t:'The deepest point of the ocean — the Challenger Deep in the Mariana Trench — is 11,034 metres deep. Mount Everest would fit inside with 2 km to spare.'},{e:'💨',t:'The ocean produces about 50% of Earth\'s oxygen — mostly from microscopic phytoplankton near the surface, not from rainforests.'}],
+   formula:null,sim:'ocean'},
+
+  student:{icon:'🌊',title:'Geostrophic flow, Ekman transport, and the thermohaline circulation',
+   body:`<p>Ocean surface currents are driven by wind stress τ (N/m²) applied to the surface layer. In the rotating Earth frame, the <strong>Coriolis force</strong> deflects moving water to the right in the Northern Hemisphere and left in the Southern. Wind-driven surface flow spirals with depth — the <strong>Ekman spiral</strong> — resulting in net water transport 90° to the right (NH) of the wind: <span class="mk">M_E = τ/(ρf)</span>, where f = 2Ω sin(φ) is the Coriolis parameter. Convergent Ekman transport piles up water, creating pressure gradients that drive <strong>geostrophic flow</strong>: the balance <span class="mk">fv = (1/ρ)∂P/∂x</span> and <span class="mk">fu = −(1/ρ)∂P/∂y</span> means geostrophic currents flow parallel to pressure contours (like wind around a weather system).</p>
+<p><strong>Wind-driven gyres</strong> arise from Ekman convergence in subtropical regions, piling up water in the gyre centre (dynamic topography ~1 m). <strong>Sverdrup balance</strong> relates interior gyre transport to wind stress curl: <span class="mk">βV = (1/ρ)∇×τ</span> (where β = ∂f/∂y). Western boundary currents (Gulf Stream, Kuroshio) are intensified because they must carry the return flow in a narrow band — a consequence of β-plane dynamics. The <strong>thermohaline circulation</strong> (THC) is driven by density differences: cold, salty water in the North Atlantic sinks to form North Atlantic Deep Water (NADW), driving a global overturning circulation (AMOC) with ~18 Sv (1 Sv = 10⁶ m³/s) transport.</p>
+<p>The ocean's vertical structure is set by density stratification: a warm, light surface mixed layer (~100 m, well-mixed by wind) overlies the <strong>thermocline</strong> (rapid temperature decrease, 100–1000 m) and abyssal deep water (~2°C, 34.7 psu salinity). Internal waves propagate along density surfaces (isopycnals); their breaking mixes the interior ocean, providing the ~1 cm²/s diapycnal diffusivity needed to sustain the THC against the tendency of stratification to shut it down.</p>`,
+   facts:[{e:'🌡️',t:'The AMOC has slowed ~15% since the mid-20th century — if it collapses, northwestern Europe could cool by 5–10°C within decades, even as global temperatures rise.'},{e:'🧪',t:'A single drop of deep ocean water near Antarctica was last at the surface ~1,000 years ago — the ventilation timescale of the deep ocean, measured by radiocarbon dating.'},{e:'🌀',t:'Mesoscale eddies (50–200 km diameter) contain ~80% of the kinetic energy in the ocean — they mix heat, salt, and nutrients far more effectively than the mean circulation.'}],
+   formula:{rows:[
+    {n:'Coriolis parameter',e:'f  =  2Ω sin(φ),   Ω = 7.27×10⁻⁵ rad/s'},
+    {n:'Ekman transport',e:'M_E  =  τ / (ρf)   [m²/s]'},
+    {sep:1},
+    {n:'Geostrophic balance',e:'fv  =  (1/ρ) ∂P/∂x,   fu  =  −(1/ρ) ∂P/∂y'},
+    {n:'Sverdrup balance',e:'βV  =  (1/ρ) (∂τ_y/∂x − ∂τ_x/∂y)'},
+    {sep:1},
+    {n:'Density (seawater)',e:'ρ  =  ρ(T, S, P)   ≈  1025  kg/m³'},
+    {n:'Brunt-Väisälä freq.',e:'N²  =  −(g/ρ) dρ/dz   (stability measure)'},
+   ]},sim:'ocean'},
+
+  scholar:{icon:'∇',title:'Ocean-atmosphere coupling, ENSO, and abyssal mixing',
+   body:`<p>The ocean and atmosphere exchange heat, moisture, and momentum continuously. The <strong>bulk formula</strong> for air-sea heat flux includes sensible heat Q_S = ρ_a c_pa C_H U(T_s−T_a), latent heat Q_L = ρ_a L_v C_E U(q_s−q_a), longwave radiation, and shortwave absorption. The net flux drives sea surface temperature (SST) anomalies, which in turn feed back on the atmosphere. The strongest coupled mode is <strong>ENSO</strong> (El Niño-Southern Oscillation): the Bjerknes feedback loop — warm SST in the east Pacific weakens trade winds → reduces upwelling → further warming — generates multi-year climate variability affecting precipitation patterns globally. ENSO is modelled by the Zebiak-Cane reduced-gravity model and predicted ~6–9 months ahead by coupled GCMs.</p>
+<p><strong>Abyssal mixing</strong> is crucial but poorly understood. The buoyancy flux needed to maintain the THC requires diapycnal diffusivity κ ~ 10⁻⁴ m²/s in the abyssal ocean — orders of magnitude above molecular diffusivity. The energy source is tidal dissipation (~1 TW) over rough topography, generating internal tides that propagate, break, and mix the interior. The <strong>Internal wave continuum</strong> (Garrett-Munk spectrum) describes the universal background internal wave field; its power-law form GM79 fits observations from Arctic to tropics. Quantifying where and how much mixing occurs — the "mixing problem" — is one of the central challenges of physical oceanography.</p>
+<p>The <strong>primitive equations</strong> of ocean circulation are the Navier-Stokes equations on a rotating sphere with the Boussinesq approximation (density variations only in buoyancy term) and hydrostatic balance (∂P/∂z = −ρg, valid for horizontal scales ≫ depth). Ocean general circulation models (OGCMs — MOM, NEMO, ROMS) solve these on grids of 1/12° (~8 km) resolution, resolving mesoscale eddies but requiring parameterisations for submesoscale processes, boundary layer mixing, and tidal dissipation. Coupled Earth System Models add biogeochemistry, sea ice, and land surface — the basis of IPCC projections.</p>`,
+   facts:[{e:'⚡',t:'Internal tides generated where tidal currents flow over the Hawaiian Ridge carry ~20 GW of energy into the open Pacific — a major source of abyssal mixing.'},{e:'🌍',t:'The ocean has absorbed ~93% of the excess heat from anthropogenic greenhouse forcing since 1955 — without this buffering, Earth\'s surface would be ~36°C warmer today.'},{e:'🔬',t:'Argo floats — 4,000 autonomous profiling robots drifting in every ocean — measure temperature and salinity from 0–2000 m every 10 days, transforming ocean observing since 2000.'}],
+   formula:{rows:[
+    {n:'Primitive equations',e:'Du/Dt − fv  =  −(1/ρ)∂P/∂x + ν∇²u'},
+    {n:'Hydrostatic balance',e:'∂P/∂z  =  −ρg'},
+    {sep:1},
+    {n:'Rossby wave speed',e:'c_R  =  −βL_d²   (westward propagation)'},
+    {n:'Deformation radius',e:'L_d  =  NH/f   (N = Brunt-Väisälä freq.)'},
+    {sep:1},
+    {n:'ENSO Bjerknes',e:'warm SST → weak trades → less upwelling → warmer SST'},
+    {n:'Diapycnal diffusivity',e:'κ  ~  10⁻⁴ m²/s  (abyssal, vs 10⁻⁷ molecular)'},
+   ]},sim:'ocean'},
+ }},
+
+{id:'volcano',group:'🌍 Earth Science',emoji:'🌋',color:'#dc2626',light:'#fef2f2',
+ title:'Volcanology',teaser:'A volcano is a window into the interior of our planet. The same process that destroys cities built the continents, created the oceans, and made the atmosphere we breathe.',chips:['Magma','Eruptions','Geohazards'],
+ lvls:{
+  junior:{icon:'🌋',title:'Fire mountains — Earth\'s most powerful builders!',
+   body:`<p>A volcano is one of the most dramatic and terrifying forces in nature — and one of the most important. Deep inside the Earth, rock melts under enormous heat and pressure to form <strong>magma</strong> — a thick, glowing liquid that is less dense than the solid rock around it. Like a bubble in honey, magma slowly rises through cracks in the Earth's crust. When it reaches the surface, it erupts as <strong>lava</strong>, ash, and volcanic gas, building new land and reshaping landscapes.</p>
+<p>Volcanoes come in very different shapes. <strong>Shield volcanoes</strong>, like those in Hawaii, have gentle slopes and produce runny lava that flows for kilometres — they are built up slowly over millions of years and are rarely explosive. <strong>Stratovolcanoes</strong> (or composite volcanoes), like Mount Vesuvius or Krakatoa, are steep, beautiful cones built from layers of ash and thick lava — and they can erupt with catastrophic explosive violence.</p>
+<p>Volcanoes are destructive, but they are also the reason life exists on Earth. Over billions of years, volcanic eruptions have released the gases that formed our atmosphere and oceans. The carbon dioxide that plants use for photosynthesis, the nitrogen in the air we breathe, even the water in the oceans — all ultimately came from volcanoes. Without them, Earth would be a barren rock, as lifeless as the Moon. In the simulation below, watch a magma chamber pressurise and erupt.</p>`,
+   facts:[{e:'🌍',t:'There are about 1,500 potentially active volcanoes on Earth — 500 have erupted in recorded history, and 50–70 erupt every year.'},{e:'❄️',t:'The 1815 eruption of Mount Tambora injected so much ash into the atmosphere that 1816 became "The Year Without a Summer" — crops failed globally and 100,000 people starved.'},{e:'🌊',t:'The largest volcano on Earth is Mauna Loa in Hawaii — measured from its base on the ocean floor, it is taller than Mount Everest by more than 1 kilometre.'}],
+   formula:null,sim:'volcano'},
+
+  student:{icon:'🌋',title:'Magma genesis, eruption styles, and volcanic hazards',
+   body:`<p>Magma forms by <strong>partial melting</strong> of the mantle or crust. Three mechanisms lower rock's melting point: (1) <em>decompression melting</em> — as mantle upwells at mid-ocean ridges, pressure drops below the solidus, generating basaltic magma (most common globally); (2) <em>flux melting</em> — water released from subducting oceanic crust lowers the solidus of overlying mantle wedge, generating arc magmas richer in silica and volatiles; (3) <em>heat transfer</em> — injection of hot mafic magma into the crust melts silicic material, producing granite batholiths. Magma composition ranges from mafic basalt (SiO₂ ~50%, low viscosity) to felsic rhyolite (SiO₂ ~75%, very high viscosity).</p>
+<p>Eruption style is controlled by <strong>magma viscosity</strong> η and dissolved volatile content. Viscosity follows an Arrhenius relationship with temperature and increases exponentially with SiO₂ content. As magma rises, confining pressure drops, volatiles (H₂O, CO₂, SO₂) exsolve forming bubbles. If viscosity is low (basalt), bubbles escape easily → effusive eruption (lava flows). If viscosity is high (rhyolite), bubbles cannot escape → pressure builds → explosive eruption (Plinian column). The <strong>Volcanic Explosivity Index</strong> (VEI) is a logarithmic scale 0–8; each unit represents ~10× more ejecta volume. VEI 8 "supervolcanic" eruptions (Yellowstone, Toba) eject >1,000 km³ of material.</p>
+<p>Primary volcanic hazards: <em>lava flows</em> (slow but unstoppable, 1000–1200°C); <em>pyroclastic density currents</em> (PDCs — fast-moving avalanches of hot gas + rock at 200–700°C, travelling at 100–300 km/h, the deadliest hazard); <em>tephra fall</em> (ash and larger fragments); <em>lahars</em> (volcanic mudflows triggered by eruptions into ice or heavy rainfall); <em>volcanic gases</em> (SO₂, CO₂, H₂S — Laki 1783 released enough SO₂ to kill 25% of Iceland's population via acid rain and fluorine poisoning). Monitoring uses seismometers (magma migration), GPS (ground deformation), gas sensors (SO₂ flux), and satellite InSAR (mm-scale deformation).</p>`,
+   facts:[{e:'💨',t:'The 1991 Pinatubo eruption injected 20 million tonnes of SO₂ into the stratosphere, forming sulfate aerosols that cooled Earth by 0.5°C for two years.'},{e:'🔥',t:'Pyroclastic flows from Vesuvius in 79 AD reached Herculaneum in 4 minutes at ~300°C — death was instantaneous from thermal shock, not asphyxiation as previously thought.'},{e:'📡',t:'Ground deformation at Yellowstone caldera is monitored by 30+ GPS stations; it inflates and deflates by up to 20 cm/year as hydrothermal fluids move — but there is no sign of an impending eruption.'}],
+   formula:{rows:[
+    {n:'Viscosity (Arrhenius)',e:'η  =  A · exp(E_a / RT)',c:'increases with SiO₂, decreases with T'},
+    {n:'Bubble growth',e:'dR/dt  =  (P_b − P_∞) / (4η/R)',c:'drives explosive eruptions'},
+    {sep:1},
+    {n:'VEI scale',e:'VEI  =  log₁₀(V_ejecta[km³]) + 8   (approx.)'},
+    {n:'Plinian column height',e:'H  ≈  0.236 · Q^{1/4}',c:'Q = mass flux (kg/s)'},
+    {sep:1},
+    {n:'Decompression melting',e:'dT_solidus/dP  <  dT_adiabat/dP   →  melting'},
+    {n:'SO₂ radiative forcing',e:'ΔF  ≈  −0.03 · M_{SO₂}  [W/m²]  per Tg'},
+   ]},sim:'volcano'},
+
+  scholar:{icon:'∂',title:'Magma chamber dynamics, volatile saturation, and supereruptions',
+   body:`<p>Magma chambers are not simple pools of melt but complex, partially crystalline <strong>mush zones</strong> — regions where melt fraction φ ranges from ~0.4 (rigid crystal framework) to ~1 (pure melt). The <strong>critical melt fraction</strong> (φ_c ~ 0.4–0.5) marks the rheological transition from solid-like to liquid-like behaviour (the "lock-up" threshold). Thermomechanical models of magma chambers solve the coupled heat equation, crystal nucleation-growth kinetics (Avrami equation), and elastic-viscoplastic host rock deformation. Recharge of hot mafic magma into a cooler, crystal-rich felsic chamber can rapidly remobilise the mush, compress volatiles, and trigger eruption — a process inferred from timescales of weeks to years recorded in zoning profiles of plagioclase crystals.</p>
+<p><strong>Volatile saturation</strong> controls eruption dynamics. For H₂O in silicic melts, solubility follows <span class="mk">X_{H₂O} = a · P^{0.5}</span> (a ~ 3.07×10⁻⁴ at 800°C, P in Pa). As magma ascends, decompression drives exsolution; the nucleation and growth of bubbles depends on the supersaturation ratio and melt viscosity. The <strong>fragmentation threshold</strong> occurs when strain rate ε̇ > G/η (brittle-ductile transition at the glass transition temperature T_g), where G is the elastic shear modulus. Above this threshold, melt fragments explosively into pyroclasts. The ratio of viscous to inertial forces — <span class="mk">We = ρv²R/σ</span> (Weber number) — governs droplet fragmentation in the eruption column.</p>
+<p><strong>Supereruptions</strong> (VEI ≥ 8, V > 1,000 km³) require rapid mobilisation of a huge mush body. The <strong>Yellowstone caldera system</strong> has produced three supereruptions (2.1 Ma, 1.3 Ma, 640 ka Lava Creek Tuff — 1,000 km³ of rhyolite). Climate impact is severe: injection of sulfate precursors into the stratosphere produces sulfate aerosols with e-folding lifetime ~1–2 years, potentially reducing photosynthesis globally and triggering "volcanic winter." The Toba supereruption (~74 ka, ~2,800 km³) may have reduced global human population to ~10,000 individuals — the genetic bottleneck visible in human mitochondrial diversity.</p>`,
+   facts:[{e:'🧬',t:'Genetic evidence suggests the Toba supereruption 74,000 years ago may have reduced the human population to fewer than 10,000 breeding pairs — explaining a bottleneck visible in our DNA.'},{e:'🔬',t:'Diffusion chronometry in olivine crystals can measure how long magma spent at eruption temperature — sometimes just days to weeks before a major eruption.'},{e:'🌍',t:'The Deccan Traps flood basalts (India, ~66 Ma) erupted 500,000 km³ of lava over ~1 Myr — coinciding with the K-Pg extinction and possibly contributing alongside the Chicxulub impact.'}],
+   formula:{rows:[
+    {n:'H₂O solubility',e:'X_{H₂O}  =  a · P^{0.5}',c:'a ≈ 3.07×10⁻⁴ (800°C)'},
+    {n:'Fragmentation crit.',e:'ε̇  >  G/η   (brittle transition)'},
+    {sep:1},
+    {n:'Avrami crystallisation',e:'φ(t)  =  1 − exp(−K·tⁿ)',c:'n = Avrami exponent'},
+    {n:'Critical melt fraction',e:'φ_c  ≈  0.4–0.5   (rheological lock-up)'},
+    {sep:1},
+    {n:'Column height',e:'H  =  0.236 · Q^{0.25},   Q = mass flux'},
+    {n:'Climate forcing',e:'ΔT  ≈  −0.03 · M_{SO₂}  per Tg injected'},
+   ]},sim:'volcano'},
+ }},
+
+// ── CHEMISTRY ─────────────────────────────────────────────────────
+{id:'chem',group:'⚗️ Chemistry',emoji:'⚗️',color:'#059669',light:'#ecfdf5',
+ title:'Atoms & Chemical Bonds',teaser:'Why does water dissolve salt but not oil? It all comes down to how atoms share electrons.',chips:['Atoms','Bonds','Reactions'],
+ lvls:{
+  junior:{icon:'🧪',title:'Tiny building blocks of everything!',
+   body:`<p>Everything around you — the air you breathe, the food you eat, the water you drink — is made of incredibly tiny particles called <strong>atoms</strong>. Atoms are so small that a single drop of water contains more atoms than there are grains of sand on all of Earth's beaches combined!</p>
+<p>Atoms love to stick together to form groups called <strong>molecules</strong>. When atoms join together they form a <strong>chemical bond</strong> — like tiny invisible hands holding them in place. Water is made of two hydrogen atoms and one oxygen atom: H₂O. Table salt is sodium and chlorine bonded together: NaCl.</p>
+<p>Different combinations produce wildly different substances. Carbon atoms can arrange as soft, slippery graphite (pencil lead) or the hardest natural material known — diamond — just by bonding differently! In the simulation below, watch atoms bounce, attract each other, and form molecules.</p>`,
+   facts:[{e:'💧',t:'A glass of water contains roughly 8,000,000,000,000,000,000,000,000 molecules — that\'s 8 septillion!'},{e:'💎',t:'Diamond and graphite are both pure carbon. The difference? Only how the atoms are arranged!'},{e:'🌬️',t:'Air is 78% nitrogen (N₂) and 21% oxygen (O₂) — two completely different molecules made of just two elements.'}],
+   formula:null,sim:'chem'},
+  student:{icon:'⚗️',title:'Covalent and Ionic Bonds: electron sharing vs electron transfer',
+   body:`<p>Atoms bond because doing so lowers their total energy. The driving force is reaching a stable electron configuration — ideally a complete outer shell (the <strong>octet rule</strong>). Two main bonding strategies exist depending on the electronegativity difference (Δχ) between atoms.</p>
+<p><strong>Covalent bonds</strong> (Δχ &lt; 1.7): atoms <em>share</em> electron pairs. In H₂, two hydrogen atoms each contribute one electron to a shared pair, lowering total energy by ~436 kJ/mol. Bond order (single, double, triple) determines length and energy. VSEPR theory predicts molecular geometry from electron-pair repulsion.</p>
+<p><strong>Ionic bonds</strong> (Δχ &gt; 1.7): electron transfer occurs. In NaCl, Na (χ=0.93) donates an electron to Cl (χ=3.16); the resulting Na⁺ and Cl⁻ ions attract electrostatically. Lattice energy <span class="mk">U = −k·Q₁Q₂/r</span> governs stability. Ionic compounds dissolve in polar solvents like water, where the dielectric constant reduces the Coulomb attraction.</p>
+<p>Polarity explains why "like dissolves like." Water (μ = 1.85 D) dissolves ionic and polar solutes via hydrogen bonding; nonpolar solvents dissolve nonpolar solutes via dispersion forces. Hess's law states that ΔH is path-independent — only initial and final states matter.</p>`,
+   facts:[{e:'🔋',t:'Electronegativity (Pauling scale): 0.7 (Cs) to 4.0 (F). The higher the difference between atoms, the more ionic the bond.'},{e:'🫧',t:'Soap works because one end is polar (loves water) and the other nonpolar (loves oil) — bridging the two worlds.'},{e:'🌡️',t:'Breaking bonds always absorbs energy; forming bonds always releases it. Exothermic reactions release more than they absorb overall.'}],
+   formula:{rows:[
+    {n:'Coulomb (ionic)',e:'U  =  k · Q₁Q₂ / r',c:'k = 8.99×10⁹ N·m²·C⁻²'},
+    {sep:1},
+    {n:'Bond energies (avg)',e:'C−C: 347   C=C: 614   C≡C: 839  kJ/mol'},
+    {n:'Hess\'s law',e:'ΔH_rxn  =  Σ ΔH_f(products) − Σ ΔH_f(reactants)'},
+    {sep:1},
+    {n:'Dipole moment',e:'μ  =  q · d   [debye, D]'},
+    {n:'Water',e:'μ(H₂O)  =  1.85 D   (strongly polar)'},
+   ]},sim:'chem'},
+  scholar:{icon:'ψ',title:'Quantum mechanics of bonding: MO theory and reaction dynamics',
+   body:`<p><strong>Molecular Orbital (MO) theory</strong> constructs approximate wavefunctions as linear combinations of atomic orbitals (LCAO): <span class="mk">ψ = c_A φ_A + c_B φ_B</span>. For H₂, combining the 1s AOs yields a bonding MO <span class="mk">σ_{1s} = (φ_A + φ_B)/√2</span> (constructive interference, lower energy) and antibonding MO <span class="mk">σ*_{1s} = (φ_A − φ_B)/√2</span> (node, higher energy). Bond order = (bonding e⁻ − antibonding e⁻)/2.</p>
+<p>The <strong>Born-Oppenheimer approximation</strong> (nuclei move far slower than electrons) permits solving the electronic Schrödinger equation at fixed nuclear geometry, mapping out the <em>potential energy surface</em> (PES). Reactants sit in a potential well, must surmount the <strong>transition state</strong> (saddle point) of activation energy E_a, and descend to the product well. The Arrhenius equation <span class="mk">k = A · e^{−E_a/RT}</span> quantifies the temperature dependence of reaction rate.</p>
+<p>Modern quantum chemistry uses <strong>Density Functional Theory (DFT)</strong>: instead of the N-electron wavefunction (3N coordinates), DFT works with the electron density ρ(r) (3 coordinates). The Hohenberg-Kohn theorems guarantee the ground-state density uniquely determines all ground-state properties. The Kohn-Sham equations use an exchange-correlation functional E_xc[ρ] to convert the interacting problem into effective one-electron equations. DFT now drives drug discovery, materials design, and catalyst screening.</p>`,
+   facts:[{e:'💻',t:'DFT can predict the melting point of new materials before they are synthesised — accelerating discovery from decades to months.'},{e:'🧬',t:'All modern drug-receptor binding simulations use quantum mechanical / molecular mechanical (QM/MM) methods derived from MO theory.'},{e:'⚡',t:'The transition state exists for ~10⁻¹³ seconds — too fast to observe directly, but detectable by femtochemistry (Nobel Prize 1999).'}],
+   formula:{rows:[
+    {n:'LCAO bonding MO',e:'ψ_b  =  (φ_A + φ_B) / √(2 + 2S)',c:'S = overlap integral'},
+    {n:'Bond order',e:'BO  =  (N_b − N_a) / 2'},
+    {sep:1},
+    {n:'Arrhenius',e:'k  =  A · exp(−E_a / RT)'},
+    {sep:1},
+    {n:'Hohenberg-Kohn',e:'E[ρ]  =  T[ρ] + V_ne[ρ] + J[ρ] + E_xc[ρ]'},
+    {n:'Kohn-Sham',e:'[−½∇² + v_eff(r)] ψ_i  =  ε_i ψ_i'},
+   ]},sim:'chem'},
+ }},
+
+ // ── ASTRONOMY ─────────────────────────────────────────────────────
+{id:'astro',group:'🌌 Astronomy',emoji:'🌌',color:'#7c3aed',light:'#f5f3ff',
+ title:'Stars & The Universe',teaser:'A star is a nuclear furnace 700,000 km across. How are they born, and what happens when they die?',chips:['Stars','Big Bang','Spacetime'],
+ lvls:{
+  junior:{icon:'⭐',title:'Suns, supernovas and the story of everything!',
+   body:`<p>Look up at the night sky. Every single star you can see is a sun — a colossal ball of hot glowing gas, held together by its own gravity and blazing with nuclear fusion. Our Sun is so large that one million Earths would fit inside it. And it's actually a fairly average-sized star!</p>
+<p>Stars are born inside giant clouds of gas and dust called <strong>nebulae</strong>. Gravity slowly squeezes the cloud tighter and tighter until the centre becomes so incredibly hot that atoms start fusing together — and a star switches on! This is the same process as a hydrogen bomb, happening continuously for billions of years.</p>
+<p>Eventually, a star runs out of fuel. Small stars like our Sun will slowly expand into a <strong>red giant</strong> and then gently puff out a beautiful cloud — a planetary nebula — leaving behind a tiny dense white dwarf. But massive stars go out with a bang: a <strong>supernova</strong> so bright it can outshine an entire galaxy for weeks. The explosion scatters all the atoms made inside the star — including the iron in your blood and the calcium in your bones — across space to build new worlds.</p>`,
+   facts:[{e:'☀️',t:'Our Sun fuses 620 million tonnes of hydrogen every second — and has enough fuel for another 5 billion years.'},{e:'💥',t:'A supernova releases more energy in a few seconds than the Sun will emit in its entire 10-billion-year lifetime.'},{e:'⭐',t:'The nearest star (Proxima Centauri) is 4.24 light-years away — at the speed of light, you\'d arrive in 4.24 years!'}],
+   formula:null,sim:'astro'},
+  student:{icon:'🔭',title:'Stellar structure, the H-R Diagram, and nucleosynthesis',
+   body:`<p>A star is in <strong>hydrostatic equilibrium</strong>: outward pressure (radiation + gas) exactly balances inward gravitational compression. For a star of mass M, luminosity scales as <span class="mk">L ∝ M⁴</span> — a star twice as massive burns 16× more brightly and lives only 1/8 as long. The Sun will spend ~10 Gyr on the main sequence; a 10M_☉ star only ~30 Myr.</p>
+<p>The <strong>Hertzsprung-Russell (H-R) Diagram</strong> plots luminosity vs surface temperature. The main sequence is a diagonal band from cool red dwarfs to hot blue giants. A star's colour reveals surface temperature via Wien's law: <span class="mk">λ_max = b/T</span> (b = 2.898×10⁻³ m·K). Red giants, white dwarfs, and supergiants occupy distinct regions off the main sequence.</p>
+<p><strong>Stellar nucleosynthesis</strong>: the Big Bang produced H, He, and trace Li. Stars fuse H→He on the main sequence (pp chain or CNO cycle). In red giant cores, triple-alpha fusion makes carbon (<span class="mk">3⁴He → ¹²C</span>). Successive burning in massive stars builds up to iron (Fe-56), which has the highest binding energy per nucleon — beyond iron, fusion absorbs energy, triggering core collapse and a <strong>Type II supernova</strong>. Elements heavier than iron are forged by rapid neutron capture (r-process) in supernovae or neutron star mergers.</p>`,
+   facts:[{e:'🪙',t:'Gold and platinum on Earth were made in neutron star collisions — confirmed by gravitational wave event GW170817 (2017).'},{e:'🔵',t:'The most massive known star, R136a1, is ~300 solar masses — so luminous it pushes against the Eddington limit.'},{e:'🌀',t:'Neutron stars are ~20 km across but 1.4 solar masses — a teaspoon of neutron star material would weigh a billion tonnes.'}],
+   formula:{rows:[
+    {n:'Hydrostatic eq.',e:'dP/dr  =  −G · M(r) · ρ / r²'},
+    {n:'Luminosity-mass',e:'L / L_☉  ≈  (M / M_☉)⁴'},
+    {sep:1},
+    {n:'Wien\'s law',e:'λ_max  =  b / T,   b = 2.898×10⁻³ m·K'},
+    {n:'Stefan-Boltzmann',e:'L  =  4π R² · σ · T⁴'},
+    {sep:1},
+    {n:'Triple-alpha',e:'3 ⁴He  →  ¹²C  +  γ  (7.275 MeV)'},
+    {n:'Lifetime',e:'τ  ≈  M / L  ∝  M⁻³'},
+   ]},sim:'astro'},
+  scholar:{icon:'∞',title:'General Relativity, black holes, and the large-scale structure of the universe',
+   body:`<p>When a stellar core exceeding ~3M_☉ collapses, no known force halts the implosion; spacetime curvature diverges at a <em>singularity</em> concealed behind an <strong>event horizon</strong> at the Schwarzschild radius <span class="mk">r_S = 2GM/c²</span>. Inside r_S, the future lightcone points inward — escape is causally forbidden. Hawking (1974) showed quantum field theory near the horizon implies thermal emission at temperature <span class="mk">T_H = ℏc³/(8πGMk_B)</span>, causing black holes to slowly evaporate — an unresolved paradox (information loss problem).</p>
+<p>The universe is described by the <strong>ΛCDM model</strong>: a flat expanding spacetime whose dynamics follow the <strong>Friedmann equations</strong>. The Hubble parameter <span class="mk">H(z) = H_0√[Ω_m(1+z)³ + Ω_r(1+z)⁴ + Ω_Λ]</span> encodes matter (Ω_m ≈ 0.31), radiation (Ω_r ≈ 9×10⁻⁵), and dark energy (Ω_Λ ≈ 0.69). The Hubble tension — H_0 = 67 km/s/Mpc from CMB vs 73 from the distance ladder — is one of the sharpest open problems in cosmology.</p>
+<p>The <strong>Cosmic Microwave Background (CMB)</strong> is the thermal relic of last scattering at z ≈ 1100 (~380,000 yr after the Big Bang). Temperature anisotropies δT/T ∼ 10⁻⁵ encode the primordial power spectrum of quantum fluctuations amplified during inflation. The angular power spectrum C_ℓ measured by Planck constrains all cosmological parameters simultaneously: acoustic peak positions confirm flatness; peak heights constrain baryon density; peak spacing gives H_0.</p>`,
+   facts:[{e:'🌑',t:'The first image of a black hole (M87*, 2019) matched GR predictions precisely — confirming the photon ring and shadow size.'},{e:'🔭',t:'JWST has observed galaxies at z > 13, corresponding to light emitted just 320 million years after the Big Bang.'},{e:'🌌',t:'Dark matter (27% of the universe\'s energy) has never been directly detected as a particle, despite overwhelming gravitational evidence.'}],
+   formula:{rows:[
+    {n:'Schwarzschild radius',e:'r_S  =  2GM/c²',c:'event horizon'},
+    {n:'Hawking temperature',e:'T_H  =  ℏc³ / (8πGMk_B)'},
+    {sep:1},
+    {n:'Friedmann eq.',e:'H²  =  (8πG/3)ρ  −  k/a²  +  Λ/3'},
+    {n:'Hubble law',e:'v  =  H_0 · d   (H_0 ≈ 70 km/s/Mpc)'},
+    {sep:1},
+    {n:'CMB temperature',e:'T_0  =  2.725  K'},
+    {n:'Last scattering',e:'z_*  ≈  1100,   t_*  ≈  380,000  yr'},
+   ]},sim:'astro'},
+ }},
+
+ // ── NEUROSCIENCE ──────────────────────────────────────────────────
+{id:'neuro',group:'🧠 Neuroscience',emoji:'🧠',color:'#db2777',light:'#fdf2f8',
+ title:'The Brain & Neurons',teaser:'86 billion neurons, 100 trillion connections — how does electrochemical noise become thought, memory, and consciousness?',chips:['Neurons','Synapses','Cognition'],
+ lvls:{
+  junior:{icon:'⚡',title:'Your brain: the universe\'s most amazing computer!',
+   body:`<p>Inside your skull sits the most complex object in the known universe — your <strong>brain</strong>. It weighs about 1.4 kg but contains roughly <em>86 billion</em> nerve cells called <strong>neurons</strong>. Each neuron can connect to thousands of others, creating up to 100 trillion connections — more than the number of stars in the Milky Way galaxy!</p>
+<p>Neurons communicate by sending tiny electrical pulses called <strong>action potentials</strong>. When you touch something hot, neurons in your hand fire a signal to your brain in milliseconds. When you think of a word, millions of neurons fire in a carefully orchestrated pattern. When you learn something new — like riding a bike — the connections between specific neurons physically strengthen, and that\'s literally what a memory is.</p>
+<p>Your brain never truly switches off. Even while you sleep, it replays the day\'s events, strengthens important memories, clears out waste products, and prepares you for tomorrow. Dreams are thought to be part of this nightly maintenance. In the simulation below, you can watch neurons fire and send signals to each other in a simple network — just like the real thing!</p>`,
+   facts:[{e:'⚡',t:'A single neuron can fire up to 1,000 times per second — sending electrical signals at up to 120 metres per second along the fastest fibres.'},{e:'💤',t:'During deep sleep, the brain flushes out toxic waste products through the glymphatic system — a kind of nightly brain-wash.'},{e:'🎸',t:'Playing a musical instrument uses more of the brain simultaneously than almost any other activity — like a full-body workout for neurons.'}],
+   formula:null,sim:'neuro'},
+  student:{icon:'🔬',title:'Action potentials, synaptic transmission, and neural coding',
+   body:`<p>The neuron\'s resting membrane potential is approximately −70 mV (inside negative) maintained by Na⁺/K⁺-ATPase pumps and selective ion channels. An <strong>action potential</strong> is triggered when depolarisation reaches the threshold (~−55 mV): voltage-gated Na⁺ channels open, driving the membrane to +40 mV; they then inactivate while K⁺ channels open, repolarising the cell. The <strong>all-or-none law</strong> means APs are stereotyped — information is encoded in firing <em>rate</em> and <em>timing</em>, not amplitude.</p>
+<p>At the <strong>synapse</strong>, an AP arriving at the presynaptic terminal triggers Ca²⁺ influx via voltage-gated channels, causing synaptic vesicles to fuse and release neurotransmitter (e.g. glutamate, GABA) into the synaptic cleft (~20 nm wide). Neurotransmitter binds postsynaptic receptors: ionotropic receptors (AMPA, NMDA, GABA_A) open ion channels directly; metabotropic receptors (mGluR, GABA_B) act via G-protein cascades. NMDA receptors are doubly gated (voltage + ligand) and are central to <strong>long-term potentiation (LTP)</strong> — the synaptic mechanism of learning and memory.</p>
+<p><strong>LTP</strong> requires coincident pre- and postsynaptic activity (Hebb\'s rule: "neurons that fire together, wire together"). NMDA receptor activation at depolarised potentials causes Ca²⁺ influx, activating CaMKII, which phosphorylates AMPA receptors and inserts new ones, strengthening the synapse. This is the molecular basis of <strong>synaptic plasticity</strong> — the physical substrate of memory formation.</p>`,
+   facts:[{e:'🔵',t:'The NMDA receptor is called a "coincidence detector" — it only opens when both the presynaptic cell fires AND the postsynaptic cell is already active.'},{e:'🌿',t:'Neurogenesis — the birth of new neurons — occurs in the adult hippocampus and is enhanced by exercise, sleep, and novelty.'},{e:'🎯',t:'Dopamine does not signal "pleasure" directly — it signals prediction error: the difference between expected and actual reward.'}],
+   formula:{rows:[
+    {n:'Nernst equation',e:'E_ion  =  (RT/zF) · ln([X]_out / [X]_in)'},
+    {n:'Resting potential',e:'V_rest  ≈  −70 mV   (Na⁺/K⁺ pump)'},
+    {sep:1},
+    {n:'Goldman equation',e:'V_m  =  (RT/F) · ln( P_K[K⁺]_o + P_Na[Na⁺]_o + P_Cl[Cl⁻]_i ) / (...)'},
+    {n:'Threshold',e:'V_threshold  ≈  −55 mV'},
+    {sep:1},
+    {n:'Hebb\'s rule',e:'"Neurons that fire together, wire together"'},
+    {n:'LTP induction',e:'NMDA Ca²⁺ influx  →  CaMKII  →  AMPA insertion'},
+   ]},sim:'neuro'},
+  scholar:{icon:'∂',title:'Computational neuroscience: Hodgkin-Huxley, neural field theory, and the connectome',
+   body:`<p>The <strong>Hodgkin-Huxley model</strong> (1952, Nobel Prize 1963) describes the action potential as a set of coupled nonlinear ODEs: <span class="mk">C_m dV/dt = −g_Na·m³h(V−E_Na) − g_K·n⁴(V−E_K) − g_L(V−E_L) + I</span>, where m, h, n are gating variables with voltage-dependent kinetics. The model predicts AP shape, refractory period, and threshold with quantitative accuracy. It remains the foundation of all conductance-based neuron models. The FitzHugh-Nagumo equations are a 2D reduction capturing the qualitative phase-plane structure (nullclines, limit cycle) at lower computational cost.</p>
+<p>At the population level, <strong>neural field theory</strong> describes spatially extended neural tissue via integro-differential equations: <span class="mk">τ ∂u(x,t)/∂t = −u + ∫w(x−y)F[u(y,t)]dy + I(x,t)</span>, where u is local mean activity, w is the synaptic weight kernel (typically Mexican-hat: local excitation, lateral inhibition), and F is a sigmoidal firing-rate function. Spatially periodic activity patterns — <em>Turing-like instabilities</em> — arise when the spatial Fourier transform of w has a maximum at non-zero wavenumber, potentially explaining cortical columns, working memory bump attractors, and grid cell periodicity in entorhinal cortex.</p>
+<p>The <strong>Human Connectome Project</strong> aims to map all ~100 trillion synaptic connections in the human brain. The only complete connectome so far is C. elegans (302 neurons, 7,000 synapses, published 1986 by White et al.). For the human cortex, electron microscopy of a 1 mm³ cube yields ~130 TB of image data (H01 dataset, Google/Harvard 2021); graph-theoretic analysis reveals small-world topology (high clustering, short path lengths), rich-club organisation (highly connected hub regions), and hierarchical modular structure. These properties are disrupted in Alzheimer\'s disease, schizophrenia, and autism spectrum disorder.</p>`,
+   facts:[{e:'🔬',t:'A 1 mm³ cube of human cortex contains ~57,000 cells, ~230 mm of blood vessels, and ~1.5 km of axons — all in a volume smaller than a grain of sand.'},{e:'🌐',t:'The human brain operates at roughly 20 W — equivalent to a dim light bulb — yet outperforms any existing computer on pattern recognition tasks.'},{e:'💡',t:'Hebbian plasticity, spike-timing-dependent plasticity (STDP), and the backpropagation algorithm in deep learning are all formally equivalent under certain conditions.'}],
+   formula:{rows:[
+    {n:'Hodgkin-Huxley',e:'C_m dV/dt  =  −g_Na m³h(V−E_Na) − g_K n⁴(V−E_K) − g_L(V−E_L) + I'},
+    {n:'Gating variable',e:'dm/dt  =  α_m(V)(1−m) − β_m(V)·m'},
+    {sep:1},
+    {n:'Neural field eq.',e:'τ ∂u/∂t  =  −u  +  ∫ w(x−y)·F[u(y)]dy  +  I'},
+    {n:'Turing instability',e:'ŵ(k*)  >  0  for some  k* ≠ 0'},
+    {sep:1},
+    {n:'Integrate-and-fire',e:'C dV/dt  =  −(V−V_rest)/R  +  I   (fire when V ≥ V_thr)'},
+   ]},sim:'neuro'},
  }},
 
 ]; // end SUBJECTS
@@ -843,15 +1481,28 @@ function getSimWidth(container){
 }
 
 function buildSim(id,container,color,lvl){
-  const map={orbit:simOrbit,waves:simWaves,thermo:simThermo,prob:simGalton,
-             fractal:simFractal,life:simLife,sorting:simSorting,climate:simClimate};
+  const map={gravity:simOrbit,waves:simWaves,thermo:simThermo,particles:simParticles,
+            prob:simGalton,fractal:simFractal,calculus:simCalculus,graphs:simGraphs,
+            life:simLife,dna:simDNA, evolution:simEvolution, ecosystem:simEcosystem,
+            sorting:simSorting,ml:simML, crypto:simCrypto, complexity:simComplexity,
+            climate:simClimate,tectonics:simTectonics, ocean:simOcean, volcano:simVolcano,
+            chem:simChem,
+            astro:simAstro,
+            neuro:simNeuro
+            };
   if(map[id])map[id](container,color,lvl);
 }
 
 /* ── ORBIT ── */
-function simOrbit(container,color){
+function simOrbit(container,color,lvl){
+  // 1. Fallback colore: se color è null o non è una stringa, usa un default
+  const safeColor = (typeof color === 'string' && color.startsWith('#')) ? color : '#3b82f6';
+  // 2. Inizializzazione sicura dell'oggetto globale
+  window.SIMS = window.SIMS || {};
+  if (window.SIMS.orbit?.raf) cancelAnimationFrame(window.SIMS.orbit.raf);
   const W=getSimWidth(container),H=290;
   const {canvas,ctx}=mkCanvas(container,W,H);
+  if (!canvas.parentNode) container.appendChild(canvas);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const pPer=pill('Period'); const pVel=pill('Speed');
@@ -1366,6 +2017,1680 @@ function simClimate(container,color){
 
     pCO2.set(co2+' ppm');pF.set(dF.toFixed(2)+' W/m²');pDT.set((dT>0?'+':'')+dT.toFixed(2)+'°C');
     S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+/* ── CHEMISTRY SIM ── */
+function simChem(container,color){
+  const W=getSimWidth(container),H=280;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pMol=pill('Molecules'); const pTemp=pill('Temp');
+  pRow.appendChild(pMol.el); pRow.appendChild(pTemp.el);
+  const rT=mkRange(ctrl,'Temperature',1,10,5,1,color);
+  const bReset=mkBtn('↺ Reset',true,color);
+  ctrl.appendChild(bReset);
+  const ATOMS=[];
+  const TYPES=[
+    {sym:'H',r:10,col:'#ef4444'},{sym:'O',r:14,col:'#3b82f6'},
+    {sym:'C',r:13,col:'#6b7280'},{sym:'N',r:12,col:'#8b5cf6'}
+  ];
+  function init(){
+    ATOMS.length=0;
+    for(let i=0;i<28;i++){
+      const t=TYPES[Math.floor(Math.random()*TYPES.length)];
+      ATOMS.push({x:t.r+Math.random()*(W-2*t.r),y:t.r+Math.random()*(H-2*t.r),
+        vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3,
+        r:t.r,sym:t.sym,col:t.col,bond:null});
+    }
+  }
+  bReset.addEventListener('click',init);
+  init();
+  const S=SIMS.chem={raf:null};
+  let molCount=0;
+  function frame(){
+    const spd=rT.val/5;
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a'; ctx.fillRect(0,0,W,H);
+    // draw bonds
+    ATOMS.forEach(a=>{
+      if(a.bond&&a.bond>a){
+        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(a.bond.x,a.bond.y);
+        ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=2;ctx.stroke();
+      }
+    });
+    // move & draw
+    molCount=0;
+    ATOMS.forEach(a=>{
+      a.vx+=((Math.random()-.5)*0.4)*spd;
+      a.vy+=((Math.random()-.5)*0.4)*spd;
+      const maxV=4*spd;
+      const v=Math.sqrt(a.vx*a.vx+a.vy*a.vy);
+      if(v>maxV){a.vx=a.vx/v*maxV;a.vy=a.vy/v*maxV;}
+      if(a.bond){a.x+=(a.bond.x+(a.r+a.bond.r+2)*Math.cos(Math.atan2(a.y-a.bond.y,a.x-a.bond.x))-a.x)*.12+a.vx*.15;}
+      else{a.x+=a.vx;a.y+=a.vy;}
+      if(a.x<a.r){a.x=a.r;a.vx=Math.abs(a.vx);}
+      if(a.x>W-a.r){a.x=W-a.r;a.vx=-Math.abs(a.vx);}
+      if(a.y<a.r){a.y=a.r;a.vy=Math.abs(a.vy);}
+      if(a.y>H-a.r){a.y=H-a.r;a.vy=-Math.abs(a.vy);}
+      // bonding
+      if(!a.bond&&spd<4){
+        for(const b of ATOMS){
+          if(b===a||b.bond)continue;
+          const dx=b.x-a.x,dy=b.y-a.y,d=Math.sqrt(dx*dx+dy*dy);
+          if(d<(a.r+b.r+8)&&Math.random()<0.01*(5-spd)){a.bond=b;b.bond=a;break;}
+        }
+      } else if(a.bond&&Math.random()<0.005*spd){a.bond.bond=null;a.bond=null;}
+      // draw
+      ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+      ctx.fillStyle=a.col;ctx.fill();
+      ctx.fillStyle='#fff';ctx.font=`bold ${Math.round(a.r)}px Nunito,sans-serif`;
+      ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillText(a.sym,a.x,a.y);
+      if(a.bond)molCount++;
+    });
+    pMol.set(Math.floor(molCount/2)+' bonds');
+    pTemp.set(Math.round(rT.val*100)+'K');
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── ASTRONOMY SIM ── */
+function simAstro(container,color){
+  const W=getSimWidth(container),H=300;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pAge=pill('Age'); const pStage=pill('Stage');
+  pRow.appendChild(pAge.el); pRow.appendChild(pStage.el);
+  const rMass=mkRange(ctrl,'Star Mass (solar masses)',0.5,20,1,0.5,color);
+  const bReset=mkBtn('↺ Reset star',true,color);
+  ctrl.appendChild(bReset);
+  let t=0; let tOffset=0;
+  bReset.addEventListener('click',()=>{t=0;tOffset=Date.now();});
+  const S=SIMS.astro={raf:null};
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    // starfield
+    ctx.fillStyle='#000814';ctx.fillRect(0,0,W,H);
+    for(let i=0;i<80;i++){
+      const sx=(i*137.5)%W,sy=(i*97.3)%H;
+      ctx.beginPath();ctx.arc(sx,sy,0.8,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,255,255,${0.3+0.5*(i%3)/3})`;ctx.fill();
+    }
+    t+=0.012;
+    const M=rMass.val;
+    const life=10/Math.pow(M,3); // Gyr
+    const phase=t%(life*4);
+    const frac=phase/(life*4);
+    let stage,radius,r,g,b;
+    if(frac<0.6){stage='Main Sequence';radius=20*Math.pow(M,0.8);r=M>3?100:255;g=M>3?150:220;b=M>3?255:80;}
+    else if(frac<0.75){stage='Red Giant';radius=50+60*(frac-0.6)/0.15;r=220;g=80;b=40;}
+    else if(M>8&&frac<0.85){stage='Supergiant';radius=80;r=255;g=60;b=20;}
+    else if(M>8&&frac<0.88){stage='💥 Supernova!';radius=120*(1-(frac-0.85)/0.03);r=255;g=200;b=100;}
+    else if(M>8){stage=M>15?'Black Hole':'Neutron Star';radius=M>15?0:5;r=20;g=20;b=20;}
+    else if(frac<0.9){stage='Planetary Nebula';radius=55;r=150;g=100;b=220;}
+    else{stage='White Dwarf';radius=8;r=200;g=220;b=255;}
+    const cx=W/2,cy=H/2;
+    // nebula glow for supernova/nebula
+    if(stage.includes('Supernova')||stage==='Planetary Nebula'){
+      const gr=ctx.createRadialGradient(cx,cy,0,cx,cy,radius*1.5);
+      gr.addColorStop(0,`rgba(${r},${g},${b},0.5)`);
+      gr.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.beginPath();ctx.arc(cx,cy,radius*1.5,0,Math.PI*2);ctx.fillStyle=gr;ctx.fill();
+    }
+    if(radius>0){
+      const gr=ctx.createRadialGradient(cx-radius*.3,cy-radius*.3,0,cx,cy,radius);
+      gr.addColorStop(0,`rgb(${Math.min(255,r+60)},${Math.min(255,g+60)},${Math.min(255,b+60)})`);
+      gr.addColorStop(0.6,`rgb(${r},${g},${b})`);
+      gr.addColorStop(1,`rgba(${Math.floor(r*.5)},${Math.floor(g*.5)},${Math.floor(b*.5)},0.3)`);
+      ctx.beginPath();ctx.arc(cx,cy,radius,0,Math.PI*2);ctx.fillStyle=gr;ctx.fill();
+    } else {
+      // accretion disk for BH
+      ctx.beginPath();ctx.ellipse(cx,cy,40,8,0,0,Math.PI*2);
+      ctx.strokeStyle='rgba(255,140,0,0.6)';ctx.lineWidth=3;ctx.stroke();
+      ctx.beginPath();ctx.arc(cx,cy,12,0,Math.PI*2);ctx.fillStyle='#000';ctx.fill();
+    }
+    // corona rays for main sequence
+    if(stage==='Main Sequence'){
+      for(let i=0;i<6;i++){
+        const a=i/6*Math.PI*2+t*0.5;
+        ctx.beginPath();ctx.moveTo(cx+(radius+4)*Math.cos(a),cy+(radius+4)*Math.sin(a));
+        ctx.lineTo(cx+(radius+14)*Math.cos(a),cy+(radius+14)*Math.sin(a));
+        ctx.strokeStyle=`rgba(${r},${g},${b},0.4)`;ctx.lineWidth=2;ctx.stroke();
+      }
+    }
+    // HR position dot
+    const hrX=W*.82, hrY=H*.1, hrW=W*.15, hrH=H*.82;
+    ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;ctx.strokeRect(hrX,hrY,hrW,hrH);
+    ctx.fillStyle='rgba(255,255,255,0.12)';ctx.fillRect(hrX,hrY,hrW,hrH);
+    ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='9px Nunito,sans-serif';ctx.textAlign='center';
+    ctx.fillText('H-R',hrX+hrW/2,hrY+10);
+    const tx=hrX+(1-Math.min(M,20)/20)*hrW;
+    const ty=hrY+Math.min(M/20,1)*hrH;
+    ctx.beginPath();ctx.arc(tx,ty,4,0,Math.PI*2);
+    ctx.fillStyle=`rgb(${r},${g},${b})`;ctx.fill();
+    const ageGyr=(frac*life*4).toFixed(1);
+    pAge.set(ageGyr+' Gyr');pStage.set(stage);
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── CALCULUS SIM ── */
+function simCalculus(container,color){
+  const W=getSimWidth(container),H=280;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pDeriv=pill('f′(x)'); const pInteg=pill('∫f dx');
+  pRow.appendChild(pDeriv.el); pRow.appendChild(pInteg.el);
+  const rX=mkRange(ctrl,'x position',-3,3,0,0.1,color);
+  const rN=mkRange(ctrl,'Riemann rectangles',2,40,8,1,color);
+  const S=SIMS.calculus={raf:null};
+  const PAD=40, PW=W-PAD*2, PH=H-PAD*2;
+  function f(x){return Math.sin(x)+0.4*x;}
+  function df(x){return Math.cos(x)+0.4;}
+  function toC(x,y){return{px:PAD+((x+4)/8)*PW, py:PAD+((2-y)/4)*PH};}
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#f8fafc';ctx.fillRect(0,0,W,H);
+    // axes
+    const o=toC(0,0);
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(PAD,o.py);ctx.lineTo(W-PAD,o.py);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(o.px,PAD);ctx.lineTo(o.px,H-PAD);ctx.stroke();
+    // axis labels
+    ctx.fillStyle='#64748b';ctx.font='11px Nunito,sans-serif';ctx.textAlign='center';
+    for(let xi=-3;xi<=3;xi++){const p=toC(xi,0);ctx.fillText(xi,p.px,p.py+14);}
+    // Riemann rectangles
+    const n=rN.val; const a=-3,b=3, dx=(b-a)/n;
+    let area=0;
+    for(let i=0;i<n;i++){
+      const xi=a+i*dx; const yi=f(xi+dx/2); area+=yi*dx;
+      const p1=toC(xi,Math.max(0,yi)), p2=toC(xi+dx,0);
+      const p1b=toC(xi,Math.min(0,yi));
+      const ph=Math.abs(toC(xi,yi).py-o.py);
+      ctx.fillStyle=yi>=0?'rgba(99,102,241,0.2)':'rgba(239,68,68,0.15)';
+      ctx.fillRect(Math.min(toC(xi,0).px,toC(xi+dx,0).px), Math.min(toC(xi,yi).py,o.py), Math.abs(toC(xi+dx,0).px-toC(xi,0).px), ph);
+      ctx.strokeStyle=yi>=0?'rgba(99,102,241,0.5)':'rgba(239,68,68,0.4)';ctx.lineWidth=0.5;
+      ctx.strokeRect(Math.min(toC(xi,0).px,toC(xi+dx,0).px), Math.min(toC(xi,yi).py,o.py), Math.abs(toC(xi+dx,0).px-toC(xi,0).px), ph);
+    }
+    // function curve
+    ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2.5;
+    for(let xi=-4;xi<=4;xi+=0.05){const p=toC(xi,f(xi));xi===-4?ctx.moveTo(p.px,p.py):ctx.lineTo(p.px,p.py);}
+    ctx.stroke();
+    // tangent line at x
+    const xv=rX.val, yv=f(xv), slope=df(xv);
+    const p0=toC(xv,yv);
+    ctx.beginPath();ctx.strokeStyle='#f59e0b';ctx.lineWidth=2;ctx.setLineDash([6,3]);
+    const x1=xv-1.5,x2=xv+1.5;
+    const p1=toC(x1,yv+slope*(x1-xv)), p2=toC(x2,yv+slope*(x2-xv));
+    ctx.moveTo(p1.px,p1.py);ctx.lineTo(p2.px,p2.py);ctx.stroke();ctx.setLineDash([]);
+    // point
+    ctx.beginPath();ctx.arc(p0.px,p0.py,6,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
+    // labels
+    ctx.fillStyle=color;ctx.font='bold 12px Nunito,sans-serif';ctx.textAlign='left';
+    ctx.fillText('f(x) = sin(x) + 0.4x',PAD+4,PAD+16);
+    ctx.fillStyle='#f59e0b';ctx.fillText('tangent at x='+xv.toFixed(1),PAD+4,PAD+30);
+    pDeriv.set(slope.toFixed(3));pInteg.set(area.toFixed(3));
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── NEUROSCIENCE SIM ── */
+function simNeuro(container,color){
+  const W=getSimWidth(container),H=290;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pFires=pill('Firing rate'); const pPot=pill('Potential');
+  pRow.appendChild(pFires.el); pRow.appendChild(pPot.el);
+  const rStim=mkRange(ctrl,'Stimulus strength',0,10,4,0.5,color);
+  const bFire=mkBtn('⚡ Fire neuron',true,color);
+  ctrl.appendChild(bFire);
+  // Build neuron network
+  const nodes=[];
+  const cx=W/2,cy=H/2-10;
+  const positions=[
+    {x:cx,y:60,lbl:'Input'},{x:cx-100,y:cy,lbl:'A'},{x:cx+100,y:cy,lbl:'B'},
+    {x:cx-50,y:cy+100,lbl:'C'},{x:cx+50,y:cy+100,lbl:'D'},{x:cx,y:cy+185,lbl:'Output'}
+  ];
+  const edges=[[0,1],[0,2],[1,3],[2,3],[1,4],[2,4],[3,5],[4,5]];
+  positions.forEach((p,i)=>nodes.push({...p,v:-70,fired:0,t:0}));
+  let fireCount=0, totalFires=0;
+  bFire.addEventListener('click',()=>{nodes[0].v=40;nodes[0].fired=1;nodes[0].t=0;totalFires++;});
+  const S=SIMS.neuro={raf:null};
+  let t=0;
+  // auto-fire from stimulus
+  let lastAuto=0;
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
+    t++;
+    const stim=rStim.val;
+    // auto fire
+    if(t-lastAuto > Math.max(5,60-stim*5)){
+      if(Math.random()<stim/12){nodes[0].v=40;nodes[0].fired=1;nodes[0].t=0;totalFires++;lastAuto=t;}
+    }
+    // propagate
+    edges.forEach(([a,b])=>{
+      if(nodes[a].fired===1&&nodes[a].t===3){
+        nodes[b].v+=18*stim/5;
+        if(nodes[b].v>-55){nodes[b].v=40;nodes[b].fired=1;nodes[b].t=0;totalFires++;}
+      }
+    });
+    // update
+    nodes.forEach(n=>{
+      if(n.fired){n.t++;if(n.t>8){n.fired=0;n.v=-70;}}
+      else if(n.v>-70){n.v=Math.max(-70,n.v-3);}
+    });
+    // draw edges
+    edges.forEach(([a,b])=>{
+      const na=nodes[a],nb=nodes[b];
+      const active=na.fired||nb.fired;
+      ctx.beginPath();ctx.moveTo(na.x,na.y);ctx.lineTo(nb.x,nb.y);
+      ctx.strokeStyle=active?`rgba(${active?'255,200,50':'100,100,150'},0.8)`:'rgba(100,120,200,0.25)';
+      ctx.lineWidth=active?2.5:1;ctx.stroke();
+      // signal dot
+      if(na.fired&&na.t>=0&&na.t<=6){
+        const prog=na.t/6;
+        const sx=na.x+(nb.x-na.x)*prog,sy=na.y+(nb.y-na.y)*prog;
+        ctx.beginPath();ctx.arc(sx,sy,4,0,Math.PI*2);
+        ctx.fillStyle='#fbbf24';ctx.fill();
+      }
+    });
+    // draw nodes
+    nodes.forEach((n,i)=>{
+      const glow=n.fired?30:0;
+      const frac=Math.max(0,(n.v+70)/110);
+      const rc=n.fired?[255,200,50]:[Math.round(50+frac*150),Math.round(100+frac*50),Math.round(220-frac*80)];
+      if(n.fired){
+        ctx.beginPath();ctx.arc(n.x,n.y,26,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,200,50,0.2)`;ctx.fill();
+      }
+      ctx.beginPath();ctx.arc(n.x,n.y,18,0,Math.PI*2);
+      ctx.fillStyle=`rgb(${rc[0]},${rc[1]},${rc[2]})`;ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.fillStyle='#fff';ctx.font='bold 10px Nunito,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillText(n.lbl,n.x,n.y);
+      // membrane potential bar
+      const bx=n.x+22,by=n.y-12,bh=24,bw=6;
+      ctx.fillStyle='rgba(255,255,255,0.1)';ctx.fillRect(bx,by,bw,bh);
+      const fillH=bh*Math.max(0,Math.min(1,(n.v+70)/110));
+      ctx.fillStyle=n.fired?'#fbbf24':'#60a5fa';
+      ctx.fillRect(bx,by+bh-fillH,bw,fillH);
+    });
+    pFires.set(Math.round(totalFires/(t/60+0.01))+' Hz');
+    pPot.set(nodes[5].v.toFixed(0)+' mV');
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── PARTICLE PHYSICS SIM ── */
+function simParticles(container,color){
+  const W=getSimWidth(container),H=290;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pColl=pill('Collisions'); const pEnergy=pill('Energy');
+  pRow.appendChild(pColl.el); pRow.appendChild(pEnergy.el);
+  const rE=mkRange(ctrl,'Beam energy (TeV)',0.5,14,7,0.5,color);
+  const bCollide=mkBtn('💥 Collide!',true,color);
+  ctrl.appendChild(bCollide);
+  const particles=[];
+  let collisions=0; let t=0;
+  const QUARKS=[{n:'u',c:'#ef4444'},{n:'d',c:'#3b82f6'},{n:'s',c:'#10b981'},
+                {n:'g',c:'#f59e0b'},{n:'e⁻',c:'#8b5cf6'},{n:'γ',c:'#fbbf24'},
+                {n:'ν',c:'rgba(200,200,255,0.8)'},{n:'H',c:'#ec4899'}];
+  function spawnDecay(cx,cy,energy){
+    const n=4+Math.floor(energy/2);
+    for(let i=0;i<n;i++){
+      const a=Math.random()*Math.PI*2;
+      const spd=2+Math.random()*4*(energy/7);
+      const q=QUARKS[Math.floor(Math.random()*QUARKS.length)];
+      particles.push({x:cx,y:cy,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
+        r:q.n==='H'?8:4+Math.random()*3,col:q.c,sym:q.n,life:80+Math.random()*60,age:0});
+    }
+    collisions++;
+  }
+  // initial particles
+  function init(){
+    particles.length=0;
+    for(let i=0;i<30;i++){
+      const q=QUARKS[Math.floor(Math.random()*5)];
+      particles.push({x:Math.random()*W,y:Math.random()*H,
+        vx:(Math.random()-.5)*1.5,vy:(Math.random()-.5)*1.5,
+        r:4,col:q.c,sym:q.n,life:999,age:0});
+    }
+  }
+  bCollide.addEventListener('click',()=>{
+    spawnDecay(W/2,H/2,rE.val);
+    // two beams
+    particles.push({x:0,y:H/2,vx:18,vy:0,r:6,col:'rgba(99,102,241,0.9)',sym:'p',life:30,age:0});
+    particles.push({x:W,y:H/2,vx:-18,vy:0,r:6,col:'rgba(239,68,68,0.9)',sym:'p̄',life:30,age:0});
+  });
+  init();
+  const S=SIMS.particles={raf:null};
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#020617';ctx.fillRect(0,0,W,H);
+    // detector rings
+    const cx=W/2,cy=H/2;
+    [60,100,140].forEach((r,i)=>{
+      ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(30,58,138,${0.2+i*.1})`;ctx.lineWidth=8;ctx.stroke();
+    });
+    t++;
+    // update & draw particles
+    for(let i=particles.length-1;i>=0;i--){
+      const p=particles[i];
+      p.x+=p.vx; p.y+=p.vy;
+      p.vx*=0.99; p.vy*=0.99;
+      p.age++;
+      if(p.age>p.life||p.x<-20||p.x>W+20||p.y<-20||p.y>H+20){particles.splice(i,1);continue;}
+      const alpha=Math.min(1,(p.life-p.age)/20);
+      // trail
+      ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x-p.vx*4,p.y-p.vy*4);
+      ctx.strokeStyle=p.col.replace(')',`,${alpha*.5})`).replace('rgb','rgba');
+      ctx.lineWidth=1.5;ctx.stroke();
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=p.col;ctx.globalAlpha=alpha;ctx.fill();ctx.globalAlpha=1;
+      ctx.fillStyle='rgba(255,255,255,0.9)';ctx.font=`bold ${p.r+1}px Nunito,sans-serif`;
+      ctx.textAlign='center';ctx.textBaseline='middle';ctx.globalAlpha=alpha;
+      ctx.fillText(p.sym,p.x,p.y);ctx.globalAlpha=1;
+    }
+    // auto random decay
+    if(t%120===0) spawnDecay(cx+(Math.random()-.5)*40,cy+(Math.random()-.5)*40,rE.val*.3);
+    pColl.set(collisions);pEnergy.set(rE.val+' TeV');
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── GRAPH THEORY SIM ── */
+function simGraphs(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pInfected = pill('Reached'); const pSteps = pill('Steps'); const pClustr = pill('Hubs');
+  pRow.appendChild(pInfected.el); pRow.appendChild(pSteps.el); pRow.appendChild(pClustr.el);
+
+  const rNodes = mkRange(ctrl, 'Nodes', 10, 40, 22, 1, color);
+  const rHubs  = mkRange(ctrl, 'Hub connections', 1, 6, 3, 1, color);
+  const bSpread = mkBtn('▶ Spread signal', true, color);
+  const bReset  = mkBtn('↺ New graph');
+  ctrl.appendChild(bSpread); ctrl.appendChild(bReset);
+
+  let nodes = [], edges = [], spreading = false, step = 0, timer = null;
+
+  function buildGraph() {
+    spreading = false; step = 0;
+    if (timer) { clearInterval(timer); timer = null; }
+    nodes = []; edges = [];
+    const n = rNodes.val;
+    const margin = 36;
+    for (let i = 0; i < n; i++) {
+      nodes.push({
+        x: margin + Math.random() * (W - margin * 2),
+        y: margin + Math.random() * (H - margin * 2),
+        state: 'S', // S=susceptible I=infected R=recovered
+        deg: 0, isHub: false
+      });
+    }
+    // Barabási-Albert preferential attachment
+    const hubK = rHubs.val;
+    const edgeSet = new Set();
+    function addEdge(a, b) {
+      if (a === b) return;
+      const key = Math.min(a,b) + '_' + Math.max(a,b);
+      if (!edgeSet.has(key)) { edgeSet.add(key); edges.push([a, b]); nodes[a].deg++; nodes[b].deg++; }
+    }
+    // seed with small clique
+    for (let i = 0; i < Math.min(4, n); i++)
+      for (let j = i+1; j < Math.min(4, n); j++) addEdge(i, j);
+    // attach new nodes preferentially
+    for (let i = 4; i < n; i++) {
+      const totalDeg = nodes.slice(0, i).reduce((s, nd) => s + nd.deg + 1, 0);
+      const targets = new Set();
+      let attempts = 0;
+      while (targets.size < Math.min(hubK, i) && attempts < 200) {
+        let r = Math.random() * totalDeg, cum = 0;
+        for (let j = 0; j < i; j++) {
+          cum += nodes[j].deg + 1;
+          if (r <= cum) { targets.add(j); break; }
+        }
+        attempts++;
+      }
+      targets.forEach(j => addEdge(i, j));
+    }
+    // mark hubs (top 15% by degree)
+    const sorted = [...nodes].sort((a, b) => b.deg - a.deg);
+    const hubThresh = sorted[Math.floor(n * 0.15)].deg;
+    nodes.forEach(nd => { nd.isHub = nd.deg >= hubThresh && hubThresh > 0; });
+    pInfected.set('0 / ' + n); pSteps.set(0); pClustr.set(nodes.filter(nd => nd.isHub).length);
+  }
+
+  function startSpread() {
+    if (spreading) return;
+    nodes.forEach(nd => nd.state = 'S');
+    // infect a random hub if possible, else random node
+    const hubs = nodes.filter(nd => nd.isHub);
+    const seed = hubs.length ? hubs[Math.floor(Math.random() * hubs.length)] : nodes[Math.floor(Math.random() * nodes.length)];
+    seed.state = 'I';
+    step = 0; spreading = true;
+    timer = setInterval(() => {
+      step++;
+      // BFS-style spread: each infected node tries to infect neighbours
+      const newlyInfected = [];
+      edges.forEach(([a, b]) => {
+        if (nodes[a].state === 'I' && nodes[b].state === 'S' && Math.random() < 0.55) newlyInfected.push(b);
+        if (nodes[b].state === 'I' && nodes[a].state === 'S' && Math.random() < 0.55) newlyInfected.push(a);
+      });
+      newlyInfected.forEach(i => nodes[i].state = 'I');
+      // some infected → recovered
+      nodes.forEach(nd => { if (nd.state === 'I' && Math.random() < 0.18) nd.state = 'R'; });
+      const inf = nodes.filter(nd => nd.state === 'I').length;
+      const rec = nodes.filter(nd => nd.state === 'R').length;
+      pInfected.set((inf + rec) + ' / ' + nodes.length);
+      pSteps.set(step);
+      if (inf === 0) { spreading = false; clearInterval(timer); timer = null; }
+    }, 320);
+  }
+
+  bSpread.addEventListener('click', startSpread);
+  bReset.addEventListener('click', buildGraph);
+  rNodes.inp.addEventListener('input', buildGraph);
+  rHubs.inp.addEventListener('input', buildGraph);
+  buildGraph();
+
+  // ── physics layout (force-directed) ──────────────────────────────
+  const vx = [], vy = [];
+  nodes.forEach(() => { vx.push(0); vy.push(0); });
+
+  const S = SIMS.graphs = { raf: null };
+
+  function frame() {
+    // force-directed layout (runs every frame for smooth settling)
+    const k = 60, rep = 2800, damp = 0.82;
+    nodes.forEach((a, i) => {
+      let fx = 0, fy = 0;
+      // repulsion
+      nodes.forEach((b, j) => {
+        if (i === j) return;
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const d = Math.sqrt(dx * dx + dy * dy) + 0.1;
+        const f = rep / (d * d);
+        fx += (dx / d) * f; fy += (dy / d) * f;
+      });
+      // attraction along edges
+      edges.forEach(([p, q]) => {
+        const other = p === i ? q : q === i ? p : -1;
+        if (other < 0) return;
+        const dx = nodes[other].x - a.x, dy = nodes[other].y - a.y;
+        const d = Math.sqrt(dx * dx + dy * dy) + 0.1;
+        const f = (d - k) * 0.03;
+        fx += (dx / d) * f; fy += (dy / d) * f;
+      });
+      // centre pull
+      fx += (W / 2 - a.x) * 0.004; fy += (H / 2 - a.y) * 0.004;
+      vx[i] = (vx[i] + fx) * damp; vy[i] = (vy[i] + fy) * damp;
+    });
+    nodes.forEach((nd, i) => {
+      nd.x = Math.max(24, Math.min(W - 24, nd.x + vx[i]));
+      nd.y = Math.max(24, Math.min(H - 24, nd.y + vy[i]));
+    });
+
+    // ── draw ─────────────────────────────────────────────────────
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+
+    // edges
+    edges.forEach(([a, b]) => {
+      const na = nodes[a], nb = nodes[b];
+      const active = na.state !== 'S' || nb.state !== 'S';
+      ctx.beginPath(); ctx.moveTo(na.x, na.y); ctx.lineTo(nb.x, nb.y);
+      ctx.strokeStyle = active ? 'rgba(251,191,36,0.35)' : 'rgba(148,163,184,0.18)';
+      ctx.lineWidth = active ? 1.8 : 1;
+      ctx.stroke();
+    });
+
+    // nodes
+    nodes.forEach(nd => {
+      const r = nd.isHub ? 13 : 8;
+      // glow for hubs
+      if (nd.isHub) {
+        ctx.beginPath(); ctx.arc(nd.x, nd.y, r + 6, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(8,145,178,0.18)'; ctx.fill();
+      }
+      const fill =
+        nd.state === 'I' ? '#f59e0b' :
+        nd.state === 'R' ? '#10b981' :
+        nd.isHub ? color : '#475569';
+      ctx.beginPath(); ctx.arc(nd.x, nd.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = fill; ctx.fill();
+      ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 1.2; ctx.stroke();
+      // degree label on hubs
+      if (nd.isHub) {
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 9px Nunito,sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(nd.deg, nd.x, nd.y);
+      }
+    });
+
+    // legend
+    const leg = [['#f59e0b','Infected'],['#10b981','Recovered'],['#475569','Susceptible'],[color,'Hub']];
+    leg.forEach(([c, lbl], i) => {
+      ctx.beginPath(); ctx.arc(14, 14 + i * 18, 5, 0, Math.PI * 2);
+      ctx.fillStyle = c; ctx.fill();
+      ctx.fillStyle = 'rgba(255,255,255,0.65)'; ctx.font = '10px Nunito,sans-serif';
+      ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      ctx.fillText(lbl, 24, 14 + i * 18);
+    });
+
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── DNA SIM ── */
+function simDNA(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pPairs = pill('Base pairs copied'); const pErrors = pill('Mutations');
+  pRow.appendChild(pPairs.el); pRow.appendChild(pErrors.el);
+  const rSpeed = mkRange(ctrl, 'Replication speed', 1, 8, 3, 1, color);
+  const bReset = mkBtn('↺ Reset', true, color);
+  ctrl.appendChild(bReset);
+
+  const BASES = ['A','T','C','G'];
+  const PAIR  = {A:'T', T:'A', C:'G', G:'C'};
+  const BCOL  = {A:'#ef4444', T:'#3b82f6', C:'#10b981', G:'#f59e0b'};
+  const NSTRANDS = 28;
+  let strand = [], progress = 0, errors = 0, copied = 0;
+
+  function init() {
+    strand = [];
+    for (let i = 0; i < NSTRANDS; i++) {
+      const b = BASES[Math.floor(Math.random() * 4)];
+      strand.push({ base: b, complement: PAIR[b], copied: false, error: false });
+    }
+    progress = 0; errors = 0; copied = 0;
+  }
+  bReset.addEventListener('click', init);
+  init();
+
+  let t = 0;
+  const S = SIMS.dna = { raf: null };
+
+  function frame() {
+    t++;
+    // advance replication fork
+    const spd = rSpeed.val;
+    if (t % Math.max(1, Math.round(8 / spd)) === 0 && progress < NSTRANDS) {
+      // rare mutation
+      if (Math.random() < 0.04) { strand[progress].error = true; errors++; }
+      strand[progress].copied = true;
+      progress++;
+      copied++;
+    }
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+
+    const cx = W / 2;
+    const yStart = 24, yEnd = H - 24;
+    const slotH = (yEnd - yStart) / NSTRANDS;
+    const helix_amp = 28;
+    const fork = progress / NSTRANDS; // 0..1
+
+    for (let i = 0; i < NSTRANDS; i++) {
+      const y = yStart + i * slotH + slotH / 2;
+      const phase = (i / NSTRANDS) * Math.PI * 4 + t * 0.04;
+      const opened = i < progress;
+      const spread = opened ? 1 : 0;
+
+      // helix strands
+      const xL = cx - helix_amp * Math.cos(phase);
+      const xR = cx + helix_amp * Math.cos(phase);
+
+      // separation (unzipping)
+      const openAmt = opened ? helix_amp * 1.6 : 0;
+      const xL2 = cx - helix_amp * Math.cos(phase) - openAmt;
+      const xR2 = cx + helix_amp * Math.cos(phase) + openAmt;
+
+      const bd = strand[i];
+      const col = BCOL[bd.base];
+      const colC = BCOL[bd.complement];
+
+      if (!opened) {
+        // draw rungs (hydrogen bonds)
+        ctx.beginPath(); ctx.moveTo(xL, y); ctx.lineTo(xR, y);
+        ctx.strokeStyle = 'rgba(255,255,255,0.12)'; ctx.lineWidth = 1; ctx.stroke();
+        // base circles
+        ctx.beginPath(); ctx.arc(xL, y, 7, 0, Math.PI * 2);
+        ctx.fillStyle = col; ctx.fill();
+        ctx.beginPath(); ctx.arc(xR, y, 7, 0, Math.PI * 2);
+        ctx.fillStyle = colC; ctx.fill();
+        // letters
+        ctx.fillStyle = '#fff'; ctx.font = 'bold 8px Nunito,sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(bd.base, xL, y);
+        ctx.fillText(bd.complement, xR, y);
+      } else {
+        // opened — draw new complementary bases appearing
+        const errCol = '#a855f7';
+        // original strands
+        ctx.beginPath(); ctx.arc(xL2, y, 7, 0, Math.PI * 2);
+        ctx.fillStyle = col; ctx.fill();
+        ctx.beginPath(); ctx.arc(xR2, y, 7, 0, Math.PI * 2);
+        ctx.fillStyle = colC; ctx.fill();
+        // new complementary (copy)
+        ctx.beginPath(); ctx.arc(xL2 + 18, y, 6, 0, Math.PI * 2);
+        ctx.fillStyle = bd.error ? errCol : colC; ctx.fill();
+        ctx.beginPath(); ctx.arc(xR2 - 18, y, 6, 0, Math.PI * 2);
+        ctx.fillStyle = bd.error ? errCol : col; ctx.fill();
+        // letters
+        ctx.fillStyle = '#fff'; ctx.font = 'bold 8px Nunito,sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(bd.base, xL2, y);
+        ctx.fillText(bd.complement, xR2, y);
+        ctx.fillText(bd.error ? '?' : bd.complement, xL2 + 18, y);
+        ctx.fillText(bd.error ? '?' : bd.base, xR2 - 18, y);
+        // dashed bond lines
+        ctx.setLineDash([3, 3]);
+        ctx.beginPath(); ctx.moveTo(xL2, y); ctx.lineTo(xL2 + 14, y);
+        ctx.strokeStyle = 'rgba(255,255,255,0.2)'; ctx.lineWidth = 1; ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(xR2, y); ctx.lineTo(xR2 - 14, y);
+        ctx.stroke(); ctx.setLineDash([]);
+      }
+    }
+
+    // replication fork indicator
+    if (progress < NSTRANDS) {
+      const fy = yStart + progress * slotH;
+      ctx.beginPath(); ctx.moveTo(cx - 60, fy); ctx.lineTo(cx + 60, fy);
+      ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2;
+      ctx.setLineDash([4, 4]); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 10px Nunito,sans-serif';
+      ctx.textAlign = 'center'; ctx.fillText('← replication fork →', cx, fy - 6);
+    }
+
+    // reset when done
+    if (progress >= NSTRANDS && t % 140 === 0) init();
+
+    pPairs.set(copied); pErrors.set(errors);
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── EVOLUTION SIM ── */
+function simEvolution(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pGen = pill('Generation'); const pFit = pill('Avg fitness'); const pDiv = pill('Diversity');
+  pRow.appendChild(pGen.el); pRow.appendChild(pFit.el); pRow.appendChild(pDiv.el);
+  const rSel = mkRange(ctrl, 'Selection pressure', 0, 10, 5, 1, color);
+  const rMut = mkRange(ctrl, 'Mutation rate', 0, 10, 3, 1, color);
+  const bReset = mkBtn('↺ Reset', true, color);
+  ctrl.appendChild(bReset);
+
+  // Each individual: hue (trait) + fitness derived from environment optimum
+  const N = 60;
+  let pop = [], gen = 0, envHue = 120; // environment optimum hue (green = forest)
+  let envDrift = 0.3;
+
+  function initPop() {
+    pop = [];
+    gen = 0;
+    for (let i = 0; i < N; i++) {
+      pop.push({ hue: Math.random() * 360, x: 20 + Math.random() * (W - 40), y: 50 + Math.random() * (H - 80), vx: (Math.random() - .5) * .8, vy: (Math.random() - .5) * .8 });
+    }
+  }
+  bReset.addEventListener('click', initPop);
+  initPop();
+
+  function hueDist(a, b) { const d = Math.abs(a - b) % 360; return Math.min(d, 360 - d); }
+  function fitness(ind) { return Math.max(0, 1 - hueDist(ind.hue, envHue) / 180); }
+
+  let frameCount = 0;
+  const S = SIMS.evolution = { raf: null };
+
+  function frame() {
+    frameCount++;
+    ctx.clearRect(0, 0, W, H);
+
+    // environment background gradient
+    const envR = Math.round(Math.sin(envHue * Math.PI / 180) * 40 + 30);
+    const envG = Math.round(Math.cos((envHue - 120) * Math.PI / 180) * 40 + 60);
+    ctx.fillStyle = `hsl(${envHue}, 35%, 14%)`; ctx.fillRect(0, 0, W, H);
+
+    // env label
+    ctx.fillStyle = `hsl(${envHue}, 70%, 70%)`;
+    ctx.font = 'bold 11px Nunito,sans-serif'; ctx.textAlign = 'left';
+    ctx.fillText('Environment optimum:', 10, 18);
+    ctx.beginPath(); ctx.arc(210, 13, 7, 0, Math.PI * 2);
+    ctx.fillStyle = `hsl(${envHue}, 80%, 55%)`; ctx.fill();
+
+    // slowly drift environment
+    envHue = (envHue + envDrift + 360) % 360;
+    if (Math.random() < 0.005) envDrift = (Math.random() - .5) * 1.2;
+
+    // generational update every 38 frames
+    if (frameCount % 38 === 0) {
+      gen++;
+      const sel = rSel.val / 10;
+      const mut = rMut.val / 10;
+      // compute fitnesses
+      const fits = pop.map(fitness);
+      const totalFit = fits.reduce((a, b) => a + b, 0) || 1;
+      // selection: weighted sampling
+      const newPop = [];
+      for (let i = 0; i < N; i++) {
+        let r = Math.random() * totalFit, cum = 0, picked = pop[0];
+        for (let j = 0; j < N; j++) {
+          cum += fits[j] * sel + (1 - sel) * (totalFit / N);
+          if (r <= cum) { picked = pop[j]; break; }
+        }
+        // mutation
+        const newHue = (picked.hue + (Math.random() - .5) * 60 * mut + 360) % 360;
+        newPop.push({ hue: newHue, x: 20 + Math.random() * (W - 40), y: 50 + Math.random() * (H - 80), vx: (Math.random() - .5) * .8, vy: (Math.random() - .5) * .8 });
+      }
+      pop = newPop;
+    }
+
+    // move & draw individuals
+    let totalFit = 0, hues = [];
+    pop.forEach(ind => {
+      ind.x += ind.vx; ind.y += ind.vy;
+      if (ind.x < 14 || ind.x > W - 14) ind.vx *= -1;
+      if (ind.y < 34 || ind.y > H - 14) ind.vy *= -1;
+      const f = fitness(ind);
+      totalFit += f;
+      hues.push(ind.hue);
+      const r = 5 + f * 5;
+      ctx.beginPath(); ctx.arc(ind.x, ind.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = `hsl(${ind.hue}, 80%, ${40 + f * 30}%)`;
+      ctx.globalAlpha = 0.5 + f * 0.5;
+      ctx.fill(); ctx.globalAlpha = 1;
+    });
+
+    // diversity = std dev of hues (circular)
+    const meanHue = hues.reduce((a, b) => a + b, 0) / hues.length;
+    const diversity = Math.sqrt(hues.reduce((s, h) => s + hueDist(h, meanHue) ** 2, 0) / hues.length);
+
+    pGen.set(gen);
+    pFit.set((totalFit / N).toFixed(2));
+    pDiv.set(Math.round(diversity) + '°');
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── ECOSYSTEM SIM ── */
+function simEcosystem(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pPlants = pill('🌿 Plants'); const pHerb = pill('🐇 Herbivores'); const pPred = pill('🦊 Predators');
+  pRow.appendChild(pPlants.el); pRow.appendChild(pHerb.el); pRow.appendChild(pPred.el);
+  const rGrowth = mkRange(ctrl, 'Plant growth rate', 1, 10, 5, 1, color);
+  const rPred = mkRange(ctrl, 'Predator efficiency', 1, 10, 4, 1, color);
+  const bReset = mkBtn('↺ Reset', true, color);
+  ctrl.appendChild(bReset);
+
+  // Agent-based: plants (green), herbivores (orange), predators (red)
+  let agents = [], time = 0;
+
+  function initAgents() {
+    agents = []; time = 0;
+    for (let i = 0; i < 60; i++) agents.push({ type: 'plant', x: Math.random() * W, y: Math.random() * H, energy: 1, age: 0 });
+    for (let i = 0; i < 18; i++) agents.push({ type: 'herb',  x: Math.random() * W, y: Math.random() * H, energy: 8, vx: (Math.random()-.5)*1.4, vy: (Math.random()-.5)*1.4, age: 0 });
+    for (let i = 0; i < 6;  i++) agents.push({ type: 'pred',  x: Math.random() * W, y: Math.random() * H, energy: 12, vx: (Math.random()-.5)*1.8, vy: (Math.random()-.5)*1.8, age: 0 });
+  }
+  bReset.addEventListener('click', initAgents);
+  initAgents();
+
+  const S = SIMS.ecosystem = { raf: null };
+
+  function frame() {
+    time++;
+    ctx.clearRect(0, 0, W, H);
+    // background
+    ctx.fillStyle = '#0a1a0a'; ctx.fillRect(0, 0, W, H);
+
+    const growthR = rGrowth.val / 10;
+    const predEff = rPred.val / 10;
+
+    // spawn new plants
+    if (time % Math.round(18 / growthR) === 0 && agents.filter(a => a.type === 'plant').length < 120) {
+      agents.push({ type: 'plant', x: Math.random() * W, y: Math.random() * H, energy: 1, age: 0 });
+    }
+
+    const toRemove = new Set();
+    const toAdd = [];
+
+    agents.forEach((a, i) => {
+      a.age++;
+      if (a.type === 'plant') {
+        // draw plant
+        const g = Math.min(1, a.age / 60);
+        ctx.beginPath(); ctx.arc(a.x, a.y, 3 + g * 2, 0, Math.PI * 2);
+        ctx.fillStyle = `hsl(120, ${50 + g * 30}%, ${25 + g * 20}%)`; ctx.fill();
+      } else {
+        // move
+        a.vx += (Math.random() - .5) * .3;
+        a.vy += (Math.random() - .5) * .3;
+        const maxV = a.type === 'pred' ? 2.2 : 1.6;
+        const spd = Math.sqrt(a.vx * a.vx + a.vy * a.vy);
+        if (spd > maxV) { a.vx = a.vx / spd * maxV; a.vy = a.vy / spd * maxV; }
+        a.x = (a.x + a.vx + W) % W; a.y = (a.y + a.vy + H) % H;
+        a.energy -= 0.04;
+        if (a.energy <= 0 || a.age > 600) { toRemove.add(i); return; }
+
+        // eat
+        if (a.type === 'herb') {
+          for (let j = 0; j < agents.length; j++) {
+            if (toRemove.has(j)) continue;
+            const b = agents[j];
+            if (b.type !== 'plant') continue;
+            const dx = b.x - a.x, dy = b.y - a.y;
+            if (dx * dx + dy * dy < 100) { a.energy += 4; toRemove.add(j); break; }
+          }
+          if (a.energy > 16 && Math.random() < 0.008) {
+            toAdd.push({ type: 'herb', x: a.x + (Math.random()-.5)*10, y: a.y + (Math.random()-.5)*10, energy: 8, vx: (Math.random()-.5)*1.4, vy: (Math.random()-.5)*1.4, age: 0 });
+            a.energy -= 6;
+          }
+        }
+        if (a.type === 'pred') {
+          for (let j = 0; j < agents.length; j++) {
+            if (toRemove.has(j)) continue;
+            const b = agents[j];
+            if (b.type !== 'herb') continue;
+            const dx = b.x - a.x, dy = b.y - a.y;
+            if (dx * dx + dy * dy < 144) { a.energy += 8 * predEff; toRemove.add(j); break; }
+          }
+          if (a.energy > 20 && Math.random() < 0.006) {
+            toAdd.push({ type: 'pred', x: a.x + (Math.random()-.5)*10, y: a.y + (Math.random()-.5)*10, energy: 12, vx: (Math.random()-.5)*1.8, vy: (Math.random()-.5)*1.8, age: 0 });
+            a.energy -= 10;
+          }
+        }
+
+        // draw animal
+        const r = a.type === 'pred' ? 7 : 5;
+        const fc = a.type === 'pred' ? `hsl(0,75%,${40+a.energy}%)` : `hsl(35,80%,${40+a.energy*.8}%)`;
+        ctx.beginPath(); ctx.arc(a.x, a.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = fc; ctx.fill();
+        // energy bar
+        ctx.fillStyle = 'rgba(255,255,255,0.2)';
+        ctx.fillRect(a.x - r, a.y - r - 4, r * 2, 2);
+        ctx.fillStyle = a.type === 'pred' ? '#ef4444' : '#f59e0b';
+        ctx.fillRect(a.x - r, a.y - r - 4, r * 2 * Math.min(1, a.energy / 20), 2);
+      }
+    });
+
+    // rebuild agents array
+    const newAgents = agents.filter((_, i) => !toRemove.has(i));
+    newAgents.push(...toAdd);
+    agents.length = 0; agents.push(...newAgents);
+
+    const nP = agents.filter(a => a.type === 'plant').length;
+    const nH = agents.filter(a => a.type === 'herb').length;
+    const nPr = agents.filter(a => a.type === 'pred').length;
+
+    pPlants.set(nP); pHerb.set(nH); pPred.set(nPr);
+
+    // trophic collapse warning
+    if (nH === 0 || nPr === 0) {
+      ctx.fillStyle = 'rgba(239,68,68,0.85)'; ctx.font = 'bold 13px Nunito,sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(nH === 0 ? '⚠️ Herbivores extinct — ecosystem collapse!' : '⚠️ Predators gone — herbivore explosion!', W / 2, H / 2);
+    }
+
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── MACHINE LEARNING SIM ── */
+function simML(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pEpoch = pill('Epoch'); const pLoss = pill('Loss'); const pAcc = pill('Accuracy');
+  pRow.appendChild(pEpoch.el); pRow.appendChild(pLoss.el); pRow.appendChild(pAcc.el);
+  const rLR   = mkRange(ctrl, 'Learning rate', 1, 10, 4, 1, color);
+  const rHid  = mkRange(ctrl, 'Hidden units',  2, 12, 5, 1, color);
+  const bReset = mkBtn('↺ Reset', true, color);
+  ctrl.appendChild(bReset);
+
+  // XOR-style dataset: 4 clusters
+  function makeData() {
+    const pts = [];
+    const centres = [[0.25,0.25,0],[0.75,0.75,0],[0.25,0.75,1],[0.75,0.25,1]];
+    centres.forEach(([cx,cy,lbl]) => {
+      for (let i = 0; i < 18; i++)
+        pts.push({ x: cx + (Math.random()-.5)*.28, y: cy + (Math.random()-.5)*.28, lbl });
+    });
+    return pts;
+  }
+
+  // Tiny 2→H→1 network
+  let W1, b1, W2, b2, epoch, loss, data;
+  function sigmoid(z) { return 1/(1+Math.exp(-z)); }
+  function initNet() {
+    const H = rHid.val;
+    W1 = Array.from({length:H}, ()=>[Math.random()*.8-.4, Math.random()*.8-.4]);
+    b1 = Array.from({length:H}, ()=>Math.random()*.4-.2);
+    W2 = Array.from({length:H}, ()=>Math.random()*.8-.4);
+    b2 = [Math.random()*.2-.1];
+    epoch = 0; loss = 1; data = makeData();
+  }
+  bReset.addEventListener('click', initNet);
+  rHid.inp.addEventListener('input', initNet);
+  initNet();
+
+  function forward(x, y) {
+    const H = rHid.val;
+    const h = W1.map((w,i) => sigmoid(w[0]*x + w[1]*y + b1[i]));
+    const o = sigmoid(h.reduce((s,hi,i) => s + W2[i]*hi, b2[0]));
+    return { h, o };
+  }
+
+  function trainStep() {
+    const lr = rLR.val * 0.015;
+    const H = rHid.val;
+    let totalLoss = 0;
+    // mini-batch = full data
+    data.forEach(pt => {
+      const { h, o } = forward(pt.x, pt.y);
+      const err = o - pt.lbl;
+      totalLoss += err * err;
+      // output layer gradient
+      const dO = err * o * (1-o);
+      // hidden layer gradients
+      const dH = W2.map((w,i) => dO * w * h[i] * (1-h[i]));
+      // update output weights
+      W2 = W2.map((w,i) => w - lr * dO * h[i]);
+      b2[0] -= lr * dO;
+      // update hidden weights
+      W1 = W1.map((w,i) => [w[0] - lr*dH[i]*pt.x, w[1] - lr*dH[i]*pt.y]);
+      b1 = b1.map((b,i) => b - lr*dH[i]);
+    });
+    loss = Math.sqrt(totalLoss / data.length);
+    epoch++;
+  }
+
+  const S = SIMS.ml = { raf: null };
+  let frameCount = 0;
+
+  function frame() {
+    frameCount++;
+    // train several steps per frame
+    for (let i = 0; i < 4; i++) trainStep();
+
+    ctx.clearRect(0, 0, W, H);
+    const PAD = 30, PW = W-PAD*2, PH = H-PAD*2;
+
+    // decision boundary heatmap
+    const res = 28;
+    for (let i = 0; i < res; i++) {
+      for (let j = 0; j < res; j++) {
+        const nx = i/res, ny = j/res;
+        const { o } = forward(nx, ny);
+        const r = Math.round(o*200+30), b2c = Math.round((1-o)*200+30);
+        ctx.fillStyle = `rgba(${r},80,${b2c},0.55)`;
+        ctx.fillRect(PAD + nx*PW, PAD + ny*PH, PW/res+1, PH/res+1);
+      }
+    }
+
+    // data points
+    let correct = 0;
+    data.forEach(pt => {
+      const px = PAD + pt.x*PW, py = PAD + pt.y*PH;
+      const { o } = forward(pt.x, pt.y);
+      const pred = o > 0.5 ? 1 : 0;
+      if (pred === pt.lbl) correct++;
+      ctx.beginPath(); ctx.arc(px, py, 6, 0, Math.PI*2);
+      ctx.fillStyle = pt.lbl ? '#f59e0b' : '#6366f1';
+      ctx.fill();
+      ctx.strokeStyle = pred===pt.lbl ? '#fff' : '#ef4444';
+      ctx.lineWidth = 2; ctx.stroke();
+    });
+
+    // network diagram (right side overlay)
+    const nx0 = W - 90, ny0 = H/2;
+    const layers = [2, rHid.val, 1];
+    const xPos = [nx0, nx0+28, nx0+56];
+    const nodeR = 5;
+    ctx.globalAlpha = 0.7;
+    layers.forEach((n, li) => {
+      const yOff = H/(n+1);
+      for (let i = 0; i < n; i++) {
+        const ny2 = yOff*(i+1);
+        if (li < layers.length-1) {
+          const nextN = layers[li+1];
+          const nextYOff = H/(nextN+1);
+          for (let j = 0; j < nextN; j++) {
+            ctx.beginPath();
+            ctx.moveTo(xPos[li], ny2);
+            ctx.lineTo(xPos[li+1], nextYOff*(j+1));
+            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+            ctx.lineWidth = 1; ctx.stroke();
+          }
+        }
+        ctx.beginPath(); ctx.arc(xPos[li], ny2, nodeR, 0, Math.PI*2);
+        ctx.fillStyle = li===0?'#6366f1':li===1?color:'#f59e0b';
+        ctx.fill();
+      }
+    });
+    ctx.globalAlpha = 1;
+
+    const acc = Math.round(correct/data.length*100);
+    pEpoch.set(epoch); pLoss.set(loss.toFixed(3)); pAcc.set(acc+'%');
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── CRYPTOGRAPHY SIM ── */
+function simCrypto(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pStep = pill('Step'); const pKey = pill('Shared key');
+  pRow.appendChild(pStep.el); pRow.appendChild(pKey.el);
+  const bStart = mkBtn('▶ Run DH exchange', true, color);
+  const bReset = mkBtn('↺ Reset');
+  ctrl.appendChild(bStart); ctrl.appendChild(bReset);
+
+  // Diffie-Hellman with small numbers for visualisation
+  const p = 23, g = 5;
+  let state = 'idle', step = 0, animT = 0;
+  let alicePriv, bobPriv, alicePub, bobPub, sharedA, sharedB;
+  let msgX = -1, msgY = -1, msgTx = -1, msgTy = -1, msgProg = 0, msgLabel = '';
+  let msgCol = '#fff', msgs = [];
+
+  function reset() {
+    state = 'idle'; step = 0; animT = 0; msgs = [];
+    alicePriv = 2 + Math.floor(Math.random()*8);
+    bobPriv   = 2 + Math.floor(Math.random()*8);
+    alicePub  = Math.pow(g, alicePriv) % p;
+    bobPub    = Math.pow(g, bobPriv)   % p;
+    sharedA   = Math.pow(bobPub,   alicePriv) % p;
+    sharedB   = Math.pow(alicePub, bobPriv)   % p;
+  }
+  reset();
+
+  bStart.addEventListener('click', () => { if (state==='idle'||state==='done') { reset(); state='running'; step=0; } });
+  bReset.addEventListener('click', () => { reset(); });
+
+  const STEPS = [
+    () => ({ from:'alice', to:'public', label:`g=${g}, p=${p}`, col:'#94a3b8', note:'Public parameters agreed' }),
+    () => ({ from:'alice', to:'bob',    label:`A = g^a mod p = ${alicePub}`, col:'#818cf8', note:`Alice sends public key A=${alicePub}` }),
+    () => ({ from:'bob',   to:'alice',  label:`B = g^b mod p = ${bobPub}`,   col:'#34d399', note:`Bob sends public key B=${bobPub}` }),
+    () => ({ from:'alice', to:'alice',  label:`K = B^a mod p = ${sharedA}`,  col:'#fbbf24', note:`Alice computes shared key` }),
+    () => ({ from:'bob',   to:'bob',    label:`K = A^b mod p = ${sharedB}`,  col:'#fbbf24', note:`Bob computes shared key` }),
+  ];
+
+  const S = SIMS.crypto = { raf: null };
+  let frameCount = 0;
+
+  function frame() {
+    frameCount++; animT++;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+
+    const aliceX = 80, bobX = W-80, midY = H/2, personR = 28;
+
+    // draw public channel bar
+    ctx.fillStyle = 'rgba(148,163,184,0.08)';
+    ctx.fillRect(aliceX+personR+5, midY-14, bobX-aliceX-personR*2-10, 28);
+    ctx.fillStyle = 'rgba(148,163,184,0.3)';
+    ctx.font = '9px Nunito,sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('PUBLIC CHANNEL (eavesdropper can see)', W/2, midY-18);
+
+    // Alice
+    ctx.beginPath(); ctx.arc(aliceX, midY, personR, 0, Math.PI*2);
+    ctx.fillStyle = '#312e81'; ctx.fill();
+    ctx.strokeStyle = '#818cf8'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 11px Nunito,sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('Alice', aliceX, midY+4);
+    ctx.fillStyle = '#818cf8'; ctx.font = '10px Nunito,sans-serif';
+    ctx.fillText(`secret a=${alicePriv}`, aliceX, midY+personR+14);
+
+    // Bob
+    ctx.beginPath(); ctx.arc(bobX, midY, personR, 0, Math.PI*2);
+    ctx.fillStyle = '#064e3b'; ctx.fill();
+    ctx.strokeStyle = '#34d399'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 11px Nunito,sans-serif';
+    ctx.fillText('Bob', bobX, midY+4);
+    ctx.fillStyle = '#34d399'; ctx.font = '10px Nunito,sans-serif';
+    ctx.fillText(`secret b=${bobPriv}`, bobX, midY+personR+14);
+
+    // Eavesdropper
+    const eaveX = W/2, eaveY = 36;
+    ctx.beginPath(); ctx.arc(eaveX, eaveY, 16, 0, Math.PI*2);
+    ctx.fillStyle = '#450a0a'; ctx.fill();
+    ctx.strokeStyle = '#ef4444'; ctx.lineWidth = 1.5; ctx.stroke();
+    ctx.fillStyle = '#ef4444'; ctx.font = 'bold 9px Nunito,sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('Eve', eaveX, eaveY+3);
+    ctx.fillStyle = 'rgba(239,68,68,0.5)'; ctx.font = '8px Nunito,sans-serif';
+    ctx.fillText('sees everything!', eaveX, eaveY+20);
+
+    // step messages
+    msgs.forEach((m, mi) => {
+      ctx.fillStyle = m.col;
+      ctx.font = 'bold 10px Nunito,sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText(m.note, W/2, H-20-mi*16);
+    });
+
+    // animate current message packet
+    if (state === 'running') {
+      if (frameCount % 70 === 0 && step < STEPS.length) {
+        const s = STEPS[step]();
+        msgs.unshift({ note: s.note, col: s.col });
+        if (msgs.length > 4) msgs.pop();
+        step++;
+        if (step >= STEPS.length) state = 'done';
+      }
+      // packet animation
+      const prog = (frameCount % 70) / 70;
+      if (step > 0 && step <= STEPS.length) {
+        const s = STEPS[step-1]();
+        const fromX = s.from==='alice' ? aliceX : bobX;
+        const toX   = s.to==='bob' ? bobX : s.to==='alice' ? aliceX : W/2;
+        const px = fromX + (toX - fromX) * prog;
+        const py = midY + Math.sin(prog * Math.PI) * -35;
+        ctx.beginPath(); ctx.arc(px, py, 8, 0, Math.PI*2);
+        ctx.fillStyle = s.col; ctx.fill();
+        ctx.fillStyle = '#fff'; ctx.font = 'bold 7px Nunito,sans-serif'; ctx.textAlign = 'center';
+        ctx.fillText(s.label.split('=').pop(), px, py+3);
+      }
+    }
+
+    if (state === 'done' && sharedA === sharedB) {
+      ctx.fillStyle = 'rgba(251,191,36,0.15)';
+      ctx.fillRect(aliceX-35, midY-personR-35, 70, 22);
+      ctx.fillRect(bobX-35,   midY-personR-35, 70, 22);
+      ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 11px Nunito,sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText(`🔑 K=${sharedA}`, aliceX, midY-personR-20);
+      ctx.fillText(`🔑 K=${sharedB}`, bobX,   midY-personR-20);
+    }
+
+    pStep.set(step + ' / ' + STEPS.length);
+    pKey.set(state==='done' ? sharedA : '?');
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── COMPLEXITY SIM ── */
+function simComplexity(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pOps = pill('Operations'); const pClass = pill('Class'); const pN = pill('n');
+  pRow.appendChild(pOps.el); pRow.appendChild(pClass.el); pRow.appendChild(pN.el);
+  const rN    = mkRange(ctrl, 'Input size n', 2, 22, 8, 1, color);
+  const rAlgo = mkRange(ctrl, 'Algorithm (1=O(n) … 5=O(2ⁿ))', 1, 5, 2, 1, color);
+  const bRun  = mkBtn('▶ Run', true, color);
+  ctrl.appendChild(bRun);
+
+  const ALGOS = [
+    { name:'O(log n)',  col:'#34d399', ops: n => Math.ceil(Math.log2(n+1)),          ex:'Binary search' },
+    { name:'O(n)',      col:'#60a5fa', ops: n => n,                                   ex:'Linear scan' },
+    { name:'O(n log n)',col:'#a78bfa', ops: n => Math.ceil(n*Math.log2(n+1)),         ex:'Merge sort' },
+    { name:'O(n²)',     col:'#f59e0b', ops: n => n*n,                                 ex:'Bubble sort' },
+    { name:'O(2ⁿ)',     col:'#ef4444', ops: n => Math.min(Math.pow(2,n), 1e9),        ex:'Brute force NP' },
+  ];
+
+  let running = false, progress = 0, currentOps = 0;
+  bRun.addEventListener('click', () => { running = true; progress = 0; currentOps = 0; });
+
+  const S = SIMS.complexity = { raf: null };
+  let t = 0;
+
+  function frame() {
+    t++;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+
+    const PAD = 48, PW = W-PAD*2, PH = H-PAD*2;
+    const n = rN.val;
+    const maxN = 22;
+
+    // axes
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(PAD, PAD); ctx.lineTo(PAD, PAD+PH); ctx.lineTo(PAD+PW, PAD+PH); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,0.4)'; ctx.font = '9px Nunito,sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('Input size n →', PAD+PW/2, PAD+PH+16);
+    ctx.save(); ctx.translate(12, PAD+PH/2); ctx.rotate(-Math.PI/2);
+    ctx.fillText('Operations', 0, 0); ctx.restore();
+
+    // n gridline
+    const nX = PAD + (n/maxN)*PW;
+    ctx.strokeStyle = 'rgba(255,255,255,0.15)'; ctx.setLineDash([4,4]);
+    ctx.beginPath(); ctx.moveTo(nX, PAD); ctx.lineTo(nX, PAD+PH); ctx.stroke();
+    ctx.setLineDash([]);
+
+    // draw all curves
+    const selectedIdx = rAlgo.val - 1;
+    const maxOps = ALGOS[selectedIdx].ops(maxN) || 1;
+    const safeMax = Math.max(maxOps, 1);
+
+    ALGOS.forEach((algo, ai) => {
+      ctx.beginPath();
+      for (let xi = 1; xi <= maxN; xi++) {
+        const ops = algo.ops(xi);
+        const px = PAD + (xi/maxN)*PW;
+        const py = PAD + PH - Math.min((ops/safeMax)*PH, PH);
+        xi === 1 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      }
+      ctx.strokeStyle = ai === selectedIdx ? algo.col : 'rgba(255,255,255,0.12)';
+      ctx.lineWidth = ai === selectedIdx ? 2.5 : 1;
+      ctx.stroke();
+
+      // label at right end
+      const lastOps = algo.ops(maxN);
+      const lastY = PAD + PH - Math.min((lastOps/safeMax)*PH, PH);
+      ctx.fillStyle = ai === selectedIdx ? algo.col : 'rgba(255,255,255,0.25)';
+      ctx.font = ai === selectedIdx ? 'bold 10px Nunito,sans-serif' : '9px Nunito,sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText(algo.name, PAD+PW+3, Math.max(PAD+8, Math.min(lastY, PAD+PH-2)));
+    });
+
+    // animated dot running along selected curve
+    const algo = ALGOS[selectedIdx];
+    const totalOps = algo.ops(n);
+    if (running) {
+      currentOps += Math.max(1, Math.ceil(totalOps/60));
+      if (currentOps >= totalOps) { currentOps = totalOps; running = false; }
+    }
+    const dotOps = running ? currentOps : totalOps;
+    const dotX = nX;
+    const dotY = PAD + PH - Math.min((dotOps/safeMax)*PH, PH);
+    ctx.beginPath(); ctx.arc(dotX, dotY, 7, 0, Math.PI*2);
+    ctx.fillStyle = algo.col; ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5; ctx.stroke();
+
+    // info box
+    ctx.fillStyle = 'rgba(0,0,0,0.6)';
+    ctx.fillRect(PAD+4, PAD+4, 175, 42);
+    ctx.fillStyle = algo.col; ctx.font = 'bold 12px Nunito,sans-serif'; ctx.textAlign = 'left';
+    ctx.fillText(algo.name + ' — ' + algo.ex, PAD+10, PAD+18);
+    ctx.fillStyle = '#cbd5e1'; ctx.font = '10px Nunito,sans-serif';
+    ctx.fillText(`n=${n}  →  ${totalOps.toLocaleString()} operations`, PAD+10, PAD+34);
+
+    // complexity class badge
+    const cls = selectedIdx <= 2 ? 'P (tractable)' : selectedIdx === 3 ? 'P (slow)' : 'NP-hard ⚠️';
+    const clsCol = selectedIdx <= 3 ? '#34d399' : '#ef4444';
+    pOps.set(totalOps >= 1e9 ? '>1 billion' : totalOps.toLocaleString());
+    pClass.set(cls); pN.set(n);
+
+    // draw class badge on canvas
+    ctx.fillStyle = selectedIdx === 4 ? 'rgba(239,68,68,0.15)' : 'rgba(52,211,153,0.1)';
+    ctx.fillRect(W-130, PAD+4, 82, 22);
+    ctx.fillStyle = clsCol; ctx.font = 'bold 10px Nunito,sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(cls, W-89, PAD+18);
+
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── PLATE TECTONICS SIM ── */
+function simTectonics(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pStress = pill('Stress'); const pTime = pill('Myr'); const pEvent = pill('Last event');
+  pRow.appendChild(pStress.el); pRow.appendChild(pTime.el); pRow.appendChild(pEvent.el);
+  const rSpeed = mkRange(ctrl, 'Plate speed', 1, 10, 4, 1, color);
+  const rType  = mkRange(ctrl, 'Boundary type (1=diverge 2=transform 3=converge)', 1, 3, 2, 1, color);
+  const bQuake = mkBtn('⚡ Trigger quake', true, color);
+  ctrl.appendChild(bQuake);
+
+  let stress = 0, myr = 0, lastEvent = 'none', quakeAnim = 0;
+  let particles = [];
+  for (let i = 0; i < 18; i++)
+    particles.push({ x: Math.random()*W, y: 30+Math.random()*(H-60), side: Math.random()<.5?'L':'R', r: 3+Math.random()*3, col: `hsl(${20+Math.random()*30},${50+Math.random()*20}%,${35+Math.random()*20}%)` });
+
+  bQuake.addEventListener('click', () => { stress = 0; quakeAnim = 40; lastEvent = 'M'+(4+Math.floor(Math.random()*4))+'.'+Math.floor(Math.random()*9)+' quake'; });
+
+  const S = SIMS.tectonics = { raf: null };
+  let t = 0;
+
+  function frame() {
+    t++; myr += 0.001 * rSpeed.val;
+    stress = Math.min(100, stress + 0.08 * rSpeed.val);
+    if (stress >= 100) { stress = 0; quakeAnim = 35; lastEvent = 'M'+(5+Math.floor(Math.random()*3))+'.'+Math.floor(Math.random()*9)+' quake'; }
+    if (quakeAnim > 0) quakeAnim--;
+
+    ctx.clearRect(0, 0, W, H);
+
+    const type = rType.val; // 1=diverge 2=transform 3=converge
+    const spd = rSpeed.val * 0.4;
+    const midX = W / 2;
+    const shake = quakeAnim > 0 ? (Math.random()-.5)*8*(quakeAnim/35) : 0;
+
+    // Left plate
+    const lx = shake * -1;
+    ctx.fillStyle = '#78350f'; ctx.fillRect(lx, 0, midX+lx, H);
+    // Right plate
+    const rx = shake;
+    ctx.fillStyle = '#92400e'; ctx.fillRect(midX+rx, 0, W-midX, H);
+
+    // plate surface texture
+    [lx, rx+midX].forEach((ox, si) => {
+      ctx.fillStyle = si===0 ? '#a16207' : '#b45309';
+      ctx.fillRect(ox + (si===0?0:0), 0, si===0?midX:W-midX, 22);
+    });
+
+    // boundary line
+    const bCol = quakeAnim > 0 ? '#ef4444' : type===1?'#f59e0b':type===2?'#60a5fa':'#a855f7';
+    ctx.strokeStyle = bCol; ctx.lineWidth = quakeAnim>0?4:2;
+    ctx.setLineDash(type===2?[8,6]:[]);
+    ctx.beginPath(); ctx.moveTo(midX+shake*.5, 0); ctx.lineTo(midX+shake*.5, H);
+    ctx.stroke(); ctx.setLineDash([]);
+
+    // boundary label
+    const bLabels = ['','DIVERGENT ←→','TRANSFORM →|←','CONVERGENT →←'];
+    ctx.fillStyle = bCol; ctx.font = 'bold 10px Nunito,sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(bLabels[type], W/2, H-8);
+
+    // move & draw particles (rock markers)
+    particles.forEach(p => {
+      if (p.side==='L') {
+        p.x += type===1 ? -spd*0.5 : type===3 ? spd*0.3 : 0;
+        if (p.x < -20) p.x = midX - 10;
+      } else {
+        p.x += type===1 ? spd*0.5 : type===3 ? -spd*0.3 : 0;
+        if (p.x > W+20) p.x = midX + 10;
+      }
+      // transform: vertical movement
+      if (type===2) { p.y += p.side==='L' ? -spd*0.4 : spd*0.4; if (p.y<10) p.y=H-10; if (p.y>H-10) p.y=10; }
+      // quake shake
+      const px = p.x + (quakeAnim>0?(Math.random()-.5)*5:0);
+      const py = p.y + (quakeAnim>0?(Math.random()-.5)*5:0);
+      ctx.beginPath(); ctx.arc(px, py, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.col; ctx.fill();
+    });
+
+    // arrows showing plate motion
+    const arrowY = H/2;
+    const arrowCol = 'rgba(255,255,255,0.5)';
+    const drawArrow = (x1,y,x2) => {
+      ctx.beginPath(); ctx.moveTo(x1,y); ctx.lineTo(x2,y);
+      ctx.strokeStyle=arrowCol; ctx.lineWidth=2; ctx.stroke();
+      ctx.beginPath(); const dir=x2>x1?1:-1;
+      ctx.moveTo(x2,y); ctx.lineTo(x2-dir*8,y-5); ctx.lineTo(x2-dir*8,y+5);
+      ctx.fillStyle=arrowCol; ctx.fill();
+    };
+    if (type===1) { drawArrow(midX-20,arrowY,midX-60); drawArrow(midX+20,arrowY,midX+60); }
+    else if (type===3) { drawArrow(midX-60,arrowY,midX-20); drawArrow(midX+60,arrowY,midX+20); }
+    else { drawArrow(midX-70,arrowY-10,midX-20); drawArrow(midX+20,arrowY+10,midX+70); }
+
+    // stress bar
+    ctx.fillStyle='rgba(0,0,0,0.4)'; ctx.fillRect(10,10,120,12);
+    ctx.fillStyle=`hsl(${120-stress*1.2},80%,50%)`; ctx.fillRect(10,10,stress*1.2,12);
+    ctx.fillStyle='#fff'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('Stress: '+Math.round(stress)+'%', 13, 20);
+
+    // quake flash
+    if (quakeAnim > 0) {
+      ctx.fillStyle = `rgba(239,68,68,${quakeAnim/35*0.25})`;
+      ctx.fillRect(0,0,W,H);
+      ctx.fillStyle='#fef3c7'; ctx.font='bold 14px Nunito,sans-serif'; ctx.textAlign='center';
+      ctx.fillText('⚡ '+lastEvent, W/2, H/2);
+    }
+
+    pStress.set(Math.round(stress)+'%'); pTime.set(myr.toFixed(1)); pEvent.set(lastEvent);
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── OCEAN CURRENTS SIM ── */
+function simOcean(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pFlow = pill('Flow rate'); const pTemp = pill('Surf. temp'); const pAMOC = pill('AMOC');
+  pRow.appendChild(pFlow.el); pRow.appendChild(pTemp.el); pRow.appendChild(pAMOC.el);
+  const rWind   = mkRange(ctrl, 'Wind strength', 1, 10, 5, 1, color);
+  const rWarm   = mkRange(ctrl, 'Ocean warming', 0, 10, 2, 1, color);
+  ctrl.appendChild(mkBtn(''));  // spacer
+
+  // Particle field simulating gyre + thermohaline
+  const N = 120;
+  let parts = [];
+  for (let i = 0; i < N; i++) {
+    parts.push({ x: Math.random()*W, y: Math.random()*H, vx:0, vy:0, depth: Math.random(), age: Math.random()*100 });
+  }
+
+  const S = SIMS.ocean = { raf: null };
+  let t = 0;
+
+  function oceanVelocity(x, y, wind, warm) {
+    // Surface gyre (wind-driven, clockwise NH)
+    const cx = W/2, cy = H/2;
+    const dx = x-cx, dy = y-cy;
+    const r = Math.sqrt(dx*dx+dy*dy)+1;
+    const gyre = wind * 0.018;
+    let vx = gyre * ( dy/r);
+    let vy = gyre * (-dx/r);
+    // Gulf Stream: strong northward current on western boundary
+    const gsStr = wind * 0.035;
+    if (x < W*0.22) { vx += gsStr * 0.3; vy += -gsStr * (1-(x/(W*0.22))); }
+    // Equatorial current: westward
+    if (y > H*0.45 && y < H*0.65) { vx -= wind*0.012; }
+    // AMOC weakening: reduce deep sinking in north
+    const amocStr = Math.max(0, 1 - warm/12);
+    if (y < H*0.25 && x > W*0.6) { vy += amocStr * wind * 0.02; }
+    return { vx, vy };
+  }
+
+  function frame() {
+    t++;
+    const wind = rWind.val, warm = rWarm.val;
+    ctx.clearRect(0, 0, W, H);
+
+    // ocean background with temperature gradient
+    for (let j = 0; j < H; j += 4) {
+      const lat = 1 - j/H; // 0=south, 1=north
+      const baseT = 28 - lat*20 - warm*lat*0.5;
+      const hue = Math.max(200, 240 - baseT*4);
+      ctx.fillStyle = `hsl(${hue},${60+warm*2}%,${15+baseT*.5}%)`;
+      ctx.fillRect(0, j, W, 4);
+    }
+
+    // update & draw particles
+    parts.forEach(p => {
+      p.age++;
+      const { vx, vy } = oceanVelocity(p.x, p.y, wind, warm);
+      p.vx = p.vx*.85 + vx*.15; p.vy = p.vy*.85 + vy*.15;
+      p.x = (p.x + p.vx + W) % W; p.y = (p.y + p.vy + H) % H;
+      const spd = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
+      const lat = 1 - p.y/H;
+      const T = 28 - lat*20;
+      const hue = T > 15 ? 30 : T > 5 ? 190 : 220;
+      const alpha = Math.min(0.85, 0.3 + spd*8);
+      ctx.beginPath(); ctx.arc(p.x, p.y, 2.5, 0, Math.PI*2);
+      ctx.fillStyle = `hsla(${hue},80%,65%,${alpha})`;
+      ctx.fill();
+      // draw velocity arrow every 30 frames
+      if (p.age % 30 === 0 && spd > 0.1) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p.x + p.vx*12, p.y + p.vy*12);
+        ctx.strokeStyle = `hsla(${hue},80%,80%,0.4)`;
+        ctx.lineWidth = 1; ctx.stroke();
+      }
+    });
+
+    // Labels
+    const labels = [
+      {x:W*.12, y:H*.35, t:'Gulf\nStream', c:'#fbbf24'},
+      {x:W*.5,  y:H*.15, t:'N. Atlantic\nGyre', c:'#93c5fd'},
+      {x:W*.5,  y:H*.58, t:'Equatorial\nCurrent', c:'#6ee7b7'},
+      {x:W*.75, y:H*.8,  t:'Deep water\nsinking', c:'rgba(255,255,255,0.5)'},
+    ];
+    labels.forEach(l => {
+      ctx.fillStyle = l.c; ctx.font = 'bold 9px Nunito,sans-serif'; ctx.textAlign = 'center';
+      l.t.split('\n').forEach((line, i) => ctx.fillText(line, l.x, l.y + i*12));
+    });
+
+    // AMOC strength indicator
+    const amoc = Math.max(0, 100 - warm*8);
+    ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.fillRect(W-90, 8, 82, 30);
+    ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.fillRect(W-86, 22, 74, 10);
+    ctx.fillStyle=amoc>60?'#34d399':amoc>30?'#f59e0b':'#ef4444';
+    ctx.fillRect(W-86, 22, 74*(amoc/100), 10);
+    ctx.fillStyle='#fff'; ctx.font='bold 9px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('AMOC strength', W-49, 19);
+
+    const surfT = (28 - warm*0.4).toFixed(1);
+    pFlow.set(Math.round(wind*3)+' Sv'); pTemp.set(surfT+'°C'); pAMOC.set(Math.round(amoc)+'%');
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── VOLCANO SIM ── */
+function simVolcano(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pPres = pill('Chamber pressure'); const pVEI = pill('VEI'); const pPhase = pill('Phase');
+  pRow.appendChild(pPres.el); pRow.appendChild(pVEI.el); pRow.appendChild(pPhase.el);
+  const rVisc  = mkRange(ctrl, 'Magma viscosity (1=basalt 10=rhyolite)', 1, 10, 4, 1, color);
+  const rRecharge = mkRange(ctrl, 'Magma recharge rate', 1, 10, 4, 1, color);
+  const bErupt = mkBtn('💥 Force eruption', true, color);
+  ctrl.appendChild(bErupt);
+
+  let pressure = 20, erupting = false, eruptT = 0, eruptPower = 0;
+  let particles = [], ashCloud = [];
+  let phase = 'Recharging';
+
+  bErupt.addEventListener('click', () => {
+    if (!erupting) { erupting = true; eruptT = 0; eruptPower = Math.min(100,pressure); pressure = 5; phase = 'Erupting!'; }
+  });
+
+  const S = SIMS.volcano = { raf: null };
+  let t = 0;
+  const cx = W/2, baseY = H-30;
+  const volcH = 140, volcW = 110;
+
+  function frame() {
+    t++;
+    // pressure build-up
+    if (!erupting) {
+      pressure += 0.06 * rRecharge.val;
+      if (pressure >= 100) { erupting = true; eruptT = 0; eruptPower = 100; pressure = 5; phase = 'Erupting!'; }
+      else phase = pressure > 70 ? 'Critical!' : pressure > 40 ? 'Pressurising' : 'Recharging';
+    } else {
+      eruptT++;
+      pressure = Math.max(5, pressure + 0.1 * rRecharge.val);
+      if (eruptT > 200) { erupting = false; ashCloud = []; particles = []; phase = 'Cooling'; }
+    }
+
+    // spawn eruption particles
+    const visc = rVisc.val;
+    if (erupting && t % Math.max(1, Math.round(visc/2)) === 0) {
+      const explosive = visc > 5;
+      for (let i = 0; i < (explosive ? 3 : 1); i++) {
+        particles.push({
+          x: cx + (Math.random()-.5)*10,
+          y: baseY - volcH,
+          vx: (Math.random()-.5) * (explosive ? 5 : 2),
+          vy: -(4 + Math.random()*6) * (explosive ? 1.4 : 0.8),
+          r: 2 + Math.random()*4,
+          life: 80 + Math.random()*60,
+          age: 0,
+          type: explosive ? 'ash' : 'lava',
+          col: explosive ? `hsl(${20+Math.random()*20},60%,${40+Math.random()*20}%)` : `hsl(${15+Math.random()*20},90%,${50+Math.random()*20}%)`
+        });
+      }
+    }
+
+    ctx.clearRect(0, 0, W, H);
+
+    // sky gradient — darkens during eruption
+    const skyAlpha = erupting ? Math.min(0.6, eruptT/100) : 0;
+    const skyG = ctx.createLinearGradient(0,0,0,H);
+    skyG.addColorStop(0, `hsl(${210-skyAlpha*180},${60-skyAlpha*40}%,${erupting?20:55}%)`);
+    skyG.addColorStop(1, `hsl(${30},${40}%,${erupting?10:30}%)`);
+    ctx.fillStyle = skyG; ctx.fillRect(0,0,W,H);
+
+    // ground
+    ctx.fillStyle = '#292524'; ctx.fillRect(0, baseY+20, W, H-baseY-20);
+
+    // lava glow underground
+    const glow = ctx.createRadialGradient(cx, baseY+10, 0, cx, baseY+10, 60+pressure*0.5);
+    glow.addColorStop(0, `rgba(255,${100+pressure},0,${0.3+pressure/200})`);
+    glow.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = glow; ctx.fillRect(0, baseY, W, H-baseY);
+
+    // volcano shape
+    ctx.beginPath();
+    ctx.moveTo(cx-volcW*1.4, baseY+20);
+    ctx.lineTo(cx-volcW*.4, baseY-volcH*.35);
+    ctx.quadraticCurveTo(cx-volcW*.12, baseY-volcH, cx, baseY-volcH);
+    ctx.quadraticCurveTo(cx+volcW*.12, baseY-volcH, cx+volcW*.4, baseY-volcH*.35);
+    ctx.lineTo(cx+volcW*1.4, baseY+20);
+    ctx.closePath();
+    ctx.fillStyle = '#44403c'; ctx.fill();
+    ctx.strokeStyle = '#57534e'; ctx.lineWidth = 1.5; ctx.stroke();
+
+    // crater glow
+    const craterGlow = ctx.createRadialGradient(cx, baseY-volcH, 0, cx, baseY-volcH, 20+pressure*.15);
+    craterGlow.addColorStop(0, `rgba(255,${80+pressure},0,${0.4+pressure/150})`);
+    craterGlow.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = craterGlow; ctx.beginPath(); ctx.arc(cx, baseY-volcH, 20+pressure*.15, 0, Math.PI*2); ctx.fill();
+
+    // update & draw particles
+    for (let i = particles.length-1; i >= 0; i--) {
+      const p = particles[i];
+      p.age++; p.vx *= 0.98; p.vy += 0.12; p.x += p.vx; p.y += p.vy;
+      if (p.age > p.life || p.y > baseY+10) { particles.splice(i,1); continue; }
+      const alpha = 1 - p.age/p.life;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.type==='lava' ? p.col : `rgba(100,80,60,${alpha*.8})`;
+      ctx.globalAlpha = alpha; ctx.fill(); ctx.globalAlpha = 1;
+    }
+
+    // pressure gauge
+    ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.fillRect(12,12,16,H*.55);
+    const gaugeH = (H*.55)*(pressure/100);
+    const gc = pressure>70?'#ef4444':pressure>40?'#f59e0b':'#34d399';
+    ctx.fillStyle=gc; ctx.fillRect(12, 12+H*.55-gaugeH, 16, gaugeH);
+    ctx.strokeStyle='rgba(255,255,255,0.3)'; ctx.strokeRect(12,12,16,H*.55);
+    ctx.fillStyle='#fff'; ctx.font='8px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('P', 20, 10);
+
+    // VEI estimate
+    const vei = Math.min(8, Math.round((eruptPower/100)*visc/1.5));
+    pPres.set(Math.round(pressure)+'%'); pVEI.set(erupting?'VEI '+vei:'—'); pPhase.set(phase);
+    S.raf = requestAnimationFrame(frame);
   }
   frame();
 }
