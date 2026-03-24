@@ -1134,6 +1134,135 @@ const S=[
    ]},sim:'chem'},
  }},
 
+{id:'electrochem',group:'⚗️ Chemistry',emoji:'🔋',color:'#ca8a04',light:'#fefce8',
+ title:'Electrochemistry & Batteries',teaser:'Every time you charge your phone, chemistry converts electrons into stored energy. The same reactions that power your devices also rust iron, refine aluminium, and keep your heart beating.',chips:['Redox','Batteries','Electrolysis'],
+ lvls:{
+  junior:{icon:'⚡',title:'Electricity from chemistry — and chemistry from electricity!',
+   body:`<p>Imagine two different metals sitting in a glass of salty water, connected by a wire. Something remarkable happens: electrons start flowing through the wire from one metal to the other — creating an electric current! This is exactly how the very first battery worked, invented by Alessandro Volta in 1800. He stacked discs of zinc and copper separated by salty cloth, and created the first steady source of electric current in history.</p>
+<p>The secret is a type of chemical reaction called <strong>oxidation-reduction</strong> (or <strong>redox</strong>). In a redox reaction, one substance loses electrons (it is <em>oxidised</em>) and another gains those electrons (it is <em>reduced</em>). When zinc sits in acid, zinc atoms lose electrons and dissolve — those electrons travel through a wire to where they are needed. This flow of electrons <em>is</em> electricity.</p>
+<p>Modern batteries — from the AA battery in your remote control to the enormous lithium-ion pack in an electric car — all work on this same principle. The lithium-ion battery in your phone stores energy by moving lithium ions between two materials; when you use the phone, ions flow back and electrons travel through the circuit powering your screen. When you plug it in, the process reverses — using electrical energy to push the ions back. In the simulation below, watch a battery discharge and recharge in real time.</p>`,
+   facts:[{e:'⚡',t:'The lithium-ion batteries in a Tesla Model S contain about 7,000 individual cells — each one a small redox reaction happening simultaneously.'},{e:'🧠',t:'Your brain runs on electrochemistry: neurons fire by pumping sodium and potassium ions across membranes, generating the electrical signals that are your every thought.'},{e:'🌍',t:'Electrolysis of aluminium ore uses so much electricity that aluminium smelters consume about 3.5% of all electricity generated globally — more than most countries.'}],
+   formula:null,sim:'electrochem'},
+
+  student:{icon:'🔋',title:'Electrochemical cells, the Nernst equation, and Li-ion batteries',
+   body:`<p>An electrochemical cell converts chemical energy to electrical energy via spontaneous redox reactions. The <strong>standard cell potential</strong> E°_cell = E°_cathode − E°_anode is calculated from standard reduction potentials (measured vs the standard hydrogen electrode, SHE, defined as 0 V). A positive E°_cell indicates a spontaneous reaction; the relationship to Gibbs energy is <span class="mk">ΔG° = −nFE°_cell</span> (n = moles of electrons transferred, F = 96,485 C/mol = Faraday's constant). At equilibrium, ΔG = 0, giving <span class="mk">E°_cell = (RT/nF)ln K</span> — connecting electrochemistry to thermodynamics.</p>
+<p>The <strong>Nernst equation</strong> corrects cell potential for non-standard conditions: <span class="mk">E = E° − (RT/nF)ln Q</span>, where Q is the reaction quotient. At 25°C this simplifies to <span class="mk">E = E° − (0.0592/n)log Q</span>. As a battery discharges, Q increases (reactants consumed, products accumulate) and E decreases — explaining why battery voltage drops as it drains. Concentration cells (same half-reactions, different concentrations) have E° = 0 but non-zero E from the Nernst equation, demonstrating that concentration differences alone can drive current.</p>
+<p><strong>Lithium-ion batteries</strong> store energy via intercalation: Li⁺ ions insert into the crystal lattice of electrode materials. At the anode (graphite, LiC₆), Li⁺ + e⁻ → Li intercalated (charging). At the cathode (LiCoO₂, LiFePO₄, or NMC), Li₁₋ₓCoO₂ + xLi⁺ + xe⁻ → LiCoO₂ (charging). The electrolyte (LiPF₆ in organic carbonate solvent) conducts Li⁺ but not electrons, forcing electrons through the external circuit. Energy density is ~250 Wh/kg (cell level); theoretical limit for lithium metal anodes is ~3,800 Wh/kg — the target driving solid-state battery research.</p>`,
+   facts:[{e:'🔬',t:'The solid-electrolyte interphase (SEI) — a nanometre-thin film forming on the anode in the first charge cycle — is crucial for battery longevity and is still not fully understood.'},{e:'🌡️',t:'Lithium-ion batteries lose ~20% capacity permanently if charged above 45°C or discharged below −10°C — why phones slow down in cold weather.'},{e:'♻️',t:'Less than 5% of lithium-ion batteries are currently recycled. As EV adoption grows, this represents both an environmental challenge and a trillion-dollar opportunity.'}],
+   formula:{rows:[
+    {n:'Cell potential',e:'E°_cell  =  E°_cathode  −  E°_anode'},
+    {n:'Gibbs energy link',e:'ΔG°  =  −nF·E°_cell'},
+    {sep:1},
+    {n:'Nernst equation',e:'E  =  E°  −  (RT/nF) ln Q'},
+    {n:'At 25°C',e:'E  =  E°  −  (0.0592/n) log Q'},
+    {sep:1},
+    {n:'Faraday\'s law',e:'m  =  (M · I · t) / (n · F)',c:'mass deposited'},
+    {n:'Equilibrium',e:'E°_cell  =  (RT/nF) ln K'},
+   ]},sim:'electrochem'},
+
+  scholar:{icon:'∂',title:'Electrode kinetics, Butler-Volmer equation, and beyond Li-ion',
+   body:`<p>Real electrodes do not behave reversibly — current flow requires an <strong>overpotential</strong> η = E − E_eq to drive the reaction at a finite rate. The <strong>Butler-Volmer equation</strong> describes the current density as a function of overpotential: <span class="mk">j = j₀[exp(αFη/RT) − exp(−(1−α)Fη/RT)]</span>, where j₀ is the exchange current density (a measure of intrinsic electrode kinetics) and α is the transfer coefficient (typically ~0.5). At large positive η, the cathodic term dominates and j → j₀exp(αFη/RT) — the <strong>Tafel equation</strong> <span class="mk">η = a + b·log j</span> with Tafel slope b = 2.303RT/(αF) ≈ 120 mV/decade for α = 0.5. Tafel analysis diagnoses reaction mechanisms by revealing the rate-determining step.</p>
+<p>Electrode kinetics involves the <strong>Marcus theory</strong> of electron transfer: the rate constant k_ET = (2π/ℏ)|H_DA|²(4πλk_BT)^{-1/2}exp[−(ΔG° + λ)²/(4λk_BT)], where H_DA is the electronic coupling, λ is the reorganisation energy (inner-sphere + outer-sphere contributions), and ΔG° is the reaction free energy. The remarkable <strong>Marcus inverted region</strong> — where increasing driving force (more negative ΔG°) slows the reaction when |ΔG°| > λ — was confirmed experimentally by Miller et al. (1984) and underlies photosynthetic charge separation efficiency.</p>
+<p>Beyond Li-ion: <strong>solid-state batteries</strong> replace liquid electrolytes with ceramic (LLZO, LGPS) or polymer (PEO) conductors, enabling lithium metal anodes and eliminating flammability. <strong>Na-ion</strong> and <strong>K-ion</strong> batteries exploit abundant alkali metals; <strong>multivalent</strong> batteries (Mg²⁺, Al³⁺, Ca²⁺) offer higher theoretical energy density but face sluggish intercalation kinetics. <strong>Flow batteries</strong> (vanadium redox, RFB) store energy in dissolved redox-active species in external tanks, decoupling power and energy for grid-scale storage. The electrochemical CO₂ reduction reaction (CO₂RR) converts captured CO₂ to fuels and chemicals using renewable electricity — potentially closing the carbon cycle.</p>`,
+   facts:[{e:'🔬',t:'The exchange current density j₀ for the hydrogen evolution reaction varies by 10 orders of magnitude across metals — explaining why platinum is catalytically unique and why finding cheaper alternatives is so difficult.'},{e:'⚡',t:'Vanadium flow batteries at grid scale can store GWh of energy with 20,000+ cycle lifetimes — a century of daily cycling — making them ideal for long-duration renewable energy storage.'},{e:'🧪',t:'Electrochemical CO₂ reduction to ethylene on copper catalysts achieves ~70% Faradaic efficiency — converting a greenhouse gas directly into a valuable industrial feedstock using only electricity.'}],
+   formula:{rows:[
+    {n:'Butler-Volmer',e:'j  =  j₀[exp(αFη/RT) − exp(−(1−α)Fη/RT)]'},
+    {n:'Tafel equation',e:'η  =  a  +  b·log j,   b = 2.303RT/(αF)'},
+    {sep:1},
+    {n:'Marcus rate',e:'k_ET  =  A · exp[−(ΔG° + λ)² / (4λk_BT)]'},
+    {n:'Inverted region',e:'k_ET decreases when |ΔG°| > λ'},
+    {sep:1},
+    {n:'Energy density',e:'E  =  V_cell · Q / m   [Wh/kg]'},
+    {n:'Li-ion theoretical',e:'LiCoO₂/graphite: ~370 Wh/kg (cell theoretical)'},
+   ]},sim:'electrochem'},
+ }},
+
+{id:'kinetics',group:'⚗️ Chemistry',emoji:'⚖️',color:'#0891b2',light:'#ecfeff',
+ title:'Kinetics & Equilibrium',teaser:'Why does food rot faster in summer? Why do some reactions explode and others take centuries? The answers reveal how chemistry controls time itself.',chips:['Reaction rates','Equilibrium','Catalysis'],
+ lvls:{
+  junior:{icon:'⏱️',title:'How fast does chemistry happen — and when does it stop?',
+   body:`<p>Put milk in the fridge and it lasts a week. Leave it on the counter on a hot day and it sours in hours. Both situations involve the same chemical reactions — bacteria breaking down the milk's sugars and proteins — but the <strong>temperature</strong> makes all the difference. This is chemical <strong>kinetics</strong>: the study of how fast reactions go, and why.</p>
+<p>For a reaction to happen, molecules must collide — and not just any collision will do. The molecules must hit each other with enough energy and in the right orientation to break old chemical bonds and form new ones. This minimum energy is called the <strong>activation energy</strong>. Higher temperature means molecules move faster, collide more often, and with more energy — dramatically speeding up the reaction. As a rough rule of thumb, every 10°C rise in temperature roughly <em>doubles</em> the reaction rate.</p>
+<p>But most reactions don't simply run to completion. Instead they reach a state of <strong>chemical equilibrium</strong> — where the forward reaction (reactants → products) and the reverse reaction (products → reactants) happen at exactly the same rate. It looks like the reaction has stopped, but actually both directions are still happening simultaneously, perfectly balanced. You can shift this balance by changing temperature, pressure, or concentration — a trick chemists use constantly to get more of the products they want. In the simulation below, watch molecules react, reach equilibrium, and respond to changes.</p>`,
+   facts:[{e:'💎',t:'Diamond is thermodynamically unstable at room temperature and pressure — it should spontaneously convert to graphite. But the activation energy is so enormous that it effectively never happens.'},{e:'🧪',t:'The Haber process (making ammonia for fertilisers) uses an iron catalyst to lower activation energy — without it, the reaction is too slow to be useful even at high temperature.'},{e:'🌡️',t:'The chemical reactions in fireflies produce light at nearly 100% efficiency — almost no heat wasted. Human lightbulbs waste ~90% of energy as heat.'}],
+   formula:null,sim:'kinetics'},
+
+  student:{icon:'⚖️',title:'Rate laws, the Arrhenius equation, and Le Chatelier\'s principle',
+   body:`<p>The <strong>rate law</strong> expresses how reaction rate depends on concentration: for aA + bB → products, the rate r = k[A]^m[B]^n, where m and n are the reaction orders (determined experimentally, not from stoichiometry) and k is the rate constant. The <strong>integrated rate laws</strong> predict how concentrations change with time: zero-order [A] = [A]₀ − kt; first-order <span class="mk">ln[A] = ln[A]₀ − kt</span> (half-life t_{1/2} = ln2/k, independent of concentration); second-order <span class="mk">1/[A] = 1/[A]₀ + kt</span>. Radioactive decay and drug elimination are first-order processes; t_{1/2} of ¹⁴C = 5,730 years enables radiocarbon dating.</p>
+<p>The <strong>Arrhenius equation</strong> k = Ae^{−Ea/RT} quantifies temperature dependence: A is the pre-exponential factor (collision frequency × steric factor), E_a is activation energy, R is the gas constant, T is absolute temperature. Taking the logarithm: <span class="mk">ln k = ln A − E_a/RT</span> — an Arrhenius plot of ln k vs 1/T gives a straight line with slope −E_a/R. Transition state theory (Eyring equation) provides a more detailed picture: <span class="mk">k = (k_BT/h)exp(−ΔG‡/RT)</span>, where ΔG‡ = ΔH‡ − TΔS‡ is the Gibbs energy of activation — revealing entropic contributions invisible to Arrhenius analysis.</p>
+<p>At <strong>chemical equilibrium</strong>, the equilibrium constant K_c = [products]^ν/[reactants]^ν (using stoichiometric coefficients ν). K is related to ΔG°: <span class="mk">ΔG° = −RT ln K</span>. <strong>Le Chatelier's principle</strong>: if a system at equilibrium is disturbed, it shifts to partially counteract the disturbance. Adding reactant → shifts right; increasing pressure (for gas-phase reactions) → shifts toward fewer moles of gas; increasing temperature → shifts in endothermic direction. The Haber process (N₂ + 3H₂ ⇌ 2NH₃) uses high pressure (150–300 atm) and moderate temperature (400–500°C) plus iron catalyst — a compromise between thermodynamics (low T favours products) and kinetics (high T needed for useful rates).</p>`,
+   facts:[{e:'🧲',t:'An enzyme can speed up a reaction by a factor of 10¹⁷ — equivalent to turning a process that would take 3 billion years into one that takes a second.'},{e:'⚗️',t:'The Haber-Bosch process for making ammonia fertiliser feeds roughly half of humanity — and consumes about 1.5% of global energy production.'},{e:'🔬',t:'Femtochemistry (Nobel 1999) uses laser pulses of 10⁻¹⁵ seconds to photograph molecules at the transition state — the fleeting instant when bonds are half-broken.'}],
+   formula:{rows:[
+    {n:'Rate law',e:'r  =  k[A]^m[B]^n'},
+    {n:'Arrhenius',e:'k  =  A · exp(−E_a / RT)'},
+    {sep:1},
+    {n:'1st order integrated',e:'ln[A]  =  ln[A]₀  −  kt,   t½ = ln2/k'},
+    {n:'Eyring equation',e:'k  =  (k_BT/h) · exp(−ΔG‡/RT)'},
+    {sep:1},
+    {n:'Equilibrium constant',e:'K_c  =  Π[products]^ν / Π[reactants]^ν'},
+    {n:'Thermodynamic link',e:'ΔG°  =  −RT ln K'},
+   ]},sim:'kinetics'},
+
+  scholar:{icon:'∂',title:'Transition state theory, reaction mechanisms, and enzyme kinetics',
+   body:`<p><strong>Transition state theory</strong> (Eyring, Evans & Polanyi, 1935) treats the activated complex [AB]‡ as a quasi-equilibrium species at the energy maximum of the reaction coordinate. The rate constant <span class="mk">k = κ(k_BT/h)exp(ΔS‡/R)exp(−ΔH‡/RT)</span>, where κ is the transmission coefficient (~1 for classical systems, <1 for quantum tunnelling). The <strong>Evans-Polanyi relation</strong> <span class="mk">E_a = E_a° + αΔH_rxn</span> (α ≈ 0–1 is the Brønsted-Evans-Polanyi parameter) connects activation energy to reaction enthalpy across a series of similar reactions — enabling linear free energy relationships (Hammett equation, Marcus equation) to predict rate constants for unknown reactions from thermodynamic data.</p>
+<p><strong>Reaction mechanisms</strong> describe the elementary steps comprising an overall reaction. The rate-determining step (RDS) — the slowest elementary step — governs the overall rate. The steady-state approximation (SSA) sets d[intermediate]/dt ≈ 0 to eliminate intermediates algebraically. For a mechanism A → I → P with fast first step and slow second: d[P]/dt ≈ k₂K₁[A], where K₁ = k₁/k₋₁ is the pre-equilibrium constant. Microscopic reversibility (principle of detailed balance) constrains mechanisms: at equilibrium every elementary step must individually balance forward and reverse rates, restricting plausible mechanisms.</p>
+<p><strong>Michaelis-Menten enzyme kinetics</strong>: E + S ⇌ ES → E + P. The SSA gives the celebrated result <span class="mk">v = V_max[S]/(K_M + [S])</span>, where V_max = k_cat[E]_total and K_M = (k₋₁ + k_cat)/k₁. The catalytic efficiency k_cat/K_M — the "specificity constant" — reaches a diffusion limit of ~10⁸–10⁹ M⁻¹s⁻¹ for the most efficient enzymes (diffusion-controlled reactions). Allosteric enzymes deviate from Michaelis-Menten behaviour, exhibiting sigmoidal v vs [S] curves described by the Hill equation <span class="mk">v = V_max[S]^n/(K_{0.5}^n + [S]^n)</span>, where n > 1 indicates positive cooperativity. Inhibition patterns (competitive, uncompetitive, mixed) are diagnosed by Lineweaver-Burk double-reciprocal plots.</p>`,
+   facts:[{e:'⚡',t:'Carbonic anhydrase catalyses CO₂ + H₂O ⇌ H₂CO₃ at 10⁶ reactions per second — one of the fastest enzymes known, operating at the diffusion limit.'},{e:'🧬',t:'CRISPR-Cas9 is an enzyme — its mechanism involves precisely controlled kinetics: binding DNA, unwinding the helix, checking for complementarity, and cleaving only when all criteria are met.'},{e:'🔬',t:'Single-molecule kinetics (using fluorescence microscopy) can now watch individual enzyme molecules catalysing one reaction at a time — revealing hidden heterogeneity invisible to bulk measurements.'}],
+   formula:{rows:[
+    {n:'Eyring (full)',e:'k  =  κ(k_BT/h) · exp(ΔS‡/R) · exp(−ΔH‡/RT)'},
+    {n:'Evans-Polanyi',e:'E_a  =  E_a°  +  α·ΔH_rxn'},
+    {sep:1},
+    {n:'Michaelis-Menten',e:'v  =  V_max[S] / (K_M + [S])'},
+    {n:'Catalytic efficiency',e:'k_cat/K_M  →  10⁸–10⁹ M⁻¹s⁻¹ (diffusion limit)'},
+    {sep:1},
+    {n:'Hill equation',e:'v  =  V_max[S]^n / (K_{0.5}^n + [S]^n)'},
+    {n:'Hammett equation',e:'log(k/k₀)  =  ρ·σ   (linear free energy)'},
+   ]},sim:'kinetics'},
+ }},
+
+{id:'organic',group:'⚗️ Chemistry',emoji:'🧪',color:'#16a34a',light:'#f0fdf4',
+ title:'Organic Chemistry & Molecules of Life',teaser:'Carbon is the most versatile atom in the universe. With just one element and a few rules, nature builds everything from aspirin to DNA, from silk to spider venom.',chips:['Carbon','Biomolecules','Synthesis'],
+ lvls:{
+  junior:{icon:'🌱',title:'Carbon — the master builder of life!',
+   body:`<p>Of the 118 elements in the periodic table, one stands apart as uniquely special: <strong>carbon</strong>. A carbon atom can form four strong bonds simultaneously — with other carbon atoms, with hydrogen, oxygen, nitrogen, and many more. This remarkable ability means carbon can build chains, rings, branches, and cages of almost unlimited complexity. Over 10 million different carbon-containing compounds are known — more than all other elements combined. The chemistry of carbon compounds is called <strong>organic chemistry</strong>.</p>
+<p>Life chose carbon as its building material for good reason. The proteins that make your muscles, the DNA that carries your genes, the sugars that fuel your cells, the fats that insulate your nerves — all are carbon-based molecules of breathtaking complexity, built from simple rules repeated millions of times. A single protein molecule can contain thousands of carbon atoms arranged in a precise three-dimensional shape that determines exactly what it does.</p>
+<p>The same carbon chemistry that runs inside your cells also runs in a chemist's laboratory. Aspirin was first synthesised in 1897 from a compound found in willow bark. Penicillin's structure was unravelled in 1945. Today, chemists design and build molecules that never existed in nature — medicines, plastics, dyes, perfumes, and materials with extraordinary properties. Organic chemistry is the science of building with the universe's most versatile atom. In the simulation below, watch carbon atoms link together into chains and rings.</p>`,
+   facts:[{e:'💊',t:'Over 90% of all pharmaceutical drugs contain carbon — organic chemistry is literally the science that keeps you healthy.'},{e:'🕷️',t:'Spider silk is stronger than steel by weight: its secret is a protein with a precisely folded carbon backbone that stretches before breaking, absorbing enormous energy.'},{e:'🌈',t:'The colours of flowers, fruits, and autumn leaves are all organic molecules — carbon-ring structures called pigments that absorb specific wavelengths of light.'}],
+   formula:null,sim:'organic'},
+
+  student:{icon:'🧪',title:'Functional groups, reaction mechanisms, and stereochemistry',
+   body:`<p>Organic molecules are classified by <strong>functional groups</strong> — specific arrangements of atoms that determine reactivity: alcohols (−OH), aldehydes (−CHO), ketones (C=O), carboxylic acids (−COOH), amines (−NH₂), esters (−COO−), and alkenes (C=C). Functional groups react predictably regardless of the rest of the molecule, enabling chemists to plan multi-step syntheses. The <strong>carbonyl group</strong> (C=O) — the most important in biochemistry — is electrophilic at carbon (δ+) and nucleophilic at oxygen (δ−), making it susceptible to nucleophilic addition (aldehydes, ketones) or substitution (esters, acids).</p>
+<p>Organic reaction <strong>mechanisms</strong> track electron flow using curved arrow notation. Key mechanism types: <em>SN2</em> (bimolecular nucleophilic substitution — one-step backside attack, inverts stereochemistry, favoured for primary alkyl halides); <em>SN1</em> (unimolecular — carbocation intermediate, racemisation, favoured for tertiary); <em>E2</em> (elimination — anti-periplanar geometry required, gives trans-alkene); <em>addition</em> to alkenes (Markovnikov's rule: nucleophile adds to less substituted carbon, giving more stable carbocation intermediate); <em>aromatic electrophilic substitution</em> (EAS) — the benzene ring acts as nucleophile attacking an electrophile, with the ring regenerated by deprotonation.</p>
+<p><strong>Stereochemistry</strong> — the three-dimensional arrangement of atoms — is crucial in biology. Chiral centres (sp³ carbon bonded to four different groups) give rise to enantiomers (non-superimposable mirror images) with identical physical properties but different interactions with biological receptors. The R/S configuration system assigns priority by atomic number. <strong>Thalidomide</strong> is the most famous example: the R-enantiomer is a sedative; the S-enantiomer causes severe birth defects — yet the drug racemises in the body. Modern drug development requires enantiopure synthesis; asymmetric catalysis (Noyori, Sharpless — Nobel 2001) provides elegant solutions.</p>`,
+   facts:[{e:'🔬',t:'The total synthesis of vitamin B₁₂ (Woodward & Eschenmoser, 1972) required 72 steps and 11 years — a landmark of human intellectual achievement.'},{e:'🧬',t:'All amino acids in proteins (except glycine) are chiral, and life uses exclusively the L-form — a 50/50 mixture of L and D forms cannot fold into functional proteins.'},{e:'💊',t:'Ibuprofen is sold as a 50/50 mixture of enantiomers — only the S-form is active. Producing the pure S-form would halve the dose needed but is currently too expensive at scale.'}],
+   formula:{rows:[
+    {n:'Carbonyl reactivity',e:'C=O: δ+ on C (electrophile), δ− on O (nucleophile)'},
+    {n:'Markovnikov\'s rule',e:'H adds to less substituted C  (more stable carbocation)'},
+    {sep:1},
+    {n:'SN2 rate',e:'rate  =  k[substrate][nucleophile]   (inversion)'},
+    {n:'SN1 rate',e:'rate  =  k[substrate]   (racemisation via carbocation)'},
+    {sep:1},
+    {n:'E2 geometry',e:'anti-periplanar H and LG required  →  trans alkene'},
+    {n:'Chiral centre',e:'sp³-C bonded to 4 different groups → R or S configuration'},
+   ]},sim:'organic'},
+
+  scholar:{icon:'ψ',title:'Pericyclic reactions, total synthesis, and computational chemistry',
+   body:`<p><strong>Pericyclic reactions</strong> proceed through cyclic transition states with simultaneous bond making and breaking, governed by orbital symmetry (Woodward-Hoffmann rules, 1965 — Nobel 1981). The three main classes: <em>electrocyclic reactions</em> (ring opening/closing of conjugated polyenes), <em>cycloadditions</em> (Diels-Alder [4+2] is thermally allowed, [2+2] requires photochemistry), and <em>sigmatropic rearrangements</em> ([1,5]-H shift, Cope/Claisen rearrangements). Allowedness is determined by the correlation of frontier molecular orbitals (HOMO of one component, LUMO of the other): thermally allowed if HOMO-LUMO interaction is bonding (constructive overlap). The Diels-Alder reaction — concerted, stereospecific (endo/exo selectivity), and generating up to four stereocentres simultaneously — is the most powerful bond-forming reaction in synthetic chemistry.</p>
+<p><strong>Retrosynthetic analysis</strong> (Corey, Nobel 1990) is the logic of total synthesis: working backwards from target to available starting materials using known disconnections (C−C bonds are priority targets), identifying key strategic bonds whose formation simplifies the problem most. Modern total synthesis of complex natural products (palytoxin with 64 stereocentres, maitotoxin MW 3,422 g/mol) requires orchestrating dozens of reactions with exquisite selectivity — chemo-, regio-, and stereoselective throughout. Protecting group strategies manage functional group compatibility; oxidation state mapping tracks carbon transformations.</p>
+<p><strong>Computational organic chemistry</strong> uses density functional theory (DFT, typically B3LYP/6-311+G** or ωB97X-D/def2-TZVP) to calculate transition state geometries, activation energies, and reaction pathways. The <strong>distortion-interaction model</strong> (Houk) decomposes activation barriers into distortion energy (deforming reactants to TS geometry) and interaction energy (stabilising orbital overlap at TS) — explaining selectivity trends across reaction series. Machine learning force fields (ANI, MACE) are now accurate enough to run nanosecond molecular dynamics on drug-sized molecules, and transformer-based models (Molecular Transformer) predict reaction products and retrosynthetic routes with >90% accuracy on benchmark datasets.</p>`,
+   facts:[{e:'🔬',t:'Palytoxin — a natural toxin from coral — has MW 2,680 g/mol, 64 stereocentres (2⁶⁴ possible stereoisomers), and its total synthesis took 20 years and required unprecedented selectivity control.'},{e:'🤖',t:'AI-driven retrosynthesis tools (ASKCOS, IBM RXN) can now propose viable synthesis routes for complex molecules in seconds — compressing what once took expert chemists weeks.'},{e:'⚡',t:'Femtosecond laser spectroscopy can now directly observe bond-breaking in organic reactions — watching the transition state in real time for the first time in chemical history.'}],
+   formula:{rows:[
+    {n:'Diels-Alder',e:'diene (4π) + dienophile (2π)  →  cyclohexene   [4+2]'},
+    {n:'WH thermal rule',e:'[4n+2] thermal ✓   [4n] thermal ✗  (suprafacial)'},
+    {sep:1},
+    {n:'Distortion-interaction',e:'ΔE‡  =  ΔE_dist(DA) + ΔE_dist(Di) + ΔE_int'},
+    {n:'FMO criterion',e:'thermal: HOMO_diene overlaps LUMO_dienophile'},
+    {sep:1},
+    {n:'DFT energy',e:'E[ρ]  =  T_s[ρ] + V_ne[ρ] + J[ρ] + E_xc[ρ]'},
+    {n:'Activation (Eyring)',e:'k  =  (k_BT/h) · exp(−ΔG‡/RT)'},
+   ]},sim:'organic'},
+ }},
+
  // ── ASTRONOMY ─────────────────────────────────────────────────────
 {id:'astro',group:'🌌 Astronomy',emoji:'🌌',color:'#7c3aed',light:'#f5f3ff',
  title:'Stars & The Universe',teaser:'A star is a nuclear furnace 700,000 km across. How are they born, and what happens when they die?',chips:['Stars','Big Bang','Spacetime'],
@@ -1174,6 +1303,135 @@ const S=[
     {n:'CMB temperature',e:'T_0  =  2.725  K'},
     {n:'Last scattering',e:'z_*  ≈  1100,   t_*  ≈  380,000  yr'},
    ]},sim:'astro'},
+ }},
+
+{id:'blackholes',group:'🌌 Astronomy',emoji:'⚫',color:'#4c1d95',light:'#f5f3ff',
+ title:'Black Holes & Relativity',teaser:'A region of space where gravity is so extreme that not even light can escape. Einstein predicted them in 1915. We photographed one in 2019.',chips:['General Relativity','Event Horizon','Spacetime'],
+ lvls:{
+  junior:{icon:'🌀',title:'The universe\'s ultimate trap — nothing escapes!',
+   body:`<p>Imagine squeezing the entire mass of the Sun into a ball just 6 kilometres across. The gravity would be so overwhelming, so absolute, that nothing — not a rocket, not a laser beam, not even light itself — could escape. This is a <strong>black hole</strong>: not a hole in space, but an object so incredibly dense that it warps the very fabric of space and time around it.</p>
+<p>Black holes form when a massive star — at least 20 times heavier than our Sun — runs out of nuclear fuel. With nothing to push back against gravity, the star's core collapses catastrophically in less than a second, triggering a supernova explosion. The remaining core is crushed to an unimaginable density: a <strong>singularity</strong>, where our current understanding of physics completely breaks down. Surrounding the singularity is the <strong>event horizon</strong> — an invisible boundary of no return. Cross it, and you can never come back.</p>
+<p>For decades, black holes were purely theoretical. Then, in April 2019, the Event Horizon Telescope — a network of radio telescopes spanning the entire Earth, working together as one planet-sized instrument — captured the first ever image of a black hole's shadow. The target was M87*, a supermassive black hole 6.5 billion times the mass of our Sun, 55 million light-years away. The image matched Einstein's predictions from 1915 with stunning precision.</p>`,
+   facts:[{e:'📸',t:'The first image of a black hole (M87*, 2019) required a telescope the size of Earth — eight radio observatories on four continents linked together by atomic clocks.'},{e:'⏱️',t:'Time runs slower near a black hole. At the event horizon of a stellar-mass black hole, one hour would equal thousands of years for a distant observer.'},{e:'🌌',t:'The Milky Way contains a supermassive black hole — Sagittarius A* — 4 million solar masses, 26,000 light-years from Earth. Its shadow was imaged in 2022.'}],
+   formula:null,sim:'blackholes'},
+
+  student:{icon:'⚫',title:'General relativity, the Schwarzschild metric, and gravitational waves',
+   body:`<p>Einstein's <strong>General Relativity (GR, 1915)</strong> replaces Newton's gravitational force with the geometry of curved spacetime. The Einstein field equations <span class="mk">G_μν + Λg_μν = (8πG/c⁴)T_μν</span> relate the Einstein tensor G_μν (encoding spacetime curvature) to the stress-energy tensor T_μν (encoding matter and energy distribution). The cosmological constant Λ, originally introduced to allow a static universe, now represents dark energy. For a non-rotating, uncharged mass M, the exact solution is the <strong>Schwarzschild metric</strong>: <span class="mk">ds² = −(1−r_S/r)c²dt² + (1−r_S/r)⁻¹dr² + r²dΩ²</span>, where r_S = 2GM/c² is the Schwarzschild radius (event horizon). The metric diverges at r = r_S (coordinate singularity, removable by a change of coordinates) and at r = 0 (true physical singularity).</p>
+<p>Near a black hole, time dilation is extreme: a stationary clock at r experiences proper time <span class="mk">dτ = √(1−r_S/r) dt</span> — approaching zero at the event horizon. Photons climbing out of a gravitational well are <strong>gravitationally redshifted</strong>: <span class="mk">z = (1−r_S/r)^{-1/2} − 1</span>. Light bending — predicted by GR to be twice the Newtonian value — was confirmed by Eddington's 1919 solar eclipse expedition, making Einstein world-famous overnight. The innermost stable circular orbit (ISCO) for a Schwarzschild black hole is at r = 3r_S = 6GM/c²; matter spiralling inward is heated in the accretion disc, reaching millions of Kelvin and radiating X-rays.</p>
+<p><strong>Gravitational waves</strong> — ripples in spacetime — were predicted by GR in 1916 and first detected by LIGO on 14 September 2015 (GW150914): two black holes of 36 and 29 solar masses merging 1.3 billion light-years away, radiating 3 solar masses of energy as gravitational waves in 0.2 seconds — briefly outshining all stars in the observable universe in gravitational wave luminosity. LIGO's mirrors moved by 10⁻¹⁸ m — 1/1000th the diameter of a proton — during the event.</p>`,
+   facts:[{e:'🔬',t:'LIGO\'s sensitivity is so extreme that quantum fluctuations of individual photons limit its precision — squeezed light (a quantum optics technique) is used to push below this limit.'},{e:'🌊',t:'The gravitational wave signal GW170817 (two neutron stars merging, 2017) was simultaneously detected in gravitational waves, gamma rays, X-rays, optical, and radio — the birth of multi-messenger astronomy.'},{e:'⚫',t:'Sagittarius A* has a mass of 4.15 million suns compressed into a region smaller than our Solar System — yet it is surprisingly quiet, accreting at just 10⁻⁸ of its theoretical maximum rate.'}],
+   formula:{rows:[
+    {n:'Einstein field eqs.',e:'G_μν + Λg_μν  =  (8πG/c⁴) T_μν'},
+    {n:'Schwarzschild radius',e:'r_S  =  2GM/c²',c:'event horizon'},
+    {sep:1},
+    {n:'Schwarzschild metric',e:'ds²  =  −(1−r_S/r)c²dt²  +  (1−r_S/r)⁻¹dr²  +  r²dΩ²'},
+    {n:'Time dilation',e:'dτ  =  √(1 − r_S/r) · dt'},
+    {sep:1},
+    {n:'Gravitational redshift',e:'z  =  (1 − r_S/r)^{−1/2}  −  1'},
+    {n:'ISCO (Schwarzschild)',e:'r_ISCO  =  3r_S  =  6GM/c²'},
+   ]},sim:'blackholes'},
+
+  scholar:{icon:'∞',title:'Kerr metric, Hawking radiation, and the black hole information paradox',
+   body:`<p>Most astrophysical black holes rotate. The <strong>Kerr metric</strong> (Roy Kerr, 1963) describes a rotating black hole with mass M and angular momentum J = aMc (a = spin parameter, 0 ≤ a ≤ GM/c²): <span class="mk">ds² = −(1−r_Sr/Σ)c²dt² − (2r_Sra sin²θ/Σ)c·dt·dφ + (Σ/Δ)dr² + Σdθ² + (r²+a²+r_Sra²sin²θ/Σ)sin²θdφ²</span>, where Σ = r²+a²cos²θ and Δ = r²−r_Sr+a². The cross term dt·dφ (frame dragging) means spacetime itself is dragged in the direction of rotation. The <strong>ergosphere</strong> (r < r_S/2 + √(r_S²/4−a²cos²θ)) is a region where nothing can remain stationary — the Penrose process extracts rotational energy by splitting objects in the ergosphere, theoretically powering relativistic jets in active galactic nuclei.</p>
+<p><strong>Hawking radiation</strong> (Hawking, 1974) arises from quantum field theory in curved spacetime: near the event horizon, virtual particle-antiparticle pairs are created by vacuum fluctuations; occasionally one falls in while the other escapes, appearing as thermal radiation at temperature <span class="mk">T_H = ℏc³/(8πGMk_B)</span>. For stellar-mass black holes T_H ~ 10⁻⁸ K — utterly negligible against the 2.7 K CMB. But as the black hole radiates, it loses mass and heats up, eventually evaporating in a runaway process. The evaporation time τ ~ G²M³/(ℏc⁴) ~ 10⁶⁴ years for a solar-mass black hole.</p>
+<p>The <strong>black hole information paradox</strong> (Hawking 1976): if Hawking radiation is exactly thermal (carrying no information), then information about matter that fell in is permanently destroyed — violating quantum mechanical unitarity. Decades of debate yielded the <strong>holographic principle</strong> (Susskind, 't Hooft): all information in a volume of space is encoded on its boundary surface, with entropy S_BH = k_B·A/(4l_P²) (Bekenstein-Hawking formula, A = horizon area, l_P = Planck length). The recent <strong>Page curve</strong> calculation (using replica wormholes and gravitational path integrals, 2019) suggests information is indeed preserved — unitarity is upheld — but the mechanism remains deeply controversial.</p>`,
+   facts:[{e:'🔬',t:'The Page curve calculation (2019) used replica wormholes — saddle points in the gravitational path integral connecting different replicas of the system — to show unitarity is preserved, but required summing over topologically non-trivial spacetime geometries.'},{e:'🌌',t:'M87* rotates at ~90% of the maximum possible spin (a ≈ 0.9 GM/c²), inferred from the asymmetry of its 2019 image — frame dragging at near-maximum rate, powering a 5,000 light-year relativistic jet.'},{e:'🎯',t:'The Event Horizon Telescope achieves an angular resolution of 20 microarcseconds — equivalent to reading a newspaper in New York from a café in Paris.'}],
+   formula:{rows:[
+    {n:'Hawking temperature',e:'T_H  =  ℏc³ / (8πGMk_B)',c:'~10⁻⁸ K for 1 M_☉'},
+    {n:'Evaporation time',e:'τ  =  5120π G²M³ / (ℏc⁴)',c:'~10⁶⁴ yr for 1 M_☉'},
+    {sep:1},
+    {n:'Bekenstein-Hawking S',e:'S_BH  =  k_B · A / (4 l_P²)',c:'l_P = √(ℏG/c³)'},
+    {n:'Penrose process',e:'ΔE_extracted  ≤  Mc²(1 − 1/√2)  ≈  29% Mc²'},
+    {sep:1},
+    {n:'Kerr ergosphere',e:'r_ergo  =  r_S/2 + √(r_S²/4 − a²cos²θ)'},
+    {n:'Frame dragging (ω)',e:'ω  =  dφ/dt  =  r_S·a·r / (2Σ·(r²+a²) + r_S·a²·r·sin²θ)'},
+   ]},sim:'blackholes'},
+ }},
+
+{id:'cosmology',group:'🌌 Astronomy',emoji:'🌌',color:'#0c4a6e',light:'#e0f2fe',
+ title:'Cosmology & The Big Bang',teaser:'13.8 billion years ago, all the matter, energy, space, and time in the universe exploded from a point smaller than an atom. How do we know — and what came before?',chips:['Big Bang','Dark Energy','CMB'],
+ lvls:{
+  junior:{icon:'💥',title:'The universe had a beginning — and we can still see its glow!',
+   body:`<p>Everything you have ever seen — every star, galaxy, planet, and atom — was once compressed into a space unimaginably smaller than the full stop at the end of this sentence. About <strong>13.8 billion years ago</strong>, this impossibly hot, dense point began expanding in an event we call the <strong>Big Bang</strong>. Space itself expanded — and has been expanding ever since.</p>
+<p>In the first few minutes, the universe was so hot that protons and neutrons fused together, making hydrogen and helium. But it was still too hot for atoms to form properly — the universe was a glowing fog of plasma, opaque like the inside of a star. Then, 380,000 years after the Big Bang, the universe had cooled enough for electrons to combine with protons to make neutral hydrogen. Suddenly, the fog cleared. Light streamed freely across the universe for the first time. <strong>We can still detect that ancient light today</strong> — it fills the entire sky as a faint glow of microwave radiation called the <strong>Cosmic Microwave Background (CMB)</strong>.</p>
+<p>The CMB is a photograph of the baby universe, 380,000 years old. It is almost perfectly uniform in every direction — but not quite. Tiny temperature variations of 1 part in 100,000 are the seeds of everything: those slight density differences grew under gravity over billions of years into galaxies, galaxy clusters, and the vast cosmic web of structure we see today. In the simulation below, watch the universe expand from the Big Bang to today.</p>`,
+   facts:[{e:'📡',t:'The CMB was accidentally discovered in 1964 by Penzias and Wilson, who thought the mysterious noise in their radio antenna was pigeon droppings. It won them the Nobel Prize in 1978.'},{e:'🌌',t:'The observable universe is 93 billion light-years across — even though it is only 13.8 billion years old. The expansion of space itself carries distant regions beyond what light could reach.'},{e:'🔭',t:'The James Webb Space Telescope has observed galaxies forming just 320 million years after the Big Bang — earlier than most models predicted, challenging our understanding of early galaxy formation.'}],
+   formula:null,sim:'cosmology'},
+
+  student:{icon:'🌌',title:'The Friedmann equations, inflation, and dark energy',
+   body:`<p>The universe's expansion is governed by the <strong>Friedmann equations</strong>, derived from GR with the Friedmann-Lemaître-Robertson-Walker (FLRW) metric — assuming homogeneity and isotropy (the cosmological principle). The first Friedmann equation: <span class="mk">H² = (ȧ/a)² = (8πG/3)ρ − kc²/a² + Λc²/3</span>, where H is the Hubble parameter, a(t) is the scale factor (relative size of the universe), ρ is total energy density, k is spatial curvature (0=flat, ±1=curved), and Λ is the cosmological constant. Observations show k ≈ 0 (flat universe) and the energy budget: ~5% ordinary matter, ~27% dark matter, ~68% dark energy (Λ).</p>
+<p><strong>Cosmic inflation</strong> (Guth, 1981) posits an epoch of exponential expansion (a ∝ e^{Ht}) lasting ~10⁻³² seconds starting at ~10⁻³⁶ seconds after the Big Bang, driven by a scalar inflaton field slow-rolling down its potential. Inflation solves three classic puzzles: the <em>horizon problem</em> (why the CMB is uniform to 1 in 10⁵ across causally disconnected regions), the <em>flatness problem</em> (why k ≈ 0 to extraordinary precision), and the <em>monopole problem</em>. Crucially, quantum fluctuations of the inflaton during inflation seeded the density perturbations observed in the CMB power spectrum — the origin of all cosmic structure.</p>
+<p><strong>Dark energy</strong> (Λ) drives the accelerating expansion of the universe, discovered via Type Ia supernova distance measurements in 1998 (Riess, Perlmutter, Schmidt — Nobel 2011). The equation of state w = p/(ρc²) = −1 for a cosmological constant; observations constrain w = −1.03 ± 0.03. The <strong>Hubble tension</strong> — H₀ = 67.4 ± 0.5 km/s/Mpc from CMB (Planck) vs 73.2 ± 1.3 from the distance ladder (Cepheid+SNIa) — is a 5σ discrepancy that may signal physics beyond ΛCDM.</p>`,
+   facts:[{e:'🔭',t:'Type Ia supernovae are "standard candles" because they all explode with almost identical peak luminosity — their apparent brightness reveals their distance, proving the universe is accelerating.'},{e:'🌡️',t:'The CMB temperature today is 2.7255 K — the most precisely measured blackbody spectrum in nature, with deviations of less than 1 part in 100,000.'},{e:'⚛️',t:'Big Bang nucleosynthesis in the first 3 minutes produced 75% hydrogen and 25% helium by mass — exactly matching the observed primordial abundances, a stunning confirmation of the model.'}],
+   formula:{rows:[
+    {n:'Friedmann equation',e:'H²  =  (8πG/3)ρ  −  kc²/a²  +  Λc²/3'},
+    {n:'Hubble parameter',e:'H(z)  =  H₀√[Ω_m(1+z)³ + Ω_r(1+z)⁴ + Ω_Λ]'},
+    {sep:1},
+    {n:'Scale factor (Λ-dom)',e:'a(t)  ∝  exp(H₀√Ω_Λ · t)   (accelerating)'},
+    {n:'Dark energy EoS',e:'w  =  p/(ρc²)  =  −1   (Λ = const.)'},
+    {sep:1},
+    {n:'CMB temperature',e:'T_CMB  =  2.7255  K   (today)'},
+    {n:'Inflation e-folds',e:'N  =  ∫H dt  ≥  60   (solves horizon problem)'},
+   ]},sim:'cosmology'},
+
+  scholar:{icon:'∂',title:'CMB anisotropies, large-scale structure, and quantum gravity',
+   body:`<p>The CMB temperature anisotropies δT/T ~ 10⁻⁵ are decomposed into spherical harmonics: <span class="mk">δT/T(n̂) = Σ_{ℓm} a_{ℓm} Y_{ℓm}(n̂)</span>. The angular power spectrum C_ℓ = ⟨|a_{ℓm}|²⟩ encodes the physics of the early universe. The acoustic peaks arise from oscillations in the baryon-photon fluid before recombination: modes that completed an integer number of half-oscillations at recombination appear as peaks (compressed or rarefied). The first peak at ℓ ~ 220 (angular scale ~1°) corresponds to the sound horizon at recombination r_s = c_s·t_rec — its observed angular position confirms spatial flatness. Polarisation of the CMB (E-modes from scalar perturbations, B-modes from tensor perturbations / gravitational waves) provides additional constraints; primordial B-modes would directly measure the inflation energy scale via the tensor-to-scalar ratio r.</p>
+<p><strong>Large-scale structure</strong> forms by gravitational amplification of primordial fluctuations. The matter power spectrum P(k) — measured by galaxy surveys (SDSS, DESI) — encodes: the Harrison-Zel'dovich primordial spectrum P(k) ∝ k^{n_s} (n_s ≈ 0.965, slight red tilt confirming slow-roll inflation); the transfer function encoding damping by radiation pressure (Silk damping, Jeans scale); and baryon acoustic oscillations (BAO) — the same acoustic physics as CMB peaks, imprinted as a ~150 Mpc preferred galaxy separation scale, providing a standard ruler for measuring H(z) across cosmic time. The DESI survey (2024) has measured BAO across 11 billion years of cosmic history, constraining dark energy evolution with unprecedented precision.</p>
+<p>The reconciliation of GR with quantum mechanics — <strong>quantum gravity</strong> — remains the deepest unsolved problem in physics. Loop quantum cosmology (LQC) replaces the Big Bang singularity with a quantum bounce (Big Bounce), where the prior contracting universe reached a maximum density of ~0.41 ρ_Planck before rebounding. String theory's landscape (~10⁵⁰⁰ vacua) suggests eternal inflation — our universe as one bubble in a vast multiverse — potentially explaining the fine-tuning of physical constants. The <strong>swampland conjectures</strong> (distance conjecture, de Sitter conjecture) suggest that metastable de Sitter space (our Λ > 0 universe) may be impossible in string theory — a profound tension that remains unresolved.</p>`,
+   facts:[{e:'🔬',t:'DESI\'s 2024 BAO measurement across 6 million galaxies shows hints that dark energy may not be constant — w may be evolving with time, potentially overturning the cosmological constant interpretation.'},{e:'🌌',t:'The observable universe contains ~2 trillion galaxies (revised upward from 200 billion in 2016), each containing hundreds of billions of stars — yet ordinary matter is only 5% of the total energy budget.'},{e:'⚡',t:'The Planck length (10⁻³⁵ m) and Planck time (10⁻⁴³ s) represent the scale at which quantum gravitational effects become dominant — 20 orders of magnitude beyond the reach of any conceivable particle accelerator.'}],
+   formula:{rows:[
+    {n:'CMB decomposition',e:'δT/T(n̂)  =  Σ_{ℓm} a_{ℓm} Y_{ℓm}(n̂)'},
+    {n:'Power spectrum',e:'C_ℓ  =  ⟨|a_{ℓm}|²⟩   (acoustic peaks at ℓ~220,540…)'},
+    {sep:1},
+    {n:'Primordial spectrum',e:'P(k)  ∝  k^{n_s},   n_s  ≈  0.965'},
+    {n:'BAO scale',e:'r_s  ≈  147  Mpc   (standard ruler)'},
+    {sep:1},
+    {n:'Planck density',e:'ρ_Pl  =  c⁵/(ℏG²)  ≈  5.2×10⁹⁶  kg/m³'},
+    {n:'Bekenstein bound',e:'S  ≤  2πkRE/(ℏc)   (max entropy in volume)'},
+   ]},sim:'cosmology'},
+ }},
+
+{id:'solarsystem',group:'🌌 Astronomy',emoji:'🪐',color:'#b45309',light:'#fffbeb',
+ title:'The Solar System',teaser:'Eight planets, 200+ moons, millions of asteroids, and a star that contains 99.86% of all the mass. Our cosmic neighbourhood is far stranger than it looks.',chips:['Planets','Orbits','Moons'],
+ lvls:{
+  junior:{icon:'🪐',title:'Our cosmic neighbourhood — eight worlds and counting!',
+   body:`<p>Our Solar System is a family of worlds orbiting a single star — our Sun. It contains <strong>eight planets</strong>, over 200 moons, millions of asteroids, billions of comets, and a vast cloud of icy debris at its edges. All of it formed from the same swirling disc of gas and dust about 4.6 billion years ago, from the explosion of a nearby star that seeded our nebula with heavy elements.</p>
+<p>The four inner planets — Mercury, Venus, Earth, and Mars — are small, rocky worlds. The four outer planets — Jupiter, Saturn, Uranus, and Neptune — are enormous balls of gas and ice. Jupiter alone is so massive that all the other planets could fit inside it, with room to spare. Saturn's iconic rings are made of billions of chunks of ice and rock, ranging from the size of a grain of sand to that of a house, all orbiting in a thin disc just tens of metres thick.</p>
+<p>Some of the most exciting places in the Solar System are not the planets themselves, but their moons. Europa (moon of Jupiter) has a global ocean of liquid water beneath its icy crust — kept liquid by tidal heating — and is considered one of the most promising places to search for extraterrestrial life in the Solar System. Titan (moon of Saturn) has a thick atmosphere and lakes of liquid methane on its surface, with a weather cycle eerily similar to Earth's water cycle — but made of hydrocarbons.</p>`,
+   facts:[{e:'🪐',t:'Saturn\'s rings span 282,000 km — wide enough to fit 22 Earths side by side — yet are only about 10 metres thick in places. If scaled to a sheet of paper, they would be thinner than the paper.'},{e:'🌋',t:'Io, a moon of Jupiter, is the most volcanically active body in the Solar System — with hundreds of active volcanoes driven by tidal squeezing from Jupiter\'s immense gravity.'},{e:'🌊',t:'Europa\'s subsurface ocean contains more liquid water than all of Earth\'s oceans combined — kept warm by tidal flexing, with a rocky seafloor that could support hydrothermal vents.'}],
+   formula:null,sim:'solarsystem'},
+
+  student:{icon:'🪐',title:'Orbital mechanics, Kepler\'s laws, and planetary formation',
+   body:`<p><strong>Kepler's three laws</strong> (derived empirically from Tycho Brahe's data, 1609–1619; later derived theoretically by Newton from his law of gravitation): (1) Planets orbit the Sun in ellipses with the Sun at one focus. (2) A line joining a planet to the Sun sweeps equal areas in equal times (conservation of angular momentum — planets move faster at perihelion). (3) T² ∝ a³: the square of the orbital period is proportional to the cube of the semi-major axis; specifically <span class="mk">T² = (4π²/GM_☉)a³</span>. For Earth: T = 1 yr, a = 1 AU = 1.496×10¹¹ m — this ratio calibrates distances throughout the Solar System.</p>
+<p><strong>Planetary formation</strong> (core accretion model): the protoplanetary disc of gas and dust undergoes gravitational instabilities forming planetesimals (~km scale); planetesimals collide and grow into protoplanets; runaway accretion builds terrestrial planets in ~10–100 Myr. Beyond the snow line (~2.7 AU from the Sun, where water ice condenses), rocky cores grow rapidly to ~10 Earth masses, triggering runaway gas accretion and forming gas giants. The <strong>Nice model</strong> (2005) explains the Late Heavy Bombardment (~3.9 Gya) as a consequence of orbital resonance migration of Jupiter and Saturn (crossing their 1:2 resonance), destabilising the outer Solar System and scattering a bombardment of planetesimals inward.</p>
+<p><strong>Tidal forces</strong> arise from the gradient of gravitational attraction across an extended body: tidal acceleration <span class="mk">a_tidal ≈ 2GMd/r³</span> (where d is the body's radius, r is the distance to the source). Tidal locking — where the rotation period equals the orbital period — affects most large moons (including Earth's Moon). Inside the <strong>Roche limit</strong> <span class="mk">d_Roche = a(2M_planet/M_satellite)^{1/3}</span>, tidal forces overcome the satellite's self-gravity, preventing accretion or disintegrating existing bodies — explaining planetary ring systems.</p>`,
+   facts:[{e:'🔭',t:'The Voyager 1 spacecraft, launched in 1977, is now 23 billion km from the Sun — the most distant human-made object — and still transmitting data using a 22-watt radio (equivalent to a fridge light).'},{e:'💥',t:'The Moon formed when a Mars-sized body (Theia) struck the young Earth ~4.5 billion years ago, ejecting material that coalesced into the Moon — confirmed by lunar rock isotopic ratios identical to Earth\'s mantle.'},{e:'🌀',t:'Jupiter\'s Great Red Spot is a storm wider than Earth that has raged continuously for at least 350 years — though it has been shrinking and is now only 1.3 times Earth\'s diameter.'}],
+   formula:{rows:[
+    {n:'Kepler\'s 3rd law',e:'T²  =  (4π²/GM_☉) · a³'},
+    {n:'Orbital velocity',e:'v_orb  =  √(GM_☉/r)   [circular orbit]'},
+    {sep:1},
+    {n:'Tidal acceleration',e:'a_tidal  ≈  2GMd / r³'},
+    {n:'Roche limit',e:'d_Roche  =  a · (2M_planet/M_sat)^{1/3}'},
+    {sep:1},
+    {n:'Escape velocity',e:'v_esc  =  √(2GM/r)'},
+    {n:'Hill sphere radius',e:'r_H  =  a(1−e)(m/3M)^{1/3}',c:'gravitational influence zone'},
+   ]},sim:'solarsystem'},
+
+  scholar:{icon:'∂',title:'N-body dynamics, resonances, and planetary habitability',
+   body:`<p>The gravitational N-body problem — the coupled equations of motion for N mutually attracting masses — has no general closed-form solution for N ≥ 3 (Poincaré, 1890). The Solar System is chaotic on timescales of ~5 Myr: Lyapunov exponent λ ~ 1/(5 Myr), meaning orbital elements diverge exponentially and long-term prediction is fundamentally impossible. Mercury's orbit is particularly unstable; numerical integrations (Laskar, Gastineau 2009) show a ~1% probability of Mercury's orbit becoming sufficiently eccentric over 5 Gyr to cause a collision with Venus or Earth — making planetary instability a low-probability but real existential risk. The <strong>Kolmogorov-Arnold-Moser (KAM) theorem</strong> guarantees that many quasi-periodic orbits persist under small perturbations, providing islands of stability amid the chaos.</p>
+<p><strong>Mean-motion resonances</strong> (MMRs) occur when orbital periods ratio to small integers (e.g. 1:2, 2:3). The Laplace resonance of Io:Europa:Ganymede (1:2:4) is maintained by tidal dissipation and drives Io's extreme volcanism: orbital eccentricity forced by the resonance causes periodic tidal squeezing (tidal dissipation rate P_tidal = (21/2)(k₂/Q)(GM_J²R⁵/a⁶)e²), heating Io's interior at ~2 W/m² — 30× Earth's geothermal flux. The <strong>Kirkwood gaps</strong> in the asteroid belt at 3:1, 5:2, 7:3, 2:1 MMRs with Jupiter are cleared by chaotic diffusion; asteroids entering these resonances are scattered onto planet-crossing orbits, providing a steady flux of near-Earth objects.</p>
+<p><strong>Planetary habitability</strong> depends on multiple factors beyond the classical "habitable zone" (HZ, where liquid water can exist on the surface). The HZ for the Sun spans ~0.95–1.67 AU (optimistic estimate); Earth lies comfortably inside. However, habitability also requires: sufficient planetary mass (retain atmosphere, drive plate tectonics); a magnetic field (protect from stellar wind); tidal effects (not too extreme — Io vs Europa); carbonate-silicate cycle (long-term CO₂ thermostat stabilising climate); and possibly a large moon stabilising obliquity. The <strong>galactic habitable zone</strong> (GHZ) restricts suitable stellar environments: too close to the galactic centre risks sterilising radiation; too far lacks sufficient heavy elements for rocky planets and complex chemistry.</p>`,
+   facts:[{e:'🔬',t:'The James Webb Space Telescope has detected CO₂, SO₂, and possible dimethyl sulphide (a potential biosignature) in the atmosphere of K2-18b — a sub-Neptune in the habitable zone — though the interpretation remains debated.'},{e:'💫',t:'Numerical simulations show that without Jupiter acting as a gravitational shield, Earth would experience 1,000× more asteroid impacts — Jupiter deflects or ejects most potential impactors before they reach the inner Solar System.'},{e:'🌍',t:'Earth\'s axial tilt (23.5°) is stabilised by the Moon to within ~±1.3° over millions of years. Without the Moon, chaotic obliquity variations of 0°–85° would cause extreme climate swings, possibly preventing complex life.'}],
+   formula:{rows:[
+    {n:'Lyapunov time (Solar System)',e:'τ_L  ~  5  Myr   (Mercury most unstable)'},
+    {n:'Tidal dissipation',e:'P_tidal  =  (21/2)(k₂/Q)(GM²R⁵/a⁶)e²'},
+    {sep:1},
+    {n:'Habitable zone (inner)',e:'r_HZ  =  √(L/L_☉) · 0.95  AU'},
+    {n:'Habitable zone (outer)',e:'r_HZ  =  √(L/L_☉) · 1.67  AU'},
+    {sep:1},
+    {n:'MMR condition',e:'n₁/n₂  =  p/(p+q),   p,q ∈ ℤ'},
+    {n:'Hill sphere',e:'r_H  =  a(m/3M)^{1/3}   (gravitational influence)'},
+   ]},sim:'solarsystem'},
  }},
 
  // ── NEUROSCIENCE ──────────────────────────────────────────────────
@@ -1486,8 +1744,8 @@ function buildSim(id,container,color,lvl){
             life:simLife,dna:simDNA, evolution:simEvolution, ecosystem:simEcosystem,
             sorting:simSorting,ml:simML, crypto:simCrypto, complexity:simComplexity,
             climate:simClimate,tectonics:simTectonics, ocean:simOcean, volcano:simVolcano,
-            chem:simChem,
-            astro:simAstro,
+            chem:simChem,electrochem:simElectrochem, kinetics:simKinetics, organic:simOrganic,
+            astro:simAstro,blackholes:simBlackholes, cosmology:simCosmology, solarsystem:simSolarSystem,
             neuro:simNeuro
             };
   if(map[id])map[id](container,color,lvl);
@@ -3692,6 +3950,780 @@ function simVolcano(container, color) {
     pPres.set(Math.round(pressure)+'%'); pVEI.set(erupting?'VEI '+vei:'—'); pPhase.set(phase);
     S.raf = requestAnimationFrame(frame);
   }
+  frame();
+}
+
+/* ── ELECTROCHEMISTRY SIM ── */
+function simElectrochem(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pV    = pill('Voltage'); const pQ = pill('Charge'); const pMode = pill('Mode');
+  pRow.appendChild(pV.el); pRow.appendChild(pQ.el); pRow.appendChild(pMode.el);
+  const rLoad    = mkRange(ctrl, 'Load (discharge rate)', 1, 10, 4, 1, color);
+  const bDischarge = mkBtn('▶ Discharge', true, color);
+  const bCharge    = mkBtn('⚡ Charge');
+  const bReset     = mkBtn('↺ Reset');
+  ctrl.appendChild(bDischarge); ctrl.appendChild(bCharge); ctrl.appendChild(bReset);
+
+  let soc = 1.0;        // state of charge 0–1
+  let mode = 'idle';    // idle | discharge | charge
+  let ions = [];        // animated ion particles
+  let t = 0;
+
+  function initIons() {
+    ions = [];
+    for (let i = 0; i < 28; i++)
+      ions.push({ x: 0.2*W + Math.random()*0.6*W, y: 60 + Math.random()*(H-120),
+        vx:0, vy:0, side: Math.random()<0.5?'L':'R', phase: Math.random()*Math.PI*2 });
+  }
+  function reset() { soc=1.0; mode='idle'; initIons(); }
+  bDischarge.addEventListener('click', () => mode='discharge');
+  bCharge.addEventListener('click',    () => mode='charge');
+  bReset.addEventListener('click', reset);
+  reset();
+
+  const S = SIMS.electrochem = { raf: null };
+
+  function frame() {
+    t++;
+    // update SOC
+    const rate = rLoad.val * 0.0008;
+    if (mode==='discharge') { soc = Math.max(0, soc - rate); if (soc<=0) mode='idle'; }
+    if (mode==='charge')    { soc = Math.min(1, soc + rate*0.7); if (soc>=1) mode='idle'; }
+
+    // Nernst-like voltage: E = E0 - (0.059/n)*log((1-soc)/soc)
+    const E0 = 3.7, n = 1;
+    const ratio = Math.max(0.001, (1-soc)/Math.max(0.001,soc));
+    const voltage = Math.max(2.5, Math.min(4.2, E0 - (0.059/n)*Math.log10(ratio)));
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+
+    // electrodes
+    const anodeX = 80, cathodeX = W-80, elecH = H-80, elecW = 36, elecY = 40;
+    // anode (graphite — discharge: Li leaves)
+    const anodeCol = mode==='discharge'?'#6366f1':'#4338ca';
+    ctx.fillStyle = anodeCol;
+    ctx.fillRect(anodeX - elecW/2, elecY, elecW, elecH);
+    ctx.fillStyle='rgba(255,255,255,0.08)';
+    for(let i=0;i<8;i++) ctx.fillRect(anodeX-elecW/2+2, elecY+10+i*(elecH-20)/8, elecW-4, 4);
+    ctx.fillStyle='#a5b4fc'; ctx.font='bold 10px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('ANODE', anodeX, elecY-8);
+    ctx.fillText('(Graphite)', anodeX, elecY-18);
+
+    // cathode (LiCoO2)
+    const cathodeCol = mode==='charge'?'#f59e0b':'#d97706';
+    ctx.fillStyle = cathodeCol;
+    ctx.fillRect(cathodeX - elecW/2, elecY, elecW, elecH);
+    ctx.fillStyle='rgba(255,255,255,0.08)';
+    for(let i=0;i<8;i++) ctx.fillRect(cathodeX-elecW/2+2, elecY+10+i*(elecH-20)/8, elecW-4, 4);
+    ctx.fillStyle='#fcd34d'; ctx.font='bold 10px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('CATHODE', cathodeX, elecY-8);
+    ctx.fillText('(LiCoO₂)', cathodeX, elecY-18);
+
+    // electrolyte region
+    ctx.fillStyle='rgba(14,165,233,0.07)';
+    ctx.fillRect(anodeX+elecW/2, elecY, cathodeX-anodeX-elecW, elecH);
+    ctx.fillStyle='rgba(14,165,233,0.3)'; ctx.font='10px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('Electrolyte (LiPF₆)', W/2, elecY+elecH/2);
+
+    // external circuit (wire + bulb)
+    const wireY = elecY - 22;
+    ctx.strokeStyle='rgba(255,255,255,0.4)'; ctx.lineWidth=3;
+    ctx.beginPath();
+    ctx.moveTo(anodeX, elecY); ctx.lineTo(anodeX, wireY);
+    ctx.lineTo(W/2-18, wireY); ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(cathodeX, elecY); ctx.lineTo(cathodeX, wireY);
+    ctx.lineTo(W/2+18, wireY); ctx.stroke();
+    // bulb/charger icon
+    const bulbGlow = mode==='discharge' ? Math.min(1, soc+0.1) : 0;
+    const chargeGlow = mode==='charge' ? 0.8 : 0;
+    ctx.beginPath(); ctx.arc(W/2, wireY, 14, 0, Math.PI*2);
+    ctx.fillStyle = mode==='charge' ? `rgba(251,191,36,${0.3+chargeGlow*0.5})` : `rgba(253,224,71,${0.1+bulbGlow*0.7})`;
+    ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=1.5; ctx.stroke();
+    ctx.fillStyle='#fff'; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(mode==='charge'?'⚡':'💡', W/2, wireY+4);
+
+    // electron flow arrows on wire
+    if (mode !== 'idle') {
+      const dir = mode==='discharge' ? 1 : -1;
+      const arrowT = (t*0.03*dir + 10) % 1;
+      const ax = anodeX + (W/2-14 - anodeX) * arrowT;
+      ctx.beginPath(); ctx.arc(ax, wireY, 4, 0, Math.PI*2);
+      ctx.fillStyle='#60a5fa'; ctx.fill();
+      ctx.fillStyle='#60a5fa'; ctx.font='8px Nunito,sans-serif'; ctx.textAlign='center';
+      ctx.fillText('e⁻', ax, wireY-8);
+    }
+
+    // ion particles
+    ions.forEach(ion => {
+      const dir = mode==='discharge' ? 1 : -1; // discharge: anode→cathode
+      ion.phase += 0.03 * rLoad.val * Math.abs(dir);
+      const prog = (Math.sin(ion.phase)*0.5+0.5);
+      const tx = mode==='idle' ? ion.x :
+        dir > 0 ? anodeX+elecW/2+20 + prog*(cathodeX-elecW/2-20 - (anodeX+elecW/2+20))
+                : cathodeX-elecW/2-20 - prog*(cathodeX-elecW/2-20 - (anodeX+elecW/2+20));
+      const ty = elecY + 20 + Math.sin(ion.phase*1.3+ion.side==='L'?0:Math.PI)*(elecH-40)*0.4 + elecH*0.3;
+      ctx.beginPath(); ctx.arc(tx, ty, 5, 0, Math.PI*2);
+      ctx.fillStyle='#34d399'; ctx.fill();
+      ctx.fillStyle='#fff'; ctx.font='bold 7px Nunito,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('Li⁺', tx, ty); ctx.textBaseline='alphabetic';
+    });
+
+    // SOC bar
+    ctx.fillStyle='rgba(255,255,255,0.1)'; ctx.fillRect(10, H-22, W-20, 12);
+    ctx.fillStyle=soc>0.4?'#34d399':soc>0.2?'#f59e0b':'#ef4444';
+    ctx.fillRect(10, H-22, (W-20)*soc, 12);
+    ctx.fillStyle='#fff'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('State of Charge: '+Math.round(soc*100)+'%', 14, H-12);
+
+    pV.set(voltage.toFixed(2)+' V');
+    pQ.set(Math.round(soc*100)+'%');
+    pMode.set(mode==='discharge'?'Discharging':mode==='charge'?'Charging':'Idle');
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── KINETICS SIM ── */
+function simKinetics(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pReact = pill('[Reactant]'); const pProd = pill('[Product]'); const pRate = pill('Rate');
+  pRow.appendChild(pReact.el); pRow.appendChild(pProd.el); pRow.appendChild(pRate.el);
+  const rTemp  = mkRange(ctrl, 'Temperature (K)', 200, 800, 400, 10, color);
+  const rEa    = mkRange(ctrl, 'Activation energy (kJ/mol)', 10, 100, 50, 5, color);
+  const bCat   = mkBtn('⚗️ Add catalyst', true, color);
+  const bReset = mkBtn('↺ Reset');
+  ctrl.appendChild(bCat); ctrl.appendChild(bReset);
+
+  let molecules = [], catActive = false, t = 0;
+  let concentrationHistory = [], productHistory = [];
+
+  function initMolecules() {
+    molecules = [];
+    catActive = false;
+    concentrationHistory = []; productHistory = [];
+    for (let i = 0; i < 60; i++)
+      molecules.push({
+        x: Math.random()*W, y: Math.random()*H,
+        vx: (Math.random()-.5)*2, vy: (Math.random()-.5)*2,
+        type: 'R', // R=reactant P=product
+        r: 6, age: 0
+      });
+    t = 0;
+  }
+  bCat.addEventListener('click', () => { catActive = !catActive; bCat.textContent = catActive ? '✕ Remove catalyst' : '⚗️ Add catalyst'; });
+  bReset.addEventListener('click', initMolecules);
+  initMolecules();
+
+  const S = SIMS.kinetics = { raf: null };
+  const R_GAS = 8.314;
+
+  function frame() {
+    t++;
+    const T = rTemp.val;
+    const Ea = rEa.val * 1000; // J/mol
+    const EaEff = catActive ? Ea * 0.45 : Ea;
+    // Arrhenius rate constant (normalised)
+    const A = 1e6;
+    const k = Math.min(0.08, A * Math.exp(-EaEff/(R_GAS*T)) * 0.0001);
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+
+    // update molecules
+    const spd = Math.sqrt(T/300);
+    molecules.forEach(m => {
+      m.x += m.vx * spd; m.y += m.vy * spd;
+      if (m.x < m.r || m.x > W-m.r) m.vx *= -1;
+      if (m.y < m.r || m.y > H*0.6-m.r) m.vy *= -1;
+      m.vx += (Math.random()-.5)*0.15*spd;
+      m.vy += (Math.random()-.5)*0.15*spd;
+      const maxV = 3*spd;
+      const v = Math.hypot(m.vx,m.vy);
+      if(v>maxV){m.vx=m.vx/v*maxV;m.vy=m.vy/v*maxV;}
+    });
+
+    // reactions — check collisions between reactants
+    for (let i = 0; i < molecules.length; i++) {
+      if (molecules[i].type !== 'R') continue;
+      for (let j = i+1; j < molecules.length; j++) {
+        if (molecules[j].type !== 'R') continue;
+        const dx = molecules[j].x - molecules[i].x;
+        const dy = molecules[j].y - molecules[i].y;
+        if (dx*dx+dy*dy < (molecules[i].r*2.5)**2 && Math.random() < k) {
+          molecules[i].type = 'P'; molecules[j].type = 'P';
+          molecules[i].vx *= -1; molecules[j].vx *= -1;
+          break;
+        }
+      }
+    }
+
+    // draw molecules
+    molecules.forEach(m => {
+      ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, Math.PI*2);
+      ctx.fillStyle = m.type==='R' ? '#6366f1' : '#f59e0b';
+      ctx.fill();
+      ctx.fillStyle='#fff'; ctx.font='bold 7px Nunito,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(m.type, m.x, m.y); ctx.textBaseline='alphabetic';
+    });
+
+    // catalyst visual
+    if (catActive) {
+      ctx.strokeStyle='rgba(16,185,129,0.5)'; ctx.lineWidth=2; ctx.setLineDash([6,4]);
+      ctx.strokeRect(5, 5, W-10, H*0.6-10); ctx.setLineDash([]);
+      ctx.fillStyle='#34d399'; ctx.font='bold 9px Nunito,sans-serif'; ctx.textAlign='left';
+      ctx.fillText('⚗️ Catalyst active — Ea reduced 55%', 10, 18);
+    }
+
+    // energy profile chart (bottom section)
+    const chartY = H*0.62, chartH = H*0.35, chartW = W-30;
+    ctx.fillStyle='rgba(255,255,255,0.04)'; ctx.fillRect(15, chartY, chartW, chartH);
+    ctx.strokeStyle='rgba(255,255,255,0.15)'; ctx.lineWidth=1;
+    ctx.strokeRect(15, chartY, chartW, chartH);
+
+    // draw energy diagram
+    const midX = 15+chartW/2;
+    const baseY = chartY+chartH-10;
+    const reactY = baseY-20;
+    const prodY  = baseY-8;
+    const tsY    = chartY+8;
+    const tsYcat = catActive ? chartY+chartH*0.38 : tsY;
+
+    // normal pathway
+    ctx.beginPath(); ctx.moveTo(15+10, reactY);
+    ctx.bezierCurveTo(midX-40, reactY, midX-20, tsY+4, midX, tsY+4);
+    ctx.bezierCurveTo(midX+20, tsY+4, midX+40, prodY, 15+chartW-10, prodY);
+    ctx.strokeStyle='rgba(99,102,241,0.6)'; ctx.lineWidth=2; ctx.stroke();
+
+    // catalyst pathway
+    if (catActive) {
+      ctx.beginPath(); ctx.moveTo(15+10, reactY);
+      ctx.bezierCurveTo(midX-40, reactY, midX-20, tsYcat, midX, tsYcat);
+      ctx.bezierCurveTo(midX+20, tsYcat, midX+40, prodY, 15+chartW-10, prodY);
+      ctx.strokeStyle='rgba(52,211,153,0.8)'; ctx.lineWidth=2; ctx.setLineDash([5,3]); ctx.stroke(); ctx.setLineDash([]);
+    }
+
+    // labels
+    ctx.fillStyle='#a5b4fc'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('Reactants', 18, reactY-4);
+    ctx.fillStyle='#fcd34d'; ctx.textAlign='right';
+    ctx.fillText('Products', 15+chartW-2, prodY-4);
+    ctx.fillStyle='rgba(255,255,255,0.4)'; ctx.textAlign='center';
+    ctx.fillText('‡ Transition state', midX, tsY-2);
+    ctx.fillText('Ea = '+rEa.val+'kJ/mol'+(catActive?' → '+Math.round(rEa.val*0.45)+'kJ/mol':''), midX, chartY+chartH/2+4);
+
+    const nR = molecules.filter(m=>m.type==='R').length;
+    const nP = molecules.filter(m=>m.type==='P').length;
+    pReact.set(nR); pProd.set(nP); pRate.set((k*1000).toFixed(2)+'×10⁻³');
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── ORGANIC CHEMISTRY SIM ── */
+function simOrganic(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pMol = pill('Molecule'); const pAtoms = pill('Atoms'); const pType = pill('Type');
+  pRow.appendChild(pMol.el); pRow.appendChild(pAtoms.el); pRow.appendChild(pType.el);
+  const rMol = mkRange(ctrl, 'Molecule selector', 1, 6, 1, 1, color);
+  ctrl.appendChild(document.createElement('div'));
+
+  // Define molecules as atom+bond lists
+  const MOLECULES = [
+    { name:'Methane (CH₄)',   type:'Alkane',   atoms:[
+        {s:'C',x:0,y:0,col:'#6b7280'},{s:'H',x:60,y:0,col:'#ef4444'},
+        {s:'H',x:-60,y:0,col:'#ef4444'},{s:'H',x:0,y:60,col:'#ef4444'},{s:'H',x:0,y:-60,col:'#ef4444'}],
+      bonds:[[0,1],[0,2],[0,3],[0,4]], info:'Simplest organic molecule — natural gas' },
+    { name:'Ethanol (C₂H₅OH)', type:'Alcohol', atoms:[
+        {s:'C',x:-50,y:0,col:'#6b7280'},{s:'C',x:0,y:0,col:'#6b7280'},
+        {s:'O',x:50,y:0,col:'#3b82f6'},{s:'H',x:80,y:0,col:'#ef4444'},
+        {s:'H',x:-80,y:-30,col:'#ef4444'},{s:'H',x:-80,y:30,col:'#ef4444'},
+        {s:'H',x:-10,y:-40,col:'#ef4444'},{s:'H',x:-10,y:40,col:'#ef4444'}],
+      bonds:[[0,1],[1,2],[2,3],[0,4],[0,5],[1,6],[1,7]], info:'Found in alcoholic drinks and hand sanitiser' },
+    { name:'Benzene (C₆H₆)',  type:'Aromatic', atoms:[
+        {s:'C',x:0,y:-60,col:'#6b7280'},{s:'C',x:52,y:-30,col:'#6b7280'},
+        {s:'C',x:52,y:30,col:'#6b7280'},{s:'C',x:0,y:60,col:'#6b7280'},
+        {s:'C',x:-52,y:30,col:'#6b7280'},{s:'C',x:-52,y:-30,col:'#6b7280'},
+        {s:'H',x:0,y:-90,col:'#ef4444'},{s:'H',x:78,y:-45,col:'#ef4444'},
+        {s:'H',x:78,y:45,col:'#ef4444'},{s:'H',x:0,y:90,col:'#ef4444'},
+        {s:'H',x:-78,y:45,col:'#ef4444'},{s:'H',x:-78,y:-45,col:'#ef4444'}],
+      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,6],[1,7],[2,8],[3,9],[4,10],[5,11]],
+      aromatic:true, info:'Fundamental aromatic ring — basis of dyes, drugs, plastics' },
+    { name:'Glucose (C₆H₁₂O₆)', type:'Sugar', atoms:[
+        {s:'C',x:-70,y:-20,col:'#6b7280'},{s:'C',x:-30,y:-40,col:'#6b7280'},
+        {s:'C',x:10,y:-20,col:'#6b7280'},{s:'C',x:10,y:30,col:'#6b7280'},
+        {s:'C',x:-30,y:50,col:'#6b7280'},{s:'O',x:-70,y:30,col:'#3b82f6'},
+        {s:'O',x:-70,y:-60,col:'#3b82f6'},{s:'O',x:-30,y:-80,col:'#3b82f6'},
+        {s:'O',x:50,y:-20,col:'#3b82f6'},{s:'O',x:50,y:30,col:'#3b82f6'},
+        {s:'H',x:-100,y:-60,col:'#ef4444'},{s:'H',x:-30,y:-100,col:'#ef4444'}],
+      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,6],[1,7],[2,8],[3,9],[6,10],[7,11]], info:'Primary fuel for all living cells — C₆H₁₂O₆' },
+    { name:'Aspirin (C₉H₈O₄)', type:'Drug',   atoms:[
+        {s:'C',x:-30,y:-55,col:'#6b7280'},{s:'C',x:20,y:-55,col:'#6b7280'},
+        {s:'C',x:45,y:0,col:'#6b7280'},{s:'C',x:20,y:55,col:'#6b7280'},
+        {s:'C',x:-30,y:55,col:'#6b7280'},{s:'C',x:-55,y:0,col:'#6b7280'},
+        {s:'C',x:90,y:0,col:'#6b7280'},{s:'O',x:110,y:-30,col:'#3b82f6'},
+        {s:'O',x:110,y:30,col:'#3b82f6'},{s:'C',x:135,y:30,col:'#6b7280'},
+        {s:'O',x:-80,y:0,col:'#3b82f6'},{s:'C',x:-110,y:0,col:'#6b7280'},
+        {s:'O',x:-130,y:-20,col:'#3b82f6'}],
+      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[2,6],[6,7],[6,8],[8,9],[5,10],[10,11],[11,12]], info:'First synthetic drug — synthesised by Felix Hoffmann, 1897' },
+    { name:'Caffeine (C₈H₁₀N₄O₂)', type:'Alkaloid', atoms:[
+        {s:'N',x:-40,y:-40,col:'#8b5cf6'},{s:'C',x:0,y:-60,col:'#6b7280'},
+        {s:'N',x:40,y:-40,col:'#8b5cf6'},{s:'C',x:50,y:0,col:'#6b7280'},
+        {s:'N',x:40,y:40,col:'#8b5cf6'},{s:'C',x:0,y:60,col:'#6b7280'},
+        {s:'C',x:-40,y:40,col:'#6b7280'},{s:'N',x:-60,y:0,col:'#8b5cf6'},
+        {s:'C',x:0,y:0,col:'#6b7280'},
+        {s:'O',x:0,y:-90,col:'#3b82f6'},{s:'O',x:80,y:0,col:'#3b82f6'},
+        {s:'C',x:-100,y:0,col:'#6b7280'},{s:'C',x:70,y:65,col:'#6b7280'},
+        {s:'C',x:-60,y:-70,col:'#6b7280'}],
+      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],[0,8],[2,8],[1,9],[3,10],[7,11],[4,12],[0,13]], info:'World\'s most consumed psychoactive substance — blocks adenosine receptors' },
+  ];
+
+  let rotAngle = 0, t = 0;
+  const S = SIMS.organic = { raf: null };
+
+  function frame() {
+    t++; rotAngle += 0.008;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+
+    const idx = rMol.val - 1;
+    const mol = MOLECULES[idx];
+    const cx = W/2, cy = H/2 - 10;
+    const cos = Math.cos(rotAngle), sin = Math.sin(rotAngle);
+
+    // transform atoms (rotate around Y axis for 3D feel)
+    const transformed = mol.atoms.map(a => ({
+      ...a,
+      px: cx + a.x * cos - a.y * 0,
+      py: cy + a.x * sin * 0.3 + a.y,
+      scale: 0.8 + (a.x * cos) / 300
+    }));
+
+    // draw bonds
+    mol.bonds.forEach(([i,j]) => {
+      const a = transformed[i], b = transformed[j];
+      ctx.beginPath(); ctx.moveTo(a.px, a.py); ctx.lineTo(b.px, b.py);
+      ctx.strokeStyle = mol.aromatic && i < 6 && j < 6 ? '#fbbf24' : 'rgba(255,255,255,0.5)';
+      ctx.lineWidth = mol.aromatic && i < 6 && j < 6 ? 2.5 : 1.5;
+      ctx.stroke();
+    });
+
+    // aromatic circle
+    if (mol.aromatic) {
+      ctx.beginPath(); ctx.arc(cx, cy, 35, 0, Math.PI*2);
+      ctx.strokeStyle='rgba(251,191,36,0.3)'; ctx.lineWidth=1.5; ctx.setLineDash([4,3]); ctx.stroke(); ctx.setLineDash([]);
+    }
+
+    // draw atoms (sorted by z for pseudo-3D)
+    transformed.sort((a,b)=>a.scale-b.scale).forEach(a => {
+      const r = (a.s==='C'?10:a.s==='O'?9:a.s==='N'?9:7) * a.scale;
+      ctx.beginPath(); ctx.arc(a.px, a.py, r, 0, Math.PI*2);
+      ctx.fillStyle = a.col; ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,0.3)'; ctx.lineWidth=1; ctx.stroke();
+      if (r > 6) {
+        ctx.fillStyle='#fff'; ctx.font=`bold ${Math.round(8*a.scale)}px Nunito,sans-serif`;
+        ctx.textAlign='center'; ctx.textBaseline='middle';
+        ctx.fillText(a.s, a.px, a.py); ctx.textBaseline='alphabetic';
+      }
+    });
+
+    // legend
+    const legX = 12;
+    [[`#6b7280`,'C Carbon'],[`#ef4444`,'H Hydrogen'],[`#3b82f6`,'O Oxygen'],[`#8b5cf6`,'N Nitrogen']].forEach(([c,l],i) => {
+      ctx.beginPath(); ctx.arc(legX+6, H-22+i*0-i*14, 5, 0, Math.PI*2);
+      ctx.fillStyle=c; ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='left';
+      ctx.fillText(l, legX+14, H-18+i*0-i*14);
+    });
+
+    // molecule info
+    ctx.fillStyle='rgba(255,255,255,0.7)'; ctx.font='10px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(mol.info, W/2, H-8);
+
+    pMol.set(mol.name.split(' ')[0]);
+    pAtoms.set(mol.atoms.length+' atoms');
+    pType.set(mol.type);
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── BLACK HOLES SIM ── */
+function simBlackholes(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pDist = pill('Distance'); const pDilat = pill('Time dilation'); const pRedshift = pill('Redshift');
+  pRow.appendChild(pDist.el); pRow.appendChild(pDilat.el); pRow.appendChild(pRedshift.el);
+  const rMass = mkRange(ctrl, 'Black hole mass (M☉)', 1, 50, 10, 1, color);
+  const rOrbit = mkRange(ctrl, 'Test particle distance (r_S)', 2, 20, 6, 0.5, color);
+  const bGwave = mkBtn('🌊 Gravitational wave', true, color);
+  ctrl.appendChild(bGwave);
+
+  let t = 0, gwAnim = 0, stars = [];
+  for (let i = 0; i < 80; i++)
+    stars.push({ x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.5, twinkle: Math.random()*Math.PI*2 });
+
+  bGwave.addEventListener('click', () => { gwAnim = 80; });
+
+  const S = SIMS.blackholes = { raf: null };
+  const cx = W/2, cy = H/2;
+
+  function frame() {
+    t += 0.02;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#000010'; ctx.fillRect(0, 0, W, H);
+
+    // stars
+    stars.forEach(s => {
+      s.twinkle += 0.03;
+      const alpha = 0.4 + 0.3*Math.sin(s.twinkle);
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(255,255,255,${alpha})`; ctx.fill();
+    });
+
+    const M = rMass.val;
+    const rs_px = Math.min(40, 8 + M*1.2); // Schwarzschild radius in pixels (visual)
+    const orbitR_rs = rOrbit.val; // in units of r_S
+    const orbitR_px = rs_px * orbitR_rs;
+
+    // gravitational lensing rings
+    for (let ring = 1; ring <= 4; ring++) {
+      const ringR = rs_px * (1 + ring * 0.8);
+      const alpha = 0.15/ring;
+      ctx.beginPath(); ctx.arc(cx, cy, ringR, 0, Math.PI*2);
+      ctx.strokeStyle = `rgba(255,200,100,${alpha})`;
+      ctx.lineWidth = ring===1?3:2; ctx.stroke();
+    }
+
+    // photon sphere
+    ctx.beginPath(); ctx.arc(cx, cy, rs_px*1.5, 0, Math.PI*2);
+    ctx.strokeStyle = 'rgba(251,191,36,0.4)'; ctx.lineWidth=1; ctx.setLineDash([4,4]); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle='rgba(251,191,36,0.5)'; ctx.font='8px Nunito,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('photon sphere', cx+rs_px*1.5+4, cy);
+
+    // accretion disc (ellipse)
+    ctx.save(); ctx.translate(cx,cy); ctx.scale(1, 0.28);
+    for (let r2 = rs_px*1.1; r2 < rs_px*4; r2 += 2) {
+      const heat = 1 - (r2-rs_px*1.1)/(rs_px*3);
+      ctx.beginPath(); ctx.arc(0, 0, r2, 0, Math.PI*2);
+      ctx.strokeStyle = `hsla(${30+heat*20},90%,${50+heat*20}%,${heat*0.35})`;
+      ctx.lineWidth=2; ctx.stroke();
+    }
+    ctx.restore();
+
+    // event horizon (black hole)
+    const bhGrad = ctx.createRadialGradient(cx-rs_px*.3, cy-rs_px*.3, 0, cx, cy, rs_px);
+    bhGrad.addColorStop(0, '#1a0533');
+    bhGrad.addColorStop(0.6, '#000');
+    bhGrad.addColorStop(1, '#000');
+    ctx.beginPath(); ctx.arc(cx, cy, rs_px, 0, Math.PI*2);
+    ctx.fillStyle = bhGrad; ctx.fill();
+    ctx.beginPath(); ctx.arc(cx, cy, rs_px, 0, Math.PI*2);
+    ctx.strokeStyle='rgba(150,50,255,0.6)'; ctx.lineWidth=2; ctx.stroke();
+
+    // orbiting test particle
+    const orbitSpeed = 1/Math.sqrt(orbitR_rs*orbitR_rs*orbitR_rs); // Kepler
+    const angle = t * orbitSpeed * 3;
+    const px = cx + orbitR_px * Math.cos(angle);
+    const py = cy + orbitR_px * Math.sin(angle) * 0.4;
+    // orbit path
+    ctx.save(); ctx.translate(cx,cy); ctx.scale(1,0.4);
+    ctx.beginPath(); ctx.arc(0,0,orbitR_px,0,Math.PI*2);
+    ctx.strokeStyle='rgba(99,102,241,0.3)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.restore();
+    ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI*2);
+    ctx.fillStyle='#818cf8'; ctx.fill();
+    ctx.strokeStyle='#fff'; ctx.lineWidth=1; ctx.stroke();
+
+    // gravitational wave animation
+    if (gwAnim > 0) {
+      gwAnim--;
+      const prog = 1-(gwAnim/80);
+      for (let w2=1; w2<=3; w2++) {
+        const wr = prog * W * 0.6 * w2/3;
+        ctx.beginPath(); ctx.arc(cx, cy, wr, 0, Math.PI*2);
+        ctx.strokeStyle = `rgba(99,102,241,${0.5*(1-prog)})`;
+        ctx.lineWidth=2; ctx.stroke();
+      }
+    }
+
+    // labels
+    ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText(`M = ${M} M☉   r_S = ${(M*2.95/1000).toFixed(2)} km`, cx, H-10);
+
+    // physics
+    const rRatio = orbitR_rs; // r/r_S
+    const timeDilation = Math.sqrt(1 - 1/rRatio);
+    const redshift = 1/Math.sqrt(1-1/rRatio) - 1;
+    const distKm = (M * 2.95 * orbitR_rs).toFixed(0);
+
+    pDist.set(distKm+' km');
+    pDilat.set(timeDilation.toFixed(3)+'×');
+    pRedshift.set('z='+redshift.toFixed(3));
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── COSMOLOGY SIM ── */
+function simCosmology(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pAge = pill('Age (Gyr)'); const pH = pill('H(z)'); const pZ = pill('Redshift z');
+  pRow.appendChild(pAge.el); pRow.appendChild(pH.el); pRow.appendChild(pZ.el);
+  const rOmegaL = mkRange(ctrl, 'Dark energy Ω_Λ', 0, 100, 69, 1, color);
+  const rOmegaM = mkRange(ctrl, 'Matter Ω_m (%)', 0, 100, 31, 1, color);
+  const bReset = mkBtn('↺ Reset', true, color);
+  ctrl.appendChild(bReset);
+
+  let galaxies = [], t = 0, cosmicT = 0;
+
+  function initGalaxies() {
+    galaxies = []; cosmicT = 0;
+    for (let i = 0; i < 55; i++) {
+      const angle = Math.random()*Math.PI*2;
+      const d = 10 + Math.random()*60;
+      galaxies.push({
+        ox: W/2 + Math.cos(angle)*d, oy: H/2 + Math.sin(angle)*d,
+        x: W/2 + Math.cos(angle)*d, y: H/2 + Math.sin(angle)*d,
+        angle, d0: d,
+        col: `hsl(${200+Math.random()*60},${60+Math.random()*30}%,${60+Math.random()*20}%)`,
+        r: 1.5 + Math.random()*2.5
+      });
+    }
+  }
+  bReset.addEventListener('click', initGalaxies);
+  initGalaxies();
+
+  const S = SIMS.cosmology = { raf: null };
+  const H0 = 70; // km/s/Mpc
+
+  function frame() {
+    t += 0.008;
+    cosmicT = Math.min(13.8, cosmicT + 0.012);
+    ctx.clearRect(0, 0, W, H);
+
+    const OmL = rOmegaL.val/100;
+    const OmM = rOmegaM.val/100;
+
+    // cosmic age → scale factor (simplified)
+    const a = Math.min(3, 0.01 + cosmicT/13.8 * (1 + OmL*0.5));
+    const z = Math.max(0, 1/a - 1);
+    const Hz = H0*Math.sqrt(OmM*(1+z)**3 + OmL);
+
+    // CMB background — warm at early times, dark at late
+    const earlyness = Math.max(0, 1 - cosmicT/13.8);
+    const bgH = 20 + earlyness*220;
+    ctx.fillStyle = `hsl(${bgH},${earlyness*60}%,${3+earlyness*20}%)`;
+    ctx.fillRect(0, 0, W, H);
+
+    // CMB ripples at early times
+    if (cosmicT < 2) {
+      for (let i = 0; i < 5; i++) {
+        const alpha = (1-cosmicT/2)*0.3;
+        ctx.beginPath(); ctx.arc(W/2, H/2, 30+i*30, 0, Math.PI*2);
+        ctx.strokeStyle=`rgba(255,200,100,${alpha})`; ctx.lineWidth=2; ctx.stroke();
+      }
+    }
+
+    // expand galaxies
+    galaxies.forEach(g => {
+      g.x = W/2 + Math.cos(g.angle)*g.d0*a*1.8;
+      g.y = H/2 + Math.sin(g.angle)*g.d0*a*1.8;
+      // wrap
+      if (g.x < -20 || g.x > W+20 || g.y < -20 || g.y > H+20) return;
+      // draw galaxy
+      const glowR = g.r*(1+a*0.3);
+      ctx.beginPath(); ctx.arc(g.x, g.y, glowR+3, 0, Math.PI*2);
+      ctx.fillStyle=`rgba(255,255,255,0.05)`; ctx.fill();
+      ctx.beginPath(); ctx.arc(g.x, g.y, glowR, 0, Math.PI*2);
+      ctx.fillStyle=g.col; ctx.fill();
+      // recession velocity arrow
+      if (a > 1.2) {
+        const vlen = Math.min(20, g.d0*a*0.08);
+        const dx = Math.cos(g.angle)*vlen, dy = Math.sin(g.angle)*vlen;
+        ctx.beginPath(); ctx.moveTo(g.x, g.y); ctx.lineTo(g.x+dx, g.y+dy);
+        ctx.strokeStyle='rgba(255,100,100,0.4)'; ctx.lineWidth=1; ctx.stroke();
+      }
+    });
+
+    // Milky Way (us) at centre
+    ctx.beginPath(); ctx.arc(W/2, H/2, 7, 0, Math.PI*2);
+    ctx.fillStyle='#fbbf24'; ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font='bold 8px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('MW', W/2, H/2+3);
+
+    // cosmic timeline bar
+    const barW = W-60, barX=30, barY=H-18;
+    ctx.fillStyle='rgba(255,255,255,0.1)'; ctx.fillRect(barX,barY,barW,8);
+    ctx.fillStyle=color; ctx.fillRect(barX,barY,barW*(cosmicT/13.8),8);
+    ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.font='8px Nunito,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('Big Bang', barX, barY-3);
+    ctx.textAlign='right'; ctx.fillText('Now (13.8 Gyr)', barX+barW, barY-3);
+
+    // phase labels
+    const phases=[{t:0.38/1000,l:'CMB'},{t:0.4,l:'First\nstars'},{t:1,l:'Galaxies'},{t:9,l:'Solar\nSystem'},{t:13.8,l:'Today'}];
+    phases.forEach(p=>{
+      if(p.t>0.01){
+        const px=barX+barW*(p.t/13.8);
+        ctx.strokeStyle='rgba(255,255,255,0.3)'; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(px,barY); ctx.lineTo(px,barY+8); ctx.stroke();
+      }
+    });
+
+    pAge.set(cosmicT.toFixed(2)); pH.set(Math.round(Hz)); pZ.set(z.toFixed(2));
+    if (cosmicT >= 13.8) cosmicT = 0;
+    S.raf = requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── SOLAR SYSTEM SIM ── */
+function simSolarSystem(container, color) {
+  const W = getSimWidth(container), H = 300;
+  const { canvas, ctx } = mkCanvas(container, W, H);
+  const ctrl = mkCtrl(container);
+  const pRow = mkPills(container);
+  const pPlanet = pill('Selected'); const pPeriod = pill('Period'); const pDist = pill('Distance');
+  pRow.appendChild(pPlanet.el); pRow.appendChild(pPeriod.el); pRow.appendChild(pDist.el);
+  const rSpeed = mkRange(ctrl, 'Time speed', 1, 10, 4, 1, color);
+  const rZoom  = mkRange(ctrl, 'Zoom', 1, 5, 2, 0.5, color);
+  ctrl.appendChild(document.createElement('div'));
+
+  const PLANETS = [
+    { name:'Mercury', a:0.39, T:0.24, r:3,  col:'#9ca3af', moons:0 },
+    { name:'Venus',   a:0.72, T:0.62, r:5,  col:'#fbbf24', moons:0 },
+    { name:'Earth',   a:1.00, T:1.00, r:5.5,col:'#3b82f6', moons:1 },
+    { name:'Mars',    a:1.52, T:1.88, r:4,  col:'#ef4444', moons:2 },
+    { name:'Jupiter', a:5.20, T:11.86,r:12, col:'#f59e0b', moons:4 },
+    { name:'Saturn',  a:9.58, T:29.46,r:10, col:'#fcd34d', moons:7, rings:true },
+    { name:'Uranus',  a:19.2, T:84.0, r:7,  col:'#67e8f9', moons:5 },
+    { name:'Neptune', a:30.1, T:164.8,r:7,  col:'#6366f1', moons:2 },
+  ];
+
+  let t = 0, selected = 2; // Earth default
+  const angles = PLANETS.map(() => Math.random()*Math.PI*2);
+  const cx = W/2, cy = H/2;
+
+  const S = SIMS.solarsystem = { raf: null };
+
+  function frame() {
+    t += 0.005 * rSpeed.val;
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#000814'; ctx.fillRect(0, 0, W, H);
+
+    // background stars
+    for (let i = 0; i < 60; i++) {
+      const sx = (i*173.7)%W, sy = (i*97.3+30)%H;
+      ctx.beginPath(); ctx.arc(sx,sy,0.7,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,255,255,${0.2+0.4*(i%3)/3})`; ctx.fill();
+    }
+
+    const zoom = rZoom.val;
+    // scale: 1 AU = px_per_AU
+    const maxA = 32;
+    const px_per_AU = Math.min(cx, cy)*0.88 / (maxA/zoom);
+
+    // Sun
+    const sunGrad = ctx.createRadialGradient(cx,cy,0,cx,cy,14);
+    sunGrad.addColorStop(0,'#fffde7'); sunGrad.addColorStop(0.4,'#fbbf24'); sunGrad.addColorStop(1,'rgba(251,191,36,0)');
+    ctx.beginPath(); ctx.arc(cx,cy,14,0,Math.PI*2); ctx.fillStyle=sunGrad; ctx.fill();
+    ctx.beginPath(); ctx.arc(cx,cy,10,0,Math.PI*2); ctx.fillStyle='#fbbf24'; ctx.fill();
+
+    PLANETS.forEach((p, i) => {
+      const orbitR = p.a * px_per_AU;
+      if (orbitR > Math.max(W,H)*0.8) return; // outside view
+
+      // orbit ring
+      ctx.beginPath(); ctx.arc(cx,cy,orbitR,0,Math.PI*2);
+      ctx.strokeStyle = i===selected?'rgba(255,255,255,0.35)':'rgba(255,255,255,0.08)';
+      ctx.lineWidth=1; ctx.stroke();
+
+      // advance angle (Kepler: ω = 2π/T)
+      angles[i] += (2*Math.PI/p.T) * 0.005 * rSpeed.val;
+      const px = cx + orbitR*Math.cos(angles[i]);
+      const py = cy + orbitR*Math.sin(angles[i]);
+
+      // Saturn rings
+      if (p.rings && orbitR < W*0.45) {
+        ctx.save(); ctx.translate(px,py); ctx.scale(1,0.3);
+        ctx.beginPath(); ctx.arc(0,0,p.r*2.4,0,Math.PI*2);
+        ctx.strokeStyle='rgba(253,211,77,0.5)'; ctx.lineWidth=4; ctx.stroke();
+        ctx.beginPath(); ctx.arc(0,0,p.r*2.0,0,Math.PI*2);
+        ctx.strokeStyle='rgba(253,211,77,0.3)'; ctx.lineWidth=2; ctx.stroke();
+        ctx.restore();
+      }
+
+      // planet
+      const pr = Math.max(2, p.r*(0.5+zoom*0.25));
+      ctx.beginPath(); ctx.arc(px,py,pr,0,Math.PI*2);
+      ctx.fillStyle = p.col; ctx.fill();
+      if (i===selected) {
+        ctx.strokeStyle='#fff'; ctx.lineWidth=1.5; ctx.stroke();
+      }
+
+      // moons (simplified)
+      if (p.moons>0 && orbitR<W*0.4 && zoom>2) {
+        const moonR = pr+6;
+        for(let m=0;m<Math.min(p.moons,4);m++){
+          const ma=angles[i]*3+m*(Math.PI*2/p.moons);
+          ctx.beginPath(); ctx.arc(px+moonR*Math.cos(ma),py+moonR*Math.sin(ma)*0.4,1.5,0,Math.PI*2);
+          ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.fill();
+        }
+      }
+
+      // label
+      if (orbitR < W*0.48 && (zoom>1.5||orbitR>30)) {
+        ctx.fillStyle=i===selected?'#fff':'rgba(255,255,255,0.5)';
+        ctx.font=`${i===selected?'bold ':''} 9px Nunito,sans-serif`;
+        ctx.textAlign='center';
+        ctx.fillText(p.name, px, py-pr-4);
+      }
+
+      if (i===selected) {
+        pPlanet.set(p.name);
+        pPeriod.set(p.T<2?p.T.toFixed(2)+' yr':Math.round(p.T)+' yr');
+        pDist.set(p.a.toFixed(2)+' AU');
+      }
+    });
+
+    // click to select
+    S.raf = requestAnimationFrame(frame);
+  }
+
+  // planet selection on click
+  const canvasEl = container.querySelector('canvas');
+  canvasEl.addEventListener('click', e => {
+    const rect = canvasEl.getBoundingClientRect();
+    const mx = (e.clientX-rect.left)*(canvasEl.width/canvasEl.offsetWidth/( window.devicePixelRatio||1));
+    const my = (e.clientY-rect.top)*(canvasEl.height/canvasEl.offsetHeight/(window.devicePixelRatio||1));
+    const zoom = rZoom.val, maxA=32;
+    const px_per_AU = Math.min(cx,cy)*0.88/(maxA/zoom);
+    let best=-1, bestD=20;
+    PLANETS.forEach((p,i)=>{
+      const orbitR=p.a*px_per_AU;
+      const px2=cx+orbitR*Math.cos(angles[i]), py2=cy+orbitR*Math.sin(angles[i]);
+      const d=Math.hypot(mx-px2,my-py2);
+      if(d<bestD){bestD=d;best=i;}
+    });
+    if(best>=0) selected=best;
+  });
+
   frame();
 }
 </script>
