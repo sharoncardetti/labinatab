@@ -1475,6 +1475,133 @@ const S=[
    ]},sim:'neuro'},
  }},
 
+{id:'neuron',group:'🧠 Neuroscience',emoji:'⚡',color:'#7c3aed',light:'#f5f0ff',
+ title:'The Electric Brain',teaser:'How does a single brain cell fire 200 electric sparks per second — and wire your thoughts?',chips:['Neurons','Electricity','Synapses'],
+ lvls:{
+  junior:{icon:'⚡',title:'Your brain runs on tiny sparks!',
+   body:`<p>Inside your skull, right now, roughly <strong>86 billion neurons</strong> are lighting up like tiny lightning bolts, sending messages at speeds up to 120 metres per second. These sparks are how you're reading this sentence, how you remember your best friend's face, and how your hand knows to pull away from something hot before you've even decided to move.</p>
+<p>A neuron is a specialised cell with a long tail called an <strong>axon</strong> and branching arms called <strong>dendrites</strong>. Think of it like a tiny tree: the dendrites are the roots, collecting incoming signals from neighbours, and the axon is the trunk, sending the signal forward. When enough signals pile up, the neuron "fires" — it sends a brief electric pulse racing down its axon to the next neuron.</p>
+<p>The gap between two neurons is called a <strong>synapse</strong>. Signals don't jump across electrically — instead, the arriving pulse triggers the release of tiny chemical messengers called <strong>neurotransmitters</strong> (like dopamine or serotonin). These float across the gap and tell the next neuron whether to fire or stay quiet. Every thought, emotion, memory, and movement you've ever had was carried by chains of these tiny sparks crossing billions of synapses.</p>`,
+   facts:[{e:'⚡',t:'Neurons can fire up to 200 times per second. That\'s faster than any professional drummer — and you have 86 billion of them!'},{e:'🔗',t:'Your brain has roughly 100 trillion synapses — more than all the stars in the Milky Way and Andromeda combined.'},{e:'🐢',t:'Not all signals are equal: fast myelinated fibres carry pain at 120 m/s, while slow bare fibres carry an aching throb at just 0.5 m/s.'}],
+   formula:null,sim:'neuron'},
+
+  student:{icon:'🔬',title:'The Hodgkin-Huxley Action Potential',
+   body:`<p>A neuron at rest maintains a <strong>resting membrane potential</strong> of about −70 mV — the inside is more negative than the outside, maintained by Na⁺/K⁺-ATPase pumps that constantly push 3 Na⁺ out and pull 2 K⁺ in. When a stimulus depolarises the membrane above the threshold (~−55 mV), voltage-gated Na⁺ channels snap open and sodium floods in, driving the membrane toward +40 mV in less than a millisecond.</p>
+<p>This sudden reversal is the <strong>action potential</strong> — an "all-or-nothing" event. Once triggered it always reaches roughly the same peak regardless of the strength of the original stimulus (information is encoded instead by the <em>rate</em> of firing). Within ~1 ms the Na⁺ channels inactivate and voltage-gated K⁺ channels open, rapidly repolarising the membrane. Slight overshoot creates the <em>hyperpolarisation</em> (refractory period) during which another spike cannot be triggered — limiting maximum firing rate.</p>
+<p>The spike propagates along the axon because local depolarisation spreads to adjacent membrane patches, triggering their channels. In myelinated axons, insulating myelin sheaths force current to jump between exposed <strong>nodes of Ranvier</strong> (saltatory conduction), achieving speeds of ~120 m/s and dramatically saving metabolic energy. The entire signalling chain from membrane potential to neurotransmitter release was described by Hodgkin and Huxley in 1952, earning them the 1963 Nobel Prize.</p>`,
+   facts:[{e:'🏆',t:'Hodgkin and Huxley derived their equations for the action potential by measuring currents in giant squid axons — 1 mm wide, visible to the naked eye!'},{e:'💊',t:'Local anaesthetics like lidocaine block voltage-gated Na⁺ channels, silencing pain signals before they even reach the brain.'},{e:'🌊',t:'Multiple sclerosis destroys the myelin sheath, slowing or blocking conduction — causing weakness, numbness, and vision problems.'}],
+   formula:{rows:[
+    {n:'Resting potential',e:'V_rest  ≈  −70 mV',c:'maintained by Na⁺/K⁺ pump'},
+    {n:'Threshold',e:'V_thresh  ≈  −55 mV',c:'all-or-nothing above this'},
+    {sep:1},
+    {n:'Nernst equation',e:'E_ion  =  (RT/zF) · ln([X]_out / [X]_in)'},
+    {n:'Na⁺ equilibrium',e:'E_Na  ≈  +60 mV'},
+    {n:'K⁺ equilibrium',e:'E_K   ≈  −88 mV'},
+    {sep:1},
+    {n:'Goldman equation',e:'V_m  =  (RT/F) · ln( P_K[K⁺]_o + P_Na[Na⁺]_o + P_Cl[Cl⁻]_i ) / (…)'},
+   ]},sim:'neuron'},
+
+  scholar:{icon:'∂',title:'Hodgkin-Huxley Equations, Conductance Models, and Neural Coding',
+   body:`<p>The Hodgkin-Huxley (HH) model describes membrane current as <span class="mk">C_m · dV/dt = −g_Na · m³h(V−E_Na) − g_K · n⁴(V−E_K) − g_L(V−E_L) + I_ext</span>, where the gating variables m (Na⁺ activation), h (Na⁺ inactivation), and n (K⁺ activation) each obey first-order kinetics: <span class="mk">dx/dt = α_x(V)(1−x) − β_x(V)x</span>. The voltage-dependent rate constants α and β were fit empirically to squid axon data. The non-linear coupling of V and the gating variables creates the action potential as a limit cycle in a four-dimensional dynamical system.</p>
+<p>The HH model can be reduced to two dimensions via the <strong>FitzHugh-Nagumo (FHN)</strong> approximation, which separates fast variables (V, m) from slow variables (h, n). The FHN phase plane reveals the action potential as a <em>separatrix-crossing event</em>: stimuli below threshold return to rest; stimuli above threshold make a large excursion. The geometry of excitability — saddle-node bifurcation (Type I neurons, continuous frequency-current curve) vs. Hopf bifurcation (Type II, discontinuous) — classifies the firing patterns of real neurons.</p>
+<p><strong>Neural coding</strong> asks how information is represented in spike trains. The dominant hypothesis is <em>rate coding</em>: information is in the firing frequency over ~100 ms windows. Evidence for <em>temporal coding</em> (precise spike timing matters) includes the auditory system's microsecond-scale ITD detection and the hippocampal phase precession of place cells. Sparse coding in the neocortex — only ~1% of neurons active at any moment — maximises the representational capacity of the network while minimising metabolic cost: a single cortical neuron firing at 10 Hz consumes roughly the same ATP as a single synapse per spike.</p>`,
+   facts:[{e:'🧮',t:'The HH model uses 4 coupled ODEs. Modern compartmental models of a single neuron can have thousands of compartments and tens of thousands of equations.'},{e:'🗺️',t:'Hippocampal place cells fire only when an animal is in a specific location — they literally encode a "cognitive map" of space in spike timing.'},{e:'🤖',t:'Spiking neural networks (SNNs) mimic HH dynamics in silicon; Intel\'s Loihi chip has 128 neuromorphic cores processing information 1000× more efficiently than GPUs.'}],
+   formula:{rows:[
+    {n:'HH membrane equation',e:'C_m dV/dt  =  −g_Na m³h(V−E_Na) − g_K n⁴(V−E_K) − g_L(V−E_L) + I'},
+    {n:'Gating variable ODE',e:'dx/dt  =  α_x(V)(1−x) − β_x(V)x,   x ∈ {m, h, n}'},
+    {sep:1},
+    {n:'FitzHugh-Nagumo (fast)',e:'dv/dt  =  v − v³/3 − w + I'},
+    {n:'FitzHugh-Nagumo (slow)',e:'dw/dt  =  ε(v + a − bw)'},
+    {sep:1},
+    {n:'Cable equation',e:'λ²·∂²V/∂x²  =  τ·∂V/∂t  +  V',c:'propagation in passive dendrite'},
+    {n:'Space constant',e:'λ  =  √(r_m / r_a)',c:'r_m: membrane resistance; r_a: axial'},
+   ]},sim:'neuron'},
+ }},
+
+{id:'memory',group:'🧠 Neuroscience',emoji:'🧩',color:'#0e7490',light:'#ecfeff',
+ title:'How Memory Works',teaser:'How does your brain store 2.5 petabytes of memories — and why do some last forever while others vanish overnight?',chips:['Memory','LTP','Plasticity'],
+ lvls:{
+  junior:{icon:'🧩',title:'Your brain rewires itself when you learn!',
+   body:`<p>Have you ever wondered how you learned to ride a bike? At first it was hard — your brain had never done it before. But with practice, something amazing happened: your brain literally <em>changed its wiring</em>. The neurons involved in balancing and pedalling started talking to each other more efficiently, forming stronger connections. Eventually the skill became automatic — you can do it without even thinking. That physical change in the brain is what a <strong>memory</strong> actually is.</p>
+<p>Scientists describe this with a beautiful phrase: <em>"neurons that fire together, wire together."</em> Every time two neurons are active at the same moment, the synapse between them grows a little stronger. Repeat the experience enough — practice the piano, revise for a test, replay a happy day in your mind — and the connection becomes robust. This is called <strong>synaptic plasticity</strong>.</p>
+<p>There are different types of memory. <strong>Short-term memory</strong> holds a small amount of information for a few seconds or minutes (like a phone number you just read). <strong>Long-term memory</strong> can last a lifetime. To move memories from short to long-term, your brain replays them — especially during <strong>sleep</strong>, when the hippocampus re-activates the day's experiences and gradually transfers them to the cortex for permanent storage.</p>`,
+   facts:[{e:'💾',t:'The human brain can store an estimated 2.5 petabytes — equivalent to about 3 million hours of TV. You\'d never run out of space.'},{e:'😴',t:'Sleep is essential for memory. Students who sleep after studying retain up to 40% more than those who stay up all night revising.'},{e:'🏆',t:'Memory champions who memorise hundreds of random digits use "method of loci" — imagining walking through a familiar place. It exploits spatial memory circuits in the hippocampus.'}],
+   formula:null,sim:'memory'},
+
+  student:{icon:'🔬',title:'Long-Term Potentiation and the Hebbian Synapse',
+   body:`<p><strong>Long-Term Potentiation (LTP)</strong> is the cellular mechanism of learning and memory. Discovered by Bliss and Lømo (1973), LTP is the long-lasting increase in synaptic strength following high-frequency stimulation. The key molecular player is the <strong>NMDA receptor</strong> — a "coincidence detector" that only opens when two conditions are simultaneously met: presynaptic glutamate release AND sufficient postsynaptic depolarisation to displace its Mg²⁺ block.</p>
+<p>When both conditions are met, Ca²⁺ floods into the postsynaptic neuron through NMDA receptors. This Ca²⁺ signal activates kinases (particularly CaMKII) that phosphorylate existing AMPA receptors (increasing their conductance) and traffick new AMPA receptors to the synapse — immediately strengthening it. Sustained LTP also drives transcription of plasticity genes (c-fos, BDNF), synthesises new proteins, and structurally enlarges dendritic spines, making the potentiation permanent.</p>
+<p>The hippocampus plays a central role in <strong>declarative memory</strong> (facts and events). Patient H.M., who had his hippocampus removed in 1953, could no longer form new long-term declarative memories, though his older memories and procedural skills were intact — demonstrating the hippocampus's role in memory consolidation. During sleep, the hippocampus replays the day's activity in compressed bursts called <strong>sharp-wave ripples</strong> (~80–100 ms), gradually transferring memories to cortical networks for long-term storage via systems consolidation.</p>`,
+   facts:[{e:'🧠',t:'Patient H.M. (Henry Molaison) lost his hippocampus in 1953. He couldn\'t form any new declarative memories until his death 55 years later, advancing our understanding of memory more than any other case.'},{e:'🌙',t:'During sleep, hippocampal sharp-wave ripples replay the day\'s events up to 20× faster than real time, consolidating memories into the cortex.'},{e:'🎵',t:'Playing a musical instrument restructures the brain\'s motor and auditory cortices — a 10-year-old pianist has measurably thicker grey matter than a non-musician.'}],
+   formula:{rows:[
+    {n:'Hebbian learning rule',e:'Δw_ij  =  η · x_i · x_j',c:'co-activation strengthens synapse'},
+    {sep:1},
+    {n:'NMDA condition',e:'pre: glutamate  AND  post: ΔV > 0  →  Ca²⁺ influx'},
+    {n:'LTP induction',e:'[Ca²⁺]_i ↑  →  CaMKII ↑  →  AMPA insertion'},
+    {sep:1},
+    {n:'STDP window',e:'Δt = t_pre − t_post < 0  →  LTP;  Δt > 0  →  LTD',c:'spike-timing dependent plasticity'},
+   ]},sim:'memory'},
+
+  scholar:{icon:'∂',title:'Synaptic Plasticity Rules, Engrams, and Systems Consolidation',
+   body:`<p><strong>Spike-Timing-Dependent Plasticity (STDP)</strong> refines the Hebbian rule: synaptic weight changes depend on the relative timing of pre- and postsynaptic spikes within a ±40 ms window. If the presynaptic spike precedes the postsynaptic spike (Δt < 0), the synapse undergoes LTP; if the order reverses (Δt > 0), it undergoes Long-Term Depression (LTD). The STDP learning rule approximates <span class="mk">ΔW(Δt) = A⁺ · exp(Δt/τ⁺)</span> for LTP and <span class="mk">ΔW(Δt) = −A⁻ · exp(−Δt/τ⁻)</span> for LTD, with τ ≈ 10–20 ms. STDP implements a biologically plausible version of temporal credit assignment, driving spike coincidence detection across precisely timed circuits.</p>
+<p>The <strong>engram</strong> — the physical substrate of a specific memory — is a sparse ensemble of neurons (~5–10% of local cells) linked by potentiated synapses. Roy et al. (2016) demonstrated in mice that optogenetically silencing these engram cells during memory recall blocked the memory, while reactivating them restored it — even in mice made amnesic by protein synthesis inhibitors. This directly demonstrated that the engram encodes the memory trace rather than being merely correlated with it.</p>
+<p><strong>Systems consolidation</strong> describes the gradual transfer of hippocampus-dependent memories to neocortical storage over weeks to years (Standard Model) or, under the competing <em>Multiple Trace Theory</em> (Nadel & Moscovitch, 1997), the parallel maintenance of hippocampal traces for episodic richness throughout life. The replay mechanism involves coordinated oscillations: hippocampal sharp-wave ripples (80–120 Hz nested in slow oscillations) couple with cortical sleep spindles (12–15 Hz) and slow oscillations (~0.75 Hz) in a precisely timed hierarchy. This "dialogue" is thought to drive Hebbian coincidence between hippocampal replay and cortical representations, gradually embedding memories in distributed neocortical circuits.</p>`,
+   facts:[{e:'💡',t:'Optogenetics — controlling neurons with light — allowed researchers to implant a false memory in a mouse in 2013 (Ramirez et al., Science), directly testing engram theory.'},{e:'🔬',t:'A single dendritic spine can potentiate or depress independently of its neighbours on the same dendrite — the basic unit of storage is finer than the neuron itself.'},{e:'🧬',t:'BDNF Val66Met, a common genetic variant (~30% of the population), impairs activity-dependent BDNF secretion and is associated with reduced hippocampal memory consolidation.'}],
+   formula:{rows:[
+    {n:'STDP (LTP)',e:'ΔW  =  A⁺ · exp( Δt / τ⁺ )   if  Δt < 0'},
+    {n:'STDP (LTD)',e:'ΔW  =  −A⁻ · exp( −Δt / τ⁻ )  if  Δt > 0'},
+    {sep:1},
+    {n:'BCM rule',e:'dw/dt  =  φ( v_post, θ_M ) · v_pre',c:'sliding modification threshold θ_M'},
+    {n:'θ_M dynamics',e:'τ · dθ_M/dt  =  v_post²  −  θ_M'},
+    {sep:1},
+    {n:'Plasticity induction',e:'[Ca²⁺] > θ_high  →  LTP;   θ_low < [Ca²⁺] < θ_high  →  LTD'},
+    {n:'Engram',e:'S  =  { n_i : w_{ij}  >>  baseline }',c:'sparse potentiated ensemble'},
+   ]},sim:'memory'},
+ }},
+
+{id:'sleep',group:'🧠 Neuroscience',emoji:'🌙',color:'#4338ca',light:'#eef2ff',
+ title:'Sleep & Consciousness',teaser:'Why do we lose hours of our lives every night — and what happens inside the brain while we do?',chips:['Sleep','Consciousness','Oscillations'],
+ lvls:{
+  junior:{icon:'🌙',title:'Why your brain needs to go offline every night!',
+   body:`<p>Have you ever wondered what your brain is actually doing while you sleep? It turns out sleep isn't just "doing nothing" — your brain is <em>incredibly busy</em>. While your body rests, your brain is cleaning itself, replaying memories, rebalancing chemistry, and doing essential repairs that simply can't happen while you're awake.</p>
+<p>Sleep comes in cycles of about 90 minutes. Each cycle contains <strong>light sleep</strong>, <strong>deep sleep</strong> (where your brain makes slow, rolling waves), and <strong>REM sleep</strong> (Rapid Eye Movement) — the stage where you dream. During REM, your brain is almost as active as when you're awake, but your muscles are paralysed so you don't act out your dreams. Your eyes dart back and forth under your eyelids (that's the "rapid eye movement").</p>
+<p>Deep sleep is when your brain does housekeeping: a network of channels opens up and cerebrospinal fluid washes through the brain, flushing out toxic waste products like amyloid-beta — a protein that builds up into dangerous plaques in Alzheimer's disease. This cleansing <strong>glymphatic system</strong> mostly works at night. Think of sleep as your brain's nightly dishwasher: skip it for a few nights, and things start to build up.</p>`,
+   facts:[{e:'🧽',t:'During sleep the brain\'s glymphatic system clears ~60% more metabolic waste — including amyloid-beta, the protein that accumulates in Alzheimer\'s disease.'},{e:'😴',t:'After 17–19 hours without sleep, cognitive performance drops to the equivalent of a blood-alcohol level of 0.05% — legally drunk in most countries.'},{e:'🐬',t:'Dolphins and whales sleep with only half their brain at a time (unihemispheric slow-wave sleep), keeping one eye open to watch for predators.'}],
+   formula:null,sim:'sleep'},
+
+  student:{icon:'🔬',title:'Sleep Architecture, EEG Oscillations, and the Glymphatic System',
+   body:`<p>Sleep is not a uniform state but a structured cycle of distinct stages identified by EEG. <strong>NREM sleep</strong> progresses from N1 (theta waves, 4–8 Hz) through N2 (sleep spindles 12–15 Hz, K-complexes) to N3 (slow-wave sleep, SWS: delta waves < 2 Hz, >75 μV). A full night contains 4–6 complete ~90-minute cycles; deep SWS dominates early cycles while <strong>REM sleep</strong> (characterised by low-amplitude, mixed-frequency EEG similar to waking, with muscle atonia) predominates in the final cycles before morning.</p>
+<p>Sleep is regulated by two interacting processes: the <strong>homeostatic drive</strong> (Process S), where adenosine accumulates during waking and creates "sleep pressure" proportional to prior wake time, and the <strong>circadian rhythm</strong> (Process C), a ~24-hour clock driven by the suprachiasmatic nucleus (SCN) of the hypothalamus, synchronised by light via retinal melanopsin (ipRGC) photoreceptors. Adenosine's sleep-inducing effect explains why caffeine works: it blocks adenosine receptors without being broken down, preventing the sleep-pressure signal from being received.</p>
+<p>The <strong>glymphatic system</strong> (Nedergaard, 2013) is a paravascular network where cerebrospinal fluid (CSF) flows along arterial channels, driven by aquaporin-4 (AQP4) water channels on astrocytes, washing through the interstitium and clearing metabolic waste including amyloid-β and tau proteins into perivenous spaces. CSF influx is ~60% greater during NREM sleep than waking — driven by slow arterial pulsations that are amplified during SWS. Chronic sleep restriction has been shown in humans to double interstitial amyloid-β levels within a single night.</p>`,
+   facts:[{e:'☕',t:'Caffeine works by blocking adenosine receptors — it doesn\'t reduce sleep pressure, just hides the signal. When it wears off, adenosine floods in and fatigue returns suddenly.'},{e:'🧹',t:'One night of sleep deprivation increases amyloid-beta levels in the human brain by ~5%, as measured by PET scan (Shokri-Kojori et al., 2018).'},{e:'🌡️',t:'Body core temperature must drop ~0.5°C to initiate sleep — this is why a cool bedroom helps you fall asleep faster, and why a warm bath paradoxically also works (it lowers core temperature by pulling heat to the skin).'}],
+   formula:{rows:[
+    {n:'Two-process model',e:'S(t): homeostatic pressure (rises awake, falls asleep)'},
+    {n:'Process C',e:'C(t)  =  circadian oscillator  ~  24 h period'},
+    {sep:1},
+    {n:'Sleep drive',e:'S(t) ∝ [adenosine]  →  blocked by caffeine'},
+    {n:'Wake drive',e:'W(t)  =  C(t) − S(t)',c:'determines alertness'},
+    {sep:1},
+    {n:'Glymphatic flow',e:'J_CSF  ∝  AQP4 channel density × arterial pulse amplitude'},
+    {n:'SWS clearance',e:'Δ[amyloid-β]_sleep  ≈  −60%  vs  waking',c:'Xie et al., Science 2013'},
+   ]},sim:'sleep'},
+
+  scholar:{icon:'∂',title:'Thalamocortical Oscillations, Integrated Information Theory, and the Neural Correlates of Consciousness',
+   body:`<p>Sleep oscillations arise from thalamocortical dynamics. During N2/N3, the thalamic reticular nucleus (TRN) paces <strong>sleep spindles</strong> (12–15 Hz, 0.5–3 s) via alternating GABA_A-mediated inhibition and T-type calcium channel rebound bursting in thalamocortical relay neurons — the spindle is a waxing-and-waning burst. The ultra-slow (<1 Hz) <strong>cortical slow oscillation</strong> cycles between down states (cortical silence, membrane hyperpolarisation) and up states (active spiking resembling waking). These oscillations coordinate plasticity: during up states, NMDA-dependent synaptic potentiation replays learned patterns; the subsequent down state is hypothesised to achieve homeostatic synaptic downscaling (Synaptic Homeostasis Hypothesis, Tononi & Cirelli).</p>
+<p>REM sleep is generated by brainstem circuits: cholinergic neurons in the pedunculopontine (PPT) and laterodorsal tegmental (LDT) nuclei activate the thalamus and cortex (producing the "activated" EEG), while glutamatergic premotor neurons drive the spinal glycinergic inhibition responsible for muscle atonia — preventing dream enactment. PGO (ponto-geniculo-occipital) waves during REM provide structured input to the visual cortex, potentially supporting memory consolidation and synaptic tagging.</p>
+<p>The <strong>neural correlates of consciousness (NCCs)</strong> — the minimal neural mechanisms sufficient for a conscious experience — remain neuroscience's deepest open question. <em>Global Workspace Theory</em> (Dehaene & Changeux) proposes that consciousness arises when information is broadcast across a global workspace of fronto-parietal networks, enabling wide access by specialised processors. <em>Integrated Information Theory</em> (Tononi) defines consciousness as Φ — the irreducible integrated information of a system — with the controversial claim that any system with Φ > 0 has some experience. TMS-EEG measurements of cortical complexity (the "perturbational complexity index", PCI) discriminate conscious from unconscious states more reliably than any single biomarker, and scale with level of consciousness across sleep, anaesthesia, and disorders of consciousness. PCI is now a clinical tool for assessing vegetative state patients.</p>`,
+   facts:[{e:'📡',t:'TMS-EEG perturbational complexity index (PCI) can determine with ~90% accuracy whether a locked-in or vegetative-state patient is consciously aware — without any behavioural response.'},{e:'🔢',t:'IIT predicts that a simple feedforward neural network, however large, has Φ ≈ 0 and is therefore not conscious — a claim that directly challenges deep learning models of mind.'},{e:'🌊',t:'Slow-wave sleep homeostasis: the EEG slow-wave activity (SWA) after sleep deprivation is precisely proportional to the amount of learning done while awake — a signature of synaptic downscaling.'}],
+   formula:{rows:[
+    {n:'Integrated Information',e:'Φ  =  min partition [ KL( p(X^t | X^{t-1}) ‖ p_partition ) ]'},
+    {n:'Conscious if',e:'Φ  >  0  and  irreducible'},
+    {sep:1},
+    {n:'Global ignition',e:'I_GW(t)  =  stimulus-driven late (>300 ms) fronto-parietal activation'},
+    {n:'PCI (clinical)',e:'PCI  =  LZ_complexity( TMS-evoked EEG )  /  signal entropy'},
+    {sep:1},
+    {n:'Spindle frequency',e:'f_spindle  ≈  1 / ( τ_GABA + τ_Ih )  ≈  12−15 Hz'},
+    {n:'Synaptic homeostasis',e:'SWA ∝ Σ w_ij  (synaptic weight sum)',c:'Tononi & Cirelli SHY'},
+   ]},sim:'sleep'},
+ }},
+
 ]; // end SUBJECTS
 
 // ═══════════════════════════════════════════════════════════════════
@@ -1746,7 +1873,7 @@ function buildSim(id,container,color,lvl){
             climate:simClimate,tectonics:simTectonics, ocean:simOcean, volcano:simVolcano,
             chem:simChem,electrochem:simElectrochem, kinetics:simKinetics, organic:simOrganic,
             astro:simAstro,blackholes:simBlackholes, cosmology:simCosmology, solarsystem:simSolarSystem,
-            neuro:simNeuro
+            neuro:simNeuro,neuron:simNeuron,memory:simMemory,sleep:simSleep
             };
   if(map[id])map[id](container,color,lvl);
 }
@@ -4724,6 +4851,538 @@ function simSolarSystem(container, color) {
     if(best>=0) selected=best;
   });
 
+  frame();
+}
+
+/* ── NEURON — Action Potential ── */
+function simNeuron(container,color){
+  const W=getSimWidth(container),H=300;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pV=pill('Membrane V'); const pState=pill('State'); const pSpikes=pill('Spikes');
+  pRow.appendChild(pV.el); pRow.appendChild(pState.el); pRow.appendChild(pSpikes.el);
+ 
+  const rI=mkRange(ctrl,'Stimulus current (I)',0,20,0,0.5,color);
+  const bFire=mkBtn('⚡ Single Pulse',true,color);
+  const bReset=mkBtn('↺ Reset');
+  ctrl.prepend(bReset); ctrl.prepend(bFire);
+ 
+  // Simplified Hodgkin-Huxley-like model (FitzHugh-Nagumo)
+  // dv/dt = v - v³/3 - w + I
+  // dw/dt = ε(v + a - bw)
+  const a=0.7, b=0.8, eps=0.08;
+  let v=-1.2, w=-0.6, t=0, spikes=0, lastSpike=false;
+  let traceV=[], traceT=[];
+  const TRACE_LEN=300;
+ 
+  function resetModel(){ v=-1.2; w=-0.6; t=0; spikes=0; traceV=[]; traceT=[]; lastSpike=false; }
+  bReset.addEventListener('click', resetModel);
+  bFire.addEventListener('click', ()=>{ v=1.8; }); // kick above threshold
+ 
+  const dt=0.12;
+  const S=SIMS.neuron={raf:null};
+ 
+  function frame(){
+    // Integrate FHN
+    const I=rI.val*0.1;
+    const dv=(v - v*v*v/3 - w + I)*dt;
+    const dw=eps*(v + a - b*w)*dt;
+    v+=dv; w+=dw; t+=dt;
+ 
+    // Spike detection
+    const firing=v>1.5;
+    if(firing&&!lastSpike){ spikes++; }
+    lastSpike=firing;
+ 
+    traceV.push(v); traceT.push(t);
+    if(traceV.length>TRACE_LEN){ traceV.shift(); traceT.shift(); }
+ 
+    ctx.clearRect(0,0,W,H);
+ 
+    // Background
+    const bgG=ctx.createLinearGradient(0,0,0,H);
+    bgG.addColorStop(0,'#f5f0ff'); bgG.addColorStop(1,'#fdf8f0');
+    ctx.fillStyle=bgG; ctx.fillRect(0,0,W,H);
+ 
+    // — Draw neuron cell body (left panel) —
+    const cellX=W*0.22, cellY=H*0.48;
+    const cellR=38;
+ 
+    // Dendrites (left side)
+    ctx.strokeStyle=`${color}55`; ctx.lineWidth=2.5;
+    const dendAngles=[-0.55,-0.25,0,0.25,0.55];
+    dendAngles.forEach((a2,i)=>{
+      const len=28+i%2*12;
+      const ax=cellX-cellR*0.8, ay=cellY;
+      ctx.beginPath();
+      ctx.moveTo(ax,ay);
+      ctx.lineTo(ax-len*Math.cos(a2)-18, ay+len*Math.sin(a2));
+      ctx.stroke();
+    });
+ 
+    // Axon (right side, longer)
+    const axonStartX=cellX+cellR, axonEndX=W*0.82;
+    ctx.strokeStyle=firing?`${color}ff`:`${color}88`;
+    ctx.lineWidth=firing?4:3;
+    ctx.beginPath(); ctx.moveTo(axonStartX,cellY); ctx.lineTo(axonEndX,cellY); ctx.stroke();
+ 
+    // Myelin sheaths along axon
+    const myelinCount=5;
+    for(let i=0;i<myelinCount;i++){
+      const mx=axonStartX+14+(axonEndX-axonStartX-28)*i/(myelinCount-1);
+      ctx.fillStyle=`rgba(200,190,230,0.55)`;
+      ctx.beginPath(); ctx.roundRect(mx-10,cellY-7,20,14,6); ctx.fill();
+    }
+ 
+    // Synapse terminal
+    ctx.beginPath(); ctx.arc(axonEndX,cellY,7,0,Math.PI*2);
+    ctx.fillStyle=firing?color:'rgba(124,58,237,0.35)'; ctx.fill();
+ 
+    // Neurotransmitter dots when firing
+    if(firing){
+      for(let i=0;i<5;i++){
+        const px=axonEndX+12+i*7+(Math.sin(t*3+i)*4);
+        const py=cellY+(i%2===0?-8:8);
+        ctx.beginPath(); ctx.arc(px,py,3.5,0,Math.PI*2);
+        ctx.fillStyle=`hsl(280,70%,${55+i*5}%)`;
+        ctx.fill();
+      }
+    }
+ 
+    // Cell body glow when active
+    const vNorm=Math.max(0,(v+2)/4);
+    const glowR=ctx.createRadialGradient(cellX,cellY,0,cellX,cellY,cellR*1.7);
+    glowR.addColorStop(0,`rgba(124,58,237,${0.06+vNorm*0.22})`);
+    glowR.addColorStop(1,'transparent');
+    ctx.beginPath(); ctx.arc(cellX,cellY,cellR*1.7,0,Math.PI*2);
+    ctx.fillStyle=glowR; ctx.fill();
+ 
+    // Cell body
+    const bodyG=ctx.createRadialGradient(cellX-8,cellY-8,2,cellX,cellY,cellR);
+    bodyG.addColorStop(0,`hsl(270,${40+vNorm*30}%,${92-vNorm*18}%)`);
+    bodyG.addColorStop(1,`hsl(260,${30+vNorm*25}%,${82-vNorm*14}%)`);
+    ctx.beginPath(); ctx.arc(cellX,cellY,cellR,0,Math.PI*2);
+    ctx.fillStyle=bodyG; ctx.fill();
+    ctx.strokeStyle=`${color}66`; ctx.lineWidth=2; ctx.stroke();
+ 
+    // Nucleus
+    ctx.beginPath(); ctx.arc(cellX,cellY,11,0,Math.PI*2);
+    ctx.fillStyle=`hsl(260,30%,70%)`; ctx.fill();
+ 
+    // — Action potential trace (right panel) —
+    const gX=W*0.44, gY=10, gW=W*0.54, gH=H-20;
+    const midY=gY+gH/2;
+ 
+    // Grid lines
+    ctx.strokeStyle='rgba(0,0,0,0.06)'; ctx.lineWidth=1;
+    [-2,-1,0,1,2].forEach(v2=>{
+      const y=midY - v2*(gH/5.5);
+      ctx.beginPath(); ctx.moveTo(gX,y); ctx.lineTo(gX+gW,y); ctx.stroke();
+    });
+ 
+    // Threshold line
+    ctx.setLineDash([5,4]);
+    ctx.strokeStyle='rgba(220,40,40,0.45)'; ctx.lineWidth=1.5;
+    const threshY=midY-(1.5*(gH/5.5));
+    ctx.beginPath(); ctx.moveTo(gX,threshY); ctx.lineTo(gX+gW,threshY); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.font='bold 10px Nunito,sans-serif'; ctx.fillStyle='rgba(200,30,30,0.7)';
+    ctx.textAlign='right';
+    ctx.fillText('threshold',gX+gW-2,threshY-3);
+ 
+    // Voltage trace
+    if(traceV.length>1){
+      ctx.beginPath();
+      traceV.forEach((vv,i)=>{
+        const x=gX+gW*(i/TRACE_LEN);
+        const y=midY-(vv*(gH/5.5));
+        i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+      });
+      // gradient stroke
+      const lineG=ctx.createLinearGradient(gX,0,gX+gW,0);
+      lineG.addColorStop(0,`${color}44`); lineG.addColorStop(1,`${color}ff`);
+      ctx.strokeStyle=lineG; ctx.lineWidth=2.5; ctx.stroke();
+    }
+ 
+    // Labels
+    ctx.fillStyle='rgba(0,0,0,0.35)'; ctx.font='bold 10px Nunito,sans-serif';
+    ctx.textAlign='left'; ctx.fillText('+40 mV',gX+2,gY+16);
+    ctx.fillText('−70 mV',gX+2,gY+gH-4);
+    ctx.fillStyle=color; ctx.font='bold 11px Nunito,sans-serif';
+    ctx.textAlign='center'; ctx.fillText('Membrane potential',gX+gW/2,gY+gH+10);
+ 
+    // State label
+    const stateLabel=v>1.5?'🔥 Firing!':(v>-0.5?'⚡ Depolarising':'💤 Resting');
+    const stateColor=v>1.5?color:(v>-0.5?'#f59e0b':'#64748b');
+    ctx.fillStyle=stateColor; ctx.font='bold 12px Nunito,sans-serif';
+    ctx.textAlign='left'; ctx.fillText(stateLabel,gX+4,gY+gH-20);
+ 
+    pV.set((v*35-70).toFixed(0)+' mV');
+    pState.set(v>1.5?'FIRING':'resting');
+    pSpikes.set(spikes);
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+ 
+/* ── MEMORY — Synaptic Plasticity / STDP ── */
+function simMemory(container,color){
+  const W=getSimWidth(container),H=310;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pW=pill('Synapse strength'); const pRule=pill('Last event'); const pTotal=pill('Events');
+  pRow.appendChild(pW.el); pRow.appendChild(pRule.el); pTotal&&pRow.appendChild(pTotal.el);
+ 
+  const rRate=mkRange(ctrl,'Stimulation rate (Hz)',0.5,8,2,0.5,color);
+  const bLTP=mkBtn('🔺 Pair (LTP)',true,color);
+  const bLTD=mkBtn('🔻 Reverse (LTD)');
+  const bReset=mkBtn('↺ Reset');
+  [bLTP,bLTD,bReset].forEach(b=>ctrl.prepend(b));
+ 
+  // Synapse weight & plasticity state
+  let synapseW=0.3, totalEvents=0;
+  let preSpike=null, postSpike=null;
+  let preT=-999, postT=-999;
+  let particles=[];  // vesicle particles
+  let ltpFlash=0, ltdFlash=0;
+  let t=0;
+ 
+  const A_plus=0.12, A_minus=0.09, tau_plus=20, tau_minus=25;
+ 
+  function doSTDP(dt_ms){
+    if(dt_ms<0){ // pre before post → LTP
+      const dw=A_plus*Math.exp(dt_ms/tau_plus);
+      synapseW=Math.min(1,synapseW+dw);
+      ltpFlash=1; pRule.set('LTP +'+dw.toFixed(3));
+    } else { // post before pre → LTD
+      const dw=A_minus*Math.exp(-dt_ms/tau_minus);
+      synapseW=Math.max(0,synapseW-dw);
+      ltdFlash=1; pRule.set('LTD −'+dw.toFixed(3));
+    }
+    totalEvents++; pTotal.set(totalEvents);
+  }
+ 
+  function spawnVesicles(){
+    for(let i=0;i<6;i++) particles.push({
+      x:W*0.5+( Math.random()-0.5)*22,
+      y:H*0.44+Math.random()*8,
+      vx:(Math.random()-0.5)*1.8,
+      vy:1.2+Math.random()*1.4,
+      life:1
+    });
+  }
+ 
+  bLTP.addEventListener('click',()=>{
+    preT=t; setTimeout(()=>{postT=t; doSTDP(preT-postT);},80);
+    spawnVesicles();
+  });
+  bLTD.addEventListener('click',()=>{
+    postT=t; setTimeout(()=>{preT=t; doSTDP(preT-postT);},80);
+    spawnVesicles();
+  });
+  bReset.addEventListener('click',()=>{synapseW=0.3;totalEvents=0;particles=[];ltpFlash=0;ltdFlash=0;pRule.set('—');pTotal.set(0);pW.set('0.30');});
+ 
+  // Auto stimulation
+  let autoT=0;
+  const S=SIMS.memory={raf:null};
+ 
+  function frame(){
+    t+=16; autoT+=16;
+    const interval=1000/rRate.val;
+    if(autoT>=interval){
+      autoT=0;
+      preT=t; setTimeout(()=>{postT=t; doSTDP(preT-postT);},60+Math.random()*40);
+      spawnVesicles();
+    }
+ 
+    ltpFlash=Math.max(0,ltpFlash-0.04);
+    ltdFlash=Math.max(0,ltdFlash-0.04);
+ 
+    ctx.clearRect(0,0,W,H);
+ 
+    // Background
+    ctx.fillStyle='#f5f0ff'; ctx.fillRect(0,0,W,H);
+ 
+    // — Layout: pre-neuron left, synapse centre, post-neuron right —
+    const preX=W*0.2, postX=W*0.8, neuronY=H*0.42, neuronR=32;
+    const gapCx=W*0.5, gapTop=neuronY-8, gapBot=neuronY+8;
+ 
+    // Pre-synaptic neuron
+    const preGlow=ctx.createRadialGradient(preX,neuronY,0,preX,neuronY,neuronR*1.5);
+    preGlow.addColorStop(0,`rgba(124,58,237,${0.08+ltpFlash*0.2})`);
+    preGlow.addColorStop(1,'transparent');
+    ctx.beginPath(); ctx.arc(preX,neuronY,neuronR*1.5,0,Math.PI*2); ctx.fillStyle=preGlow; ctx.fill();
+    ctx.beginPath(); ctx.arc(preX,neuronY,neuronR,0,Math.PI*2);
+    ctx.fillStyle=`hsl(265,35%,88%)`; ctx.fill();
+    ctx.strokeStyle=`${color}88`; ctx.lineWidth=2; ctx.stroke();
+    ctx.beginPath(); ctx.arc(preX,neuronY,10,0,Math.PI*2); ctx.fillStyle=`hsl(265,25%,72%)`; ctx.fill();
+    ctx.fillStyle=color; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('Pre-synaptic',preX,neuronY+neuronR+18);
+    ctx.fillText('neuron',preX,neuronY+neuronR+31);
+ 
+    // Axon terminal bulb
+    const termX=gapCx-22;
+    ctx.beginPath(); ctx.arc(termX,neuronY,14,0,Math.PI*2);
+    ctx.fillStyle=`hsl(265,40%,${82-ltpFlash*15}%)`; ctx.fill();
+    ctx.strokeStyle=`${color}66`; ctx.lineWidth=1.5; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(preX+neuronR,neuronY); ctx.lineTo(termX-14,neuronY);
+    ctx.strokeStyle=`${color}88`; ctx.lineWidth=3; ctx.stroke();
+ 
+    // Vesicles in terminal
+    for(let i=0;i<4;i++){
+      const vx2=termX+(i%2===0?-5:3);
+      const vy2=neuronY+(i<2?-5:5);
+      ctx.beginPath(); ctx.arc(vx2,vy2,4,0,Math.PI*2);
+      ctx.fillStyle=`rgba(124,58,237,0.5)`; ctx.fill();
+    }
+ 
+    // Synaptic cleft
+    const cleftW=44, cleftH=22;
+    ctx.fillStyle='rgba(255,255,255,0.8)';
+    ctx.beginPath(); ctx.roundRect(gapCx-cleftW/2,neuronY-cleftH/2,cleftW,cleftH,5); ctx.fill();
+    ctx.strokeStyle='rgba(0,0,0,0.1)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.roundRect(gapCx-cleftW/2,neuronY-cleftH/2,cleftW,cleftH,5); ctx.stroke();
+    ctx.fillStyle='rgba(0,0,0,0.3)'; ctx.font='bold 9px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('synapse',gapCx,neuronY+4);
+ 
+    // AMPA receptors on post-synaptic side (size = synapseW)
+    const nAMPA=Math.round(2+synapseW*7);
+    for(let i=0;i<nAMPA;i++){
+      const rx=gapCx-cleftW/2+6+i*(cleftW-8)/(Math.max(nAMPA-1,1));
+      ctx.beginPath(); ctx.arc(rx,neuronY+cleftH/2-1,3.5,0,Math.PI*2);
+      ctx.fillStyle=`hsl(195,70%,${50-synapseW*10}%)`; ctx.fill();
+    }
+ 
+    // Flying neurotransmitter particles
+    const alive2=[];
+    for(const p of particles){
+      p.x+=p.vx; p.y+=p.vy; p.life-=0.025;
+      if(p.life>0){
+        ctx.beginPath(); ctx.arc(p.x,p.y,3,0,Math.PI*2);
+        ctx.fillStyle=`rgba(124,58,237,${p.life*0.9})`; ctx.fill();
+        alive2.push(p);
+      }
+    }
+    particles=alive2;
+ 
+    // Post-synaptic neuron
+    const postBright=synapseW;
+    const postGlow=ctx.createRadialGradient(postX,neuronY,0,postX,neuronY,neuronR*1.7);
+    postGlow.addColorStop(0,`rgba(14,116,144,${0.04+postBright*0.22+ltpFlash*0.2})`);
+    postGlow.addColorStop(1,'transparent');
+    ctx.beginPath(); ctx.arc(postX,neuronY,neuronR*1.7,0,Math.PI*2); ctx.fillStyle=postGlow; ctx.fill();
+    ctx.beginPath(); ctx.arc(postX,neuronY,neuronR,0,Math.PI*2);
+    ctx.fillStyle=`hsl(195,${25+postBright*25}%,${90-postBright*12}%)`; ctx.fill();
+    ctx.strokeStyle=`rgba(14,116,144,${0.3+postBright*0.5})`; ctx.lineWidth=2; ctx.stroke();
+    ctx.beginPath(); ctx.arc(postX,neuronY,10,0,Math.PI*2); ctx.fillStyle=`hsl(195,20%,72%)`; ctx.fill();
+    ctx.beginPath(); ctx.moveTo(gapCx+cleftW/2,neuronY); ctx.lineTo(postX-neuronR,neuronY);
+    ctx.strokeStyle=`rgba(14,116,144,0.5)`; ctx.lineWidth=3; ctx.stroke();
+    ctx.fillStyle='#0e7490'; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='center';
+    ctx.fillText('Post-synaptic',postX,neuronY+neuronR+18);
+    ctx.fillText('neuron',postX,neuronY+neuronR+31);
+ 
+    // — Synapse strength bar — (bottom)
+    const barX=W*0.1, barY=H*0.76, barW=W*0.8, barH=22;
+    ctx.fillStyle='rgba(0,0,0,0.07)';
+    ctx.beginPath(); ctx.roundRect(barX,barY,barW,barH,11); ctx.fill();
+    const fillColor=ltpFlash>0.1?`hsl(145,60%,45%)`:ltdFlash>0.1?`hsl(0,65%,55%)`:color;
+    ctx.fillStyle=fillColor;
+    ctx.beginPath(); ctx.roundRect(barX,barY,barW*synapseW,barH,11); ctx.fill();
+    ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='left';
+    ctx.fillText('Synapse strength',barX,barY-6);
+    ctx.textAlign='right'; ctx.fillText((synapseW*100).toFixed(0)+'%',barX+barW,barY-6);
+ 
+    // LTP / LTD flash labels
+    if(ltpFlash>0.05){
+      ctx.fillStyle=`rgba(22,163,74,${ltpFlash})`; ctx.font='bold 15px Nunito,sans-serif';
+      ctx.textAlign='center'; ctx.fillText('▲ LTP — synapse strengthened!',W/2,H*0.91);
+    } else if(ltdFlash>0.05){
+      ctx.fillStyle=`rgba(220,38,38,${ltdFlash})`; ctx.font='bold 15px Nunito,sans-serif';
+      ctx.textAlign='center'; ctx.fillText('▼ LTD — synapse weakened',W/2,H*0.91);
+    }
+ 
+    pW.set((synapseW).toFixed(2));
+    S.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+ 
+/* ── SLEEP — Brain oscillations & Sleep stages ── */
+function simSleep(container,color){
+  const W=getSimWidth(container),H=310;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const pStage=pill('Sleep stage'); const pFreq=pill('EEG freq'); const pAd=pill('Adenosine');
+  pRow.appendChild(pStage.el); pRow.appendChild(pFreq.el); pRow.appendChild(pAd.el);
+ 
+  // Stages: awake, N1, N2, N3, REM
+  const stages=['Awake','N1','N2 (spindles)','N3 (deep)','REM'];
+  const stageFreqs=[15,6,13,1.2,18];  // Hz
+  const stageAmps=[0.18,0.32,0.55,1.0,0.22];
+  const stageColors=['#f59e0b','#84cc16','#0ea5e9',color,'#ec4899'];
+  const stageDesc=['β/γ waves — alert','θ waves — drowsy','sleep spindles','δ waves — deep restore','dreaming — vivid'];
+ 
+  let currentStage=0, stageT=0, cycleT=0;
+  const stageDurations=[40,25,35,50,55]; // relative ticks
+  const rSpeed=mkRange(ctrl,'Sleep cycle speed',1,6,3,1,color);
+  const bStage=mkBtn('⏭ Next Stage',true,color);
+  const bWake=mkBtn('☀️ Wake up');
+  [bStage,bWake].forEach(b=>ctrl.prepend(b));
+ 
+  bStage.addEventListener('click',()=>{ currentStage=(currentStage+1)%stages.length; stageT=0; });
+  bWake.addEventListener('click',()=>{ currentStage=0; stageT=0; cycleT=0; adenosine=0.2; });
+ 
+  let t=0, adenosine=0.2;
+ 
+  // Glymphatic wave state
+  let glymphWave=0;
+ 
+  const S=SIMS.sleep={raf:null};
+  function frame(){
+    const speed=rSpeed.val;
+    t+=0.05*speed;
+    stageT+=speed;
+    cycleT+=speed;
+ 
+    // Auto-advance stages
+    if(stageT>stageDurations[currentStage]*40){
+      stageT=0;
+      if(currentStage>0) currentStage=(currentStage%(stages.length-1))+1;
+      if(currentStage===4) currentStage=1; // cycle back after REM
+    }
+ 
+    // Adenosine dynamics
+    if(currentStage===0) adenosine=Math.min(1,adenosine+0.0008*speed);
+    else adenosine=Math.max(0,adenosine-0.0006*speed);
+ 
+    glymphWave=(glymphWave+0.02*speed*(currentStage===3?2:0.3))%1;
+ 
+    ctx.clearRect(0,0,W,H);
+ 
+    // Background gradient
+    const bgDark=currentStage>0?Math.min(1,currentStage*0.18):0;
+    const r=Math.round(253-bgDark*80), g2=Math.round(248-bgDark*80), b2=Math.round(240-bgDark*60);
+    ctx.fillStyle=`rgb(${r},${g2},${b2})`; ctx.fillRect(0,0,W,H);
+ 
+    // ── Sleep Hypnogram (top) ──
+    const hypX=W*0.05, hypY=18, hypW=W*0.9, hypH=52;
+    const stagesN=stages.length;
+ 
+    // Background bar
+    ctx.fillStyle='rgba(0,0,0,0.05)';
+    ctx.beginPath(); ctx.roundRect(hypX,hypY,hypW,hypH,8); ctx.fill();
+ 
+    // Stage segments
+    const segW=hypW/stagesN;
+    stages.forEach((s,i)=>{
+      const sx=hypX+i*segW;
+      if(i===currentStage){
+        ctx.fillStyle=stageColors[i]+'33';
+        ctx.beginPath(); ctx.roundRect(sx,hypY,segW,hypH,6); ctx.fill();
+        ctx.strokeStyle=stageColors[i]; ctx.lineWidth=2;
+        ctx.beginPath(); ctx.roundRect(sx+1,hypY+1,segW-2,hypH-2,6); ctx.stroke();
+      }
+      ctx.fillStyle=i===currentStage?stageColors[i]:'rgba(0,0,0,0.35)';
+      ctx.font=`bold ${i===currentStage?11:9}px Nunito,sans-serif`;
+      ctx.textAlign='center';
+      ctx.fillText(s,sx+segW/2,hypY+hypH/2+4);
+    });
+ 
+    // Stage description
+    ctx.fillStyle=stageColors[currentStage]; ctx.font='bold 10px Nunito,sans-serif';
+    ctx.textAlign='center'; ctx.fillText(stageDesc[currentStage],W/2,hypY+hypH+13);
+ 
+    // ── EEG Wave (middle) ──
+    const eegX=0, eegY=H*0.35, eegH=H*0.28;
+    const midY2=eegY+eegH/2;
+    const freq=stageFreqs[currentStage];
+    const amp=stageAmps[currentStage]*(eegH*0.44);
+ 
+    // EEG background
+    ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.fillRect(eegX,eegY,W,eegH);
+    ctx.strokeStyle='rgba(0,0,0,0.04)'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(eegX,midY2); ctx.lineTo(eegX+W,midY2); ctx.stroke();
+ 
+    // Draw EEG trace with characteristic waveform
+    ctx.beginPath();
+    for(let x=0;x<W;x++){
+      const phase=x/W*Math.PI*2*freq*3+t;
+      let y;
+      if(currentStage===2){ // N2: spindle waveform
+        const envelope=Math.sin(x/W*Math.PI*4+t*0.4);
+        y=midY2+amp*Math.sin(phase)*Math.abs(envelope)*0.9;
+      } else if(currentStage===3){ // N3: delta — slow big waves
+        y=midY2+amp*(Math.sin(phase)*0.7+Math.sin(phase*0.5)*0.35);
+      } else if(currentStage===4){ // REM: sawtooth-like
+        y=midY2+amp*0.55*(Math.sin(phase)+0.4*Math.sin(phase*2.1)+0.2*Math.sin(phase*3.7));
+      } else {
+        y=midY2+amp*(Math.sin(phase)+0.25*Math.sin(phase*2.3));
+      }
+      x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    }
+    const waveG=ctx.createLinearGradient(0,0,W,0);
+    waveG.addColorStop(0,stageColors[currentStage]+'55');
+    waveG.addColorStop(1,stageColors[currentStage]+'ff');
+    ctx.strokeStyle=waveG; ctx.lineWidth=2.2; ctx.stroke();
+ 
+    // EEG label
+    ctx.fillStyle='rgba(0,0,0,0.4)'; ctx.font='bold 10px Nunito,sans-serif';
+    ctx.textAlign='left'; ctx.fillText('EEG',4,eegY+14);
+ 
+    // ── Bottom panel: Adenosine + Glymphatic ──
+    const botY=H*0.68, botH=H*0.28;
+ 
+    // Adenosine bar
+    const adX=W*0.05, adY=botY, adW=W*0.38, adBarH=14;
+    ctx.fillStyle='rgba(0,0,0,0.07)';
+    ctx.beginPath(); ctx.roundRect(adX,adY,adW,adBarH,7); ctx.fill();
+    ctx.fillStyle=`hsl(${30+adenosine*20},80%,55%)`;
+    ctx.beginPath(); ctx.roundRect(adX,adY,adW*adenosine,adBarH,7); ctx.fill();
+    ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.font='bold 10px Nunito,sans-serif';
+    ctx.textAlign='left'; ctx.fillText('☕ Adenosine (sleep pressure)',adX,adY-5);
+    ctx.textAlign='right'; ctx.fillText((adenosine*100).toFixed(0)+'%',adX+adW,adY-5);
+ 
+    // Glymphatic activity bar
+    const glX=W*0.05, glY=botY+30, glW=W*0.38, glBarH=14;
+    const glAct=currentStage===3?0.85:currentStage===2?0.45:currentStage===0?0.1:0.25;
+    ctx.fillStyle='rgba(0,0,0,0.07)';
+    ctx.beginPath(); ctx.roundRect(glX,glY,glW,glBarH,7); ctx.fill();
+    ctx.fillStyle=`hsl(168,60%,45%)`;
+    ctx.beginPath(); ctx.roundRect(glX,glY,glW*glAct,glBarH,7); ctx.fill();
+    ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.font='bold 10px Nunito,sans-serif';
+    ctx.textAlign='left'; ctx.fillText('🧹 Glymphatic clearing',glX,glY-5);
+    ctx.textAlign='right'; ctx.fillText((glAct*100).toFixed(0)+'%',glX+glW,glY-5);
+ 
+    // Brain silhouette (right side of bottom)
+    const brainX=W*0.75, brainY=botY+30, brainR=34;
+    // Simplified brain shape
+    ctx.strokeStyle=stageColors[currentStage]+'88'; ctx.lineWidth=2.5;
+    ctx.beginPath();
+    ctx.ellipse(brainX,brainY,brainR,brainR*0.82,0,0,Math.PI*2);
+    const brainFill=ctx.createRadialGradient(brainX,brainY,0,brainX,brainY,brainR);
+    brainFill.addColorStop(0,stageColors[currentStage]+'33');
+    brainFill.addColorStop(1,stageColors[currentStage]+'11');
+    ctx.fillStyle=brainFill; ctx.fill(); ctx.stroke();
+    // Brain ripple waves (activity)
+    for(let ring=1;ring<=3;ring++){
+      const rPhase=(glymphWave+ring*0.33)%1;
+      const rr=brainR*(0.3+rPhase*0.7);
+      ctx.strokeStyle=`${stageColors[currentStage]}${Math.round((1-rPhase)*60).toString(16).padStart(2,'0')}`;
+      ctx.lineWidth=1.5; ctx.beginPath();
+      ctx.ellipse(brainX,brainY,rr,rr*0.82,0,0,Math.PI*2); ctx.stroke();
+    }
+    // Stage label on brain
+    ctx.fillStyle=stageColors[currentStage]; ctx.font='bold 10px Nunito,sans-serif';
+    ctx.textAlign='center'; ctx.fillText(stages[currentStage],brainX,brainY+brainR+14);
+ 
+    pStage.set(stages[currentStage]);
+    pFreq.set(freq.toFixed(1)+' Hz');
+    pAd.set((adenosine*100).toFixed(0)+'%');
+    S.raf=requestAnimationFrame(frame);
+  }
   frame();
 }
 </script>
