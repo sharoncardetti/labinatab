@@ -1647,7 +1647,7 @@ document.querySelectorAll('.lvl').forEach(b=>{
       c.innerHTML=`<div class="sc-stripe" style="background:linear-gradient(90deg,${s.color},${s.color}88)"></div>
 <div class="sc-body">
   <div class="sc-emoji" style="background:${s.light}">${s.emoji}</div>
-  <div class="sc-tag" style="background:${s.light};color:${s.color}">${s.group.replace(/^./,'').trim()}</div>
+  <div class="sc-tag" style="background:${s.light};color:${s.color}">${s.group.replace(/^\S+\s*/,'').trim()}</div>
   <div class="sc-title">${s.title}</div>
   <div class="sc-teaser">${s.teaser}</div>
 </div>
@@ -1679,7 +1679,7 @@ function openModal(s, refresh=false){
   document.getElementById('pico').style.background=s.light;
   document.getElementById('ptitle').textContent=s.title;
   document.getElementById('psub').textContent=
-    s.group.replace(/^./,'').trim()+' · '+{junior:'Junior 🌱',student:'Student 🔬',scholar:'Scholar 🎓'}[LVL];
+    s.group.replace(/^\S+\s*/,'').trim()+' · '+{junior:'Junior 🌱',student:'Student 🔬',scholar:'Scholar 🎓'}[LVL];
   document.getElementById('psub').style.color=s.color;
 
   // Tabs
@@ -1860,8 +1860,13 @@ function mkRange(ctrl,lbl,min,max,val,step,clr){
 }
 
 function getSimWidth(container){
-  // Use the panel body width, capped at 800
-  const w=document.getElementById('pbody').offsetWidth||500;
+  // Available content width = pbody inner width minus its horizontal padding.
+  // (The sim container is display:none at build time, so we measure pbody and
+  //  use clientWidth — which already excludes any scrollbar — minus padding.)
+  const pb=document.getElementById('pbody');
+  const cs=getComputedStyle(pb);
+  const pad=parseFloat(cs.paddingLeft||0)+parseFloat(cs.paddingRight||0);
+  const w=((pb.clientWidth||500)-pad)||500;
   return Math.min(w-4,820);
 }
 
@@ -1954,34 +1959,45 @@ function simWaves(container,color){
   const S=SIMS.waves={raf:null};
 
   function frame(){
-    ctx.clearRect(0,0,W,H);
-    const cy=H/2, A=Math.min(H/2-8,50);
+    const safe=(typeof color==='string'&&color[0]==='#')?color:'#7c3aed';
+    // dark background
+    const bg=ctx.createLinearGradient(0,0,0,H);
+    bg.addColorStop(0,'#0c1322'); bg.addColorStop(1,'#070b14');
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+    const cy=H/2, A=Math.min(H/2-10,52);
     const f2=rF.val, ph=rP.val;
 
-    // Centre line
+    // centre line
     ctx.beginPath();ctx.moveTo(0,cy);ctx.lineTo(W,cy);
-    ctx.strokeStyle='rgba(0,0,0,0.05)';ctx.lineWidth=1;ctx.stroke();
+    ctx.strokeStyle='rgba(255,255,255,0.09)';ctx.lineWidth=1;ctx.stroke();
 
-    // Wave 1
-    ctx.beginPath();
-    for(let x=0;x<W;x++){const xi=x/W*Math.PI*8;const y=cy+A*Math.sin(xi-t);x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
-    ctx.strokeStyle=color+'88';ctx.lineWidth=2;ctx.stroke();
+    // source waves (faint, glowing)
+    function srcWave(fn,stroke){
+      ctx.save();ctx.shadowColor=stroke;ctx.shadowBlur=6;
+      ctx.beginPath();
+      for(let x=0;x<=W;x++){const xi=x/W*Math.PI*8;const y=cy+fn(xi);x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+      ctx.strokeStyle=stroke;ctx.lineWidth=1.8;ctx.lineJoin='round';ctx.stroke();ctx.restore();
+    }
+    srcWave(xi=>A*0.85*Math.sin(xi-t),'rgba(56,189,248,0.5)');
+    srcWave(xi=>A*0.85*Math.sin(f2*xi-t+ph),'rgba(167,139,250,0.5)');
 
-    // Wave 2
-    ctx.beginPath();
-    for(let x=0;x<W;x++){const xi=x/W*Math.PI*8;const y=cy+A*Math.sin(f2*xi-t+ph);x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
-    ctx.strokeStyle='rgba(124,58,237,0.55)';ctx.lineWidth=2;ctx.stroke();
-
-    // Superposition
-    let maxA=0;
-    ctx.beginPath();
-    for(let x=0;x<W;x++){
+    // superposition
+    let maxA=0; const pts=[];
+    for(let x=0;x<=W;x++){
       const xi=x/W*Math.PI*8;
       const sum=A*Math.sin(xi-t)+A*Math.sin(f2*xi-t+ph);
       if(Math.abs(sum)>maxA)maxA=Math.abs(sum);
-      x?ctx.lineTo(x,cy+sum):ctx.moveTo(x,cy+sum);
+      pts.push([x,cy+sum]);
     }
-    ctx.strokeStyle=color;ctx.lineWidth=3;ctx.stroke();
+    // soft fill to centre line
+    const fillG=ctx.createLinearGradient(0,0,0,H);
+    fillG.addColorStop(0,'rgba(255,255,255,0.10)');fillG.addColorStop(0.5,'rgba(255,255,255,0.015)');fillG.addColorStop(1,'rgba(255,255,255,0.10)');
+    ctx.beginPath();ctx.moveTo(0,cy);for(const p of pts)ctx.lineTo(p[0],p[1]);ctx.lineTo(W,cy);ctx.closePath();
+    ctx.fillStyle=fillG;ctx.fill();
+    // bold glowing line
+    ctx.save();ctx.shadowColor=safe;ctx.shadowBlur=14;
+    ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));
+    ctx.strokeStyle=safe;ctx.lineWidth=3.2;ctx.lineJoin='round';ctx.stroke();ctx.restore();
 
     pType.set(maxA>A*1.6?'Constructive ✓':maxA<A*0.4?'Destructive ✗':'Partial ~');
     pAmp.set((maxA/A).toFixed(2)+'×');
@@ -1992,51 +2008,191 @@ function simWaves(container,color){
 
 /* ── THERMODYNAMICS ── */
 function simThermo(container,color){
-  const W=getSimWidth(container),H=280;
+  const safe=(typeof color==='string'&&color[0]==='#')?color:'#ff6b35';
+  const W=getSimWidth(container),H=312;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pHits=pill('Wall hits/s'); const pAvg=pill('Avg speed');
-  pRow.appendChild(pHits.el); pRow.appendChild(pAvg.el);
-  const rT=mkRange(ctrl,'Temperature (K)',50,1200,300,10,color);
-  const rN=mkRange(ctrl,'Particles',5,90,30,5,color);
+  const pHits=pill('Wall hits/s'); const pAvg=pill('Avg speed'); const pPres=pill('Pressure');
+  pRow.appendChild(pHits.el); pRow.appendChild(pAvg.el); pRow.appendChild(pPres.el);
+  const rT=mkRange(ctrl,'Temperature (K)',50,1200,300,10,safe);
+  const rN=mkRange(ctrl,'Particles',5,90,30,5,safe);
 
-  let particles=[], wallHits=0, frames=0;
+  // rounded-rect path helper (begins a fresh path)
+  function rr(x,y,w,h,rad){
+    const k=Math.min(rad,w/2,h/2);
+    ctx.beginPath();
+    ctx.moveTo(x+k,y);
+    ctx.arcTo(x+w,y,x+w,y+h,k);
+    ctx.arcTo(x+w,y+h,x,y+h,k);
+    ctx.arcTo(x,y+h,x,y,k);
+    ctx.arcTo(x,y,x+w,y,k);
+    ctx.closePath();
+  }
+  // geometry: gas box (top-left) + thermometer (top-right) + speed histogram (bottom)
+  const pad=14, thermoW=50, r=6, gap=14;
+  const bx=pad, by=pad, bw=W-pad*2-thermoW, bh=186;
+  const hx=pad, hy=by+bh+gap, hw=W-pad*2, hh=H-hy-pad;
+
+  const NB=20, vMax=11;                              // histogram bins & display-speed range
+  let binsT=new Array(NB).fill(0), binsS=new Array(NB).fill(0);
+
+  function speedColor(spd){
+    const t=Math.max(0,Math.min(1,spd/8));           // 0 slow → 1 fast
+    return `hsl(${212-t*212},88%,${56+t*8}%)`;        // blue → cyan → yellow → red
+  }
+
+  let particles=[], sparks=[], wallHits=0, wallImpulse=0, frames=0;
   function initP(){
     particles=[];
     const n=rN.val;
-    for(let i=0;i<n;i++) particles.push({
-      x:18+Math.random()*(W-36),y:18+Math.random()*(H-36),
-      vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3
-    });
+    for(let i=0;i<n;i++){
+      const x=bx+r+Math.random()*(bw-2*r), y=by+r+Math.random()*(bh-2*r);
+      particles.push({x,y,px:x,py:y,vx:(Math.random()-.5)*3,vy:(Math.random()-.5)*3});
+    }
   }
   rN.inp.addEventListener('input',initP);
   initP();
 
+  const bg=ctx.createLinearGradient(0,0,0,H);
+  bg.addColorStop(0,'#0d1424'); bg.addColorStop(1,'#070b13');
+  function spark(x,y){ sparks.push({x,y,life:9,max:9}); }
+
+  function drawThermo(){
+    const tubeW=13, tubeTop=by+16, tubeBot=by+bh-26, bulbR=13;
+    const cx=W-pad-thermoW/2, tx=cx-tubeW/2;
+    ctx.fillStyle='rgba(255,255,255,0.09)';
+    rr(tx,tubeTop,tubeW,tubeBot-tubeTop,tubeW/2); ctx.fill();
+    ctx.beginPath();ctx.arc(cx,tubeBot+bulbR-1,bulbR,0,Math.PI*2);ctx.fill();
+    const t=(rT.val-50)/(1200-50);
+    const fillTop=tubeBot-(tubeBot-tubeTop)*t;
+    const tcol=`hsl(${212-t*212},88%,57%)`;
+    ctx.save();ctx.shadowColor=tcol;ctx.shadowBlur=12;ctx.fillStyle=tcol;
+    ctx.beginPath();ctx.arc(cx,tubeBot+bulbR-1,bulbR-3,0,Math.PI*2);ctx.fill();
+    rr(tx+3,fillTop,tubeW-6,tubeBot-fillTop,(tubeW-6)/2);ctx.fill();
+    ctx.restore();
+    ctx.fillStyle='rgba(255,255,255,0.8)';ctx.font='800 11px Nunito,sans-serif';ctx.textAlign='center';
+    ctx.fillText(rT.val+' K',cx,tubeTop-5);
+  }
+
+  function drawHist(){
+    const baseY=hy+hh-15, plotH=hh-24, barW=hw/NB;
+    // panel + axis
+    ctx.fillStyle='rgba(255,255,255,0.04)'; rr(hx,hy,hw,hh,10); ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.14)'; ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(hx+8,baseY);ctx.lineTo(hx+hw-8,baseY);ctx.stroke();
+    // bars (fraction of particles per speed bin)
+    const tops=[];
+    for(let i=0;i<NB;i++){
+      const frac=binsS[i], bh2=Math.min(1,frac/0.30)*plotH;
+      const x=hx+8+i*((hw-16)/NB), w=(hw-16)/NB-2;
+      const cen=(i+0.5)/NB*vMax, col=speedColor(cen);
+      ctx.save();ctx.shadowColor=col;ctx.shadowBlur=8;ctx.fillStyle=col;ctx.globalAlpha=.92;
+      rr(x,baseY-bh2,w,bh2,Math.min(3,w/2,bh2/2)); ctx.fill();
+      ctx.restore();
+      tops.push({x:x+w/2,y:baseY-bh2});
+    }
+    // distribution envelope
+    ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.lineWidth=1.5;ctx.beginPath();
+    tops.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();
+    // labels
+    ctx.fillStyle='rgba(255,255,255,0.45)';ctx.font='800 9.5px Nunito,sans-serif';
+    ctx.textAlign='left'; ctx.fillText('SLOW',hx+10,hy+13);
+    ctx.textAlign='right'; ctx.fillText('FAST',hx+hw-10,hy+13);
+    ctx.textAlign='center'; ctx.fillStyle='rgba(255,255,255,0.6)';
+    ctx.fillText('Speed distribution  ·  Maxwell–Boltzmann',hx+hw/2,hy+13);
+  }
+
   const S=SIMS.thermo={raf:null};
   function frame(){
-    ctx.clearRect(0,0,W,H);
-    ctx.strokeStyle=color;ctx.lineWidth=2;ctx.strokeRect(10,10,W-20,H-20);
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
     const sc=Math.sqrt(rT.val/300)*2;
-    let tv=0;
+    const heat=(rT.val-50)/(1200-50);                // 0 cold → 1 hot
+
+    // ambient heat glow inside the box (blue when cold, orange when hot)
+    const gx=bx+bw/2, gy=by+bh/2;
+    const glow=ctx.createRadialGradient(gx,gy,0,gx,gy,bw*0.6);
+    glow.addColorStop(0,`hsla(${30+(1-heat)*180},90%,55%,${0.05+heat*0.16})`);
+    glow.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.save(); rr(bx,by,bw,bh,12); ctx.clip();
+    ctx.fillStyle=glow; ctx.fillRect(bx,by,bw,bh); ctx.restore();
+
+    // glowing container walls
+    ctx.save();
+    ctx.shadowColor=safe; ctx.shadowBlur=16;
+    ctx.strokeStyle=safe; ctx.lineWidth=2;
+    rr(bx,by,bw,bh,12); ctx.stroke();
+    ctx.restore();
+
+    // integrate + wall bounce
     for(const p of particles){
+      p.px=p.x; p.py=p.y;
       p.x+=p.vx*sc; p.y+=p.vy*sc;
-      if(p.x<15){p.vx=Math.abs(p.vx);wallHits++;}
-      if(p.x>W-15){p.vx=-Math.abs(p.vx);wallHits++;}
-      if(p.y<15){p.vy=Math.abs(p.vy);wallHits++;}
-      if(p.y>H-15){p.vy=-Math.abs(p.vy);wallHits++;}
-      p.x=Math.max(15,Math.min(W-15,p.x));
-      p.y=Math.max(15,Math.min(H-15,p.y));
-      const spd=Math.sqrt(p.vx*p.vx+p.vy*p.vy)*sc; tv+=spd;
-      const h=Math.max(0,220-rT.val*0.18);
-      ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);
-      ctx.fillStyle=`hsl(${h},76%,58%)`;ctx.fill();
+      if(p.x<bx+r){p.vx=Math.abs(p.vx);wallHits++;wallImpulse+=Math.abs(p.vx)*sc;spark(bx+r,p.y);}
+      else if(p.x>bx+bw-r){p.vx=-Math.abs(p.vx);wallHits++;wallImpulse+=Math.abs(p.vx)*sc;spark(bx+bw-r,p.y);}
+      if(p.y<by+r){p.vy=Math.abs(p.vy);wallHits++;wallImpulse+=Math.abs(p.vy)*sc;spark(p.x,by+r);}
+      else if(p.y>by+bh-r){p.vy=-Math.abs(p.vy);wallHits++;wallImpulse+=Math.abs(p.vy)*sc;spark(p.x,by+bh-r);}
     }
+    // elastic particle-particle collisions (equal mass)
+    const minD=2*r;
+    for(let i=0;i<particles.length;i++){
+      const a=particles[i];
+      for(let j=i+1;j<particles.length;j++){
+        const b=particles[j];
+        const dx=b.x-a.x, dy=b.y-a.y, d2=dx*dx+dy*dy;
+        if(d2<minD*minD && d2>1e-6){
+          const d=Math.sqrt(d2), nx=dx/d, ny=dy/d;
+          const rel=(a.vx-b.vx)*nx+(a.vy-b.vy)*ny;
+          if(rel>0){ a.vx-=rel*nx; a.vy-=rel*ny; b.vx+=rel*nx; b.vy+=rel*ny; }
+          const ov=(minD-d)/2; a.x-=nx*ov; a.y-=ny*ov; b.x+=nx*ov; b.y+=ny*ov;
+        }
+      }
+    }
+
+    // draw particles + accumulate stats/histogram
+    let tv=0; binsT.fill(0);
+    ctx.save();
+    rr(bx,by,bw,bh,12); ctx.clip(); ctx.lineCap='round';
+    for(const p of particles){
+      p.x=Math.max(bx+r,Math.min(bx+bw-r,p.x));
+      p.y=Math.max(by+r,Math.min(by+bh-r,p.y));
+      const spd=Math.sqrt(p.vx*p.vx+p.vy*p.vy)*sc; tv+=spd;
+      binsT[Math.max(0,Math.min(NB-1,Math.floor(spd/vMax*NB)))]++;
+      const col=speedColor(spd);
+      ctx.globalAlpha=.30; ctx.strokeStyle=col; ctx.lineWidth=r*1.05;
+      ctx.beginPath();ctx.moveTo(p.px,p.py);ctx.lineTo(p.x,p.y);ctx.stroke();
+      ctx.globalAlpha=1;
+      ctx.shadowColor=col; ctx.shadowBlur=11;
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
+      ctx.shadowBlur=0;
+      ctx.beginPath();ctx.arc(p.x-r*0.32,p.y-r*0.32,r*0.34,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,0.55)';ctx.fill();
+    }
+    for(let i=sparks.length-1;i>=0;i--){
+      const s2=sparks[i]; s2.life--;
+      if(s2.life<=0){sparks.splice(i,1);continue;}
+      const al=s2.life/s2.max;
+      ctx.globalAlpha=al*0.9; ctx.strokeStyle='#fff'; ctx.lineWidth=1.4;
+      ctx.beginPath();ctx.arc(s2.x,s2.y,(1-al)*9+2,0,Math.PI*2);ctx.stroke();
+      ctx.globalAlpha=1;
+    }
+    ctx.restore();
+
+    // ease histogram toward target fractions
+    const n=particles.length||1;
+    for(let i=0;i<NB;i++) binsS[i]+=((binsT[i]/n)-binsS[i])*0.12;
+
+    drawThermo();
+    drawHist();
+
     frames++;
     if(frames%30===0){
-      pHits.set(wallHits);
-      pAvg.set((tv/particles.length).toFixed(2)+' u/s');
-      wallHits=0;
+      pHits.set(wallHits*2);
+      pAvg.set((tv/n).toFixed(2)+' u/s');
+      const perim=2*(bw+bh);
+      pPres.set((wallImpulse/perim*120).toFixed(1)+' kPa');
+      wallHits=0; wallImpulse=0;
     }
     S.raf=requestAnimationFrame(frame);
   }
@@ -2066,7 +2222,7 @@ function simGalton(container,color){
     dropping=!dropping;
     bDrop.textContent=dropping?'⏸ Stop':'▶ Drop balls';
     if(dropping)dropInt=setInterval(()=>{
-      balls.push({x:W/2,y:6,row:0,col:0,vy:0,hue:180+Math.random()*70});
+      balls.push({x:W/2,y:6,row:0,col:0,vy:0,hue:40+Math.random()*18});
     },120);
     else clearInterval(dropInt);
   });
@@ -2082,32 +2238,43 @@ function simGalton(container,color){
 
   const S=SIMS.prob={raf:null};
   function frame(){
-    ctx.clearRect(0,0,W,H);
-    // Pegs
+    // dark background
+    const bg=ctx.createLinearGradient(0,0,0,H);
+    bg.addColorStop(0,'#0e1322'); bg.addColorStop(1,'#080b14');
+    ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+    // glowing pegs
     for(let r=0;r<=numRows;r++) for(let c=0;c<=r;c++){
       const p=pp(r,c);
-      ctx.beginPath();ctx.arc(p.x,p.y,4,0,Math.PI*2);
-      ctx.fillStyle='rgba(0,0,0,0.2)';ctx.fill();
+      ctx.beginPath();ctx.arc(p.x,p.y,3,0,Math.PI*2);
+      ctx.fillStyle='rgba(150,180,230,0.55)';ctx.fill();
     }
-    // Bins
+
+    // bins
     const maxB=Math.max(...bins,1);
     const lastY=pp(numRows,0).y+14;
     const maxBH=H-lastY-8;
     const bw=Math.min(22,(W-60)/(numRows+1));
     for(let i=0;i<=numRows;i++){
-      const p=pp(numRows,i), bx=p.x-bw/2;
-      // Gaussian ghost
-      const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(numRows*0.2),2));
-      ctx.fillStyle=color+'18'; ctx.fillRect(bx,H-8-g*maxBH,bw-2,g*maxBH);
-      // Data bar
+      const p=pp(numRows,i), bx2=p.x-bw/2;
+      const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(numRows*0.22),2));
+      // expected (ghost) bar
+      ctx.fillStyle='rgba(255,255,255,0.05)'; ctx.fillRect(bx2,H-8-g*maxBH,bw-2,g*maxBH);
+      // data bar with gradient + glow
       if(bins[i]>0){
-        const bh=(bins[i]/maxB)*maxBH;
-        ctx.fillStyle=color+'cc'; ctx.fillRect(bx,H-8-bh,bw-2,bh);
+        const bh=(bins[i]/maxB)*maxBH, hue=190+i*120/numRows;
+        const grad=ctx.createLinearGradient(0,H-8-bh,0,H-8);
+        grad.addColorStop(0,`hsl(${hue},92%,64%)`); grad.addColorStop(1,`hsl(${hue},92%,46%)`);
+        ctx.save();ctx.shadowColor=`hsl(${hue},92%,55%)`;ctx.shadowBlur=10;
+        ctx.fillStyle=grad; ctx.fillRect(bx2,H-8-bh,bw-2,bh); ctx.restore();
       }
-      ctx.strokeStyle='rgba(0,0,0,0.07)';ctx.lineWidth=1;
-      ctx.strokeRect(bx,lastY,bw-2,maxBH);
     }
-    // Animate balls
+    // theoretical Gaussian curve overlay
+    ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.setLineDash([4,4]);ctx.lineWidth=1.5;ctx.beginPath();
+    for(let i=0;i<=numRows;i++){const p=pp(numRows,i);const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(numRows*0.22),2));const y=H-8-g*maxBH;i?ctx.lineTo(p.x,y):ctx.moveTo(p.x,y);}
+    ctx.stroke();ctx.setLineDash([]);
+
+    // animate balls (glowing)
     const alive=[];
     for(const b of balls){
       b.vy+=0.65; b.y+=b.vy;
@@ -2116,12 +2283,15 @@ function simGalton(container,color){
         if(b.y>=pin.y){b.vy=2.5;b.col+=(Math.random()<.5?1:0);b.row++;b.x=pp(b.row,b.col).x+(Math.random()-.5)*3;}
       }
       if(b.row>numRows&&b.y>H-10){
-        bins[b.col]++; total++;
+        const cc=Math.max(0,Math.min(numRows,b.col));   // keep bin index in range
+        bins[cc]++; total++;
         pTot.set(total);
         pMean.set((bins.reduce((s,v,i)=>s+v*i,0)/total).toFixed(2));
       } else {
-        ctx.beginPath();ctx.arc(b.x,b.y,5,0,Math.PI*2);
-        ctx.fillStyle=`hsl(${b.hue},76%,55%)`;ctx.fill();
+        const col=`hsl(${b.hue},92%,60%)`;
+        ctx.save();ctx.shadowColor=col;ctx.shadowBlur=10;
+        ctx.beginPath();ctx.arc(b.x,b.y,5,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();ctx.restore();
+        ctx.beginPath();ctx.arc(b.x-1.6,b.y-1.6,1.8,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.65)';ctx.fill();
         alive.push(b);
       }
     }
@@ -2160,33 +2330,58 @@ function simFractal(container,color,lvl){
     dirty=true;
   });
 
+  // 256-entry "stellar" palette (deep blue → cyan → white → gold → red), built once
+  const LUT=(()=>{
+    const stops=[[0,[10,12,38]],[0.14,[34,58,168]],[0.34,[40,184,222]],
+                 [0.52,[224,250,238]],[0.68,[250,202,92]],[0.85,[222,92,42]],[1,[60,16,26]]];
+    const lut=new Uint8ClampedArray(256*3);
+    for(let i=0;i<256;i++){
+      const t=i/255; let a=stops[0],b=stops[stops.length-1];
+      for(let s=0;s<stops.length-1;s++){ if(t>=stops[s][0]&&t<=stops[s+1][0]){a=stops[s];b=stops[s+1];break;} }
+      const f=(t-a[0])/((b[0]-a[0])||1);
+      lut[i*3]=a[1][0]+(b[1][0]-a[1][0])*f;
+      lut[i*3+1]=a[1][1]+(b[1][1]-a[1][1])*f;
+      lut[i*3+2]=a[1][2]+(b[1][2]-a[1][2])*f;
+    }
+    return lut;
+  })();
+  const LOG2=Math.LN2;
+
   function drawM(){
-    const RW=W*dpr, RH=H*dpr;
+    // use the canvas's true integer device dimensions (dpr may be fractional, e.g. 1.5)
+    const RW=canvas.width, RH=canvas.height;
+    const sx=W/RW, sy=H/RH;
     const id=ctx.createImageData(RW,RH);
     const d=id.data;
     for(let py=0;py<RH;py++){
       for(let px=0;px<RW;px++){
-        const cr=(px/dpr-W/2)/zoom+cx, ci=(py/dpr-H/2)/zoom+cy;
-        let zr=0,zi=0,it=0;
-        while(it<maxIter&&zr*zr+zi*zi<4){const t=zr*zr-zi*zi+cr;zi=2*zr*zi+ci;zr=t;it++;}
-        const idx=(py*RW+px)*4;
-        if(it===maxIter){d[idx]=10;d[idx+1]=8;d[idx+2]=20;d[idx+3]=255;}
+        const cr=(px*sx-W/2)/zoom+cx, ci=(py*sy-H/2)/zoom+cy;
+        let zr=0,zi=0,it=0,m=0;
+        while(it<maxIter){
+          const zr2=zr*zr, zi2=zi*zi;
+          if(zr2+zi2>64){m=zr2+zi2;break;}
+          zi=2*zr*zi+ci; zr=zr2-zi2+cr; it++;
+        }
+        const idx=(py*RW+px)*4; d[idx+3]=255;
+        if(it>=maxIter){ d[idx]=8; d[idx+1]=9; d[idx+2]=24; }   // interior
         else{
-          const t=it/maxIter;
-          d[idx]=Math.round(9+230*Math.pow(Math.sin(t*3.14),1.5));
-          d[idx+1]=Math.round(220*Math.pow(Math.sin(t*3.14+2.1),1.5));
-          d[idx+2]=Math.round(30+220*Math.pow(Math.sin(t*3.14+4.2),1.5));
-          d[idx+3]=255;
+          // smooth (continuous) iteration count → no banding
+          const nu=Math.log(Math.log(m)/2/LOG2)/LOG2;
+          let t=(it+1-nu)/maxIter; t=t<0?0:t>1?1:t;
+          const li=(Math.pow(t,0.55)*255)|0, l=li*3;        // boost boundary detail
+          d[idx]=LUT[l]; d[idx+1]=LUT[l+1]; d[idx+2]=LUT[l+2];
         }
       }
     }
     ctx.putImageData(id,0,0);
-    // overlay hint
-    ctx.save();ctx.scale(1/dpr,1/dpr);
-    ctx.font=`bold ${13*dpr}px Nunito,sans-serif`;
-    ctx.fillStyle='rgba(255,255,255,0.55)';
-    ctx.fillText('Click anywhere to zoom in',10*dpr,(H-10)*dpr);
-    ctx.restore();
+    // vignette for depth
+    const vg=ctx.createRadialGradient(W/2,H/2,H*0.22,W/2,H/2,W*0.62);
+    vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,0.42)');
+    ctx.fillStyle=vg; ctx.fillRect(0,0,W,H);
+    // hint
+    ctx.font='800 12px Nunito,sans-serif'; ctx.textAlign='left';
+    ctx.fillStyle='rgba(255,255,255,0.6)';
+    ctx.fillText('🔍 Click anywhere to zoom in',12,H-12);
     dirty=false;
   }
 
@@ -2245,11 +2440,11 @@ function simLife(container,color){
 
   const S=SIMS.life={raf:null,timer:null};
   function frame(){
-    ctx.fillStyle='#f4f9f4';ctx.fillRect(0,0,W*dpr,H*dpr);
+    ctx.fillStyle='#f4f9f4';ctx.fillRect(0,0,W,H);
     for(let r=0;r<rows;r++) for(let c=0;c<cols;c++){
       if(!grid[idx(r,c)])continue;
       ctx.fillStyle=color+'e0';
-      ctx.fillRect((c*CELL+1)*dpr,(r*CELL+1)*dpr,(CELL-2)*dpr,(CELL-2)*dpr);
+      ctx.fillRect(c*CELL+1,r*CELL+1,CELL-2,CELL-2);
     }
     if(running) step();
     S.timer=setTimeout(()=>{S.raf=requestAnimationFrame(frame);},72);
@@ -2301,12 +2496,12 @@ function simSorting(container,color){
 
   const S=SIMS.sorting={raf:null,timer:null};
   function frame(){
-    ctx.clearRect(0,0,W*dpr,H*dpr);
+    ctx.clearRect(0,0,W,H);
     const bw=W/arr.length;
     arr.forEach((v,i)=>{
-      const bh=(v/100)*(H-12)*dpr;
+      const bh=(v/100)*(H-12);
       ctx.fillStyle=`hsl(${210+i*120/arr.length},65%,55%)`;
-      ctx.fillRect(i*bw*dpr,(H-6)*dpr-bh,Math.max(1,(bw-1.5)*dpr),bh);
+      ctx.fillRect(i*bw,(H-6)-bh,Math.max(1,bw-1.5),bh);
     });
     if(active&&gen){
       const steps=gen===bubble?4:10;
@@ -3241,9 +3436,9 @@ function simEcosystem(container, color) {
 
   function initAgents() {
     agents = []; time = 0;
-    for (let i = 0; i < 60; i++) agents.push({ type: 'plant', x: Math.random() * W, y: Math.random() * H, energy: 1, age: 0 });
-    for (let i = 0; i < 18; i++) agents.push({ type: 'herb',  x: Math.random() * W, y: Math.random() * H, energy: 8, vx: (Math.random()-.5)*1.4, vy: (Math.random()-.5)*1.4, age: 0 });
-    for (let i = 0; i < 6;  i++) agents.push({ type: 'pred',  x: Math.random() * W, y: Math.random() * H, energy: 12, vx: (Math.random()-.5)*1.8, vy: (Math.random()-.5)*1.8, age: 0 });
+    for (let i = 0; i < 85; i++) agents.push({ type: 'plant', x: Math.random() * W, y: Math.random() * H, energy: 1, age: 0 });
+    for (let i = 0; i < 22; i++) agents.push({ type: 'herb',  x: Math.random() * W, y: Math.random() * H, energy: 10, vx: (Math.random()-.5)*1.4, vy: (Math.random()-.5)*1.4, age: 0 });
+    for (let i = 0; i < 7;  i++) agents.push({ type: 'pred',  x: Math.random() * W, y: Math.random() * H, energy: 20, vx: (Math.random()-.5)*1.8, vy: (Math.random()-.5)*1.8, age: 0 });
   }
   bReset.addEventListener('click', initAgents);
   initAgents();
@@ -3259,9 +3454,12 @@ function simEcosystem(container, color) {
     const growthR = rGrowth.val / 10;
     const predEff = rPred.val / 10;
 
-    // spawn new plants
-    if (time % Math.round(18 / growthR) === 0 && agents.filter(a => a.type === 'plant').length < 120) {
-      agents.push({ type: 'plant', x: Math.random() * W, y: Math.random() * H, energy: 1, age: 0 });
+    // spawn new plants — rate scales with the growth slider so herbivores can feed
+    if (time % 6 === 0) {
+      const nPlant = agents.filter(a => a.type === 'plant').length;
+      const grow = Math.max(1, Math.round(growthR * 3.5));
+      for (let k = 0; k < grow && nPlant + k < 180; k++)
+        agents.push({ type: 'plant', x: Math.random() * W, y: Math.random() * H, energy: 1, age: 0 });
     }
 
     const toRemove = new Set();
@@ -3282,7 +3480,7 @@ function simEcosystem(container, color) {
         const spd = Math.sqrt(a.vx * a.vx + a.vy * a.vy);
         if (spd > maxV) { a.vx = a.vx / spd * maxV; a.vy = a.vy / spd * maxV; }
         a.x = (a.x + a.vx + W) % W; a.y = (a.y + a.vy + H) % H;
-        a.energy -= 0.04;
+        a.energy -= (a.type === 'pred' ? 0.022 : 0.03);
         if (a.energy <= 0 || a.age > 600) { toRemove.add(i); return; }
 
         // eat
@@ -3292,9 +3490,9 @@ function simEcosystem(container, color) {
             const b = agents[j];
             if (b.type !== 'plant') continue;
             const dx = b.x - a.x, dy = b.y - a.y;
-            if (dx * dx + dy * dy < 100) { a.energy += 4; toRemove.add(j); break; }
+            if (dx * dx + dy * dy < 225) { a.energy += 5; toRemove.add(j); break; }
           }
-          if (a.energy > 16 && Math.random() < 0.008) {
+          if (a.energy > 16 && Math.random() < 0.012) {
             toAdd.push({ type: 'herb', x: a.x + (Math.random()-.5)*10, y: a.y + (Math.random()-.5)*10, energy: 8, vx: (Math.random()-.5)*1.4, vy: (Math.random()-.5)*1.4, age: 0 });
             a.energy -= 6;
           }
@@ -3305,11 +3503,11 @@ function simEcosystem(container, color) {
             const b = agents[j];
             if (b.type !== 'herb') continue;
             const dx = b.x - a.x, dy = b.y - a.y;
-            if (dx * dx + dy * dy < 144) { a.energy += 8 * predEff; toRemove.add(j); break; }
+            if (dx * dx + dy * dy < 160) { a.energy += 11 * predEff; toRemove.add(j); break; }
           }
-          if (a.energy > 20 && Math.random() < 0.006) {
+          if (a.energy > 18 && Math.random() < 0.007) {
             toAdd.push({ type: 'pred', x: a.x + (Math.random()-.5)*10, y: a.y + (Math.random()-.5)*10, energy: 12, vx: (Math.random()-.5)*1.8, vy: (Math.random()-.5)*1.8, age: 0 });
-            a.energy -= 10;
+            a.energy -= 8;
           }
         }
 
@@ -3336,6 +3534,12 @@ function simEcosystem(container, color) {
     const nPr = agents.filter(a => a.type === 'pred').length;
 
     pPlants.set(nP); pHerb.set(nH); pPred.set(nPr);
+
+    // rescue effect — immigration from neighbouring habitats keeps the cycle going
+    if (nH < 4 && Math.random() < 0.06)
+      agents.push({ type: 'herb', x: Math.random()*W, y: Math.random()*H, energy: 10, vx: (Math.random()-.5)*1.4, vy: (Math.random()-.5)*1.4, age: 0 });
+    if (nPr < 2 && Math.random() < 0.06)
+      agents.push({ type: 'pred', x: Math.random()*W, y: Math.random()*H, energy: 16, vx: (Math.random()-.5)*1.8, vy: (Math.random()-.5)*1.8, age: 0 });
 
     // trophic collapse warning
     if (nH === 0 || nPr === 0) {
@@ -3376,12 +3580,14 @@ function simML(container, color) {
   // Tiny 2→H→1 network
   let W1, b1, W2, b2, epoch, loss, data;
   function sigmoid(z) { return 1/(1+Math.exp(-z)); }
+  // inputs centred to [-1,1] so the net reliably escapes the XOR 50% saddle
+  const cen = v => (v - 0.5) * 2;
   function initNet() {
     const H = rHid.val;
-    W1 = Array.from({length:H}, ()=>[Math.random()*.8-.4, Math.random()*.8-.4]);
-    b1 = Array.from({length:H}, ()=>Math.random()*.4-.2);
-    W2 = Array.from({length:H}, ()=>Math.random()*.8-.4);
-    b2 = [Math.random()*.2-.1];
+    W1 = Array.from({length:H}, ()=>[Math.random()*2-1, Math.random()*2-1]);
+    b1 = Array.from({length:H}, ()=>Math.random()-0.5);
+    W2 = Array.from({length:H}, ()=>Math.random()*2-1);
+    b2 = [Math.random()*.4-.2];
     epoch = 0; loss = 1; data = makeData();
   }
   bReset.addEventListener('click', initNet);
@@ -3389,30 +3595,30 @@ function simML(container, color) {
   initNet();
 
   function forward(x, y) {
-    const H = rHid.val;
-    const h = W1.map((w,i) => sigmoid(w[0]*x + w[1]*y + b1[i]));
+    const X = cen(x), Y = cen(y);
+    const h = W1.map((w,i) => sigmoid(w[0]*X + w[1]*Y + b1[i]));
     const o = sigmoid(h.reduce((s,hi,i) => s + W2[i]*hi, b2[0]));
     return { h, o };
   }
 
   function trainStep() {
-    const lr = rLR.val * 0.015;
-    const H = rHid.val;
+    const lr = rLR.val * 0.03;
     let totalLoss = 0;
     // mini-batch = full data
     data.forEach(pt => {
+      const X = cen(pt.x), Y = cen(pt.y);
       const { h, o } = forward(pt.x, pt.y);
       const err = o - pt.lbl;
       totalLoss += err * err;
       // output layer gradient
       const dO = err * o * (1-o);
-      // hidden layer gradients
+      // hidden layer gradients (use pre-update W2)
       const dH = W2.map((w,i) => dO * w * h[i] * (1-h[i]));
       // update output weights
       W2 = W2.map((w,i) => w - lr * dO * h[i]);
       b2[0] -= lr * dO;
-      // update hidden weights
-      W1 = W1.map((w,i) => [w[0] - lr*dH[i]*pt.x, w[1] - lr*dH[i]*pt.y]);
+      // update hidden weights (centred inputs)
+      W1 = W1.map((w,i) => [w[0] - lr*dH[i]*X, w[1] - lr*dH[i]*Y]);
       b1 = b1.map((b,i) => b - lr*dH[i]);
     });
     loss = Math.sqrt(totalLoss / data.length);
@@ -3425,7 +3631,7 @@ function simML(container, color) {
   function frame() {
     frameCount++;
     // train several steps per frame
-    for (let i = 0; i < 4; i++) trainStep();
+    for (let i = 0; i < 8; i++) trainStep();
 
     ctx.clearRect(0, 0, W, H);
     const PAD = 30, PW = W-PAD*2, PH = H-PAD*2;
@@ -4018,24 +4224,20 @@ function simVolcano(container, color) {
     }
 
     ctx.clearRect(0, 0, W, H);
+    const heat = pressure/100;
+    const e = erupting ? Math.min(1, eruptT/100) : 0;      // eruption darkening
 
-    // sky gradient — darkens during eruption
-    const skyAlpha = erupting ? Math.min(0.6, eruptT/100) : 0;
-    const skyG = ctx.createLinearGradient(0,0,0,H);
-    skyG.addColorStop(0, `hsl(${210-skyAlpha*180},${60-skyAlpha*40}%,${erupting?20:55}%)`);
-    skyG.addColorStop(1, `hsl(${30},${40}%,${erupting?10:30}%)`);
+    // sky — calm blue when idle, charcoal/ember when erupting (never green)
+    const lc=(a,b,f)=>`rgb(${Math.round(a[0]+(b[0]-a[0])*f)},${Math.round(a[1]+(b[1]-a[1])*f)},${Math.round(a[2]+(b[2]-a[2])*f)})`;
+    const skyG = ctx.createLinearGradient(0,0,0,baseY+20);
+    skyG.addColorStop(0, lc([122,167,212],[24,18,26],e));
+    skyG.addColorStop(1, lc([222,196,158],[60,22,16],e));
     ctx.fillStyle = skyG; ctx.fillRect(0,0,W,H);
 
     // ground
-    ctx.fillStyle = '#292524'; ctx.fillRect(0, baseY+20, W, H-baseY-20);
+    ctx.fillStyle = '#241f1c'; ctx.fillRect(0, baseY+20, W, H-baseY-20);
 
-    // lava glow underground
-    const glow = ctx.createRadialGradient(cx, baseY+10, 0, cx, baseY+10, 60+pressure*0.5);
-    glow.addColorStop(0, `rgba(255,${100+pressure},0,${0.3+pressure/200})`);
-    glow.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = glow; ctx.fillRect(0, baseY, W, H-baseY);
-
-    // volcano shape
+    // volcano cone
     ctx.beginPath();
     ctx.moveTo(cx-volcW*1.4, baseY+20);
     ctx.lineTo(cx-volcW*.4, baseY-volcH*.35);
@@ -4046,11 +4248,37 @@ function simVolcano(container, color) {
     ctx.fillStyle = '#44403c'; ctx.fill();
     ctx.strokeStyle = '#57534e'; ctx.lineWidth = 1.5; ctx.stroke();
 
+    // ── cutaway cross-section: magma chamber + conduit ──
+    const condTopY = baseY-volcH+8, condBotY = baseY+6;
+    // chamber glow halo
+    const halo = ctx.createRadialGradient(cx, condBotY+14, 0, cx, condBotY+14, 90);
+    halo.addColorStop(0, `rgba(255,140,30,${0.3+heat*0.5})`);
+    halo.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(cx, condBotY+14, 90, 0, Math.PI*2); ctx.fill();
+    // magma rises in the conduit with pressure
+    const magmaTopY = condBotY - (condBotY-condTopY) * Math.min(1, pressure/100);
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(cx-7, condBotY); ctx.lineTo(cx-4.5, condTopY);
+    ctx.lineTo(cx+4.5, condTopY); ctx.lineTo(cx+7, condBotY); ctx.closePath();
+    ctx.fillStyle = '#160f0c'; ctx.fill();             // empty conduit
+    ctx.clip();
+    const mg = ctx.createLinearGradient(0, condBotY, 0, condTopY);
+    mg.addColorStop(0, 'hsl(18,100%,52%)'); mg.addColorStop(1, `hsl(45,100%,${60+heat*12}%)`);
+    ctx.fillStyle = mg; ctx.fillRect(cx-8, magmaTopY, 16, condBotY-magmaTopY);
+    ctx.restore();
+    // chamber body
+    ctx.save(); ctx.shadowColor='rgba(255,120,20,0.8)'; ctx.shadowBlur=24;
+    ctx.beginPath(); ctx.ellipse(cx, condBotY+16, 62, 19, 0, 0, Math.PI*2);
+    const cg = ctx.createRadialGradient(cx, condBotY+10, 4, cx, condBotY+16, 62);
+    cg.addColorStop(0, `hsl(48,100%,${62+heat*14}%)`); cg.addColorStop(0.55, 'hsl(26,100%,54%)'); cg.addColorStop(1, 'hsl(12,88%,34%)');
+    ctx.fillStyle = cg; ctx.fill(); ctx.restore();
+
     // crater glow
-    const craterGlow = ctx.createRadialGradient(cx, baseY-volcH, 0, cx, baseY-volcH, 20+pressure*.15);
+    const craterGlow = ctx.createRadialGradient(cx, condTopY, 0, cx, condTopY, 20+pressure*.15);
     craterGlow.addColorStop(0, `rgba(255,${80+pressure},0,${0.4+pressure/150})`);
     craterGlow.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = craterGlow; ctx.beginPath(); ctx.arc(cx, baseY-volcH, 20+pressure*.15, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = craterGlow; ctx.beginPath(); ctx.arc(cx, condTopY, 20+pressure*.15, 0, Math.PI*2); ctx.fill();
 
     // update & draw particles
     for (let i = particles.length-1; i >= 0; i--) {
@@ -4058,9 +4286,15 @@ function simVolcano(container, color) {
       p.age++; p.vx *= 0.98; p.vy += 0.12; p.x += p.vx; p.y += p.vy;
       if (p.age > p.life || p.y > baseY+10) { particles.splice(i,1); continue; }
       const alpha = 1 - p.age/p.life;
-      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fillStyle = p.type==='lava' ? p.col : `rgba(100,80,60,${alpha*.8})`;
-      ctx.globalAlpha = alpha; ctx.fill(); ctx.globalAlpha = 1;
+      if (p.type==='lava'){
+        ctx.save(); ctx.shadowColor='rgba(255,90,0,0.9)'; ctx.shadowBlur=10;
+        ctx.globalAlpha=alpha; ctx.fillStyle=p.col;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill(); ctx.restore();
+      } else {
+        ctx.globalAlpha=alpha*.8; ctx.fillStyle=`rgba(120,108,100,1)`;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
     }
 
     // pressure gauge
@@ -4418,48 +4652,65 @@ function simOrganic(container, color) {
 
   let rotAngle = 0, t = 0;
   const S = SIMS.organic = { raf: null };
+  function shade(hex,f){
+    const n=parseInt(hex.slice(1),16);
+    const r=Math.min(255,Math.round(((n>>16)&255)*f));
+    const g=Math.min(255,Math.round(((n>>8)&255)*f));
+    const b=Math.min(255,Math.round((n&255)*f));
+    return `rgb(${r},${g},${b})`;
+  }
 
   function frame() {
-    t++; rotAngle += 0.008;
-    ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = '#0f172a'; ctx.fillRect(0, 0, W, H);
+    t++; rotAngle += 0.012;
+    // dark radial background
+    const bg = ctx.createRadialGradient(W/2, H/2-12, 10, W/2, H/2, W*0.62);
+    bg.addColorStop(0,'#141e36'); bg.addColorStop(1,'#0a1120');
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
     const idx = rMol.val - 1;
     const mol = MOLECULES[idx];
-    const cx = W/2, cy = H/2 - 10;
+    const cx = W/2, cy = H/2 - 12;
     const cos = Math.cos(rotAngle), sin = Math.sin(rotAngle);
 
-    // transform atoms (rotate around Y axis for 3D feel)
-    const transformed = mol.atoms.map(a => ({
-      ...a,
-      px: cx + a.x * cos - a.y * 0,
-      py: cy + a.x * sin * 0.3 + a.y,
-      scale: 0.8 + (a.x * cos) / 300
-    }));
-
-    // draw bonds
-    mol.bonds.forEach(([i,j]) => {
-      const a = transformed[i], b = transformed[j];
-      ctx.beginPath(); ctx.moveTo(a.px, a.py); ctx.lineTo(b.px, b.py);
-      ctx.strokeStyle = mol.aromatic && i < 6 && j < 6 ? '#fbbf24' : 'rgba(255,255,255,0.5)';
-      ctx.lineWidth = mol.aromatic && i < 6 && j < 6 ? 2.5 : 1.5;
-      ctx.stroke();
+    // 3D rotation around the vertical axis: x → screen-x via cos, depth z via sin
+    let maxX = 1; for (const a of mol.atoms) maxX = Math.max(maxX, Math.abs(a.x));
+    const tr = mol.atoms.map((a, i) => {
+      const z = a.x * sin;
+      const depth = (z + maxX) / (2 * maxX);          // 0 far → 1 near
+      return { ...a, i, px: cx + a.x * cos, py: cy + a.y, depth, scale: 0.62 + depth*0.7 };
     });
+    const aR = a => (a.s==='C'?11:a.s==='O'?9.5:a.s==='N'?9.5:7) * a.scale;
 
-    // aromatic circle
+    // bonds, back-to-front, depth-shaded
+    mol.bonds.map(([i,j]) => ({i,j,d:(tr[i].depth+tr[j].depth)/2}))
+      .sort((p,q)=>p.d-q.d)
+      .forEach(({i,j,d}) => {
+        const a = tr[i], b = tr[j];
+        const arom = mol.aromatic && i < 6 && j < 6;
+        ctx.strokeStyle = arom ? `rgba(251,191,36,${0.45+d*0.5})` : `rgba(205,214,235,${0.22+d*0.5})`;
+        ctx.lineWidth = (arom?3:2.4) * (0.6+d*0.6); ctx.lineCap='round';
+        ctx.beginPath(); ctx.moveTo(a.px, a.py); ctx.lineTo(b.px, b.py); ctx.stroke();
+      });
+
+    // aromatic ring hint
     if (mol.aromatic) {
-      ctx.beginPath(); ctx.arc(cx, cy, 35, 0, Math.PI*2);
-      ctx.strokeStyle='rgba(251,191,36,0.3)'; ctx.lineWidth=1.5; ctx.setLineDash([4,3]); ctx.stroke(); ctx.setLineDash([]);
+      ctx.beginPath(); ctx.arc(cx, cy, 33, 0, Math.PI*2);
+      ctx.strokeStyle='rgba(251,191,36,0.25)'; ctx.lineWidth=1.5; ctx.setLineDash([4,3]); ctx.stroke(); ctx.setLineDash([]);
     }
 
-    // draw atoms (sorted by z for pseudo-3D)
-    transformed.sort((a,b)=>a.scale-b.scale).forEach(a => {
-      const r = (a.s==='C'?10:a.s==='O'?9:a.s==='N'?9:7) * a.scale;
-      ctx.beginPath(); ctx.arc(a.px, a.py, r, 0, Math.PI*2);
-      ctx.fillStyle = a.col; ctx.fill();
-      ctx.strokeStyle='rgba(255,255,255,0.3)'; ctx.lineWidth=1; ctx.stroke();
-      if (r > 6) {
-        ctx.fillStyle='#fff'; ctx.font=`bold ${Math.round(8*a.scale)}px Nunito,sans-serif`;
+    // atoms as shaded spheres, back-to-front
+    tr.slice().sort((a,b)=>a.depth-b.depth).forEach(a => {
+      const r = aR(a), bright = 0.55 + a.depth*0.45;
+      ctx.save(); ctx.shadowColor = a.col; ctx.shadowBlur = 4 + a.depth*9;
+      const g = ctx.createRadialGradient(a.px-r*0.35, a.py-r*0.4, r*0.1, a.px, a.py, r);
+      g.addColorStop(0, 'rgba(255,255,255,0.92)');
+      g.addColorStop(0.28, shade(a.col, 1.12*bright));
+      g.addColorStop(1, shade(a.col, 0.5*bright));
+      ctx.beginPath(); ctx.arc(a.px, a.py, r, 0, Math.PI*2); ctx.fillStyle = g; ctx.fill();
+      ctx.restore();
+      if (r > 5.5) {
+        ctx.fillStyle = `rgba(255,255,255,${bright})`;
+        ctx.font = `800 ${Math.round(8.5*a.scale)}px Nunito,sans-serif`;
         ctx.textAlign='center'; ctx.textBaseline='middle';
         ctx.fillText(a.s, a.px, a.py); ctx.textBaseline='alphabetic';
       }
@@ -4618,21 +4869,21 @@ function simCosmology(container, color) {
   const bReset = mkBtn('↺ Reset', true, color);
   ctrl.appendChild(bReset);
 
-  let galaxies = [], t = 0, cosmicT = 0;
+  let galaxies = [], stars = [], t = 0, cosmicT = 0;
 
   function initGalaxies() {
     galaxies = []; cosmicT = 0;
-    for (let i = 0; i < 55; i++) {
+    for (let i = 0; i < 60; i++) {
       const angle = Math.random()*Math.PI*2;
       const d = 10 + Math.random()*60;
       galaxies.push({
-        ox: W/2 + Math.cos(angle)*d, oy: H/2 + Math.sin(angle)*d,
         x: W/2 + Math.cos(angle)*d, y: H/2 + Math.sin(angle)*d,
         angle, d0: d,
-        col: `hsl(${200+Math.random()*60},${60+Math.random()*30}%,${60+Math.random()*20}%)`,
+        h: 200+Math.random()*60, s: 60+Math.random()*30, l: 62+Math.random()*18,
         r: 1.5 + Math.random()*2.5
       });
     }
+    if(!stars.length) for(let i=0;i<100;i++) stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.1+0.25,a:Math.random()*0.5+0.25});
   }
   bReset.addEventListener('click', initGalaxies);
   initGalaxies();
@@ -4653,39 +4904,50 @@ function simCosmology(container, color) {
     const z = Math.max(0, 1/a - 1);
     const Hz = H0*Math.sqrt(OmM*(1+z)**3 + OmL);
 
-    // CMB background — warm at early times, dark at late
-    const earlyness = Math.max(0, 1 - cosmicT/13.8);
-    const bgH = 20 + earlyness*220;
-    ctx.fillStyle = `hsl(${bgH},${earlyness*60}%,${3+earlyness*20}%)`;
-    ctx.fillRect(0, 0, W, H);
+    // deep-space background (constant) + faint starfield
+    const sky = ctx.createLinearGradient(0,0,0,H);
+    sky.addColorStop(0,'#05060f'); sky.addColorStop(0.55,'#080a18'); sky.addColorStop(1,'#04050c');
+    ctx.fillStyle = sky; ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='rgb(190,205,255)';
+    for(const st of stars){ ctx.globalAlpha=st.a; ctx.beginPath(); ctx.arc(st.x,st.y,st.r,0,Math.PI*2); ctx.fill(); }
+    ctx.globalAlpha=1;
 
-    // CMB ripples at early times
+    // hot early universe: warm CMB glow that fades as space expands
+    const early = Math.max(0, 1 - cosmicT/3);
+    if(early>0){
+      const g0=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)*0.6*(0.3+cosmicT/3));
+      g0.addColorStop(0,`rgba(255,184,96,${0.38*early})`);
+      g0.addColorStop(0.5,`rgba(224,96,64,${0.20*early})`);
+      g0.addColorStop(1,'rgba(40,20,40,0)');
+      ctx.fillStyle=g0; ctx.fillRect(0,0,W,H);
+    }
+    // CMB ripples at very early times
     if (cosmicT < 2) {
       for (let i = 0; i < 5; i++) {
-        const alpha = (1-cosmicT/2)*0.3;
+        const alpha = (1-cosmicT/2)*0.25;
         ctx.beginPath(); ctx.arc(W/2, H/2, 30+i*30, 0, Math.PI*2);
-        ctx.strokeStyle=`rgba(255,200,100,${alpha})`; ctx.lineWidth=2; ctx.stroke();
+        ctx.strokeStyle=`rgba(255,210,150,${alpha})`; ctx.lineWidth=2; ctx.stroke();
       }
     }
 
-    // expand galaxies
+    // expand galaxies (Hubble flow) with cosmological redshift
     galaxies.forEach(g => {
       g.x = W/2 + Math.cos(g.angle)*g.d0*a*1.8;
       g.y = H/2 + Math.sin(g.angle)*g.d0*a*1.8;
-      // wrap
       if (g.x < -20 || g.x > W+20 || g.y < -20 || g.y > H+20) return;
-      // draw galaxy
       const glowR = g.r*(1+a*0.3);
-      ctx.beginPath(); ctx.arc(g.x, g.y, glowR+3, 0, Math.PI*2);
-      ctx.fillStyle=`rgba(255,255,255,0.05)`; ctx.fill();
-      ctx.beginPath(); ctx.arc(g.x, g.y, glowR, 0, Math.PI*2);
-      ctx.fillStyle=g.col; ctx.fill();
-      // recession velocity arrow
+      const rs = Math.min(1,(a-1)*0.5);                       // recede → redshift
+      const col = `hsl(${g.h+(15-g.h)*rs}, ${g.s}%, ${g.l*(1-rs*0.25)}%)`;
+      const gg=ctx.createRadialGradient(g.x,g.y,0,g.x,g.y,glowR+5);
+      gg.addColorStop(0,col); gg.addColorStop(0.4,col); gg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.globalAlpha=0.55; ctx.fillStyle=gg;
+      ctx.beginPath();ctx.arc(g.x,g.y,glowR+5,0,Math.PI*2);ctx.fill(); ctx.globalAlpha=1;
+      ctx.beginPath(); ctx.arc(g.x, g.y, glowR, 0, Math.PI*2); ctx.fillStyle=col; ctx.fill();
       if (a > 1.2) {
         const vlen = Math.min(20, g.d0*a*0.08);
         const dx = Math.cos(g.angle)*vlen, dy = Math.sin(g.angle)*vlen;
         ctx.beginPath(); ctx.moveTo(g.x, g.y); ctx.lineTo(g.x+dx, g.y+dy);
-        ctx.strokeStyle='rgba(255,100,100,0.4)'; ctx.lineWidth=1; ctx.stroke();
+        ctx.strokeStyle='rgba(255,120,120,0.4)'; ctx.lineWidth=1; ctx.stroke();
       }
     });
 
@@ -4762,9 +5024,11 @@ function simSolarSystem(container, color) {
     }
 
     const zoom = rZoom.val;
-    // scale: 1 AU = px_per_AU
+    // logarithmic radial scale so inner planets aren't stacked on the Sun
     const maxA = 32;
-    const px_per_AU = Math.min(cx, cy)*0.88 / (maxA/zoom);
+    const baseR = Math.min(cx, cy)*0.92 * (zoom/2);
+    const inner0 = 16 * (zoom/2);
+    const orbitOf = au => inner0 + (Math.log(au+1)/Math.log(maxA+1)) * (baseR - inner0);
 
     // Sun
     const sunGrad = ctx.createRadialGradient(cx,cy,0,cx,cy,14);
@@ -4773,7 +5037,7 @@ function simSolarSystem(container, color) {
     ctx.beginPath(); ctx.arc(cx,cy,10,0,Math.PI*2); ctx.fillStyle='#fbbf24'; ctx.fill();
 
     PLANETS.forEach((p, i) => {
-      const orbitR = p.a * px_per_AU;
+      const orbitR = orbitOf(p.a);
       if (orbitR > Math.max(W,H)*0.8) return; // outside view
 
       // orbit ring
@@ -4814,12 +5078,13 @@ function simSolarSystem(container, color) {
         }
       }
 
-      // label
+      // label (stagger above/below to reduce overlap)
       if (orbitR < W*0.48 && (zoom>1.5||orbitR>30)) {
-        ctx.fillStyle=i===selected?'#fff':'rgba(255,255,255,0.5)';
+        ctx.fillStyle=i===selected?'#fff':'rgba(255,255,255,0.55)';
         ctx.font=`${i===selected?'bold ':''} 9px Nunito,sans-serif`;
         ctx.textAlign='center';
-        ctx.fillText(p.name, px, py-pr-4);
+        const ly = (i%2===0) ? py-pr-4 : py+pr+10;
+        ctx.fillText(p.name, px, ly);
       }
 
       if (i===selected) {
@@ -4840,10 +5105,12 @@ function simSolarSystem(container, color) {
     const mx = (e.clientX-rect.left)*(canvasEl.width/canvasEl.offsetWidth/( window.devicePixelRatio||1));
     const my = (e.clientY-rect.top)*(canvasEl.height/canvasEl.offsetHeight/(window.devicePixelRatio||1));
     const zoom = rZoom.val, maxA=32;
-    const px_per_AU = Math.min(cx,cy)*0.88/(maxA/zoom);
+    const baseR = Math.min(cx,cy)*0.92*(zoom/2);
+    const inner0 = 16*(zoom/2);
+    const orbitOf = au => inner0 + (Math.log(au+1)/Math.log(maxA+1)) * (baseR - inner0);
     let best=-1, bestD=20;
     PLANETS.forEach((p,i)=>{
-      const orbitR=p.a*px_per_AU;
+      const orbitR=orbitOf(p.a);
       const px2=cx+orbitR*Math.cos(angles[i]), py2=cy+orbitR*Math.sin(angles[i]);
       const d=Math.hypot(mx-px2,my-py2);
       if(d<bestD){bestD=d;best=i;}
@@ -5018,7 +5285,9 @@ function simNeuron(container,color){
     ctx.fillStyle=stateColor; ctx.font='bold 12px Nunito,sans-serif';
     ctx.textAlign='left'; ctx.fillText(stateLabel,gX+4,gY+gH-20);
  
-    pV.set((v*35-70).toFixed(0)+' mV');
+    // FHN v (rest ≈ −1.2, peak ≈ +2) → mV, calibrated to −70 rest / +40 peak, clamped physiological
+    const mv=Math.max(-90,Math.min(50, v*34-29));
+    pV.set(mv.toFixed(0)+' mV');
     pState.set(v>1.5?'FIRING':'resting');
     pSpikes.set(spikes);
     S.raf=requestAnimationFrame(frame);
