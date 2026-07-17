@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://labinatab.com/sitemap.xml

@@ -92,7 +92,8 @@ html{scroll-behavior:smooth}
 body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
 
 header{position:sticky;top:0;z-index:300;background:var(--header-bg);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,4vw,3rem);gap:1rem}
-.logo{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:6px}
+.logo{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+.lvl-bar{margin-left:auto}
 /* --- NUOVO CSS PER IL LOGO E ACCENTI --- */
 
 /* Logo rendered as a CSS mask so it recolours per theme
@@ -147,7 +148,7 @@ header{position:sticky;top:0;z-index:300;background:var(--header-bg);backdrop-fi
 .glbl{font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin:2.5rem 0 1rem;padding-left:2px;display:flex;align-items:center;gap:.6rem}
 .glbl::after{content:'';flex:1;height:1px;background:var(--border)}
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1.2rem}
-.scard{background:var(--white);border:1.5px solid var(--border);border-radius:22px;cursor:pointer;position:relative;overflow:hidden;box-shadow:var(--sh);opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s,box-shadow .3s,border-color .3s}
+.scard{display:block;text-decoration:none;color:inherit;background:var(--white);border:1.5px solid var(--border);border-radius:22px;cursor:pointer;position:relative;overflow:hidden;box-shadow:var(--sh);opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s,box-shadow .3s,border-color .3s}
 .scard.vis{opacity:1;transform:none}
 .scard:hover{box-shadow:var(--sh-h);transform:translateY(-5px) scale(1.01)}
 .scard:hover .sc-emoji{transform:scale(1.1) rotate(-4deg)}
@@ -243,8 +244,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .dcard-body li{margin-bottom:.3rem}
 .dcard-body a{color:inherit;font-weight:800;text-decoration:underline}
 
-/* HEADER RIGHT + THEME TOGGLE */
-.hdr-right{display:flex;align-items:center;gap:.7rem}
+/* THEME TOGGLE */
 .icon-btn{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--border);background:var(--white);color:var(--ink2);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0;line-height:1}
 .icon-btn:hover{color:var(--ink);border-color:var(--ink3)}
 
@@ -273,28 +273,41 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 :root[data-theme=dark] .pclose:hover{background:#7f1d1d;color:#fecaca;border-color:#b91c1c}
 
 /* FOOTER */
-.site-footer{border-top:1px solid var(--border);background:var(--white);margin-top:2rem}
-.footer-grid{max-width:1340px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem) 1.6rem;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem}
-.footer-brand .logo{margin-bottom:.7rem}
-.footer-about{font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.7;max-width:34ch}
-.footer-col h4{font-family:'Fraunces',serif;font-size:.98rem;font-weight:700;color:var(--ink);margin-bottom:.85rem}
-.footer-col ul{list-style:none}
-.footer-col li{margin-bottom:.55rem}
-.footer-col a{color:var(--ink2);text-decoration:none;font-size:.86rem;font-weight:700;transition:color .18s;cursor:pointer;background:none;border:none;padding:0;font-family:'Nunito',sans-serif}
-.footer-col a:hover{color:#ff6b35}
-.footer-bar{border-top:1px solid var(--border);max-width:1340px;margin:0 auto;padding:1.2rem clamp(1rem,4vw,3rem);display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;align-items:center;justify-content:space-between}
-.footer-bar small{color:var(--ink3);font-size:.8rem;font-weight:700}
-.footer-bar .fb-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+.site-footer{border-top:1px solid var(--border);background:var(--white);margin-top:3rem}
+.footer-top{max-width:1340px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem) 1.8rem;display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem}
+.footer-brand .logo{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:6px;margin-bottom:.85rem}
+.footer-about{font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.75;max-width:48ch}
+.footer-subjects h4{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:1rem}
+.footer-subjects ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.65rem 1.2rem}
+.footer-subjects a{color:var(--ink2);text-decoration:none;font-size:.88rem;font-weight:700;cursor:pointer;transition:color .18s}
+.footer-subjects a:hover{color:#ff6b35}
+.footer-bar{border-top:1px solid var(--border);max-width:1340px;margin:0 auto;padding:1.3rem clamp(1rem,4vw,3rem);display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between}
+.footer-bar small{color:var(--ink3);font-size:.82rem;font-weight:700}
+.footer-bar .fb-links{display:flex;gap:1.4rem;flex-wrap:wrap;align-items:center}
+.footer-bar .fb-links a{color:var(--ink2);text-decoration:none;font-weight:800;font-size:.82rem;transition:color .18s}
+.footer-bar .fb-links a:hover{color:#ff6b35}
+.footer-bar .attrib{color:var(--ink3);font-size:.78rem;font-weight:600}
 
 @media(max-width:640px){
-  .footer-grid{grid-template-columns:1fr;gap:1.8rem;padding-top:2.2rem}
+  /* Header wraps to two rows: [logo … toggle] then the level bar full-width.
+     Fixes the squeezed logo wrapping to multiple lines. */
+  header{height:auto;flex-wrap:wrap;padding-top:.55rem;padding-bottom:.55rem;row-gap:.55rem}
+  .logo{order:1;margin-right:auto;font-size:1.15rem}
+  #themeToggle{order:2}
+  .lvl-bar{order:3;flex-basis:100%;margin-left:0;justify-content:center}
+  .lvl{padding:6px 14px;font-size:.78rem}
   .toolbar{gap:.7rem}
   .cat-chips{gap:.4rem}
   .panel{border-radius:22px 22px 0 0;max-height:95vh}
   .phdr,.pbody{padding-left:1rem;padding-right:1rem}
   .ptabs{padding:0 1rem}
-  header{height:58px}
-  .lvl{padding:5px 10px;font-size:.72rem}
+  /* Footer: single column, centred */
+  .footer-top{grid-template-columns:1fr;gap:1.8rem;padding-top:2.4rem;text-align:center}
+  .footer-brand .logo{justify-content:center}
+  .footer-about{max-width:none;margin:0 auto}
+  .footer-subjects ul{max-width:340px;margin:0 auto;text-align:left}
+  .footer-bar{flex-direction:column;justify-content:center;text-align:center;gap:.5rem}
+  .footer-bar .fb-links{justify-content:center;flex-direction:column;gap:.35rem}
   .frow{grid-template-columns:1fr;gap:0}
   .fcmt{display:none}
 }
@@ -307,14 +320,12 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <span class="logo-img" role="img" aria-label="Lab-in-a-Tab logo"></span>
     Lab-in-a-Tab
   </div>
-  <div class="hdr-right">
-    <nav class="lvl-bar">
-      <button class="lvl on" data-l="junior">🌱 Junior</button>
-      <button class="lvl" data-l="student">🔬 Student</button>
-      <button class="lvl" data-l="scholar">🎓 Scholar</button>
-    </nav>
-    <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-  </div>
+  <nav class="lvl-bar" aria-label="Difficulty level">
+    <button class="lvl on" data-l="junior">🌱 Junior</button>
+    <button class="lvl" data-l="student">🔬 Student</button>
+    <button class="lvl" data-l="scholar">🎓 Scholar</button>
+  </nav>
+  <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
 </header>
 
 <section class="hero">
@@ -338,39 +349,33 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <main class="wrap" id="mainGrid"></main>
 
 <footer class="site-footer">
-  <div class="footer-grid">
+  <div class="footer-top">
     <div class="footer-brand">
       <div class="logo">
         <span class="logo-img" role="img" aria-label="Lab-in-a-Tab logo"></span>
         Lab-in-a-Tab
       </div>
-      <p class="footer-about">An open, interactive science library - 32 hands-on simulations across nine fields, each written for three levels so anyone from a curious ten-year-old to a graduate student can go as deep as they like. Free, no account, no tracking.</p>
+      <p class="footer-about">32 hands-on science simulations across nine fields, each written for three levels — from a curious ten-year-old to a graduate student. Free, no account, no tracking.</p>
     </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
+    <nav class="footer-subjects" aria-label="Browse by subject">
+      <h4>Explore by subject</h4>
       <ul>
         <li><a data-cat="⚛️ Physics">Physics</a></li>
         <li><a data-cat="🔢 Mathematics">Mathematics</a></li>
         <li><a data-cat="🧬 Biology">Biology</a></li>
         <li><a data-cat="💻 Computer Science">Computer Science</a></li>
-        <li><a data-cat="🌌 Astronomy">Astronomy</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>About</h4>
-      <ul>
-        <li><a data-cat="🧠 Neuroscience">Neuroscience</a></li>
         <li><a data-cat="⚗️ Chemistry">Chemistry</a></li>
         <li><a data-cat="🌍 Earth Science">Earth Science</a></li>
-        <li><a href="https://github.com/sharoncardetti/labinatab" target="_blank" rel="noopener">Source on GitHub ↗</a></li>
-        <li><a href="mailto:hello@labinatab.com">Contact</a></li>
+        <li><a data-cat="🌌 Astronomy">Astronomy</a></li>
+        <li><a data-cat="🧠 Neuroscience">Neuroscience</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
   <div class="footer-bar">
-    <small>© <span id="year">2025</span> Lab-in-a-Tab · Made for curious minds.</small>
+    <small>© <span id="year">2026</span> Lab-in-a-Tab — made for curious minds.</small>
     <div class="fb-links">
-      <small>Concepts sourced from Wikipedia &amp; open educational resources</small>
+      <a href="mailto:hello@labinatab.com">Contact</a>
+      <span class="attrib">Concepts from Wikipedia &amp; open educational resources</span>
     </div>
   </div>
 </footer>
@@ -2096,6 +2101,44 @@ document.querySelectorAll('.lvl').forEach(b=>{
   });
 });
 
+// URL of each topic's standalone article page. Single source of truth: the card
+// links below AND build-pages.mjs both read this, so a slug is only ever written
+// once. Slugs are permanent once indexed — do not rename without a 301.
+const SLUG={
+  gravity:     'gravity-orbits',
+  waves:       'waves-interference',
+  thermo:      'thermodynamics',
+  particles:   'standard-model',
+  prob:        'probability-bell-curve',
+  fractal:     'fractals',
+  calculus:    'calculus',
+  graphs:      'graph-theory',
+  life:        'rules-of-life',
+  dna:         'dna-genetics',
+  evolution:   'evolution',
+  ecosystem:   'ecosystems-food-webs',
+  sorting:     'sorting-algorithms',
+  ml:          'machine-learning',
+  crypto:      'cryptography',
+  complexity:  'computation-complexity',
+  climate:     'climate-atmosphere',
+  tectonics:   'plate-tectonics',
+  ocean:       'ocean-currents',
+  volcano:     'volcanology',
+  chem:        'chemical-bonds',
+  electrochem: 'electrochemistry',
+  kinetics:    'kinetics-equilibrium',
+  organic:     'organic-chemistry',
+  astro:       'stars-universe',
+  blackholes:  'black-holes',
+  cosmology:   'cosmology-big-bang',
+  solarsystem: 'solar-system',
+  neuro:       'brain-neurons',
+  neuron:      'electric-brain',
+  memory:      'how-memory-works',
+  sleep:       'sleep-consciousness',
+};
+
 // ═══════════════════════════════════════════════════════════════════
 // BUILD GRID
 // ═══════════════════════════════════════════════════════════════════
@@ -2110,8 +2153,12 @@ document.querySelectorAll('.lvl').forEach(b=>{
     const lbl=document.createElement('div');lbl.className='glbl';lbl.textContent=grp;sec.appendChild(lbl);
     const grid=document.createElement('div');grid.className='cgrid';
     subs.forEach((s,si)=>{
-      const c=document.createElement('div');c.className='scard';c.tabIndex=0;c.dataset.group=grp;
-      c.setAttribute('role','button');c.setAttribute('aria-label','Open experiment: '+s.title);
+      // A real <a> to the article page: crawlable by Google, works on Ctrl/middle
+      // click, and still opens the modal on a plain click (see handler below).
+      // Native link semantics also give us Enter-to-activate and focus for free.
+      const c=document.createElement('a');c.className='scard';c.dataset.group=grp;
+      c.href='/'+SLUG[s.id]+'/';
+      c.setAttribute('aria-label',s.title+' — open experiment');
       c.dataset.search=(s.title+' '+s.teaser+' '+s.chips.join(' ')+' '+grp).toLowerCase();
       c.innerHTML=`<div class="sc-stripe" style="background:linear-gradient(90deg,${s.color},${s.color}88)"></div>
 <div class="sc-body">
@@ -2124,8 +2171,12 @@ document.querySelectorAll('.lvl').forEach(b=>{
   <div class="sc-chips">${s.chips.map(ch=>`<span class="chip">${ch}</span>`).join('')}</div>
   <span class="sc-arr" style="color:${s.color}">→</span>
 </div>`;
-      c.addEventListener('click',()=>openModal(s));
-      c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(s);}});
+      c.addEventListener('click',e=>{
+        // Let Ctrl/Cmd/shift/middle click through so the article page can open
+        // in a new tab; a plain click keeps the in-page modal experience.
+        if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+        e.preventDefault();openModal(s);
+      });
       grid.appendChild(c);cards.push(c);
       setTimeout(()=>c.classList.add('vis'),120+(gi*4+si)*65);
     });
@@ -2168,7 +2219,7 @@ document.querySelectorAll('.lvl').forEach(b=>{
   }
   searchBox.addEventListener('input',applyFilter);
   searchClear.addEventListener('click',()=>{searchBox.value='';searchBox.focus();applyFilter();});
-  document.querySelectorAll('.footer-col a[data-cat]').forEach(a=>a.addEventListener('click',e=>{
+  document.querySelectorAll('.site-footer a[data-cat]').forEach(a=>a.addEventListener('click',e=>{
     e.preventDefault();setCat(a.dataset.cat);document.querySelector('.toolbar').scrollIntoView({behavior:'smooth',block:'start'});
   }));
   applyFilter();
@@ -2283,6 +2334,7 @@ function openModal(s, refresh=false){
   }
 }
 let lastFocused=null;
+
 
 // Primary Wikipedia article per simulation. Every URL verified to return
 // HTTP 200 (checked 2026-07) so "Go Deeper" never lands on the site homepage.

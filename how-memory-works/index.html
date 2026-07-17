@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Memory Works | Lab-in-a-Tab</title>
+<meta name="description" content="How does your brain store 2.5 petabytes of memories - and why do some last forever while others vanish overnight?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-memory-works/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Memory Works — Explained &amp; Simulated">
+<meta property="og:description" content="How does your brain store 2.5 petabytes of memories - and why do some last forever while others vanish overnight?">
+<meta property="og:url" content="https://labinatab.com/how-memory-works/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Memory Works — Explained &amp; Simulated">
+<meta name="twitter:description" content="How does your brain store 2.5 petabytes of memories - and why do some last forever while others vanish overnight?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-memory-works/#article",
+   "headline": "How Memory Works",
+   "name": "How Memory Works",
+   "description": "How does your brain store 2.5 petabytes of memories - and why do some last forever while others vanish overnight?",
+   "url": "https://labinatab.com/how-memory-works/",
+   "mainEntityOfPage": "https://labinatab.com/how-memory-works/",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Memory",
+    "LTP",
+    "Plasticity"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Memory Works",
+    "sameAs": "https://en.wikipedia.org/wiki/Memory"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Memory Works",
+     "item": "https://labinatab.com/how-memory-works/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Neuroscience</nav>
+  <h1>How Memory Works</h1>
+  <p class="lead">How does your brain store 2.5 petabytes of memories - and why do some last forever while others vanish overnight?</p>
+  <a class="cta" href="/#memory">▶ Run the interactive simulation</a>
+  <div class="chips"><span>Memory</span><span>LTP</span><span>Plasticity</span></div>
+  
+<section class="lvl" id="junior">
+  <h2>Your brain rewires itself when you learn!</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Ever wondered how you learned to ride a bike? At first it was hard - your brain had never done it. But with practice something remarkable happened: your brain literally <em>rewired itself</em>. The neurons handling balance and pedalling began talking to each other more efficiently, forging stronger connections, until one day the skill ran itself and you could do it without a thought. That physical change in the brain is what a <strong>memory</strong> really is.</p>
+<p>Scientists sum it up in a lovely phrase: <em>"neurons that fire together, wire together."</em> Every time two neurons light up at the same instant, the synapse between them grows a shade stronger. Repeat the experience enough - practise the piano, revise for a test, replay a happy afternoon in your head - and the connection turns rock-solid. That's <strong>synaptic plasticity</strong>.</p>
+<p>Not all memory is the same. <strong>Short-term memory</strong> clutches a scrap of information for seconds or minutes, like a phone number you just glanced at. <strong>Long-term memory</strong> can last a lifetime. To move a memory from one to the other, your brain replays it - above all during <strong>sleep</strong>, when the hippocampus re-runs the day's events and slowly hands them off to the cortex for permanent keeping.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">💾</span> The human brain can store an estimated 2.5 petabytes - equivalent to about 3 million hours of TV. You'd never run out of space.</li><li><span aria-hidden="true">😴</span> Sleep is essential for memory. Students who sleep after studying retain up to 40% more than those who stay up all night revising.</li><li><span aria-hidden="true">🏆</span> Memory champions who memorise hundreds of random digits use &quot;method of loci&quot; - imagining walking through a familiar place. It exploits spatial memory circuits in the hippocampus.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Long-Term Potentiation and the Hebbian Synapse</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p><strong>Long-term potentiation</strong> - LTP - is the cellular act of remembering. Bliss and Lømo found in 1973 that a burst of high-frequency stimulation leaves a synapse lastingly stronger, and the molecule at the heart of it is the <strong>NMDA receptor</strong>. It works as a coincidence detector: it only opens when two things happen together - the incoming neuron releases glutamate <em>and</em> the receiving neuron is already depolarised enough to knock a blocking magnesium ion out of the channel's mouth.</p>
+<p>When both conditions coincide, calcium pours into the receiving cell and sets a cascade in motion. Kinases - chiefly CaMKII - crank up the existing AMPA receptors and ferry new ones to the synapse, boosting its strength within minutes. Push the stimulation harder and the change becomes permanent: genes switch on, fresh proteins are built, and the dendritic spine physically swells. It all maps neatly onto Hebb's rule, \(\Delta w_{ij} = \eta\, x_i x_j\) - joint activity strengthens the link.</p>
+<p>Where these changes matter most is the <strong>hippocampus</strong>, the brain's gateway for facts and events. The starkest proof came from patient H.M., whose hippocampus was surgically removed in 1953: he kept his old memories and his skills, but could never again lay down a new fact or experience. During sleep the hippocampus replays the day in compressed bursts called <em>sharp-wave ripples</em>, gradually shipping each memory out to the cortex for long-term keeping - a slow migration known as systems consolidation.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Hebbian rule</th><td>\(\Delta w_{ij} = \eta\, x_i x_j\)</td><td class="cmt">co-activation strengthens</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">NMDA coincidence</th><td>\(\text{glutamate} \;\wedge\; \Delta V &gt; 0 \;\Rightarrow\; \text{Ca}^{2+}\ \text{influx}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">LTP induction</th><td>\([\text{Ca}^{2+}]_i \uparrow \;\to\; \text{CaMKII} \;\to\; \text{AMPA insertion}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">STDP</th><td>\(\Delta t &lt; 0 \Rightarrow \text{LTP};\quad \Delta t &gt; 0 \Rightarrow \text{LTD}\)</td><td class="cmt">Δt = t_pre − t_post</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🧠</span> Patient H.M. (Henry Molaison) lost his hippocampus in 1953. He couldn't form any new declarative memories until his death 55 years later, advancing our understanding of memory more than any other case.</li><li><span aria-hidden="true">🌙</span> During sleep, hippocampal sharp-wave ripples replay the day's events up to 20× faster than real time, consolidating memories into the cortex.</li><li><span aria-hidden="true">🎵</span> Playing a musical instrument restructures the brain's motor and auditory cortices - a 10-year-old pianist has measurably thicker grey matter than a non-musician.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Synaptic Plasticity Rules, Engrams, and Systems Consolidation</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Timing is everything: STDP</h3>
+<p>Hebb's rule says co-active neurons strengthen their link, but experiments revealed something sharper: the exact <em>order</em> of firing matters, down to milliseconds. In <strong>spike-timing-dependent plasticity</strong>, a synapse is strengthened when the presynaptic spike arrives just <em>before</em> the postsynaptic one - plausibly causal - and weakened when it arrives just after, within a narrow \(\pm 40\) ms window, \(\Delta W = A^+ e^{\Delta t/\tau^+}\) for potentiation and \(-A^- e^{-\Delta t/\tau^-}\) for depression. The brain, in effect, rewards synapses that helped predict the next spike.</p>
+<h3><span class="hn">02</span>Keeping plasticity stable: the sliding threshold</h3>
+<p>Pure Hebbian strengthening is unstable - strong synapses would only grow stronger without bound. The BCM theory fixes this with a <em>sliding threshold</em> \(\theta_M\) that itself tracks recent activity: a neuron that has been firing a lot raises its bar for potentiation, so plasticity self-regulates. Calcium is the physical readout - a large influx drives LTP, a moderate one LTD, and this graded, self-adjusting response keeps a lifetime of learning from saturating the network.</p>
+<h3><span class="hn">03</span>The engram: catching a memory in the act</h3>
+<p>The physical trace of a specific memory - the <strong>engram</strong> - turns out to be a sparse ensemble, only ~5–10% of the neurons in a region, bound together by potentiated synapses. This was speculation for a century until optogenetics let researchers tag the exact cells active during an experience and then switch them back on with light. Reactivating an engram makes an animal behave as if recalling the event; silencing it blocks the recall. The memory really does live in that identifiable set of cells.</p>
+<h3><span class="hn">04</span>Writing and erasing memories with light</h3>
+<p>Once you can address an engram, you can edit it. In a landmark 2013 experiment, researchers implanted a <em>false</em> memory in a mouse by artificially co-activating an engram for a place with an aversive shock, so the animal later feared a location where nothing bad had happened. And in mice made amnesic by blocking protein synthesis, directly reactivating the engram restored the "lost" memory - showing the trace was stored but merely inaccessible. Memory became something you could not just observe but manipulate.</p>
+<h3><span class="hn">05</span>Storage finer than the cell</h3>
+<p>Remarkably, the unit of storage is smaller than a neuron. A single <em>dendritic spine</em> can be potentiated or depressed independently of its neighbours a few microns away on the same branch, so one cell can hold thousands of near-independent memory elements. This vastly multiplies the brain's capacity and explains how ~86 billion neurons store an estimated petabytes' worth of experience - the real bit is the synapse, not the cell.</p>
+<h3><span class="hn">06</span>The sleeping dialogue that makes memories last</h3>
+<p><strong>Systems consolidation</strong> is the slow handover of a memory from the fast-learning hippocampus to durable neocortical storage, and it happens largely in sleep through an exquisitely timed conversation between brain rhythms. Hippocampal sharp-wave ripples, cortical sleep spindles and slow oscillations nest inside one another in a precise hierarchy, and this coordination is thought to replay the day's traces to the cortex just when it is primed to receive them - gradually embedding a fleeting experience into the distributed fabric of long-term memory.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">STDP (potentiation)</th><td>\(\Delta W = A^+ e^{\Delta t/\tau^+}\)</td><td class="cmt">Δt &lt; 0</td></tr>
+<tr><th scope="row">STDP (depression)</th><td>\(\Delta W = -A^- e^{-\Delta t/\tau^-}\)</td><td class="cmt">Δt &gt; 0</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">BCM rule</th><td>\(\dfrac{dw}{dt} = \phi(v_{\text{post}}, \theta_M)\,v_{\text{pre}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Sliding threshold</th><td>\(\tau\,\dfrac{d\theta_M}{dt} = v_{\text{post}}^2 - \theta_M\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Calcium control</th><td>\([\text{Ca}^{2+}] &gt; \theta_{\text{high}} \Rightarrow \text{LTP}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Engram</th><td>\(S = \{\, n_i : w_{ij} \gg \text{baseline} \,\}\)</td><td class="cmt">sparse ensemble</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">💡</span> Optogenetics - controlling neurons with light - allowed researchers to implant a false memory in a mouse in 2013 (Ramirez et al., Science), directly testing engram theory.</li><li><span aria-hidden="true">🔬</span> A single dendritic spine can potentiate or depress independently of its neighbours on the same dendrite - the basic unit of storage is finer than the neuron itself.</li><li><span aria-hidden="true">🧬</span> BDNF Val66Met, a common genetic variant (~30% of the population), impairs activity-dependent BDNF secretion and is associated with reduced hippocampal memory consolidation.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Memory" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Neuroscience</h2>
+    <ul><li><a href="/brain-neurons/">The Brain &amp; Neurons</a></li><li><a href="/electric-brain/">The Electric Brain</a></li><li><a href="/sleep-consciousness/">Sleep &amp; Consciousness</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fractals &amp; Infinity | Lab-in-a-Tab</title>
+<meta name="description" content="A coastline has infinite length. A snowflake contains itself forever. How is that possible?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fractals/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Fractals &amp; Infinity — Explained &amp; Simulated">
+<meta property="og:description" content="A coastline has infinite length. A snowflake contains itself forever. How is that possible?">
+<meta property="og:url" content="https://labinatab.com/fractals/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fractals &amp; Infinity — Explained &amp; Simulated">
+<meta name="twitter:description" content="A coastline has infinite length. A snowflake contains itself forever. How is that possible?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fractals/#article",
+   "headline": "Fractals & Infinity",
+   "name": "Fractals & Infinity",
+   "description": "A coastline has infinite length. A snowflake contains itself forever. How is that possible?",
+   "url": "https://labinatab.com/fractals/",
+   "mainEntityOfPage": "https://labinatab.com/fractals/",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Geometry",
+    "Self-similarity",
+    "Chaos"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Fractals & Infinity",
+    "sameAs": "https://en.wikipedia.org/wiki/Fractal"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Fractals & Infinity",
+     "item": "https://labinatab.com/fractals/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Mathematics</nav>
+  <h1>Fractals &amp; Infinity</h1>
+  <p class="lead">A coastline has infinite length. A snowflake contains itself forever. How is that possible?</p>
+  <a class="cta" href="/#fractal">▶ Run the interactive simulation</a>
+  <div class="chips"><span>Geometry</span><span>Self-similarity</span><span>Chaos</span></div>
+  
+<section class="lvl" id="junior">
+  <h2>Shapes that contain themselves!</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Look closely at a fern. Now zoom in on one of its little side branches - it's basically a tiny fern. Zoom in again on a branch of <em>that</em> branch, and there's another tiny fern. A shape that keeps looking like itself however far you zoom in has a name: it's <strong>self-similar</strong>, and shapes that pull this trick are called <strong>fractals</strong>.</p>
+<p>Nature is stuffed with them. Snowflakes, coastlines, mountain ridges and lightning bolts are all fractal - and so is your dinner. Slice into a head of Romanesco broccoli and you'll find a spiral built of smaller spirals built of smaller spirals still. Even your own lungs play the game: their endlessly forking branches cram a surface the size of a tennis court into your chest, just so you can breathe.</p>
+<p>The superstar of the family is the <strong>Mandelbrot set</strong>, a shape conjured from one tiny rule repeated over and over. From a distance its outline looks almost plain, but dive into its edge and the detail simply never runs out - swirling spirals, curling seahorse tails, miniature copies of the whole shape, and then more detail hiding inside those, on and on forever. It may be the most intricate object in all of mathematics, and it grows from one of the simplest rules you could ever write down.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌿</span> Romanesco broccoli is a near-perfect natural fractal - each floret is a miniature version of the entire head!</li><li><span aria-hidden="true">🌊</span> Britain's coastline gets longer the more precisely you measure it. There's no single &quot;correct&quot; answer - it's fractal!</li><li><span aria-hidden="true">🫁</span> Your lungs' fractal branching creates ~70 m² of surface - enough to cover a tennis court, packed into your chest!</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Fractal Dimension and the Mandelbrot Set</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Ordinary geometry deals in whole-number dimensions: a point is 0, a line is 1, a square 2, a cube 3. Fractals quietly break that rule - they live at <strong>fractional dimensions</strong>, the <em>Hausdorff dimension</em>. The idea is to ask how detail multiplies as you zoom. Scale a line by 3 and you get 3 copies; scale a square by 3 and you get \(9 = 3^2\); a cube, \(27 = 3^3\). Read off the exponent and you have the dimension. For a shape made of \(N\) copies each shrunk by \(1/s\), it's \(D = \dfrac{\log N}{\log s}\).</p>
+<p>Feed the <strong>Koch snowflake</strong> into that formula - every segment swapped for a bump of 4 pieces, each a third as long, so \(N=4\) and \(s=3\) - and out comes \(D = \dfrac{\log 4}{\log 3} \approx 1.26\): more than a line, less than a plane. The unsettling part is that its perimeter is <em>infinite</em>, \(L_n = (4/3)^n L_0 \to \infty\), while the area it fences off stays finite. That is exactly why a coastline has no single length - measure it with a finer ruler and you keep uncovering more wiggles.</p>
+<p>The <strong>Mandelbrot set</strong> grows from an almost insultingly simple recipe: iterate \(z_{n+1} = z_n^2 + c\) starting from \(z_0 = 0\). A complex number \(c\) belongs to the set if that sequence never runs off to infinity. Points just outside escape at different speeds, and colouring them by how fast they flee paints those famous psychedelic halos. The boundary itself is bottomless: zoom into any point on the edge and fresh structures keep blooming - spirals, seahorse valleys, tiny perfect copies of the whole set - without end.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Mandelbrot iteration</th><td>\(z_{n+1} = z_n^2 + c,\quad z_0 = 0\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Mandelbrot set</th><td>\(M = \{\, c \in \mathbb{C} : \sup_n |z_n| &lt; \infty \,\}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Hausdorff dimension</th><td>\(D = \dfrac{\log N}{\log s}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Koch snowflake</th><td>\(D = \dfrac{\log 4}{\log 3} \approx 1.2619\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Koch perimeter</th><td>\(L_n = \left(\tfrac{4}{3}\right)^{n} L_0 \to \infty\)</td><td class="cmt">finite area, infinite perimeter</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌀</span> The boundary of the Mandelbrot Set has Hausdorff dimension exactly 2 - infinitely wrinkled. Zooming in always reveals new mini-Mandelbrot sets!</li><li><span aria-hidden="true">📡</span> Fractal antennas (used in modern smartphones) receive multiple frequencies because their self-similar structure resonates at multiple scales simultaneously.</li><li><span aria-hidden="true">🩺</span> Malignant tumours have measurably higher fractal dimension than healthy tissue - a quantitative cancer diagnostic tool.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Complex Dynamics, Julia Sets, and connections to chaos theory</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Julia sets: the chaotic frontier</h3>
+<p>Fix a complex number \(c\) and iterate \(f_c(z) = z^2 + c\). Some starting points race off to infinity; others stay bounded forever. The <strong>Julia set</strong> \(J_c\) is the knife-edge between them - the boundary of the escaping region, and a place of genuine chaos, where two neighbours that look identical can end up in entirely different fates. The <em>filled</em> Julia set \(K_c\) gathers every point that never escapes. Nudge \(c\) and \(J_c\) transforms wildly: a smooth circle at \(c=0\), a branching dendrite a little further out, a spray of disconnected dust beyond that.</p>
+<h3><span class="hn">02</span>The Mandelbrot set as an atlas of Julia sets</h3>
+<p>Here is the bridge that lifts the Mandelbrot set above mere decoration. <strong>\(c\) lies in \(M\) precisely when its Julia set \(J_c\) is connected</strong>; the instant \(c\) leaves \(M\), \(J_c\) shatters into totally disconnected Cantor dust - and there is nothing in between. Douady and Hubbard proved this clean dichotomy in 1982, recasting \(M\) as a single catalogue of every quadratic Julia set at once. Each point of the Mandelbrot set is, in effect, a postcard from a different chaotic world.</p>
+<h3><span class="hn">03</span>Uniformisation and the great open question</h3>
+<p>They went further, constructing an explicit conformal map from the outside of \(M\) onto the outside of the unit disk through the <em>Böttcher coordinate</em> \(\varphi_c(z) = \lim_{n\to\infty} [f_c^{\,n}(z)]^{2^{-n}}\). One payoff: \(M\) is connected - far from obvious in the pictures, where stray "islands" turn out to be tethered to the mainland by filaments too thin to see. Whether \(M\) is also <em>locally</em> connected - the <strong>MLC conjecture</strong> - is the central open problem of the subject. A proof would pin down the entire combinatorial structure of \(M\) in a single move; it has held out for forty years.</p>
+<h3><span class="hn">04</span>Where fractals meet chaos</h3>
+<p>Slice the Mandelbrot set along the real axis and you stumble onto something from a quite different corner of mathematics: the <strong>logistic map</strong> \(x_{n+1} = r\,x_n(1-x_n)\), the textbook model of chaos. Push \(r\) up from 1 toward 4 and a steady population first settles, then splits to oscillate between two values, then four, then eight - a <em>period-doubling cascade</em> - before collapsing into full chaos. The real spine of the Mandelbrot set is literally this bifurcation diagram wearing a disguise.</p>
+<h3><span class="hn">05</span>Feigenbaum's astonishing constant</h3>
+<p>Measure how fast those splittings accumulate and the intervals shrink by a ratio converging on the <strong>Feigenbaum constant</strong> \(\delta \approx 4.6692\). The marvel is its universality: the very same number paces the road to chaos in dripping taps, oscillating circuits and convecting fluids - systems that share no physics whatsoever, only the shape of a single hump. Feigenbaum cracked it in the 1970s with renormalization-group ideas borrowed wholesale from statistical physics, exposing a hidden order running underneath chaos itself.</p>
+<h3><span class="hn">06</span>A curve as rough as a plane</h3>
+<p>How wrinkled can a boundary get? For the Mandelbrot set, the answer is: maximally. Shishikura proved in 1998, with delicate quasi-conformal surgery, that the Hausdorff dimension of \(\partial M\) is exactly <strong>2</strong> - the most a planar curve can possibly reach. Though it traces a one-dimensional outline, it crinkles so violently that, in the limit, it behaves like something that fills area outright. Infinite roughness, squeezed out of \(z^2 + c\), the simplest nonlinear rule there is.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Quadratic map</th><td>\(f_c(z) = z^2 + c,\quad z_0 = 0\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Mandelbrot set</th><td>\(M = \{\, c \in \mathbb{C} : \sup_n |f_c^{\,n}(0)| &lt; \infty \,\}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Julia set</th><td>\(J_c = \partial\{\, z : f_c^{\,n}(z) \to \infty \,\}\)</td><td class="cmt">connected ⟺ c ∈ M</td></tr>
+<tr><th scope="row">Böttcher coordinate</th><td>\(\varphi_c(z) = \lim_{n\to\infty} [f_c^{\,n}(z)]^{2^{-n}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Logistic map</th><td>\(x_{n+1} = r\,x_n(1 - x_n)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Feigenbaum constant</th><td>\(\delta \approx 4.6692\)</td><td class="cmt">dim_H(∂M) = 2 (Shishikura 1998)</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔢</span> The MLC conjecture (Mandelbrot locally connected?) would imply the combinatorial description of M is complete - it has resisted proof for 40 years.</li><li><span aria-hidden="true">📐</span> Feigenbaum's constant δ ≈ 4.6692 appears in period-doubling cascades of dripping faucets, electronic circuits, and Rayleigh-Bénard convection - all the same number!</li><li><span aria-hidden="true">🌊</span> Turbulent fluid flow exhibits multifractal structure - different regions of space scale with different local Hölder exponents, described by the multifractal spectrum f(α).</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Fractal" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Mathematics</h2>
+    <ul><li><a href="/probability-bell-curve/">Probability &amp; The Bell Curve</a></li><li><a href="/calculus/">Calculus &amp; Change</a></li><li><a href="/graph-theory/">Graph Theory &amp; Networks</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>

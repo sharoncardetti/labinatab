@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heat &amp; Thermodynamics | Lab-in-a-Tab</title>
+<meta name="description" content="Why does ice always melt and coffee always cool down? The universe has a direction.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/thermodynamics/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Heat &amp; Thermodynamics — Explained &amp; Simulated">
+<meta property="og:description" content="Why does ice always melt and coffee always cool down? The universe has a direction.">
+<meta property="og:url" content="https://labinatab.com/thermodynamics/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Heat &amp; Thermodynamics — Explained &amp; Simulated">
+<meta name="twitter:description" content="Why does ice always melt and coffee always cool down? The universe has a direction.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/thermodynamics/#article",
+   "headline": "Heat & Thermodynamics",
+   "name": "Heat & Thermodynamics",
+   "description": "Why does ice always melt and coffee always cool down? The universe has a direction.",
+   "url": "https://labinatab.com/thermodynamics/",
+   "mainEntityOfPage": "https://labinatab.com/thermodynamics/",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Entropy",
+    "Energy",
+    "Heat"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Heat & Thermodynamics",
+    "sameAs": "https://en.wikipedia.org/wiki/Laws_of_thermodynamics"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Heat & Thermodynamics",
+     "item": "https://labinatab.com/thermodynamics/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physics</nav>
+  <h1>Heat &amp; Thermodynamics</h1>
+  <p class="lead">Why does ice always melt and coffee always cool down? The universe has a direction.</p>
+  <a class="cta" href="/#thermo">▶ Run the interactive simulation</a>
+  <div class="chips"><span>Entropy</span><span>Energy</span><span>Heat</span></div>
+  
+<section class="lvl" id="junior">
+  <h2>Heat always flows from hot to cold - never backwards</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Leave a hot chocolate on the table and come back later: it has gone cold. Now notice the thing that <em>never</em> happens - a cold drink doesn't suddenly heat itself back up by pulling warmth out of the room. Heat only ever travels one way, from hot to cold. That one-way street sounds obvious, but it turns out to be one of the deepest rules in all of physics.</p>
+<p>Zoom in far enough and everything - the air, your hand, this screen - is a swarm of jiggling atoms. "Hot" just means they jiggle fast; "cold" means they jiggle slowly. When your warm cup meets the cooler air, the fast atoms bump into the slow ones and share their motion, like a crowd jostling until everyone moves at the same pace. The drink cools, the air warms a touch, and they settle in the middle. That settled, shared state has a name: <strong>equilibrium</strong>.</p>
+<p>Behind the one-way street hides a single idea - <strong>entropy</strong>, roughly a measure of how spread-out and jumbled things are. Left alone, the world always drifts toward <em>more</em> jumble, never less. Your room gets messy on its own; it never tidies itself. A drop of ink uncurls through water and never gathers back into a drop. That relentless drift is why a perfect engine is impossible, why you remember the past but not the future, and - pushed to the limit - how the entire universe will slowly wind down. A cooling cup of coffee is the universe quietly showing you which way time runs.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🧊</span> Ice absorbs heat while melting but stays at 0°C throughout - all that energy is breaking molecular bonds, not raising temperature.</li><li><span aria-hidden="true">🌡️</span> The coldest possible temperature is −273.15°C (absolute zero, 0 K). At this point, atoms have minimum possible motion - quantum mechanics prevents them fully stopping.</li><li><span aria-hidden="true">🚀</span> Rockets work by thermodynamics: burning fuel creates extremely hot gas, which expands rapidly and exits at the back, generating thrust by Newton's 3rd law.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>The Four Laws of Thermodynamics</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Four laws hold up the whole of thermodynamics, and between them they explain why engines waste fuel, why perpetual-motion machines are a fool's errand, and why time runs in only one direction. They were discovered out of order - which is why the first one is called the <em>zeroth</em>.</p>
+<p>The <strong>Zeroth Law</strong> is the one nobody bothered to write down until they realised everyone had been quietly assuming it: if A is in thermal equilibrium with B, and B with C, then A and C agree too. That bland-sounding transitivity is what lets a thermometer mean anything at all - it's why a number on a glass tube can stand in for "how hot".</p>
+<p>The <strong>First Law</strong> is energy accounting, nothing more: \(\Delta U = Q - W\). Whatever heat \(Q\) you pour in, minus the work \(W\) the system does on the outside world, is what stays behind as internal energy. Nothing is created or destroyed, only swapped - chemical into heat in an engine, chemical into electrical in a battery, nuclear into sunlight in a star. The books always balance.</p>
+<p>The <strong>Second Law</strong> is the one with teeth: the entropy of an isolated system never falls. Every spontaneous change nudges it upward, and that upward drift <em>is</em> the arrow of time - a glass shatters but never reassembles. It also caps every engine ever built. Carnot showed that even a flawless one, shuttling heat between a hot reservoir at \(T_h\) and a cold one at \(T_c\), can do no better than \(\eta = 1 - T_c/T_h\). As long as \(T_c > 0\), perfect efficiency is simply off the table - not for lack of clever engineering, but because the universe forbids it.</p>
+<p>The <strong>Third Law</strong> closes off the bottom of the scale: as \(T \to 0\), entropy settles onto a constant minimum (zero for a perfect crystal). A curious consequence is that absolute zero is unreachable - you can edge closer and closer, but every step buys you less, and you never quite arrive.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">First Law</th><td>\(\Delta U = Q - W\)</td><td class="cmt">energy conservation</td></tr>
+<tr><th scope="row">Entropy change</th><td>\(\Delta S = \dfrac{Q_{\text{rev}}}{T}\)</td><td class="cmt">reversible process</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Ideal gas law</th><td>\(PV = nRT\)</td><td class="cmt">R = 8.314 J·mol⁻¹·K⁻¹</td></tr>
+<tr><th scope="row">Carnot efficiency</th><td>\(\eta_{\max} = 1 - \dfrac{T_c}{T_h}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Boltzmann constant</th><td>\(k_B = 1.381\times10^{-23}\ \text{J·K}^{-1}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🏎️</span> A car engine is typically only 25–35% efficient. The rest of the fuel's chemical energy is wasted as heat - a direct consequence of the 2nd law.</li><li><span aria-hidden="true">❄️</span> A refrigerator moves heat from cold (inside) to hot (room) - this requires external work (electricity), consistent with the 2nd law.</li><li><span aria-hidden="true">🔥</span> The Sun converts ~4 million tonnes of mass to energy per second via E = mc². It's been doing this for 4.6 billion years and has fuel for another ~5 billion.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Statistical Mechanics: from microstates to the entropy of black holes</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Microstates, macrostates and the statistical postulate</h3>
+<p>Thermodynamics looks like a science of steam engines and gas laws, but underneath it is really applied probability. Everything follows from one deceptively modest assumption - the <em>fundamental postulate</em>: an isolated system in equilibrium is equally likely to be found in any of its accessible microstates. Count those microstates and you have done the physics. If \(\Omega(E,V,N)\) is the number of microscopic arrangements consistent with the macroscopic energy, volume and particle number, then Boltzmann's \(S = k_B \ln \Omega\) <em>is</em> the entropy - not a hand-wavy "disorder", but the logarithm of a count. Temperature, pressure and chemical potential are simply how that count reacts when you nudge \(E\), \(V\) or \(N\): \(\tfrac{1}{T} = \left(\tfrac{\partial S}{\partial E}\right)_{V,N}\), and so on. Why does a gas spread to fill its box? Not because anything pushes the molecules apart, but because the spread-out arrangements outnumber the tidy ones so absurdly that you would wait around \(10^{10^{23}}\) years to catch every molecule huddled in one corner. Equilibrium is not a force law. It is the house always winning.</p>
+<h3><span class="hn">02</span>The canonical ensemble and the partition function</h3>
+<p>Real systems are rarely isolated; they sit in contact with surroundings at some temperature \(T\). Hand the energy bookkeeping to a heat bath and maximise the entropy \(S = -k_B \sum_i P_i \ln P_i\) at fixed <em>average</em> energy, and the probabilities drop out as Boltzmann weights, \(P_i = e^{-\beta E_i}/Z\) with \(\beta = 1/k_B T\). The normaliser \(Z = \sum_i e^{-\beta E_i}\) - the <strong>partition function</strong> - looks like a humble sum, yet it quietly holds all the thermodynamics. Differentiate its logarithm and the rest tumbles out: \(U = -\partial_\beta \ln Z\), the free energy \(F = -k_B T \ln Z\), the entropy \(S = -\partial F/\partial T\), the pressure, the heat capacity. Let particles come and go as well and you graduate to the grand canonical ensemble, where a fugacity \(z = e^{\beta\mu}\) keeps the books. The reassuring part: once \(N\) is large, the choice of ensemble stops mattering - they all agree - so you pick whichever makes the algebra kindest.</p>
+<h3><span class="hn">03</span>Potentials, Legendre transforms and Maxwell relations</h3>
+<p>Internal energy is the natural potential when you control entropy and volume - but who controls entropy in a laboratory? In practice you fix temperature, or pressure, or both, and each choice calls for its own potential. The bridge between them is the <strong>Legendre transform</strong>, which swaps a variable for its conjugate slope: Helmholtz \(F = U - TS\) at fixed \(T\), enthalpy \(H = U + PV\) at fixed \(P\), Gibbs \(G = U - TS + PV\) for both, the grand potential \(\Omega = F - \mu N\) when particle number floats. Whichever you pick, equilibrium <em>minimises</em> it. And because these potentials are well-behaved functions, the order of mixed second derivatives cannot matter - that single fact hands you the <strong>Maxwell relations</strong>, such as \(\left(\tfrac{\partial S}{\partial V}\right)_T = \left(\tfrac{\partial P}{\partial T}\right)_V\), trading something you cannot measure for something you can. Demand that the potentials curve the right way and stability follows: positive heat capacities, positive compressibilities.</p>
+<h3><span class="hn">04</span>Fluctuations and the fluctuation–dissipation theorem</h3>
+<p>Averages are only half the story; statistical mechanics also tells you how much things jitter. A system in a heat bath does not hold a fixed energy - it fluctuates, and the size of the fluctuation is pinned to a quantity you already know: \(\langle \Delta E^2 \rangle = k_B T^2 C_V\). Watch the scaling. The <em>relative</em> wobble shrinks like \(1/\sqrt{N}\), which is why a cup of coffee has a perfectly sharp temperature while a single protein does not. This bridge from a spontaneous fluctuation to a measurable response is the first hint of the <strong>fluctuation–dissipation theorem</strong>: poke a system gently and its reaction is dictated by the noise it already makes at rest. Einstein found the cleanest case in 1905 - \(D = \mu\, k_B T\), tying diffusion to drag - and Perrin turned it into a weighing scale, pinning down Avogadro's number by watching grains stagger through water.</p>
+<h3><span class="hn">05</span>Irreversibility: the H-theorem and its paradoxes</h3>
+<p>Here is the puzzle that nearly broke Boltzmann. His <strong>H-theorem</strong> shows a quantity \(H = \int f \ln f \, d^3v\) sliding only downhill as a gas relaxes - which is just entropy climbing, the Second Law wrung out of collisions. Beautiful, except those collisions obey Newton's laws, and Newton's laws run equally well in reverse. Flip every velocity and entropy should <em>fall</em> (Loschmidt's objection); wait long enough and Poincaré guarantees the gas very nearly returns to its starting huddle (Zermelo's). Both objections are correct, and both miss the point. The arrow of time does not live in the dynamics; it lives in the bookkeeping. Boltzmann's derivation quietly assumes molecules are uncorrelated <em>before</em> a collision but not after - the <em>Stosszahlansatz</em> - and that is where the asymmetry sneaks in. The recurrences are real, but they take of order \(e^{N}\) ages, dwarfing the lifetime of the universe. In the end the arrow traces back to one brute fact: the universe began in a staggeringly low-entropy state, and we have been sliding downhill ever since.</p>
+<h3><span class="hn">06</span>Quantum statistics and the failure of the classical picture</h3>
+<p>Classical counting collapses the moment particles become genuinely identical, because "particle 1 here, particle 2 there" can no longer be told apart from its own swap. Quantum mechanics then splits the world into two tribes. <strong>Bosons</strong> are gregarious: \(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} - 1}\) lets any number pile into one state, and when they do you get superfluids, lasers and Bose–Einstein condensates. <strong>Fermions</strong> are loners: \(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} + 1}\) caps each state at one, and that stubborn refusal to be squeezed - degeneracy pressure - is what holds a white dwarf up against its own gravity. Both melt back into the familiar Maxwell–Boltzmann curve when the gas is hot and thin. The same quantum count rescued physics from the <strong>ultraviolet catastrophe</strong>: treat each radiation mode classically and equipartition awards it \(\tfrac{1}{2}k_B T\), summing to an infinitely bright fire. Planck's guess that energy comes in lumps, \(E = n\hbar\omega\), starves the high-frequency modes, tames the spectrum, and - almost by accident - opened the quantum century.</p>
+<h3><span class="hn">07</span>Phase transitions, criticality and the renormalization group</h3>
+<p>Boil water and something mathematically violent happens: the free energy develops a kink. Sharp phase transitions exist only in the limit of infinitely many particles, where they appear as <em>non-analyticities</em>. Near a continuous transition the system forgets its own size, and quantities diverge as power laws set by a few <strong>critical exponents</strong>. The shock, understood only in the 1960s and 70s, is that those exponents are <em>universal</em>: a magnet dying at its Curie point, a fluid at its critical point, and an alloy unmixing all share the same numbers - sensitive to dimensionality and symmetry, but blind to every microscopic detail. Kadanoff and Wilson explained why with the <strong>renormalization group</strong>: zoom out, average over the small stuff, repeat, and watch the system flow toward a fixed point that washes away the irrelevant and keeps only what matters. It won Wilson the 1982 Nobel and quietly reorganised how physicists think, from superconductors to quantum field theory.</p>
+<h3><span class="hn">08</span>Frontiers: work theorems, information and gravity</h3>
+<p>For a century the Second Law looked like a one-way street with no shortcuts; then came the surprises. The <strong>Jarzynski equality</strong> \(\langle e^{-\beta W} \rangle = e^{-\beta \Delta F}\) and its sharper cousin, the Crooks theorem, say that if you drag a system out of equilibrium as roughly as you like and average the right way over many attempts, you recover the <em>equilibrium</em> free-energy difference exactly - now a standard trick for reading folding energies off single molecules stretched with optical tweezers. <strong>Landauer's principle</strong> finally caught Maxwell's demon: the demon seems to cheat the Second Law until you remember it must eventually erase its memory, and erasing one bit costs at least \(k_B T \ln 2\) of heat. Thermodynamics and information turn out to be the same subject in different clothes. The strangest twist is gravitational. A black hole carries an entropy \(S = \dfrac{k_B c^3 A}{4 G \hbar}\) fixed by the <em>area</em> of its horizon, not the volume within, and glows at the Hawking temperature \(T = \dfrac{\hbar c^3}{8\pi G k_B M}\). That entropy should live on a surface is the seed of the holographic principle - and very likely a clue to whatever theory finally weds gravity to the quantum.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Boltzmann entropy</th><td>\(S = k_B \ln \Omega\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Temperature</th><td>\(\dfrac{1}{T} = \left(\dfrac{\partial S}{\partial E}\right)_{V,N}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Boltzmann weights</th><td>\(P_i = \dfrac{e^{-\beta E_i}}{Z}, \quad \beta = \dfrac{1}{k_B T}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Partition function</th><td>\(Z = \sum_i e^{-\beta E_i}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Free energy</th><td>\(F = -k_B T \ln Z = U - TS\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Grand partition function</th><td>\(\Xi = \sum_N e^{\beta \mu N}\, Z_N\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Maxwell relation</th><td>\(\left(\dfrac{\partial S}{\partial V}\right)_T = \left(\dfrac{\partial P}{\partial T}\right)_V\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Energy fluctuations</th><td>\(\langle \Delta E^2 \rangle = k_B T^2 C_V\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Bose–Einstein</th><td>\(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} - 1}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fermi–Dirac</th><td>\(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} + 1}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Jarzynski equality</th><td>\(\langle e^{-\beta W} \rangle = e^{-\beta \Delta F}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Bekenstein–Hawking</th><td>\(S_{BH} = \dfrac{k_B c^3 A}{4 G \hbar}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🕳️</span> A black hole is the most entropic object known: a solar-mass black hole holds ~10⁷⁷ k_B of entropy - roughly 10²⁰× the thermodynamic entropy of the Sun. Almost all the entropy of the observable universe sits behind event horizons.</li><li><span aria-hidden="true">🧬</span> The Jarzynski and Crooks theorems were verified by mechanically unfolding single RNA/DNA molecules with optical tweezers (Collin et al., Nature 2005), recovering equilibrium free energies from irreversible pulls.</li><li><span aria-hidden="true">🌡️</span> Systems with a bounded energy spectrum (nuclear spins, cold atoms in optical lattices) can reach negative absolute temperature - hotter than infinity, since heat always flows from them into any T &gt; 0 system (Braun et al., Science 2013).</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Laws_of_thermodynamics" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Physics</h2>
+    <ul><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/standard-model/">The Standard Model</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>

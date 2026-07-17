@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Probability &amp; The Bell Curve | Lab-in-a-Tab</title>
+<meta name="description" content="Why does everything cluster in the middle? The universe has a favourite shape.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/probability-bell-curve/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Probability &amp; The Bell Curve — Explained &amp; Simulated">
+<meta property="og:description" content="Why does everything cluster in the middle? The universe has a favourite shape.">
+<meta property="og:url" content="https://labinatab.com/probability-bell-curve/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Probability &amp; The Bell Curve — Explained &amp; Simulated">
+<meta name="twitter:description" content="Why does everything cluster in the middle? The universe has a favourite shape.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/probability-bell-curve/#article",
+   "headline": "Probability & The Bell Curve",
+   "name": "Probability & The Bell Curve",
+   "description": "Why does everything cluster in the middle? The universe has a favourite shape.",
+   "url": "https://labinatab.com/probability-bell-curve/",
+   "mainEntityOfPage": "https://labinatab.com/probability-bell-curve/",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Statistics",
+    "Probability",
+    "Normal distribution"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Probability & The Bell Curve",
+    "sameAs": "https://en.wikipedia.org/wiki/Normal_distribution"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Probability & The Bell Curve",
+     "item": "https://labinatab.com/probability-bell-curve/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Mathematics</nav>
+  <h1>Probability &amp; The Bell Curve</h1>
+  <p class="lead">Why does everything cluster in the middle? The universe has a favourite shape.</p>
+  <a class="cta" href="/#prob">▶ Run the interactive simulation</a>
+  <div class="chips"><span>Statistics</span><span>Probability</span><span>Normal distribution</span></div>
+  
+<section class="lvl" id="junior">
+  <h2>Why the middle always wins!</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Picture a board studded with rows of pegs in a triangle. Drop a ball in at the top, and at every peg it bounces left or right at random - a fair coin toss, every time. After tumbling all the way down, where does it end up?</p>
+<p>Nearly always <strong>somewhere near the middle</strong> - and there's a lovely reason why. To finish at the far right, the ball would have to bounce right at <em>every single peg</em> in a row, like flipping ten heads in a row: possible, but rare. To finish near the middle it just needs roughly as many lefts as rights, and there are thousands of different left-right combinations that get it there. The middle wins not because anything is steering the ball, but simply because there are far more ways to reach it.</p>
+<p>Drop enough balls and they pile into a smooth mound - tall in the centre, sloping away evenly on both sides. That's the <strong>bell curve</strong>, and once you've met it you'll start seeing it everywhere: people's heights, daily temperatures, exam marks, the tiny errors in any measurement. The recipe never changes. Whenever an outcome is the sum of many small, independent nudges, the middle is where they most often cancel out - and the middle is where you most often land.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📏</span> Most adults are near 170 cm tall. Very few are above 2 m or below 1.4 m - the bell curve at work in human biology!</li><li><span aria-hidden="true">🎯</span> Flipping a coin 100 times almost always gives between 40 and 60 heads. Getting fewer than 30 or more than 70 would be extraordinary.</li><li><span aria-hidden="true">🌡️</span> Daily temperature errors in weather forecasts follow a bell curve - forecasters use this to calculate confidence ranges.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>The Binomial Distribution and the Normal Limit</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>The peg machine has a name - the <strong>Galton board</strong>, built by Francis Galton in 1887. With \(n\) rows, a ball makes \(n\) independent left/right choices, each a fair coin flip, and the bin it ends in simply counts how many times it went right, \(k\). Those counts follow the <strong>binomial distribution</strong> \(P(k) = \binom{n}{k}(0.5)^n\).</p>
+<p>That \(\binom{n}{k} = \dfrac{n!}{k!(n-k)!}\) is nothing more than a tally of how many distinct paths reach bin \(k\) - and it's the whole story. With 7 rows there are \(2^7 = 128\) equally likely paths in all; the centre bin is fed by \(\binom{7}{3} = 35\) of them, while each far edge has exactly one. More paths, more probability. Now crank \(n\) up and the jagged binomial smooths into the <strong>normal (Gaussian) distribution</strong>, with mean \(\mu = np\) and spread \(\sigma = \sqrt{np(1-p)}\). This isn't a happy accident; it's forced by the Central Limit Theorem.</p>
+<p>Once a quantity is normal, the <strong>68–95–99.7 rule</strong> tells you almost everything at a glance: roughly 68% of values fall within \(1\sigma\) of the mean, 95% within \(2\sigma\), and 99.7% within \(3\sigma\). It's why physicists insist on "5-sigma" before celebrating: a five-sigma bump has under a 1-in-3.5-million chance of being a random fluke, and that's the bar a genuine particle discovery has to clear.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Binomial probability</th><td>\(P(k;n,p) = \binom{n}{k} p^k (1-p)^{n-k}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Mean</th><td>\(\mu = np\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Standard deviation</th><td>\(\sigma = \sqrt{np(1-p)}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Gaussian density</th><td>\(f(x) = \dfrac{1}{\sigma\sqrt{2\pi}}\,e^{-(x-\mu)^2/2\sigma^2}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">68–95–99.7 rule</th><td>\(P(|X-\mu| &lt; \sigma) \approx 0.6827\)</td><td class="cmt">0.9545 at 2σ, 0.9973 at 3σ</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📈</span> Heights, blood pressure, IQ scores, and most biological measurements are approximately normally distributed, because they result from many independent genetic and environmental factors.</li><li><span aria-hidden="true">🎰</span> Casinos profit because the house edge, applied over millions of bets, converges to a reliable mean profit via the Law of Large Numbers.</li><li><span aria-hidden="true">🏅</span> Galton used the board to demonstrate &quot;regression to the mean&quot;: tall parents tend to have children slightly shorter than themselves - extreme values regress toward average over generations.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>The Central Limit Theorem, Berry–Esséen, and the universality of Gaussian statistics</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The theorem behind the bell curve's reach</h3>
+<p>The <strong>Central Limit Theorem</strong> is the reason a single curve haunts all of science. Take any independent, identically distributed variables \(X_1,\dots,X_n\) with mean \(\mu\) and finite variance \(\sigma^2\) - and it genuinely does not matter what they are, dice or incomes or photon counts - then standardise their average: \(Z_n = \dfrac{\bar{X}_n - \mu}{\sigma/\sqrt{n}}\). As \(n\to\infty\), \(Z_n\) converges in distribution to the standard normal \(N(0,1)\). The ingredients are forgotten; only the bell survives. That erasure of detail is the deepest thing about it.</p>
+<h3><span class="hn">02</span>Why it's true: the Fourier fingerprint</h3>
+<p>The cleanest proof runs through <strong>characteristic functions</strong> - Fourier transforms of distributions, \(\varphi_X(t) = \mathbb{E}[e^{itX}]\) - which turn the awkward convolution of summing variables into ordinary multiplication. Take logarithms, Taylor-expand around the origin, and the first two terms are exactly the mean and the variance; everything higher is choked off by powers of \(1/\sqrt{n}\). What remains is \(\log\varphi_{Z_n}(t) \to -t^2/2\), and \(e^{-t^2/2}\) is the unmistakable signature of the Gaussian. The bell curve is simply whatever you get when only the first two moments survive.</p>
+<h3><span class="hn">03</span>How fast: the Berry–Esséen bound</h3>
+<p>Convergence is one thing; convergence you can actually <em>use</em> is another. The <strong>Berry–Esséen theorem</strong> pins down the error. With \(\rho = \mathbb{E}[|X-\mu|^3]\) the third absolute moment, the worst-case gap between \(Z_n\)'s distribution and the true normal obeys \(\sup_x |F_n(x) - \Phi(x)| \le \dfrac{C\rho}{\sigma^3\sqrt{n}}\), with \(C \le 0.4748\). The \(1/\sqrt{n}\) rate is optimal - quadruple the sample to halve the error - and skewed distributions, carrying a large \(\rho\), crawl toward the bell more slowly than symmetric ones.</p>
+<h3><span class="hn">04</span>When the bell breaks: heavy tails</h3>
+<p>There's a price of admission: finite variance. Break that condition and the Gaussian loses its grip entirely. The <strong>Cauchy distribution</strong> - the ratio of two normals - has tails so fat that its variance, and even its mean, simply don't exist; average a million Cauchy draws and you are no better off than with one. Such sums converge instead to <strong>Lévy stable distributions</strong>, a broader family with tails \(P(X>x)\sim x^{-\alpha}\) for \(0<\alpha\le 2\), of which the Gaussian (\(\alpha=2\)) is just the tame special case. Markets, earthquakes and avalanches live out here - which is why "hundred-year events" keep showing up early.</p>
+<h3><span class="hn">05</span>Beyond independence</h3>
+<p>Real data are rarely so well-mannered, and the theorem stretches to meet them. There are versions for weakly dependent variables, for triangular arrays under the Lindeberg condition, and for sums where no single term is allowed to dominate. Correlated Gaussian dynamics get their own workhorses: the <strong>Ornstein–Uhlenbeck process</strong> and its discrete cousin the AR(1) model describe mean-reverting noise, surfacing everywhere from interest rates to neural membrane voltages to climate wobble.</p>
+<h3><span class="hn">06</span>Why nature keeps reaching for the Gaussian</h3>
+<p>Stitched together, the CLT explains why the bell is the universe's default setting. Anything you can measure that is built from a crowd of small, roughly independent contributions - a height from thousands of genes and meals, thermal noise from countless jostling electrons, an error from many tiny imperfections - drifts toward the same shape. It also quietly underwrites classical statistics: t-tests, confidence intervals and error bars all lean on normality for large samples. The bell curve isn't nature's favourite shape by taste. It's the shape that's left over once the details are allowed to cancel.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Central Limit Theorem</th><td>\(Z_n = \dfrac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \;\xrightarrow{d}\; N(0,1)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Characteristic function</th><td>\(\varphi_X(t) = \mathbb{E}\!\left[e^{itX}\right]\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Gaussian limit</th><td>\(\log\varphi_{Z_n}(t) \to -\dfrac{t^2}{2}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Berry–Esséen</th><td>\(\sup_x |F_n(x) - \Phi(x)| \le \dfrac{C\rho}{\sigma^3\sqrt{n}}\)</td><td class="cmt">C ≤ 0.4748</td></tr>
+<tr><th scope="row">Lévy stable tail</th><td>\(P(X &gt; x) \sim x^{-\alpha},\quad 0 &lt; \alpha \le 2\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔬</span> Student's t-distribution is correct for small samples (n &lt; 30) and converges to the Normal as n → ∞ - a direct consequence of the CLT.</li><li><span aria-hidden="true">💹</span> Black-Scholes option pricing assumes normally distributed log-returns - a CLT approximation that breaks down during market crashes (fat tails).</li><li><span aria-hidden="true">🎲</span> The Cauchy distribution (ratio of two normals) has undefined mean and infinite variance - its CLT fails, and the sample mean does NOT converge.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Normal_distribution" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Mathematics</h2>
+    <ul><li><a href="/fractals/">Fractals &amp; Infinity</a></li><li><a href="/calculus/">Calculus &amp; Change</a></li><li><a href="/graph-theory/">Graph Theory &amp; Networks</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>

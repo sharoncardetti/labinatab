@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinetics &amp; Equilibrium | Lab-in-a-Tab</title>
+<meta name="description" content="Why does food rot faster in summer? Why do some reactions explode and others take centuries? The answers reveal how chemistry controls time itself.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/kinetics-equilibrium/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Kinetics &amp; Equilibrium — Explained &amp; Simulated">
+<meta property="og:description" content="Why does food rot faster in summer? Why do some reactions explode and others take centuries? The answers reveal how chemistry controls time itself.">
+<meta property="og:url" content="https://labinatab.com/kinetics-equilibrium/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kinetics &amp; Equilibrium — Explained &amp; Simulated">
+<meta name="twitter:description" content="Why does food rot faster in summer? Why do some reactions explode and others take centuries? The answers reveal how chemistry controls time itself.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/kinetics-equilibrium/#article",
+   "headline": "Kinetics & Equilibrium",
+   "name": "Kinetics & Equilibrium",
+   "description": "Why does food rot faster in summer? Why do some reactions explode and others take centuries? The answers reveal how chemistry controls time itself.",
+   "url": "https://labinatab.com/kinetics-equilibrium/",
+   "mainEntityOfPage": "https://labinatab.com/kinetics-equilibrium/",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Reaction rates",
+    "Equilibrium",
+    "Catalysis"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Kinetics & Equilibrium",
+    "sameAs": "https://en.wikipedia.org/wiki/Chemical_kinetics"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Kinetics & Equilibrium",
+     "item": "https://labinatab.com/kinetics-equilibrium/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Chemistry</nav>
+  <h1>Kinetics &amp; Equilibrium</h1>
+  <p class="lead">Why does food rot faster in summer? Why do some reactions explode and others take centuries? The answers reveal how chemistry controls time itself.</p>
+  <a class="cta" href="/#kinetics">▶ Run the interactive simulation</a>
+  <div class="chips"><span>Reaction rates</span><span>Equilibrium</span><span>Catalysis</span></div>
+  
+<section class="lvl" id="junior">
+  <h2>How fast does chemistry happen - and when does it stop?</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Milk in the fridge keeps for a week; left on the counter on a hot day it sours in hours. Same chemistry both times - bacteria breaking down the milk's sugars and proteins - but the <strong>temperature</strong> changes everything. This is chemical <strong>kinetics</strong>: the study of how fast reactions go, and why.</p>
+<p>For any reaction to happen, molecules have to collide - and not just brush past. They must hit hard enough, and in the right orientation, to snap old bonds and forge new ones. That minimum energy for a "good" collision is the <strong>activation energy</strong>. Warm things up and the molecules move faster, bump into each other more often and with more punch, so the reaction races along. A handy rule of thumb: every 10°C rise roughly <em>doubles</em> the speed.</p>
+<p>But most reactions don't just run until the reactants are gone. They coast to a standstill called <strong>chemical equilibrium</strong>, where the forward reaction (reactants → products) and the reverse (products → reactants) run at exactly the same pace. It looks finished, yet both directions are still going full tilt, perfectly cancelling out. Nudge the temperature, pressure or concentration and you tip the balance - a lever chemists pull constantly to squeeze out more of whatever they're after. In the simulation below, watch molecules react, reach equilibrium, and respond to your changes.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">💎</span> Diamond is thermodynamically unstable at room temperature and pressure - it should spontaneously convert to graphite. But the activation energy is so enormous that it effectively never happens.</li><li><span aria-hidden="true">🧪</span> The Haber process (making ammonia for fertilisers) uses an iron catalyst to lower activation energy - without it, the reaction is too slow to be useful even at high temperature.</li><li><span aria-hidden="true">🌡️</span> The chemical reactions in fireflies produce light at nearly 100% efficiency - almost no heat wasted. Human lightbulbs waste ~90% of energy as heat.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Rate laws, the Arrhenius equation, and Le Chatelier's principle</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>A <strong>rate law</strong> pins down how fast a reaction runs as a function of concentration: for reactants A and B, \(r = k[A]^m[B]^n\), where the orders \(m, n\) are found by experiment (not read off the balanced equation) and \(k\) is the rate constant. Integrate it and you learn how concentrations fall with time - most famously the first-order law \(\ln[A] = \ln[A]_0 - kt\), whose half-life \(t_{1/2} = \ln 2/k\) is gloriously independent of how much you start with. That constancy is what turns first-order decay into a clock: the 5,730-year half-life of carbon-14 is the whole basis of radiocarbon dating.</p>
+<p>Temperature's grip is captured by the <strong>Arrhenius equation</strong> \(k = A\,e^{-E_a/RT}\): nudge \(T\) up and the exponential lets far more molecules clear the activation barrier. Take logs, \(\ln k = \ln A - E_a/RT\), and a plot of \(\ln k\) against \(1/T\) is a straight line whose slope hands you \(E_a\). Transition-state theory sharpens the picture with the Eyring equation \(k = \dfrac{k_B T}{h}\,e^{-\Delta G^\ddagger/RT}\), splitting the barrier into enthalpy and entropy and revealing whether a sluggish reaction is fighting energy or disorder.</p>
+<p>Where a reaction <em>stops</em> is a separate question, set by the <strong>equilibrium constant</strong> \(K\) and its thermodynamic anchor \(\Delta G^\circ = -RT\ln K\). <strong>Le Chatelier's principle</strong> tells you how to move the goalposts: disturb an equilibrium and it shifts to blunt the disturbance - add reactant and it pushes right, squeeze a gas reaction and it slides toward fewer molecules, heat it and it leans endothermic. The Haber process for ammonia is Le Chatelier turned into industrial strategy: crank the pressure to favour the product, then compromise on temperature and add an iron catalyst to keep the rate workable.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Rate law</th><td>\(r = k[A]^m[B]^n\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Arrhenius</th><td>\(k = A\,e^{-E_a/RT}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">First-order</th><td>\(\ln[A] = \ln[A]_0 - kt,\quad t_{1/2} = \dfrac{\ln 2}{k}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Eyring equation</th><td>\(k = \dfrac{k_B T}{h}\,e^{-\Delta G^{\ddagger}/RT}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Equilibrium constant</th><td>\(K_c = \dfrac{\prod[\text{products}]^{\nu}}{\prod[\text{reactants}]^{\nu}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Thermodynamic link</th><td>\(\Delta G^\circ = -RT\ln K\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🧲</span> An enzyme can speed up a reaction by a factor of 10¹⁷ - equivalent to turning a process that would take 3 billion years into one that takes a second.</li><li><span aria-hidden="true">⚗️</span> The Haber-Bosch process for making ammonia fertiliser feeds roughly half of humanity - and consumes about 1.5% of global energy production.</li><li><span aria-hidden="true">🔬</span> Femtochemistry (Nobel 1999) uses laser pulses of 10⁻¹⁵ seconds to photograph molecules at the transition state - the fleeting instant when bonds are half-broken.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Transition state theory, reaction mechanisms, and enzyme kinetics</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The peak as a quasi-equilibrium</h3>
+<p><strong>Transition state theory</strong> (Eyring, Evans and Polanyi, 1935) made a bold simplifying move: treat the fleeting activated complex \([AB]^\ddagger\) at the very top of the energy barrier as if it were in equilibrium with the reactants. From that one assumption a universal rate expression falls out, \(k = \kappa\dfrac{k_B T}{h}\,e^{\Delta S^\ddagger/R}\,e^{-\Delta H^\ddagger/RT}\), with the transmission coefficient \(\kappa\) mopping up quantum corrections like tunnelling. Chemistry's rates, it says, are governed by the geometry of a mountain pass the system barely visits.</p>
+<h3><span class="hn">02</span>Energy versus disorder at the barrier</h3>
+<p>Splitting the barrier into \(\Delta H^\ddagger\) and \(\Delta S^\ddagger\) is more than bookkeeping. A reaction can be slow because its transition state is high in <em>energy</em>, or because reaching it demands an improbably ordered arrangement - a steep <em>entropy</em> cost, as when two molecules must meet in one precise geometry. Arrhenius lumps both into a single \(E_a\); the Eyring form pries them apart, and the entropy term is often what a catalyst is really engineered to fix.</p>
+<h3><span class="hn">03</span>Predicting rates from thermodynamics</h3>
+<p>Across a family of similar reactions, the barrier tracks the thermodynamics in a strikingly linear way - the <strong>Evans–Polanyi relation</strong> \(E_a = E_a^0 + \alpha\,\Delta H_{\text{rxn}}\), a more favourable reaction tending to have a lower barrier. This is the seed of the <em>linear free-energy relationships</em> (Hammett, Marcus) that let chemists forecast the rate of an unmeasured reaction from cheap thermodynamic data alone - one of the field's great labour-saving shortcuts.</p>
+<h3><span class="hn">04</span>Mechanisms and the steady-state trick</h3>
+<p>An overall reaction is really a sequence of elementary steps, and the slowest - the <em>rate-determining step</em> - sets the pace. The workhorse for untangling them is the <strong>steady-state approximation</strong>: assume any reactive intermediate is consumed as fast as it forms, \(d[\text{I}]/dt \approx 0\), and it can be eliminated algebraically to yield the observed rate law. Detailed balance then polices the result - at equilibrium every step must individually balance, ruling out otherwise tempting mechanisms.</p>
+<h3><span class="hn">05</span>Enzymes: Michaelis–Menten</h3>
+<p>Turn the machinery on biology's catalysts and the same steady-state assumption produces the most famous equation in biochemistry. For \(E + S \rightleftharpoons ES \to E + P\), the rate is \(v = \dfrac{V_{\max}[S]}{K_M + [S]}\) - linear in substrate when scarce, saturating to \(V_{\max}\) when the enzyme is swamped. \(K_M\) is the substrate level at half-maximal speed, a practical gauge of how tightly the enzyme grips its target.</p>
+<h3><span class="hn">06</span>Cooperativity and the ultimate speed limit</h3>
+<p>Not all enzymes follow that tidy curve. Allosteric ones give a sigmoidal, switch-like response fit by the Hill equation \(v = \dfrac{V_{\max}[S]^n}{K_{0.5}^n + [S]^n}\), where \(n > 1\) signals that binding one substrate helps the next - the cooperativity that lets haemoglobin load and dump oxygen so sharply. And there is a ceiling: the best enzymes reach a catalytic efficiency \(k_{\text{cat}}/K_M \sim 10^{8}\text{–}10^{9}\ \text{M}^{-1}\text{s}^{-1}\), the rate at which substrate simply diffuses into the active site. They have become so fast that chemistry no longer limits them - only the speed of encounter does.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Eyring (full)</th><td>\(k = \kappa\dfrac{k_B T}{h}\,e^{\Delta S^{\ddagger}/R}\,e^{-\Delta H^{\ddagger}/RT}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Evans–Polanyi</th><td>\(E_a = E_a^0 + \alpha\,\Delta H_{\text{rxn}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Michaelis–Menten</th><td>\(v = \dfrac{V_{\max}[S]}{K_M + [S]}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Catalytic efficiency</th><td>\(\dfrac{k_{\text{cat}}}{K_M} \to 10^{8}\text{–}10^{9}\ \text{M}^{-1}\text{s}^{-1}\)</td><td class="cmt">diffusion limit</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Hill equation</th><td>\(v = \dfrac{V_{\max}[S]^n}{K_{0.5}^n + [S]^n}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Hammett equation</th><td>\(\log(k/k_0) = \rho\,\sigma\)</td><td class="cmt">linear free energy</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⚡</span> Carbonic anhydrase catalyses CO₂ + H₂O ⇌ H₂CO₃ at 10⁶ reactions per second - one of the fastest enzymes known, operating at the diffusion limit.</li><li><span aria-hidden="true">🧬</span> CRISPR-Cas9 is an enzyme - its mechanism involves precisely controlled kinetics: binding DNA, unwinding the helix, checking for complementarity, and cleaving only when all criteria are met.</li><li><span aria-hidden="true">🔬</span> Single-molecule kinetics (using fluorescence microscopy) can now watch individual enzyme molecules catalysing one reaction at a time - revealing hidden heterogeneity invisible to bulk measurements.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Chemical_kinetics" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Chemistry</h2>
+    <ul><li><a href="/chemical-bonds/">Atoms &amp; Chemical Bonds</a></li><li><a href="/electrochemistry/">Electrochemistry &amp; Batteries</a></li><li><a href="/organic-chemistry/">Organic Chemistry &amp; Molecules of Life</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravity &amp; Orbits | Lab-in-a-Tab</title>
+<meta name="description" content="Why does everything fall - and why do planets never crash into the Sun?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/gravity-orbits/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Gravity &amp; Orbits — Explained &amp; Simulated">
+<meta property="og:description" content="Why does everything fall - and why do planets never crash into the Sun?">
+<meta property="og:url" content="https://labinatab.com/gravity-orbits/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gravity &amp; Orbits — Explained &amp; Simulated">
+<meta name="twitter:description" content="Why does everything fall - and why do planets never crash into the Sun?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/gravity-orbits/#article",
+   "headline": "Gravity & Orbits",
+   "name": "Gravity & Orbits",
+   "description": "Why does everything fall - and why do planets never crash into the Sun?",
+   "url": "https://labinatab.com/gravity-orbits/",
+   "mainEntityOfPage": "https://labinatab.com/gravity-orbits/",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Gravity",
+    "Orbits",
+    "Space"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Gravity & Orbits",
+    "sameAs": "https://en.wikipedia.org/wiki/Gravity"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Gravity & Orbits",
+     "item": "https://labinatab.com/gravity-orbits/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physics</nav>
+  <h1>Gravity &amp; Orbits</h1>
+  <p class="lead">Why does everything fall - and why do planets never crash into the Sun?</p>
+  <a class="cta" href="/#gravity">▶ Run the interactive simulation</a>
+  <div class="chips"><span>Gravity</span><span>Orbits</span><span>Space</span></div>
+  
+<section class="lvl" id="junior">
+  <h2>The invisible glue of the universe</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Hold a pen out and let go. It drops - every time, no exceptions. That stubborn, invisible tug is <strong>gravity</strong>, and it isn't only an Earth thing. Every object with mass pulls on every other object, everywhere, always: you on your chair, the Moon on the oceans, the Sun on all eight planets at once. It's one of the four basic forces that run the universe - and the gentlest of them - yet it shapes everything from a dropped pen to the whole night sky.</p>
+<p>The rule behind it is wonderfully simple: the more massive something is, the harder it pulls. Earth is so huge that its grip holds down the oceans, the air you're breathing and you. Stand on the Moon, which has far less mass, and those same legs would launch you three metres up. The pull never switches off - it just grows gentler the further away you get.</p>
+<p>Here's the puzzle that baffled people for centuries: if the Sun keeps pulling on the Earth, why doesn't the Earth simply fall in? Picture whirling a ball on a string. The string hauls the ball inward, but the ball keeps darting sideways, so it circles your hand instead of hitting it. Planets do precisely that. The Earth is forever falling toward the Sun - and forever missing, because it's also racing sideways at a fantastic speed. That endless "falling but missing" is what we call an <strong>orbit</strong>.</p>
+<p>Newton found a lovely way to picture it. Imagine firing a cannonball off an impossibly tall mountain. Fire it gently and it arcs down and lands nearby. Fire it harder and it lands further off. Fire it hard enough - around 28,000 km/h - and the ground curves away beneath it exactly as fast as the ball falls. Now it never lands at all: it's in orbit. That's the same trick the International Space Station uses to loop around us every ninety minutes. It hasn't escaped gravity - it's just falling forever, and forever missing the Earth.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌙</span> On the Moon you weigh 6× less and could jump over 3 metres high - the same muscles, much weaker gravity!</li><li><span aria-hidden="true">🏋️</span> On Jupiter you'd weigh 2.5× more - getting out of bed would feel like carrying a second person on your back.</li><li><span aria-hidden="true">🌍</span> Gravity keeps our atmosphere in place. Without it, all our air would escape into space and Earth would be like Mars.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Newton's Law of Universal Gravitation</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Newton's stroke of genius was to see that the apple and the Moon obey the <em>same</em> law. Any two masses attract with a force \(F = \dfrac{GMm}{r^2}\) - proportional to both masses, and fading with the square of the distance between them. He laid it out in the <em>Principia</em> in 1687, and it went unchallenged for two centuries.</p>
+<p>That little \(r^2\) in the denominator does an enormous amount of work. Double your distance from a planet and gravity drops to a quarter; triple it and you're down to a ninth. The pull weakens quickly - but it never quite reaches zero, which is why the Sun can keep Neptune on a leash 4.5 billion kilometres long, and why galaxies hold together across the dark.</p>
+<p>An orbit is really a standoff. Gravity hauls a planet inward while its sideways motion keeps carrying it past; get the speed exactly right and the two settle into a closed ellipse. Too slow and it spirals in, too fast and it escapes for good. The balance speed at distance \(r\) from a star of mass \(M\) is \(v = \sqrt{GM/r}\), and it carries a tidy prediction: inner planets must move faster than outer ones. Mercury really does sprint while Neptune crawls.</p>
+<p>Half a lifetime before Newton, Kepler had already squeezed three patterns out of Tycho Brahe's mountain of naked-eye measurements - most strikingly \(T^2 \propto a^3\), a planet's year set by the cube of its orbit's size. Kepler found the pattern but couldn't say <em>why</em> it held. Newton's single law reproduced all three of Kepler's rules at once, proving that the falling apple and the wheeling planets run on identical mathematics. It was the first time physics reached past the sky.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Gravitational force</th><td>\(F = \dfrac{GMm}{r^2}\)</td><td class="cmt">Newton, 1687</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Gravitational constant</th><td>\(G = 6.674\times10^{-11}\ \text{N·m}^2\text{kg}^{-2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Orbital velocity</th><td>\(v = \sqrt{\dfrac{GM}{r}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Kepler's third law</th><td>\(T^2 = \dfrac{4\pi^2}{GM}\,a^3\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🛰️</span> The ISS orbits at 7.66 km/s, completing a full lap of Earth every 92 minutes - it sees 16 sunrises per day!</li><li><span aria-hidden="true">⚖️</span> Weight = mg. On Earth g ≈ 9.81 m/s². On Mars g ≈ 3.72 m/s², which is why rovers can make long jumps.</li><li><span aria-hidden="true">🌊</span> Tides arise because the Moon pulls the near side of Earth harder than the far side, stretching the ocean into two bulges.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>From Newton to Einstein: curved spacetime and the geometry of gravity</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The equivalence principle: Einstein's happiest thought</h3>
+<p>Newton's law is fabulously accurate, yet it hides an embarrassment: it has gravity reaching across the cosmos instantaneously, with no machinery and no delay. Einstein's escape began with one observation he later called the happiest thought of his life - a person in free fall feels no gravity at all. Step off a ledge, or orbit the Earth in a station, and you float; the pull simply vanishes. The <strong>equivalence principle</strong> turns this into law: locally, gravity and acceleration are indistinguishable. And if gravity can be switched off just by choosing to fall, then it cannot truly be a force. It must be something about the stage on which motion plays out.</p>
+<h3><span class="hn">02</span>Spacetime, the metric and geodesics</h3>
+<p>That stage is four-dimensional <strong>spacetime</strong>, and its shape lives in the <em>metric</em> \(g_{\mu\nu}\), which fixes the interval - the distance or elapsed proper time - between nearby events. Far from any mass the metric is flat; near a mass it warps. A free particle feels no force; it just coasts along the straightest path the geometry allows, a <strong>geodesic</strong>, obeying \(\ddot{x}^\mu + \Gamma^\mu_{\alpha\beta}\,\dot{x}^\alpha \dot{x}^\beta = 0\). The Christoffel symbols \(\Gamma\) do the job Newton handed to the gravitational field. Wheeler compressed the whole theory into one line: matter tells spacetime how to curve, and curved spacetime tells matter how to move.</p>
+<h3><span class="hn">03</span>The Einstein field equations</h3>
+<p>The bridge between those two clauses is \(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}\). The left side is pure geometry - the Einstein tensor \(G_{\mu\nu}\), distilled from the curvature of spacetime - and the right side is everything that carries energy and momentum, bundled into the stress-energy tensor \(T_{\mu\nu}\). It is ten coupled, nonlinear partial differential equations, and that nonlinearity is the whole personality of the theory: gravity itself carries energy, so it gravitates, and the equations bend back on themselves in a way Newton's never could. The lonely extra term \(\Lambda\) was Einstein's self-described "biggest blunder" - and is now our leading account of the <strong>dark energy</strong> prising the universe apart.</p>
+<h3><span class="hn">04</span>The Schwarzschild solution and black holes</h3>
+<p>Within months of the field equations - and from a First World War trench - Schwarzschild found their first exact solution: the geometry around a spherical mass. It conceals a one-way surface at the <strong>Schwarzschild radius</strong> \(r_s = 2GM/c^2\), the event horizon, past which not even light can climb back out. Pack the Sun inside 3 km, or the Earth inside 9 mm, and you have a black hole. For decades these looked like pathologies of the maths; we now know they are real and everywhere, from collapsed stars to the supermassive monsters anchoring entire galaxies.</p>
+<h3><span class="hn">05</span>The classic tests</h3>
+<p>A theory is only as convincing as the risks it survives, and GR took several. Mercury's orbit slowly twists - precessing 43 arcseconds per century more than Newton permits - and GR predicts that figure exactly, with nothing to adjust. Starlight bends as it skims the Sun, which Eddington confirmed at the 1919 eclipse and which made Einstein a household name overnight. Clocks deeper in a gravitational well run slow, by \(d\tau/dt = \sqrt{1 - r_s/r}\); your phone proves it every second, because the GPS satellites' clocks tick about \(38\ \mu\text{s}\) per day faster than ours, and ignoring it would throw navigation off by some 10 km within a day.</p>
+<h3><span class="hn">06</span>Ripples in spacetime</h3>
+<p>If spacetime can curve, it can also quiver. Accelerating masses shed <strong>gravitational waves</strong> - ripples in the metric racing outward at \(c\) - but they are maddeningly faint. It took a century and two 4 km laser interferometers (LIGO) to feel one: on 14 September 2015 the merger of two black holes 1.3 billion light-years away stretched and squeezed each arm by less than a thousandth of a proton's width. Overnight we gained a new sense, able to hear cataclysms that emit no light at all.</p>
+<h3><span class="hn">07</span>Spin, cosmology and the unfinished theory</h3>
+<p>Real black holes spin, and the Kerr solution (1963) captures them: a rotating hole drags spacetime around with it and wraps an <em>ergosphere</em> outside the horizon, a region from which energy can in principle be extracted. Scaled up to the whole sky, the same equations give modern cosmology its expanding, \(\Lambda\)-dominated universe, and the Event Horizon Telescope has now photographed the shadows of M87* (2019) and our own Sgr A* (2022), each exactly the size GR demands. And yet the theory is incomplete: at a singularity it forecasts its own collapse, and marrying its smooth geometry to quantum mechanics remains the deepest open problem in physics.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Einstein field equations</th><td>\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Geodesic equation</th><td>\(\ddot{x}^\mu + \Gamma^\mu_{\alpha\beta}\,\dot{x}^\alpha \dot{x}^\beta = 0\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Schwarzschild radius</th><td>\(r_s = \dfrac{2GM}{c^2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Perihelion precession</th><td>\(\Delta\varphi = \dfrac{6\pi GM}{c^2 a (1-e^2)}\)</td><td class="cmt">per orbit</td></tr>
+<tr><th scope="row">Gravitational time dilation</th><td>\(\dfrac{d\tau}{dt} = \sqrt{1 - \dfrac{r_s}{r}}\)</td><td class="cmt">Schwarzschild metric</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⌛</span> GPS clocks gain ~45μs/day from weaker gravity (GR) and lose ~7μs/day from orbital speed (SR). Without correction, GPS would drift ~10 km/day.</li><li><span aria-hidden="true">🌀</span> Gravitational waves were first detected by LIGO on 14 Sept 2015, from two black holes merging 1.3 billion light-years away.</li><li><span aria-hidden="true">🔭</span> The Event Horizon Telescope resolved a 40-μas shadow around M87* - equivalent to reading a newspaper in New York from Paris.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Gravity" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Physics</h2>
+    <ul><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/standard-model/">The Standard Model</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>

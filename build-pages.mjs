@@ -1,0 +1,287 @@
+// Generates one static, crawlable page per topic from the SAME `S` array that
+// drives index.html — single source of truth, so re-running is free.
+//   node build-pages.mjs
+// Output: <slug>/index.html for every topic (served as https://labinatab.com/<slug>/)
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ORIGIN = 'https://labinatab.com';
+const src = fs.readFileSync('index.html', 'utf8');
+
+// ── pull `S` and `REF` straight out of index.html ──────────────────────
+function extract(startMarker, endMarker) {
+  const a = src.indexOf(startMarker);
+  const b = src.indexOf(endMarker, a);
+  if (a < 0 || b < 0) throw new Error(`cannot locate ${startMarker}`);
+  return src.slice(a, b + endMarker.length);
+}
+// newline matters: the S block ends in a `//` comment, which would swallow the return
+const S = new Function(`${extract('const S=[', ']; // end SUBJECTS')}\nreturn S;`)();
+const REF = new Function(`${extract('const REF={', '};')}\nreturn REF;`)();
+
+const LEVELS = [
+  { key: 'junior',  label: 'Junior',  blurb: 'plain language, no maths' },
+  { key: 'student', label: 'Student', blurb: 'the core equations' },
+  { key: 'scholar', label: 'Scholar', blurb: 'full mathematical depth' },
+];
+
+const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// strip tags -> plain text (for meta description / word counts)
+const plain = h => String(h).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+// Slugs live in index.html (the homepage card links need them too) — read them
+// from there so a URL is only ever written down in one place.
+const SLUG = new Function(`${extract('const SLUG={', '};')}\nreturn SLUG;`)();
+const slugFor = s => {
+  const v = SLUG[s.id];
+  if (!v) throw new Error(`no slug for id "${s.id}" — add it to SLUG in index.html`);
+  return v;
+};
+
+// Meta descriptions must survive Google's ~160 char cut: trim on a word boundary.
+function clamp(text, max = 155) {
+  const t = plain(text);
+  if (t.length <= max) return t;
+  return t.slice(0, t.lastIndexOf(' ', max - 1)).replace(/[,;:—-]$/, '') + '…';
+}
+
+// The prose uses <h4> inside a section; under the page's <h2> that skips a
+// level, so promote to <h3> to keep the outline valid for screen readers.
+const fixHeadings = h => h.replace(/<(\/?)h4\b/g, '<$1h3');
+
+function formulaHTML(f) {
+  if (!f || !f.rows || !f.rows.length) return '';
+  const rows = f.rows.map(r => {
+    if (r.sep) return '<tr class="sep"><td colspan="3"></td></tr>';
+    const eq = f.tex ? `\\(${esc(r.e)}\\)` : `<code>${esc(r.e)}</code>`;
+    return `<tr><th scope="row">${esc(r.n)}</th><td>${eq}</td><td class="cmt">${r.c ? esc(r.c) : ''}</td></tr>`;
+  }).join('\n');
+  return `<div class="formulas"><h3>Key formulas</h3><table>${rows}</table></div>`;
+}
+
+function factsHTML(facts) {
+  if (!facts || !facts.length) return '';
+  return `<div class="facts"><h3>Things worth knowing</h3><ul>${
+    facts.map(f => `<li><span aria-hidden="true">${f.e}</span> ${esc(f.t)}</li>`).join('')
+  }</ul></div>`;
+}
+
+const CSS = `
+:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+`.trim();
+
+function page(s) {
+  const slug = slugFor(s);
+  const url = `${ORIGIN}/${slug}/`;
+  const subject = s.group.replace(/^\S+\s*/, '').trim();
+  const desc = clamp(s.teaser);
+  const wiki = REF[s.id] ? `https://en.wikipedia.org/wiki/${REF[s.id]}` : null;
+
+  const levels = LEVELS.map(L => {
+    const lc = s.lvls[L.key];
+    if (!lc) return '';
+    return `
+<section class="lvl" id="${L.key}">
+  <h2>${esc(lc.title)}</h2>
+  <p class="lvl-note">${L.label} level — ${L.blurb}</p>
+  ${fixHeadings(lc.body)}
+  ${formulaHTML(lc.formula)}
+  ${factsHTML(lc.facts)}
+</section>`;
+  }).join('\n');
+
+  const related = S.filter(x => x.group === s.group && x.id !== s.id)
+    .map(x => `<li><a href="/${slugFor(x)}/">${esc(x.title)}</a></li>`).join('');
+
+  // Structured data. Article+LearningResource describes the page; `about.sameAs`
+  // ties it to the Wikipedia entity; BreadcrumbList can render in the SERP.
+  const ld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': ['Article', 'LearningResource'],
+        '@id': url + '#article',
+        headline: s.title,
+        name: s.title,
+        description: desc,
+        url,
+        mainEntityOfPage: url,
+        inLanguage: 'en',
+        isAccessibleForFree: true,
+        isFamilyFriendly: true,
+        learningResourceType: 'Interactive explanation with simulation',
+        educationalLevel: LEVELS.map(l => l.label),
+        teaches: s.chips,
+        about: { '@type': 'Thing', name: s.title, ...(wiki ? { sameAs: wiki } : {}) },
+        image: `${ORIGIN}/logo_radiant_infinity.png`,
+        author: { '@type': 'Organization', name: 'Lab-in-a-Tab', url: ORIGIN + '/' },
+        publisher: {
+          '@type': 'Organization', name: 'Lab-in-a-Tab', url: ORIGIN + '/',
+          logo: { '@type': 'ImageObject', url: `${ORIGIN}/logo_radiant_infinity.png` },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Lab-in-a-Tab', item: ORIGIN + '/' },
+          { '@type': 'ListItem', position: 2, name: s.title, item: url },
+        ],
+      },
+    ],
+  };
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(s.title)} | Lab-in-a-Tab</title>
+<meta name="description" content="${esc(desc)}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="${url}">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="${esc(s.title)} — Explained &amp; Simulated">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${ORIGIN}/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(s.title)} — Explained &amp; Simulated">
+<meta name="twitter:description" content="${esc(desc)}">
+<meta name="twitter:image" content="${ORIGIN}/logo_radiant_infinity.png">
+<script type="application/ld+json">
+${JSON.stringify(ld, null, 1)}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>${CSS}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › ${esc(subject)}</nav>
+  <h1>${esc(s.title)}</h1>
+  <p class="lead">${esc(plain(s.teaser))}</p>
+  <a class="cta" href="/#${s.id}">▶ Run the interactive simulation</a>
+  <div class="chips">${s.chips.map(c => `<span>${esc(c)}</span>`).join('')}</div>
+  ${levels}
+  <div class="sources">
+    <h3>Sources</h3>
+    ${wiki ? `<p><a href="${wiki}" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>` : ''}
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in ${esc(subject)}</h2>
+    <ul>${related}</ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>`;
+}
+
+let n = 0;
+const built = [];
+for (const s of S) {
+  const slug = slugFor(s);
+  fs.mkdirSync(slug, { recursive: true });
+  const html = page(s);
+  fs.writeFileSync(path.join(slug, 'index.html'), html, 'utf8');
+  built.push({ slug, id: s.id, title: s.title, words: plain(html).split(/\s+/).length });
+  n++;
+}
+
+// Remove directories from an earlier run whose slug changed, so renaming a page
+// never leaves a stale copy live. Only ever touches slugs we ourselves built.
+const slugs = new Set(built.map(b => b.slug));
+let removed = 0;
+if (fs.existsSync('.build-pages.json')) {
+  for (const prev of JSON.parse(fs.readFileSync('.build-pages.json', 'utf8'))) {
+    if (!slugs.has(prev.slug) && fs.existsSync(prev.slug)) {
+      fs.rmSync(prev.slug, { recursive: true, force: true });
+      removed++;
+    }
+  }
+}
+fs.writeFileSync('.build-pages.json', JSON.stringify(built, null, 1));
+
+// sitemap.xml — only canonical URLs, and only <loc>/<lastmod>: Google states it
+// ignores <changefreq> and <priority>, so emitting them is noise.
+const today = new Date().toISOString().slice(0, 10);
+const urls = ['', ...built.map(b => b.slug + '/')];
+fs.writeFileSync('sitemap.xml',
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  urls.map(u => `  <url>\n    <loc>${ORIGIN}/${u}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`).join('\n') +
+  `\n</urlset>\n`, 'utf8');
+
+fs.writeFileSync('robots.txt',
+  `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`, 'utf8');
+
+console.log(`built ${n} pages${removed ? `, removed ${removed} stale` : ''}`);
+console.log(`median words/page: ${built.map(b => b.words).sort((a, b) => a - b)[Math.floor(n / 2)]}`);
+console.log(`sitemap.xml: ${urls.length} urls · robots.txt written`);

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graph Theory &amp; Networks | Lab-in-a-Tab</title>
+<meta name="description" content="Six handshakes separate any two people on Earth. The internet, your brain, and a virus outbreak all obey the same hidden mathematics.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/graph-theory/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Graph Theory &amp; Networks — Explained &amp; Simulated">
+<meta property="og:description" content="Six handshakes separate any two people on Earth. The internet, your brain, and a virus outbreak all obey the same hidden mathematics.">
+<meta property="og:url" content="https://labinatab.com/graph-theory/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Graph Theory &amp; Networks — Explained &amp; Simulated">
+<meta name="twitter:description" content="Six handshakes separate any two people on Earth. The internet, your brain, and a virus outbreak all obey the same hidden mathematics.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/graph-theory/#article",
+   "headline": "Graph Theory & Networks",
+   "name": "Graph Theory & Networks",
+   "description": "Six handshakes separate any two people on Earth. The internet, your brain, and a virus outbreak all obey the same hidden mathematics.",
+   "url": "https://labinatab.com/graph-theory/",
+   "mainEntityOfPage": "https://labinatab.com/graph-theory/",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Networks",
+    "Topology",
+    "Connections"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Graph Theory & Networks",
+    "sameAs": "https://en.wikipedia.org/wiki/Graph_theory"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Graph Theory & Networks",
+     "item": "https://labinatab.com/graph-theory/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Mathematics</nav>
+  <h1>Graph Theory &amp; Networks</h1>
+  <p class="lead">Six handshakes separate any two people on Earth. The internet, your brain, and a virus outbreak all obey the same hidden mathematics.</p>
+  <a class="cta" href="/#graphs">▶ Run the interactive simulation</a>
+  <div class="chips"><span>Networks</span><span>Topology</span><span>Connections</span></div>
+  
+<section class="lvl" id="junior">
+  <h2>Everything is connected - but how?</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Suppose you want to get a message to a famous stranger you've never met - a head of state, a film star. You tell a friend, who tells one of their friends, who tells one of theirs. How many hops until you reach <em>anyone</em> on the planet? In 1967 Stanley Milgram ran the experiment with posted letters and got a startling answer: about <strong>six</strong>. Six degrees of separation, between you and everyone alive.</p>
+<p>That's the quiet power of <strong>networks</strong>. A network - mathematicians call it a <strong>graph</strong> - is nothing more than a set of <em>nodes</em> (things) joined by <em>edges</em> (links). Your friendships are a graph. So are cities wired by roads, web pages stitched together by hyperlinks, neurons laced through your brain, proteins reacting inside a cell. Same skeleton, wildly different flesh.</p>
+<p>The big surprise of the last fifty years is that these utterly different networks share the same hidden architecture. Crack that architecture and you can predict how an epidemic spreads, how a blackout cascades across a power grid, how one shuttered airport snarls global travel, how a rumour goes viral. In the simulation below, watch information ripple through a network - and notice how a single well-connected <strong>hub</strong> can change everything.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌐</span> The entire World Wide Web has an average path length of just 19 clicks between any two pages - out of billions of possible routes.</li><li><span aria-hidden="true">🦠</span> COVID-19 spread so fast partly because air travel creates a &quot;small-world&quot; network - a single superspreader event in one city reaches every continent within days.</li><li><span aria-hidden="true">⚡</span> The 2003 Northeast blackout cascaded from a single Ohio power line failure to cut power for 55 million people in 8 states - pure network vulnerability.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Small worlds, scale-free networks, and Euler's bridges</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Graph theory was born in 1736, when Leonhard Euler took on the <strong>bridges of Königsberg</strong>: could you stroll through the city crossing each of its seven bridges exactly once? Euler proved you couldn't - and his argument threw the map away entirely, keeping only what connects to what. Such a walk exists precisely when the graph has either 0 or 2 vertices of odd degree, and nothing else matters. Discarding geometry and keeping pure connectivity founded a whole branch of mathematics.</p>
+<p>A graph \(G = (V, E)\) is just a set of vertices \(V\) and edges \(E\). The <strong>degree</strong> \(d(v)\) counts a vertex's neighbours, and the <strong>degree distribution</strong> \(P(k)\) - the chance a random node has \(k\) links - turns out to be the network's fingerprint. Sprinkle edges at random (the Erdős–Rényi model) and you get a tidy Poisson distribution and a sharp <em>phase transition</em>: cross \(p = 1/n\) and a giant connected component snaps into being. But real networks look nothing like random ones. They are <strong>small worlds</strong> - tightly clustered yet only a few hops across (Watts–Strogatz, 1998) - and <strong>scale-free</strong>, with a heavy-tailed \(P(k) \sim k^{-\gamma}\) (Barabási–Albert, 1999) that emerges whenever newcomers prefer to link to the already-popular.</p>
+<p>That scale-free shape carries a startling double edge. These networks are <strong>robust to random failure</strong> - nearly every node is a minor one, so a random knockout rarely touches a hub - yet <strong>fragile to a targeted strike</strong>: pull out the handful of biggest hubs and the whole thing fractures. It's why the internet shrugs off router crashes but dreads a coordinated attack, and why vaccinating the few super-connectors halts an outbreak far more efficiently than vaccinating people at random.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Handshaking lemma</th><td>\(\sum_v d(v) = 2|E|\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Eulerian path</th><td>\(\text{exists} \iff 0 \text{ or } 2 \text{ odd-degree vertices}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Clustering coefficient</th><td>\(C(v) = \dfrac{2\,e_v}{d(v)\,(d(v)-1)}\)</td><td class="cmt">e_v = edges among neighbours</td></tr>
+<tr><th scope="row">Average path length</th><td>\(L = \dfrac{1}{n^2}\sum_{u,v} d(u,v)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Scale-free degrees</th><td>\(P(k) \sim k^{-\gamma},\quad 2 &lt; \gamma &lt; 3\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">ER phase transition</th><td>\(p_c = \dfrac{1}{n}\)</td><td class="cmt">giant component emerges</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🧬</span> The protein-interaction network of yeast is scale-free with γ ≈ 2.4 - removing the top 1% of hub proteins kills the cell; removing 99% of non-hubs does not.</li><li><span aria-hidden="true">🔗</span> Wikipedia's hyperlink network has average path length ~3.5 - you can reach almost any article from any other in 4 clicks.</li><li><span aria-hidden="true">📊</span> The Barabási-Albert preferential attachment model generates scale-free networks with γ = 3 - matching the exponent measured in the World Wide Web.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Spectral graph theory, random walks, and network epidemics</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The Laplacian: a matrix that remembers the shape</h3>
+<p>Strip a network down to numbers and its whole structure lives in the <strong>graph Laplacian</strong> \(L = D - A\), built from the degree matrix \(D\) and the adjacency matrix \(A\). Diagonalise it and the eigenvalues \(0 = \lambda_1 \le \lambda_2 \le \dots \le \lambda_n\) read out the network's geometry without your ever drawing it. The number of zero eigenvalues counts the connected pieces; the gaps between the rest encode bottlenecks, symmetries, and how heat or rumour would diffuse across the graph. Spectral graph theory is the surprising claim that you really can hear the shape of a network.</p>
+<h3><span class="hn">02</span>The Fiedler value: how connected, really?</h3>
+<p>The second eigenvalue \(\lambda_2\) - Fiedler's <em>algebraic connectivity</em> - is the one to watch. It sits just above zero when a graph is barely held together and climbs as the graph knits tighter. Cheeger's inequality makes that intuition exact, trapping the true bottleneck \(h(G)\) (the cheapest cut relative to its size) between two functions of the spectrum: \(\dfrac{\lambda_2}{2} \le h(G) \le \sqrt{2\lambda_2}\). A small \(\lambda_2\) guarantees some sparse cut exists; a large one certifies the network has no weak seam to tear along.</p>
+<h3><span class="hn">03</span>Spectral clustering: finding the communities</h3>
+<p>That same Fiedler eigenvector earns its keep in practice. Sort the nodes by the sign of their entry in it and the graph tends to split along its most natural seam - the heart of <strong>spectral clustering</strong>, the algorithm underneath a great deal of modern community detection, image segmentation and recommendation. What looks like an abstract eigenvalue problem turns out to be the cleanest known way to ask, "which parts of this network actually belong together?"</p>
+<h3><span class="hn">04</span>Random walks, mixing and PageRank</h3>
+<p>Set a token wandering the graph, hopping to a random neighbour at each step - a <strong>random walk</strong> with transition matrix \(P = D^{-1}A\). It settles into a stationary distribution \(\pi(v) = d(v)/2|E|\), purely proportional to degree, and the time it needs to forget where it began - the <em>mixing time</em> - scales as \(\tau_{\text{mix}} \sim \log n / \lambda_2\): well-knit "expander" graphs mix in a blink, bottlenecked ones crawl. Bolt on a small chance of teleporting anywhere and you have <strong>PageRank</strong>, the random walk whose stationary distribution Google first used to rank the web.</p>
+<h3><span class="hn">05</span>Epidemics on networks: the vanishing threshold</h3>
+<p>Run an <strong>SIR</strong> contagion - susceptible, infected, recovered - across a graph and a sharp threshold appears: the outbreak only catches when \(\beta/\mu > 1/\lambda_{\max}(A)\), governed by the largest eigenvalue of the adjacency matrix. Here scale-free topology springs its nastiest trick. For \(\gamma \le 3\), \(\lambda_{\max}\) grows without bound as the network grows, so the threshold slides all the way to <em>zero</em>: on a large scale-free network an epidemic spreads no matter how feeble the transmission. That is the deep reason computer viruses and online misinformation are so stubborn - the hubs hand them a foothold for free.</p>
+<h3><span class="hn">06</span>The hard problems hiding in plain graphs</h3>
+<p>For all this elegance, some of the simplest-sounding graph questions are among the hardest known. Asking whether a graph has a <em>Hamiltonian path</em> - a route visiting every node exactly once - is NP-complete, and an efficient algorithm for it would topple thousands of other problems at a stroke and settle <strong>P versus NP</strong>, the deepest open question in computer science. Graphs are where abstract connectivity slams into the brick wall of computational hardness - which is the room next door.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Graph Laplacian</th><td>\(L = D - A\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Spectrum</th><td>\(0 = \lambda_1 \le \lambda_2 \le \dots \le \lambda_n\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Cheeger inequality</th><td>\(\dfrac{\lambda_2}{2} \le h(G) \le \sqrt{2\lambda_2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Random-walk mixing</th><td>\(\tau_{\text{mix}} \sim \dfrac{\log n}{\lambda_2}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">SIR epidemic threshold</th><td>\(\dfrac{\beta}{\mu} &gt; \dfrac{1}{\lambda_{\max}(A)}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Scale-free limit</th><td>\(\lambda_{\max}(A) \to \infty \;(\gamma \le 3) \;\Rightarrow\; \text{threshold} \to 0\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔢</span> The spectral gap λ₂ of the Petersen graph equals 2 - it is the smallest 3-regular expander, which is why it appears in so many extremal graph theory results.</li><li><span aria-hidden="true">🌍</span> The epidemic threshold on the internet (scale-free, γ≈2.1) is effectively zero - explaining why computer viruses persist indefinitely at any transmission rate.</li><li><span aria-hidden="true">🏆</span> The P vs NP problem is equivalent to asking whether the Hamiltonian path problem (does a graph have a path visiting every node once?) can be solved efficiently - still unsolved.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Graph_theory" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Mathematics</h2>
+    <ul><li><a href="/probability-bell-curve/">Probability &amp; The Bell Curve</a></li><li><a href="/fractals/">Fractals &amp; Infinity</a></li><li><a href="/calculus/">Calculus &amp; Change</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+</script>
+</body>
+</html>
