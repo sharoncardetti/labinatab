@@ -235,6 +235,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
 .spill b{color:var(--ink)}
 .sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+/* SIM GUIDE — try / legend / notice scaffold */
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
 
 /* DEEPER */
 .dcard{background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:1.2rem;margin-bottom:.9rem}
@@ -2314,10 +2330,30 @@ function openModal(s, refresh=false){
 
   // Tab 1 - Simulate (built after append so container has width)
   const t1=newEl('div','tpanel','tp_'+s.id+'_1');
-  const sh=newEl('div','sim-hint');sh.textContent='🕹️ Interactive simulation - use the controls below to explore';
-  t1.appendChild(sh);
+  const guide=(SIM_GUIDE[s.id]||{})[LVL];
+  if(guide){
+    const tr=newEl('div','sim-try');
+    tr.style.borderLeftColor=s.color;
+    tr.innerHTML=`<span class="sg-lbl">Try this</span><span>${fillLabels(guide.try,simLabels(s.id,LVL))}</span>`;
+    t1.appendChild(tr);
+    typesetMath(tr);   // scholar prompts contain LaTeX too
+  }else{
+    const sh=newEl('div','sim-hint');sh.textContent='🕹️ Interactive simulation - use the controls below to explore';
+    t1.appendChild(sh);
+  }
   body.appendChild(t1);
-  requestAnimationFrame(()=>requestAnimationFrame(()=>buildSim(s.id,t1,s.color,LVL)));
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    buildSim(s.id,t1,s.color,LVL);
+    if(guide){
+      // appended after buildSim so it lands below the canvas and controls
+      const lab=simLabels(s.id,LVL);
+      const gw=newEl('div','sim-guide');
+      gw.innerHTML=`<div class="sg-legend"><span class="sg-lbl">What you're seeing</span>${fillLabels(guide.legend,lab)}</div>
+<details class="sg-notice"><summary>What to notice</summary><div class="sg-body">${fillLabels(guide.notice,lab)}</div></details>`;
+      t1.appendChild(gw);
+      typesetMath(gw);
+    }
+  }));
 
   // Tab 2 - Go Deeper
   const t2=newEl('div','tpanel','tp_'+s.id+'_2');
@@ -2335,6 +2371,771 @@ function openModal(s, refresh=false){
 }
 let lastFocused=null;
 
+
+// ═══════════════════════════════════════════════════════════════════
+// SIM LABELS — every on-screen control and readout is named HERE, once,
+// per level. The sim renders these strings and the guide text interpolates
+// the same [[tokens]], so the prose can never tell you to "read the Period"
+// when the readout on screen actually says "Year length".
+// ═══════════════════════════════════════════════════════════════════
+const SIM_LABELS={
+ gravity:{
+  junior :{radius:'Distance from star',mass:'Star mass',    period:'Year length',speed:'Speed'},
+  student:{radius:'Orbit radius',      mass:'Star mass',    period:'Period (T)', speed:'Orbital speed (v)'},
+  scholar:{radius:'Orbit radius (r)',  mass:'Star mass (M)',period:'Period (T)', speed:'Orbital speed (v)'}
+ },
+ prob:{
+  junior :{drop:'Drop balls',reset:'Reset',rows:'Rows of pegs',total:'Balls dropped',  mean:'Average bin'},
+  student:{drop:'Drop balls',reset:'Reset',rows:'Rows of pegs',total:'Sample size (N)',mean:'Mean bin index'},
+  scholar:{drop:'Drop balls',reset:'Reset',rows:'Rows of pegs',total:'Sample size (N)',mean:'Mean bin index'}
+ },
+ waves:{
+  junior :{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Wave height'},
+  student:{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Max amplitude'},
+  scholar:{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Max amplitude'}
+ },
+ thermo:{
+  junior :{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure'},
+  student:{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure'},
+  scholar:{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure'}
+ },
+ particles:{
+  junior :{energy:'Beam energy (TeV)',collide:'Collide!',count:'Collisions',e:'Energy'},
+  student:{energy:'Beam energy (TeV)',collide:'Collide!',count:'Collisions',e:'Energy'},
+  scholar:{energy:'Beam energy (TeV)',collide:'Collide!',count:'Collisions',e:'Energy'}
+ },
+ fractal:{
+  junior :{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view'},
+  student:{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view'},
+  scholar:{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view'}
+ },
+ calculus:{
+  junior :{x:'x position',rects:'Riemann rectangles',deriv:'Slope here',integ:'Area so far'},
+  student:{x:'x position',rects:'Riemann rectangles',deriv:'f′(x)',integ:'∫f dx (−3→x)'},
+  scholar:{x:'x position',rects:'Riemann rectangles',deriv:'f′(x)',integ:'∫ from −3 to x'}
+ },
+ graphs:{
+  junior :{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs'},
+  student:{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs'},
+  scholar:{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs'}
+ },
+ life:{
+  junior :{pause:'Pause',clear:'Clear',random:'Random',glider:'Glider',gen:'Generation',alive:'Alive cells'},
+  student:{pause:'Pause',clear:'Clear',random:'Random',glider:'Glider',gen:'Generation',alive:'Alive cells'},
+  scholar:{pause:'Pause',clear:'Clear',random:'Random',glider:'Glider',gen:'Generation',alive:'Alive cells'}
+ },
+ dna:{
+  junior :{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations'},
+  student:{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations'},
+  scholar:{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations'}
+ },
+ evolution:{
+  junior :{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Average fitness',div:'Diversity'},
+  student:{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Avg fitness',div:'Diversity'},
+  scholar:{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Avg fitness',div:'Diversity'}
+ },
+ ecosystem:{
+  junior :{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators'},
+  student:{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators'},
+  scholar:{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators'}
+ },
+ sorting:{
+  junior :{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps'},
+  student:{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps'},
+  scholar:{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps'}
+ },
+ ml:{
+  junior :{lr:'Learning rate',hid:'Hidden units',reset:'Reset',epoch:'Epoch',loss:'Error',acc:'Accuracy'},
+  student:{lr:'Learning rate',hid:'Hidden units',reset:'Reset',epoch:'Epoch',loss:'Loss',acc:'Accuracy'},
+  scholar:{lr:'Learning rate',hid:'Hidden units',reset:'Reset',epoch:'Epoch',loss:'Loss',acc:'Accuracy'}
+ },
+ crypto:{
+  junior :{run:'Run the exchange',reset:'Reset',step:'Step',key:'Shared key'},
+  student:{run:'Run DH exchange', reset:'Reset',step:'Step',key:'Shared key'},
+  scholar:{run:'Run DH exchange', reset:'Reset',step:'Step',key:'Shared key'}
+ },
+ complexity:{
+  junior :{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n'},
+  student:{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n'},
+  scholar:{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n'}
+ },
+ climate:{
+  junior :{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Extra heat trapped',dt:'Temperature rise'},
+  student:{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Forcing',dt:'ΔT'},
+  scholar:{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Forcing',dt:'ΔT'}
+ },
+ tectonics:{
+  junior :{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Million years',event:'Last event'},
+  student:{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Myr',event:'Last event'},
+  scholar:{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Myr',event:'Last event'}
+ },
+ ocean:{
+  junior :{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'Ocean conveyor'},
+  student:{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'AMOC'},
+  scholar:{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'AMOC'}
+ },
+ volcano:{
+  junior :{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'Blast size',phase:'Phase'},
+  student:{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'VEI',phase:'Phase'},
+  scholar:{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'VEI',phase:'Phase'}
+ },
+ chem:{
+  junior :{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp'},
+  student:{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp'},
+  scholar:{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp'}
+ },
+ electrochem:{
+  junior :{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'Battery level',mode:'Mode'},
+  student:{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'Charge level',mode:'Mode'},
+  scholar:{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'State of charge',mode:'Mode'}
+ },
+ kinetics:{
+  junior :{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'Reactant left',prod:'Product made',rate:'Rate'},
+  student:{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'[Reactant]',prod:'[Product]',rate:'Rate'},
+  scholar:{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'[Reactant]',prod:'[Product]',rate:'Rate'}
+ },
+ organic:{
+  junior :{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type'},
+  student:{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type'},
+  scholar:{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type'}
+ },
+ astro:{
+  junior :{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage'},
+  student:{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage'},
+  scholar:{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage'}
+ },
+ blackholes:{
+  junior :{mass:'Black hole mass (M☉)',dist:'Distance from hole',wave:'Gravitational wave',km:'Distance',dilat:'Time dilation',z:'Light stretching'},
+  student:{mass:'Black hole mass (M☉)',dist:'Test particle distance (r_S)',wave:'Gravitational wave',km:'Distance',dilat:'Time dilation',z:'Redshift'},
+  scholar:{mass:'Black hole mass (M☉)',dist:'Test particle distance (r_S)',wave:'Gravitational wave',km:'Distance',dilat:'Time dilation',z:'Redshift'}
+ },
+ cosmology:{
+  junior :{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'Expansion rate',z:'Redshift z'},
+  student:{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'H(z)',z:'Redshift z'},
+  scholar:{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'H(z)',z:'Redshift z'}
+ },
+ solarsystem:{
+  junior :{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance'},
+  student:{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance'},
+  scholar:{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance'}
+ },
+ neuro:{
+  junior :{stim:'Stimulus strength',fire:'Fire neuron',rate:'Firing rate',pot:'Potential'},
+  student:{stim:'Stimulus strength',fire:'Fire neuron',rate:'Firing rate',pot:'Potential'},
+  scholar:{stim:'Stimulus strength',fire:'Fire neuron',rate:'Firing rate',pot:'Potential'}
+ },
+ neuron:{
+  junior :{cur:'Stimulus strength',      pulse:'Single Pulse',reset:'Reset',v:'Voltage inside',state:'State',spikes:'Spikes'},
+  student:{cur:'Stimulus current (I)',   pulse:'Single Pulse',reset:'Reset',v:'Membrane V',   state:'State',spikes:'Spikes'},
+  scholar:{cur:'Stimulus current (I)',   pulse:'Single Pulse',reset:'Reset',v:'Membrane V',   state:'State',spikes:'Spikes'}
+ },
+ memory:{
+  junior :{rate:'Stimulation rate (Hz)',ltp:'Strengthen (LTP)',ltd:'Weaken (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events'},
+  student:{rate:'Stimulation rate (Hz)',ltp:'Pair (LTP)',      ltd:'Reverse (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events'},
+  scholar:{rate:'Stimulation rate (Hz)',ltp:'Pair (LTP)',      ltd:'Reverse (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events'}
+ },
+ sleep:{
+  junior :{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'Brain wave speed',ad:'Sleep pressure'},
+  student:{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'EEG freq',ad:'Adenosine'},
+  scholar:{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'EEG freq',ad:'Adenosine'}
+ }
+};
+// the label set a given sim shows at a given level
+function simLabels(id,lvl){return (SIM_LABELS[id]||{})[lvl]||{};}
+// [[token]] -> the exact label shown on screen at this level, emphasised.
+// Double brackets, not braces: LaTeX is full of {n}, {N}, 	ext{...}.
+function fillLabels(txt,lab){
+  return String(txt).replace(/\[\[(\w+)\]\]/g,(m,k)=>lab&&lab[k]?`<b>${lab[k]}</b>`:m);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// SIM GUIDE — the scaffold that turns a toy into a lesson.
+// Three parts per level, keyed by topic id:
+//   legend — what the shapes on the canvas actually are
+//   try    — one concrete challenge that forces the insight out
+//   notice — the takeaway, hidden behind a <details> so the user
+//            attempts it before being told the answer
+// Sims without an entry fall back to the old generic hint.
+// ═══════════════════════════════════════════════════════════════════
+const SIM_GUIDE={
+
+ gravity:{
+  junior:{
+   legend:`The amber ball in the middle is the <b>star</b>. The coloured ball is a <b>planet</b> going round it. The faint circle is the path it follows, the glowing tail is where it has just been, and the short amber line is <b>gravity</b> — it always points straight at the star.`,
+   try:`Drag [[radius]] down to 40 and read [[period]]. Now drag it to 80 — exactly double. Does [[period]] double too?`,
+   notice:`<b>No — doubling the distance does not double the year. It almost triples it.</b> [[period]] goes from about 37s to about 106s, and the planet also travels more slowly the further out it sits. That's why Neptune needs 165 Earth years for a single lap of the Sun, while Earth needs one.`
+  },
+  student:{
+   legend:`Amber sphere = the <b>star</b> (its drawn radius grows with the mass you set). Coloured dot = a <b>planet</b> on a circular orbit. Faint ring = the orbital path, fading tail = recent trajectory, short amber vector = the <b>gravitational force</b>, always directed at the star.`,
+   try:`Double [[radius]] from 40 to 80 and compare the two [[period]] readings. Then hold the radius fixed and push [[mass]] from 0.5 to 5, watching [[speed]].`,
+   notice:`<b>Doubling \\(r\\) does not double \\(T\\) — it multiplies it by about 2.8.</b> That is Kepler's third law, \\(T^2 \\propto r^3\\). The orbital speed obeys \\(v = \\sqrt{GM/r}\\), so it drops as the orbit widens and rises with the star's mass. Notice too that gravity points at the star the entire time, yet the planet never falls in — it keeps moving sideways fast enough to keep missing.`
+  },
+  scholar:{
+   legend:`Amber sphere = central mass \\(M\\) (drawn to scale, not to size). Coloured dot = a test particle on a circular orbit of radius \\(r\\). Faint ring = the orbit, fading tail = recent path, amber vector = the centripetal gravitational acceleration \\(GM/r^2\\).`,
+   try:`Sample [[period]] at \\(r = 40, 80, 120\\) with [[mass]] held fixed, and estimate the slope of \\(\\log T\\) against \\(\\log r\\). Then vary [[mass]] at fixed radius and test whether \\(T \\propto M^{-1/2}\\).`,
+   notice:`<b>The log-log slope is exactly \\(3/2\\), so doubling \\(r\\) multiplies \\(T\\) by \\(2^{3/2} \\approx 2.83\\).</b> Equating gravitational and centripetal acceleration, \\(GM/r^2 = v^2/r\\), gives \\(v = \\sqrt{GM/r}\\) and hence \\[T = \\frac{2\\pi r}{v} = \\frac{2\\pi r^{3/2}}{\\sqrt{GM}},\\] so \\(T^2 = (4\\pi^2/GM)\\,r^3\\) and \\(T \\propto M^{-1/2}\\), as the second test confirms. The simulation integrates this relation directly, so [[mass]] is rescaling the Keplerian constant \\(4\\pi^2/GM\\).`
+  }
+ },
+
+ prob:{
+  junior:{
+   legend:`Balls fall from the top into a triangle of <b>pegs</b>. At every peg a ball bounces left or right by pure chance — like flipping a coin. They pile up in the <b>bins</b> at the bottom. The dashed white line and the faint bars behind show the shape the maths says you should get.`,
+   try:`Press [[drop]] and stop after about 20 balls. Is the shape tidy? Now press [[reset]], let it run past 200, and compare the bars with the dashed line.`,
+   notice:`<b>With 20 balls the pile looks ragged; with 200 it always grows into the same hump in the middle — the bell curve.</b> Nobody can say where any <i>single</i> ball will land, because each one is pure luck. Yet hundreds together are remarkably predictable. Watch [[mean]] wander at first, then settle near the middle and stay there.`
+  },
+  student:{
+   legend:`Each peg is a fair 50/50 branch, so a ball's final bin counts how many times it happened to go right — a <b>binomial</b> outcome. Glowing bars = the counts you actually got, faint bars and the dashed curve = the predicted bell shape. [[mean]] is the running average bin index.`,
+   try:`Run past 300 balls with [[rows]] set to 7 and watch where [[mean]] settles. Then set [[rows]] to 10 and run again — where does the mean sit now, and what happens to the width of the pile?`,
+   notice:`<b>The mean settles at \\(n/2\\) — 3.5 for 7 rows, 5 for 10 — and the pile widens as \\(\\sqrt{n}\\).</b> With \\(n\\) rows the result is \\(\\text{Binomial}(n, \\tfrac12)\\), whose standard deviation is \\(\\sqrt{n}/2\\), so the spread grows while the peak sharpens relative to the total. Nothing here was designed to make a bell: it falls out of repeated coin flips on its own.`
+  },
+  scholar:{
+   legend:`The board realises a sum of \\(n\\) i.i.d. \\(\\text{Bernoulli}(\\tfrac12)\\) variables; the bin index is the count of right-branches. Glowing bars = the empirical distribution, dashed curve = the normal approximation \\(\\mathcal{N}(n/2,\\, n/4)\\) overlaid by the simulation. [[mean]] is the running sample mean.`,
+   try:`Compare the empirical spread at [[rows]] = 4 and [[rows]] = 10 and test whether the width scales as \\(\\sqrt{n}\\). Then watch how [[mean]] stabilises as balls accumulate — its fluctuation should shrink like \\(1/\\sqrt{N}\\) in the number \\(N\\) dropped.`,
+   notice:`<b>The spread scales as \\(\\sqrt{n}\\) and the sample mean converges like \\(1/\\sqrt{N}\\).</b> This is the <b>de Moivre–Laplace theorem</b> in miniature: \\(\\text{Binomial}(n,\\tfrac12) \\to \\mathcal{N}(n/2,\\, n/4)\\) as \\(n\\) grows — historically the first special case of the Central Limit Theorem. The remarkable part is the universality: the limit is normal almost regardless of the branch distribution's own shape, provided its variance is finite. That is why the same curve governs measurement error, thermal noise and diffusion alike.`
+  }
+ },
+
+ waves:{
+  junior:{
+   legend:`The two faint waves — one blue, one purple — are two separate <b>waves</b> travelling along. The bold bright line is what you'd actually see and hear: the two added together, crest by crest.`,
+   try:`Leave [[freq]] at 1 so the two waves match. Now drag [[phase]] slowly from 0 up to about 3.14 and watch the bold line.`,
+   notice:`<b>The bold wave shrinks to a flat line — two waves add up to nothing.</b> When you shift one wave by half a step, its crests land exactly on the other's troughs and they cancel out. Add sound to sound and you get silence: that is precisely how noise-cancelling headphones work. Push [[phase]] on to 6.28 (a full step) and the wave comes roaring back.`
+  },
+  student:{
+   legend:`Faint blue and faint purple = the two <b>source waves</b>. The bold glowing curve is their <b>superposition</b>, the point-by-point sum. [[type]] reports whether the result is reinforcing or cancelling, and [[amp]] gives the peak height as a multiple of a single wave's.`,
+   try:`With [[freq]] at 1, set [[phase]] to 0 and read [[amp]]. Then move [[phase]] to \\(\\pi \\approx 3.14\\) and read it again. Finally set [[freq]] to 2 and watch the shape change character.`,
+   notice:`<b>[[amp]] runs from 2.00× down to 0.00× — total reinforcement to total cancellation — with no change in the energy you put in.</b> Waves superpose linearly: \\(y = A\\sin(kx-\\omega t) + A\\sin(kx-\\omega t+\\phi)\\), which sums to \\(2A\\cos(\\phi/2)\\sin(kx-\\omega t+\\phi/2)\\). The amplitude factor \\(2A\\cos(\\phi/2)\\) vanishes at \\(\\phi=\\pi\\). With unequal frequencies you no longer get a clean single wave but a repeating <em>beat</em> pattern.`
+  },
+  scholar:{
+   legend:`Two harmonic source terms of equal amplitude \\(A\\), the second with frequency ratio [[freq]] and relative phase [[phase]]. The bold curve is their linear superposition; [[amp]] reports \\(\\max|y|/A\\).`,
+   try:`Hold [[freq]] at 1 and sweep [[phase]] across \\([0, 2\\pi]\\), checking [[amp]] against \\(2|\\cos(\\phi/2)|\\). Then set [[freq]] to a non-integer such as 1.5 and observe that the envelope no longer closes into a single period.`,
+   notice:`<b>[[amp]] traces \\(2|\\cos(\\phi/2)|\\) exactly, and irrational frequency ratios never repeat.</b> Superposition follows from the linearity of the wave equation \\(\\partial_t^2 y = c^2 \\partial_x^2 y\\): sums of solutions are solutions, which is what makes Fourier analysis possible at all. For \\(f_2/f_1 = p/q\\) rational the pattern is periodic with period \\(q\\) cycles; irrational ratios are quasi-periodic and never exactly repeat. Note that cancellation redistributes energy, it does not destroy it — the energy suppressed here reappears elsewhere in the field.`
+  }
+ },
+
+ thermo:{
+  junior:{
+   legend:`The box holds bouncing gas <b>particles</b>, coloured by how fast they're going — blue is slow, red is fast. The thermometer on the right shows the temperature. The chart underneath counts how many particles have each speed.`,
+   try:`Watch the chart at [[temp]] = 300. Now drag [[temp]] up to 1200 and compare: where has the hump moved, and what happened to [[press]]?`,
+   notice:`<b>Heating doesn't give every particle the same speed — it shifts the whole hump to the right and smears it wider.</b> Even in a red-hot gas some particles crawl and some race. Temperature isn't the speed of one particle; it's the <em>average</em> over billions. Faster particles also hit the walls harder and more often, which is exactly what [[press]] measures — the reason a sealed can explodes in a fire.`
+  },
+  student:{
+   legend:`A 2D ideal gas with elastic collisions. Particle colour encodes speed (blue slow → red fast), the thermometer tracks [[temp]], and the lower chart is the live <b>speed distribution</b> with its envelope. [[hits]], [[speed]] and [[press]] are measured from the particles themselves, not assumed.`,
+   try:`Record [[speed]] and [[press]] at [[temp]] = 300, then at 1200 — a factor of 4. Does the speed also rise by 4? Then return to 300 and instead double [[num]].`,
+   notice:`<b>Quadrupling the temperature only doubles the average speed, but doubling the particle count doubles the pressure.</b> That is \\(v_{\\text{rms}} \\propto \\sqrt{T}\\) — kinetic energy, not speed, is what scales with \\(T\\), via \\(\\tfrac12 m v^2 = \\tfrac{d}{2} k_B T\\). Pressure meanwhile follows \\(PV = Nk_BT\\), linear in both \\(N\\) and \\(T\\). The distribution you see is the <b>Maxwell–Boltzmann</b> law: it has a hard floor at zero speed but an unbounded tail, so it is fundamentally asymmetric.`
+  },
+  scholar:{
+   legend:`Hard-disc gas at fixed volume with elastic two-body collisions; speeds are initialised and rescaled as \\(v \\propto \\sqrt{T}\\). The histogram is the instantaneous empirical speed density, and [[press]] is accumulated from measured wall impulse per unit time.`,
+   try:`Verify the scaling \\(v_{\\text{rms}} \\propto \\sqrt{T}\\) across [[temp]] = 300, 600, 1200, then hold \\(T\\) fixed and vary [[num]] to confirm \\(P \\propto N\\). Watch how quickly the histogram re-equilibrates into its envelope after a sudden temperature jump.`,
+   notice:`<b>The distribution re-forms within a few collision times, no matter how you disturb it.</b> In 2D the equilibrium law is \\(f(v) \\propto v\\,e^{-mv^2/2k_BT}\\) (the 3D Maxwell–Boltzmann carries \\(v^2\\)), and equipartition gives \\(\\langle E\\rangle = \\tfrac{d}{2}k_BT\\) per particle. The remarkable part is the speed of the approach: <b>Boltzmann's H-theorem</b> shows that molecular chaos drives any initial distribution monotonically toward this one. The microscopic dynamics are perfectly time-reversible, yet the macroscopic relaxation is not — the origin of the arrow of time.`
+  }
+ },
+
+ particles:{
+  junior:{
+   legend:`This is the view from inside a particle detector — the blue rings are its layers. Press [[collide]] and two protons race in from the sides and smash in the middle. The lettered sparks flying out are the <b>new particles</b> created by the crash; the pink <b>H</b> is a Higgs boson.`,
+   try:`Set [[energy]] to its lowest, 0.5, and press [[collide]] a few times. Count roughly how many sparks fly out. Now set [[energy]] to 14 and collide again.`,
+   notice:`<b>More energy makes more particles — the crash creates matter that wasn't there before.</b> The protons don't shatter into smaller pieces like a dropped plate; their energy of motion turns into brand-new particles, because energy and mass are the same thing (\\(E = mc^2\\)). That is why physicists build ever bigger accelerators: to make heavier particles, you need more energy, and nothing else will do.`
+  },
+  student:{
+   legend:`A schematic detector cross-section: concentric rings are tracking layers, and each labelled dot is a decay product — quarks (u, d, s), gluons (g), electrons, photons, neutrinos, and the Higgs (H). [[count]] tallies collisions; [[energy]] is the beam energy per proton.`,
+   try:`Compare the number and variety of products at [[energy]] = 0.5 against 14. Watch specifically for how often the pink <b>H</b> appears at each setting.`,
+   notice:`<b>Product multiplicity climbs with beam energy, and heavy particles only appear once there is energy to pay for them.</b> A collision converts kinetic energy into rest mass via \\(E = mc^2\\), so producing a Higgs (125 GeV/c²) demands a collision energy well above that threshold. This is why the LHC runs at 13–14 TeV rather than something cheaper: the Higgs was simply inaccessible at lower energies, and the particle was found in 2012 only once the machine could reach it.`
+  },
+  scholar:{
+   legend:`Schematic of a hadron-collider event: concentric tracking layers, with final-state products drawn from the Standard Model spectrum. Multiplicity scales with \\(\\sqrt{s}\\) in this model; the H marker denotes a Higgs candidate.`,
+   try:`Step [[energy]] across its range and note how multiplicity grows. Consider what fraction of events would need to contain an H for a discovery claim, given that the real Higgs production cross-section is \\(\\sim\\!10^{-10}\\) of the total inelastic rate.`,
+   notice:`<b>The rate here is wildly generous — a real Higgs appears in roughly one collision in \\(10^{10}\\).</b> Discovery is therefore a statistics problem, not a detection problem: the LHC produces ~600 million collisions per second and physicists hunt a handful of events against an overwhelming QCD background, demanding \\(5\\sigma\\) (a \\(3\\times10^{-7}\\) false-alarm probability) before claiming a signal. The Standard Model's 17 fields account for every particle seen here, and it predicts the electron's magnetic moment to 12 significant figures — yet it contains no dark matter candidate and no gravity at all.`
+  }
+ },
+
+ fractal:{
+  junior:{
+   legend:`This is the <b>Mandelbrot set</b>. The dark middle is the set itself; the glowing colours around its edge show how quickly nearby points escape to infinity. Every click zooms you 2.2× deeper into the picture.`,
+   try:`Click on the wiggliest part of the edge. Then click again. And again — five or six times, watching [[zoom]] climb. Do you ever run out of detail?`,
+   notice:`<b>No — the detail never ends. Zoom as far as you like and new shapes keep unfolding forever.</b> Even stranger, you keep meeting tiny copies of the whole shape buried deep inside its own edge. All of this comes from one absurdly short rule, applied over and over: square the number, add the starting point, repeat. Endless complexity from almost no instructions — that is what a <b>fractal</b> is.`
+  },
+  student:{
+   legend:`For each pixel \\(c\\), the sequence \\(z_{n+1} = z_n^2 + c\\) is iterated from \\(z_0=0\\). Dark = the sequence stays bounded (\\(c\\) is in the set); colour = how many steps it took to escape, so the bands are contours of escape time. [[detail]] caps the iteration count and [[zoom]] tracks magnification.`,
+   try:`Zoom several times into the boundary, then drag [[detail]] from 20 up to 240 and back. Watch what happens to the black region at high magnification.`,
+   notice:`<b>Raising [[detail]] makes black areas bloom into filigree — the "solid" region was an artefact of stopping too early.</b> Points near the boundary escape only after very many iterations, so a low cap misclassifies them as inside. The boundary itself has <b>Hausdorff dimension 2</b> (proved by Shishikura, 1998) despite having zero area: it is so crinkled it effectively fills the plane. The set is also connected — every one of those isolated-looking mini-Mandelbrots is joined to the main body by filaments too thin to render.`
+  },
+  scholar:{
+   legend:`Escape-time rendering of \\(M = \\{c \\in \\mathbb{C} : (z_{n+1}=z_n^2+c,\\, z_0=0) \\not\\to \\infty\\}\\), with smooth (continuous) iteration colouring \\(\\nu = n + 1 - \\log_2\\log_2|z_n|\\) to remove banding. [[detail]] sets the escape-time cutoff.`,
+   try:`Zoom onto the boundary of a mini-Mandelbrot and vary [[detail]]. Estimate how the required iteration count grows with magnification, and consider what that implies about deciding membership in \\(M\\) algorithmically.`,
+   notice:`<b>The iteration count needed grows without bound as you approach the boundary — membership is not decidable in finite time by this method.</b> \\(M\\) is compact and connected (Douady–Hubbard), yet its boundary has Hausdorff dimension exactly 2 while carrying zero Lebesgue measure. Whether \\(M\\) is <em>locally connected</em> — the MLC conjecture — remains open, and it would imply a complete combinatorial classification of the set. Under the Blum–Shub–Smale model of real computation \\(M\\) is not decidable, making this picture a genuinely non-computable object rendered by approximation.`
+  }
+ },
+
+ calculus:{
+  junior:{
+   legend:`The curve is a function. The orange dashed line touches it at one point and shows how steeply it is climbing there — that is [[deriv]]. The shaded rectangles under the curve add up to the area, shown as [[integ]]; blue counts as positive, red as negative.`,
+   try:`Set [[rects]] to 2 and note [[integ]]. Now drag it up to 40 and watch both the picture and the number.`,
+   notice:`<b>The rectangles snap tight against the curve and [[integ]] stops wobbling — it settles on the true area.</b> A curved shape has no easy area formula, so the trick is to cover it with rectangles you <em>can</em> measure, then use more and thinner ones until the error vanishes. Now slide [[x]] and watch [[deriv]]: where the curve climbs steeply the slope is large, and at the top of a bump it passes through zero.`
+  },
+  student:{
+   legend:`\\(f(x) = \\sin x + 0.4x\\). The orange dashed line is the tangent at [[x]], whose gradient is [[deriv]]. The shaded blocks are a midpoint <b>Riemann sum</b> from \\(-3\\) to [[x]], reported as [[integ]]; signed, so blocks below the axis subtract.`,
+   try:`Fix [[x]] at 0 and step [[rects]] through 2, 8 and 40, recording [[integ]] each time. Then hold [[rects]] at 40 and sweep [[x]], comparing [[deriv]] with how fast [[integ]] is changing.`,
+   notice:`<b>[[integ]] converges to −3.790, and its rate of change as you slide [[x]] is exactly [[deriv]].</b> That second observation is the <b>fundamental theorem of calculus</b>: if \\(A(x) = \\int_{-3}^{x} f(t)\\,dt\\) then \\(A'(x) = f(x)\\) — differentiation and integration undo one another. The midpoint rule converges as \\(O(h^2)\\), which is why the jump from 2 to 8 rectangles buys far more accuracy than 8 to 40.`
+  },
+  scholar:{
+   legend:`\\(f(x)=\\sin x + 0.4x\\) with tangent of slope \\(f'(x) = \\cos x + 0.4\\) at [[x]]. Blocks show the midpoint quadrature \\(\\sum f(x_i + h/2)\\,h\\) approximating \\(\\int_{-3}^{x} f\\), signed.`,
+   try:`Estimate the convergence order empirically: record [[integ]] at [[rects]] = 5, 10, 20 for fixed [[x]], and check whether the error quarters each time you double the count. Then verify \\(\\frac{d}{dx}\\!\\int_{-3}^{x} f = f(x)\\) at a point where \\(f\\) changes sign.`,
+   notice:`<b>The error falls by a factor of four per doubling — second-order convergence, \\(O(h^2)\\).</b> The midpoint rule's error term is \\(\\frac{(b-a)h^2}{24}f''(\\xi)\\), so it is exact for linear integrands and beats the trapezoid rule by a factor of two despite using one evaluation per interval. The tangent-versus-area link is the first fundamental theorem, \\(\\frac{d}{dx}\\int_a^x f = f(x)\\) for continuous \\(f\\); its power is that it converts an infinite limiting process into antidifferentiation, which is why calculus became computable at all.`
+  }
+ },
+
+ graphs:{
+  junior:{
+   legend:`Each dot is a <b>person</b> and each line a connection between two of them. A few dots have far more lines than the rest — those are the <b>hubs</b>, counted in [[hubcount]]. Pressing [[spread]] starts a signal at one hub and lets it travel along the lines.`,
+   try:`Set [[hubs]] to 1, press [[reset]], then [[spread]] and note [[steps]]. Now set [[hubs]] to 6, press [[reset]] and spread again.`,
+   notice:`<b>With more hub connections the signal reaches everyone in far fewer steps — often just three or four.</b> The network isn't evenly woven: most dots have a couple of links while a handful have dozens, and those few hubs act as shortcuts across the whole population. It's why any two people on Earth are about six handshakes apart, and why a rumour — or a virus — that reaches a well-connected person spreads so alarmingly fast.`
+  },
+  student:{
+   legend:`A <b>scale-free network</b> grown by preferential attachment: each new node prefers to link to nodes that are already popular. [[hubs]] sets how many links each newcomer makes, [[hubcount]] counts the top 15% by degree, and [[spread]] runs an epidemic-style cascade seeded at a hub. [[reached]] and [[steps]] track the cascade.`,
+   try:`Compare [[steps]] to reach everyone at [[hubs]] = 1 versus 6, keeping [[nodes]] fixed. Then raise [[nodes]] from 10 to 40 and see how much [[steps]] grows in response.`,
+   notice:`<b>Quadrupling the number of nodes barely changes the number of steps.</b> That is the <b>small-world</b> property: path length grows like \\(\\log N\\), not \\(N\\). Preferential attachment produces a degree distribution \\(P(k) \\sim k^{-\\gamma}\\) with \\(\\gamma \\approx 3\\) — a power law with no typical scale, so hubs of enormous degree are not the freak events a bell curve would predict. Such networks resist random failure superbly yet collapse if their hubs are removed deliberately.`
+  },
+  scholar:{
+   legend:`Barabási–Albert growth: nodes arrive sequentially and attach with probability proportional to existing degree, \\(\\Pi(k_i) = k_i/\\sum_j k_j\\), giving \\(P(k)\\sim k^{-3}\\). [[spread]] seeds an SIR-type cascade at a high-degree vertex; [[reached]] and [[steps]] report its progress.`,
+   try:`Measure how [[steps]] scales as [[nodes]] goes 10 → 20 → 40 at fixed [[hubs]], and compare against \\(\\log N\\) and \\(\\sqrt{N}\\). Then consider what removing the top few hubs would do to [[reached]].`,
+   notice:`<b>Path length tracks \\(\\log N\\); in pure scale-free graphs it is even shorter, \\(\\ell \\sim \\log\\log N\\) — "ultrasmall".</b> The deep consequence is epidemiological: for \\(\\gamma \\le 3\\) the second moment \\(\\langle k^2\\rangle\\) diverges as \\(N\\to\\infty\\), and since the epidemic threshold scales as \\(\\lambda_c = \\langle k\\rangle/\\langle k^2\\rangle\\), it vanishes. <b>A scale-free network has no epidemic threshold at all</b>: any transmissible infection, however weak, can persist. This is precisely why targeted hub immunisation vastly outperforms random vaccination.`
+  }
+ },
+
+ life:{
+  junior:{
+   legend:`Every square is a <b>cell</b> that is either alive or dead. Each generation, all cells look at their eight neighbours and follow the same tiny rule: too few neighbours and a cell dies of loneliness, too many and it dies of crowding, exactly right and a new one is born. [[gen]] counts the turns.`,
+   try:`Press [[random]] to scatter live cells everywhere, then watch [[alive]] for a minute without touching anything.`,
+   notice:`<b>The chaos settles down by itself into neat, repeating shapes — blocks that sit still, small patterns that blink forever, and little gliders that walk across the screen.</b> Nobody programmed a block or a glider; they simply fall out of the one rule about neighbours. Press [[clear]] and then [[glider]] to watch a single one march away on its own. Order emerging from very simple rules with nobody in charge is called <b>emergence</b>, and it's how ant colonies, flocks and your own cells organise themselves.`
+  },
+  student:{
+   legend:`Conway's <b>Game of Life</b> on a wrapping (toroidal) grid. The rule is B3/S23: a dead cell with exactly 3 live neighbours is born, a live cell survives on 2 or 3, everything else dies. [[gen]] is the step count, [[alive]] the live-cell population. Click any square to toggle it.`,
+   try:`Press [[random]] and track [[alive]] over a couple of hundred generations. Does it settle, and roughly what fraction of the initial population survives? Then [[clear]] and place a single [[glider]].`,
+   notice:`<b>A random soup collapses to a low, near-constant population of still lifes and oscillators, typically only a few per cent of the grid.</b> Yet the same rule supports a glider that travels one cell diagonally every four generations. Life is <b>Turing-complete</b>: gliders can encode signals, and collisions between them build logic gates, so any computation whatsoever can in principle be run inside this grid. Two states and one neighbour rule are enough for universal computation.`
+  },
+  scholar:{
+   legend:`Two-state, outer-totalistic cellular automaton B3/S23 on \\(\\mathbb{Z}^2\\) with periodic boundary conditions and a Moore neighbourhood. [[gen]] indexes the parallel update; [[alive]] is the population.`,
+   try:`Compare the settling behaviour and final density from repeated [[random]] seeds. Consider what you would need to observe in order to predict, in advance, whether a given configuration ever dies out.`,
+   notice:`<b>You could not predict it — the question is formally undecidable.</b> Life is Turing-complete (Berlekamp–Conway–Guy; explicit universal constructors followed), so asking whether an arbitrary configuration eventually stabilises is equivalent to the halting problem. Random soups reliably converge to a density near 0.029 with an ash of still lifes and blinkers, yet no shortcut exists for the general case: the automaton is <em>computationally irreducible</em>, and simulating it step by step is the fastest way to know its future. A rule stated in one sentence contains behaviour no theory can compress.`
+  }
+ },
+
+ dna:{
+  junior:{
+   legend:`The twisted ladder is a <b>DNA molecule</b>. Its rungs are pairs of letters — A always joins T, and C always joins G. The fork travelling down the middle is unzipping it, and fresh letters snap onto each half to build two complete copies. Purple marks a copying <b>mistake</b>.`,
+   try:`Press [[reset]] and watch a full copy run through, keeping an eye on the letters appearing on the new strands. Can you predict each new letter before it lands?`,
+   notice:`<b>Yes — every new letter is forced. A can only pair with T, C only with G, so each half of the ladder holds complete instructions for rebuilding the other.</b> That is the whole secret of inheritance: split the molecule and you automatically have two copies. Watch [[errors]] though — occasionally the wrong letter slips in. Those rare mistakes are <b>mutations</b>, and without them evolution would have nothing to work with.`
+  },
+  student:{
+   legend:`A replication fork unzipping a double helix. Bases pair by complementarity (A–T, C–G) so each parental strand templates a new one — <b>semi-conservative</b> replication. [[speed]] sets the fork rate, [[pairs]] counts bases copied and [[errors]] counts misincorporations, highlighted in purple.`,
+   try:`Run a full replication and compare [[errors]] against [[pairs]] to estimate this simulation's error rate. Then change [[speed]] and repeat — does going faster make it less accurate here?`,
+   notice:`<b>The error rate stays around 4% no matter how fast the fork runs — and 4% is roughly a hundred million times worse than reality.</b> The exaggeration is deliberate, so mistakes are visible at all. Real DNA polymerase misincorporates about 1 base in \\(10^4\\)–\\(10^5\\), then proofreads with a 3′→5′ exonuclease and hands leftovers to mismatch repair, giving a final rate near 1 in \\(10^9\\). Copy 3.2 billion bases at 4% and you would destroy the genome in a single division; the fidelity, not the copying, is the hard engineering problem.`
+  },
+  scholar:{
+   legend:`Schematic semi-conservative replication at a single fork. Watson–Crick pairing (A–T two hydrogen bonds, G–C three) makes each strand a template; [[pairs]] tracks incorporation and [[errors]] flags mismatches. Leading/lagging asymmetry and Okazaki fragments are not depicted.`,
+   try:`Estimate the per-base error rate from [[errors]]/[[pairs]], then work out the expected number of mutations per human genome duplication at that rate, and compare with the observed ~1–2 per division.`,
+   notice:`<b>At this simulation's rate you would accumulate ~10⁸ errors per genome copy; the real figure is one or two.</b> The gap is closed multiplicatively: base-selection fidelity (~10⁻⁵), 3′→5′ proofreading (~10²-fold), and mismatch repair (~10²–10³-fold) compose to ~10⁻⁹–10⁻¹⁰ per base. Yet the rate is not minimised — it is <em>tuned</em>. Zero mutation means zero adaptation, and lineages with disabled mismatch repair (MMR-deficient tumours, hypermutator bacteria) show that the optimum sits at a nonzero value set by the balance between deleterious load and adaptive supply.`
+  }
+ },
+
+ evolution:{
+  junior:{
+   legend:`Each dot is an <b>animal</b>, and its colour is the trait it inherited. The background is the environment it must blend into, and it slowly drifts to a different colour over time. Well-camouflaged animals are drawn bigger — they are the ones most likely to have babies. [[fit]] shows how well the group matches its surroundings.`,
+   try:`Drag [[mut]] all the way down to 0 and let it run for a hundred generations. Watch [[div]], then keep watching [[fit]] as the background colour keeps drifting.`,
+   notice:`<b>With no mutation the population becomes all one colour — [[div]] falls to nearly zero — and then, as the background drifts away, [[fit]] collapses and cannot recover.</b> Selection alone can only pick from variety that already exists; once it's used up, there is nothing left to choose from. That is why mutation matters: today's random mistake is tomorrow's only chance of surviving a changed world. Turn [[mut]] back up and watch the population claw its way back.`
+  },
+  student:{
+   legend:`60 individuals carry a single continuous trait (hue). Fitness falls with distance from the environment's optimum, which drifts over time. Reproduction is fitness-weighted sampling scaled by [[sel]], with offspring perturbed by [[mut]]. [[div]] is the standard deviation of the trait across the population.`,
+   try:`Set [[mut]] to 0 and run: watch [[div]] collapse and then [[fit]] decay as the optimum drifts. Then set [[sel]] to 0 with [[mut]] high, and see whether [[fit]] ever climbs.`,
+   notice:`<b>Neither knob alone works: without mutation the population runs out of variation, without selection it never concentrates on the optimum.</b> Evolution needs both — a source of variation and a filter. This is the substance of <b>Fisher's fundamental theorem</b>: the rate of increase in mean fitness equals the additive genetic variance in fitness, so a population with zero variance cannot adapt at any speed. Note also that high [[sel]] is not simply better: it strips variation faster, leaving the population brittle when the environment moves.`
+  },
+  scholar:{
+   legend:`Fitness-proportionate reproduction on a one-dimensional continuous trait with a drifting optimum. [[sel]] scales selection intensity, [[mut]] the per-generation mutational variance, and [[div]] reports the population's trait standard deviation — a proxy for additive genetic variance.`,
+   try:`Explore the \\(([[sel]], [[mut]])\\) plane and find where sustained [[fit]] is maximised against the drifting optimum. Check whether the best setting is the highest available selection, and identify where the population goes extinct in fitness terms.`,
+   notice:`<b>The optimum is intermediate in both parameters — maximal selection is actively harmful.</b> This is the classic mutation–selection balance: equilibrium variance scales as \\(\\sigma^2 \\approx V_m/s\\), so hard selection erodes the very variance adaptation requires. With a moving optimum the population lags by \\(\\propto k/s\\) for drift rate \\(k\\), and Fisher's theorem bounds the achievable tracking rate by the additive variance. Too much mutation, meanwhile, crosses <b>Eigen's error threshold</b>, where selection can no longer maintain information against mutational load and the population melts away from the peak entirely.`
+  }
+ },
+
+ ecosystem:{
+  junior:{
+   legend:`Green dots are <b>plants</b>, orange ones are <b>rabbits</b> that eat them, and red ones are <b>foxes</b> that eat the rabbits. Everything needs food to stay alive and to breed. The three counters track how many of each are alive right now.`,
+   try:`Watch the three numbers for a while — they never sit still. Now drag [[pred]] up to 10 and keep watching [[herb]] and then [[preds]].`,
+   notice:`<b>Super-efficient foxes eat nearly all the rabbits — and then the foxes starve too.</b> The predators destroy themselves by being too good at hunting. Notice also that the numbers rise and fall in <em>turns</em>: lots of rabbits, then lots of foxes, then few rabbits, then few foxes, over and over. Nothing coordinates this — it falls out of who eats whom. Pull one thread in a food web and the whole thing moves.`
+  },
+  student:{
+   legend:`An agent-based food chain: plants regrow at a rate set by [[growth]], herbivores forage and reproduce when their energy is high enough, predators hunt herbivores with success scaled by [[pred]]. Every agent carries an energy budget and starves without food.`,
+   try:`Leave the defaults and watch the three counters for a few minutes, noting which peaks first. Then push [[pred]] to 10 and watch what happens to [[herb]] and [[preds]] in turn.`,
+   notice:`<b>The populations oscillate with the predators peaking <em>after</em> the prey, and over-efficient predators trigger a crash that takes them down with their food.</b> These are <b>Lotka–Volterra</b> dynamics: prey grow, predators follow, prey collapse, predators follow again — the lag is what makes it cycle rather than settle. The lesson generalises badly for conservation: a predator that maximises short-term capture rate can drive its own extinction, which is exactly why real predator–prey pairs persist only with refuges, and why removing a top predator can cascade down an entire web.`
+  },
+  scholar:{
+   legend:`Individual-based tri-trophic system with explicit energy budgets. Resource input is set by [[growth]], the functional response by [[pred]]; demography emerges from local encounters rather than from a mean-field equation.`,
+   try:`Map the outcome across the \\(([[growth]], [[pred]])\\) plane. Look specifically for whether <em>raising</em> [[growth]] ever destabilises the system rather than supporting more life, and note where cycles turn into extinctions.`,
+   notice:`<b>Enriching the system can destabilise it: more plant growth drives wilder oscillations whose troughs hit zero, wiping out the top level.</b> This is the <b>paradox of enrichment</b> (Rosenzweig, 1971) — adding resources raises the equilibrium but destabilises it, since the limit cycle's amplitude grows until a stochastic trough causes extinction. Being individual-based, the model also shows what mean-field Lotka–Volterra cannot: demographic stochasticity at small population sizes means extinction is a <em>probabilistic</em> event long before the deterministic equilibrium reaches zero.`
+  }
+ },
+
+ sorting:{
+  junior:{
+   legend:`Each bar is a number waiting to be put in order — short bars are small, tall bars are big. Pressing a sort button makes the computer rearrange them step by step. [[comps]] counts how many times it compared two bars, and [[swaps]] how many times it moved them.`,
+   try:`Drag [[size]] to 80. Press [[bubble]] and let it finish — note [[comps]]. Now press [[merge]] on the same size and compare.`,
+   notice:`<b>Bubble Sort needs about 3,160 comparisons; Merge Sort needs about 400 — nearly eight times fewer, for exactly the same result.</b> Bubble Sort compares neighbours over and over, so the work grows with the square of the list. Merge Sort splits the pile in half, sorts each half, then merges — and halving repeatedly is enormously cheaper. The strategy you choose matters more than the speed of your computer: on a million items this gap becomes days versus seconds.`
+  },
+  student:{
+   legend:`A live comparison-sort visualiser. Bar height is the value; [[comps]] and [[swaps]] are counted as the algorithm runs. [[algo]] names the running method and its asymptotic class.`,
+   try:`Run [[bubble]] at [[size]] = 20, 40 and 80, noting [[comps]] each time. Does the count double when the size doubles, or do something more dramatic? Then repeat with [[merge]].`,
+   notice:`<b>Bubble's count roughly quadruples when you double the size; Merge's only slightly more than doubles.</b> That is the difference between \\(\\Theta(n^2)\\) — exactly \\(n(n-1)/2 = 3160\\) comparisons at \\(n=80\\) — and \\(\\Theta(n\\log n)\\), about \\(n\\log_2 n \\approx 506\\). The gap widens without limit: at a million elements it is \\(5\\times10^{11}\\) against \\(2\\times10^{7}\\), roughly 25,000-fold. This is why algorithmic complexity, not clock speed, sets what is computationally possible.`
+  },
+  scholar:{
+   legend:`Instrumented comparison sorts over a uniform random permutation. [[comps]] is the exact comparison count, [[swaps]] the write count — distinct cost measures that different hardware weights differently.`,
+   try:`Fit the growth of [[comps]] against [[size]] for both algorithms. Then consider: could any comparison-based algorithm beat Merge Sort's growth rate, and what would that require?`,
+   notice:`<b>No comparison sort can do better — \\(\\Omega(n\\log n)\\) is a proven lower bound, and Merge Sort attains it.</b> The argument is information-theoretic: a comparison yields one bit, there are \\(n!\\) possible orderings, so any decision tree needs depth \\(\\ge \\log_2(n!) = \\Theta(n\\log n)\\) by Stirling. Sorting faster therefore demands abandoning comparisons entirely — radix and counting sorts achieve \\(O(n)\\) by exploiting the structure of keys. Note too that [[comps]] and [[swaps]] diverge sharply: on modern hardware, cache behaviour and branch prediction often matter more than either count.`
+  }
+ },
+
+ ml:{
+  junior:{
+   legend:`The four clusters of dots are two kinds of thing the computer must learn to tell apart — look carefully, the same kind sits in <em>opposite</em> corners. The coloured background is the computer's current guess for every point on the map. On the right is its little brain: inputs, [[hid]] in the middle, one answer. [[loss]] shows how wrong it still is.`,
+   try:`Try to separate the two kinds with one straight line — you can't. Now set [[hid]] to 2, press [[reset]] and watch [[acc]]. Then set [[hid]] to 10, press [[reset]] and watch again.`,
+   notice:`<b>One straight line can never work here, but with enough hidden units the computer bends the boundary into the right shape and [[acc]] climbs towards 100%.</b> Nobody told it what shape to draw. It started with random guesses and simply nudged them, over and over, in whatever direction made [[loss]] smaller. That patient nudging — millions of tiny corrections — is all "learning" means for a machine.`
+  },
+  student:{
+   legend:`A 2-[[hid]]-1 feed-forward network with sigmoid activations, trained by backpropagation on an <b>XOR-like</b> dataset: the two classes occupy diagonally opposite corners. The heatmap is the current decision surface, [[loss]] is RMS error and [[acc]] the classification rate.`,
+   try:`Set [[hid]] to 2 and press [[reset]] a few times, noting where [[acc]] plateaus each run. Then set [[hid]] to 10 and repeat. Does the same architecture always reach the same answer?`,
+   notice:`<b>With 2 hidden units the outcome is inconsistent — some runs solve it, others stall near 75% — while 10 units succeeds almost every time.</b> XOR is the canonical <em>non-linearly-separable</em> problem: no single hyperplane divides these classes, which is exactly the limitation Minsky and Papert used in 1969 to show perceptrons were fundamentally restricted, freezing the field for over a decade. Two hidden units are theoretically sufficient but leave almost no room for error, so gradient descent frequently lands in a bad local minimum. The extra units don't add power so much as add <em>routes</em> to the solution.`
+  },
+  scholar:{
+   legend:`Two-layer MLP, \\(2 \\to H \\to 1\\), sigmoid throughout, trained by full-batch gradient descent with learning rate \\(\\propto\\) [[lr]]. The dataset is four Gaussian clusters in XOR configuration; the heatmap renders \\(\\sigma(W_2^\\top\\sigma(W_1x+b_1)+b_2)\\).`,
+   try:`Hold [[hid]] at 2 and re-[[reset]] repeatedly, recording the distribution of final [[acc]]. Then increase [[hid]] and observe how that distribution changes. Consider what this implies about the loss landscape rather than about representational capacity.`,
+   notice:`<b>Capacity is not the binding constraint — optimisation is. Two hidden units can represent XOR exactly, yet frequently fail to find it.</b> The failures are bad local minima and saddle points in a non-convex landscape. Widening the network doesn't increase expressivity here; it makes the landscape more benign, and in the overparameterised limit almost all local minima approach the global value. This is why modern practice favours networks far larger than the task demands, and why they nonetheless generalise — an apparent contradiction of classical bias–variance reasoning that motivated the double-descent literature.`
+  }
+ },
+
+ crypto:{
+  junior:{
+   legend:`Alice on the left and Bob on the right want a shared secret number. The eye at the top is an <b>eavesdropper</b> who sees absolutely everything they send. Watch the numbers travel across, and keep an eye on [[key]] at the end.`,
+   try:`Press [[run]] and follow every number that crosses the middle. Then ask yourself: was the final [[key]] ever one of them?`,
+   notice:`<b>No — the shared key never crossed the wire, yet Alice and Bob both ended up with the same number.</b> Each kept one secret number to themselves and sent only a scrambled mixture. Because of how the mixing works, combining your own secret with the other person's mixture gives the same answer both ways round. The eavesdropper saw every message and still can't reproduce it — which is roughly what protects your card details every time you buy something online.`
+  },
+  student:{
+   legend:`<b>Diffie–Hellman key exchange</b> with public parameters \\(p=23\\), \\(g=5\\). Alice and Bob each choose a private exponent, publish \\(g^a \\bmod p\\) and \\(g^b \\bmod p\\), then raise the other's value to their own exponent. [[step]] walks the protocol; [[key]] is the agreed secret.`,
+   try:`Press [[run]] and write down every public value that crosses. Using only those and the public \\(p\\) and \\(g\\), try to work out either private exponent — then check your answer against [[key]].`,
+   notice:`<b>Both parties compute \\((g^a)^b = (g^b)^a = g^{ab} \\bmod p\\), a value that was never transmitted.</b> Recovering \\(a\\) from \\(g^a \\bmod p\\) is the <b>discrete logarithm problem</b>. With \\(p=23\\) you can brute-force it in 23 guesses; with a 2048-bit prime the same search is computationally hopeless. The asymmetry is everything: exponentiation is cheap, inverting it is not. Note this establishes a shared secret between strangers but does <em>not</em> authenticate them — plain DH is wide open to a man-in-the-middle.`
+  },
+  scholar:{
+   legend:`DH over \\(\\mathbb{Z}_p^*\\) with \\(p=23\\), \\(g=5\\) a generator. Security rests on the <b>computational Diffie–Hellman</b> assumption; the passive adversary observes \\((g, p, g^a, g^b)\\) and must produce \\(g^{ab}\\).`,
+   try:`Note that \\(p=23\\) makes the discrete log trivially breakable by exhaustive search. Estimate the group size needed to resist index calculus, and contrast that with the key size an elliptic-curve group would require for equivalent security.`,
+   notice:`<b>Finite-field DH needs ~2048–3072 bits for ~112–128-bit security; an elliptic curve needs only ~256.</b> The gap exists because \\(\\mathbb{Z}_p^*\\) admits sub-exponential index calculus, \\(L_p[1/3, 1.923]\\), while general elliptic curves admit only generic \\(O(\\sqrt{n})\\) attacks. Security also demands a prime-order subgroup — Logjam (2015) showed that shared 512-bit primes plus export-grade downgrade broke real TLS at scale. All of it falls to a sufficiently large quantum computer via Shor's algorithm, which is why post-quantum key agreement has moved to lattice constructions such as ML-KEM.`
+  }
+ },
+
+ complexity:{
+  junior:{
+   legend:`Each curve shows how much <b>work</b> a different kind of algorithm needs as the problem gets bigger. The flat ones barely notice; the steep one rockets off the top of the chart. [[ops]] is the work needed for the current size, and [[cls]] names the method you have selected.`,
+   try:`Set [[algo]] to 5 — the steepest kind. Now drag [[n]] slowly from 2 up to 22, watching [[ops]] the whole way.`,
+   notice:`<b>The work explodes from 4 to over four million — for a problem that only grew from 2 items to 22.</b> Each extra item <em>doubles</em> the work, so it doesn't matter how fast your computer is: add thirty more items and no machine that will ever exist could finish. Some problems aren't hard because we haven't found the clever trick yet; they're hard because of how the work grows. Slide [[algo]] back to 1 and watch the same problem become trivial.`
+  },
+  student:{
+   legend:`Growth curves for five complexity classes, from \\(O(\\log n)\\) to \\(O(2^n)\\), plotted against input size. [[n]] moves the evaluation point, [[algo]] selects a class, and [[ops]] reports the operation count at the current \\(n\\).`,
+   try:`At [[n]] = 22, step [[algo]] from 1 to 5 and record [[ops]] each time. Then work out how much longer \\(O(2^n)\\) would take at \\(n = 60\\), assuming a billion operations per second.`,
+   notice:`<b>At \\(n=22\\) the classes span 5 operations to 4,194,304 — and at \\(n=60\\), \\(2^n\\) is \\(1.15\\times10^{18}\\) operations, about 36 years at a billion per second.</b> This is why complexity classes dominate practical computing: hardware gains multiply your speed by a constant, but an exponential swallows any constant whole. Doubling your CPU speed buys exactly <em>one</em> extra element of input on an \\(O(2^n)\\) algorithm. Note the flip side — for small \\(n\\), an exponential algorithm with a tiny constant can genuinely beat a "better" one.`
+  },
+  scholar:{
+   legend:`Asymptotic growth of \\(\\log n\\), \\(n\\), \\(n\\log n\\), \\(n^2\\) and \\(2^n\\). [[ops]] evaluates the selected class at [[n]]; the crossings illustrate that asymptotic dominance says nothing about behaviour at small \\(n\\).`,
+   try:`Identify where the \\(n^2\\) and \\(2^n\\) curves intersect, and note which is cheaper below that point. Then consider: does an \\(O(n^{100})\\) algorithm belong in the same practical category as \\(O(n\\log n)\\), given both are polynomial?`,
+   notice:`<b>\\(n^2\\) beats \\(2^n\\) only up to \\(n \\approx 4\\); yet \\(O(n^{100})\\) is "efficient" by the formal definition and utterly useless in practice.</b> The polynomial/exponential line is the <b>Cobham–Edmonds thesis</b> — a robust theoretical boundary (closed under composition, machine-model independent) that is nonetheless a poor proxy for feasibility. Whether \\(\\text{P} = \\text{NP}\\) asks if verification and discovery are equally hard, and remains open. In practice hard instances are often rare: SAT solvers routinely dispatch industrial problems with millions of variables, because worst-case complexity describes an adversary, not the inputs you actually meet.`
+  }
+ },
+
+ climate:{
+  junior:{
+   legend:`The yellow arrows are heat arriving from the Sun, and the ones rising from the ground are heat trying to escape back to space. The hazy band is the <b>greenhouse gas</b> in the air: the more there is, the more escaping heat gets bounced back down. The sky and ground redden as the planet warms.`,
+   try:`Press [[pre]] to go back to the year 1750 and note [[dt]]. Now press [[now]] for today's air. Then drag [[co2]] to 560 — double the 1750 amount.`,
+   notice:`<b>Doubling CO₂ from 280 to 560 warms the planet by about 3°C — and today's 420 has already committed us to roughly 1.7°C.</b> Three degrees sounds small next to the weather changing 10° between morning and afternoon. But this is the <em>whole planet, every day, permanently</em>: the difference between now and the last ice age, when Canada lay under a kilometre of ice, was only about 5°C. Small global numbers move very big things.`
+  },
+  student:{
+   legend:`A radiation-balance cartoon: incoming solar shortwave, outgoing infrared, and an absorbing greenhouse layer whose opacity scales with [[co2]]. [[forcing]] is the radiative forcing in W/m² and [[dt]] the resulting equilibrium warming.`,
+   try:`Record [[forcing]] at [[co2]] = 280, 560 and then 800. Is the jump from 280→560 the same size as 560→800? Work out what [[co2]] would be needed to double the forcing you get at 560.`,
+   notice:`<b>Each <em>doubling</em> adds the same 3.7 W/m² — 280→560 and 400→800 give identical increments.</b> The forcing is logarithmic, \\(\\Delta F = 5.35\\ln(C/C_0)\\), because the strongest absorption bands are already saturated and only the band edges keep absorbing. This cuts both ways: the damage per extra ppm falls, but so does the benefit of each ppm you avoid, and the relationship never flattens to zero. Multiplying by the sensitivity \\(\\lambda \\approx 0.8\\ \\text{K/(W/m²)}\\) gives ~3°C per doubling — the number climate policy has revolved around for forty years.`
+  },
+  scholar:{
+   legend:`Zero-dimensional energy-balance representation. [[forcing]] implements the Myhre et al. (1998) approximation \\(\\Delta F = 5.35\\ln(C/C_0)\\) with \\(C_0 = 280\\) ppm; [[dt]] applies a fixed sensitivity parameter \\(\\lambda = 0.8\\) K/(W/m²), i.e. equilibrium rather than transient response.`,
+   try:`Confirm the logarithmic form by checking that equal ratios of [[co2]] give equal increments of [[forcing]]. Then consider what this model necessarily omits, and in which direction each omission biases [[dt]].`,
+   notice:`<b>The model gives \\(\\Delta T \\approx 3\\)°C per doubling — but it is equilibrium-only, and that hides almost all of the real uncertainty.</b> \\(\\lambda\\) is not a constant: it aggregates the Planck response with water-vapour, lapse-rate, albedo and cloud feedbacks, and clouds alone keep the IPCC likely range at 2.5–4°C. Ocean thermal inertia means the <em>transient</em> response is only 50–70% of equilibrium, so observed warming lags committed warming. And the framework is linear in forcing, so it cannot represent tipping elements — ice-sheet collapse, AMOC shutdown, permafrost carbon — where the response is hysteretic and the notion of a single \\(\\lambda\\) breaks down entirely.`
+  }
+ },
+
+ tectonics:{
+  junior:{
+   legend:`Two slabs of the Earth's crust meet in the middle, and the dots are rock being dragged along with them. The bar at the top left is [[stress]] — the strain building up where they are stuck together. When it fills completely, the rock snaps.`,
+   try:`Set [[speed]] to 1 and watch how long [[stress]] takes to fill. Now set it to 10 and watch again.`,
+   notice:`<b>Faster plates fill the stress bar far quicker, so earthquakes come round much more often — but each one still waits until the bar is full.</b> The plates never actually slide smoothly; friction locks them, strain builds for decades or centuries, and then it releases in seconds. That is why earthquakes feel sudden even though the cause is agonisingly slow: your fingernails grow at about the speed continents move. Try [[quake]] to release the strain early and watch the bar drop.`
+  },
+  student:{
+   legend:`A plate boundary in cross-section. [[type]] switches between divergent, transform and convergent geometry; [[speed]] sets the relative plate velocity. [[stress]] is accumulated elastic strain, released as an event when it saturates, with the magnitude reported in [[event]].`,
+   try:`Time how long [[stress]] takes to saturate at [[speed]] = 2 versus 8. Then use [[quake]] to release strain early, repeatedly, and compare the magnitudes in [[event]] against those from natural saturation.`,
+   notice:`<b>Strain accumulates linearly and releases instantaneously — the <b>elastic rebound</b> model Reid inferred from the 1906 San Francisco rupture.</b> Recurrence interval scales inversely with plate velocity, which is why the Nazca–South America boundary (~7 cm/yr) ruptures far more often than intraplate settings. Releasing early gives smaller events, and this is the kernel of truth behind "small quakes relieve stress" — but the truth is thin: magnitude is logarithmic in energy, so it takes about 32 small M5s to release the energy of one M6, and roughly a million M2s to substitute for one M6.`
+  },
+  scholar:{
+   legend:`Idealised stick-slip boundary with linear strain accumulation \\(\\dot\\sigma \\propto v_{\\text{plate}}\\) and complete stress drop at a fixed failure threshold — a characteristic-earthquake model. [[type]] selects boundary kinematics; [[event]] reports moment magnitude.`,
+   try:`Examine the recurrence statistics this model produces at fixed [[speed]]. Compare its distribution of magnitudes against the Gutenberg–Richter law \\(\\log_{10}N = a - bM\\) with \\(b \\approx 1\\), and identify what the model cannot reproduce.`,
+   notice:`<b>This model is deliberately periodic; real seismicity is not, and that gap is why prediction has failed.</b> Perfectly characteristic earthquakes would be forecastable, yet observed catalogues follow Gutenberg–Richter with \\(b\\approx1\\) — scale-invariant, with no characteristic size — and recurrence intervals on well-studied faults vary by factors of several (Parkfield's "22-year" cycle famously ran 38). Rate-and-state friction and self-organised criticality both imply the same conclusion: small ruptures cascade into large ones without any distinguishing precursor, so the size of an event may be undetermined at nucleation. Seismic hazard is therefore quoted probabilistically; deterministic prediction is not currently considered achievable.`
+  }
+ },
+
+ ocean:{
+  junior:{
+   legend:`This is the Atlantic seen from the side, with the tropics on the left and the far north on the right. The moving dots are water: warm water flows north along the top, cools, becomes heavy and sinks, then creeps back south along the bottom. [[amoc]] shows how strongly that loop is turning.`,
+   try:`Watch the sinking on the right at [[warm]] = 0. Now drag [[warm]] up to 10 and keep watching both the sinking and [[amoc]].`,
+   notice:`<b>Warming the ocean makes the conveyor slow down and stall — [[amoc]] falls from 100% to 20%.</b> The loop runs because cold salty water is heavy enough to sink; warm it and it stays floating, so the whole belt stutters. That belt is what carries tropical heat to Europe, which is why Britain is far milder than Canada at the same latitude. Warming the planet could, paradoxically, make northern Europe considerably colder.`
+  },
+  student:{
+   legend:`Meridional section of the Atlantic overturning circulation. Surface flow is driven by [[wind]]; deep-water formation in the north depends on density, which [[warm]] reduces. [[flow]] reports transport in sverdrups (1 Sv = 10⁶ m³/s) and [[amoc]] the overturning strength.`,
+   try:`Hold [[wind]] fixed and step [[warm]] from 0 to 10, recording [[amoc]] at each step. Is the response linear? Then vary [[wind]] alone and see whether it can compensate for a weakened [[amoc]].`,
+   notice:`<b>[[amoc]] falls linearly here (8% per unit of warming) and wind cannot rescue it — the two drivers are not interchangeable.</b> Overturning is driven by density, so freshening and warming both suppress it while wind only stirs the surface. The AMOC transports ~1.3 PW northward, roughly a quarter of the planet's total poleward heat flux, and observations since 2004 (RAPID array) suggest a weakening trend against high variability. The real system's danger is what this linear model omits: a salt-advection feedback that can make collapse self-reinforcing rather than gradual.`
+  },
+  scholar:{
+   legend:`Schematic AMOC with wind-driven surface transport and buoyancy-controlled deep-water formation; [[warm]] acts as a buoyancy forcing suppressing convection. [[amoc]] is a linear proxy for overturning strength.`,
+   try:`Note that [[amoc]] here responds linearly and reversibly to [[warm]]. Consider what observable would distinguish this behaviour from a system possessing bistability, and what that implies for early warning.`,
+   notice:`<b>The linearity is the model's key falsehood: Stommel's two-box analysis shows the AMOC is plausibly <em>bistable</em>, with a saddle-node bifurcation and hysteresis.</b> The mechanism is the salt-advection feedback — a weaker overturning imports less salt northward, further reducing density and weakening it again — which admits an "off" state that persists even if forcing is removed. Palaeo evidence (Dansgaard–Oeschger events, the 8.2 ka event) shows abrupt reorganisations on decadal timescales. Because the transition is a bifurcation rather than a threshold in forcing, the practical hope lies in critical-slowing-down indicators: rising variance and autocorrelation in SST fingerprints, which several analyses now claim to detect, though the statistical case remains contested.`
+  }
+ },
+
+ volcano:{
+  junior:{
+   legend:`Underneath the mountain is a chamber of molten rock. Fresh magma keeps arriving from below, so [[pres]] climbs steadily; when the chamber can't take any more, the volcano erupts. [[phase]] tells you what stage it is in, and [[vei]] rates how violent the eruption was.`,
+   try:`Set [[visc]] to 1 — runny, like Hawaii — and press [[erupt]], noting [[vei]]. Now set it to 10, the sticky kind, and erupt again.`,
+   notice:`<b>Runny magma gives a gentle blast of about 1; sticky magma gives a 7 — hundreds of times more violent, from the very same pressure.</b> The difference is whether the gas can get out. In runny magma the bubbles escape easily and lava simply pours out, so you can walk near a Hawaiian eruption. In sticky magma the gas is trapped until the whole thing bursts at once, like shaking a fizzy drink and opening it suddenly. Same pressure, utterly different day.`
+  },
+  student:{
+   legend:`A magma chamber and conduit. [[recharge]] sets the rate of magma input, so [[pres]] rises until failure; [[visc]] spans basaltic (1) to rhyolitic (10) composition. [[vei]] is the Volcanic Explosivity Index of the resulting eruption.`,
+   try:`Erupt at [[visc]] = 1, 5 and 10 from full pressure, recording [[vei]] each time. Then change [[recharge]] and check whether it alters [[vei]] or only the waiting time.`,
+   notice:`<b>Viscosity sets the violence, recharge only sets the frequency — [[vei]] runs from 1 to 7 across the viscosity range at identical pressure.</b> Viscosity is governed chiefly by silica content: basalt (~50% SiO₂) is fluid enough for bubbles to escape continuously, while rhyolite (~70%) polymerises into a melt so stiff that volatiles stay dissolved until fragmentation. Since VEI is logarithmic in erupted volume, that span of 1 to 7 is roughly a million-fold difference in material. It is also why the dangerous volcanoes are the quiet ones: long repose intervals let evolved, gas-rich, viscous magma accumulate.`
+  },
+  scholar:{
+   legend:`Chamber–conduit system with volumetric recharge and a failure threshold. [[visc]] parameterises melt composition; explosive fragmentation is triggered above a viscosity threshold. [[vei]] scales with both stored overpressure and viscosity.`,
+   try:`Map [[vei]] over the ([[visc]], [[pres]]) plane by forcing eruptions at different pressures. Consider which physical variable the model conspicuously omits, and whether its absence makes the model optimistic or pessimistic.`,
+   notice:`<b>The omission is dissolved volatile content — the actual driver of explosivity, which viscosity here merely proxies.</b> Fragmentation occurs when bubble overpressure exceeds melt tensile strength, governed by decompression rate and \\(\\mathrm{H_2O}\\)/\\(\\mathrm{CO_2}\\) solubility (Henry's law: \\(\\sim\\)4–6 wt% H₂O at rhyolitic chamber depths). Viscosity and volatile content correlate through silica, so the proxy holds statistically while missing the mechanism. Two consequences the model cannot show: the plinian–effusive transition can flip within a <em>single</em> eruption as conduit conditions evolve (Mount St. Helens 1980), and VEI, being volume-based, systematically understates the climate impact of sulphur-rich but small eruptions — Pinatubo's 20 Mt of SO₂ cooled the planet 0.5°C despite a VEI of only 6.`
+  }
+ },
+
+ chem:{
+  junior:{
+   legend:`The coloured balls are <b>atoms</b> flying around. When two slow ones drift close enough they can stick together and form a <b>molecule</b>, drawn with a line joining them. [[mols]] counts how many have paired up.`,
+   try:`Set [[temp]] to 10 and watch for a while — count how many molecules form. Now drag [[temp]] down to 1 and watch again.`,
+   notice:`<b>Hot atoms almost never bond; cold ones pair up quickly and [[mols]] climbs.</b> Bonding needs the two atoms to linger near each other long enough to latch on, and fast-moving atoms simply bounce apart before that can happen. It is the same reason heating things breaks them down — cooking, melting, burning — while cooling lets structures form. Snowflakes exist because water molecules are moving slowly enough to lock together.`
+  },
+  student:{
+   legend:`Atoms in a 2D box with speeds set by [[temp]]. Bond formation is probabilistic and permitted only below a kinetic-energy threshold; [[mols]] counts bonded pairs. Bonded atoms are held at an equilibrium separation, mimicking a covalent bond length.`,
+   try:`Hold [[temp]] at 10 and let it run, then drop it to 1 without resetting. Watch whether existing bonds survive the change, and how fast [[mols]] responds in each direction.`,
+   notice:`<b>Bonds form readily when cold and essentially stop forming when hot — the threshold is sharp, not gradual.</b> This is chemistry's central competition: bonding lowers the system's potential energy, while thermal motion supplies the kinetic energy to break free of it. Whether a bond persists depends on the ratio of bond energy to \\(k_BT\\), which is why every substance has a temperature at which it decomposes, and why the same reaction can run forwards or backwards depending only on how hot you make it.`
+  },
+  scholar:{
+   legend:`Kinetic model of association in 2D: pair formation is gated by a relative-speed threshold with a stochastic rate, and bonded pairs are constrained to an equilibrium separation. [[temp]] scales the velocity distribution; [[mols]] is the instantaneous bound fraction.`,
+   try:`Establish a bound population at low [[temp]], then raise it and observe whether the system returns to its previous state when you lower it again. Consider what the model represents about \\(\\Delta G = \\Delta H - T\\Delta S\\), and what it leaves out.`,
+   notice:`<b>The model captures the enthalpy term but has no entropy term — and that is the interesting omission.</b> Association is enthalpically favourable (\\(\\Delta H < 0\\)) yet entropically costly, since two free particles becoming one bound pair reduces translational microstates. Real equilibrium is set by \\(\\Delta G = \\Delta H - T\\Delta S\\), so raising \\(T\\) shifts the balance towards dissociation not merely by supplying kinetic energy but by amplifying the entropic penalty — the molecular content of Le Chatelier's principle. The same competition explains hydrophobic assembly and protein folding, where the entropy of <em>solvent</em> molecules, not the solute, dominates the sign of \\(\\Delta G\\).`
+  }
+ },
+
+ electrochem:{
+  junior:{
+   legend:`This is a battery cut in half. The little dots are charged particles shuttling between the two ends through the liquid in the middle — that flow is what lights the bulb. [[soc]] is how full the battery is, and [[volts]] is the push it delivers.`,
+   try:`Press [[discharge]] and watch [[soc]] fall from 100% all the way to 0. Keep your eye on [[volts]] the whole time — how much does it drop?`,
+   notice:`<b>The battery empties completely but the voltage barely moves — from about 3.9 V down to only 3.6 V.</b> That's why your phone can't tell how full it is just by measuring voltage, and why the battery percentage sometimes lies or jumps. Phones instead count the charge flowing in and out, like a water meter. A flat voltage is actually a feature: your device gets the same steady power whether the battery is full or nearly empty.`
+  },
+  student:{
+   legend:`A cell with ion transport between electrodes. [[load]] sets the discharge current, [[soc]] the state of charge, and [[volts]] follows a Nernst-style relation \\(E = E^0 - \\frac{0.059}{n}\\log_{10}\\frac{1-\\text{soc}}{\\text{soc}}\\), clamped to a realistic Li-ion window.`,
+   try:`Discharge fully and record [[volts]] at [[soc]] = 100%, 50% and 10%. Then charge back up. Does the voltage retrace the same path, and could you use it to infer [[soc]] reliably?`,
+   notice:`<b>Voltage spans barely 0.3 V across the entire capacity — far too flat to serve as a fuel gauge.</b> The Nernst equation is logarithmic in the ratio of oxidised to reduced species, so it is steep only at the extremes and nearly flat through the middle. Real battery-management systems therefore use coulomb counting (integrating current) with periodic voltage recalibration at the endpoints. This flatness is precisely what makes lithium chemistry so useful — a stable supply rail — and simultaneously what makes state-of-charge estimation a genuinely hard engineering problem.`
+  },
+  scholar:{
+   legend:`Idealised cell with a Nernstian open-circuit potential in [[soc]]; [[load]] scales the discharge rate. Overpotentials, diffusion limitation and hysteresis are not modelled.`,
+   try:`Note that [[volts]] here depends only on [[soc]], never on [[load]]. Identify which physical effects that independence eliminates, and how each would alter the observed curve under a heavy load.`,
+   notice:`<b>Making voltage a function of charge alone removes every loss mechanism that matters in practice.</b> Terminal voltage is \\(E_{\\text{cell}} = E^0 - \\eta_{\\text{act}} - \\eta_{\\text{conc}} - IR_{\\Omega}\\): activation overpotential follows Butler–Volmer kinetics, concentration overpotential arises from depleted diffusion layers, and ohmic drop scales with current. Together they mean real capacity <em>falls</em> as discharge rate rises — the Peukert effect — and produce the charge/discharge hysteresis that defeats naive coulomb counting. Add solid-electrolyte-interphase growth and lithium plating and you have the whole of battery degradation, none of which a purely thermodynamic model can express.`
+  }
+ },
+
+ kinetics:{
+  junior:{
+   legend:`The curve in the lower panel is a hill the molecules must climb before they can react — that height is the <b>activation energy</b>. Only molecules with enough energy make it over. [[react]] is how much starting material is left, [[prod]] how much has been converted, and [[rate]] how fast it's going.`,
+   try:`Set [[temp]] to 400 and note [[rate]]. Now raise it to 500 — just 100 degrees hotter — and read [[rate]] again.`,
+   notice:`<b>Only 100 degrees hotter and the reaction runs about 20 times faster.</b> Heat doesn't push molecules over the hill; it widens the small fraction that already had enough energy to climb it, and that fraction grows explosively with temperature. It's why a fridge preserves food for weeks while the same food spoils in a day on the counter, and why baking has such precise temperatures. Now press [[cat]] and watch the hill itself shrink.`
+  },
+  student:{
+   legend:`A reaction-coordinate diagram with the barrier height set by [[ea]]. Molecules react on collision if they clear the barrier; the rate constant follows Arrhenius, \\(k = A e^{-E_a/RT}\\). [[react]] and [[prod]] track concentrations and [[rate]] the instantaneous rate.`,
+   try:`Record [[rate]] at [[temp]] = 400 and 500 with [[ea]] at 50. Then return to 400 and instead lower [[ea]] to 25. Which change bought you more speed?`,
+   notice:`<b>+100 K multiplies the rate about 20-fold, but halving the barrier is worth far more — the exponential is much more sensitive to \\(E_a\\) than to \\(T\\).</b> That asymmetry is why catalysis dominates industrial chemistry: you cannot always heat a reaction (products decompose, energy costs money), but lowering \\(E_a\\) by offering an alternative pathway achieves the same end at ambient temperature. A catalyst changes neither \\(\\Delta G\\) nor the equilibrium position — it accelerates forward and reverse reactions equally, and is regenerated unchanged.`
+  },
+  scholar:{
+   legend:`Arrhenius kinetics with \\(k = A\\exp(-E_a/RT)\\), \\(A = 10^6\\); the catalyst pathway reduces \\(E_a\\) by 55%. Note that the displayed [[rate]] is clamped at an upper bound, so the most extreme combinations of high [[temp]] and low [[ea]] are truncated rather than reported faithfully.`,
+   try:`Verify the Arrhenius form by checking that \\(\\ln k\\) is linear in \\(1/T\\), sampling [[temp]] where the rate is well below its ceiling. Then estimate \\(E_a\\) from your own slope and compare with the [[ea]] setting.`,
+   notice:`<b>An Arrhenius plot of \\(\\ln k\\) against \\(1/T\\) gives a straight line of slope \\(-E_a/R\\) — that is how activation energies are actually measured.</b> The interpretation deepens with transition-state theory: \\(k = \\frac{k_BT}{h}e^{-\\Delta G^\\ddagger/RT}\\) splits the barrier into enthalpic and entropic parts, so a "pre-exponential factor" is really \\(e^{\\Delta S^\\ddagger/R}\\) — an orientational requirement, not a collision count. This is why enzymes achieve rate enhancements of \\(10^{17}\\): they pay the entropic cost of alignment in advance by binding the substrate, rather than lowering \\(\\Delta H^\\ddagger\\) alone.`
+  }
+ },
+
+ organic:{
+  junior:{
+   legend:`A molecule drawn in 3D and slowly turning. Grey balls are <b>carbon</b>, red are <b>hydrogen</b>, blue <b>oxygen</b> and purple <b>nitrogen</b>; the sticks are the bonds holding them together. [[sel]] switches between six different real molecules.`,
+   try:`Step [[sel]] through all six, from 1 to 6, and watch the grey carbon atoms specifically. Count how many sticks come out of each grey ball.`,
+   notice:`<b>Every carbon has exactly four bonds, in all six molecules — natural gas, alcohol, sugar, aspirin and caffeine alike.</b> That single fact is why life is built from carbon. Four bonds let carbon form chains, branches and rings of any length while still having room to attach other atoms, so a handful of elements can be arranged into millions of distinct substances. Fuel, sugar and medicine differ only in how the same few atom types are wired together.`
+  },
+  student:{
+   legend:`Ball-and-stick models with depth shading: carbon (grey), hydrogen (red), oxygen (blue), nitrogen (purple). [[sel]] selects from methane, ethanol, benzene, glucose, aspirin and caffeine; [[atoms]] counts atoms and [[type]] classifies the compound.`,
+   try:`Compare benzene (3) with glucose (4) — both are six-membered rings. Look at how the atoms sit relative to one another in each, and count the bonds between ring carbons.`,
+   notice:`<b>Benzene's ring is flat and its carbons are identical; glucose's ring puckers and every carbon differs.</b> Benzene's six \\(\\pi\\)-electrons are delocalised around the ring, giving bonds of equal length intermediate between single and double, plus the extra stability called <b>aromaticity</b> — which is why benzene resists the addition reactions an ordinary alkene undergoes readily. Glucose is fully saturated, so its ring adopts a puckered chair conformation to relieve strain, and its four distinct stereocentres mean mirror-image forms your body cannot metabolise interchangeably.`
+  },
+  scholar:{
+   legend:`Static ball-and-stick geometries for six representative organics. Note that bond lengths and angles are schematic rather than optimised, and the depictions are conformationally frozen.`,
+   try:`Consider aspirin (5) and caffeine (6). Identify the functional groups in each, and reason about which structural features make aspirin an irreversible inhibitor while caffeine acts as a competitive antagonist.`,
+   notice:`<b>The distinction is chemical, not shape-based: aspirin carries an acetyl group it can <em>transfer</em>, caffeine carries none.</b> Aspirin acetylates Ser530 of COX-1 covalently, so inhibition persists for the enzyme's lifetime — which is why a single low dose suppresses platelet thromboxane for days, platelets being anucleate and unable to resynthesise the enzyme. Caffeine merely occupies adenosine receptors reversibly, so its effect tracks concentration and clears with a ~5-hour half-life. Both illustrate why structure-based drug design is so demanding: the pharmacology follows from a single reactive substituent, not from gross molecular shape, and neither is deducible from the ball-and-stick picture alone.`
+  }
+ },
+
+ astro:{
+  junior:{
+   legend:`A single star living out its entire life, sped up enormously. [[age]] tracks how far through it is and [[stage]] names what it has become. The colour and size change as it ages — and how it ends depends on just one thing you control.`,
+   try:`Set [[mass]] to 1 (a star like our Sun) and press [[reset]], then watch all the way to the end. Now set [[mass]] to 20 and watch again.`,
+   notice:`<b>The Sun-sized star swells, puffs off its outer layers and leaves a tiny white dwarf. The heavy one explodes as a supernova and leaves a black hole.</b> A star's whole destiny is fixed at birth by its mass — nothing else. And the big ones die absurdly fast: heavier stars burn their fuel so extravagantly that a 20-solar-mass star lives a few million years while the Sun manages ten billion. Being bigger gives you more fuel and a far shorter life.`
+  },
+  student:{
+   legend:`Stellar evolution driven by [[mass]] alone. [[stage]] steps through main sequence, red giant, and then a mass-dependent endpoint: planetary nebula and white dwarf below ~8 M☉, or supergiant, supernova and a neutron star or black hole above it.`,
+   try:`Compare endpoints at [[mass]] = 1, 10 and 20, and note how long each spends on the main sequence. Find the [[mass]] where the outcome switches from white dwarf to supernova.`,
+   notice:`<b>The fork sits near 8 M☉, and lifetime collapses as roughly \\(1/M^3\\) — ten billion years for the Sun, ten million for a 10 M☉ star.</b> Luminosity scales steeply with mass (\\(L \\propto M^{3.5}\\)) while fuel supply only scales as \\(M\\), so lifetime \\(\\propto M/L \\sim M^{-2.5}\\). Below the fork, electron degeneracy pressure halts collapse at the <b>Chandrasekhar limit</b> of 1.4 M☉ and a white dwarf survives; above it, the core exceeds what degeneracy can support and collapses catastrophically. Every element heavier than iron in your body was forged in the second kind of death.`
+  },
+  scholar:{
+   legend:`Schematic single-star evolution parameterised by initial [[mass]], with main-sequence lifetime scaling as \\(\\propto M^{-3}\\) in this model. Metallicity, mass loss, rotation and binarity are not represented.`,
+   try:`Locate the model's white-dwarf / supernova boundary and its neutron-star / black-hole boundary. Consider how strongly each of the omitted variables would move those thresholds in a real population.`,
+   notice:`<b>The thresholds are far less crisp than any single-parameter model implies — mass loss and metallicity move them by several solar masses.</b> The observed relation is \\(L \\propto M^{3.5}\\) giving \\(\\tau \\propto M^{-2.5}\\); core collapse requires exceeding the Chandrasekhar mass \\(M_{Ch} = 1.44\\,(\\mu_e/2)^{-2}\\) M☉, and the neutron-star/black-hole division depends on the poorly constrained nuclear equation of state (Tolman–Oppenheimer–Volkoff limit, ~2.2–2.9 M☉). Low-metallicity stars retain far more mass and collapse directly without a bright supernova, and since most massive stars are in interacting binaries, single-star tracks describe a minority of real cases. Gravitational-wave catalogues now supply the population statistics that stellar models alone could not.`
+  }
+ },
+
+ blackholes:{
+  junior:{
+   legend:`The black disc is the <b>event horizon</b> — cross it and nothing, not even light, can get back out. The orbiting dot is a clock we're watching from far away. [[dilat]] tells you how fast that clock ticks compared with yours, and [[z]] shows how much its light gets stretched on the way out.`,
+   try:`Set [[dist]] to 20 (far away) and read [[dilat]]. Now slide it down to 2, right up against the horizon, and read it again.`,
+   notice:`<b>Far away the clock ticks at almost your speed (0.975×); close in it slows to 0.707× — it loses nearly a third of every second.</b> Time itself runs slower near heavy things. This isn't a trick of the light or a broken clock: someone falling in would age genuinely less than you. Nothing in everyday life prepares you for it, yet your phone's satnav corrects for exactly this effect every second, or it would put you kilometres off course.`
+  },
+  student:{
+   legend:`A Schwarzschild black hole of mass [[mass]]. [[dist]] positions a test particle in units of the Schwarzschild radius \\(r_S\\); [[dilat]] gives \\(\\sqrt{1-r_S/r}\\) and [[z]] the gravitational redshift \\((1-r_S/r)^{-1/2}-1\\).`,
+   try:`Record [[dilat]] and [[z]] at [[dist]] = 20, 6 and 2. Then reason about what both quantities do as [[dist]] approaches 1, and check whether [[mass]] changes them at fixed [[dist]].`,
+   notice:`<b>Both diverge at \\(r = r_S\\): time dilation goes to zero and redshift to infinity — yet neither depends on the hole's mass at fixed \\(r/r_S\\).</b> The horizon is not a place where physics breaks; it is where the escape velocity reaches \\(c\\), and a freely falling observer notices nothing special crossing it. The divergence is a coordinate artefact of the distant observer's frame. Note \\(r_S = 2GM/c^2\\) is <em>linear</em> in mass, so a supermassive black hole has a gentle horizon: tidal forces at \\(r_S\\) scale as \\(M^{-2}\\), and you would cross Sagittarius A*'s horizon entirely intact.`
+  },
+  scholar:{
+   legend:`Schwarzschild geometry, \\(ds^2 = -(1-r_S/r)c^2dt^2 + (1-r_S/r)^{-1}dr^2 + r^2d\\Omega^2\\). [[dilat]] is the ratio of proper to coordinate time for a static observer; [[z]] the corresponding gravitational redshift. The ISCO at \\(3r_S\\) is not marked.`,
+   try:`Examine the behaviour as [[dist]] approaches 1 and consider whether the divergence is physical. Then work out where a circular orbit ceases to be stable, and compare that radius with the horizon.`,
+   notice:`<b>The divergence is purely a coordinate pathology — curvature invariants stay finite at \\(r_S\\) and only blow up at \\(r=0\\).</b> Kruskal–Szekeres coordinates remove it entirely, and the infalling observer crosses in finite proper time. The physically meaningful radius for accretion is the <b>ISCO</b> at \\(3r_S\\) (Schwarzschild), inside which no stable circular orbit exists — this sets accretion-disc efficiency at 5.7%, rising to 42% for a maximally rotating Kerr hole, which is why quasars outshine their host galaxies. The real open problem sits at the horizon: Hawking radiation is thermal, \\(T_H = \\hbar c^3/8\\pi GMk_B\\), which appears to destroy information, and the resulting paradox remains unresolved.`
+  }
+ },
+
+ cosmology:{
+  junior:{
+   legend:`The whole universe expanding, with galaxies carried apart as space itself stretches. [[age]] counts billions of years since the Big Bang. Two ingredients compete: <b>matter</b>, whose gravity pulls everything together, and <b>dark energy</b>, which pushes it apart.`,
+   try:`Drag [[lam]] down to 0 so gravity has no opponent, and watch what happens to the expansion. Then put it back up to 69 and watch the difference.`,
+   notice:`<b>With no dark energy the expansion slows down; with it, the expansion speeds up — space flies apart faster and faster.</b> Astronomers expected the first and found the second in 1998, by noticing distant supernovae were dimmer than they should be. Roughly 69% of everything is this dark energy, and nobody knows what it is. The universe's largest ingredient is a complete mystery, and it was discovered by accident.`
+  },
+  student:{
+   legend:`An expanding FLRW universe with [[mat]] and [[lam]] as the density parameters. [[h]] is the Hubble parameter at the current redshift, following \\(H(z) = H_0\\sqrt{\\Omega_m(1+z)^3 + \\Omega_\\Lambda}\\), and [[age]] the elapsed cosmic time.`,
+   try:`Set [[lam]] = 0 with [[mat]] = 100 and note the expansion behaviour and [[age]]. Then use the standard values (31 and 69). Which combination gives an older universe, and why does that matter observationally?`,
+   notice:`<b>A matter-only universe is younger than the oldest known stars — the contradiction that made dark energy unavoidable.</b> Matter density dilutes as \\((1+z)^3\\) while \\(\\Omega_\\Lambda\\) stays constant, so gravity dominated early (decelerating) and dark energy took over around \\(z \\approx 0.7\\), switching the expansion to acceleration. With \\(H_0 = 70\\) and matter only, the age is \\(\\tfrac{2}{3}H_0^{-1} \\approx 9.3\\) Gyr, younger than 12-Gyr globular clusters. Adding \\(\\Lambda\\) stretches it to 13.8 Gyr and resolves the paradox — one of several independent lines that converged on the same conclusion.`
+  },
+  scholar:{
+   legend:`Flat FLRW cosmology with \\(H(z) = H_0\\sqrt{\\Omega_m(1+z)^3+\\Omega_\\Lambda}\\), \\(H_0 = 70\\) km/s/Mpc. [[mat]] and [[lam]] are set independently here, so the model does not enforce \\(\\Omega_m + \\Omega_\\Lambda = 1\\).`,
+   try:`Set combinations that violate flatness and note that the model still computes an answer. Then consider what \\(\\Omega_{\\text{total}} \\ne 1\\) would physically imply, and why the observed near-perfect flatness is itself a problem demanding explanation.`,
+   notice:`<b>Flatness is unstable: any deviation from \\(\\Omega = 1\\) grows with time, so today's flatness to within 0.4% demands absurd fine-tuning at the Planck era — roughly 1 part in \\(10^{60}\\).</b> This is the flatness problem, and together with the horizon problem it motivated <b>inflation</b>, which drives \\(\\Omega \\to 1\\) exponentially and seeds structure from quantum fluctuations. The framework's current stress point is the <b>Hubble tension</b>: early-universe inference from the CMB gives \\(H_0 \\approx 67.4\\), local distance-ladder measurements give \\(\\approx 73\\), and the \\(\\sim5\\sigma\\) discrepancy has resisted every proposed systematic. Meanwhile \\(\\Lambda\\) itself remains unexplained — QFT vacuum energy overshoots the observed value by up to 120 orders of magnitude.`
+  }
+ },
+
+ solarsystem:{
+  junior:{
+   legend:`Our Solar System from above, with the Sun in the middle and the eight planets going round. Click any planet to select it: [[sel]] names it, [[dist]] gives its distance from the Sun and [[period]] how long its year lasts. Distances are squashed so the inner planets aren't piled on top of each other.`,
+   try:`Click Mercury and write down [[dist]] and [[period]]. Now click Neptune and do the same. Neptune is about 77 times further out — is its year 77 times longer?`,
+   notice:`<b>No — it's about 690 times longer. Mercury takes 0.24 years, Neptune takes 165.</b> Distant planets have further to travel <em>and</em> move more slowly, so their years stretch out far faster than distance alone would suggest. The same rule governs every orbiting thing, from these planets to the moons of Jupiter to the satellites overhead. Watch the planets move: the inner ones race round while the outer ones barely crawl.`
+  },
+  student:{
+   legend:`The eight planets on a logarithmically compressed radial scale (so orbital sizes are not to scale). [[dist]] is the semi-major axis in AU and [[period]] the orbital period in years; [[speed]] controls the animation rate.`,
+   try:`Collect [[dist]] and [[period]] for four planets, then test \\(T^2/a^3\\) for each. Does the ratio stay constant across the whole system?`,
+   notice:`<b>\\(T^2/a^3 = 1\\) for every planet, from Mercury to Neptune — a constant across a 77-fold range of distance.</b> That is <b>Kepler's third law</b>, and Newton later showed it follows directly from an inverse-square gravity: \\(T^2 = \\frac{4\\pi^2}{GM_\\odot}a^3\\). Because the constant depends only on the Sun's mass, measuring any planet's orbit weighs the Sun. The same relation applied to stars orbiting the galactic centre reveals Sagittarius A*, and applied to galaxies it exposed the missing mass we call dark matter.`
+  },
+  scholar:{
+   legend:`Kepler orbits with observed semi-major axes and periods, drawn on a compressed radial scale and as coplanar circles — eccentricity and inclination are suppressed.`,
+   try:`Verify \\(T^2 \\propto a^3\\) across the planets, then consider how precisely it holds. Estimate what would have to be true for the residuals to reveal something the model cannot show.`,
+   notice:`<b>Kepler's law is exact only for the two-body problem; the residuals are where the physics actually lives.</b> Planet–planet perturbations required Newtonian corrections that led directly to Neptune's prediction in 1846, and the leftover 43″/century in Mercury's perihelion advance — inexplicable in Newtonian gravity — became the first confirmation of general relativity. Beyond three bodies there is no closed-form solution at all, and Laskar's integrations show the inner Solar System is chaotic with a Lyapunov time near 5 Myr: positions become unpredictable beyond ~100 Myr, and there is a small but nonzero probability of Mercury's orbit destabilising before the Sun leaves the main sequence.`
+  }
+ },
+
+ neuro:{
+  junior:{
+   legend:`A small network of <b>neurons</b> — brain cells — joined by their connections. When one builds up enough charge it fires, sending a pulse racing along to its neighbours, which may then fire too. [[rate]] counts firings per second and [[pot]] shows the charge inside one cell.`,
+   try:`Set [[stim]] to 0 and press [[fire]] once, watching how far the pulse travels. Now set [[stim]] to 10 and watch the network for a while.`,
+   notice:`<b>One nudge sends a single pulse that fades out; strong steady input makes the whole network chatter continuously.</b> No single neuron decides anything — each one just adds up what it receives and fires if the total is big enough. Thought, memory and movement are all built from this one trick repeated across 86 billion cells. Your brain runs the entire operation on about 20 watts, roughly a dim light bulb.`
+  },
+  student:{
+   legend:`A simplified spiking network. Each node integrates input from its neighbours and fires when it crosses threshold, propagating activity along its connections. [[stim]] is the external drive, [[rate]] the population firing rate and [[pot]] one cell's membrane potential.`,
+   try:`Increase [[stim]] gradually from 0 and watch [[rate]]. Does activity grow smoothly in proportion, or is there a point where the network's behaviour changes character?`,
+   notice:`<b>Activity stays near zero until a critical drive, then the network switches into sustained self-propagating firing — a threshold, not a slope.</b> This is <em>recurrent excitation</em>: once enough neurons fire, their mutual input sustains the activity without further external drive, which is how working memory holds information for seconds. The same property is dangerous, since unchecked recurrent excitation is precisely what a seizure is. Real cortex keeps itself just below that point with powerful inhibitory interneurons — only ~20% of cells, but enough to hold the balance.`
+  },
+  scholar:{
+   legend:`Integrate-and-fire units on a sparse recurrent graph, with [[stim]] as a tonic external drive. [[rate]] reports population activity; the model is purely excitatory, with no inhibitory population.`,
+   try:`Characterise the transition in [[rate]] as [[stim]] increases. Consider what the absence of inhibition implies for the stability of the high-activity state, and what would change with a balanced inhibitory population.`,
+   notice:`<b>A purely excitatory recurrent network has only two stable states — silent or saturated — and that is the model's central omission.</b> Real cortex operates in the <b>balanced state</b>, where large excitatory and inhibitory currents nearly cancel, leaving a small fluctuating net drive. This produces the irregular, Poisson-like spiking observed in vivo, gives rapid responsiveness (the balance can be broken faster than any membrane time constant), and yields an approximately linear \\(f\\)–\\(I\\) curve instead of a step. The balanced regime also sits near criticality, where neuronal avalanches follow a power law with exponent \\(-3/2\\) — a configuration that maximises dynamic range and information transmission, and which this model cannot reach.`
+  }
+ },
+
+ neuron:{
+  junior:{
+   legend:`One brain cell, with the trace showing the voltage inside it moment by moment. The dashed line is the <b>threshold</b>. [[v]] is the current voltage, [[state]] says whether it is resting or firing, and [[spikes]] counts the pulses.`,
+   try:`Raise [[cur]] very slowly from 0, a notch at a time, watching [[v]] and [[state]]. Find the exact point where the cell starts firing — then go one notch past it.`,
+   notice:`<b>Below the threshold, nothing at all happens. Cross it and the cell fires a full-sized spike — and pushing harder doesn't make the spike any bigger.</b> This is <b>all-or-none</b> firing: a neuron has no way to send a "half" signal. Since every spike is identical, the message can't be in their size — it has to be in how <em>often</em> they arrive. A gentle touch and a hard press feel different because of spike rate, not spike strength.`
+  },
+  student:{
+   legend:`A FitzHugh–Nagumo neuron: a fast voltage variable and a slow recovery variable, the minimal system reproducing excitability. The trace is membrane potential against time, with the firing threshold marked. [[cur]] injects steady current; [[spikes]] counts events.`,
+   try:`Step [[cur]] up slowly and locate the value where firing begins. Then compare spike <em>amplitude</em> just above threshold with amplitude at [[cur]] = 20, and compare the firing <em>frequency</em> at the same two settings.`,
+   notice:`<b>Amplitude is essentially identical at both currents; only the frequency changes — the cell encodes intensity in rate, not size.</b> The onset is a <b>Hopf bifurcation</b>: the resting fixed point loses stability and a limit cycle appears, so oscillation begins at nonzero frequency. The recovery variable is what makes the spike self-terminating and enforces the refractory period, which caps firing near 1 kHz and makes propagation unidirectional. Hodgkin and Huxley's 1952 model derived all of this from actual sodium and potassium conductances; FitzHugh–Nagumo strips it to two equations while keeping the qualitative behaviour intact.`
+  },
+  scholar:{
+   legend:`FitzHugh–Nagumo dynamics, \\(\\dot v = v - v^3/3 - w + I\\), \\(\\dot w = \\epsilon(v + a - bw)\\), a planar reduction of Hodgkin–Huxley separating fast voltage from slow recovery. [[cur]] is the injected current \\(I\\).`,
+   try:`Locate the critical \\(I\\) at which repetitive firing begins and examine the frequency immediately above it. Determine whether the onset frequency is zero or finite, and identify which bifurcation class that implies.`,
+   notice:`<b>Firing begins at a finite frequency, identifying a subcritical Hopf bifurcation — a Class II neuron in Hodgkin's classification.</b> Class II cells have a discontinuous \\(f\\)–\\(I\\) curve and act as resonators, preferentially responding to input near their intrinsic frequency; Class I cells arise instead via a saddle-node on an invariant circle (SNIC), fire arbitrarily slowly at onset, and behave as integrators. The distinction is not academic: it determines phase-response curves, and therefore whether a population synchronises or desynchronises under shared input — the mathematical substrate of cortical oscillations and of pathological synchrony in Parkinson's disease and epilepsy.`
+  }
+ },
+
+ memory:{
+  junior:{
+   legend:`Two neurons meeting at a <b>synapse</b>, the junction where one passes signals to the other. [[w]] is how strong that junction currently is — a strong one passes messages easily, a weak one barely at all. [[last]] reports what just happened to it.`,
+   try:`Press [[ltp]] several times and watch [[w]] climb. Now press [[ltd]] several times and watch it fall. The two buttons fire the same two cells — the only difference is which one goes first.`,
+   notice:`<b>Firing the sender <em>just before</em> the receiver strengthens the connection; firing it just after weakens it. Same cells, same signals — only the order changed.</b> That tiny asymmetry is how brains learn cause and effect: if A regularly happens before B, the link A→B grows, because A might be causing B. Reverse the order and the brain concludes A is irrelevant and prunes the link. Learning, at bottom, is millimetre-scale bookkeeping about what came first.`
+  },
+  student:{
+   legend:`A single synapse under <b>spike-timing-dependent plasticity</b>. [[ltp]] fires presynaptic before postsynaptic (\\(\\Delta t < 0\\)) and [[ltd]] reverses the order. [[w]] tracks synaptic weight and [[last]] reports the sign and magnitude of the last change.`,
+   try:`Drive [[w]] as high as you can with repeated [[ltp]], then try to push it higher still. Then vary [[rate]] and check whether the size of each change depends on how frequently you stimulate.`,
+   notice:`<b>The weight saturates — it cannot grow without bound, and each pairing near the ceiling buys less than the last.</b> Without such a bound, Hebbian learning is unstable: strong synapses drive more firing, which strengthens them further, until one input dominates everything. Real synapses combine saturation with <em>homeostatic</em> mechanisms such as synaptic scaling, which multiplicatively renormalise all of a neuron's inputs over hours, preserving relative weights while holding total drive constant. STDP's temporal asymmetry follows from NMDA receptors, which require both glutamate binding and postsynaptic depolarisation to expel their Mg²⁺ block — a molecular coincidence detector with a ~20 ms window.`
+  },
+  scholar:{
+   legend:`Pair-based STDP at a single synapse: \\(\\Delta w = A_+e^{\\Delta t/\\tau_+}\\) for \\(\\Delta t<0\\) and \\(-A_-e^{-\\Delta t/\\tau_-}\\) for \\(\\Delta t>0\\), with a saturating bound on [[w]]. [[rate]] sets the pairing frequency.`,
+   try:`Consider what this pair-based rule predicts for high-frequency pairing, and compare that with the experimental finding that potentiation at 50 Hz occurs regardless of spike order. Ask what the rule must be missing.`,
+   notice:`<b>Pair-based STDP fails above ~30 Hz: experimentally, high-frequency pairing potentiates whatever the order, which the rule cannot produce.</b> Triplet and voltage-based models (Pfister–Gerstner; Clopath) fix this and additionally recover the Bienenstock–Cooper–Munro sliding threshold, in which the LTP/LTD boundary shifts with recent postsynaptic activity. The deeper issue is that STDP is not one mechanism: its sign, window and frequency dependence vary by synapse type, dendritic location and neuromodulatory state, and dopamine can gate whether an eligibility trace is consolidated at all — which is how a biologically local rule can implement reward-dependent, temporally distal credit assignment.`
+  }
+ },
+
+ sleep:{
+  junior:{
+   legend:`A night's sleep in fast-forward. The wavy trace is real brain activity as measured by an EEG. [[stage]] names which stage you're in, [[freq]] shows how fast the waves are, and [[ad]] is the chemical that builds up while you're awake and makes you sleepy.`,
+   try:`Press [[next]] to step through every stage in turn, from Awake to REM. Watch the wave shape at N3 (deep), then at REM — and compare each with Awake.`,
+   notice:`<b>Deep sleep has huge slow waves, but REM looks almost exactly like being awake — fast and small — even though you're profoundly asleep and dreaming.</b> That's why REM is called <em>paradoxical</em> sleep: from the brain's electrical activity alone you could not tell it from wakefulness. Your body is paralysed during it, which is a good thing, because it stops you acting out your dreams.`
+  },
+  student:{
+   legend:`Idealised sleep architecture cycling through wake, N1, N2, N3 and REM, with characteristic EEG signatures — [[freq]] shows the dominant frequency for each. [[ad]] tracks adenosine, the homeostatic sleep-pressure signal.`,
+   try:`Step through the stages with [[next]] and record [[freq]] for each. Note that N3 has the lowest frequency but the largest amplitude, while REM's frequency nearly matches waking. Then watch [[ad]] across a full cycle.`,
+   notice:`<b>EEG frequency and amplitude move in opposite directions — slow waves are large precisely <em>because</em> they are slow.</b> Fast waking rhythms reflect neurons firing independently, so their contributions partly cancel at the scalp; in N3 the whole cortex tolls together between synchronised up and down states, and the summed signal is enormous. Sleep is regulated by two interacting processes: homeostatic pressure from adenosine, which caffeine masks by blocking its receptors without removing the pressure, and a circadian oscillator that is independent of how long you have been awake.`
+  },
+  scholar:{
+   legend:`Schematic hypnogram with canonical spectral signatures per stage. [[freq]] reports the dominant EEG band; [[ad]] represents Process S. The model omits the cycle-to-cycle shift in REM/NREM proportion across a real night.`,
+   try:`Note that this model cycles stages with fixed durations. Consider how a real night differs in the distribution of N3 and REM across successive cycles, and what functional account explains that asymmetry.`,
+   notice:`<b>Real nights front-load N3 and back-load REM — early cycles are slow-wave dominated, later ones REM dominated — which no fixed-duration cycle can capture.</b> This follows from the two-process model: Process S dissipates exponentially through the night, so slow-wave activity (its direct index) is concentrated early, while REM propensity rides the circadian Process C and peaks near the core-temperature minimum. Functionally the asymmetry matters: the synaptic homeostasis hypothesis holds that SWA downscales synapses potentiated during waking, and its magnitude scales with the prior day's learning. Glymphatic clearance of amyloid-β likewise rises ~60% in NREM — which is why sleep deprivation is now treated as a candidate causal factor in neurodegeneration rather than merely a symptom.`
+  }
+ }
+
+}; // end SIM_GUIDE
 
 // Primary Wikipedia article per simulation. Every URL verified to return
 // HTTP 200 (checked 2026-07) so "Go Deeper" never lands on the site homepage.
@@ -2487,7 +3288,10 @@ function mkRange(ctrl,lbl,min,max,val,step,clr){
   const v=newEl('span','rng-v');v.textContent=val;if(clr)v.style.color=clr;
   top.appendChild(l);top.appendChild(v);
   const inp=document.createElement('input');inp.type='range';
-  inp.min=min;inp.max=max;inp.value=val;inp.step=step||1;
+  // step MUST be set before value: while step is still the default 1, the
+  // browser snaps value onto the min+k*1 grid (Star Mass 2 became 2.5), and
+  // the label then disagrees with the physics.
+  inp.min=min;inp.max=max;inp.step=step||1;inp.value=val;
   w.appendChild(top);w.appendChild(inp);
   ctrl.appendChild(w);
   inp.addEventListener('input',()=>{v.textContent=parseFloat(inp.value).toFixed(step<1?2:0);});
@@ -2495,13 +3299,20 @@ function mkRange(ctrl,lbl,min,max,val,step,clr){
 }
 
 function getSimWidth(container){
-  // Available content width = pbody inner width minus its horizontal padding.
-  // (The sim container is display:none at build time, so we measure pbody and
-  //  use clientWidth - which already excludes any scrollbar - minus padding.)
-  const pb=document.getElementById('pbody');
-  const cs=getComputedStyle(pb);
-  const pad=parseFloat(cs.paddingLeft||0)+parseFloat(cs.paddingRight||0);
-  const w=((pb.clientWidth||500)-pad)||500;
+  // Prefer the container's own laid-out width. Inside the modal the sim tab is
+  // display:none at build time so the container measures 0 — there we fall back
+  // to #pbody. On a standalone page (no #pbody) the container is visible, so its
+  // clientWidth is correct and the fallback is skipped.
+  let w=container&&container.clientWidth||0;
+  if(!w){
+    const pb=document.getElementById('pbody');
+    if(pb){
+      const cs=getComputedStyle(pb);
+      const pad=parseFloat(cs.paddingLeft||0)+parseFloat(cs.paddingRight||0);
+      w=(pb.clientWidth||0)-pad;
+    }
+  }
+  w=w||500;
   return Math.min(w-4,820);
 }
 
@@ -2530,10 +3341,11 @@ function simOrbit(container,color,lvl){
   if (!canvas.parentNode) container.appendChild(canvas);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pPer=pill('Period'); const pVel=pill('Speed');
+  const L=simLabels('gravity',lvl);
+  const pPer=pill(L.period); const pVel=pill(L.speed);
   pRow.appendChild(pPer.el); pRow.appendChild(pVel.el);
-  const rR=mkRange(ctrl,'Orbit Radius',40,130,80,1,color);
-  const rM=mkRange(ctrl,'Star Mass',0.5,5,2,0.1,color);
+  const rR=mkRange(ctrl,L.radius,40,130,80,1,color);
+  const rM=mkRange(ctrl,L.mass,0.5,5,2,0.1,color);
 
   let angle=0, trail=[];
   const S=SIMS.orbit={raf:null};
@@ -2580,12 +3392,13 @@ function simOrbit(container,color,lvl){
 }
 
 /* ── WAVES ── */
-function simWaves(container,color){
+function simWaves(container,color,lvl){
   const W=getSimWidth(container),H=260;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pType=pill('Interference'); const pAmp=pill('Max amplitude');
+  const L=simLabels('waves',lvl);
+  const pType=pill(L.type); const pAmp=pill(L.amp);
   pRow.appendChild(pType.el); pRow.appendChild(pAmp.el);
   const rF=mkRange(ctrl,'Frequency 2',0.5,3,1,0.05,color);
   const rP=mkRange(ctrl,'Phase Shift',0,6.28,0,0.05,color);
@@ -2642,16 +3455,17 @@ function simWaves(container,color){
 }
 
 /* ── THERMODYNAMICS ── */
-function simThermo(container,color){
+function simThermo(container,color,lvl){
   const safe=(typeof color==='string'&&color[0]==='#')?color:'#ff6b35';
   const W=getSimWidth(container),H=312;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pHits=pill('Wall hits/s'); const pAvg=pill('Avg speed'); const pPres=pill('Pressure');
+  const L=simLabels('thermo',lvl);
+  const pHits=pill(L.hits); const pAvg=pill(L.speed); const pPres=pill(L.press);
   pRow.appendChild(pHits.el); pRow.appendChild(pAvg.el); pRow.appendChild(pPres.el);
-  const rT=mkRange(ctrl,'Temperature (K)',50,1200,300,10,safe);
-  const rN=mkRange(ctrl,'Particles',5,90,30,5,safe);
+  const rT=mkRange(ctrl,L.temp,50,1200,300,10,safe);
+  const rN=mkRange(ctrl,L.num,5,90,30,5,safe);
 
   // rounded-rect path helper (begins a fresh path)
   function rr(x,y,w,h,rad){
@@ -2835,17 +3649,18 @@ function simThermo(container,color){
 }
 
 /* ── GALTON BOARD ── */
-function simGalton(container,color){
+function simGalton(container,color,lvl){
   const W=getSimWidth(container),H=300;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pTot=pill('Total balls'); const pMean=pill('Mean bin');
+  const L=simLabels('prob',lvl);
+  const pTot=pill(L.total); const pMean=pill(L.mean);
   pRow.appendChild(pTot.el); pRow.appendChild(pMean.el);
 
-  const bDrop=mkBtn('▶ Drop balls',true,color);
-  const bReset=mkBtn('↺ Reset');
-  const rRows=mkRange(ctrl,'Rows of pegs',4,10,7,1,color);
+  const bDrop=mkBtn('▶ '+L.drop,true,color);
+  const bReset=mkBtn('↺ '+L.reset);
+  const rRows=mkRange(ctrl,L.rows,4,10,7,1,color);
   ctrl.prepend(bReset); ctrl.prepend(bDrop);
 
   let numRows=7, bins, balls=[], total=0, dropping=false, dropInt;
@@ -2855,14 +3670,14 @@ function simGalton(container,color){
   rRows.inp.addEventListener('input',()=>{numRows=rRows.val;reset();});
   bDrop.addEventListener('click',()=>{
     dropping=!dropping;
-    bDrop.textContent=dropping?'⏸ Stop':'▶ Drop balls';
+    bDrop.textContent=dropping?'⏸ Stop':'▶ '+L.drop;
     if(dropping)dropInt=setInterval(()=>{
       balls.push({x:W/2,y:6,row:0,col:0,vy:0,hue:40+Math.random()*18});
     },120);
     else clearInterval(dropInt);
   });
   bReset.addEventListener('click',()=>{
-    dropping=false;clearInterval(dropInt);bDrop.textContent='▶ Drop balls';reset();
+    dropping=false;clearInterval(dropInt);bDrop.textContent='▶ '+L.drop;reset();
   });
 
   function pp(r,c){
@@ -2892,7 +3707,7 @@ function simGalton(container,color){
     const bw=Math.min(22,(W-60)/(numRows+1));
     for(let i=0;i<=numRows;i++){
       const p=pp(numRows,i), bx2=p.x-bw/2;
-      const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(numRows*0.22),2));
+      const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(Math.sqrt(numRows)/2),2));
       // expected (ghost) bar
       ctx.fillStyle='rgba(255,255,255,0.05)'; ctx.fillRect(bx2,H-8-g*maxBH,bw-2,g*maxBH);
       // data bar with gradient + glow
@@ -2906,7 +3721,7 @@ function simGalton(container,color){
     }
     // theoretical Gaussian curve overlay
     ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.setLineDash([4,4]);ctx.lineWidth=1.5;ctx.beginPath();
-    for(let i=0;i<=numRows;i++){const p=pp(numRows,i);const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(numRows*0.22),2));const y=H-8-g*maxBH;i?ctx.lineTo(p.x,y):ctx.moveTo(p.x,y);}
+    for(let i=0;i<=numRows;i++){const p=pp(numRows,i);const g=Math.exp(-0.5*Math.pow((i-numRows/2)/(Math.sqrt(numRows)/2),2));const y=H-8-g*maxBH;i?ctx.lineTo(p.x,y):ctx.moveTo(p.x,y);}
     ctx.stroke();ctx.setLineDash([]);
 
     // animate balls (glowing)
@@ -2942,10 +3757,11 @@ function simFractal(container,color,lvl){
   const {canvas,ctx,dpr}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pZoom=pill('Zoom level'); pRow.appendChild(pZoom.el);
+  const L=simLabels('fractal',lvl);
+  const pZoom=pill(L.zoom); pRow.appendChild(pZoom.el);
   let maxIter=lvl==='junior'?50:lvl==='student'?90:160;
-  const rI=mkRange(ctrl,'Detail (iterations)',20,240,maxIter,5,color);
-  const bR=mkBtn('↺ Reset view');
+  const rI=mkRange(ctrl,L.detail,20,240,maxIter,5,color);
+  const bR=mkBtn('↺ '+L.reset);
   ctrl.appendChild(bR);
 
   let cx=-0.5,cy=0,zoom=Math.min(W,H)*0.44, dirty=true;
@@ -3026,18 +3842,19 @@ function simFractal(container,color,lvl){
 }
 
 /* ── GAME OF LIFE ── */
-function simLife(container,color){
+function simLife(container,color,lvl){
   const W=getSimWidth(container),H=290;
   const {canvas,ctx,dpr}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pGen=pill('Generation'); const pAlive=pill('Alive cells');
+  const L=simLabels('life',lvl);
+  const pGen=pill(L.gen); const pAlive=pill(L.alive);
   pRow.appendChild(pGen.el); pRow.appendChild(pAlive.el);
 
-  const bTog=mkBtn('⏸ Pause');bTog.style.cssText=`border-color:${color};color:${color}`;
-  const bClear=mkBtn('✕ Clear');
-  const bRand=mkBtn('⚡ Random');
-  const bGlider=mkBtn('🛸 Glider',true,color);
+  const bTog=mkBtn('⏸ '+L.pause);bTog.style.cssText=`border-color:${color};color:${color}`;
+  const bClear=mkBtn('✕ '+L.clear);
+  const bRand=mkBtn('⚡ '+L.random);
+  const bGlider=mkBtn('🛸 '+L.glider,true,color);
   [bTog,bClear,bRand,bGlider].forEach(b=>ctrl.appendChild(b));
 
   const CELL=9;
@@ -3088,18 +3905,19 @@ function simLife(container,color){
 }
 
 /* ── SORTING ── */
-function simSorting(container,color){
+function simSorting(container,color,lvl){
   const W=getSimWidth(container),H=260;
   const {canvas,ctx,dpr}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pAlgo=pill('Algorithm'); const pComp=pill('Comparisons'); const pSwap=pill('Swaps');
+  const L=simLabels('sorting',lvl);
+  const pAlgo=pill(L.algo); const pComp=pill(L.comps); const pSwap=pill(L.swaps);
   pRow.appendChild(pAlgo.el); pRow.appendChild(pComp.el); pRow.appendChild(pSwap.el);
 
-  const bBubble=mkBtn('Bubble Sort',true,color);
-  const bMerge=mkBtn('Merge Sort');
-  const bRand=mkBtn('↺ Shuffle');
-  const rN=mkRange(ctrl,'Array size',10,80,40,5,color);
+  const bBubble=mkBtn(L.bubble,true,color);
+  const bMerge=mkBtn(L.merge);
+  const bRand=mkBtn('↺ '+L.shuffle);
+  const rN=mkRange(ctrl,L.size,10,80,40,5,color);
   [bBubble,bMerge,bRand].forEach(b=>ctrl.prepend(b));
 
   let arr=[], n=40, gen=null, active=false, comps=0, swaps=0;
@@ -3149,17 +3967,18 @@ function simSorting(container,color){
 }
 
 /* ── CLIMATE ── */
-function simClimate(container,color){
+function simClimate(container,color,lvl){
   const W=getSimWidth(container),H=280;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pCO2=pill('CO₂'); const pF=pill('Forcing'); const pDT=pill('ΔT');
+  const L=simLabels('climate',lvl);
+  const pCO2=pill(L.c); const pF=pill(L.forcing); const pDT=pill(L.dt);
   pRow.appendChild(pCO2.el); pRow.appendChild(pF.el); pRow.appendChild(pDT.el);
 
-  const rC=mkRange(ctrl,'CO₂ concentration (ppm)',280,800,280,5,color);
-  const bPre=mkBtn('↺ Pre-industrial (280)');
-  const bNow=mkBtn('Set to 2024 (420)',true,color);
+  const rC=mkRange(ctrl,L.co2,280,800,280,5,color);
+  const bPre=mkBtn('↺ '+L.pre);
+  const bNow=mkBtn(L.now,true,color);
   ctrl.appendChild(bPre); ctrl.appendChild(bNow);
 
   bPre.addEventListener('click',()=>{rC.inp.value=280;rC.v.textContent='280';});
@@ -3236,15 +4055,16 @@ function simClimate(container,color){
   frame();
 }
 /* ── CHEMISTRY SIM ── */
-function simChem(container,color){
+function simChem(container,color,lvl){
   const W=getSimWidth(container),H=280;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pMol=pill('Molecules'); const pTemp=pill('Temp');
+  const L=simLabels('chem',lvl);
+  const pMol=pill(L.mols); const pTemp=pill(L.t);
   pRow.appendChild(pMol.el); pRow.appendChild(pTemp.el);
-  const rT=mkRange(ctrl,'Temperature',1,10,5,1,color);
-  const bReset=mkBtn('↺ Reset',true,color);
+  const rT=mkRange(ctrl,L.temp,1,10,5,1,color);
+  const bReset=mkBtn('↺ '+L.reset,true,color);
   ctrl.appendChild(bReset);
   const ATOMS=[];
   const TYPES=[
@@ -3313,15 +4133,16 @@ function simChem(container,color){
 }
 
 /* ── ASTRONOMY SIM ── */
-function simAstro(container,color){
+function simAstro(container,color,lvl){
   const W=getSimWidth(container),H=300;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pAge=pill('Age'); const pStage=pill('Stage');
+  const L=simLabels('astro',lvl);
+  const pAge=pill(L.age); const pStage=pill(L.stage);
   pRow.appendChild(pAge.el); pRow.appendChild(pStage.el);
-  const rMass=mkRange(ctrl,'Star Mass (solar masses)',0.5,20,1,0.5,color);
-  const bReset=mkBtn('↺ Reset star',true,color);
+  const rMass=mkRange(ctrl,L.mass,0.5,20,1,0.5,color);
+  const bReset=mkBtn('↺ '+L.reset,true,color);
   ctrl.appendChild(bReset);
   let t=0; let tOffset=0;
   bReset.addEventListener('click',()=>{t=0;tOffset=Date.now();});
@@ -3395,15 +4216,16 @@ function simAstro(container,color){
 }
 
 /* ── CALCULUS SIM ── */
-function simCalculus(container,color){
+function simCalculus(container,color,lvl){
   const W=getSimWidth(container),H=280;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pDeriv=pill('f′(x)'); const pInteg=pill('∫f dx');
+  const L=simLabels('calculus',lvl);
+  const pDeriv=pill(L.deriv); const pInteg=pill(L.integ);
   pRow.appendChild(pDeriv.el); pRow.appendChild(pInteg.el);
-  const rX=mkRange(ctrl,'x position',-3,3,0,0.1,color);
-  const rN=mkRange(ctrl,'Riemann rectangles',2,40,8,1,color);
+  const rX=mkRange(ctrl,L.x,-3,3,0,0.1,color);
+  const rN=mkRange(ctrl,L.rects,2,40,8,1,color);
   const S=SIMS.calculus={raf:null};
   const PAD=40, PW=W-PAD*2, PH=H-PAD*2;
   function f(x){return Math.sin(x)+0.4*x;}
@@ -3421,7 +4243,11 @@ function simCalculus(container,color){
     ctx.fillStyle='#64748b';ctx.font='11px Nunito,sans-serif';ctx.textAlign='center';
     for(let xi=-3;xi<=3;xi++){const p=toC(xi,0);ctx.fillText(xi,p.px,p.py+14);}
     // Riemann rectangles
-    const n=rN.val; const a=-3,b=3, dx=(b-a)/n;
+    // Integrate from -3 up to the x slider, not over the whole fixed span:
+    // f is odd on [-3,3] and the midpoint rule is exact there by symmetry, so
+    // the old version printed 0.000 for every rectangle count and the slider
+    // appeared broken. Running to x also exposes the fundamental theorem.
+    const n=rN.val; const a=-3,b=rX.val, dx=(b-a)/n;
     let area=0;
     for(let i=0;i<n;i++){
       const xi=a+i*dx; const yi=f(xi+dx/2); area+=yi*dx;
@@ -3457,15 +4283,16 @@ function simCalculus(container,color){
 }
 
 /* ── NEUROSCIENCE SIM ── */
-function simNeuro(container,color){
+function simNeuro(container,color,lvl){
   const W=getSimWidth(container),H=290;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pFires=pill('Firing rate'); const pPot=pill('Potential');
+  const L=simLabels('neuro',lvl);
+  const pFires=pill(L.rate); const pPot=pill(L.pot);
   pRow.appendChild(pFires.el); pRow.appendChild(pPot.el);
-  const rStim=mkRange(ctrl,'Stimulus strength',0,10,4,0.5,color);
-  const bFire=mkBtn('⚡ Fire neuron',true,color);
+  const rStim=mkRange(ctrl,L.stim,0,10,4,0.5,color);
+  const bFire=mkBtn('⚡ '+L.fire,true,color);
   ctrl.appendChild(bFire);
   // Build neuron network
   const nodes=[];
@@ -3547,15 +4374,16 @@ function simNeuro(container,color){
 }
 
 /* ── PARTICLE PHYSICS SIM ── */
-function simParticles(container,color){
+function simParticles(container,color,lvl){
   const W=getSimWidth(container),H=290;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pColl=pill('Collisions'); const pEnergy=pill('Energy');
+  const L=simLabels('particles',lvl);
+  const pColl=pill(L.count); const pEnergy=pill(L.e);
   pRow.appendChild(pColl.el); pRow.appendChild(pEnergy.el);
-  const rE=mkRange(ctrl,'Beam energy (TeV)',0.5,14,7,0.5,color);
-  const bCollide=mkBtn('💥 Collide!',true,color);
+  const rE=mkRange(ctrl,L.energy,0.5,14,7,0.5,color);
+  const bCollide=mkBtn('💥 '+L.collide,true,color);
   ctrl.appendChild(bCollide);
   const particles=[];
   let collisions=0; let t=0;
@@ -3628,18 +4456,19 @@ function simParticles(container,color){
 }
 
 /* ── GRAPH THEORY SIM ── */
-function simGraphs(container, color) {
+function simGraphs(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pInfected = pill('Reached'); const pSteps = pill('Steps'); const pClustr = pill('Hubs');
+  const L = simLabels('graphs', lvl);
+  const pInfected = pill(L.reached); const pSteps = pill(L.steps); const pClustr = pill(L.hubcount);
   pRow.appendChild(pInfected.el); pRow.appendChild(pSteps.el); pRow.appendChild(pClustr.el);
 
-  const rNodes = mkRange(ctrl, 'Nodes', 10, 40, 22, 1, color);
-  const rHubs  = mkRange(ctrl, 'Hub connections', 1, 6, 3, 1, color);
-  const bSpread = mkBtn('▶ Spread signal', true, color);
-  const bReset  = mkBtn('↺ New graph');
+  const rNodes = mkRange(ctrl, L.nodes, 10, 40, 22, 1, color);
+  const rHubs  = mkRange(ctrl, L.hubs, 1, 6, 3, 1, color);
+  const bSpread = mkBtn('▶ ' + L.spread, true, color);
+  const bReset  = mkBtn('↺ ' + L.reset);
   ctrl.appendChild(bSpread); ctrl.appendChild(bReset);
 
   let nodes = [], edges = [], spreading = false, step = 0, timer = null;
@@ -3815,15 +4644,16 @@ function simGraphs(container, color) {
 }
 
 /* ── DNA SIM ── */
-function simDNA(container, color) {
+function simDNA(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pPairs = pill('Base pairs copied'); const pErrors = pill('Mutations');
+  const L = simLabels('dna', lvl);
+  const pPairs = pill(L.pairs); const pErrors = pill(L.errors);
   pRow.appendChild(pPairs.el); pRow.appendChild(pErrors.el);
-  const rSpeed = mkRange(ctrl, 'Replication speed', 1, 8, 3, 1, color);
-  const bReset = mkBtn('↺ Reset', true, color);
+  const rSpeed = mkRange(ctrl, L.speed, 1, 8, 3, 1, color);
+  const bReset = mkBtn('↺ ' + L.reset, true, color);
   ctrl.appendChild(bReset);
 
   const BASES = ['A','T','C','G'];
@@ -3949,16 +4779,17 @@ function simDNA(container, color) {
 }
 
 /* ── EVOLUTION SIM ── */
-function simEvolution(container, color) {
+function simEvolution(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pGen = pill('Generation'); const pFit = pill('Avg fitness'); const pDiv = pill('Diversity');
+  const L = simLabels('evolution', lvl);
+  const pGen = pill(L.gen); const pFit = pill(L.fit); const pDiv = pill(L.div);
   pRow.appendChild(pGen.el); pRow.appendChild(pFit.el); pRow.appendChild(pDiv.el);
-  const rSel = mkRange(ctrl, 'Selection pressure', 0, 10, 5, 1, color);
-  const rMut = mkRange(ctrl, 'Mutation rate', 0, 10, 3, 1, color);
-  const bReset = mkBtn('↺ Reset', true, color);
+  const rSel = mkRange(ctrl, L.sel, 0, 10, 5, 1, color);
+  const rMut = mkRange(ctrl, L.mut, 0, 10, 3, 1, color);
+  const bReset = mkBtn('↺ ' + L.reset, true, color);
   ctrl.appendChild(bReset);
 
   // Each individual: hue (trait) + fitness derived from environment optimum
@@ -4054,16 +4885,17 @@ function simEvolution(container, color) {
 }
 
 /* ── ECOSYSTEM SIM ── */
-function simEcosystem(container, color) {
+function simEcosystem(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pPlants = pill('🌿 Plants'); const pHerb = pill('🐇 Herbivores'); const pPred = pill('🦊 Predators');
+  const L = simLabels('ecosystem', lvl);
+  const pPlants = pill(L.plants); const pHerb = pill(L.herb); const pPred = pill(L.preds);
   pRow.appendChild(pPlants.el); pRow.appendChild(pHerb.el); pRow.appendChild(pPred.el);
-  const rGrowth = mkRange(ctrl, 'Plant growth rate', 1, 10, 5, 1, color);
-  const rPred = mkRange(ctrl, 'Predator efficiency', 1, 10, 4, 1, color);
-  const bReset = mkBtn('↺ Reset', true, color);
+  const rGrowth = mkRange(ctrl, L.growth, 1, 10, 5, 1, color);
+  const rPred = mkRange(ctrl, L.pred, 1, 10, 4, 1, color);
+  const bReset = mkBtn('↺ ' + L.reset, true, color);
   ctrl.appendChild(bReset);
 
   // Agent-based: plants (green), herbivores (orange), predators (red)
@@ -4189,16 +5021,17 @@ function simEcosystem(container, color) {
 }
 
 /* ── MACHINE LEARNING SIM ── */
-function simML(container, color) {
+function simML(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pEpoch = pill('Epoch'); const pLoss = pill('Loss'); const pAcc = pill('Accuracy');
+  const L = simLabels('ml', lvl);
+  const pEpoch = pill(L.epoch); const pLoss = pill(L.loss); const pAcc = pill(L.acc);
   pRow.appendChild(pEpoch.el); pRow.appendChild(pLoss.el); pRow.appendChild(pAcc.el);
-  const rLR   = mkRange(ctrl, 'Learning rate', 1, 10, 4, 1, color);
-  const rHid  = mkRange(ctrl, 'Hidden units',  2, 12, 5, 1, color);
-  const bReset = mkBtn('↺ Reset', true, color);
+  const rLR   = mkRange(ctrl, L.lr, 1, 10, 4, 1, color);
+  const rHid  = mkRange(ctrl, L.hid,  2, 12, 5, 1, color);
+  const bReset = mkBtn('↺ ' + L.reset, true, color);
   ctrl.appendChild(bReset);
 
   // XOR-style dataset: 4 clusters
@@ -4333,15 +5166,16 @@ function simML(container, color) {
 }
 
 /* ── CRYPTOGRAPHY SIM ── */
-function simCrypto(container, color) {
+function simCrypto(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pStep = pill('Step'); const pKey = pill('Shared key');
+  const L = simLabels('crypto', lvl);
+  const pStep = pill(L.step); const pKey = pill(L.key);
   pRow.appendChild(pStep.el); pRow.appendChild(pKey.el);
-  const bStart = mkBtn('▶ Run DH exchange', true, color);
-  const bReset = mkBtn('↺ Reset');
+  const bStart = mkBtn('▶ ' + L.run, true, color);
+  const bReset = mkBtn('↺ ' + L.reset);
   ctrl.appendChild(bStart); ctrl.appendChild(bReset);
 
   // Diffie-Hellman with small numbers for visualisation
@@ -4466,16 +5300,18 @@ function simCrypto(container, color) {
 }
 
 /* ── COMPLEXITY SIM ── */
-function simComplexity(container, color) {
+function simComplexity(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pOps = pill('Operations'); const pClass = pill('Class'); const pN = pill('n');
+  const L = simLabels('complexity', lvl);
+  const pOps = pill(L.ops); const pClass = pill(L.cls); const pN = pill(L.nval);
   pRow.appendChild(pOps.el); pRow.appendChild(pClass.el); pRow.appendChild(pN.el);
-  const rN    = mkRange(ctrl, 'Input size n', 2, 22, 8, 1, color);
-  const rAlgo = mkRange(ctrl, 'Algorithm (1=O(n) … 5=O(2ⁿ))', 1, 5, 2, 1, color);
-  const bRun  = mkBtn('▶ Run', true, color);
+  const rN    = mkRange(ctrl, L.n, 2, 22, 8, 1, color);
+  // label was off by one: slider value 1 selects ALGOS[0], which is O(log n)
+  const rAlgo = mkRange(ctrl, L.algo, 1, 5, 2, 1, color);
+  const bRun  = mkBtn('▶ ' + L.run, true, color);
   ctrl.appendChild(bRun);
 
   const ALGOS = [
@@ -4581,16 +5417,17 @@ function simComplexity(container, color) {
 }
 
 /* ── PLATE TECTONICS SIM ── */
-function simTectonics(container, color) {
+function simTectonics(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pStress = pill('Stress'); const pTime = pill('Myr'); const pEvent = pill('Last event');
+  const L = simLabels('tectonics', lvl);
+  const pStress = pill(L.stress); const pTime = pill(L.time); const pEvent = pill(L.event);
   pRow.appendChild(pStress.el); pRow.appendChild(pTime.el); pRow.appendChild(pEvent.el);
-  const rSpeed = mkRange(ctrl, 'Plate speed', 1, 10, 4, 1, color);
-  const rType  = mkRange(ctrl, 'Boundary type (1=diverge 2=transform 3=converge)', 1, 3, 2, 1, color);
-  const bQuake = mkBtn('⚡ Trigger quake', true, color);
+  const rSpeed = mkRange(ctrl, L.speed, 1, 10, 4, 1, color);
+  const rType  = mkRange(ctrl, L.type, 1, 3, 2, 1, color);
+  const bQuake = mkBtn('⚡ ' + L.quake, true, color);
   ctrl.appendChild(bQuake);
 
   let stress = 0, myr = 0, lastEvent = 'none', quakeAnim = 0;
@@ -4694,15 +5531,16 @@ function simTectonics(container, color) {
 }
 
 /* ── OCEAN CURRENTS SIM ── */
-function simOcean(container, color) {
+function simOcean(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pFlow = pill('Flow rate'); const pTemp = pill('Surf. temp'); const pAMOC = pill('AMOC');
+  const L = simLabels('ocean', lvl);
+  const pFlow = pill(L.flow); const pTemp = pill(L.temp); const pAMOC = pill(L.amoc);
   pRow.appendChild(pFlow.el); pRow.appendChild(pTemp.el); pRow.appendChild(pAMOC.el);
-  const rWind   = mkRange(ctrl, 'Wind strength', 1, 10, 5, 1, color);
-  const rWarm   = mkRange(ctrl, 'Ocean warming', 0, 10, 2, 1, color);
+  const rWind   = mkRange(ctrl, L.wind, 1, 10, 5, 1, color);
+  const rWarm   = mkRange(ctrl, L.warm, 0, 10, 2, 1, color);
   ctrl.appendChild(mkBtn(''));  // spacer
 
   // Particle field simulating gyre + thermohaline
@@ -4801,16 +5639,17 @@ function simOcean(container, color) {
 }
 
 /* ── VOLCANO SIM ── */
-function simVolcano(container, color) {
+function simVolcano(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pPres = pill('Chamber pressure'); const pVEI = pill('VEI'); const pPhase = pill('Phase');
+  const L = simLabels('volcano', lvl);
+  const pPres = pill(L.pres); const pVEI = pill(L.vei); const pPhase = pill(L.phase);
   pRow.appendChild(pPres.el); pRow.appendChild(pVEI.el); pRow.appendChild(pPhase.el);
-  const rVisc  = mkRange(ctrl, 'Magma viscosity (1=basalt 10=rhyolite)', 1, 10, 4, 1, color);
-  const rRecharge = mkRange(ctrl, 'Magma recharge rate', 1, 10, 4, 1, color);
-  const bErupt = mkBtn('💥 Force eruption', true, color);
+  const rVisc  = mkRange(ctrl, L.visc, 1, 10, 4, 1, color);
+  const rRecharge = mkRange(ctrl, L.recharge, 1, 10, 4, 1, color);
+  const bErupt = mkBtn('💥 ' + L.erupt, true, color);
   ctrl.appendChild(bErupt);
 
   let pressure = 20, erupting = false, eruptT = 0, eruptPower = 0;
@@ -4950,17 +5789,18 @@ function simVolcano(container, color) {
 }
 
 /* ── ELECTROCHEMISTRY SIM ── */
-function simElectrochem(container, color) {
+function simElectrochem(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pV    = pill('Voltage'); const pQ = pill('Charge'); const pMode = pill('Mode');
+  const L = simLabels('electrochem', lvl);
+  const pV    = pill(L.volts); const pQ = pill(L.soc); const pMode = pill(L.mode);
   pRow.appendChild(pV.el); pRow.appendChild(pQ.el); pRow.appendChild(pMode.el);
-  const rLoad    = mkRange(ctrl, 'Load (discharge rate)', 1, 10, 4, 1, color);
-  const bDischarge = mkBtn('▶ Discharge', true, color);
-  const bCharge    = mkBtn('⚡ Charge');
-  const bReset     = mkBtn('↺ Reset');
+  const rLoad    = mkRange(ctrl, L.load, 1, 10, 4, 1, color);
+  const bDischarge = mkBtn('▶ ' + L.discharge, true, color);
+  const bCharge    = mkBtn('⚡ ' + L.charge);
+  const bReset     = mkBtn('↺ ' + L.reset);
   ctrl.appendChild(bDischarge); ctrl.appendChild(bCharge); ctrl.appendChild(bReset);
 
   let soc = 1.0;        // state of charge 0–1
@@ -5086,17 +5926,18 @@ function simElectrochem(container, color) {
 }
 
 /* ── KINETICS SIM ── */
-function simKinetics(container, color) {
+function simKinetics(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pReact = pill('[Reactant]'); const pProd = pill('[Product]'); const pRate = pill('Rate');
+  const L = simLabels('kinetics', lvl);
+  const pReact = pill(L.react); const pProd = pill(L.prod); const pRate = pill(L.rate);
   pRow.appendChild(pReact.el); pRow.appendChild(pProd.el); pRow.appendChild(pRate.el);
-  const rTemp  = mkRange(ctrl, 'Temperature (K)', 200, 800, 400, 10, color);
-  const rEa    = mkRange(ctrl, 'Activation energy (kJ/mol)', 10, 100, 50, 5, color);
-  const bCat   = mkBtn('⚗️ Add catalyst', true, color);
-  const bReset = mkBtn('↺ Reset');
+  const rTemp  = mkRange(ctrl, L.temp, 200, 800, 400, 10, color);
+  const rEa    = mkRange(ctrl, L.ea, 10, 100, 50, 5, color);
+  const bCat   = mkBtn('⚗️ ' + L.cat, true, color);
+  const bReset = mkBtn('↺ ' + L.reset);
   ctrl.appendChild(bCat); ctrl.appendChild(bReset);
 
   let molecules = [], catActive = false, t = 0;
@@ -5115,7 +5956,7 @@ function simKinetics(container, color) {
       });
     t = 0;
   }
-  bCat.addEventListener('click', () => { catActive = !catActive; bCat.textContent = catActive ? '✕ Remove catalyst' : '⚗️ Add catalyst'; });
+  bCat.addEventListener('click', () => { catActive = !catActive; bCat.textContent = catActive ? '✕ Remove catalyst' : '⚗️ ' + L.cat; });
   bReset.addEventListener('click', initMolecules);
   initMolecules();
 
@@ -5225,14 +6066,15 @@ function simKinetics(container, color) {
 }
 
 /* ── ORGANIC CHEMISTRY SIM ── */
-function simOrganic(container, color) {
+function simOrganic(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pMol = pill('Molecule'); const pAtoms = pill('Atoms'); const pType = pill('Type');
+  const L = simLabels('organic', lvl);
+  const pMol = pill(L.mol); const pAtoms = pill(L.atoms); const pType = pill(L.type);
   pRow.appendChild(pMol.el); pRow.appendChild(pAtoms.el); pRow.appendChild(pType.el);
-  const rMol = mkRange(ctrl, 'Molecule selector', 1, 6, 1, 1, color);
+  const rMol = mkRange(ctrl, L.sel, 1, 6, 1, 1, color);
   ctrl.appendChild(document.createElement('div'));
 
   // Define molecules as atom+bond lists
@@ -5373,16 +6215,17 @@ function simOrganic(container, color) {
 }
 
 /* ── BLACK HOLES SIM ── */
-function simBlackholes(container, color) {
+function simBlackholes(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pDist = pill('Distance'); const pDilat = pill('Time dilation'); const pRedshift = pill('Redshift');
+  const L = simLabels('blackholes', lvl);
+  const pDist = pill(L.km); const pDilat = pill(L.dilat); const pRedshift = pill(L.z);
   pRow.appendChild(pDist.el); pRow.appendChild(pDilat.el); pRow.appendChild(pRedshift.el);
-  const rMass = mkRange(ctrl, 'Black hole mass (M☉)', 1, 50, 10, 1, color);
-  const rOrbit = mkRange(ctrl, 'Test particle distance (r_S)', 2, 20, 6, 0.5, color);
-  const bGwave = mkBtn('🌊 Gravitational wave', true, color);
+  const rMass = mkRange(ctrl, L.mass, 1, 50, 10, 1, color);
+  const rOrbit = mkRange(ctrl, L.dist, 2, 20, 6, 0.5, color);
+  const bGwave = mkBtn('🌊 ' + L.wave, true, color);
   ctrl.appendChild(bGwave);
 
   let t = 0, gwAnim = 0, stars = [];
@@ -5492,16 +6335,17 @@ function simBlackholes(container, color) {
 }
 
 /* ── COSMOLOGY SIM ── */
-function simCosmology(container, color) {
+function simCosmology(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pAge = pill('Age (Gyr)'); const pH = pill('H(z)'); const pZ = pill('Redshift z');
+  const L = simLabels('cosmology', lvl);
+  const pAge = pill(L.age); const pH = pill(L.h); const pZ = pill(L.z);
   pRow.appendChild(pAge.el); pRow.appendChild(pH.el); pRow.appendChild(pZ.el);
-  const rOmegaL = mkRange(ctrl, 'Dark energy Ω_Λ', 0, 100, 69, 1, color);
-  const rOmegaM = mkRange(ctrl, 'Matter Ω_m (%)', 0, 100, 31, 1, color);
-  const bReset = mkBtn('↺ Reset', true, color);
+  const rOmegaL = mkRange(ctrl, L.lam, 0, 100, 69, 1, color);
+  const rOmegaM = mkRange(ctrl, L.mat, 0, 100, 31, 1, color);
+  const bReset = mkBtn('↺ ' + L.reset, true, color);
   ctrl.appendChild(bReset);
 
   let galaxies = [], stars = [], t = 0, cosmicT = 0;
@@ -5618,15 +6462,16 @@ function simCosmology(container, color) {
 }
 
 /* ── SOLAR SYSTEM SIM ── */
-function simSolarSystem(container, color) {
+function simSolarSystem(container, color, lvl) {
   const W = getSimWidth(container), H = 300;
   const { canvas, ctx } = mkCanvas(container, W, H);
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
-  const pPlanet = pill('Selected'); const pPeriod = pill('Period'); const pDist = pill('Distance');
+  const L = simLabels('solarsystem', lvl);
+  const pPlanet = pill(L.sel); const pPeriod = pill(L.period); const pDist = pill(L.dist);
   pRow.appendChild(pPlanet.el); pRow.appendChild(pPeriod.el); pRow.appendChild(pDist.el);
-  const rSpeed = mkRange(ctrl, 'Time speed', 1, 10, 4, 1, color);
-  const rZoom  = mkRange(ctrl, 'Zoom', 1, 5, 2, 0.5, color);
+  const rSpeed = mkRange(ctrl, L.speed, 1, 10, 4, 1, color);
+  const rZoom  = mkRange(ctrl, L.zoom, 1, 5, 2, 0.5, color);
   ctrl.appendChild(document.createElement('div'));
 
   const PLANETS = [
@@ -5757,17 +6602,18 @@ function simSolarSystem(container, color) {
 }
 
 /* ── NEURON - Action Potential ── */
-function simNeuron(container,color){
+function simNeuron(container,color,lvl){
   const W=getSimWidth(container),H=300;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pV=pill('Membrane V'); const pState=pill('State'); const pSpikes=pill('Spikes');
+  const L=simLabels('neuron',lvl);
+  const pV=pill(L.v); const pState=pill(L.state); const pSpikes=pill(L.spikes);
   pRow.appendChild(pV.el); pRow.appendChild(pState.el); pRow.appendChild(pSpikes.el);
  
-  const rI=mkRange(ctrl,'Stimulus current (I)',0,20,0,0.5,color);
-  const bFire=mkBtn('⚡ Single Pulse',true,color);
-  const bReset=mkBtn('↺ Reset');
+  const rI=mkRange(ctrl,L.cur,0,20,0,0.5,color);
+  const bFire=mkBtn('⚡ '+L.pulse,true,color);
+  const bReset=mkBtn('↺ '+L.reset);
   ctrl.prepend(bReset); ctrl.prepend(bFire);
  
   // Simplified Hodgkin-Huxley-like model (FitzHugh-Nagumo)
@@ -5931,18 +6777,19 @@ function simNeuron(container,color){
 }
  
 /* ── MEMORY - Synaptic Plasticity / STDP ── */
-function simMemory(container,color){
+function simMemory(container,color,lvl){
   const W=getSimWidth(container),H=310;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pW=pill('Synapse strength'); const pRule=pill('Last event'); const pTotal=pill('Events');
+  const L=simLabels('memory',lvl);
+  const pW=pill(L.w); const pRule=pill(L.last); const pTotal=pill(L.events);
   pRow.appendChild(pW.el); pRow.appendChild(pRule.el); pTotal&&pRow.appendChild(pTotal.el);
  
-  const rRate=mkRange(ctrl,'Stimulation rate (Hz)',0.5,8,2,0.5,color);
-  const bLTP=mkBtn('🔺 Pair (LTP)',true,color);
-  const bLTD=mkBtn('🔻 Reverse (LTD)');
-  const bReset=mkBtn('↺ Reset');
+  const rRate=mkRange(ctrl,L.rate,0.5,8,2,0.5,color);
+  const bLTP=mkBtn('🔺 '+L.ltp,true,color);
+  const bLTD=mkBtn('🔻 '+L.ltd);
+  const bReset=mkBtn('↺ '+L.reset);
   [bLTP,bLTD,bReset].forEach(b=>ctrl.prepend(b));
  
   // Synapse weight & plasticity state
@@ -6114,12 +6961,13 @@ function simMemory(container,color){
 }
  
 /* ── SLEEP - Brain oscillations & Sleep stages ── */
-function simSleep(container,color){
+function simSleep(container,color,lvl){
   const W=getSimWidth(container),H=310;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const pStage=pill('Sleep stage'); const pFreq=pill('EEG freq'); const pAd=pill('Adenosine');
+  const L=simLabels('sleep',lvl);
+  const pStage=pill(L.stage); const pFreq=pill(L.freq); const pAd=pill(L.ad);
   pRow.appendChild(pStage.el); pRow.appendChild(pFreq.el); pRow.appendChild(pAd.el);
  
   // Stages: awake, N1, N2, N3, REM
@@ -6131,9 +6979,9 @@ function simSleep(container,color){
  
   let currentStage=0, stageT=0, cycleT=0;
   const stageDurations=[40,25,35,50,55]; // relative ticks
-  const rSpeed=mkRange(ctrl,'Sleep cycle speed',1,6,3,1,color);
-  const bStage=mkBtn('⏭ Next Stage',true,color);
-  const bWake=mkBtn('☀️ Wake up');
+  const rSpeed=mkRange(ctrl,L.speed,1,6,3,1,color);
+  const bStage=mkBtn('⏭ '+L.next,true,color);
+  const bWake=mkBtn('☀️ '+L.wake);
   [bStage,bWake].forEach(b=>ctrl.prepend(b));
  
   bStage.addEventListener('click',()=>{ currentStage=(currentStage+1)%stages.length; stageT=0; });
