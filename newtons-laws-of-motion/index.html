@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newton's Laws of Motion | Lab-in-a-Tab</title>
+<meta name="description" content="Three short rules that explain every push, crash, rocket and falling apple in the universe.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/newtons-laws-of-motion/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Newton's Laws of Motion — Explained &amp; Simulated">
+<meta property="og:description" content="Three short rules that explain every push, crash, rocket and falling apple in the universe.">
+<meta property="og:url" content="https://labinatab.com/newtons-laws-of-motion/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Newton's Laws of Motion — Explained &amp; Simulated">
+<meta name="twitter:description" content="Three short rules that explain every push, crash, rocket and falling apple in the universe.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/newtons-laws-of-motion/#article",
+   "headline": "Newton's Laws of Motion",
+   "name": "Newton's Laws of Motion",
+   "description": "Three short rules that explain every push, crash, rocket and falling apple in the universe.",
+   "url": "https://labinatab.com/newtons-laws-of-motion/",
+   "mainEntityOfPage": "https://labinatab.com/newtons-laws-of-motion/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-25",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Forces",
+    "F = ma",
+    "Inertia"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Newton's Laws of Motion",
+    "sameAs": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Newton's Laws of Motion",
+     "item": "https://labinatab.com/newtons-laws-of-motion/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+/* embedded simulation widget */
+[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physics</nav>
+  <h1>Newton's Laws of Motion</h1>
+  <p class="lead">Three short rules that explain every push, crash, rocket and falling apple in the universe.</p>
+  <div class="chips"><span>Forces</span><span>F = ma</span><span>Inertia</span></div>
+  <section class="sim-embed" data-sim="newton" data-color="#4f46e5" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4f46e5"><span class="sg-lbl">Try this</span><span>Make <b>Mass</b> small and <b>Push force</b> big, and watch <b>How fast it speeds up</b>. Now double <b>Mass</b> with the same <b>Push force</b>. What happens to how quickly it speeds up?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4f46e5"><span class="sg-lbl">Try this</span><span>Hold <b>Applied force (N)</b> fixed and step <b>Mass (kg)</b> from low to high, reading <b>Acceleration (a)</b> each time. Then raise <b>Friction (μ)</b> until the block refuses to move.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4f46e5"><span class="sg-lbl">Try this</span><span>Verify \(a \propto 1/m\) by halving and doubling <b>Mass (kg)</b> at fixed <b>Applied force (N)</b>, then locate the friction threshold where motion just ceases and compare it with \(\mu m g\).</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A block sits on a track. The green arrow is the <b>push</b> you apply; the red arrow is <b>friction</b> pushing back. The block speeds up while the push wins, then loops back to the start and runs again.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Doubling the mass halves the acceleration.</b> The same push moves a heavy block more slowly — that is \(F = ma\). And if you turn <b>Friction</b> up high enough, the block won't move at all: friction cancels your push, the forces balance, and Newton's first law keeps it still.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A free-body picture on a track: green = applied force, red = kinetic friction \(f = \mu m g\). The net force \(F_{\text{net}} = F - f\) gives the acceleration \(a = F_{\text{net}}/m\); the pills read net force, acceleration and speed live.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Acceleration is proportional to force and inversely proportional to mass — exactly \(a = F_{\text{net}}/m\).</b> When the applied force falls below the friction limit \(\mu m g\), the net force is zero and the block stays put: a balanced-forces demonstration of the first law.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A track showing the net of the applied force and Coulomb friction. Acceleration is integrated from \(a = F_{\text{net}}/m\) and speed from \(a\); the block resets to run at constant acceleration each cycle.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Motion begins exactly at \(F = \mu m g\), and the acceleration scales as \(1/m\).</b> This is the constant-force, constant-mass corner of \(\mathbf{F} = d\mathbf{p}/dt\). The sim uses a single kinetic \(\mu\); real surfaces have a larger <i>static</i> coefficient, so the true break-away force is a little higher than the value drawn here.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Nothing moves, stops, or turns without a force</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Newton boiled all of motion down to three rules, and the first is the least obvious: things keep doing what they're already doing. A ball on a smooth floor rolls until something - friction, a wall, your foot - stops it. A hockey puck on ice glides for ages. We only <em>think</em> objects naturally slow down because on Earth there's always friction quietly pushing back. Take friction away and motion simply continues. This reluctance to change is called <strong>inertia</strong>.</p>
+<p>The second rule is the one you feel every day: push something and it speeds up; push harder and it speeds up faster; push something heavier and it barely budges. That's \(F = ma\) put into words - the force you apply equals the mass times the acceleration you get. A shopping trolley proves it perfectly: empty, a gentle shove sends it rolling; loaded with bricks, the very same shove hardly moves it.</p>
+<p>The third rule is the surprising one: every push comes with an equal push back. Lean on a wall and the wall pushes on you just as hard, which is exactly why you don't topple through it. A rocket hurls hot gas downward and the gas hurls the rocket up. A swimmer shoves water backward and the water shoves the swimmer forward. Forces always come in pairs, pointing opposite ways - you can never touch without being touched back.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🚀</span> A rocket doesn't push against the air - it pushes against the gas it throws out the back, which is why rockets work in the vacuum of space.</li><li><span aria-hidden="true">🧊</span> On frictionless ice a gentle push would keep you sliding forever. Friction, not nature, is what brings things to a stop.</li><li><span aria-hidden="true">🎈</span> Let go of an untied balloon and it zips around the room: air rushes out one way, the balloon is shoved the other - Newton's third law in your living room.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>The three laws, made quantitative</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Newton's three laws, published in the <em>Principia</em> in 1687, are the foundation of all mechanics. <strong>First:</strong> an object stays at rest, or moving in a straight line at constant speed, unless a net external force acts on it - the principle of inertia. <strong>Second,</strong> the workhorse: the net force equals mass times acceleration, \(\mathbf{F}_{\text{net}} = m\mathbf{a}\), a vector equation you apply one axis at a time. <strong>Third:</strong> for every force there is an equal and opposite one, \(\mathbf{F}_{AB} = -\mathbf{F}_{BA}\), and crucially the two act on <em>different</em> bodies.</p>
+<p>The trick to using them is the <strong>free-body diagram</strong>: draw the object, mark every force on it - gravity \(mg\) pulling down, the normal force \(N\) from a surface pushing up, any applied push, and friction - then add them as vectors. Friction resists motion up to a limit \(f \le \mu N\); below that limit a stationary object simply won't move, because the forces balance and \(\mathbf{a} = 0\). Push past the limit and it accelerates at \(a = F_{\text{net}}/m\).</p>
+<p>Two consequences are worth burning into memory. Acceleration is <em>inversely</em> proportional to mass - double the mass and the same force delivers half the acceleration. And weight is not the same as mass: weight is merely gravity's force on you, \(W = mg\). Fly to the Moon and your mass is unchanged, yet your weight drops sixfold, because \(g\) does.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">First law</th><td>\(\mathbf{F}_{\text{net}} = 0 \;\Rightarrow\; \mathbf{a} = 0\)</td><td class="cmt">inertia</td></tr>
+<tr><th scope="row">Second law</th><td>\(\mathbf{F}_{\text{net}} = m\mathbf{a}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Third law</th><td>\(\mathbf{F}_{AB} = -\mathbf{F}_{BA}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Weight</th><td>\(W = mg\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Friction limit</th><td>\(f \le \mu N\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Acceleration</th><td>\(a = \dfrac{F_{\text{net}}}{m}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⚖️</span> Mass and weight differ: mass (kg) is how much matter you are; weight (newtons) is the force gravity exerts on it, W = mg.</li><li><span aria-hidden="true">🚗</span> Seatbelts fight inertia: in a crash the car stops but your body keeps moving at speed - the belt supplies the force that stops you with it.</li><li><span aria-hidden="true">🪶</span> In a vacuum a feather and a hammer fall together: gravity gives both the same acceleration, because a = F/m and F = mg cancel the mass exactly.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>From three laws to momentum, frames, and their limits</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The second law is really about momentum</h3>
+<p>Newton did not write \(F = ma\); he wrote \(\mathbf{F} = \dfrac{d\mathbf{p}}{dt}\), the rate of change of momentum \(\mathbf{p} = m\mathbf{v}\). For constant mass this collapses to \(m\mathbf{a}\), but the momentum form is the honest one: it handles rockets and other variable-mass systems, where mass is being ejected, and it is the version that survives - suitably modified - into relativity.</p>
+<h3><span class="hn">02</span>The third law is conservation of momentum</h3>
+<p>Because internal forces cancel in equal-and-opposite pairs, the total momentum of an isolated system never changes: \(\sum \mathbf{p} = \text{const}\). This is arguably deeper than the force statement itself. By Noether's theorem it follows from the <em>translational symmetry of space</em> - the fact that physics is the same here as over there - and it holds even where the naive action-reaction picture strains, such as when electromagnetic fields quietly carry momentum of their own.</p>
+<h3><span class="hn">03</span>Inertial frames and Galilean relativity</h3>
+<p>The laws hold only in <strong>inertial</strong> (non-accelerating) frames. Step into an accelerating frame and you must invent <em>fictitious</em> forces - centrifugal, Coriolis - to keep \(F = ma\) bookkeeping straight. Yet all inertial frames are equivalent: no mechanical experiment can single out a state of absolute rest. That principle of relativity, already present in Galileo and Newton, is the seed Einstein grew into special relativity.</p>
+<h3><span class="hn">04</span>Where Newton breaks down</h3>
+<p>Newtonian mechanics is a spectacularly accurate limit - low speeds, weak gravity, macroscopic sizes - not the final law. Approach the speed of light and momentum becomes \(\mathbf{p} = \gamma m\mathbf{v}\), so force no longer runs parallel to acceleration. Shrink to atomic scales and the sharp trajectory dissolves into quantum probability. Turn up gravity and the "force" is revealed as the curvature of spacetime. The three laws are the first, superbly useful chapter of dynamics - and knowing exactly where they fail is part of understanding why they work so well everywhere else.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Second law (general)</th><td>\(\mathbf{F} = \dfrac{d\mathbf{p}}{dt}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Momentum</th><td>\(\mathbf{p} = m\mathbf{v}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Conservation</th><td>\(\sum \mathbf{p} = \text{const}\)</td><td class="cmt">isolated system</td></tr>
+<tr><th scope="row">Relativistic momentum</th><td>\(\mathbf{p} = \gamma m\mathbf{v}\)</td><td class="cmt">\gamma = 1/\sqrt{1-v^2/c^2}</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🎯</span> Newton stated his second law as F = dp/dt (rate of change of momentum). F = ma is only the special case of constant mass.</li><li><span aria-hidden="true">🌀</span> The Coriolis &quot;force&quot; that curls hurricanes isn't a real force - it's the correction you add to make F = ma work in Earth's rotating, non-inertial frame.</li><li><span aria-hidden="true">⚡</span> Momentum conservation is more fundamental than Newton's laws: it follows from the symmetry of space itself and carries over into quantum and relativistic physics.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Physics</h2>
+    <ul><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
+// Wired inline (the .sim-embed markup is already above this script) rather than
+// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
+// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

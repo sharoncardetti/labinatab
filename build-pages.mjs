@@ -6,6 +6,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ORIGIN = 'https://labinatab.com';
+const TODAY = new Date().toISOString().slice(0, 10);
+// Freshness dates for Article schema. PUBLISHED is a stable launch date — set it
+// to the site's real first-publish date; dateModified reflects each rebuild.
+const PUBLISHED = '2026-03-23';
 const src = fs.readFileSync('index.html', 'utf8');
 
 // ── pull `S` and `REF` straight out of index.html ──────────────────────
@@ -81,11 +85,12 @@ const ENGINE = [
   decl('SIM_LABELS'), decl('SIMS'),
   ...['simLabels', 'newEl', 'mkCanvas', 'mkCtrl', 'mkPills', 'pill', 'mkBtn', 'mkRange',
     'getSimWidth', 'stopSims', 'buildSim',
-    'simOrbit', 'simWaves', 'simThermo', 'simParticles', 'simGalton', 'simFractal',
+    'simOrbit', 'simProjectile', 'simNewton', 'simCircuit', 'simWaves', 'simThermo', 'simParticles', 'simGalton', 'simFractal',
     'simCalculus', 'simGraphs', 'simLife', 'simDNA', 'simEvolution', 'simEcosystem',
+    'simPhotosynthesis', 'simCell', 'simMitosis',
     'simSorting', 'simML', 'simCrypto', 'simComplexity', 'simClimate', 'simTectonics',
-    'simOcean', 'simVolcano', 'simChem', 'simElectrochem', 'simKinetics', 'simOrganic',
-    'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simNeuro', 'simNeuron',
+    'simOcean', 'simVolcano', 'simChem', 'simElectrochem', 'simKinetics', 'simOrganic', 'simAcids', 'simPeriodic',
+    'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simEclipse', 'simMeteors', 'simNeuro', 'simNeuron',
     'simMemory', 'simSleep'].map(decl),
 ].join('\n\n');
 
@@ -236,6 +241,8 @@ function page(s) {
         description: desc,
         url,
         mainEntityOfPage: url,
+        datePublished: PUBLISHED,
+        dateModified: TODAY,
         inLanguage: 'en',
         isAccessibleForFree: true,
         isFamilyFriendly: true,
@@ -316,7 +323,7 @@ ${JSON.stringify(ld, null, 1)}
     <ul>${related}</ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 32 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All ${S.length} experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
@@ -397,6 +404,45 @@ fs.writeFileSync('sitemap.xml',
 
 fs.writeFileSync('robots.txt',
   `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`, 'utf8');
+
+// Patch index.html in place: static footer links + home ItemList JSON-LD, both
+// generated from S so the home links to all 32 topic pages in raw HTML (crawlable
+// without JS) and declares itself a CollectionPage hub. Idempotent per run.
+{
+  let home = fs.readFileSync('index.html', 'utf8');
+  const order = S.map(s => built.find(b => b.id === s.id)); // S order = grouped by subject
+  const links = order.map(b => `<li><a href="/${b.slug}/">${esc(b.title)}</a></li>`).join('');
+  const itemList = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: `Lab-in-a-Tab — ${order.length} interactive science experiments`,
+    url: ORIGIN + '/',
+    isPartOf: { '@type': 'WebSite', name: 'Lab-in-a-Tab', url: ORIGIN + '/' },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: order.length,
+      itemListElement: order.map((b, i) => ({
+        '@type': 'ListItem', position: i + 1,
+        url: `${ORIGIN}/${b.slug}/`, name: b.title,
+      })),
+    },
+  };
+  const ulRe = /(<ul class="all-topics" id="all-topics">)[\s\S]*?(<\/ul>)/;
+  const ldRe = /(<script type="application\/ld\+json" id="itemlist">)[\s\S]*?(<\/script>)/;
+  // fail loudly if a marker is gone; but a no-op re-patch (content already correct)
+  // must NOT error, so the generator stays re-runnable.
+  if (!ulRe.test(home) || !ldRe.test(home)) throw new Error('index.html patch markers not found (all-topics / itemlist)');
+  home = home.replace(ulRe, `$1${links}$2`)
+             .replace(ldRe, `$1\n${JSON.stringify(itemList, null, 1)}\n$2`);
+  // Keep the hand-authored topic counts in sync with S.length so they never drift.
+  const N = order.length;
+  home = home
+    .replace(/\b\d+ interactive science simulations/g, `${N} interactive science simulations`)
+    .replace(/Search \d+ experiments/g, `Search ${N} experiments`)
+    .replace(/All \d+ experiments<\/h4>/g, `All ${N} experiments</h4>`)
+    .replace(/hub of \d+ topics/g, `hub of ${N} topics`);
+  fs.writeFileSync('index.html', home, 'utf8');
+}
 
 console.log(`built ${n} pages${removed ? `, removed ${removed} stale` : ''}`);
 console.log(`median words/page: ${built.map(b => b.words).sort((a, b) => a - b)[Math.floor(n / 2)]}`);

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclipses | Lab-in-a-Tab</title>
+<meta name="description" content="When the Sun goes dark by day or the Moon turns blood-red - and why it isn't every month.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/eclipses/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Eclipses — Explained &amp; Simulated">
+<meta property="og:description" content="When the Sun goes dark by day or the Moon turns blood-red - and why it isn't every month.">
+<meta property="og:url" content="https://labinatab.com/eclipses/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eclipses — Explained &amp; Simulated">
+<meta name="twitter:description" content="When the Sun goes dark by day or the Moon turns blood-red - and why it isn't every month.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/eclipses/#article",
+   "headline": "Eclipses",
+   "name": "Eclipses",
+   "description": "When the Sun goes dark by day or the Moon turns blood-red - and why it isn't every month.",
+   "url": "https://labinatab.com/eclipses/",
+   "mainEntityOfPage": "https://labinatab.com/eclipses/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-25",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Solar eclipse",
+    "Lunar eclipse",
+    "Shadows"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Eclipses",
+    "sameAs": "https://en.wikipedia.org/wiki/Solar_eclipse"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Eclipses",
+     "item": "https://labinatab.com/eclipses/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+/* embedded simulation widget */
+[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomy</nav>
+  <h1>Eclipses</h1>
+  <p class="lead">When the Sun goes dark by day or the Moon turns blood-red - and why it isn't every month.</p>
+  <div class="chips"><span>Solar eclipse</span><span>Lunar eclipse</span><span>Shadows</span></div>
+  <section class="sim-embed" data-sim="eclipse" data-color="#d97706" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#d97706"><span class="sg-lbl">Try this</span><span>Put <b>Move the Moon</b> at the new-moon spot (between the Earth and the Sun). Now change <b>Line up the orbit</b> until the shadow lands on the Earth. What does <b>Eclipse?</b> say?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#d97706"><span class="sg-lbl">Try this</span><span>Set <b>Moon position</b> to new moon and sweep <b>Node alignment</b> to find the narrow window where <b>Eclipse</b> flips to "Solar eclipse". Then set <b>Moon position</b> to full moon and do the same for a lunar eclipse.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#d97706"><span class="sg-lbl">Try this</span><span>Trace the eclipse condition: hold <b>Moon position</b> at new moon and vary <b>Node alignment</b> to bracket the ecliptic limit where totality becomes possible, then repeat at full moon for the wider lunar limit.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A top-down view of the Sun (left), the Earth, and the Moon on its orbit. The grey cones are shadows. Move the Moon around, and line up its orbit, to drop a shadow where it causes an eclipse.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>You only get an eclipse when the line-up is nearly perfect.</b> Most settings of <b>Line up the orbit</b> send the Moon's shadow above or below the Earth — a miss. That tiny tilt is exactly why we don't get an eclipse every month, even though there's a new moon every month.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A side view along the Sun-Earth line. A solar eclipse is the Moon's umbra hitting Earth at new moon; a lunar eclipse is the Moon entering Earth's umbra at full moon. <b>Node alignment</b> sets how closely the Moon's tilted orbit crosses the ecliptic.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>An eclipse needs syzygy AND a node crossing at the same time.</b> The Moon's ~5° tilt means that for most node positions the shadow misses altogether. Only near a node — a couple of times a year, the "eclipse seasons" — does a new moon give a solar eclipse and a full moon a lunar one.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A schematic of the Sun-Earth-Moon geometry with umbral cones. The Moon's height above the ecliptic follows its ~5° inclination; alignment is only possible within the ecliptic limits of a node.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The window is the ecliptic limit — only a few degrees of node longitude.</b> Because the line of nodes regresses over 18.6 years, the eclipse seasons drift ~19 days earlier each year, and after one Saros (223 synodic months) the whole geometry repeats. The Sun-Moon angular-size match is what allows totality rather than a permanent annular ring.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>When the Sun or Moon goes dark</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Every so often the sky does something dramatic: the Sun is blotted out in the middle of the day, or the full Moon turns a deep coppery red. These are <strong>eclipses</strong>, and they happen because three balls in space - the Sun, the Earth and the Moon - briefly line up in a row so that one casts its shadow on another. On <strong>12 August 2026</strong> a total solar eclipse will sweep across Iceland and northern Spain, the first visible from mainland Europe since 1999.</p>
+<p>A <strong>solar eclipse</strong> happens at new moon, when the Moon slides directly between us and the Sun and drops its shadow onto the Earth. Stand inside that shadow and the Moon covers the Sun completely for a couple of minutes - day turns to twilight, stars come out, and the Sun's ghostly outer atmosphere blazes around a black disc. A <strong>lunar eclipse</strong> is the mirror image: at full moon the Earth slips between Sun and Moon, and our shadow falls across the Moon, staining it red.</p>
+<p>So why isn't there an eclipse every single month, at every new and full moon? Because the Moon's path is tilted a few degrees, so most months its shadow sails just above or below the Earth and misses entirely. Only when the line-up is nearly perfect - a few times a year - does a shadow actually land. That near-miss the rest of the time is exactly what makes an eclipse feel special.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌘</span> The total solar eclipse of 12 August 2026 is the first visible from mainland Europe since 1999, crossing Iceland and northern Spain.</li><li><span aria-hidden="true">🔴</span> A &quot;blood moon&quot; is just a lunar eclipse: the Moon glows red because it's lit only by sunlight bent through Earth's atmosphere - every sunrise and sunset at once.</li><li><span aria-hidden="true">🎯</span> By pure coincidence the Sun is ~400× wider than the Moon and ~400× farther away, so they look the same size in our sky - which is why total eclipses are possible at all.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>The geometry of eclipses, and why they're rare</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Eclipses are a shadow game with strict rules. A solar eclipse needs a <em>new</em> moon (Moon between Earth and Sun); a lunar eclipse needs a <em>full</em> moon (Earth between Sun and Moon). Shadows have two parts: the dark central <strong>umbra</strong>, where the light source is fully blocked, and the lighter <strong>penumbra</strong> around it, where it's only partly hidden. Stand in the Moon's umbra and you see a total solar eclipse; in the penumbra, only a partial one.</p>
+<p>If the Moon orbited in the same plane that the Earth orbits the Sun - the ecliptic - we would get a solar and a lunar eclipse every single month. But the Moon's orbit is tilted about 5°, so it usually passes above or below the Sun-Earth line. Eclipses can only happen when the Moon is crossing that line - at one of its two <strong>nodes</strong> - at the same moment as new or full moon. Those alignments cluster into two "eclipse seasons" each year.</p>
+<p>The Sun-Moon size coincidence makes Earth uniquely lucky. Because the Moon's apparent size so nearly matches the Sun's, it can just cover the disc and reveal the corona. When the Moon is a little farther out in its slightly elliptical orbit it falls short and leaves a bright ring - an <strong>annular</strong> eclipse. Totality is brief (a couple of minutes) because the umbra's tip is small and races across the ground at over 1,500 km/h.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Solar eclipse</th><td>\(\text{new moon} + \text{near a node}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Lunar eclipse</th><td>\(\text{full moon} + \text{near a node}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Orbital tilt</th><td>\(i \approx 5.14°\)</td><td class="cmt">why not every month</td></tr>
+<tr><th scope="row">Saros cycle</th><td>\(\approx 18\text{ yr } 11\text{ d}\)</td><td class="cmt">eclipses repeat</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌗</span> In the umbra you see totality; in the wider penumbra only a partial eclipse. That's why just a narrow strip of Earth sees a total solar eclipse.</li><li><span aria-hidden="true">💍</span> When the Moon is near the far point of its orbit it looks too small to cover the Sun, leaving a bright &quot;ring of fire&quot; - an annular eclipse.</li><li><span aria-hidden="true">📅</span> Eclipses come in &quot;seasons&quot; about twice a year, when the Moon's tilted orbit crosses the Earth-Sun plane near a new or full moon.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Nodes, the Saros cycle, and eclipse prediction</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The line of nodes</h3>
+<p>The Moon's orbit intersects the ecliptic at two points, the <strong>nodes</strong>. An eclipse needs syzygy - Sun, Earth and Moon collinear - within a few degrees of a node, the "ecliptic limits". Because the line of nodes regresses (precesses) once every 18.6 years, the eclipse seasons drift about 19 days earlier each year rather than staying fixed on the calendar.</p>
+<h3><span class="hn">02</span>Umbra, penumbra and antumbra</h3>
+<p>The Moon's umbral cone barely reaches the Earth; when the Moon is near apogee the tip falls short, the <em>antumbra</em> touches down instead, and the eclipse is annular. The path of totality is only ~100-270 km wide, and its duration - capped near 7.5 minutes - is set by the umbra's size against the relative motion of Moon and observer.</p>
+<h3><span class="hn">03</span>The Saros</h3>
+<p>After 223 synodic months - 6,585.3 days, or 18 years 11 days 8 hours - the Sun, Moon and nodes return to almost the same geometry, so a nearly identical eclipse recurs. The extra 8 hours rotate the next event about 120° west in longitude; successive Saros members also creep in latitude, so a series is born near a pole, marches across the globe over ~1,200-1,500 years, and dies at the other.</p>
+<h3><span class="hn">04</span>A coincidence with an expiry date</h3>
+<p>The angular diameters of Sun and Moon are both about 0.5°, which is what makes totality (rather than a permanent ring) possible. But the Moon recedes ~3.8 cm per year, so in roughly 600 million years its disc will always fall short and total solar eclipses will cease forever. We happen to live in the era when they occur.</p>
+<h3><span class="hn">05</span>Eclipses as a laboratory</h3>
+<p>Totality has repeatedly advanced physics: the 1919 eclipse let Eddington measure starlight bending around the Sun and confirm general relativity; helium was first identified in the Sun's spectrum during the 1868 eclipse; and the corona and chromosphere are still best studied when the blinding photosphere is hidden. Recorded eclipses even anchor the chronology of the ancient world.</p>
+  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Synodic month</th><td>\(29.531\ \text{days}\)</td><td class="cmt">new moon to new moon</td></tr>
+<tr><th scope="row">Draconic month</th><td>\(27.212\ \text{days}\)</td><td class="cmt">node to node</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Saros period</th><td>\(223\ \text{synodic} \approx 18\text{y }11\text{d}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Solar ecliptic limit</th><td>\(|\beta| \lesssim 1.5°\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔭</span> The 1919 total eclipse let Eddington measure starlight bending around the Sun, confirming Einstein's general relativity.</li><li><span aria-hidden="true">🌞</span> Helium was discovered in the Sun's spectrum during the 1868 eclipse - 27 years before it was ever found on Earth.</li><li><span aria-hidden="true">📉</span> The Moon drifts ~3.8 cm farther away each year; in ~600 million years it'll be too small to ever cause a total solar eclipse.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Solar_eclipse" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Astronomy</h2>
+    <ul><li><a href="/stars-universe/">Stars &amp; The Universe</a></li><li><a href="/black-holes/">Black Holes &amp; Relativity</a></li><li><a href="/cosmology-big-bang/">Cosmology &amp; The Big Bang</a></li><li><a href="/solar-system/">The Solar System</a></li><li><a href="/meteor-showers/">Meteor Showers</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
+// Wired inline (the .sim-embed markup is already above this script) rather than
+// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
+// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>
