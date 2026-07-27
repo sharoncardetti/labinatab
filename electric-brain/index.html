@@ -7,6 +7,9 @@
 <meta name="description" content="How does a single brain cell fire 200 electric sparks per second - and wire your thoughts?">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/electric-brain/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/electric-brain/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/cervello-elettrico/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/electric-brain/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/electric-brain/",
    "mainEntityOfPage": "https://labinatab.com/electric-brain/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/electric-brain/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/cervello-elettrico/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Neuroscience</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>A neuron at rest holds a <strong>membrane potential</strong> of about \(-70\) mV - its interior kept more negative than the outside by the Na⁺/K⁺ pump, which tirelessly ejects three sodium ions for every two potassium it hauls in. Depolarise the membrane past a threshold near \(-55\) mV and voltage-gated sodium channels burst open, letting sodium flood in and driving the voltage all the way to \(+40\) mV in under a millisecond.</p>
 <p>That lightning reversal is the <strong>action potential</strong>, and it is strictly <em>all-or-nothing</em>: once it trips, it always reaches roughly the same peak no matter how hard it was pushed. So a neuron signals intensity by how <em>often</em> it fires, not how big each spike is. Within a millisecond the sodium channels inactivate and slower potassium channels swing the voltage back down, briefly overshooting into a <em>refractory</em> lull in which no fresh spike can fire - a hard ceiling on how fast a neuron can talk.</p>
 <p>Then the spike travels: each patch of depolarised membrane tips its neighbour past threshold, and the pulse marches down the axon without fading. Nature bolted on a turbocharger - fatty <strong>myelin</strong> insulation forces the signal to leap between bare gaps called <em>nodes of Ranvier</em> (saltatory conduction), pushing speed toward 120 m/s while slashing the energy bill. Hodgkin and Huxley mapped this whole cascade in 1952, from ionic currents to spike, and took the 1963 Nobel Prize for it.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Resting potential</th><td>\(V_{\text{rest}} \approx -70\ \text{mV}\)</td><td class="cmt">Na⁺/K⁺ pump</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Resting potential</th><td>\(V_{\text{rest}} \approx -70\ \text{mV}\)</td><td class="cmt">Na⁺/K⁺ pump</td></tr>
 <tr><th scope="row">Threshold</th><td>\(V_{\text{thr}} \approx -55\ \text{mV}\)</td><td class="cmt">all-or-nothing</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Nernst potential</th><td>\(E_{\text{ion}} = \dfrac{RT}{zF}\ln\dfrac{[X]_{\text{out}}}{[X]_{\text{in}}}\)</td><td class="cmt"></td></tr>
@@ -249,7 +259,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>A dendrite is a leaky electrical cable, and how far a passive signal reaches before dwindling is set by the <em>space constant</em> \(\lambda = \sqrt{r_m/r_a}\) - the balance between membrane leak and axial resistance. This is why distant synapses are heard only faintly at the soma, why myelin (raising \(r_m\)) lets signals travel farther between nodes, and why the branching architecture of a neuron is itself a form of computation, not mere plumbing.</p>
 <h3><span class="hn">06</span>What the spikes actually mean</h3>
 <p>Finally, what do these pulses <em>encode</em>? The default answer is <em>rate coding</em> - information in the firing frequency - but timing clearly matters too: the auditory system pins sound direction from microsecond spike differences, and hippocampal place cells signal location through the exact <em>phase</em> at which they fire. The cortex leans on <em>sparse</em> coding, with only ~1% of neurons active at once, squeezing maximum representation from minimum metabolic spend - the same efficiency logic now driving neuromorphic "spiking" chips built to compute like a brain.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">HH membrane</th><td>\(C_m\dfrac{dV}{dt} = -g_{Na}m^3h(V\!-\!E_{Na}) - g_K n^4(V\!-\!E_K) - g_L(V\!-\!E_L) + I\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">HH membrane</th><td>\(C_m\dfrac{dV}{dt} = -g_{Na}m^3h(V\!-\!E_{Na}) - g_K n^4(V\!-\!E_K) - g_L(V\!-\!E_L) + I\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Gating kinetics</th><td>\(\dfrac{dx}{dt} = \alpha_x(V)(1-x) - \beta_x(V)x\)</td><td class="cmt">x ∈ {m,h,n}</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">FitzHugh–Nagumo</th><td>\(\dot v = v - \tfrac{v^3}{3} - w + I,\quad \dot w = \varepsilon(v + a - bw)\)</td><td class="cmt"></td></tr>
@@ -267,22 +277,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/brain-neurons/">The Brain &amp; Neurons</a></li><li><a href="/how-memory-works/">How Memory Works</a></li><li><a href="/sleep-consciousness/">Sleep &amp; Consciousness</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calore e termodinamica | Lab-in-a-Tab</title>
+<meta name="description" content="Perché il ghiaccio si scioglie sempre e il caffè si raffredda sempre? L'universo ha una direzione.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/calore-termodinamica/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/thermodynamics/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/calore-termodinamica/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/thermodynamics/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Calore e termodinamica — Spiegato e simulato">
+<meta property="og:description" content="Perché il ghiaccio si scioglie sempre e il caffè si raffredda sempre? L'universo ha una direzione.">
+<meta property="og:url" content="https://labinatab.com/it/calore-termodinamica/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calore e termodinamica — Spiegato e simulato">
+<meta name="twitter:description" content="Perché il ghiaccio si scioglie sempre e il caffè si raffredda sempre? L'universo ha una direzione.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/calore-termodinamica/#article",
+   "headline": "Calore e termodinamica",
+   "name": "Calore e termodinamica",
+   "description": "Perché il ghiaccio si scioglie sempre e il caffè si raffredda sempre? L'universo ha una direzione.",
+   "url": "https://labinatab.com/it/calore-termodinamica/",
+   "mainEntityOfPage": "https://labinatab.com/it/calore-termodinamica/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Entropia",
+    "Energia",
+    "Calore"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Calore e termodinamica",
+    "sameAs": "https://en.wikipedia.org/wiki/Laws_of_thermodynamics"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Calore e termodinamica",
+     "item": "https://labinatab.com/it/calore-termodinamica/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/thermodynamics/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/calore-termodinamica/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Fisica</nav>
+  <h1>Calore e termodinamica</h1>
+  <p class="lead">Perché il ghiaccio si scioglie sempre e il caffè si raffredda sempre? L'universo ha una direzione.</p>
+  <div class="chips"><span>Entropia</span><span>Energia</span><span>Calore</span></div>
+  <section class="sim-embed" data-sim="thermo" data-color="#dc2626" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#dc2626"><span class="sg-lbl">Prova</span><span>Watch the chart at <b>Temperature (K)</b> = 300. Now drag <b>Temperature (K)</b> up to 1200 and compare: where has the hump moved, and what happened to <b>Pressure</b>?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#dc2626"><span class="sg-lbl">Prova</span><span>Record <b>Avg speed</b> and <b>Pressure</b> at <b>Temperature (K)</b> = 300, then at 1200 — a factor of 4. Does the speed also rise by 4? Then return to 300 and instead double <b>Particles</b>.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#dc2626"><span class="sg-lbl">Prova</span><span>Verify the scaling \(v_{\text{rms}} \propto \sqrt{T}\) across <b>Temperature (K)</b> = 300, 600, 1200, then hold \(T\) fixed and vary <b>Particles</b> to confirm \(P \propto N\). Watch how quickly the histogram re-equilibrates into its envelope after a sudden temperature jump.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>The box holds bouncing gas <b>particles</b>, coloured by how fast they're going — blue is slow, red is fast. The thermometer on the right shows the temperature. The chart underneath counts how many particles have each speed.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Heating doesn't give every particle the same speed — it shifts the whole hump to the right and smears it wider.</b> Even in a red-hot gas some particles crawl and some race. Temperature isn't the speed of one particle; it's the <em>average</em> over billions. Faster particles also hit the walls harder and more often, which is exactly what <b>Pressure</b> measures — the reason a sealed can explodes in a fire.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A 2D ideal gas with elastic collisions. Particle colour encodes speed (blue slow → red fast), the thermometer tracks <b>Temperature (K)</b>, and the lower chart is the live <b>speed distribution</b> with its envelope. <b>Wall hits/s</b>, <b>Avg speed</b> and <b>Pressure</b> are measured from the particles themselves, not assumed.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Quadrupling the temperature only doubles the average speed, but doubling the particle count doubles the pressure.</b> That is \(v_{\text{rms}} \propto \sqrt{T}\) — kinetic energy, not speed, is what scales with \(T\), via \(\tfrac12 m v^2 = \tfrac{d}{2} k_B T\). Pressure meanwhile follows \(PV = Nk_BT\), linear in both \(N\) and \(T\). The distribution you see is the <b>Maxwell–Boltzmann</b> law: it has a hard floor at zero speed but an unbounded tail, so it is fundamentally asymmetric.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Hard-disc gas at fixed volume with elastic two-body collisions; speeds are initialised and rescaled as \(v \propto \sqrt{T}\). The histogram is the instantaneous empirical speed density, and <b>Pressure</b> is accumulated from measured wall impulse per unit time.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>The distribution re-forms within a few collision times, no matter how you disturb it.</b> In 2D the equilibrium law is \(f(v) \propto v\,e^{-mv^2/2k_BT}\) (the 3D Maxwell–Boltzmann carries \(v^2\)), and equipartition gives \(\langle E\rangle = \tfrac{d}{2}k_BT\) per particle. The remarkable part is the speed of the approach: <b>Boltzmann's H-theorem</b> shows that molecular chaos drives any initial distribution monotonically toward this one. The microscopic dynamics are perfectly time-reversible, yet the macroscopic relaxation is not — the origin of the arrow of time.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Il calore fluisce sempre dal caldo al freddo — mai all'indietro</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Lascia una cioccolata calda sul tavolo e torna più tardi: si è raffreddata. Ora nota la cosa che <em>non</em> accade mai — una bevanda fredda non si riscalda all'improvviso da sola tirando fuori il calore dalla stanza. Il calore viaggia sempre e solo in una direzione, dal caldo al freddo. Quella strada a senso unico sembra ovvia, ma si rivela una delle regole più profonde di tutta la fisica.</p>
+<p>Ingrandisci abbastanza e ogni cosa — l'aria, la tua mano, questo schermo — è uno sciame di atomi che si agitano. "Caldo" significa solo che si agitano velocemente; "freddo" che si agitano lentamente. Quando la tua tazza tiepida incontra l'aria più fresca, gli atomi veloci urtano quelli lenti e condividono il loro movimento, come una folla che si spintona finché tutti si muovono allo stesso ritmo. La bevanda si raffredda, l'aria si scalda un poco, e si assestano a metà. Quello stato assestato e condiviso ha un nome: <strong>equilibrio</strong>.</p>
+<p>Dietro la strada a senso unico si nasconde un'unica idea — l'<strong>entropia</strong>, grosso modo una misura di quanto le cose siano sparpagliate e confuse. Lasciato a sé stesso, il mondo va sempre alla deriva verso <em>più</em> confusione, mai meno. La tua stanza si mette in disordine da sola; non si riordina mai da sé. Una goccia d'inchiostro si srotola nell'acqua e non si raccoglie mai di nuovo in una goccia. Quella deriva implacabile è il motivo per cui un motore perfetto è impossibile, perché ricordi il passato ma non il futuro e — spinta al limite — come l'intero universo si spegnerà lentamente. Una tazza di caffè che si raffredda è l'universo che ti mostra in silenzio in che direzione scorre il tempo.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🧊</span> Il ghiaccio assorbe calore mentre si scioglie ma resta a 0°C per tutto il tempo — tutta quell'energia rompe legami molecolari, non alza la temperatura.</li><li><span aria-hidden="true">🌡️</span> La temperatura più fredda possibile è −273,15°C (lo zero assoluto, 0 K). A quel punto gli atomi hanno il minimo movimento possibile — la meccanica quantistica impedisce loro di fermarsi del tutto.</li><li><span aria-hidden="true">🚀</span> I razzi funzionano grazie alla termodinamica: bruciando il carburante si crea gas estremamente caldo, che si espande rapidamente ed esce dal retro, generando spinta per la terza legge di Newton.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Le quattro leggi della termodinamica</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Quattro leggi reggono tutta la termodinamica, e insieme spiegano perché i motori sprecano carburante, perché le macchine a moto perpetuo sono una chimera e perché il tempo scorre in un'unica direzione. Furono scoperte fuori ordine — ed è per questo che la prima si chiama <em>zeresima</em>.</p>
+<p>La <strong>legge zeresima</strong> è quella che nessuno si è preoccupato di scrivere finché non si è capito che tutti la davano per scontata: se A è in equilibrio termico con B, e B con C, allora anche A e C sono d'accordo. Quella transitività dall'aria banale è ciò che permette a un termometro di significare qualcosa — è perché un numero su un tubo di vetro può stare al posto di "quanto è caldo".</p>
+<p>La <strong>prima legge</strong> è contabilità dell'energia, niente di più: \(\Delta U = Q - W\). Qualunque calore \(Q\) versi dentro, meno il lavoro \(W\) che il sistema compie sul mondo esterno, è ciò che resta come energia interna. Nulla si crea o si distrugge, solo si scambia — chimica in calore in un motore, chimica in elettrica in una batteria, nucleare in luce solare in una stella. I conti tornano sempre.</p>
+<p>La <strong>seconda legge</strong> è quella che morde: l'entropia di un sistema isolato non cala mai. Ogni cambiamento spontaneo la spinge verso l'alto, e quella deriva verso l'alto <em>è</em> la freccia del tempo — un bicchiere va in frantumi ma non si ricompone mai. Mette anche un tetto a ogni motore mai costruito. Carnot mostrò che persino uno perfetto, che fa la spola di calore fra un serbatoio caldo a \(T_h\) e uno freddo a \(T_c\), non può fare meglio di \(\eta = 1 - T_c/T_h\). Finché \(T_c > 0\), l'efficienza perfetta è semplicemente fuori discussione — non per mancanza di ingegno, ma perché l'universo lo vieta.</p>
+<p>La <strong>terza legge</strong> chiude il fondo della scala: quando \(T \to 0\), l'entropia si assesta su un minimo costante (zero per un cristallo perfetto). Una curiosa conseguenza è che lo zero assoluto è irraggiungibile — puoi avvicinarti sempre di più, ma ogni passo ti rende meno, e non arrivi mai del tutto.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Prima legge</th><td>\(\Delta U = Q - W\)</td><td class="cmt">conservazione dell'energia</td></tr>
+<tr><th scope="row">Variazione di entropia</th><td>\(\Delta S = \dfrac{Q_{\text{rev}}}{T}\)</td><td class="cmt">processo reversibile</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Legge dei gas ideali</th><td>\(PV = nRT\)</td><td class="cmt">R = 8.314 J·mol⁻¹·K⁻¹</td></tr>
+<tr><th scope="row">Efficienza di Carnot</th><td>\(\eta_{\max} = 1 - \dfrac{T_c}{T_h}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Costante di Boltzmann</th><td>\(k_B = 1.381\times10^{-23}\ \text{J·K}^{-1}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🏎️</span> Un motore d'auto è tipicamente efficiente solo al 25–35%. Il resto dell'energia chimica del carburante è sprecato come calore — diretta conseguenza della seconda legge.</li><li><span aria-hidden="true">❄️</span> Un frigorifero sposta il calore dal freddo (interno) al caldo (stanza) — e questo richiede lavoro esterno (elettricità), coerentemente con la seconda legge.</li><li><span aria-hidden="true">🔥</span> Il Sole converte ~4 milioni di tonnellate di massa in energia al secondo tramite E = mc². Lo fa da 4,6 miliardi di anni e ha carburante per altri ~5 miliardi.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Meccanica statistica: dai microstati all'entropia dei buchi neri</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Microstati, macrostati e il postulato statistico</h3>
+<p>La termodinamica sembra una scienza di macchine a vapore e leggi dei gas, ma sotto è in realtà probabilità applicata. Tutto discende da un'ipotesi ingannevolmente modesta — il <em>postulato fondamentale</em>: un sistema isolato all'equilibrio ha uguale probabilità di trovarsi in uno qualsiasi dei suoi microstati accessibili. Conta quei microstati e hai fatto la fisica. Se \(\Omega(E,V,N)\) è il numero di disposizioni microscopiche compatibili con l'energia, il volume e il numero di particelle macroscopici, allora \(S = k_B \ln \Omega\) di Boltzmann <em>è</em> l'entropia — non un vago "disordine", ma il logaritmo di un conteggio. Temperatura, pressione e potenziale chimico sono semplicemente come quel conteggio reagisce quando spingi su \(E\), \(V\) o \(N\): \(\tfrac{1}{T} = \left(\tfrac{\partial S}{\partial E}\right)_{V,N}\), e così via. Perché un gas si spande a riempire la sua scatola? Non perché qualcosa spinga via le molecole, ma perché le disposizioni sparpagliate superano quelle ordinate così assurdamente che aspetteresti circa \(10^{10^{23}}\) anni per cogliere ogni molecola raggomitolata in un angolo. L'equilibrio non è una legge di forza. È il banco che vince sempre.</p>
+<h3><span class="hn">02</span>L'insieme canonico e la funzione di partizione</h3>
+<p>I sistemi reali sono raramente isolati; stanno a contatto con un ambiente a una certa temperatura \(T\). Affida la contabilità dell'energia a un bagno termico e massimizza l'entropia \(S = -k_B \sum_i P_i \ln P_i\) a energia <em>media</em> fissa, e le probabilità saltano fuori come pesi di Boltzmann, \(P_i = e^{-\beta E_i}/Z\) con \(\beta = 1/k_B T\). Il normalizzatore \(Z = \sum_i e^{-\beta E_i}\) — la <strong>funzione di partizione</strong> — sembra un'umile somma, eppure racchiude in silenzio tutta la termodinamica. Differenzia il suo logaritmo e il resto viene giù: \(U = -\partial_\beta \ln Z\), l'energia libera \(F = -k_B T \ln Z\), l'entropia \(S = -\partial F/\partial T\), la pressione, la capacità termica. Lascia che anche le particelle vadano e vengano e passi all'insieme gran canonico, dove una fugacità \(z = e^{\beta\mu}\) tiene i conti. La parte rassicurante: una volta che \(N\) è grande, la scelta dell'insieme smette di contare — concordano tutti — così scegli quello che rende l'algebra più gentile.</p>
+<h3><span class="hn">03</span>Potenziali, trasformate di Legendre e relazioni di Maxwell</h3>
+<p>L'energia interna è il potenziale naturale quando controlli entropia e volume — ma chi controlla l'entropia in un laboratorio? In pratica fissi la temperatura, o la pressione, o entrambe, e ogni scelta richiede il proprio potenziale. Il ponte fra loro è la <strong>trasformata di Legendre</strong>, che scambia una variabile con la sua pendenza coniugata: Helmholtz \(F = U - TS\) a \(T\) fissa, entalpia \(H = U + PV\) a \(P\) fissa, Gibbs \(G = U - TS + PV\) per entrambe, il gran potenziale \(\Omega = F - \mu N\) quando il numero di particelle fluttua. Qualunque tu scelga, l'equilibrio lo <em>minimizza</em>. E poiché questi potenziali sono funzioni ben educate, l'ordine delle derivate seconde miste non può contare — quell'unico fatto ti consegna le <strong>relazioni di Maxwell</strong>, come \(\left(\tfrac{\partial S}{\partial V}\right)_T = \left(\tfrac{\partial P}{\partial T}\right)_V\), che barattano qualcosa che non puoi misurare con qualcosa che puoi. Esigi che i potenziali curvino nel verso giusto e ne segue la stabilità: capacità termiche positive, comprimibilità positive.</p>
+<h3><span class="hn">04</span>Fluttuazioni e il teorema fluttuazione–dissipazione</h3>
+<p>Le medie sono solo metà della storia; la meccanica statistica dice anche quanto le cose tremolano. Un sistema in un bagno termico non ha un'energia fissa — fluttua, e la dimensione della fluttuazione è agganciata a una quantità che già conosci: \(\langle \Delta E^2 \rangle = k_B T^2 C_V\). Osserva la scala. L'oscillazione <em>relativa</em> si restringe come \(1/\sqrt{N}\), ed è per questo che una tazza di caffè ha una temperatura perfettamente netta mentre una singola proteina no. Questo ponte da una fluttuazione spontanea a una risposta misurabile è il primo indizio del <strong>teorema fluttuazione–dissipazione</strong>: pungola gentilmente un sistema e la sua reazione è dettata dal rumore che già fa a riposo. Einstein trovò il caso più pulito nel 1905 — \(D = \mu\, k_B T\), che lega la diffusione all'attrito — e Perrin lo trasformò in una bilancia, fissando il numero di Avogadro osservando i granelli barcollare nell'acqua.</p>
+<h3><span class="hn">05</span>Irreversibilità: il teorema H e i suoi paradossi</h3>
+<p>Ecco l'enigma che quasi spezzò Boltzmann. Il suo <strong>teorema H</strong> mostra una quantità \(H = \int f \ln f \, d^3v\) che scivola solo in discesa mentre un gas si rilassa — che è solo l'entropia che sale, la seconda legge spremuta dagli urti. Bellissimo, se non che quegli urti obbediscono alle leggi di Newton, e le leggi di Newton funzionano altrettanto bene all'indietro. Inverti ogni velocità e l'entropia dovrebbe <em>calare</em> (obiezione di Loschmidt); aspetta abbastanza a lungo e Poincaré garantisce che il gas ritorni quasi esattamente al suo raggomitolamento iniziale (quella di Zermelo). Entrambe le obiezioni sono corrette, ed entrambe mancano il punto. La freccia del tempo non vive nella dinamica; vive nella contabilità. La derivazione di Boltzmann assume in silenzio che le molecole siano scorrelate <em>prima</em> di un urto ma non dopo — lo <em>Stosszahlansatz</em> — ed è lì che si insinua l'asimmetria. Le ricorrenze sono reali, ma richiedono un tempo dell'ordine di \(e^{N}\), che nanizza la vita dell'universo. Alla fine la freccia risale a un unico fatto brutale: l'universo iniziò in uno stato di entropia sbalorditivamente bassa, e da allora scivoliamo in discesa.</p>
+<h3><span class="hn">06</span>Statistiche quantistiche e il crollo del quadro classico</h3>
+<p>Il conteggio classico crolla nel momento in cui le particelle diventano genuinamente identiche, perché "particella 1 qui, particella 2 là" non si distingue più dal proprio scambio. La meccanica quantistica allora divide il mondo in due tribù. I <strong>bosoni</strong> sono gregari: \(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} - 1}\) lascia che un numero qualsiasi si ammucchi in un solo stato, e quando lo fanno ottieni superfluidi, laser e condensati di Bose–Einstein. I <strong>fermioni</strong> sono solitari: \(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} + 1}\) limita ogni stato a uno, e quel testardo rifiuto di essere compressi — la pressione di degenerazione — è ciò che regge una nana bianca contro la sua stessa gravità. Entrambi si fondono nella familiare curva di Maxwell–Boltzmann quando il gas è caldo e rarefatto. Lo stesso conteggio quantistico salvò la fisica dalla <strong>catastrofe ultravioletta</strong>: tratta ogni modo di radiazione classicamente e l'equipartizione gli assegna \(\tfrac{1}{2}k_B T\), sommando fino a un fuoco infinitamente brillante. L'ipotesi di Planck che l'energia arrivi a grumi, \(E = n\hbar\omega\), affama i modi ad alta frequenza, doma lo spettro e — quasi per caso — aprì il secolo quantistico.</p>
+<h3><span class="hn">07</span>Transizioni di fase, criticità e il gruppo di rinormalizzazione</h3>
+<p>Fai bollire l'acqua e accade qualcosa di matematicamente violento: l'energia libera sviluppa uno spigolo. Transizioni di fase nette esistono solo nel limite di infinite particelle, dove appaiono come <em>non-analiticità</em>. Vicino a una transizione continua il sistema dimentica la propria dimensione, e le quantità divergono come leggi di potenza fissate da pochi <strong>esponenti critici</strong>. Lo shock, compreso solo negli anni '60 e '70, è che quegli esponenti sono <em>universali</em>: un magnete che muore al suo punto di Curie, un fluido al suo punto critico e una lega che si smescola condividono tutti gli stessi numeri — sensibili alla dimensionalità e alla simmetria, ma ciechi a ogni dettaglio microscopico. Kadanoff e Wilson spiegarono perché con il <strong>gruppo di rinormalizzazione</strong>: allarga lo sguardo, media sul piccolo, ripeti, e guarda il sistema fluire verso un punto fisso che spazza via l'irrilevante e tiene solo ciò che conta. Valse a Wilson il Nobel del 1982 e riorganizzò in silenzio il modo di pensare dei fisici, dai superconduttori alla teoria quantistica dei campi.</p>
+<h3><span class="hn">08</span>Frontiere: teoremi sul lavoro, informazione e gravità</h3>
+<p>Per un secolo la seconda legge sembrò una strada a senso unico senza scorciatoie; poi arrivarono le sorprese. L'<strong>uguaglianza di Jarzynski</strong> \(\langle e^{-\beta W} \rangle = e^{-\beta \Delta F}\) e la sua cugina più affilata, il teorema di Crooks, dicono che se trascini un sistema fuori equilibrio in modo rozzo quanto vuoi e medi nel modo giusto su molti tentativi, recuperi la differenza di energia libera <em>di equilibrio</em> esattamente — ora un trucco standard per leggere le energie di ripiegamento da singole molecole stirate con pinzette ottiche. Il <strong>principio di Landauer</strong> catturò infine il demone di Maxwell: il demone sembra imbrogliare la seconda legge finché non ricordi che deve prima o poi cancellare la sua memoria, e cancellare un bit costa almeno \(k_B T \ln 2\) di calore. Termodinamica e informazione si rivelano lo stesso argomento in abiti diversi. La svolta più strana è gravitazionale. Un buco nero porta un'entropia \(S = \dfrac{k_B c^3 A}{4 G \hbar}\) fissata dall'<em>area</em> del suo orizzonte, non dal volume all'interno, e risplende alla temperatura di Hawking \(T = \dfrac{\hbar c^3}{8\pi G k_B M}\). Che quell'entropia debba vivere su una superficie è il seme del principio olografico — e molto probabilmente un indizio verso qualsiasi teoria che infine sposi la gravità con il quanto.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Entropia di Boltzmann</th><td>\(S = k_B \ln \Omega\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Temperatura</th><td>\(\dfrac{1}{T} = \left(\dfrac{\partial S}{\partial E}\right)_{V,N}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Pesi di Boltzmann</th><td>\(P_i = \dfrac{e^{-\beta E_i}}{Z}, \quad \beta = \dfrac{1}{k_B T}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Funzione di partizione</th><td>\(Z = \sum_i e^{-\beta E_i}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Energia libera</th><td>\(F = -k_B T \ln Z = U - TS\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Gran funzione di partizione</th><td>\(\Xi = \sum_N e^{\beta \mu N}\, Z_N\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Relazione di Maxwell</th><td>\(\left(\dfrac{\partial S}{\partial V}\right)_T = \left(\dfrac{\partial P}{\partial T}\right)_V\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fluttuazioni di energia</th><td>\(\langle \Delta E^2 \rangle = k_B T^2 C_V\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Bose–Einstein</th><td>\(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} - 1}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fermi–Dirac</th><td>\(\langle n \rangle = \dfrac{1}{e^{\beta(\varepsilon-\mu)} + 1}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Uguaglianza di Jarzynski</th><td>\(\langle e^{-\beta W} \rangle = e^{-\beta \Delta F}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Bekenstein–Hawking</th><td>\(S_{BH} = \dfrac{k_B c^3 A}{4 G \hbar}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🕳️</span> Un buco nero è l'oggetto più entropico conosciuto: un buco nero di massa solare contiene ~10⁷⁷ k_B di entropia — circa 10²⁰ volte l'entropia termodinamica del Sole. Quasi tutta l'entropia dell'universo osservabile sta dietro gli orizzonti degli eventi.</li><li><span aria-hidden="true">🧬</span> I teoremi di Jarzynski e Crooks sono stati verificati srotolando meccanicamente singole molecole di RNA/DNA con pinzette ottiche (Collin et al., Nature 2005), recuperando energie libere di equilibrio da tiri irreversibili.</li><li><span aria-hidden="true">🌡️</span> Sistemi con uno spettro di energia limitato (spin nucleari, atomi freddi in reticoli ottici) possono raggiungere temperature assolute negative — più calde dell'infinito, poiché il calore fluisce sempre da essi verso qualsiasi sistema a T &gt; 0 (Braun et al., Science 2013).</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Laws_of_thermodynamics" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Fisica</h2>
+    <ul><li><a href="/it/gravita-orbite/">Gravità e orbite</a></li><li><a href="/it/moto-dei-proiettili/">Moto dei proiettili</a></li><li><a href="/it/onde-interferenza/">Onde e interferenza</a></li><li><a href="/it/modello-standard/">Il Modello Standard</a></li><li><a href="/it/leggi-del-moto-di-newton/">Le leggi del moto di Newton</a></li><li><a href="/it/legge-di-ohm-circuiti/">Legge di Ohm e circuiti</a></li><li><a href="/it/stati-della-materia/">Stati della materia</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

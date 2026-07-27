@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le leggi del moto di Newton | Lab-in-a-Tab</title>
+<meta name="description" content="Tre brevi regole che spiegano ogni spinta, urto, razzo e mela che cade nell'universo.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/leggi-del-moto-di-newton/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/newtons-laws-of-motion/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/leggi-del-moto-di-newton/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/newtons-laws-of-motion/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Le leggi del moto di Newton — Spiegato e simulato">
+<meta property="og:description" content="Tre brevi regole che spiegano ogni spinta, urto, razzo e mela che cade nell'universo.">
+<meta property="og:url" content="https://labinatab.com/it/leggi-del-moto-di-newton/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le leggi del moto di Newton — Spiegato e simulato">
+<meta name="twitter:description" content="Tre brevi regole che spiegano ogni spinta, urto, razzo e mela che cade nell'universo.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/leggi-del-moto-di-newton/#article",
+   "headline": "Le leggi del moto di Newton",
+   "name": "Le leggi del moto di Newton",
+   "description": "Tre brevi regole che spiegano ogni spinta, urto, razzo e mela che cade nell'universo.",
+   "url": "https://labinatab.com/it/leggi-del-moto-di-newton/",
+   "mainEntityOfPage": "https://labinatab.com/it/leggi-del-moto-di-newton/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Forze",
+    "F = ma",
+    "Inerzia"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Le leggi del moto di Newton",
+    "sameAs": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Le leggi del moto di Newton",
+     "item": "https://labinatab.com/it/leggi-del-moto-di-newton/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/newtons-laws-of-motion/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/leggi-del-moto-di-newton/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Fisica</nav>
+  <h1>Le leggi del moto di Newton</h1>
+  <p class="lead">Tre brevi regole che spiegano ogni spinta, urto, razzo e mela che cade nell'universo.</p>
+  <div class="chips"><span>Forze</span><span>F = ma</span><span>Inerzia</span></div>
+  <section class="sim-embed" data-sim="newton" data-color="#4f46e5" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4f46e5"><span class="sg-lbl">Prova</span><span>Make <b>Mass</b> small and <b>Push force</b> big, and watch <b>How fast it speeds up</b>. Now double <b>Mass</b> with the same <b>Push force</b>. What happens to how quickly it speeds up?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4f46e5"><span class="sg-lbl">Prova</span><span>Hold <b>Applied force (N)</b> fixed and step <b>Mass (kg)</b> from low to high, reading <b>Acceleration (a)</b> each time. Then raise <b>Friction (μ)</b> until the block refuses to move.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4f46e5"><span class="sg-lbl">Prova</span><span>Verify \(a \propto 1/m\) by halving and doubling <b>Mass (kg)</b> at fixed <b>Applied force (N)</b>, then locate the friction threshold where motion just ceases and compare it with \(\mu m g\).</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A block sits on a track. The green arrow is the <b>push</b> you apply; the red arrow is <b>friction</b> pushing back. The block speeds up while the push wins, then loops back to the start and runs again.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Doubling the mass halves the acceleration.</b> The same push moves a heavy block more slowly — that is \(F = ma\). And if you turn <b>Friction</b> up high enough, the block won't move at all: friction cancels your push, the forces balance, and Newton's first law keeps it still.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A free-body picture on a track: green = applied force, red = kinetic friction \(f = \mu m g\). The net force \(F_{\text{net}} = F - f\) gives the acceleration \(a = F_{\text{net}}/m\); the pills read net force, acceleration and speed live.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Acceleration is proportional to force and inversely proportional to mass — exactly \(a = F_{\text{net}}/m\).</b> When the applied force falls below the friction limit \(\mu m g\), the net force is zero and the block stays put: a balanced-forces demonstration of the first law.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A track showing the net of the applied force and Coulomb friction. Acceleration is integrated from \(a = F_{\text{net}}/m\) and speed from \(a\); the block resets to run at constant acceleration each cycle.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Motion begins exactly at \(F = \mu m g\), and the acceleration scales as \(1/m\).</b> This is the constant-force, constant-mass corner of \(\mathbf{F} = d\mathbf{p}/dt\). The sim uses a single kinetic \(\mu\); real surfaces have a larger <i>static</i> coefficient, so the true break-away force is a little higher than the value drawn here.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Niente si muove, si ferma o gira senza una forza</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Newton ridusse tutto il moto a tre regole, e la prima è la meno ovvia: le cose continuano a fare ciò che già stanno facendo. Una palla su un pavimento liscio rotola finché qualcosa — l'attrito, un muro, il tuo piede — la ferma. Un disco da hockey sul ghiaccio scivola per un'eternità. <em>Pensiamo</em> che gli oggetti rallentino naturalmente solo perché sulla Terra c'è sempre l'attrito che spinge in silenzio all'indietro. Togli l'attrito e il moto semplicemente continua. Questa riluttanza a cambiare si chiama <strong>inerzia</strong>.</p>
+<p>La seconda regola è quella che senti ogni giorno: spingi qualcosa e accelera; spingi più forte e accelera di più; spingi qualcosa di più pesante e a malapena si muove. È \(F = ma\) messo in parole — la forza che applichi è uguale alla massa per l'accelerazione che ottieni. Un carrello della spesa lo dimostra perfettamente: vuoto, una spinta gentile lo mette in moto; carico di mattoni, la stessissima spinta lo muove appena.</p>
+<p>La terza regola è quella sorprendente: ogni spinta viene con una spinta uguale all'indietro. Appoggiati a un muro e il muro spinge su di te con la stessa forza, ed è esattamente per questo che non lo attraversi cadendo. Un razzo scaglia gas caldo verso il basso e il gas scaglia il razzo verso l'alto. Un nuotatore spinge l'acqua all'indietro e l'acqua spinge il nuotatore in avanti. Le forze arrivano sempre in coppie, puntate in versi opposti — non puoi mai toccare senza essere toccato a tua volta.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🚀</span> Un razzo non spinge contro l'aria — spinge contro il gas che scaglia dal retro, ed è per questo che i razzi funzionano nel vuoto dello spazio.</li><li><span aria-hidden="true">🧊</span> Su ghiaccio senza attrito una spinta gentile ti terrebbe a scivolare per sempre. È l'attrito, non la natura, a fermare le cose.</li><li><span aria-hidden="true">🎈</span> Lascia andare un palloncino non annodato e sfreccia per la stanza: l'aria esce da un lato, il palloncino è spinto dall'altro — la terza legge di Newton nel tuo soggiorno.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Le tre leggi, rese quantitative</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Le tre leggi di Newton, pubblicate nei <em>Principia</em> nel 1687, sono il fondamento di tutta la meccanica. <strong>Prima:</strong> un oggetto resta fermo, o in moto rettilineo a velocità costante, a meno che una forza esterna netta agisca su di esso — il principio d'inerzia. <strong>Seconda,</strong> il cavallo da tiro: la forza netta è uguale alla massa per l'accelerazione, \(\mathbf{F}_{\text{net}} = m\mathbf{a}\), un'equazione vettoriale che applichi un asse alla volta. <strong>Terza:</strong> per ogni forza ce n'è una uguale e opposta, \(\mathbf{F}_{AB} = -\mathbf{F}_{BA}\), e cosa cruciale le due agiscono su corpi <em>diversi</em>.</p>
+<p>Il trucco per usarle è il <strong>diagramma di corpo libero</strong>: disegna l'oggetto, segna ogni forza su di esso — la gravità \(mg\) che tira giù, la forza normale \(N\) di una superficie che spinge su, ogni spinta applicata e l'attrito — poi sommale come vettori. L'attrito resiste al moto fino a un limite \(f \le \mu N\); sotto quel limite un oggetto fermo semplicemente non si muove, perché le forze si bilanciano e \(\mathbf{a} = 0\). Spingi oltre il limite e accelera a \(a = F_{\text{net}}/m\).</p>
+<p>Due conseguenze vale la pena imprimersi in mente. L'accelerazione è <em>inversamente</em> proporzionale alla massa — raddoppia la massa e la stessa forza fornisce metà dell'accelerazione. E il peso non è la stessa cosa della massa: il peso è semplicemente la forza della gravità su di te, \(W = mg\). Vola sulla Luna e la tua massa resta invariata, eppure il tuo peso scende di sei volte, perché lo fa \(g\).</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Prima legge</th><td>\(\mathbf{F}_{\text{net}} = 0 \;\Rightarrow\; \mathbf{a} = 0\)</td><td class="cmt">inerzia</td></tr>
+<tr><th scope="row">Seconda legge</th><td>\(\mathbf{F}_{\text{net}} = m\mathbf{a}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Terza legge</th><td>\(\mathbf{F}_{AB} = -\mathbf{F}_{BA}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Peso</th><td>\(W = mg\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Limite di attrito</th><td>\(f \le \mu N\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Accelerazione</th><td>\(a = \dfrac{F_{\text{net}}}{m}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">⚖️</span> Massa e peso differiscono: la massa (kg) è quanta materia sei; il peso (newton) è la forza che la gravità esercita su di essa, W = mg.</li><li><span aria-hidden="true">🚗</span> Le cinture di sicurezza combattono l'inerzia: in un urto l'auto si ferma ma il tuo corpo continua a muoversi a velocità — la cintura fornisce la forza che ti ferma con essa.</li><li><span aria-hidden="true">🪶</span> Nel vuoto una piuma e un martello cadono insieme: la gravità dà a entrambi la stessa accelerazione, perché a = F/m e F = mg cancellano esattamente la massa.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Dalle tre leggi alla quantità di moto, ai sistemi di riferimento e ai loro limiti</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>La seconda legge riguarda in realtà la quantità di moto</h3>
+<p>Newton non scrisse \(F = ma\); scrisse \(\mathbf{F} = \dfrac{d\mathbf{p}}{dt}\), il tasso di variazione della quantità di moto \(\mathbf{p} = m\mathbf{v}\). Per massa costante questo collassa in \(m\mathbf{a}\), ma la forma con la quantità di moto è quella onesta: gestisce i razzi e altri sistemi a massa variabile, dove la massa viene espulsa, ed è la versione che sopravvive — opportunamente modificata — nella relatività.</p>
+<h3><span class="hn">02</span>La terza legge è la conservazione della quantità di moto</h3>
+<p>Poiché le forze interne si cancellano in coppie uguali e opposte, la quantità di moto totale di un sistema isolato non cambia mai: \(\sum \mathbf{p} = \text{const}\). Questo è probabilmente più profondo dell'enunciato sulle forze stesso. Per il teorema di Noether discende dalla <em>simmetria traslazionale dello spazio</em> — il fatto che la fisica sia la stessa qui e altrove — e vale anche dove il quadro ingenuo azione-reazione fa fatica, come quando i campi elettromagnetici portano in silenzio quantità di moto propria.</p>
+<h3><span class="hn">03</span>Sistemi inerziali e relatività galileiana</h3>
+<p>Le leggi valgono solo nei sistemi di riferimento <strong>inerziali</strong> (non accelerati). Entra in un sistema accelerato e devi inventare forze <em>fittizie</em> — centrifuga, Coriolis — per tenere in ordine la contabilità di \(F = ma\). Eppure tutti i sistemi inerziali sono equivalenti: nessun esperimento meccanico può individuare uno stato di quiete assoluta. Quel principio di relatività, già presente in Galileo e Newton, è il seme che Einstein fece crescere nella relatività ristretta.</p>
+<h3><span class="hn">04</span>Dove Newton crolla</h3>
+<p>La meccanica newtoniana è un limite spettacolarmente accurato — basse velocità, gravità debole, dimensioni macroscopiche — non la legge finale. Avvicinati alla velocità della luce e la quantità di moto diventa \(\mathbf{p} = \gamma m\mathbf{v}\), così la forza non corre più parallela all'accelerazione. Rimpicciolisci a scale atomiche e la traiettoria netta si dissolve nella probabilità quantistica. Alza la gravità e la "forza" si rivela essere la curvatura dello spaziotempo. Le tre leggi sono il primo, superbamente utile capitolo della dinamica — e sapere esattamente dove falliscono è parte del capire perché funzionano così bene ovunque altro.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Seconda legge (generale)</th><td>\(\mathbf{F} = \dfrac{d\mathbf{p}}{dt}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Quantità di moto</th><td>\(\mathbf{p} = m\mathbf{v}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Conservazione</th><td>\(\sum \mathbf{p} = \text{const}\)</td><td class="cmt">sistema isolato</td></tr>
+<tr><th scope="row">Quantità di moto relativistica</th><td>\(\mathbf{p} = \gamma m\mathbf{v}\)</td><td class="cmt">\gamma = 1/\sqrt{1-v^2/c^2}</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🎯</span> Newton enunciò la sua seconda legge come F = dp/dt (tasso di variazione della quantità di moto). F = ma è solo il caso speciale di massa costante.</li><li><span aria-hidden="true">🌀</span> La &quot;forza&quot; di Coriolis che arriccia gli uragani non è una forza reale — è la correzione che aggiungi per far funzionare F = ma nel sistema rotante e non inerziale della Terra.</li><li><span aria-hidden="true">⚡</span> La conservazione della quantità di moto è più fondamentale delle leggi di Newton: discende dalla simmetria dello spazio stesso e si trasferisce nella fisica quantistica e relativistica.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Fisica</h2>
+    <ul><li><a href="/it/gravita-orbite/">Gravità e orbite</a></li><li><a href="/it/moto-dei-proiettili/">Moto dei proiettili</a></li><li><a href="/it/onde-interferenza/">Onde e interferenza</a></li><li><a href="/it/calore-termodinamica/">Calore e termodinamica</a></li><li><a href="/it/modello-standard/">Il Modello Standard</a></li><li><a href="/it/legge-di-ohm-circuiti/">Legge di Ohm e circuiti</a></li><li><a href="/it/stati-della-materia/">Stati della materia</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

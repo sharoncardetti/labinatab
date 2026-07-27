@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinetica ed equilibrio | Lab-in-a-Tab</title>
+<meta name="description" content="Perché il cibo marcisce più in fretta d'estate? Perché alcune reazioni esplodono e altre richiedono secoli? Le risposte rivelano come la chimica controlli…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/cinetica-equilibrio/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/kinetics-equilibrium/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/cinetica-equilibrio/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/kinetics-equilibrium/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Cinetica ed equilibrio — Spiegato e simulato">
+<meta property="og:description" content="Perché il cibo marcisce più in fretta d'estate? Perché alcune reazioni esplodono e altre richiedono secoli? Le risposte rivelano come la chimica controlli…">
+<meta property="og:url" content="https://labinatab.com/it/cinetica-equilibrio/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cinetica ed equilibrio — Spiegato e simulato">
+<meta name="twitter:description" content="Perché il cibo marcisce più in fretta d'estate? Perché alcune reazioni esplodono e altre richiedono secoli? Le risposte rivelano come la chimica controlli…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/cinetica-equilibrio/#article",
+   "headline": "Cinetica ed equilibrio",
+   "name": "Cinetica ed equilibrio",
+   "description": "Perché il cibo marcisce più in fretta d'estate? Perché alcune reazioni esplodono e altre richiedono secoli? Le risposte rivelano come la chimica controlli…",
+   "url": "https://labinatab.com/it/cinetica-equilibrio/",
+   "mainEntityOfPage": "https://labinatab.com/it/cinetica-equilibrio/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Velocità di reazione",
+    "Equilibrio",
+    "Catalisi"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Cinetica ed equilibrio",
+    "sameAs": "https://en.wikipedia.org/wiki/Chemical_kinetics"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Cinetica ed equilibrio",
+     "item": "https://labinatab.com/it/cinetica-equilibrio/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/kinetics-equilibrium/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/cinetica-equilibrio/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Chimica</nav>
+  <h1>Cinetica ed equilibrio</h1>
+  <p class="lead">Perché il cibo marcisce più in fretta d'estate? Perché alcune reazioni esplodono e altre richiedono secoli? Le risposte rivelano come la chimica controlli il tempo stesso.</p>
+  <div class="chips"><span>Velocità di reazione</span><span>Equilibrio</span><span>Catalisi</span></div>
+  <section class="sim-embed" data-sim="kinetics" data-color="#0891b2" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Set <b>Temperature (K)</b> to 400 and note <b>Rate</b>. Now raise it to 500 — just 100 degrees hotter — and read <b>Rate</b> again.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Record <b>Rate</b> at <b>Temperature (K)</b> = 400 and 500 with <b>Activation energy (kJ/mol)</b> at 50. Then return to 400 and instead lower <b>Activation energy (kJ/mol)</b> to 25. Which change bought you more speed?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Verify the Arrhenius form by checking that \(\ln k\) is linear in \(1/T\), sampling <b>Temperature (K)</b> where the rate is well below its ceiling. Then estimate \(E_a\) from your own slope and compare with the <b>Activation energy (kJ/mol)</b> setting.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>The curve in the lower panel is a hill the molecules must climb before they can react — that height is the <b>activation energy</b>. Only molecules with enough energy make it over. <b>Reactant left</b> is how much starting material is left, <b>Product made</b> how much has been converted, and <b>Rate</b> how fast it's going.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Only 100 degrees hotter and the reaction runs about 20 times faster.</b> Heat doesn't push molecules over the hill; it widens the small fraction that already had enough energy to climb it, and that fraction grows explosively with temperature. It's why a fridge preserves food for weeks while the same food spoils in a day on the counter, and why baking has such precise temperatures. Now press <b>Add catalyst</b> and watch the hill itself shrink.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A reaction-coordinate diagram with the barrier height set by <b>Activation energy (kJ/mol)</b>. Molecules react on collision if they clear the barrier; the rate constant follows Arrhenius, \(k = A e^{-E_a/RT}\). <b>[Reactant]</b> and <b>[Product]</b> track concentrations and <b>Rate</b> the instantaneous rate.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>+100 K multiplies the rate about 20-fold, but halving the barrier is worth far more — the exponential is much more sensitive to \(E_a\) than to \(T\).</b> That asymmetry is why catalysis dominates industrial chemistry: you cannot always heat a reaction (products decompose, energy costs money), but lowering \(E_a\) by offering an alternative pathway achieves the same end at ambient temperature. A catalyst changes neither \(\Delta G\) nor the equilibrium position — it accelerates forward and reverse reactions equally, and is regenerated unchanged.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Arrhenius kinetics with \(k = A\exp(-E_a/RT)\), \(A = 10^6\); the catalyst pathway reduces \(E_a\) by 55%. Note that the displayed <b>Rate</b> is clamped at an upper bound, so the most extreme combinations of high <b>Temperature (K)</b> and low <b>Activation energy (kJ/mol)</b> are truncated rather than reported faithfully.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>An Arrhenius plot of \(\ln k\) against \(1/T\) gives a straight line of slope \(-E_a/R\) — that is how activation energies are actually measured.</b> The interpretation deepens with transition-state theory: \(k = \frac{k_BT}{h}e^{-\Delta G^\ddagger/RT}\) splits the barrier into enthalpic and entropic parts, so a "pre-exponential factor" is really \(e^{\Delta S^\ddagger/R}\) — an orientational requirement, not a collision count. This is why enzymes achieve rate enhancements of \(10^{17}\): they pay the entropic cost of alignment in advance by binding the substrate, rather than lowering \(\Delta H^\ddagger\) alone.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Quanto in fretta avviene la chimica — e quando si ferma?</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Il latte in frigo si conserva una settimana; lasciato sul bancone in una giornata calda inacidisce in poche ore. Stessa chimica in entrambi i casi — batteri che scompongono gli zuccheri e le proteine del latte — ma la <strong>temperatura</strong> cambia tutto. Questa è la <strong>cinetica</strong> chimica: lo studio di quanto in fretta vanno le reazioni, e perché.</p>
+<p>Perché una reazione qualsiasi avvenga, le molecole devono scontrarsi — e non solo sfiorarsi. Devono colpirsi abbastanza forte, e nel giusto orientamento, per rompere vecchi legami e forgiarne di nuovi. Quell'energia minima per un urto "buono" è l'<strong>energia di attivazione</strong>. Riscalda le cose e le molecole si muovono più in fretta, si urtano più spesso e con più forza, così la reazione sfreccia. Una comoda regola empirica: ogni 10°C in più all'incirca <em>raddoppia</em> la velocità.</p>
+<p>Ma la maggior parte delle reazioni non corre semplicemente finché i reagenti sono finiti. Rallentano fino a un punto morto chiamato <strong>equilibrio chimico</strong>, dove la reazione diretta (reagenti → prodotti) e quella inversa (prodotti → reagenti) vanno esattamente allo stesso ritmo. Sembra finita, eppure entrambe le direzioni sono ancora in piena attività, cancellandosi perfettamente. Sposta la temperatura, la pressione o la concentrazione e sbilanci l'equilibrio — una leva che i chimici tirano di continuo per spremere più di qualunque cosa cerchino. Nella simulazione qui sotto, guarda le molecole reagire, raggiungere l'equilibrio e rispondere alle tue modifiche.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">💎</span> Il diamante è termodinamicamente instabile a temperatura e pressione ambiente — dovrebbe convertirsi spontaneamente in grafite. Ma l'energia di attivazione è così enorme che di fatto non accade mai.</li><li><span aria-hidden="true">🧪</span> Il processo Haber (fare ammoniaca per i fertilizzanti) usa un catalizzatore di ferro per abbassare l'energia di attivazione — senza, la reazione è troppo lenta per essere utile anche ad alta temperatura.</li><li><span aria-hidden="true">🌡️</span> Le reazioni chimiche nelle lucciole producono luce a quasi il 100% di efficienza — quasi nessun calore sprecato. Le lampadine umane sprecano ~90% dell'energia come calore.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Leggi cinetiche, l'equazione di Arrhenius e il principio di Le Chatelier</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Una <strong>legge cinetica</strong> inchioda quanto in fretta va una reazione in funzione della concentrazione: per i reagenti A e B, \(r = k[A]^m[B]^n\), dove gli ordini \(m, n\) si trovano per esperimento (non si leggono dall'equazione bilanciata) e \(k\) è la costante di velocità. Integrala e impari come le concentrazioni calano nel tempo — la più famosa la legge del primo ordine \(\ln[A] = \ln[A]_0 - kt\), il cui tempo di dimezzamento \(t_{1/2} = \ln 2/k\) è gloriosamente indipendente da quanto parti. Quella costanza è ciò che trasforma il decadimento del primo ordine in un orologio: il tempo di dimezzamento di 5.730 anni del carbonio-14 è l'intera base della datazione al radiocarbonio.</p>
+<p>La presa della temperatura è catturata dall'<strong>equazione di Arrhenius</strong> \(k = A\,e^{-E_a/RT}\): spingi \(T\) su e l'esponenziale lascia molte più molecole valicare la barriera di attivazione. Prendi i logaritmi, \(\ln k = \ln A - E_a/RT\), e un grafico di \(\ln k\) contro \(1/T\) è una retta la cui pendenza ti consegna \(E_a\). La teoria dello stato di transizione affina il quadro con l'equazione di Eyring \(k = \dfrac{k_B T}{h}\,e^{-\Delta G^\ddagger/RT}\), scomponendo la barriera in entalpia ed entropia e rivelando se una reazione pigra sta combattendo l'energia o il disordine.</p>
+<p>Dove una reazione <em>si ferma</em> è una domanda separata, fissata dalla <strong>costante di equilibrio</strong> \(K\) e dalla sua àncora termodinamica \(\Delta G^\circ = -RT\ln K\). Il <strong>principio di Le Chatelier</strong> ti dice come spostare i pali: disturba un equilibrio e si sposta per smussare il disturbo — aggiungi reagente e spinge a destra, comprimi una reazione gassosa e scivola verso meno molecole, scaldala e pende verso l'endotermica. Il processo Haber per l'ammoniaca è Le Chatelier trasformato in strategia industriale: alza la pressione per favorire il prodotto, poi scendi a compromessi sulla temperatura e aggiungi un catalizzatore di ferro per tenere la velocità gestibile.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Legge cinetica</th><td>\(r = k[A]^m[B]^n\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Arrhenius</th><td>\(k = A\,e^{-E_a/RT}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Primo ordine</th><td>\(\ln[A] = \ln[A]_0 - kt,\quad t_{1/2} = \dfrac{\ln 2}{k}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Equazione di Eyring</th><td>\(k = \dfrac{k_B T}{h}\,e^{-\Delta G^{\ddagger}/RT}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Costante di equilibrio</th><td>\(K_c = \dfrac{\prod[\text{prodotti}]^{\nu}}{\prod[\text{reagenti}]^{\nu}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Legame termodinamico</th><td>\(\Delta G^\circ = -RT\ln K\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🧲</span> Un enzima può accelerare una reazione di un fattore 10¹⁷ — equivalente a trasformare un processo che richiederebbe 3 miliardi di anni in uno che richiede un secondo.</li><li><span aria-hidden="true">⚗️</span> Il processo Haber-Bosch per fare fertilizzante di ammoniaca nutre grosso modo metà dell'umanità — e consuma circa l'1,5% della produzione energetica globale.</li><li><span aria-hidden="true">🔬</span> La femtochimica (Nobel 1999) usa impulsi laser da 10⁻¹⁵ secondi per fotografare le molecole allo stato di transizione — l'istante fugace in cui i legami sono mezzo rotti.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Teoria dello stato di transizione, meccanismi di reazione e cinetica enzimatica</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Il picco come quasi-equilibrio</h3>
+<p>La <strong>teoria dello stato di transizione</strong> (Eyring, Evans e Polanyi, 1935) fece una mossa semplificatrice audace: trattare il fugace complesso attivato \([AB]^\ddagger\) proprio in cima alla barriera energetica come se fosse in equilibrio con i reagenti. Da quell'unica ipotesi cade un'espressione universale della velocità, \(k = \kappa\dfrac{k_B T}{h}\,e^{\Delta S^\ddagger/R}\,e^{-\Delta H^\ddagger/RT}\), con il coefficiente di trasmissione \(\kappa\) che raccoglie correzioni quantistiche come l'effetto tunnel. Le velocità della chimica, dice, sono governate dalla geometria di un passo di montagna che il sistema visita a malapena.</p>
+<h3><span class="hn">02</span>Energia contro disordine alla barriera</h3>
+<p>Scomporre la barriera in \(\Delta H^\ddagger\) e \(\Delta S^\ddagger\) è più che contabilità. Una reazione può essere lenta perché il suo stato di transizione è alto in <em>energia</em>, o perché raggiungerlo esige una disposizione improbabilmente ordinata — un ripido costo <em>entropico</em>, come quando due molecole devono incontrarsi in una precisa geometria. Arrhenius accorpa entrambi in un singolo \(E_a\); la forma di Eyring li separa, e il termine entropico è spesso ciò che un catalizzatore è davvero progettato per sistemare.</p>
+<h3><span class="hn">03</span>Prevedere le velocità dalla termodinamica</h3>
+<p>Attraverso una famiglia di reazioni simili, la barriera segue la termodinamica in modo sorprendentemente lineare — la <strong>relazione di Evans–Polanyi</strong> \(E_a = E_a^0 + \alpha\,\Delta H_{\text{rxn}}\), una reazione più favorevole tende ad avere una barriera più bassa. È il seme delle <em>relazioni lineari di energia libera</em> (Hammett, Marcus) che permettono ai chimici di prevedere la velocità di una reazione non misurata dai soli dati termodinamici economici — una delle grandi scorciatoie salva-lavoro del campo.</p>
+<h3><span class="hn">04</span>Meccanismi e il trucco dello stato stazionario</h3>
+<p>Una reazione complessiva è in realtà una sequenza di passi elementari, e il più lento — lo <em>stadio determinante la velocità</em> — fissa il ritmo. Il cavallo da tiro per districarli è l'<strong>approssimazione dello stato stazionario</strong>: assumi che qualsiasi intermedio reattivo sia consumato tanto in fretta quanto si forma, \(d[\text{I}]/dt \approx 0\), e lo si può eliminare algebricamente per ricavare la legge cinetica osservata. Il bilancio dettagliato sorveglia poi il risultato — all'equilibrio ogni passo deve bilanciarsi individualmente, escludendo meccanismi altrimenti allettanti.</p>
+<h3><span class="hn">05</span>Enzimi: Michaelis–Menten</h3>
+<p>Punta il macchinario sui catalizzatori della biologia e la stessa ipotesi dello stato stazionario produce l'equazione più famosa della biochimica. Per \(E + S \rightleftharpoons ES \to E + P\), la velocità è \(v = \dfrac{V_{\max}[S]}{K_M + [S]}\) — lineare nel substrato quando scarso, saturando a \(V_{\max}\) quando l'enzima è sommerso. \(K_M\) è il livello di substrato a metà della velocità massima, un indicatore pratico di quanto strettamente l'enzima stringe il suo bersaglio.</p>
+<h3><span class="hn">06</span>Cooperatività e il limite di velocità estremo</h3>
+<p>Non tutti gli enzimi seguono quella curva ordinata. Quelli allosterici danno una risposta sigmoidale, da interruttore, adattata dall'equazione di Hill \(v = \dfrac{V_{\max}[S]^n}{K_{0.5}^n + [S]^n}\), dove \(n > 1\) segnala che legare un substrato aiuta il successivo — la cooperatività che permette all'emoglobina di caricare e scaricare l'ossigeno così nettamente. E c'è un tetto: i migliori enzimi raggiungono un'efficienza catalitica \(k_{\text{cat}}/K_M \sim 10^{8}\text{–}10^{9}\ \text{M}^{-1}\text{s}^{-1}\), la velocità a cui il substrato semplicemente diffonde nel sito attivo. Sono diventati così veloci che la chimica non li limita più — solo la velocità dell'incontro lo fa.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Eyring (completa)</th><td>\(k = \kappa\dfrac{k_B T}{h}\,e^{\Delta S^{\ddagger}/R}\,e^{-\Delta H^{\ddagger}/RT}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Evans–Polanyi</th><td>\(E_a = E_a^0 + \alpha\,\Delta H_{\text{rxn}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Michaelis–Menten</th><td>\(v = \dfrac{V_{\max}[S]}{K_M + [S]}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Efficienza catalitica</th><td>\(\dfrac{k_{\text{cat}}}{K_M} \to 10^{8}\text{–}10^{9}\ \text{M}^{-1}\text{s}^{-1}\)</td><td class="cmt">limite di diffusione</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Equazione di Hill</th><td>\(v = \dfrac{V_{\max}[S]^n}{K_{0.5}^n + [S]^n}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Equazione di Hammett</th><td>\(\log(k/k_0) = \rho\,\sigma\)</td><td class="cmt">energia libera lineare</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">⚡</span> L'anidrasi carbonica catalizza CO₂ + H₂O ⇌ H₂CO₃ a 10⁶ reazioni al secondo — uno degli enzimi più veloci conosciuti, che opera al limite di diffusione.</li><li><span aria-hidden="true">🧬</span> CRISPR-Cas9 è un enzima — il suo meccanismo implica una cinetica controllata con precisione: legare il DNA, srotolare l'elica, verificare la complementarità e tagliare solo quando tutti i criteri sono soddisfatti.</li><li><span aria-hidden="true">🔬</span> La cinetica a singola molecola (con la microscopia a fluorescenza) può ora osservare singole molecole di enzima catalizzare una reazione alla volta — rivelando un'eterogeneità nascosta invisibile alle misure di massa.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Chemical_kinetics" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Chimica</h2>
+    <ul><li><a href="/it/atomi-legami-chimici/">Atomi e legami chimici</a></li><li><a href="/it/elettrochimica-batterie/">Elettrochimica e batterie</a></li><li><a href="/it/chimica-organica-molecole-vita/">Chimica organica e molecole della vita</a></li><li><a href="/it/acidi-basi-ph/">Acidi, basi e pH</a></li><li><a href="/it/tavola-periodica/">La tavola periodica</a></li><li><a href="/it/bilanciare-equazioni-chimiche/">Bilanciare le equazioni chimiche</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

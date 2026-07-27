@@ -7,6 +7,9 @@
 <meta name="description" content="Why does ice always melt and coffee always cool down? The universe has a direction.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/thermodynamics/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/thermodynamics/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/calore-termodinamica/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/thermodynamics/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/thermodynamics/",
    "mainEntityOfPage": "https://labinatab.com/thermodynamics/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/thermodynamics/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/calore-termodinamica/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physics</nav>
@@ -225,7 +235,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>The <strong>First Law</strong> is energy accounting, nothing more: \(\Delta U = Q - W\). Whatever heat \(Q\) you pour in, minus the work \(W\) the system does on the outside world, is what stays behind as internal energy. Nothing is created or destroyed, only swapped - chemical into heat in an engine, chemical into electrical in a battery, nuclear into sunlight in a star. The books always balance.</p>
 <p>The <strong>Second Law</strong> is the one with teeth: the entropy of an isolated system never falls. Every spontaneous change nudges it upward, and that upward drift <em>is</em> the arrow of time - a glass shatters but never reassembles. It also caps every engine ever built. Carnot showed that even a flawless one, shuttling heat between a hot reservoir at \(T_h\) and a cold one at \(T_c\), can do no better than \(\eta = 1 - T_c/T_h\). As long as \(T_c > 0\), perfect efficiency is simply off the table - not for lack of clever engineering, but because the universe forbids it.</p>
 <p>The <strong>Third Law</strong> closes off the bottom of the scale: as \(T \to 0\), entropy settles onto a constant minimum (zero for a perfect crystal). A curious consequence is that absolute zero is unreachable - you can edge closer and closer, but every step buys you less, and you never quite arrive.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">First Law</th><td>\(\Delta U = Q - W\)</td><td class="cmt">energy conservation</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">First Law</th><td>\(\Delta U = Q - W\)</td><td class="cmt">energy conservation</td></tr>
 <tr><th scope="row">Entropy change</th><td>\(\Delta S = \dfrac{Q_{\text{rev}}}{T}\)</td><td class="cmt">reversible process</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Ideal gas law</th><td>\(PV = nRT\)</td><td class="cmt">R = 8.314 J·mol⁻¹·K⁻¹</td></tr>
@@ -254,7 +264,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>Boil water and something mathematically violent happens: the free energy develops a kink. Sharp phase transitions exist only in the limit of infinitely many particles, where they appear as <em>non-analyticities</em>. Near a continuous transition the system forgets its own size, and quantities diverge as power laws set by a few <strong>critical exponents</strong>. The shock, understood only in the 1960s and 70s, is that those exponents are <em>universal</em>: a magnet dying at its Curie point, a fluid at its critical point, and an alloy unmixing all share the same numbers - sensitive to dimensionality and symmetry, but blind to every microscopic detail. Kadanoff and Wilson explained why with the <strong>renormalization group</strong>: zoom out, average over the small stuff, repeat, and watch the system flow toward a fixed point that washes away the irrelevant and keeps only what matters. It won Wilson the 1982 Nobel and quietly reorganised how physicists think, from superconductors to quantum field theory.</p>
 <h3><span class="hn">08</span>Frontiers: work theorems, information and gravity</h3>
 <p>For a century the Second Law looked like a one-way street with no shortcuts; then came the surprises. The <strong>Jarzynski equality</strong> \(\langle e^{-\beta W} \rangle = e^{-\beta \Delta F}\) and its sharper cousin, the Crooks theorem, say that if you drag a system out of equilibrium as roughly as you like and average the right way over many attempts, you recover the <em>equilibrium</em> free-energy difference exactly - now a standard trick for reading folding energies off single molecules stretched with optical tweezers. <strong>Landauer's principle</strong> finally caught Maxwell's demon: the demon seems to cheat the Second Law until you remember it must eventually erase its memory, and erasing one bit costs at least \(k_B T \ln 2\) of heat. Thermodynamics and information turn out to be the same subject in different clothes. The strangest twist is gravitational. A black hole carries an entropy \(S = \dfrac{k_B c^3 A}{4 G \hbar}\) fixed by the <em>area</em> of its horizon, not the volume within, and glows at the Hawking temperature \(T = \dfrac{\hbar c^3}{8\pi G k_B M}\). That entropy should live on a surface is the seed of the holographic principle - and very likely a clue to whatever theory finally weds gravity to the quantum.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Boltzmann entropy</th><td>\(S = k_B \ln \Omega\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Boltzmann entropy</th><td>\(S = k_B \ln \Omega\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Temperature</th><td>\(\dfrac{1}{T} = \left(\dfrac{\partial S}{\partial E}\right)_{V,N}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Boltzmann weights</th><td>\(P_i = \dfrac{e^{-\beta E_i}}{Z}, \quad \beta = \dfrac{1}{k_B T}\)</td><td class="cmt"></td></tr>
@@ -278,25 +288,25 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
   <nav class="related" aria-label="Related topics">
     <h2>More in Physics</h2>
-    <ul><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li></ul>
+    <ul><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li><li><a href="/states-of-matter/">States of Matter</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

@@ -7,6 +7,9 @@
 <meta name="description" content="Some problems are easy. Some are hard. And some are provably impossible - no matter how fast your computer gets. Why?">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/computation-complexity/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/computation-complexity/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/computazione-complessita/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/computation-complexity/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/computation-complexity/",
    "mainEntityOfPage": "https://labinatab.com/computation-complexity/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/computation-complexity/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/computazione-complessita/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Computer Science</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>A <strong>Turing machine</strong> is computation stripped to the bone: an infinite tape, a head that reads and writes one square, and a handful of states with rules \(\delta(\text{state}, \text{symbol}) \to (\text{state}', \text{symbol}', \text{move})\). It looks absurdly primitive, yet the Church–Turing thesis holds that anything computable at all is computable by one of these. And a single <strong>Universal Turing Machine</strong>, handed the description of any other, can imitate it perfectly - the theoretical seed of every general-purpose computer you've ever used.</p>
 <p>Turing's <strong>Halting Problem</strong> falls out by <em>diagonalisation</em>. Suppose a decider \(H(M, w)\) could always say whether machine \(M\) halts on input \(w\). Build a spoiler \(D(M)\) that runs \(H(M, M)\) and then does the opposite - loops if \(H\) says "halts", halts if \(H\) says "loops". Now feed \(D\) its own description: \(D(D)\) halts exactly when it doesn't. Contradiction, so \(H\) can't exist. Rice's theorem generalises the damage: <em>every</em> non-trivial question about what a program does is undecidable, which is why perfect automatic bug-checking is off the table.</p>
 <p>Among the problems that <em>are</em> solvable, we sort by cost. <strong>P</strong> is everything decidable in polynomial time; <strong>NP</strong> is everything whose answer, once guessed, can be <em>checked</em> in polynomial time - Sudoku, graph colouring, factoring. A problem is <strong>NP-complete</strong> if it's in NP and every other NP problem reduces to it, so it's as hard as the whole class at once. Cook and Levin (1971) proved boolean satisfiability (SAT) is one such problem, and thousands of everyday problems have since joined it. Crack any one of them efficiently and you've proven \(P = NP\) - and cracked them all.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">TM transition</th><td>\(\delta: Q \times \Gamma \to Q \times \Gamma \times \{L, R\}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">TM transition</th><td>\(\delta: Q \times \Gamma \to Q \times \Gamma \times \{L, R\}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Church–Turing thesis</th><td>\(\text{computable} \iff \text{TM-computable}\)</td><td class="cmt">conjecture</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Class P</th><td>\(\text{decidable in } O(n^k) \text{ time}\)</td><td class="cmt"></td></tr>
@@ -249,7 +259,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>A different thread asks whether coin flips add real power. <strong>BPP</strong> is what you can solve in polynomial time allowing a small two-sided error, and for decades it seemed strictly richer than \(P\). The surprise (Impagliazzo–Wigderson, 1997) is that it probably isn't: <em>if</em> suitably hard functions exist, then \(BPP = P\) and every randomised algorithm can be derandomised. Hardness, the villain of the P-vs-NP story, turns out to be exactly what you'd need to make randomness redundant.</p>
 <h3><span class="hn">06</span>Interactive proofs and a shock from 2020</h3>
 <p>Let a verifier interrogate a prover and computation's reach expands astonishingly. Shamir proved \(IP = PSPACE\): anything solvable in polynomial memory can be <em>verified</em> through conversation. Add multiple provers sharing quantum entanglement and it explodes all the way to \(MIP^* = RE\) (Ji et al., 2020) - the entire class of recursively enumerable problems, including undecidable ones. That result didn't just startle complexity theorists; it settled Connes' embedding conjecture in pure operator algebra, a reminder that the theory of computation now reaches into the far corners of mathematics.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Circuit lower bound</th><td>\(\exists f \in NP:\; \text{size}(f) = \Omega(2^n/n)\)</td><td class="cmt">Shannon counting</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Circuit lower bound</th><td>\(\exists f \in NP:\; \text{size}(f) = \Omega(2^n/n)\)</td><td class="cmt">Shannon counting</td></tr>
 <tr><th scope="row">Best explicit bound</th><td>\(\text{size}(f) \ge \Omega(n \log n)\)</td><td class="cmt">far from exponential</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Randomised class</th><td>\(BPP:\; \text{poly time, error} \le \tfrac{1}{3}\)</td><td class="cmt"></td></tr>
@@ -268,22 +278,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/sorting-algorithms/">Sorting Algorithms</a></li><li><a href="/machine-learning/">Machine Learning &amp; Neural Networks</a></li><li><a href="/cryptography/">Cryptography &amp; Security</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

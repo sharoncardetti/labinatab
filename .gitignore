@@ -1,2 +1,22 @@
+# ── Cache di build & tooling ──────────────────────
 .claude/
 .build-pages.json
+
+# ── Solo sviluppo locale (mai in produzione) ──────
+serve.bat
+serve_out.txt
+
+# ── Node (se un domani aggiungi tooling) ──────────
+node_modules/
+npm-debug.log*
+*.log
+
+# ── Spazzatura OS / editor ────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vulcanologia | Lab-in-a-Tab</title>
+<meta name="description" content="Un vulcano è una finestra sull'interno del nostro pianeta. Lo stesso processo che distrugge città ha costruito i continenti, creato gli oceani e formato…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/vulcanologia/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/volcanology/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/vulcanologia/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/volcanology/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Vulcanologia — Spiegato e simulato">
+<meta property="og:description" content="Un vulcano è una finestra sull'interno del nostro pianeta. Lo stesso processo che distrugge città ha costruito i continenti, creato gli oceani e formato…">
+<meta property="og:url" content="https://labinatab.com/it/vulcanologia/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vulcanologia — Spiegato e simulato">
+<meta name="twitter:description" content="Un vulcano è una finestra sull'interno del nostro pianeta. Lo stesso processo che distrugge città ha costruito i continenti, creato gli oceani e formato…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/vulcanologia/#article",
+   "headline": "Vulcanologia",
+   "name": "Vulcanologia",
+   "description": "Un vulcano è una finestra sull'interno del nostro pianeta. Lo stesso processo che distrugge città ha costruito i continenti, creato gli oceani e formato…",
+   "url": "https://labinatab.com/it/vulcanologia/",
+   "mainEntityOfPage": "https://labinatab.com/it/vulcanologia/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Magma",
+    "Eruzioni",
+    "Rischi geologici"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Vulcanologia",
+    "sameAs": "https://en.wikipedia.org/wiki/Volcano"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Vulcanologia",
+     "item": "https://labinatab.com/it/vulcanologia/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/volcanology/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/vulcanologia/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Scienze della Terra</nav>
+  <h1>Vulcanologia</h1>
+  <p class="lead">Un vulcano è una finestra sull'interno del nostro pianeta. Lo stesso processo che distrugge città ha costruito i continenti, creato gli oceani e formato l'atmosfera che respiriamo.</p>
+  <div class="chips"><span>Magma</span><span>Eruzioni</span><span>Rischi geologici</span></div>
+  <section class="sim-embed" data-sim="volcano" data-color="#dc2626" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#dc2626"><span class="sg-lbl">Prova</span><span>Set <b>Magma viscosity (1=basalt 10=rhyolite)</b> to 1 — runny, like Hawaii — and press <b>Force eruption</b>, noting <b>Blast size</b>. Now set it to 10, the sticky kind, and erupt again.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#dc2626"><span class="sg-lbl">Prova</span><span>Erupt at <b>Magma viscosity (1=basalt 10=rhyolite)</b> = 1, 5 and 10 from full pressure, recording <b>VEI</b> each time. Then change <b>Magma recharge rate</b> and check whether it alters <b>VEI</b> or only the waiting time.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#dc2626"><span class="sg-lbl">Prova</span><span>Map <b>VEI</b> over the (<b>Magma viscosity (1=basalt 10=rhyolite)</b>, <b>Chamber pressure</b>) plane by forcing eruptions at different pressures. Consider which physical variable the model conspicuously omits, and whether its absence makes the model optimistic or pessimistic.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Underneath the mountain is a chamber of molten rock. Fresh magma keeps arriving from below, so <b>Chamber pressure</b> climbs steadily; when the chamber can't take any more, the volcano erupts. <b>Phase</b> tells you what stage it is in, and <b>Blast size</b> rates how violent the eruption was.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Runny magma gives a gentle blast of about 1; sticky magma gives a 7 — hundreds of times more violent, from the very same pressure.</b> The difference is whether the gas can get out. In runny magma the bubbles escape easily and lava simply pours out, so you can walk near a Hawaiian eruption. In sticky magma the gas is trapped until the whole thing bursts at once, like shaking a fizzy drink and opening it suddenly. Same pressure, utterly different day.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A magma chamber and conduit. <b>Magma recharge rate</b> sets the rate of magma input, so <b>Chamber pressure</b> rises until failure; <b>Magma viscosity (1=basalt 10=rhyolite)</b> spans basaltic (1) to rhyolitic (10) composition. <b>VEI</b> is the Volcanic Explosivity Index of the resulting eruption.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Viscosity sets the violence, recharge only sets the frequency — <b>VEI</b> runs from 1 to 7 across the viscosity range at identical pressure.</b> Viscosity is governed chiefly by silica content: basalt (~50% SiO₂) is fluid enough for bubbles to escape continuously, while rhyolite (~70%) polymerises into a melt so stiff that volatiles stay dissolved until fragmentation. Since VEI is logarithmic in erupted volume, that span of 1 to 7 is roughly a million-fold difference in material. It is also why the dangerous volcanoes are the quiet ones: long repose intervals let evolved, gas-rich, viscous magma accumulate.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Chamber–conduit system with volumetric recharge and a failure threshold. <b>Magma viscosity (1=basalt 10=rhyolite)</b> parameterises melt composition; explosive fragmentation is triggered above a viscosity threshold. <b>VEI</b> scales with both stored overpressure and viscosity.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>The omission is dissolved volatile content — the actual driver of explosivity, which viscosity here merely proxies.</b> Fragmentation occurs when bubble overpressure exceeds melt tensile strength, governed by decompression rate and \(\mathrm{H_2O}\)/\(\mathrm{CO_2}\) solubility (Henry's law: \(\sim\)4–6 wt% H₂O at rhyolitic chamber depths). Viscosity and volatile content correlate through silica, so the proxy holds statistically while missing the mechanism. Two consequences the model cannot show: the plinian–effusive transition can flip within a <em>single</em> eruption as conduit conditions evolve (Mount St. Helens 1980), and VEI, being volume-based, systematically understates the climate impact of sulphur-rich but small eruptions — Pinatubo's 20 Mt of SO₂ cooled the planet 0.5°C despite a VEI of only 6.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Montagne di fuoco — i costruttori più potenti della Terra!</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Un vulcano è una delle forze più terrificanti della natura — e una delle più creative. Nel profondo della Terra, la roccia fonde sotto calore e pressione feroci in <strong>magma</strong>, un liquido denso e incandescente più leggero della roccia solida attorno. Come una bolla che sale nel miele, il magma si fa strada verso l'alto attraverso le crepe nella crosta, e quando finalmente rompe la superficie erutta come <strong>lava</strong>, cenere e gas — costruendo nuova terra mentre procede.</p>
+<p>I vulcani vengono in forme molto diverse. I <strong>vulcani a scudo</strong>, come quelli delle Hawaii, sono larghi e dolcemente inclinati, colando lava fluida che scorre per chilometri e raramente esplode. Gli <strong>stratovulcani</strong> come il Vesuvio o il Krakatoa sono i coni ripidi e perfetti da cartolina, costruiti strato su strato da cenere e lava viscosa — e possono esplodere con violenza catastrofica.</p>
+<p>Con tutta la loro distruttività, i vulcani sono gran parte del motivo per cui siamo qui. Nel corso di miliardi di anni, le eruzioni eruttarono i gas che divennero la nostra atmosfera e riempirono gli oceani. L'anidride carbonica che le piante respirano, l'azoto che respiriamo, perfino l'acqua nel mare — quasi tutto un tempo uscì ruggendo da un vulcano. Senza di essi, la Terra sarebbe una roccia brulla, morta come la Luna. Nella simulazione qui sotto, guarda una camera magmatica pressurizzarsi ed esplodere.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🌍</span> Ci sono circa 1.500 vulcani potenzialmente attivi sulla Terra — 500 hanno eruttato nella storia documentata, e 50–70 eruttano ogni anno.</li><li><span aria-hidden="true">❄️</span> L'eruzione del monte Tambora del 1815 iniettò così tanta cenere nell'atmosfera che il 1816 divenne &quot;l'anno senza estate&quot; — i raccolti fallirono a livello globale e 100.000 persone morirono di fame.</li><li><span aria-hidden="true">🌊</span> Il vulcano più grande della Terra è il Mauna Loa alle Hawaii — misurato dalla sua base sul fondale oceanico, è più alto del Monte Everest di oltre 1 chilometro.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Genesi del magma, stili eruttivi e rischi vulcanici</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Il magma non è semplicemente "roccia fusa" — si forma per <strong>fusione parziale</strong>, e ci sono tre modi per far superare il limite al mantello solido. <em>Decompressione</em>: il mantello che sale a una dorsale scende sotto la sua pressione di fusione e fonde risalendo. <em>Fusione per flusso</em>: l'acqua strizzata da una lastra in subduzione abbassa il punto di fusione del mantello sovrastante, preparando i magmi ricchi di silice degli archi vulcanici. <em>Trasferimento di calore</em>: magma caldo del mantello iniettato nella crosta la fonde dall'interno. Il prodotto va dal basalto fluido (~50% di silice) alla riolite rigida (~75%) — e quel contenuto di silice decide in silenzio quasi tutto ciò che segue.</p>
+<p>Lo stile eruttivo è in realtà un braccio di ferro fra <strong>viscosità</strong> e gas disciolto. Man mano che il magma sale, la pressione che lo comprime si allenta e i volatili — acqua, CO₂, SO₂ — vengono fuori frizzando come bolle, esattamente come stappare una bottiglia agitata. Nel basalto fluido le bolle si liberano e il magma si limita a colare (un'eruzione <em>effusiva</em>). Nella riolite rigida restano intrappolate, la pressione si accumula dietro di esse, e l'intera cosa detona in una torreggiante colonna <em>pliniana</em>. La grandezza è registrata sull'<strong>indice di esplosività vulcanica</strong>, una scala logaritmica 0–8 dove ogni passo è all'incirca \(10\times\) più materiale eruttato — e una "supereruzione" VEI 8 come Yellowstone scaglia oltre 1.000 km³.</p>
+<p>I pericoli sono molti e ineguali. Le colate laviche sono lente e quasi inarrestabili ma raramente letali; i veri assassini sono le <strong>correnti piroclastiche</strong> — cocenti valanghe di gas e roccia a centinaia di gradi, che corrono in discesa a velocità autostradali. Aggiungi ricadute di cenere abbastanza pesanti da far crollare i tetti, i <em>lahar</em> (colate di fango vulcanico) che seppelliscono intere valli, e il gas invisibile — l'eruzione del Laki del 1783 esalò abbastanza zolfo da uccidere un quarto dell'Islanda. Oggi una rete di sismometri, GPS, sensori di gas e radar satellitari sorveglia i vulcani irrequieti per i tremori e il rigonfiamento che precorrono un'eruzione.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Viscosità del magma</th><td>\(\eta = A\,e^{E_a/RT}\)</td><td class="cmt">sale con SiO₂, cala con T</td></tr>
+<tr><th scope="row">Crescita delle bolle</th><td>\(\dfrac{dR}{dt} = \dfrac{(P_b - P_\infty)R}{4\eta}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Indice di esplosività</th><td>\(\text{VEI} \approx \log_{10}(V_{\text{ejecta}}) + 8\)</td><td class="cmt">V in km³</td></tr>
+<tr><th scope="row">Colonna pliniana</th><td>\(H \approx 0.236\,Q^{1/4}\)</td><td class="cmt">Q = flusso di massa</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Fusione per decompressione</th><td>\(\left.\tfrac{dT}{dP}\right|_{\text{sol}} &lt; \left.\tfrac{dT}{dP}\right|_{\text{adiabat}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Forzante da SO₂</th><td>\(\Delta F \approx -0.03\,M_{\text{SO}_2}\ \text{W/m}^2\)</td><td class="cmt">per Tg</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">💨</span> L'eruzione del Pinatubo del 1991 iniettò 20 milioni di tonnellate di SO₂ nella stratosfera, formando aerosol di solfato che raffreddarono la Terra di 0,5°C per due anni.</li><li><span aria-hidden="true">🔥</span> Le correnti piroclastiche del Vesuvio nel 79 d.C. raggiunsero Ercolano in 4 minuti a ~300°C — la morte fu istantanea per shock termico, non per asfissia come si pensava prima.</li><li><span aria-hidden="true">📡</span> La deformazione del suolo alla caldera di Yellowstone è monitorata da oltre 30 stazioni GPS; si gonfia e si sgonfia fino a 20 cm/anno mentre i fluidi idrotermali si muovono — ma non c'è segno di un'eruzione imminente.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Dinamica della camera magmatica, saturazione dei volatili e supereruzioni</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Non una pozza di lava, ma una poltiglia</h3>
+<p>La vignetta di una caverna fusa sotto un vulcano è sbagliata. I veri serbatoi di magma sono <strong>poltiglie di cristalli</strong> (crystal mush) — una spugnosa miscela di cristalli e fuso interstiziale, con frazione di fuso \(\phi\) che va da quasi 1 (liquido) fino a ~0,4, sotto cui i cristalli si incastrano e l'intera massa si blocca come sabbia bagnata. Quella <strong>frazione critica di fuso</strong> \(\phi_c \approx 0.4\text{–}0.5\) è il cardine reologico fra "eruttabile" e "bloccato", e la maggior parte della vita di un serbatoio è passata parcheggiata, fredda e ricca di cristalli, sul lato sbagliato di essa.</p>
+<h3><span class="hn">02</span>Il fattore scatenante della ricarica</h3>
+<p>Ciò che ribalta una poltiglia in stallo in un'eruzione è spesso un'iniezione di magma fresco e caldo dal mantello sottostante. La ricarica riscalda e rimobilita la pila di cristalli, comprime ed essolve i suoi volatili, e sovrappressurizza il serbatoio. La parte sbalorditiva è la scala temporale: la zonatura chimica congelata nei cristalli di plagioclasio e olivina registra il processo che richiede mere settimane o anni — un sistema geologico che passa millenni dormiente può armarsi in una stagione.</p>
+<h3><span class="hn">03</span>I volatili e il frizzare</h3>
+<p>Tutto ciò che è esplosivo risale al gas disciolto. La solubilità dell'acqua in un fuso silicico scala grosso modo come \(X_{\text{H}_2\text{O}} \propto P^{1/2}\), così mentre il magma risale e la pressione cala, l'acqua è forzata fuori dalla soluzione e nelle bolle. Quanto violentemente dipende da quanto in fretta decomprime rispetto a quanto pigramente il fuso viscoso lascia crescere e drenare le bolle. Sbaglia quell'equilibrio — risali troppo in fretta in un fuso troppo rigido — e le bolle non tengono il passo, e la pressione non ha altra via d'uscita che fuori.</p>
+<h3><span class="hn">04</span>Frammentazione: quando il magma si frantuma</h3>
+<p>Il momento dell'esplosione è un cambiamento di fase nel comportamento. Quando il tasso di deformazione supera la capacità del fuso di scorrere — grossolanamente, \(\dot{\varepsilon} > G/\eta\) — il magma smette di comportarsi come un liquido e si frantuma come vetro, frammentandosi in piroclasti lungo il <strong>fronte di frammentazione</strong>. Un liquido continuo diventa uno spruzzo ad alta velocità di cenere e gas in un istante. Tutto ciò che sta sopra quel fronte è una colonna eruttiva; tutto ciò che sta sotto è ancora magma. È l'unica soglia che separa una colata lavica da una catastrofe pliniana.</p>
+<h3><span class="hn">05</span>Supereruzioni</h3>
+<p>Le <strong>supereruzioni</strong> (VEI ≥ 8, oltre 1.000 km³) esigono la rapida mobilitazione di un enorme corpo di poltiglia — una rara confluenza di un grande serbatoio e di un fattore scatenante abbastanza forte. Yellowstone lo ha fatto tre volte, più di recente il Lava Creek Tuff di 640.000 anni fa, all'incirca 1.000 km³ di riolite. Queste non sono solo eruzioni più grandi; operano su una scala fisica diversa, svuotando un serbatoio così vasto che il suolo sopra sprofonda in una <em>caldera</em> larga decine di chilometri.</p>
+<h3><span class="hn">06</span>Inverno vulcanico</h3>
+<p>La minaccia globale dalle eruzioni più grandi è climatica, non locale. Lo zolfo iniettato nella stratosfera forma una foschia di aerosol di solfato che indugia per un anno o due, riflettendo la luce solare e raffreddando la superficie — un <em>inverno vulcanico</em>. La supereruzione di Toba ~74.000 anni fa potrebbe aver precipitato il mondo esattamente in questo, e alcuni leggono un corrispondente collo di bottiglia genetico nel DNA umano, come se la nostra specie fosse stata brevemente ridotta a qualche migliaio di sopravvissuti. Persino la modesta eruzione del Pinatubo del 1991 raffreddò in modo misurabile il pianeta di 0,5°C per due anni — prova di concetto, su piccola scala.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Solubilità dell'H₂O</th><td>\(X_{\text{H}_2\text{O}} = a\,P^{1/2}\)</td><td class="cmt">a ≈ 3.07×10⁻⁴ (800°C)</td></tr>
+<tr><th scope="row">Frammentazione</th><td>\(\dot{\varepsilon} &gt; G/\eta\)</td><td class="cmt">transizione fragile</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Cristallizzazione di Avrami</th><td>\(\phi(t) = 1 - e^{-K t^{n}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Frazione critica di fuso</th><td>\(\phi_c \approx 0.4\text{–}0.5\)</td><td class="cmt">blocco reologico</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Altezza della colonna</th><td>\(H = 0.236\,Q^{1/4}\)</td><td class="cmt">Q = flusso di massa</td></tr>
+<tr><th scope="row">Forzante climatico</th><td>\(\Delta T \approx -0.03\,M_{\text{SO}_2}\)</td><td class="cmt">per Tg iniettato</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🧬</span> Le prove genetiche suggeriscono che la supereruzione di Toba 74.000 anni fa possa aver ridotto la popolazione umana a meno di 10.000 coppie riproduttive — spiegando un collo di bottiglia visibile nel nostro DNA.</li><li><span aria-hidden="true">🔬</span> La cronometria per diffusione nei cristalli di olivina può misurare quanto a lungo il magma ha passato a temperatura di eruzione — a volte solo giorni o settimane prima di una grande eruzione.</li><li><span aria-hidden="true">🌍</span> I basalti alluvionali dei Trappi del Deccan (India, ~66 Ma) eruttarono 500.000 km³ di lava in ~1 milione di anni — coincidendo con l'estinzione K-Pg e forse contribuendovi accanto all'impatto di Chicxulub.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Volcano" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Scienze della Terra</h2>
+    <ul><li><a href="/it/clima-atmosfera/">Clima e atmosfera</a></li><li><a href="/it/tettonica-a-placche-terremoti/">Tettonica a placche e terremoti</a></li><li><a href="/it/oceanografia-correnti-oceaniche/">Oceanografia e correnti oceaniche</a></li><li><a href="/it/perche-abbiamo-le-stagioni/">Perché abbiamo le stagioni</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

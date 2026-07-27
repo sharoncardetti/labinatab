@@ -1,59 +1,87 @@
-// Generates one static, crawlable page per topic from the SAME `S` array that
-// drives index.html — single source of truth, so re-running is free.
+// Generates static, crawlable pages per topic from the SAME `S` array that drives
+// index.html — single source of truth. Multilingual: English at the root, other
+// languages under /<lang>/ from overlay files in i18n/. A localized page exists
+// only when that topic is translated (no English content served under /it/).
 //   node build-pages.mjs
-// Output: <slug>/index.html for every topic (served as https://labinatab.com/<slug>/)
 import fs from 'node:fs';
 import path from 'node:path';
+import itLang from './i18n/it.mjs';
+import frLang from './i18n/fr.mjs';
 
 const ORIGIN = 'https://labinatab.com';
 const TODAY = new Date().toISOString().slice(0, 10);
-// Freshness dates for Article schema. PUBLISHED is a stable launch date — set it
-// to the site's real first-publish date; dateModified reflects each rebuild.
 const PUBLISHED = '2026-03-23';
 const src = fs.readFileSync('index.html', 'utf8');
 
-// ── pull `S` and `REF` straight out of index.html ──────────────────────
 function extract(startMarker, endMarker) {
   const a = src.indexOf(startMarker);
   const b = src.indexOf(endMarker, a);
   if (a < 0 || b < 0) throw new Error(`cannot locate ${startMarker}`);
   return src.slice(a, b + endMarker.length);
 }
-// newline matters: the S block ends in a `//` comment, which would swallow the return
 const S = new Function(`${extract('const S=[', ']; // end SUBJECTS')}\nreturn S;`)();
 const REF = new Function(`${extract('const REF={', '};')}\nreturn REF;`)();
-
-const LEVELS = [
-  { key: 'junior',  label: 'Junior',  blurb: 'plain language, no maths' },
-  { key: 'student', label: 'Student', blurb: 'the core equations' },
-  { key: 'scholar', label: 'Scholar', blurb: 'full mathematical depth' },
-];
-
-const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-// strip tags -> plain text (for meta description / word counts)
-const plain = h => String(h).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-
-// Slugs live in index.html (the homepage card links need them too) — read them
-// from there so a URL is only ever written down in one place.
 const SLUG = new Function(`${extract('const SLUG={', '};')}\nreturn SLUG;`)();
-const slugFor = s => {
-  const v = SLUG[s.id];
-  if (!v) throw new Error(`no slug for id "${s.id}" — add it to SLUG in index.html`);
-  return v;
-};
-
-// ── the interactive simulation, ported from the modal ──────────────────
-// Labels + guide text are read from index.html so the wording is authored in
-// exactly one place. The sim ENGINE (canvas code) is written out to a shared
-// sim-engine.js that every page loads — one download, cached across the site.
 const SIM_LABELS = new Function(`${extract('const SIM_LABELS={', '\n};')}\nreturn SIM_LABELS;`)();
 const SIM_GUIDE  = new Function(`${extract('const SIM_GUIDE={', '}; // end SIM_GUIDE')}\nreturn SIM_GUIDE;`)();
+const UI = new Function(`${extract('const UI={', '}; // end UI')}\nreturn UI;`)();
 
-// [[token]] -> the on-screen control label, bold. Mirrors fillLabels in index.html.
+// Fill {placeholders} in a UI template string; used where the SPA uses fmtUI.
+const fmt = (s, m) => String(s).replace(/\{(\w+)\}/g, (_, k) => (m && m[k] != null ? m[k] : ''));
+// JSON for inlining inside <script>; guard against a </script> break (none today).
+const jsonInline = (x) => { const j = JSON.stringify(x); if (/<\/script/i.test(j)) throw new Error('clone: content contains </script>'); return j; };
+
+const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const plain = h => String(h).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const fillLabels = (txt, lab) =>
   String(txt).replace(/\[\[(\w+)\]\]/g, (m, k) => (lab && lab[k]) ? `<b>${esc(lab[k])}</b>` : m);
 
-// Pull named top-level declarations verbatim out of index.html by brace-matching.
+// ── languages ──────────────────────────────────────────────────────────
+// English is the base: empty overlays, so every topic resolves to `S` as-is.
+const EN = {
+  code: 'en', name: 'English', flag: '<svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg>', htmlLang: 'en', locale: 'en_US', prefix: '',
+  ui: UI,
+  slugs: {}, t: {}, guide: {}, labels: {},
+};
+const LANGS = [EN, itLang, frLang];
+const LEVEL_KEYS = ['junior', 'student', 'scholar'];
+
+const slugForLang = (s, lang) => (lang.slugs && lang.slugs[s.id]) || SLUG[s.id];
+const hasTopic = (lang, id) => lang.code === 'en' || !!(lang.t && lang.t[id]);
+const subjectName = (s, lang) => (lang.ui.subjects && lang.ui.subjects[s.group]) || s.group.replace(/^\S+\s*/, '').trim();
+
+// Merge base topic with a language overlay, English fallback per field.
+function resolveTopic(s, lang) {
+  if (lang.code === 'en') return s;
+  const ov = lang.t[s.id];
+  if (!ov) return null;
+  const lvls = {};
+  for (const k of LEVEL_KEYS) {
+    const base = s.lvls[k];
+    if (!base) continue;
+    const o = (ov.lvls && ov.lvls[k]) || {};
+    lvls[k] = {
+      icon: base.icon, sim: base.sim,
+      title: o.title || base.title,
+      body: o.body || base.body,
+      facts: o.facts || base.facts,
+      formula: o.formula || base.formula,
+    };
+  }
+  return { ...s, title: ov.title || s.title, teaser: ov.teaser || s.teaser, chips: ov.chips || s.chips, lvls };
+}
+
+// Precompute, for each topic id, the languages it exists in (for hreflang + switcher).
+const altsByTopic = {};
+for (const lang of LANGS) for (const s of S) {
+  if (!hasTopic(lang, s.id)) continue;
+  (altsByTopic[s.id] = altsByTopic[s.id] || []).push({
+    code: lang.code, htmlLang: lang.htmlLang, flag: lang.flag, name: lang.name,
+    url: `${ORIGIN}/${lang.prefix}${slugForLang(s, lang)}/`,
+  });
+}
+
+// ── the shared sim engine (English canvas labels; ported once) ───────────
 function decl(name) {
   let i = src.indexOf('function ' + name + '(');
   if (i < 0) { const m = src.search(new RegExp('const ' + name + '\\s*=')); i = m; }
@@ -67,9 +95,6 @@ function decl(name) {
   if (src[j] === ';') j++;
   return src.slice(i, j);
 }
-
-// Sim CSS lives in index.html's <style>; grab exactly the rules the engine needs
-// (comments stripped first, else a rule preceded by /*…*/ is skipped).
 function simCss() {
   const css = src.match(/<style>([\s\S]*?)<\/style>/)[1].replace(/\/\*[\s\S]*?\*\//g, '');
   const want = ['.sim-canvas-wrap', '.sim-controls', '.cbtn', '.rng-wrap', '.rng-top',
@@ -80,12 +105,12 @@ function simCss() {
     .filter(r => want.some(w => r.split('{')[0].split(',').some(s => s.trim().startsWith(w))))
     .join('\n') + (dark ? '\n' + dark[0] : '');
 }
-
 const ENGINE = [
   decl('SIM_LABELS'), decl('SIMS'),
   ...['simLabels', 'newEl', 'mkCanvas', 'mkCtrl', 'mkPills', 'pill', 'mkBtn', 'mkRange',
     'getSimWidth', 'stopSims', 'buildSim',
-    'simOrbit', 'simProjectile', 'simNewton', 'simCircuit', 'simWaves', 'simThermo', 'simParticles', 'simGalton', 'simFractal',
+    'simOrbit', 'simProjectile', 'simNewton', 'simCircuit', 'simStates', 'simTrig', 'simSeasons', 'simBalance', 'simPunnett',
+    'simWaves', 'simThermo', 'simParticles', 'simGalton', 'simFractal',
     'simCalculus', 'simGraphs', 'simLife', 'simDNA', 'simEvolution', 'simEcosystem',
     'simPhotosynthesis', 'simCell', 'simMitosis',
     'simSorting', 'simML', 'simCrypto', 'simComplexity', 'simClimate', 'simTectonics',
@@ -94,26 +119,25 @@ const ENGINE = [
     'simMemory', 'simSleep'].map(decl),
 ].join('\n\n');
 
-const LVL_LABEL = { junior: '🌱 Junior', student: '🔬 Student', scholar: '🎓 Scholar' };
-
-// The embedded sim: level tabs + per-level Try/legend/notice (all baked into HTML
-// so it is crawlable), plus an empty host the engine fills on first scroll-in.
-function simEmbedHTML(s) {
-  const guide = SIM_GUIDE[s.id];
-  if (!guide) return `<a class="cta" href="/#${s.id}">▶ Run the interactive simulation</a>`;
-  const levels = ['junior', 'student', 'scholar'];
+// The embedded sim, localized. Guide text + tab labels come from the language;
+// the canvas control labels remain the engine's (English) for now.
+function simEmbedHTML(T, lang) {
+  const ui = lang.ui;
+  const guide = (lang.guide && lang.guide[T.id]) || SIM_GUIDE[T.id];
+  if (!guide) return `<a class="cta" href="/#${T.id}">${ui.runSim}</a>`;
+  const labelsFor = (lang.labels && lang.labels[T.id]) || SIM_LABELS[T.id] || {};
   const active = 'junior';
-  const tabs = levels.map(l =>
-    `<button type="button" data-l="${l}"${l === active ? ' class="on"' : ''}>${LVL_LABEL[l]}</button>`).join('');
-  const tries = levels.map(l => {
-    const g = guide[l], lab = (SIM_LABELS[s.id] || {})[l] || {};
-    return `<div class="sim-try" data-l="${l}"${l === active ? '' : ' hidden'} style="border-left-color:${s.color}"><span class="sg-lbl">Try this</span><span>${fillLabels(g.try, lab)}</span></div>`;
+  const tabs = LEVEL_KEYS.map(l =>
+    `<button type="button" data-l="${l}"${l === active ? ' class="on"' : ''}>${ui.levelBar[l]}</button>`).join('');
+  const tries = LEVEL_KEYS.map(l => {
+    const g = guide[l], lab = labelsFor[l] || {};
+    return `<div class="sim-try" data-l="${l}"${l === active ? '' : ' hidden'} style="border-left-color:${T.color}"><span class="sg-lbl">${ui.tryThis}</span><span>${fillLabels(g.try, lab)}</span></div>`;
   }).join('\n');
-  const guides = levels.map(l => {
-    const g = guide[l], lab = (SIM_LABELS[s.id] || {})[l] || {};
-    return `<div class="sim-guide" data-l="${l}"${l === active ? '' : ' hidden'}><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>${fillLabels(g.legend, lab)}</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body">${fillLabels(g.notice, lab)}</div></details></div>`;
+  const guides = LEVEL_KEYS.map(l => {
+    const g = guide[l], lab = labelsFor[l] || {};
+    return `<div class="sim-guide" data-l="${l}"${l === active ? '' : ' hidden'}><div class="sg-legend"><span class="sg-lbl">${ui.whatSeeing}</span>${fillLabels(g.legend, lab)}</div><details class="sg-notice"><summary>${ui.whatNotice}</summary><div class="sg-body">${fillLabels(g.notice, lab)}</div></details></div>`;
   }).join('\n');
-  return `<section class="sim-embed" data-sim="${s.id}" data-color="${s.color}" aria-label="Interactive simulation">
+  return `<section class="sim-embed" data-sim="${T.id}" data-color="${T.color}" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level">${tabs}</div>
   ${tries}
   <div class="sim-host"></div>
@@ -121,30 +145,25 @@ function simEmbedHTML(s) {
 </section>`;
 }
 
-// Meta descriptions must survive Google's ~160 char cut: trim on a word boundary.
 function clamp(text, max = 155) {
   const t = plain(text);
   if (t.length <= max) return t;
   return t.slice(0, t.lastIndexOf(' ', max - 1)).replace(/[,;:—-]$/, '') + '…';
 }
-
-// The prose uses <h4> inside a section; under the page's <h2> that skips a
-// level, so promote to <h3> to keep the outline valid for screen readers.
 const fixHeadings = h => h.replace(/<(\/?)h4\b/g, '<$1h3');
 
-function formulaHTML(f) {
+function formulaHTML(f, ui) {
   if (!f || !f.rows || !f.rows.length) return '';
   const rows = f.rows.map(r => {
     if (r.sep) return '<tr class="sep"><td colspan="3"></td></tr>';
     const eq = f.tex ? `\\(${esc(r.e)}\\)` : `<code>${esc(r.e)}</code>`;
     return `<tr><th scope="row">${esc(r.n)}</th><td>${eq}</td><td class="cmt">${r.c ? esc(r.c) : ''}</td></tr>`;
   }).join('\n');
-  return `<div class="formulas"><h3>Key formulas</h3><table>${rows}</table></div>`;
+  return `<div class="formulas"><h3>${ui.keyFormulas}</h3><table>${rows}</table></div>`;
 }
-
-function factsHTML(facts) {
+function factsHTML(facts, ui) {
   if (!facts || !facts.length) return '';
-  return `<div class="facts"><h3>Things worth knowing</h3><ul>${
+  return `<div class="facts"><h3>${ui.worthKnowing}</h3><ul>${
     facts.map(f => `<li><span aria-hidden="true">${f.e}</span> ${esc(f.t)}</li>`).join('')
   }</ul></div>`;
 }
@@ -159,7 +178,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -194,8 +221,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -205,89 +231,93 @@ footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);te
 .sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
 ${simCss()}`.trim();
 
-function page(s) {
-  const slug = slugFor(s);
-  const url = `${ORIGIN}/${slug}/`;
-  const subject = s.group.replace(/^\S+\s*/, '').trim();
-  const desc = clamp(s.teaser);
-  const wiki = REF[s.id] ? `https://en.wikipedia.org/wiki/${REF[s.id]}` : null;
+function page(T, lang, alts) {
+  const ui = lang.ui;
+  const slug = slugForLang(T, lang);
+  const url = `${ORIGIN}/${lang.prefix}${slug}/`;
+  const subject = subjectName(T, lang);
+  const desc = clamp(T.teaser);
+  const wiki = REF[T.id] ? `https://en.wikipedia.org/wiki/${REF[T.id]}` : null;
 
-  const levels = LEVELS.map(L => {
-    const lc = s.lvls[L.key];
+  const levels = LEVEL_KEYS.map(k => {
+    const lc = T.lvls[k];
     if (!lc) return '';
+    const L = ui.levels[k];
     return `
-<section class="lvl" id="${L.key}">
+<section class="lvl" id="${k}">
   <h2>${esc(lc.title)}</h2>
-  <p class="lvl-note">${L.label} level — ${L.blurb}</p>
+  <p class="lvl-note">${esc(fmt(ui.levelNote, { label: L.label, blurb: L.blurb }))}</p>
   ${fixHeadings(lc.body)}
-  ${formulaHTML(lc.formula)}
-  ${factsHTML(lc.facts)}
+  ${formulaHTML(lc.formula, ui)}
+  ${factsHTML(lc.facts, ui)}
 </section>`;
   }).join('\n');
 
-  const related = S.filter(x => x.group === s.group && x.id !== s.id)
-    .map(x => `<li><a href="/${slugFor(x)}/">${esc(x.title)}</a></li>`).join('');
+  const related = S.filter(x => x.group === T.group && x.id !== T.id && hasTopic(lang, x.id))
+    .map(x => {
+      const rt = lang.code === 'en' ? x.title : ((lang.t[x.id] && lang.t[x.id].title) || x.title);
+      return `<li><a href="/${lang.prefix}${slugForLang(x, lang)}/">${esc(rt)}</a></li>`;
+    }).join('');
 
-  // Structured data. Article+LearningResource describes the page; `about.sameAs`
-  // ties it to the Wikipedia entity; BreadcrumbList can render in the SERP.
+  const enAlt = alts.find(a => a.code === 'en');
+  const hreflang = alts.map(a => `<link rel="alternate" hreflang="${a.htmlLang}" href="${a.url}">`).join('\n')
+    + (enAlt ? `\n<link rel="alternate" hreflang="x-default" href="${enAlt.url}">` : '');
+
+  const switcher = alts.length > 1
+    ? `<div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language">${lang.flag}</button><div class="langmenu" id="lm" hidden>${
+        alts.map(a => `<a href="${a.url}" hreflang="${a.htmlLang}"${a.code === lang.code ? ' aria-current="true"' : ''}>${a.flag} ${esc(a.name)}</a>`).join('')
+      }</div></div>`
+    : '';
+
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': ['Article', 'LearningResource'],
         '@id': url + '#article',
-        headline: s.title,
-        name: s.title,
-        description: desc,
-        url,
-        mainEntityOfPage: url,
-        datePublished: PUBLISHED,
-        dateModified: TODAY,
-        inLanguage: 'en',
-        isAccessibleForFree: true,
-        isFamilyFriendly: true,
+        headline: T.title, name: T.title, description: desc, url, mainEntityOfPage: url,
+        datePublished: PUBLISHED, dateModified: TODAY, inLanguage: lang.htmlLang,
+        isAccessibleForFree: true, isFamilyFriendly: true,
         learningResourceType: 'Interactive explanation with simulation',
-        educationalLevel: LEVELS.map(l => l.label),
-        teaches: s.chips,
-        about: { '@type': 'Thing', name: s.title, ...(wiki ? { sameAs: wiki } : {}) },
+        educationalLevel: LEVEL_KEYS.map(k => ui.levels[k].label),
+        teaches: T.chips,
+        about: { '@type': 'Thing', name: T.title, ...(wiki ? { sameAs: wiki } : {}) },
         image: `${ORIGIN}/logo_radiant_infinity.png`,
         author: { '@type': 'Organization', name: 'Lab-in-a-Tab', url: ORIGIN + '/' },
-        publisher: {
-          '@type': 'Organization', name: 'Lab-in-a-Tab', url: ORIGIN + '/',
-          logo: { '@type': 'ImageObject', url: `${ORIGIN}/logo_radiant_infinity.png` },
-        },
+        publisher: { '@type': 'Organization', name: 'Lab-in-a-Tab', url: ORIGIN + '/', logo: { '@type': 'ImageObject', url: `${ORIGIN}/logo_radiant_infinity.png` } },
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Lab-in-a-Tab', item: ORIGIN + '/' },
-          { '@type': 'ListItem', position: 2, name: s.title, item: url },
+          { '@type': 'ListItem', position: 2, name: T.title, item: url },
         ],
       },
     ],
   };
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang.htmlLang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${esc(s.title)} | Lab-in-a-Tab</title>
+<title>${esc(T.title)} | Lab-in-a-Tab</title>
 <meta name="description" content="${esc(desc)}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="${url}">
+${hreflang}
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Lab-in-a-Tab">
-<meta property="og:title" content="${esc(s.title)} — Explained &amp; Simulated">
+<meta property="og:title" content="${esc(T.title)} — ${esc(ui.explainedSimulated)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${ORIGIN}/logo_radiant_infinity.png">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="${lang.locale}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${esc(s.title)} — Explained &amp; Simulated">
+<meta name="twitter:title" content="${esc(T.title)} — ${esc(ui.explainedSimulated)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${ORIGIN}/logo_radiant_infinity.png">
 <script type="application/ld+json">
@@ -305,40 +335,40 @@ ${JSON.stringify(ld, null, 1)}
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions">${switcher}<button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › ${esc(subject)}</nav>
-  <h1>${esc(s.title)}</h1>
-  <p class="lead">${esc(plain(s.teaser))}</p>
-  <div class="chips">${s.chips.map(c => `<span>${esc(c)}</span>`).join('')}</div>
-  ${simEmbedHTML(s)}
+  <h1>${esc(T.title)}</h1>
+  <p class="lead">${esc(plain(T.teaser))}</p>
+  <div class="chips">${T.chips.map(c => `<span>${esc(c)}</span>`).join('')}</div>
+  ${simEmbedHTML(T, lang)}
   ${levels}
   <div class="sources">
-    <h3>Sources</h3>
-    ${wiki ? `<p><a href="${wiki}" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>` : ''}
+    <h3>${ui.sources}</h3>
+    ${wiki ? `<p><a href="${wiki}" target="_blank" rel="noopener">${ui.wikiLink}</a></p>` : ''}
   </div>
   <nav class="related" aria-label="Related topics">
-    <h2>More in ${esc(subject)}</h2>
+    <h2>${ui.moreIn} ${esc(subject)}</h2>
     <ul>${related}</ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All ${S.length} experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">${ui.footer.allExperiments}</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';
@@ -362,7 +392,62 @@ window.addEventListener('load',function(){
 </html>`;
 }
 
-// Shared sim engine — one file for the whole site, loaded by every topic page.
+// ── full localized SPA clones (/it/, /fr/) ────────────────────────────────
+// The English SPA (index.html) verbatim, with only the data blocks swapped:
+//   UI (all chrome) · S (all 47 topics, translated where available, English
+//   fallback) · SLUG (localized article paths) · SIM_GUIDE + SIM_LABELS.
+// Every language is therefore the same app; only the words differ.
+const localizedS = lang => S.map(s => (hasTopic(lang, s.id) ? resolveTopic(s, lang) : s));
+const localizedSlugMap = lang => {
+  const out = {};
+  for (const s of S) out[s.id] = hasTopic(lang, s.id) ? `${lang.prefix}${slugForLang(s, lang)}` : SLUG[s.id];
+  return out;
+};
+const mergeById = (base, over) => ({ ...base, ...(over || {}) });
+
+function swapBlock(html, start, end, code) {
+  const a = html.indexOf(start);
+  const b = html.indexOf(end, a);
+  if (a < 0 || b < 0) throw new Error(`clone: block not found: ${start}`);
+  return html.slice(0, a) + code + html.slice(b + end.length);
+}
+
+function buildSPAClone(lang) {
+  const ui = lang.ui;
+  const url = `${ORIGIN}/${lang.prefix}`;
+  const cleanHtag = String(ui.htag).replace(/^\S+\s*/, '').trim();
+  const desc = clamp(ui.heroSub.junior);
+  let html = src;
+  // data blocks
+  html = swapBlock(html, 'const UI={', '}; // end UI', `const UI=${jsonInline(ui)}; // end UI`);
+  html = swapBlock(html, 'const S=[', ']; // end SUBJECTS', `const S=${jsonInline(localizedS(lang))}; // end SUBJECTS`);
+  html = swapBlock(html, 'const SLUG={', '};', `const SLUG=${jsonInline(localizedSlugMap(lang))};`);
+  html = swapBlock(html, 'const SIM_GUIDE={', '}; // end SIM_GUIDE', `const SIM_GUIDE=${jsonInline(mergeById(SIM_GUIDE, lang.guide))}; // end SIM_GUIDE`);
+  html = swapBlock(html, 'const SIM_LABELS={', '\n};', `const SIM_LABELS=${jsonInline(mergeById(SIM_LABELS, lang.labels))};`);
+  // head + document language
+  html = html.replace('<html lang="en">', `<html lang="${lang.htmlLang}">`);
+  html = html.replace('<link rel="canonical" href="https://labinatab.com/">', `<link rel="canonical" href="${url}">`);
+  html = html.replace('<meta property="og:url" content="https://labinatab.com/">', `<meta property="og:url" content="${url}">`);
+  html = html.replace('<meta property="og:locale" content="en_US">', `<meta property="og:locale" content="${lang.locale}">`);
+  html = html.replace(/<title>[^<]*<\/title>/, `<title>Lab-in-a-Tab — ${esc(cleanHtag)}</title>`);
+  html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(desc)}">`);
+  html = html.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="Lab-in-a-Tab — ${esc(cleanHtag)}">`);
+  // language switcher: this language's flag on the button, mark its menu item current
+  html = html.replace(/(<button class="icon-btn langbtn" id="lb"[^>]*>)[\s\S]*?(<\/button>)/, (m, open, close) => open + lang.flag + close);
+  html = html.replace(' aria-current="true"', '');
+  html = html.replace(`<a href="/${lang.prefix}" hreflang="${lang.htmlLang}">`, `<a href="/${lang.prefix}" hreflang="${lang.htmlLang}" aria-current="true">`);
+  // localized footer "all experiments" list (translated titles + localized/EN-fallback slugs)
+  const footerLinks = S.map(s => {
+    const t = resolveTopic(s, lang) || s;
+    const href = hasTopic(lang, s.id) ? `/${lang.prefix}${slugForLang(s, lang)}/` : `/${SLUG[s.id]}/`;
+    return `<li><a href="${href}">${esc(t.title)}</a></li>`;
+  }).join('');
+  html = swapBlock(html, '<ul class="all-topics" id="all-topics">', '</ul>', `<ul class="all-topics" id="all-topics">${footerLinks}</ul>`);
+  fs.mkdirSync(lang.prefix, { recursive: true });
+  fs.writeFileSync(path.join(lang.prefix, 'index.html'), html, 'utf8');
+}
+
+// Shared sim engine.
 fs.writeFileSync('sim-engine.js',
   '// AUTO-GENERATED by build-pages.mjs from index.html — do not edit by hand.\n' +
   '// Ports the simulation engine so each topic page can run its own sim.\n' +
@@ -370,22 +455,29 @@ fs.writeFileSync('sim-engine.js',
 
 let n = 0;
 const built = [];
-for (const s of S) {
-  const slug = slugFor(s);
-  fs.mkdirSync(slug, { recursive: true });
-  const html = page(s);
-  fs.writeFileSync(path.join(slug, 'index.html'), html, 'utf8');
-  built.push({ slug, id: s.id, title: s.title, words: plain(html).split(/\s+/).length });
-  n++;
+for (const lang of LANGS) {
+  for (const s of S) {
+    if (!hasTopic(lang, s.id)) continue;
+    const T = resolveTopic(s, lang);
+    const dir = lang.prefix + slugForLang(s, lang);
+    fs.mkdirSync(dir, { recursive: true });
+    const html = page(T, lang, altsByTopic[s.id]);
+    fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+    built.push({ slug: dir, id: s.id, lang: lang.code, title: T.title, words: plain(html).split(/\s+/).length });
+    n++;
+  }
 }
 
-// Remove directories from an earlier run whose slug changed, so renaming a page
-// never leaves a stale copy live. Only ever touches slugs we ourselves built.
-const slugs = new Set(built.map(b => b.slug));
+// Full localized SPA clone for every non-English language that has ≥1 translated topic.
+const hubs = LANGS.filter(l => l.code !== 'en' && S.some(s => hasTopic(l, s.id))).map(l => l.prefix);
+for (const lang of LANGS) if (lang.code !== 'en' && S.some(s => hasTopic(lang, s.id))) buildSPAClone(lang);
+
+// Remove directories from an earlier run whose slug changed. Only touches slugs we built.
+const slugSet = new Set(built.map(b => b.slug));
 let removed = 0;
 if (fs.existsSync('.build-pages.json')) {
   for (const prev of JSON.parse(fs.readFileSync('.build-pages.json', 'utf8'))) {
-    if (!slugs.has(prev.slug) && fs.existsSync(prev.slug)) {
+    if (!slugSet.has(prev.slug) && fs.existsSync(prev.slug)) {
       fs.rmSync(prev.slug, { recursive: true, force: true });
       removed++;
     }
@@ -393,57 +485,38 @@ if (fs.existsSync('.build-pages.json')) {
 }
 fs.writeFileSync('.build-pages.json', JSON.stringify(built, null, 1));
 
-// sitemap.xml — only canonical URLs, and only <loc>/<lastmod>: Google states it
-// ignores <changefreq> and <priority>, so emitting them is noise.
-const today = new Date().toISOString().slice(0, 10);
-const urls = ['', ...built.map(b => b.slug + '/')];
+// sitemap.xml — every localized page plus the English home.
+const urls = ['', ...hubs, ...built.map(b => b.slug + '/')];
 fs.writeFileSync('sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  urls.map(u => `  <url>\n    <loc>${ORIGIN}/${u}</loc>\n    <lastmod>${today}</lastmod>\n  </url>`).join('\n') +
+  urls.map(u => `  <url>\n    <loc>${ORIGIN}/${u}</loc>\n    <lastmod>${TODAY}</lastmod>\n  </url>`).join('\n') +
   `\n</urlset>\n`, 'utf8');
 
-fs.writeFileSync('robots.txt',
-  `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`, 'utf8');
+fs.writeFileSync('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`, 'utf8');
 
-// Patch index.html in place: static footer links + home ItemList JSON-LD, both
-// generated from S so the home links to all 32 topic pages in raw HTML (crawlable
-// without JS) and declares itself a CollectionPage hub. Idempotent per run.
+// Patch index.html (English home): static footer links + ItemList JSON-LD.
 {
   let home = fs.readFileSync('index.html', 'utf8');
-  const order = S.map(s => built.find(b => b.id === s.id)); // S order = grouped by subject
+  const enBuilt = built.filter(b => b.lang === 'en');
+  const order = S.map(s => enBuilt.find(b => b.id === s.id));
   const links = order.map(b => `<li><a href="/${b.slug}/">${esc(b.title)}</a></li>`).join('');
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `Lab-in-a-Tab — ${order.length} interactive science experiments`,
+    name: 'Lab-in-a-Tab — interactive science experiments',
     url: ORIGIN + '/',
     isPartOf: { '@type': 'WebSite', name: 'Lab-in-a-Tab', url: ORIGIN + '/' },
     mainEntity: {
-      '@type': 'ItemList',
-      numberOfItems: order.length,
-      itemListElement: order.map((b, i) => ({
-        '@type': 'ListItem', position: i + 1,
-        url: `${ORIGIN}/${b.slug}/`, name: b.title,
-      })),
+      '@type': 'ItemList', numberOfItems: order.length,
+      itemListElement: order.map((b, i) => ({ '@type': 'ListItem', position: i + 1, url: `${ORIGIN}/${b.slug}/`, name: b.title })),
     },
   };
   const ulRe = /(<ul class="all-topics" id="all-topics">)[\s\S]*?(<\/ul>)/;
   const ldRe = /(<script type="application\/ld\+json" id="itemlist">)[\s\S]*?(<\/script>)/;
-  // fail loudly if a marker is gone; but a no-op re-patch (content already correct)
-  // must NOT error, so the generator stays re-runnable.
   if (!ulRe.test(home) || !ldRe.test(home)) throw new Error('index.html patch markers not found (all-topics / itemlist)');
-  home = home.replace(ulRe, `$1${links}$2`)
-             .replace(ldRe, `$1\n${JSON.stringify(itemList, null, 1)}\n$2`);
-  // Keep the hand-authored topic counts in sync with S.length so they never drift.
-  const N = order.length;
-  home = home
-    .replace(/\b\d+ interactive science simulations/g, `${N} interactive science simulations`)
-    .replace(/Search \d+ experiments/g, `Search ${N} experiments`)
-    .replace(/All \d+ experiments<\/h4>/g, `All ${N} experiments</h4>`)
-    .replace(/hub of \d+ topics/g, `hub of ${N} topics`);
+  home = home.replace(ulRe, `$1${links}$2`).replace(ldRe, `$1\n${JSON.stringify(itemList, null, 1)}\n$2`);
   fs.writeFileSync('index.html', home, 'utf8');
 }
 
-console.log(`built ${n} pages${removed ? `, removed ${removed} stale` : ''}`);
-console.log(`median words/page: ${built.map(b => b.words).sort((a, b) => a - b)[Math.floor(n / 2)]}`);
+console.log(`built ${n} pages (${LANGS.map(l => l.code + ':' + built.filter(b => b.lang === l.code).length).join(' ')})${removed ? `, removed ${removed} stale` : ''}`);
 console.log(`sitemap.xml: ${urls.length} urls · robots.txt written`);

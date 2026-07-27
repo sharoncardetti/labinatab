@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Système solaire | Lab-in-a-Tab</title>
+<meta name="description" content="Huit planètes, plus de 200 lunes, des millions d'astéroïdes, et une étoile qui contient 99,86 % de toute la masse. Notre voisinage cosmique est bien plus…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/systeme-solaire/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/solar-system/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/sistema-solare/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/systeme-solaire/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/solar-system/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Le Système solaire — Expliqué et simulé">
+<meta property="og:description" content="Huit planètes, plus de 200 lunes, des millions d'astéroïdes, et une étoile qui contient 99,86 % de toute la masse. Notre voisinage cosmique est bien plus…">
+<meta property="og:url" content="https://labinatab.com/fr/systeme-solaire/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le Système solaire — Expliqué et simulé">
+<meta name="twitter:description" content="Huit planètes, plus de 200 lunes, des millions d'astéroïdes, et une étoile qui contient 99,86 % de toute la masse. Notre voisinage cosmique est bien plus…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/systeme-solaire/#article",
+   "headline": "Le Système solaire",
+   "name": "Le Système solaire",
+   "description": "Huit planètes, plus de 200 lunes, des millions d'astéroïdes, et une étoile qui contient 99,86 % de toute la masse. Notre voisinage cosmique est bien plus…",
+   "url": "https://labinatab.com/fr/systeme-solaire/",
+   "mainEntityOfPage": "https://labinatab.com/fr/systeme-solaire/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Planètes",
+    "Orbites",
+    "Lunes"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Le Système solaire",
+    "sameAs": "https://en.wikipedia.org/wiki/Solar_System"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Le Système solaire",
+     "item": "https://labinatab.com/fr/systeme-solaire/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/solar-system/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/sistema-solare/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/systeme-solaire/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomie</nav>
+  <h1>Le Système solaire</h1>
+  <p class="lead">Huit planètes, plus de 200 lunes, des millions d'astéroïdes, et une étoile qui contient 99,86 % de toute la masse. Notre voisinage cosmique est bien plus étrange qu'il n'y paraît.</p>
+  <div class="chips"><span>Planètes</span><span>Orbites</span><span>Lunes</span></div>
+  <section class="sim-embed" data-sim="solarsystem" data-color="#b45309" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Clique Mercure et note <b>Distance</b> et <b>Période</b>. Clique ensuite Neptune et fais de même. Neptune est environ 77 fois plus loin — son année est-elle 77 fois plus longue ?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Recueille <b>Distance</b> et <b>Période</b> pour quatre planètes, puis teste \(T^2/a^3\) pour chacune. Le rapport reste-t-il constant sur tout le système ?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Vérifie \(T^2 \propto a^3\) parmi les planètes, puis considère avec quelle précision cela tient. Estime ce qui devrait être vrai pour que les résidus révèlent quelque chose que le modèle ne peut pas montrer.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Notre Système solaire vu de dessus, le Soleil au centre et les huit planètes qui tournent. Clique une planète pour la sélectionner : <b>Sélectionné</b> la nomme, <b>Distance</b> donne sa distance au Soleil et <b>Période</b> la durée de son année. Les distances sont tassées pour que les planètes internes ne se chevauchent pas.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Non — elle est environ 690 fois plus longue. Mercure met 0,24 an, Neptune 165.</b> Les planètes lointaines ont plus de chemin à faire <em>et</em> se déplacent plus lentement, si bien que leurs années s'allongent bien plus vite que la seule distance ne le laisserait croire. La même règle régit tout ce qui orbite, de ces planètes aux lunes de Jupiter aux satellites au-dessus de nos têtes. Regarde les planètes bouger : les internes filent tandis que les externes rampent à peine.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Les huit planètes sur une échelle radiale comprimée logarithmiquement (les tailles orbitales ne sont donc pas à l'échelle). <b>Distance</b> est le demi-grand axe en UA et <b>Période</b> la période orbitale en années ; <b>Vitesse du temps</b> contrôle la vitesse de l'animation.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>\(T^2/a^3 = 1\) pour chaque planète, de Mercure à Neptune — une constante sur une plage de distances de 77 fois.</b> C'est la <b>troisième loi de Kepler</b>, et Newton a montré plus tard qu'elle découle directement d'une gravité en inverse du carré : \(T^2 = \frac{4\pi^2}{GM_\odot}a^3\). Comme la constante ne dépend que de la masse du Soleil, mesurer l'orbite d'une planète quelconque pèse le Soleil. La même relation appliquée aux étoiles orbitant le centre galactique révèle Sagittarius A*, et appliquée aux galaxies a exposé la masse manquante que nous appelons matière noire.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Des orbites képlériennes aux demi-grands axes et périodes observés, tracées sur une échelle radiale comprimée et en cercles coplanaires — l'excentricité et l'inclinaison sont supprimées.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La loi de Kepler n'est exacte que pour le problème à deux corps ; les résidus sont là où la physique vit vraiment.</b> Les perturbations planète–planète ont exigé des corrections newtoniennes qui ont mené directement à la prédiction de Neptune en 1846, et les 43″/siècle résiduels dans l'avance du périhélie de Mercure — inexplicables en gravité newtonienne — sont devenus la première confirmation de la relativité générale. Au-delà de trois corps il n'y a aucune solution en forme close, et les intégrations de Laskar montrent que le Système solaire interne est chaotique avec un temps de Lyapunov proche de 5 millions d'années : les positions deviennent imprévisibles au-delà de ~100 millions d'années, et il existe une probabilité faible mais non nulle que l'orbite de Mercure se déstabilise avant que le Soleil ne quitte la séquence principale.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Notre voisinage cosmique - huit mondes et plus encore !</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Notre Système solaire est une famille de mondes tournant autour d'une seule étoile, notre Soleil. Il compte <strong>huit planètes</strong>, plus de 200 lunes, des millions d'astéroïdes, des milliards de comètes et un vaste nuage de débris glacés aux confins. Chaque parcelle s'est condensée à partir du même disque tourbillonnant de gaz et de poussière il y a environ 4,6 milliards d'années - une poussière qu'une étoile voisine, en explosant, avait enrichie des éléments lourds dont tu es toi-même fait.</p>
+<p>Les quatre planètes internes - Mercure, Vénus, la Terre et Mars - sont de petits mondes rocheux. Les quatre externes - Jupiter, Saturne, Uranus et Neptune - sont de géantes boules de gaz et de glace. Jupiter à elle seule est si vaste que toutes les autres planètes y tiendraient avec de la place en rab. Et les célèbres anneaux de Saturne ? Des milliards de morceaux de glace et de roche, du grain de sable à la taille d'une maison, balayant un disque épais de quelques dizaines de mètres à peine.</p>
+<p>Certains des endroits les plus palpitants là-haut ne sont pas les planètes du tout, mais leurs lunes. Sous la coquille glacée d'<strong>Europe</strong>, lune de Jupiter, s'étend un océan global d'eau liquide, empêché de geler par le chauffage de marée - l'un des meilleurs paris de tout le Système solaire pour trouver la vie. <strong>Titan</strong>, lune de Saturne, porte une épaisse atmosphère orange et a des lacs en surface, avec pluie, rivières et un cycle météo étrangement semblable à celui de la Terre - sauf qu'il fonctionne au méthane liquide au lieu de l'eau.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🪐</span> Les anneaux de Saturne s'étendent sur 282 000 km - de quoi aligner 22 Terres - et pourtant ils n'ont qu'une dizaine de mètres d'épaisseur par endroits. Ramenés à une feuille de papier, ils seraient plus fins que le papier.</li><li><span aria-hidden="true">🌋</span> Io, une lune de Jupiter, est le corps le plus volcaniquement actif du Système solaire - avec des centaines de volcans actifs alimentés par le pétrissage de marée de l'immense gravité de Jupiter.</li><li><span aria-hidden="true">🌊</span> L'océan sous la surface d'Europe contient plus d'eau liquide que tous les océans de la Terre réunis - maintenu chaud par la flexion de marée, avec un fond rocheux qui pourrait abriter des sources hydrothermales.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Mécanique orbitale, lois de Kepler et formation planétaire</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Les <strong>trois lois de Kepler</strong>, tirées des données à l'œil nu de Tycho Brahe puis dérivées proprement par Newton, régissent encore toute orbite. Les planètes tracent des <em>ellipses</em> avec le Soleil en un foyer ; une ligne du Soleil à la planète balaie des aires égales en des temps égaux, si bien qu'un monde file au plus près et lambine au plus loin ; et les périodes obéissent à \(T^2 = \dfrac{4\pi^2}{GM_\odot}a^3\), le carré de l'année fixé par le cube de la taille de l'orbite. Cette dernière relation est le mètre-ruban du Système solaire, transformant une période mesurée directement en distance.</p>
+<p>Le système s'est bâti de bas en haut. Dans le jeune <em>disque protoplanétaire</em>, la poussière s'est agglomérée en planétésimaux kilométriques, qui se sont heurtés et fondus en protoplanètes sur des dizaines de millions d'années. Au-delà de la <em>ligne des glaces</em> - vers 2,7 UA, où l'eau gèle - les cœurs ont grossi assez pour capturer l'hydrogène et l'hélium en masse, gonflant en géantes gazeuses. Plus tard les géantes elles-mêmes ont réarrangé leurs orbites, et une telle migration (le modèle de Nice) aurait projeté vers l'intérieur une grêle de débris : le Grand Bombardement tardif qui a marqué la jeune Lune.</p>
+<p>Comme la gravité faiblit avec la distance, un grand corps subit une attraction plus forte de son côté proche que de son côté lointain - une <strong>force de marée</strong> qui étire, \(a_{\text{tidal}} \approx \dfrac{2GMd}{r^3}\). Avec le temps, les marées verrouillent la plupart des grandes lunes pour qu'une seule face pointe à jamais vers l'intérieur, et là où elles l'emportent sur la gravité propre d'un corps - à l'intérieur de la <strong>limite de Roche</strong> \(d_{\text{Roche}} = a\left(\dfrac{2M_{\text{planet}}}{M_{\text{sat}}}\right)^{1/3}\) - aucune lune ne peut tenir. C'est précisément pourquoi les planètes portent des anneaux plutôt qu'une lune de plus : les débris orbitent trop près pour jamais s'agglomérer.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Troisième loi de Kepler</th><td>\(T^2 = \dfrac{4\pi^2}{GM_\odot}\,a^3\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Vitesse orbitale</th><td>\(v_{\text{orb}} = \sqrt{\dfrac{GM_\odot}{r}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Accélération de marée</th><td>\(a_{\text{tidal}} \approx \dfrac{2GMd}{r^3}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Limite de Roche</th><td>\(d_{\text{Roche}} = a\left(\dfrac{2M_{\text{planet}}}{M_{\text{sat}}}\right)^{1/3}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Vitesse de libération</th><td>\(v_{\text{esc}} = \sqrt{\dfrac{2GM}{r}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Sphère de Hill</th><td>\(r_H = a(1-e)\left(\dfrac{m}{3M}\right)^{1/3}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔭</span> La sonde Voyager 1, lancée en 1977, est désormais à 23 milliards de km du Soleil - l'objet fabriqué par l'homme le plus lointain - et transmet encore des données avec une radio de 22 watts (comme l'ampoule d'un frigo).</li><li><span aria-hidden="true">💥</span> La Lune s'est formée quand un corps de la taille de Mars (Théia) a heurté la jeune Terre il y a ~4,5 milliards d'années, éjectant de la matière qui s'est agglomérée en Lune - confirmé par les rapports isotopiques des roches lunaires, identiques à ceux du manteau terrestre.</li><li><span aria-hidden="true">🌀</span> La Grande Tache rouge de Jupiter est une tempête plus large que la Terre qui fait rage sans interruption depuis au moins 350 ans - bien qu'elle rétrécisse et ne fasse plus que 1,3 fois le diamètre terrestre.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Dynamique à N corps, résonances et habitabilité planétaire</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Le problème sans formule</h3>
+<p>Deux corps qui s'attirent orbitent en ellipses parfaites et résolubles. Ajoutes-en un troisième et les jolies maths s'effondrent : Poincaré a prouvé en 1890 que le <strong>problème à N corps</strong> général n'a pas de solution en forme close pour \(N \ge 3\). Le mieux que nous puissions faire est de calculer l'avenir numériquement, par minuscules pas - ce qui signifie que la majestueuse horlogerie des cieux est, au fond, un problème que nous ne savons pas vraiment résoudre sur le papier.</p>
+<h3><span class="hn">02</span>Un Système solaire discrètement chaotique</h3>
+<p>Pire, le Système solaire est <em>chaotique</em>. Son temps de Lyapunov n'est que de ~5 millions d'années, si bien que toute incertitude sur les positions des planètes explose exponentiellement et leur configuration exacte devient réellement imprévisible au-delà de ~100 millions d'années. Mercure est l'électron libre : de longues simulations (Laskar & Gastineau, 2009) trouvent une probabilité d'environ 1 % que son orbite devienne assez excentrique, dans le temps qu'il reste au Soleil, pour heurter Vénus ou la Terre. Le théorème KAM sauve un peu d'ordre, garantissant des îlots d'orbites stables et quasi périodiques au milieu du chaos - c'est pourquoi le système a duré si longtemps.</p>
+<h3><span class="hn">03</span>Des résonances qui bâtissent des mondes et attisent des volcans</h3>
+<p>Quand les périodes orbitales se calent sur des rapports simples, on obtient une <strong>résonance de moyen mouvement</strong>, aux effets spectaculaires. Les lunes internes de Jupiter Io, Europe et Ganymède sont piégées dans une résonance de Laplace 1:2:4 qui maintient leurs orbites légèrement elliptiques, si bien que la gravité de Jupiter pétrit Io à chaque tour. Cette flexion de marée incessante déverse ~2 W/m² dans l'intérieur d'Io - trente fois le flux géothermique terrestre - en faisant le corps le plus violemment volcanique du Système solaire. C'est la résonance, pas la radioactivité, qui alimente ces éruptions.</p>
+<h3><span class="hn">04</span>Des résonances qui creusent des vides</h3>
+<p>Les résonances peuvent aussi détruire. Dans la ceinture d'astéroïdes, les <strong>lacunes de Kirkwood</strong> - des couloirs vides aux rapports de période 3:1, 5:2 et 2:1 avec Jupiter - marquent où des coups de pouce résonnants répétés pompent l'excentricité d'un astéroïde jusqu'à le projeter sur une orbite croisant les planètes. Ces résonances vidées agissent comme un lent goutte-à-goutte alimentant la population d'objets géocroiseurs, autrement dit la même physique qui sculpte la ceinture nous livre aussi nos impacteurs occasionnels.</p>
+<h3><span class="hn">05</span>Ce qui rend une planète habitable</h3>
+<p>La classique <strong>zone habitable</strong> - la coquille autour d'une étoile où l'eau liquide peut persister, environ 0,95–1,67 UA pour le Soleil - n'est que le ticket d'entrée. L'habitabilité réelle semble aussi exiger assez de masse pour retenir une atmosphère et entraîner la tectonique des plaques, un champ magnétique pour repousser le vent stellaire, un cycle carbonate–silicate qui thermostate le climat sur des ères, et peut-être une grande lune pour stabiliser l'inclinaison de la planète. La Terre les satisfait toutes en silence, toutes à la fois.</p>
+<h3><span class="hn">06</span>Prendre du recul : le voisinage chanceux</h3>
+<p>L'habitabilité passe aussi à l'échelle supérieure. Il existe sans doute une zone habitable <em>galactique</em> : trop près du centre galactique bondé, les radiations stérilisantes et les rencontres perturbatrices abondent ; trop loin, il n'y a pas assez d'éléments lourds pour bâtir des planètes rocheuses ou une chimie complexe. Et au sein de notre système, Jupiter semble faire office de bouclier gravitationnel, déviant ou éjectant des comètes qui, sinon, martèleraient bien plus souvent les planètes internes. Que nous existions seulement repose sur une chaîne de telles discrètes bonnes fortunes.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Temps de Lyapunov</th><td>\(\tau_L \sim 5\ \text{Myr}\)</td><td class="cmt">Mercure le plus instable</td></tr>
+<tr><th scope="row">Dissipation de marée</th><td>\(P_{\text{tidal}} = \tfrac{21}{2}\dfrac{k_2}{Q}\dfrac{GM^2 R^5}{a^6}e^2\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Zone habitable</th><td>\(r_{\text{HZ}} = \sqrt{L/L_\odot}\,\times(0.95\text{–}1.67)\ \text{UA}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Condition de résonance</th><td>\(\dfrac{n_1}{n_2} = \dfrac{p}{p+q},\quad p,q \in \mathbb{Z}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Vitesse de libération</th><td>\(v_{\text{esc}} = \sqrt{2GM/r}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Sphère de Hill</th><td>\(r_H = a\left(\dfrac{m}{3M}\right)^{1/3}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔬</span> Le télescope spatial James Webb a détecté du CO₂, du SO₂ et un possible sulfure de diméthyle (une biosignature potentielle) dans l'atmosphère de K2-18b - une sous-Neptune en zone habitable - même si l'interprétation reste débattue.</li><li><span aria-hidden="true">💫</span> Des simulations numériques montrent que sans Jupiter comme bouclier gravitationnel, la Terre subirait 1 000 fois plus d'impacts d'astéroïdes - Jupiter dévie ou éjecte la plupart des impacteurs potentiels avant qu'ils n'atteignent le Système solaire interne.</li><li><span aria-hidden="true">🌍</span> L'inclinaison axiale de la Terre (23,5°) est stabilisée par la Lune à ~±1,3° près sur des millions d'années. Sans la Lune, des variations chaotiques de l'obliquité de 0°–85° causeraient des sautes climatiques extrêmes, empêchant peut-être la vie complexe.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Solar_System" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Astronomie</h2>
+    <ul><li><a href="/fr/trous-noirs/">Trous noirs et relativité</a></li><li><a href="/fr/eclipses/">Éclipses</a></li><li><a href="/fr/etoiles-filantes/">Étoiles filantes et pluies de météores</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

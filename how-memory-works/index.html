@@ -7,6 +7,9 @@
 <meta name="description" content="How does your brain store 2.5 petabytes of memories - and why do some last forever while others vanish overnight?">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/how-memory-works/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-memory-works/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-la-memoria/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-memory-works/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/how-memory-works/",
    "mainEntityOfPage": "https://labinatab.com/how-memory-works/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-memory-works/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-la-memoria/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Neuroscience</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p><strong>Long-term potentiation</strong> - LTP - is the cellular act of remembering. Bliss and Lømo found in 1973 that a burst of high-frequency stimulation leaves a synapse lastingly stronger, and the molecule at the heart of it is the <strong>NMDA receptor</strong>. It works as a coincidence detector: it only opens when two things happen together - the incoming neuron releases glutamate <em>and</em> the receiving neuron is already depolarised enough to knock a blocking magnesium ion out of the channel's mouth.</p>
 <p>When both conditions coincide, calcium pours into the receiving cell and sets a cascade in motion. Kinases - chiefly CaMKII - crank up the existing AMPA receptors and ferry new ones to the synapse, boosting its strength within minutes. Push the stimulation harder and the change becomes permanent: genes switch on, fresh proteins are built, and the dendritic spine physically swells. It all maps neatly onto Hebb's rule, \(\Delta w_{ij} = \eta\, x_i x_j\) - joint activity strengthens the link.</p>
 <p>Where these changes matter most is the <strong>hippocampus</strong>, the brain's gateway for facts and events. The starkest proof came from patient H.M., whose hippocampus was surgically removed in 1953: he kept his old memories and his skills, but could never again lay down a new fact or experience. During sleep the hippocampus replays the day in compressed bursts called <em>sharp-wave ripples</em>, gradually shipping each memory out to the cortex for long-term keeping - a slow migration known as systems consolidation.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Hebbian rule</th><td>\(\Delta w_{ij} = \eta\, x_i x_j\)</td><td class="cmt">co-activation strengthens</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Hebbian rule</th><td>\(\Delta w_{ij} = \eta\, x_i x_j\)</td><td class="cmt">co-activation strengthens</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">NMDA coincidence</th><td>\(\text{glutamate} \;\wedge\; \Delta V &gt; 0 \;\Rightarrow\; \text{Ca}^{2+}\ \text{influx}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">LTP induction</th><td>\([\text{Ca}^{2+}]_i \uparrow \;\to\; \text{CaMKII} \;\to\; \text{AMPA insertion}\)</td><td class="cmt"></td></tr>
@@ -247,7 +257,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>Remarkably, the unit of storage is smaller than a neuron. A single <em>dendritic spine</em> can be potentiated or depressed independently of its neighbours a few microns away on the same branch, so one cell can hold thousands of near-independent memory elements. This vastly multiplies the brain's capacity and explains how ~86 billion neurons store an estimated petabytes' worth of experience - the real bit is the synapse, not the cell.</p>
 <h3><span class="hn">06</span>The sleeping dialogue that makes memories last</h3>
 <p><strong>Systems consolidation</strong> is the slow handover of a memory from the fast-learning hippocampus to durable neocortical storage, and it happens largely in sleep through an exquisitely timed conversation between brain rhythms. Hippocampal sharp-wave ripples, cortical sleep spindles and slow oscillations nest inside one another in a precise hierarchy, and this coordination is thought to replay the day's traces to the cortex just when it is primed to receive them - gradually embedding a fleeting experience into the distributed fabric of long-term memory.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">STDP (potentiation)</th><td>\(\Delta W = A^+ e^{\Delta t/\tau^+}\)</td><td class="cmt">Δt &lt; 0</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">STDP (potentiation)</th><td>\(\Delta W = A^+ e^{\Delta t/\tau^+}\)</td><td class="cmt">Δt &lt; 0</td></tr>
 <tr><th scope="row">STDP (depression)</th><td>\(\Delta W = -A^- e^{-\Delta t/\tau^-}\)</td><td class="cmt">Δt &gt; 0</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">BCM rule</th><td>\(\dfrac{dw}{dt} = \phi(v_{\text{post}}, \theta_M)\,v_{\text{pre}}\)</td><td class="cmt"></td></tr>
@@ -266,22 +276,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/brain-neurons/">The Brain &amp; Neurons</a></li><li><a href="/electric-brain/">The Electric Brain</a></li><li><a href="/sleep-consciousness/">Sleep &amp; Consciousness</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

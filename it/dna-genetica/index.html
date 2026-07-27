@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DNA e genetica | Lab-in-a-Tab</title>
+<meta name="description" content="Ogni cellula del tuo corpo porta un manuale di istruzioni lungo 2 metri, scritto in un alfabeto di 4 lettere, che ti rende unicamente te.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/dna-genetica/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/dna-genetics/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/dna-genetica/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/dna-genetics/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="DNA e genetica — Spiegato e simulato">
+<meta property="og:description" content="Ogni cellula del tuo corpo porta un manuale di istruzioni lungo 2 metri, scritto in un alfabeto di 4 lettere, che ti rende unicamente te.">
+<meta property="og:url" content="https://labinatab.com/it/dna-genetica/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DNA e genetica — Spiegato e simulato">
+<meta name="twitter:description" content="Ogni cellula del tuo corpo porta un manuale di istruzioni lungo 2 metri, scritto in un alfabeto di 4 lettere, che ti rende unicamente te.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/dna-genetica/#article",
+   "headline": "DNA e genetica",
+   "name": "DNA e genetica",
+   "description": "Ogni cellula del tuo corpo porta un manuale di istruzioni lungo 2 metri, scritto in un alfabeto di 4 lettere, che ti rende unicamente te.",
+   "url": "https://labinatab.com/it/dna-genetica/",
+   "mainEntityOfPage": "https://labinatab.com/it/dna-genetica/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "DNA",
+    "Geni",
+    "Ereditarietà"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "DNA e genetica",
+    "sameAs": "https://en.wikipedia.org/wiki/DNA"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "DNA e genetica",
+     "item": "https://labinatab.com/it/dna-genetica/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/dna-genetics/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/dna-genetica/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Biologia</nav>
+  <h1>DNA e genetica</h1>
+  <p class="lead">Ogni cellula del tuo corpo porta un manuale di istruzioni lungo 2 metri, scritto in un alfabeto di 4 lettere, che ti rende unicamente te.</p>
+  <div class="chips"><span>DNA</span><span>Geni</span><span>Ereditarietà</span></div>
+  <section class="sim-embed" data-sim="dna" data-color="#16a34a" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#16a34a"><span class="sg-lbl">Prova</span><span>Press <b>Reset</b> and watch a full copy run through, keeping an eye on the letters appearing on the new strands. Can you predict each new letter before it lands?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#16a34a"><span class="sg-lbl">Prova</span><span>Run a full replication and compare <b>Mutations</b> against <b>Base pairs copied</b> to estimate this simulation's error rate. Then change <b>Replication speed</b> and repeat — does going faster make it less accurate here?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#16a34a"><span class="sg-lbl">Prova</span><span>Estimate the per-base error rate from <b>Mutations</b>/<b>Base pairs copied</b>, then work out the expected number of mutations per human genome duplication at that rate, and compare with the observed ~1–2 per division.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>The twisted ladder is a <b>DNA molecule</b>. Its rungs are pairs of letters — A always joins T, and C always joins G. The fork travelling down the middle is unzipping it, and fresh letters snap onto each half to build two complete copies. Purple marks a copying <b>mistake</b>.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Yes — every new letter is forced. A can only pair with T, C only with G, so each half of the ladder holds complete instructions for rebuilding the other.</b> That is the whole secret of inheritance: split the molecule and you automatically have two copies. Watch <b>Mutations</b> though — occasionally the wrong letter slips in. Those rare mistakes are <b>mutations</b>, and without them evolution would have nothing to work with.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A replication fork unzipping a double helix. Bases pair by complementarity (A–T, C–G) so each parental strand templates a new one — <b>semi-conservative</b> replication. <b>Replication speed</b> sets the fork rate, <b>Base pairs copied</b> counts bases copied and <b>Mutations</b> counts misincorporations, highlighted in purple.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>The error rate stays around 4% no matter how fast the fork runs — and 4% is roughly a hundred million times worse than reality.</b> The exaggeration is deliberate, so mistakes are visible at all. Real DNA polymerase misincorporates about 1 base in \(10^4\)–\(10^5\), then proofreads with a 3′→5′ exonuclease and hands leftovers to mismatch repair, giving a final rate near 1 in \(10^9\). Copy 3.2 billion bases at 4% and you would destroy the genome in a single division; the fidelity, not the copying, is the hard engineering problem.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Schematic semi-conservative replication at a single fork. Watson–Crick pairing (A–T two hydrogen bonds, G–C three) makes each strand a template; <b>Base pairs copied</b> tracks incorporation and <b>Mutations</b> flags mismatches. Leading/lagging asymmetry and Okazaki fragments are not depicted.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>At this simulation's rate you would accumulate ~10⁸ errors per genome copy; the real figure is one or two.</b> The gap is closed multiplicatively: base-selection fidelity (~10⁻⁵), 3′→5′ proofreading (~10²-fold), and mismatch repair (~10²–10³-fold) compose to ~10⁻⁹–10⁻¹⁰ per base. Yet the rate is not minimised — it is <em>tuned</em>. Zero mutation means zero adaptation, and lineages with disabled mismatch repair (MMR-deficient tumours, hypermutator bacteria) show that the optimum sits at a nonzero value set by the balance between deleterious load and adaptive supply.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Il manuale di istruzioni dentro ogni cellula!</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Rannicchiato dentro quasi ognuna dei tuoi 37 mila miliardi di cellule c'è un set completo di istruzioni per costruire e far funzionare un intero essere umano. Sono scritte su una molecola attorcigliata, a forma di scala, chiamata <strong>DNA</strong>. Srotola il DNA da una singola cellula e si estende per circa <strong>due metri</strong> — eppure è così incredibilmente sottile da ripiegarsi in uno spazio più piccolo del punto che chiude questa frase.</p>
+<p>L'intero manuale è scritto in un alfabeto di appena <strong>quattro lettere</strong> — A, T, C e G — e il tuo arriva a circa 3,2 miliardi di esse. Tratti significativi di quel testo si chiamano <strong>geni</strong>, e la maggior parte dei geni è la ricetta per una proteina. Le proteine sono la forza lavoro del corpo: costruiscono i tuoi muscoli, trasportano l'ossigeno nel sangue, digeriscono il pranzo e combattono le malattie.</p>
+<p>La parte più folle è la copiatura. Ogni volta che una cellula si divide, tutti i 3,2 miliardi di lettere vengono trascritti — accuratamente — in poche ore, con solo circa un errore per miliardo di lettere. È come copiare a mano tremila libri e fare un totale di tre refusi. Nella simulazione qui sotto, guarda la doppia elica aprirsi come una cerniera e replicarsi in tempo reale.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📏</span> Tutto il DNA del tuo corpo, disteso in fila, si estenderebbe dalla Terra a Plutone e ritorno — due volte. Porti con te circa 70 miliardi di chilometri di DNA.</li><li><span aria-hidden="true">👯</span> Condividi il 99,9% del tuo DNA con ogni altro essere umano sulla Terra. Lo 0,1% di differenza — circa 3 milioni di lettere — è ciò che ti rende unico.</li><li><span aria-hidden="true">🍌</span> Condividi il 60% del tuo DNA con una banana. La vita sulla Terra è sorprendentemente imparentata — tutti gli organismi usano lo stesso codice del DNA a 4 lettere.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Replicazione, trascrizione, traduzione del DNA e genetica mendeliana</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>La <strong>doppia elica</strong> del DNA (Watson e Crick, 1953) è formata da due filamenti antiparalleli chiusi come una cerniera da basi complementari: A con T (due legami a idrogeno), C con G (tre). Ogni filamento corre \(5'\!\to\!3'\), e quell'appaiamento è tutto il trucco della copiatura — ogni filamento è uno stampo per ricostruire l'altro. La <strong>replicazione</strong> è semiconservativa: l'elicasi srotola la scala, la primasi posa gli inneschi, e la DNA polimerasi costruisce il nuovo filamento \(5'\!\to\!3'\), dando un filamento guida liscio e uno in ritardo cucito a pezzi. La fedeltà raggiunge \(\sim\!10^{-9}\) errori per base, perché la polimerasi rilegge il proprio lavoro e la riparazione dei disappaiamenti raccoglie il resto.</p>
+<p>Il <strong>dogma centrale</strong> (Crick, 1958) fissa il flusso dell'informazione: \(\text{DNA} \to \text{RNA} \to \text{proteina}\). Nella <em>trascrizione</em>, la RNA polimerasi legge un gene in RNA messaggero, gli introni vengono rimossi, e il messaggio è dotato di cappuccio e coda. Nella <em>traduzione</em>, i ribosomi strisciano lungo l'mRNA leggendo <strong>codoni</strong> di tre lettere, ciascuno dei quali richiama un particolare amminoacido tramite il codice genetico — 64 codoni che coprono 20 amminoacidi più tre segnali di "stop" — mentre i tRNA fanno la spola portando i mattoni.</p>
+<p>Molto prima che si conoscesse tutto questo macchinario molecolare, <strong>Mendel</strong> (1866) dedusse la logica dalle sole piante di pisello. I geni vengono in due copie (<em>alleli</em>), una da ciascun genitore, e gli alleli dominanti nascondono quelli recessivi. Incrocia due portatori, \(Aa \times Aa\), e la prole cade in \(1\!:\!2\!:\!1\) per genotipo e \(3\!:\!1\) per aspetto — rapporti che puoi verificare contro conteggi reali con una statistica chi-quadro \(\chi^2 = \sum (O-E)^2/E\). L'ereditarietà reale ammucchia poi le complicazioni che i piselli convenientemente nascondevano: codominanza, mescolamento e tratti spinti da centinaia di geni insieme.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Appaiamento delle basi</th><td>\(A\!=\!T \;(2\text{ legami H}),\quad G\!\equiv\!C \;(3\text{ legami H})\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Filamenti antiparalleli</th><td>\(\text{5'-ATCG-3'} \;\leftrightarrow\; \text{3'-TAGC-5'}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Fedeltà di replicazione</th><td>\(\sim 1 \text{ errore} / 10^{9} \text{ bp}\)</td><td class="cmt">con rilettura</td></tr>
+<tr><th scope="row">Dogma centrale</th><td>\(\text{DNA} \to \text{mRNA} \to \text{proteina}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Codice genetico</th><td>\(64 \text{ codoni} \to 20 \text{ amminoacidi} + 3 \text{ stop}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Rapporto F₂ di Mendel</th><td>\(Aa \times Aa \to 1\,AA : 2\,Aa : 1\,aa\)</td><td class="cmt">fenotipo 3:1</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">✂️</span> CRISPR-Cas9 può modificare una sequenza specifica fra 3,2 miliardi di paia di basi con la precisione di trovare e cambiare una parola in una biblioteca di 1.000 libri.</li><li><span aria-hidden="true">👴</span> I telomeri — cappucci protettivi alle estremità dei cromosomi — si accorciano a ogni divisione cellulare. La loro lunghezza è un orologio molecolare dell'invecchiamento.</li><li><span aria-hidden="true">🎨</span> Colore degli occhi, altezza e QI sono tutti poligenici — influenzati da centinaia di geni simultaneamente, non da una singola coppia dominante/recessiva.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Genetica di popolazione, equilibrio di Hardy-Weinberg ed evoluzione molecolare</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Hardy–Weinberg: l'ipotesi nulla dell'evoluzione</h3>
+<p>La genetica di popolazione comincia chiedendosi cosa succede quando <em>non</em> succede niente. In una popolazione idealizzata — infinita, con accoppiamento casuale, senza selezione, mutazione o migrazione — le frequenze alleliche \(p\) e \(q = 1-p\) si assestano in frequenze genotipiche \(p^2 : 2pq : q^2\) e restano ferme per sempre. È l'equilibrio di <strong>Hardy–Weinberg</strong>, e il suo vero valore è come linea di base: qualsiasi popolazione che se ne <em>discosta</em> è spinta da una forza evolutiva, quindi la deviazione stessa diventa la misura.</p>
+<h3><span class="hn">02</span>Misurare quanto le popolazioni si sono allontanate</h3>
+<p>Dividi una specie in sottopopolazioni e divergono. L'<strong>indice di fissazione</strong> \(F_{ST} = (H_T - H_S)/H_T\) cattura quanto, confrontando la diversità genetica interna ai gruppi con quella dell'insieme: \(F_{ST} = 0\) significa che tutti si incrociano liberamente, \(F_{ST} = 1\) significa isolamento completo. È il metro standard per domande dall'ascendenza umana alla genetica della conservazione — e, notevolmente, l'\(F_{ST}\) umano è sorprendentemente piccolo, un'eco genetica di quanto recentemente e a fondo la nostra specie si sia mescolata.</p>
+<h3><span class="hn">03</span>La teoria neutrale: la maggior parte del cambiamento è solo rumore</h3>
+<p>La <strong>teoria neutrale</strong> di Kimura (1968) fece un'affermazione sorprendente: a livello molecolare, la maggior parte delle varianti che si diffondono lo fa non perché aiuti, ma perché è invisibile alla selezione e sale per puro caso — la deriva genetica. Il suo risultato più pulito è che il tasso di fissazione delle mutazioni neutrali è uguale al tasso di mutazione stesso, \(k = \mu\), indipendente dalla dimensione della popolazione. L'adattamento è reale, ma contro un vasto sfondo di brusio molecolare che non significa nulla, la spiegazione predefinita del cambiamento divenne "deriva", non "vantaggio".</p>
+<h3><span class="hn">04</span>Leggere la selezione nel codice</h3>
+<p>Puoi cogliere la selezione con le mani nel sacco confrontando due tipi di cambiamento del DNA: le sostituzioni <em>sinonime</em> che lasciano intatta la proteina, e quelle <em>non sinonime</em> che la alterano. Il loro rapporto \(\omega = dN/dS\) è un verdetto: \(\omega < 1\) significa che la selezione purificante sta eliminando i cambiamenti dannosi, \(\omega > 1\) significa che la selezione positiva li sta attivamente guidando, e \(\omega \approx 1\) significa deriva soltanto. E poiché i cambiamenti neutrali procedono a un ritmo grosso modo costante, fanno anche da <strong>orologio molecolare</strong> per datare quando due lignaggi hanno condiviso un antenato per l'ultima volta.</p>
+<h3><span class="hn">05</span>Scomporre un tratto nelle sue cause</h3>
+<p>Per i tratti plasmati da molti geni, la <strong>genetica quantitativa</strong> partiziona la variazione totale: \(V_P = V_A + V_D + V_I + V_E\), separando gli effetti genetici additivi da dominanza, epistasi e ambiente. Il rapporto che conta per l'evoluzione è l'<strong>ereditabilità</strong> in senso stretto \(h^2 = V_A/V_P\) — solo la parte additiva \(V_A\) è ciò su cui la selezione può agire in modo affidabile, ed è per questo che \(h^2\), non la più vaga nozione di "genetico", predice quanto in fretta una popolazione risponde alla selezione o all'allevamento.</p>
+<h3><span class="hn">06</span>L'enigma dell'ereditabilità mancante</h3>
+<p>I moderni studi di associazione sull'intero genoma scandagliano milioni di marcatori del DNA su coorti enormi, e per tratti complessi come l'altezza trovano centinaia di riscontri reali — che insieme spiegano solo una frazione dell'ereditabilità che gli studi sui gemelli dicono esserci. Questa <em>ereditabilità mancante</em> è uno degli enigmi vivi del campo, imputato a varianti rare che le scansioni non colgono, a intricate interazioni gene-ambiente e a un'epistasi troppo complessa perché i modelli additivi la vedano. Ora possiamo leggere l'intero genoma; ancora non riusciamo a leggere del tutto una persona da esso.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Hardy–Weinberg</th><td>\(p^2 + 2pq + q^2 = 1,\quad p + q = 1\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Indice di fissazione</th><td>\(F_{ST} = \dfrac{H_T - H_S}{H_T}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Tasso di fissazione neutrale</th><td>\(k = \mu\)</td><td class="cmt">Kimura, 1968</td></tr>
+<tr><th scope="row">Test di selezione</th><td>\(\omega = dN/dS\)</td><td class="cmt">&lt;1 purificante, &gt;1 positiva</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Varianza fenotipica</th><td>\(V_P = V_A + V_D + V_I + V_E\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Ereditabilità in senso stretto</th><td>\(h^2 = V_A / V_P\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🌍</span> Il collo di bottiglia dell'uscita dall'Africa ~70.000 anni fa ridusse la diversità genetica umana così gravemente che gli scimpanzé di una singola foresta mostrano più variazione genetica di tutti gli 8 miliardi di umani.</li><li><span aria-hidden="true">🔬</span> Il primo genoma umano completo (HGP, 2003) costò 2,7 miliardi di dollari e richiese 13 anni. Oggi un genoma costa ~200 dollari e richiede un giorno.</li><li><span aria-hidden="true">⚡</span> Gli elementi trasponibili (&quot;geni saltatori&quot;) costituiscono ~45% del genoma umano — più dei geni codificanti proteine (solo ~1,5%).</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/DNA" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Biologia</h2>
+    <ul><li><a href="/it/regole-della-vita/">Le regole della vita</a></li><li><a href="/it/evoluzione-selezione-naturale/">Evoluzione e selezione naturale</a></li><li><a href="/it/ecosistemi-reti-alimentari/">Ecosistemi e reti alimentari</a></li><li><a href="/it/fotosintesi/">Fotosintesi</a></li><li><a href="/it/cellula-osmosi-diffusione/">La cellula: osmosi e diffusione</a></li><li><a href="/it/mitosi-meiosi/">Mitosi e meiosi</a></li><li><a href="/it/quadrati-di-punnett-genetica/">Quadrati di Punnett e genetica</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

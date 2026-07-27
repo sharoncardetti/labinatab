@@ -7,6 +7,10 @@
 <meta name="description" content="Plants eat sunlight - turning air, water and light into food and the oxygen in your next breath.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/photosynthesis/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/photosynthesis/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/fotosintesi/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/photosynthese/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/photosynthesis/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +41,7 @@
    "url": "https://labinatab.com/photosynthesis/",
    "mainEntityOfPage": "https://labinatab.com/photosynthesis/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +113,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +156,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +200,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/photosynthesis/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/fotosintesi/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/photosynthese/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Biology</nav>
@@ -223,7 +234,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>The overall equation looks deceptively tidy: \(6CO_2 + 6H_2O \xrightarrow{\text{light}} C_6H_{12}O_6 + 6O_2\) - six carbon dioxides and six waters become one glucose and six oxygens, powered by light. But it hides two linked stages, both inside the chloroplast.</p>
 <p>First, the <strong>light-dependent reactions</strong> in the thylakoid membranes: chlorophyll absorbs photons, which excite electrons and split water - this is where the \(O_2\) comes from - banking the energy as ATP and NADPH. Second, the <strong>light-independent Calvin cycle</strong> in the stroma spends that ATP and NADPH to fix \(CO_2\) into sugar, stitching carbon from the air onto an existing molecule with the enzyme rubisco, the most abundant protein on Earth.</p>
 <p>The overall rate is set by whatever is in shortest supply - a <strong>limiting factor</strong>. In dim light, adding light speeds things up; in bright light the rate plateaus and something else (CO₂ concentration or temperature) becomes the bottleneck. Growers exploit this precisely: pump extra CO₂ into a greenhouse and, as long as light and warmth allow, the plants grow faster. Push any single factor and the rate climbs only until the next one runs out.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Overall reaction</th><td>\(6CO_2 + 6H_2O \xrightarrow{\text{light}} C_6H_{12}O_6 + 6O_2\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Overall reaction</th><td>\(6CO_2 + 6H_2O \xrightarrow{\text{light}} C_6H_{12}O_6 + 6O_2\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Light reactions</th><td>\(2H_2O \to O_2 + 4H^+ + 4e^-\)</td><td class="cmt">in the thylakoid; makes ATP, NADPH</td></tr>
 <tr><th scope="row">Calvin cycle</th><td>\(CO_2 + \text{ATP} + \text{NADPH} \to \text{sugar}\)</td><td class="cmt">in the stroma</td></tr>
@@ -244,7 +255,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>Hot, dry climates make photorespiration worse, so some plants concentrate \(CO_2\) around rubisco to suppress it. C4 plants (maize, sugarcane) separate carbon capture and fixation into different cells; CAM plants (cacti, pineapples) separate them in time, opening their stomata only at night. They are independent evolutionary solutions to the very same problem.</p>
 <h3><span class="hn">05</span>Efficiency and the planetary balance</h3>
 <p>Photosynthesis converts only about 1-2% of the sunlight that lands on a leaf into biomass, yet at planetary scale it fixes roughly 120 gigatonnes of carbon a year and, over billions of years, filled the sky with oxygen - the Great Oxidation Event of ~2.4 billion years ago. It remains the ultimate power source for very nearly all life on Earth.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Overall reaction</th><td>\(6CO_2 + 6H_2O \to C_6H_{12}O_6 + 6O_2\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Overall reaction</th><td>\(6CO_2 + 6H_2O \to C_6H_{12}O_6 + 6O_2\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Water splitting (PSII)</th><td>\(2H_2O \to O_2 + 4H^+ + 4e^-\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Calvin cycle cost</th><td>\(6\,CO_2 + 18\,\text{ATP} + 12\,\text{NADPH} \to C_6H_{12}O_6\)</td><td class="cmt"></td></tr>
@@ -257,25 +268,25 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
   <nav class="related" aria-label="Related topics">
     <h2>More in Biology</h2>
-    <ul><li><a href="/rules-of-life/">The Rules of Life</a></li><li><a href="/dna-genetics/">DNA &amp; Genetics</a></li><li><a href="/evolution/">Evolution &amp; Natural Selection</a></li><li><a href="/ecosystems-food-webs/">Ecosystems &amp; Food Webs</a></li><li><a href="/cell-osmosis-diffusion/">The Cell: Osmosis &amp; Diffusion</a></li><li><a href="/mitosis-meiosis/">Mitosis &amp; Meiosis</a></li></ul>
+    <ul><li><a href="/rules-of-life/">The Rules of Life</a></li><li><a href="/dna-genetics/">DNA &amp; Genetics</a></li><li><a href="/evolution/">Evolution &amp; Natural Selection</a></li><li><a href="/ecosystems-food-webs/">Ecosystems &amp; Food Webs</a></li><li><a href="/cell-osmosis-diffusion/">The Cell: Osmosis &amp; Diffusion</a></li><li><a href="/mitosis-meiosis/">Mitosis &amp; Meiosis</a></li><li><a href="/punnett-squares-genetics/">Punnett Squares &amp; Genetics</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

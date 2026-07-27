@@ -7,6 +7,10 @@
 <meta name="description" content="A region of space where gravity is so extreme that not even light can escape. Einstein predicted them in 1915. We photographed one in 2019.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/black-holes/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/black-holes/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/buchi-neri/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/trous-noirs/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/black-holes/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +41,7 @@
    "url": "https://labinatab.com/black-holes/",
    "mainEntityOfPage": "https://labinatab.com/black-holes/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +113,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +156,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +200,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/black-holes/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/buchi-neri/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/trous-noirs/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomy</nav>
@@ -223,7 +234,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>Einstein's <strong>General Relativity</strong> (1915) threw out Newton's gravitational force and replaced it with geometry: mass and energy curve spacetime, and objects simply follow the straightest available paths through the curves. The whole theory sits in the Einstein field equations \(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4}T_{\mu\nu}\) - geometry on the left, matter on the right. For a lone, non-spinning mass the exact solution is the <strong>Schwarzschild metric</strong>, and it conceals a critical surface at \(r_S = 2GM/c^2\), the event horizon.</p>
 <p>The consequences near that surface are strange and thoroughly real. Time itself slows for anyone deep in the well - a clock at radius \(r\) ticks at \(d\tau = \sqrt{1 - r_S/r}\,dt\), grinding toward a standstill at the horizon as seen from far away - and light struggling outward is stretched to the red, \(z = (1 - r_S/r)^{-1/2} - 1\). Matter can't simply fall straight in, either; it spirals through an accretion disc, heated by friction to millions of degrees until it blazes in X-rays. That glow is how we find black holes we can never see directly.</p>
 <p>GR also predicted <strong>gravitational waves</strong> - genuine ripples in spacetime - and in 2015 LIGO finally caught one. Two black holes of 36 and 29 solar masses spiralled together 1.3 billion light-years away and, in two-tenths of a second, converted three whole suns' worth of mass into gravitational radiation, briefly out-radiating every star in the visible universe. The waves stretched LIGO's 4 km arms by \(10^{-18}\) m - a thousandth the width of a proton - and we heard them.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Einstein field equations</th><td>\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4}T_{\mu\nu}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Einstein field equations</th><td>\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4}T_{\mu\nu}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Schwarzschild radius</th><td>\(r_S = \dfrac{2GM}{c^2}\)</td><td class="cmt">event horizon</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Schwarzschild metric</th><td>\(ds^2 = -\!\left(1-\tfrac{r_S}{r}\right)\!c^2dt^2 + \left(1-\tfrac{r_S}{r}\right)^{-1}\!dr^2 + r^2 d\Omega^2\)</td><td class="cmt"></td></tr>
@@ -249,7 +260,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>That evaporation opens the deepest wound in theoretical physics. If the outgoing radiation is truly thermal - pure randomness - then everything that ever fell in is erased when the hole disappears, which quantum mechanics flatly forbids: information must be conserved. For fifty years the smoothness of relativity and the unitarity of quantum theory have been at war over a evaporating black hole, and there is still no fully agreed peace.</p>
 <h3><span class="hn">06</span>Holography and the Page curve</h3>
 <p>The most tantalising clue is that a black hole's entropy scales with its horizon <em>area</em>, not its volume - \(S_{BH} = \dfrac{k_B A}{4 l_P^2}\) - hinting that everything inside is somehow encoded on the surface, the seed of the <strong>holographic principle</strong>. Recent calculations of the "Page curve", using strange gravitational configurations called replica wormholes, suggest information does escape after all and unitarity survives. Exactly how remains one of the liveliest questions in the search for quantum gravity.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Hawking temperature</th><td>\(T_H = \dfrac{\hbar c^3}{8\pi G M k_B}\)</td><td class="cmt">~10⁻⁸ K for 1 M_☉</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Hawking temperature</th><td>\(T_H = \dfrac{\hbar c^3}{8\pi G M k_B}\)</td><td class="cmt">~10⁻⁸ K for 1 M_☉</td></tr>
 <tr><th scope="row">Evaporation time</th><td>\(\tau = \dfrac{5120\pi G^2 M^3}{\hbar c^4}\)</td><td class="cmt">~10⁶⁴ yr for 1 M_☉</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Bekenstein–Hawking</th><td>\(S_{BH} = \dfrac{k_B A}{4 l_P^2}\)</td><td class="cmt">l_P = √(ℏG/c³)</td></tr>
@@ -268,22 +279,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/stars-universe/">Stars &amp; The Universe</a></li><li><a href="/cosmology-big-bang/">Cosmology &amp; The Big Bang</a></li><li><a href="/solar-system/">The Solar System</a></li><li><a href="/eclipses/">Eclipses</a></li><li><a href="/meteor-showers/">Meteor Showers</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

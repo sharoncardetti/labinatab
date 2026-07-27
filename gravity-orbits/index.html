@@ -7,6 +7,9 @@
 <meta name="description" content="Why does everything fall - and why do planets never crash into the Sun?">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/gravity-orbits/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/gravity-orbits/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/gravita-orbite/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/gravity-orbits/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/gravity-orbits/",
    "mainEntityOfPage": "https://labinatab.com/gravity-orbits/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/gravity-orbits/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/gravita-orbite/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physics</nav>
@@ -225,7 +235,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>That little \(r^2\) in the denominator does an enormous amount of work. Double your distance from a planet and gravity drops to a quarter; triple it and you're down to a ninth. The pull weakens quickly - but it never quite reaches zero, which is why the Sun can keep Neptune on a leash 4.5 billion kilometres long, and why galaxies hold together across the dark.</p>
 <p>An orbit is really a standoff. Gravity hauls a planet inward while its sideways motion keeps carrying it past; get the speed exactly right and the two settle into a closed ellipse. Too slow and it spirals in, too fast and it escapes for good. The balance speed at distance \(r\) from a star of mass \(M\) is \(v = \sqrt{GM/r}\), and it carries a tidy prediction: inner planets must move faster than outer ones. Mercury really does sprint while Neptune crawls.</p>
 <p>Half a lifetime before Newton, Kepler had already squeezed three patterns out of Tycho Brahe's mountain of naked-eye measurements - most strikingly \(T^2 \propto a^3\), a planet's year set by the cube of its orbit's size. Kepler found the pattern but couldn't say <em>why</em> it held. Newton's single law reproduced all three of Kepler's rules at once, proving that the falling apple and the wheeling planets run on identical mathematics. It was the first time physics reached past the sky.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Gravitational force</th><td>\(F = \dfrac{GMm}{r^2}\)</td><td class="cmt">Newton, 1687</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Gravitational force</th><td>\(F = \dfrac{GMm}{r^2}\)</td><td class="cmt">Newton, 1687</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Gravitational constant</th><td>\(G = 6.674\times10^{-11}\ \text{N·m}^2\text{kg}^{-2}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Orbital velocity</th><td>\(v = \sqrt{\dfrac{GM}{r}}\)</td><td class="cmt"></td></tr>
@@ -250,7 +260,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>If spacetime can curve, it can also quiver. Accelerating masses shed <strong>gravitational waves</strong> - ripples in the metric racing outward at \(c\) - but they are maddeningly faint. It took a century and two 4 km laser interferometers (LIGO) to feel one: on 14 September 2015 the merger of two black holes 1.3 billion light-years away stretched and squeezed each arm by less than a thousandth of a proton's width. Overnight we gained a new sense, able to hear cataclysms that emit no light at all.</p>
 <h3><span class="hn">07</span>Spin, cosmology and the unfinished theory</h3>
 <p>Real black holes spin, and the Kerr solution (1963) captures them: a rotating hole drags spacetime around with it and wraps an <em>ergosphere</em> outside the horizon, a region from which energy can in principle be extracted. Scaled up to the whole sky, the same equations give modern cosmology its expanding, \(\Lambda\)-dominated universe, and the Event Horizon Telescope has now photographed the shadows of M87* (2019) and our own Sgr A* (2022), each exactly the size GR demands. And yet the theory is incomplete: at a singularity it forecasts its own collapse, and marrying its smooth geometry to quantum mechanics remains the deepest open problem in physics.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Einstein field equations</th><td>\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Einstein field equations</th><td>\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Geodesic equation</th><td>\(\ddot{x}^\mu + \Gamma^\mu_{\alpha\beta}\,\dot{x}^\alpha \dot{x}^\beta = 0\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Schwarzschild radius</th><td>\(r_s = \dfrac{2GM}{c^2}\)</td><td class="cmt"></td></tr>
@@ -264,25 +274,25 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
   <nav class="related" aria-label="Related topics">
     <h2>More in Physics</h2>
-    <ul><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li></ul>
+    <ul><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li><li><a href="/states-of-matter/">States of Matter</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

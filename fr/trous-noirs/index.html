@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trous noirs et relativité | Lab-in-a-Tab</title>
+<meta name="description" content="Une région de l'espace où la gravité est si extrême que même la lumière ne peut s'échapper. Einstein les a prédits en 1915. Nous en avons photographié un…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/trous-noirs/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/black-holes/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/buchi-neri/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/trous-noirs/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/black-holes/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Trous noirs et relativité — Expliqué et simulé">
+<meta property="og:description" content="Une région de l'espace où la gravité est si extrême que même la lumière ne peut s'échapper. Einstein les a prédits en 1915. Nous en avons photographié un…">
+<meta property="og:url" content="https://labinatab.com/fr/trous-noirs/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trous noirs et relativité — Expliqué et simulé">
+<meta name="twitter:description" content="Une région de l'espace où la gravité est si extrême que même la lumière ne peut s'échapper. Einstein les a prédits en 1915. Nous en avons photographié un…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/trous-noirs/#article",
+   "headline": "Trous noirs et relativité",
+   "name": "Trous noirs et relativité",
+   "description": "Une région de l'espace où la gravité est si extrême que même la lumière ne peut s'échapper. Einstein les a prédits en 1915. Nous en avons photographié un…",
+   "url": "https://labinatab.com/fr/trous-noirs/",
+   "mainEntityOfPage": "https://labinatab.com/fr/trous-noirs/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Relativité générale",
+    "Horizon des événements",
+    "Espace-temps"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Trous noirs et relativité",
+    "sameAs": "https://en.wikipedia.org/wiki/Black_hole"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Trous noirs et relativité",
+     "item": "https://labinatab.com/fr/trous-noirs/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/black-holes/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/buchi-neri/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/trous-noirs/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomie</nav>
+  <h1>Trous noirs et relativité</h1>
+  <p class="lead">Une région de l'espace où la gravité est si extrême que même la lumière ne peut s'échapper. Einstein les a prédits en 1915. Nous en avons photographié un en 2019.</p>
+  <div class="chips"><span>Relativité générale</span><span>Horizon des événements</span><span>Espace-temps</span></div>
+  <section class="sim-embed" data-sim="blackholes" data-color="#4c1d95" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4c1d95"><span class="sg-lbl">Essaie</span><span>Mets <b>Distance du trou</b> à 20 (loin) et lis <b>Dilatation du temps</b>. Descends-la maintenant à 2, tout contre l'horizon, et relis-la.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4c1d95"><span class="sg-lbl">Essaie</span><span>Note <b>Dilatation du temps</b> et <b>Redshift</b> à <b>Distance particule test (r_S)</b> = 20, 6 et 2. Raisonne ensuite sur ce que font les deux grandeurs quand <b>Distance particule test (r_S)</b> approche 1, et vérifie si <b>Masse du trou noir (M☉)</b> les change à <b>Distance particule test (r_S)</b> fixé.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4c1d95"><span class="sg-lbl">Essaie</span><span>Examine le comportement quand <b>Distance particule test (r_S)</b> approche 1 et demande-toi si la divergence est physique. Détermine ensuite où une orbite circulaire cesse d'être stable et compare ce rayon à l'horizon.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le disque noir est l'<b>horizon des événements</b> — franchis-le et rien, pas même la lumière, ne peut ressortir. Le point en orbite est une horloge que nous observons de loin. <b>Dilatation du temps</b> te dit à quelle vitesse elle bat comparée à la tienne, et <b>Étirement de la lumière</b> montre de combien sa lumière est étirée en sortant.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Loin, l'horloge bat presque à ta vitesse (0,975×) ; tout près, elle ralentit à 0,707× — elle perd près d'un tiers de chaque seconde.</b> Le temps lui-même s'écoule plus lentement près des choses lourdes. Ce n'est pas un tour de lumière ni une horloge cassée : quelqu'un qui tombe dedans vieillit réellement moins que toi. Rien dans la vie quotidienne ne t'y prépare, pourtant le GPS de ton téléphone corrige exactement cet effet chaque seconde, sinon il te placerait à des kilomètres.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Un trou noir de Schwarzschild de masse <b>Masse du trou noir (M☉)</b>. <b>Distance particule test (r_S)</b> place une particule test en unités du rayon de Schwarzschild \(r_S\) ; <b>Dilatation du temps</b> donne \(\sqrt{1-r_S/r}\) et <b>Redshift</b> le redshift gravitationnel \((1-r_S/r)^{-1/2}-1\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Toutes deux divergent à \(r = r_S\) : la dilatation du temps tend vers zéro et le redshift vers l'infini — pourtant aucune ne dépend de la masse du trou à \(r/r_S\) fixé.</b> L'horizon n'est pas un lieu où la physique se brise ; c'est là où la vitesse de libération atteint \(c\), et un observateur en chute libre ne remarque rien de spécial en le franchissant. La divergence est un artefact de coordonnées du référentiel de l'observateur lointain. Note que \(r_S = 2GM/c^2\) est <em>linéaire</em> en la masse, si bien qu'un trou supermassif a un horizon doux : les forces de marée à \(r_S\) varient comme \(M^{-2}\), et tu franchirais l'horizon de Sagittarius A* tout à fait intact.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Géométrie de Schwarzschild, \(ds^2 = -(1-r_S/r)c^2dt^2 + (1-r_S/r)^{-1}dr^2 + r^2d\Omega^2\). <b>Dilatation du temps</b> est le rapport du temps propre au temps coordonnée pour un observateur statique ; <b>Redshift</b> le redshift gravitationnel correspondant. L'ISCO à \(3r_S\) n'est pas marquée.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La divergence est purement une pathologie de coordonnées — les invariants de courbure restent finis à \(r_S\) et n'explosent qu'à \(r=0\).</b> Les coordonnées de Kruskal–Szekeres l'éliminent entièrement, et l'observateur en chute franchit en temps propre fini. Le rayon physiquement pertinent pour l'accrétion est l'<b>ISCO</b> à \(3r_S\) (Schwarzschild), en deçà duquel aucune orbite circulaire stable n'existe — cela fixe l'efficacité du disque d'accrétion à 5,7 %, montant à 42 % pour un trou de Kerr en rotation maximale, ce qui explique pourquoi les quasars surpassent leurs galaxies hôtes. Le vrai problème ouvert siège à l'horizon : le rayonnement de Hawking est thermique, \(T_H = \hbar c^3/8\pi GMk_B\), ce qui paraît détruire l'information, et le paradoxe qui en résulte reste irrésolu.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Le piège ultime de l'univers - rien ne s'échappe !</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Imagine écraser le Soleil entier en une boule de six kilomètres à peine. Sa gravité deviendrait si écrasante, si absolue, que rien - ni une fusée, ni un laser, ni la lumière elle-même - ne pourrait jamais en ressortir. C'est un <strong>trou noir</strong> : pas un trou dans l'espace, mais un objet si incroyablement dense qu'il déforme le tissu même de l'espace et du temps autour de lui.</p>
+<p>Les trous noirs naissent quand une étoile géante - au moins vingt fois la masse du Soleil - épuise son carburant nucléaire. Sans plus rien pour repousser vers l'extérieur, son cœur s'effondre en moins d'une seconde, projetant une supernova et écrasant ce qui reste en une <strong>singularité</strong>, un point où notre physique abandonne tout simplement. Autour se trouve l'<strong>horizon des événements</strong>, une ligne invisible de non-retour. Franchis-la et tu ne reviendras jamais - jamais.</p>
+<p>Pendant presque un siècle, les trous noirs furent de la pure théorie. Puis, en avril 2019, l'Event Horizon Telescope - un réseau d'antennes radio réparties sur toute la planète, reliées en un seul œil de la taille de la Terre - captura la toute première image de l'ombre d'un trou noir. Sa cible, M87*, est un monstre de 6,5 milliards de fois la masse du Soleil, à 55 millions d'années-lumière, et l'image correspondait aux prédictions d'Einstein de 1915 avec une précision stupéfiante.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📸</span> La première image d'un trou noir (M87*, 2019) a nécessité un télescope de la taille de la Terre - huit observatoires radio sur quatre continents reliés par des horloges atomiques.</li><li><span aria-hidden="true">⏱️</span> Le temps s'écoule plus lentement près d'un trou noir. À l'horizon des événements d'un trou noir de masse stellaire, une heure équivaudrait à des milliers d'années pour un observateur lointain.</li><li><span aria-hidden="true">🌌</span> La Voie lactée abrite un trou noir supermassif - Sagittarius A* - de 4 millions de masses solaires, à 26 000 années-lumière de la Terre. Son ombre a été photographiée en 2022.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Relativité générale, métrique de Schwarzschild et ondes gravitationnelles</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>La <strong>relativité générale</strong> d'Einstein (1915) a jeté la force de gravité de Newton et l'a remplacée par la géométrie : la masse et l'énergie courbent l'espace-temps, et les objets suivent les trajectoires les plus droites disponibles à travers les courbes. Toute la théorie tient dans les équations de champ d'Einstein \(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4}T_{\mu\nu}\) - la géométrie à gauche, la matière à droite. Pour une masse isolée et non tournante, la solution exacte est la <strong>métrique de Schwarzschild</strong>, qui dissimule une surface critique à \(r_S = 2GM/c^2\), l'horizon des événements.</p>
+<p>Les conséquences près de cette surface sont étranges et tout à fait réelles. Le temps lui-même ralentit pour qui se trouve au fond du puits - une horloge au rayon \(r\) bat à \(d\tau = \sqrt{1 - r_S/r}\,dt\), s'arrêtant presque à l'horizon vu de loin - et la lumière qui lutte pour sortir est étirée vers le rouge, \(z = (1 - r_S/r)^{-1/2} - 1\). La matière ne peut pas non plus tomber tout droit : elle spirale dans un disque d'accrétion, chauffé par frottement à des millions de degrés jusqu'à briller en rayons X. C'est cette lueur qui nous fait trouver des trous noirs que nous ne verrons jamais directement.</p>
+<p>La relativité générale a aussi prédit les <strong>ondes gravitationnelles</strong> - de véritables rides dans l'espace-temps - et en 2015 LIGO en a enfin attrapé une. Deux trous noirs de 36 et 29 masses solaires ont spiralé ensemble à 1,3 milliard d'années-lumière et, en deux dixièmes de seconde, ont converti trois Soleils entiers de masse en rayonnement gravitationnel, rayonnant un instant plus que toutes les étoiles de l'univers visible. Les ondes ont étiré les bras de 4 km de LIGO de \(10^{-18}\) m - un millième de la largeur d'un proton - et nous les avons entendues.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Équations de champ d'Einstein</th><td>\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4}T_{\mu\nu}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Rayon de Schwarzschild</th><td>\(r_S = \dfrac{2GM}{c^2}\)</td><td class="cmt">horizon des événements</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Métrique de Schwarzschild</th><td>\(ds^2 = -\!\left(1-\tfrac{r_S}{r}\right)\!c^2dt^2 + \left(1-\tfrac{r_S}{r}\right)^{-1}\!dr^2 + r^2 d\Omega^2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Dilatation du temps</th><td>\(d\tau = \sqrt{1 - r_S/r}\;dt\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Redshift gravitationnel</th><td>\(z = (1 - r_S/r)^{-1/2} - 1\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">ISCO</th><td>\(r_{\text{ISCO}} = 3r_S = 6GM/c^2\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔬</span> La sensibilité de LIGO est si extrême que les fluctuations quantiques de photons individuels limitent sa précision - on utilise la lumière « comprimée » (une technique d'optique quantique) pour passer sous cette limite.</li><li><span aria-hidden="true">🌊</span> Le signal GW170817 (deux étoiles à neutrons fusionnant, 2017) a été détecté simultanément en ondes gravitationnelles, rayons gamma, rayons X, optique et radio - la naissance de l'astronomie multimessager.</li><li><span aria-hidden="true">⚫</span> Sagittarius A* a une masse de 4,15 millions de Soleils comprimée dans une région plus petite que notre Système solaire - pourtant il est étonnamment calme, accrétant à seulement 10⁻⁸ de son taux maximal théorique.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Métrique de Kerr, rayonnement de Hawking et le paradoxe de l'information</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Les vrais trous noirs tournent</h3>
+<p>L'élégante solution de Schwarzschild est une idéalisation ; presque tout trou noir réel tourne, et la rotation change tout. La <strong>métrique de Kerr</strong> (Roy Kerr, 1963) décrit un trou tournant de masse \(M\) et de moment cinétique \(J = aMc\), avec le spin \(a\) plafonné à \(GM/c^2\) - au-delà, l'horizon disparaîtrait et exposerait une singularité « nue » que la nature semble interdire. La découverte de Kerr a mis près d'un demi-siècle à être trouvée dans le ciel, mais elle décrit désormais les moteurs au centre des galaxies.</p>
+<h3><span class="hn">02</span>L'entraînement des référentiels et l'ergosphère</h3>
+<p>Une masse en rotation ne courbe pas seulement l'espace-temps, elle l'<em>entraîne</em> avec elle comme l'eau qui tourbillonne dans un siphon. Assez près, cet entraînement devient si féroce que dans une région appelée <strong>ergosphère</strong> - hors de l'horizon, donc encore franchissable en retour - rien ne peut rester immobile par rapport aux étoiles lointaines. Tenir sa position n'est plus une option : tu es forcé de co-tourner avec le trou, que tu le veuilles ou non.</p>
+<h3><span class="hn">03</span>Extraire de l'énergie d'un trou noir : le processus de Penrose</h3>
+<p>Cet entraînement est exploitable. Dans le schéma de Penrose, un objet entrant dans l'ergosphère se scinde en deux ; un morceau est projeté sur une trajectoire d'énergie négative dans le trou tandis que l'autre s'échappe en emportant <em>plus</em> d'énergie que la paire n'en apportait - le surplus siphonné directement du spin du trou, jusqu'à environ 29 % de sa masse-énergie. La nature semble faire exactement cela à grande échelle, puisant dans la rotation des trous noirs pour lancer les jets relativistes longs d'années-lumière des galaxies actives.</p>
+<h3><span class="hn">04</span>Les trous noirs ne sont pas noirs : le rayonnement de Hawking</h3>
+<p>La bombe de Hawking en 1974 fut que la mécanique quantique fait briller un trou noir. Près de l'horizon, les fluctuations agitées du vide sont scindées, un partenaire tombant tandis que l'autre s'échappe en véritable rayonnement thermique à \(T_H = \dfrac{\hbar c^3}{8\pi G M k_B}\). La température est minuscule pour un trou de masse stellaire, mais attention au signe : plus petit signifie plus <em>chaud</em>, si bien qu'en rayonnant un trou rétrécit, chauffe et rayonne plus vite, s'évaporant dans un emballement qui s'achève - après peut-être \(10^{64}\) ans - en un éclair final.</p>
+<h3><span class="hn">05</span>Le paradoxe de l'information</h3>
+<p>Cette évaporation ouvre la plaie la plus profonde de la physique théorique. Si le rayonnement sortant est vraiment thermique - du pur hasard - alors tout ce qui est jamais tombé dedans est effacé quand le trou disparaît, ce que la mécanique quantique interdit catégoriquement : l'information doit se conserver. Depuis cinquante ans, la douceur de la relativité et l'unitarité de la théorie quantique se font la guerre autour d'un trou noir qui s'évapore, et il n'y a toujours pas de paix pleinement admise.</p>
+<h3><span class="hn">06</span>Holographie et la courbe de Page</h3>
+<p>L'indice le plus troublant est que l'entropie d'un trou noir varie avec l'<em>aire</em> de son horizon, pas avec son volume - \(S_{BH} = \dfrac{k_B A}{4 l_P^2}\) - laissant penser que tout ce qui est à l'intérieur est d'une certaine façon encodé sur la surface, la graine du <strong>principe holographique</strong>. Des calculs récents de la « courbe de Page », utilisant d'étranges configurations gravitationnelles appelées trous de ver de réplique, suggèrent que l'information s'échappe finalement et que l'unitarité survit. Comment exactement reste l'une des questions les plus vives dans la quête d'une gravité quantique.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Température de Hawking</th><td>\(T_H = \dfrac{\hbar c^3}{8\pi G M k_B}\)</td><td class="cmt">~10⁻⁸ K pour 1 M_☉</td></tr>
+<tr><th scope="row">Temps d'évaporation</th><td>\(\tau = \dfrac{5120\pi G^2 M^3}{\hbar c^4}\)</td><td class="cmt">~10⁶⁴ ans pour 1 M_☉</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Bekenstein–Hawking</th><td>\(S_{BH} = \dfrac{k_B A}{4 l_P^2}\)</td><td class="cmt">l_P = √(ℏG/c³)</td></tr>
+<tr><th scope="row">Processus de Penrose</th><td>\(\Delta E \le \left(1 - \tfrac{1}{\sqrt{2}}\right)Mc^2 \approx 29\%\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Borne de spin de Kerr</th><td>\(0 \le a \le GM/c^2\)</td><td class="cmt">extrémal à égalité</td></tr>
+<tr><th scope="row">Ergosphère</th><td>\(r_{\text{ergo}} = \tfrac{r_S}{2} + \sqrt{\tfrac{r_S^2}{4} - a^2\cos^2\theta}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔬</span> Le calcul de la courbe de Page (2019) a utilisé des trous de ver de réplique - des points-selles dans l'intégrale de chemin gravitationnelle reliant différentes répliques du système - pour montrer que l'unitarité est préservée, en sommant sur des géométries d'espace-temps topologiquement non triviales.</li><li><span aria-hidden="true">🌌</span> M87* tourne à ~90 % du spin maximal possible (a ≈ 0,9 GM/c²), déduit de l'asymétrie de son image de 2019 - un entraînement des référentiels quasi maximal, qui alimente un jet relativiste de 5 000 années-lumière.</li><li><span aria-hidden="true">🎯</span> L'Event Horizon Telescope atteint une résolution angulaire de 20 microsecondes d'arc - l'équivalent de lire un journal à New York depuis un café à Paris.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Black_hole" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Astronomie</h2>
+    <ul><li><a href="/fr/systeme-solaire/">Le Système solaire</a></li><li><a href="/fr/eclipses/">Éclipses</a></li><li><a href="/fr/etoiles-filantes/">Étoiles filantes et pluies de météores</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

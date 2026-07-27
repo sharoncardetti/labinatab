@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La cellula: osmosi e diffusione | Lab-in-a-Tab</title>
+<meta name="description" content="Una cellula è un sacchetto con una pelle intelligente. Come entrano ed escono le cose — e perché il sale fa raggrinzire una lumaca?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/cellula-osmosi-diffusione/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/cell-osmosis-diffusion/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/cellula-osmosi-diffusione/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/cell-osmosis-diffusion/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="La cellula: osmosi e diffusione — Spiegato e simulato">
+<meta property="og:description" content="Una cellula è un sacchetto con una pelle intelligente. Come entrano ed escono le cose — e perché il sale fa raggrinzire una lumaca?">
+<meta property="og:url" content="https://labinatab.com/it/cellula-osmosi-diffusione/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La cellula: osmosi e diffusione — Spiegato e simulato">
+<meta name="twitter:description" content="Una cellula è un sacchetto con una pelle intelligente. Come entrano ed escono le cose — e perché il sale fa raggrinzire una lumaca?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/cellula-osmosi-diffusione/#article",
+   "headline": "La cellula: osmosi e diffusione",
+   "name": "La cellula: osmosi e diffusione",
+   "description": "Una cellula è un sacchetto con una pelle intelligente. Come entrano ed escono le cose — e perché il sale fa raggrinzire una lumaca?",
+   "url": "https://labinatab.com/it/cellula-osmosi-diffusione/",
+   "mainEntityOfPage": "https://labinatab.com/it/cellula-osmosi-diffusione/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Membrana",
+    "Osmosi",
+    "Diffusione"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "La cellula: osmosi e diffusione",
+    "sameAs": "https://en.wikipedia.org/wiki/Osmosis"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "La cellula: osmosi e diffusione",
+     "item": "https://labinatab.com/it/cellula-osmosi-diffusione/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/cell-osmosis-diffusion/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/cellula-osmosi-diffusione/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Biologia</nav>
+  <h1>La cellula: osmosi e diffusione</h1>
+  <p class="lead">Una cellula è un sacchetto con una pelle intelligente. Come entrano ed escono le cose — e perché il sale fa raggrinzire una lumaca?</p>
+  <div class="chips"><span>Membrana</span><span>Osmosi</span><span>Diffusione</span></div>
+  <section class="sim-embed" data-sim="cell" data-color="#0891b2" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Add <b>Salt on the right</b> to the right side and watch the water. Which way does it move — and does it keep going forever?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Raise <b>Solute added (right)</b> and watch <b>Water (right)</b> climb while <b>Water (left)</b> falls, then settle. Push <b>Solute added (right)</b> higher still — does the final level difference grow?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Vary <b>Solute added (right)</b> and record the equilibrium level gap; check that it scales with the solute load, mirroring \(\Pi = iMRT\).</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Two chambers of water joined by a membrane down the middle. The right side has <b>salt</b> (orange dots) that can't cross; the water can. Watch which way the water level moves.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Water moves toward the salty side.</b> It's trying to dilute the salt it can't reach, so it flows through the membrane until the rising level pushes back hard enough to stop it. That balance point is osmosis in action — no pumping, just water evening things out.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A semipermeable membrane separating pure water (left) from a solution (right). Solute (orange) can't cross; water can. The levels shift until the osmotic pull balances the pressure difference that builds up.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Water flows toward the higher solute concentration and stops when the pressure balances the osmotic pull.</b> A bigger solute load drives more water across and builds a larger level difference — a direct picture of osmotic pressure, \(\Pi = iMRT\). The membrane never lets the solute equalise, so the water does the balancing instead.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A two-compartment osmosis model: the net water flux is proportional to \((\Delta\text{concentration}) - k(\Delta\text{level})\), so the system relaxes to a steady state where the osmotic gradient is balanced by a hydrostatic head.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Equilibrium here is not equal concentration — it's balanced water potential.</b> Because the solute is trapped on one side, water moves until the pressure term (the level difference) offsets the solute term. That is water potential \(\Psi = \Psi_s + \Psi_p\) reaching equality, and the leftover level gap is the osmotic pressure made visible.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Come le cose entrano ed escono da una cellula</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Ogni essere vivente è costruito da <strong>cellule</strong>, e ogni cellula è avvolta in una pelle sottile — la <strong>membrana cellulare</strong> — che decide cosa entra ed esce. Non è un muro solido; è più come una recinzione di sicurezza con dei cancelli. Le cose piccole passano liberamente; quelle grandi o pericolose vengono bloccate o accompagnate attraverso porte speciali. Sbaglia questo traffico e la cellula muore, quindi la membrana è letteralmente il confine fra una cellula e il resto del mondo.</p>
+<p>Il modo più semplice in cui le cose si muovono è la <strong>diffusione</strong>: le particelle si spargono da dove sono affollate a dove sono rade, puramente per urti casuali, finché non sono mescolate uniformemente. Una goccia di colorante che si srotola nell'acqua, o l'odore del caffè che riempie una stanza, è diffusione. L'ossigeno entra nelle tue cellule e l'anidride carbonica ne esce allo stesso modo — ciascuno che scende lungo il proprio gradiente di affollamento, senza bisogno di alcuna energia.</p>
+<p>L'acqua ha la sua versione, chiamata <strong>osmosi</strong>: l'acqua si sposta attraverso la membrana verso il lato più salato o più dolce — il lato più affollato di roba — cercando di pareggiare le cose. È perché una pianta appassita si riprende quando la annaffi, perché le dita si raggrinziscono in un lungo bagno, e perché una lumaca si raggrinzisce se le cospargi del sale (per favore non farlo!). Una cellula gestisce continuamente questo flusso per evitare sia di scoppiare sia di rimpicciolirsi.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🥒</span> Sala un cetriolo e piange acqua: l'osmosi tira l'acqua fuori dalle cellule verso la superficie salata, e le fette diventano flosce.</li><li><span aria-hidden="true">🫧</span> La diffusione non ha bisogno di energia — è solo moto casuale che si media. I tuoi polmoni ci contano per spostare l'ossigeno nel sangue.</li><li><span aria-hidden="true">🌱</span> Una pianta appassita si rialza dopo l'annaffiatura perché l'osmosi riempie di nuovo le sue cellule, irrigidendole come palloncini che si gonfiano.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Diffusione, osmosi e tonicità</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Le molecole non sono mai ferme; si agitano con energia termica, e quel moto casuale ha un effetto netto: la <strong>diffusione</strong>, il movimento di una sostanza da alta a bassa concentrazione lungo il suo gradiente, finché le concentrazioni si pareggiano. Non richiede alcun apporto di energia — è guidata puramente dalla statistica (l'entropia). Attraverso una membrana, piccole molecole non polari (\(O_2\), \(CO_2\)) diffondono dritte attraverso il doppio strato lipidico, mentre ioni e molecole polari più grandi hanno bisogno di canali proteici — la diffusione facilitata.</p>
+<p>L'<strong>osmosi</strong> è la diffusione dell'acqua nello specifico, attraverso una membrana semipermeabile che lascia passare l'acqua ma non il soluto disciolto. L'acqua si sposta verso la concentrazione di soluto più alta (la concentrazione d'acqua più bassa), perché il soluto non può muoversi per bilanciare le cose da sé. La pressione che questo può generare — la pressione osmotica — è \(\Pi = iMRT\) (van 't Hoff): sale con quanto è concentrato e quanto è dissociato il soluto.</p>
+<p>Per una cellula, ciò che conta è la <strong>tonicità</strong> — la concentrazione di soluto fuori rispetto a dentro. In una soluzione <em>isotonica</em> la cellula resta stabile. In una <em>ipotonica</em> (diluita), l'acqua irrompe dentro e una cellula animale può gonfiarsi e scoppiare — una cellula vegetale è salvata dalla sua parete rigida. In una <em>ipertonica</em> (concentrata), l'acqua schizza fuori e la cellula si raggrinzisce. È perché una flebo deve essere accuratamente isotonica, e perché i pesci d'acqua dolce e d'acqua salata affrontano battaglie esattamente opposte.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Diffusione (legge di Fick)</th><td>\(J = -D\,\dfrac{dC}{dx}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Pressione osmotica</th><td>\(\Pi = iMRT\)</td><td class="cmt">van 't Hoff</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Ipotonica</th><td>\(C_{\text{out}} &lt; C_{\text{in}} \Rightarrow \text{acqua dentro (si gonfia)}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Ipertonica</th><td>\(C_{\text{out}} &gt; C_{\text{in}} \Rightarrow \text{acqua fuori (si restringe)}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">💉</span> Le flebo devono essere isotoniche (~0,9% di soluzione salina). Acqua pura in una vena farebbe gonfiare e scoppiare i globuli rossi per osmosi.</li><li><span aria-hidden="true">🐟</span> I pesci d'acqua dolce svuotano di continuo l'acqua che irrompe per osmosi; quelli d'acqua salata fanno il contrario, bevendo per combattere la perdita d'acqua.</li><li><span aria-hidden="true">🧅</span> Le pareti cellulari lasciano stare le cellule vegetali in acqua pura senza scoppiare: si gonfiano finché la parete spinge indietro (turgore), tenendo dritti gli steli.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Trasporto di membrana, dai gradienti passivi alle pompe attive</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>La membrana a mosaico fluido</h3>
+<p>La membrana è un doppio strato fosfolipidico — un nucleo idrofobico stretto fra teste idrofile — costellato di proteine che vi derivano lateralmente (il modello di Singer-Nicolson, 1972). Il doppio strato stesso è la barriera; le proteine incastonate sono i cancelli, i trasportatori e le pompe che lo rendono selettivo.</p>
+<h3><span class="hn">02</span>Trasporto passivo e legge di Fick</h3>
+<p>La diffusione porta un flusso \(J = -D\,dC/dx\), proporzionale al gradiente di concentrazione e al coefficiente di diffusione \(D\). Non si spende ATP — il gradiente è il carburante. La diffusione facilitata aggiunge semplicemente canali o trasportatori che alzano il \(D\) effettivo per soluti specifici, ma il flusso corre ancora in discesa.</p>
+<h3><span class="hn">03</span>Osmosi e potenziale idrico</h3>
+<p>La fisiologia vegetale inquadra l'osmosi tramite il potenziale idrico \(\Psi = \Psi_s + \Psi_p\) (un termine di soluto più un termine di pressione); l'acqua scorre da \(\Psi\) alto a \(\Psi\) basso. Turgore, appassimento e apertura degli stomi sono tutti \(\Psi\) all'opera, e la pressione osmotica \(\Pi = iMRT\) è precisamente la sua componente di soluto.</p>
+<h3><span class="hn">04</span>Trasporto attivo e gradienti elettrochimici</h3>
+<p>Pompe come la Na⁺/K⁺-ATPasi bruciano ATP per spingere gli ioni <em>contro</em> i loro gradienti, costruendo i gradienti elettrochimici che alimentano gli impulsi nervosi e il trasporto secondario — il cotrasporto del glucosio, per esempio, cavalca il gradiente del sodio di nuovo in discesa. All'incirca un quinto del tuo bilancio energetico a riposo è speso a far funzionare queste pompe.</p>
+<h3><span class="hn">05</span>Trasporto in massa</h3>
+<p>Le molecole troppo grandi per qualsiasi canale entrano per endocitosi, con la membrana che le ingloba in una vescicola, ed escono per esocitosi. È così che le cellule importano il colesterolo, come le cellule immunitarie inghiottono i patogeni e come i neuroni rilasciano i loro trasmettitori — il traffico di membrana come logistica cellulare.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Flusso di diffusione</th><td>\(J = -D\,\dfrac{dC}{dx}\)</td><td class="cmt">prima legge di Fick</td></tr>
+<tr><th scope="row">Potenziale idrico</th><td>\(\Psi = \Psi_s + \Psi_p\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Pressione osmotica</th><td>\(\Pi = iMRT\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Pompa Na⁺/K⁺</th><td>\(3\,Na^+_{\text{out}} + 2\,K^+_{\text{in}} \ \text{per ATP}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔋</span> La pompa Na⁺/K⁺ usa circa il 20-25% della tua energia a riposo, spostando 3 Na⁺ fuori e 2 K⁺ dentro per ogni ATP per tenere le cellule cariche.</li><li><span aria-hidden="true">🧠</span> Ogni impulso nervoso spende il gradiente elettrochimico costruito dalle pompe ioniche — pensare è, in fondo, diffusione ionica controllata.</li><li><span aria-hidden="true">🍬</span> Il tuo intestino assorbe il glucosio per cotrasporto, agganciandolo al sodio che scorre lungo il gradiente mantenuto dalla pompa Na⁺/K⁺.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Osmosis" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Biologia</h2>
+    <ul><li><a href="/it/regole-della-vita/">Le regole della vita</a></li><li><a href="/it/dna-genetica/">DNA e genetica</a></li><li><a href="/it/evoluzione-selezione-naturale/">Evoluzione e selezione naturale</a></li><li><a href="/it/ecosistemi-reti-alimentari/">Ecosistemi e reti alimentari</a></li><li><a href="/it/fotosintesi/">Fotosintesi</a></li><li><a href="/it/mitosi-meiosi/">Mitosi e meiosi</a></li><li><a href="/it/quadrati-di-punnett-genetica/">Quadrati di Punnett e genetica</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

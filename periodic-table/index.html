@@ -7,6 +7,9 @@
 <meta name="description" content="Line up every element by one number and a hidden pattern of families and trends snaps into view.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/periodic-table/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/periodic-table/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/tavola-periodica/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/periodic-table/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/periodic-table/",
    "mainEntityOfPage": "https://labinatab.com/periodic-table/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/periodic-table/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/tavola-periodica/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Chemistry</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>The table's layout is a picture of atomic structure. Each row (a <strong>period</strong>) fills a new electron shell; each column (a <strong>group</strong>) shares the same number of outer, or valence, electrons - and it is those outer electrons that do the chemistry. That's why group 1 (one valence electron, eager to give it away) and group 17 (one short of a full shell, desperate to grab one) are the most reactive metals and non-metals, while group 18 (full shells) barely reacts at all.</p>
 <p>Because behaviour tracks electron arrangement, properties shift smoothly across the table - the <strong>periodic trends</strong>. Atomic radius shrinks left to right (more protons haul the same shell in tighter) and grows down a group (each period adds a shell). Electronegativity, an atom's pull on shared electrons, does the opposite: it climbs toward the top-right, peaking at fluorine. Ionization energy, the cost of removing an electron, tracks electronegativity closely.</p>
 <p>The table also sorts into <strong>blocks</strong> by which orbital is filling: the s-block (groups 1-2), the p-block (13-18), the d-block transition metals in the middle, and the f-block lanthanides and actinides pulled out below. Metals (left and centre) shed electrons and conduct; non-metals (top-right) grab or share them; metalloids trace the staircase between and act like both - which is precisely why silicon and germanium make semiconductors.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Atomic number</th><td>\(Z = \#\,\text{protons}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Atomic number</th><td>\(Z = \#\,\text{protons}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Atomic radius</th><td>\(r:\ \text{smaller} \rightarrow,\ \text{larger} \downarrow\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Electronegativity</th><td>\(\chi:\ \text{larger} \rightarrow,\ \text{smaller} \downarrow\)</td><td class="cmt"></td></tr>
@@ -244,7 +254,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>In the heaviest atoms the inner electrons move at a serious fraction of light speed, and the resulting relativistic contraction of the s-orbitals has visible consequences: it is why gold is yellow rather than silvery, why mercury is a liquid, and why the lead-acid battery in your car delivers the voltage it does. The tidy trends bend precisely where relativity begins to bite.</p>
 <h3><span class="hn">05</span>The unfinished edges</h3>
 <p>The table is still being written: superheavy elements are synthesized one atom at a time, now out to oganesson (118), and physicists chase a predicted "island of stability" of longer-lived isotopes beyond it. Whether periodicity itself survives into the eighth period - where relativity scrambles the orbital ordering - is a genuinely open question.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Filling order</th><td>\(\text{Aufbau: lowest } (n+\ell) \text{ first}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Filling order</th><td>\(\text{Aufbau: lowest } (n+\ell) \text{ first}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Effective charge</th><td>\(Z_{\text{eff}} = Z - S\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Ionization energy</th><td>\(E \sim 13.6\,\dfrac{Z_{\text{eff}}^2}{n^2}\ \text{eV}\)</td><td class="cmt"></td></tr>
@@ -257,25 +267,25 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
   <nav class="related" aria-label="Related topics">
     <h2>More in Chemistry</h2>
-    <ul><li><a href="/chemical-bonds/">Atoms &amp; Chemical Bonds</a></li><li><a href="/electrochemistry/">Electrochemistry &amp; Batteries</a></li><li><a href="/kinetics-equilibrium/">Kinetics &amp; Equilibrium</a></li><li><a href="/organic-chemistry/">Organic Chemistry &amp; Molecules of Life</a></li><li><a href="/acids-bases-ph/">Acids, Bases &amp; pH</a></li></ul>
+    <ul><li><a href="/chemical-bonds/">Atoms &amp; Chemical Bonds</a></li><li><a href="/electrochemistry/">Electrochemistry &amp; Batteries</a></li><li><a href="/kinetics-equilibrium/">Kinetics &amp; Equilibrium</a></li><li><a href="/organic-chemistry/">Organic Chemistry &amp; Molecules of Life</a></li><li><a href="/acids-bases-ph/">Acids, Bases &amp; pH</a></li><li><a href="/balancing-chemical-equations/">Balancing Chemical Equations</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

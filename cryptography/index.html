@@ -7,6 +7,9 @@
 <meta name="description" content="Every time you buy something online, mathematics shields your data from the entire internet. How does a secret stay secret in public?">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/cryptography/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/cryptography/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/crittografia-sicurezza/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/cryptography/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/cryptography/",
    "mainEntityOfPage": "https://labinatab.com/cryptography/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/cryptography/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/crittografia-sicurezza/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Computer Science</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p><strong>RSA</strong> (Rivest–Shamir–Adleman, 1977) rests on a beautiful asymmetry: multiplying two large primes is instant, but un-multiplying the result - factoring it - is believed to be practically impossible. Pick primes \(p, q\), set \(n = pq\) and \(\varphi(n) = (p-1)(q-1)\), choose a public exponent \(e\), and compute the private \(d \equiv e^{-1} \pmod{\varphi(n)}\). Then encryption and decryption are just modular powers: \(c = m^e \bmod n\) and \(m = c^d \bmod n\). They undo each other because Euler's theorem guarantees \(m^{\varphi(n)} \equiv 1 \pmod n\), so \(m^{ed} \equiv m\). Recovering \(d\) from the public \((e, n)\) is believed to be as hard as factoring \(n\) - unproven, but safe at 2048 bits.</p>
 <p><strong>Diffie–Hellman</strong> (1976) is the trick that lets two strangers agree on a secret in full view of everyone. Alice and Bob publicly fix a prime \(p\) and a generator \(g\); Alice keeps a secret \(a\) and sends \(g^a \bmod p\), Bob keeps \(b\) and sends \(g^b \bmod p\). Each raises what they received to their own secret, and both land on the same key \(K = g^{ab} \bmod p\). An eavesdropper sees \(g, p, g^a, g^b\) and still can't get \(K\) without solving the discrete logarithm problem - easy to compute forwards, believed infeasible to reverse.</p>
 <p>Public-key maths is slow, so it's used sparingly. Real connections do a <strong>hybrid</strong>: Diffie–Hellman (or its elliptic-curve cousin) agrees a key, then a fast <strong>symmetric cipher</strong> like AES encrypts the actual traffic. Holding it all together are <strong>hash functions</strong> (SHA-256, SHA-3), which crush any input to a fixed-size fingerprint that's one-way, collision-resistant, and wildly sensitive - flip one input bit and about half the output bits change. Those fingerprints are what make digital signatures, certificates and blockchains possible.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">RSA encrypt</th><td>\(c = m^e \bmod n\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">RSA encrypt</th><td>\(c = m^e \bmod n\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">RSA decrypt</th><td>\(m = c^d \bmod n,\quad d \equiv e^{-1}\!\!\pmod{\varphi(n)}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Euler's theorem</th><td>\(m^{\varphi(n)} \equiv 1 \pmod n \;\Rightarrow\; m^{ed} \equiv m\)</td><td class="cmt"></td></tr>
@@ -249,7 +259,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p><strong>Zero-knowledge proofs</strong> (Goldwasser–Micali–Rackoff, 1985) pull off a genuine paradox: a prover convinces a verifier that a statement is true while revealing nothing beyond its truth. The three demands are completeness (honest proofs always convince), soundness (false claims almost never slip through), and zero-knowledge (the verifier learns nothing it couldn't have made up alone). You can prove you know a password without uttering it, or that a transaction is valid without disclosing its amount.</p>
 <h3><span class="hn">06</span>Succinct proofs and where this is heading</h3>
 <p>The modern workhorses are <strong>zk-SNARKs</strong> - proofs that are both non-interactive and astonishingly compact, a constant \(O(1)\) in size and verifiable in milliseconds no matter how vast the computation they attest to. They already power privacy-preserving currencies, anonymous credentials, and verifiable outsourced computation, and are creeping toward proving that a specific AI model produced a specific output without exposing the model or the input. A curiosity once dismissed as pure theory is turning into core infrastructure.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Perfect secrecy</th><td>\(P(M=m \mid C=c) = P(M=m)\quad \forall\, m,c\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Perfect secrecy</th><td>\(P(M=m \mid C=c) = P(M=m)\quad \forall\, m,c\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">One-time pad</th><td>\(c = m \oplus k,\quad |k| = |m|\)</td><td class="cmt">k uniform, used once</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">LWE sample</th><td>\(b_i = \langle a_i, s\rangle + e_i \pmod q\)</td><td class="cmt">e_i small noise</td></tr>
@@ -268,22 +278,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/sorting-algorithms/">Sorting Algorithms</a></li><li><a href="/machine-learning/">Machine Learning &amp; Neural Networks</a></li><li><a href="/computation-complexity/">Computation &amp; Complexity</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

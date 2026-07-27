@@ -7,6 +7,10 @@
 <meta name="description" content="When the Sun goes dark by day or the Moon turns blood-red - and why it isn't every month.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/eclipses/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/eclipses/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/eclissi/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/eclipses/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/eclipses/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +41,7 @@
    "url": "https://labinatab.com/eclipses/",
    "mainEntityOfPage": "https://labinatab.com/eclipses/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +113,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +156,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +200,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/eclipses/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/eclissi/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/eclipses/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomy</nav>
@@ -223,7 +234,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>Eclipses are a shadow game with strict rules. A solar eclipse needs a <em>new</em> moon (Moon between Earth and Sun); a lunar eclipse needs a <em>full</em> moon (Earth between Sun and Moon). Shadows have two parts: the dark central <strong>umbra</strong>, where the light source is fully blocked, and the lighter <strong>penumbra</strong> around it, where it's only partly hidden. Stand in the Moon's umbra and you see a total solar eclipse; in the penumbra, only a partial one.</p>
 <p>If the Moon orbited in the same plane that the Earth orbits the Sun - the ecliptic - we would get a solar and a lunar eclipse every single month. But the Moon's orbit is tilted about 5°, so it usually passes above or below the Sun-Earth line. Eclipses can only happen when the Moon is crossing that line - at one of its two <strong>nodes</strong> - at the same moment as new or full moon. Those alignments cluster into two "eclipse seasons" each year.</p>
 <p>The Sun-Moon size coincidence makes Earth uniquely lucky. Because the Moon's apparent size so nearly matches the Sun's, it can just cover the disc and reveal the corona. When the Moon is a little farther out in its slightly elliptical orbit it falls short and leaves a bright ring - an <strong>annular</strong> eclipse. Totality is brief (a couple of minutes) because the umbra's tip is small and races across the ground at over 1,500 km/h.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Solar eclipse</th><td>\(\text{new moon} + \text{near a node}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Solar eclipse</th><td>\(\text{new moon} + \text{near a node}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Lunar eclipse</th><td>\(\text{full moon} + \text{near a node}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Orbital tilt</th><td>\(i \approx 5.14°\)</td><td class="cmt">why not every month</td></tr>
@@ -244,7 +255,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>The angular diameters of Sun and Moon are both about 0.5°, which is what makes totality (rather than a permanent ring) possible. But the Moon recedes ~3.8 cm per year, so in roughly 600 million years its disc will always fall short and total solar eclipses will cease forever. We happen to live in the era when they occur.</p>
 <h3><span class="hn">05</span>Eclipses as a laboratory</h3>
 <p>Totality has repeatedly advanced physics: the 1919 eclipse let Eddington measure starlight bending around the Sun and confirm general relativity; helium was first identified in the Sun's spectrum during the 1868 eclipse; and the corona and chromosphere are still best studied when the blinding photosphere is hidden. Recorded eclipses even anchor the chronology of the ancient world.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Synodic month</th><td>\(29.531\ \text{days}\)</td><td class="cmt">new moon to new moon</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Synodic month</th><td>\(29.531\ \text{days}\)</td><td class="cmt">new moon to new moon</td></tr>
 <tr><th scope="row">Draconic month</th><td>\(27.212\ \text{days}\)</td><td class="cmt">node to node</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Saros period</th><td>\(223\ \text{synodic} \approx 18\text{y }11\text{d}\)</td><td class="cmt"></td></tr>
@@ -260,22 +271,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/stars-universe/">Stars &amp; The Universe</a></li><li><a href="/black-holes/">Black Holes &amp; Relativity</a></li><li><a href="/cosmology-big-bang/">Cosmology &amp; The Big Bang</a></li><li><a href="/solar-system/">The Solar System</a></li><li><a href="/meteor-showers/">Meteor Showers</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

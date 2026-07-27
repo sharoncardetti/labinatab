@@ -7,6 +7,9 @@
 <meta name="description" content="How does a computer learn to recognise your face, translate languages, and beat world champions at chess - without ever being explicitly programmed?">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/machine-learning/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/machine-learning/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/machine-learning-reti-neurali/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/machine-learning/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/machine-learning/",
    "mainEntityOfPage": "https://labinatab.com/machine-learning/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/machine-learning/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/machine-learning-reti-neurali/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Computer Science</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>A network of \(L\) layers is just one big nested function, \(f(x) = W_L\,\sigma(W_{L-1}\,\sigma(\cdots \sigma(W_1 x + b_1)\cdots) + b_{L-1}) + b_L\), where each \(\sigma\) is a nonlinearity - ReLU \(\sigma(z)=\max(0,z)\) or sigmoid \(\sigma(z)=1/(1+e^{-z})\) - and the weights \(W_i\) and biases \(b_i\) are what the network learns. Without the \(\sigma\)'s the whole stack would collapse to a single linear map; the nonlinearity is what lets depth buy you anything. Training means tuning \(\theta=\{W_i,b_i\}\) to shrink a loss, say the cross-entropy \(L = -\sum_i y_i \log \hat{y}_i\).</p>
 <p><strong>Gradient descent</strong> nudges every parameter downhill on that loss: \(\theta \leftarrow \theta - \eta\,\nabla_\theta L\), with \(\eta\) the learning rate. The trick that makes it feasible on billions of parameters is <strong>backpropagation</strong> - the chain rule run backwards through the network, reusing each layer's work so one sweep computes every gradient. In practice you estimate \(\nabla_\theta L\) on small random <em>mini-batches</em> (stochastic gradient descent), noisy but cheap, and adaptive optimisers like Adam keep a separate step size per parameter to converge faster.</p>
 <p>Why should this ever work? The <strong>Universal Approximation Theorem</strong> (Cybenko 1989, Hornik 1991) proves a single hidden layer, given enough units, can mimic <em>any</em> continuous function as closely as you like. But "enough" can be astronomically many; depth is what makes it practical, representing compactly what a shallow net would need exponentially many neurons for. The real fight isn't fitting the training data - it's <strong>generalising</strong> to new data, and tools like dropout, weight decay and batch normalisation exist to stop a network from simply memorising its examples.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Forward pass</th><td>\(a^{(l)} = \sigma\!\left(W^{(l)} a^{(l-1)} + b^{(l)}\right)\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Forward pass</th><td>\(a^{(l)} = \sigma\!\left(W^{(l)} a^{(l-1)} + b^{(l)}\right)\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Cross-entropy loss</th><td>\(L = -\sum_i y_i \log \hat{y}_i\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Gradient descent</th><td>\(\theta \leftarrow \theta - \eta\,\nabla_\theta L\)</td><td class="cmt"></td></tr>
@@ -249,7 +259,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>Nearly all of today's frontier models are <strong>Transformers</strong> (Vaswani et al., 2017), which threw out recurrence in favour of <em>self-attention</em>: \(\mathrm{Attention}(Q,K,V) = \mathrm{softmax}\!\left(\tfrac{QK^\top}{\sqrt{d_k}}\right)V\). Every token compares itself to every other and pulls in a weighted mix of their values - quadratic \(O(n^2)\) cost, but only \(O(1)\) sequential depth, so it parallelises across a whole sequence at once. Stack many such heads, each learning a different pattern of relationships, add positional encodings for order, and you have the engine behind modern language models.</p>
 <h3><span class="hn">06</span>Scaling laws: intelligence you can budget</h3>
 <p>The strangest empirical fact about deep learning is how <em>predictable</em> it is at scale. Test loss falls as a clean power law in model size, data and compute across seven orders of magnitude. The Chinchilla analysis (Hoffmann et al., 2022) pinned the optimal recipe: for a compute budget \(C\), grow parameters and training tokens together, roughly \(N \propto C^{0.5}\) and \(D \propto C^{0.5}\). That capability can be dialled up by spending more - rather than waiting for a new idea - is exactly what turned deep learning from a research curiosity into an industry.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Self-attention</th><td>\(\mathrm{Attention}(Q,K,V) = \mathrm{softmax}\!\left(\dfrac{QK^\top}{\sqrt{d_k}}\right)V\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Self-attention</th><td>\(\mathrm{Attention}(Q,K,V) = \mathrm{softmax}\!\left(\dfrac{QK^\top}{\sqrt{d_k}}\right)V\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Multi-head</th><td>\(\mathrm{MHA} = \mathrm{concat}(h_1,\dots,h_h)\,W^O\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">PAC-Bayes bound</th><td>\(L(f) \le \hat{L}(f) + \sqrt{\dfrac{\mathrm{KL}(Q\|P) + \ln(n/\delta)}{2n}}\)</td><td class="cmt"></td></tr>
@@ -267,22 +277,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/sorting-algorithms/">Sorting Algorithms</a></li><li><a href="/cryptography/">Cryptography &amp; Security</a></li><li><a href="/computation-complexity/">Computation &amp; Complexity</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

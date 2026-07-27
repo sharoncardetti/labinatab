@@ -7,6 +7,9 @@
 <meta name="description" content="How do we measure the speed of something that never moves at constant speed? The answer changed science forever.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/calculus/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/calculus/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/calcolo-cambiamento/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/calculus/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/calculus/",
    "mainEntityOfPage": "https://labinatab.com/calculus/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/calculus/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/calcolo-cambiamento/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Mathematics</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>The <strong>derivative</strong> is built from a limit that stares the "zero over zero" problem down and beats it: \(f'(x) = \lim_{h\to 0} \dfrac{f(x+h) - f(x)}{h}\). Geometrically it's the slope of the tangent line; physically, if \(f(t)\) is position then \(f'(t)\) is velocity and \(f''(t)\) acceleration. Two rules carry most of the load: the power rule \(\dfrac{d}{dx}x^n = n x^{n-1}\), and the chain rule \(\dfrac{d}{dx}f(g(x)) = f'(g(x))\,g'(x)\) for peeling apart nested functions.</p>
 <p>The <strong>definite integral</strong> \(\int_a^b f(x)\,dx\) is the signed area under a curve, defined as the limit of ever-finer rectangles - a Riemann sum \(\lim_{n\to\infty}\sum_i f(x_i)\,\Delta x\). Then comes the punchline that binds the whole subject together, the <strong>Fundamental Theorem of Calculus</strong>: if \(F' = f\), then \(\int_a^b f(x)\,dx = F(b) - F(a)\). Differentiation and integration look like utterly different jobs - finding slopes versus finding areas - and yet they are exact inverses. That single fact is the hinge the entire subject swings on.</p>
 <p>Aim calculus at <em>time</em> and you get <strong>differential equations</strong>, the language nature uses to state its laws. The simplest, \(\dfrac{dy}{dt} = ky\), captures anything whose growth keeps pace with its own size - populations, compound interest, radioactive decay - and solves neatly to \(y(t) = y_0 e^{kt}\). Add a little complexity and the same machinery delivers Newton's second law, the wave equation and the heat equation, the differential equations that run essentially all of physics and engineering.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Derivative (definition)</th><td>\(f'(x) = \lim_{h\to 0} \dfrac{f(x+h) - f(x)}{h}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Derivative (definition)</th><td>\(f'(x) = \lim_{h\to 0} \dfrac{f(x+h) - f(x)}{h}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Power rule</th><td>\(\dfrac{d}{dx}x^n = n x^{n-1}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">FTC, part I</th><td>\(\dfrac{d}{dx}\int_a^x f(t)\,dt = f(x)\)</td><td class="cmt"></td></tr>
@@ -249,7 +259,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>The square-integrable functions \(L^2\) form a <em>Hilbert space</em> - an infinite-dimensional geometry equipped with lengths and angles, in which the complex exponentials \(\{e^{inx}/\sqrt{2\pi}\}\) serve as perpendicular axes. Expanding a function in them is just dropping perpendiculars, and Parseval's identity \(\|f\|^2 = \sum_n |\hat{c}_n|^2\) is Pythagoras in disguise: a signal's energy equals the energy of its spectrum. The continuous version, the <strong>Fourier transform</strong> \(\hat{f}(\xi) = \int f(x)\,e^{-2\pi i \xi x}\,dx\), carries the same geometry onto the whole real line.</p>
 <h3><span class="hn">06</span>Where it all lands</h3>
 <p>None of this is ornamental - it is the floor modern science stands on. Quantum mechanics is the study of state vectors in a Hilbert space, with \(|\hat{\psi}(p)|^2\) the momentum probability density and operators standing in for observables. Probability theory is measure theory under another name, and the Central Limit Theorem falls out cleanly through characteristic functions. Every MP3, JPEG and MRI scan is Fourier analysis cashed out in silicon. The shaky "infinitesimals" of Newton and Leibniz took two centuries to make rigorous - and that rigour turned out to be the bedrock of twentieth-century physics.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Lebesgue integral</th><td>\(\int f\,d\mu = \sup \sum_i y_i\,\mu\!\left(f^{-1}[y_i, y_{i+1}]\right)\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Lebesgue integral</th><td>\(\int f\,d\mu = \sup \sum_i y_i\,\mu\!\left(f^{-1}[y_i, y_{i+1}]\right)\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Dominated convergence</th><td>\(|f_n| \le g \in L^1 \;\Rightarrow\; \lim\!\int f_n = \int \lim f_n\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Fourier transform</th><td>\(\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)\,e^{-2\pi i \xi x}\,dx\)</td><td class="cmt"></td></tr>
@@ -264,25 +274,25 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
   <nav class="related" aria-label="Related topics">
     <h2>More in Mathematics</h2>
-    <ul><li><a href="/probability-bell-curve/">Probability &amp; The Bell Curve</a></li><li><a href="/fractals/">Fractals &amp; Infinity</a></li><li><a href="/graph-theory/">Graph Theory &amp; Networks</a></li></ul>
+    <ul><li><a href="/probability-bell-curve/">Probability &amp; The Bell Curve</a></li><li><a href="/fractals/">Fractals &amp; Infinity</a></li><li><a href="/graph-theory/">Graph Theory &amp; Networks</a></li><li><a href="/unit-circle-trigonometry/">Trigonometry &amp; The Unit Circle</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

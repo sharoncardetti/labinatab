@@ -56,6 +56,31 @@ const SIM_LABELS={
   student:{pos:'Earth\'s position',dens:'Debris density',   rate:'Meteors/hour',     status:'Activity'},
   scholar:{pos:'Earth\'s position',dens:'Stream density',   rate:'Meteors/hour',     status:'Activity'}
  },
+ states:{
+  junior :{temp:'Temperature',state:'State of matter',tval:'How it feels'},
+  student:{temp:'Temperature',state:'State',          tval:'How it feels'},
+  scholar:{temp:'Temperature',state:'State',          tval:'How it feels'}
+ },
+ trig:{
+  junior :{angle:'Angle',   play:'Play',sin:'Height (sin)',cos:'Across (cos)'},
+  student:{angle:'Angle θ', play:'Play',sin:'sin θ',       cos:'cos θ'},
+  scholar:{angle:'Angle θ', play:'Play',sin:'sin θ',       cos:'cos θ'}
+ },
+ punnett:{
+  junior :{p1:'Parent 1',         p2:'Parent 2',         pheno:'Look (phenotype)', geno:'Genes (genotype)'},
+  student:{p1:'Parent 1 genotype',p2:'Parent 2 genotype',pheno:'Phenotype ratio',  geno:'Genotype ratio'},
+  scholar:{p1:'Parent 1 genotype',p2:'Parent 2 genotype',pheno:'Phenotype ratio',  geno:'Genotype ratio'}
+ },
+ seasons:{
+  junior :{month:'Month',        nh:'Northern half',       sh:'Southern half'},
+  student:{month:'Month of year',nh:'Northern Hemisphere', sh:'Southern Hemisphere'},
+  scholar:{month:'Month of year',nh:'Northern Hemisphere', sh:'Southern Hemisphere'}
+ },
+ balancing:{
+  junior :{next:'Next reaction',bal:'Balanced?',check:'Atom check'},
+  student:{next:'Next reaction',bal:'Balanced?',check:'Atom check'},
+  scholar:{next:'Next reaction',bal:'Balanced?',check:'Atom check'}
+ },
  prob:{
   junior :{drop:'Drop balls',reset:'Reset',rows:'Rows of pegs',total:'Balls dropped',  mean:'Average bin'},
   student:{drop:'Drop balls',reset:'Reset',rows:'Rows of pegs',total:'Sample size (N)',mean:'Mean bin index'},
@@ -298,7 +323,9 @@ function stopSims(){
 }
 
 function buildSim(id,container,color,lvl){
-  const map={gravity:simOrbit,projectile:simProjectile,newton:simNewton,circuits:simCircuit,waves:simWaves,thermo:simThermo,particles:simParticles,
+  const map={gravity:simOrbit,projectile:simProjectile,newton:simNewton,circuits:simCircuit,
+            states:simStates,trig:simTrig,seasons:simSeasons,balancing:simBalance,punnett:simPunnett,
+            waves:simWaves,thermo:simThermo,particles:simParticles,
             prob:simGalton,fractal:simFractal,calculus:simCalculus,graphs:simGraphs,
             life:simLife,dna:simDNA, evolution:simEvolution, ecosystem:simEcosystem,
             photosynthesis:simPhotosynthesis, cell:simCell, mitosis:simMitosis,
@@ -542,6 +569,247 @@ function simCircuit(container,color,lvl){
     St.raf=requestAnimationFrame(frame);
   }
   frame();
+}
+
+function simStates(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0ea5e9';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.states&&SIMS.states.raf)cancelAnimationFrame(SIMS.states.raf);
+  const W=getSimWidth(container),H=270;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('states',lvl);
+  const pState=pill(L.state),pTemp=pill(L.tval);
+  pRow.appendChild(pState.el);pRow.appendChild(pTemp.el);
+  const rT=mkRange(ctrl,L.temp,0,100,15,1,color);
+  const St=SIMS.states={raf:null};
+  const boxX=10,boxY=12,boxW=W-92,boxH=H-24,Tm=34,Tb=67,cols=8,rowsN=6,N=cols*rowsN,parts=[];
+  for(let i=0;i<N;i++){const c=i%cols,r=(i/cols)|0;parts.push({hx:boxX+20+c*((boxW-40)/(cols-1)),hy:boxY+22+r*((boxH-44)/(rowsN-1)),x:0,y:0,vx:(Math.random()*2-1),vy:(Math.random()*2-1)});}
+  for(let i=0;i<N;i++){parts[i].x=parts[i].hx;parts[i].y=parts[i].hy;}
+  function frame(){
+    const T=rT.val;let state;
+    if(T<Tm)state='Solid';else if(T<Tb)state='Liquid';else state='Gas';
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='rgba(125,125,125,0.5)';ctx.lineWidth=2;ctx.strokeRect(boxX,boxY,boxW,boxH);
+    const spd=0.3+T/100*3.4;
+    for(let i=0;i<N;i++){const p=parts[i];
+      if(state==='Solid'){const j=T/Tm*6;p.x=p.hx+(Math.random()*2-1)*j;p.y=p.hy+(Math.random()*2-1)*j;}
+      else{
+        p.x+=p.vx*spd;p.y+=p.vy*spd;
+        let top=boxY+5;if(state==='Liquid')top=boxY+boxH*0.42;
+        if(p.x<boxX+6||p.x>boxX+boxW-6){p.vx*=-1;p.x=Math.max(boxX+6,Math.min(boxX+boxW-6,p.x));}
+        if(p.y<top||p.y>boxY+boxH-6){p.vy*=-1;p.y=Math.max(top,Math.min(boxY+boxH-6,p.y));}
+      }
+      ctx.beginPath();ctx.arc(p.x,p.y,9,0,Math.PI*2);ctx.fillStyle=C+'2a';ctx.fill();
+      ctx.beginPath();ctx.arc(p.x,p.y,6,0,Math.PI*2);ctx.fillStyle=C;ctx.fill();
+    }
+    const bx=W-70,by=boxY+8,bh=boxH-16,bw=18;
+    function zoneY(t){return by+bh-(t/100)*bh;}
+    ctx.fillStyle='rgba(96,165,250,0.35)';ctx.fillRect(bx,by,bw,zoneY(Tb)-by);
+    ctx.fillStyle='rgba(45,212,191,0.35)';ctx.fillRect(bx,zoneY(Tb),bw,zoneY(Tm)-zoneY(Tb));
+    ctx.fillStyle='rgba(59,130,246,0.4)';ctx.fillRect(bx,zoneY(Tm),bw,by+bh-zoneY(Tm));
+    ctx.strokeStyle='rgba(125,125,125,0.5)';ctx.lineWidth=1;ctx.strokeRect(bx,by,bw,bh);
+    ctx.fillStyle='rgba(90,90,90,0.9)';ctx.font='9px system-ui';ctx.textAlign='right';
+    ctx.fillText('boil',bx-2,zoneY(Tb)+3);ctx.fillText('melt',bx-2,zoneY(Tm)+3);ctx.textAlign='left';
+    const my=zoneY(T);ctx.fillStyle=C;ctx.beginPath();ctx.moveTo(bx+bw+2,my);ctx.lineTo(bx+bw+11,my-6);ctx.lineTo(bx+bw+11,my+6);ctx.closePath();ctx.fill();
+    pState.set(state);pTemp.set(T<Tm?'cold':(T<Tb?'warm':'hot'));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simTrig(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#2563eb';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.trig&&SIMS.trig.raf)cancelAnimationFrame(SIMS.trig.raf);
+  const W=getSimWidth(container),H=260;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('trig',lvl);
+  const pSin=pill(L.sin),pCos=pill(L.cos);
+  pRow.appendChild(pSin.el);pRow.appendChild(pCos.el);
+  const rA=mkRange(ctrl,L.angle,0,360,45,1,color);
+  const bPlay=mkBtn(L.play,true,color);ctrl.appendChild(bPlay);
+  let playing=false;
+  bPlay.addEventListener('click',function(){if(rA.val>=360){rA.inp.value=0;rA.v.textContent='0';}playing=!playing;});
+  const St=SIMS.trig={raf:null};
+  const R=Math.min(94,(H-44)/2),cxL=R+22,cyL=H/2,gx0=cxL+R+34,gx1=W-14,gcy=H/2,amp=R,DEG=Math.PI/180;
+  const sinCol='#ef4444',cosCol='#22c55e';
+  function frame(){
+    if(playing){let v=rA.val+1.4;if(v>360)v-=360;rA.inp.value=v;rA.v.textContent=Math.round(v);}
+    const a=rA.val,ar=a*DEG,px=cxL+R*Math.cos(ar),py=cyL-R*Math.sin(ar);
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle='rgba(125,125,125,0.35)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(cxL,cyL,R,0,Math.PI*2);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(cxL-R-6,cyL);ctx.lineTo(cxL+R+6,cyL);ctx.moveTo(cxL,cyL-R-6);ctx.lineTo(cxL,cyL+R+6);ctx.stroke();
+    ctx.strokeStyle=cosCol;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(cxL,cyL);ctx.lineTo(px,cyL);ctx.stroke();
+    ctx.strokeStyle=sinCol;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(px,cyL);ctx.lineTo(px,py);ctx.stroke();
+    ctx.strokeStyle=C;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cxL,cyL);ctx.lineTo(px,py);ctx.stroke();
+    ctx.fillStyle=C;ctx.beginPath();ctx.arc(px,py,5,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(125,125,125,0.3)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(gx0,gcy);ctx.lineTo(gx1,gcy);ctx.stroke();
+    function wave(fn,col){ctx.strokeStyle=col;ctx.lineWidth=2;ctx.beginPath();for(let d=0;d<=a;d+=2){const x=gx0+(d/360)*(gx1-gx0),y=gcy-fn(d*DEG)*amp;d?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();}
+    wave(Math.cos,cosCol);wave(Math.sin,sinCol);
+    const hx=gx0+(a/360)*(gx1-gx0),hy=gcy-Math.sin(ar)*amp;
+    ctx.strokeStyle='rgba(239,68,68,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(hx,hy);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle=sinCol;ctx.beginPath();ctx.arc(hx,hy,4,0,Math.PI*2);ctx.fill();
+    pSin.set(Math.sin(ar).toFixed(3));pCos.set(Math.cos(ar).toFixed(3));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simSeasons(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#f59e0b';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.seasons&&SIMS.seasons.raf)cancelAnimationFrame(SIMS.seasons.raf);
+  const W=getSimWidth(container),H=280;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('seasons',lvl);
+  const pN=pill(L.nh),pS=pill(L.sh);
+  pRow.appendChild(pN.el);pRow.appendChild(pS.el);
+  const rM=mkRange(ctrl,L.month,1,12,6,1,color);
+  const St=SIMS.seasons={raf:null};
+  const cx=W/2,cy=H/2,ox=Math.min(W*0.33,155),oy=Math.min(H*0.34,84),tilt=23.5*Math.PI/180;
+  const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const NSEAS=['Winter','Winter','Spring','Spring','Spring','Summer','Summer','Summer','Autumn','Autumn','Autumn','Winter'];
+  const SSEAS=['Summer','Summer','Autumn','Autumn','Autumn','Winter','Winter','Winter','Spring','Spring','Spring','Summer'];
+  function frame(){
+    const m=rM.val,mi=Math.max(0,Math.min(11,(m-1)|0)),phi=Math.PI+((m-6)/12)*Math.PI*2;
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#0a0e1a');bg.addColorStop(1,'#05070f');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle='rgba(255,255,255,0.14)';ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(cx,cy,ox,oy,0,0,Math.PI*2);ctx.stroke();
+    const sg=ctx.createRadialGradient(cx,cy,3,cx,cy,42);sg.addColorStop(0,'rgba(255,214,90,0.95)');sg.addColorStop(1,'rgba(255,214,90,0)');
+    ctx.fillStyle=sg;ctx.beginPath();ctx.arc(cx,cy,42,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#ffd24a';ctx.beginPath();ctx.arc(cx,cy,15,0,Math.PI*2);ctx.fill();
+    const ex=cx+ox*Math.cos(phi),ey=cy+oy*Math.sin(phi),er=17;
+    const sdx=cx-ex,sdy=cy-ey,sl=Math.hypot(sdx,sdy)||1,ux=sdx/sl,uy=sdy/sl;
+    ctx.save();ctx.beginPath();ctx.arc(ex,ey,er,0,Math.PI*2);ctx.clip();
+    ctx.fillStyle='#0f2744';ctx.fillRect(ex-er,ey-er,er*2,er*2);
+    ctx.fillStyle='#3b82f6';ctx.beginPath();ctx.arc(ex+ux*er*0.55,ey+uy*er*0.55,er,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(ex,ey,er,0,Math.PI*2);ctx.stroke();
+    const axx=Math.sin(tilt),axy=-Math.cos(tilt);
+    ctx.strokeStyle='#e5e7eb';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(ex-axx*er*1.35,ey-axy*er*1.35);ctx.lineTo(ex+axx*er*1.35,ey+axy*er*1.35);ctx.stroke();
+    ctx.fillStyle='#ef4444';ctx.beginPath();ctx.arc(ex+axx*er*1.35,ey+axy*er*1.35,2.6,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#fff';ctx.font='bold 12px system-ui';ctx.textAlign='center';ctx.fillText(MON[mi],ex,ey+er+16);ctx.textAlign='left';
+    pN.set(NSEAS[mi]);pS.set(SSEAS[mi]);
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simBalance(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#10b981';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.balancing&&SIMS.balancing.raf)cancelAnimationFrame(SIMS.balancing.raf);
+  const W=getSimWidth(container),H=290;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('balancing',lvl);
+  const pBal=pill(L.bal),pChk=pill(L.check);
+  pRow.appendChild(pBal.el);pRow.appendChild(pChk.el);
+  const RX=[
+   {L:[{f:'CH4',a:{C:1,H:4}},{f:'O2',a:{O:2}}],R:[{f:'CO2',a:{C:1,O:2}},{f:'H2O',a:{H:2,O:1}}]},
+   {L:[{f:'H2',a:{H:2}},{f:'O2',a:{O:2}}],R:[{f:'H2O',a:{H:2,O:1}}]},
+   {L:[{f:'N2',a:{N:2}},{f:'H2',a:{H:2}}],R:[{f:'NH3',a:{N:1,H:3}}]}
+  ];
+  const sliders=[];
+  for(let i=0;i<4;i++)sliders.push(mkRange(ctrl,'-',1,8,1,1,color));
+  const wraps=ctrl.querySelectorAll('.rng-wrap'),labs=[];
+  for(let i=0;i<4;i++)labs.push(wraps[i].querySelector('.rng-lbl'));
+  const bNext=mkBtn(L.next,true,color);ctrl.appendChild(bNext);
+  let cur=0;
+  const St=SIMS.balancing={raf:null};
+  function species(){return RX[cur].L.concat(RX[cur].R);}
+  function loadRx(){const sp=species();for(let i=0;i<4;i++){if(i<sp.length){wraps[i].style.display='';labs[i].textContent=sp[i].f;sliders[i].inp.value=1;sliders[i].v.textContent='1';}else{wraps[i].style.display='none';}}}
+  bNext.addEventListener('click',function(){cur=(cur+1)%RX.length;loadRx();});
+  loadRx();
+  function atomColor(e){return e==='H'?'#94a3b8':e==='O'?'#ef4444':e==='C'?'#334155':e==='N'?'#3b82f6':'#a3a3a3';}
+  function drawMol(mx,my,sp){
+    const atoms=[];for(const e in sp.a){for(let k=0;k<sp.a[e];k++)atoms.push(e);}
+    const n=atoms.length;
+    for(let i=0;i<n;i++){
+      const ang=(i/n)*Math.PI*2,rr=n>1?10:0,ax=mx+Math.cos(ang)*rr,ay=my+Math.sin(ang)*rr;
+      ctx.fillStyle=atomColor(atoms[i]);ctx.beginPath();ctx.arc(ax,ay,7,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,0.95)';ctx.font='bold 8px system-ui';ctx.textAlign='center';ctx.fillText(atoms[i],ax,ay+3);
+    }
+    ctx.textAlign='left';
+  }
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    const sp=species(),nL=RX[cur].L.length,coefs=sp.map(function(s,i){return sliders[i].val;});
+    const elem={};
+    for(let i=0;i<sp.length;i++){const s=sp[i],co=coefs[i],side=i<nL?0:1;for(const e in s.a){if(!elem[e])elem[e]=[0,0];elem[e][side]+=co*s.a[e];}}
+    const bal=Object.keys(elem).every(function(e){return elem[e][0]===elem[e][1];});
+    const slotW=(W-30)/sp.length,y1=58;
+    for(let i=0;i<sp.length;i++){
+      const mx=18+slotW*i+slotW/2;
+      ctx.fillStyle=C;ctx.font='bold 16px system-ui';ctx.textAlign='right';ctx.fillText(coefs[i],mx-20,y1+4);ctx.textAlign='left';
+      drawMol(mx,y1,sp[i]);
+      ctx.fillStyle='rgba(120,120,120,0.95)';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText(sp[i].f,mx,y1+26);ctx.textAlign='left';
+      if(i<sp.length-1){const sx=18+slotW*(i+1);ctx.fillStyle='rgba(120,120,120,0.9)';ctx.font='17px system-ui';ctx.textAlign='center';ctx.fillText(i===nL-1?'→':'+',sx,y1+5);ctx.textAlign='left';}
+    }
+    let tx=26,ty=H-74;ctx.font='13px system-ui';ctx.textAlign='left';
+    for(const e in elem){const l=elem[e][0],r=elem[e][1],ok=l===r;ctx.fillStyle=ok?'#16a34a':'#dc2626';ctx.fillText(e+':  '+l+(ok?'  =  ':'  ≠  ')+r,tx,ty);ty+=21;if(ty>H-14){ty=H-74;tx+=130;}}
+    if(bal){ctx.fillStyle='#16a34a';ctx.font='bold 15px system-ui';ctx.textAlign='center';ctx.fillText('✓ Balanced!',W-90,H-26);ctx.textAlign='left';}
+    pBal.set(bal?'Yes':'No');pChk.set(bal?'all atoms match':'counts differ');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simPunnett(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#c026d3';
+  window.SIMS=window.SIMS||{};
+  SIMS.punnett={raf:null};
+  const W=getSimWidth(container),H=280;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('punnett',lvl);
+  const pPh=pill(L.pheno),pGe=pill(L.geno);
+  pRow.appendChild(pPh.el);pRow.appendChild(pGe.el);
+  const GENO=['AA','Aa','aa'];
+  let g1=1,g2=1;
+  const b1=mkBtn(L.p1+': Aa',true,color);ctrl.appendChild(b1);
+  const b2=mkBtn(L.p2+': Aa',true,color);ctrl.appendChild(b2);
+  function alleles(g){return GENO[g].split('');}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    const a1=alleles(g1),a2=alleles(g2);
+    const gs=Math.min(150,H-96),cell=gs/2,gx=W/2-gs/2,gy=42;
+    ctx.fillStyle='rgba(120,120,120,0.95)';ctx.font='bold 16px system-ui';ctx.textAlign='center';
+    for(let c=0;c<2;c++)ctx.fillText(a2[c],gx+cell*c+cell/2,gy-9);
+    ctx.textAlign='right';
+    for(let r=0;r<2;r++)ctx.fillText(a1[r],gx-9,gy+cell*r+cell/2+5);
+    ctx.textAlign='left';
+    let dom=0,rec=0,gAA=0,gAa=0,gaa=0;
+    for(let r=0;r<2;r++)for(let c=0;c<2;c++){
+      const hasA=(a1[r]==='A'||a2[c]==='A'),hasa=(a1[r]==='a'||a2[c]==='a');
+      const combo=hasA&&hasa?'Aa':(hasA?'AA':'aa'),isDom=hasA;
+      if(isDom)dom++;else rec++;
+      if(combo==='AA')gAA++;else if(combo==='aa')gaa++;else gAa++;
+      const x=gx+cell*c,y=gy+cell*r;
+      ctx.fillStyle=isDom?C:'#cbd5e1';ctx.globalAlpha=0.26;ctx.fillRect(x+1,y+1,cell-2,cell-2);ctx.globalAlpha=1;
+      ctx.strokeStyle='rgba(120,120,120,0.5)';ctx.lineWidth=1;ctx.strokeRect(x+1,y+1,cell-2,cell-2);
+      ctx.fillStyle=isDom?C:'#94a3b8';ctx.beginPath();ctx.arc(x+cell/2,y+cell*0.4,cell*0.19,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='rgba(20,20,20,0.85)';ctx.font='bold 15px system-ui';ctx.textAlign='center';ctx.fillText(combo,x+cell/2,y+cell*0.85);ctx.textAlign='left';
+    }
+    ctx.strokeStyle='rgba(120,120,120,0.8)';ctx.lineWidth=2;ctx.strokeRect(gx,gy,gs,gs);
+    ctx.beginPath();ctx.moveTo(gx+cell,gy);ctx.lineTo(gx+cell,gy+gs);ctx.moveTo(gx,gy+cell);ctx.lineTo(gx+gs,gy+cell);ctx.stroke();
+    ctx.fillStyle='rgba(130,130,130,0.9)';ctx.font='11px system-ui';ctx.textAlign='center';
+    ctx.fillText('coloured = dominant   ·   grey = recessive',W/2,gy+gs+24);ctx.textAlign='left';
+    pPh.set(dom+' : '+rec+'  (dom:rec)');pGe.set(gAA+' : '+gAa+' : '+gaa+'  (AA:Aa:aa)');
+  }
+  b1.addEventListener('click',function(){g1=(g1+1)%3;b1.textContent=L.p1+': '+GENO[g1];draw();});
+  b2.addEventListener('click',function(){g2=(g2+1)%3;b2.textContent=L.p2+': '+GENO[g2];draw();});
+  draw();
 }
 
 function simWaves(container,color,lvl){

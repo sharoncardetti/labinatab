@@ -7,6 +7,9 @@
 <meta name="description" content="A volcano is a window into the interior of our planet. The same process that destroys cities built the continents, created the oceans, and made the…">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/volcanology/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/volcanology/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/vulcanologia/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/volcanology/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/volcanology/",
    "mainEntityOfPage": "https://labinatab.com/volcanology/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/volcanology/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/vulcanologia/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Earth Science</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>Magma isn't simply "melted rock" - it forms by <strong>partial melting</strong>, and there are three ways to tip solid mantle over the edge. <em>Decompression</em>: mantle rising at a ridge crosses below its melting pressure and melts on the way up. <em>Flux melting</em>: water wrung out of a subducting slab lowers the melting point of the mantle above it, brewing the silica-rich magmas of volcanic arcs. <em>Heat transfer</em>: hot mantle magma injected into the crust melts it from within. The product ranges from runny basalt (~50% silica) to stiff rhyolite (~75%) - and that silica content quietly decides almost everything that follows.</p>
 <p>Eruption style is really a tug-of-war between <strong>viscosity</strong> and dissolved gas. As magma climbs, the pressure squeezing it eases and volatiles - water, CO₂, SO₂ - come fizzing out as bubbles, exactly like cracking open a shaken bottle. In runny basalt the bubbles slip free and the magma just pours out (an <em>effusive</em> eruption). In stiff rhyolite they're trapped, pressure builds behind them, and the whole thing detonates into a towering <em>Plinian</em> column. Size is logged on the <strong>Volcanic Explosivity Index</strong>, a logarithmic 0–8 scale where each step is roughly \(10\times\) more erupted material - and a VEI 8 "supereruption" like Yellowstone flings out over 1,000 km³.</p>
 <p>The dangers are many and unequal. Lava flows are slow and nearly unstoppable but rarely lethal; the real killers are <strong>pyroclastic density currents</strong> - searing avalanches of gas and rock at hundreds of degrees, racing downhill at highway speeds. Add ashfall heavy enough to collapse roofs, <em>lahars</em> (volcanic mudflows) that bury whole valleys, and invisible gas - the Laki eruption of 1783 exhaled enough sulphur to kill a quarter of Iceland. Today a web of seismometers, GPS, gas sensors and satellite radar keeps watch on restless volcanoes for the tremors and swelling that run ahead of an eruption.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Magma viscosity</th><td>\(\eta = A\,e^{E_a/RT}\)</td><td class="cmt">rises with SiO₂, falls with T</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Magma viscosity</th><td>\(\eta = A\,e^{E_a/RT}\)</td><td class="cmt">rises with SiO₂, falls with T</td></tr>
 <tr><th scope="row">Bubble growth</th><td>\(\dfrac{dR}{dt} = \dfrac{(P_b - P_\infty)R}{4\eta}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Explosivity index</th><td>\(\text{VEI} \approx \log_{10}(V_{\text{ejecta}}) + 8\)</td><td class="cmt">V in km³</td></tr>
@@ -249,7 +259,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p><strong>Supereruptions</strong> (VEI ≥ 8, over 1,000 km³) demand the rapid mobilisation of an enormous mush body - a rare confluence of a big reservoir and a strong enough trigger. Yellowstone has done it three times, most recently the 640,000-year-old Lava Creek Tuff, roughly 1,000 km³ of rhyolite. These aren't just bigger eruptions; they operate on a different physical scale, emptying a reservoir so large that the ground above founders into a <em>caldera</em> tens of kilometres across.</p>
 <h3><span class="hn">06</span>Volcanic winter</h3>
 <p>The global threat from the largest eruptions is climatic, not local. Sulphur injected into the stratosphere forms a haze of sulphate aerosols that lingers for a year or two, reflecting sunlight and chilling the surface - a <em>volcanic winter</em>. The Toba supereruption ~74,000 years ago may have plunged the world into exactly this, and some read a matching genetic bottleneck in human DNA, as though our species was briefly squeezed to a few thousand survivors. Even the modest 1991 Pinatubo eruption measurably cooled the planet by 0.5°C for two years - proof of concept, on a small scale.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">H₂O solubility</th><td>\(X_{\text{H}_2\text{O}} = a\,P^{1/2}\)</td><td class="cmt">a ≈ 3.07×10⁻⁴ (800°C)</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">H₂O solubility</th><td>\(X_{\text{H}_2\text{O}} = a\,P^{1/2}\)</td><td class="cmt">a ≈ 3.07×10⁻⁴ (800°C)</td></tr>
 <tr><th scope="row">Fragmentation</th><td>\(\dot{\varepsilon} &gt; G/\eta\)</td><td class="cmt">brittle transition</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Avrami crystallisation</th><td>\(\phi(t) = 1 - e^{-K t^{n}}\)</td><td class="cmt"></td></tr>
@@ -265,25 +275,25 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
   <nav class="related" aria-label="Related topics">
     <h2>More in Earth Science</h2>
-    <ul><li><a href="/climate-atmosphere/">Climate &amp; the Atmosphere</a></li><li><a href="/plate-tectonics/">Plate Tectonics &amp; Earthquakes</a></li><li><a href="/ocean-currents/">Oceanography &amp; Ocean Currents</a></li></ul>
+    <ul><li><a href="/climate-atmosphere/">Climate &amp; the Atmosphere</a></li><li><a href="/plate-tectonics/">Plate Tectonics &amp; Earthquakes</a></li><li><a href="/ocean-currents/">Oceanography &amp; Ocean Currents</a></li><li><a href="/why-we-have-seasons/">Why We Have Seasons</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

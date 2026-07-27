@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonno e coscienza | Lab-in-a-Tab</title>
+<meta name="description" content="Perché perdiamo ore della nostra vita ogni notte — e cosa succede dentro il cervello mentre lo facciamo?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/sonno-coscienza/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/sleep-consciousness/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/sonno-coscienza/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/sleep-consciousness/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Sonno e coscienza — Spiegato e simulato">
+<meta property="og:description" content="Perché perdiamo ore della nostra vita ogni notte — e cosa succede dentro il cervello mentre lo facciamo?">
+<meta property="og:url" content="https://labinatab.com/it/sonno-coscienza/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sonno e coscienza — Spiegato e simulato">
+<meta name="twitter:description" content="Perché perdiamo ore della nostra vita ogni notte — e cosa succede dentro il cervello mentre lo facciamo?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/sonno-coscienza/#article",
+   "headline": "Sonno e coscienza",
+   "name": "Sonno e coscienza",
+   "description": "Perché perdiamo ore della nostra vita ogni notte — e cosa succede dentro il cervello mentre lo facciamo?",
+   "url": "https://labinatab.com/it/sonno-coscienza/",
+   "mainEntityOfPage": "https://labinatab.com/it/sonno-coscienza/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Sonno",
+    "Coscienza",
+    "Oscillazioni"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Sonno e coscienza",
+    "sameAs": "https://en.wikipedia.org/wiki/Sleep"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Sonno e coscienza",
+     "item": "https://labinatab.com/it/sonno-coscienza/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/sleep-consciousness/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/sonno-coscienza/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Neuroscienze</nav>
+  <h1>Sonno e coscienza</h1>
+  <p class="lead">Perché perdiamo ore della nostra vita ogni notte — e cosa succede dentro il cervello mentre lo facciamo?</p>
+  <div class="chips"><span>Sonno</span><span>Coscienza</span><span>Oscillazioni</span></div>
+  <section class="sim-embed" data-sim="sleep" data-color="#4338ca" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4338ca"><span class="sg-lbl">Prova</span><span>Press <b>Next Stage</b> to step through every stage in turn, from Awake to REM. Watch the wave shape at N3 (deep), then at REM — and compare each with Awake.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4338ca"><span class="sg-lbl">Prova</span><span>Step through the stages with <b>Next Stage</b> and record <b>EEG freq</b> for each. Note that N3 has the lowest frequency but the largest amplitude, while REM's frequency nearly matches waking. Then watch <b>Adenosine</b> across a full cycle.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4338ca"><span class="sg-lbl">Prova</span><span>Note that this model cycles stages with fixed durations. Consider how a real night differs in the distribution of N3 and REM across successive cycles, and what functional account explains that asymmetry.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A night's sleep in fast-forward. The wavy trace is real brain activity as measured by an EEG. <b>Sleep stage</b> names which stage you're in, <b>Brain wave speed</b> shows how fast the waves are, and <b>Sleep pressure</b> is the chemical that builds up while you're awake and makes you sleepy.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Deep sleep has huge slow waves, but REM looks almost exactly like being awake — fast and small — even though you're profoundly asleep and dreaming.</b> That's why REM is called <em>paradoxical</em> sleep: from the brain's electrical activity alone you could not tell it from wakefulness. Your body is paralysed during it, which is a good thing, because it stops you acting out your dreams.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Idealised sleep architecture cycling through wake, N1, N2, N3 and REM, with characteristic EEG signatures — <b>EEG freq</b> shows the dominant frequency for each. <b>Adenosine</b> tracks adenosine, the homeostatic sleep-pressure signal.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>EEG frequency and amplitude move in opposite directions — slow waves are large precisely <em>because</em> they are slow.</b> Fast waking rhythms reflect neurons firing independently, so their contributions partly cancel at the scalp; in N3 the whole cortex tolls together between synchronised up and down states, and the summed signal is enormous. Sleep is regulated by two interacting processes: homeostatic pressure from adenosine, which caffeine masks by blocking its receptors without removing the pressure, and a circadian oscillator that is independent of how long you have been awake.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Schematic hypnogram with canonical spectral signatures per stage. <b>EEG freq</b> reports the dominant EEG band; <b>Adenosine</b> represents Process S. The model omits the cycle-to-cycle shift in REM/NREM proportion across a real night.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Real nights front-load N3 and back-load REM — early cycles are slow-wave dominated, later ones REM dominated — which no fixed-duration cycle can capture.</b> This follows from the two-process model: Process S dissipates exponentially through the night, so slow-wave activity (its direct index) is concentrated early, while REM propensity rides the circadian Process C and peaks near the core-temperature minimum. Functionally the asymmetry matters: the synaptic homeostasis hypothesis holds that SWA downscales synapses potentiated during waking, and its magnitude scales with the prior day's learning. Glymphatic clearance of amyloid-β likewise rises ~60% in NREM — which is why sleep deprivation is now treated as a candidate causal factor in neurodegeneration rather than merely a symptom.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Perché il tuo cervello deve andare offline ogni notte!</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Ti sei mai chiesto cosa combina davvero il tuo cervello mentre dormi? Si scopre che il sonno non è affatto "non fare nulla" — il tuo cervello è <em>indaffaratissimo</em>. Mentre il tuo corpo riposa, si pulisce, riproduce i ricordi, riequilibra la sua chimica ed esegue riparazioni essenziali che semplicemente non si possono fare da svegli.</p>
+<p>Il sonno scorre in cicli di circa 90 minuti. Ognuno attraversa il <strong>sonno leggero</strong>, poi il <strong>sonno profondo</strong> (dove il cervello dispiega grandi onde lente), e infine il <strong>sonno REM</strong> — la fase dei sogni. Durante il REM il tuo cervello è attivo quasi quanto da sveglio, eppure i tuoi muscoli si afflosciano così da non poter mettere in scena i sogni, mentre i tuoi occhi guizzano avanti e indietro sotto le palpebre (è il "movimento rapido degli occhi").</p>
+<p>Il sonno profondo è quando avviene la pulizia. Una rete di canali si apre e il liquido cerebrospinale lava attraverso il cervello, sciacquando via i rifiuti tossici — inclusa la beta-amiloide, la stessa proteina che si aggruma in placche nella malattia di Alzheimer. Questo <strong>sistema glinfatico</strong> di pulizia funziona perlopiù di notte. Pensa al sonno come alla lavastoviglie notturna del tuo cervello: saltala per qualche notte e la sporcizia comincia ad accumularsi.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🧽</span> Durante il sonno il sistema glinfatico del cervello elimina ~60% in più di rifiuti metabolici — inclusa la beta-amiloide, la proteina che si accumula nell'Alzheimer.</li><li><span aria-hidden="true">😴</span> Dopo 17–19 ore senza sonno, le prestazioni cognitive scendono all'equivalente di un tasso alcolemico dello 0,05% — legalmente ubriaco nella maggior parte dei paesi.</li><li><span aria-hidden="true">🐬</span> Delfini e balene dormono con solo metà del cervello alla volta (sonno a onde lente uniemisferico), tenendo un occhio aperto per sorvegliare i predatori.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Architettura del sonno, oscillazioni EEG e il sistema glinfatico</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Il sonno non è uno stato ma un tour strutturato di parecchi, ognuno con la propria firma EEG. Il <strong>NREM</strong> scende dal leggero N1 nell'N2 — costellato di <em>fusi del sonno</em> a 12–15 Hz — e giù fino all'N3, il profondo sonno a onde lente, dove grandi onde delta sotto i 2 Hz spazzano la corteccia. Poi arriva il <strong>REM</strong>, il cui EEG quasi da sveglio smentisce un corpo tenuto in una paralisi quasi totale. Una notte scorre da quattro a sei di questi cicli di ~90 minuti, caricati davanti col sonno profondo e dietro col REM — ed è per questo che i tuoi sogni più lunghi e vividi arrivano appena prima di svegliarti.</p>
+<p>Due orologi decidono quando dormi. Una <strong>pressione omeostatica</strong> (Processo S) si accumula più a lungo resti sveglio man mano che la molecola <em>adenosina</em> si accumula nel cervello — la sensazione fisica della stanchezza. Sopra ci cavalca il <strong>ritmo circadiano</strong> (Processo C), un ciclo di ~24 ore tenuto da un orologio principale nell'ipotalamo e resettato ogni giorno dalla luce che colpisce l'occhio. La tua vigilanza è grosso modo il braccio di ferro fra loro, \(W(t) = C(t) - S(t)\). La caffeina funziona impersonando l'adenosina al suo recettore senza accenderlo — non abbassa la tua pressione del sonno, si limita a mascherare il segnale, ed è per questo che la stanchezza torna a fiotti nel momento in cui svanisce.</p>
+<p>La scoperta più sorprendente è il <em>perché</em> il sonno profondo è non negoziabile. Il <strong>sistema glinfatico</strong> (Nedergaard, 2013) è una rete idraulica in cui il liquido cerebrospinale scorre lungo i vasi sanguigni e sciacqua attraverso il tessuto cerebrale, portando via i rifiuti metabolici — incluse le proteine beta-amiloide e tau legate alla demenza. Quel lavaggio funziona circa il 60% più forte nel sonno NREM che da svegli, guidato dai lenti impulsi arteriosi del sonno profondo. Una singola brutta notte alza in modo misurabile la beta-amiloide nel cervello umano — un indizio che fa riflettere sul perché la perdita cronica di sonno e l'Alzheimer viaggino insieme.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Pressione omeostatica</th><td>\(S(t) \propto [\text{adenosina}]\)</td><td class="cmt">sale da svegli, cala nel sonno</td></tr>
+<tr><th scope="row">Processo circadiano</th><td>\(C(t):\ \sim\!24\text{-h oscillatore}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Vigilanza</th><td>\(W(t) = C(t) - S(t)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Caffeina</th><td>\(\text{blocca i recettori dell'adenosina}\)</td><td class="cmt">nasconde la pressione del sonno</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Flusso glinfatico</th><td>\(J_{\text{CSF}} \propto \text{AQP4} \times \text{ampiezza dell'impulso}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Pulizia NREM</th><td>\(\Delta[\text{A}\beta] \approx -60\%\)</td><td class="cmt">vs svegli; Xie et al. 2013</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">☕</span> La caffeina funziona bloccando i recettori dell'adenosina — non riduce la pressione del sonno, nasconde solo il segnale. Quando svanisce, l'adenosina si riversa dentro e la fatica torna all'improvviso.</li><li><span aria-hidden="true">🧹</span> Una notte di privazione di sonno aumenta i livelli di beta-amiloide nel cervello umano di ~5%, misurato con la PET (Shokri-Kojori et al., 2018).</li><li><span aria-hidden="true">🌡️</span> La temperatura corporea centrale deve scendere di ~0,5°C per avviare il sonno — è perché una camera fresca ti aiuta ad addormentarti più in fretta, e perché un bagno caldo paradossalmente funziona anch'esso (abbassa la temperatura centrale tirando il calore verso la pelle).</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Oscillazioni talamocorticali, teoria dell'informazione integrata e i correlati neurali della coscienza</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Dove nascono i ritmi del sonno</h3>
+<p>Le onde caratteristiche del sonno sono generate da un anello fra la corteccia e il talamo. In N2/N3 il nucleo reticolare talamico scandisce i <strong>fusi del sonno</strong> — raffiche a 12–15 Hz che crescono e calano — attraverso inibizione alternata e raffiche di calcio di rimbalzo nei neuroni di relè. Sotto di essi corre l'<strong>oscillazione lenta</strong> corticale sotto 1 Hz, l'intera corteccia che rintocca fra <em>stati up</em> di attività quasi da sveglio e <em>stati down</em> di silenzio collettivo. Il sonno, lungi dall'essere spento, è il cervello che suona un piccolo insieme di ritmi squisitamente coordinati.</p>
+<h3><span class="hn">02</span>Perché forse dormiamo: l'omeostasi sinaptica</h3>
+<p>Quelle oscillazioni lente potrebbero risolvere un problema che la veglia crea. L'<em>ipotesi dell'omeostasi sinaptica</em> (Tononi e Cirelli) sostiene che imparare tutto il giorno guida un rafforzamento netto delle sinapsi che non può continuare indefinitamente — costa energia e spazio e satura la rete. Il sonno profondo, in questa visione, <em>riduce di scala</em> delicatamente le sinapsi a tutto campo, preservando lo schema relativo appreso mentre ripristina la capacità. Significativamente, la quantità di attività a onde lente in una data notte scala con quanto hai imparato quel giorno.</p>
+<h3><span class="hn">03</span>L'interruttore del tronco encefalico dietro il sogno</h3>
+<p>Il sonno REM è orchestrato dal tronco encefalico. I nuclei colinergici lì accendono il talamo e la corteccia, producendo un EEG quasi indistinguibile dalla veglia, anche mentre i circuiti glutamatergici guidano un'inibizione spinale che lascia il corpo atonico — paralizzato, così non metti in atto i tuoi sogni. Quando quella salvaguardia fallisce, nel disturbo comportamentale del sonno REM, le persone mettono fisicamente in scena i loro sogni, una vivida dimostrazione di quanto sottile sia davvero la linea fra sognare e fare.</p>
+<h3><span class="hn">04</span>L'appiglio del problema difficile: i correlati neurali</h3>
+<p>Il sonno e l'anestesia contano per la domanda più profonda della neuroscienza perché accendono e spengono la coscienza, offrendo una presa sui <strong>correlati neurali della coscienza</strong> — il macchinario minimo sufficiente per l'esperienza. Cosa c'è in una corteccia attiva nella veglia o nel REM che produce esperienza sentita, mentre la stessissima corteccia nel sonno profondo no, nonostante molta scarica neurale? Isolare quella differenza è la via empirica in un problema a lungo ritenuto puramente filosofico.</p>
+<h3><span class="hn">05</span>Due teorie in guerra</h3>
+<p>Due quadri dominano. La <em>teoria dello spazio di lavoro globale</em> sostiene che uno stimolo diventa cosciente quando è trasmesso ampiamente attraverso le reti fronto-parietali — un'"accensione" tutto-o-niente che rende l'informazione globalmente disponibile. La <em>teoria dell'informazione integrata</em> prende la direzione opposta, definendo la coscienza come \(\Phi\), la quantità di informazione integrata <em>irriducibile</em> che un sistema genera, e fa l'affermazione provocatoria che qualsiasi sistema con \(\Phi > 0\) ha qualche barlume di esperienza — mentre una rete puramente feedforward, per quanto vasta, essenzialmente nessuno.</p>
+<h3><span class="hn">06</span>Mettere un numero sulla consapevolezza</h3>
+<p>In modo sorprendente, questo è diventato misurabile al letto del paziente. Colpisci la corteccia con un impulso magnetico e registra l'eco: un cervello cosciente risponde con una risposta complessa e ampiamente riverberante, uno incosciente con un semplice sussulto locale. Comprimere quell'eco produce l'<em>indice di complessità perturbazionale</em>, che segue la coscienza attraverso sonno, anestesia e lesione cerebrale più affidabilmente di qualsiasi comportamento. Ora può segnalare la consapevolezza in pazienti non responsivi, "vegetativi", che non possono muoversi o parlare — un rudimentale misuratore di coscienza, nato dallo studio del sonno.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Informazione integrata</th><td>\(\Phi = \min_{\text{partition}} \text{KL}\!\left(p \,\|\, p_{\text{part}}\right)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Cosciente se</th><td>\(\Phi &gt; 0 \text{ e irriducibile}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Accensione globale</th><td>\(\text{attivazione fronto-parietale tardiva } (&gt;300\,\text{ms})\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Indice di complessità</th><td>\(\text{PCI} = \dfrac{\text{complessità LZ}(\text{TMS-EEG})}{\text{entropia del segnale}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Frequenza dei fusi</th><td>\(f_{\text{spindle}} \approx 12\text{–}15\ \text{Hz}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Omeostasi sinaptica</th><td>\(\text{SWA} \propto \textstyle\sum w_{ij}\)</td><td class="cmt">Tononi e Cirelli</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📡</span> L'indice di complessità perturbazionale TMS-EEG (PCI) può determinare con ~90% di accuratezza se un paziente in stato locked-in o vegetativo sia consapevolmente cosciente — senza alcuna risposta comportamentale.</li><li><span aria-hidden="true">🔢</span> La IIT prevede che una semplice rete neurale feedforward, per quanto grande, abbia Φ ≈ 0 e non sia quindi cosciente — un'affermazione che sfida direttamente i modelli della mente basati sul deep learning.</li><li><span aria-hidden="true">🌊</span> Omeostasi del sonno a onde lente: l'attività EEG a onde lente (SWA) dopo la privazione di sonno è precisamente proporzionale alla quantità di apprendimento fatto da svegli — una firma della riduzione di scala sinaptica.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Sleep" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Neuroscienze</h2>
+    <ul><li><a href="/it/cervello-neuroni/">Il cervello e i neuroni</a></li><li><a href="/it/cervello-elettrico/">Il cervello elettrico</a></li><li><a href="/it/come-funziona-la-memoria/">Come funziona la memoria</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

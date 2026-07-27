@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadrati di Punnett e genetica | Lab-in-a-Tab</title>
+<meta name="description" content="Incrocia due genitori e prevedi i figli — la piccola griglia che Mendel costruì da un giardino di piselli.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/quadrati-di-punnett-genetica/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/punnett-squares-genetics/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/quadrati-di-punnett-genetica/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/punnett-squares-genetics/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Quadrati di Punnett e genetica — Spiegato e simulato">
+<meta property="og:description" content="Incrocia due genitori e prevedi i figli — la piccola griglia che Mendel costruì da un giardino di piselli.">
+<meta property="og:url" content="https://labinatab.com/it/quadrati-di-punnett-genetica/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quadrati di Punnett e genetica — Spiegato e simulato">
+<meta name="twitter:description" content="Incrocia due genitori e prevedi i figli — la piccola griglia che Mendel costruì da un giardino di piselli.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/quadrati-di-punnett-genetica/#article",
+   "headline": "Quadrati di Punnett e genetica",
+   "name": "Quadrati di Punnett e genetica",
+   "description": "Incrocia due genitori e prevedi i figli — la piccola griglia che Mendel costruì da un giardino di piselli.",
+   "url": "https://labinatab.com/it/quadrati-di-punnett-genetica/",
+   "mainEntityOfPage": "https://labinatab.com/it/quadrati-di-punnett-genetica/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-07-27",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Genetica",
+    "Alleli",
+    "Ereditarietà"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Quadrati di Punnett e genetica",
+    "sameAs": "https://en.wikipedia.org/wiki/Punnett_square"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Quadrati di Punnett e genetica",
+     "item": "https://labinatab.com/it/quadrati-di-punnett-genetica/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/punnett-squares-genetics/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/quadrati-di-punnett-genetica/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Biologia</nav>
+  <h1>Quadrati di Punnett e genetica</h1>
+  <p class="lead">Incrocia due genitori e prevedi i figli — la piccola griglia che Mendel costruì da un giardino di piselli.</p>
+  <div class="chips"><span>Genetica</span><span>Alleli</span><span>Ereditarietà</span></div>
+  <section class="sim-embed" data-sim="punnett" data-color="#c026d3" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#c026d3"><span class="sg-lbl">Prova</span><span>Set both parents to Aa (one dominant, one recessive) with the buttons, then look at the four cells. How many show the dominant colour, and how many the recessive?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#c026d3"><span class="sg-lbl">Prova</span><span>Compare Aa × Aa (both heterozygous) with a test cross, Aa × aa. How do the <b>Phenotype ratio</b> and <b>Genotype ratio</b> ratios differ?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#c026d3"><span class="sg-lbl">Prova</span><span>Work through every cross (AA, Aa, aa in each parent) and predict the ratios before revealing them; note which crosses can never produce a recessive child.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Two parents, each with two gene copies. The grid shows every combination their child could inherit; coloured cells show how the child would look.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Aa × Aa gives a 3-to-1 ratio.</b> Three of the four possible children show the dominant trait, one shows the recessive. It's odds, not certainty — like coin flips — but over many offspring the 3:1 holds.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A Punnett square: each parent's two alleles head the rows and columns, and each cell is an equally likely offspring genotype, coloured by phenotype. <b>Phenotype ratio</b> and <b>Genotype ratio</b> give the ratios.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Aa × Aa → 3:1 phenotype but 1:2:1 genotype; Aa × aa → 1:1.</b> Each parent passes one allele at random (segregation), so the four cells are equally likely. The test cross against a recessive is exactly how you tell an AA from an Aa.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A monohybrid Punnett square, with genotype and phenotype ratios computed from the four equally likely gametic combinations.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>The grid is Mendel's law of segregation made visual.</b> It assumes simple complete dominance; real inheritance adds incomplete dominance, codominance, multiple alleles, linkage and sex-linkage — and scales to whole populations through Hardy-Weinberg, the \(p^2 + 2pq + q^2\) baseline for detecting evolution.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Prevedere l'aspetto della prole</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Perché hai il colore degli occhi che hai? Hai ereditato istruzioni — i <strong>geni</strong> — da entrambi i genitori, una copia da ciascuno. Per molti tratti, una versione di un gene è <strong>dominante</strong> (si manifesta se ne hai anche solo una copia) e l'altra è <strong>recessiva</strong> (si manifesta solo se ne hai due). Un <strong>quadrato di Punnett</strong> è una semplice griglia che prevede le probabilità di ciò che un figlio erediterà — e Gregor Mendel dedusse tutto questo negli anni 1860 allevando migliaia di piante di pisello.</p>
+<p>Diciamo che un gene viene in una versione dominante "A" e una recessiva "a". Ogni genitore porta due copie e ne passa una, a caso, al figlio. Il quadrato di Punnett elenca le due opzioni di un genitore lungo il lato superiore e quelle dell'altro genitore lungo il lato, poi riempie ogni combinazione possibile. All'improvviso puoi vedere tutti i figli possibili, e quanto è probabile ciascuno.</p>
+<p>Il risultato classico: incrocia due genitori che portano ciascuno un gene dominante e uno recessivo (Aa × Aa) e i loro figli escono, in media, <strong>3 che mostrano il tratto dominante contro 1 che mostra il recessivo</strong> — il famoso rapporto 3:1. Non ti dice esattamente cosa sarà un singolo figlio (quella è fortuna), ma su molti figli il rapporto regge, proprio come lanciare monete.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🌱</span> Gregor Mendel trovò le regole dell'ereditarietà negli anni 1860 allevando ~28.000 piante di pisello — decenni prima che qualcuno sapesse dell'esistenza del DNA.</li><li><span aria-hidden="true">🎲</span> Un quadrato di Punnett dà probabilità, non certezze: un rapporto 3:1 è la media su molti figli, come lanci di moneta, non una promessa per un singolo figlio.</li><li><span aria-hidden="true">👁️</span> Un tratto recessivo può saltare generazioni, nascondendosi nei portatori con una copia, per poi riapparire quando due portatori hanno un figlio.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Alleli, genotipo, fenotipo e il quadrato</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Prima il vocabolario. Un gene può esistere in versioni diverse chiamate <strong>alleli</strong>, e ne porti due di ciascuno (uno per genitore). Il tuo <strong>genotipo</strong> è la coppia che hai (AA, Aa o aa); il tuo <strong>fenotipo</strong> è il tratto che effettivamente si manifesta. Un allele dominante (A) maschera uno recessivo (a), quindi sia AA sia Aa mostrano il fenotipo dominante, mentre solo aa mostra il recessivo. AA e aa sono <em>omozigoti</em>; Aa è <em>eterozigote</em> — un portatore.</p>
+<p>La meiosi divide la coppia, quindi ogni genitore passa un solo allele, scelto a caso — la <strong>legge della segregazione</strong> di Mendel. Il quadrato di Punnett è semplicemente una tabella di quella casualità: i due alleli di un genitore come colonne, quelli dell'altro come righe, e ciascuna delle quattro celle un genotipo della prole ugualmente probabile. Contali per i rapporti previsti.</p>
+<p>Gli incroci emblematici: Aa × Aa dà un rapporto genotipico <strong>1:2:1</strong> (AA:Aa:aa) e un rapporto fenotipico <strong>3:1</strong> (dominante:recessivo). Un testcross contro un recessivo (Aa × aa) dà 1:1 — che è come riveli se un individuo dall'aspetto dominante è AA o Aa. I tratti su due geni diversi si assortiscono indipendentemente (seconda legge di Mendel), dando il famoso 9:3:3:1 di un incrocio diibrido.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Genotipi</th><td>\(AA,\ Aa,\ aa\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fenotipo</th><td>\(A\_ \to \text{dominante},\quad aa \to \text{recessivo}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Aa × Aa</th><td>\(1\,AA : 2\,Aa : 1\,aa \;\Rightarrow\; 3:1\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Testcross</th><td>\(Aa \times aa \to 1:1\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔬</span> AA e Aa hanno lo stesso aspetto (entrambi mostrano il tratto dominante). Un testcross con aa li distingue — un risultato 1:1 significa che il genitore era Aa.</li><li><span aria-hidden="true">🧬</span> Le due leggi di Mendel: gli alleli si segregano (uno per gamete), e geni diversi si assortiscono indipendentemente — entrambe spiegate poi dalla meiosi.</li><li><span aria-hidden="true">🌸</span> Il classico incrocio Aa × Aa dà un rapporto fenotipico 3:1 ma un rapporto genotipico 1:2:1 — le stesse quattro celle, contate in due modi.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Oltre la dominanza semplice</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Quando un gene non è tutta la storia</h3>
+<p>La dominanza incompleta (l'eterozigote è una miscela, come un fiore rosa), la codominanza (entrambi gli alleli si manifestano insieme, come il gruppo sanguigno AB) e gli alleli multipli (il gene ABO ne ha tre nella popolazione) rompono tutti il quadro netto dominante/recessivo — pur obbedendo alla stessa segregazione degli alleli nei gameti.</p>
+<h3><span class="hn">02</span>Associazione e ricombinazione</h3>
+<p>I geni che stanno vicini sullo stesso cromosoma tendono a essere ereditati insieme — <em>associati</em> — violando l'assortimento indipendente, a meno che il crossing over li separi. Quanto spesso avviene quella separazione misura la distanza fra i geni, che è esattamente come furono disegnate le prime mappe genetiche.</p>
+<h3><span class="hn">03</span>Associazione al sesso e alberi genealogici</h3>
+<p>I geni sul cromosoma X (daltonismo, emofilia) mostrano schemi diversi in maschi e femmine, perché i maschi hanno una sola X. L'analisi degli alberi genealogici applica la stessa logica di Punnett attraverso un albero familiare per tracciare, e prevedere, le condizioni ereditarie.</p>
+<h3><span class="hn">04</span>Dai rapporti alle popolazioni</h3>
+<p>Il <strong>principio di Hardy-Weinberg</strong> scala Mendel da un incrocio a un'intera popolazione, prevedendo le frequenze alleliche e genotipiche tramite \(p^2 + 2pq + q^2 = 1\). È la linea di base del "niente sta cambiando" contro cui si rileva la vera evoluzione — selezione, deriva, migrazione.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Monoibrido (Aa × Aa)</th><td>\(3:1\ \text{fenotipo},\quad 1:2:1\ \text{genotipo}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Incrocio diibrido</th><td>\(9:3:3:1\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Hardy-Weinberg</th><td>\(p^2 + 2pq + q^2 = 1\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🩸</span> Il gruppo sanguigno ABO mostra codominanza e alleli multipli: A e B sono entrambi espressi nel tipo AB, e tre alleli circolano nella popolazione.</li><li><span aria-hidden="true">🗺️</span> Quanto spesso due geni vengono separati dal crossing over misura la distanza fra loro — il principio dietro le prime mappe geniche.</li><li><span aria-hidden="true">📊</span> L'equazione di Hardy-Weinberg predice le frequenze genotipiche in una popolazione che non evolve — la linea di base che rende misurabile l'evoluzione.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Punnett_square" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Biologia</h2>
+    <ul><li><a href="/it/regole-della-vita/">Le regole della vita</a></li><li><a href="/it/dna-genetica/">DNA e genetica</a></li><li><a href="/it/evoluzione-selezione-naturale/">Evoluzione e selezione naturale</a></li><li><a href="/it/ecosistemi-reti-alimentari/">Ecosistemi e reti alimentari</a></li><li><a href="/it/fotosintesi/">Fotosintesi</a></li><li><a href="/it/cellula-osmosi-diffusione/">La cellula: osmosi e diffusione</a></li><li><a href="/it/mitosi-meiosi/">Mitosi e meiosi</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

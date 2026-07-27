@@ -7,6 +7,9 @@
 <meta name="description" content="Everything you can see is made of just 17 fundamental particles. What are they - and what holds them together?">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/standard-model/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/standard-model/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/modello-standard/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/standard-model/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +40,7 @@
    "url": "https://labinatab.com/standard-model/",
    "mainEntityOfPage": "https://labinatab.com/standard-model/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +112,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +155,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +199,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/standard-model/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/modello-standard/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physics</nav>
@@ -223,7 +233,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>The Standard Model sorts every fundamental particle by its spin. <strong>Fermions</strong> (spin \(\tfrac{1}{2}\)) are the matter: six <em>quarks</em> (up, down, charm, strange, top, bottom - each carrying one of three "colours") and six <em>leptons</em> (the electron, muon, tau, and their three neutrinos). The <strong>Pauli exclusion principle</strong> forbids two identical fermions from sharing a quantum state, and that one refusal is why matter is solid and atoms have structure at all.</p>
 <p><strong>Bosons</strong> (integer spin) are the messengers that carry the forces. The <strong>photon</strong> carries electromagnetism; the hefty <strong>W\(^{\pm}\)</strong> and <strong>Z\(^0\)</strong> carry the weak force behind radioactive decay; eight <strong>gluons</strong> carry the strong force; and a hypothetical <em>graviton</em> would carry gravity, if only we knew how to fit it in. Each force grows out of a local symmetry - \(U(1)\) for electromagnetism, \(SU(2)\) for the weak force, \(SU(3)\) for the strong - gathered into the gauge group \(U(1)\times SU(2)\times SU(3)\).</p>
 <p>That tidy picture had one glaring flaw: the symmetry demands the force-carriers be massless, yet the W and Z are heavyweights. The rescue is the <strong>Higgs mechanism</strong>. A field with a "Mexican-hat" potential settles into a non-zero value everywhere - a vacuum expectation value \(\langle\phi\rangle \approx 246\ \text{GeV}\) - and particles wading through it pick up mass in proportion to how strongly they couple. Its leftover ripple, the <strong>Higgs boson</strong> at \(125\ \text{GeV}/c^2\), surfaced at CERN in 2012, half a century after it was predicted.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">QED Lagrangian</th><td>\(\mathcal{L} = \bar{\psi}(i\gamma^\mu D_\mu - m)\psi - \tfrac{1}{4}F_{\mu\nu}F^{\mu\nu}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">QED Lagrangian</th><td>\(\mathcal{L} = \bar{\psi}(i\gamma^\mu D_\mu - m)\psi - \tfrac{1}{4}F_{\mu\nu}F^{\mu\nu}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Covariant derivative</th><td>\(D_\mu = \partial_\mu + ieA_\mu\)</td><td class="cmt">minimal coupling</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Higgs potential</th><td>\(V(\phi) = -\mu^2|\phi|^2 + \lambda|\phi|^4\)</td><td class="cmt"></td></tr>
@@ -249,7 +259,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>For all its triumphs the Standard Model is plainly unfinished. The <em>hierarchy problem</em> asks why quantum corrections of order \(\delta m_H^2 \sim g^2\Lambda^2/16\pi^2\) don't drag the Higgs mass up to the Planck scale - a cancellation tuned to a part in \(10^{34}\) for no reason anyone can name. It says nothing about <strong>dark matter</strong>, whose gravity is undeniable but whose particle is simply absent from the roster. It hands neutrinos zero mass, yet they oscillate, so they must have some. And its CP violation is far too feeble to explain why the cosmos is built of matter rather than nothing at all.</p>
 <h3><span class="hn">06</span>Beyond the Standard Model</h3>
 <p>Theorists have met these cracks with bold proposals - supersymmetry pairing every particle with a heavier twin, extra spatial dimensions, new symmetries, asymptotic safety - each elegant, none yet confirmed. The hardest fact to swallow is the LHC's near-silence: after colliding protons hundreds of millions of times a second for over a decade, it has delivered the Higgs and, so far, nothing beyond it. The map of physics has a clear edge marked "here be dragons," and the open question is whether the next clue waits at a future collider, in a neutrino detector, in the dark sky - or only once quantum theory and gravity are finally reconciled.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Path integral</th><td>\(Z[J] = \int \mathcal{D}\phi\,\exp\!\left(i\!\int [\mathcal{L} + J\phi]\,d^4x\right)\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Path integral</th><td>\(Z[J] = \int \mathcal{D}\phi\,\exp\!\left(i\!\int [\mathcal{L} + J\phi]\,d^4x\right)\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Running coupling (QCD)</th><td>\(\alpha_s(\mu) = \dfrac{12\pi}{(33 - 2n_f)\ln(\mu^2/\Lambda^2)}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Electroweak mixing</th><td>\(\sin^2\theta_W = 1 - \dfrac{M_W^2}{M_Z^2} \approx 0.231\)</td><td class="cmt"></td></tr>
@@ -264,25 +274,25 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </div>
   <nav class="related" aria-label="Related topics">
     <h2>More in Physics</h2>
-    <ul><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li></ul>
+    <ul><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li><li><a href="/states-of-matter/">States of Matter</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';

@@ -7,6 +7,10 @@
 <meta name="description" content="Why shooting stars arrive on a schedule - and why the 2026 Perseids are set to be spectacular.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://labinatab.com/meteor-showers/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/meteor-showers/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/stelle-cadenti/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/etoiles-filantes/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/meteor-showers/">
 <link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
 <meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
@@ -37,7 +41,7 @@
    "url": "https://labinatab.com/meteor-showers/",
    "mainEntityOfPage": "https://labinatab.com/meteor-showers/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-07-25",
+   "dateModified": "2026-07-27",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -109,7 +113,15 @@ a{color:inherit}
 header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
 .brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
-.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;width:34px;height:34px;cursor:pointer;font-size:.9rem;line-height:1}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
 main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
 .crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
 .crumb a{color:var(--ink3)}
@@ -144,8 +156,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
-/* embedded simulation widget */
-[hidden]{display:none!important}  /* a display: rule otherwise beats the hidden attribute */
+[hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
@@ -189,7 +200,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <body>
 <header>
   <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
-  <button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/meteor-showers/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/stelle-cadenti/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/etoiles-filantes/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
   <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomy</nav>
@@ -223,7 +234,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <p>A <strong>meteoroid</strong> is a small chunk of rock or dust in space; when it hits the atmosphere (~100 km up) and glows it's a <strong>meteor</strong>; anything that survives to the ground is a <strong>meteorite</strong>. Shower meteors are cometary crumbs. As a comet loops close to the Sun, its ice sublimates and releases dust that spreads out along the comet's orbit, forming a debris stream. Whenever Earth's orbit intersects that stream - on the same date each year - we get a shower.</p>
 <p>All the meteors in a shower travel on parallel paths (they share the comet's orbit), so perspective makes them appear to diverge from a single point in the sky - the <strong>radiant</strong> - just as parallel railway tracks seem to meet on the horizon. Showers are named for the constellation the radiant sits in: Perseids (Perseus), Geminids (Gemini), Leonids (Leo). Activity is quoted as the <em>Zenithal Hourly Rate</em>, the number you'd see under perfect dark skies with the radiant overhead.</p>
 <p>The rate ramps up and down over days as Earth enters and exits the densest part of the stream, peaking when it crosses the core. Moonlight is the spoiler: a bright Moon drowns out the faint ones, which is why forecasters get excited when a peak lands on a new moon - as the Perseids do in 2026. Meteors strike the air between 11 and 72 km/s; the Perseids are fast, around 59 km/s.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Meteoroid → meteor → meteorite</th><td>\(\text{in space} \to \text{air glows} \to \text{on the ground}\)</td><td class="cmt"></td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Meteoroid → meteor → meteorite</th><td>\(\text{in space} \to \text{air glows} \to \text{on the ground}\)</td><td class="cmt"></td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Zenithal Hourly Rate</th><td>\(\text{ZHR} = \text{meteors/hr, ideal sky}\)</td><td class="cmt"></td></tr>
 <tr><th scope="row">Perseid speed</th><td>\(v \approx 59\ \text{km/s}\)</td><td class="cmt"></td></tr></table></div>
@@ -243,7 +254,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 <p>Only larger, slower, structurally tough bodies survive ablation to land as meteorites; shower meteoroids are far too small and fragile and never reach the ground. In fact most of the mass Earth sweeps up - some 40,000 tonnes a year - arrives as sporadic (non-shower) dust rather than in the showers we watch for.</p>
 <h3><span class="hn">05</span>Prediction and hazard</h3>
 <p>Modern models trace individual dust trails to forecast outbursts to within the hour - valuable because even a sand-grain meteoroid is dangerous to a spacecraft at orbital speed. The Perseids' parent, Comet 109P/Swift-Tuttle, is a 26-km nucleus on a 133-year orbit - the largest object known to make repeated close passes by Earth.</p>
-  <div class="formulas"><h3>Key formulas</h3><table><tr><th scope="row">Kinetic energy</th><td>\(E = \tfrac{1}{2}mv^2\)</td><td class="cmt">why fast meteors shine</td></tr>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Kinetic energy</th><td>\(E = \tfrac{1}{2}mv^2\)</td><td class="cmt">why fast meteors shine</td></tr>
 <tr><th scope="row">Zenithal Hourly Rate</th><td>\(\text{ZHR} \propto \dfrac{N}{\sin h_R}\)</td><td class="cmt">corrected to zenith</td></tr>
 <tr class="sep"><td colspan="3"></td></tr>
 <tr><th scope="row">Perseid parent</th><td>\(\text{109P/Swift-Tuttle}\)</td><td class="cmt">133-yr orbit</td></tr></table></div>
@@ -258,22 +269,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <ul><li><a href="/stars-universe/">Stars &amp; The Universe</a></li><li><a href="/black-holes/">Black Holes &amp; Relativity</a></li><li><a href="/cosmology-big-bang/">Cosmology &amp; The Big Bang</a></li><li><a href="/solar-system/">The Solar System</a></li><li><a href="/eclipses/">Eclipses</a></li></ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All 42 experiments</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
 var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
 b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
 r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
 window.addEventListener('load',function(){
   if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
     delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
     throwOnError:false});
 });
-// Embedded simulation: build lazily on first scroll-in; level tabs rebuild it.
-// Wired inline (the .sim-embed markup is already above this script) rather than
-// on DOMContentLoaded — the deferred 172KB sim-engine.js is not reliably ready by
-// then, so render() retries on window 'load' if buildSim hasn't arrived yet.
 (function(){
   var sec=document.querySelector('.sim-embed'); if(!sec) return;
   var host=sec.querySelector('.sim-host'), level='junior';
