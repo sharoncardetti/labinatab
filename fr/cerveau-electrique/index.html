@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le cerveau électrique | Lab-in-a-Tab</title>
+<meta name="description" content="Comment une seule cellule cérébrale tire-t-elle 200 étincelles électriques par seconde — et câble-t-elle tes pensées ?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/cerveau-electrique/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/electric-brain/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/cervello-elettrico/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/cerveau-electrique/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/electric-brain/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Le cerveau électrique — Expliqué et simulé">
+<meta property="og:description" content="Comment une seule cellule cérébrale tire-t-elle 200 étincelles électriques par seconde — et câble-t-elle tes pensées ?">
+<meta property="og:url" content="https://labinatab.com/fr/cerveau-electrique/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le cerveau électrique — Expliqué et simulé">
+<meta name="twitter:description" content="Comment une seule cellule cérébrale tire-t-elle 200 étincelles électriques par seconde — et câble-t-elle tes pensées ?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/cerveau-electrique/#article",
+   "headline": "Le cerveau électrique",
+   "name": "Le cerveau électrique",
+   "description": "Comment une seule cellule cérébrale tire-t-elle 200 étincelles électriques par seconde — et câble-t-elle tes pensées ?",
+   "url": "https://labinatab.com/fr/cerveau-electrique/",
+   "mainEntityOfPage": "https://labinatab.com/fr/cerveau-electrique/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Neurones",
+    "Électricité",
+    "Synapses"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Le cerveau électrique",
+    "sameAs": "https://en.wikipedia.org/wiki/Action_potential"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Le cerveau électrique",
+     "item": "https://labinatab.com/fr/cerveau-electrique/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/electric-brain/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/cervello-elettrico/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/cerveau-electrique/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Neurosciences</nav>
+  <h1>Le cerveau électrique</h1>
+  <p class="lead">Comment une seule cellule cérébrale tire-t-elle 200 étincelles électriques par seconde — et câble-t-elle tes pensées ?</p>
+  <div class="chips"><span>Neurones</span><span>Électricité</span><span>Synapses</span></div>
+  <section class="sim-embed" data-sim="neuron" data-color="#7c3aed" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Raise <b>Stimulus strength</b> very slowly from 0, a notch at a time, watching <b>Voltage inside</b> and <b>State</b>. Find the exact point where the cell starts firing — then go one notch past it.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Step <b>Stimulus current (I)</b> up slowly and locate the value where firing begins. Then compare spike <em>amplitude</em> just above threshold with amplitude at <b>Stimulus current (I)</b> = 20, and compare the firing <em>frequency</em> at the same two settings.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Locate the critical \(I\) at which repetitive firing begins and examine the frequency immediately above it. Determine whether the onset frequency is zero or finite, and identify which bifurcation class that implies.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>One brain cell, with the trace showing the voltage inside it moment by moment. The dashed line is the <b>threshold</b>. <b>Voltage inside</b> is the current voltage, <b>State</b> says whether it is resting or firing, and <b>Spikes</b> counts the pulses.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Below the threshold, nothing at all happens. Cross it and the cell fires a full-sized spike — and pushing harder doesn't make the spike any bigger.</b> This is <b>all-or-none</b> firing: a neuron has no way to send a "half" signal. Since every spike is identical, the message can't be in their size — it has to be in how <em>often</em> they arrive. A gentle touch and a hard press feel different because of spike rate, not spike strength.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>A FitzHugh–Nagumo neuron: a fast voltage variable and a slow recovery variable, the minimal system reproducing excitability. The trace is membrane potential against time, with the firing threshold marked. <b>Stimulus current (I)</b> injects steady current; <b>Spikes</b> counts events.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Amplitude is essentially identical at both currents; only the frequency changes — the cell encodes intensity in rate, not size.</b> The onset is a <b>Hopf bifurcation</b>: the resting fixed point loses stability and a limit cycle appears, so oscillation begins at nonzero frequency. The recovery variable is what makes the spike self-terminating and enforces the refractory period, which caps firing near 1 kHz and makes propagation unidirectional. Hodgkin and Huxley's 1952 model derived all of this from actual sodium and potassium conductances; FitzHugh–Nagumo strips it to two equations while keeping the qualitative behaviour intact.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>FitzHugh–Nagumo dynamics, \(\dot v = v - v^3/3 - w + I\), \(\dot w = \epsilon(v + a - bw)\), a planar reduction of Hodgkin–Huxley separating fast voltage from slow recovery. <b>Stimulus current (I)</b> is the injected current \(I\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Firing begins at a finite frequency, identifying a subcritical Hopf bifurcation — a Class II neuron in Hodgkin's classification.</b> Class II cells have a discontinuous \(f\)–\(I\) curve and act as resonators, preferentially responding to input near their intrinsic frequency; Class I cells arise instead via a saddle-node on an invariant circle (SNIC), fire arbitrarily slowly at onset, and behave as integrators. The distinction is not academic: it determines phase-response curves, and therefore whether a population synchronises or desynchronises under shared input — the mathematical substrate of cortical oscillations and of pathological synchrony in Parkinson's disease and epilepsy.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Ton cerveau tourne sur de minuscules étincelles !</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>À l'intérieur de ton crâne, en ce moment même, quelque <strong>86 milliards de neurones</strong> flashent comme de minuscules éclairs, projetant des messages jusqu'à 120 mètres par seconde. Ces étincelles sont comment tu lis cette phrase, comment tu peux imaginer le visage d'un ami, et comment ta main se retire d'un objet brûlant avant même que tu aies décidé de bouger.</p>
+<p>Un neurone est une cellule spécialisée en forme d'arbre, un peu. Ses <strong>dendrites</strong> ramifiées sont les racines, rassemblant les signaux entrants des voisins, et sa longue queue, l'<strong>axone</strong>, est le tronc qui porte le signal plus loin. Quand assez de signaux entrants s'accumulent, le neurone « tire », lançant une brève impulsion électrique filant le long de l'axone vers la cellule suivante en ligne.</p>
+<p>Entre deux neurones se trouve un étroit écart, la <strong>synapse</strong>, et ici le signal change de forme. Plutôt que de sauter à travers en tant qu'électricité, l'impulsion arrivante libère de petits messagers chimiques — des <strong>neurotransmetteurs</strong> comme la dopamine et la sérotonine — qui dérivent au-dessus de l'écart et disent au neurone suivant de tirer ou de rester tranquille. Chaque pensée, sentiment, souvenir et mouvement que tu aies jamais eu fut porté par des chaînes de ces étincelles sautant à travers des milliards de synapses.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">⚡</span> Les neurones peuvent tirer jusqu'à 200 fois par seconde. C'est plus rapide que tout batteur professionnel — et tu en as 86 milliards !</li><li><span aria-hidden="true">🔗</span> Ton cerveau a environ 100 000 milliards de synapses — plus que toutes les étoiles de la Voie lactée et d'Andromède réunies.</li><li><span aria-hidden="true">🐢</span> Tous les signaux ne sont pas égaux : les fibres myélinisées rapides portent la douleur à 120 m/s, tandis que les fibres nues lentes portent un élancement à seulement 0,5 m/s.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Le potentiel d'action de Hodgkin-Huxley</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Un neurone au repos tient un <strong>potentiel de membrane</strong> d'environ \(-70\) mV — son intérieur gardé plus négatif que l'extérieur par la pompe Na⁺/K⁺, qui éjecte inlassablement trois ions sodium pour deux potassium qu'elle ramène. Dépolarise la membrane au-delà d'un seuil près de \(-55\) mV et les canaux sodium voltage-dépendants éclatent ouverts, laissant le sodium inonder et poussant la tension jusqu'à \(+40\) mV en moins d'une milliseconde.</p>
+<p>Ce renversement fulgurant est le <strong>potentiel d'action</strong>, et il est strictement <em>tout-ou-rien</em> : une fois déclenché, il atteint toujours à peu près le même pic peu importe la force de la poussée. Donc un neurone signale l'intensité par la <em>fréquence</em> de ses décharges, non par la taille de chaque pic. En une milliseconde les canaux sodium s'inactivent et de plus lents canaux potassium ramènent la tension vers le bas, dépassant brièvement en une accalmie <em>réfractaire</em> où aucun pic frais ne peut se déclencher — un plafond dur sur la vitesse à laquelle un neurone peut parler.</p>
+<p>Puis le pic voyage : chaque parcelle de membrane dépolarisée fait basculer sa voisine au-delà du seuil, et l'impulsion marche le long de l'axone sans s'estomper. La nature y a boulonné un turbocompresseur — l'isolation graisseuse de <strong>myéline</strong> force le signal à sauter entre des espaces nus appelés <em>nœuds de Ranvier</em> (conduction saltatoire), poussant la vitesse vers 120 m/s tout en réduisant drastiquement la facture d'énergie. Hodgkin et Huxley cartographièrent toute cette cascade en 1952, des courants ioniques au pic, et en prirent le prix Nobel 1963.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Potentiel de repos</th><td>\(V_{\text{rest}} \approx -70\ \text{mV}\)</td><td class="cmt">pompe Na⁺/K⁺</td></tr>
+<tr><th scope="row">Seuil</th><td>\(V_{\text{thr}} \approx -55\ \text{mV}\)</td><td class="cmt">tout-ou-rien</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Potentiel de Nernst</th><td>\(E_{\text{ion}} = \dfrac{RT}{zF}\ln\dfrac{[X]_{\text{out}}}{[X]_{\text{in}}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Équilibre Na⁺</th><td>\(E_{Na} \approx +60\ \text{mV}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Équilibre K⁺</th><td>\(E_K \approx -88\ \text{mV}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Équation de Goldman</th><td>\(V_m = \dfrac{RT}{F}\ln\dfrac{P_K[K^+]_o + P_{Na}[Na^+]_o}{P_K[K^+]_i + P_{Na}[Na^+]_i}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🏆</span> Hodgkin et Huxley dérivèrent leurs équations du potentiel d'action en mesurant les courants dans les axones géants de calmar — larges de 1 mm, visibles à l'œil nu !</li><li><span aria-hidden="true">💊</span> Les anesthésiques locaux comme la lidocaïne bloquent les canaux Na⁺ voltage-dépendants, faisant taire les signaux de douleur avant même qu'ils n'atteignent le cerveau.</li><li><span aria-hidden="true">🌊</span> La sclérose en plaques détruit la gaine de myéline, ralentissant ou bloquant la conduction — causant faiblesse, engourdissement et troubles de la vision.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Équations de Hodgkin-Huxley, modèles de conductance et codage neuronal</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Le pic comme circuit</h3>
+<p>Le génie de Hodgkin et Huxley fut de traiter la membrane comme un circuit électrique : un condensateur en parallèle avec des résistances contrôlées en tension pour chaque ion. La conservation du courant donne \(C_m \dfrac{dV}{dt} = -g_{Na}m^3h(V-E_{Na}) - g_K n^4(V-E_K) - g_L(V-E_L) + I\). Chaque terme est une voie ionique, chaque pile \(E\) le potentiel de Nernst de l'ion. Résous-le et un potentiel d'action complet apparaît, sans qu'on l'appelle — preuve que le pic n'est pas une astuce biologique spéciale mais une conséquence d'une poignée de canaux voltage-dépendants obéissant à la loi d'Ohm.</p>
+<h3><span class="hn">02</span>Des canaux qui s'ouvrent et se ferment dans le temps</h3>
+<p>La non-linéarité vit dans les <em>variables de porte</em> \(m, h, n\), chacune la fraction de canaux en configuration ouverte et chacune relaxant vers une cible voltage-dépendante, \(\dfrac{dx}{dt} = \alpha_x(V)(1-x) - \beta_x(V)x\). Le sodium s'active vite (\(m\)) mais s'inactive ensuite (\(h\)) ; le potassium s'active lentement (\(n\)). Cette synchronisation décalée — entrée rapide, sortie retardée — est ce qui fait dépasser et récupérer la tension plutôt que simplement relaxer, transformant un franchissement de seuil en une impulsion stéréotypée.</p>
+<h3><span class="hn">03</span>Ramener quatre équations à deux</h3>
+<p>Quatre variables couplées sont dures à imaginer, donc FitzHugh et Nagumo groupèrent la paire rapide et la paire lente en seulement deux, \(\dot v = v - v^3/3 - w + I\) et \(\dot w = \varepsilon(v + a - bw)\). Maintenant toute l'histoire tient sur un <em>plan de phase</em> 2-D, où le potentiel d'action est simplement une grande boucle que fait l'état quand un stimulus le pousse à travers une courbe de seuil — sous la courbe il glisse tranquillement au bercail, au-dessus il prend la grande excursion.</p>
+<h3><span class="hn">04</span>Deux saveurs d'excitabilité</h3>
+<p>Cette vue géométrique classe les vrais neurones. Si la décharge s'enclenche par une bifurcation <em>nœud-col</em>, la cellule est de Type I — elle peut tirer arbitrairement lentement, montant son taux en douceur avec l'entrée. Si elle s'enclenche par une bifurcation de <em>Hopf</em>, elle est de Type II — la décharge apparaît abruptement à une fréquence finie. Ce n'est pas une taxonomie oisive : qu'un neurone intègre ses entrées ou résonne avec elles façonne la manière dont un circuit entier calcule.</p>
+<h3><span class="hn">05</span>Comment les signaux se propagent : la théorie du câble</h3>
+<p>Une dendrite est un câble électrique qui fuit, et jusqu'où un signal passif porte avant de s'amenuiser est fixé par la <em>constante d'espace</em> \(\lambda = \sqrt{r_m/r_a}\) — l'équilibre entre la fuite de membrane et la résistance axiale. C'est pourquoi les synapses lointaines ne sont entendues que faiblement au soma, pourquoi la myéline (élevant \(r_m\)) laisse les signaux voyager plus loin entre les nœuds, et pourquoi l'architecture ramifiée d'un neurone est elle-même une forme de calcul, non une simple plomberie.</p>
+<h3><span class="hn">06</span>Ce que les pics veulent réellement dire</h3>
+<p>Enfin, que <em>codent</em> ces impulsions ? La réponse par défaut est le <em>codage par fréquence</em> — l'information dans la fréquence de décharge — mais la synchronisation compte clairement aussi : le système auditif épingle la direction du son à partir de différences de pics de l'ordre de la microseconde, et les cellules de lieu de l'hippocampe signalent la position par la <em>phase</em> exacte à laquelle elles tirent. Le cortex s'appuie sur un codage <em>parcimonieux</em>, avec seulement ~1 % des neurones actifs à la fois, tirant un maximum de représentation d'une dépense métabolique minimale — la même logique d'efficacité qui pilote désormais les puces neuromorphiques « à pics » bâties pour calculer comme un cerveau.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Membrane HH</th><td>\(C_m\dfrac{dV}{dt} = -g_{Na}m^3h(V\!-\!E_{Na}) - g_K n^4(V\!-\!E_K) - g_L(V\!-\!E_L) + I\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Cinétique des portes</th><td>\(\dfrac{dx}{dt} = \alpha_x(V)(1-x) - \beta_x(V)x\)</td><td class="cmt">x ∈ {m,h,n}</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">FitzHugh–Nagumo</th><td>\(\dot v = v - \tfrac{v^3}{3} - w + I,\quad \dot w = \varepsilon(v + a - bw)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Équation du câble</th><td>\(\lambda^2\dfrac{\partial^2 V}{\partial x^2} = \tau\dfrac{\partial V}{\partial t} + V\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Constante d'espace</th><td>\(\lambda = \sqrt{r_m/r_a}\)</td><td class="cmt">r_m membrane, r_a axial</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧮</span> Le modèle HH utilise 4 EDO couplées. Les modèles compartimentaux modernes d'un seul neurone peuvent avoir des milliers de compartiments et des dizaines de milliers d'équations.</li><li><span aria-hidden="true">🗺️</span> Les cellules de lieu de l'hippocampe ne tirent que lorsqu'un animal est à un endroit précis — elles codent littéralement une « carte cognitive » de l'espace dans la synchronisation des pics.</li><li><span aria-hidden="true">🤖</span> Les réseaux de neurones à pics (SNN) imitent la dynamique HH dans le silicium ; la puce Loihi d'Intel a 128 cœurs neuromorphiques traitant l'information 1000× plus efficacement que les GPU.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Action_potential" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Neurosciences</h2>
+    <ul><li><a href="/fr/cerveau-neurones/">Le cerveau et les neurones</a></li><li><a href="/fr/comment-fonctionne-la-memoire/">Comment fonctionne la mémoire</a></li><li><a href="/fr/sommeil-conscience/">Sommeil et conscience</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

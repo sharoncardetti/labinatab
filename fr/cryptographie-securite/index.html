@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cryptographie et sécurité | Lab-in-a-Tab</title>
+<meta name="description" content="Chaque fois que tu achètes en ligne, les mathématiques protègent tes données de tout internet. Comment un secret reste-t-il secret en public ?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/cryptographie-securite/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/cryptography/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/crittografia-sicurezza/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/cryptographie-securite/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/cryptography/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Cryptographie et sécurité — Expliqué et simulé">
+<meta property="og:description" content="Chaque fois que tu achètes en ligne, les mathématiques protègent tes données de tout internet. Comment un secret reste-t-il secret en public ?">
+<meta property="og:url" content="https://labinatab.com/fr/cryptographie-securite/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cryptographie et sécurité — Expliqué et simulé">
+<meta name="twitter:description" content="Chaque fois que tu achètes en ligne, les mathématiques protègent tes données de tout internet. Comment un secret reste-t-il secret en public ?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/cryptographie-securite/#article",
+   "headline": "Cryptographie et sécurité",
+   "name": "Cryptographie et sécurité",
+   "description": "Chaque fois que tu achètes en ligne, les mathématiques protègent tes données de tout internet. Comment un secret reste-t-il secret en public ?",
+   "url": "https://labinatab.com/fr/cryptographie-securite/",
+   "mainEntityOfPage": "https://labinatab.com/fr/cryptographie-securite/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Chiffrement",
+    "RSA",
+    "Quantique"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Cryptographie et sécurité",
+    "sameAs": "https://en.wikipedia.org/wiki/Public-key_cryptography"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Cryptographie et sécurité",
+     "item": "https://labinatab.com/fr/cryptographie-securite/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/cryptography/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/crittografia-sicurezza/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/cryptographie-securite/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Informatique</nav>
+  <h1>Cryptographie et sécurité</h1>
+  <p class="lead">Chaque fois que tu achètes en ligne, les mathématiques protègent tes données de tout internet. Comment un secret reste-t-il secret en public ?</p>
+  <div class="chips"><span>Chiffrement</span><span>RSA</span><span>Quantique</span></div>
+  <section class="sim-embed" data-sim="crypto" data-color="#0f766e" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0f766e"><span class="sg-lbl">Essaie</span><span>Press <b>Run the exchange</b> and follow every number that crosses the middle. Then ask yourself: was the final <b>Shared key</b> ever one of them?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0f766e"><span class="sg-lbl">Essaie</span><span>Press <b>Run DH exchange</b> and write down every public value that crosses. Using only those and the public \(p\) and \(g\), try to work out either private exponent — then check your answer against <b>Shared key</b>.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0f766e"><span class="sg-lbl">Essaie</span><span>Note that \(p=23\) makes the discrete log trivially breakable by exhaustive search. Estimate the group size needed to resist index calculus, and contrast that with the key size an elliptic-curve group would require for equivalent security.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Alice on the left and Bob on the right want a shared secret number. The eye at the top is an <b>eavesdropper</b> who sees absolutely everything they send. Watch the numbers travel across, and keep an eye on <b>Shared key</b> at the end.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>No — the shared key never crossed the wire, yet Alice and Bob both ended up with the same number.</b> Each kept one secret number to themselves and sent only a scrambled mixture. Because of how the mixing works, combining your own secret with the other person's mixture gives the same answer both ways round. The eavesdropper saw every message and still can't reproduce it — which is roughly what protects your card details every time you buy something online.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span><b>Diffie–Hellman key exchange</b> with public parameters \(p=23\), \(g=5\). Alice and Bob each choose a private exponent, publish \(g^a \bmod p\) and \(g^b \bmod p\), then raise the other's value to their own exponent. <b>Step</b> walks the protocol; <b>Shared key</b> is the agreed secret.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Both parties compute \((g^a)^b = (g^b)^a = g^{ab} \bmod p\), a value that was never transmitted.</b> Recovering \(a\) from \(g^a \bmod p\) is the <b>discrete logarithm problem</b>. With \(p=23\) you can brute-force it in 23 guesses; with a 2048-bit prime the same search is computationally hopeless. The asymmetry is everything: exponentiation is cheap, inverting it is not. Note this establishes a shared secret between strangers but does <em>not</em> authenticate them — plain DH is wide open to a man-in-the-middle.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>DH over \(\mathbb{Z}_p^*\) with \(p=23\), \(g=5\) a generator. Security rests on the <b>computational Diffie–Hellman</b> assumption; the passive adversary observes \((g, p, g^a, g^b)\) and must produce \(g^{ab}\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Finite-field DH needs ~2048–3072 bits for ~112–128-bit security; an elliptic curve needs only ~256.</b> The gap exists because \(\mathbb{Z}_p^*\) admits sub-exponential index calculus, \(L_p[1/3, 1.923]\), while general elliptic curves admit only generic \(O(\sqrt{n})\) attacks. Security also demands a prime-order subgroup — Logjam (2015) showed that shared 512-bit primes plus export-grade downgrade broke real TLS at scale. All of it falls to a sufficiently large quantum computer via Shor's algorithm, which is why post-quantum key agreement has moved to lattice constructions such as ML-KEM.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Messages secrets et cadenas inviolables !</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Disons que tu veux glisser un mot à un ami à travers une pièce bondée où tout le monde adorerait le lire. Tu recours à un <strong>chiffre</strong> — un code secret. Le plus vieux tour du manuel, utilisé par Jules César il y a deux mille ans, décale simplement chaque lettre d'une quantité fixe : A devient D, B devient E, et ainsi de suite. Ton ami, qui connaît le décalage, le lit à l'instant ; tous les autres voient un charabia.</p>
+<p>Mais il y a un hic qui hanta les faiseurs de codes pendant des millénaires : comment dis-tu à ton ami le décalage en premier lieu sans que quelqu'un l'entende ? La réponse, trouvée seulement dans les années 1970, ressemble à un tour de magie — la <strong>cryptographie à clé publique</strong>. Imagine un cadenas que n'importe qui peut claquer fermé mais dont seul toi tiens la clé pour l'ouvrir. Poste ce cadenas ouvert au monde entier ; n'importe qui peut y enfermer un message et le renvoyer, et seul toi peux l'ouvrir, alors même que tu n'as jamais partagé de secret.</p>
+<p>C'est ainsi que fonctionne chaque site sécurisé. Quand le petit cadenas apparaît dans ton navigateur, ton ordinateur et le serveur conjurent un secret partagé au grand jour — juste sous le nez de tout indiscret, qui repart quand même avec rien. Dans la simulation ci-dessous, regarde cet échange de clés se dérouler une étape à la fois.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🌐</span> Le HTTPS chiffre aujourd'hui plus de 95% du trafic web. Les mathématiques protégeant tes mots de passe étaient essentiellement inexistantes avant 1976.</li><li><span aria-hidden="true">🏦</span> L'algorithme RSA, inventé en 1977, tire sa sécurité du fait que multiplier deux grands nombres premiers prend des millisecondes, mais factoriser le résultat prend plus de temps que l'âge de l'univers.</li><li><span aria-hidden="true">⚛️</span> Les ordinateurs quantiques pourraient casser le chiffrement RSA — c'est pourquoi les gouvernements du monde entier passent déjà à des standards de cryptographie « post-quantique ».</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>RSA, Diffie-Hellman et les mathématiques des fonctions à sens unique</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Le <strong>RSA</strong> (Rivest–Shamir–Adleman, 1977) repose sur une belle asymétrie : multiplier deux grands nombres premiers est instantané, mais dé-multiplier le résultat — le factoriser — est cru pratiquement impossible. Choisis des premiers \(p, q\), pose \(n = pq\) et \(\varphi(n) = (p-1)(q-1)\), choisis un exposant public \(e\), et calcule le privé \(d \equiv e^{-1} \pmod{\varphi(n)}\). Alors chiffrement et déchiffrement ne sont que des puissances modulaires : \(c = m^e \bmod n\) et \(m = c^d \bmod n\). Ils s'annulent car le théorème d'Euler garantit \(m^{\varphi(n)} \equiv 1 \pmod n\), donc \(m^{ed} \equiv m\). Récupérer \(d\) depuis le couple public \((e, n)\) est cru aussi difficile que factoriser \(n\) — non prouvé, mais sûr à 2048 bits.</p>
+<p>Le <strong>Diffie-Hellman</strong> (1976) est le tour qui permet à deux inconnus de convenir d'un secret à la vue de tous. Alice et Bob fixent publiquement un premier \(p\) et un générateur \(g\) ; Alice garde un secret \(a\) et envoie \(g^a \bmod p\), Bob garde \(b\) et envoie \(g^b \bmod p\). Chacun élève ce qu'il a reçu à son propre secret, et tous deux atterrissent sur la même clé \(K = g^{ab} \bmod p\). Un indiscret voit \(g, p, g^a, g^b\) et ne peut toujours pas obtenir \(K\) sans résoudre le problème du logarithme discret — facile à calculer en avant, cru irréalisable à inverser.</p>
+<p>Les maths à clé publique sont lentes, donc on les utilise avec parcimonie. Les vraies connexions font un <strong>hybride</strong> : Diffie-Hellman (ou son cousin à courbes elliptiques) convient d'une clé, puis un rapide <strong>chiffre symétrique</strong> comme AES chiffre le trafic réel. Ce qui tient tout ensemble, ce sont les <strong>fonctions de hachage</strong> (SHA-256, SHA-3), qui écrasent toute entrée en une empreinte de taille fixe qui est à sens unique, résistante aux collisions et follement sensible — inverse un bit d'entrée et environ la moitié des bits de sortie changent. Ces empreintes sont ce qui rend possibles les signatures numériques, les certificats et les blockchains.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Chiffrement RSA</th><td>\(c = m^e \bmod n\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Déchiffrement RSA</th><td>\(m = c^d \bmod n,\quad d \equiv e^{-1}\!\!\pmod{\varphi(n)}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Théorème d'Euler</th><td>\(m^{\varphi(n)} \equiv 1 \pmod n \;\Rightarrow\; m^{ed} \equiv m\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Secret partagé DH</th><td>\(K = g^{ab} \bmod p\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Fonction de hachage</th><td>\(H:\{0,1\}^{*} \to \{0,1\}^{256}\)</td><td class="cmt">à sens unique, résistante aux collisions</td></tr>
+<tr><th scope="row">Borne des anniversaires</th><td>\(\text{collision après } \sim\!\sqrt{2^{256}} = 2^{128} \text{ requêtes}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔢</span> La clé de chiffrement RSA-2048 a 617 chiffres décimaux. La factoriser avec le meilleur algorithme connu sur tous les ordinateurs actuels prendrait plus de temps que l'âge de l'univers.</li><li><span aria-hidden="true">📱</span> La connexion HTTPS de ton téléphone utilise l'Elliptic Curve Diffie-Hellman (ECDH) — offrant une sécurité équivalente à RSA avec des clés 20 fois plus petites, grâce à la difficulté du logarithme discret sur courbe elliptique.</li><li><span aria-hidden="true">🏛️</span> Le NIST standardisa ses premiers algorithmes de cryptographie post-quantique en 2024 — CRYSTALS-Kyber pour l'échange de clés et CRYSTALS-Dilithium pour les signatures — tous deux fondés sur des problèmes de réseaux.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Sécurité théorique-informationnelle, cryptographie sur réseaux et preuves à divulgation nulle</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Le secret parfait et son prix impossible</h3>
+<p>Shannon (1949) fixa le plafond théorique : un chiffre est <strong>parfaitement secret</strong> quand le texte chiffré ne trahit absolument rien sur le message, \(P(M=m \mid C=c) = P(M=m)\) pour tout \(m, c\). Le <strong>masque jetable</strong> (one-time pad) — XOR du message avec une clé vraiment aléatoire utilisée exactement une fois, \(c = m \oplus k\) — l'atteint, et Shannon prouva que c'est essentiellement la <em>seule</em> chose qui le fait. Le hic est dans l'exigence : la clé doit être aussi longue que le message et jamais réutilisée, donc pour envoyer secrètement un gigaoctet tu dois déjà avoir partagé secrètement un gigaoctet. Le secret parfait est réel, et presque inutile.</p>
+<h3><span class="hn">02</span>Troquer la perfection contre la praticité</h3>
+<p>Tout ce qui est utilisable descend donc à la <strong>sécurité computationnelle</strong> : un chiffre est « sûr » si aucun adversaire borné au temps polynomial ne peut faire mieux que négligeablement mieux que deviner. Cela relocalise discrètement toute la cryptographie sur un terrain non prouvé — RSA s'appuie sur la difficulté de la factorisation, Diffie-Hellman sur les logarithmes discrets, et aucun n'est prouvé insoluble ; une preuve trancherait \(P\) contre \(NP\). Nous parions, en effet, internet sur des conjectures qui ont simplement résisté à chaque attaque jusqu'ici.</p>
+<h3><span class="hn">03</span>La menace quantique et la réponse des réseaux</h3>
+<p>Ce pari a une date d'expiration connue. L'algorithme de Shor permet à un grand ordinateur quantique de factoriser et de prendre des logarithmes discrets en temps polynomial, démolissant discrètement RSA et le Diffie-Hellman classique. Le remplaçant en tête est la <strong>cryptographie sur réseaux</strong>, bâtie sur <em>Learning With Errors</em> : étant donné de nombreux échantillons bruités \(b_i = \langle a_i, s\rangle + e_i \bmod q\), récupérer le secret \(s\) paraît difficile même pour une machine quantique. Les premiers standards post-quantiques du NIST (2024) sont des schémas sur réseaux, et la migration est déjà en cours.</p>
+<h3><span class="hn">04</span>Calculer sur des données que tu ne peux pas lire</h3>
+<p>Les réseaux débloquèrent quelque chose autrefois jugé impossible : le <strong>chiffrement pleinement homomorphe</strong> (Gentry, 2009), où un serveur calcule directement sur le texte chiffré, \(f(\mathrm{Enc}(x)) = \mathrm{Enc}(f(x))\), et rend une réponse chiffrée qu'il n'a jamais réellement vue. Tu peux lancer une recherche, entraîner un modèle ou interroger une base de données, les données restant scellées tout du long. Le premier FHE était un million de fois trop lent ; les schémas modernes ont ramené cela vers quelques centaines de fois, le faisant passer d'expérience de pensée vers le déploiement.</p>
+<h3><span class="hn">05</span>Prouver que tu connais un secret sans le révéler</h3>
+<p>Les <strong>preuves à divulgation nulle de connaissance</strong> (Goldwasser–Micali–Rackoff, 1985) réussissent un vrai paradoxe : un prouveur convainc un vérifieur qu'un énoncé est vrai tout en ne révélant rien au-delà de sa vérité. Les trois exigences sont la complétude (les preuves honnêtes convainquent toujours), la solidité (les fausses affirmations ne passent presque jamais) et la divulgation nulle (le vérifieur n'apprend rien qu'il n'aurait pu inventer seul). Tu peux prouver que tu connais un mot de passe sans le prononcer, ou qu'une transaction est valide sans en divulguer le montant.</p>
+<h3><span class="hn">06</span>Preuves succinctes et où cela mène</h3>
+<p>Les chevaux de trait modernes sont les <strong>zk-SNARK</strong> — des preuves à la fois non interactives et étonnamment compactes, une constante \(O(1)\) en taille et vérifiables en millisecondes quelle que soit l'ampleur du calcul qu'elles attestent. Elles alimentent déjà des monnaies préservant la vie privée, des identifiants anonymes et du calcul externalisé vérifiable, et rampent vers le fait de prouver qu'un modèle d'IA spécifique a produit une sortie spécifique sans exposer le modèle ni l'entrée. Une curiosité autrefois écartée comme pure théorie devient une infrastructure fondamentale.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Secret parfait</th><td>\(P(M=m \mid C=c) = P(M=m)\quad \forall\, m,c\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Masque jetable</th><td>\(c = m \oplus k,\quad |k| = |m|\)</td><td class="cmt">k uniforme, utilisée une fois</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Échantillon LWE</th><td>\(b_i = \langle a_i, s\rangle + e_i \pmod q\)</td><td class="cmt">e_i petit bruit</td></tr>
+<tr><th scope="row">Propriété homomorphe</th><td>\(f(\mathrm{Enc}(x)) = \mathrm{Enc}(f(x))\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Garanties ZKP</th><td>\(\text{complétude} + \text{solidité} + \text{divulgation nulle}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Taille de preuve zk-SNARK</th><td>\(|\pi| = O(1)\)</td><td class="cmt">indépendante de la taille du circuit</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔮</span> Une preuve zk-SNARK qu'un réseau de neurones a produit une sortie spécifique peut être générée et vérifiée — sans révéler les poids du modèle ni les données d'entrée.</li><li><span aria-hidden="true">🧮</span> Le problème LWE est si difficile que même un ordinateur quantique exécutant l'algorithme de Shor (qui casse RSA) ne peut le résoudre — aucune accélération quantique n'est connue.</li><li><span aria-hidden="true">🏆</span> Le prix Turing 2012 revint à Silvio Micali et Shafi Goldwasser pour avoir inventé les preuves à divulgation nulle — originellement considérées comme une curiosité purement théorique.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Informatique</h2>
+    <ul><li><a href="/fr/algorithmes-de-tri/">Algorithmes de tri</a></li><li><a href="/fr/apprentissage-automatique-reseaux-neurones/">Apprentissage automatique et réseaux de neurones</a></li><li><a href="/fr/calcul-complexite/">Calcul et complexité</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Électrochimie et batteries | Lab-in-a-Tab</title>
+<meta name="description" content="Chaque fois que tu recharges ton téléphone, la chimie convertit des électrons en énergie stockée. Les mêmes réactions qui alimentent tes appareils font…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/electrochimie-batteries/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/electrochemistry/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/elettrochimica-batterie/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/electrochimie-batteries/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/electrochemistry/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Électrochimie et batteries — Expliqué et simulé">
+<meta property="og:description" content="Chaque fois que tu recharges ton téléphone, la chimie convertit des électrons en énergie stockée. Les mêmes réactions qui alimentent tes appareils font…">
+<meta property="og:url" content="https://labinatab.com/fr/electrochimie-batteries/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Électrochimie et batteries — Expliqué et simulé">
+<meta name="twitter:description" content="Chaque fois que tu recharges ton téléphone, la chimie convertit des électrons en énergie stockée. Les mêmes réactions qui alimentent tes appareils font…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/electrochimie-batteries/#article",
+   "headline": "Électrochimie et batteries",
+   "name": "Électrochimie et batteries",
+   "description": "Chaque fois que tu recharges ton téléphone, la chimie convertit des électrons en énergie stockée. Les mêmes réactions qui alimentent tes appareils font…",
+   "url": "https://labinatab.com/fr/electrochimie-batteries/",
+   "mainEntityOfPage": "https://labinatab.com/fr/electrochimie-batteries/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Rédox",
+    "Batteries",
+    "Électrolyse"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Électrochimie et batteries",
+    "sameAs": "https://en.wikipedia.org/wiki/Electrochemistry"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Électrochimie et batteries",
+     "item": "https://labinatab.com/fr/electrochimie-batteries/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/electrochemistry/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/elettrochimica-batterie/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/electrochimie-batteries/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Chimie</nav>
+  <h1>Électrochimie et batteries</h1>
+  <p class="lead">Chaque fois que tu recharges ton téléphone, la chimie convertit des électrons en énergie stockée. Les mêmes réactions qui alimentent tes appareils font aussi rouiller le fer, raffinent l'aluminium et font battre ton cœur.</p>
+  <div class="chips"><span>Rédox</span><span>Batteries</span><span>Électrolyse</span></div>
+  <section class="sim-embed" data-sim="electrochem" data-color="#ca8a04" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Press <b>Discharge</b> and watch <b>Battery level</b> fall from 100% all the way to 0. Keep your eye on <b>Voltage</b> the whole time — how much does it drop?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Discharge fully and record <b>Voltage</b> at <b>Charge level</b> = 100%, 50% and 10%. Then charge back up. Does the voltage retrace the same path, and could you use it to infer <b>Charge level</b> reliably?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Note that <b>Voltage</b> here depends only on <b>State of charge</b>, never on <b>Load (discharge rate)</b>. Identify which physical effects that independence eliminates, and how each would alter the observed curve under a heavy load.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>This is a battery cut in half. The little dots are charged particles shuttling between the two ends through the liquid in the middle — that flow is what lights the bulb. <b>Battery level</b> is how full the battery is, and <b>Voltage</b> is the push it delivers.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>The battery empties completely but the voltage barely moves — from about 3.9 V down to only 3.6 V.</b> That's why your phone can't tell how full it is just by measuring voltage, and why the battery percentage sometimes lies or jumps. Phones instead count the charge flowing in and out, like a water meter. A flat voltage is actually a feature: your device gets the same steady power whether the battery is full or nearly empty.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>A cell with ion transport between electrodes. <b>Load (discharge rate)</b> sets the discharge current, <b>Charge level</b> the state of charge, and <b>Voltage</b> follows a Nernst-style relation \(E = E^0 - \frac{0.059}{n}\log_{10}\frac{1-\text{soc}}{\text{soc}}\), clamped to a realistic Li-ion window.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Voltage spans barely 0.3 V across the entire capacity — far too flat to serve as a fuel gauge.</b> The Nernst equation is logarithmic in the ratio of oxidised to reduced species, so it is steep only at the extremes and nearly flat through the middle. Real battery-management systems therefore use coulomb counting (integrating current) with periodic voltage recalibration at the endpoints. This flatness is precisely what makes lithium chemistry so useful — a stable supply rail — and simultaneously what makes state-of-charge estimation a genuinely hard engineering problem.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Idealised cell with a Nernstian open-circuit potential in <b>State of charge</b>; <b>Load (discharge rate)</b> scales the discharge rate. Overpotentials, diffusion limitation and hysteresis are not modelled.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Making voltage a function of charge alone removes every loss mechanism that matters in practice.</b> Terminal voltage is \(E_{\text{cell}} = E^0 - \eta_{\text{act}} - \eta_{\text{conc}} - IR_{\Omega}\): activation overpotential follows Butler–Volmer kinetics, concentration overpotential arises from depleted diffusion layers, and ohmic drop scales with current. Together they mean real capacity <em>falls</em> as discharge rate rises — the Peukert effect — and produce the charge/discharge hysteresis that defeats naive coulomb counting. Add solid-electrolyte-interphase growth and lithium plating and you have the whole of battery degradation, none of which a purely thermodynamic model can express.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>De l'électricité à partir de la chimie — et de la chimie à partir de l'électricité !</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Plonge deux métaux différents dans un verre d'eau salée et relie-les par un fil, et quelque chose d'extraordinaire se produit : des électrons se mettent à ruisseler à travers le fil d'un métal à l'autre — un courant électrique, tiré de rien d'autre que de la chimie. C'est exactement ainsi que fonctionna la première batterie. En 1800 Alessandro Volta empila des disques de zinc et de cuivre séparés par du tissu imbibé de saumure et produisit le premier courant électrique continu de l'histoire.</p>
+<p>L'astuce est une réaction appelée <strong>oxydoréduction</strong>, ou <strong>rédox</strong>. Une substance perd des électrons (elle est <em>oxydée</em>), une autre les attrape (elle est <em>réduite</em>). Quand le zinc rencontre l'acide, ses atomes larguent des électrons et se dissolvent, et ces électrons libres partent en quête d'un endroit où être — le long du fil. Ce flux <em>est</em> l'électricité.</p>
+<p>Chaque batterie que tu possèdes tourne sur la même idée, de la pile AA de ta télécommande à l'énorme pack lithium-ion d'une voiture électrique. La batterie de ton téléphone stocke l'énergie en faisant la navette d'ions lithium entre deux matériaux : utilise le téléphone et les ions dérivent d'un côté tandis que les électrons bouclent par le circuit en allumant ton écran ; branche-le et le tout tourne à l'envers, l'électricité repoussant les ions. Dans la simulation ci-dessous, regarde une batterie se décharger et se recharger en temps réel.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">⚡</span> Les batteries lithium-ion d'une Tesla Model S contiennent environ 7 000 cellules individuelles — chacune une petite réaction rédox se produisant simultanément.</li><li><span aria-hidden="true">🧠</span> Ton cerveau tourne à l'électrochimie : les neurones s'activent en pompant des ions sodium et potassium à travers des membranes, engendrant les signaux électriques qui sont chacune de tes pensées.</li><li><span aria-hidden="true">🌍</span> L'électrolyse du minerai d'aluminium consomme tant d'électricité que les fonderies d'aluminium engloutissent environ 3,5 % de toute l'électricité produite mondialement — plus que la plupart des pays.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Cellules électrochimiques, l'équation de Nernst et les batteries Li-ion</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Une cellule électrochimique transforme la chimie en électricité grâce à une réaction rédox qui <em>veut</em> se produire. Sa tension motrice est le <strong>potentiel de cellule</strong> \(E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}\), lu directement sur une table de potentiels standards de réduction. Une valeur positive signifie que la réaction tourne spontanément, et elle se branche directement à la thermodynamique via \(\Delta G^\circ = -nFE^\circ_{\text{cell}}\), où \(n\) est le nombre d'électrons déplacés et \(F\) la constante de Faraday, la charge d'une mole d'entre eux. La tension, au fond, n'est que l'énergie libre par électron.</p>
+<p>Les conditions standards sont une fiction commode, et l'<strong>équation de Nernst</strong> corrige la tension pour le monde réel : \(E = E^\circ - \dfrac{RT}{nF}\ln Q\), avec \(Q\) le rapport des produits aux réactifs. À mesure qu'une batterie se vide, elle brûle ses réactifs et empile des produits, donc \(Q\) grimpe et la tension fléchit — ce qui est exactement pourquoi une batterie fatiguée affiche bas avant de finalement lâcher. Laisse \(Q\) atteindre l'équilibre et \(E\) tombe à zéro : la batterie est à plat.</p>
+<p>Les cellules <strong>lithium-ion</strong> sont une belle exploitation de tout cela. Au lieu de dissoudre quoi que ce soit, elles font la navette d'ions \(\text{Li}^+\) à l'entrée et à la sortie des réseaux cristallins de deux électrodes — l'<em>intercalation</em>. La charge pousse le lithium dans le graphite ; la décharge le laisse reglisser dans une cathode d'oxyde métallique, et l'électrolyte est choisi pour porter librement \(\text{Li}^+\) tout en bloquant les électrons, les forçant à faire un détour par ton appareil. Les cellules actuelles atteignent ~250 Wh/kg, et pourtant une anode de lithium métallique pur pourrait en principe dépasser 3 000 — le prix même que poursuivent les batteries à électrolyte solide.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Potentiel de cellule</th><td>\(E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Lien avec l'énergie de Gibbs</th><td>\(\Delta G^\circ = -nF E^\circ_{\text{cell}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Équation de Nernst</th><td>\(E = E^\circ - \dfrac{RT}{nF}\ln Q\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">À 25 °C</th><td>\(E = E^\circ - \dfrac{0.0592}{n}\log Q\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Loi de Faraday</th><td>\(m = \dfrac{M I t}{nF}\)</td><td class="cmt">masse déposée</td></tr>
+<tr><th scope="row">Équilibre</th><td>\(E^\circ_{\text{cell}} = \dfrac{RT}{nF}\ln K\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔬</span> L'interphase électrolyte-solide (SEI) — un film nanométrique se formant sur l'anode au premier cycle de charge — est cruciale pour la longévité de la batterie et reste mal comprise.</li><li><span aria-hidden="true">🌡️</span> Les batteries lithium-ion perdent ~20 % de capacité de façon permanente si elles sont chargées au-dessus de 45 °C ou déchargées en dessous de −10 °C — pourquoi les téléphones ralentissent par temps froid.</li><li><span aria-hidden="true">♻️</span> Moins de 5 % des batteries lithium-ion sont actuellement recyclées. À mesure que l'adoption des VE croît, cela représente à la fois un défi environnemental et une opportunité à mille milliards de dollars.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Cinétique d'électrode, équation de Butler-Volmer et au-delà du Li-ion</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Rien n'est gratuit : la surtension</h3>
+<p>La thermodynamique te dit quelle <em>devrait</em> être la tension d'une cellule, mais jamais à quelle vitesse elle la délivrera. Fais fonctionner n'importe quelle vraie électrode à un courant utile et elle exige une taxe — une <strong>surtension</strong> \(\eta = E - E_{\text{eq}}\), une poussée au-delà de l'équilibre pour faire aller la réaction à une vitesse finie. Cette tension supplémentaire est gaspillée en chaleur, et la minimiser — par de meilleurs catalyseurs et une meilleure conception d'électrode — est une grande part de ce qu'est réellement l'ingénierie des batteries et des piles à combustible.</p>
+<h3><span class="hn">02</span>Butler–Volmer et la pente de Tafel</h3>
+<p>Le courant que passe une électrode répond exponentiellement à cette surtension, capturé par l'<strong>équation de Butler–Volmer</strong> \(j = j_0\!\left[e^{\alpha F\eta/RT} - e^{-(1-\alpha)F\eta/RT}\right]\). Le préfacteur \(j_0\), la densité de courant d'échange, mesure la rapidité intrinsèque d'une électrode — et il s'étend sur dix ordres de grandeur entre métaux, ce qui est pourquoi le platine est si prisé et si dur à remplacer. Pousse \(\eta\) fort et une exponentielle l'emporte, s'effondrant en la loi linéaire de <strong>Tafel</strong> \(\eta = a + b\log j\), dont la pente trahit l'étape limitante de la réaction.</p>
+<h3><span class="hn">03</span>Théorie de Marcus : la géométrie du transfert d'électron</h3>
+<p>Zoome sur un unique saut d'électron et tu atteins la <strong>théorie de Marcus</strong>, qui remporta le prix Nobel 1992. Son intuition est qu'avant qu'un électron puisse sauter, les atomes et le solvant environnants doivent d'abord se réarranger vers une configuration partagée, à un coût d'énergie appelé l'<em>énergie de réorganisation</em> \(\lambda\). La vitesse dépend alors de la force motrice et de \(\lambda\) ensemble, \(k_{\text{ET}} \propto \exp\!\left[-\dfrac{(\Delta G^\circ + \lambda)^2}{4\lambda k_B T}\right]\) — une quadratique, non la courbe monotone que l'intuition attend.</p>
+<h3><span class="hn">04</span>La contre-intuitive région inversée</h3>
+<p>Cette quadratique fait une prédiction saisissante. À mesure que tu montes la force motrice, la vitesse d'abord grimpe, culmine quand \(-\Delta G^\circ = \lambda\) — puis <em>retombe</em> : rends une réaction plus favorable et elle va <em>plus lentement</em>. Cette <strong>région inversée</strong> parut absurde jusqu'à ce que Miller la confirme en 1984, et ce n'est pas une simple curiosité : c'est précisément ce qui laisse la photosynthèse tenir une charge séparée à part assez longtemps pour l'utiliser, en faisant atterrir la réaction inverse gaspilleuse dans la lente zone inversée.</p>
+<h3><span class="hn">05</span>Au-delà du lithium</h3>
+<p>Le lithium-ion ne sera pas le dernier mot. Les conceptions <strong>à électrolyte solide</strong> échangent l'électrolyte liquide inflammable contre un conducteur céramique ou polymère, débloquant les anodes de lithium métallique ; les cellules <strong>sodium-</strong> et <strong>potassium-ion</strong> troquent des performances contre des métaux abondants et bon marché ; les chimies <strong>multivalentes</strong> (Mg²⁺, Al³⁺) portent plus de charge par ion mais s'intercalent avec lenteur. Pour le réseau, les <strong>batteries à circulation</strong> stockent l'énergie dans des réservoirs d'espèces rédox dissoutes, découplant proprement combien d'énergie tu stockes de la vitesse à laquelle tu peux la délivrer.</p>
+<h3><span class="hn">06</span>Faire tourner la réaction à l'envers sur le CO₂</h3>
+<p>La frontière la plus ambitieuse inverse la combustion. La <strong>réduction électrochimique du CO₂</strong> utilise de l'électricité renouvelable pour retransformer le dioxyde de carbone capturé en carburants et matières premières — des catalyseurs au cuivre le convertissent déjà en éthylène à environ 70 % d'efficacité. Si cela passe à l'échelle, la même électrochimie qui stocke notre énergie pourrait aider à boucler le cycle du carbone, faisant tourner la réaction des combustibles fossiles à l'envers et tirant le carbone hors de l'air au lieu de l'y déverser.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Butler–Volmer</th><td>\(j = j_0\!\left[e^{\alpha F\eta/RT} - e^{-(1-\alpha)F\eta/RT}\right]\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Équation de Tafel</th><td>\(\eta = a + b\log j,\quad b = \dfrac{2.303RT}{\alpha F}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Vitesse de Marcus</th><td>\(k_{\text{ET}} \propto \exp\!\left[-\dfrac{(\Delta G^\circ + \lambda)^2}{4\lambda k_B T}\right]\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Région inversée</th><td>\(k_{\text{ET}} \downarrow \text{ quand } |\Delta G^\circ| &gt; \lambda\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Densité d'énergie</th><td>\(\mathcal{E} = \dfrac{V_{\text{cell}}\,Q}{m}\ \text{[Wh/kg]}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Li-ion (théorique)</th><td>\(\text{LiCoO}_2/\text{graphite} \approx 370\ \text{Wh/kg}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔬</span> La densité de courant d'échange j₀ pour la réaction de dégagement d'hydrogène varie de 10 ordres de grandeur entre métaux — expliquant pourquoi le platine est catalytiquement unique et pourquoi trouver des alternatives moins chères est si difficile.</li><li><span aria-hidden="true">⚡</span> Les batteries à circulation au vanadium à l'échelle du réseau peuvent stocker des GWh d'énergie avec plus de 20 000 cycles de durée de vie — un siècle de cyclage quotidien — les rendant idéales pour le stockage d'énergie renouvelable de longue durée.</li><li><span aria-hidden="true">🧪</span> La réduction électrochimique du CO₂ en éthylène sur catalyseurs au cuivre atteint ~70 % d'efficacité faradique — convertissant un gaz à effet de serre directement en une précieuse matière première industrielle en n'utilisant que de l'électricité.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Electrochemistry" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Chimie</h2>
+    <ul><li><a href="/fr/atomes-liaisons-chimiques/">Atomes et liaisons chimiques</a></li><li><a href="/fr/cinetique-equilibre/">Cinétique et équilibre</a></li><li><a href="/fr/chimie-organique-molecules-du-vivant/">Chimie organique et molécules du vivant</a></li><li><a href="/fr/acides-bases-ph/">Acides, bases et pH</a></li><li><a href="/fr/tableau-periodique/">Le tableau périodique</a></li><li><a href="/fr/equilibrer-equations-chimiques/">Équilibrer les équations chimiques</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

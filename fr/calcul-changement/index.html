@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le calcul et le changement | Lab-in-a-Tab</title>
+<meta name="description" content="Comment mesurer la vitesse de quelque chose qui ne bouge jamais à vitesse constante ? La réponse a changé la science pour toujours.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/calcul-changement/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/calculus/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/calcolo-cambiamento/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/calcul-changement/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/calculus/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Le calcul et le changement — Expliqué et simulé">
+<meta property="og:description" content="Comment mesurer la vitesse de quelque chose qui ne bouge jamais à vitesse constante ? La réponse a changé la science pour toujours.">
+<meta property="og:url" content="https://labinatab.com/fr/calcul-changement/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le calcul et le changement — Expliqué et simulé">
+<meta name="twitter:description" content="Comment mesurer la vitesse de quelque chose qui ne bouge jamais à vitesse constante ? La réponse a changé la science pour toujours.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/calcul-changement/#article",
+   "headline": "Le calcul et le changement",
+   "name": "Le calcul et le changement",
+   "description": "Comment mesurer la vitesse de quelque chose qui ne bouge jamais à vitesse constante ? La réponse a changé la science pour toujours.",
+   "url": "https://labinatab.com/fr/calcul-changement/",
+   "mainEntityOfPage": "https://labinatab.com/fr/calcul-changement/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Dérivées",
+    "Intégrales",
+    "Infini"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Le calcul et le changement",
+    "sameAs": "https://en.wikipedia.org/wiki/Calculus"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Le calcul et le changement",
+     "item": "https://labinatab.com/fr/calcul-changement/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/calculus/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/calcolo-cambiamento/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/calcul-changement/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Mathématiques</nav>
+  <h1>Le calcul et le changement</h1>
+  <p class="lead">Comment mesurer la vitesse de quelque chose qui ne bouge jamais à vitesse constante ? La réponse a changé la science pour toujours.</p>
+  <div class="chips"><span>Dérivées</span><span>Intégrales</span><span>Infini</span></div>
+  <section class="sim-embed" data-sim="calculus" data-color="#b45309" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Set <b>Riemann rectangles</b> to 2 and note <b>Area so far</b>. Now drag it up to 40 and watch both the picture and the number.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Fix <b>x position</b> at 0 and step <b>Riemann rectangles</b> through 2, 8 and 40, recording <b>∫f dx (−3→x)</b> each time. Then hold <b>Riemann rectangles</b> at 40 and sweep <b>x position</b>, comparing <b>f′(x)</b> with how fast <b>∫f dx (−3→x)</b> is changing.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Estimate the convergence order empirically: record <b>∫ from −3 to x</b> at <b>Riemann rectangles</b> = 5, 10, 20 for fixed <b>x position</b>, and check whether the error quarters each time you double the count. Then verify \(\frac{d}{dx}\!\int_{-3}^{x} f = f(x)\) at a point where \(f\) changes sign.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>The curve is a function. The orange dashed line touches it at one point and shows how steeply it is climbing there — that is <b>Slope here</b>. The shaded rectangles under the curve add up to the area, shown as <b>Area so far</b>; blue counts as positive, red as negative.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>The rectangles snap tight against the curve and <b>Area so far</b> stops wobbling — it settles on the true area.</b> A curved shape has no easy area formula, so the trick is to cover it with rectangles you <em>can</em> measure, then use more and thinner ones until the error vanishes. Now slide <b>x position</b> and watch <b>Slope here</b>: where the curve climbs steeply the slope is large, and at the top of a bump it passes through zero.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>\(f(x) = \sin x + 0.4x\). The orange dashed line is the tangent at <b>x position</b>, whose gradient is <b>f′(x)</b>. The shaded blocks are a midpoint <b>Riemann sum</b> from \(-3\) to <b>x position</b>, reported as <b>∫f dx (−3→x)</b>; signed, so blocks below the axis subtract.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b><b>∫f dx (−3→x)</b> converges to −3.790, and its rate of change as you slide <b>x position</b> is exactly <b>f′(x)</b>.</b> That second observation is the <b>fundamental theorem of calculus</b>: if \(A(x) = \int_{-3}^{x} f(t)\,dt\) then \(A'(x) = f(x)\) — differentiation and integration undo one another. The midpoint rule converges as \(O(h^2)\), which is why the jump from 2 to 8 rectangles buys far more accuracy than 8 to 40.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>\(f(x)=\sin x + 0.4x\) with tangent of slope \(f'(x) = \cos x + 0.4\) at <b>x position</b>. Blocks show the midpoint quadrature \(\sum f(x_i + h/2)\,h\) approximating \(\int_{-3}^{x} f\), signed.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>The error falls by a factor of four per doubling — second-order convergence, \(O(h^2)\).</b> The midpoint rule's error term is \(\frac{(b-a)h^2}{24}f''(\xi)\), so it is exact for linear integrands and beats the trapezoid rule by a factor of two despite using one evaluation per interval. The tangent-versus-area link is the first fundamental theorem, \(\frac{d}{dx}\int_a^x f = f(x)\) for continuous \(f\); its power is that it converts an infinite limiting process into antidifferentiation, which is why calculus became computable at all.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Mesurer le changement — les maths du mouvement !</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Lance une balle droit en l'air. Elle monte vite, puis plus lentement, reste suspendue le temps d'un battement de cœur tout en haut, puis retombe de plus en plus vite. Voici une question sournoise qui a déconcerté les gens pendant des siècles : à quelle vitesse va-t-elle à un instant <em>exact</em> — pas sur une seconde, pas même sur un millième de seconde, mais à un unique moment figé ? Fige complètement le temps et la balle n'a pas bougé du tout, donc l'habituel « distance divisée par temps » ne te livre qu'un déroutant zéro sur zéro.</p>
+<p>Newton et Leibniz le percèrent au XVIIe siècle, en travaillant séparément, et leur idée est magnifiquement simple : zoome sur n'importe quelle courbe lisse d'assez près et elle commence à ressembler à une droite. La pente de cette droite est la vitesse à cet instant — et, plus généralement, la <strong>dérivée</strong>, le taux auquel quelque chose change en ce moment même. La raideur devient vitesse.</p>
+<p>Fais tourner la même machine à l'envers — additionne une infinité de tranches infiniment minces — et tu obtiens l'<strong>intégrale</strong>, qui te livre aires, volumes, distances et grands totaux. Dérivées et intégrales sont deux faces d'une même pièce, et ensemble elles sont peut-être les outils les plus puissants que les mathématiques aient jamais produits, faisant tourner discrètement la physique, l'ingénierie, la médecine, l'économie et presque toutes les sciences qui existent.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🚀</span> Les calculs de trajectoire de la NASA pour chaque mission spatiale utilisent le calcul — précisément des équations différentielles issues des lois de Newton.</li><li><span aria-hidden="true">💊</span> La pharmacocinétique (comment les médicaments se déplacent dans ton corps) est régie par des équations différentielles — le calcul dit aux médecins à quelle fréquence prescrire.</li><li><span aria-hidden="true">📱</span> Chaque animation sur ton téléphone utilise le calcul pour calculer des courbes lisses, des trajectoires de mouvement et des simulations physiques en temps réel.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Dérivées, intégrales et le théorème fondamental du calcul</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>La <strong>dérivée</strong> est bâtie sur une limite qui fixe droit dans les yeux le problème du « zéro sur zéro » et le bat : \(f'(x) = \lim_{h\to 0} \dfrac{f(x+h) - f(x)}{h}\). Géométriquement c'est la pente de la tangente ; physiquement, si \(f(t)\) est la position alors \(f'(t)\) est la vitesse et \(f''(t)\) l'accélération. Deux règles portent l'essentiel du travail : la règle de la puissance \(\dfrac{d}{dx}x^n = n x^{n-1}\), et la règle de la chaîne \(\dfrac{d}{dx}f(g(x)) = f'(g(x))\,g'(x)\) pour éplucher les fonctions imbriquées.</p>
+<p>L'<strong>intégrale définie</strong> \(\int_a^b f(x)\,dx\) est l'aire signée sous une courbe, définie comme la limite de rectangles toujours plus fins — une somme de Riemann \(\lim_{n\to\infty}\sum_i f(x_i)\,\Delta x\). Puis vient la chute qui lie tout le sujet, le <strong>théorème fondamental du calcul</strong> : si \(F' = f\), alors \(\int_a^b f(x)\,dx = F(b) - F(a)\). Dérivation et intégration ressemblent à des tâches totalement différentes — trouver des pentes contre trouver des aires — et pourtant elles sont des inverses exacts. Ce seul fait est le pivot sur lequel tourne le sujet entier.</p>
+<p>Pointe le calcul sur le <em>temps</em> et tu obtiens les <strong>équations différentielles</strong>, le langage que la nature utilise pour énoncer ses lois. La plus simple, \(\dfrac{dy}{dt} = ky\), capture tout ce dont la croissance suit le rythme de sa propre taille — populations, intérêts composés, désintégration radioactive — et se résout élégamment en \(y(t) = y_0 e^{kt}\). Ajoute un peu de complexité et le même mécanisme livre la deuxième loi de Newton, l'équation des ondes et l'équation de la chaleur, les équations différentielles qui font tourner l'essentiel de la physique et de l'ingénierie.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Dérivée (définition)</th><td>\(f'(x) = \lim_{h\to 0} \dfrac{f(x+h) - f(x)}{h}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Règle de la puissance</th><td>\(\dfrac{d}{dx}x^n = n x^{n-1}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">TFC, partie I</th><td>\(\dfrac{d}{dx}\int_a^x f(t)\,dt = f(x)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">TFC, partie II</th><td>\(\int_a^b f(x)\,dx = F(b) - F(a)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Croissance exponentielle</th><td>\(\dfrac{dy}{dt} = ky \;\Rightarrow\; y(t) = y_0 e^{kt}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Série de Taylor</th><td>\(f(x) = \sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!}(x-a)^n\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">💹</span> Les intérêts composés A = Pe^{rt} sont la solution de dA/dt = rA — la croissance exponentielle en finance est littéralement du calcul.</li><li><span aria-hidden="true">⚡</span> Les quatre équations aux dérivées partielles de Maxwell décrivent tout l'électromagnétisme — des ondes radio à la lumière — en notation du calcul vectoriel.</li><li><span aria-hidden="true">🌡️</span> L'équation de la chaleur ∂u/∂t = α∇²u fut résolue par Fourier à l'aide de la série qui porte désormais son nom.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Analyse réelle, théorie de la mesure et l'intégrale de Lebesgue</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Là où Riemann s'épuise</h3>
+<p>L'intégrale que tu rencontres d'abord — celle de Riemann — découpe l'axe horizontal en fines bandes et somme leurs aires. Elle marche magnifiquement pour les fonctions lisses de la physique, mais elle s'étrangle sur tout ce qui est trop dentelé. L'horreur classique est la fonction de Dirichlet, égale à 1 sur les rationnels et 0 sur les irrationnels : entre deux points quelconques elle saute une infinité de fois, aucune bande ne se cale, et l'intégrale de Riemann refuse catégoriquement d'exister. Pour faire de l'analyse honnêtement — échanger limites et intégrales sans croiser les doigts — il te faut une définition plus robuste.</p>
+<h3><span class="hn">02</span>L'idée de Lebesgue : trancher l'image, pas le domaine</h3>
+<p>Le geste de Lebesgue (1902) fut de basculer le tableau sur le côté. Au lieu de partitionner l'entrée, partitionne la <em>sortie</em> : demande quelle part du domaine tombe dans chaque fine bande horizontale de valeurs, et pondère par cette quantité — \(\int f\,d\mu = \sup \sum_i y_i\,\mu\!\left(f^{-1}[y_i, y_{i+1}]\right)\). La fonction de Dirichlet devient aussitôt triviale : les rationnels, où elle vaut 1, forment un ensemble de <em>mesure nulle</em>, donc ils ne contribuent rien et l'intégrale est simplement 0. L'espace \(L^1(\mu)\) des fonctions intégrables devient un espace de Banach complet — un vrai foyer pour l'analyse.</p>
+<h3><span class="hn">03</span>La mesure, et les choses qu'on ne peut mesurer</h3>
+<p>Sous tout cela se tient la <strong>théorie de la mesure</strong>, l'art d'attribuer de façon cohérente une « taille » aux ensembles — longueur sur la droite, aire dans le plan, probabilité dans un espace d'épreuves — qui survit aux unions dénombrables. Elle est assez générale pour mesurer des bizarreries comme l'ensemble de Cantor, et pourtant elle a une limite dure : en concédant l'axiome du choix, tu peux construire des ensembles si pathologiques qu'aucune mesure cohérente n'existe pour eux. Le paradoxe de Banach-Tarski rôde ici, tranchant une sphère en quelques bouts non mesurables et les réassemblant en deux sphères identiques à la première. La théorie de la mesure est précisément le langage qui explique pourquoi cela devrait sembler impossible.</p>
+<h3><span class="hn">04</span>Les théorèmes de convergence — le vrai prix</h3>
+<p>Les analystes ne changèrent pas pour l'élégance ; ils changèrent pour la puissance. L'intégrale de Lebesgue arrive avec des théorèmes pour échanger une limite et une intégrale — le pas que les physiciens font constamment, d'ordinaire sans y penser à deux fois. Le <strong>théorème de convergence dominée</strong> est le cheval de trait : si \(f_n \to f\) ponctuellement et sont toutes majorées par une seule \(g\) intégrable, avec \(|f_n| \le g\), alors \(\lim \int f_n\,d\mu = \int f\,d\mu\). Riemann n'offre aucune garantie aussi propre, et presque chaque échange de somme, limite et intégrale en physique moderne s'appuie discrètement sur ce résultat.</p>
+<h3><span class="hn">05</span>L² et Fourier : les fonctions comme géométrie</h3>
+<p>Les fonctions de carré intégrable \(L^2\) forment un <em>espace de Hilbert</em> — une géométrie de dimension infinie dotée de longueurs et d'angles, où les exponentielles complexes \(\{e^{inx}/\sqrt{2\pi}\}\) servent d'axes perpendiculaires. Développer une fonction en elles n'est que tracer des perpendiculaires, et l'identité de Parseval \(\|f\|^2 = \sum_n |\hat{c}_n|^2\) est Pythagore déguisé : l'énergie d'un signal égale l'énergie de son spectre. La version continue, la <strong>transformée de Fourier</strong> \(\hat{f}(\xi) = \int f(x)\,e^{-2\pi i \xi x}\,dx\), porte la même géométrie sur toute la droite réelle.</p>
+<h3><span class="hn">06</span>Où tout cela atterrit</h3>
+<p>Rien de tout ceci n'est ornemental — c'est le plancher sur lequel se tient la science moderne. La mécanique quantique est l'étude des vecteurs d'état dans un espace de Hilbert, avec \(|\hat{\psi}(p)|^2\) la densité de probabilité de la quantité de mouvement et des opérateurs à la place des observables. La théorie des probabilités est la théorie de la mesure sous un autre nom, et le théorème central limite en découle proprement via les fonctions caractéristiques. Chaque MP3, JPEG et scanner IRM est de l'analyse de Fourier encaissée dans le silicium. Les « infinitésimaux » branlants de Newton et Leibniz mirent deux siècles à devenir rigoureux — et cette rigueur se révéla le socle de la physique du XXe siècle.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Intégrale de Lebesgue</th><td>\(\int f\,d\mu = \sup \sum_i y_i\,\mu\!\left(f^{-1}[y_i, y_{i+1}]\right)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Convergence dominée</th><td>\(|f_n| \le g \in L^1 \;\Rightarrow\; \lim\!\int f_n = \int \lim f_n\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Transformée de Fourier</th><td>\(\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)\,e^{-2\pi i \xi x}\,dx\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Identité de Parseval</th><td>\(\|f\|^2 = \sum_n |\hat{c}_n|^2\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Norme de Sobolev</th><td>\(\|f\|_{H^k}^2 = \sum_{|\alpha|\le k} \|\partial^\alpha f\|_{L^2}^2\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🎵</span> La compression MP3 et JPEG repose toutes deux sur des transformées de Fourier / en cosinus — écartant les fréquences que les humains ne perçoivent pas pour compresser les fichiers.</li><li><span aria-hidden="true">🔬</span> Les machines IRM reconstruisent des images 3D du corps en transformant à l'inverse par Fourier les signaux de résonance magnétique nucléaire de millions de voxels.</li><li><span aria-hidden="true">🌐</span> Le paradoxe de Banach-Tarski : à l'aide de l'axiome du choix, une sphère peut être décomposée et réassemblée en deux sphères identiques — la théorie de la mesure est pourquoi c'est paradoxal.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Calculus" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Mathématiques</h2>
+    <ul><li><a href="/fr/probabilites-courbe-en-cloche/">Probabilités et la courbe en cloche</a></li><li><a href="/fr/fractales-infini/">Fractales et infini</a></li><li><a href="/fr/theorie-des-graphes-reseaux/">Théorie des graphes et réseaux</a></li><li><a href="/fr/trigonometrie-cercle-unite/">Trigonométrie et le cercle unité</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

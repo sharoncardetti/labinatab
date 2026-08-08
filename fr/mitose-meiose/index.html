@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitose et méiose | Lab-in-a-Tab</title>
+<meta name="description" content="Une cellule devient deux — ou quatre. Comment la vie se copie, répare un corps et brasse la génération suivante.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/mitose-meiose/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/mitosis-meiosis/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/mitosi-meiosi/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/mitose-meiose/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/mitosis-meiosis/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Mitose et méiose — Expliqué et simulé">
+<meta property="og:description" content="Une cellule devient deux — ou quatre. Comment la vie se copie, répare un corps et brasse la génération suivante.">
+<meta property="og:url" content="https://labinatab.com/fr/mitose-meiose/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mitose et méiose — Expliqué et simulé">
+<meta name="twitter:description" content="Une cellule devient deux — ou quatre. Comment la vie se copie, répare un corps et brasse la génération suivante.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/mitose-meiose/#article",
+   "headline": "Mitose et méiose",
+   "name": "Mitose et méiose",
+   "description": "Une cellule devient deux — ou quatre. Comment la vie se copie, répare un corps et brasse la génération suivante.",
+   "url": "https://labinatab.com/fr/mitose-meiose/",
+   "mainEntityOfPage": "https://labinatab.com/fr/mitose-meiose/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Division cellulaire",
+    "Chromosomes",
+    "ADN"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Mitose et méiose",
+    "sameAs": "https://en.wikipedia.org/wiki/Mitosis"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Mitose et méiose",
+     "item": "https://labinatab.com/fr/mitose-meiose/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/mitosis-meiosis/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/mitosi-meiosi/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/mitose-meiose/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Biologie</nav>
+  <h1>Mitose et méiose</h1>
+  <p class="lead">Une cellule devient deux — ou quatre. Comment la vie se copie, répare un corps et brasse la génération suivante.</p>
+  <div class="chips"><span>Division cellulaire</span><span>Chromosomes</span><span>ADN</span></div>
+  <section class="sim-embed" data-sim="mitosis" data-color="#9333ea" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#9333ea"><span class="sg-lbl">Essaie</span><span>Drag <b>Drag through the stages</b> slowly from start to finish, watching the chromosomes line up in the middle and then split to the ends. How many cells do you end up with?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#9333ea"><span class="sg-lbl">Essaie</span><span>Scrub to metaphase and note the chromosomes lined up on the equator, then to anaphase to watch the sisters separate. Then switch to Meiosis and let it run two divisions.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#9333ea"><span class="sg-lbl">Essaie</span><span>Compare the two modes at their midpoints: in mitosis the sister chromatids separate once; in meiosis I the homologs separate first, and only in meiosis II do the sisters part.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>A cell dividing. Drag the slider to move through the stages, or press Play. The coloured X-shapes are <b>chromosomes</b> — the cell copies them, lines them up, and pulls them apart into two new cells.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>One cell becomes two, each with a full, identical set of chromosomes.</b> The copies line up down the centre, get pulled to opposite ends, and the cell pinches in half. Switch to Meiosis and the same start ends in <i>four</i> cells with half the chromosomes instead.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>The stages of division. Drag <b>Stage</b> to scrub through prophase, metaphase, anaphase and telophase; <b>Phase</b> names where you are and <b>Cells</b> counts the cells. The mode button switches between mitosis and meiosis.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Mitosis ends in 2 identical diploid cells; meiosis ends in 4 unique haploid cells.</b> Metaphase (alignment) and anaphase (separation) are the crux. Meiosis adds a second division and pairs up homologous chromosomes first, which halves the chromosome number and reshuffles the genes.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>A schematic of chromosome segregation. <b>Stage</b> scrubs the timeline, <b>Phase</b> labels the stage and <b>Cells</b> the product count. Meiosis mode shows the reductional division (I) followed by the equational division (II).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>The defining difference is meiosis I: homologs, not sister chromatids, separate — and that is what halves the chromosome number.</b> Sister separation (mitosis, and meiosis II) preserves ploidy; homolog separation reduces it. The schematic omits crossing over, the other great source of variation, which recombines the homologs before they part.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Comment une cellule devient deux</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Tu as commencé comme une seule cellule. Maintenant tu es fait de dizaines de milliers de milliards — et chacune est venue de cette première cellule qui s'est divisée, encore et encore. Cette copie s'appelle la <strong>division cellulaire</strong>, et elle se produit en toi en ce moment même : guérissant une coupure, remplaçant la peau usée et la paroi intestinale, faisant pousser tes cheveux et tes ongles. La version de tous les jours, qui fait deux copies identiques, s'appelle la <strong>mitose</strong>.</p>
+<p>Le plus dur, ce sont les instructions. Chaque cellule porte un jeu complet d'ADN, empaqueté en <strong>chromosomes</strong>, et avant de se diviser elle doit copier chacun parfaitement — puis répartir les copies pour que chaque nouvelle cellule finisse avec un jeu complet, ni plus ni moins. La mitose est la danse soigneusement chorégraphiée qui aligne les copies et les tire à part uniformément. Rate-la et les cellules finissent avec trop ou trop peu de chromosomes.</p>
+<p>Il existe un second type de division, la <strong>méiose</strong>, réservé à faire des ovules et des spermatozoïdes. Au lieu de deux cellules identiques elle en fait quatre, chacune avec la moitié de l'ADN et brassée en combinaisons nouvelles — c'est pourquoi tu ressembles à tes parents mais n'es le clone d'aucun. La mitose bâtit et répare un corps ; la méiose fabrique les cellules qui transmettent la vie à la génération suivante.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">✂️</span> Tu perds et remplaces des dizaines de milliers de cellules de peau chaque minute — toutes faites par la mitose qui copie des cellules existantes.</li><li><span aria-hidden="true">🧬</span> Avant de se diviser, une cellule humaine copie les 2 mètres entiers d'ADN empaquetés dans ses 46 chromosomes — avec étonnamment peu d'erreurs.</li><li><span aria-hidden="true">👶</span> La méiose brasse les gènes de tes parents en nouvelles combinaisons, c'est pourquoi les frères et sœurs diffèrent — tu n'es la copie d'aucun parent.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Les phases de la mitose, et en quoi la méiose diffère</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Une cellule qui se divise exécute un cycle : elle grandit et copie son ADN pendant l'<em>interphase</em>, puis se divise dans la phase mitotique. La mitose elle-même a quatre étapes chorégraphiées. <strong>Prophase</strong> : les chromosomes copiés se condensent en formes en X visibles — deux chromatides sœurs identiques jointes à un centromère — et un fuseau de microtubules s'assemble. <strong>Métaphase</strong> : les chromosomes s'alignent en file indienne le long de l'équateur de la cellule. <strong>Anaphase</strong> : le fuseau tire les chromatides sœurs à part vers des pôles opposés. <strong>Télophase</strong> : les noyaux se reforment autour de chaque jeu, et la cellule s'étrangle en deux (cytocinèse).</p>
+<p>Le résultat est deux cellules filles diploïdes génétiquement identiques, chacune avec le compte complet de chromosomes (46 chez l'humain). Des points de contrôle surveillent tout le processus — la cellule ne procède pas à moins que son ADN soit intact et chaque chromosome correctement attaché. Quand ces freins lâchent, les cellules se divisent sans contrôle, ce qui est l'essence du cancer.</p>
+<p>La <strong>méiose</strong>, qui fait les gamètes, exécute le machinage deux fois avec une torsion. Elle commence en appariant les chromosomes homologues (un de chaque parent) et en échangeant des segments entre eux — le <em>crossing-over</em> — puis sépare les homologues en méiose I et les chromatides sœurs en méiose II. Le résultat est quatre cellules haploïdes, chacune avec la moitié des chromosomes (23) et un brassage unique de gènes. Ce brassage, avec l'assortiment aléatoire des chromosomes, est le moteur de la variété génétique.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Produit de la mitose</th><td>\(2n \to 2n + 2n\)</td><td class="cmt">deux cellules diploïdes identiques</td></tr>
+<tr><th scope="row">Produit de la méiose</th><td>\(2n \to n + n + n + n\)</td><td class="cmt">quatre cellules haploïdes uniques</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Chromosomes humains</th><td>\(2n = 46,\quad n = 23\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔬</span> La mitose produit deux cellules génétiquement identiques ; la méiose en produit quatre génétiquement uniques, chacune avec la moitié de l'ADN.</li><li><span aria-hidden="true">🎗️</span> Le cancer est une mitose incontrôlée : des cellules qui ignorent les points de contrôle censés arrêter une division endommagée ou indésirable.</li><li><span aria-hidden="true">🔀</span> Le crossing-over échange de l'ADN entre chromosomes appariés en méiose, mélangeant les gènes de tes parents en combinaisons toutes nouvelles.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Mécanique des chromosomes, cycle cellulaire, variation et cancer</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Le cycle cellulaire et ses points de contrôle</h3>
+<p>La division est une étape d'un cycle : \(G_1 \to S\) (réplication de l'ADN) \(\to G_2 \to M\), entraîné par les cyclines et les kinases cyclines-dépendantes. Les points de contrôle (G1/S, G2/M, et le point de contrôle d'assemblage du fuseau) arrêtent le cycle jusqu'à ce que les conditions soient bonnes, et p53 — « le gardien du génome » — déclenche la réparation ou la mort programmée quand l'ADN est endommagé.</p>
+<h3><span class="hn">02</span>Le fuseau et la ségrégation des chromosomes</h3>
+<p>Un kinétochore sur chaque centromère capture les microtubules du fuseau, et le point de contrôle d'assemblage du fuseau bloque l'anaphase jusqu'à ce que chaque chromosome soit bi-orienté, attaché aux deux pôles. Seulement alors la cohésine qui tient les sœurs ensemble est clivée, et elles se séparent d'un coup. Les erreurs ici produisent l'<em>aneuploïdie</em> — le mauvais nombre de chromosomes.</p>
+<h3><span class="hn">03</span>La méiose et les sources de variation</h3>
+<p>La méiose I est <em>réductionnelle</em> — les homologues se séparent, divisant le compte par deux ; la méiose II est <em>équationnelle</em> — les sœurs se séparent, comme en mitose. Deux brasseurs indépendants créent la variété : le crossing-over recombine les homologues, et le seul assortiment indépendant des 23 paires donne \(2^{23} \approx 8.4\) millions de combinaisons par gamète, avant même de compter la recombinaison.</p>
+<h3><span class="hn">04</span>Quand la division tourne mal</h3>
+<p>Le cancer est fondamentalement une maladie du cycle cellulaire : des mutations dans les oncogènes (les accélérateurs) et les suppresseurs de tumeurs (les freins, comme p53 et RB) laissent les cellules se diviser sans permission et ignorer leurs points de contrôle. L'aneuploïdie par mauvaise ségrégation — la trisomie 21, par exemple — montre le coût abrupt d'un seul chromosome en trop.</p>
+<h3><span class="hn">05</span>Au-delà du manuel</h3>
+<p>Les cellules peuvent aussi mourir exprès (apoptose), cesser de se diviser pour de bon (sénescence, liée au raccourcissement des télomères à chaque division), et réaffecter le même machinage à la régénération. L'équilibre entre se diviser et se retenir est exactement ce qui empêche un corps de mille milliards de cellules soit de dépérir, soit de s'emballer.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Le cycle cellulaire</th><td>\(G_1 \to S \to G_2 \to M\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Mitose contre méiose</th><td>\(2n \to 2n\ (\times 2) \quad\text{vs}\quad 2n \to n\ (\times 4)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Assortiment indépendant</th><td>\(2^{n} = 2^{23} \approx 8.4\times10^{6}\)</td><td class="cmt">combinaisons par gamète</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧬</span> Le seul assortiment indépendant donne 2²³ ≈ 8,4 millions de combinaisons de chromosomes par gamète humain — avant que le crossing-over n'en ajoute encore plus.</li><li><span aria-hidden="true">🛡️</span> p53, le « gardien du génome », arrête la division pour réparer l'ADN ou déclenche le suicide cellulaire. Il est muté dans environ la moitié de tous les cancers.</li><li><span aria-hidden="true">⏳</span> Chaque division raccourcit les coiffes télomériques de tes chromosomes ; quand elles s'épuisent la cellule cesse de se diviser — une limite intégrée liée au vieillissement.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Mitosis" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Biologie</h2>
+    <ul><li><a href="/fr/regles-de-la-vie/">Les règles de la vie</a></li><li><a href="/fr/adn-genetique/">ADN et génétique</a></li><li><a href="/fr/evolution-selection-naturelle/">Évolution et sélection naturelle</a></li><li><a href="/fr/ecosystemes-reseaux-trophiques/">Écosystèmes et réseaux trophiques</a></li><li><a href="/fr/photosynthese/">Photosynthèse</a></li><li><a href="/fr/cellule-osmose-diffusion/">La cellule : osmose et diffusion</a></li><li><a href="/fr/echiquiers-de-punnett-genetique/">Échiquiers de Punnett et génétique</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

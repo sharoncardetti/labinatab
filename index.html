@@ -65,7 +65,7 @@
  },
  "mainEntity": {
   "@type": "ItemList",
-  "numberOfItems": 47,
+  "numberOfItems": 52,
   "itemListElement": [
    {
     "@type": "ListItem",
@@ -348,6 +348,36 @@
     "position": 47,
     "url": "https://labinatab.com/sleep-consciousness/",
     "name": "Sleep & Consciousness"
+   },
+   {
+    "@type": "ListItem",
+    "position": 48,
+    "url": "https://labinatab.com/optics-light-lenses/",
+    "name": "Optics: Light, Lenses & Refraction"
+   },
+   {
+    "@type": "ListItem",
+    "position": 49,
+    "url": "https://labinatab.com/pendulum-simple-harmonic-motion/",
+    "name": "Pendulums & Simple Harmonic Motion"
+   },
+   {
+    "@type": "ListItem",
+    "position": 50,
+    "url": "https://labinatab.com/gas-laws/",
+    "name": "The Gas Laws"
+   },
+   {
+    "@type": "ListItem",
+    "position": 51,
+    "url": "https://labinatab.com/moon-phases/",
+    "name": "Moon Phases"
+   },
+   {
+    "@type": "ListItem",
+    "position": 52,
+    "url": "https://labinatab.com/protein-synthesis/",
+    "name": "Protein Synthesis"
    }
   ]
  }
@@ -597,25 +627,32 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 :root[data-theme=dark] .pclose:hover{background:#7f1d1d;color:#fecaca;border-color:#b91c1c}
 
 /* FOOTER */
-.site-footer{border-top:1px solid var(--border);background:var(--white);margin-top:3rem}
-.footer-top{max-width:1340px;margin:0 auto;padding:3rem clamp(1rem,4vw,3rem) 1.8rem;display:grid;grid-template-columns:1.5fr 1fr;gap:2.5rem}
-.footer-brand .logo{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:6px;margin-bottom:.85rem}
-.footer-about{font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.75;max-width:48ch}
-.footer-subjects h4{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:1rem}
-.footer-subjects ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.65rem 1.2rem}
-.footer-subjects a{color:var(--ink2);text-decoration:none;font-size:.88rem;font-weight:700;cursor:pointer;transition:color .18s}
+.site-footer{border-top:1px solid var(--border);background:var(--white);margin-top:2.5rem}
+.footer-top{max-width:1340px;margin:0 auto;padding:2rem clamp(1rem,4vw,3rem) 1.2rem;display:grid;grid-template-columns:1.5fr 1fr;gap:1.8rem}
+.footer-brand .logo{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:6px;margin-bottom:.6rem}
+.footer-about{font-size:.86rem;font-weight:600;color:var(--ink2);line-height:1.65;max-width:48ch}
+.footer-subjects h4{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.7rem}
+.footer-subjects ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.45rem 1.2rem}
+.footer-subjects a{color:var(--ink2);text-decoration:none;font-size:.85rem;font-weight:700;cursor:pointer;transition:color .18s}
 .footer-subjects a:hover{color:#ff6b35}
-.footer-all{max-width:1340px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem) 2rem}
-.footer-all h4{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.9rem}
-.all-topics{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.5rem 1.2rem}
+.footer-all{max-width:1340px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem) 1.2rem}
+/* collapsed by default: 50 links would triple the footer's height */
+.footer-all summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem}
+.footer-all summary::-webkit-details-marker{display:none}
+.footer-all summary::after{content:'▾';font-size:.75rem;color:var(--ink3);transition:transform .2s}
+.footer-all details[open] summary::after{transform:rotate(180deg)}
+.footer-all h4{font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--ink);margin:0}
+.all-topics{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.45rem 1.2rem;margin-top:.9rem}
 .all-topics a{color:var(--ink3);text-decoration:none;font-size:.83rem;font-weight:700;transition:color .15s}
 .all-topics a:hover{color:#ff6b35}
-.footer-bar{border-top:1px solid var(--border);max-width:1340px;margin:0 auto;padding:1.3rem clamp(1rem,4vw,3rem);display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between}
+.footer-bar{border-top:1px solid var(--border);max-width:1340px;margin:0 auto;padding:1rem clamp(1rem,4vw,3rem);display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;align-items:center;justify-content:space-between}
 .footer-bar small{color:var(--ink3);font-size:.82rem;font-weight:700}
 .footer-bar .fb-links{display:flex;gap:1.4rem;flex-wrap:wrap;align-items:center}
 .footer-bar .fb-links a{color:var(--ink2);text-decoration:none;font-weight:800;font-size:.82rem;transition:color .18s}
 .footer-bar .fb-links a:hover{color:#ff6b35}
 .footer-bar .attrib{color:var(--ink3);font-size:.78rem;font-weight:600}
+.footer-bar .ai-notice{flex-basis:100%;margin:0;color:var(--ink3);font-size:.78rem;font-weight:600;line-height:1.6}
+.footer-bar .ai-notice a{color:var(--ink2);font-weight:800}
 
 @media(max-width:640px){
   /* Header wraps to two rows: [logo … toggle] then the level bar full-width.
@@ -625,6 +662,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   #themeToggle{order:2}
   .lvl-bar{order:3;flex-basis:100%;margin-left:0;justify-content:center}
   .lvl{padding:6px 14px;font-size:.78rem}
+  /* Lang button sits at the header's left edge on mobile; open the menu
+     rightward (left:0) so it doesn't spill off the left of the screen. */
+  .langsel .langmenu{left:0;right:auto}
   .toolbar{gap:.7rem}
   .cat-chips{gap:.4rem}
   .panel{border-radius:22px 22px 0 0;max-height:95vh}
@@ -643,6 +683,9 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 .langsel{position:relative}
 .langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
 .flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+/* Fixed flag width inside the lang button so it stays the same shape in every
+   language (UK flag is 2:1, IT/FR are 3:2, so height-based sizing made EN wider). */
+.langbtn .flag{width:22px;height:auto}
 .langmenu{position:absolute;right:0;top:calc(100% + 8px);background:var(--white);border:1px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 12px 30px rgba(0,0,0,.22);z-index:60;display:flex;flex-direction:column;gap:2px}
 .langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
 .langmenu a:hover{background:var(--bg);color:var(--ink)}
@@ -701,7 +744,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
         <span class="logo-img" role="img" aria-label="Lab-in-a-Tab logo"></span>
         Lab-in-a-Tab
       </div>
-      <p class="footer-about">32 hands-on science simulations across nine fields, each written for three levels — from a curious ten-year-old to a graduate student. Free, no account, no tracking.</p>
+      <p class="footer-about">Hands-on science simulations across nine fields, each written for three levels, from a curious ten-year-old to a graduate student. Free, no account, no tracking.</p>
     </div>
     <nav class="footer-subjects" aria-label="Browse by subject">
       <h4>Explore by subject</h4>
@@ -718,10 +761,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     </nav>
   </div>
   <nav class="footer-all" aria-label="All experiments">
-    <h4>All experiments</h4>
-    <!-- filled by build-pages.mjs from the S array — static links so crawlers and
-         link equity reach every topic page without depending on JS rendering -->
-    <ul class="all-topics" id="all-topics"><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li><li><a href="/states-of-matter/">States of Matter</a></li><li><a href="/probability-bell-curve/">Probability &amp; The Bell Curve</a></li><li><a href="/fractals/">Fractals &amp; Infinity</a></li><li><a href="/calculus/">Calculus &amp; Change</a></li><li><a href="/graph-theory/">Graph Theory &amp; Networks</a></li><li><a href="/unit-circle-trigonometry/">Trigonometry &amp; The Unit Circle</a></li><li><a href="/rules-of-life/">The Rules of Life</a></li><li><a href="/dna-genetics/">DNA &amp; Genetics</a></li><li><a href="/evolution/">Evolution &amp; Natural Selection</a></li><li><a href="/ecosystems-food-webs/">Ecosystems &amp; Food Webs</a></li><li><a href="/photosynthesis/">Photosynthesis</a></li><li><a href="/cell-osmosis-diffusion/">The Cell: Osmosis &amp; Diffusion</a></li><li><a href="/mitosis-meiosis/">Mitosis &amp; Meiosis</a></li><li><a href="/punnett-squares-genetics/">Punnett Squares &amp; Genetics</a></li><li><a href="/sorting-algorithms/">Sorting Algorithms</a></li><li><a href="/machine-learning/">Machine Learning &amp; Neural Networks</a></li><li><a href="/cryptography/">Cryptography &amp; Security</a></li><li><a href="/computation-complexity/">Computation &amp; Complexity</a></li><li><a href="/climate-atmosphere/">Climate &amp; the Atmosphere</a></li><li><a href="/plate-tectonics/">Plate Tectonics &amp; Earthquakes</a></li><li><a href="/ocean-currents/">Oceanography &amp; Ocean Currents</a></li><li><a href="/volcanology/">Volcanology</a></li><li><a href="/why-we-have-seasons/">Why We Have Seasons</a></li><li><a href="/chemical-bonds/">Atoms &amp; Chemical Bonds</a></li><li><a href="/electrochemistry/">Electrochemistry &amp; Batteries</a></li><li><a href="/kinetics-equilibrium/">Kinetics &amp; Equilibrium</a></li><li><a href="/organic-chemistry/">Organic Chemistry &amp; Molecules of Life</a></li><li><a href="/acids-bases-ph/">Acids, Bases &amp; pH</a></li><li><a href="/periodic-table/">The Periodic Table</a></li><li><a href="/balancing-chemical-equations/">Balancing Chemical Equations</a></li><li><a href="/stars-universe/">Stars &amp; The Universe</a></li><li><a href="/black-holes/">Black Holes &amp; Relativity</a></li><li><a href="/cosmology-big-bang/">Cosmology &amp; The Big Bang</a></li><li><a href="/solar-system/">The Solar System</a></li><li><a href="/eclipses/">Eclipses</a></li><li><a href="/meteor-showers/">Meteor Showers</a></li><li><a href="/brain-neurons/">The Brain &amp; Neurons</a></li><li><a href="/electric-brain/">The Electric Brain</a></li><li><a href="/how-memory-works/">How Memory Works</a></li><li><a href="/sleep-consciousness/">Sleep &amp; Consciousness</a></li></ul>
+    <details>
+    <summary><h4>All experiments</h4></summary>
+    <!-- collapsed by default to keep the footer short; the links stay in the DOM
+         so crawlers and link equity still reach every topic page.
+         filled by build-pages.mjs from the S array. -->
+    <ul class="all-topics" id="all-topics"><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li><li><a href="/states-of-matter/">States of Matter</a></li><li><a href="/probability-bell-curve/">Probability &amp; The Bell Curve</a></li><li><a href="/fractals/">Fractals &amp; Infinity</a></li><li><a href="/calculus/">Calculus &amp; Change</a></li><li><a href="/graph-theory/">Graph Theory &amp; Networks</a></li><li><a href="/unit-circle-trigonometry/">Trigonometry &amp; The Unit Circle</a></li><li><a href="/rules-of-life/">The Rules of Life</a></li><li><a href="/dna-genetics/">DNA &amp; Genetics</a></li><li><a href="/evolution/">Evolution &amp; Natural Selection</a></li><li><a href="/ecosystems-food-webs/">Ecosystems &amp; Food Webs</a></li><li><a href="/photosynthesis/">Photosynthesis</a></li><li><a href="/cell-osmosis-diffusion/">The Cell: Osmosis &amp; Diffusion</a></li><li><a href="/mitosis-meiosis/">Mitosis &amp; Meiosis</a></li><li><a href="/punnett-squares-genetics/">Punnett Squares &amp; Genetics</a></li><li><a href="/sorting-algorithms/">Sorting Algorithms</a></li><li><a href="/machine-learning/">Machine Learning &amp; Neural Networks</a></li><li><a href="/cryptography/">Cryptography &amp; Security</a></li><li><a href="/computation-complexity/">Computation &amp; Complexity</a></li><li><a href="/climate-atmosphere/">Climate &amp; the Atmosphere</a></li><li><a href="/plate-tectonics/">Plate Tectonics &amp; Earthquakes</a></li><li><a href="/ocean-currents/">Oceanography &amp; Ocean Currents</a></li><li><a href="/volcanology/">Volcanology</a></li><li><a href="/why-we-have-seasons/">Why We Have Seasons</a></li><li><a href="/chemical-bonds/">Atoms &amp; Chemical Bonds</a></li><li><a href="/electrochemistry/">Electrochemistry &amp; Batteries</a></li><li><a href="/kinetics-equilibrium/">Kinetics &amp; Equilibrium</a></li><li><a href="/organic-chemistry/">Organic Chemistry &amp; Molecules of Life</a></li><li><a href="/acids-bases-ph/">Acids, Bases &amp; pH</a></li><li><a href="/periodic-table/">The Periodic Table</a></li><li><a href="/balancing-chemical-equations/">Balancing Chemical Equations</a></li><li><a href="/stars-universe/">Stars &amp; The Universe</a></li><li><a href="/black-holes/">Black Holes &amp; Relativity</a></li><li><a href="/cosmology-big-bang/">Cosmology &amp; The Big Bang</a></li><li><a href="/solar-system/">The Solar System</a></li><li><a href="/eclipses/">Eclipses</a></li><li><a href="/meteor-showers/">Meteor Showers</a></li><li><a href="/brain-neurons/">The Brain &amp; Neurons</a></li><li><a href="/electric-brain/">The Electric Brain</a></li><li><a href="/how-memory-works/">How Memory Works</a></li><li><a href="/sleep-consciousness/">Sleep &amp; Consciousness</a></li><li><a href="/optics-light-lenses/">Optics: Light, Lenses &amp; Refraction</a></li><li><a href="/pendulum-simple-harmonic-motion/">Pendulums &amp; Simple Harmonic Motion</a></li><li><a href="/gas-laws/">The Gas Laws</a></li><li><a href="/moon-phases/">Moon Phases</a></li><li><a href="/protein-synthesis/">Protein Synthesis</a></li></ul>
+    </details>
   </nav>
   <div class="footer-bar">
     <small>© <span id="year">2026</span> Lab-in-a-Tab — <span id="madeFor">made for curious minds</span>.</small>
@@ -729,6 +775,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       <a href="mailto:hello@labinatab.com">Contact</a>
       <span class="attrib">Concepts from Wikipedia &amp; open educational resources</span>
     </div>
+    <!-- EU AI Act art. 50(4) disclosure — must stay visible, not link-only -->
+    <p class="ai-notice"><span class="ai-txt">Explanations on this site are written with the help of generative AI.</span> <a href="/ai/">How we use AI</a></p>
   </div>
 </footer>
 
@@ -3074,6 +3122,253 @@ const S=[
    ]},sim:'sleep'},
  }},
 
+{id:'optics',group:'⚛️ Physics',emoji:'🔦',color:'#0284c7',light:'#f0f9ff',
+ title:'Optics: Light, Lenses & Refraction',teaser:`Why does a lens flip the world upside down, and a straw look broken in a glass of water? Light bends — and that bending builds every eye, camera and telescope.`,chips:['Lenses','Refraction','Optics'],
+ lvls:{
+  junior:{icon:'🔦',title:`How light bends to make pictures`,
+   body:`<p>Light almost always travels in dead-straight lines — which is why you get sharp shadows and why you can't see around corners. But the instant light crosses from one clear material into another, from air into water or glass, it <strong>bends</strong>. That bending is called <strong>refraction</strong>, and it's the reason a straw in a glass of water looks snapped in half, and why a coin at the bottom of a pool sits higher than it really is.</p>
+<p>Shape a piece of glass just right and you can steer that bending on purpose — that's a <strong>lens</strong>. A magnifying glass bulges in the middle, so it gathers stray rays of light and funnels them to meet at a single point. Hold it at the right distance and those rays cross over and rebuild a picture of whatever they came from — often flipped upside down. That crossing-over is exactly why a camera, a telescope and your own eyeball can all take the light bouncing off the world and fold it into a clear image.</p>
+<p>Your eye does it with a soft, living lens that muscles squeeze to change its shape, focusing near then far in a fraction of a second. A camera does the same job with a sliding glass lens. In the simulation below, move the object and reshape the lens, and watch the rays cross to build the image — real, flipped, and resized.</p>`,
+   facts:[{e:'👁️',t:`Your eye's lens flips every image upside down before it hits the retina — your brain quietly turns the whole world right-way-up again.`},{e:'🌈',t:`A rainbow is refraction in action: sunlight bends as it enters each raindrop, splitting into colours because each colour bends by a slightly different amount.`},{e:'🔭',t:`The lens in a big telescope can be over a metre wide — the wider the lens, the more starlight it gathers, and the fainter the things it can see.`}],
+   formula:null,sim:'optics'},
+  student:{icon:'📐',title:`Snell's law and the thin-lens equation`,
+   body:`<p>Refraction happens because light travels at different speeds in different materials, and each material is rated by its <strong>refractive index</strong> \\(n = c/v\\) — how many times slower light goes inside it than in a vacuum (water is 1.33, glass about 1.5). At a boundary the ray bends by exactly the amount that keeps its wavefronts in step, captured by <strong>Snell's law</strong> \\(n_1\\sin\\theta_1 = n_2\\sin\\theta_2\\). Going into a denser medium bends the ray toward the normal; coming out bends it away.</p>
+<p>Push that exit angle far enough and something dramatic happens: past the <em>critical angle</em> \\(\\theta_c = \\arcsin(n_2/n_1)\\) the ray can't escape at all and reflects entirely back inside — <strong>total internal reflection</strong>, the trick that pipes light down a fibre-optic cable for thousands of kilometres with barely any loss. A lens simply refracts a ray twice, once at each curved surface, and its focusing power is set by the <em>lensmaker's equation</em> from those curvatures and the glass index.</p>
+<p>Where a lens forms its image follows the beautifully simple <strong>thin-lens equation</strong> \\(\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}\\), linking focal length \\(f\\), object distance \\(d_o\\) and image distance \\(d_i\\). The image's size and orientation come from the magnification \\(m = -d_i/d_o\\): a negative \\(m\\) means inverted. Put the object beyond \\(f\\) and you get a <em>real</em>, flipped image you can catch on a screen (a camera); bring it inside \\(f\\) and the image turns <em>virtual</em>, upright and enlarged (a magnifying glass).</p>`,
+   facts:[{e:'💎',t:`Diamond's refractive index is a huge 2.42, giving it a tiny 24° critical angle — light bounces around inside for ages before escaping, which is why cut diamonds sparkle so fiercely.`},{e:'📡',t:`A single optical fibre relies on total internal reflection to carry light — modern cables move over 100 terabits per second, the backbone of the entire internet.`},{e:'👓',t:`Glasses correct vision by adding just the right focal length: converging lenses for long-sightedness, diverging lenses (negative f) for short-sightedness.`}],
+   formula:{tex:1,rows:[
+    {n:'Refractive index',e:'n = c/v',c:'water 1.33, glass ~1.5'},
+    {n:`Snell's law`,e:'n_1\\sin\\theta_1 = n_2\\sin\\theta_2'},
+    {sep:1},
+    {n:'Critical angle',e:'\\theta_c = \\arcsin(n_2/n_1)',c:'total internal reflection'},
+    {n:'Thin-lens equation',e:'\\dfrac{1}{f} = \\dfrac{1}{d_o} + \\dfrac{1}{d_i}'},
+    {sep:1},
+    {n:'Magnification',e:'m = -\\dfrac{d_i}{d_o}',c:'m<0 = inverted'},
+    {n:`Lensmaker`,e:'\\dfrac{1}{f} = (n-1)\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)'},
+   ]},sim:'optics'},
+  scholar:{icon:'🔬',title:`Wave optics, aberrations and the diffraction limit`,
+   body:`<h4><span class="hn">01</span>Rays are shortcuts; light is a wave</h4>
+<p>Ray optics — straight lines that bend at surfaces — is a superb approximation, but it is only the short-wavelength limit of something deeper. <strong>Fermat's principle</strong> reframes every path light takes as the one of <em>stationary optical path length</em>, \\(\\delta\\!\\int n\\,ds = 0\\). Snell's law, the law of reflection, the very existence of focal points all fall out of this single variational statement — light behaves as if it sniffs out the extremal route. It is the same mathematics that reappears as the principle of least action in mechanics.</p>
+<h4><span class="hn">02</span>Refraction as wavefronts changing gear</h4>
+<p>Why does a ray bend toward the normal in glass? Picture the wavefront as a marching row: when one end enters the slower medium first, it lags while the other end keeps pace, and the whole front pivots — Huygens' construction made literal. Speed and wavelength drop by the factor \\(n\\) while frequency is conserved, so \\(\\lambda_{\\text{medium}} = \\lambda_0/n\\). The ray picture and the wave picture agree exactly, but only the wave picture survives when the lens gets small.</p>
+<h4><span class="hn">03</span>Why no lens is ever perfect: aberrations</h4>
+<p>The tidy thin-lens equation assumes rays hug the axis. Real lenses violate it. <em>Spherical aberration</em> focuses edge rays and central rays at different points because a sphere isn't the ideal shape; <em>chromatic aberration</em> smears colour because \\(n(\\lambda)\\) means blue light bends more than red, so a lens has a different focal length for every colour. Designers fight back by cementing crown and flint glasses into <em>achromatic doublets</em> and grinding <em>aspheric</em> surfaces — a whole craft devoted to undoing the sphere's imperfections.</p>
+<h4><span class="hn">04</span>The wall you cannot climb: diffraction</h4>
+<p>Even a flawless lens cannot focus light to a point. Because light is a wave passing through a finite aperture, it spreads into an <strong>Airy disc</strong>, and two points blur together once they are closer than the <em>Rayleigh criterion</em> \\(\\theta_{\\min} = 1.22\\,\\lambda/D\\). Resolution is set by the <em>numerical aperture</em>, \\(d_{\\min} = 0.61\\,\\lambda/\\text{NA}\\): the smallest thing a microscope can cleanly separate is roughly half a wavelength, a few hundred nanometres. This is a limit of physics, not engineering.</p>
+<h4><span class="hn">05</span>A lens computes a Fourier transform</h4>
+<p>There is a startling identity at the heart of optics: the light field in the back focal plane of a lens is the <strong>spatial Fourier transform</strong> of the field in its front focal plane. Fine detail in the object becomes high spatial frequency far off-axis, so an aperture that clips those rays is literally a low-pass filter. This is the foundation of <em>Fourier optics</em>, of spatial filtering, and of the modulation transfer function that quantifies exactly how much contrast a lens preserves at each level of detail.</p>
+<h4><span class="hn">06</span>Cheating the diffraction limit</h4>
+<p>For a century the Rayleigh limit looked absolute — and then microscopy simply went around it. <em>STED</em> shrinks the glowing spot with a doughnut of depletion light; <em>PALM/STORM</em> switch single molecules on and off and locate each far more precisely than it blurs, winning the 2014 Nobel Prize in Chemistry. Meanwhile <em>metamaterials</em> and near-field probes exploit the evanescent waves that ordinary lenses throw away. The diffraction limit still holds for far-field propagating light — but cleverness about <em>which</em> light you use has pushed optical imaging down to the scale of individual molecules.</p>`,
+   facts:[{e:'🏆',t:`Super-resolution microscopy (STED, PALM/STORM) broke the diffraction limit and won the 2014 Nobel Prize in Chemistry, imaging structures ~20 nm across — ten times finer than light "should" allow.`},{e:'🔭',t:`The James Webb Space Telescope's 6.5 m mirror gives it a diffraction-limited resolution of ~0.1 arcseconds in the infrared — sharp enough to resolve a coin from ~40 km away.`},{e:'🌀',t:`A lens performs an optical Fourier transform at the speed of light with zero power draw — an idea now revived for ultra-fast analogue and optical computing.`}],
+   formula:{tex:1,rows:[
+    {n:`Fermat's principle`,e:'\\delta\\!\\int n\\,ds = 0'},
+    {n:'Wavelength in medium',e:'\\lambda_{\\text{med}} = \\lambda_0/n'},
+    {sep:1},
+    {n:'Rayleigh criterion',e:'\\theta_{\\min} = 1.22\\,\\dfrac{\\lambda}{D}'},
+    {n:'Resolution',e:'d_{\\min} = 0.61\\,\\dfrac{\\lambda}{\\text{NA}}',c:'NA = n\\sin\\theta'},
+    {sep:1},
+    {n:'Lensmaker',e:'\\dfrac{1}{f} = (n-1)\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)'},
+    {n:'Dispersion',e:'n = n(\\lambda)',c:'chromatic aberration'},
+   ]},sim:'optics'},
+ }},
+
+{id:'pendulum',group:'⚛️ Physics',emoji:'🕰️',color:'#7c3aed',light:'#f5f3ff',
+ title:'Pendulums & Simple Harmonic Motion',teaser:`A swinging weight keeps almost perfect time — and it doesn't care how heavy it is or how far it swings. Why does the same rhythm run clocks, springs, atoms and bridges?`,chips:['Oscillation','Period','Resonance'],
+ lvls:{
+  junior:{icon:'🕰️',title:`The steady swing that keeps time`,
+   body:`<p>Tie a weight to a string, pull it to one side and let go: it swings across, back, across, back — over and over, in a rhythm so even you could set a clock by it. People did exactly that for three hundred years. That swinging weight is a <strong>pendulum</strong>, and the steadiness of its beat is one of the quiet marvels of physics.</p>
+<p>The surprising part is what the rhythm depends on — and what it doesn't. Make the weight heavier: the timing doesn't change. Pull it out further so it swings wider: it travels faster but takes the <em>same time</em> to get back, so the timing barely changes either. The one thing that really matters is the <strong>length</strong> of the string. Short string, quick busy ticks; long string, slow lazy swings. Legend says Galileo spotted this as a boy, timing a swaying lamp in a cathedral against his own pulse.</p>
+<p>That reliability made the pendulum the heart of the most accurate clocks in the world for centuries. And the same back-and-forth rhythm is everywhere once you look: a child on a swing, a guitar string humming, a spring bouncing, even a skyscraper swaying in the wind. In the simulation below, change the length and the swing size and watch what happens to the beat.</p>`,
+   facts:[{e:'⛪',t:`Galileo timed a swinging cathedral lamp against his own pulse around 1583 and realised the period barely changes with swing size — the discovery behind the pendulum clock.`},{e:'🌍',t:`A pendulum swings slower on the Moon: with one-sixth of Earth's gravity, the same pendulum takes about 2.5 times as long per swing.`},{e:'🏢',t:`Skyscrapers hang giant "tuned mass dampers" — pendulums weighing hundreds of tonnes — that swing opposite to the building to cancel out sway in the wind.`}],
+   formula:null,sim:'pendulum'},
+  student:{icon:'📐',title:`Simple harmonic motion and the pendulum period`,
+   body:`<p>Nudge a pendulum off centre and gravity pulls it back — and crucially, for small swings the restoring pull is very nearly <em>proportional to the displacement</em>, \\(F \\approx -kx\\). Any system obeying that one rule performs <strong>simple harmonic motion</strong>: the position traces a perfect sine wave in time, \\(x(t) = A\\cos(\\omega t)\\), with angular frequency \\(\\omega = \\sqrt{k/m}\\). The same equation governs a mass on a spring, a floating buoy, and the vibration of a molecule.</p>
+<p>For a pendulum the maths delivers the famous result \\(T = 2\\pi\\sqrt{L/g}\\): the period grows with the square root of the length and shrinks in stronger gravity — and contains <em>neither the mass nor the amplitude</em>. That is the pendulum's <strong>isochronism</strong>: quadruple the length to double the period; swap the bob for one twice as heavy and nothing changes. The frequency is just \\(f = 1/T\\), the number of swings per second.</p>
+<p>Energy is what keeps it going. At the ends of the swing all the energy is <em>potential</em> (the bob is highest, momentarily still); at the bottom it is all <em>kinetic</em> (lowest and fastest), and the total \\(E = \\tfrac{1}{2}kA^2\\) stays fixed as it sloshes endlessly between the two. Strictly, all this holds only for small angles — swing too wide and the restoring force stops being perfectly linear, and the period creeps a little longer.</p>`,
+   facts:[{e:'⏱️',t:`A pendulum exactly 1 metre long (with a small swing) has a period very close to 2 seconds on Earth — one second per side, the basis of the "seconds pendulum".`},{e:'🎸',t:`A guitar string, a car suspension and quartz in a watch are all simple harmonic oscillators — same sine-wave motion, wildly different frequencies.`},{e:'🌀',t:`Foucault's pendulum swings in a fixed plane while the Earth turns beneath it — a giant pendulum that visibly proves the planet rotates.`}],
+   formula:{tex:1,rows:[
+    {n:'Restoring force',e:'F = -kx',c:'small displacement'},
+    {n:'SHM solution',e:'x(t) = A\\cos(\\omega t)'},
+    {sep:1},
+    {n:'Angular frequency',e:'\\omega = \\sqrt{k/m}'},
+    {n:'Pendulum period',e:'T = 2\\pi\\sqrt{L/g}',c:'no mass, no amplitude'},
+    {sep:1},
+    {n:'Frequency',e:'f = 1/T = \\omega/2\\pi'},
+    {n:'Total energy',e:'E = \\tfrac{1}{2}kA^2',c:'KE + PE conserved'},
+   ]},sim:'pendulum'},
+  scholar:{icon:'🔬',title:`Nonlinearity, damping, resonance and chaos`,
+   body:`<h4><span class="hn">01</span>Why the small-angle trick works</h4>
+<p>The true equation of a pendulum is nonlinear: \\(\\ddot\\theta + (g/L)\\sin\\theta = 0\\). It has no solution in elementary functions. The escape route is the approximation \\(\\sin\\theta \\approx \\theta\\), valid to within 1% out to about 14°, which linearises the equation into the harmonic oscillator \\(\\ddot\\theta + \\omega^2\\theta = 0\\) with \\(\\omega = \\sqrt{g/L}\\). Almost all of "simple" harmonic motion is really this quiet decision to throw away the higher terms of a sine.</p>
+<h4><span class="hn">02</span>What the approximation costs</h4>
+<p>Keep the full \\(\\sin\\theta\\) and the period stops being constant — it lengthens with amplitude, exactly, as a complete <em>elliptic integral</em> \\(T = 4\\sqrt{L/g}\\,K(\\sin\\tfrac{\\theta_0}{2})\\). Expanded, \\(T \\approx T_0\\left(1 + \\tfrac{1}{16}\\theta_0^2 + \\cdots\\right)\\): a 30° swing runs about 1.7% slow, a 90° swing nearly 18%. Isochronism is a small-angle fiction — real pendulum clocks are engineered to keep the amplitude tiny and constant for exactly this reason.</p>
+<h4><span class="hn">03</span>Adding friction: the damped oscillator</h4>
+<p>Reality drains energy. A resistive force proportional to speed gives \\(\\ddot x + 2\\gamma\\dot x + \\omega_0^2 x = 0\\), whose behaviour splits three ways by the damping ratio \\(\\zeta\\): <em>underdamped</em> (\\(\\zeta<1\\)) rings down with a decaying envelope \\(e^{-\\gamma t}\\); <em>critically damped</em> (\\(\\zeta=1\\)) returns to rest fastest without overshoot — the target for a car suspension or a door closer; <em>overdamped</em> (\\(\\zeta>1\\)) crawls back sluggishly.</p>
+<h4><span class="hn">04</span>Pushing at the right moment: resonance</h4>
+<p>Drive an oscillator with a periodic force and its steady response peaks sharply when the drive frequency approaches the natural \\(\\omega_0\\) — <strong>resonance</strong>, amplitude \\(A(\\omega) = F_0/m\\big/\\sqrt{(\\omega_0^2-\\omega^2)^2 + 4\\gamma^2\\omega^2}\\). Push a swing in time and it climbs higher and higher on tiny nudges. The same effect shatters a wine glass with a sung note, and it is why soldiers break step crossing a bridge.</p>
+<h4><span class="hn">05</span>How sharp is the peak: the Q factor</h4>
+<p>The <em>quality factor</em> \\(Q = \\omega_0/2\\gamma\\) measures how lightly damped an oscillator is — the number of radians it rings through before its energy falls by \\(1/e\\), and the sharpness of its resonance. A car suspension has \\(Q \\sim 1\\); a quartz watch crystal reaches \\(10^4\\text{–}10^6\\); the mirrors of the LIGO gravitational-wave detector are engineered toward \\(Q \\sim 10^7\\), which is what lets them register a length change of \\(10^{-18}\\) m.</p>
+<h4><span class="hn">06</span>Two rods, no prediction: chaos</h4>
+<p>Hang one pendulum from the end of another and the tidy world collapses. The <strong>double pendulum</strong> is fully deterministic yet <em>chaotic</em>: its motion depends so sensitively on the starting angle that two releases differing by a hair diverge completely within seconds, a positive Lyapunov exponent in action. Its trajectory in phase space fills a strange, folded region rather than closing into a neat loop — the same mathematics that makes the weather unforecastable beyond a couple of weeks.</p>`,
+   facts:[{e:'📡',t:`The Q factor of the LIGO mirrors' test masses exceeds 10 million — so lightly damped that a single push would ring for hours, essential for detecting gravitational waves.`},{e:'🌉',t:`The Tacoma Narrows Bridge tore itself apart in 1940 when wind drove it near a natural frequency — a textbook lesson in resonance (though the true mechanism was aeroelastic flutter).`},{e:'🎲',t:`A double pendulum is a classroom example of deterministic chaos: identical-looking releases produce wildly different motions, making its long-term path impossible to predict.`}],
+   formula:{tex:1,rows:[
+    {n:'Nonlinear pendulum',e:'\\ddot\\theta + \\tfrac{g}{L}\\sin\\theta = 0'},
+    {n:'Exact period',e:'T = 4\\sqrt{L/g}\\,K\\!\\left(\\sin\\tfrac{\\theta_0}{2}\\right)'},
+    {sep:1},
+    {n:'Amplitude correction',e:'T \\approx T_0\\left(1 + \\tfrac{1}{16}\\theta_0^2\\right)'},
+    {n:'Damped oscillator',e:'\\ddot x + 2\\gamma\\dot x + \\omega_0^2 x = 0'},
+    {sep:1},
+    {n:'Resonance',e:'A(\\omega) = \\dfrac{F_0/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2 + 4\\gamma^2\\omega^2}}'},
+    {n:'Quality factor',e:'Q = \\omega_0/2\\gamma'},
+   ]},sim:'pendulum'},
+ }},
+
+{id:'gaslaws',group:'⚗️ Chemistry',emoji:'🎈',color:'#0891b2',light:'#ecfeff',
+ title:'The Gas Laws',teaser:`Squeeze a gas and it pushes back; heat it and it strains to escape. Three simple laws — and one equation — capture how pressure, volume and temperature dance together.`,chips:['Pressure','Ideal Gas','Kinetic Theory'],
+ lvls:{
+  junior:{icon:'🎈',title:`Why gases push, squeeze and swell`,
+   body:`<p>A gas has no shape of its own — it spreads out to fill whatever container you put it in, be it a balloon, a tyre or a whole room. That's because a gas is really a swarm of unimaginably tiny particles, zipping about at hundreds of metres per second and bouncing off everything they hit. Every time one of those particles bangs into a wall it gives a tiny push, and the constant drumbeat of billions of them is what we feel as <strong>pressure</strong>.</p>
+<p>Now play with the swarm. Squeeze the container <em>smaller</em> and the same particles are crammed into less space, so they hit the walls more often — the pressure shoots up. That's why a bike pump gets harder to push the further down you go. <strong>Heat</strong> the gas instead and the particles speed up, slamming into the walls harder and more often — pressure rises again, which is why a sealed can thrown on a fire eventually bursts.</p>
+<p>These simple rules run a surprising amount of the world: they inflate your lungs, lift hot-air balloons, fire car engines and pop a bag of popcorn. In the simulation below, change the temperature and the size of the box and watch the particles — and the pressure — respond.</p>`,
+   facts:[{e:'🎈',t:`A helium balloon shrinks in the cold and swells in the heat: cool the gas and its particles slow down and huddle closer, warm it and they spread out.`},{e:'👂',t:`Your ears "pop" on a plane because the air pressure outside drops with altitude while the air trapped behind your eardrum stays put — until it escapes with a click.`},{e:'🍿',t:`Popcorn explodes because water inside each kernel turns to steam and its pressure builds until the hull can't hold it — a gas law in your kitchen.`}],
+   formula:null,sim:'gaslaws'},
+  student:{icon:'📐',title:`The ideal gas law and where it comes from`,
+   body:`<p>Three centuries of experiments distilled the behaviour of gases into a handful of relationships. <strong>Boyle's law</strong>: at fixed temperature, pressure and volume are inversely linked, \\(P \\propto 1/V\\) — halve the volume, double the pressure. <strong>Charles's law</strong>: at fixed pressure, volume grows with absolute temperature, \\(V \\propto T\\). <strong>Gay-Lussac's law</strong>: at fixed volume, pressure grows with temperature, \\(P \\propto T\\). Crucially, the \\(T\\) here is measured from <em>absolute zero</em> — the Kelvin scale — because that is where a gas's pressure would, in principle, vanish.</p>
+<p>Stitch these together with Avogadro's insight — equal volumes of any gas hold equal numbers of particles — and they collapse into one clean statement, the <strong>ideal gas law</strong> \\(PV = nRT\\). Here \\(n\\) is the amount in moles and \\(R\\) is the universal gas constant, \\(8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}\\). Every earlier law is just this equation with one variable held still.</p>
+<p>Where does it come from? From the particles themselves. The <strong>kinetic theory of gases</strong> pictures pressure as the collective recoil of countless molecular impacts on the walls, and links the temperature directly to how fast they move: the average kinetic energy of a particle is \\(\\tfrac{3}{2}k_B T\\). Temperature, in other words, <em>is</em> molecular motion — heat a gas and you are literally speeding up its particles.</p>`,
+   facts:[{e:'🌡️',t:`Absolute zero is −273.15°C: extrapolate a gas's shrinking volume down a Charles's-law line and it would hit zero exactly there — the coldest anything can be.`},{e:'⚗️',t:`One mole of any ideal gas fills 22.4 litres at 0°C and 1 atm — the same volume whether it's hydrogen or carbon dioxide, because only the particle count matters.`},{e:'🫁',t:`You breathe by Boyle's law: your diaphragm enlarges your chest, dropping the pressure inside your lungs below the outside air, which then rushes in.`}],
+   formula:{tex:1,rows:[
+    {n:`Boyle's law`,e:'P \\propto 1/V',c:'T constant'},
+    {n:`Charles's law`,e:'V \\propto T',c:'P constant'},
+    {n:`Gay-Lussac`,e:'P \\propto T',c:'V constant'},
+    {sep:1},
+    {n:'Ideal gas law',e:'PV = nRT',c:'R = 8.314 J mol⁻¹K⁻¹'},
+    {n:'Combined gas law',e:'\\dfrac{P_1V_1}{T_1} = \\dfrac{P_2V_2}{T_2}'},
+    {sep:1},
+    {n:'Mean kinetic energy',e:'\\langle E_k\\rangle = \\tfrac{3}{2}k_B T'},
+   ]},sim:'gaslaws'},
+  scholar:{icon:'🔬',title:`Kinetic theory, distributions and real gases`,
+   body:`<h4><span class="hn">01</span>Pressure, derived from first principles</h4>
+<p>The ideal gas law is not an axiom — it falls out of mechanics. Treat the gas as point particles in elastic, random motion and count the momentum they deliver to a wall: pressure works out to \\(P = \\tfrac{1}{3}\\dfrac{N}{V}m\\langle v^2\\rangle\\). Compare that with \\(PV = Nk_B T\\) and you are forced to identify \\(\\tfrac{1}{2}m\\langle v^2\\rangle = \\tfrac{3}{2}k_B T\\). Temperature emerges as nothing more than the mean translational kinetic energy per particle — a bridge from Newton's laws straight to thermodynamics.</p>
+<h4><span class="hn">02</span>Not one speed but a spectrum</h4>
+<p>The particles do not share a single speed; they follow the <strong>Maxwell-Boltzmann distribution</strong>, \\(f(v) \\propto v^2 e^{-mv^2/2k_B T}\\), a lopsided curve with a long fast tail. It yields three distinct "average" speeds — most-probable, mean and root-mean-square — and the curve broadens and shifts right as \\(T\\) climbs. That high-speed tail matters enormously: it is the rare, fast molecules that clear reaction barriers, so it underlies the exponential temperature dependence of chemistry itself.</p>
+<h4><span class="hn">03</span>Energy shared out: equipartition</h4>
+<p>Why \\(\\tfrac{3}{2}k_B T\\)? The <strong>equipartition theorem</strong> hands each quadratic degree of freedom exactly \\(\\tfrac{1}{2}k_B T\\) of energy. A monatomic gas has three (motion in x, y, z), giving \\(C_V = \\tfrac{3}{2}R\\); a diatomic gas adds two rotational modes for \\(\\tfrac{5}{2}R\\). The startling part is that vibrational modes stay silent until the gas is hot enough — a purely quantum effect that classical physics could never explain, and an early crack in the classical world.</p>
+<h4><span class="hn">04</span>When real gases misbehave</h4>
+<p>The ideal law assumes particles are points that never attract each other — false on both counts. Real molecules take up space and feel weak long-range pulls, so <strong>van der Waals</strong> patched the equation, \\(\\left(P + \\dfrac{an^2}{V^2}\\right)(V - nb) = nRT\\): the \\(a\\) term corrects for attraction, the \\(b\\) term for finite size. This single fix predicts something the ideal law never could — that a gas can condense into a liquid, complete with a critical point beyond which the two states become indistinguishable.</p>
+<h4><span class="hn">05</span>How far, how fast: transport</h4>
+<p>Between collisions a molecule travels a <em>mean free path</em> \\(\\lambda = 1/(\\sqrt{2}\\,n\\sigma)\\) — at room pressure only about 70 nanometres, so a molecule collides billions of times a second. This microscopic zig-zag sets the gas's viscosity, thermal conductivity and diffusion rate, and explains <strong>Graham's law</strong>: lighter molecules move faster and effuse more quickly, exactly the principle once used to separate uranium isotopes for the first atomic bombs.</p>
+<h4><span class="hn">06</span>The limits of the picture</h4>
+<p>Cool a gas far enough and even van der Waals fails, because quantum statistics take over. Once the thermal de Broglie wavelength rivals the particle spacing, identical particles can no longer be treated as independent: bosons crowd into a single state to form a <em>Bose-Einstein condensate</em>, while fermions are forced apart by the Pauli principle, propping up white dwarfs and neutron stars against gravity. The humble gas laws are the high-temperature, low-density corner of a much stranger quantum landscape.</p>`,
+   facts:[{e:'🥶',t:`In 1995 physicists cooled a gas to under a millionth of a degree above absolute zero, forming a Bose-Einstein condensate — thousands of atoms sharing one quantum state (Nobel Prize 2001).`},{e:'☢️',t:`Graham's law of effusion separated uranium-235 from uranium-238 for the first nuclear weapons: the lighter isotope diffuses very slightly faster through a porous barrier.`},{e:'💨',t:`At room temperature air molecules average ~500 m/s — faster than a jet — yet a scent crosses a room slowly because each molecule collides billions of times per second.`}],
+   formula:{tex:1,rows:[
+    {n:'Kinetic pressure',e:'P = \\tfrac{1}{3}\\dfrac{N}{V}m\\langle v^2\\rangle'},
+    {n:'Temperature link',e:'\\tfrac{1}{2}m\\langle v^2\\rangle = \\tfrac{3}{2}k_B T'},
+    {sep:1},
+    {n:'Maxwell-Boltzmann',e:'f(v) \\propto v^2 e^{-mv^2/2k_B T}'},
+    {n:'RMS speed',e:'v_{\\text{rms}} = \\sqrt{3k_B T/m}'},
+    {sep:1},
+    {n:'Van der Waals',e:'\\left(P + \\dfrac{an^2}{V^2}\\right)(V - nb) = nRT'},
+    {n:'Mean free path',e:'\\lambda = \\dfrac{1}{\\sqrt{2}\\,n\\sigma}'},
+   ]},sim:'gaslaws'},
+ }},
+
+{id:'moonphases',group:'🌌 Astronomy',emoji:'🌙',color:'#475569',light:'#f1f5f9',
+ title:'Moon Phases',teaser:`The Moon makes no light of its own — so why does it grow from a sliver to a full disc and back every month? It's all in the angle you're watching from.`,chips:['Moon','Phases','Orbits'],
+ lvls:{
+  junior:{icon:'🌙',title:`Why the Moon changes shape every night`,
+   body:`<p>Look at the Moon across a month and it seems to grow and shrink — a thin sliver, a half, a fat disc, a full circle, then back again. But the Moon never actually changes shape. The secret is that the Moon makes <em>no light of its own</em>. Like a giant ball hanging in space, it simply catches sunlight and reflects it back to us — and the Sun can only ever light up <strong>one half</strong> of it at a time, the half that happens to be facing the Sun.</p>
+<p>As the Moon circles the Earth once a month, we get to look at that lit half from different angles. When the Moon sits between us and the Sun, its lit side faces away from us and we see darkness — a <strong>new moon</strong>. When it's on the far side, the whole lit face turns toward us — a <strong>full moon</strong>. In between we catch it side-on and see just a slice: a crescent or a half. The shape you see is simply how much of the sunlit half is pointing your way.</p>
+<p>The full cycle — new, to full, and back to new — takes about <strong>29 and a half days</strong>, which is roughly where the idea of a "month" comes from. And here's a lovely quirk: the Moon always keeps the <em>same face</em> pointed at Earth, so we never see its far side from home. In the simulation below, move the Moon around its orbit and watch its phase change.</p>`,
+   facts:[{e:'🌑',t:`You can never see a "new moon" — its lit side faces entirely away from Earth, so it hangs in the daytime sky, invisible against the Sun's glare.`},{e:'🔄',t:`The Moon keeps the same face toward Earth because it spins exactly once per orbit — a balance called tidal locking. The "far side" was unseen by anyone until a Soviet probe photographed it in 1959.`},{e:'📅',t:`The ~29.5-day cycle of phases is the origin of the word "month" — and still sets the Islamic, Hebrew and Chinese calendars today.`}],
+   formula:null,sim:'moonphases'},
+  student:{icon:'📐',title:`The geometry of phases, and why eclipses are rare`,
+   body:`<p>A moon phase is pure geometry. Sunlight always illuminates exactly half the Moon; what changes is the <em>angle between the Sun, Earth and Moon</em>. Call that the phase angle: at 0° the Moon is roughly between us and the Sun (new), at 180° it is opposite the Sun (full), and the lit fraction we see follows \\(k = \\tfrac{1}{2}(1 - \\cos\\theta)\\). The waxing half of the cycle (growing) and the waning half (shrinking) are mirror images, lit on opposite sides.</p>
+<p>There is a subtlety in the timing. The Moon takes 27.3 days to complete one orbit against the background stars — the <em>sidereal month</em> — but 29.5 days to return to the same phase — the <em>synodic month</em>. The gap exists because the Earth has moved along its own orbit in the meantime, so the Moon must swing a little further to line up with the Sun again. The phase cycle we actually see is the synodic one.</p>
+<p>So why isn't there an eclipse at every new and full moon? Because the Moon's orbit is tilted about <strong>5°</strong> to the plane of Earth's orbit. Most months the Moon passes a little above or below the direct Sun-Earth line, and its shadow misses. Only when a new or full moon happens to fall near the two points where the orbits cross — the <em>nodes</em> — do we get a solar or lunar eclipse. That tilt is the reason eclipses are occasional treats, not monthly events.</p>`,
+   facts:[{e:'🌗',t:`The synodic month (29.5 days, phase to phase) is longer than the sidereal month (27.3 days, orbit to orbit) because Earth keeps moving around the Sun — the Moon has to catch up.`},{e:'🌍',t:`Because the Moon's orbit is slightly elliptical, it appears to rock and nod — a wobble called libration that lets us glimpse about 59% of its surface over time, not just 50%.`},{e:'🌘',t:`On a thin crescent you can often see the whole dark disc glowing faintly — "earthshine", sunlight reflected off Earth onto the Moon and back, once explained by Leonardo da Vinci.`}],
+   formula:{tex:1,rows:[
+    {n:'Illuminated fraction',e:'k = \\tfrac{1}{2}(1 - \\cos\\theta)',c:'θ = phase angle'},
+    {sep:1},
+    {n:'Sidereal month',e:'T_{\\text{sid}} \\approx 27.3\\ \\text{days}',c:'orbit vs stars'},
+    {n:'Synodic month',e:'T_{\\text{syn}} \\approx 29.5\\ \\text{days}',c:'phase to phase'},
+    {sep:1},
+    {n:'Synodic relation',e:'\\dfrac{1}{T_{\\text{syn}}} = \\dfrac{1}{T_{\\text{sid}}} - \\dfrac{1}{T_{\\text{year}}}'},
+    {n:'Orbital tilt',e:'i \\approx 5.14°',c:'why eclipses are rare'},
+   ]},sim:'moonphases'},
+  scholar:{icon:'🌌',title:`Tidal locking, orbital recession and long cycles`,
+   body:`<h4><span class="hn">01</span>Why one face is hidden forever</h4>
+<p>The Moon's rotation period exactly equals its orbital period, so it is <strong>tidally locked</strong>. This is no coincidence: Earth's gravity raises a slight bulge on the Moon, and any mismatch between spin and orbit drags on that bulge, applying a torque that brakes the rotation until the two rates match. Almost every large moon in the Solar System has arrived at the same 1:1 spin-orbit resonance by the same route — synchronous rotation is the natural endpoint of tidal friction.</p>
+<h4><span class="hn">02</span>Tides steal the Moon's orbit outward</h4>
+<p>Tidal coupling runs both ways. The Moon raises ocean bulges on Earth, and Earth's faster rotation drags them ahead of the Earth-Moon line; their gravitational tug adds angular momentum to the Moon's orbit, pushing it <em>outward</em> by about \\(3.8\\ \\text{cm}\\) per year — a rate now measured to millimetres by bouncing lasers off reflectors the Apollo astronauts left behind. The same transfer slows Earth's spin, lengthening the day by roughly 1.7 milliseconds per century.</p>
+<h4><span class="hn">03</span>Conservation bookkeeping</h4>
+<p>All of it is one conserved quantity being shuffled around. The total angular momentum of the Earth-Moon system is fixed, so as Earth's rotational share bleeds away, the Moon's orbital share must grow — which is precisely why a receding Moon and a lengthening day go hand in hand. Run the clock forward and the process ends only when Earth's day and the lunar month both stretch to the same value, a mutual tidal lock tens of billions of years off.</p>
+<h4><span class="hn">04</span>The tilted, twisting orbit</h4>
+<p>The 5.14° tilt is not fixed in space: the line of nodes where the Moon's orbit crosses the ecliptic <em>precesses</em> all the way around in 18.6 years, and the orbit's long axis precesses in 8.85 years. These slow swings modulate when and where eclipses can occur and thread them into the famous <strong>Saros cycle</strong> of 18 years 11⅓ days, after which the Sun-Earth-Moon geometry nearly repeats and a near-twin eclipse returns.</p>
+<h4><span class="hn">05</span>Reading a phase quantitatively</h4>
+<p>The illuminated fraction \\(k = \\tfrac{1}{2}(1+\\cos\\alpha)\\), written in terms of the Sun-Moon <em>elongation</em>, is only the geometric skeleton. The Moon is a startlingly poor mirror — its albedo is about 0.12, darker than worn asphalt — and its brightness does not scale linearly with lit area. Near full moon it surges disproportionately bright, the <em>opposition surge</em>, as surface shadows vanish and glass beads in the regolith backscatter sunlight straight at the source.</p>
+<h4><span class="hn">06</span>A calendar that never quite fits</h4>
+<p>The synodic month is not a whole number of days, nor does a whole number of them fit a solar year — twelve synodic months fall about 11 days short. Every lunar calendar in history has wrestled with this mismatch, from the 19-year <em>Metonic cycle</em> that realigns Moon and Sun (the basis of computing Easter) to the leap months of the Hebrew and Chinese calendars. The Moon's tidy-looking rhythm is, at root, gloriously incommensurate with the year.</p>`,
+   facts:[{e:'📡',t:`Laser ranging off Apollo-era retroreflectors measures the Earth-Moon distance to the millimetre, confirming the Moon recedes at 3.8 cm per year — about as fast as fingernails grow.`},{e:'🔁',t:`The Saros cycle (18 years, 11⅓ days) lets eclipses be predicted centuries ahead: after one Saros the Sun-Earth-Moon geometry nearly repeats, producing a near-identical eclipse shifted 120° in longitude.`},{e:'🌑',t:`The Moon's albedo is only ~0.12 — it reflects a mere 12% of sunlight, about the same as old asphalt. The "bright" full moon is actually a very dark grey object lit by a very bright Sun.`}],
+   formula:{tex:1,rows:[
+    {n:'Illuminated fraction',e:'k = \\tfrac{1}{2}(1 + \\cos\\alpha)',c:'α = elongation'},
+    {sep:1},
+    {n:'Orbital recession',e:'\\dot r \\approx 3.8\\ \\text{cm/yr}'},
+    {n:'Day lengthening',e:'\\approx 1.7\\ \\text{ms/century}'},
+    {sep:1},
+    {n:'Node precession',e:'T_{\\text{node}} \\approx 18.6\\ \\text{yr}'},
+    {n:'Saros cycle',e:'\\approx 6585.3\\ \\text{days}',c:'eclipse repeat'},
+   ]},sim:'moonphases'},
+ }},
+
+{id:'protein',group:'🧬 Biology',emoji:'🧬',color:'#c026d3',light:'#fdf4ff',
+ title:'Protein Synthesis',teaser:`Your DNA is just a library of recipes. How does a cell read those recipes and build the actual machines — the proteins — that make you work?`,chips:['DNA','Ribosome','Genetic Code'],
+ lvls:{
+  junior:{icon:'🧬',title:`How your body reads DNA to build itself`,
+   body:`<p>Every cell in your body carries a full copy of your <strong>DNA</strong> — a colossal instruction manual written in just four chemical "letters". But DNA doesn't <em>do</em> anything on its own. It's a library of recipes, and the things those recipes build are <strong>proteins</strong>: the tiny molecular machines that digest your food, carry oxygen in your blood, fight off germs and hold your whole body together.</p>
+<p>To cook up a protein, the cell works in two steps. First it makes a throwaway copy of just the one recipe it needs, written in a related molecule called <strong>mRNA</strong> — a bit like photocopying a single page so the precious original never leaves the library. That copy then travels to a molecular workshop called a <strong>ribosome</strong>.</p>
+<p>The ribosome reads the mRNA <em>three letters at a time</em>. Each little three-letter word, called a <strong>codon</strong>, names one <strong>amino acid</strong> — and amino acids are the beads that string together to make a protein. The ribosome shuffles along, calling out codon after codon, and a growing chain of amino acids clicks into place. When the chain is complete it folds up into a precise 3-D shape, and that shape is what lets the finished protein do its job. Watch it happen in the simulation below.</p>`,
+   facts:[{e:'📖',t:`If you read your DNA aloud at one letter per second, it would take you nearly a hundred years to finish — 3 billion letters in every cell.`},{e:'⚡',t:`A ribosome adds about 10–20 amino acids every second, and a single cell can run millions of ribosomes at once, churning out proteins non-stop.`},{e:'🧩',t:`There are only 20 different amino acids, yet strung together in different orders they build every one of the ~100,000 kinds of protein in your body.`}],
+   formula:null,sim:'protein'},
+  student:{icon:'🔬',title:`The central dogma: transcription and translation`,
+   body:`<p>The flow of genetic information follows the <strong>central dogma</strong>: DNA → RNA → protein. In <strong>transcription</strong>, an enzyme called RNA polymerase unzips a stretch of DNA and builds a matching strand of messenger RNA, swapping the base thymine (T) for uracil (U). This mRNA carries the message out of the nucleus to the ribosomes in the cytoplasm.</p>
+<p>The message is written in the <strong>genetic code</strong>: each <em>codon</em> of three bases specifies one amino acid. With four bases there are \\(4^3 = 64\\) possible codons but only 20 amino acids, so the code is <em>redundant</em> — most amino acids have several codons. One codon, AUG, doubles as the "start" signal (and codes methionine); three others (UAA, UAG, UGA) are "stop" signals that end the chain.</p>
+<p>In <strong>translation</strong>, the ribosome clamps onto the mRNA and reads it codon by codon. For each codon a matching <strong>tRNA</strong> — carrying the right amino acid and a complementary three-base <em>anticodon</em> — docks in, and the ribosome links its amino acid onto the growing chain, then ratchets forward. Reach a stop codon and the finished polypeptide is released to fold into a working protein. It is a molecular assembly line of astonishing speed and fidelity.</p>`,
+   facts:[{e:'🔡',t:`The genetic code is nearly universal — the same codons mean the same amino acids in a bacterium, a banana and a human, evidence that all life shares one ancestor.`},{e:'🧬',t:`tRNA molecules are the "adaptors" Francis Crick predicted before they were found: one end reads the codon, the other carries the matching amino acid.`},{e:'💉',t:`mRNA vaccines work by delivering a lab-made mRNA that your own ribosomes translate into a viral protein, training your immune system without any live virus.`}],
+   formula:{tex:1,rows:[
+    {n:'Central dogma',e:'\\text{DNA} \\to \\text{RNA} \\to \\text{protein}'},
+    {sep:1},
+    {n:'Codon size',e:'4^3 = 64\\ \\text{codons}',c:'for 20 amino acids'},
+    {n:'Start codon',e:'\\text{AUG}',c:'also codes Met'},
+    {n:'Stop codons',e:'\\text{UAA, UAG, UGA}'},
+    {sep:1},
+    {n:'Base pairing',e:'\\text{A–U},\\ \\text{G–C}',c:'RNA uses U not T'},
+   ]},sim:'protein'},
+  scholar:{icon:'🧪',title:`The code, fidelity, folding and regulation`,
+   body:`<h4><span class="hn">01</span>Why the code is degenerate — and robust</h4>
+<p>The 64-to-20 mapping is not random. Codons for the same amino acid usually differ only in their <em>third</em> base, and Crick's <strong>wobble hypothesis</strong> explains why: pairing at the third position is loose, so a single tRNA can read several synonymous codons. The upshot is a code buffered against error — many point mutations are <em>silent</em>, and even mistranslations tend to swap in a chemically similar amino acid. The genetic code appears optimised to minimise the damage of mistakes.</p>
+<h4><span class="hn">02</span>Getting it right: translational fidelity</h4>
+<p>The ribosome makes an error only about once in \\(10^{4}\\) codons, far better than raw codon-anticodon binding energies allow. It buys that accuracy through <em>kinetic proofreading</em>: a correct tRNA is checked twice, with an irreversible, energy-burning step in between that gives wrong tRNAs extra chances to fall off before the bond is sealed. Fidelity, here, is paid for in GTP — accuracy costs energy.</p>
+<h4><span class="hn">03</span>The ribosome is a ribozyme</h4>
+<p>For decades the ribosome was assumed to be a protein enzyme. The 2000 crystal structures revealed the opposite: the catalytic core that forms the peptide bond is built entirely of <strong>RNA</strong>, with no protein within reach of the reaction. The ribosome is a <em>ribozyme</em>. This is a molecular fossil of the <em>RNA world</em> — a time before DNA and proteins when RNA both stored information and did chemistry — and it won the 2009 Nobel Prize in Chemistry.</p>
+<h4><span class="hn">04</span>Folding, and folding gone wrong</h4>
+<p>A protein's function lives in its three-dimensional fold, and much of that folding begins <em>co-translationally</em>, as the chain is still emerging from the ribosome. <em>Chaperone</em> proteins shepherd the process and shield sticky intermediates. When folding fails, the debris can aggregate — the molecular root of Alzheimer's, Parkinson's and prion diseases. Predicting the fold from sequence alone stumped biology for fifty years until AlphaFold cracked it in 2021.</p>
+<h4><span class="hn">05</span>One gene, many proteins</h4>
+<p>In eukaryotes the DNA-to-protein path is heavily edited. Freshly made RNA is <em>spliced</em>: introns are cut out and exons stitched together, and <strong>alternative splicing</strong> lets a single gene yield dozens of different proteins from different exon combinations — which is how ~20,000 human genes specify a far larger proteome. Add capping, tailing and chemical base modifications and the "one gene, one protein" slogan collapses entirely.</p>
+<h4><span class="hn">06</span>Turning the volume up and down</h4>
+<p>Cells control not just <em>what</em> they translate but <em>how much</em> and <em>when</em>. <em>MicroRNAs</em> silence specific mRNAs, riboswitches sense metabolites and fold to gate their own translation, and ribosomes can stall, frameshift or reinitiate under stress. This regulatory layer is where synthetic biology now intervenes — engineering mRNAs, rewriting codons, even adding wholly new amino acids to the code — turning the reading of genes into something we can deliberately program.</p>`,
+   facts:[{e:'🏆',t:`Determining the ribosome's atomic structure — and proving its catalytic heart is RNA, not protein — won the 2009 Nobel Prize in Chemistry, confirming it as a relic of the RNA world.`},{e:'🤖',t:`AlphaFold (2021) solved the 50-year protein-folding problem, predicting 3-D structures from amino-acid sequence with near-experimental accuracy for over 200 million proteins.`},{e:'🧬',t:`Alternative splicing lets one gene make many proteins: the human Dscam gene can, in principle, be spliced into over 38,000 distinct protein variants.`}],
+   formula:{tex:1,rows:[
+    {n:'Translation error rate',e:'\\sim 10^{-4}\\ \\text{per codon}',c:'via kinetic proofreading'},
+    {n:'Wobble pairing',e:'\\text{loose 3rd-base match}'},
+    {sep:1},
+    {n:'Peptide bond',e:'\\text{-COOH} + \\text{H}_2\\text{N-} \\to \\text{amide} + \\text{H}_2\\text{O}'},
+    {n:'Catalysis',e:'\\text{rRNA (a ribozyme)}'},
+    {sep:1},
+    {n:'Splicing',e:'\\text{introns out, exons joined}'},
+    {n:'Proteome expansion',e:'\\sim\\!20{,}000\\ \\text{genes} \\to 10^5\\ \\text{proteins}'},
+   ]},sim:'protein'},
+ }},
+
 ]; // end SUBJECTS
 
 // ═══════════════════════════════════════════════════════════════════
@@ -3113,12 +3408,14 @@ const UI={
  whatSeeing:"What you're seeing",
  whatNotice:'What to notice',
  footer:{
-  about:'32 hands-on science simulations across nine fields, each written for three levels — from a curious ten-year-old to a graduate student. Free, no account, no tracking.',
+  about:'Hands-on science simulations across nine fields, each written for three levels, from a curious ten-year-old to a graduate student. Free, no account, no tracking.',
   exploreBySubject:'Explore by subject',
   allExperiments:'All experiments',
   madeFor:'made for curious minds',
   contact:'Contact',
-  attrib:'Concepts from Wikipedia & open educational resources'
+  attrib:'Concepts from Wikipedia & open educational resources',
+  ai:'Explanations on this site are written with the help of generative AI.',
+  aiLink:'How we use AI'
  },
  deeper:{
   keepExploring:'📚 Keep exploring',
@@ -3166,6 +3463,8 @@ function applyUI(){
   setTxt('#madeFor',UI.footer.madeFor);
   setTxt('.fb-links a[href^="mailto"]',UI.footer.contact);
   setTxt('.attrib',UI.footer.attrib);
+  setTxt('.ai-notice .ai-txt',UI.footer.ai);
+  setTxt('.ai-notice a',UI.footer.aiLink);
   document.documentElement.lang=UI.htmlLang||document.documentElement.lang;
 }
 applyUI();
@@ -3232,6 +3531,11 @@ const SLUG={
   neuron:      'electric-brain',
   memory:      'how-memory-works',
   sleep:       'sleep-consciousness',
+  optics:      'optics-light-lenses',
+  pendulum:    'pendulum-simple-harmonic-motion',
+  gaslaws:     'gas-laws',
+  moonphases:  'moon-phases',
+  protein:     'protein-synthesis',
 };
 
 // ═══════════════════════════════════════════════════════════════════
@@ -3458,6 +3762,31 @@ let lastFocused=null;
 // when the readout on screen actually says "Year length".
 // ═══════════════════════════════════════════════════════════════════
 const SIM_LABELS={
+ gaslaws:{
+  junior :{temp:'Temperature',    vol:'Container size',pres:'Pressure',    pv:'Pressure × size'},
+  student:{temp:'Temperature (T)', vol:'Volume (V)',    pres:'Pressure (P)',pv:'P × V'},
+  scholar:{temp:'Temperature (T)', vol:'Volume (V)',    pres:'Pressure (P)',pv:'P × V'}
+ },
+ moonphases:{
+  junior :{day:'Day of the month',phase:'Phase',lit:'How much is lit'},
+  student:{day:'Day (of 29.5)',    phase:'Phase',lit:'Illuminated'},
+  scholar:{day:'Day (of 29.5)',    phase:'Phase',lit:'Illuminated'}
+ },
+ protein:{
+  junior :{play:'Build',codon:'Reading',   len:'Beads so far'},
+  student:{play:'Translate',codon:'Codon → amino acid',len:'Chain length'},
+  scholar:{play:'Translate',codon:'Codon → amino acid',len:'Chain length'}
+ },
+ pendulum:{
+  junior :{len:'Length',    amp:'How far it swings',per:'Time per swing',freq:'Swings per second'},
+  student:{len:'Length (L)',amp:'Amplitude (θ₀)',   per:'Period (T)',   freq:'Frequency (f)'},
+  scholar:{len:'Length (L)',amp:'Amplitude (θ₀)',   per:'Period (T)',   freq:'Frequency (f)'}
+ },
+ optics:{
+  junior :{obj:'Object distance',foc:'Lens strength',   img:'Where the image is',mag:'How big',       type:'Image'},
+  student:{obj:'Object distance (dₒ)',foc:'Focal length (f)',img:'Image distance (dᵢ)',mag:'Magnification (m)',type:'Image'},
+  scholar:{obj:'Object distance (dₒ)',foc:'Focal length (f)',img:'Image distance (dᵢ)',mag:'Magnification (m)',type:'Image'}
+ },
  gravity:{
   junior :{radius:'Distance from star',mass:'Star mass',    period:'Year length',speed:'Speed'},
   student:{radius:'Orbit radius',      mass:'Star mass',    period:'Period (T)', speed:'Orbital speed (v)'},
@@ -3712,6 +4041,96 @@ function fillLabels(txt,lab){
 // Sims without an entry fall back to the old generic hint.
 // ═══════════════════════════════════════════════════════════════════
 const SIM_GUIDE={
+
+ gaslaws:{
+  junior:{
+   legend:`The dots bouncing inside the box are <b>gas particles</b>. The right wall is a <b>piston</b> you can slide to change the container size. Every time a dot hits a wall it pushes — and all those pushes together are the <b>pressure</b> shown in the pill.`,
+   try:`Keep [[temp]] the same and slide [[vol]] to make the box smaller. Watch [[pres]]. Then make the box big again and turn [[temp]] up instead.`,
+   notice:`<b>Squeeze the box and the pressure rises; heat the gas and it rises too.</b> Smaller space means the same particles hit the walls more often; higher temperature means they fly faster and hit harder. Notice that "Pressure × size" stays about constant when you only change the size — that's Boyle's law.`
+  },
+  student:{
+   legend:`Particles in elastic random motion; their speed scales with \\(\\sqrt{T}\\) and the right piston sets the volume \\(V\\). The pills read pressure \\(P\\) and the product \\(P\\times V\\). The gas obeys \\(PV = nRT\\).`,
+   try:`Hold [[temp]] fixed and halve [[vol]] — does [[pres]] double while \\(P\\times V\\) stays put? Then hold [[vol]] and raise [[temp]], watching \\(P\\) climb in step.`,
+   notice:`<b>At fixed \\(T\\), \\(P\\times V\\) is constant (Boyle); at fixed \\(V\\), \\(P\\propto T\\) (Gay-Lussac).</b> Both are faces of \\(PV=nRT\\). The simulation computes \\(P = nRT/V\\) directly, and the particle speeds track \\(\\sqrt{T}\\) — a visual of the kinetic theory in which temperature <em>is</em> average kinetic energy.`
+  },
+  scholar:{
+   legend:`An ideal gas: \\(P = nRT/V\\), particle speeds \\(\\propto\\sqrt{T}\\) as in the Maxwell-Boltzmann picture. Piston sets \\(V\\); pills read \\(P\\) and \\(PV\\). Deviations of real gases would need the van der Waals correction.`,
+   try:`Trace an isotherm: fix [[temp]] and sample \\((P,V)\\) pairs across the range, testing whether \\(PV\\) holds constant. Then trace an isochore: fix [[vol]] and vary [[temp]].`,
+   notice:`<b>The isotherm gives \\(PV=\\text{const}\\); the isochore gives \\(P\\propto T\\) — the ideal gas law dissected.</b> This idealisation assumes point particles with no attractions. Real gases deviate as density rises: finite size (the \\(b\\) term) and intermolecular pull (the \\(a\\) term) bend the isotherms and, below a critical point, allow condensation the ideal law can never show.`
+  }
+ },
+
+ moonphases:{
+  junior:{
+   legend:`The bright disc on the left is the <b>Sun</b>, lighting everything from that side. The blue ball is <b>Earth</b>, and the grey ball circling it is the <b>Moon</b> — always half-lit on its Sun side. The small disc on the right shows the <b>phase you'd see from Earth</b>.`,
+   try:`Slide [[day]] slowly around the whole month. Watch the little Earth-view disc on the right, and read [[phase]] and [[lit]].`,
+   notice:`<b>The Moon's shape isn't changing — you're just seeing its lit half from different angles.</b> When the Moon is between Earth and Sun its dark side faces us (new moon); when it's on the far side we see the whole lit face (full moon). One trip round takes about 29.5 days.`
+  },
+  student:{
+   legend:`Top-down view: Sun-lit direction from the left, Earth at centre, Moon on its orbit. The Moon's Sun-facing half is always lit; the inset disc reconstructs the view from Earth. Pills read the phase name and illuminated fraction \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\).`,
+   try:`Step [[day]] to 0, ~7, ~15 and ~22 and name each [[phase]]. Watch how [[lit]] follows the phase angle rather than jumping.`,
+   notice:`<b>Illumination varies smoothly as \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\): 0% new, 50% at the quarters, 100% full.</b> The phase we track repeats every synodic month (29.5 d), longer than the 27.3-day orbit because Earth moves round the Sun meanwhile. And since the orbit is tilted ~5°, most months the Moon misses the Sun-Earth line, so eclipses are rare.`
+  },
+  scholar:{
+   legend:`Sun direction fixed left; Earth central; Moon on a circular orbit with its solar hemisphere illuminated. Inset = geocentric appearance. Illuminated fraction \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\) with \\(\\theta\\) the Sun-Earth-Moon phase angle.`,
+   try:`Sweep [[day]] and confirm the phase sequence and the symmetry of waxing and waning. Note that the model shows the geometric phase only — not the opposition brightness surge or libration.`,
+   notice:`<b>The geometry is exact, but real lunar brightness is not linear in \\(k\\).</b> The Moon's albedo is ~0.12 and near full it surges brighter than area alone predicts (the opposition effect). Layer on the 18.6-yr nodal precession and the orbit's eccentricity (libration) and you have the full apparatus behind eclipse prediction and the Saros cycle.`
+  }
+ },
+
+ protein:{
+  junior:{
+   legend:`The row of letters is the <b>mRNA</b> — the recipe. The rounded shape sliding along it is the <b>ribosome</b>, reading three letters (a <b>codon</b>) at a time. Each codon adds one coloured bead — an <b>amino acid</b> — to the growing chain below. That chain is the protein.`,
+   try:`Press [[play]] and watch the ribosome move. Read each three-letter codon and the bead it adds. What special codon makes it stop?`,
+   notice:`<b>Three letters name one bead, and the chain grows one bead per codon until a STOP codon ends it.</b> Just four letters, read in threes, spell out every protein your body builds — the same simple code in every living thing on Earth.`
+  },
+  student:{
+   legend:`The mRNA is read 5'→3' in non-overlapping <em>codons</em>. The ribosome (rounded shape) translates each codon into an amino acid via a matching tRNA; the chain below is the growing polypeptide. Pills name the current codon → amino acid and the chain length.`,
+   try:`Press [[play]] and follow [[codon]] as translation runs from the AUG start to the stop codon. Count how [[len]] grows one residue per codon.`,
+   notice:`<b>Each codon maps to exactly one amino acid; AUG starts, and UAA/UAG/UGA stop.</b> With \\(4^3=64\\) codons for 20 amino acids the code is redundant, so several codons share an amino acid. This is translation — the second half of the central dogma, DNA → RNA → protein.`
+  },
+  scholar:{
+   legend:`Codon-by-codon translation of an mRNA. Decoding relies on codon-anticodon pairing, with third-base <em>wobble</em> letting one tRNA read synonymous codons. Pills show codon → amino acid and chain length; elongation proceeds until a release factor reads a stop codon.`,
+   try:`Run [[play]] and note where synonymous codons would give the same amino acid, and how the reading frame is fixed by the AUG start — a one-base shift would garble everything downstream.`,
+   notice:`<b>The frame set at AUG is everything: translation is strictly triplet and non-overlapping, so an insertion or deletion causes a frameshift.</b> Fidelity (~1 error in 10⁴) comes from kinetic proofreading, and the peptide bond is forged by ribosomal RNA — the ribosome is a ribozyme, a relic of the RNA world.`
+  }
+ },
+
+ pendulum:{
+  junior:{
+   legend:`The dot hanging from the string is the <b>pendulum</b>. It swings side to side, and the faint arc shows the path it sweeps. The pill counts the <b>time for one full swing</b> — over there and back.`,
+   try:`Set [[amp]] wide and read [[per]]. Now drag [[amp]] much smaller. Does the time per swing change much? Then double [[len]] and watch [[per]].`,
+   notice:`<b>Changing how far it swings barely changes the timing — but making the string longer clearly slows it down.</b> That's the pendulum's secret: the beat is set almost entirely by the <em>length</em>, not by how wide it swings or how heavy the bob is. Longer string, slower swing.`
+  },
+  student:{
+   legend:`Pendulum of length \\(L\\) swinging with amplitude \\(\\theta_0\\). The arc is its path; the pills read the period \\(T\\) and frequency \\(f\\). The motion is (near-)simple-harmonic, \\(\\theta(t)=\\theta_0\\cos(\\omega t)\\).`,
+   try:`Hold [[amp]] small and quadruple [[len]] from 0.5 to 2.0 — does [[per]] exactly double? Then hold [[len]] and push [[amp]] out to 70°, watching [[per]] creep up.`,
+   notice:`<b>Quadrupling \\(L\\) doubles \\(T\\), because \\(T = 2\\pi\\sqrt{L/g}\\) — the square root.</b> Mass and amplitude are absent from that formula, which is why small swings are isochronous. Push the amplitude large, though, and the small-angle approximation frays: \\(T\\) grows by about \\(\\theta_0^2/16\\), the correction you can watch appear.`
+  },
+  scholar:{
+   legend:`Length \\(L\\), amplitude \\(\\theta_0\\). The bob obeys \\(\\ddot\\theta + (g/L)\\sin\\theta = 0\\); the simulation uses the amplitude-corrected period \\(T = T_0(1+\\theta_0^2/16)\\) with \\(T_0 = 2\\pi\\sqrt{L/g}\\). Pills read \\(T\\) and \\(f = 1/T\\).`,
+   try:`Record [[per]] against [[len]] at fixed small [[amp]] and check the slope of \\(\\log T\\) vs \\(\\log L\\). Then fix [[len]] and sweep [[amp]] from 10° to 80°, tracking how far \\(T\\) departs from \\(T_0\\).`,
+   notice:`<b>The log-log slope is \\(1/2\\) (so \\(T\\propto\\sqrt L\\)), and \\(T\\) rises above \\(T_0\\) as amplitude grows.</b> The exact period is the elliptic integral \\(T = 4\\sqrt{L/g}\\,K(\\sin\\tfrac{\\theta_0}{2})\\); the first term of its expansion, \\(\\theta_0^2/16\\), is what the simulation applies — 1.7% at 30°, ~18% at 90°. Isochronism is strictly a small-angle limit.`
+  }
+ },
+
+ optics:{
+  junior:{
+   legend:`The blue arrow on the left is the <b>object</b>. The tall shape in the middle is a <b>lens</b>. The coloured lines are <b>rays of light</b> leaving the top of the object; where they cross again on the right, the lens rebuilds the picture — that's the <b>image</b> (drawn in orange).`,
+   try:`Slide [[obj]] so the object is far from the lens and look at the orange image. Now drag it slowly closer. What happens to the image the moment the object gets very close to the lens?`,
+   notice:`<b>Far away, the image is small and flipped upside down; up close, it flips back to upright and grows huge.</b> That switch is exactly the difference between a camera (object far, image small and inverted) and a magnifying glass (object near, image large and upright). The lens does both — it just depends how close you hold it.`
+  },
+  student:{
+   legend:`Blue arrow = object at distance \\(d_o\\). Vertical lens with focal points marked at \\(\\pm f\\). Three principal rays trace from the object tip: parallel-then-through-focus, straight-through-centre, and through-the-near-focus-then-parallel. They meet at the image, distance \\(d_i\\); the pills read \\(d_i\\), \\(m\\) and whether the image is real or virtual.`,
+   try:`Set [[foc]] to about 60 and sweep [[obj]] from 300 down to 40. Watch [[img]] and [[mag]] as the object crosses \\(d_o = f\\).`,
+   notice:`<b>As \\(d_o \\to f\\), the image races off to infinity and \\(m\\) blows up.</b> The thin-lens equation \\(1/f = 1/d_o + 1/d_i\\) makes \\(d_i\\) diverge when \\(d_o = f\\), so rays leave the lens parallel and form no finite image. Cross inside \\(f\\) and \\(d_i\\) goes negative: the image becomes <em>virtual</em>, upright and magnified — the magnifying-glass regime.`
+  },
+  scholar:{
+   legend:`Object at \\(d_o\\); thin converging lens of focal length \\(f\\) with foci at \\(\\pm f\\). The three principal rays construct the image at \\(d_i\\) given by \\(1/f = 1/d_o + 1/d_i\\), with transverse magnification \\(m = -d_i/d_o\\). Real images (\\(d_i>0\\)) appear right of the lens; virtual images (\\(d_i<0\\)) appear left, dashed.`,
+   try:`Fix [[foc]] and record \\((d_o, d_i)\\) pairs across the range, then test whether \\(1/d_o + 1/d_i\\) stays constant. Note the sign of [[mag]] as [[obj]] passes through \\(f\\) and through \\(2f\\).`,
+   notice:`<b>\\(1/d_o + 1/d_i = 1/f\\) holds exactly, and \\(m = -d_i/d_o\\) tracks the geometry.</b> At \\(d_o = 2f\\), \\(m=-1\\) (same size, inverted); for \\(f<d_o<2f\\) the real image is enlarged (projector); for \\(d_o<f\\), \\(d_i<0\\) gives an erect virtual image. The simulation solves \\(d_i = d_o f/(d_o-f)\\) each frame — the pole at \\(d_o=f\\) is the diverging image you just watched.`
+  }
+ },
 
  gravity:{
   junior:{
@@ -4577,7 +4996,9 @@ const REF={
   acids:'PH', periodic:'Periodic_table',
   astro:'Stellar_evolution', blackholes:'Black_hole', cosmology:'Big_Bang', solarsystem:'Solar_System',
   eclipse:'Solar_eclipse', meteors:'Meteor_shower',
-  neuro:'Neuroscience', neuron:'Action_potential', memory:'Memory', sleep:'Sleep'
+  neuro:'Neuroscience', neuron:'Action_potential', memory:'Memory', sleep:'Sleep',
+  optics:'Lens_(optics)', pendulum:'Pendulum',
+  gaslaws:'Gas_laws', moonphases:'Lunar_phase', protein:'Protein_biosynthesis'
 };
 function buildDeeper(s,lvl){
   const NL={junior:UI.levelShort.student,student:UI.levelShort.scholar,scholar:null};
@@ -4759,9 +5180,344 @@ function buildSim(id,container,color,lvl){
             acids:simAcids, periodic:simPeriodic,
             astro:simAstro,blackholes:simBlackholes, cosmology:simCosmology, solarsystem:simSolarSystem,
             eclipse:simEclipse, meteors:simMeteors,
-            neuro:simNeuro,neuron:simNeuron,memory:simMemory,sleep:simSleep
+            neuro:simNeuro,neuron:simNeuron,memory:simMemory,sleep:simSleep,
+            optics:simOptics, pendulum:simPendulum,
+            gaslaws:simGas, moonphases:simMoon, protein:simProtein
             };
   if(map[id])map[id](container,color,lvl);
+}
+
+/* ── GAS LAWS ── */
+function simGas(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0891b2';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.gaslaws&&SIMS.gaslaws.raf)cancelAnimationFrame(SIMS.gaslaws.raf);
+  const W=getSimWidth(container),H=270;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('gaslaws',lvl);
+  const pPres=pill(L.pres),pPV=pill(L.pv);
+  pRow.appendChild(pPres.el);pRow.appendChild(pPV.el);
+  const rT=mkRange(ctrl,L.temp,200,500,300,1,color);
+  const rV=mkRange(ctrl,L.vol,0.4,2,1,0.1,color);
+  const St=SIMS.gaslaws={raf:null};
+  const boxX=12,boxY=16,boxH=H-32,N=36,parts=[],flashes=[],gx=W-30,gw=15;
+  for(let i=0;i<N;i++)parts.push({x:boxX+20+Math.random()*80,y:boxY+10+Math.random()*(boxH-20),vx:Math.random()*2-1,vy:Math.random()*2-1});
+  function frame(){
+    const T=rT.val,vol=rV.val;
+    const boxW=Math.min(W-70,90+vol*180),rx=boxX+boxW;
+    const P=Math.round(T/(vol*10)),spd=0.6+(T-200)/300*2.6,hot=Math.min(1,(T-200)/300);
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#f2fbfd');bg.addColorStop(1,'#e3f3f8');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    // container
+    ctx.strokeStyle='rgba(90,110,120,0.75)';ctx.lineWidth=2;ctx.strokeRect(boxX,boxY,boxW,boxH);
+    // particles + wall collisions
+    const cr='rgba('+Math.round(40+hot*200)+',130,'+Math.round(210-hot*130)+',';
+    for(let i=0;i<N;i++){const p=parts[i];
+      p.x+=p.vx*spd;p.y+=p.vy*spd;
+      if(p.x<boxX+6){p.x=boxX+6;p.vx*=-1;flashes.push({x:boxX+3,y:p.y,life:1});}
+      if(p.x>rx-6){p.x=rx-6;p.vx*=-1;flashes.push({x:rx-3,y:p.y,life:1});}
+      if(p.y<boxY+6){p.y=boxY+6;p.vy*=-1;flashes.push({x:p.x,y:boxY+3,life:1});}
+      if(p.y>boxY+boxH-6){p.y=boxY+boxH-6;p.vy*=-1;flashes.push({x:p.x,y:boxY+boxH-3,life:1});}
+      ctx.beginPath();ctx.arc(p.x,p.y,8,0,Math.PI*2);ctx.fillStyle=cr+'0.16)';ctx.fill();
+      ctx.beginPath();ctx.arc(p.x,p.y,4.5,0,Math.PI*2);ctx.fillStyle=cr+'0.95)';ctx.fill();
+    }
+    if(flashes.length>140)flashes.splice(0,flashes.length-140);
+    for(let i=flashes.length-1;i>=0;i--){const fl=flashes[i];fl.life-=0.09;if(fl.life<=0){flashes.splice(i,1);continue;}
+      ctx.beginPath();ctx.arc(fl.x,fl.y,(1-fl.life)*9+2,0,Math.PI*2);ctx.strokeStyle='rgba(255,180,80,'+fl.life*0.8+')';ctx.lineWidth=2;ctx.stroke();
+    }
+    // piston (hatched) + handle
+    ctx.fillStyle='rgba(70,80,92,0.92)';ctx.fillRect(rx-5,boxY-3,9,boxH+6);
+    ctx.strokeStyle='rgba(255,255,255,0.22)';ctx.lineWidth=1;
+    for(let y=boxY;y<boxY+boxH;y+=8){ctx.beginPath();ctx.moveTo(rx-5,y);ctx.lineTo(rx+4,y+6);ctx.stroke();}
+    ctx.fillStyle='rgba(70,80,92,0.92)';ctx.fillRect(rx+3,boxY+boxH/2-16,16,32);
+    // pressure gauge
+    ctx.fillStyle='rgba(255,255,255,0.55)';ctx.fillRect(gx,boxY,gw,boxH);
+    const frac=Math.min(1,P/125),fh=frac*boxH;
+    const pg=ctx.createLinearGradient(0,boxY+boxH,0,boxY);pg.addColorStop(0,'#22c55e');pg.addColorStop(0.55,'#eab308');pg.addColorStop(1,'#ef4444');
+    ctx.fillStyle=pg;ctx.fillRect(gx+1,boxY+boxH-fh,gw-2,fh);
+    ctx.strokeStyle='rgba(90,110,120,0.75)';ctx.lineWidth=1.5;ctx.strokeRect(gx,boxY,gw,boxH);
+    ctx.strokeStyle='rgba(90,110,120,0.5)';ctx.lineWidth=1;
+    for(let k=0;k<=4;k++){const y=boxY+boxH-k/4*boxH;ctx.beginPath();ctx.moveTo(gx-3,y);ctx.lineTo(gx,y);ctx.stroke();}
+    ctx.fillStyle='rgba(60,80,90,0.9)';ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillText('P',gx+gw/2,boxY-5);ctx.textAlign='left';
+    pPres.set(P+' kPa');pPV.set((P*vol).toFixed(1));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── MOON PHASES ── */
+function simMoon(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#475569';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.moonphases&&SIMS.moonphases.raf)cancelAnimationFrame(SIMS.moonphases.raf);
+  const W=getSimWidth(container),H=290;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('moonphases',lvl);
+  const pPhase=pill(L.phase),pLit=pill(L.lit);
+  pRow.appendChild(pPhase.el);pRow.appendChild(pLit.el);
+  const rDay=mkRange(ctrl,L.day,0,29.5,7,0.5,color);
+  const St=SIMS.moonphases={raf:null};
+  const ex=Math.round(W*0.42),ey=H/2,orbR=Math.min(ex-40,H*0.36);
+  function phaseName(k,waxing){
+    if(k<0.03)return 'New Moon';
+    if(k>0.97)return 'Full Moon';
+    if(Math.abs(k-0.5)<0.06)return waxing?'First Quarter':'Last Quarter';
+    if(waxing)return k<0.5?'Waxing Crescent':'Waxing Gibbous';
+    return k<0.5?'Waning Crescent':'Waning Gibbous';
+  }
+  function frame(){
+    const day=rDay.val,phi=Math.PI+(day/29.5)*Math.PI*2;
+    const k=(1+Math.cos(phi))/2,waxing=day<14.75;
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,W,0);bg.addColorStop(0,'#0b1020');bg.addColorStop(1,'#05070f');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    // Sun glow from the left
+    const sg=ctx.createRadialGradient(-30,ey,10,-30,ey,W*0.7);sg.addColorStop(0,'rgba(255,224,120,0.5)');sg.addColorStop(1,'transparent');
+    ctx.fillStyle=sg;ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#ffd24a';ctx.beginPath();ctx.arc(2,ey,16,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(255,220,120,0.85)';ctx.font='11px system-ui';ctx.fillText('Sun',6,ey-22);
+    // orbit + Earth
+    ctx.strokeStyle='rgba(255,255,255,0.13)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(ex,ey,orbR,0,Math.PI*2);ctx.stroke();
+    ctx.fillStyle='#3b82f6';ctx.beginPath();ctx.arc(ex,ey,15,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(180,205,255,0.9)';ctx.fillText('Earth',ex-16,ey+30);
+    // Moon on orbit, lit half toward the Sun (left)
+    const mx=ex+orbR*Math.cos(phi),my=ey+orbR*Math.sin(phi),mr=9;
+    ctx.fillStyle='#4b5563';ctx.beginPath();ctx.arc(mx,my,mr,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.beginPath();ctx.arc(mx,my,mr,0,Math.PI*2);ctx.clip();
+    ctx.fillStyle='#e5e7eb';ctx.beginPath();ctx.arc(mx-mr*0.5,my,mr,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(mx,my,mr,0,Math.PI*2);ctx.stroke();
+    // Earth-view inset disc (top right)
+    const ix=W-70,iy=66,ir=42;
+    ctx.fillStyle='rgba(255,255,255,0.06)';ctx.beginPath();ctx.arc(ix,iy,ir+8,0,Math.PI*2);ctx.fill();
+    ctx.save();ctx.beginPath();ctx.arc(ix,iy,ir,0,Math.PI*2);ctx.clip();
+    ctx.fillStyle='#20242e';ctx.fillRect(ix-ir,iy-ir,ir*2,ir*2);
+    const dir=waxing?1:-1,off=dir*(ir*2)*(1-k);
+    ctx.fillStyle='#f3f4f6';ctx.beginPath();ctx.arc(ix+off,iy,ir,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(ix,iy,ir,0,Math.PI*2);ctx.stroke();
+    ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText('from Earth',ix,iy+ir+18);ctx.textAlign='left';
+    pPhase.set(phaseName(k,waxing));pLit.set(Math.round(k*100)+'%');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── PROTEIN SYNTHESIS ── */
+function simProtein(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#c026d3';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.protein&&SIMS.protein.raf)cancelAnimationFrame(SIMS.protein.raf);
+  const W=getSimWidth(container),H=290;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('protein',lvl);
+  const pCodon=pill(L.codon),pLen=pill(L.len);
+  pRow.appendChild(pCodon.el);pRow.appendChild(pLen.el);
+  const bPlay=mkBtn(L.play,true,color);ctrl.appendChild(bPlay);
+  const codons=['AUG','GCU','UAU','GGC','AAA','GAC','UGG','UAA'];
+  const aa    =['Met','Ala','Tyr','Gly','Lys','Asp','Trp','STOP'];
+  const aaCol =['#ef4444','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899','#14b8a6','#6b7280'];
+  const St=SIMS.protein={raf:null,i:0,t:0,playing:false};
+  bPlay.addEventListener('click',function(){if(St.i>=codons.length-1){St.i=0;St.t=0;}St.playing=!St.playing;});
+  function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+  function frame(){
+    if(St.playing){St.t+=0.016;if(St.t>0.9){St.t=0;if(St.i<codons.length-1)St.i++;else St.playing=false;}}
+    const n=codons.length,cw=Math.min(50,(W-20)/n),x0=10,rowY=58,bh=30;
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#fdf4fe');bg.addColorStop(1,'#f5e6fa');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='rgba(120,70,140,0.9)';ctx.font='bold 12px system-ui';ctx.textAlign='left';ctx.fillText('mRNA — the recipe',x0,rowY-14);
+    // sugar-phosphate backbone
+    ctx.strokeStyle='rgba(150,110,165,0.45)';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x0+2,rowY+bh+5);ctx.lineTo(x0+n*cw-2,rowY+bh+5);ctx.stroke();
+    // ribosome glow behind the current codon (drawn first, so letters stay on top)
+    const rcx=x0+St.i*cw+cw/2;
+    const rg=ctx.createRadialGradient(rcx,rowY+bh/2,3,rcx,rowY+bh/2,cw*1.2);rg.addColorStop(0,'rgba(192,38,211,0.30)');rg.addColorStop(1,'transparent');
+    ctx.fillStyle=rg;ctx.fillRect(rcx-cw*1.3,rowY-26,cw*2.6,bh+72);
+    // codon boxes
+    for(let j=0;j<n;j++){const bxx=x0+j*cw,on=(j===St.i),read=(j<St.i);
+      ctx.fillStyle=on?'#ffffff':(read?'rgba(228,213,238,0.92)':'rgba(255,255,255,0.55)');
+      ctx.strokeStyle=on?C:'rgba(160,120,175,0.5)';ctx.lineWidth=on?2.6:1;
+      rr(bxx+2,rowY,cw-4,bh,7);ctx.fill();ctx.stroke();
+    }
+    // codon letters, always on top
+    for(let j=0;j<n;j++){const bxx=x0+j*cw;
+      ctx.fillStyle=(j<=St.i)?'#5b2a66':'rgba(120,90,130,0.5)';
+      ctx.font='bold 13px ui-monospace,monospace';ctx.textAlign='center';ctx.fillText(codons[j],bxx+cw/2,rowY+20);
+    }
+    // ribosome body BELOW the strand (never covers the letters)
+    const ry=rowY+bh+34;
+    ctx.fillStyle='rgba(168,85,199,0.92)';ctx.beginPath();ctx.ellipse(rcx,ry,cw*0.95,21,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(147,51,180,0.95)';ctx.beginPath();ctx.ellipse(rcx,ry-15,cw*0.72,14,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(110,60,130,0.9)';ctx.font='10px system-ui';ctx.textAlign='center';ctx.fillText('ribosome',rcx,ry+36);
+    // amino acid currently held by the ribosome
+    if(aa[St.i]!=='STOP'){
+      const iy=ry-15;
+      ctx.beginPath();ctx.arc(rcx,iy,12,0,Math.PI*2);ctx.fillStyle=aaCol[St.i];ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,0.75)';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.fillStyle='#fff';ctx.font='bold 9px system-ui';ctx.textAlign='center';ctx.fillText(aa[St.i],rcx,iy+3);
+    }else{
+      ctx.fillStyle='#6b7280';ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillText('STOP',rcx,ry-12);
+    }
+    // growing polypeptide chain
+    const chainY=H-52;
+    ctx.fillStyle='rgba(120,70,140,0.9)';ctx.font='bold 12px system-ui';ctx.textAlign='left';ctx.fillText('protein chain',x0,chainY-28);
+    let built=0;
+    for(let j=0;j<St.i;j++){if(aa[j]==='STOP')break;
+      const bxp=32+built*46,byp=chainY;
+      if(built>0){ctx.strokeStyle='rgba(120,90,140,0.55)';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(bxp-29,byp);ctx.lineTo(bxp-17,byp);ctx.stroke();}
+      const gd=ctx.createRadialGradient(bxp-5,byp-5,2,bxp,byp,17);gd.addColorStop(0,'rgba(255,255,255,0.6)');gd.addColorStop(0.4,aaCol[j]);gd.addColorStop(1,aaCol[j]);
+      ctx.beginPath();ctx.arc(bxp,byp,17,0,Math.PI*2);ctx.fillStyle=gd;ctx.fill();
+      ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.lineWidth=1;ctx.stroke();
+      ctx.fillStyle='#fff';ctx.font='bold 10px system-ui';ctx.textAlign='center';ctx.fillText(aa[j],bxp,byp+4);
+      built++;
+    }
+    ctx.textAlign='left';
+    pCodon.set(codons[St.i]+' → '+aa[St.i]);pLen.set(built+(aa[St.i]==='STOP'?' (done)':''));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── PENDULUM / SHM ── */
+function simPendulum(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#7c3aed';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.pendulum&&SIMS.pendulum.raf)cancelAnimationFrame(SIMS.pendulum.raf);
+  const W=getSimWidth(container),H=300;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('pendulum',lvl);
+  const pPer=pill(L.per),pFreq=pill(L.freq);
+  pRow.appendChild(pPer.el);pRow.appendChild(pFreq.el);
+  const rLen=mkRange(ctrl,L.len,0.2,3,1,0.1,color);
+  const rAmp=mkRange(ctrl,L.amp,5,80,20,1,color);
+  const St=SIMS.pendulum={raf:null,t:0};
+  const g=9.8,cx=W/2,py=34;
+  function frame(){
+    const Lm=rLen.val,amp=rAmp.val,th0=amp*Math.PI/180;
+    const T0=2*Math.PI*Math.sqrt(Lm/g),T=T0*(1+th0*th0/16);
+    St.t+=0.016;
+    const th=th0*Math.cos(2*Math.PI*St.t/T),Lpx=26+Lm*72;
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#faf7ff');bg.addColorStop(1,'#f1ecfb');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    // swept path arc
+    ctx.strokeStyle='rgba(124,58,237,0.20)';ctx.lineWidth=2;ctx.setLineDash([4,4]);ctx.beginPath();
+    for(let a=-th0;a<=th0+0.001;a+=0.04){const x=cx+Lpx*Math.sin(a),y=py+Lpx*Math.cos(a);(a===-th0)?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+    ctx.stroke();ctx.setLineDash([]);
+    // extreme swing lines (faint)
+    [-th0,th0].forEach(function(a){const x=cx+Lpx*Math.sin(a),y=py+Lpx*Math.cos(a);ctx.strokeStyle='rgba(124,58,237,0.13)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx,py);ctx.lineTo(x,y);ctx.stroke();});
+    const bx=cx+Lpx*Math.sin(th),by=py+Lpx*Math.cos(th);
+    ctx.strokeStyle='#9ca3af';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cx,py);ctx.lineTo(bx,by);ctx.stroke();
+    ctx.fillStyle='#6b7280';ctx.beginPath();ctx.arc(cx,py,4,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(bx,by,15,0,Math.PI*2);ctx.fillStyle=C+'33';ctx.fill();
+    ctx.beginPath();ctx.arc(bx,by,11,0,Math.PI*2);ctx.fillStyle=C;ctx.fill();
+    pPer.set(T.toFixed(2)+' s');pFreq.set((1/T).toFixed(2)+' Hz');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── OPTICS / THIN LENS ── */
+function simOptics(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0284c7';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.optics&&SIMS.optics.raf)cancelAnimationFrame(SIMS.optics.raf);
+  const W=getSimWidth(container),H=300;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('optics',lvl);
+  const pImg=pill(L.img),pMag=pill(L.mag),pType=pill(L.type);
+  pRow.appendChild(pImg.el);pRow.appendChild(pMag.el);pRow.appendChild(pType.el);
+  const rObj=mkRange(ctrl,L.obj,40,380,260,1,color);
+  const rF=mkRange(ctrl,L.foc,30,180,70,1,color);
+  const St=SIMS.optics={raf:null};
+  const cy=Math.round(H*0.54),cx=Math.round(W*0.52),scale=0.5,objH=52;
+  const rayP='#ef4444',rayC='#22c55e',rayF='#3b82f6',imgCol='#f59e0b';
+  function glow(ax,ay,bx,by,col,dash){
+    ctx.setLineDash(dash?[5,5]:[]);
+    ctx.strokeStyle=col+'2e';ctx.lineWidth=5.5;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();
+    ctx.strokeStyle=col;ctx.lineWidth=1.8;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  function arrow(x,tipY,col,solid){
+    ctx.setLineDash(solid?[]:[5,4]);
+    ctx.strokeStyle=col;ctx.lineWidth=3.5;ctx.beginPath();ctx.moveTo(x,cy);ctx.lineTo(x,tipY);ctx.stroke();ctx.setLineDash([]);
+    const up=tipY<cy?1:-1;
+    ctx.beginPath();ctx.moveTo(x,tipY);ctx.lineTo(x-6,tipY+up*9);ctx.lineTo(x+6,tipY+up*9);ctx.closePath();ctx.fillStyle=col;ctx.fill();
+  }
+  function frame(){
+    const doD=rObj.val,f=rF.val;
+    let di,m;const denom=doD-f;
+    if(Math.abs(denom)<0.8){di=Infinity;m=Infinity;}else{di=doD*f/denom;m=-di/doD;}
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#f4faff');bg.addColorStop(1,'#e6f0fb');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    // optical axis
+    ctx.strokeStyle='rgba(120,135,160,0.55)';ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(8,cy);ctx.lineTo(W-8,cy);ctx.stroke();
+    // focal (F) and 2F marks on both sides
+    const fpx=cx+f*scale,fnx=cx-f*scale,f2p=cx+2*f*scale,f2n=cx-2*f*scale;
+    ctx.textAlign='center';ctx.font='11px system-ui';
+    function mark(x,lbl){ctx.strokeStyle='rgba(120,135,160,0.7)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x,cy-5);ctx.lineTo(x,cy+5);ctx.stroke();ctx.fillStyle='#64748b';ctx.beginPath();ctx.arc(x,cy,2.6,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(80,90,110,0.85)';ctx.fillText(lbl,x,cy+17);}
+    mark(fnx,'F');mark(fpx,'F');mark(f2n,'2F');mark(f2p,'2F');
+    // biconvex glassy lens
+    const lensH=124,bulge=13;
+    const lg=ctx.createLinearGradient(cx-bulge,0,cx+bulge,0);lg.addColorStop(0,'rgba(56,140,220,0.10)');lg.addColorStop(0.5,'rgba(125,195,240,0.34)');lg.addColorStop(1,'rgba(56,140,220,0.10)');
+    ctx.beginPath();ctx.moveTo(cx,cy-lensH/2);ctx.quadraticCurveTo(cx+bulge,cy,cx,cy+lensH/2);ctx.quadraticCurveTo(cx-bulge,cy,cx,cy-lensH/2);ctx.closePath();
+    ctx.fillStyle=lg;ctx.fill();ctx.strokeStyle='rgba(40,110,190,0.75)';ctx.lineWidth=2;ctx.stroke();
+    // object
+    const ox=cx-doD*scale,tipY=cy-objH,xR=W-10;
+    arrow(ox,tipY,C,true);
+    ctx.fillStyle=C;ctx.font='bold 11px system-ui';ctx.fillText('object',ox,cy+30);
+    if(di===Infinity){
+      glow(ox,tipY,cx,tipY,rayP,false);glow(cx,tipY,xR,tipY,rayP,false);
+      const dcx=cx-ox,dcy=cy-tipY,t=(xR-ox)/dcx;glow(ox,tipY,xR,tipY+dcy*t,rayC,false);
+      pImg.set('∞');pMag.set('∞');pType.set('At infinity');
+    }else{
+      const imgx=cx+di*scale,imgTipY=cy-objH*m;
+      const t3=(cx-ox)/(fnx-ox),y3=tipY+(cy-tipY)*t3;
+      glow(ox,tipY,cx,tipY,rayP,false);              // ray 1: parallel, up to lens
+      glow(ox,tipY,cx,y3,rayF,false);                // ray 3: toward near focus, up to lens
+      if(di>0){
+        glow(cx,tipY,imgx,imgTipY,rayP,false);       // refracts through far focus
+        glow(ox,tipY,imgx,imgTipY,rayC,false);       // ray 2: straight through centre
+        glow(cx,y3,imgx,imgTipY,rayF,false);         // exits parallel to axis
+        arrow(imgx,imgTipY,imgCol,true);
+        ctx.fillStyle=imgCol;ctx.font='bold 11px system-ui';ctx.fillText('image',imgx,cy+30);
+        pType.set(m<0?'Real, inverted':'Real');
+      }else{
+        const d1x=fpx-cx,d1y=cy-tipY,t1=(xR-cx)/d1x;glow(cx,tipY,xR,tipY+d1y*t1,rayP,false);
+        const dcx=cx-ox,dcy=cy-tipY,t2=(xR-ox)/dcx;glow(ox,tipY,xR,tipY+dcy*t2,rayC,false);
+        glow(cx,y3,xR,y3,rayF,false);
+        glow(cx,tipY,imgx,imgTipY,rayP,true);glow(ox,tipY,imgx,imgTipY,rayC,true);
+        arrow(imgx,imgTipY,imgCol,false);
+        ctx.fillStyle=imgCol;ctx.font='bold 11px system-ui';ctx.fillText('virtual image',Math.max(34,imgx),cy+30);
+        pType.set('Virtual, upright');
+      }
+      pImg.set(Math.round(di)+(di>0?' (real)':' (virtual)'));
+      pMag.set(m.toFixed(2)+'×');
+    }
+    // legend
+    const lx=10,ly=10;
+    ctx.fillStyle='rgba(255,255,255,0.78)';ctx.strokeStyle='rgba(120,135,160,0.5)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.rect(lx,ly,140,56);ctx.fill();ctx.stroke();
+    ctx.textAlign='left';ctx.font='10px system-ui';
+    [['parallel ray',rayP],['through centre',rayC],['through focus',rayF]].forEach(function(it,i){
+      ctx.strokeStyle=it[1];ctx.lineWidth=2.6;ctx.beginPath();ctx.moveTo(lx+9,ly+14+i*15);ctx.lineTo(lx+28,ly+14+i*15);ctx.stroke();
+      ctx.fillStyle='rgba(60,70,90,0.9)';ctx.fillText(it[0],lx+33,ly+17+i*15);
+    });
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
 }
 
 /* ── ORBIT ── */
@@ -5482,26 +6238,46 @@ function simTrig(container,color,lvl){
   let playing=false;
   bPlay.addEventListener('click',function(){if(rA.val>=360){rA.inp.value=0;rA.v.textContent='0';}playing=!playing;});
   const St=SIMS.trig={raf:null};
-  const R=Math.min(94,(H-44)/2),cxL=R+22,cyL=H/2,gx0=cxL+R+34,gx1=W-14,gcy=H/2,amp=R,DEG=Math.PI/180;
+  const R=Math.min(96,(H-44)/2),cxL=R+26,cyL=H/2,gx0=cxL+R+40,gx1=W-14,gcy=H/2,amp=R,DEG=Math.PI/180;
   const sinCol='#ef4444',cosCol='#22c55e';
   function frame(){
     if(playing){let v=rA.val+1.4;if(v>360)v-=360;rA.inp.value=v;rA.v.textContent=Math.round(v);}
-    const a=rA.val,ar=a*DEG,px=cxL+R*Math.cos(ar),py=cyL-R*Math.sin(ar);
+    const a=rA.val,ar=a*DEG,px=cxL+R*Math.cos(ar),py=cyL-R*Math.sin(ar),s=Math.sin(ar),co=Math.cos(ar);
     ctx.clearRect(0,0,W,H);
-    ctx.strokeStyle='rgba(125,125,125,0.35)';ctx.lineWidth=1;
-    ctx.beginPath();ctx.arc(cxL,cyL,R,0,Math.PI*2);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(cxL-R-6,cyL);ctx.lineTo(cxL+R+6,cyL);ctx.moveTo(cxL,cyL-R-6);ctx.lineTo(cxL,cyL+R+6);ctx.stroke();
-    ctx.strokeStyle=cosCol;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(cxL,cyL);ctx.lineTo(px,cyL);ctx.stroke();
-    ctx.strokeStyle=sinCol;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(px,cyL);ctx.lineTo(px,py);ctx.stroke();
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#f6f9ff');bg.addColorStop(1,'#eaf0fb');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    // unit circle
+    ctx.fillStyle='rgba(37,99,235,0.05)';ctx.beginPath();ctx.arc(cxL,cyL,R,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(120,130,150,0.5)';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(cxL,cyL,R,0,Math.PI*2);ctx.stroke();
+    ctx.strokeStyle='rgba(120,130,150,0.4)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cxL-R-8,cyL);ctx.lineTo(cxL+R+8,cyL);ctx.moveTo(cxL,cyL-R-8);ctx.lineTo(cxL,cyL+R+8);ctx.stroke();
+    ctx.fillStyle='rgba(110,120,140,0.8)';ctx.font='9px system-ui';ctx.textAlign='center';
+    ctx.fillText('1',cxL+R+3,cyL-4);ctx.fillText('-1',cxL-R-4,cyL-4);ctx.fillText('1',cxL+9,cyL-R-1);ctx.fillText('-1',cxL+11,cyL+R+9);
+    // angle arc + label
+    ctx.strokeStyle=C;ctx.lineWidth=2;ctx.beginPath();ctx.arc(cxL,cyL,20,0,-ar,true);ctx.stroke();
+    ctx.fillStyle=C;ctx.font='bold 11px system-ui';ctx.textAlign='left';ctx.fillText('θ = '+Math.round(a)+'°',cxL-R+2,cyL+R+9);
+    // cos (green) and sin (red) projections
+    ctx.strokeStyle=cosCol;ctx.lineWidth=3.5;ctx.beginPath();ctx.moveTo(cxL,cyL);ctx.lineTo(px,cyL);ctx.stroke();
+    ctx.strokeStyle=sinCol;ctx.lineWidth=3.5;ctx.beginPath();ctx.moveTo(px,cyL);ctx.lineTo(px,py);ctx.stroke();
     ctx.strokeStyle=C;ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(cxL,cyL);ctx.lineTo(px,py);ctx.stroke();
+    // point + glow
+    const pgd=ctx.createRadialGradient(px,py,1,px,py,13);pgd.addColorStop(0,C);pgd.addColorStop(1,'transparent');
+    ctx.fillStyle=pgd;ctx.beginPath();ctx.arc(px,py,13,0,Math.PI*2);ctx.fill();
     ctx.fillStyle=C;ctx.beginPath();ctx.arc(px,py,5,0,Math.PI*2);ctx.fill();
-    ctx.strokeStyle='rgba(125,125,125,0.3)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(gx0,gcy);ctx.lineTo(gx1,gcy);ctx.stroke();
-    function wave(fn,col){ctx.strokeStyle=col;ctx.lineWidth=2;ctx.beginPath();for(let d=0;d<=a;d+=2){const x=gx0+(d/360)*(gx1-gx0),y=gcy-fn(d*DEG)*amp;d?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();}
+    ctx.fillStyle='rgba(45,55,75,0.92)';ctx.font='10px system-ui';ctx.textAlign=co>=0?'left':'right';
+    ctx.fillText('('+co.toFixed(2)+', '+s.toFixed(2)+')',px+(co>=0?8:-8),py-9);
+    // wave panel
+    ctx.strokeStyle='rgba(120,130,150,0.35)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(gx0,gcy);ctx.lineTo(gx1,gcy);ctx.stroke();
+    ctx.strokeStyle='rgba(120,130,150,0.22)';ctx.setLineDash([2,3]);ctx.beginPath();ctx.moveTo(gx0,gcy-amp);ctx.lineTo(gx1,gcy-amp);ctx.moveTo(gx0,gcy+amp);ctx.lineTo(gx1,gcy+amp);ctx.stroke();ctx.setLineDash([]);
+    function wave(fn,col){ctx.strokeStyle=col;ctx.lineWidth=2.3;ctx.beginPath();for(let d=0;d<=a;d+=2){const x=gx0+(d/360)*(gx1-gx0),y=gcy-fn(d*DEG)*amp;d?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();}
     wave(Math.cos,cosCol);wave(Math.sin,sinCol);
-    const hx=gx0+(a/360)*(gx1-gx0),hy=gcy-Math.sin(ar)*amp;
-    ctx.strokeStyle='rgba(239,68,68,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(hx,hy);ctx.stroke();ctx.setLineDash([]);
+    const hx=gx0+(a/360)*(gx1-gx0),hy=gcy-s*amp,hyc=gcy-co*amp;
+    ctx.strokeStyle='rgba(150,150,160,0.4)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(hx,hy);ctx.stroke();ctx.setLineDash([]);
     ctx.fillStyle=sinCol;ctx.beginPath();ctx.arc(hx,hy,4,0,Math.PI*2);ctx.fill();
-    pSin.set(Math.sin(ar).toFixed(3));pCos.set(Math.cos(ar).toFixed(3));
+    ctx.fillStyle=cosCol;ctx.beginPath();ctx.arc(hx,hyc,4,0,Math.PI*2);ctx.fill();
+    ctx.textAlign='left';ctx.font='bold 10px system-ui';
+    ctx.fillStyle=sinCol;ctx.fillText('sin θ',gx0+2,gcy-amp-4);
+    ctx.fillStyle=cosCol;ctx.fillText('cos θ',gx0+44,gcy-amp-4);
+    pSin.set(s.toFixed(3));pCos.set(co.toFixed(3));
     St.raf=requestAnimationFrame(frame);
   }
   frame();

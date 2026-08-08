@@ -33,12 +33,14 @@ export default {
     whatSeeing:'Cosa stai vedendo',
     whatNotice:'Cosa notare',
     footer:{
-      about:'47 simulazioni scientifiche pratiche in nove ambiti, ognuna scritta per tre livelli — da un curioso decenne a uno studente universitario. Gratis, senza account, senza tracciamento.',
+      about:'Simulazioni scientifiche pratiche in nove ambiti, ognuna scritta per tre livelli: da un curioso decenne a uno studente universitario. Gratis, senza account, senza tracciamento.',
       exploreBySubject:'Esplora per materia',
       allExperiments:'Tutti gli esperimenti',
       madeFor:'fatto per menti curiose',
       contact:'Contatti',
-      attrib:'Concetti da Wikipedia e risorse educative aperte'
+      attrib:'Concetti da Wikipedia e risorse educative aperte',
+      ai:'Le spiegazioni di questo sito sono redatte con l\'aiuto di IA generativa.',
+      aiLink:'Come usiamo l\'IA'
     },
     deeper:{
       keepExploring:'📚 Continua a esplorare',
@@ -62,8 +64,355 @@ export default {
     runSim:'▶ Avvia la simulazione interattiva',
     explainedSimulated:'Spiegato e simulato'
   },
-  slugs: { memory: 'come-funziona-la-memoria', sleep: 'sonno-coscienza', neuro: 'cervello-neuroni', neuron: 'cervello-elettrico', astro: 'stelle-universo', cosmology: 'cosmologia-big-bang', organic: 'chimica-organica-molecole-vita', acids: 'acidi-basi-ph', periodic: 'tavola-periodica', balancing: 'bilanciare-equazioni-chimiche', chem: 'atomi-legami-chimici', electrochem: 'elettrochimica-batterie', kinetics: 'cinetica-equilibrio', volcano: 'vulcanologia', seasons: 'perche-abbiamo-le-stagioni', climate: 'clima-atmosfera', tectonics: 'tettonica-a-placche-terremoti', ocean: 'oceanografia-correnti-oceaniche', sorting: 'algoritmi-di-ordinamento', ml: 'machine-learning-reti-neurali', crypto: 'crittografia-sicurezza', complexity: 'computazione-complessita', ecosystem: 'ecosistemi-reti-alimentari', cell: 'cellula-osmosi-diffusione', mitosis: 'mitosi-meiosi', punnett: 'quadrati-di-punnett-genetica', life: 'regole-della-vita', dna: 'dna-genetica', evolution: 'evoluzione-selezione-naturale', graphs: 'teoria-dei-grafi-reti', trig: 'trigonometria-cerchio-unitario', prob: 'probabilita-curva-a-campana', fractal: 'frattali-infinito', calculus: 'calcolo-cambiamento', circuits: 'legge-di-ohm-circuiti', states: 'stati-della-materia', thermo: 'calore-termodinamica', particles: 'modello-standard', newton: 'leggi-del-moto-di-newton', gravity: 'gravita-orbite', projectile: 'moto-dei-proiettili', waves: 'onde-interferenza', photosynthesis: 'fotosintesi', eclipse: 'eclissi', meteors: 'stelle-cadenti', blackholes: 'buchi-neri', solarsystem: 'sistema-solare' },
+  slugs: { gaslaws: 'leggi-dei-gas', moonphases: 'fasi-lunari', protein: 'sintesi-proteica', pendulum: 'pendolo-moto-armonico', optics: 'ottica-luce-lenti', memory: 'come-funziona-la-memoria', sleep: 'sonno-coscienza', neuro: 'cervello-neuroni', neuron: 'cervello-elettrico', astro: 'stelle-universo', cosmology: 'cosmologia-big-bang', organic: 'chimica-organica-molecole-vita', acids: 'acidi-basi-ph', periodic: 'tavola-periodica', balancing: 'bilanciare-equazioni-chimiche', chem: 'atomi-legami-chimici', electrochem: 'elettrochimica-batterie', kinetics: 'cinetica-equilibrio', volcano: 'vulcanologia', seasons: 'perche-abbiamo-le-stagioni', climate: 'clima-atmosfera', tectonics: 'tettonica-a-placche-terremoti', ocean: 'oceanografia-correnti-oceaniche', sorting: 'algoritmi-di-ordinamento', ml: 'machine-learning-reti-neurali', crypto: 'crittografia-sicurezza', complexity: 'computazione-complessita', ecosystem: 'ecosistemi-reti-alimentari', cell: 'cellula-osmosi-diffusione', mitosis: 'mitosi-meiosi', punnett: 'quadrati-di-punnett-genetica', life: 'regole-della-vita', dna: 'dna-genetica', evolution: 'evoluzione-selezione-naturale', graphs: 'teoria-dei-grafi-reti', trig: 'trigonometria-cerchio-unitario', prob: 'probabilita-curva-a-campana', fractal: 'frattali-infinito', calculus: 'calcolo-cambiamento', circuits: 'legge-di-ohm-circuiti', states: 'stati-della-materia', thermo: 'calore-termodinamica', particles: 'modello-standard', newton: 'leggi-del-moto-di-newton', gravity: 'gravita-orbite', projectile: 'moto-dei-proiettili', waves: 'onde-interferenza', photosynthesis: 'fotosintesi', eclipse: 'eclissi', meteors: 'stelle-cadenti', blackholes: 'buchi-neri', solarsystem: 'sistema-solare' },
   t: {
+    gaslaws: {
+      title: 'Le leggi dei gas',
+      teaser: `Comprimi un gas e ti spinge indietro; scaldalo e si sforza di fuggire. Tre leggi semplici — e una sola equazione — catturano come pressione, volume e temperatura danzano insieme.`,
+      chips: ['Pressione', 'Gas ideale', 'Teoria cinetica'],
+      lvls: {
+        junior: {
+          title: `Perché i gas spingono, si comprimono e si gonfiano`,
+          body: `<p>Un gas non ha una forma propria — si spande a riempire qualunque contenitore ci metti, che sia un palloncino, una gomma o un'intera stanza. Questo perché un gas è in realtà uno sciame di particelle inimmaginabilmente minuscole, che sfrecciano a centinaia di metri al secondo e rimbalzano su tutto ciò che colpiscono. Ogni volta che una di quelle particelle sbatte contro una parete dà una minuscola spinta, e il tamburellare costante di miliardi di esse è ciò che sentiamo come <strong>pressione</strong>.</p>
+<p>Ora gioca con lo sciame. Comprimi il contenitore <em>più piccolo</em> e le stesse particelle sono stipate in meno spazio, quindi colpiscono le pareti più spesso — la pressione schizza in alto. Ecco perché una pompa da bici diventa più dura da spingere man mano che scendi. <strong>Scalda</strong> invece il gas e le particelle accelerano, sbattendo contro le pareti più forte e più spesso — la pressione sale di nuovo, ed è per questo che una lattina sigillata gettata sul fuoco alla fine scoppia.</p>
+<p>Queste regole semplici governano una sorprendente fetta del mondo: gonfiano i tuoi polmoni, sollevano le mongolfiere, accendono i motori delle auto e fanno saltare un sacchetto di popcorn. Nella simulazione qui sotto, cambia la temperatura e la dimensione della scatola e guarda le particelle — e la pressione — rispondere.</p>`,
+          facts: [
+            { e: '🎈', t: `Un palloncino di elio si restringe al freddo e si gonfia al caldo: raffredda il gas e le sue particelle rallentano e si stringono, scaldalo e si spandono.` },
+            { e: '👂', t: `Le orecchie si "stappano" in aereo perché la pressione dell'aria fuori cala con la quota mentre l'aria intrappolata dietro il timpano resta ferma — finché non fugge con un click.` },
+            { e: '🍿', t: `I popcorn esplodono perché l'acqua dentro ogni chicco diventa vapore e la sua pressione cresce finché il guscio non regge più — una legge dei gas nella tua cucina.` },
+          ],
+          formula: null, sim: 'gaslaws',
+        },
+        student: {
+          title: `La legge dei gas ideali e da dove viene`,
+          body: `<p>Tre secoli di esperimenti hanno distillato il comportamento dei gas in una manciata di relazioni. <strong>Legge di Boyle</strong>: a temperatura fissa, pressione e volume sono inversamente legati, \\(P \\propto 1/V\\) — dimezza il volume, raddoppia la pressione. <strong>Legge di Charles</strong>: a pressione fissa, il volume cresce con la temperatura assoluta, \\(V \\propto T\\). <strong>Legge di Gay-Lussac</strong>: a volume fisso, la pressione cresce con la temperatura, \\(P \\propto T\\). Punto cruciale, la \\(T\\) qui è misurata dallo <em>zero assoluto</em> — la scala Kelvin — perché è lì che la pressione di un gas, in linea di principio, svanirebbe.</p>
+<p>Cuci insieme queste con l'intuizione di Avogadro — volumi uguali di qualsiasi gas contengono numeri uguali di particelle — e collassano in un'unica affermazione pulita, la <strong>legge dei gas ideali</strong> \\(PV = nRT\\). Qui \\(n\\) è la quantità in moli e \\(R\\) è la costante universale dei gas, \\(8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}\\). Ogni legge precedente è solo questa equazione con una variabile tenuta ferma.</p>
+<p>Da dove viene? Dalle particelle stesse. La <strong>teoria cinetica dei gas</strong> raffigura la pressione come il rinculo collettivo di innumerevoli impatti molecolari sulle pareti, e lega la temperatura direttamente a quanto veloci si muovono: l'energia cinetica media di una particella è \\(\\tfrac{3}{2}k_B T\\). La temperatura, in altre parole, <em>è</em> moto molecolare — scalda un gas e stai letteralmente accelerando le sue particelle.</p>`,
+          facts: [
+            { e: '🌡️', t: `Lo zero assoluto è −273,15°C: estrapola il volume calante di un gas lungo una retta della legge di Charles e colpirebbe lo zero esattamente lì — la cosa più fredda che possa esistere.` },
+            { e: '⚗️', t: `Una mole di qualsiasi gas ideale riempie 22,4 litri a 0°C e 1 atm — lo stesso volume che sia idrogeno o anidride carbonica, perché conta solo il numero di particelle.` },
+            { e: '🫁', t: `Respiri per la legge di Boyle: il diaframma allarga il torace, abbassando la pressione dentro i polmoni sotto quella dell'aria esterna, che allora entra di corsa.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Legge di Boyle`, e: 'P \\propto 1/V', c: 'T costante' },
+            { n: `Legge di Charles`, e: 'V \\propto T', c: 'P costante' },
+            { n: `Gay-Lussac`, e: 'P \\propto T', c: 'V costante' },
+            { sep: 1 },
+            { n: 'Legge dei gas ideali', e: 'PV = nRT', c: 'R = 8.314 J mol⁻¹K⁻¹' },
+            { n: 'Legge combinata', e: '\\dfrac{P_1V_1}{T_1} = \\dfrac{P_2V_2}{T_2}' },
+            { sep: 1 },
+            { n: 'Energia cinetica media', e: '\\langle E_k\\rangle = \\tfrac{3}{2}k_B T' },
+          ] }, sim: 'gaslaws',
+        },
+        scholar: {
+          title: `Teoria cinetica, distribuzioni e gas reali`,
+          body: `<h4><span class="hn">01</span>La pressione, derivata dai primi principi</h4>
+<p>La legge dei gas ideali non è un assioma — cade fuori dalla meccanica. Tratta il gas come particelle puntiformi in moto elastico e casuale e conta la quantità di moto che consegnano a una parete: la pressione risulta \\(P = \\tfrac{1}{3}\\dfrac{N}{V}m\\langle v^2\\rangle\\). Confrontala con \\(PV = Nk_B T\\) e sei costretto a identificare \\(\\tfrac{1}{2}m\\langle v^2\\rangle = \\tfrac{3}{2}k_B T\\). La temperatura emerge come nient'altro che l'energia cinetica traslazionale media per particella — un ponte dalle leggi di Newton dritto alla termodinamica.</p>
+<h4><span class="hn">02</span>Non una velocità ma uno spettro</h4>
+<p>Le particelle non condividono un'unica velocità; seguono la <strong>distribuzione di Maxwell-Boltzmann</strong>, \\(f(v) \\propto v^2 e^{-mv^2/2k_B T}\\), una curva asimmetrica con una lunga coda veloce. Fornisce tre distinte velocità "medie" — più probabile, media e quadratica media — e la curva si allarga e si sposta a destra man mano che \\(T\\) sale. Quella coda ad alta velocità conta enormemente: sono le rare molecole veloci a superare le barriere di reazione, quindi sta alla base della dipendenza esponenziale dalla temperatura della chimica stessa.</p>
+<h4><span class="hn">03</span>Energia distribuita: l'equipartizione</h4>
+<p>Perché \\(\\tfrac{3}{2}k_B T\\)? Il <strong>teorema di equipartizione</strong> assegna a ogni grado di libertà quadratico esattamente \\(\\tfrac{1}{2}k_B T\\) di energia. Un gas monoatomico ne ha tre (moto in x, y, z), dando \\(C_V = \\tfrac{3}{2}R\\); un gas biatomico aggiunge due modi rotazionali per \\(\\tfrac{5}{2}R\\). La parte sorprendente è che i modi vibrazionali restano silenti finché il gas non è abbastanza caldo — un effetto puramente quantistico che la fisica classica non poté mai spiegare, e una prima crepa nel mondo classico.</p>
+<h4><span class="hn">04</span>Quando i gas reali si comportano male</h4>
+<p>La legge ideale assume che le particelle siano punti che non si attraggono mai — falso su entrambi i conti. Le molecole reali occupano spazio e sentono deboli attrazioni a lungo raggio, così <strong>van der Waals</strong> rattoppò l'equazione, \\(\\left(P + \\dfrac{an^2}{V^2}\\right)(V - nb) = nRT\\): il termine \\(a\\) corregge per l'attrazione, il termine \\(b\\) per la dimensione finita. Questa singola correzione predice qualcosa che la legge ideale non poté mai — che un gas può condensare in un liquido, completo di un punto critico oltre il quale i due stati diventano indistinguibili.</p>
+<h4><span class="hn">05</span>Quanto lontano, quanto veloce: il trasporto</h4>
+<p>Tra una collisione e l'altra una molecola percorre un <em>libero cammino medio</em> \\(\\lambda = 1/(\\sqrt{2}\\,n\\sigma)\\) — a pressione ambiente solo circa 70 nanometri, quindi una molecola collide miliardi di volte al secondo. Questo zig-zag microscopico fissa la viscosità del gas, la conducibilità termica e la velocità di diffusione, e spiega la <strong>legge di Graham</strong>: le molecole più leggere si muovono più veloci ed effondono più rapidamente, esattamente il principio un tempo usato per separare gli isotopi dell'uranio per le prime bombe atomiche.</p>
+<h4><span class="hn">06</span>I limiti dell'immagine</h4>
+<p>Raffredda un gas abbastanza e persino van der Waals fallisce, perché la statistica quantistica prende il sopravvento. Una volta che la lunghezza d'onda termica di de Broglie rivaleggia con la spaziatura tra particelle, particelle identiche non possono più essere trattate come indipendenti: i bosoni si affollano in un singolo stato a formare un <em>condensato di Bose-Einstein</em>, mentre i fermioni sono forzati a separarsi dal principio di Pauli, sostenendo nane bianche e stelle di neutroni contro la gravità. Le umili leggi dei gas sono l'angolo ad alta temperatura e bassa densità di un paesaggio quantistico ben più strano.</p>`,
+          facts: [
+            { e: '🥶', t: `Nel 1995 i fisici raffreddarono un gas a meno di un milionesimo di grado sopra lo zero assoluto, formando un condensato di Bose-Einstein — migliaia di atomi che condividono un unico stato quantistico (premio Nobel 2001).` },
+            { e: '☢️', t: `La legge di effusione di Graham separò l'uranio-235 dall'uranio-238 per le prime armi nucleari: l'isotopo più leggero diffonde di pochissimo più in fretta attraverso una barriera porosa.` },
+            { e: '💨', t: `A temperatura ambiente le molecole d'aria viaggiano in media a ~500 m/s — più veloci di un jet — eppure un profumo attraversa una stanza lentamente perché ogni molecola collide miliardi di volte al secondo.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Pressione cinetica', e: 'P = \\tfrac{1}{3}\\dfrac{N}{V}m\\langle v^2\\rangle' },
+            { n: 'Legame con la temperatura', e: '\\tfrac{1}{2}m\\langle v^2\\rangle = \\tfrac{3}{2}k_B T' },
+            { sep: 1 },
+            { n: 'Maxwell-Boltzmann', e: 'f(v) \\propto v^2 e^{-mv^2/2k_B T}' },
+            { n: 'Velocità quadratica media', e: 'v_{\\text{rms}} = \\sqrt{3k_B T/m}' },
+            { sep: 1 },
+            { n: 'Van der Waals', e: '\\left(P + \\dfrac{an^2}{V^2}\\right)(V - nb) = nRT' },
+            { n: 'Libero cammino medio', e: '\\lambda = \\dfrac{1}{\\sqrt{2}\\,n\\sigma}' },
+          ] }, sim: 'gaslaws',
+        },
+      },
+    },
+    moonphases: {
+      title: 'Le fasi lunari',
+      teaser: `La Luna non produce luce propria — allora perché cresce da una falce a un disco pieno e ritorno ogni mese? È tutto nell'angolo da cui la guardi.`,
+      chips: ['Luna', 'Fasi', 'Orbite'],
+      lvls: {
+        junior: {
+          title: `Perché la Luna cambia forma ogni notte`,
+          body: `<p>Guarda la Luna nell'arco di un mese e sembra crescere e restringersi — una falce sottile, una metà, un disco grasso, un cerchio pieno, poi di nuovo indietro. Ma la Luna non cambia mai davvero forma. Il segreto è che la Luna <em>non produce luce propria</em>. Come una palla gigante appesa nello spazio, semplicemente cattura la luce del Sole e ce la riflette — e il Sole può illuminare sempre e solo <strong>una metà</strong> di essa alla volta, la metà che per caso è rivolta verso il Sole.</p>
+<p>Mentre la Luna gira attorno alla Terra una volta al mese, ci capita di guardare quella metà illuminata da angoli diversi. Quando la Luna sta tra noi e il Sole, il suo lato illuminato è rivolto lontano da noi e vediamo buio — una <strong>luna nuova</strong>. Quando è sul lato opposto, l'intera faccia illuminata si volge verso di noi — una <strong>luna piena</strong>. In mezzo la cogliamo di taglio e vediamo solo una fetta: una falce o una metà. La forma che vedi è semplicemente quanta parte della metà illuminata dal Sole punta verso di te.</p>
+<p>Il ciclo completo — da nuova, a piena, e di nuovo a nuova — richiede circa <strong>29 giorni e mezzo</strong>, che è più o meno da dove viene l'idea di "mese". Ed ecco una simpatica stranezza: la Luna tiene sempre la <em>stessa faccia</em> rivolta alla Terra, quindi da casa non vediamo mai il suo lato nascosto. Nella simulazione qui sotto, muovi la Luna lungo la sua orbita e guarda cambiare la sua fase.</p>`,
+          facts: [
+            { e: '🌑', t: `Non puoi mai vedere una "luna nuova" — il suo lato illuminato è rivolto interamente lontano dalla Terra, quindi sta nel cielo diurno, invisibile contro il bagliore del Sole.` },
+            { e: '🔄', t: `La Luna tiene la stessa faccia verso la Terra perché ruota esattamente una volta per orbita — un equilibrio chiamato blocco mareale. Il "lato nascosto" restò invisibile a chiunque finché una sonda sovietica non lo fotografò nel 1959.` },
+            { e: '📅', t: `Il ciclo di ~29,5 giorni delle fasi è l'origine della parola "mese" — e regola ancora oggi i calendari islamico, ebraico e cinese.` },
+          ],
+          formula: null, sim: 'moonphases',
+        },
+        student: {
+          title: `La geometria delle fasi, e perché le eclissi sono rare`,
+          body: `<p>Una fase lunare è pura geometria. La luce solare illumina sempre esattamente metà della Luna; ciò che cambia è l'<em>angolo tra Sole, Terra e Luna</em>. Chiamalo angolo di fase: a 0° la Luna è grosso modo tra noi e il Sole (nuova), a 180° è opposta al Sole (piena), e la frazione illuminata che vediamo segue \\(k = \\tfrac{1}{2}(1 - \\cos\\theta)\\). La metà crescente del ciclo e la metà calante sono immagini speculari, illuminate su lati opposti.</p>
+<p>C'è una sottigliezza nei tempi. La Luna impiega 27,3 giorni per completare un'orbita rispetto alle stelle di sfondo — il <em>mese siderale</em> — ma 29,5 giorni per tornare alla stessa fase — il <em>mese sinodico</em>. Il divario esiste perché nel frattempo la Terra si è mossa lungo la propria orbita, quindi la Luna deve oscillare un po' più in là per riallinearsi col Sole. Il ciclo delle fasi che vediamo davvero è quello sinodico.</p>
+<p>Allora perché non c'è un'eclissi a ogni luna nuova e piena? Perché l'orbita della Luna è inclinata di circa <strong>5°</strong> rispetto al piano dell'orbita terrestre. La maggior parte dei mesi la Luna passa un po' sopra o sotto la linea diretta Sole-Terra, e la sua ombra manca il bersaglio. Solo quando una luna nuova o piena cade vicino ai due punti dove le orbite si incrociano — i <em>nodi</em> — otteniamo un'eclissi solare o lunare. Quell'inclinazione è il motivo per cui le eclissi sono rari doni occasionali, non eventi mensili.</p>`,
+          facts: [
+            { e: '🌗', t: `Il mese sinodico (29,5 giorni, da fase a fase) è più lungo del mese siderale (27,3 giorni, da orbita a orbita) perché la Terra continua a muoversi attorno al Sole — la Luna deve rincorrere.` },
+            { e: '🌍', t: `Poiché l'orbita della Luna è leggermente ellittica, sembra dondolare e annuire — un'oscillazione chiamata librazione che ci fa intravedere circa il 59% della sua superficie nel tempo, non solo il 50%.` },
+            { e: '🌘', t: `Su una falce sottile puoi spesso vedere l'intero disco scuro brillare debolmente — la "luce cinerea", luce solare riflessa dalla Terra sulla Luna e di ritorno, spiegata già da Leonardo da Vinci.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Frazione illuminata', e: 'k = \\tfrac{1}{2}(1 - \\cos\\theta)', c: 'θ = angolo di fase' },
+            { sep: 1 },
+            { n: 'Mese siderale', e: 'T_{\\text{sid}} \\approx 27.3\\ \\text{giorni}', c: 'orbita vs stelle' },
+            { n: 'Mese sinodico', e: 'T_{\\text{syn}} \\approx 29.5\\ \\text{giorni}', c: 'da fase a fase' },
+            { sep: 1 },
+            { n: 'Relazione sinodica', e: '\\dfrac{1}{T_{\\text{syn}}} = \\dfrac{1}{T_{\\text{sid}}} - \\dfrac{1}{T_{\\text{anno}}}' },
+            { n: 'Inclinazione orbitale', e: 'i \\approx 5.14°', c: 'perché le eclissi sono rare' },
+          ] }, sim: 'moonphases',
+        },
+        scholar: {
+          title: `Blocco mareale, recessione orbitale e cicli lunghi`,
+          body: `<h4><span class="hn">01</span>Perché una faccia è nascosta per sempre</h4>
+<p>Il periodo di rotazione della Luna eguaglia esattamente il suo periodo orbitale, quindi è in <strong>blocco mareale</strong>. Non è un caso: la gravità terrestre solleva un leggero rigonfiamento sulla Luna, e qualsiasi disallineamento tra rotazione e orbita trascina su quel rigonfiamento, applicando una coppia che frena la rotazione finché i due ritmi non coincidono. Quasi ogni grande luna del Sistema Solare è arrivata alla stessa risonanza spin-orbita 1:1 per la stessa via — la rotazione sincrona è il punto d'arrivo naturale dell'attrito mareale.</p>
+<h4><span class="hn">02</span>Le maree rubano l'orbita della Luna verso l'esterno</h4>
+<p>L'accoppiamento mareale funziona in entrambi i sensi. La Luna solleva rigonfiamenti oceanici sulla Terra, e la rotazione più rapida della Terra li trascina davanti alla linea Terra-Luna; il loro strattone gravitazionale aggiunge momento angolare all'orbita della Luna, spingendola <em>verso l'esterno</em> di circa \\(3.8\\ \\text{cm}\\) all'anno — un tasso ora misurato al millimetro rimbalzando laser sui riflettori lasciati dagli astronauti dell'Apollo. Lo stesso trasferimento rallenta la rotazione terrestre, allungando il giorno di circa 1,7 millisecondi al secolo.</p>
+<h4><span class="hn">03</span>La contabilità della conservazione</h4>
+<p>Tutto ciò è un'unica quantità conservata che viene rimescolata. Il momento angolare totale del sistema Terra-Luna è fisso, quindi mentre la quota rotazionale della Terra si dissangua, la quota orbitale della Luna deve crescere — ed è precisamente per questo che una Luna che si allontana e un giorno che si allunga vanno di pari passo. Fai avanzare l'orologio e il processo finisce solo quando il giorno terrestre e il mese lunare si stirano allo stesso valore, un mutuo blocco mareale a decine di miliardi di anni di distanza.</p>
+<h4><span class="hn">04</span>L'orbita inclinata e ruotante</h4>
+<p>L'inclinazione di 5,14° non è fissa nello spazio: la linea dei nodi dove l'orbita della Luna incrocia l'eclittica <em>precede</em> tutt'attorno in 18,6 anni, e l'asse maggiore dell'orbita precede in 8,85 anni. Queste lente oscillazioni modulano quando e dove possono avvenire le eclissi e le infilano nel famoso <strong>ciclo di Saros</strong> di 18 anni e 11 giorni e ⅓, dopo il quale la geometria Sole-Terra-Luna quasi si ripete e ritorna un'eclissi quasi gemella.</p>
+<h4><span class="hn">05</span>Leggere una fase quantitativamente</h4>
+<p>La frazione illuminata \\(k = \\tfrac{1}{2}(1+\\cos\\alpha)\\), scritta in termini dell'<em>elongazione</em> Sole-Luna, è solo lo scheletro geometrico. La Luna è uno specchio sorprendentemente scadente — il suo albedo è circa 0,12, più scuro dell'asfalto consumato — e la sua luminosità non scala linearmente con l'area illuminata. Vicino alla luna piena aumenta in modo sproporzionato, l'<em>impennata di opposizione</em>, mentre le ombre superficiali svaniscono e le perle vetrose nella regolite retrodiffondono la luce solare dritta verso la sorgente.</p>
+<h4><span class="hn">06</span>Un calendario che non combacia mai del tutto</h4>
+<p>Il mese sinodico non è un numero intero di giorni, né un numero intero di essi entra in un anno solare — dodici mesi sinodici cadono circa 11 giorni corti. Ogni calendario lunare della storia si è battuto con questo disaccordo, dal <em>ciclo metonico</em> di 19 anni che riallinea Luna e Sole (la base per calcolare la Pasqua) ai mesi intercalari dei calendari ebraico e cinese. Il ritmo dall'aria ordinata della Luna è, in fondo, gloriosamente incommensurabile con l'anno.</p>`,
+          facts: [
+            { e: '📡', t: `Il laser ranging sui retroriflettori dell'era Apollo misura la distanza Terra-Luna al millimetro, confermando che la Luna si allontana di 3,8 cm all'anno — circa la velocità con cui crescono le unghie.` },
+            { e: '🔁', t: `Il ciclo di Saros (18 anni, 11 giorni e ⅓) permette di prevedere le eclissi secoli in anticipo: dopo un Saros la geometria Sole-Terra-Luna quasi si ripete, producendo un'eclissi quasi identica spostata di 120° in longitudine.` },
+            { e: '🌑', t: `L'albedo della Luna è solo ~0,12 — riflette appena il 12% della luce solare, circa come l'asfalto vecchio. La luna piena "brillante" è in realtà un oggetto grigio molto scuro illuminato da un Sole molto brillante.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Frazione illuminata', e: 'k = \\tfrac{1}{2}(1 + \\cos\\alpha)', c: 'α = elongazione' },
+            { sep: 1 },
+            { n: 'Recessione orbitale', e: '\\dot r \\approx 3.8\\ \\text{cm/anno}' },
+            { n: 'Allungamento del giorno', e: '\\approx 1.7\\ \\text{ms/secolo}' },
+            { sep: 1 },
+            { n: 'Precessione dei nodi', e: 'T_{\\text{nodo}} \\approx 18.6\\ \\text{anni}' },
+            { n: 'Ciclo di Saros', e: '\\approx 6585.3\\ \\text{giorni}', c: 'ripetizione eclissi' },
+          ] }, sim: 'moonphases',
+        },
+      },
+    },
+    protein: {
+      title: 'La sintesi proteica',
+      teaser: `Il tuo DNA è solo una biblioteca di ricette. Come fa una cellula a leggere quelle ricette e costruire le macchine vere — le proteine — che ti fanno funzionare?`,
+      chips: ['DNA', 'Ribosoma', 'Codice genetico'],
+      lvls: {
+        junior: {
+          title: `Come il tuo corpo legge il DNA per costruire sé stesso`,
+          body: `<p>Ogni cellula del tuo corpo porta una copia completa del tuo <strong>DNA</strong> — un colossale manuale di istruzioni scritto in appena quattro "lettere" chimiche. Ma il DNA non <em>fa</em> nulla da solo. È una biblioteca di ricette, e le cose che quelle ricette costruiscono sono le <strong>proteine</strong>: le minuscole macchine molecolari che digeriscono il cibo, portano l'ossigeno nel sangue, combattono i germi e tengono insieme tutto il tuo corpo.</p>
+<p>Per cucinare una proteina, la cellula lavora in due passi. Prima fa una copia usa-e-getta della sola ricetta che le serve, scritta in una molecola affine chiamata <strong>mRNA</strong> — un po' come fotocopiare una singola pagina così l'originale prezioso non lascia mai la biblioteca. Quella copia viaggia poi verso un'officina molecolare chiamata <strong>ribosoma</strong>.</p>
+<p>Il ribosoma legge l'mRNA <em>tre lettere alla volta</em>. Ogni piccola parola di tre lettere, chiamata <strong>codone</strong>, nomina un <strong>amminoacido</strong> — e gli amminoacidi sono le perline che si infilano insieme per fare una proteina. Il ribosoma avanza, chiamando codone dopo codone, e una catena crescente di amminoacidi scatta al suo posto. Quando la catena è completa si ripiega in una forma tridimensionale precisa, ed è quella forma a permettere alla proteina finita di fare il suo lavoro. Guardalo accadere nella simulazione qui sotto.</p>`,
+          facts: [
+            { e: '📖', t: `Se leggessi il tuo DNA a voce alta a una lettera al secondo, ti servirebbero quasi cent'anni per finire — 3 miliardi di lettere in ogni cellula.` },
+            { e: '⚡', t: `Un ribosoma aggiunge circa 10–20 amminoacidi al secondo, e una singola cellula può far girare milioni di ribosomi in una volta, sfornando proteine senza sosta.` },
+            { e: '🧩', t: `Ci sono solo 20 amminoacidi diversi, eppure infilati insieme in ordini diversi costruiscono ognuna delle ~100.000 specie di proteina del tuo corpo.` },
+          ],
+          formula: null, sim: 'protein',
+        },
+        student: {
+          title: `Il dogma centrale: trascrizione e traduzione`,
+          body: `<p>Il flusso dell'informazione genetica segue il <strong>dogma centrale</strong>: DNA → RNA → proteina. Nella <strong>trascrizione</strong>, un enzima chiamato RNA polimerasi apre una porzione di DNA e costruisce un filamento corrispondente di RNA messaggero, scambiando la base timina (T) con l'uracile (U). Questo mRNA porta il messaggio fuori dal nucleo verso i ribosomi nel citoplasma.</p>
+<p>Il messaggio è scritto nel <strong>codice genetico</strong>: ogni <em>codone</em> di tre basi specifica un amminoacido. Con quattro basi ci sono \\(4^3 = 64\\) codoni possibili ma solo 20 amminoacidi, quindi il codice è <em>ridondante</em> — la maggior parte degli amminoacidi ha più codoni. Un codone, AUG, fa anche da segnale di "inizio" (e codifica la metionina); altri tre (UAA, UAG, UGA) sono segnali di "stop" che terminano la catena.</p>
+<p>Nella <strong>traduzione</strong>, il ribosoma si aggancia all'mRNA e lo legge codone per codone. Per ogni codone un <strong>tRNA</strong> corrispondente — che porta l'amminoacido giusto e un <em>anticodone</em> complementare di tre basi — si aggancia, e il ribosoma collega il suo amminoacido alla catena crescente, poi avanza a scatti. Raggiunto un codone di stop, il polipeptide finito è rilasciato a ripiegarsi in una proteina funzionante. È una catena di montaggio molecolare di velocità e fedeltà stupefacenti.</p>`,
+          facts: [
+            { e: '🔡', t: `Il codice genetico è quasi universale — gli stessi codoni significano gli stessi amminoacidi in un batterio, in una banana e in un umano, prova che tutta la vita condivide un unico antenato.` },
+            { e: '🧬', t: `Le molecole di tRNA sono gli "adattatori" che Francis Crick predisse prima che fossero trovati: un'estremità legge il codone, l'altra porta l'amminoacido corrispondente.` },
+            { e: '💉', t: `I vaccini a mRNA funzionano consegnando un mRNA fatto in laboratorio che i tuoi stessi ribosomi traducono in una proteina virale, allenando il sistema immunitario senza alcun virus vivo.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Dogma centrale', e: '\\text{DNA} \\to \\text{RNA} \\to \\text{proteina}' },
+            { sep: 1 },
+            { n: 'Dimensione del codone', e: '4^3 = 64\\ \\text{codoni}', c: 'per 20 amminoacidi' },
+            { n: 'Codone di inizio', e: '\\text{AUG}', c: 'codifica anche Met' },
+            { n: 'Codoni di stop', e: '\\text{UAA, UAG, UGA}' },
+            { sep: 1 },
+            { n: 'Appaiamento di basi', e: '\\text{A–U},\\ \\text{G–C}', c: "l'RNA usa U non T" },
+          ] }, sim: 'protein',
+        },
+        scholar: {
+          title: `Il codice, la fedeltà, il ripiegamento e la regolazione`,
+          body: `<h4><span class="hn">01</span>Perché il codice è degenere — e robusto</h4>
+<p>La mappatura 64-a-20 non è casuale. I codoni per lo stesso amminoacido di solito differiscono solo nella loro <em>terza</em> base, e l'<strong>ipotesi del vacillamento</strong> (wobble) di Crick spiega perché: l'appaiamento in terza posizione è lasco, così un singolo tRNA può leggere più codoni sinonimi. Il risultato è un codice tamponato contro l'errore — molte mutazioni puntiformi sono <em>silenti</em>, e persino gli errori di traduzione tendono a inserire un amminoacido chimicamente simile. Il codice genetico appare ottimizzato per minimizzare il danno degli sbagli.</p>
+<h4><span class="hn">02</span>Farlo bene: la fedeltà traduzionale</h4>
+<p>Il ribosoma commette un errore solo circa una volta ogni \\(10^{4}\\) codoni, ben meglio di quanto le sole energie di legame codone-anticodone permetterebbero. Compra quell'accuratezza attraverso il <em>proofreading cinetico</em>: un tRNA corretto è controllato due volte, con un passo irreversibile e che brucia energia in mezzo, che dà ai tRNA sbagliati più occasioni di staccarsi prima che il legame sia sigillato. La fedeltà, qui, si paga in GTP — l'accuratezza costa energia.</p>
+<h4><span class="hn">03</span>Il ribosoma è un ribozima</h4>
+<p>Per decenni si assunse che il ribosoma fosse un enzima proteico. Le strutture cristallografiche del 2000 rivelarono l'opposto: il nucleo catalitico che forma il legame peptidico è costruito interamente di <strong>RNA</strong>, senza alcuna proteina a portata della reazione. Il ribosoma è un <em>ribozima</em>. Questo è un fossile molecolare del <em>mondo a RNA</em> — un tempo prima del DNA e delle proteine in cui l'RNA sia immagazzinava informazione sia faceva chimica — e vinse il premio Nobel per la Chimica 2009.</p>
+<h4><span class="hn">04</span>Il ripiegamento, e il ripiegamento andato storto</h4>
+<p>La funzione di una proteina vive nel suo ripiegamento tridimensionale, e gran parte di quel ripiegamento inizia <em>co-traduzionalmente</em>, mentre la catena sta ancora emergendo dal ribosoma. Le proteine <em>chaperone</em> accompagnano il processo e schermano gli intermedi appiccicosi. Quando il ripiegamento fallisce, i detriti possono aggregarsi — la radice molecolare dell'Alzheimer, del Parkinson e delle malattie da prioni. Prevedere il ripiegamento dalla sola sequenza sconcertò la biologia per cinquant'anni finché AlphaFold non lo risolse nel 2021.</p>
+<h4><span class="hn">05</span>Un gene, molte proteine</h4>
+<p>Negli eucarioti il percorso DNA-a-proteina è pesantemente editato. L'RNA appena fatto subisce lo <em>splicing</em>: gli introni sono tagliati via e gli esoni cuciti insieme, e lo <strong>splicing alternativo</strong> lascia che un singolo gene renda dozzine di proteine diverse da diverse combinazioni di esoni — ed è così che ~20.000 geni umani specificano un proteoma ben più grande. Aggiungi il capping, la coda e le modifiche chimiche delle basi e lo slogan "un gene, una proteina" crolla del tutto.</p>
+<h4><span class="hn">06</span>Alzare e abbassare il volume</h4>
+<p>Le cellule controllano non solo <em>cosa</em> traducono ma <em>quanto</em> e <em>quando</em>. I <em>microRNA</em> silenziano specifici mRNA, i riboswitch percepiscono metaboliti e si ripiegano per regolare la propria traduzione, e i ribosomi possono stallare, cambiare frame o reiniziare sotto stress. Questo strato regolatorio è dove la biologia sintetica ora interviene — ingegnerizzando mRNA, riscrivendo codoni, persino aggiungendo amminoacidi del tutto nuovi al codice — trasformando la lettura dei geni in qualcosa che possiamo deliberatamente programmare.</p>`,
+          facts: [
+            { e: '🏆', t: `Determinare la struttura atomica del ribosoma — e provare che il suo cuore catalitico è RNA, non proteina — vinse il premio Nobel per la Chimica 2009, confermandolo come reliquia del mondo a RNA.` },
+            { e: '🤖', t: `AlphaFold (2021) risolse il problema del ripiegamento proteico vecchio di 50 anni, prevedendo strutture 3-D dalla sequenza amminoacidica con accuratezza quasi sperimentale per oltre 200 milioni di proteine.` },
+            { e: '🧬', t: `Lo splicing alternativo permette a un gene di fare molte proteine: il gene umano Dscam può, in linea di principio, essere spliced in oltre 38.000 varianti proteiche distinte.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Tasso di errore', e: '\\sim 10^{-4}\\ \\text{per codone}', c: 'via proofreading cinetico' },
+            { n: 'Appaiamento wobble', e: '\\text{3ª base a incastro lasco}' },
+            { sep: 1 },
+            { n: 'Legame peptidico', e: '\\text{-COOH} + \\text{H}_2\\text{N-} \\to \\text{ammide} + \\text{H}_2\\text{O}' },
+            { n: 'Catalisi', e: '\\text{rRNA (un ribozima)}' },
+            { sep: 1 },
+            { n: 'Splicing', e: '\\text{introni fuori, esoni uniti}' },
+            { n: 'Espansione del proteoma', e: '\\sim\\!20{,}000\\ \\text{geni} \\to 10^5\\ \\text{proteine}' },
+          ] }, sim: 'protein',
+        },
+      },
+    },
+    pendulum: {
+      title: 'Pendoli e moto armonico semplice',
+      teaser: `Un peso che oscilla tiene il tempo quasi alla perfezione — e non gli importa quanto sia pesante o quanto ampio sia il suo arco. Perché lo stesso ritmo muove orologi, molle, atomi e ponti?`,
+      chips: ['Oscillazione', 'Periodo', 'Risonanza'],
+      lvls: {
+        junior: {
+          title: `L'oscillazione costante che tiene il tempo`,
+          body: `<p>Lega un peso a uno spago, tiralo da un lato e lascialo andare: oscilla di là, indietro, di là, indietro — più e più volte, in un ritmo così regolare che potresti regolarci un orologio. La gente ha fatto esattamente questo per trecento anni. Quel peso che oscilla è un <strong>pendolo</strong>, e la costanza del suo battito è una delle meraviglie silenziose della fisica.</p>
+<p>La parte sorprendente è da cosa dipende quel ritmo — e da cosa no. Rendi il peso più pesante: il tempo non cambia. Tiralo più in là così oscilla più ampio: viaggia più veloce ma impiega lo <em>stesso tempo</em> a tornare, quindi anche il ritmo cambia appena. L'unica cosa che conta davvero è la <strong>lunghezza</strong> dello spago. Spago corto, battiti rapidi e frenetici; spago lungo, oscillazioni lente e pigre. La leggenda vuole che Galileo lo notò da ragazzo, cronometrando una lampada oscillante in una cattedrale contro il proprio polso.</p>
+<p>Quell'affidabilità rese il pendolo il cuore degli orologi più precisi del mondo per secoli. E lo stesso ritmo avanti-e-indietro è ovunque, una volta che lo cerchi: un bambino sull'altalena, una corda di chitarra che vibra, una molla che rimbalza, persino un grattacielo che ondeggia nel vento. Nella simulazione qui sotto, cambia la lunghezza e l'ampiezza dell'oscillazione e guarda cosa succede al battito.</p>`,
+          facts: [
+            { e: '⛪', t: `Galileo cronometrò una lampada oscillante in una cattedrale contro il proprio polso intorno al 1583 e capì che il periodo cambia appena con l'ampiezza — la scoperta dietro l'orologio a pendolo.` },
+            { e: '🌍', t: `Un pendolo oscilla più lentamente sulla Luna: con un sesto della gravità terrestre, lo stesso pendolo impiega circa 2,5 volte più tempo per oscillazione.` },
+            { e: '🏢', t: `I grattacieli ospitano giganteschi "smorzatori a massa accordata" — pendoli che pesano centinaia di tonnellate — che oscillano in opposizione all'edificio per annullare il dondolio nel vento.` },
+          ],
+          formula: null, sim: 'pendulum',
+        },
+        student: {
+          title: `Il moto armonico semplice e il periodo del pendolo`,
+          body: `<p>Sposta un pendolo dal centro e la gravità lo richiama indietro — e, punto cruciale, per piccole oscillazioni la forza di richiamo è quasi esattamente <em>proporzionale allo spostamento</em>, \\(F \\approx -kx\\). Qualsiasi sistema che obbedisce a questa sola regola compie un <strong>moto armonico semplice</strong>: la posizione traccia un'onda sinusoidale perfetta nel tempo, \\(x(t) = A\\cos(\\omega t)\\), con frequenza angolare \\(\\omega = \\sqrt{k/m}\\). La stessa equazione governa una massa su una molla, una boa galleggiante e la vibrazione di una molecola.</p>
+<p>Per un pendolo la matematica consegna il celebre risultato \\(T = 2\\pi\\sqrt{L/g}\\): il periodo cresce con la radice quadrata della lunghezza e si accorcia in gravità più forte — e non contiene <em>né la massa né l'ampiezza</em>. Questo è l'<strong>isocronismo</strong> del pendolo: quadruplica la lunghezza per raddoppiare il periodo; sostituisci la massa con una due volte più pesante e non cambia nulla. La frequenza è semplicemente \\(f = 1/T\\), il numero di oscillazioni al secondo.</p>
+<p>L'energia è ciò che lo tiene in moto. Agli estremi dell'oscillazione tutta l'energia è <em>potenziale</em> (la massa è più in alto, momentaneamente ferma); in fondo è tutta <em>cinetica</em> (più in basso e più veloce), e il totale \\(E = \\tfrac{1}{2}kA^2\\) resta fisso mentre si travasa senza fine tra le due. A rigore, tutto questo vale solo per piccoli angoli — oscilla troppo ampio e la forza di richiamo smette di essere perfettamente lineare, e il periodo si allunga un poco.</p>`,
+          facts: [
+            { e: '⏱️', t: `Un pendolo lungo esattamente 1 metro (con piccola oscillazione) ha un periodo molto vicino a 2 secondi sulla Terra — un secondo per lato, la base del "pendolo dei secondi".` },
+            { e: '🎸', t: `Una corda di chitarra, la sospensione di un'auto e il quarzo in un orologio sono tutti oscillatori armonici semplici — stesso moto sinusoidale, frequenze enormemente diverse.` },
+            { e: '🌀', t: `Il pendolo di Foucault oscilla su un piano fisso mentre la Terra gira sotto di esso — un pendolo gigante che prova visibilmente la rotazione del pianeta.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Forza di richiamo', e: 'F = -kx', c: 'piccolo spostamento' },
+            { n: 'Soluzione MAS', e: 'x(t) = A\\cos(\\omega t)' },
+            { sep: 1 },
+            { n: 'Frequenza angolare', e: '\\omega = \\sqrt{k/m}' },
+            { n: 'Periodo del pendolo', e: 'T = 2\\pi\\sqrt{L/g}', c: 'niente massa, niente ampiezza' },
+            { sep: 1 },
+            { n: 'Frequenza', e: 'f = 1/T = \\omega/2\\pi' },
+            { n: 'Energia totale', e: 'E = \\tfrac{1}{2}kA^2', c: 'KE + PE conservata' },
+          ] }, sim: 'pendulum',
+        },
+        scholar: {
+          title: `Non linearità, smorzamento, risonanza e caos`,
+          body: `<h4><span class="hn">01</span>Perché il trucco dei piccoli angoli funziona</h4>
+<p>La vera equazione di un pendolo è non lineare: \\(\\ddot\\theta + (g/L)\\sin\\theta = 0\\). Non ha soluzione in funzioni elementari. La via di fuga è l'approssimazione \\(\\sin\\theta \\approx \\theta\\), valida entro l'1% fino a circa 14°, che linearizza l'equazione nell'oscillatore armonico \\(\\ddot\\theta + \\omega^2\\theta = 0\\) con \\(\\omega = \\sqrt{g/L}\\). Quasi tutto il moto armonico "semplice" è in realtà questa silenziosa decisione di buttare via i termini superiori di un seno.</p>
+<h4><span class="hn">02</span>Quanto costa l'approssimazione</h4>
+<p>Tieni il \\(\\sin\\theta\\) completo e il periodo smette di essere costante — si allunga con l'ampiezza, esattamente, come un <em>integrale ellittico</em> completo \\(T = 4\\sqrt{L/g}\\,K(\\sin\\tfrac{\\theta_0}{2})\\). Espanso, \\(T \\approx T_0\\left(1 + \\tfrac{1}{16}\\theta_0^2 + \\cdots\\right)\\): un'oscillazione di 30° va circa l'1,7% più lenta, una di 90° quasi il 18%. L'isocronismo è una finzione dei piccoli angoli — i veri orologi a pendolo sono progettati per tenere l'ampiezza minuscola e costante proprio per questo.</p>
+<h4><span class="hn">03</span>Aggiungere attrito: l'oscillatore smorzato</h4>
+<p>La realtà drena energia. Una forza resistiva proporzionale alla velocità dà \\(\\ddot x + 2\\gamma\\dot x + \\omega_0^2 x = 0\\), il cui comportamento si divide in tre secondo il rapporto di smorzamento \\(\\zeta\\): <em>sottosmorzato</em> (\\(\\zeta<1\\)) si spegne con un inviluppo decrescente \\(e^{-\\gamma t}\\); <em>criticamente smorzato</em> (\\(\\zeta=1\\)) torna a riposo più in fretta senza sorpasso — l'obiettivo per una sospensione d'auto o un chiudiporta; <em>sovrasmorzato</em> (\\(\\zeta>1\\)) striscia indietro lentamente.</p>
+<h4><span class="hn">04</span>Spingere al momento giusto: la risonanza</h4>
+<p>Guida un oscillatore con una forza periodica e la sua risposta stazionaria picca bruscamente quando la frequenza di guida si avvicina a quella naturale \\(\\omega_0\\) — la <strong>risonanza</strong>, ampiezza \\(A(\\omega) = F_0/m\\big/\\sqrt{(\\omega_0^2-\\omega^2)^2 + 4\\gamma^2\\omega^2}\\). Spingi un'altalena a tempo e sale sempre più in alto con minuscole spinte. Lo stesso effetto frantuma un bicchiere di vino con una nota cantata, ed è perché i soldati rompono il passo attraversando un ponte.</p>
+<h4><span class="hn">05</span>Quanto è affilato il picco: il fattore Q</h4>
+<p>Il <em>fattore di qualità</em> \\(Q = \\omega_0/2\\gamma\\) misura quanto leggermente è smorzato un oscillatore — il numero di radianti che percorre prima che la sua energia cali di \\(1/e\\), e l'affilatezza della sua risonanza. Una sospensione d'auto ha \\(Q \\sim 1\\); un cristallo di quarzo da orologio raggiunge \\(10^4\\text{–}10^6\\); gli specchi del rivelatore di onde gravitazionali LIGO sono progettati verso \\(Q \\sim 10^7\\), ed è ciò che permette loro di registrare un cambiamento di lunghezza di \\(10^{-18}\\) m.</p>
+<h4><span class="hn">06</span>Due aste, nessuna previsione: il caos</h4>
+<p>Appendi un pendolo all'estremità di un altro e il mondo ordinato crolla. Il <strong>doppio pendolo</strong> è pienamente deterministico eppure <em>caotico</em>: il suo moto dipende così sensibilmente dall'angolo di partenza che due rilasci diversi per un capello divergono completamente in pochi secondi, un esponente di Lyapunov positivo in azione. La sua traiettoria nello spazio delle fasi riempie una regione strana e ripiegata invece di chiudersi in un anello ordinato — la stessa matematica che rende il meteo imprevedibile oltre un paio di settimane.</p>`,
+          facts: [
+            { e: '📡', t: `Il fattore Q delle masse di prova degli specchi di LIGO supera i 10 milioni — così leggermente smorzate che una singola spinta risuonerebbe per ore, essenziale per rilevare le onde gravitazionali.` },
+            { e: '🌉', t: `Il ponte di Tacoma Narrows si smembrò nel 1940 quando il vento lo spinse vicino a una frequenza naturale — una lezione da manuale sulla risonanza (anche se il vero meccanismo fu il flutter aeroelastico).` },
+            { e: '🎲', t: `Un doppio pendolo è l'esempio da aula di caos deterministico: rilasci apparentemente identici producono moti enormemente diversi, rendendo il suo percorso a lungo termine impossibile da prevedere.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Pendolo non lineare', e: '\\ddot\\theta + \\tfrac{g}{L}\\sin\\theta = 0' },
+            { n: 'Periodo esatto', e: 'T = 4\\sqrt{L/g}\\,K\\!\\left(\\sin\\tfrac{\\theta_0}{2}\\right)' },
+            { sep: 1 },
+            { n: 'Correzione di ampiezza', e: 'T \\approx T_0\\left(1 + \\tfrac{1}{16}\\theta_0^2\\right)' },
+            { n: 'Oscillatore smorzato', e: '\\ddot x + 2\\gamma\\dot x + \\omega_0^2 x = 0' },
+            { sep: 1 },
+            { n: 'Risonanza', e: 'A(\\omega) = \\dfrac{F_0/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2 + 4\\gamma^2\\omega^2}}' },
+            { n: 'Fattore di qualità', e: 'Q = \\omega_0/2\\gamma' },
+          ] }, sim: 'pendulum',
+        },
+      },
+    },
+    optics: {
+      title: 'Ottica: luce, lenti e rifrazione',
+      teaser: `Perché una lente capovolge il mondo, e una cannuccia sembra spezzata in un bicchiere d'acqua? La luce si piega — e quella piega costruisce ogni occhio, macchina fotografica e telescopio.`,
+      chips: ['Lenti', 'Rifrazione', 'Ottica'],
+      lvls: {
+        junior: {
+          title: `Come la luce si piega per formare immagini`,
+          body: `<p>La luce viaggia quasi sempre in linee perfettamente dritte — ecco perché ottieni ombre nette e perché non puoi vedere dietro gli angoli. Ma nell'istante in cui la luce passa da un materiale trasparente a un altro, dall'aria all'acqua o al vetro, si <strong>piega</strong>. Questa piega si chiama <strong>rifrazione</strong>, ed è il motivo per cui una cannuccia in un bicchiere d'acqua sembra spezzata a metà, e perché una moneta sul fondo di una piscina appare più in alto di quanto sia davvero.</p>
+<p>Modella un pezzo di vetro nel modo giusto e puoi guidare quella piega di proposito — questa è una <strong>lente</strong>. Una lente d'ingrandimento è più spessa al centro, così raccoglie i raggi di luce sparsi e li convoglia a incontrarsi in un unico punto. Tienila alla distanza giusta e quei raggi si incrociano e ricostruiscono un'immagine di ciò da cui provengono — spesso capovolta. Quell'incrocio è esattamente il motivo per cui una macchina fotografica, un telescopio e il tuo stesso occhio possono prendere la luce che rimbalza dal mondo e piegarla in un'immagine nitida.</p>
+<p>Il tuo occhio lo fa con una lente morbida e vivente che i muscoli comprimono per cambiarne la forma, mettendo a fuoco prima da vicino poi da lontano in una frazione di secondo. Una macchina fotografica fa lo stesso lavoro con una lente di vetro scorrevole. Nella simulazione qui sotto, sposta l'oggetto e rimodella la lente, e guarda i raggi incrociarsi per costruire l'immagine — reale, capovolta e ridimensionata.</p>`,
+          facts: [
+            { e: '👁️', t: `La lente del tuo occhio capovolge ogni immagine prima che colpisca la retina — il tuo cervello rimette silenziosamente tutto il mondo dritto.` },
+            { e: '🌈', t: `Un arcobaleno è la rifrazione in azione: la luce solare si piega entrando in ogni goccia di pioggia, scomponendosi nei colori perché ciascun colore si piega di una quantità leggermente diversa.` },
+            { e: '🔭', t: `La lente di un grande telescopio può essere larga oltre un metro — più larga è la lente, più luce stellare raccoglie, e più deboli sono le cose che riesce a vedere.` },
+          ],
+          formula: null, sim: 'optics',
+        },
+        student: {
+          title: `La legge di Snell e l'equazione delle lenti sottili`,
+          body: `<p>La rifrazione avviene perché la luce viaggia a velocità diverse in materiali diversi, e ogni materiale è caratterizzato dal suo <strong>indice di rifrazione</strong> \\(n = c/v\\) — quante volte più lentamente va la luce al suo interno rispetto al vuoto (l'acqua è 1,33, il vetro circa 1,5). A un confine il raggio si piega esattamente della quantità che mantiene i suoi fronti d'onda in fase, catturata dalla <strong>legge di Snell</strong> \\(n_1\\sin\\theta_1 = n_2\\sin\\theta_2\\). Entrando in un mezzo più denso il raggio si piega verso la normale; uscendo si piega via da essa.</p>
+<p>Spingi quell'angolo di uscita abbastanza e succede qualcosa di drammatico: oltre l'<em>angolo critico</em> \\(\\theta_c = \\arcsin(n_2/n_1)\\) il raggio non può più fuggire e si riflette interamente all'interno — la <strong>riflessione totale interna</strong>, il trucco che convoglia la luce lungo una fibra ottica per migliaia di chilometri con quasi nessuna perdita. Una lente non fa altro che rifrangere un raggio due volte, una a ciascuna superficie curva, e il suo potere di messa a fuoco è fissato dall'<em>equazione dei costruttori di lenti</em> a partire da quelle curvature e dall'indice del vetro.</p>
+<p>Dove una lente forma la sua immagine segue la bellissima e semplice <strong>equazione delle lenti sottili</strong> \\(\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}\\), che lega la lunghezza focale \\(f\\), la distanza dell'oggetto \\(d_o\\) e la distanza dell'immagine \\(d_i\\). La dimensione e l'orientamento dell'immagine vengono dall'ingrandimento \\(m = -d_i/d_o\\): un \\(m\\) negativo significa capovolta. Metti l'oggetto oltre \\(f\\) e ottieni un'immagine <em>reale</em>, capovolta, che puoi raccogliere su uno schermo (una macchina fotografica); portalo dentro \\(f\\) e l'immagine diventa <em>virtuale</em>, dritta e ingrandita (una lente d'ingrandimento).</p>`,
+          facts: [
+            { e: '💎', t: `L'indice di rifrazione del diamante è un enorme 2,42, che gli dà un minuscolo angolo critico di 24° — la luce rimbalza all'interno a lungo prima di fuggire, ed è per questo che i diamanti tagliati brillano così intensamente.` },
+            { e: '📡', t: `Una singola fibra ottica si affida alla riflessione totale interna per trasportare la luce — i cavi moderni muovono oltre 100 terabit al secondo, la spina dorsale di tutto internet.` },
+            { e: '👓', t: `Gli occhiali correggono la vista aggiungendo esattamente la lunghezza focale giusta: lenti convergenti per l'ipermetropia, lenti divergenti (f negativa) per la miopia.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Indice di rifrazione', e: 'n = c/v', c: 'acqua 1,33, vetro ~1,5' },
+            { n: `Legge di Snell`, e: 'n_1\\sin\\theta_1 = n_2\\sin\\theta_2' },
+            { sep: 1 },
+            { n: 'Angolo critico', e: '\\theta_c = \\arcsin(n_2/n_1)', c: 'riflessione totale interna' },
+            { n: 'Equazione lenti sottili', e: '\\dfrac{1}{f} = \\dfrac{1}{d_o} + \\dfrac{1}{d_i}' },
+            { sep: 1 },
+            { n: 'Ingrandimento', e: 'm = -\\dfrac{d_i}{d_o}', c: 'm<0 = capovolta' },
+            { n: `Costruttori di lenti`, e: '\\dfrac{1}{f} = (n-1)\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)' },
+          ] }, sim: 'optics',
+        },
+        scholar: {
+          title: `Ottica ondulatoria, aberrazioni e il limite di diffrazione`,
+          body: `<h4><span class="hn">01</span>I raggi sono scorciatoie; la luce è un'onda</h4>
+<p>L'ottica geometrica — linee dritte che si piegano alle superfici — è un'approssimazione superba, ma è solo il limite di piccola lunghezza d'onda di qualcosa di più profondo. Il <strong>principio di Fermat</strong> riformula ogni percorso che la luce prende come quello di <em>cammino ottico stazionario</em>, \\(\\delta\\!\\int n\\,ds = 0\\). La legge di Snell, la legge della riflessione, l'esistenza stessa dei punti focali cadono tutte fuori da questa singola affermazione variazionale — la luce si comporta come se fiutasse la via estremale. È la stessa matematica che ricompare come principio di minima azione in meccanica.</p>
+<h4><span class="hn">02</span>La rifrazione come fronti d'onda che cambiano marcia</h4>
+<p>Perché un raggio si piega verso la normale nel vetro? Immagina il fronte d'onda come una fila in marcia: quando un'estremità entra per prima nel mezzo più lento, resta indietro mentre l'altra estremità mantiene il passo, e l'intero fronte ruota — la costruzione di Huygens resa letterale. Velocità e lunghezza d'onda calano del fattore \\(n\\) mentre la frequenza si conserva, quindi \\(\\lambda_{\\text{mezzo}} = \\lambda_0/n\\). L'immagine a raggi e l'immagine ondulatoria concordano esattamente, ma solo quella ondulatoria sopravvive quando la lente diventa piccola.</p>
+<h4><span class="hn">03</span>Perché nessuna lente è mai perfetta: le aberrazioni</h4>
+<p>L'ordinata equazione delle lenti sottili assume che i raggi restino vicini all'asse. Le lenti reali la violano. L'<em>aberrazione sferica</em> mette a fuoco i raggi di bordo e quelli centrali in punti diversi perché una sfera non è la forma ideale; l'<em>aberrazione cromatica</em> sbava il colore perché \\(n(\\lambda)\\) significa che la luce blu si piega più del rosso, quindi una lente ha una lunghezza focale diversa per ogni colore. I progettisti reagiscono cementando vetri crown e flint in <em>doppietti acromatici</em> e molando superfici <em>asferiche</em> — un'intera arte dedicata a disfare le imperfezioni della sfera.</p>
+<h4><span class="hn">04</span>Il muro che non puoi scalare: la diffrazione</h4>
+<p>Persino una lente impeccabile non può mettere a fuoco la luce in un punto. Poiché la luce è un'onda che passa attraverso un'apertura finita, si sparge in un <strong>disco di Airy</strong>, e due punti si confondono insieme una volta che sono più vicini del <em>criterio di Rayleigh</em> \\(\\theta_{\\min} = 1.22\\,\\lambda/D\\). La risoluzione è fissata dall'<em>apertura numerica</em>, \\(d_{\\min} = 0.61\\,\\lambda/\\text{NA}\\): la cosa più piccola che un microscopio può separare nettamente è circa mezza lunghezza d'onda, qualche centinaio di nanometri. Questo è un limite della fisica, non dell'ingegneria.</p>
+<h4><span class="hn">05</span>Una lente calcola una trasformata di Fourier</h4>
+<p>C'è un'identità sorprendente nel cuore dell'ottica: il campo luminoso nel piano focale posteriore di una lente è la <strong>trasformata di Fourier spaziale</strong> del campo nel suo piano focale anteriore. Il dettaglio fine dell'oggetto diventa alta frequenza spaziale lontano dall'asse, quindi un'apertura che taglia quei raggi è letteralmente un filtro passa-basso. Questa è la base dell'<em>ottica di Fourier</em>, del filtraggio spaziale, e della funzione di trasferimento di modulazione che quantifica esattamente quanto contrasto una lente preserva a ogni livello di dettaglio.</p>
+<h4><span class="hn">06</span>Imbrogliare il limite di diffrazione</h4>
+<p>Per un secolo il limite di Rayleigh è sembrato assoluto — e poi la microscopia gli è semplicemente girata attorno. Lo <em>STED</em> restringe il punto luminoso con una ciambella di luce di deplezione; la <em>PALM/STORM</em> accende e spegne singole molecole e localizza ciascuna molto più precisamente di quanto sbavi, vincendo il premio Nobel per la Chimica 2014. Nel frattempo i <em>metamateriali</em> e le sonde di campo vicino sfruttano le onde evanescenti che le lenti ordinarie buttano via. Il limite di diffrazione vale ancora per la luce propagante in campo lontano — ma l'astuzia su <em>quale</em> luce usare ha spinto l'imaging ottico fino alla scala delle singole molecole.</p>`,
+          facts: [
+            { e: '🏆', t: `La microscopia a super-risoluzione (STED, PALM/STORM) ha infranto il limite di diffrazione e vinto il premio Nobel per la Chimica 2014, immaginando strutture larghe ~20 nm — dieci volte più fini di quanto la luce "dovrebbe" permettere.` },
+            { e: '🔭', t: `Lo specchio da 6,5 m del James Webb Space Telescope gli dà una risoluzione limitata dalla diffrazione di ~0,1 arcosecondi nell'infrarosso — abbastanza netta da risolvere una moneta da ~40 km di distanza.` },
+            { e: '🌀', t: `Una lente esegue una trasformata di Fourier ottica alla velocità della luce con zero consumo di energia — un'idea ora riscoperta per il calcolo analogico e ottico ultra-veloce.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Principio di Fermat`, e: '\\delta\\!\\int n\\,ds = 0' },
+            { n: `Lunghezza d'onda nel mezzo`, e: '\\lambda_{\\text{mezzo}} = \\lambda_0/n' },
+            { sep: 1 },
+            { n: 'Criterio di Rayleigh', e: '\\theta_{\\min} = 1.22\\,\\dfrac{\\lambda}{D}' },
+            { n: 'Risoluzione', e: 'd_{\\min} = 0.61\\,\\dfrac{\\lambda}{\\text{NA}}', c: 'NA = n\\sin\\theta' },
+            { sep: 1 },
+            { n: 'Costruttori di lenti', e: '\\dfrac{1}{f} = (n-1)\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)' },
+            { n: 'Dispersione', e: 'n = n(\\lambda)', c: 'aberrazione cromatica' },
+          ] }, sim: 'optics',
+        },
+      },
+    },
     memory: {
       title: 'Come funziona la memoria',
       teaser: 'Come fa il tuo cervello a immagazzinare 2,5 petabyte di ricordi — e perché alcuni durano per sempre mentre altri svaniscono in una notte?',

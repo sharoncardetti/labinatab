@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le tableau périodique | Lab-in-a-Tab</title>
+<meta name="description" content="Aligne chaque élément par un seul nombre et un motif caché de familles et de tendances surgit.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/tableau-periodique/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/periodic-table/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/tavola-periodica/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/tableau-periodique/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/periodic-table/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Le tableau périodique — Expliqué et simulé">
+<meta property="og:description" content="Aligne chaque élément par un seul nombre et un motif caché de familles et de tendances surgit.">
+<meta property="og:url" content="https://labinatab.com/fr/tableau-periodique/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le tableau périodique — Expliqué et simulé">
+<meta name="twitter:description" content="Aligne chaque élément par un seul nombre et un motif caché de familles et de tendances surgit.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/tableau-periodique/#article",
+   "headline": "Le tableau périodique",
+   "name": "Le tableau périodique",
+   "description": "Aligne chaque élément par un seul nombre et un motif caché de familles et de tendances surgit.",
+   "url": "https://labinatab.com/fr/tableau-periodique/",
+   "mainEntityOfPage": "https://labinatab.com/fr/tableau-periodique/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Éléments",
+    "Tendances",
+    "Atomes"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Le tableau périodique",
+    "sameAs": "https://en.wikipedia.org/wiki/Periodic_table"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Le tableau périodique",
+     "item": "https://labinatab.com/fr/tableau-periodique/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/periodic-table/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/tavola-periodica/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/tableau-periodique/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Chimie</nav>
+  <h1>Le tableau périodique</h1>
+  <p class="lead">Aligne chaque élément par un seul nombre et un motif caché de familles et de tendances surgit.</p>
+  <div class="chips"><span>Éléments</span><span>Tendances</span><span>Atomes</span></div>
+  <section class="sim-embed" data-sim="periodic" data-color="#7c3aed" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Click a few squares down the same column, then a few along the top row. Then press "Atomic radius" and "Electronegativity" and watch the colours sweep across the table.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Switch to "Atomic radius", then "Electronegativity", and watch the gradient flip direction. Then click fluorine (top-right) and caesium (bottom-left) — the two extremes.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Compare the electronegativity gradient with the block structure: note how the d-block transition metals vary far less than the s- and p-blocks, and how the f-block sits almost uniform.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>The whole periodic table, one square per element, coloured by chemical family — reds and oranges are reactive metals on the left, blues and purples are non-metals and noble gases on the right. Click any square to see what it is.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Elements in the same column behave alike, and the properties change smoothly across the table.</b> Atomic size grows as you head left and down; the pull on electrons grows toward the top-right. The table's shape isn't decoration — it's a map of how every element behaves.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Elements arranged by atomic number into periods (rows = electron shells) and groups (columns = valence electrons), coloured by family. The trend buttons re-shade the table by a periodic property; click a tile to inspect it.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Atomic radius increases down and to the left; electronegativity increases up and to the right.</b> Both flow from one cause: across a period the rising nuclear charge pulls the electrons in tighter, while down a group each new shell pushes the outer electrons further out.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>The 118-element table coloured by family, with property overlays. The radius and electronegativity shadings encode the qualitative periodic trends that follow from effective nuclear charge; tile inspection reports \(Z\) and category.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>The trends are a map of the effective nuclear charge \(Z_{\text{eff}}\).</b> The blocks are 2, 6, 10 and 14 wide because s, p, d and f orbitals hold that many electrons. The muted variation across the transition and inner-transition metals reflects electrons filling inner d and f shells, which shield the outermost electrons and flatten the trends.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>La liste d'ingrédients de l'univers, triée</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Tout autour de toi — ton corps, l'air, cet écran, les étoiles lointaines — est bâti à partir d'environ 90 ingrédients naturels appelés <strong>éléments</strong>. Le tableau périodique est simplement leur liste, mais arrangée si astucieusement que sa forme même te dit comment chacun se comporte. Chaque case est un élément : son symbole (O pour l'oxygène, Fe pour le fer) et son <strong>numéro atomique</strong>, le compte de protons qui en fait cet élément et rien d'autre.</p>
+<p>Le génie, dû à Dmitri Mendeleïev en 1869, fut l'ordonnancement. Lis de gauche à droite et les éléments changent graduellement ; descends à la rangée suivante et le motif recommence — ce qui est exactement pourquoi on l'appelle « périodique ». Les éléments partageant une colonne (un <strong>groupe</strong>) sont des cousins chimiques qui se comportent pareil : les métaux mous et explosifs de la première colonne, les gaz colorés et fainéants de la dernière. Chaque famille a une personnalité que tu peux prédire rien qu'à sa place.</p>
+<p>Cette prévisibilité est le super-pouvoir du tableau. Mendeleïev laissa même des vides pour des éléments non encore découverts et décrivit leurs propriétés à l'avance — et quand ils apparurent, il avait raison. Les métaux se pressent à gauche et au milieu, les non-métaux en haut à droite, et un escalier d'intermédiaires descend au centre. Apprends la carte et tu peux deviner comment une substance agira avant même de la toucher.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧊</span> Environ 90 éléments seulement existent à l'état naturel ; le reste est fabriqué en laboratoire et s'évanouit en fractions de seconde.</li><li><span aria-hidden="true">💥</span> Les métaux alcalins (colonne 1) sont si réactifs que le césium explose au contact de l'eau — on ne les trouve jamais purs dans la nature.</li><li><span aria-hidden="true">🎈</span> Les gaz nobles (dernière colonne) réagissent à peine avec quoi que ce soit, ce qui est pourquoi l'hélium est sûr dans les ballons et le néon brille tranquillement dans les enseignes.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Structure, groupes, périodes et tendances périodiques</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>La disposition du tableau est une image de la structure atomique. Chaque rangée (une <strong>période</strong>) remplit une nouvelle couche électronique ; chaque colonne (un <strong>groupe</strong>) partage le même nombre d'électrons externes, ou de valence — et ce sont ces électrons externes qui font la chimie. C'est pourquoi le groupe 1 (un électron de valence, avide de le donner) et le groupe 17 (à un électron d'une couche pleine, désespéré d'en attraper un) sont les métaux et non-métaux les plus réactifs, tandis que le groupe 18 (couches pleines) ne réagit presque pas.</p>
+<p>Parce que le comportement suit l'arrangement des électrons, les propriétés se décalent en douceur à travers le tableau — les <strong>tendances périodiques</strong>. Le rayon atomique rétrécit de gauche à droite (plus de protons tirent la même couche plus serrée) et grandit vers le bas d'un groupe (chaque période ajoute une couche). L'électronégativité, l'attraction d'un atome sur les électrons partagés, fait l'inverse : elle grimpe vers le haut à droite, culminant au fluor. L'énergie d'ionisation, le coût pour retirer un électron, suit de près l'électronégativité.</p>
+<p>Le tableau se trie aussi en <strong>blocs</strong> selon l'orbitale qui se remplit : le bloc s (groupes 1-2), le bloc p (13-18), les métaux de transition du bloc d au milieu, et les lanthanides et actinides du bloc f tirés en dessous. Les métaux (gauche et centre) larguent des électrons et conduisent ; les non-métaux (haut à droite) les attrapent ou les partagent ; les métalloïdes tracent l'escalier entre les deux et agissent comme les deux — ce qui est précisément pourquoi le silicium et le germanium font des semi-conducteurs.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Numéro atomique</th><td>\(Z = \#\,\text{protons}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Rayon atomique</th><td>\(r:\ \text{plus petit} \rightarrow,\ \text{plus grand} \downarrow\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Électronégativité</th><td>\(\chi:\ \text{plus grand} \rightarrow,\ \text{plus petit} \downarrow\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Énergie d'ionisation</th><td>\(\text{suit } \chi:\ \text{plus grand} \rightarrow,\ \text{plus petit} \downarrow\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔋</span> Le numéro de groupe égale souvent le nombre d'électrons de valence, ce qui est pourquoi les éléments d'une colonne forment des composés semblables — p. ex. tous les métaux du groupe 1 font des sels X-chlorure.</li><li><span aria-hidden="true">⚛️</span> Le fluor (haut à droite) est l'élément le plus électronégatif ; le césium et le francium (bas à gauche) le sont le moins — les deux bouts de la tendance.</li><li><span aria-hidden="true">💻</span> Le silicium siège sur l'escalier des métalloïdes, se comportant ni comme un bon métal ni comme un bon isolant — la propriété qui rend possible toute l'industrie des semi-conducteurs.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Origines quantiques : pourquoi le tableau a la forme qu'il a</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Le tableau est la spectroscopie rendue visible</h3>
+<p>Les périodes et les blocs sont une lecture directe de la mécanique quantique. Les électrons occupent des orbitales étiquetées par des nombres quantiques, se remplissant à peu près par ordre d'énergie (le principe d'Aufbau et la règle \(n+\ell\) de Madelung), au plus deux par orbitale selon le principe d'exclusion de Pauli. La sous-couche s tient 2 électrons, p en tient 6, d en tient 10, f en tient 14 — ce qui est exactement pourquoi les blocs du tableau ont 2, 6, 10 et 14 colonnes de large.</p>
+<h3><span class="hn">02</span>Charge nucléaire effective et écrantage</h3>
+<p>Un électron externe ne ressent jamais la pleine charge nucléaire \(Z\) ; les électrons internes l'écrantent, laissant une charge <em>effective</em> \(Z_{\text{eff}} = Z - S\). À travers une période \(Z_{\text{eff}}\) grimpe — des protons sont ajoutés tandis que les électrons de même couche écrantent mal — donc l'atome se resserre et l'électronégativité monte. Vers le bas d'un groupe la couche fraîchement ajoutée l'emporte sur l'attraction supplémentaire, donc les atomes enflent. Presque chaque tendance est une ombre de \(Z_{\text{eff}}\).</p>
+<h3><span class="hn">03</span>L'énergie d'ionisation et son zigzag</h3>
+<p>L'énergie pour arracher un électron suit \(E \sim 13.6\,Z_{\text{eff}}^2/n^2\) eV, mais avec des creux révélateurs — le bore sous le béryllium, l'oxygène sous l'azote — où une sous-couche fraîchement commencée ou une première répulsion de paire d'électrons abaisse le coût. Ces plis sont le modèle orbital se confirmant lui-même dans les données.</p>
+<h3><span class="hn">04</span>La relativité tout en bas</h3>
+<p>Dans les atomes les plus lourds les électrons internes se déplacent à une sérieuse fraction de la vitesse de la lumière, et la contraction relativiste des orbitales s qui en résulte a des conséquences visibles : c'est pourquoi l'or est jaune plutôt qu'argenté, pourquoi le mercure est liquide, et pourquoi la batterie plomb-acide de ta voiture délivre la tension qu'elle délivre. Les tendances soignées se courbent précisément là où la relativité commence à mordre.</p>
+<h3><span class="hn">05</span>Les bords inachevés</h3>
+<p>Le tableau s'écrit encore : les éléments superlourds sont synthétisés un atome à la fois, désormais jusqu'à l'oganesson (118), et les physiciens poursuivent un « îlot de stabilité » prédit d'isotopes à plus longue vie au-delà. Que la périodicité elle-même survive dans la huitième période — où la relativité brouille l'ordre des orbitales — est une question authentiquement ouverte.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Ordre de remplissage</th><td>\(\text{Aufbau : plus bas } (n+\ell) \text{ d'abord}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Charge effective</th><td>\(Z_{\text{eff}} = Z - S\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Énergie d'ionisation</th><td>\(E \sim 13.6\,\dfrac{Z_{\text{eff}}^2}{n^2}\ \text{eV}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Largeurs de blocs</th><td>\(s,p,d,f = 2,\,6,\,10,\,14\)</td><td class="cmt">capacités orbitales</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🥇</span> L'or est jaune à cause de la relativité : ses électrons internes rapides contractent les orbitales, décalant vers le bleu la lumière qu'il absorbe.</li><li><span aria-hidden="true">🌡️</span> Le mercure est liquide à température ambiante pour la même raison relativiste — ses atomes se lient trop faiblement pour rester solides.</li><li><span aria-hidden="true">🏝️</span> Les physiciens chassent un « îlot de stabilité » : des éléments superlourds dont les comptes spéciaux de protons et de neutrons pourraient survivre bien plus longtemps que les isotopes à la milliseconde d'aujourd'hui.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Periodic_table" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Chimie</h2>
+    <ul><li><a href="/fr/atomes-liaisons-chimiques/">Atomes et liaisons chimiques</a></li><li><a href="/fr/electrochimie-batteries/">Électrochimie et batteries</a></li><li><a href="/fr/cinetique-equilibre/">Cinétique et équilibre</a></li><li><a href="/fr/chimie-organique-molecules-du-vivant/">Chimie organique et molécules du vivant</a></li><li><a href="/fr/acides-bases-ph/">Acides, bases et pH</a></li><li><a href="/fr/equilibrer-equations-chimiques/">Équilibrer les équations chimiques</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

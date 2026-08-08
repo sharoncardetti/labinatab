@@ -116,7 +116,7 @@ const ENGINE = [
     'simSorting', 'simML', 'simCrypto', 'simComplexity', 'simClimate', 'simTectonics',
     'simOcean', 'simVolcano', 'simChem', 'simElectrochem', 'simKinetics', 'simOrganic', 'simAcids', 'simPeriodic',
     'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simEclipse', 'simMeteors', 'simNeuro', 'simNeuron',
-    'simMemory', 'simSleep'].map(decl),
+    'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein'].map(decl),
 ].join('\n\n');
 
 // The embedded sim, localized. Guide text + tab labels come from the language;
@@ -221,6 +221,7 @@ li{margin-bottom:.35rem}
 .related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
 .sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
 footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
 [hidden]{display:none!important}
 .sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
 .sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
@@ -353,7 +354,8 @@ ${JSON.stringify(ld, null, 1)}
     <ul>${related}</ul>
   </nav>
 </main>
-<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">${ui.footer.allExperiments}</a></footer>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">${ui.footer.allExperiments}</a>
+<span class="ai-notice">${ui.footer.ai} <a href="/${lang.prefix}ai/">${ui.footer.aiLink}</a></span></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 (function(){var r=document.documentElement,b=document.getElementById('t');
@@ -434,6 +436,7 @@ function buildSPAClone(lang) {
   html = html.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="Lab-in-a-Tab — ${esc(cleanHtag)}">`);
   // language switcher: this language's flag on the button, mark its menu item current
   html = html.replace(/(<button class="icon-btn langbtn" id="lb"[^>]*>)[\s\S]*?(<\/button>)/, (m, open, close) => open + lang.flag + close);
+  html = html.replace('href="/ai/"', `href="/${lang.prefix}ai/"`);
   html = html.replace(' aria-current="true"', '');
   html = html.replace(`<a href="/${lang.prefix}" hreflang="${lang.htmlLang}">`, `<a href="/${lang.prefix}" hreflang="${lang.htmlLang}" aria-current="true">`);
   // localized footer "all experiments" list (translated titles + localized/EN-fallback slugs)

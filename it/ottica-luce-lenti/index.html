@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ottica: luce, lenti e rifrazione | Lab-in-a-Tab</title>
+<meta name="description" content="Perché una lente capovolge il mondo, e una cannuccia sembra spezzata in un bicchiere d'acqua? La luce si piega — e quella piega costruisce ogni occhio…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/ottica-luce-lenti/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/optics-light-lenses/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/ottica-luce-lenti/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/optics-light-lenses/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Ottica: luce, lenti e rifrazione — Spiegato e simulato">
+<meta property="og:description" content="Perché una lente capovolge il mondo, e una cannuccia sembra spezzata in un bicchiere d'acqua? La luce si piega — e quella piega costruisce ogni occhio…">
+<meta property="og:url" content="https://labinatab.com/it/ottica-luce-lenti/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ottica: luce, lenti e rifrazione — Spiegato e simulato">
+<meta name="twitter:description" content="Perché una lente capovolge il mondo, e una cannuccia sembra spezzata in un bicchiere d'acqua? La luce si piega — e quella piega costruisce ogni occhio…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/ottica-luce-lenti/#article",
+   "headline": "Ottica: luce, lenti e rifrazione",
+   "name": "Ottica: luce, lenti e rifrazione",
+   "description": "Perché una lente capovolge il mondo, e una cannuccia sembra spezzata in un bicchiere d'acqua? La luce si piega — e quella piega costruisce ogni occhio…",
+   "url": "https://labinatab.com/it/ottica-luce-lenti/",
+   "mainEntityOfPage": "https://labinatab.com/it/ottica-luce-lenti/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Lenti",
+    "Rifrazione",
+    "Ottica"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Ottica: luce, lenti e rifrazione",
+    "sameAs": "https://en.wikipedia.org/wiki/Lens_(optics)"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Ottica: luce, lenti e rifrazione",
+     "item": "https://labinatab.com/it/ottica-luce-lenti/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/optics-light-lenses/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/ottica-luce-lenti/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Fisica</nav>
+  <h1>Ottica: luce, lenti e rifrazione</h1>
+  <p class="lead">Perché una lente capovolge il mondo, e una cannuccia sembra spezzata in un bicchiere d'acqua? La luce si piega — e quella piega costruisce ogni occhio, macchina fotografica e telescopio.</p>
+  <div class="chips"><span>Lenti</span><span>Rifrazione</span><span>Ottica</span></div>
+  <section class="sim-embed" data-sim="optics" data-color="#0284c7" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0284c7"><span class="sg-lbl">Prova</span><span>Slide <b>Object distance</b> so the object is far from the lens and look at the orange image. Now drag it slowly closer. What happens to the image the moment the object gets very close to the lens?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Prova</span><span>Set <b>Focal length (f)</b> to about 60 and sweep <b>Object distance (dₒ)</b> from 300 down to 40. Watch <b>Image distance (dᵢ)</b> and <b>Magnification (m)</b> as the object crosses \(d_o = f\).</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Prova</span><span>Fix <b>Focal length (f)</b> and record \((d_o, d_i)\) pairs across the range, then test whether \(1/d_o + 1/d_i\) stays constant. Note the sign of <b>Magnification (m)</b> as <b>Object distance (dₒ)</b> passes through \(f\) and through \(2f\).</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>The blue arrow on the left is the <b>object</b>. The tall shape in the middle is a <b>lens</b>. The coloured lines are <b>rays of light</b> leaving the top of the object; where they cross again on the right, the lens rebuilds the picture — that's the <b>image</b> (drawn in orange).</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Far away, the image is small and flipped upside down; up close, it flips back to upright and grows huge.</b> That switch is exactly the difference between a camera (object far, image small and inverted) and a magnifying glass (object near, image large and upright). The lens does both — it just depends how close you hold it.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Blue arrow = object at distance \(d_o\). Vertical lens with focal points marked at \(\pm f\). Three principal rays trace from the object tip: parallel-then-through-focus, straight-through-centre, and through-the-near-focus-then-parallel. They meet at the image, distance \(d_i\); the pills read \(d_i\), \(m\) and whether the image is real or virtual.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>As \(d_o \to f\), the image races off to infinity and \(m\) blows up.</b> The thin-lens equation \(1/f = 1/d_o + 1/d_i\) makes \(d_i\) diverge when \(d_o = f\), so rays leave the lens parallel and form no finite image. Cross inside \(f\) and \(d_i\) goes negative: the image becomes <em>virtual</em>, upright and magnified — the magnifying-glass regime.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Object at \(d_o\); thin converging lens of focal length \(f\) with foci at \(\pm f\). The three principal rays construct the image at \(d_i\) given by \(1/f = 1/d_o + 1/d_i\), with transverse magnification \(m = -d_i/d_o\). Real images (\(d_i>0\)) appear right of the lens; virtual images (\(d_i<0\)) appear left, dashed.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>\(1/d_o + 1/d_i = 1/f\) holds exactly, and \(m = -d_i/d_o\) tracks the geometry.</b> At \(d_o = 2f\), \(m=-1\) (same size, inverted); for \(f<d_o<2f\) the real image is enlarged (projector); for \(d_o<f\), \(d_i<0\) gives an erect virtual image. The simulation solves \(d_i = d_o f/(d_o-f)\) each frame — the pole at \(d_o=f\) is the diverging image you just watched.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Come la luce si piega per formare immagini</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>La luce viaggia quasi sempre in linee perfettamente dritte — ecco perché ottieni ombre nette e perché non puoi vedere dietro gli angoli. Ma nell'istante in cui la luce passa da un materiale trasparente a un altro, dall'aria all'acqua o al vetro, si <strong>piega</strong>. Questa piega si chiama <strong>rifrazione</strong>, ed è il motivo per cui una cannuccia in un bicchiere d'acqua sembra spezzata a metà, e perché una moneta sul fondo di una piscina appare più in alto di quanto sia davvero.</p>
+<p>Modella un pezzo di vetro nel modo giusto e puoi guidare quella piega di proposito — questa è una <strong>lente</strong>. Una lente d'ingrandimento è più spessa al centro, così raccoglie i raggi di luce sparsi e li convoglia a incontrarsi in un unico punto. Tienila alla distanza giusta e quei raggi si incrociano e ricostruiscono un'immagine di ciò da cui provengono — spesso capovolta. Quell'incrocio è esattamente il motivo per cui una macchina fotografica, un telescopio e il tuo stesso occhio possono prendere la luce che rimbalza dal mondo e piegarla in un'immagine nitida.</p>
+<p>Il tuo occhio lo fa con una lente morbida e vivente che i muscoli comprimono per cambiarne la forma, mettendo a fuoco prima da vicino poi da lontano in una frazione di secondo. Una macchina fotografica fa lo stesso lavoro con una lente di vetro scorrevole. Nella simulazione qui sotto, sposta l'oggetto e rimodella la lente, e guarda i raggi incrociarsi per costruire l'immagine — reale, capovolta e ridimensionata.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">👁️</span> La lente del tuo occhio capovolge ogni immagine prima che colpisca la retina — il tuo cervello rimette silenziosamente tutto il mondo dritto.</li><li><span aria-hidden="true">🌈</span> Un arcobaleno è la rifrazione in azione: la luce solare si piega entrando in ogni goccia di pioggia, scomponendosi nei colori perché ciascun colore si piega di una quantità leggermente diversa.</li><li><span aria-hidden="true">🔭</span> La lente di un grande telescopio può essere larga oltre un metro — più larga è la lente, più luce stellare raccoglie, e più deboli sono le cose che riesce a vedere.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>La legge di Snell e l'equazione delle lenti sottili</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>La rifrazione avviene perché la luce viaggia a velocità diverse in materiali diversi, e ogni materiale è caratterizzato dal suo <strong>indice di rifrazione</strong> \(n = c/v\) — quante volte più lentamente va la luce al suo interno rispetto al vuoto (l'acqua è 1,33, il vetro circa 1,5). A un confine il raggio si piega esattamente della quantità che mantiene i suoi fronti d'onda in fase, catturata dalla <strong>legge di Snell</strong> \(n_1\sin\theta_1 = n_2\sin\theta_2\). Entrando in un mezzo più denso il raggio si piega verso la normale; uscendo si piega via da essa.</p>
+<p>Spingi quell'angolo di uscita abbastanza e succede qualcosa di drammatico: oltre l'<em>angolo critico</em> \(\theta_c = \arcsin(n_2/n_1)\) il raggio non può più fuggire e si riflette interamente all'interno — la <strong>riflessione totale interna</strong>, il trucco che convoglia la luce lungo una fibra ottica per migliaia di chilometri con quasi nessuna perdita. Una lente non fa altro che rifrangere un raggio due volte, una a ciascuna superficie curva, e il suo potere di messa a fuoco è fissato dall'<em>equazione dei costruttori di lenti</em> a partire da quelle curvature e dall'indice del vetro.</p>
+<p>Dove una lente forma la sua immagine segue la bellissima e semplice <strong>equazione delle lenti sottili</strong> \(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\), che lega la lunghezza focale \(f\), la distanza dell'oggetto \(d_o\) e la distanza dell'immagine \(d_i\). La dimensione e l'orientamento dell'immagine vengono dall'ingrandimento \(m = -d_i/d_o\): un \(m\) negativo significa capovolta. Metti l'oggetto oltre \(f\) e ottieni un'immagine <em>reale</em>, capovolta, che puoi raccogliere su uno schermo (una macchina fotografica); portalo dentro \(f\) e l'immagine diventa <em>virtuale</em>, dritta e ingrandita (una lente d'ingrandimento).</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Indice di rifrazione</th><td>\(n = c/v\)</td><td class="cmt">acqua 1,33, vetro ~1,5</td></tr>
+<tr><th scope="row">Legge di Snell</th><td>\(n_1\sin\theta_1 = n_2\sin\theta_2\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Angolo critico</th><td>\(\theta_c = \arcsin(n_2/n_1)\)</td><td class="cmt">riflessione totale interna</td></tr>
+<tr><th scope="row">Equazione lenti sottili</th><td>\(\dfrac{1}{f} = \dfrac{1}{d_o} + \dfrac{1}{d_i}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Ingrandimento</th><td>\(m = -\dfrac{d_i}{d_o}\)</td><td class="cmt">m&lt;0 = capovolta</td></tr>
+<tr><th scope="row">Costruttori di lenti</th><td>\(\dfrac{1}{f} = (n-1)\left(\dfrac{1}{R_1} - \dfrac{1}{R_2}\right)\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">💎</span> L'indice di rifrazione del diamante è un enorme 2,42, che gli dà un minuscolo angolo critico di 24° — la luce rimbalza all'interno a lungo prima di fuggire, ed è per questo che i diamanti tagliati brillano così intensamente.</li><li><span aria-hidden="true">📡</span> Una singola fibra ottica si affida alla riflessione totale interna per trasportare la luce — i cavi moderni muovono oltre 100 terabit al secondo, la spina dorsale di tutto internet.</li><li><span aria-hidden="true">👓</span> Gli occhiali correggono la vista aggiungendo esattamente la lunghezza focale giusta: lenti convergenti per l'ipermetropia, lenti divergenti (f negativa) per la miopia.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Ottica ondulatoria, aberrazioni e il limite di diffrazione</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>I raggi sono scorciatoie; la luce è un'onda</h3>
+<p>L'ottica geometrica — linee dritte che si piegano alle superfici — è un'approssimazione superba, ma è solo il limite di piccola lunghezza d'onda di qualcosa di più profondo. Il <strong>principio di Fermat</strong> riformula ogni percorso che la luce prende come quello di <em>cammino ottico stazionario</em>, \(\delta\!\int n\,ds = 0\). La legge di Snell, la legge della riflessione, l'esistenza stessa dei punti focali cadono tutte fuori da questa singola affermazione variazionale — la luce si comporta come se fiutasse la via estremale. È la stessa matematica che ricompare come principio di minima azione in meccanica.</p>
+<h3><span class="hn">02</span>La rifrazione come fronti d'onda che cambiano marcia</h3>
+<p>Perché un raggio si piega verso la normale nel vetro? Immagina il fronte d'onda come una fila in marcia: quando un'estremità entra per prima nel mezzo più lento, resta indietro mentre l'altra estremità mantiene il passo, e l'intero fronte ruota — la costruzione di Huygens resa letterale. Velocità e lunghezza d'onda calano del fattore \(n\) mentre la frequenza si conserva, quindi \(\lambda_{\text{mezzo}} = \lambda_0/n\). L'immagine a raggi e l'immagine ondulatoria concordano esattamente, ma solo quella ondulatoria sopravvive quando la lente diventa piccola.</p>
+<h3><span class="hn">03</span>Perché nessuna lente è mai perfetta: le aberrazioni</h3>
+<p>L'ordinata equazione delle lenti sottili assume che i raggi restino vicini all'asse. Le lenti reali la violano. L'<em>aberrazione sferica</em> mette a fuoco i raggi di bordo e quelli centrali in punti diversi perché una sfera non è la forma ideale; l'<em>aberrazione cromatica</em> sbava il colore perché \(n(\lambda)\) significa che la luce blu si piega più del rosso, quindi una lente ha una lunghezza focale diversa per ogni colore. I progettisti reagiscono cementando vetri crown e flint in <em>doppietti acromatici</em> e molando superfici <em>asferiche</em> — un'intera arte dedicata a disfare le imperfezioni della sfera.</p>
+<h3><span class="hn">04</span>Il muro che non puoi scalare: la diffrazione</h3>
+<p>Persino una lente impeccabile non può mettere a fuoco la luce in un punto. Poiché la luce è un'onda che passa attraverso un'apertura finita, si sparge in un <strong>disco di Airy</strong>, e due punti si confondono insieme una volta che sono più vicini del <em>criterio di Rayleigh</em> \(\theta_{\min} = 1.22\,\lambda/D\). La risoluzione è fissata dall'<em>apertura numerica</em>, \(d_{\min} = 0.61\,\lambda/\text{NA}\): la cosa più piccola che un microscopio può separare nettamente è circa mezza lunghezza d'onda, qualche centinaio di nanometri. Questo è un limite della fisica, non dell'ingegneria.</p>
+<h3><span class="hn">05</span>Una lente calcola una trasformata di Fourier</h3>
+<p>C'è un'identità sorprendente nel cuore dell'ottica: il campo luminoso nel piano focale posteriore di una lente è la <strong>trasformata di Fourier spaziale</strong> del campo nel suo piano focale anteriore. Il dettaglio fine dell'oggetto diventa alta frequenza spaziale lontano dall'asse, quindi un'apertura che taglia quei raggi è letteralmente un filtro passa-basso. Questa è la base dell'<em>ottica di Fourier</em>, del filtraggio spaziale, e della funzione di trasferimento di modulazione che quantifica esattamente quanto contrasto una lente preserva a ogni livello di dettaglio.</p>
+<h3><span class="hn">06</span>Imbrogliare il limite di diffrazione</h3>
+<p>Per un secolo il limite di Rayleigh è sembrato assoluto — e poi la microscopia gli è semplicemente girata attorno. Lo <em>STED</em> restringe il punto luminoso con una ciambella di luce di deplezione; la <em>PALM/STORM</em> accende e spegne singole molecole e localizza ciascuna molto più precisamente di quanto sbavi, vincendo il premio Nobel per la Chimica 2014. Nel frattempo i <em>metamateriali</em> e le sonde di campo vicino sfruttano le onde evanescenti che le lenti ordinarie buttano via. Il limite di diffrazione vale ancora per la luce propagante in campo lontano — ma l'astuzia su <em>quale</em> luce usare ha spinto l'imaging ottico fino alla scala delle singole molecole.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Principio di Fermat</th><td>\(\delta\!\int n\,ds = 0\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Lunghezza d'onda nel mezzo</th><td>\(\lambda_{\text{mezzo}} = \lambda_0/n\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Criterio di Rayleigh</th><td>\(\theta_{\min} = 1.22\,\dfrac{\lambda}{D}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Risoluzione</th><td>\(d_{\min} = 0.61\,\dfrac{\lambda}{\text{NA}}\)</td><td class="cmt">NA = n\sin\theta</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Costruttori di lenti</th><td>\(\dfrac{1}{f} = (n-1)\left(\dfrac{1}{R_1} - \dfrac{1}{R_2}\right)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Dispersione</th><td>\(n = n(\lambda)\)</td><td class="cmt">aberrazione cromatica</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🏆</span> La microscopia a super-risoluzione (STED, PALM/STORM) ha infranto il limite di diffrazione e vinto il premio Nobel per la Chimica 2014, immaginando strutture larghe ~20 nm — dieci volte più fini di quanto la luce &quot;dovrebbe&quot; permettere.</li><li><span aria-hidden="true">🔭</span> Lo specchio da 6,5 m del James Webb Space Telescope gli dà una risoluzione limitata dalla diffrazione di ~0,1 arcosecondi nell'infrarosso — abbastanza netta da risolvere una moneta da ~40 km di distanza.</li><li><span aria-hidden="true">🌀</span> Una lente esegue una trasformata di Fourier ottica alla velocità della luce con zero consumo di energia — un'idea ora riscoperta per il calcolo analogico e ottico ultra-veloce.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Lens_(optics)" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Fisica</h2>
+    <ul><li><a href="/it/gravita-orbite/">Gravità e orbite</a></li><li><a href="/it/moto-dei-proiettili/">Moto dei proiettili</a></li><li><a href="/it/onde-interferenza/">Onde e interferenza</a></li><li><a href="/it/calore-termodinamica/">Calore e termodinamica</a></li><li><a href="/it/modello-standard/">Il Modello Standard</a></li><li><a href="/it/leggi-del-moto-di-newton/">Le leggi del moto di Newton</a></li><li><a href="/it/legge-di-ohm-circuiti/">Legge di Ohm e circuiti</a></li><li><a href="/it/stati-della-materia/">Stati della materia</a></li><li><a href="/it/pendolo-moto-armonico/">Pendoli e moto armonico semplice</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

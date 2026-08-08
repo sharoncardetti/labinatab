@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravité et orbites | Lab-in-a-Tab</title>
+<meta name="description" content="Pourquoi tout tombe — et pourquoi les planètes ne s'écrasent-elles jamais sur le Soleil ?">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/gravite-orbites/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/gravity-orbits/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/gravita-orbite/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/gravite-orbites/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/gravity-orbits/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Gravité et orbites — Expliqué et simulé">
+<meta property="og:description" content="Pourquoi tout tombe — et pourquoi les planètes ne s'écrasent-elles jamais sur le Soleil ?">
+<meta property="og:url" content="https://labinatab.com/fr/gravite-orbites/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gravité et orbites — Expliqué et simulé">
+<meta name="twitter:description" content="Pourquoi tout tombe — et pourquoi les planètes ne s'écrasent-elles jamais sur le Soleil ?">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/gravite-orbites/#article",
+   "headline": "Gravité et orbites",
+   "name": "Gravité et orbites",
+   "description": "Pourquoi tout tombe — et pourquoi les planètes ne s'écrasent-elles jamais sur le Soleil ?",
+   "url": "https://labinatab.com/fr/gravite-orbites/",
+   "mainEntityOfPage": "https://labinatab.com/fr/gravite-orbites/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-08",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Gravité",
+    "Orbites",
+    "Espace"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Gravité et orbites",
+    "sameAs": "https://en.wikipedia.org/wiki/Gravity"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Gravité et orbites",
+     "item": "https://labinatab.com/fr/gravite-orbites/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/gravity-orbits/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/gravita-orbite/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/gravite-orbites/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physique</nav>
+  <h1>Gravité et orbites</h1>
+  <p class="lead">Pourquoi tout tombe — et pourquoi les planètes ne s'écrasent-elles jamais sur le Soleil ?</p>
+  <div class="chips"><span>Gravité</span><span>Orbites</span><span>Espace</span></div>
+  <section class="sim-embed" data-sim="gravity" data-color="#e05c1a" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#e05c1a"><span class="sg-lbl">Essaie</span><span>Drag <b>Distance from star</b> down to 40 and read <b>Year length</b>. Now drag it to 80 — exactly double. Does <b>Year length</b> double too?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#e05c1a"><span class="sg-lbl">Essaie</span><span>Double <b>Orbit radius</b> from 40 to 80 and compare the two <b>Period (T)</b> readings. Then hold the radius fixed and push <b>Star mass</b> from 0.5 to 5, watching <b>Orbital speed (v)</b>.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#e05c1a"><span class="sg-lbl">Essaie</span><span>Sample <b>Period (T)</b> at \(r = 40, 80, 120\) with <b>Star mass (M)</b> held fixed, and estimate the slope of \(\log T\) against \(\log r\). Then vary <b>Star mass (M)</b> at fixed radius and test whether \(T \propto M^{-1/2}\).</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>The amber ball in the middle is the <b>star</b>. The coloured ball is a <b>planet</b> going round it. The faint circle is the path it follows, the glowing tail is where it has just been, and the short amber line is <b>gravity</b> — it always points straight at the star.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>No — doubling the distance does not double the year. It almost triples it.</b> <b>Year length</b> goes from about 37s to about 106s, and the planet also travels more slowly the further out it sits. That's why Neptune needs 165 Earth years for a single lap of the Sun, while Earth needs one.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Amber sphere = the <b>star</b> (its drawn radius grows with the mass you set). Coloured dot = a <b>planet</b> on a circular orbit. Faint ring = the orbital path, fading tail = recent trajectory, short amber vector = the <b>gravitational force</b>, always directed at the star.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Doubling \(r\) does not double \(T\) — it multiplies it by about 2.8.</b> That is Kepler's third law, \(T^2 \propto r^3\). The orbital speed obeys \(v = \sqrt{GM/r}\), so it drops as the orbit widens and rises with the star's mass. Notice too that gravity points at the star the entire time, yet the planet never falls in — it keeps moving sideways fast enough to keep missing.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Amber sphere = central mass \(M\) (drawn to scale, not to size). Coloured dot = a test particle on a circular orbit of radius \(r\). Faint ring = the orbit, fading tail = recent path, amber vector = the centripetal gravitational acceleration \(GM/r^2\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>The log-log slope is exactly \(3/2\), so doubling \(r\) multiplies \(T\) by \(2^{3/2} \approx 2.83\).</b> Equating gravitational and centripetal acceleration, \(GM/r^2 = v^2/r\), gives \(v = \sqrt{GM/r}\) and hence \[T = \frac{2\pi r}{v} = \frac{2\pi r^{3/2}}{\sqrt{GM}},\] so \(T^2 = (4\pi^2/GM)\,r^3\) and \(T \propto M^{-1/2}\), as the second test confirms. The simulation integrates this relation directly, so <b>Star mass (M)</b> is rescaling the Keplerian constant \(4\pi^2/GM\).</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>La colle invisible de l'univers</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Tiens un stylo en l'air et lâche-le. Il tombe — à chaque fois, sans exception. Cette traction tenace et invisible, c'est la <strong>gravité</strong>, et ce n'est pas seulement une affaire terrestre. Tout objet doté d'une masse attire tout autre objet, partout, toujours : toi sur ta chaise, la Lune sur les océans, le Soleil sur les huit planètes à la fois. C'est l'une des quatre forces fondamentales qui régissent l'univers — et la plus douce d'entre elles — et pourtant elle façonne tout, d'un stylo qui tombe au ciel nocturne tout entier.</p>
+<p>La règle qui se cache derrière est merveilleusement simple : plus un objet est massif, plus il attire fort. La Terre est si énorme que sa poigne retient les océans, l'air que tu respires et toi. Tiens-toi sur la Lune, bien moins massive, et ces mêmes jambes te propulseraient à trois mètres de haut. L'attraction ne s'éteint jamais — elle devient seulement plus douce à mesure que tu t'éloignes.</p>
+<p>Voici l'énigme qui a déconcerté les gens pendant des siècles : si le Soleil ne cesse d'attirer la Terre, pourquoi la Terre ne tombe-t-elle pas simplement dedans ? Imagine faire tournoyer une balle au bout d'une ficelle. La ficelle tire la balle vers l'intérieur, mais la balle ne cesse de filer sur le côté, si bien qu'elle tourne autour de ta main au lieu de la heurter. Les planètes font exactement cela. La Terre tombe éternellement vers le Soleil — et le manque éternellement, parce qu'elle file aussi sur le côté à une vitesse fantastique. Ce « tomber sans jamais atteindre » sans fin, c'est ce que nous appelons une <strong>orbite</strong>.</p>
+<p>Newton a trouvé une belle façon de l'imaginer. Pense à tirer un boulet de canon depuis le sommet d'une montagne incroyablement haute. Tire doucement et il retombe en arc peu loin. Tire plus fort et il atterrit plus loin. Tire assez fort — environ 28 000 km/h — et le sol se courbe sous lui exactement aussi vite que le boulet tombe. Maintenant il n'atterrit plus jamais : il est en orbite. C'est le même tour qu'utilise la Station spatiale internationale pour nous tourner autour toutes les quatre-vingt-dix minutes. Elle n'a pas échappé à la gravité — elle tombe simplement pour toujours, en manquant pour toujours la Terre.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🌙</span> Sur la Lune tu pèses 6 fois moins et tu pourrais sauter à plus de 3 mètres de haut — les mêmes muscles, une gravité bien plus faible !</li><li><span aria-hidden="true">🏋️</span> Sur Jupiter tu pèserais 2,5 fois plus — sortir du lit reviendrait à porter une deuxième personne sur ton dos.</li><li><span aria-hidden="true">🌍</span> La gravité maintient notre atmosphère en place. Sans elle, tout notre air s'échapperait dans l'espace et la Terre ressemblerait à Mars.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>La loi de la gravitation universelle de Newton</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Le coup de génie de Newton fut de voir que la pomme et la Lune obéissent à la <em>même</em> loi. Deux masses quelconques s'attirent avec une force \(F = \dfrac{GMm}{r^2}\) — proportionnelle aux deux masses, et décroissant avec le carré de la distance qui les sépare. Il l'exposa dans les <em>Principia</em> en 1687, et elle resta incontestée pendant deux siècles.</p>
+<p>Ce petit \(r^2\) au dénominateur fait un travail énorme. Double ta distance à une planète et la gravité chute au quart ; triple-la et te voilà au neuvième. L'attraction faiblit vite — mais elle n'atteint jamais tout à fait zéro, et c'est pourquoi le Soleil peut tenir Neptune en laisse sur 4,5 milliards de kilomètres, et pourquoi les galaxies tiennent ensemble à travers le noir.</p>
+<p>Une orbite est en réalité un bras de fer. La gravité tire une planète vers l'intérieur tandis que son mouvement latéral ne cesse de l'emporter plus loin ; ajuste exactement la vitesse et les deux se calent dans une ellipse fermée. Trop lente et elle spirale vers l'intérieur, trop rapide et elle s'échappe pour de bon. La vitesse d'équilibre à une distance \(r\) d'une étoile de masse \(M\) est \(v = \sqrt{GM/r}\), et elle porte une prédiction élégante : les planètes intérieures doivent aller plus vite que les extérieures. Mercure file vraiment tandis que Neptune se traîne.</p>
+<p>Une demi-vie avant Newton, Kepler avait déjà extrait trois régularités de la montagne de mesures à l'œil nu de Tycho Brahe — la plus frappante étant \(T^2 \propto a^3\), l'année d'une planète fixée par le cube de la taille de son orbite. Kepler trouva la régularité mais ne put dire <em>pourquoi</em> elle tenait. L'unique loi de Newton reproduisit d'un coup les trois règles de Kepler, prouvant que la pomme qui tombe et les planètes qui tournent obéissent à des mathématiques identiques. Ce fut la première fois que la physique se hissa au-delà du ciel.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Force gravitationnelle</th><td>\(F = \dfrac{GMm}{r^2}\)</td><td class="cmt">Newton, 1687</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Constante gravitationnelle</th><td>\(G = 6.674\times10^{-11}\ \text{N·m}^2\text{kg}^{-2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Vitesse orbitale</th><td>\(v = \sqrt{\dfrac{GM}{r}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Troisième loi de Kepler</th><td>\(T^2 = \dfrac{4\pi^2}{GM}\,a^3\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🛰️</span> L'ISS orbite à 7,66 km/s, effectuant un tour complet de la Terre toutes les 92 minutes — elle voit 16 levers de soleil par jour !</li><li><span aria-hidden="true">⚖️</span> Poids = mg. Sur Terre g ≈ 9,81 m/s². Sur Mars g ≈ 3,72 m/s², ce qui explique pourquoi les rovers peuvent faire de longs bonds.</li><li><span aria-hidden="true">🌊</span> Les marées naissent parce que la Lune attire le côté proche de la Terre plus fort que le côté éloigné, étirant l'océan en deux renflements.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>De Newton à Einstein : l'espace-temps courbe et la géométrie de la gravité</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Le principe d'équivalence : la pensée la plus heureuse d'Einstein</h3>
+<p>La loi de Newton est fabuleusement précise, et pourtant elle cache un embarras : elle fait traverser le cosmos à la gravité instantanément, sans mécanisme ni délai. L'échappatoire d'Einstein commença par une observation qu'il appela plus tard la pensée la plus heureuse de sa vie — une personne en chute libre ne ressent aucune gravité. Enjambe un rebord, ou mets-toi en orbite dans une station, et tu flottes ; l'attraction disparaît tout simplement. Le <strong>principe d'équivalence</strong> érige cela en loi : localement, gravité et accélération sont indiscernables. Et si la gravité peut être désactivée rien qu'en choisissant de tomber, alors elle ne peut pas vraiment être une force. Ce doit être quelque chose de la scène sur laquelle se joue le mouvement.</p>
+<h3><span class="hn">02</span>Espace-temps, métrique et géodésiques</h3>
+<p>Cette scène est l'<strong>espace-temps</strong> quadridimensionnel, et sa forme réside dans la <em>métrique</em> \(g_{\mu\nu}\), qui fixe l'intervalle — la distance ou le temps propre écoulé — entre événements voisins. Loin de toute masse la métrique est plate ; près d'une masse elle se gauchit. Une particule libre ne ressent aucune force ; elle glisse simplement le long du chemin le plus droit que la géométrie permet, une <strong>géodésique</strong>, obéissant à \(\ddot{x}^\mu + \Gamma^\mu_{\alpha\beta}\,\dot{x}^\alpha \dot{x}^\beta = 0\). Les symboles de Christoffel \(\Gamma\) font le travail que Newton confiait au champ gravitationnel. Wheeler comprima toute la théorie en une ligne : la matière dit à l'espace-temps comment se courber, et l'espace-temps courbe dit à la matière comment bouger.</p>
+<h3><span class="hn">03</span>Les équations du champ d'Einstein</h3>
+<p>Le pont entre ces deux propositions est \(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}\). Le côté gauche est de la pure géométrie — le tenseur d'Einstein \(G_{\mu\nu}\), distillé de la courbure de l'espace-temps — et le côté droit est tout ce qui porte énergie et quantité de mouvement, réuni dans le tenseur énergie-impulsion \(T_{\mu\nu}\). Ce sont dix équations aux dérivées partielles couplées et non linéaires, et cette non-linéarité est toute la personnalité de la théorie : la gravité elle-même porte de l'énergie, donc elle gravite, et les équations se replient sur elles-mêmes d'une manière que celles de Newton ne pouvaient pas. Le solitaire terme supplémentaire \(\Lambda\) fut, de l'aveu même d'Einstein, sa « plus grande bévue » — et c'est aujourd'hui notre principale explication de l'<strong>énergie noire</strong> qui écarte l'univers.</p>
+<h3><span class="hn">04</span>La solution de Schwarzschild et les trous noirs</h3>
+<p>Quelques mois après les équations du champ — et depuis une tranchée de la Première Guerre mondiale — Schwarzschild en trouva la première solution exacte : la géométrie autour d'une masse sphérique. Elle dissimule une surface à sens unique au <strong>rayon de Schwarzschild</strong> \(r_s = 2GM/c^2\), l'horizon des événements, au-delà duquel même la lumière ne peut ressortir. Comprime le Soleil dans 3 km, ou la Terre dans 9 mm, et tu as un trou noir. Pendant des décennies ils ressemblèrent à des pathologies des maths ; nous savons maintenant qu'ils sont réels et partout, des étoiles effondrées aux monstres supermassifs qui ancrent des galaxies entières.</p>
+<h3><span class="hn">05</span>Les tests classiques</h3>
+<p>Une théorie ne vaut que par les risques auxquels elle survit, et la relativité générale en affronta plusieurs. L'orbite de Mercure tourne lentement sur elle-même — précessant de 43 secondes d'arc par siècle de plus que Newton ne l'autorise — et la relativité générale prédit ce chiffre exactement, sans rien à ajuster. La lumière des étoiles se courbe en frôlant le Soleil, ce qu'Eddington confirma lors de l'éclipse de 1919 et qui rendit Einstein célèbre du jour au lendemain. Les horloges plus profondes dans un puits gravitationnel ralentissent, de \(d\tau/dt = \sqrt{1 - r_s/r}\) ; ton téléphone le prouve chaque seconde, car les horloges des satellites GPS avancent d'environ \(38\ \mu\text{s}\) par jour par rapport aux nôtres, et l'ignorer ferait dériver la navigation d'une dizaine de km en un jour.</p>
+<h3><span class="hn">06</span>Des ondulations dans l'espace-temps</h3>
+<p>Si l'espace-temps peut se courber, il peut aussi frémir. Des masses en accélération émettent des <strong>ondes gravitationnelles</strong> — des ondulations de la métrique filant vers l'extérieur à \(c\) — mais elles sont désespérément faibles. Il fallut un siècle et deux interféromètres laser de 4 km (LIGO) pour en ressentir une : le 14 septembre 2015 la fusion de deux trous noirs à 1,3 milliard d'années-lumière étira et comprima chaque bras de moins d'un millième de la largeur d'un proton. Du jour au lendemain nous avons gagné un sens nouveau, capable d'entendre des cataclysmes qui n'émettent aucune lumière.</p>
+<h3><span class="hn">07</span>Rotation, cosmologie et la théorie inachevée</h3>
+<p>Les vrais trous noirs tournent, et la solution de Kerr (1963) les décrit : un trou en rotation entraîne l'espace-temps avec lui et enveloppe une <em>ergosphère</em> hors de l'horizon, une région d'où l'on peut en principe extraire de l'énergie. Portées à l'échelle du ciel entier, les mêmes équations donnent à la cosmologie moderne son univers en expansion dominé par \(\Lambda\), et l'Event Horizon Telescope a désormais photographié les ombres de M87* (2019) et de notre propre Sgr A* (2022), chacune exactement de la taille qu'exige la relativité générale. Et pourtant la théorie est incomplète : à une singularité elle prédit son propre effondrement, et marier sa géométrie lisse à la mécanique quantique reste le problème ouvert le plus profond de la physique.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Équations du champ d'Einstein</th><td>\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \dfrac{8\pi G}{c^4} T_{\mu\nu}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Équation géodésique</th><td>\(\ddot{x}^\mu + \Gamma^\mu_{\alpha\beta}\,\dot{x}^\alpha \dot{x}^\beta = 0\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Rayon de Schwarzschild</th><td>\(r_s = \dfrac{2GM}{c^2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Précession du périhélie</th><td>\(\Delta\varphi = \dfrac{6\pi GM}{c^2 a (1-e^2)}\)</td><td class="cmt">par orbite</td></tr>
+<tr><th scope="row">Dilatation gravitationnelle du temps</th><td>\(\dfrac{d\tau}{dt} = \sqrt{1 - \dfrac{r_s}{r}}\)</td><td class="cmt">métrique de Schwarzschild</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">⌛</span> Les horloges GPS gagnent ~45μs/jour à cause de la gravité plus faible (relativité générale) et perdent ~7μs/jour à cause de la vitesse orbitale (relativité restreinte). Sans correction, le GPS dériverait de ~10 km par jour.</li><li><span aria-hidden="true">🌀</span> Les ondes gravitationnelles furent détectées pour la première fois par LIGO le 14 septembre 2015, provenant de deux trous noirs fusionnant à 1,3 milliard d'années-lumière.</li><li><span aria-hidden="true">🔭</span> L'Event Horizon Telescope a résolu une ombre de 40 μas autour de M87* — l'équivalent de lire un journal à New York depuis Paris.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Gravity" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Physique</h2>
+    <ul><li><a href="/fr/mouvement-des-projectiles/">Le mouvement des projectiles</a></li><li><a href="/fr/ondes-interferences/">Ondes et interférences</a></li><li><a href="/fr/chaleur-thermodynamique/">Chaleur et thermodynamique</a></li><li><a href="/fr/modele-standard/">Le Modèle standard</a></li><li><a href="/fr/lois-du-mouvement-de-newton/">Les lois du mouvement de Newton</a></li><li><a href="/fr/loi-d-ohm-circuits/">Loi d'Ohm et circuits</a></li><li><a href="/fr/etats-de-la-matiere/">Les états de la matière</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>
