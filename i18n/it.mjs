@@ -64,8 +64,286 @@ export default {
     runSim:'▶ Avvia la simulazione interattiva',
     explainedSimulated:'Spiegato e simulato'
   },
-  slugs: { gaslaws: 'leggi-dei-gas', moonphases: 'fasi-lunari', protein: 'sintesi-proteica', pendulum: 'pendolo-moto-armonico', optics: 'ottica-luce-lenti', memory: 'come-funziona-la-memoria', sleep: 'sonno-coscienza', neuro: 'cervello-neuroni', neuron: 'cervello-elettrico', astro: 'stelle-universo', cosmology: 'cosmologia-big-bang', organic: 'chimica-organica-molecole-vita', acids: 'acidi-basi-ph', periodic: 'tavola-periodica', balancing: 'bilanciare-equazioni-chimiche', chem: 'atomi-legami-chimici', electrochem: 'elettrochimica-batterie', kinetics: 'cinetica-equilibrio', volcano: 'vulcanologia', seasons: 'perche-abbiamo-le-stagioni', climate: 'clima-atmosfera', tectonics: 'tettonica-a-placche-terremoti', ocean: 'oceanografia-correnti-oceaniche', sorting: 'algoritmi-di-ordinamento', ml: 'machine-learning-reti-neurali', crypto: 'crittografia-sicurezza', complexity: 'computazione-complessita', ecosystem: 'ecosistemi-reti-alimentari', cell: 'cellula-osmosi-diffusione', mitosis: 'mitosi-meiosi', punnett: 'quadrati-di-punnett-genetica', life: 'regole-della-vita', dna: 'dna-genetica', evolution: 'evoluzione-selezione-naturale', graphs: 'teoria-dei-grafi-reti', trig: 'trigonometria-cerchio-unitario', prob: 'probabilita-curva-a-campana', fractal: 'frattali-infinito', calculus: 'calcolo-cambiamento', circuits: 'legge-di-ohm-circuiti', states: 'stati-della-materia', thermo: 'calore-termodinamica', particles: 'modello-standard', newton: 'leggi-del-moto-di-newton', gravity: 'gravita-orbite', projectile: 'moto-dei-proiettili', waves: 'onde-interferenza', photosynthesis: 'fotosintesi', eclipse: 'eclissi', meteors: 'stelle-cadenti', blackholes: 'buchi-neri', solarsystem: 'sistema-solare' },
+  slugs: { seriesparallel: 'circuiti-serie-parallelo', respiration: 'respirazione-cellulare', watercycle: 'ciclo-dell-acqua', energy: 'energia-conservazione', gaslaws: 'leggi-dei-gas', moonphases: 'fasi-lunari', protein: 'sintesi-proteica', pendulum: 'pendolo-moto-armonico', optics: 'ottica-luce-lenti', memory: 'come-funziona-la-memoria', sleep: 'sonno-coscienza', neuro: 'cervello-neuroni', neuron: 'cervello-elettrico', astro: 'stelle-universo', cosmology: 'cosmologia-big-bang', organic: 'chimica-organica-molecole-vita', acids: 'acidi-basi-ph', periodic: 'tavola-periodica', balancing: 'bilanciare-equazioni-chimiche', chem: 'atomi-legami-chimici', electrochem: 'elettrochimica-batterie', kinetics: 'cinetica-equilibrio', volcano: 'vulcanologia', seasons: 'perche-abbiamo-le-stagioni', climate: 'clima-atmosfera', tectonics: 'tettonica-a-placche-terremoti', ocean: 'oceanografia-correnti-oceaniche', sorting: 'algoritmi-di-ordinamento', ml: 'machine-learning-reti-neurali', crypto: 'crittografia-sicurezza', complexity: 'computazione-complessita', ecosystem: 'ecosistemi-reti-alimentari', cell: 'cellula-osmosi-diffusione', mitosis: 'mitosi-meiosi', punnett: 'quadrati-di-punnett-genetica', life: 'regole-della-vita', dna: 'dna-genetica', evolution: 'evoluzione-selezione-naturale', graphs: 'teoria-dei-grafi-reti', trig: 'trigonometria-cerchio-unitario', prob: 'probabilita-curva-a-campana', fractal: 'frattali-infinito', calculus: 'calcolo-cambiamento', circuits: 'legge-di-ohm-circuiti', states: 'stati-della-materia', thermo: 'calore-termodinamica', particles: 'modello-standard', newton: 'leggi-del-moto-di-newton', gravity: 'gravita-orbite', projectile: 'moto-dei-proiettili', waves: 'onde-interferenza', photosynthesis: 'fotosintesi', eclipse: 'eclissi', meteors: 'stelle-cadenti', blackholes: 'buchi-neri', solarsystem: 'sistema-solare' },
   t: {
+    seriesparallel: {
+      title: 'Circuiti in serie e in parallelo',
+      teaser: `Collega due lampadine una dopo l'altra e si affievoliscono entrambe; collegale affiancate e brillano entrambe. Stessi componenti, comportamento opposto — ed è esattamente perché casa tua è cablata così com'è.`,
+      chips: ['Circuiti', 'Resistenza', 'Corrente'],
+      lvls: {
+        junior: {
+          title: `Due modi di cablare, due risultati molto diversi`,
+          body: `<p>Prendi una batteria e due lampadine identiche. Ci sono due modi di collegarle, e si comportano in modi sorprendentemente opposti. Cabla le lampadine una dopo l'altra, in un unico anello, e hai un <strong>circuito in serie</strong>. Cabla ogni lampadina sul proprio ramo separato, affiancate, e hai un <strong>circuito in parallelo</strong>. Stessa batteria, stesse lampadine — risultati completamente diversi.</p>
+<p>In <strong>serie</strong>, la stessa corrente deve infilarsi attraverso entrambe le lampadine, prima una poi l'altra, come perline su un solo filo. Poiché le due lampadine si dividono la spinta di una batteria, ciascuna ne riceve solo metà, così brillano entrambe fioche. Peggio, se una lampadina si fulmina, l'anello è interrotto ed <em>entrambe</em> si spengono — è esattamente come le vecchie luci di Natale facevano infuriare tutti: una sola guasta uccideva l'intera fila.</p>
+<p>In <strong>parallelo</strong>, ogni lampadina ha il proprio percorso dritto alla batteria, così ognuna sente la spinta piena della batteria e splende luminosa. Svitane una e l'altra continua a brillare, perché il suo percorso è intatto. Ecco perché casa tua è cablata in parallelo: ogni lampada ed elettrodomestico riceve la tensione piena, e spegnere il bollitore non piomba tutta la casa nel buio. Nella simulazione qui sotto, alterna tra i due e guarda le lampadine.</p>`,
+          facts: [
+            { e: '🎄', t: `Le vecchie luci di Natale erano cablate in serie, così una singola lampadina bruciata spegneva l'intera fila — quelle moderne usano trucchi astuti simili al parallelo per evitarlo.` },
+            { e: '🏠', t: `Ogni casa è cablata in parallelo: ecco perché ogni presa eroga i 230 (o 120) volt pieni, e perché il guasto di un elettrodomestico non uccide tutti gli altri.` },
+            { e: '🔦', t: `Una torcia con due batterie in serie raddoppia la tensione per spingere più forte; metterle in parallelo invece manterrebbe la tensione ma farebbe durare le batterie il doppio.` },
+          ],
+          formula: null, sim: 'seriesparallel',
+        },
+        student: {
+          title: `Sommare le resistenze, e come si dividono corrente e tensione`,
+          body: `<p>I due cablaggi obbediscono a regole speculari. In <strong>serie</strong>, c'è un solo percorso, così la stessa corrente \\(I\\) scorre ovunque, e le resistenze semplicemente si sommano: \\(R_{\\text{serie}} = R_1 + R_2\\). La tensione della batteria si divide tra i componenti in proporzione alla loro resistenza. Due lampadine da \\(10\\ \\Omega\\) su una batteria da \\(6\\ \\text{V}\\) danno \\(20\\ \\Omega\\) totali e una corrente di appena \\(0.3\\ \\text{A}\\), con \\(3\\ \\text{V}\\) caduti su ciascuna lampadina.</p>
+<p>In <strong>parallelo</strong>, ogni ramo sente la tensione <em>piena</em> della batteria, e sono le correnti a sommarsi. Le resistenze si combinano in modo reciproco: \\(\\dfrac{1}{R_{\\text{par}}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2}\\), che dà sempre un totale <em>più piccolo</em> di ciascun ramo. Quelle stesse due lampadine da \\(10\\ \\Omega\\) ora fanno appena \\(5\\ \\Omega\\), tirando \\(1.2\\ \\text{A}\\) dalla batteria — quattro volte la corrente in serie — con ogni lampadina che riceve i \\(6\\ \\text{V}\\) pieni e brilla molto più luminosa.</p>
+<p>La luminosità segue la <strong>potenza</strong>, \\(P = VI = I^2R\\). In serie ogni lampadina dissipa \\(I^2R = 0.3^2\\times10 \\approx 0.9\\ \\text{W}\\); in parallelo ognuna brucia \\(0.6^2\\times10 = 3.6\\ \\text{W}\\), quattro volte tanto. Quel fattore quattro è esattamente ciò che vedi come salto di luminosità. Avverte anche perché i rami in parallelo possono sovraccaricare un'alimentazione: aggiungine altri e la corrente totale continua a salire, ed è ciò che fa scattare il salvavita di casa.</p>`,
+          facts: [
+            { e: '⚡', t: `La resistenza in parallelo è sempre minore del ramo più piccolo: aggiungi una seconda resistenza identica e il totale si dimezza, perché hai aperto una seconda corsia per la corrente.` },
+            { e: '🔌', t: `Aggiungere elettrodomestici in parallelo aumenta la corrente totale prelevata — collegane troppi a un circuito e il filo si surriscalda, ed è esattamente ciò che un fusibile o un salvavita è lì a fermare.` },
+            { e: '🔋', t: `Le batterie in serie sommano le loro tensioni (due celle da 1,5 V → 3 V); in parallelo mantengono la tensione ma si dividono il carico, durando di più e fornendo più corrente.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Resistenza in serie', e: 'R_s = R_1 + R_2', c: 'stessa corrente I' },
+            { n: 'Resistenza in parallelo', e: '\\dfrac{1}{R_p} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2}', c: 'stessa tensione V' },
+            { sep: 1 },
+            { n: 'Legge di Ohm', e: 'V = IR' },
+            { n: 'Potenza', e: 'P = VI = I^2 R' },
+            { sep: 1 },
+            { n: 'La serie divide V', e: 'V_1:V_2 = R_1:R_2' },
+            { n: 'Il parallelo divide I', e: 'I_1:I_2 = R_2:R_1' },
+          ] }, sim: 'seriesparallel',
+        },
+        scholar: {
+          title: `Le leggi di Kirchhoff, sorgenti reali e riduzione di reti`,
+          body: `<h4><span class="hn">01</span>Le due leggi di conservazione dietro ogni circuito</h4>
+<p>Serie e parallelo sono solo casi particolari di due regole più profonde. La <strong>legge delle correnti di Kirchhoff</strong> dice che la carica si conserva a ogni nodo — correnti entranti uguali a correnti uscenti, \\(\\sum I = 0\\) — ed è il <em>perché</em> le correnti dei rami in parallelo si sommano. La <strong>legge delle tensioni di Kirchhoff</strong> dice che l'energia si conserva lungo ogni anello — le salite e cadute di tensione sommano a zero, \\(\\sum V = 0\\) — ed è il <em>perché</em> le tensioni in serie si dividono. Ogni analisi di circuito, per quanto aggrovigliata, si riduce ad applicare queste due affermazioni.</p>
+<h4><span class="hn">02</span>Collassare una rete</h4>
+<p>Con quelle leggi puoi rimpicciolire qualsiasi rete di resistori fondendo ripetutamente gruppi in serie e in parallelo in equivalenti, finché non resta una sola resistenza. I circuiti che resistono a questo — il classico <em>ponte di Wheatstone</em> — richiedono le equazioni simultanee complete (analisi ai nodi o alle maglie), che è in realtà solo le leggi di Kirchhoff scritte come algebra lineare. Il ponte non è una curiosità: bilanciato, misura una resistenza incognita con precisione squisita, ed è alla base di estensimetri e innumerevoli sensori.</p>
+<h4><span class="hn">03</span>Nessuna batteria è ideale</h4>
+<p>Le sorgenti reali hanno una <strong>resistenza interna</strong> \\(r\\), così la tensione che ottieni davvero cede sotto carico: \\(V_{\\text{morsetti}} = \\varepsilon - Ir\\). Ecco perché i fari di un'auto si affievoliscono per un istante quando il motorino d'avviamento — un carico enorme a bassa resistenza — tira centinaia di ampere, e perché una batteria quasi scarica (la cui \\(r\\) è salita) può leggere una tensione sana eppure collassare nel momento in cui le chiedi corrente. La batteria ideale degli schemi è sempre un'approssimazione.</p>
+<h4><span class="hn">04</span>Massima potenza, e il suo costo</h4>
+<p>Quanto carico estrae la massima potenza da una sorgente reale? Il <strong>teorema del massimo trasferimento di potenza</strong> dice che la potenza erogata culmina quando la resistenza di carico eguaglia la resistenza interna della sorgente, \\(R_L = r\\). Ma a quel match solo <em>metà</em> dell'energia raggiunge il carico; il resto è sprecato a scaldare la sorgente. L'elettronica di potenza evita quindi deliberatamente la condizione di match — la rete elettrica gira \\(R_L \\gg r\\) per efficienza — mentre gli ingegneri radio e audio abbracciano il match, dove trasferire il segnale conta più che sprecare un po' di potenza.</p>
+<h4><span class="hn">05</span>Quando i componenti ricordano: i transitori</h4>
+<p>Aggiungi un condensatore o un induttore e il circuito acquista memoria del tempo. Un circuito <em>RC</em> si carica e scarica su una scala temporale \\(\\tau = RC\\), seguendo \\(V(t) = V_0(1 - e^{-t/\\tau})\\); un circuito <em>RL</em> fa la cosa analoga con \\(\\tau = L/R\\). Questi transitori esponenziali fissano quanto in fretta un circuito può commutare, filtrano quali frequenze passano e — concatenati insieme — diventano gli elementi di temporizzazione e i filtri al cuore di ogni dispositivo elettronico.</p>
+<h4><span class="hn">06</span>Oltre gli elementi concentrati</h4>
+<p>Tutto questo assume componenti <em>concentrati</em> uniti da fili senza resistenza — un'approssimazione che regge finché il circuito è molto più piccolo della lunghezza d'onda del segnale. Spingi ad alte frequenze e i fili stessi diventano linee di trasmissione con la propria impedenza, i segnali si riflettono sui disadattamenti, e le ordinate leggi di Kirchhoff cedono il passo alle equazioni di Maxwell. L'umile distinzione serie-parallelo è il primo gradino di una scala che sale fino all'ingegneria delle microonde e alla progettazione di ogni chip digitale veloce.</p>`,
+          facts: [
+            { e: '🌉', t: `Il ponte di Wheatstone, non riducibile con semplice riduzione serie-parallelo, misura resistenze incognite con alta precisione ed è la base degli estensimetri in bilance e sensori di carico.` },
+            { e: '🚗', t: `La resistenza interna spiega perché i fari si affievoliscono quando aziona il motorino d'avviamento: l'enorme corrente dell'avviamento abbassa la tensione ai morsetti attraverso la resistenza stessa della batteria.` },
+            { e: '⏱️', t: `La costante di tempo τ = RC di un circuito RC fissa la velocità di tutto, dai flash delle macchine fotografiche alla temporizzazione del clock dentro i microprocessori — la carica esponenziale è ovunque.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Corrente di Kirchhoff', e: '\\textstyle\\sum I_{\\text{in}} = \\sum I_{\\text{out}}' },
+            { n: 'Tensione di Kirchhoff', e: '\\textstyle\\sum_{\\text{anello}} V = 0' },
+            { sep: 1 },
+            { n: 'Tensione ai morsetti', e: 'V = \\varepsilon - Ir', c: 'resistenza interna r' },
+            { n: 'Max trasferimento potenza', e: 'R_L = r', c: 'solo 50% efficiente' },
+            { sep: 1 },
+            { n: 'Transitorio RC', e: 'V(t) = V_0(1 - e^{-t/RC})' },
+            { n: 'Costante di tempo', e: '\\tau = RC' },
+          ] }, sim: 'seriesparallel',
+        },
+      },
+    },
+    respiration: {
+      title: 'La respirazione cellulare',
+      teaser: `Ogni cellula del tuo corpo brucia zucchero con l'ossigeno per fare ATP, il carburante universale della vita — un fuoco lento e squisitamente controllato che alimenta tutto ciò che fai.`,
+      chips: ['ATP', 'Mitocondri', 'Metabolismo'],
+      lvls: {
+        junior: {
+          title: `Come le tue cellule trasformano il cibo in energia`,
+          body: `<p>Mangi cibo per ottenere energia — ma il tuo corpo non può bruciare un panino in una grande fiammata. Invece, ognuna dei tuoi migliaia di miliardi di cellule fa girare una versione lenta, attenta e controllata della combustione chiamata <strong>respirazione cellulare</strong>. Prende lo zucchero dal tuo cibo, lo combina con l'ossigeno che respiri e rilascia l'energia immagazzinata poco a poco, in sicurezza, esattamente dove e quando la cellula ne ha bisogno.</p>
+<p>L'energia non esce come una fiamma — esce come una minuscola molecola-batteria ricaricabile chiamata <strong>ATP</strong>. Pensa all'ATP come alla valuta energetica universale della vita: ogni volta che una cellula deve fare qualcosa — flettere un muscolo, far scattare un nervo, costruire una proteina — spende ATP. L'intero compito della respirazione è continuare a fabbricare ATP fresco, e lo fa a un ritmo stupefacente.</p>
+<p>La maggior parte di questo avviene dentro minuscole strutture a forma di fagiolo chiamate <strong>mitocondri</strong>, le centrali elettriche della cellula. Entrano glucosio e ossigeno; escono anidride carbonica, acqua e tanto ATP. Quell'anidride carbonica è esattamente ciò che espiri — così ogni espirazione è le tue cellule che finiscono il lavoro. Nella simulazione qui sotto, dai a un mitocondrio glucosio e ossigeno e guarda l'ATP sgorgare.</p>`,
+          facts: [
+            { e: '🔋', t: `Il tuo corpo fabbrica e spende ogni singolo giorno il proprio peso in ATP — ma ne trattieni solo una quantità minuscola alla volta, riciclando ogni molecola migliaia di volte al giorno.` },
+            { e: '🫁', t: `L'anidride carbonica che espiri viene dritta dalle tue cellule che bruciano zucchero — ogni espirazione è lo scarico della respirazione cellulare.` },
+            { e: '🏃', t: `Quando scatti più forte di quanto i polmoni possano fornire ossigeno, i muscoli passano a un rapido rimedio senza ossigeno che produce molta meno energia e lascia dietro di sé l'acido lattico che ti fa indolenzire.` },
+          ],
+          formula: null, sim: 'respiration',
+        },
+        student: {
+          title: `Glicolisi, ciclo di Krebs e catena di trasporto degli elettroni`,
+          body: `<p>La respirazione cellulare estrae energia dal glucosio in tre stadi collegati, riassunti da un'equazione ingannevolmente semplice: \\(C_6H_{12}O_6 + 6O_2 \\to 6CO_2 + 6H_2O + \\text{ATP}\\). Prima viene la <strong>glicolisi</strong>, nel citoplasma: il glucosio è scisso in due molecole di piruvato, con una piccola resa netta di 2 ATP e un po' di NADH portatore di elettroni. Fatto cruciale, la glicolisi non ha bisogno di ossigeno — è il nucleo antico che tutta la vita condivide.</p>
+<p>Se l'ossigeno è presente, il piruvato entra nel mitocondrio per il <strong>ciclo di Krebs</strong> (ciclo dell'acido citrico), che lo smonta, rilasciando \\(CO_2\\) e caricando altri portatori di elettroni — NADH e FADH₂. Questi portatori sono il vero premio: traghettano elettroni ad alta energia al terzo stadio, la <strong>catena di trasporto degli elettroni</strong>, costellata sulla membrana interna del mitocondrio, dove il grosso dell'ATP è finalmente fatto.</p>
+<p>Il conteggio è sbilanciato. Glicolisi e ciclo di Krebs fanno solo una manciata di ATP direttamente; la catena di trasporto degli elettroni, usando l'ossigeno come accettore finale di elettroni, produce l'altro ~90% — circa 30–32 ATP per glucosio in totale. Togli l'ossigeno e può girare solo la glicolisi: le cellule ripiegano sulla <strong>fermentazione</strong>, recuperando appena 2 ATP e producendo lattato (nei tuoi muscoli) o etanolo e \\(CO_2\\) (nel lievito). L'ossigeno vale grosso modo un aumento di quindici volte in energia.</p>`,
+          facts: [
+            { e: '🧬', t: `La glicolisi è così antica e universale che gira in quasi ogni essere vivente, dai batteri a te — si è evoluta prima che l'atmosfera terrestre avesse persino ossigeno.` },
+            { e: '🍞', t: `La fermentazione del lievito fa lievitare il pane e fermentare la birra: privo di ossigeno, il lievito trasforma lo zucchero in etanolo e CO₂ — la stessa via che usano i tuoi muscoli affamati di ossigeno, solo con un prodotto finale diverso.` },
+            { e: '⚡', t: `La respirazione aerobica rende ~15× più ATP per glucosio della fermentazione. Quell'efficienza è perché la vita complessa e affamata di energia poté fiorire solo dopo che l'ossigeno riempì l'aria.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Reazione complessiva', e: 'C_6H_{12}O_6 + 6O_2 \\to 6CO_2 + 6H_2O' },
+            { sep: 1 },
+            { n: 'Glicolisi', e: '\\text{glucosio} \\to 2\\,\\text{piruvato} + 2\\,\\text{ATP}', c: 'senza ossigeno' },
+            { n: 'Ciclo di Krebs', e: '\\to CO_2 + \\text{NADH} + \\text{FADH}_2' },
+            { n: 'Trasporto elettroni', e: '\\text{NADH} + O_2 \\to \\text{ATP} + H_2O' },
+            { sep: 1 },
+            { n: 'Resa aerobica', e: '\\approx 30\\text{–}32\\ \\text{ATP/glucosio}' },
+            { n: 'Fermentazione', e: '2\\ \\text{ATP/glucosio}', c: 'anaerobica' },
+          ] }, sim: 'respiration',
+        },
+        scholar: {
+          title: `Chemiosmosi, forza proton-motrice e l'origine dei mitocondri`,
+          body: `<h4><span class="hn">01</span>L'idea che sembrava impossibile</h4>
+<p>Per decenni i biochimici cercarono un intermedio chimico che portasse l'energia dal cibo all'ATP, e non lo trovarono mai. L'<strong>ipotesi chemiosmotica</strong> di Peter Mitchell (1961) spiegò perché: non ce n'è uno. La catena di trasporto degli elettroni pompa invece protoni attraverso la membrana interna del mitocondrio, immagazzinando energia non in una molecola ma in un <em>gradiente</em> — una batteria elettrochimica di \\(H^+\\). L'idea era così eterodossa da essere ridicolizzata per anni prima di vincere il premio Nobel 1978.</p>
+<h4><span class="hn">02</span>La forza proton-motrice</h4>
+<p>Quel gradiente è la <strong>forza proton-motrice</strong>, e ha due parti: una differenza di concentrazione di \\(H^+\\) (un gradiente di pH) e una differenza di carica (una tensione di membrana di circa \\(-150\\ \\text{mV}\\)), combinate come \\(\\Delta p = \\Delta\\psi - \\tfrac{2.3RT}{F}\\Delta\\text{pH}\\). Gli elettroni che scendono a cascata lungo la catena da NADH all'ossigeno rilasciano energia a gradini, e ogni complesso principale la usa per spingere protoni in salita, fuori dalla matrice — caricando la membrana come un condensatore.</p>
+<h4><span class="hn">03</span>Un motore rotante fatto di proteina</h4>
+<p>L'energia immagazzinata è riscossa dall'<strong>ATP sintasi</strong>, una delle macchine più stupefacenti della biologia: una turbina molecolare. I protoni che rifluiscono giù per il loro gradiente attraverso l'enzima fanno fisicamente <em>ruotare</em> un rotore fino a cento giri al secondo, e quella rotazione forza meccanicamente ADP e fosfato insieme in ATP. È un motore rotante di pochi nanometri, alimentato da una corrente di protoni — conferma diretta e visibile del gradiente di Mitchell, poiché la rotazione dell'albero è stata filmata.</p>
+<h4><span class="hn">04</span>Perché l'ossigeno, e perché conta</h4>
+<p>Il ruolo dell'ossigeno è sottile ma decisivo: è semplicemente l'<em>accettore finale di elettroni</em>, seduto alla fine della catena a raccogliere gli elettroni esausti e formare acqua. Eppure senza di esso l'intera catena si ingorga — i portatori restano ridotti, il pompaggio di protoni si ferma, e la sintesi di ATP tramite fosforilazione ossidativa si arresta in pochi secondi. L'eccezionale affinità elettronica dell'ossigeno è ciò che rende l'intera cascata così energeticamente ripida, e quindi così produttiva; è la ragione termodinamica per cui la vita aerobica surclassa in potenza tutto ciò che è anaerobico.</p>
+<h4><span class="hn">05</span>Ospiti diventati organi</h4>
+<p>I mitocondri hanno il proprio DNA circolare, i propri ribosomi e doppie membrane — perché un tempo erano batteri a vita libera. La <strong>teoria endosimbiotica</strong> (Lynn Margulis) sostiene che circa due miliardi di anni fa una cellula inghiottì un batterio aerobico e, invece di digerirlo, lo tenne come centrale elettrica. Ogni mitocondrio nel tuo corpo è un discendente di quell'antico prigioniero, e li erediti tutti da tua madre — ed è così che il DNA mitocondriale traccia le linee materne indietro attraverso la storia umana.</p>
+<h4><span class="hn">06</span>Il doppio taglio della catena</h4>
+<p>La stessa macchina che ti alimenta ti mette anche in pericolo. Gli elettroni occasionalmente sfuggono dalla catena e riducono l'ossigeno solo in parte, producendo <strong>specie reattive dell'ossigeno</strong> — radicali liberi implicati nell'invecchiamento e nella malattia. Le cellule sfruttano deliberatamente anche fughe controllate: le <em>proteine disaccoppianti</em> lasciano rifluire i protoni senza fare ATP, dissipando il gradiente come puro calore, ed è così che il grasso bruno scalda i neonati e gli animali in letargo. La respirazione non è solo una fonte di energia ma una manopola finemente regolata tra fare ATP e fare calore.</p>`,
+          facts: [
+            { e: '🔄', t: `L'ATP sintasi è un motore rotante: i protoni che vi scorrono attraverso fanno girare un albero proteico fino a 100 volte al secondo, forgiando meccanicamente ATP — una turbina larga appena 10 nanometri.` },
+            { e: '🧬', t: `I mitocondri portano il proprio DNA ed erano un tempo batteri a vita libera (teoria endosimbiotica). Li erediti solo da tua madre, rendendo il DNA mitocondriale un tracciante dell'ascendenza materna.` },
+            { e: '🔥', t: `Il grasso bruno "disaccoppia" deliberatamente la respirazione — lasciando rifluire i protoni senza fare ATP — per bruciare carburante puramente come calore, tenendo caldi neonati e animali in letargo.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Forza proton-motrice', e: '\\Delta p = \\Delta\\psi - \\tfrac{2.3RT}{F}\\Delta\\text{pH}' },
+            { n: 'Potenziale di membrana', e: '\\Delta\\psi \\approx -150\\ \\text{mV}' },
+            { sep: 1 },
+            { n: 'ATP sintasi', e: '\\text{ADP} + P_i + H^+_{\\text{out}} \\to \\text{ATP}' },
+            { n: 'Stechiometria', e: '\\approx 4\\,H^+\\ \\text{per ATP}' },
+            { sep: 1 },
+            { n: 'Salto redox', e: '\\text{NADH}\\to O_2:\\ \\Delta E \\approx 1.14\\ \\text{V}' },
+            { n: 'Energia libera ATP', e: '\\Delta G \\approx -30.5\\ \\text{kJ/mol}', c: 'idrolisi' },
+          ] }, sim: 'respiration',
+        },
+      },
+    },
+    watercycle: {
+      title: `Il ciclo dell'acqua`,
+      teaser: `La Terra ha quasi esattamente la stessa acqua di quattro miliardi di anni fa — usata, pulita e riusata senza fine. Il Sole la solleva, le nuvole la trasportano, la pioggia la restituisce.`,
+      chips: ['Evaporazione', 'Nuvole', 'Precipitazioni'],
+      lvls: {
+        junior: {
+          title: `L'infinita macchina di riciclo dell'acqua della Terra`,
+          body: `<p>Ecco un pensiero strano: l'acqua nel tuo bicchiere è <em>vecchia</em>. Le stesse identiche molecole d'acqua sono in giro da miliardi di anni, bevute dai dinosauri, congelate in antichi ghiacciai, piovute sulle strade romane — usate, pulite e riusate senza fine. La Terra non fabbrica mai acqua nuova e non ne perde mai; si limita a spostare la stessa scorta in un gigantesco anello chiamato <strong>ciclo dell'acqua</strong>.</p>
+<p>Il motore è il <strong>Sole</strong>. Il suo calore solleva l'acqua da oceani, laghi e fiumi come un gas invisibile — il <strong>vapore acqueo</strong> — in un processo detto <strong>evaporazione</strong>. Il vapore galleggia verso l'alto, e in alto nel cielo dove l'aria è fredda si raffredda e si aggruma di nuovo in minuscole goccioline, radunandosi in <strong>nuvole</strong>. È la <strong>condensazione</strong>: la stessa cosa che appanna una finestra fredda o imperla una bibita ghiacciata.</p>
+<p>Quando le goccioline di una nuvola diventano abbastanza pesanti, cadono — come pioggia, neve o grandine — ed è la <strong>precipitazione</strong>. Un po' filtra nel terreno diventando acqua sotterranea, un po' scorre a valle in ruscelli e fiumi, e tutta alla fine torna al mare, pronta a risalire. Giro e giro, per sempre. Nella simulazione qui sotto, scalda il Sole e guarda l'acqua evaporare, formare nuvole e ripiovere.</p>`,
+          facts: [
+            { e: '🦕', t: `L'acqua che hai bevuto oggi è stata riciclata per oltre 4 miliardi di anni — alcune di quelle molecole erano quasi certamente un tempo dentro un dinosauro.` },
+            { e: '☁️', t: `Una singola nuvola può contenere centinaia di tonnellate d'acqua, eppure galleggia perché quell'acqua è distribuita in miliardi di goccioline troppo piccole e leggere per cadere.` },
+            { e: '🌊', t: `Circa il 90% dell'acqua che evapora viene dagli oceani — e una molecola d'acqua passa in media solo circa nove giorni in aria prima di ricadere.` },
+          ],
+          formula: null, sim: 'watercycle',
+        },
+        student: {
+          title: `Cambiamenti di stato, calore latente e il bilancio idrico globale`,
+          body: `<p>Il ciclo dell'acqua è in realtà una storia di <strong>cambiamenti di stato</strong> e dell'energia che portano. Per trasformare l'acqua liquida in vapore devi fornire il suo <strong>calore latente di vaporizzazione</strong>, ben \\(2.26\\ \\text{MJ/kg}\\) — energia assorbita dall'ambiente (ed è esattamente per questo che sudare ti raffredda). Quando quel vapore condensa poi in una nuvola, tutto quel calore viene rilasciato di nuovo, scaldando l'atmosfera. L'evaporazione sposta silenziosamente enormi quantità di energia dalla superficie al cielo.</p>
+<p>Quanto vapore l'aria può contenere sale ripidamente con la temperatura: l'aria più calda è più assetata. Una volta che l'aria è satura (umidità relativa 100%), qualsiasi ulteriore raffreddamento forza la condensazione. È per questo che le nuvole si formano quando l'aria umida sale e si raffredda, perché la rugiada appare nelle mattine fredde, e perché la temperatura a cui inizia la condensazione — il <strong>punto di rugiada</strong> — è un numero meteorologico così utile.</p>
+<p>Globalmente i conti devono tornare. Ogni anno circa \\(5\\times10^{5}\\ \\text{km}^3\\) d'acqua evapora e la stessa quantità cade come precipitazione. Gli oceani perdono per evaporazione un po' più di quanto riottengono come pioggia, e quel deficit è colmato dai <strong>fiumi</strong> che portano l'acqua giù dalla terraferma — il tratto di ritorno che chiude l'anello. Una molecola d'acqua resta in aria circa nove giorni, ma può stare in una falda profonda o in una calotta di ghiaccio per migliaia di anni.</p>`,
+          facts: [
+            { e: '🔥', t: `Far evaporare un chilogrammo d'acqua assorbe circa 2,26 milioni di joule — abbastanza per sollevare un'auto piccola di due metri. Ecco perché il raffreddamento evaporativo (sudore, raffrescatori) funziona così bene.` },
+            { e: '💨', t: `L'aria calda contiene molta più umidità di quella fredda: l'aria a 30°C può portare circa quattro volte il vapore acqueo dell'aria a 10°C, ed è per questo che le tempeste tropicali sono così piovose.` },
+            { e: '🏔️', t: `L'acqua può saltare del tutto lo stadio liquido: neve e ghiaccio possono passare direttamente a vapore per sublimazione, ed è così che i ghiacciai si riducono anche quando non sale mai sopra lo zero.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Calore latente (vaporizzazione)', e: 'L_v \\approx 2.26\\ \\text{MJ/kg}' },
+            { n: 'Calore latente (fusione)', e: 'L_f \\approx 0.334\\ \\text{MJ/kg}' },
+            { sep: 1 },
+            { n: 'Umidità relativa', e: '\\text{UR} = \\dfrac{e}{e_s(T)}\\times100\\%' },
+            { n: 'Saturazione (Clausius-Clapeyron)', e: '\\dfrac{de_s}{dT} = \\dfrac{L_v\\,e_s}{R_v T^2}' },
+            { sep: 1 },
+            { n: 'Flusso globale', e: '\\approx 5\\times10^{5}\\ \\text{km}^3/\\text{anno}', c: 'evaporazione = precipitazione' },
+          ] }, sim: 'watercycle',
+        },
+        scholar: {
+          title: `Clausius-Clapeyron, umidità atmosferica e un ciclo che si intensifica`,
+          body: `<h4><span class="hn">01</span>La legge esponenziale dietro ogni nuvola</h4>
+<p>Quasi tutto sull'umidità atmosferica scaturisce da una relazione. Integrando l'equazione di Clausius-Clapeyron si ottiene la pressione di vapore saturo \\(e_s(T) \\approx e_0\\exp\\!\\left[\\dfrac{L_v}{R_v}\\left(\\dfrac{1}{T_0}-\\dfrac{1}{T}\\right)\\right]\\) — una salita <em>esponenziale</em> con la temperatura. La regola pratica è che la capacità dell'aria di trattenere acqua sale di circa il <strong>7% per grado</strong> Celsius. Quel singolo numero governa rugiada, nebbia, altezza della base delle nuvole e l'umidità disponibile per ogni tempesta.</p>
+<h4><span class="hn">02</span>Il calore latente come condotto di carburante dell'atmosfera</h4>
+<p>L'evaporazione è un oleodotto energetico nascosto. Circa metà dell'energia solare assorbita alla superficie terrestre la lascia non come radiazione o conduzione ma come <em>calore latente</em> rinchiuso nel vapore acqueo, rilasciato in quota quando il vapore condensa. È la sorgente di potenza dominante di temporali e uragani: un grande uragano rilascia calore latente a un ritmo equivalente a centinaia di volte l'intera produzione elettrica dell'umanità, ed è per questo che i mari caldi li nutrono e i mari freddi li affamano.</p>
+<h4><span class="hn">03</span>Tempo di residenza e la forma del serbatoio</h4>
+<p>Il ciclo è un insieme di serbatoi dal ricambio follemente diverso. L'atmosfera ne contiene solo circa \\(1.3\\times10^{4}\\ \\text{km}^3\\) in ogni istante — un tempo medio di residenza di ~9 giorni — eppure elabora l'intero flusso globale molte volte l'anno. Contrasta con l'acqua sotterranea profonda o le grandi calotte, dove una molecola può indugiare per migliaia o centinaia di migliaia di anni. Il tempo di residenza \\(\\tau = V/F\\) (volume su flusso) è il singolo numero che ti dice quanto in fretta ogni bacino risponde al cambiamento.</p>
+<h4><span class="hn">04</span>Gli isotopi che identificano il ciclo</h4>
+<p>Le molecole d'acqua non sono identiche: quelle costruite con gli isotopi più pesanti \\(^{18}\\text{O}\\) e il deuterio evaporano un po' meno prontamente e condensano un po' prima. Ogni cambiamento di stato quindi le <em>fraziona</em>, e i rapporti conservati in pioggia, carote di ghiaccio e stalagmiti diventano un termometro del passato. Leggere il \\(\\delta^{18}\\text{O}\\) lungo una carota di ghiaccio ricostruisce decine di migliaia di anni di temperatura — il ciclo dell'acqua che scrive la propria storia.</p>
+<h4><span class="hn">05</span>Un ciclo che viene avvolto più stretto</h4>
+<p>Poiché la capacità scala con la legge di Clausius-Clapeyron, un'atmosfera più calda trattiene più acqua, e l'intero ciclo <em>si intensifica</em>. Osservazioni e modelli concordano sullo schema riassunto come "il bagnato diventa più bagnato, il secco più secco": gli estremi di precipitazione intensa scalano con l'aumento di umidità di ~7%/K (a volte più in fretta nella convezione intensa), mentre le zone secche subtropicali si espandono. Un mondo più caldo non ha semplicemente più acqua in aria — la ridistribuisce più violentemente.</p>
+<h4><span class="hn">06</span>Osservare l'intero anello dall'orbita</h4>
+<p>Il ciclo moderno si misura dallo spazio. I satelliti GRACE pesano acque sotterranee e calotte percependo minuscoli cambiamenti nella gravità terrestre; missioni come GPM mappano la pioggia globale ogni poche ore; e gli scatterometri seguono l'umidità del suolo e l'evaporazione oceanica. Insieme trasformano un diagramma da manuale in un sistema monitorato e quantitativo — e rivelano che l'uso umano dell'acqua, la costruzione di dighe e lo svuotamento delle falde sono diventati essi stessi termini misurabili nel bilancio idrico del pianeta.</p>`,
+          facts: [
+            { e: '🛰️', t: `I satelliti GRACE rilevano la perdita di acque sotterranee misurando i cambiamenti nel campo gravitazionale terrestre — abbastanza precisi da pesare l'acqua pompata dalle falde attraverso interi continenti.` },
+            { e: '📈', t: `La capacità dell'aria di trattenere acqua sale di ~7% per °C di riscaldamento (Clausius-Clapeyron), intensificando direttamente gli acquazzoni più forti — la fisica dietro alluvioni più estreme.` },
+            { e: '🧊', t: `I rapporti degli isotopi dell'ossigeno (δ¹⁸O) nelle carote di ghiaccio fanno da paleotermometro, ricostruendo le temperature indietro di oltre 800.000 anni dal registro stesso del ciclo dell'acqua.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Pressione di saturazione', e: 'e_s(T) = e_0\\exp\\!\\left[\\tfrac{L_v}{R_v}\\left(\\tfrac{1}{T_0}-\\tfrac{1}{T}\\right)\\right]' },
+            { n: 'Sensibilità C-C', e: '\\dfrac{1}{e_s}\\dfrac{de_s}{dT} \\approx 7\\%\\ \\text{per °C}' },
+            { sep: 1 },
+            { n: 'Tempo di residenza', e: '\\tau = V/F', c: 'atmosfera ≈ 9 giorni' },
+            { n: 'Riserva atmosferica', e: 'V_{\\text{atm}} \\approx 1.3\\times10^{4}\\ \\text{km}^3' },
+            { sep: 1 },
+            { n: 'Bilancio energetico superficie', e: 'R_n = H + LE + G', c: 'LE = flusso di calore latente' },
+          ] }, sim: 'watercycle',
+        },
+      },
+    },
+    energy: {
+      title: 'Energia e conservazione',
+      teaser: `L'energia non è mai creata né distrutta — solo scambiata tra forme. Una pallina che rotola baratta altezza con velocità e viceversa, e i conti tornano sempre.`,
+      chips: ['Cinetica', 'Potenziale', 'Conservazione'],
+      lvls: {
+        junior: {
+          title: `L'unica regola che l'universo non infrange mai`,
+          body: `<p>Di tutte le leggi della fisica, una spicca per non essere mai, mai infranta: <strong>l'energia non può essere creata né distrutta</strong>. Puoi spostarla e cambiare la forma che assume, ma non puoi mai farne una sola goccia dal nulla, e non puoi mai farne sparire un po'. È la <strong>conservazione dell'energia</strong>, e vale ovunque, da una lucciola a una supernova.</p>
+<p>L'energia indossa solo costumi diversi. Una pallina tenuta in alto ha <strong>energia potenziale</strong> — energia immagazzinata di posizione, in attesa di essere usata. Lasciala andare e quell'energia immagazzinata si trasforma in <strong>energia cinetica</strong>, l'energia del movimento, mentre la pallina accelera scendendo. In fondo è tutta movimento; in cima era tutta immagazzinata. Il totale non cambia mai — la pallina si limita a barattare un tipo con l'altro.</p>
+<p>Puoi vedere questo baratto ovunque: uno skater che pompa su e giù per una rampa, un'altalena che arca avanti e indietro, un ottovolante che scavalca una collina e si tuffa dall'altra parte. Allora perché tutto alla fine si ferma? Perché un terzo costume, l'<strong>attrito</strong>, ruba silenziosamente un po' di energia a ogni ciclo e la trasforma in <em>calore</em>. L'energia non è sparita — è solo sparpagliata come tepore, troppo dispersa per essere usata. Nella simulazione qui sotto, lascia cadere una pallina in una ciotola e guarda l'altezza diventare velocità e la velocità diventare altezza.</p>`,
+          facts: [
+            { e: '🎢', t: `Un ottovolante non ha bisogno di motore dopo la prima collina — baratta solo altezza con velocità e viceversa, ed è per questo che ogni discesa è più bassa della precedente (l'attrito si prende la sua parte).` },
+            { e: '🔥', t: `Sfrega le mani e si scaldano: stai convertendo l'energia cinetica del movimento direttamente in calore, la forma più dispersa che l'energia possa assumere.` },
+            { e: '🌱', t: `L'energia chimica del tuo pranzo risale fino alla luce solare catturata dalle piante — energia passata di forma in forma lungo una lunga catena per arrivare a te.` },
+          ],
+          formula: null, sim: 'energy',
+        },
+        student: {
+          title: `Energia cinetica, energia potenziale e conservazione meccanica`,
+          body: `<p>Due grandezze fanno la maggior parte del lavoro in meccanica. L'<strong>energia cinetica</strong>, l'energia del movimento, è \\(KE = \\tfrac{1}{2}mv^2\\) — nota il \\(v^2\\): raddoppiare la velocità <em>quadruplica</em> l'energia, ed è esattamente perché gli spazi di frenata esplodono ad alta velocità. L'<strong>energia potenziale gravitazionale</strong>, l'energia dell'altezza, è \\(PE = mgh\\). In qualsiasi sistema dove solo la gravità compie lavoro, la loro somma è fissa: \\(\\tfrac{1}{2}mv^2 + mgh = \\text{costante}\\).</p>
+<p>Quella singola equazione risolve una vasta gamma di problemi senza mai seguire i dettagli disordinati del moto. Lascia cadere la pallina da altezza \\(h\\) e tutto il suo \\(mgh\\) si converte in \\(\\tfrac{1}{2}mv^2\\), dando una velocità d'impatto \\(v = \\sqrt{2gh}\\) — indipendente dalla massa, lo stesso risultato che trovò Galileo. Un pendolo, un ottovolante, un salto con gli sci: ciascuno è solo energia potenziale ed energia cinetica che si scambiano di posto mentre il loro totale resta fermo.</p>
+<p>L'energia si collega anche alla forza tramite il <strong>lavoro</strong>, \\(W = Fd\\), e al tempo tramite la <strong>potenza</strong>, \\(P = W/t\\) — il <em>ritmo</em> di trasferimento dell'energia, misurato in watt. I sistemi reali, però, non sono mai perfettamente conservativi: <strong>attrito</strong> e resistenza dell'aria compiono lavoro negativo e convertono l'energia meccanica in calore. L'energia è comunque conservata nel complesso — ha solo lasciato l'ordinato registro meccanico per quello disordinato termico, ed è per questo che i pendoli reali si smorzano.</p>`,
+          facts: [
+            { e: '🚗', t: `Poiché KE ∝ v², un'auto a 100 km/h porta quattro volte l'energia che ha a 50 km/h — e serve circa quattro volte la distanza per fermarsi. La velocità è ingannevolmente pericolosa.` },
+            { e: '⚡', t: `Un watt è un joule al secondo. Una lampadina da 100 watt converte 100 joule di energia elettrica ogni secondo; anche un umano a riposo "gira" a circa 100 watt.` },
+            { e: '🎯', t: `La velocità d'impatto da un'altezza dipende solo dall'altezza, non dalla massa: v = √(2gh). Una palla da bowling e una biglia lasciate cadere insieme toccano terra alla stessa velocità (ignorando l'aria).` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Energia cinetica', e: 'KE = \\tfrac{1}{2}mv^2' },
+            { n: 'Energia potenziale', e: 'PE = mgh' },
+            { sep: 1 },
+            { n: 'Conservazione', e: '\\tfrac{1}{2}mv^2 + mgh = \\text{cost}' },
+            { n: `Velocità d'impatto`, e: 'v = \\sqrt{2gh}', c: 'indipendente dalla massa' },
+            { sep: 1 },
+            { n: 'Lavoro', e: 'W = Fd' },
+            { n: 'Potenza', e: 'P = W/t\\ \\ [\\text{watt}]' },
+          ] }, sim: 'energy',
+        },
+        scholar: {
+          title: `Il teorema dell'energia-lavoro, i potenziali e perché l'energia si conserva`,
+          body: `<h4><span class="hn">01</span>Il lavoro come ponte dalla forza all'energia</h4>
+<p>L'energia non è un postulato separato bullonato su Newton — segue dalla sua seconda legge. Integra \\(F = ma\\) lungo un percorso e ottieni il <strong>teorema dell'energia-lavoro</strong>, \\(W_{\\text{net}} = \\int \\vec{F}\\cdot d\\vec{r} = \\Delta KE\\): il lavoro netto compiuto su un corpo eguaglia il suo cambiamento di energia cinetica. L'energia cinetica \\(\\tfrac{1}{2}mv^2\\) non è una definizione tirata fuori dal nulla; è precisamente la grandezza che questo integrale di forza-per-distanza cambia.</p>
+<h4><span class="hn">02</span>Forze conservative e la nascita dell'energia potenziale</h4>
+<p>Alcune forze — gravità, molle, elettrostatica — compiono un lavoro che dipende solo dai punti di partenza e arrivo, mai dal percorso preso. Tali <strong>forze conservative</strong> hanno \\(\\nabla\\times\\vec{F} = 0\\), il che ci permette di definire un'<em>energia potenziale</em> \\(U\\) con \\(\\vec{F} = -\\nabla U\\). L'energia potenziale è la contabilità del lavoro che una forza conservativa <em>compirebbe</em>, e per esattamente questa classe di forze il totale \\(E = KE + U\\) è costante. L'attrito non supera il test — il suo lavoro dipende dalla lunghezza del percorso — quindi non ha potenziale e drena energia meccanica.</p>
+<h4><span class="hn">03</span>La ragione più profonda: la simmetria</h4>
+<p>Perché l'energia si conserva del tutto? La risposta profonda è il <strong>teorema di Noether</strong> (1918): ogni simmetria continua delle leggi di un sistema produce una grandezza conservata, e la simmetria dietro l'energia è l'<em>invarianza per traslazione temporale</em> — il fatto che le leggi della fisica siano le stesse oggi e domani. La conservazione dell'energia non è un incidente della meccanica; è l'ombra proiettata dall'uniformità del tempo stesso. La conservazione della quantità di moto segue identicamente dall'uniformità dello spazio.</p>
+<h4><span class="hn">04</span>Quando l'energia sembra sparire</h4>
+<p>Le apparenti violazioni sono sempre contabilità incompleta. Una pallina lasciata cadere nel miele non conserva l'energia <em>meccanica</em>, ma segui il calore e i conti tornano — la prima legge della termodinamica, \\(\\Delta U = Q - W\\), allarga semplicemente i libri per includere l'energia interna. Storicamente ogni "perdita" costrinse il concetto a crescere: energia chimica, poi l'equivalenza di calore e lavoro (Joule), poi \\(E = mc^2\\), che rivelò la massa stessa come energia concentrata e chiuse l'ultimo apparente divario nelle reazioni nucleari.</p>
+<h4><span class="hn">05</span>Il caso sottile di un universo in espansione</h4>
+<p>C'è un luogo dove la legge ordinata diventa scivolosa. Nella relatività generale, la conservazione dell'energia è rigorosamente locale; globalmente, in un universo in espansione, non c'è simmetria per traslazione temporale, quindi l'energia totale non è conservata in modo diretto. I fotoni del fondo cosmico a microonde perdono energia mentre lo spazio si stira (le loro lunghezze d'onda arrossano) senza nulla di ovvio a raccoglierla. Lungi dall'infrangere il teorema di Noether, questo è il suo carattere in piccolo: niente simmetria temporale, niente legge di conservazione globale.</p>
+<h4><span class="hn">06</span>L'energia libera: la valuta che scorre davvero</h4>
+<p>Per i processi reali, l'energia grezza è la contabilità sbagliata. La seconda legge dice che l'energia utilizzabile si degrada: ciò che conta è l'<strong>energia libera</strong>, \\(G = H - TS\\), la porzione effettivamente disponibile a compiere lavoro una volta pagata l'entropia. Ogni motore, batteria, muscolo e cellula vivente commercia in energia libera, non in energia, e il suo inesorabile declino — energia conservata ma sempre più disordinata — è ciò che dà al tempo la sua direzione e in ultima analisi punta verso la morte termica dell'universo.</p>`,
+          facts: [
+            { e: '🔗', t: `Il teorema di Noether lega ogni legge di conservazione a una simmetria: energia ↔ tempo, quantità di moto ↔ spazio, momento angolare ↔ rotazione. È uno dei risultati più belli di tutta la fisica.` },
+            { e: '☀️', t: `E = mc² significa che il Sole perde circa 4 milioni di tonnellate di massa ogni secondo, convertite nell'energia della luce solare — massa ed energia sono la stessa valuta.` },
+            { e: '🌡️', t: `L'energia è sempre conservata, ma l'energia utilizzabile (libera) no — la seconda legge garantisce che si degradi verso il disordine, ed è per questo che nessun motore può essere efficiente al 100%.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Teorema energia-lavoro', e: 'W_{\\text{net}} = \\int \\vec{F}\\cdot d\\vec{r} = \\Delta KE' },
+            { n: 'Forza conservativa', e: '\\vec{F} = -\\nabla U,\\quad \\nabla\\times\\vec{F} = 0' },
+            { sep: 1 },
+            { n: 'Energia meccanica', e: 'E = KE + U = \\text{cost}' },
+            { n: 'Prima legge', e: '\\Delta U = Q - W' },
+            { sep: 1 },
+            { n: 'Massa-energia', e: 'E = mc^2' },
+            { n: 'Energia libera', e: 'G = H - TS', c: 'lavoro disponibile' },
+          ] }, sim: 'energy',
+        },
+      },
+    },
     gaslaws: {
       title: 'Le leggi dei gas',
       teaser: `Comprimi un gas e ti spinge indietro; scaldalo e si sforza di fuggire. Tre leggi semplici — e una sola equazione — catturano come pressione, volume e temperatura danzano insieme.`,
@@ -3582,6 +3860,873 @@ export default {
     },
   },
   guide: {
+    astro: {
+      junior: {
+        legend: `Una singola stella che vive la sua intera vita, accelerata enormemente. [[age]] segue quanto è avanzata e [[stage]] nomina cosa è diventata. Il colore e la dimensione cambiano man mano che invecchia — e come finisce dipende da una sola cosa che controlli.`,
+        try: `Metti [[mass]] a 1 (una stella come il nostro Sole) e premi [[reset]], poi guarda fino alla fine. Ora metti [[mass]] a 20 e guarda di nuovo.`,
+        notice: `<b>La stella di taglia solare si gonfia, soffia via i suoi strati esterni e lascia una minuscola nana bianca. Quella pesante esplode come supernova e lascia un buco nero.</b> L'intero destino di una stella è fissato alla nascita dalla sua massa — nient'altro. E quelle grandi muoiono assurdamente in fretta: le stelle più pesanti bruciano il loro carburante così sfrenatamente che una stella di 20 masse solari vive pochi milioni di anni mentre il Sole ne fa dieci miliardi. Essere più grandi ti dà più carburante e una vita molto più corta.`,
+      },
+      student: {
+        legend: `Evoluzione stellare guidata dalla sola [[mass]]. [[stage]] scorre tra sequenza principale, gigante rossa, e poi un punto finale dipendente dalla massa: nebulosa planetaria e nana bianca sotto ~8 M☉, o supergigante, supernova e una stella di neutroni o buco nero sopra.`,
+        try: `Confronta i punti finali a [[mass]] = 1, 10 e 20, e nota quanto tempo ciascuna passa sulla sequenza principale. Trova la [[mass]] dove l'esito passa da nana bianca a supernova.`,
+        notice: `<b>Il bivio sta vicino a 8 M☉, e la durata di vita crolla come circa \\(1/M^3\\) — dieci miliardi di anni per il Sole, dieci milioni per una stella da 10 M☉.</b> La luminosità scala ripidamente con la massa (\\(L \\propto M^{3.5}\\)) mentre la scorta di carburante scala solo come \\(M\\), quindi la durata \\(\\propto M/L \\sim M^{-2.5}\\). Sotto il bivio, la pressione di degenerazione degli elettroni arresta il collasso al <b>limite di Chandrasekhar</b> di 1,4 M☉ e una nana bianca sopravvive; sopra, il nucleo supera ciò che la degenerazione può sostenere e collassa catastroficamente. Ogni elemento più pesante del ferro nel tuo corpo fu forgiato nel secondo tipo di morte.`,
+      },
+      scholar: {
+        legend: `Evoluzione schematica di stella singola parametrizzata dalla [[mass]] iniziale, con durata di vita in sequenza principale che scala come \\(\\propto M^{-3}\\) in questo modello. Metallicità, perdita di massa, rotazione e binarietà non sono rappresentate.`,
+        try: `Localizza il confine nana-bianca / supernova del modello e il suo confine stella-di-neutroni / buco nero. Considera quanto fortemente ciascuna delle variabili omesse sposterebbe quelle soglie in una popolazione reale.`,
+        notice: `<b>Le soglie sono molto meno nette di quanto qualsiasi modello a parametro singolo implichi — perdita di massa e metallicità le spostano di parecchie masse solari.</b> La relazione osservata è \\(L \\propto M^{3.5}\\) dando \\(\\tau \\propto M^{-2.5}\\); il collasso del nucleo richiede di superare la massa di Chandrasekhar \\(M_{Ch} = 1.44\\,(\\mu_e/2)^{-2}\\) M☉, e la divisione stella-di-neutroni/buco-nero dipende dall'equazione di stato nucleare mal vincolata (limite di Tolman–Oppenheimer–Volkoff, ~2,2–2,9 M☉). Le stelle a bassa metallicità trattengono molta più massa e collassano direttamente senza una supernova brillante, e poiché la maggior parte delle stelle massicce è in binarie interagenti, le tracce di stella singola descrivono una minoranza dei casi reali. I cataloghi di onde gravitazionali ora forniscono le statistiche di popolazione che i soli modelli stellari non potevano.`,
+      },
+    },
+    cosmology: {
+      junior: {
+        legend: `L'intero universo in espansione, con le galassie portate via man mano che lo spazio stesso si stira. [[age]] conta i miliardi di anni dal Big Bang. Due ingredienti competono: la <b>materia</b>, la cui gravità tira tutto insieme, e l'<b>energia oscura</b>, che lo spinge via.`,
+        try: `Trascina [[lam]] fino a 0 così la gravità non ha avversario, e guarda cosa succede all'espansione. Poi rimettila su a 69 e guarda la differenza.`,
+        notice: `<b>Senza energia oscura l'espansione rallenta; con essa, l'espansione accelera — lo spazio vola via sempre più in fretta.</b> Gli astronomi si aspettavano la prima e trovarono la seconda nel 1998, notando che le supernove lontane erano più deboli di quanto dovessero. Circa il 69% di tutto è questa energia oscura, e nessuno sa cosa sia. L'ingrediente più grande dell'universo è un mistero completo, ed è stato scoperto per caso.`,
+      },
+      student: {
+        legend: `Un universo FLRW in espansione con [[mat]] e [[lam]] come parametri di densità. [[h]] è il parametro di Hubble al redshift attuale, che segue \\(H(z) = H_0\\sqrt{\\Omega_m(1+z)^3 + \\Omega_\\Lambda}\\), e [[age]] il tempo cosmico trascorso.`,
+        try: `Metti [[lam]] = 0 con [[mat]] = 100 e nota il comportamento dell'espansione e [[age]]. Poi usa i valori standard (31 e 69). Quale combinazione dà un universo più vecchio, e perché conta osservativamente?`,
+        notice: `<b>Un universo di sola materia è più giovane delle stelle più vecchie conosciute — la contraddizione che rese inevitabile l'energia oscura.</b> La densità di materia si diluisce come \\((1+z)^3\\) mentre \\(\\Omega_\\Lambda\\) resta costante, quindi la gravità dominò presto (decelerando) e l'energia oscura prese il sopravvento attorno a \\(z \\approx 0.7\\), commutando l'espansione ad accelerazione. Con \\(H_0 = 70\\) e sola materia, l'età è \\(\\tfrac{2}{3}H_0^{-1} \\approx 9.3\\) Gyr, più giovane degli ammassi globulari di 12 Gyr. Aggiungere \\(\\Lambda\\) la stira a 13,8 Gyr e risolve il paradosso — una di varie linee indipendenti che convergono sulla stessa conclusione.`,
+      },
+      scholar: {
+        legend: `Cosmologia FLRW piatta con \\(H(z) = H_0\\sqrt{\\Omega_m(1+z)^3+\\Omega_\\Lambda}\\), \\(H_0 = 70\\) km/s/Mpc. [[mat]] e [[lam]] sono impostati indipendentemente qui, quindi il modello non impone \\(\\Omega_m + \\Omega_\\Lambda = 1\\).`,
+        try: `Imposta combinazioni che violano la planarità e nota che il modello calcola comunque una risposta. Poi considera cosa \\(\\Omega_{\\text{total}} \\ne 1\\) implicherebbe fisicamente, e perché la planarità quasi perfetta osservata è essa stessa un problema che esige spiegazione.`,
+        notice: `<b>La planarità è instabile: qualsiasi deviazione da \\(\\Omega = 1\\) cresce col tempo, quindi la planarità odierna entro lo 0,4% esige un assurdo regolaggio fine all'era di Planck — circa 1 parte su \\(10^{60}\\).</b> È il problema della planarità, e insieme al problema dell'orizzonte motivò l'<b>inflazione</b>, che spinge \\(\\Omega \\to 1\\) esponenzialmente e semina la struttura da fluttuazioni quantistiche. Il punto di stress attuale del quadro è la <b>tensione di Hubble</b>: l'inferenza dall'universo primitivo dal CMB dà \\(H_0 \\approx 67.4\\), le misure locali della scala delle distanze danno \\(\\approx 73\\), e la discrepanza a \\(\\sim5\\sigma\\) ha resistito a ogni sistematica proposta. Intanto \\(\\Lambda\\) stessa resta inspiegata — l'energia del vuoto della QFT supera il valore osservato fino a 120 ordini di grandezza.`,
+      },
+    },
+    neuro: {
+      junior: {
+        legend: `Una piccola rete di <b>neuroni</b> — cellule cerebrali — uniti dalle loro connessioni. Quando uno accumula abbastanza carica si attiva, mandando un impulso a correre verso i suoi vicini, che possono allora attivarsi anch'essi. [[rate]] conta le attivazioni al secondo e [[pot]] mostra la carica dentro una cellula.`,
+        try: `Metti [[stim]] a 0 e premi [[fire]] una volta, guardando quanto lontano viaggia l'impulso. Ora metti [[stim]] a 10 e guarda la rete per un po'.`,
+        notice: `<b>Una spintarella manda un singolo impulso che svanisce; un input forte e costante fa chiacchierare l'intera rete di continuo.</b> Nessun singolo neurone decide nulla — ciascuno somma solo ciò che riceve e si attiva se il totale è abbastanza grande. Pensiero, memoria e movimento sono tutti costruiti da questo unico trucco ripetuto su 86 miliardi di cellule. Il tuo cervello fa girare l'intera operazione su circa 20 watt, più o meno una lampadina fioca.`,
+      },
+      student: {
+        legend: `Una rete a picchi semplificata. Ogni nodo integra l'input dai suoi vicini e si attiva quando attraversa la soglia, propagando l'attività lungo le sue connessioni. [[stim]] è la spinta esterna, [[rate]] il tasso di attivazione della popolazione e [[pot]] il potenziale di membrana di una cellula.`,
+        try: `Aumenta [[stim]] gradualmente da 0 e guarda [[rate]]. L'attività cresce in modo liscio in proporzione, o c'è un punto in cui il comportamento della rete cambia carattere?`,
+        notice: `<b>L'attività resta vicino a zero fino a una spinta critica, poi la rete commuta in un'attivazione sostenuta auto-propagante — una soglia, non una pendenza.</b> È l'<em>eccitazione ricorrente</em>: una volta che abbastanza neuroni si attivano, il loro input reciproco sostiene l'attività senza ulteriore spinta esterna, ed è così che la memoria di lavoro tiene l'informazione per secondi. La stessa proprietà è pericolosa, poiché l'eccitazione ricorrente incontrollata è precisamente ciò che è una crisi epilettica. La corteccia reale si tiene appena sotto quel punto con potenti interneuroni inibitori — solo ~20% delle cellule, ma abbastanza da tenere l'equilibrio.`,
+      },
+      scholar: {
+        legend: `Unità integra-e-tira su un grafo ricorrente sparso, con [[stim]] come spinta esterna tonica. [[rate]] riporta l'attività della popolazione; il modello è puramente eccitatorio, senza popolazione inibitoria.`,
+        try: `Caratterizza la transizione in [[rate]] man mano che [[stim]] aumenta. Considera cosa implica l'assenza di inibizione per la stabilità dello stato ad alta attività, e cosa cambierebbe con una popolazione inibitoria bilanciata.`,
+        notice: `<b>Una rete ricorrente puramente eccitatoria ha solo due stati stabili — silente o saturo — ed è l'omissione centrale del modello.</b> La corteccia reale opera nello <b>stato bilanciato</b>, dove grandi correnti eccitatorie e inibitorie quasi si annullano, lasciando una piccola spinta netta fluttuante. Ciò produce l'attivazione irregolare, simile a Poisson, osservata in vivo, dà rapida reattività (l'equilibrio può essere rotto più in fretta di qualsiasi costante di tempo di membrana), e rende una curva \\(f\\)–\\(I\\) approssimativamente lineare invece di un gradino. Il regime bilanciato sta anche vicino alla criticità, dove le valanghe neuronali seguono una legge di potenza con esponente \\(-3/2\\) — una configurazione che massimizza la gamma dinamica e la trasmissione dell'informazione, e che questo modello non può raggiungere.`,
+      },
+    },
+    neuron: {
+      junior: {
+        legend: `Una cellula cerebrale, con la traccia che mostra la tensione al suo interno momento per momento. La linea tratteggiata è la <b>soglia</b>. [[v]] è la tensione attuale, [[state]] dice se è a riposo o in attivazione, e [[spikes]] conta gli impulsi.`,
+        try: `Alza [[cur]] molto lentamente da 0, una tacca alla volta, guardando [[v]] e [[state]]. Trova il punto esatto dove la cellula inizia ad attivarsi — poi vai una tacca oltre.`,
+        notice: `<b>Sotto la soglia, non succede assolutamente nulla. Attraversala e la cellula tira un picco a grandezza piena — e spingere più forte non rende il picco più grande.</b> È l'attivazione <b>tutto-o-niente</b>: un neurone non ha modo di inviare un "mezzo" segnale. Poiché ogni picco è identico, il messaggio non può stare nella loro dimensione — deve stare in quanto <em>spesso</em> arrivano. Un tocco delicato e una pressione forte si percepiscono diversi per il tasso di picchi, non per la forza del picco.`,
+      },
+      student: {
+        legend: `Un neurone di FitzHugh–Nagumo: una variabile veloce di tensione e una lenta di recupero, il sistema minimo che riproduce l'eccitabilità. La traccia è il potenziale di membrana contro il tempo, con la soglia di attivazione segnata. [[cur]] inietta corrente costante; [[spikes]] conta gli eventi.`,
+        try: `Porta [[cur]] su lentamente e localizza il valore dove l'attivazione inizia. Poi confronta l'<em>ampiezza</em> del picco appena sopra soglia con l'ampiezza a [[cur]] = 20, e confronta la <em>frequenza</em> di attivazione alle stesse due impostazioni.`,
+        notice: `<b>L'ampiezza è essenzialmente identica a entrambe le correnti; cambia solo la frequenza — la cellula codifica l'intensità nel tasso, non nella dimensione.</b> L'esordio è una <b>biforcazione di Hopf</b>: il punto fisso di riposo perde stabilità e appare un ciclo limite, quindi l'oscillazione inizia a frequenza non nulla. La variabile di recupero è ciò che rende il picco auto-terminante e impone il periodo refrattario, che limita l'attivazione vicino a 1 kHz e rende la propagazione unidirezionale. Il modello del 1952 di Hodgkin e Huxley derivò tutto questo da conduttanze reali di sodio e potassio; FitzHugh–Nagumo lo spoglia a due equazioni mantenendo intatto il comportamento qualitativo.`,
+      },
+      scholar: {
+        legend: `Dinamica di FitzHugh–Nagumo, \\(\\dot v = v - v^3/3 - w + I\\), \\(\\dot w = \\epsilon(v + a - bw)\\), una riduzione planare di Hodgkin–Huxley che separa la tensione veloce dal recupero lento. [[cur]] è la corrente iniettata \\(I\\).`,
+        try: `Localizza l'\\(I\\) critica alla quale inizia l'attivazione ripetitiva ed esamina la frequenza immediatamente sopra di essa. Determina se la frequenza di esordio è zero o finita, e identifica quale classe di biforcazione ciò implica.`,
+        notice: `<b>L'attivazione inizia a una frequenza finita, identificando una biforcazione di Hopf subcritica — un neurone di Classe II nella classificazione di Hodgkin.</b> Le cellule di Classe II hanno una curva \\(f\\)–\\(I\\) discontinua e agiscono da risonatori, rispondendo preferenzialmente a input vicino alla loro frequenza intrinseca; le cellule di Classe I nascono invece via un nodo-sella su un cerchio invariante (SNIC), si attivano arbitrariamente lentamente all'esordio, e si comportano da integratori. La distinzione non è accademica: determina le curve di risposta di fase, e quindi se una popolazione si sincronizza o desincronizza sotto input condiviso — il substrato matematico delle oscillazioni corticali e della sincronia patologica nella malattia di Parkinson e nell'epilessia.`,
+      },
+    },
+    memory: {
+      junior: {
+        legend: `Due neuroni che si incontrano a una <b>sinapsi</b>, la giunzione dove uno passa segnali all'altro. [[w]] è quanto forte è quella giunzione al momento — una forte passa i messaggi facilmente, una debole a malapena. [[last]] riporta cosa le è appena successo.`,
+        try: `Premi [[ltp]] più volte e guarda [[w]] salire. Ora premi [[ltd]] più volte e guardala scendere. I due pulsanti attivano le stesse due cellule — l'unica differenza è quale va per prima.`,
+        notice: `<b>Attivare il mittente <em>appena prima</em> del ricevente rafforza la connessione; attivarlo appena dopo la indebolisce. Stesse cellule, stessi segnali — è cambiato solo l'ordine.</b> Quella minuscola asimmetria è come i cervelli imparano causa ed effetto: se A accade regolarmente prima di B, il legame A→B cresce, perché A potrebbe star causando B. Inverti l'ordine e il cervello conclude che A è irrilevante e pota il legame. L'apprendimento, in fondo, è contabilità su scala millimetrica su cosa è venuto prima.`,
+      },
+      student: {
+        legend: `Una singola sinapsi sotto <b>plasticità dipendente dal tempo dei picchi</b>. [[ltp]] attiva il presinaptico prima del postsinaptico (\\(\\Delta t < 0\\)) e [[ltd]] inverte l'ordine. [[w]] segue il peso sinaptico e [[last]] riporta il segno e la magnitudo dell'ultimo cambiamento.`,
+        try: `Porta [[w]] più in alto che puoi con [[ltp]] ripetuto, poi prova a spingerlo ancora più su. Poi varia [[rate]] e verifica se la dimensione di ogni cambiamento dipende da quanto frequentemente stimoli.`,
+        notice: `<b>Il peso satura — non può crescere senza limite, e ogni accoppiamento vicino al tetto compra meno del precedente.</b> Senza un tale limite, l'apprendimento hebbiano è instabile: le sinapsi forti guidano più attivazione, che le rafforza ulteriormente, finché un input domina tutto. Le sinapsi reali combinano la saturazione con meccanismi <em>omeostatici</em> come lo scaling sinaptico, che rinormalizza moltiplicativamente tutti gli input di un neurone in ore, preservando i pesi relativi mentre tiene costante la spinta totale. L'asimmetria temporale della STDP segue dai recettori NMDA, che richiedono sia il legame del glutammato sia la depolarizzazione postsinaptica per espellere il loro blocco Mg²⁺ — un rilevatore di coincidenza molecolare con una finestra di ~20 ms.`,
+      },
+      scholar: {
+        legend: `STDP basata su coppie a una singola sinapsi: \\(\\Delta w = A_+e^{\\Delta t/\\tau_+}\\) per \\(\\Delta t<0\\) e \\(-A_-e^{-\\Delta t/\\tau_-}\\) per \\(\\Delta t>0\\), con un limite di saturazione su [[w]]. [[rate]] fissa la frequenza di accoppiamento.`,
+        try: `Considera cosa questa regola basata su coppie predice per l'accoppiamento ad alta frequenza, e confrontalo con la scoperta sperimentale che la potenziazione a 50 Hz avviene indipendentemente dall'ordine dei picchi. Chiediti cosa alla regola deve mancare.`,
+        notice: `<b>La STDP basata su coppie fallisce sopra ~30 Hz: sperimentalmente, l'accoppiamento ad alta frequenza potenzia qualunque sia l'ordine, cosa che la regola non può produrre.</b> I modelli a triplette e basati sulla tensione (Pfister–Gerstner; Clopath) correggono questo e in più recuperano la soglia scorrevole di Bienenstock–Cooper–Munro, in cui il confine LTP/LTD si sposta con l'attività postsinaptica recente. La questione più profonda è che la STDP non è un unico meccanismo: il suo segno, la finestra e la dipendenza dalla frequenza variano per tipo di sinapsi, posizione dendritica e stato neuromodulatorio, e la dopamina può regolare se una traccia di eleggibilità sia consolidata affatto — è così che una regola biologicamente locale può implementare l'assegnazione del credito dipendente dalla ricompensa e temporalmente distale.`,
+      },
+    },
+    sleep: {
+      junior: {
+        legend: `Una notte di sonno in avanti veloce. La traccia ondulata è vera attività cerebrale misurata da un EEG. [[stage]] nomina in quale fase sei, [[freq]] mostra quanto veloci sono le onde, e [[ad]] è la sostanza chimica che si accumula mentre sei sveglio e ti fa venire sonno.`,
+        try: `Premi [[next]] per scorrere ogni fase a turno, da Sveglio a REM. Guarda la forma dell'onda in N3 (profondo), poi in REM — e confronta ciascuna con Sveglio.`,
+        notice: `<b>Il sonno profondo ha enormi onde lente, ma il REM sembra quasi esattamente lo stato di veglia — veloce e piccolo — anche se sei profondamente addormentato e stai sognando.</b> È perché il REM è chiamato sonno <em>paradosso</em>: dalla sola attività elettrica del cervello non potresti distinguerlo dalla veglia. Il tuo corpo è paralizzato durante di esso, il che è un bene, perché ti impedisce di mimare i tuoi sogni.`,
+      },
+      student: {
+        legend: `Architettura del sonno idealizzata che cicla tra veglia, N1, N2, N3 e REM, con firme EEG caratteristiche — [[freq]] mostra la frequenza dominante di ciascuna. [[ad]] segue l'adenosina, il segnale omeostatico di pressione del sonno.`,
+        try: `Scorri le fasi con [[next]] e registra [[freq]] per ciascuna. Nota che N3 ha la frequenza più bassa ma l'ampiezza più grande, mentre la frequenza del REM quasi eguaglia la veglia. Poi guarda [[ad]] su un ciclo completo.`,
+        notice: `<b>Frequenza e ampiezza EEG si muovono in direzioni opposte — le onde lente sono grandi precisamente <em>perché</em> sono lente.</b> I ritmi veloci della veglia riflettono neuroni che si attivano indipendentemente, quindi i loro contributi in parte si annullano sul cuoio capelluto; in N3 l'intera corteccia rintocca insieme tra stati sincronizzati alto e basso, e il segnale sommato è enorme. Il sonno è regolato da due processi interagenti: la pressione omeostatica dall'adenosina, che la caffeina maschera bloccandone i recettori senza rimuovere la pressione, e un oscillatore circadiano indipendente da quanto a lungo sei stato sveglio.`,
+      },
+      scholar: {
+        legend: `Ipnogramma schematico con firme spettrali canoniche per fase. [[freq]] riporta la banda EEG dominante; [[ad]] rappresenta il Processo S. Il modello omette lo spostamento ciclo-per-ciclo nella proporzione REM/NREM lungo una notte reale.`,
+        try: `Nota che questo modello cicla le fasi con durate fisse. Considera come una notte reale differisce nella distribuzione di N3 e REM lungo cicli successivi, e quale resoconto funzionale spiega quell'asimmetria.`,
+        notice: `<b>Le notti reali caricano N3 all'inizio e il REM alla fine — i cicli iniziali sono dominati dalle onde lente, quelli successivi dal REM — cosa che nessun ciclo a durata fissa può catturare.</b> Segue dal modello a due processi: il Processo S si dissipa esponenzialmente lungo la notte, quindi l'attività a onde lente (il suo indice diretto) è concentrata all'inizio, mentre la propensione al REM cavalca il Processo C circadiano e culmina vicino al minimo della temperatura corporea. Funzionalmente l'asimmetria conta: l'ipotesi dell'omeostasi sinaptica sostiene che la SWA declassa le sinapsi potenziate durante la veglia, e la sua magnitudo scala con l'apprendimento del giorno prima. Anche la clearance glinfatica dell'amiloide-β sale ~60% in NREM — ed è perché la privazione di sonno è ora trattata come un candidato fattore causale nella neurodegenerazione invece che un mero sintomo.`,
+      },
+    },
+    chem: {
+      junior: {
+        legend: `Le palline colorate sono <b>atomi</b> che volano in giro. Quando due lenti si avvicinano abbastanza possono attaccarsi e formare una <b>molecola</b>, disegnata con una linea che li unisce. [[mols]] conta quanti si sono accoppiati.`,
+        try: `Metti [[temp]] a 10 e guarda per un po' — conta quante molecole si formano. Ora trascina [[temp]] fino a 1 e guarda di nuovo.`,
+        notice: `<b>Gli atomi caldi non si legano quasi mai; quelli freddi si accoppiano in fretta e [[mols]] sale.</b> Il legame richiede che i due atomi indugino abbastanza vicini da agganciarsi, e gli atomi veloci semplicemente rimbalzano via prima che ciò possa accadere. È la stessa ragione per cui scaldare le cose le scompone — cuocere, fondere, bruciare — mentre raffreddare lascia formare le strutture. I fiocchi di neve esistono perché le molecole d'acqua si muovono abbastanza lentamente da incastrarsi.`,
+      },
+      student: {
+        legend: `Atomi in una scatola 2D con velocità fissate da [[temp]]. La formazione dei legami è probabilistica e permessa solo sotto una soglia di energia cinetica; [[mols]] conta le coppie legate. Gli atomi legati sono tenuti a una separazione di equilibrio, imitando una lunghezza di legame covalente.`,
+        try: `Tieni [[temp]] a 10 e lascia girare, poi abbassala a 1 senza reimpostare. Guarda se i legami esistenti sopravvivono al cambiamento, e quanto in fretta [[mols]] risponde in ciascuna direzione.`,
+        notice: `<b>I legami si formano prontamente da freddi e sostanzialmente smettono di formarsi da caldi — la soglia è netta, non graduale.</b> È la competizione centrale della chimica: il legame abbassa l'energia potenziale del sistema, mentre il moto termico fornisce l'energia cinetica per liberarsene. Se un legame persista dipende dal rapporto tra energia di legame e \\(k_BT\\), ed è perché ogni sostanza ha una temperatura a cui si decompone, e perché la stessa reazione può andare avanti o indietro dipendendo solo da quanto la scaldi.`,
+      },
+      scholar: {
+        legend: `Modello cinetico di associazione in 2D: la formazione di coppie è regolata da una soglia di velocità relativa con un tasso stocastico, e le coppie legate sono vincolate a una separazione di equilibrio. [[temp]] scala la distribuzione delle velocità; [[mols]] è la frazione legata istantanea.`,
+        try: `Stabilisci una popolazione legata a [[temp]] bassa, poi alzala e osserva se il sistema torna al suo stato precedente quando la riabbassi. Considera cosa il modello rappresenta di \\(\\Delta G = \\Delta H - T\\Delta S\\), e cosa tralascia.`,
+        notice: `<b>Il modello cattura il termine di entalpia ma non ha alcun termine di entropia — ed è l'omissione interessante.</b> L'associazione è entalpicamente favorevole (\\(\\Delta H < 0\\)) ma costosa entropicamente, poiché due particelle libere che diventano una coppia legata riducono i microstati traslazionali. L'equilibrio reale è fissato da \\(\\Delta G = \\Delta H - T\\Delta S\\), quindi alzare \\(T\\) sposta l'equilibrio verso la dissociazione non solo fornendo energia cinetica ma amplificando la penalità entropica — il contenuto molecolare del principio di Le Chatelier. La stessa competizione spiega l'assemblaggio idrofobico e il ripiegamento delle proteine, dove l'entropia delle molecole di <em>solvente</em>, non del soluto, domina il segno di \\(\\Delta G\\).`,
+      },
+    },
+    electrochem: {
+      junior: {
+        legend: `Questa è una batteria tagliata a metà. I puntini sono particelle cariche che fanno la spola tra le due estremità attraverso il liquido nel mezzo — quel flusso è ciò che accende la lampadina. [[soc]] è quanto è piena la batteria, e [[volts]] è la spinta che eroga.`,
+        try: `Premi [[discharge]] e guarda [[soc]] scendere dal 100% fino a 0. Tieni d'occhio [[volts]] per tutto il tempo — di quanto cala?`,
+        notice: `<b>La batteria si svuota del tutto ma la tensione si muove appena — da circa 3,9 V giù a solo 3,6 V.</b> È perché il tuo telefono non può capire quanto è piena solo misurando la tensione, e perché la percentuale della batteria a volte mente o salta. I telefoni invece contano la carica che entra ed esce, come un contatore dell'acqua. Una tensione piatta è in realtà un pregio: il tuo dispositivo riceve la stessa potenza costante che la batteria sia piena o quasi vuota.`,
+      },
+      student: {
+        legend: `Una cella con trasporto di ioni tra gli elettrodi. [[load]] fissa la corrente di scarica, [[soc]] lo stato di carica, e [[volts]] segue una relazione in stile Nernst \\(E = E^0 - \\frac{0.059}{n}\\log_{10}\\frac{1-\\text{soc}}{\\text{soc}}\\), limitata a una finestra Li-ion realistica.`,
+        try: `Scarica del tutto e registra [[volts]] a [[soc]] = 100%, 50% e 10%. Poi ricarica. La tensione ripercorre lo stesso cammino, e potresti usarla per dedurre [[soc]] in modo affidabile?`,
+        notice: `<b>La tensione spazia appena 0,3 V sull'intera capacità — troppo piatta per fare da indicatore di carburante.</b> L'equazione di Nernst è logaritmica nel rapporto tra specie ossidate e ridotte, quindi è ripida solo agli estremi e quasi piatta nel mezzo. I veri sistemi di gestione della batteria usano perciò il conteggio dei coulomb (integrando la corrente) con ricalibrazione periodica della tensione agli estremi. Questa piattezza è precisamente ciò che rende la chimica del litio così utile — un binario di alimentazione stabile — e allo stesso tempo ciò che rende la stima dello stato di carica un problema ingegneristico genuinamente difficile.`,
+      },
+      scholar: {
+        legend: `Cella idealizzata con un potenziale a circuito aperto nernstiano in [[soc]]; [[load]] scala il tasso di scarica. Sovratensioni, limitazione da diffusione e isteresi non sono modellate.`,
+        try: `Nota che [[volts]] qui dipende solo da [[soc]], mai da [[load]]. Identifica quali effetti fisici questa indipendenza elimina, e come ciascuno altererebbe la curva osservata sotto un carico pesante.`,
+        notice: `<b>Fare della tensione una funzione della sola carica rimuove ogni meccanismo di perdita che conta in pratica.</b> La tensione ai morsetti è \\(E_{\\text{cell}} = E^0 - \\eta_{\\text{act}} - \\eta_{\\text{conc}} - IR_{\\Omega}\\): la sovratensione di attivazione segue la cinetica di Butler–Volmer, la sovratensione di concentrazione nasce da strati di diffusione impoveriti, e la caduta ohmica scala con la corrente. Insieme significano che la capacità reale <em>cala</em> al crescere del tasso di scarica — l'effetto Peukert — e producono l'isteresi carica/scarica che sconfigge il conteggio ingenuo dei coulomb. Aggiungi la crescita dell'interfase elettrolita-solido e la placcatura del litio e hai l'intera degradazione della batteria, nulla della quale un modello puramente termodinamico può esprimere.`,
+      },
+    },
+    kinetics: {
+      junior: {
+        legend: `La curva nel pannello inferiore è una collina che le molecole devono scalare prima di poter reagire — quell'altezza è l'<b>energia di attivazione</b>. Solo le molecole con abbastanza energia la superano. [[react]] è quanto materiale di partenza resta, [[prod]] quanto è stato convertito, e [[rate]] quanto in fretta procede.`,
+        try: `Metti [[temp]] a 400 e nota [[rate]]. Ora alzala a 500 — solo 100 gradi più caldo — e rileggi [[rate]].`,
+        notice: `<b>Solo 100 gradi più caldo e la reazione va circa 20 volte più veloce.</b> Il calore non spinge le molecole oltre la collina; allarga la piccola frazione che aveva già abbastanza energia per scalarla, e quella frazione cresce esplosivamente con la temperatura. È perché un frigo conserva il cibo per settimane mentre lo stesso cibo va a male in un giorno sul bancone, e perché la cottura al forno ha temperature così precise. Ora premi [[cat]] e guarda la collina stessa rimpicciolirsi.`,
+      },
+      student: {
+        legend: `Un diagramma di coordinata di reazione con l'altezza della barriera fissata da [[ea]]. Le molecole reagiscono alla collisione se superano la barriera; la costante di velocità segue Arrhenius, \\(k = A e^{-E_a/RT}\\). [[react]] e [[prod]] seguono le concentrazioni e [[rate]] la velocità istantanea.`,
+        try: `Registra [[rate]] a [[temp]] = 400 e 500 con [[ea]] a 50. Poi torna a 400 e invece abbassa [[ea]] a 25. Quale cambiamento ti ha comprato più velocità?`,
+        notice: `<b>+100 K moltiplica la velocità di circa 20 volte, ma dimezzare la barriera vale molto di più — l'esponenziale è molto più sensibile a \\(E_a\\) che a \\(T\\).</b> Quell'asimmetria è perché la catalisi domina la chimica industriale: non puoi sempre scaldare una reazione (i prodotti si decompongono, l'energia costa), ma abbassare \\(E_a\\) offrendo un percorso alternativo raggiunge lo stesso fine a temperatura ambiente. Un catalizzatore non cambia né \\(\\Delta G\\) né la posizione di equilibrio — accelera ugualmente reazione diretta e inversa, e si rigenera immutato.`,
+      },
+      scholar: {
+        legend: `Cinetica di Arrhenius con \\(k = A\\exp(-E_a/RT)\\), \\(A = 10^6\\); il percorso del catalizzatore riduce \\(E_a\\) del 55%. Nota che la [[rate]] mostrata è limitata a un massimo, quindi le combinazioni più estreme di [[temp]] alta e [[ea]] bassa sono troncate invece che riportate fedelmente.`,
+        try: `Verifica la forma di Arrhenius controllando che \\(\\ln k\\) sia lineare in \\(1/T\\), campionando [[temp]] dove la velocità è ben sotto il suo tetto. Poi stima \\(E_a\\) dalla tua pendenza e confronta con l'impostazione [[ea]].`,
+        notice: `<b>Un grafico di Arrhenius di \\(\\ln k\\) contro \\(1/T\\) dà una retta di pendenza \\(-E_a/R\\) — è così che le energie di attivazione sono davvero misurate.</b> L'interpretazione si approfondisce con la teoria dello stato di transizione: \\(k = \\frac{k_BT}{h}e^{-\\Delta G^\\ddagger/RT}\\) scinde la barriera in parti entalpica ed entropica, quindi un "fattore pre-esponenziale" è in realtà \\(e^{\\Delta S^\\ddagger/R}\\) — un requisito di orientamento, non un conteggio di collisioni. È perché gli enzimi raggiungono aumenti di velocità di \\(10^{17}\\): pagano in anticipo il costo entropico dell'allineamento legando il substrato, invece di abbassare il solo \\(\\Delta H^\\ddagger\\).`,
+      },
+    },
+    organic: {
+      junior: {
+        legend: `Una molecola disegnata in 3D che ruota lentamente. Le palline grigie sono <b>carbonio</b>, le rosse <b>idrogeno</b>, le blu <b>ossigeno</b> e le viola <b>azoto</b>; i bastoncini sono i legami che li tengono insieme. [[sel]] alterna tra sei diverse molecole reali.`,
+        try: `Porta [[sel]] attraverso tutte e sei, da 1 a 6, e guarda specificamente gli atomi grigi di carbonio. Conta quanti bastoncini escono da ogni pallina grigia.`,
+        notice: `<b>Ogni carbonio ha esattamente quattro legami, in tutte e sei le molecole — gas naturale, alcol, zucchero, aspirina e caffeina allo stesso modo.</b> Quel singolo fatto è perché la vita è costruita dal carbonio. Quattro legami lasciano al carbonio formare catene, ramificazioni e anelli di qualsiasi lunghezza pur avendo ancora spazio per attaccare altri atomi, quindi una manciata di elementi può essere arrangiata in milioni di sostanze distinte. Carburante, zucchero e medicina differiscono solo per come gli stessi pochi tipi di atomo sono collegati.`,
+      },
+      student: {
+        legend: `Modelli a palline e bastoncini con ombreggiatura di profondità: carbonio (grigio), idrogeno (rosso), ossigeno (blu), azoto (viola). [[sel]] seleziona tra metano, etanolo, benzene, glucosio, aspirina e caffeina; [[atoms]] conta gli atomi e [[type]] classifica il composto.`,
+        try: `Confronta il benzene (3) con il glucosio (4) — entrambi anelli a sei membri. Guarda come gli atomi stanno l'uno rispetto all'altro in ciascuno, e conta i legami tra i carboni dell'anello.`,
+        notice: `<b>L'anello del benzene è piatto e i suoi carboni sono identici; l'anello del glucosio si increspa e ogni carbonio differisce.</b> I sei elettroni \\(\\pi\\) del benzene sono delocalizzati attorno all'anello, dando legami di lunghezza uguale intermedia tra singolo e doppio, più la stabilità extra chiamata <b>aromaticità</b> — ed è perché il benzene resiste alle reazioni di addizione che un normale alchene subisce prontamente. Il glucosio è completamente saturo, quindi il suo anello adotta una conformazione a sedia increspata per alleviare la tensione, e i suoi quattro stereocentri distinti fanno sì che le forme speculari il tuo corpo non possa metabolizzarle in modo intercambiabile.`,
+      },
+      scholar: {
+        legend: `Geometrie statiche a palline e bastoncini per sei organici rappresentativi. Nota che lunghezze e angoli di legame sono schematici invece che ottimizzati, e le raffigurazioni sono conformazionalmente congelate.`,
+        try: `Considera l'aspirina (5) e la caffeina (6). Identifica i gruppi funzionali in ciascuna, e ragiona su quali caratteristiche strutturali rendono l'aspirina un inibitore irreversibile mentre la caffeina agisce da antagonista competitivo.`,
+        notice: `<b>La distinzione è chimica, non basata sulla forma: l'aspirina porta un gruppo acetile che può <em>trasferire</em>, la caffeina non ne porta nessuno.</b> L'aspirina acetila covalentemente la Ser530 della COX-1, quindi l'inibizione persiste per la vita dell'enzima — ed è perché una singola dose bassa sopprime il trombossano piastrinico per giorni, essendo le piastrine anucleate e incapaci di risintetizzare l'enzima. La caffeina occupa semplicemente i recettori dell'adenosina in modo reversibile, quindi il suo effetto segue la concentrazione e si smaltisce con un'emivita di ~5 ore. Entrambe illustrano perché la progettazione di farmaci basata sulla struttura è così esigente: la farmacologia segue da un singolo sostituente reattivo, non dalla forma molecolare grossolana, e nessuno dei due è deducibile dalla sola immagine a palline e bastoncini.`,
+      },
+    },
+    acids: {
+      junior: {
+        legend: `Il becher a sinistra mostra la tua soluzione, colorata da un indicatore universale — rosso e arancione per gli acidi, verde per il neutro, blu e viola per le basi. La curva traccia il pH man mano che aggiungi base, e il punto segna dove sei ora.`,
+        try: `Parti con [[base]] a 0 e leggi il [[ph]]. Ora trascina lentamente [[base]] verso l'alto per aggiungere base, e guarda il colore e il pH salire. Cosa succede proprio attorno alla metà?`,
+        notice: `<b>Il pH si muove appena all'inizio, poi balza di colpo attraverso il neutro.</b> Ogni po' di base è silenziosamente assorbito finché non raggiungi la quantità esattamente corrispondente — il punto di equivalenza — dove la goccia successiva manda il pH a schizzare in su in un salto, dall'acido dritto alla base.`,
+      },
+      student: {
+        legend: `Una titolazione: 25 mL di acido 0,1 M, con base 0,1 M aggiunta lungo l'asse x e il pH sull'asse y. Le bande di sfondo sono la scala dell'indicatore universale, e il becher rispecchia il pH attuale. \\([H^+]\\) fissa \\(\\text{pH} = -\\log_{10}[H^+]\\).`,
+        try: `Tieni [[pka]] al minimo (un acido forte) e aggiungi [[base]] fino a 25 mL. Poi alza [[pka]] per fare un acido debole e titola di nuovo — come cambia la forma della curva?`,
+        notice: `<b>Il punto di equivalenza sta a 25 mL, dove le moli di base eguagliano le moli di acido.</b> Per un acido forte atterra a pH 7; per un acido debole il salto è più piccolo, parte più in alto, e il punto di equivalenza sale sopra 7 perché il sale formato è esso stesso leggermente basico. Il tratto piatto prima del salto è la regione tampone.`,
+      },
+      scholar: {
+        legend: `Una titolazione monoprotica forte/debole di 25 mL di acido 0,1 M con base 0,1 M. Il pH è calcolato a tratti — regione tampone via Henderson–Hasselbalch, equivalenza via idrolisi del coniugato, oltre essa via eccesso di base forte — e le bande dell'indicatore tassellano l'asse del pH.`,
+        try: `Metti [[pka]] a un valore debole e trova il punto di semi-equivalenza a 12,5 mL: leggi [[ph]] lì e confrontalo con [[pka]]. Poi conferma che il salto di equivalenza si restringe man mano che l'acido si indebolisce.`,
+        notice: `<b>Alla semi-equivalenza, \\(\\text{pH} = pK_a\\) esattamente.</b> Lì \\([HA] = [A^-]\\), quindi Henderson–Hasselbalch \\(\\text{pH} = pK_a + \\log_{10}([A^-]/[HA])\\) collassa a \\(\\text{pH} = pK_a\\) — il modo standard di leggere la forza di un acido debole dalla sua curva. Il salto verticale si restringe al crescere di \\(pK_a\\), perché la base coniugata tamponante lo smorza.`,
+      },
+    },
+    periodic: {
+      junior: {
+        legend: `L'intera tavola periodica, un quadrato per elemento, colorata per famiglia chimica — rossi e arancioni sono metalli reattivi a sinistra, blu e viola sono non-metalli e gas nobili a destra. Clicca un quadrato per vedere cos'è.`,
+        try: `Clicca alcuni quadrati lungo la stessa colonna, poi alcuni lungo la riga in alto. Poi premi "Raggio atomico" ed "Elettronegatività" e guarda i colori scorrere attraverso la tavola.`,
+        notice: `<b>Gli elementi nella stessa colonna si comportano allo stesso modo, e le proprietà cambiano con continuità attraverso la tavola.</b> La dimensione atomica cresce verso sinistra e verso il basso; l'attrazione sugli elettroni cresce verso l'alto a destra. La forma della tavola non è decorazione — è una mappa di come si comporta ogni elemento.`,
+      },
+      student: {
+        legend: `Elementi disposti per numero atomico in periodi (righe = gusci elettronici) e gruppi (colonne = elettroni di valenza), colorati per famiglia. I pulsanti di tendenza ri-ombreggiano la tavola per una proprietà periodica; clicca una casella per ispezionarla.`,
+        try: `Passa a "Raggio atomico", poi "Elettronegatività", e guarda il gradiente invertire direzione. Poi clicca il fluoro (alto a destra) e il cesio (basso a sinistra) — i due estremi.`,
+        notice: `<b>Il raggio atomico aumenta verso il basso e a sinistra; l'elettronegatività aumenta verso l'alto e a destra.</b> Entrambi scaturiscono da una causa: attraverso un periodo la carica nucleare crescente tira gli elettroni più stretti, mentre giù per un gruppo ogni nuovo guscio spinge gli elettroni esterni più fuori.`,
+      },
+      scholar: {
+        legend: `La tavola a 118 elementi colorata per famiglia, con sovrapposizioni di proprietà. Le ombreggiature di raggio ed elettronegatività codificano le tendenze periodiche qualitative che seguono dalla carica nucleare effettiva; l'ispezione della casella riporta \\(Z\\) e categoria.`,
+        try: `Confronta il gradiente di elettronegatività con la struttura a blocchi: nota come i metalli di transizione del blocco d variano molto meno dei blocchi s e p, e come il blocco f sta quasi uniforme.`,
+        notice: `<b>Le tendenze sono una mappa della carica nucleare effettiva \\(Z_{\\text{eff}}\\).</b> I blocchi sono larghi 2, 6, 10 e 14 perché gli orbitali s, p, d e f contengono quel numero di elettroni. La variazione attenuata attraverso i metalli di transizione e di transizione interna riflette gli elettroni che riempiono i gusci d ed f interni, che schermano gli elettroni più esterni e appiattiscono le tendenze.`,
+      },
+    },
+    balancing: {
+      junior: {
+        legend: `Una reazione chimica disegnata come molecole. I cursori impostano quante ce ne sono di ciascuna molecola. Fai combaciare i conteggi di atomi a sinistra con quelli a destra per bilanciarla.`,
+        try: `Usa i cursori per cambiare i numeri davanti a ogni molecola finché ogni conteggio di atomi non combacia su entrambi i lati. [[bal]] passa a Sì?`,
+        notice: `<b>Gli atomi non sono mai persi — solo riarrangiati.</b> Non puoi cambiare le molecole, solo quante ce ne sono, finché entrambi i lati non portano lo stesso conteggio di ogni atomo. È un'equazione bilanciata, ed è in realtà solo conteggio attento.`,
+      },
+      student: {
+        legend: `Reagenti → prodotti disegnati come molecole, con un cursore di coefficiente per specie. [[check]] conta ogni elemento su entrambi i lati, e [[bal]] conferma quando combaciano tutti.`,
+        try: `Bilancia la combustione del metano: regola i coefficienti finché carbonio, idrogeno e ossigeno non combaciano tutti. Poi premi [[next]] per una reazione diversa.`,
+        notice: `<b>Solo i coefficienti possono cambiare, mai gli indici.</b> Il bilanciamento impone la conservazione della massa — gli stessi atomi in uscita che in entrata. I coefficienti che trovi sono anche i rapporti molari: CH₄ + 2O₂ → CO₂ + 2H₂O significa che una mole di metano ha bisogno di due di ossigeno.`,
+      },
+      scholar: {
+        legend: `Un bilanciatore a conservazione degli atomi: ogni coefficiente scala una specie, e i conteggi degli elementi devono equivalersi attraverso la freccia. Sono disponibili diverse reazioni.`,
+        try: `Trova i coefficienti interi più piccoli per ciascuna reazione, e nota che l'insieme bilanciato è unico a meno di un multiplo comune.`,
+        notice: `<b>Bilanciare è risolvere un sistema lineare costruito dalla conservazione di ciascun elemento.</b> C'è sempre una soluzione a meno di un fattore comune — l'insieme di interi più piccolo. Le equazioni redox aggiungono un secondo vincolo, che anche la carica deve bilanciarsi, gestito con le semireazioni elettroniche.`,
+      },
+    },
+    climate: {
+      junior: {
+        legend: `Le frecce gialle sono calore in arrivo dal Sole, e quelle che salgono dal suolo sono calore che cerca di sfuggire di nuovo nello spazio. La fascia sfumata è il <b>gas serra</b> nell'aria: più ce n'è, più calore in fuga viene rimbalzato di nuovo giù. Il cielo e il suolo arrossano man mano che il pianeta si scalda.`,
+        try: `Premi [[pre]] per tornare all'anno 1750 e nota [[dt]]. Ora premi [[now]] per l'aria di oggi. Poi trascina [[co2]] a 560 — il doppio della quantità del 1750.`,
+        notice: `<b>Raddoppiare la CO₂ da 280 a 560 scalda il pianeta di circa 3°C — e i 420 di oggi ci hanno già impegnato a circa 1,7°C.</b> Tre gradi sembrano pochi accanto al tempo che cambia di 10° tra mattina e pomeriggio. Ma questo è l'<em>intero pianeta, ogni giorno, permanentemente</em>: la differenza tra oggi e l'ultima era glaciale, quando il Canada giaceva sotto un chilometro di ghiaccio, era solo di circa 5°C. Piccoli numeri globali muovono cose molto grandi.`,
+      },
+      student: {
+        legend: `Un cartone del bilancio radiativo: onde corte solari in arrivo, infrarosso uscente, e uno strato serra assorbente la cui opacità scala con [[co2]]. [[forcing]] è il forzante radiativo in W/m² e [[dt]] il conseguente riscaldamento all'equilibrio.`,
+        try: `Registra [[forcing]] a [[co2]] = 280, 560 e poi 800. Il salto da 280→560 è della stessa dimensione di 560→800? Calcola quale [[co2]] servirebbe per raddoppiare il forzante che ottieni a 560.`,
+        notice: `<b>Ogni <em>raddoppio</em> aggiunge gli stessi 3,7 W/m² — 280→560 e 400→800 danno incrementi identici.</b> Il forzante è logaritmico, \\(\\Delta F = 5.35\\ln(C/C_0)\\), perché le bande di assorbimento più forti sono già sature e solo i bordi delle bande continuano ad assorbire. Ciò taglia in entrambi i sensi: il danno per ppm in più cala, ma anche il beneficio di ogni ppm che eviti, e la relazione non si appiattisce mai a zero. Moltiplicare per la sensibilità \\(\\lambda \\approx 0.8\\ \\text{K/(W/m²)}\\) dà ~3°C per raddoppio — il numero attorno a cui la politica climatica ruota da quarant'anni.`,
+      },
+      scholar: {
+        legend: `Rappresentazione di bilancio energetico a zero dimensioni. [[forcing]] implementa l'approssimazione di Myhre et al. (1998) \\(\\Delta F = 5.35\\ln(C/C_0)\\) con \\(C_0 = 280\\) ppm; [[dt]] applica un parametro di sensibilità fisso \\(\\lambda = 0.8\\) K/(W/m²), cioè risposta d'equilibrio invece che transitoria.`,
+        try: `Conferma la forma logaritmica verificando che rapporti uguali di [[co2]] diano incrementi uguali di [[forcing]]. Poi considera cosa questo modello necessariamente omette, e in quale direzione ogni omissione distorce [[dt]].`,
+        notice: `<b>Il modello dà \\(\\Delta T \\approx 3\\)°C per raddoppio — ma è solo d'equilibrio, e ciò nasconde quasi tutta l'incertezza reale.</b> \\(\\lambda\\) non è una costante: aggrega la risposta di Planck con le retroazioni di vapore acqueo, gradiente termico verticale, albedo e nubi, e le sole nubi tengono l'intervallo probabile dell'IPCC a 2,5–4°C. L'inerzia termica dell'oceano significa che la risposta <em>transitoria</em> è solo il 50–70% dell'equilibrio, quindi il riscaldamento osservato è in ritardo su quello impegnato. E il quadro è lineare nel forzante, quindi non può rappresentare gli elementi di bascula — collasso delle calotte, arresto dell'AMOC, carbonio del pergelisol — dove la risposta è isteretica e la nozione di un singolo \\(\\lambda\\) crolla del tutto.`,
+      },
+    },
+    tectonics: {
+      junior: {
+        legend: `Due lastre della crosta terrestre si incontrano al centro, e i punti sono roccia trascinata con esse. La barra in alto a sinistra è [[stress]] — la tensione che si accumula dove sono incastrate insieme. Quando si riempie del tutto, la roccia si spezza.`,
+        try: `Metti [[speed]] a 1 e guarda quanto ci mette [[stress]] a riempirsi. Ora mettila a 10 e guarda di nuovo.`,
+        notice: `<b>Placche più veloci riempiono la barra di tensione molto più in fretta, quindi i terremoti tornano molto più spesso — ma ognuno aspetta comunque che la barra sia piena.</b> Le placche non scivolano mai davvero in modo liscio; l'attrito le incastra, la tensione si accumula per decenni o secoli, e poi si rilascia in secondi. È perché i terremoti sembrano improvvisi anche se la causa è angosciosamente lenta: le tue unghie crescono più o meno alla velocità con cui si muovono i continenti. Prova [[quake]] per rilasciare la tensione in anticipo e guarda la barra scendere.`,
+      },
+      student: {
+        legend: `Un margine di placca in sezione. [[type]] alterna tra geometria divergente, trasforme e convergente; [[speed]] fissa la velocità relativa delle placche. [[stress]] è la tensione elastica accumulata, rilasciata come evento quando satura, con la magnitudo riportata in [[event]].`,
+        try: `Cronometra quanto ci mette [[stress]] a saturare a [[speed]] = 2 contro 8. Poi usa [[quake]] per rilasciare la tensione in anticipo, ripetutamente, e confronta le magnitudo in [[event]] con quelle da saturazione naturale.`,
+        notice: `<b>La tensione si accumula linearmente e si rilascia istantaneamente — il modello di <b>rimbalzo elastico</b> che Reid dedusse dalla rottura di San Francisco del 1906.</b> L'intervallo di ricorrenza scala inversamente con la velocità della placca, ed è perché il margine Nazca–Sud America (~7 cm/anno) si rompe molto più spesso dei contesti intraplacca. Rilasciare in anticipo dà eventi più piccoli, ed è il nocciolo di verità dietro "i piccoli sismi scaricano la tensione" — ma la verità è sottile: la magnitudo è logaritmica nell'energia, quindi servono circa 32 piccoli M5 per rilasciare l'energia di un M6, e circa un milione di M2 per sostituire un M6.`,
+      },
+      scholar: {
+        legend: `Margine stick-slip idealizzato con accumulo lineare di tensione \\(\\dot\\sigma \\propto v_{\\text{plate}}\\) e caduta completa dello sforzo a una soglia di rottura fissa — un modello a terremoto caratteristico. [[type]] seleziona la cinematica del margine; [[event]] riporta la magnitudo di momento.`,
+        try: `Esamina le statistiche di ricorrenza che questo modello produce a [[speed]] fissa. Confronta la sua distribuzione di magnitudo con la legge di Gutenberg–Richter \\(\\log_{10}N = a - bM\\) con \\(b \\approx 1\\), e identifica cosa il modello non può riprodurre.`,
+        notice: `<b>Questo modello è deliberatamente periodico; la sismicità reale no, e quel divario è perché la previsione è fallita.</b> Terremoti perfettamente caratteristici sarebbero prevedibili, eppure i cataloghi osservati seguono Gutenberg–Richter con \\(b\\approx1\\) — invariante di scala, senza dimensione caratteristica — e gli intervalli di ricorrenza su faglie ben studiate variano di fattori di parecchie unità (il ciclo "di 22 anni" di Parkfield notoriamente durò 38). L'attrito rate-and-state e la criticità auto-organizzata implicano entrambi la stessa conclusione: le piccole rotture cascano in grandi senza alcun precursore distintivo, quindi la dimensione di un evento potrebbe essere indeterminata alla nucleazione. Il rischio sismico è perciò quotato in modo probabilistico; la previsione deterministica non è attualmente considerata raggiungibile.`,
+      },
+    },
+    ocean: {
+      junior: {
+        legend: `Questo è l'Atlantico visto di lato, con i tropici a sinistra e l'estremo nord a destra. I punti in movimento sono acqua: l'acqua calda scorre a nord lungo la cima, si raffredda, diventa pesante e sprofonda, poi torna strisciando a sud lungo il fondo. [[amoc]] mostra quanto forte gira quel giro.`,
+        try: `Guarda lo sprofondamento a destra a [[warm]] = 0. Ora trascina [[warm]] fino a 10 e continua a guardare sia lo sprofondamento che [[amoc]].`,
+        notice: `<b>Scaldare l'oceano fa rallentare e fermare il nastro trasportatore — [[amoc]] scende dal 100% al 20%.</b> Il giro funziona perché l'acqua fredda e salata è abbastanza pesante da sprofondare; scaldala e resta a galla, così tutta la cinghia balbetta. Quella cinghia è ciò che porta il calore tropicale all'Europa, ed è perché la Gran Bretagna è molto più mite del Canada alla stessa latitudine. Scaldare il pianeta potrebbe, paradossalmente, rendere l'Europa del nord considerevolmente più fredda.`,
+      },
+      student: {
+        legend: `Sezione meridionale della circolazione di rovesciamento atlantica. Il flusso superficiale è guidato da [[wind]]; la formazione di acqua profonda a nord dipende dalla densità, che [[warm]] riduce. [[flow]] riporta il trasporto in sverdrup (1 Sv = 10⁶ m³/s) e [[amoc]] la forza del rovesciamento.`,
+        try: `Tieni [[wind]] fisso e porta [[warm]] da 0 a 10, registrando [[amoc]] a ogni passo. La risposta è lineare? Poi varia [[wind]] da solo e vedi se può compensare un [[amoc]] indebolito.`,
+        notice: `<b>[[amoc]] cala linearmente qui (8% per unità di riscaldamento) e il vento non può salvarlo — i due motori non sono intercambiabili.</b> Il rovesciamento è guidato dalla densità, quindi sia l'addolcimento che il riscaldamento lo sopprimono mentre il vento mescola solo la superficie. L'AMOC trasporta ~1,3 PW verso nord, circa un quarto del flusso totale di calore verso i poli del pianeta, e le osservazioni dal 2004 (array RAPID) suggeriscono una tendenza all'indebolimento contro alta variabilità. Il pericolo del sistema reale è ciò che questo modello lineare omette: una retroazione di avvezione del sale che può rendere il collasso auto-rinforzante invece che graduale.`,
+      },
+      scholar: {
+        legend: `AMOC schematica con trasporto superficiale guidato dal vento e formazione di acqua profonda controllata dalla galleggiabilità; [[warm]] agisce come un forzante di galleggiabilità che sopprime la convezione. [[amoc]] è un surrogato lineare della forza del rovesciamento.`,
+        try: `Nota che [[amoc]] qui risponde linearmente e reversibilmente a [[warm]]. Considera quale osservabile distinguerebbe questo comportamento da un sistema dotato di bistabilità, e cosa implica per l'allerta precoce.`,
+        notice: `<b>La linearità è la falsità chiave del modello: l'analisi a due scatole di Stommel mostra che l'AMOC è plausibilmente <em>bistabile</em>, con una biforcazione nodo-sella e isteresi.</b> Il meccanismo è la retroazione di avvezione del sale — un rovesciamento più debole importa meno sale verso nord, riducendo ulteriormente la densità e indebolendolo di nuovo — che ammette uno stato "spento" che persiste anche se il forzante è rimosso. Le prove paleo (eventi di Dansgaard–Oeschger, l'evento di 8,2 ka) mostrano riorganizzazioni brusche su scale temporali decennali. Poiché la transizione è una biforcazione invece che una soglia nel forzante, la speranza pratica sta negli indicatori di rallentamento critico: varianza e autocorrelazione in aumento nelle impronte di SST, che varie analisi ora affermano di rilevare, anche se il caso statistico resta contestato.`,
+      },
+    },
+    volcano: {
+      junior: {
+        legend: `Sotto la montagna c'è una camera di roccia fusa. Magma fresco continua ad arrivare dal basso, quindi [[pres]] sale costantemente; quando la camera non ne può prendere più, il vulcano erutta. [[phase]] ti dice in che stadio è, e [[vei]] valuta quanto violenta è stata l'eruzione.`,
+        try: `Metti [[visc]] a 1 — fluido, come alle Hawaii — e premi [[erupt]], notando [[vei]]. Ora mettila a 10, il tipo appiccicoso, ed erutta di nuovo.`,
+        notice: `<b>Il magma fluido dà un'esplosione dolce di circa 1; il magma appiccicoso dà un 7 — centinaia di volte più violenta, dalla stessissima pressione.</b> La differenza è se il gas riesce a uscire. Nel magma fluido le bolle scappano facilmente e la lava semplicemente si versa, quindi puoi camminare vicino a un'eruzione hawaiana. Nel magma appiccicoso il gas è intrappolato finché il tutto non scoppia in una volta, come scuotere una bibita gassata e aprirla di colpo. Stessa pressione, giornata del tutto diversa.`,
+      },
+      student: {
+        legend: `Una camera magmatica e un condotto. [[recharge]] fissa il tasso di apporto di magma, quindi [[pres]] sale fino alla rottura; [[visc]] spazia da composizione basaltica (1) a riolitica (10). [[vei]] è l'Indice di Esplosività Vulcanica dell'eruzione risultante.`,
+        try: `Erutta a [[visc]] = 1, 5 e 10 da piena pressione, registrando [[vei]] ogni volta. Poi cambia [[recharge]] e verifica se altera [[vei]] o solo il tempo di attesa.`,
+        notice: `<b>La viscosità fissa la violenza, la ricarica fissa solo la frequenza — [[vei]] va da 1 a 7 lungo l'intervallo di viscosità a pressione identica.</b> La viscosità è governata principalmente dal contenuto di silice: il basalto (~50% SiO₂) è abbastanza fluido perché le bolle scappino di continuo, mentre la riolite (~70%) polimerizza in un fuso così rigido che i volatili restano disciolti fino alla frammentazione. Poiché il VEI è logaritmico nel volume eruttato, quello spazio da 1 a 7 è circa un milione di volte di differenza in materiale. È anche perché i vulcani pericolosi sono quelli tranquilli: i lunghi intervalli di riposo lasciano accumulare magma evoluto, ricco di gas e viscoso.`,
+      },
+      scholar: {
+        legend: `Sistema camera–condotto con ricarica volumetrica e una soglia di rottura. [[visc]] parametrizza la composizione del fuso; la frammentazione esplosiva è innescata sopra una soglia di viscosità. [[vei]] scala sia con la sovrapressione immagazzinata che con la viscosità.`,
+        try: `Mappa [[vei]] sul piano ([[visc]], [[pres]]) forzando eruzioni a pressioni diverse. Considera quale variabile fisica il modello omette vistosamente, e se la sua assenza rende il modello ottimista o pessimista.`,
+        notice: `<b>L'omissione è il contenuto di volatili disciolti — il vero motore dell'esplosività, di cui la viscosità qui è solo un surrogato.</b> La frammentazione avviene quando la sovrapressione delle bolle supera la resistenza a trazione del fuso, governata dal tasso di decompressione e dalla solubilità di \\(\\mathrm{H_2O}\\)/\\(\\mathrm{CO_2}\\) (legge di Henry: \\(\\sim\\)4–6 wt% H₂O alle profondità riolitiche di camera). Viscosità e contenuto di volatili correlano tramite la silice, quindi il surrogato regge statisticamente pur mancando il meccanismo. Due conseguenze che il modello non può mostrare: la transizione pliniana–effusiva può ribaltarsi entro una <em>singola</em> eruzione man mano che le condizioni del condotto evolvono (Mount St. Helens 1980), e il VEI, essendo basato sul volume, sottostima sistematicamente l'impatto climatico di eruzioni ricche di zolfo ma piccole — i 20 Mt di SO₂ del Pinatubo raffreddarono il pianeta di 0,5°C nonostante un VEI di soli 6.`,
+      },
+    },
+    seasons: {
+      junior: {
+        legend: `La Terra (con la sua inclinazione) che orbita il Sole. Muoviti tra i mesi e guarda quale metà della Terra si inclina verso il Sole — quella metà sta avendo l'estate.`,
+        try: `Trascina [[month]] su un anno intero. Quando la metà nord si inclina verso il Sole, cosa dice [[nh]] — e cosa sta facendo [[sh]] nello stesso momento?`,
+        notice: `<b>È l'inclinazione, non la distanza.</b> La distanza della Terra dal Sole cambia appena; ciò che cambia è quale metà si inclina verso il Sole. Quella metà riceve luce più diretta e giorni più lunghi — estate — mentre l'altra ha l'inverno. È perché i due emisferi sono sempre in stagioni opposte.`,
+      },
+      student: {
+        legend: `La Terra che orbita il Sole con un'inclinazione assiale fissa di 23,5°. L'emisfero illuminato e le etichette delle stagioni si aggiornano col mese; l'orbita è disegnata quasi circolare di proposito.`,
+        try: `Porta [[month]] ai solstizi di giugno e dicembre (asse inclinato al massimo verso o lontano dal Sole) e agli equinozi nel mezzo, guardando [[nh]] ciclare estate → autunno → inverno → primavera.`,
+        notice: `<b>L'inclinazione resta fissa nello spazio, quindi ogni emisfero si inclina alternativamente verso e lontano dal Sole.</b> Inclinarsi verso dà un Sole più alto e giorni più lunghi — più riscaldamento — che è l'estate. L'orbita quasi circolare è tutto il punto: la distanza è quasi costante, quindi non può essere la causa.`,
+      },
+      scholar: {
+        legend: `Uno schema dell'orbita terrestre con obliquità fissa. La stagione segue l'emisfero sub-solare; l'orbita è disegnata quasi circolare per riflettere la minuscola eccentricità.`,
+        try: `Localizza i solstizi e gli equinozi, e nota che la stagione è fissata dalla geometria asse-Sole, indipendente dai piccoli cambiamenti nella distanza orbitale.`,
+        notice: `<b>L'insolazione va come la costante solare per il coseno dell'angolo zenitale del Sole, per la durata del giorno — e l'inclinazione guida entrambi.</b> L'eccentricità (0,017) cambia la distanza solo di ~3%, una modulazione minore. Su tempi lunghi la lenta deriva di inclinazione, eccentricità e precessione — i cicli di Milankovitch — rimescola questa geometria e ritma le ere glaciali.`,
+      },
+    },
+    sorting: {
+      junior: {
+        legend: `Ogni barra è un numero in attesa di essere messo in ordine — barre corte sono piccole, barre alte sono grandi. Premere un pulsante di ordinamento fa riordinare al computer, passo dopo passo. [[comps]] conta quante volte ha confrontato due barre, e [[swaps]] quante volte le ha spostate.`,
+        try: `Trascina [[size]] a 80. Premi [[bubble]] e lascialo finire — nota [[comps]]. Ora premi [[merge]] sulla stessa dimensione e confronta.`,
+        notice: `<b>Il Bubble Sort ha bisogno di circa 3.160 confronti; il Merge Sort di circa 400 — quasi otto volte meno, per esattamente lo stesso risultato.</b> Il Bubble Sort confronta i vicini più e più volte, quindi il lavoro cresce col quadrato della lista. Il Merge Sort divide il mucchio a metà, ordina ogni metà, poi fonde — e dividere ripetutamente è enormemente più economico. La strategia che scegli conta più della velocità del tuo computer: su un milione di elementi questo divario diventa giorni contro secondi.`,
+      },
+      student: {
+        legend: `Un visualizzatore live di ordinamenti per confronto. L'altezza della barra è il valore; [[comps]] e [[swaps]] sono contati mentre l'algoritmo gira. [[algo]] nomina il metodo in esecuzione e la sua classe asintotica.`,
+        try: `Fai girare [[bubble]] a [[size]] = 20, 40 e 80, notando [[comps]] ogni volta. Il conteggio raddoppia quando la dimensione raddoppia, o fa qualcosa di più drammatico? Poi ripeti con [[merge]].`,
+        notice: `<b>Il conteggio del Bubble quadruplica circa quando raddoppi la dimensione; quello del Merge poco più che raddoppia.</b> È la differenza tra \\(\\Theta(n^2)\\) — esattamente \\(n(n-1)/2 = 3160\\) confronti a \\(n=80\\) — e \\(\\Theta(n\\log n)\\), circa \\(n\\log_2 n \\approx 506\\). Il divario si allarga senza limite: a un milione di elementi è \\(5\\times10^{11}\\) contro \\(2\\times10^{7}\\), circa 25.000 volte. Ecco perché la complessità algoritmica, non la velocità di clock, fissa ciò che è computazionalmente possibile.`,
+      },
+      scholar: {
+        legend: `Ordinamenti per confronto strumentati su una permutazione casuale uniforme. [[comps]] è il conteggio esatto dei confronti, [[swaps]] il conteggio delle scritture — misure di costo distinte che hardware diversi pesano diversamente.`,
+        try: `Adatta la crescita di [[comps]] contro [[size]] per entrambi gli algoritmi. Poi considera: un qualsiasi algoritmo basato su confronti potrebbe battere il tasso di crescita del Merge Sort, e cosa richiederebbe?`,
+        notice: `<b>Nessun ordinamento per confronto può fare meglio — \\(\\Omega(n\\log n)\\) è un limite inferiore dimostrato, e il Merge Sort lo raggiunge.</b> L'argomento è teorico-informazionale: un confronto rende un bit, ci sono \\(n!\\) ordinamenti possibili, quindi qualsiasi albero di decisione ha bisogno di profondità \\(\\ge \\log_2(n!) = \\Theta(n\\log n)\\) per Stirling. Ordinare più in fretta richiede quindi di abbandonare del tutto i confronti — radix e counting sort raggiungono \\(O(n)\\) sfruttando la struttura delle chiavi. Nota anche che [[comps]] e [[swaps]] divergono nettamente: su hardware moderno, il comportamento della cache e la predizione dei salti contano spesso più di entrambi i conteggi.`,
+      },
+    },
+    ml: {
+      junior: {
+        legend: `I quattro gruppi di punti sono due tipi di cosa che il computer deve imparare a distinguere — guarda bene, lo stesso tipo sta in angoli <em>opposti</em>. Lo sfondo colorato è l'ipotesi attuale del computer per ogni punto della mappa. A destra c'è il suo piccolo cervello: ingressi, [[hid]] nel mezzo, una risposta. [[loss]] mostra quanto ancora sbaglia.`,
+        try: `Prova a separare i due tipi con una sola linea retta — non ci riesci. Ora metti [[hid]] a 2, premi [[reset]] e guarda [[acc]]. Poi metti [[hid]] a 10, premi [[reset]] e guarda di nuovo.`,
+        notice: `<b>Una sola linea retta non può mai funzionare qui, ma con abbastanza unità nascoste il computer piega il confine nella forma giusta e [[acc]] sale verso il 100%.</b> Nessuno gli ha detto che forma disegnare. È partito da ipotesi casuali e le ha semplicemente aggiustate, più e più volte, in qualsiasi direzione rendesse [[loss]] più piccolo. Quell'aggiustamento paziente — milioni di piccole correzioni — è tutto ciò che "imparare" significa per una macchina.`,
+      },
+      student: {
+        legend: `Una rete feed-forward 2-[[hid]]-1 con attivazioni sigmoidi, addestrata per retropropagazione su un dataset <b>simile a XOR</b>: le due classi occupano angoli diagonalmente opposti. La heatmap è la superficie di decisione attuale, [[loss]] è l'errore RMS e [[acc]] il tasso di classificazione.`,
+        try: `Metti [[hid]] a 2 e premi [[reset]] alcune volte, notando dove [[acc]] si stabilizza a ogni giro. Poi metti [[hid]] a 10 e ripeti. La stessa architettura raggiunge sempre la stessa risposta?`,
+        notice: `<b>Con 2 unità nascoste l'esito è incoerente — alcuni giri lo risolvono, altri si bloccano vicino al 75% — mentre 10 unità riescono quasi ogni volta.</b> XOR è il problema canonico <em>non linearmente separabile</em>: nessun singolo iperpiano divide queste classi, ed è esattamente il limite che Minsky e Papert usarono nel 1969 per mostrare che i percettroni erano fondamentalmente ristretti, congelando il campo per oltre un decennio. Due unità nascoste sono teoricamente sufficienti ma lasciano quasi nessun margine d'errore, quindi la discesa del gradiente atterra spesso in un cattivo minimo locale. Le unità extra non aggiungono potenza quanto aggiungono <em>vie</em> alla soluzione.`,
+      },
+      scholar: {
+        legend: `MLP a due strati, \\(2 \\to H \\to 1\\), sigmoide ovunque, addestrato per discesa del gradiente full-batch con tasso di apprendimento \\(\\propto\\) [[lr]]. Il dataset è quattro cluster gaussiani in configurazione XOR; la heatmap rende \\(\\sigma(W_2^\\top\\sigma(W_1x+b_1)+b_2)\\).`,
+        try: `Tieni [[hid]] a 2 e ri-[[reset]] ripetutamente, registrando la distribuzione della [[acc]] finale. Poi aumenta [[hid]] e osserva come cambia quella distribuzione. Considera cosa implica sul paesaggio della perdita più che sulla capacità rappresentativa.`,
+        notice: `<b>La capacità non è il vincolo stringente — lo è l'ottimizzazione. Due unità nascoste possono rappresentare XOR esattamente, eppure spesso non riescono a trovarlo.</b> I fallimenti sono cattivi minimi locali e punti di sella in un paesaggio non convesso. Allargare la rete non aumenta l'espressività qui; rende il paesaggio più benigno, e nel limite sovraparametrizzato quasi tutti i minimi locali si avvicinano al valore globale. È perché la pratica moderna favorisce reti ben più grandi di quanto il compito richieda, e perché ciò nonostante generalizzano — un'apparente contraddizione del ragionamento classico bias–varianza che motivò la letteratura sulla doppia discesa.`,
+      },
+    },
+    crypto: {
+      junior: {
+        legend: `Alice a sinistra e Bob a destra vogliono un numero segreto condiviso. L'occhio in alto è un <b>intercettatore</b> che vede assolutamente tutto ciò che inviano. Guarda i numeri viaggiare attraverso, e tieni d'occhio [[key]] alla fine.`,
+        try: `Premi [[run]] e segui ogni numero che attraversa il centro. Poi chiediti: la [[key]] finale è mai stata uno di loro?`,
+        notice: `<b>No — la chiave condivisa non ha mai attraversato il filo, eppure Alice e Bob sono finiti entrambi con lo stesso numero.</b> Ciascuno ha tenuto per sé un numero segreto e ha inviato solo una miscela mescolata. Per come funziona il mescolamento, combinare il proprio segreto con la miscela dell'altra persona dà la stessa risposta in entrambi i sensi. L'intercettatore ha visto ogni messaggio e ancora non può riprodurla — che è più o meno ciò che protegge i dati della tua carta ogni volta che compri qualcosa online.`,
+      },
+      student: {
+        legend: `<b>Scambio di chiavi Diffie–Hellman</b> con parametri pubblici \\(p=23\\), \\(g=5\\). Alice e Bob scelgono ciascuno un esponente privato, pubblicano \\(g^a \\bmod p\\) e \\(g^b \\bmod p\\), poi elevano il valore dell'altro al proprio esponente. [[step]] percorre il protocollo; [[key]] è il segreto concordato.`,
+        try: `Premi [[run]] e annota ogni valore pubblico che attraversa. Usando solo quelli e i pubblici \\(p\\) e \\(g\\), prova a ricavare uno dei due esponenti privati — poi controlla la tua risposta contro [[key]].`,
+        notice: `<b>Entrambe le parti calcolano \\((g^a)^b = (g^b)^a = g^{ab} \\bmod p\\), un valore mai trasmesso.</b> Recuperare \\(a\\) da \\(g^a \\bmod p\\) è il <b>problema del logaritmo discreto</b>. Con \\(p=23\\) puoi risolverlo a forza bruta in 23 tentativi; con un primo di 2048 bit la stessa ricerca è computazionalmente senza speranza. L'asimmetria è tutto: l'elevamento a potenza è economico, invertirlo no. Nota che questo stabilisce un segreto condiviso tra estranei ma <em>non</em> li autentica — il DH puro è del tutto aperto a un attacco man-in-the-middle.`,
+      },
+      scholar: {
+        legend: `DH su \\(\\mathbb{Z}_p^*\\) con \\(p=23\\), \\(g=5\\) un generatore. La sicurezza poggia sull'assunzione <b>Diffie–Hellman computazionale</b>; l'avversario passivo osserva \\((g, p, g^a, g^b)\\) e deve produrre \\(g^{ab}\\).`,
+        try: `Nota che \\(p=23\\) rende il log discreto banalmente violabile per ricerca esaustiva. Stima la dimensione del gruppo necessaria a resistere all'index calculus, e contrastala con la dimensione di chiave che un gruppo a curva ellittica richiederebbe per sicurezza equivalente.`,
+        notice: `<b>Il DH su campi finiti ha bisogno di ~2048–3072 bit per ~112–128 bit di sicurezza; una curva ellittica ne serve solo ~256.</b> Il divario esiste perché \\(\\mathbb{Z}_p^*\\) ammette l'index calculus sub-esponenziale, \\(L_p[1/3, 1.923]\\), mentre le curve ellittiche generali ammettono solo attacchi generici \\(O(\\sqrt{n})\\). La sicurezza esige anche un sottogruppo di ordine primo — Logjam (2015) mostrò che primi condivisi da 512 bit più un downgrade a grado export ruppero il vero TLS su scala. Tutto ciò cade a un computer quantistico abbastanza grande via l'algoritmo di Shor, ed è perché l'accordo di chiavi post-quantistico è passato a costruzioni su reticoli come ML-KEM.`,
+      },
+    },
+    complexity: {
+      junior: {
+        legend: `Ogni curva mostra quanto <b>lavoro</b> serve a un diverso tipo di algoritmo man mano che il problema cresce. Quelle piatte lo notano appena; quella ripida schizza fuori dalla cima del grafico. [[ops]] è il lavoro necessario per la dimensione attuale, e [[cls]] nomina il metodo selezionato.`,
+        try: `Metti [[algo]] a 5 — il tipo più ripido. Ora trascina [[n]] lentamente da 2 fino a 22, guardando [[ops]] per tutto il tempo.`,
+        notice: `<b>Il lavoro esplode da 4 a oltre quattro milioni — per un problema che è cresciuto solo da 2 elementi a 22.</b> Ogni elemento in più <em>raddoppia</em> il lavoro, quindi non importa quanto veloce sia il tuo computer: aggiungi altri trenta elementi e nessuna macchina che esisterà mai potrebbe finire. Alcuni problemi non sono difficili perché non abbiamo ancora trovato il trucco astuto; sono difficili per come cresce il lavoro. Riporta [[algo]] a 1 e guarda lo stesso problema diventare banale.`,
+      },
+      student: {
+        legend: `Curve di crescita per cinque classi di complessità, da \\(O(\\log n)\\) a \\(O(2^n)\\), tracciate contro la dimensione dell'input. [[n]] muove il punto di valutazione, [[algo]] seleziona una classe, e [[ops]] riporta il conteggio delle operazioni all'\\(n\\) attuale.`,
+        try: `A [[n]] = 22, porta [[algo]] da 1 a 5 e registra [[ops]] ogni volta. Poi calcola quanto più a lungo impiegherebbe \\(O(2^n)\\) a \\(n = 60\\), assumendo un miliardo di operazioni al secondo.`,
+        notice: `<b>A \\(n=22\\) le classi spaziano da 5 operazioni a 4.194.304 — e a \\(n=60\\), \\(2^n\\) è \\(1,15\\times10^{18}\\) operazioni, circa 36 anni a un miliardo al secondo.</b> È perché le classi di complessità dominano il calcolo pratico: i guadagni hardware moltiplicano la tua velocità per una costante, ma un'esponenziale ingoia intera qualsiasi costante. Raddoppiare la velocità della CPU compra esattamente <em>un</em> elemento di input in più su un algoritmo \\(O(2^n)\\). Nota il rovescio — per \\(n\\) piccolo, un algoritmo esponenziale con una costante minuscola può battere davvero uno "migliore".`,
+      },
+      scholar: {
+        legend: `Crescita asintotica di \\(\\log n\\), \\(n\\), \\(n\\log n\\), \\(n^2\\) e \\(2^n\\). [[ops]] valuta la classe selezionata a [[n]]; le intersezioni illustrano che la dominanza asintotica non dice nulla sul comportamento a piccoli \\(n\\).`,
+        try: `Identifica dove le curve \\(n^2\\) e \\(2^n\\) si intersecano, e nota quale è più economica sotto quel punto. Poi considera: un algoritmo \\(O(n^{100})\\) appartiene alla stessa categoria pratica di \\(O(n\\log n)\\), dato che entrambi sono polinomiali?`,
+        notice: `<b>\\(n^2\\) batte \\(2^n\\) solo fino a \\(n \\approx 4\\); eppure \\(O(n^{100})\\) è "efficiente" secondo la definizione formale e del tutto inutile in pratica.</b> La linea polinomiale/esponenziale è la <b>tesi di Cobham–Edmonds</b> — un confine teorico robusto (chiuso per composizione, indipendente dal modello di macchina) che è ciò nonostante un cattivo surrogato della fattibilità. Se \\(\\text{P} = \\text{NP}\\) chiede se verifica e scoperta siano ugualmente difficili, e resta aperto. In pratica le istanze difficili sono spesso rare: i risolutori SAT sbrigano di routine problemi industriali con milioni di variabili, perché la complessità del caso peggiore descrive un avversario, non gli input che incontri davvero.`,
+      },
+    },
+    life: {
+      junior: {
+        legend: `Ogni quadretto è una <b>cellula</b> viva o morta. A ogni generazione, tutte le cellule guardano i loro otto vicini e seguono la stessa minuscola regola: troppo pochi vicini e una cellula muore di solitudine, troppi e muore di sovraffollamento, esattamente giusti e ne nasce una nuova. [[gen]] conta i turni.`,
+        try: `Premi [[random]] per spargere cellule vive dappertutto, poi guarda [[alive]] per un minuto senza toccare nulla.`,
+        notice: `<b>Il caos si assesta da solo in forme ordinate e ripetute — blocchi fermi, piccoli motivi che lampeggiano per sempre, e piccoli alianti che camminano sullo schermo.</b> Nessuno ha programmato un blocco o un aliante; cadono semplicemente fuori dall'unica regola sui vicini. Premi [[clear]] e poi [[glider]] per guardarne uno singolo marciare via da solo. L'ordine che emerge da regole molto semplici senza nessuno al comando si chiama <b>emergenza</b>, ed è così che colonie di formiche, stormi e le tue stesse cellule si organizzano.`,
+      },
+      student: {
+        legend: `Il <b>Game of Life</b> di Conway su una griglia che si avvolge (toroidale). La regola è B3/S23: una cellula morta con esattamente 3 vicini vivi nasce, una viva sopravvive con 2 o 3, tutto il resto muore. [[gen]] è il conteggio dei passi, [[alive]] la popolazione di cellule vive. Clicca un quadretto per commutarlo.`,
+        try: `Premi [[random]] e segui [[alive]] per un paio di centinaia di generazioni. Si assesta, e all'incirca quale frazione della popolazione iniziale sopravvive? Poi [[clear]] e piazza un singolo [[glider]].`,
+        notice: `<b>Una zuppa casuale collassa in una popolazione bassa e quasi costante di nature morte e oscillatori, tipicamente solo qualche percento della griglia.</b> Eppure la stessa regola sostiene un aliante che viaggia di una cella in diagonale ogni quattro generazioni. Life è <b>Turing-completo</b>: gli alianti possono codificare segnali, e le collisioni tra loro costruiscono porte logiche, quindi qualsiasi calcolo può in linea di principio girare dentro questa griglia. Due stati e una regola sui vicini bastano per il calcolo universale.`,
+      },
+      scholar: {
+        legend: `Automa cellulare a due stati, esterno-totalistico B3/S23 su \\(\\mathbb{Z}^2\\) con condizioni al contorno periodiche e intorno di Moore. [[gen]] indicizza l'aggiornamento parallelo; [[alive]] è la popolazione.`,
+        try: `Confronta il comportamento di assestamento e la densità finale da semi [[random]] ripetuti. Considera cosa dovresti osservare per prevedere in anticipo se una data configurazione si estingua mai.`,
+        notice: `<b>Non potresti prevederlo — la domanda è formalmente indecidibile.</b> Life è Turing-completo (Berlekamp–Conway–Guy; seguirono costruttori universali espliciti), quindi chiedere se una configurazione arbitraria alla fine si stabilizzi equivale al problema dell'arresto. Le zuppe casuali convergono affidabilmente a una densità vicina a 0,029 con una cenere di nature morte e blinker, eppure nessuna scorciatoia esiste per il caso generale: l'automa è <em>computazionalmente irriducibile</em>, e simularlo passo dopo passo è il modo più veloce per conoscere il suo futuro. Una regola dichiarata in una frase contiene un comportamento che nessuna teoria può comprimere.`,
+      },
+    },
+    dna: {
+      junior: {
+        legend: `La scala attorcigliata è una <b>molecola di DNA</b>. I suoi gradini sono coppie di lettere — A si unisce sempre a T, e C sempre a G. La forcella che viaggia lungo il centro la apre come una cerniera, e lettere fresche scattano su ogni metà per costruire due copie complete. Il viola segna un <b>errore</b> di copiatura.`,
+        try: `Premi [[reset]] e guarda scorrere una copia completa, tenendo d'occhio le lettere che appaiono sui nuovi filamenti. Riesci a prevedere ogni nuova lettera prima che atterri?`,
+        notice: `<b>Sì — ogni nuova lettera è forzata. A può accoppiarsi solo con T, C solo con G, quindi ogni metà della scala tiene istruzioni complete per ricostruire l'altra.</b> È tutto qui il segreto dell'ereditarietà: dividi la molecola e hai automaticamente due copie. Guarda però [[errors]] — di tanto in tanto la lettera sbagliata s'infila. Quei rari errori sono <b>mutazioni</b>, e senza di essi l'evoluzione non avrebbe nulla su cui lavorare.`,
+      },
+      student: {
+        legend: `Una forcella di replicazione che apre una doppia elica. Le basi si accoppiano per complementarità (A–T, C–G) quindi ogni filamento parentale fa da stampo per uno nuovo — replicazione <b>semiconservativa</b>. [[speed]] fissa la velocità della forcella, [[pairs]] conta le basi copiate ed [[errors]] conta gli errori di incorporazione, evidenziati in viola.`,
+        try: `Fai girare una replicazione completa e confronta [[errors]] con [[pairs]] per stimare il tasso d'errore di questa simulazione. Poi cambia [[speed]] e ripeti — andare più veloce la rende meno accurata qui?`,
+        notice: `<b>Il tasso d'errore resta attorno al 4% per quanto veloce corra la forcella — e il 4% è circa cento milioni di volte peggio della realtà.</b> L'esagerazione è deliberata, così gli errori sono visibili. La vera DNA polimerasi incorpora male circa 1 base su \\(10^4\\)–\\(10^5\\), poi corregge con un'esonucleasi 3′→5′ e passa gli avanzi alla riparazione dei mismatch, dando un tasso finale vicino a 1 su \\(10^9\\). Copia 3,2 miliardi di basi al 4% e distruggeresti il genoma in una singola divisione; è la fedeltà, non la copiatura, il vero problema ingegneristico.`,
+      },
+      scholar: {
+        legend: `Replicazione semiconservativa schematica a una singola forcella. L'accoppiamento di Watson–Crick (A–T due legami idrogeno, G–C tre) rende ogni filamento uno stampo; [[pairs]] segue l'incorporazione ed [[errors]] segnala i mismatch. L'asimmetria filamento guida/in ritardo e i frammenti di Okazaki non sono raffigurati.`,
+        try: `Stima il tasso d'errore per base da [[errors]]/[[pairs]], poi calcola il numero atteso di mutazioni per duplicazione del genoma umano a quel tasso, e confronta con l'osservato ~1–2 per divisione.`,
+        notice: `<b>Al tasso di questa simulazione accumuleresti ~10⁸ errori per copia del genoma; il valore reale è uno o due.</b> Il divario è chiuso in modo moltiplicativo: la fedeltà di selezione della base (~10⁻⁵), il proofreading 3′→5′ (~10²×), e la riparazione dei mismatch (~10²–10³×) si compongono a ~10⁻⁹–10⁻¹⁰ per base. Eppure il tasso non è minimizzato — è <em>sintonizzato</em>. Zero mutazione significa zero adattamento, e le linee con riparazione dei mismatch disattivata (tumori MMR-deficienti, batteri ipermutatori) mostrano che l'ottimo sta a un valore non nullo fissato dall'equilibrio tra carico deleterio e apporto adattativo.`,
+      },
+    },
+    evolution: {
+      junior: {
+        legend: `Ogni punto è un <b>animale</b>, e il suo colore è il tratto che ha ereditato. Lo sfondo è l'ambiente in cui deve mimetizzarsi, e deriva lentamente verso un colore diverso col tempo. Gli animali ben mimetizzati sono disegnati più grandi — sono quelli con più probabilità di avere figli. [[fit]] mostra quanto bene il gruppo si adatta all'ambiente circostante.`,
+        try: `Trascina [[mut]] fino a 0 e lascia girare per cento generazioni. Guarda [[div]], poi continua a guardare [[fit]] mentre il colore dello sfondo continua a derivare.`,
+        notice: `<b>Senza mutazione la popolazione diventa tutta di un colore — [[div]] scende a quasi zero — e poi, mentre lo sfondo si allontana, [[fit]] crolla e non può riprendersi.</b> La selezione da sola può solo scegliere dalla varietà che già esiste; una volta esaurita, non resta nulla da cui scegliere. È per questo che la mutazione conta: l'errore casuale di oggi è l'unica occasione di domani di sopravvivere a un mondo cambiato. Rialza [[mut]] e guarda la popolazione arrampicarsi indietro.`,
+      },
+      student: {
+        legend: `60 individui portano un singolo tratto continuo (tinta). La fitness cala con la distanza dall'ottimo dell'ambiente, che deriva col tempo. La riproduzione è un campionamento pesato per fitness scalato da [[sel]], con la prole perturbata da [[mut]]. [[div]] è la deviazione standard del tratto nella popolazione.`,
+        try: `Metti [[mut]] a 0 e fai girare: guarda [[div]] collassare e poi [[fit]] decadere mentre l'ottimo deriva. Poi metti [[sel]] a 0 con [[mut]] alta, e vedi se [[fit]] sale mai.`,
+        notice: `<b>Nessuna manopola da sola funziona: senza mutazione la popolazione esaurisce la variazione, senza selezione non si concentra mai sull'ottimo.</b> L'evoluzione ha bisogno di entrambe — una sorgente di variazione e un filtro. È la sostanza del <b>teorema fondamentale di Fisher</b>: il tasso di aumento della fitness media eguaglia la varianza genetica additiva in fitness, quindi una popolazione con varianza zero non può adattarsi a nessuna velocità. Nota anche che [[sel]] alta non è semplicemente meglio: spoglia la variazione più in fretta, lasciando la popolazione fragile quando l'ambiente si muove.`,
+      },
+      scholar: {
+        legend: `Riproduzione proporzionale alla fitness su un tratto continuo unidimensionale con un ottimo che deriva. [[sel]] scala l'intensità della selezione, [[mut]] la varianza mutazionale per generazione, e [[div]] riporta la deviazione standard del tratto della popolazione — un surrogato della varianza genetica additiva.`,
+        try: `Esplora il piano \\(([[sel]], [[mut]])\\) e trova dove la [[fit]] sostenuta è massimizzata contro l'ottimo che deriva. Verifica se l'impostazione migliore è la selezione più alta disponibile, e identifica dove la popolazione si estingue in termini di fitness.`,
+        notice: `<b>L'ottimo è intermedio in entrambi i parametri — la selezione massima è attivamente dannosa.</b> È il classico equilibrio mutazione–selezione: la varianza d'equilibrio scala come \\(\\sigma^2 \\approx V_m/s\\), quindi la selezione dura erode la varianza stessa che l'adattamento richiede. Con un ottimo in movimento la popolazione resta indietro di \\(\\propto k/s\\) per un tasso di deriva \\(k\\), e il teorema di Fisher limita il tasso di inseguimento raggiungibile con la varianza additiva. Troppa mutazione, intanto, attraversa la <b>soglia d'errore di Eigen</b>, dove la selezione non può più mantenere l'informazione contro il carico mutazionale e la popolazione si scioglie via dal picco del tutto.`,
+      },
+    },
+    ecosystem: {
+      junior: {
+        legend: `I punti verdi sono <b>piante</b>, quelli arancioni sono <b>conigli</b> che le mangiano, e quelli rossi sono <b>volpi</b> che mangiano i conigli. Tutto ha bisogno di cibo per restare vivo e riprodursi. I tre contatori seguono quanti di ciascuno sono vivi in questo momento.`,
+        try: `Guarda i tre numeri per un po' — non stanno mai fermi. Ora trascina [[pred]] fino a 10 e continua a guardare [[herb]] e poi [[preds]].`,
+        notice: `<b>Volpi super-efficienti mangiano quasi tutti i conigli — e poi anche le volpi muoiono di fame.</b> I predatori si distruggono da soli essendo troppo bravi a cacciare. Nota anche che i numeri salgono e scendono a <em>turni</em>: tanti conigli, poi tante volpi, poi pochi conigli, poi poche volpi, ancora e ancora. Nulla coordina questo — cade fuori da chi mangia chi. Tira un filo in una rete alimentare e tutto il resto si muove.`,
+      },
+      student: {
+        legend: `Una catena alimentare basata su agenti: le piante ricrescono a un tasso fissato da [[growth]], gli erbivori foraggiano e si riproducono quando la loro energia è abbastanza alta, i predatori cacciano gli erbivori con un successo scalato da [[pred]]. Ogni agente porta un budget energetico e muore di fame senza cibo.`,
+        try: `Lascia i valori predefiniti e guarda i tre contatori per qualche minuto, notando quale culmina per primo. Poi spingi [[pred]] a 10 e guarda cosa succede a [[herb]] e [[preds]] a turno.`,
+        notice: `<b>Le popolazioni oscillano con i predatori che culminano <em>dopo</em> le prede, e i predatori troppo efficienti innescano un crollo che li porta giù col loro cibo.</b> È la dinamica di <b>Lotka–Volterra</b>: le prede crescono, i predatori seguono, le prede collassano, i predatori seguono di nuovo — il ritardo è ciò che la fa ciclare invece di assestarsi. La lezione si generalizza male per la conservazione: un predatore che massimizza il tasso di cattura a breve termine può guidare la propria estinzione, ed è esattamente perché le coppie predatore–preda reali persistono solo con rifugi, e perché rimuovere un predatore apicale può scatenare una cascata giù per un'intera rete.`,
+      },
+      scholar: {
+        legend: `Sistema tri-trofico basato su individui con budget energetici espliciti. L'apporto di risorse è fissato da [[growth]], la risposta funzionale da [[pred]]; la demografia emerge da incontri locali invece che da un'equazione di campo medio.`,
+        try: `Mappa l'esito attraverso il piano \\(([[growth]], [[pred]])\\). Cerca in particolare se <em>alzare</em> [[growth]] destabilizzi mai il sistema invece di sostenere più vita, e nota dove i cicli si trasformano in estinzioni.`,
+        notice: `<b>Arricchire il sistema può destabilizzarlo: più crescita delle piante guida oscillazioni più selvagge i cui minimi toccano lo zero, spazzando via il livello superiore.</b> È il <b>paradosso dell'arricchimento</b> (Rosenzweig, 1971) — aggiungere risorse alza l'equilibrio ma lo destabilizza, poiché l'ampiezza del ciclo limite cresce finché un minimo stocastico causa l'estinzione. Essendo basato su individui, il modello mostra anche ciò che il Lotka–Volterra di campo medio non può: la stocasticità demografica a piccole dimensioni di popolazione significa che l'estinzione è un evento <em>probabilistico</em> ben prima che l'equilibrio deterministico raggiunga lo zero.`,
+      },
+    },
+    cell: {
+      junior: {
+        legend: `Due camere d'acqua unite da una membrana nel mezzo. Il lato destro ha <b>sale</b> (punti arancioni) che non può attraversare; l'acqua sì. Guarda in che direzione si muove il livello dell'acqua.`,
+        try: `Aggiungi [[salt]] al lato destro e guarda l'acqua. In che direzione si muove — e continua per sempre?`,
+        notice: `<b>L'acqua si muove verso il lato salato.</b> Sta cercando di diluire il sale che non può raggiungere, quindi scorre attraverso la membrana finché il livello che sale non spinge indietro abbastanza forte da fermarla. Quel punto di equilibrio è l'osmosi in azione — nessun pompaggio, solo l'acqua che pareggia le cose.`,
+      },
+      student: {
+        legend: `Una membrana semipermeabile che separa acqua pura (sinistra) da una soluzione (destra). Il soluto (arancione) non può attraversare; l'acqua sì. I livelli si spostano finché il richiamo osmotico non bilancia la differenza di pressione che si accumula.`,
+        try: `Alza [[salt]] e guarda [[right]] salire mentre [[left]] scende, poi assestarsi. Spingi [[salt]] ancora più su — la differenza di livello finale cresce?`,
+        notice: `<b>L'acqua scorre verso la concentrazione di soluto più alta e si ferma quando la pressione bilancia il richiamo osmotico.</b> Un carico di soluto più grande spinge più acqua attraverso e costruisce una differenza di livello più grande — un'immagine diretta della pressione osmotica, \\(\\Pi = iMRT\\). La membrana non lascia mai pareggiare il soluto, quindi è l'acqua a fare il bilanciamento.`,
+      },
+      scholar: {
+        legend: `Un modello di osmosi a due compartimenti: il flusso netto d'acqua è proporzionale a \\((\\Delta\\text{concentrazione}) - k(\\Delta\\text{livello})\\), quindi il sistema si rilassa a uno stato stazionario dove il gradiente osmotico è bilanciato da un battente idrostatico.`,
+        try: `Varia [[salt]] e registra il divario di livello all'equilibrio; verifica che scali con il carico di soluto, rispecchiando \\(\\Pi = iMRT\\).`,
+        notice: `<b>L'equilibrio qui non è concentrazione uguale — è potenziale idrico bilanciato.</b> Poiché il soluto è intrappolato su un lato, l'acqua si muove finché il termine di pressione (la differenza di livello) non compensa il termine di soluto. È il potenziale idrico \\(\\Psi = \\Psi_s + \\Psi_p\\) che raggiunge l'uguaglianza, e il divario di livello residuo è la pressione osmotica resa visibile.`,
+      },
+    },
+    mitosis: {
+      junior: {
+        legend: `Una cellula che si divide. Trascina il cursore per muoverti tra le fasi, o premi Play. Le forme a X colorate sono i <b>cromosomi</b> — la cellula li copia, li allinea, e li separa in due cellule nuove.`,
+        try: `Trascina [[stage]] lentamente dall'inizio alla fine, guardando i cromosomi allinearsi al centro e poi dividersi verso le estremità. Con quante cellule finisci?`,
+        notice: `<b>Una cellula diventa due, ciascuna con un corredo completo e identico di cromosomi.</b> Le copie si allineano lungo il centro, vengono tirate a estremità opposte, e la cellula si strozza a metà. Passa a Meiosi e lo stesso inizio finisce in <i>quattro</i> cellule con metà dei cromosomi invece.`,
+      },
+      student: {
+        legend: `Le fasi della divisione. Trascina [[stage]] per scorrere tra profase, metafase, anafase e telofase; [[phase]] nomina dove sei e [[cells]] conta le cellule. Il pulsante modalità alterna tra mitosi e meiosi.`,
+        try: `Scorri fino alla metafase e nota i cromosomi allineati sull'equatore, poi all'anafase per guardare le sorelle separarsi. Poi passa a Meiosi e lasciala fare due divisioni.`,
+        notice: `<b>La mitosi finisce in 2 cellule diploidi identiche; la meiosi finisce in 4 cellule aploidi uniche.</b> Metafase (allineamento) e anafase (separazione) sono il nodo. La meiosi aggiunge una seconda divisione e prima accoppia i cromosomi omologhi, il che dimezza il numero di cromosomi e rimescola i geni.`,
+      },
+      scholar: {
+        legend: `Uno schema della segregazione cromosomica. [[stage]] scorre la linea temporale, [[phase]] etichetta la fase e [[cells]] il conteggio dei prodotti. La modalità Meiosi mostra la divisione riduzionale (I) seguita dalla divisione equazionale (II).`,
+        try: `Confronta le due modalità ai loro punti medi: nella mitosi i cromatidi fratelli si separano una volta; nella meiosi I si separano prima gli omologhi, e solo nella meiosi II i fratelli si dividono.`,
+        notice: `<b>La differenza distintiva è la meiosi I: si separano gli omologhi, non i cromatidi fratelli — ed è ciò che dimezza il numero di cromosomi.</b> La separazione dei fratelli (mitosi, e meiosi II) preserva la ploidia; la separazione degli omologhi la riduce. Lo schema omette il crossing over, l'altra grande fonte di variazione, che ricombina gli omologhi prima che si separino.`,
+      },
+    },
+    punnett: {
+      junior: {
+        legend: `Due genitori, ciascuno con due copie del gene. La griglia mostra ogni combinazione che il loro figlio potrebbe ereditare; le celle colorate mostrano come apparirebbe il figlio.`,
+        try: `Imposta entrambi i genitori a Aa (uno dominante, uno recessivo) con i pulsanti, poi guarda le quattro celle. Quante mostrano il colore dominante, e quante il recessivo?`,
+        notice: `<b>Aa × Aa dà un rapporto 3-a-1.</b> Tre dei quattro figli possibili mostrano il tratto dominante, uno mostra il recessivo. Sono probabilità, non certezza — come lanci di moneta — ma su molti figli il 3:1 tiene.`,
+      },
+      student: {
+        legend: `Un quadrato di Punnett: i due alleli di ciascun genitore intestano righe e colonne, e ogni cella è un genotipo di prole ugualmente probabile, colorato per fenotipo. [[pheno]] e [[geno]] danno i rapporti.`,
+        try: `Confronta Aa × Aa (entrambi eterozigoti) con un testcross, Aa × aa. Come differiscono i rapporti [[pheno]] e [[geno]]?`,
+        notice: `<b>Aa × Aa → fenotipo 3:1 ma genotipo 1:2:1; Aa × aa → 1:1.</b> Ogni genitore passa un allele a caso (segregazione), quindi le quattro celle sono ugualmente probabili. Il testcross contro un recessivo è esattamente come distingui un AA da un Aa.`,
+      },
+      scholar: {
+        legend: `Un quadrato di Punnett monoibrido, con i rapporti genotipici e fenotipici calcolati dalle quattro combinazioni gametiche ugualmente probabili.`,
+        try: `Lavora attraverso ogni incrocio (AA, Aa, aa in ciascun genitore) e prevedi i rapporti prima di rivelarli; nota quali incroci non possono mai produrre un figlio recessivo.`,
+        notice: `<b>La griglia è la legge della segregazione di Mendel resa visiva.</b> Assume una dominanza completa semplice; l'ereditarietà reale aggiunge dominanza incompleta, codominanza, alleli multipli, associazione e associazione al sesso — e scala a intere popolazioni attraverso Hardy-Weinberg, la linea di base \\(p^2 + 2pq + q^2\\) per rilevare l'evoluzione.`,
+      },
+    },
+    prob: {
+      junior: {
+        legend: `Le palline cadono dall'alto in un triangolo di <b>pioli</b>. A ogni piolo una pallina rimbalza a sinistra o a destra per puro caso — come lanciare una moneta. Si accumulano nelle <b>caselle</b> in fondo. La linea bianca tratteggiata e le barre tenui dietro mostrano la forma che la matematica dice che dovresti ottenere.`,
+        try: `Premi [[drop]] e fermati dopo circa 20 palline. La forma è ordinata? Ora premi [[reset]], lascia andare oltre le 200, e confronta le barre con la linea tratteggiata.`,
+        notice: `<b>Con 20 palline il mucchio sembra irregolare; con 200 cresce sempre nella stessa gobba al centro — la curva a campana.</b> Nessuno può dire dove atterrerà una <i>singola</i> pallina, perché ciascuna è pura fortuna. Eppure centinaia insieme sono notevolmente prevedibili. Guarda [[mean]] vagare all'inizio, poi assestarsi vicino al centro e restarci.`,
+      },
+      student: {
+        legend: `Ogni piolo è un ramo equo 50/50, quindi la casella finale di una pallina conta quante volte è capitato che andasse a destra — un esito <b>binomiale</b>. Barre luminose = i conteggi che hai davvero ottenuto, barre tenui e la curva tratteggiata = la forma a campana prevista. [[mean]] è l'indice medio corrente della casella.`,
+        try: `Fai andare oltre le 300 palline con [[rows]] a 7 e guarda dove si assesta [[mean]]. Poi metti [[rows]] a 10 e rilancia — dove sta ora la media, e cosa succede alla larghezza del mucchio?`,
+        notice: `<b>La media si assesta a \\(n/2\\) — 3,5 per 7 file, 5 per 10 — e il mucchio si allarga come \\(\\sqrt{n}\\).</b> Con \\(n\\) file il risultato è \\(\\text{Binomiale}(n, \\tfrac12)\\), la cui deviazione standard è \\(\\sqrt{n}/2\\), quindi la dispersione cresce mentre il picco si affina rispetto al totale. Nulla qui è stato progettato per fare una campana: cade fuori da lanci di moneta ripetuti da sé.`,
+      },
+      scholar: {
+        legend: `Il tabellone realizza una somma di \\(n\\) variabili i.i.d. \\(\\text{Bernoulli}(\\tfrac12)\\); l'indice della casella è il conteggio dei rami a destra. Barre luminose = la distribuzione empirica, curva tratteggiata = l'approssimazione normale \\(\\mathcal{N}(n/2,\\, n/4)\\) sovrapposta dalla simulazione. [[mean]] è la media campionaria corrente.`,
+        try: `Confronta la dispersione empirica a [[rows]] = 4 e [[rows]] = 10 e verifica se la larghezza scala come \\(\\sqrt{n}\\). Poi guarda come [[mean]] si stabilizza man mano che le palline si accumulano — la sua fluttuazione dovrebbe ridursi come \\(1/\\sqrt{N}\\) nel numero \\(N\\) lasciato cadere.`,
+        notice: `<b>La dispersione scala come \\(\\sqrt{n}\\) e la media campionaria converge come \\(1/\\sqrt{N}\\).</b> È il <b>teorema di de Moivre–Laplace</b> in miniatura: \\(\\text{Binomiale}(n,\\tfrac12) \\to \\mathcal{N}(n/2,\\, n/4)\\) al crescere di \\(n\\) — storicamente il primo caso particolare del teorema del limite centrale. La parte notevole è l'universalità: il limite è normale quasi indipendentemente dalla forma stessa della distribuzione del ramo, purché la sua varianza sia finita. Ecco perché la stessa curva governa errore di misura, rumore termico e diffusione allo stesso modo.`,
+      },
+    },
+    fractal: {
+      junior: {
+        legend: `Questo è l'<b>insieme di Mandelbrot</b>. Il centro scuro è l'insieme stesso; i colori luminosi attorno al bordo mostrano quanto in fretta i punti vicini fuggono all'infinito. Ogni click ti zooma 2,2× più a fondo nell'immagine.`,
+        try: `Clicca sulla parte più frastagliata del bordo. Poi clicca di nuovo. E ancora — cinque o sei volte, guardando [[zoom]] salire. Finisci mai il dettaglio?`,
+        notice: `<b>No — il dettaglio non finisce mai. Zooma quanto vuoi e nuove forme continuano a dispiegarsi per sempre.</b> Ancora più strano, continui a incontrare minuscole copie dell'intera forma sepolte in fondo al suo stesso bordo. Tutto questo viene da una regola assurdamente corta, applicata più e più volte: eleva al quadrato il numero, aggiungi il punto di partenza, ripeti. Complessità senza fine da quasi nessuna istruzione — è questo un <b>frattale</b>.`,
+      },
+      student: {
+        legend: `Per ogni pixel \\(c\\), la successione \\(z_{n+1} = z_n^2 + c\\) è iterata da \\(z_0=0\\). Scuro = la successione resta limitata (\\(c\\) è nell'insieme); colore = quanti passi ci ha messo a fuggire, quindi le bande sono curve di livello del tempo di fuga. [[detail]] limita il numero di iterazioni e [[zoom]] segue l'ingrandimento.`,
+        try: `Zooma più volte nel bordo, poi trascina [[detail]] da 20 fino a 240 e indietro. Guarda cosa succede alla regione nera ad alto ingrandimento.`,
+        notice: `<b>Alzare [[detail]] fa sbocciare le aree nere in filigrana — la regione "piena" era un artefatto del fermarsi troppo presto.</b> I punti vicino al bordo fuggono solo dopo moltissime iterazioni, quindi un limite basso li classifica erroneamente come interni. Il bordo stesso ha <b>dimensione di Hausdorff 2</b> (dimostrato da Shishikura, 1998) pur avendo area zero: è così increspato da riempire di fatto il piano. L'insieme è anche connesso — ognuno di quei mini-Mandelbrot dall'aria isolata è unito al corpo principale da filamenti troppo sottili da disegnare.`,
+      },
+      scholar: {
+        legend: `Rendering per tempo di fuga di \\(M = \\{c \\in \\mathbb{C} : (z_{n+1}=z_n^2+c,\\, z_0=0) \\not\\to \\infty\\}\\), con colorazione a iterazione liscia (continua) \\(\\nu = n + 1 - \\log_2\\log_2|z_n|\\) per rimuovere il banding. [[detail]] fissa il taglio del tempo di fuga.`,
+        try: `Zooma sul bordo di un mini-Mandelbrot e varia [[detail]]. Stima come cresce il numero di iterazioni richiesto con l'ingrandimento, e considera cosa implica sul decidere l'appartenenza a \\(M\\) algoritmicamente.`,
+        notice: `<b>Il numero di iterazioni necessarie cresce senza limite man mano che ti avvicini al bordo — l'appartenenza non è decidibile in tempo finito con questo metodo.</b> \\(M\\) è compatto e connesso (Douady–Hubbard), eppure il suo bordo ha dimensione di Hausdorff esattamente 2 pur portando misura di Lebesgue zero. Se \\(M\\) sia <em>localmente connesso</em> — la congettura MLC — resta aperto, e implicherebbe una classificazione combinatoria completa dell'insieme. Sotto il modello di calcolo reale di Blum–Shub–Smale \\(M\\) non è decidibile, rendendo questa immagine un oggetto genuinamente non calcolabile reso per approssimazione.`,
+      },
+    },
+    calculus: {
+      junior: {
+        legend: `La curva è una funzione. La linea tratteggiata arancione la tocca in un punto e mostra quanto ripidamente sta salendo lì — quella è [[deriv]]. I rettangoli ombreggiati sotto la curva sommano l'area, mostrata come [[integ]]; il blu conta come positivo, il rosso come negativo.`,
+        try: `Metti [[rects]] a 2 e nota [[integ]]. Ora trascinalo fino a 40 e guarda sia l'immagine che il numero.`,
+        notice: `<b>I rettangoli si incastrano stretti contro la curva e [[integ]] smette di oscillare — si assesta sull'area vera.</b> Una forma curva non ha una formula d'area facile, quindi il trucco è coprirla con rettangoli che <em>puoi</em> misurare, poi usarne di più e più sottili finché l'errore svanisce. Ora fai scorrere [[x]] e guarda [[deriv]]: dove la curva sale ripida la pendenza è grande, e in cima a una gobba passa per zero.`,
+      },
+      student: {
+        legend: `\\(f(x) = \\sin x + 0.4x\\). La linea tratteggiata arancione è la tangente in [[x]], la cui pendenza è [[deriv]]. I blocchi ombreggiati sono una <b>somma di Riemann</b> col punto medio da \\(-3\\) a [[x]], riportata come [[integ]]; con segno, quindi i blocchi sotto l'asse sottraggono.`,
+        try: `Fissa [[x]] a 0 e porta [[rects]] attraverso 2, 8 e 40, registrando [[integ]] ogni volta. Poi tieni [[rects]] a 40 e spazza [[x]], confrontando [[deriv]] con quanto in fretta cambia [[integ]].`,
+        notice: `<b>[[integ]] converge a −3,790, e il suo tasso di variazione mentre fai scorrere [[x]] è esattamente [[deriv]].</b> Quella seconda osservazione è il <b>teorema fondamentale del calcolo</b>: se \\(A(x) = \\int_{-3}^{x} f(t)\\,dt\\) allora \\(A'(x) = f(x)\\) — derivazione e integrazione si annullano a vicenda. La regola del punto medio converge come \\(O(h^2)\\), ed è perché il salto da 2 a 8 rettangoli compra molta più accuratezza che da 8 a 40.`,
+      },
+      scholar: {
+        legend: `\\(f(x)=\\sin x + 0.4x\\) con tangente di pendenza \\(f'(x) = \\cos x + 0.4\\) in [[x]]. I blocchi mostrano la quadratura del punto medio \\(\\sum f(x_i + h/2)\\,h\\) che approssima \\(\\int_{-3}^{x} f\\), con segno.`,
+        try: `Stima l'ordine di convergenza empiricamente: registra [[integ]] a [[rects]] = 5, 10, 20 per [[x]] fisso, e verifica se l'errore si divide per quattro ogni volta che raddoppi il conteggio. Poi verifica \\(\\frac{d}{dx}\\!\\int_{-3}^{x} f = f(x)\\) in un punto dove \\(f\\) cambia segno.`,
+        notice: `<b>L'errore cala di un fattore quattro per raddoppio — convergenza del secondo ordine, \\(O(h^2)\\).</b> Il termine d'errore della regola del punto medio è \\(\\frac{(b-a)h^2}{24}f''(\\xi)\\), quindi è esatta per integrandi lineari e batte la regola dei trapezi di un fattore due pur usando una valutazione per intervallo. Il legame tangente-area è il primo teorema fondamentale, \\(\\frac{d}{dx}\\int_a^x f = f(x)\\) per \\(f\\) continua; la sua potenza è che converte un processo di limite infinito in antiderivazione, ed è perché il calcolo divenne calcolabile.`,
+      },
+    },
+    graphs: {
+      junior: {
+        legend: `Ogni punto è una <b>persona</b> e ogni linea una connessione tra due di esse. Alcuni punti hanno molte più linee del resto — quelli sono gli <b>hub</b>, contati in [[hubcount]]. Premere [[spread]] avvia un segnale da un hub e lo lascia viaggiare lungo le linee.`,
+        try: `Metti [[hubs]] a 1, premi [[reset]], poi [[spread]] e nota [[steps]]. Ora metti [[hubs]] a 6, premi [[reset]] e propaga di nuovo.`,
+        notice: `<b>Con più connessioni hub il segnale raggiunge tutti in molti meno passi — spesso solo tre o quattro.</b> La rete non è tessuta in modo uniforme: la maggior parte dei punti ha un paio di collegamenti mentre una manciata ne ha dozzine, e quei pochi hub fanno da scorciatoie attraverso l'intera popolazione. È perché due persone qualsiasi sulla Terra sono a circa sei strette di mano di distanza, e perché una diceria — o un virus — che raggiunge una persona ben connessa si diffonde così allarmantemente in fretta.`,
+      },
+      student: {
+        legend: `Una <b>rete scale-free</b> cresciuta per attaccamento preferenziale: ogni nuovo nodo preferisce collegarsi a nodi già popolari. [[hubs]] fissa quanti collegamenti fa ogni nuovo arrivato, [[hubcount]] conta il 15% più connesso, e [[spread]] fa girare una cascata in stile epidemia innescata da un hub. [[reached]] e [[steps]] seguono la cascata.`,
+        try: `Confronta [[steps]] per raggiungere tutti a [[hubs]] = 1 contro 6, tenendo [[nodes]] fisso. Poi alza [[nodes]] da 10 a 40 e vedi di quanto cresce [[steps]] in risposta.`,
+        notice: `<b>Quadruplicare il numero di nodi cambia appena il numero di passi.</b> È la proprietà <b>piccolo-mondo</b>: la lunghezza dei percorsi cresce come \\(\\log N\\), non \\(N\\). L'attaccamento preferenziale produce una distribuzione dei gradi \\(P(k) \\sim k^{-\\gamma}\\) con \\(\\gamma \\approx 3\\) — una legge di potenza senza scala tipica, quindi hub di grado enorme non sono gli eventi anomali che una campana predirebbe. Tali reti resistono benissimo al guasto casuale eppure crollano se i loro hub vengono rimossi deliberatamente.`,
+      },
+      scholar: {
+        legend: `Crescita di Barabási–Albert: i nodi arrivano in sequenza e si attaccano con probabilità proporzionale al grado esistente, \\(\\Pi(k_i) = k_i/\\sum_j k_j\\), dando \\(P(k)\\sim k^{-3}\\). [[spread]] innesca una cascata di tipo SIR a un vertice di alto grado; [[reached]] e [[steps]] ne riportano il progresso.`,
+        try: `Misura come [[steps]] scala mentre [[nodes]] va 10 → 20 → 40 a [[hubs]] fisso, e confronta con \\(\\log N\\) e \\(\\sqrt{N}\\). Poi considera cosa farebbe a [[reached]] rimuovere i pochi hub principali.`,
+        notice: `<b>La lunghezza dei percorsi segue \\(\\log N\\); nei grafi scale-free puri è persino più corta, \\(\\ell \\sim \\log\\log N\\) — "ultrapiccola".</b> La conseguenza profonda è epidemiologica: per \\(\\gamma \\le 3\\) il secondo momento \\(\\langle k^2\\rangle\\) diverge quando \\(N\\to\\infty\\), e poiché la soglia epidemica scala come \\(\\lambda_c = \\langle k\\rangle/\\langle k^2\\rangle\\), essa svanisce. <b>Una rete scale-free non ha alcuna soglia epidemica</b>: qualsiasi infezione trasmissibile, per quanto debole, può persistere. È precisamente perché l'immunizzazione mirata degli hub supera enormemente la vaccinazione casuale.`,
+      },
+    },
+    trig: {
+      junior: {
+        legend: `Un punto gira su un cerchio a sinistra. La sua <b>altezza</b> è disegnata come un'onda a destra — quell'onda è il seno.`,
+        try: `Premi [[play]] (o trascina [[angle]]) e guarda il punto girare mentre l'onda si disegna da sola. Quanto vale [[sin]] quando il punto è proprio in cima?`,
+        notice: `<b>Il cerchio disegna l'onda.</b> L'altezza del punto è il seno, e mentre gira, quell'altezza traccia un'onda liscia e ripetuta — +1 in cima, −1 in fondo, 0 ai lati. Ogni cosa ripetuta in natura, dal suono alle maree, è costruita da questo.`,
+      },
+      student: {
+        legend: `Il cerchio unitario (raggio 1): il punto all'angolo θ sta a (cos θ, sin θ). Il pannello destro traccia sin θ e cos θ man mano che θ avanza; [[sin]] e [[cos]] leggono i valori in tempo reale.`,
+        try: `Metti [[angle]] a 90° e leggi [[sin]] e [[cos]]; poi 0°, poi 45°. Conferma che sin² + cos² fa sempre 1.`,
+        notice: `<b>Il coseno è la coordinata x, il seno la coordinata y di un punto sul cerchio unitario.</b> Scivolano tra +1 e −1 e si ripetono ogni 360°. Poiché il raggio è 1, Pitagora dà sin²θ + cos²θ = 1 a ogni angolo — l'identità che hai appena verificato.`,
+      },
+      scholar: {
+        legend: `La definizione di seno e coseno tramite il cerchio unitario, con le loro forme d'onda generate mentre θ spazza. Il collegamento tratteggiato mostra la proiezione che diventa l'altezza dell'onda.`,
+        try: `Traccia un giro completo e nota lo sfasamento di un quarto di giro tra coseno e seno, e dove tan = sin/cos esplode (θ = 90°, 270°).`,
+        notice: `<b>Seno e coseno sono la stessa onda a un quarto di giro di distanza, e ciascuno è la derivata dell'altro.</b> Quella relazione, \\(y'' = -y\\), è perché descrivono ogni oscillazione, e attraverso la formula di Eulero \\(e^{i\\theta} = \\cos\\theta + i\\sin\\theta\\) diventano il linguaggio naturale di onde, rotazioni e analisi di Fourier.`,
+      },
+    },
+    gravity: {
+      junior: {
+        legend: `La palla ambra al centro è la <b>stella</b>. La palla colorata è un <b>pianeta</b> che le gira attorno. Il cerchio tenue è il percorso che segue, la scia luminosa è dove è appena passato, e la corta linea ambra è la <b>gravità</b> — punta sempre dritta alla stella.`,
+        try: `Trascina [[radius]] fino a 40 e leggi [[period]]. Ora portalo a 80 — esattamente il doppio. Anche [[period]] raddoppia?`,
+        notice: `<b>No — raddoppiare la distanza non raddoppia l'anno. Lo triplica quasi.</b> [[period]] passa da circa 37s a circa 106s, e il pianeta viaggia anche più lentamente più lontano si trova. Ecco perché Nettuno impiega 165 anni terrestri per un singolo giro del Sole, mentre la Terra ne impiega uno.`,
+      },
+      student: {
+        legend: `Sfera ambra = la <b>stella</b> (il suo raggio disegnato cresce con la massa che imposti). Punto colorato = un <b>pianeta</b> su un'orbita circolare. Anello tenue = il percorso orbitale, scia sfumata = traiettoria recente, corto vettore ambra = la <b>forza gravitazionale</b>, sempre diretta alla stella.`,
+        try: `Raddoppia [[radius]] da 40 a 80 e confronta le due letture di [[period]]. Poi tieni fisso il raggio e spingi [[mass]] da 0,5 a 5, guardando [[speed]].`,
+        notice: `<b>Raddoppiare \\(r\\) non raddoppia \\(T\\) — lo moltiplica per circa 2,8.</b> È la terza legge di Keplero, \\(T^2 \\propto r^3\\). La velocità orbitale obbedisce a \\(v = \\sqrt{GM/r}\\), quindi cala man mano che l'orbita si allarga e sale con la massa della stella. Nota anche che la gravità punta alla stella tutto il tempo, eppure il pianeta non ci cade mai dentro — continua a muoversi di lato abbastanza in fretta da mancarla sempre.`,
+      },
+      scholar: {
+        legend: `Sfera ambra = massa centrale \\(M\\) (disegnata in scala, non in dimensione). Punto colorato = una particella test su un'orbita circolare di raggio \\(r\\). Anello tenue = l'orbita, scia sfumata = percorso recente, vettore ambra = l'accelerazione gravitazionale centripeta \\(GM/r^2\\).`,
+        try: `Campiona [[period]] a \\(r = 40, 80, 120\\) con [[mass]] fissa, e stima la pendenza di \\(\\log T\\) contro \\(\\log r\\). Poi varia [[mass]] a raggio fisso e verifica se \\(T \\propto M^{-1/2}\\).`,
+        notice: `<b>La pendenza log-log è esattamente \\(3/2\\), quindi raddoppiare \\(r\\) moltiplica \\(T\\) per \\(2^{3/2} \\approx 2,83\\).</b> Eguagliando accelerazione gravitazionale e centripeta, \\(GM/r^2 = v^2/r\\), si ottiene \\(v = \\sqrt{GM/r}\\) e quindi \\[T = \\frac{2\\pi r}{v} = \\frac{2\\pi r^{3/2}}{\\sqrt{GM}},\\] così \\(T^2 = (4\\pi^2/GM)\\,r^3\\) e \\(T \\propto M^{-1/2}\\), come conferma il secondo test. La simulazione integra questa relazione direttamente, quindi [[mass]] riscala la costante kepleriana \\(4\\pi^2/GM\\).`,
+      },
+    },
+    projectile: {
+      junior: {
+        legend: `La palla colorata è lanciata da sinistra. La linea tratteggiata mostra il percorso che seguirà, e il piccolo marcatore a terra è dove atterra. Sale mentre la gravità rallenta la sua salita, poi ricade — sempre un arco morbido.`,
+        try: `Tieni [[speed]] uguale e metti [[angle]] a 45. Nota [[range]]. Ora prova 20, poi 70. Quale angolo la lancia più lontano?`,
+        notice: `<b>45° vince ogni volta.</b> Mira troppo basso (20°) e tocca terra presto; mira troppo ripido (70°) e va alto ma non lontano. Esattamente a metà — 45° — divide il lancio equamente tra "avanti" e "su", e questo raggiunge la massima distanza.`,
+      },
+      student: {
+        legend: `La velocità di lancio si divide in una parte orizzontale costante \\(v_0\\cos\\theta\\) e una parte verticale \\(v_0\\sin\\theta\\) che la gravità erode a \\(g\\). Curva tratteggiata = la parabola prevista, marcatore a terra = la gittata \\(R\\). Le pill leggono \\(R\\), l'altezza dell'apice \\(H\\) e il tempo di volo \\(T\\).`,
+        try: `Tieni [[speed]] fissa e lancia a [[angle]] = 30°; leggi [[range]]. Ora lancia a 60° e confronta le due gittate.`,
+        notice: `<b>30° e 60° danno la gittata identica.</b> Poiché \\(R = v_0^2\\sin 2\\theta/g\\) e \\(\\sin 2\\theta\\) è simmetrico attorno a \\(\\theta = 45°\\), ogni coppia di angoli complementari \\((\\theta,\\,90°-\\theta)\\) atterra nello stesso punto — uno su un arco piatto e veloce, l'altro alto e lento. \\(\\sin 2\\theta\\) culmina a \\(2\\theta = 90°\\), ed è esattamente perché 45° è il singolo angolo più lontano.`,
+      },
+      scholar: {
+        legend: `Un'accelerazione costante verso il basso \\(g\\) che agisce sulla velocità iniziale \\((v_0\\cos\\theta,\\,v_0\\sin\\theta)\\). Eliminando il tempo si ottiene la parabola tratteggiata \\(y = x\\tan\\theta - gx^2/(2v_0^2\\cos^2\\theta)\\); il marcatore a terra sta alla gittata \\(R\\).`,
+        try: `Conferma la simmetria degli angoli complementari campionando [[range]] a [[angle]] = 30° e 60° a [[speed]] fissa, poi scansiona [[angle]] attorno a 45° per localizzare dove [[range]] culmina.`,
+        notice: `<b>Il massimo sta esattamente a 45° — ma solo perché qui le quote di lancio e atterraggio sono uguali.</b> La gittata \\(R = (v_0^2/g)\\sin 2\\theta\\) è simmetrica attorno a 45° e massima lì. Alza il punto di lancio e l'ottimo scivola sotto i 45° a \\(\\arctan(v_0/\\sqrt{v_0^2+2gh})\\); aggiungi resistenza dell'aria quadratica e scende ancora — le vere palline da baseball battute vanno più lontano vicino a 30–35°, e nessuna gittata in forma chiusa sopravvive.`,
+      },
+    },
+    newton: {
+      junior: {
+        legend: `Un blocco sta su una pista. La freccia verde è la <b>spinta</b> che applichi; la freccia rossa è l'<b>attrito</b> che spinge indietro. Il blocco accelera mentre la spinta vince, poi torna all'inizio e riparte.`,
+        try: `Fai [[mass]] piccola e [[force]] grande, e guarda [[accel]]. Ora raddoppia [[mass]] con la stessa [[force]]. Cosa succede a quanto in fretta accelera?`,
+        notice: `<b>Raddoppiare la massa dimezza l'accelerazione.</b> La stessa spinta muove un blocco pesante più lentamente — è \\(F = ma\\). E se alzi [[fric]] abbastanza, il blocco non si muove affatto: l'attrito annulla la tua spinta, le forze si bilanciano, e la prima legge di Newton lo tiene fermo.`,
+      },
+      student: {
+        legend: `Un diagramma di corpo libero su una pista: verde = forza applicata, rosso = attrito cinetico \\(f = \\mu m g\\). La forza netta \\(F_{\\text{net}} = F - f\\) dà l'accelerazione \\(a = F_{\\text{net}}/m\\); le pill leggono forza netta, accelerazione e velocità in tempo reale.`,
+        try: `Tieni [[force]] fissa e porta [[mass]] da bassa ad alta, leggendo [[accel]] ogni volta. Poi alza [[fric]] finché il blocco rifiuta di muoversi.`,
+        notice: `<b>L'accelerazione è proporzionale alla forza e inversamente proporzionale alla massa — esattamente \\(a = F_{\\text{net}}/m\\).</b> Quando la forza applicata scende sotto il limite d'attrito \\(\\mu m g\\), la forza netta è zero e il blocco resta fermo: una dimostrazione della prima legge a forze bilanciate.`,
+      },
+      scholar: {
+        legend: `Una pista che mostra il netto tra la forza applicata e l'attrito di Coulomb. L'accelerazione è integrata da \\(a = F_{\\text{net}}/m\\) e la velocità da \\(a\\); il blocco si reimposta per correre ad accelerazione costante a ogni ciclo.`,
+        try: `Verifica \\(a \\propto 1/m\\) dimezzando e raddoppiando [[mass]] a [[force]] fissa, poi localizza la soglia d'attrito dove il moto cessa e confrontala con \\(\\mu m g\\).`,
+        notice: `<b>Il moto inizia esattamente a \\(F = \\mu m g\\), e l'accelerazione scala come \\(1/m\\).</b> È l'angolo a forza-costante, massa-costante di \\(\\mathbf{F} = d\\mathbf{p}/dt\\). La sim usa un singolo \\(\\mu\\) cinetico; le superfici reali hanno un coefficiente <i>statico</i> più grande, quindi la vera forza di distacco è un po' più alta del valore disegnato qui.`,
+      },
+    },
+    circuits: {
+      junior: {
+        legend: `Una batteria a sinistra spinge una <b>corrente</b> di carica lungo l'anello per accendere la lampadina a destra. I puntini in movimento sono la carica — più corrono veloci, più grande è la corrente. Alza la batteria e accelerano; aggiungi resistenza e rallentano.`,
+        try: `Alza [[volt]] e guarda i puntini e la lampadina. Ora alza [[res]] invece. Quale rende la corrente più grande, e quale più piccola?`,
+        notice: `<b>Più tensione significa più corrente; più resistenza significa meno.</b> È la legge di Ohm, corrente = tensione ÷ resistenza. La luminosità della lampadina segue la <i>potenza</i>, quindi raddoppiare la tensione la rende molto più del doppio luminosa.`,
+      },
+      student: {
+        legend: `Un unico anello: una sorgente di f.e.m. (batteria) e una lampadina resistiva. I puntini si muovono a una velocità fissata dalla corrente \\(I = V/R\\), e il bagliore della lampadina segue la potenza \\(P = VI\\). Le pill leggono corrente e potenza.`,
+        try: `Fissa [[res]] e raddoppia [[volt]] — verifica che [[cur]] raddoppi. Poi tieni [[volt]] e raddoppia [[res]]; conferma che [[cur]] si dimezzi.`,
+        notice: `<b>La corrente è esattamente \\(V/R\\): lineare nella tensione, inversamente proporzionale alla resistenza.</b> La potenza, però, va come \\(P = VI = V^2/R\\), quindi raddoppiare la tensione <i>quadruplica</i> la potenza — ed è perché la lampadina si illumina così drasticamente.`,
+      },
+      scholar: {
+        legend: `Un circuito ohmico a singolo anello idealizzato. La velocità dei portatori di carica è disegnata proporzionale a \\(I = V/R\\) e la luminanza della lampadina a \\(P = V^2/R\\); il modello assume una resistenza costante (nessun riscaldamento).`,
+        try: `Traccia la retta \\(I\\)–\\(V\\) variando [[volt]] a [[res]] fissa, poi cambia [[res]] per vedere cambiare la pendenza \\(1/R\\). Guarda come [[pow]] segue \\(V^2/R\\), non \\(V\\).`,
+        notice: `<b>La corrente segue una retta per l'origine con pendenza \\(1/R\\) — la firma di un elemento ohmico.</b> Un filamento reale si scalda man mano che \\(P\\) sale, la sua resistenza cresce, e la retta si piega. La sim mostra il caso idealizzato a \\(R\\) costante: la tangente che solo un metallo freddo obbedisce esattamente.`,
+      },
+    },
+    states: {
+      junior: {
+        legend: `Una scatola di particelle. Il cursore è la <b>temperatura</b>. Fredde e si bloccano in un solido ordinato; più calde e scivolano come un liquido; caldissime e volano via come un gas. La barra a destra segna i punti di fusione ed ebollizione.`,
+        try: `Parti freddo e alza lentamente [[temp]]. Guarda le particelle passare da griglia fissa, a fluenti, a libere in volo. In quali punti cambia lo [[state]]?`,
+        notice: `<b>Stesse particelle — solo più energia.</b> Nulla è aggiunto o rimosso; scaldare fa solo muovere le particelle più in fretta finché non si liberano l'una dall'altra. È tutta qui la differenza tra ghiaccio, acqua e vapore: non di cosa sono fatti, ma quanto in fretta si muovono.`,
+      },
+      student: {
+        legend: `Teoria cinetica in azione: la temperatura fissa la velocità media delle particelle, e l'equilibrio tra il loro moto e la loro attrazione reciproca fissa lo stato. La barra laterale segna i punti di fusione ed ebollizione.`,
+        try: `Alza [[temp]] lentamente attraverso il punto di fusione, poi quello di ebollizione, guardando l'arrangiamento cambiare da reticolo → fluente → libero.`,
+        notice: `<b>La temperatura è energia cinetica media, e lo stato è un braccio di ferro.</b> Sotto la fusione, vince l'attrazione (un reticolo rigido); sopra l'ebollizione, vince il moto (un gas libero); tra le due, un quasi-pareggio (un liquido mobile). Le sostanze reali fanno anche una pausa a ogni transizione mentre il calore latente rompe i legami.`,
+      },
+      scholar: {
+        legend: `Uno schema cinetico-molecolare: la velocità delle particelle scala con T, e l'arrangiamento riflette se dominano le forze intermolecolari o il moto termico.`,
+        try: `Spazza [[temp]] attraverso entrambe le transizioni e nota che il cambiamento qualitativo — reticolo, liquido, gas — è brusco, non graduale: la firma di una transizione di fase.`,
+        notice: `<b>I cambiamenti di stato sono transizioni collettive, quasi-discontinue.</b> A pressione fissa lo stato scatta a punti netti di fusione ed ebollizione, e attraversarli costa calore latente senza aumento di temperatura. Cambia la pressione e quei punti si spostano — il resoconto completo è il diagramma di fase, con i suoi punti triplo e critico.`,
+      },
+    },
+    waves: {
+      junior: {
+        legend: `Le due onde tenui — una blu, una viola — sono due <b>onde</b> separate che viaggiano. La linea spessa e luminosa è ciò che vedresti e sentiresti davvero: le due sommate, cresta per cresta.`,
+        try: `Lascia [[freq]] a 1 così le due onde coincidono. Ora trascina [[phase]] lentamente da 0 fino a circa 3,14 e guarda la linea spessa.`,
+        notice: `<b>L'onda spessa si riduce a una linea piatta — due onde sommate danno nulla.</b> Quando sposti un'onda di mezzo passo, le sue creste cadono esattamente sui ventri dell'altra e si annullano. Somma suono a suono e ottieni silenzio: è esattamente come funzionano le cuffie a cancellazione di rumore. Spingi [[phase]] fino a 6,28 (un passo intero) e l'onda torna ruggente.`,
+      },
+      student: {
+        legend: `Blu tenue e viola tenue = le due <b>onde sorgente</b>. La curva spessa e luminosa è la loro <b>sovrapposizione</b>, la somma punto per punto. [[type]] riporta se il risultato rinforza o annulla, e [[amp]] dà l'altezza di picco come multiplo di quella di una singola onda.`,
+        try: `Con [[freq]] a 1, metti [[phase]] a 0 e leggi [[amp]]. Poi porta [[phase]] a \\(\\pi \\approx 3.14\\) e rileggilo. Infine metti [[freq]] a 2 e guarda la forma cambiare carattere.`,
+        notice: `<b>[[amp]] va da 2,00× giù a 0,00× — rinforzo totale a cancellazione totale — senza cambiare l'energia che immetti.</b> Le onde si sovrappongono linearmente: \\(y = A\\sin(kx-\\omega t) + A\\sin(kx-\\omega t+\\phi)\\), che somma a \\(2A\\cos(\\phi/2)\\sin(kx-\\omega t+\\phi/2)\\). Il fattore di ampiezza \\(2A\\cos(\\phi/2)\\) svanisce a \\(\\phi=\\pi\\). Con frequenze diverse non ottieni più un'unica onda pulita ma un motivo di <em>battimento</em> ripetuto.`,
+      },
+      scholar: {
+        legend: `Due termini sorgente armonici di uguale ampiezza \\(A\\), il secondo con rapporto di frequenza [[freq]] e fase relativa [[phase]]. La curva spessa è la loro sovrapposizione lineare; [[amp]] riporta \\(\\max|y|/A\\).`,
+        try: `Tieni [[freq]] a 1 e spazza [[phase]] su \\([0, 2\\pi]\\), confrontando [[amp]] con \\(2|\\cos(\\phi/2)|\\). Poi metti [[freq]] a un valore non intero come 1,5 e osserva che l'inviluppo non si chiude più in un unico periodo.`,
+        notice: `<b>[[amp]] traccia \\(2|\\cos(\\phi/2)|\\) esattamente, e i rapporti di frequenza irrazionali non si ripetono mai.</b> La sovrapposizione segue dalla linearità dell'equazione delle onde \\(\\partial_t^2 y = c^2 \\partial_x^2 y\\): somme di soluzioni sono soluzioni, ed è ciò che rende possibile l'analisi di Fourier. Per \\(f_2/f_1 = p/q\\) razionale il motivo è periodico con periodo \\(q\\) cicli; i rapporti irrazionali sono quasi-periodici e non si ripetono mai esattamente. Nota che la cancellazione ridistribuisce l'energia, non la distrugge — l'energia soppressa qui riappare altrove nel campo.`,
+      },
+    },
+    thermo: {
+      junior: {
+        legend: `La scatola tiene <b>particelle</b> di gas che rimbalzano, colorate da quanto vanno veloci — blu è lento, rosso è veloce. Il termometro a destra mostra la temperatura. Il grafico sotto conta quante particelle hanno ciascuna velocità.`,
+        try: `Guarda il grafico a [[temp]] = 300. Ora trascina [[temp]] fino a 1200 e confronta: dove si è spostata la gobba, e cosa è successo a [[press]]?`,
+        notice: `<b>Scaldare non dà a ogni particella la stessa velocità — sposta l'intera gobba a destra e la spalma più larga.</b> Anche in un gas rovente alcune particelle strisciano e alcune corrono. La temperatura non è la velocità di una particella; è la <em>media</em> su miliardi. Le particelle più veloci colpiscono anche le pareti più forte e più spesso, ed è esattamente ciò che [[press]] misura — il motivo per cui una lattina sigillata esplode nel fuoco.`,
+      },
+      student: {
+        legend: `Un gas ideale 2D con collisioni elastiche. Il colore delle particelle codifica la velocità (blu lento → rosso veloce), il termometro segue [[temp]], e il grafico in basso è la <b>distribuzione delle velocità</b> in tempo reale con il suo inviluppo. [[hits]], [[speed]] e [[press]] sono misurati dalle particelle stesse, non assunti.`,
+        try: `Registra [[speed]] e [[press]] a [[temp]] = 300, poi a 1200 — un fattore 4. Anche la velocità sale di 4? Poi torna a 300 e invece raddoppia [[num]].`,
+        notice: `<b>Quadruplicare la temperatura raddoppia solo la velocità media, ma raddoppiare il numero di particelle raddoppia la pressione.</b> È \\(v_{\\text{rms}} \\propto \\sqrt{T}\\) — l'energia cinetica, non la velocità, è ciò che scala con \\(T\\), via \\(\\tfrac12 m v^2 = \\tfrac{d}{2} k_B T\\). La pressione intanto segue \\(PV = Nk_BT\\), lineare sia in \\(N\\) che in \\(T\\). La distribuzione che vedi è la legge di <b>Maxwell–Boltzmann</b>: ha un pavimento rigido a velocità zero ma una coda illimitata, quindi è fondamentalmente asimmetrica.`,
+      },
+      scholar: {
+        legend: `Gas di dischi rigidi a volume fisso con collisioni elastiche a due corpi; le velocità sono inizializzate e riscalate come \\(v \\propto \\sqrt{T}\\). L'istogramma è la densità empirica istantanea delle velocità, e [[press]] è accumulata dall'impulso misurato sulle pareti per unità di tempo.`,
+        try: `Verifica lo scaling \\(v_{\\text{rms}} \\propto \\sqrt{T}\\) su [[temp]] = 300, 600, 1200, poi tieni \\(T\\) fisso e varia [[num]] per confermare \\(P \\propto N\\). Guarda quanto in fretta l'istogramma si ri-equilibra nel suo inviluppo dopo un salto improvviso di temperatura.`,
+        notice: `<b>La distribuzione si riforma entro pochi tempi di collisione, comunque tu la disturbi.</b> In 2D la legge di equilibrio è \\(f(v) \\propto v\\,e^{-mv^2/2k_BT}\\) (la Maxwell–Boltzmann 3D porta \\(v^2\\)), e l'equipartizione dà \\(\\langle E\\rangle = \\tfrac{d}{2}k_BT\\) per particella. La parte notevole è la velocità dell'avvicinamento: il <b>teorema H di Boltzmann</b> mostra che il caos molecolare guida qualsiasi distribuzione iniziale monotonamente verso questa. La dinamica microscopica è perfettamente reversibile nel tempo, eppure il rilassamento macroscopico no — l'origine della freccia del tempo.`,
+      },
+    },
+    particles: {
+      junior: {
+        legend: `Questa è la vista dall'interno di un rivelatore di particelle — gli anelli blu sono i suoi strati. Premi [[collide]] e due protoni corrono dai lati e si schiantano al centro. Le scintille con le lettere che volano fuori sono le <b>nuove particelle</b> create dallo schianto; la <b>H</b> rosa è un bosone di Higgs.`,
+        try: `Metti [[energy]] al minimo, 0,5, e premi [[collide]] alcune volte. Conta all'incirca quante scintille volano fuori. Ora metti [[energy]] a 14 e collidi di nuovo.`,
+        notice: `<b>Più energia fa più particelle — lo schianto crea materia che prima non c'era.</b> I protoni non si frantumano in pezzi più piccoli come un piatto caduto; la loro energia di movimento si trasforma in particelle nuove di zecca, perché energia e massa sono la stessa cosa (\\(E = mc^2\\)). Ecco perché i fisici costruiscono acceleratori sempre più grandi: per fare particelle più pesanti, serve più energia, e nient'altro va bene.`,
+      },
+      student: {
+        legend: `Una sezione schematica del rivelatore: gli anelli concentrici sono strati di tracciamento, e ogni punto etichettato è un prodotto di decadimento — quark (u, d, s), gluoni (g), elettroni, fotoni, neutrini e l'Higgs (H). [[count]] conta le collisioni; [[energy]] è l'energia del fascio per protone.`,
+        try: `Confronta il numero e la varietà dei prodotti a [[energy]] = 0,5 contro 14. Guarda in particolare quanto spesso appare la <b>H</b> rosa a ciascuna impostazione.`,
+        notice: `<b>La molteplicità dei prodotti sale con l'energia del fascio, e le particelle pesanti appaiono solo quando c'è energia per pagarle.</b> Una collisione converte energia cinetica in massa a riposo via \\(E = mc^2\\), quindi produrre un Higgs (125 GeV/c²) richiede un'energia di collisione ben sopra quella soglia. Ecco perché l'LHC gira a 13–14 TeV invece che a qualcosa di più economico: l'Higgs era semplicemente inaccessibile a energie più basse, e la particella fu trovata nel 2012 solo quando la macchina poté raggiungerla.`,
+      },
+      scholar: {
+        legend: `Schema di un evento di collisore di adroni: strati di tracciamento concentrici, con prodotti nello stato finale presi dallo spettro del Modello Standard. La molteplicità scala con \\(\\sqrt{s}\\) in questo modello; il marcatore H denota un candidato Higgs.`,
+        try: `Porta [[energy]] su tutto il suo intervallo e nota come cresce la molteplicità. Considera quale frazione di eventi dovrebbe contenere un H per una rivendicazione di scoperta, dato che la vera sezione d'urto di produzione dell'Higgs è \\(\\sim\\!10^{-10}\\) del tasso inelastico totale.`,
+        notice: `<b>Il tasso qui è follemente generoso — un Higgs reale appare in circa una collisione su \\(10^{10}\\).</b> La scoperta è quindi un problema di statistica, non di rivelazione: l'LHC produce ~600 milioni di collisioni al secondo e i fisici cacciano una manciata di eventi contro un travolgente fondo di QCD, esigendo \\(5\\sigma\\) (una probabilità di falso allarme di \\(3\\times10^{-7}\\)) prima di rivendicare un segnale. I 17 campi del Modello Standard rendono conto di ogni particella vista qui, e predicono il momento magnetico dell'elettrone a 12 cifre significative — eppure non contengono alcun candidato per la materia oscura e nessuna gravità.`,
+      },
+    },
+    seriesparallel: {
+      junior: {
+        legend: `A sinistra c'è la <b>batteria</b>; i due cerchi luminosi sono <b>lampadine</b>. I puntini gialli sono la <b>corrente elettrica</b> che scorre nei fili. Il pulsante alterna il cablaggio tra <b>serie</b> (un anello) e <b>parallelo</b> (due rami).`,
+        try: `Parti in serie e nota quanto sono luminose le lampadine. Premi il pulsante [[mode]] per passare a parallelo. Le lampadine diventano più luminose o più fioche? Guarda cambiare anche [[cur]].`,
+        notice: `<b>In parallelo le lampadine brillano; in serie sono fioche — stessa batteria, stesse lampadine.</b> In serie le due lampadine si dividono la spinta di una batteria, così ciascuna ne riceve metà. In parallelo ogni lampadina riceve la spinta piena sul proprio ramo, così brillano entrambe e la batteria eroga molta più corrente. Ecco perché casa tua è cablata in parallelo.`,
+      },
+      student: {
+        legend: `Due lampadine da \\(10\\,\\Omega\\) su una batteria che imposti con [[volt]]. Il pulsante [[mode]] alterna tra serie (\\(R=R_1+R_2\\), corrente condivisa) e parallelo (\\(1/R=1/R_1+1/R_2\\), tensione condivisa). Le pill leggono resistenza totale, corrente totale e potenza per lampadina.`,
+        try: `Fissa [[volt]] e leggi [[rtot]] e [[cur]] in serie, poi passa a parallelo. Di che fattore salta [[cur]], e come si confronta [[bulb]]?`,
+        notice: `<b>La serie dà \\(20\\,\\Omega\\); il parallelo dà \\(5\\,\\Omega\\) — quattro volte la corrente, e quattro volte la potenza per lampadina.</b> Le resistenze si sommano in serie ma si combinano in modo reciproco in parallelo, scendendo sempre sotto il ramo più piccolo. Poiché \\(P=I^2R\\), le lampadine in parallelo dissipano \\(4\\times\\) la potenza e brillano molto di più — il guadagno visibile della scelta di cablaggio.`,
+      },
+      scholar: {
+        legend: `Una rete a due resistori alternata tra serie e parallelo da [[mode]], alimentata a tensione [[volt]]. Le riduzioni \\(R_s=R_1+R_2\\) e \\(R_p^{-1}=R_1^{-1}+R_2^{-1}\\) sono casi particolari delle leggi di Kirchhoff; la sorgente qui è trattata come ideale (nessuna resistenza interna).`,
+        try: `Confronta [[rtot]] e [[cur]] attraverso l'alternanza e conferma che il totale in parallelo sta sotto entrambi i rami. Poi considera come una resistenza interna reale \\(r\\) limiterebbe la corrente in parallelo che il modello lascia crescere liberamente.`,
+        notice: `<b>Serie e parallelo sono solo le leggi delle correnti e delle tensioni di Kirchhoff applicate a un anello o a un nodo.</b> Ogni rete di resistori si riduce così — tranne le topologie a ponte, che richiedono l'analisi completa ai nodi/maglie. Questa sorgente idealizzata non ha resistenza interna, così la corrente in parallelo sale senza limite; una batteria reale cederebbe come \\(V=\\varepsilon-Ir\\), l'effetto che affievolisce i fari quando l'avviamento tira centinaia di ampere.`,
+      },
+    },
+    respiration: {
+      junior: {
+        legend: `La grande forma è un <b>mitocondrio</b>, la centrale elettrica della tua cellula. Il <b>glucosio</b> rosso (zucchero) entra da sinistra e l'<b>ossigeno</b> blu dall'alto; escono gettoni d'energia <b>ATP</b> dorati e <b>CO₂</b> grigia. Fai scorrere [[o2]] per cambiare quanto ossigeno è disponibile.`,
+        try: `Alza [[o2]] in alto e guarda l'ATP sgorgare. Ora abbassalo del tutto. Cosa succede a [[atp]] e alla [[mode]] quando l'ossigeno si esaurisce?`,
+        notice: `<b>Con tanto ossigeno la cellula fa circa 15 volte più energia che senza.</b> L'ossigeno permette al mitocondrio di finire di bruciare lo zucchero fino in fondo, rilasciando tanto ATP ed espirando CO₂. Privalo di ossigeno e la cellula ripiega su un rimedio rapido e fiacco che fa a malapena ATP — la modalità "anaerobica" che i tuoi muscoli raggiungono in uno scatto intenso.`,
+      },
+      student: {
+        legend: `Un mitocondrio che fa girare \\(C_6H_{12}O_6 + 6O_2 \\to 6CO_2 + 6H_2O + \\text{ATP}\\). Glucosio e O₂ (impostati da [[o2]]) entrano; ATP e CO₂ escono. Le pill leggono ATP per glucosio, CO₂ per glucosio e se la via è aerobica o anaerobica.`,
+        try: `Alza [[o2]] al massimo e leggi [[atp]] e [[co2]]; poi abbassalo vicino a zero e guarda [[mode]] passare ad anaerobica. Nota come la resa di ATP crolla.`,
+        notice: `<b>La respirazione aerobica rende ~30–32 ATP per glucosio; la fermentazione anaerobica ne recupera appena 2.</b> La glicolisi (2 ATP) non ha bisogno di ossigeno, ma il grande guadagno viene dal ciclo di Krebs e dalla catena di trasporto degli elettroni, che hanno bisogno di O₂ come accettore finale di elettroni. Toglilo e gira solo la glicolisi — una perdita di ~15 volte, e il perché l'ossigeno fu la chiave della vita complessa affamata di energia.`,
+      },
+      scholar: {
+        legend: `Metabolismo ossidativo schematico: il flusso di substrato (glucosio) e la disponibilità di O₂ ([[o2]]) fissano la resa di ATP e l'emissione di CO₂. L'operazione aerobica sta al posto dell'intera catena — glicolisi, ciclo di Krebs e la catena di trasporto degli elettroni che pompa protoni — condensata in ingressi e uscite.`,
+        try: `Spazza [[o2]] e nota il calo brusco di [[atp]] quando la via attraversa in territorio anaerobico — un surrogato dello stallo della catena di trasporto degli elettroni quando il suo accettore terminale è sparito.`,
+        notice: `<b>Il vantaggio aerobico di ~15× risale alla chemiosmosi: la catena pompa protoni per costruire un gradiente, e l'ATP sintasi lo riscuote.</b> Il ruolo dell'ossigeno è solo quello di accettore finale di elettroni, eppure senza di esso i portatori restano ridotti, il pompaggio di protoni si ferma e la fosforilazione ossidativa si arresta in pochi secondi. La forza proton-motrice \\(\\Delta p\\) è il vero deposito d'energia; l'ATP sintasi è un motore rotante che gira su quella corrente di protoni.`,
+      },
+    },
+    watercycle: {
+      junior: {
+        legend: `Il blu in basso è l'<b>oceano</b>, la palla gialla è il <b>Sole</b>. L'acqua calda sale come goccioline (<b>evaporazione</b>), si raduna in una <b>nuvola</b> in alto, e quando la nuvola si riempie <b>piove</b> di nuovo verso il mare. Giro e giro.`,
+        try: `Abbassa [[temp]] al minimo e guarda quanto in fretta si riempie la nuvola. Ora alzalo al massimo. La nuvola si riempie e piove prima?`,
+        notice: `<b>Più Sole significa evaporazione più rapida, così la nuvola si riempie e piove prima — l'intero ciclo accelera.</b> Il Sole è il motore del ciclo dell'acqua: il suo calore solleva l'acqua nel cielo, e la gravità la riporta giù come pioggia. Non si fabbrica mai acqua nuova — le stesse goccioline girano e rigirano.`,
+      },
+      student: {
+        legend: `Il Sole guida l'<b>evaporazione</b> dall'oceano; il vapore sale, si raffredda e <b>condensa</b> nella nuvola; una volta satura cade come <b>precipitazione</b> e torna al mare. Le pill leggono il livello di evaporazione, il riempimento della nuvola e se sta piovendo.`,
+        try: `Metti [[temp]] basso e nota il tasso di riempimento di [[cloud]], poi mettilo alto. Guarda come [[rain]] passa da "Building" a "Raining" più in fretta con più calore.`,
+        notice: `<b>L'aria più calda evapora l'acqua più in fretta e ne può contenere di più — così il calore accelera l'intero ciclo.</b> L'evaporazione assorbe calore latente (2,26 MJ/kg) e la condensazione lo rilascia in quota, spostando silenziosamente enormi quantità di energia verso l'alto. Globalmente evaporazione e precipitazione devono bilanciarsi, con i fiumi a restituire il lieve deficit dell'oceano.`,
+      },
+      scholar: {
+        legend: `Un modello schematico a serbatoi e flussi: il flusso di evaporazione scala con [[temp]], il vapore condensa alla nuvola, e la precipitazione chiude l'anello. La nuvola è un tampone che si svuota al raggiungimento della capacità.`,
+        try: `Spazza [[temp]] e osserva che il tasso di riempimento della nuvola e la frequenza della pioggia salgono entrambi con esso — un surrogato dello scaling di Clausius-Clapeyron dell'umidità con la temperatura.`,
+        notice: `<b>La capacità dell'aria di trattenere acqua sale esponenzialmente con la temperatura (~7% per °C), ed è per questo che un clima più caldo intensifica il ciclo.</b> Il calore latente rende l'evaporazione il principale oleodotto energetico dell'atmosfera (alimenta gli uragani), il tempo di residenza \\(\\tau=V/F\\) fissa quanto in fretta ogni serbatoio risponde, e il frazionamento isotopico a ogni cambiamento di stato permette alle carote di ghiaccio di registrare le temperature passate.`,
+      },
+    },
+    energy: {
+      junior: {
+        legend: `La pallina rotola in una <b>ciotola</b>. In alto sul fianco ha <b>energia d'altezza</b> immagazzinata; in fondo è tutta <b>energia di movimento</b>. Le due barre a destra mostrano ogni tipo — guardale scambiarsi mentre la pallina rotola.`,
+        try: `Metti [[fric]] a 0 e lascia cadere la pallina. Le barre continuano a scambiarsi per sempre? Ora aggiungi un po' di [[fric]] e guarda cosa succede al <b>Totale</b>.`,
+        notice: `<b>Senza attrito il totale non cambia mai — energia d'altezza ed energia di movimento si scambiano avanti e indietro per sempre.</b> È la conservazione dell'energia. Aggiungi attrito e un po' di energia sfugge come calore a ogni oscillazione, così la pallina risale un po' più in basso ogni volta finché non si ferma. L'energia non è distrutta — è diventata tepore.`,
+      },
+      student: {
+        legend: `Una pallina in una ciotola parabolica. Energia potenziale \\(PE=mgh\\) (barra blu) ed energia cinetica \\(KE=\\tfrac{1}{2}mv^2\\) (barra rossa) si scambiano mentre si muove; la pill "Total" è la loro somma. [[fric]] rimuove energia meccanica come calore.`,
+        try: `Con [[fric]] = 0, verifica che \\(KE+PE\\) (il Totale) resti costante mentre KE e PE oscillano. Poi alza [[fric]] e guarda il Totale decadere.`,
+        notice: `<b>Ad attrito zero \\(\\tfrac{1}{2}mv^2 + mgh\\) è costante — ogni joule di altezza diventa un joule di movimento e viceversa.</b> Questo dà la velocità d'impatto \\(v=\\sqrt{2gh}\\), indipendente dalla massa. L'attrito compie lavoro negativo, convertendo energia meccanica in calore, così il Totale cala e la pallina si assesta — energia comunque conservata, solo spostata al registro termico.`,
+      },
+      scholar: {
+        legend: `Buca parabolica, quindi il moto è armonico semplice e \\(E=KE+PE\\propto A^2\\) con ampiezza \\(A\\). [[drop]] fissa \\(A\\); [[fric]] applica un decadimento esponenziale dell'ampiezza. Le barre mostrano \\(KE\\) (rosso) e \\(PE\\) (blu), la pill la loro somma.`,
+        try: `Metti [[fric]]=0 e conferma che il Totale è invariante mentre \\(KE\\) e \\(PE\\) si scambiano. Poi aggiungi attrito e nota il decadimento quasi-esponenziale del Totale — la firma di una forza non conservativa.`,
+        notice: `<b>La conservazione segue dal teorema dell'energia-lavoro più una forza conservativa \\(\\vec F=-\\nabla U\\); l'attrito non supera quel test e dissipa.</b> Più in profondità, il teorema di Noether lega la conservazione dell'energia alla simmetria per traslazione temporale. Allarga i libri con \\(\\Delta U=Q-W\\) e persino l'energia "persa" è contabilizzata — conservata nel complesso, ma degradata verso il disordine.`,
+      },
+    },
+    gaslaws: {
+      junior: {
+        legend: `I puntini che rimbalzano dentro la scatola sono <b>particelle di gas</b>. La parete destra è un <b>pistone</b> che puoi far scorrere per cambiare la dimensione del contenitore. Ogni volta che un puntino colpisce una parete spinge — e tutte quelle spinte insieme sono la <b>pressione</b> mostrata nella pill.`,
+        try: `Tieni [[temp]] uguale e fai scorrere [[vol]] per rimpicciolire la scatola. Guarda [[pres]]. Poi rifai grande la scatola e alza invece [[temp]].`,
+        notice: `<b>Comprimi la scatola e la pressione sale; scalda il gas e sale anche.</b> Meno spazio significa che le stesse particelle colpiscono le pareti più spesso; temperatura più alta significa che volano più veloci e colpiscono più forte. Nota che "Pressione × dimensione" resta circa costante quando cambi solo la dimensione — è la legge di Boyle.`,
+      },
+      student: {
+        legend: `Particelle in moto elastico casuale; la loro velocità scala con \\(\\sqrt{T}\\) e il pistone destro fissa il volume \\(V\\). Le pill leggono la pressione \\(P\\) e il prodotto \\(P\\times V\\). Il gas obbedisce a \\(PV = nRT\\).`,
+        try: `Tieni [[temp]] fisso e dimezza [[vol]] — [[pres]] raddoppia mentre \\(P\\times V\\) resta fermo? Poi tieni [[vol]] e alza [[temp]], guardando \\(P\\) salire di pari passo.`,
+        notice: `<b>A \\(T\\) fisso, \\(P\\times V\\) è costante (Boyle); a \\(V\\) fisso, \\(P\\propto T\\) (Gay-Lussac).</b> Entrambe sono facce di \\(PV=nRT\\). La simulazione calcola \\(P = nRT/V\\) direttamente, e le velocità delle particelle seguono \\(\\sqrt{T}\\) — una visualizzazione della teoria cinetica in cui la temperatura <em>è</em> energia cinetica media.`,
+      },
+      scholar: {
+        legend: `Un gas ideale: \\(P = nRT/V\\), velocità delle particelle \\(\\propto\\sqrt{T}\\) come nell'immagine di Maxwell-Boltzmann. Il pistone fissa \\(V\\); le pill leggono \\(P\\) e \\(PV\\). Le deviazioni dei gas reali richiederebbero la correzione di van der Waals.`,
+        try: `Traccia un'isoterma: fissa [[temp]] e campiona coppie \\((P,V)\\) su tutto l'intervallo, verificando se \\(PV\\) resta costante. Poi traccia un'isocora: fissa [[vol]] e varia [[temp]].`,
+        notice: `<b>L'isoterma dà \\(PV=\\text{cost}\\); l'isocora dà \\(P\\propto T\\) — la legge dei gas ideali sezionata.</b> Questa idealizzazione assume particelle puntiformi senza attrazioni. I gas reali deviano al crescere della densità: dimensione finita (il termine \\(b\\)) e attrazione intermolecolare (il termine \\(a\\)) piegano le isoterme e, sotto un punto critico, permettono la condensazione che la legge ideale non può mai mostrare.`,
+      },
+    },
+    moonphases: {
+      junior: {
+        legend: `Il disco luminoso a sinistra è il <b>Sole</b>, che illumina tutto da quel lato. La palla blu è la <b>Terra</b>, e la palla grigia che le gira attorno è la <b>Luna</b> — sempre illuminata a metà sul lato del Sole. Il piccolo disco a destra mostra la <b>fase che vedresti dalla Terra</b>.`,
+        try: `Fai scorrere [[day]] lentamente per tutto il mese. Guarda il disco "dalla Terra" a destra, e leggi [[phase]] e [[lit]].`,
+        notice: `<b>La forma della Luna non cambia — stai solo vedendo la sua metà illuminata da angoli diversi.</b> Quando la Luna è tra Terra e Sole il suo lato scuro è rivolto a noi (luna nuova); quando è sul lato opposto vediamo l'intera faccia illuminata (luna piena). Un giro completo dura circa 29,5 giorni.`,
+      },
+      student: {
+        legend: `Vista dall'alto: direzione illuminata dal Sole da sinistra, Terra al centro, Luna sulla sua orbita. La metà rivolta al Sole è sempre illuminata; il disco inserito ricostruisce la vista dalla Terra. Le pill leggono il nome della fase e la frazione illuminata \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\).`,
+        try: `Porta [[day]] a 0, ~7, ~15 e ~22 e nomina ogni [[phase]]. Guarda come [[lit]] segue l'angolo di fase invece di saltare.`,
+        notice: `<b>L'illuminazione varia con continuità come \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\): 0% nuova, 50% ai quarti, 100% piena.</b> La fase che seguiamo si ripete ogni mese sinodico (29,5 g), più lungo dell'orbita di 27,3 giorni perché nel frattempo la Terra si muove attorno al Sole. E poiché l'orbita è inclinata di ~5°, la maggior parte dei mesi la Luna manca la linea Sole-Terra, quindi le eclissi sono rare.`,
+      },
+      scholar: {
+        legend: `Direzione del Sole fissa a sinistra; Terra al centro; Luna su orbita circolare con l'emisfero solare illuminato. Inserto = aspetto geocentrico. Frazione illuminata \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\) con \\(\\theta\\) l'angolo di fase Sole-Terra-Luna.`,
+        try: `Spazza [[day]] e conferma la sequenza delle fasi e la simmetria tra crescente e calante. Nota che il modello mostra solo la fase geometrica — non l'impennata di luminosità in opposizione né la librazione.`,
+        notice: `<b>La geometria è esatta, ma la luminosità lunare reale non è lineare in \\(k\\).</b> L'albedo della Luna è ~0,12 e vicino alla piena aumenta più di quanto la sola area preveda (l'effetto di opposizione). Sovrapponi la precessione dei nodi di 18,6 anni e l'eccentricità dell'orbita (librazione) e hai l'intero apparato dietro la previsione delle eclissi e il ciclo di Saros.`,
+      },
+    },
+    protein: {
+      junior: {
+        legend: `La riga di lettere è l'<b>mRNA</b> — la ricetta. La forma arrotondata che scorre lungo di essa è il <b>ribosoma</b>, che legge tre lettere (un <b>codone</b>) alla volta. Ogni codone aggiunge una perlina colorata — un <b>amminoacido</b> — alla catena crescente sotto. Quella catena è la proteina.`,
+        try: `Premi [[play]] e guarda muoversi il ribosoma. Leggi ogni codone di tre lettere e la perlina che aggiunge. Quale codone speciale lo fa fermare?`,
+        notice: `<b>Tre lettere nominano una perlina, e la catena cresce di una perlina per codone finché un codone di STOP non la termina.</b> Solo quattro lettere, lette a tre a tre, compitano ogni proteina che il tuo corpo costruisce — lo stesso codice semplice in ogni essere vivente sulla Terra.`,
+      },
+      student: {
+        legend: `L'mRNA è letto 5'→3' in <em>codoni</em> non sovrapposti. Il ribosoma (forma arrotondata) traduce ogni codone in un amminoacido tramite un tRNA corrispondente; la catena sotto è il polipeptide crescente. Le pill nominano il codone corrente → amminoacido e la lunghezza della catena.`,
+        try: `Premi [[play]] e segui [[codon]] mentre la traduzione procede dall'inizio AUG al codone di stop. Conta come [[len]] cresce di un residuo per codone.`,
+        notice: `<b>Ogni codone mappa esattamente un amminoacido; AUG inizia, e UAA/UAG/UGA fermano.</b> Con \\(4^3=64\\) codoni per 20 amminoacidi il codice è ridondante, così più codoni condividono un amminoacido. Questa è la traduzione — la seconda metà del dogma centrale, DNA → RNA → proteina.`,
+      },
+      scholar: {
+        legend: `Traduzione codone per codone di un mRNA. La decodifica si basa sull'appaiamento codone-anticodone, con il <em>vacillamento</em> (wobble) della terza base che permette a un tRNA di leggere codoni sinonimi. Le pill mostrano codone → amminoacido e lunghezza della catena; l'allungamento procede finché un fattore di rilascio non legge un codone di stop.`,
+        try: `Fai girare [[play]] e nota dove codoni sinonimi darebbero lo stesso amminoacido, e come il frame di lettura è fissato dall'inizio AUG — uno spostamento di una base scombinerebbe tutto a valle.`,
+        notice: `<b>Il frame fissato ad AUG è tutto: la traduzione è rigorosamente a triplette e non sovrapposta, così un'inserzione o delezione causa uno slittamento di frame.</b> La fedeltà (~1 errore su 10⁴) viene dal proofreading cinetico, e il legame peptidico è forgiato dall'RNA ribosomiale — il ribosoma è un ribozima, una reliquia del mondo a RNA.`,
+      },
+    },
+    pendulum: {
+      junior: {
+        legend: `Il punto appeso al filo è il <b>pendolo</b>. Oscilla da un lato all'altro, e l'arco tenue mostra il percorso che spazza. La pill conta il <b>tempo per un'oscillazione completa</b> — di là e ritorno.`,
+        try: `Metti [[amp]] ampia e leggi [[per]]. Ora trascina [[amp]] molto più piccola. Il tempo per oscillazione cambia molto? Poi raddoppia [[len]] e guarda [[per]].`,
+        notice: `<b>Cambiare quanto oscilla non cambia quasi il tempo — ma allungare il filo lo rallenta chiaramente.</b> È il segreto del pendolo: il ritmo è fissato quasi solo dalla <em>lunghezza</em>, non da quanto ampia è l'oscillazione né da quanto pesa il peso. Filo più lungo, oscillazione più lenta.`,
+      },
+      student: {
+        legend: `Pendolo di lunghezza \\(L\\) che oscilla con ampiezza \\(\\theta_0\\). L'arco è il suo percorso; le pill leggono il periodo \\(T\\) e la frequenza \\(f\\). Il moto è (quasi-)armonico semplice, \\(\\theta(t)=\\theta_0\\cos(\\omega t)\\).`,
+        try: `Tieni [[amp]] piccola e quadruplica [[len]] da 0,5 a 2,0 — [[per]] raddoppia esattamente? Poi tieni [[len]] e spingi [[amp]] fino a 70°, guardando [[per]] salire.`,
+        notice: `<b>Quadruplicare \\(L\\) raddoppia \\(T\\), perché \\(T = 2\\pi\\sqrt{L/g}\\) — la radice quadrata.</b> Massa e ampiezza sono assenti da quella formula, ed è per questo che le piccole oscillazioni sono isocrone. Spingi però l'ampiezza in grande e l'approssimazione dei piccoli angoli si sfilaccia: \\(T\\) cresce di circa \\(\\theta_0^2/16\\), la correzione che puoi vedere comparire.`,
+      },
+      scholar: {
+        legend: `Lunghezza \\(L\\), ampiezza \\(\\theta_0\\). Il peso obbedisce a \\(\\ddot\\theta + (g/L)\\sin\\theta = 0\\); la simulazione usa il periodo corretto per l'ampiezza \\(T = T_0(1+\\theta_0^2/16)\\) con \\(T_0 = 2\\pi\\sqrt{L/g}\\). Le pill leggono \\(T\\) e \\(f = 1/T\\).`,
+        try: `Registra [[per]] contro [[len]] a [[amp]] piccola fissa e controlla la pendenza di \\(\\log T\\) contro \\(\\log L\\). Poi fissa [[len]] e spazza [[amp]] da 10° a 80°, seguendo quanto \\(T\\) si scosta da \\(T_0\\).`,
+        notice: `<b>La pendenza log-log è \\(1/2\\) (quindi \\(T\\propto\\sqrt L\\)), e \\(T\\) sale sopra \\(T_0\\) al crescere dell'ampiezza.</b> Il periodo esatto è l'integrale ellittico \\(T = 4\\sqrt{L/g}\\,K(\\sin\\tfrac{\\theta_0}{2})\\); il primo termine della sua espansione, \\(\\theta_0^2/16\\), è ciò che la simulazione applica — 1,7% a 30°, ~18% a 90°. L'isocronismo è rigorosamente un limite di piccolo angolo.`,
+      },
+    },
+    optics: {
+      junior: {
+        legend: `La freccia blu a sinistra è l'<b>oggetto</b>. La forma alta al centro è una <b>lente</b>. Le linee colorate sono <b>raggi di luce</b> che escono dalla cima dell'oggetto; dove si incrociano di nuovo a destra, la lente ricostruisce l'immagine — quella è l'<b>immagine</b> (disegnata in arancione).`,
+        try: `Fai scorrere [[obj]] così l'oggetto è lontano dalla lente e guarda l'immagine arancione. Ora trascinalo lentamente più vicino. Cosa succede all'immagine nell'istante in cui l'oggetto si avvicina molto alla lente?`,
+        notice: `<b>Lontano, l'immagine è piccola e capovolta; da vicino, si raddrizza e diventa enorme.</b> Quel passaggio è esattamente la differenza tra una macchina fotografica (oggetto lontano, immagine piccola e rovesciata) e una lente d'ingrandimento (oggetto vicino, immagine grande e dritta). La lente fa entrambe — dipende solo da quanto vicino la tieni.`,
+      },
+      student: {
+        legend: `Freccia blu = oggetto a distanza \\(d_o\\). Lente verticale con i fuochi segnati a \\(\\pm f\\). Tre raggi principali partono dalla punta dell'oggetto: parallelo-poi-per-il-fuoco, dritto-per-il-centro, e per-il-fuoco-vicino-poi-parallelo. Si incontrano nell'immagine, distanza \\(d_i\\); le pill leggono \\(d_i\\), \\(m\\) e se l'immagine è reale o virtuale.`,
+        try: `Metti [[foc]] a circa 60 e spazza [[obj]] da 300 giù a 40. Guarda [[img]] e [[mag]] mentre l'oggetto attraversa \\(d_o = f\\).`,
+        notice: `<b>Quando \\(d_o \\to f\\), l'immagine schizza all'infinito e \\(m\\) esplode.</b> L'equazione delle lenti sottili \\(1/f = 1/d_o + 1/d_i\\) fa divergere \\(d_i\\) quando \\(d_o = f\\), così i raggi lasciano la lente paralleli e non formano immagine finita. Attraversa dentro \\(f\\) e \\(d_i\\) diventa negativo: l'immagine diventa <em>virtuale</em>, dritta e ingrandita — il regime della lente d'ingrandimento.`,
+      },
+      scholar: {
+        legend: `Oggetto a \\(d_o\\); lente convergente sottile di lunghezza focale \\(f\\) con fuochi a \\(\\pm f\\). I tre raggi principali costruiscono l'immagine a \\(d_i\\) data da \\(1/f = 1/d_o + 1/d_i\\), con ingrandimento trasversale \\(m = -d_i/d_o\\). Le immagini reali (\\(d_i>0\\)) appaiono a destra della lente; le virtuali (\\(d_i<0\\)) a sinistra, tratteggiate.`,
+        try: `Fissa [[foc]] e registra coppie \\((d_o, d_i)\\) su tutto l'intervallo, poi verifica se \\(1/d_o + 1/d_i\\) resta costante. Nota il segno di [[mag]] quando [[obj]] passa per \\(f\\) e per \\(2f\\).`,
+        notice: `<b>\\(1/d_o + 1/d_i = 1/f\\) vale esattamente, e \\(m = -d_i/d_o\\) segue la geometria.</b> A \\(d_o = 2f\\), \\(m=-1\\) (stessa dimensione, rovesciata); per \\(f<d_o<2f\\) l'immagine reale è ingrandita (proiettore); per \\(d_o<f\\), \\(d_i<0\\) dà un'immagine virtuale dritta. La simulazione risolve \\(d_i = d_o f/(d_o-f)\\) a ogni frame — il polo a \\(d_o=f\\) è l'immagine divergente che hai appena visto.`,
+      },
+    },
     blackholes: {
       junior: {
         legend: `Il disco nero è l'<b>orizzonte degli eventi</b> — attraversalo e nulla, nemmeno la luce, può tornare indietro. Il punto in orbita è un orologio che osserviamo da lontano. [[dilat]] dice quanto in fretta batte rispetto al tuo, e [[z]] mostra quanto la sua luce viene stirata uscendo.`,
@@ -3669,6 +4814,261 @@ export default {
     },
   },
   labels: {
+    gravity: {
+      junior:  { radius: 'Distanza dalla stella', mass: 'Massa stella',     period: 'Durata anno', speed: 'Velocità' },
+      student: { radius: 'Raggio orbita',         mass: 'Massa stella',     period: 'Periodo (T)', speed: 'Velocità orbitale (v)' },
+      scholar: { radius: 'Raggio orbita (r)',     mass: 'Massa stella (M)', period: 'Periodo (T)', speed: 'Velocità orbitale (v)' },
+    },
+    projectile: {
+      junior:  { angle: 'Angolo di lancio', speed: 'Velocità di lancio',    launch: 'Lancia di nuovo', range: 'Dove atterra', peak: 'Punto più alto',  time: 'Tempo in aria' },
+      student: { angle: 'Angolo (θ)',       speed: 'Velocità (v₀)',         launch: 'Lancia',          range: 'Gittata (R)',  peak: 'Altezza max (H)', time: 'Tempo di volo (T)' },
+      scholar: { angle: 'Angolo (θ)',       speed: 'Velocità iniziale (v₀)',launch: 'Lancia',          range: 'Gittata (R)',  peak: 'Altezza apice (H)',time: 'Tempo di volo (T)' },
+    },
+    newton: {
+      junior:  { force: 'Forza di spinta',    mass: 'Massa',      fric: 'Attrito',     net: 'Spinta totale',        accel: 'Quanto accelera',   vel: 'Velocità' },
+      student: { force: 'Forza applicata (N)',mass: 'Massa (kg)', fric: 'Attrito (μ)', net: 'Forza netta',          accel: 'Accelerazione (a)', vel: 'Velocità (v)' },
+      scholar: { force: 'Forza applicata (N)',mass: 'Massa (kg)', fric: 'Attrito (μ)', net: 'Forza netta (F net)',  accel: 'Accelerazione (a)', vel: 'Velocità (v)' },
+    },
+    circuits: {
+      junior:  { volt: 'Tensione batteria', res: 'Resistenza',     cur: 'Corrente (flusso)', pow: 'Luminosità (potenza)' },
+      student: { volt: 'Tensione (V)',      res: 'Resistenza (R)', cur: 'Corrente (I)',      pow: 'Potenza (P)' },
+      scholar: { volt: 'Tensione (V)',      res: 'Resistenza (R)', cur: 'Corrente (I)',      pow: 'Potenza (P)' },
+    },
+    states: {
+      junior:  { temp: 'Temperatura', state: 'Stato della materia', tval: 'Come si percepisce' },
+      student: { temp: 'Temperatura', state: 'Stato',               tval: 'Come si percepisce' },
+      scholar: { temp: 'Temperatura', state: 'Stato',               tval: 'Come si percepisce' },
+    },
+    waves: {
+      junior:  { freq: 'Frequenza 2', phase: 'Sfasamento', type: 'Interferenza', amp: 'Altezza onda' },
+      student: { freq: 'Frequenza 2', phase: 'Sfasamento', type: 'Interferenza', amp: 'Ampiezza max' },
+      scholar: { freq: 'Frequenza 2', phase: 'Sfasamento', type: 'Interferenza', amp: 'Ampiezza max' },
+    },
+    thermo: {
+      junior:  { temp: 'Temperatura (K)', num: 'Particelle', hits: 'Urti/s sulle pareti', speed: 'Velocità media', press: 'Pressione' },
+      student: { temp: 'Temperatura (K)', num: 'Particelle', hits: 'Urti/s sulle pareti', speed: 'Velocità media', press: 'Pressione' },
+      scholar: { temp: 'Temperatura (K)', num: 'Particelle', hits: 'Urti/s sulle pareti', speed: 'Velocità media', press: 'Pressione' },
+    },
+    particles: {
+      junior:  { energy: 'Energia fascio (TeV)', collide: 'Collidi!', count: 'Collisioni', e: 'Energia' },
+      student: { energy: 'Energia fascio (TeV)', collide: 'Collidi!', count: 'Collisioni', e: 'Energia' },
+      scholar: { energy: 'Energia fascio (TeV)', collide: 'Collidi!', count: 'Collisioni', e: 'Energia' },
+    },
+    prob: {
+      junior:  { drop: 'Lascia cadere palline', reset: 'Reset', rows: 'File di pioli', total: 'Palline cadute',          mean: 'Casella media' },
+      student: { drop: 'Lascia cadere palline', reset: 'Reset', rows: 'File di pioli', total: 'Dimensione campione (N)', mean: 'Indice casella media' },
+      scholar: { drop: 'Lascia cadere palline', reset: 'Reset', rows: 'File di pioli', total: 'Dimensione campione (N)', mean: 'Indice casella media' },
+    },
+    fractal: {
+      junior:  { detail: 'Dettaglio (iterazioni)', zoom: 'Livello di zoom', reset: 'Reimposta vista' },
+      student: { detail: 'Dettaglio (iterazioni)', zoom: 'Livello di zoom', reset: 'Reimposta vista' },
+      scholar: { detail: 'Dettaglio (iterazioni)', zoom: 'Livello di zoom', reset: 'Reimposta vista' },
+    },
+    calculus: {
+      junior:  { x: 'posizione x', rects: 'Rettangoli di Riemann', deriv: 'Pendenza qui', integ: 'Area finora' },
+      student: { x: 'posizione x', rects: 'Rettangoli di Riemann', deriv: 'f′(x)',        integ: '∫f dx (−3→x)' },
+      scholar: { x: 'posizione x', rects: 'Rettangoli di Riemann', deriv: 'f′(x)',        integ: '∫ da −3 a x' },
+    },
+    graphs: {
+      junior:  { nodes: 'Nodi', hubs: 'Connessioni hub', spread: 'Propaga segnale', reset: 'Nuovo grafo', reached: 'Raggiunti', steps: 'Passi', hubcount: 'Hub' },
+      student: { nodes: 'Nodi', hubs: 'Connessioni hub', spread: 'Propaga segnale', reset: 'Nuovo grafo', reached: 'Raggiunti', steps: 'Passi', hubcount: 'Hub' },
+      scholar: { nodes: 'Nodi', hubs: 'Connessioni hub', spread: 'Propaga segnale', reset: 'Nuovo grafo', reached: 'Raggiunti', steps: 'Passi', hubcount: 'Hub' },
+    },
+    trig: {
+      junior:  { angle: 'Angolo',   play: 'Play', sin: 'Altezza (sin)', cos: 'Orizzontale (cos)' },
+      student: { angle: 'Angolo θ', play: 'Play', sin: 'sin θ',         cos: 'cos θ' },
+      scholar: { angle: 'Angolo θ', play: 'Play', sin: 'sin θ',         cos: 'cos θ' },
+    },
+    life: {
+      junior:  { pause: 'Pausa', clear: 'Pulisci', random: 'Casuale', glider: 'Aliante', gen: 'Generazione', alive: 'Cellule vive' },
+      student: { pause: 'Pausa', clear: 'Pulisci', random: 'Casuale', glider: 'Aliante', gen: 'Generazione', alive: 'Cellule vive' },
+      scholar: { pause: 'Pausa', clear: 'Pulisci', random: 'Casuale', glider: 'Aliante', gen: 'Generazione', alive: 'Cellule vive' },
+    },
+    dna: {
+      junior:  { speed: 'Velocità replicazione', reset: 'Reset', pairs: 'Coppie di basi copiate', errors: 'Mutazioni' },
+      student: { speed: 'Velocità replicazione', reset: 'Reset', pairs: 'Coppie di basi copiate', errors: 'Mutazioni' },
+      scholar: { speed: 'Velocità replicazione', reset: 'Reset', pairs: 'Coppie di basi copiate', errors: 'Mutazioni' },
+    },
+    evolution: {
+      junior:  { sel: 'Pressione selettiva', mut: 'Tasso di mutazione', reset: 'Reset', gen: 'Generazione', fit: 'Fitness media', div: 'Diversità' },
+      student: { sel: 'Pressione selettiva', mut: 'Tasso di mutazione', reset: 'Reset', gen: 'Generazione', fit: 'Fitness media', div: 'Diversità' },
+      scholar: { sel: 'Pressione selettiva', mut: 'Tasso di mutazione', reset: 'Reset', gen: 'Generazione', fit: 'Fitness media', div: 'Diversità' },
+    },
+    ecosystem: {
+      junior:  { growth: 'Tasso di crescita piante', pred: 'Efficienza predatori', reset: 'Reset', plants: '🌿 Piante', herb: '🐇 Erbivori', preds: '🦊 Predatori' },
+      student: { growth: 'Tasso di crescita piante', pred: 'Efficienza predatori', reset: 'Reset', plants: '🌿 Piante', herb: '🐇 Erbivori', preds: '🦊 Predatori' },
+      scholar: { growth: 'Tasso di crescita piante', pred: 'Efficienza predatori', reset: 'Reset', plants: '🌿 Piante', herb: '🐇 Erbivori', preds: '🦊 Predatori' },
+    },
+    cell: {
+      junior:  { salt: 'Sale a destra',            reset: 'Reset', left: 'Acqua a sinistra',  right: 'Acqua a destra' },
+      student: { salt: 'Soluto aggiunto (destra)', reset: 'Reset', left: 'Acqua (sinistra)',  right: 'Acqua (destra)' },
+      scholar: { salt: 'Soluto aggiunto (destra)', reset: 'Reset', left: 'Acqua (sinistra)',  right: 'Acqua (destra)' },
+    },
+    mitosis: {
+      junior:  { stage: 'Trascina tra le fasi', play: 'Play', phase: 'Fase', cells: 'Cellule' },
+      student: { stage: 'Fase',                 play: 'Play', phase: 'Fase', cells: 'Cellule' },
+      scholar: { stage: 'Fase',                 play: 'Play', phase: 'Fase', cells: 'Cellule' },
+    },
+    punnett: {
+      junior:  { p1: 'Genitore 1',          p2: 'Genitore 2',          pheno: 'Aspetto (fenotipo)',  geno: 'Geni (genotipo)' },
+      student: { p1: 'Genotipo genitore 1', p2: 'Genotipo genitore 2', pheno: 'Rapporto fenotipico', geno: 'Rapporto genotipico' },
+      scholar: { p1: 'Genotipo genitore 1', p2: 'Genotipo genitore 2', pheno: 'Rapporto fenotipico', geno: 'Rapporto genotipico' },
+    },
+    sorting: {
+      junior:  { size: 'Dimensione array', bubble: 'Bubble Sort', merge: 'Merge Sort', shuffle: 'Mescola', algo: 'Algoritmo', comps: 'Confronti', swaps: 'Scambi' },
+      student: { size: 'Dimensione array', bubble: 'Bubble Sort', merge: 'Merge Sort', shuffle: 'Mescola', algo: 'Algoritmo', comps: 'Confronti', swaps: 'Scambi' },
+      scholar: { size: 'Dimensione array', bubble: 'Bubble Sort', merge: 'Merge Sort', shuffle: 'Mescola', algo: 'Algoritmo', comps: 'Confronti', swaps: 'Scambi' },
+    },
+    ml: {
+      junior:  { lr: 'Tasso di apprendimento', hid: 'Unità nascoste', reset: 'Reset', epoch: 'Epoca', loss: 'Errore',  acc: 'Accuratezza' },
+      student: { lr: 'Tasso di apprendimento', hid: 'Unità nascoste', reset: 'Reset', epoch: 'Epoca', loss: 'Perdita', acc: 'Accuratezza' },
+      scholar: { lr: 'Tasso di apprendimento', hid: 'Unità nascoste', reset: 'Reset', epoch: 'Epoca', loss: 'Perdita', acc: 'Accuratezza' },
+    },
+    crypto: {
+      junior:  { run: 'Esegui lo scambio', reset: 'Reset', step: 'Passo', key: 'Chiave condivisa' },
+      student: { run: 'Esegui scambio DH', reset: 'Reset', step: 'Passo', key: 'Chiave condivisa' },
+      scholar: { run: 'Esegui scambio DH', reset: 'Reset', step: 'Passo', key: 'Chiave condivisa' },
+    },
+    complexity: {
+      junior:  { n: 'Dimensione input n', algo: 'Algoritmo (1=O(log n) … 5=O(2ⁿ))', run: 'Esegui', ops: 'Operazioni', cls: 'Classe', nval: 'n' },
+      student: { n: 'Dimensione input n', algo: 'Algoritmo (1=O(log n) … 5=O(2ⁿ))', run: 'Esegui', ops: 'Operazioni', cls: 'Classe', nval: 'n' },
+      scholar: { n: 'Dimensione input n', algo: 'Algoritmo (1=O(log n) … 5=O(2ⁿ))', run: 'Esegui', ops: 'Operazioni', cls: 'Classe', nval: 'n' },
+    },
+    climate: {
+      junior:  { co2: 'Concentrazione CO₂ (ppm)', pre: 'Preindustriale (280)', now: 'Imposta al 2024 (420)', c: 'CO₂', forcing: 'Calore extra intrappolato', dt: 'Aumento di temperatura' },
+      student: { co2: 'Concentrazione CO₂ (ppm)', pre: 'Preindustriale (280)', now: 'Imposta al 2024 (420)', c: 'CO₂', forcing: 'Forzante',                    dt: 'ΔT' },
+      scholar: { co2: 'Concentrazione CO₂ (ppm)', pre: 'Preindustriale (280)', now: 'Imposta al 2024 (420)', c: 'CO₂', forcing: 'Forzante',                    dt: 'ΔT' },
+    },
+    tectonics: {
+      junior:  { speed: 'Velocità placca', type: 'Tipo di margine (1=divergente 2=trasforme 3=convergente)', quake: 'Innesca sisma', stress: 'Sforzo', time: 'Milioni di anni', event: 'Ultimo evento' },
+      student: { speed: 'Velocità placca', type: 'Tipo di margine (1=divergente 2=trasforme 3=convergente)', quake: 'Innesca sisma', stress: 'Sforzo', time: 'Myr',             event: 'Ultimo evento' },
+      scholar: { speed: 'Velocità placca', type: 'Tipo di margine (1=divergente 2=trasforme 3=convergente)', quake: 'Innesca sisma', stress: 'Sforzo', time: 'Myr',             event: 'Ultimo evento' },
+    },
+    ocean: {
+      junior:  { wind: 'Forza del vento', warm: 'Riscaldamento oceano', flow: 'Portata', temp: 'Temp. superf.', amoc: 'Nastro trasportatore oceanico' },
+      student: { wind: 'Forza del vento', warm: 'Riscaldamento oceano', flow: 'Portata', temp: 'Temp. superf.', amoc: 'AMOC' },
+      scholar: { wind: 'Forza del vento', warm: 'Riscaldamento oceano', flow: 'Portata', temp: 'Temp. superf.', amoc: 'AMOC' },
+    },
+    volcano: {
+      junior:  { visc: 'Viscosità del magma (1=basalto 10=riolite)', recharge: 'Tasso di ricarica magma', erupt: 'Forza eruzione', pres: 'Pressione camera', vei: 'Dimensione esplosione', phase: 'Fase' },
+      student: { visc: 'Viscosità del magma (1=basalto 10=riolite)', recharge: 'Tasso di ricarica magma', erupt: 'Forza eruzione', pres: 'Pressione camera', vei: 'VEI',                   phase: 'Fase' },
+      scholar: { visc: 'Viscosità del magma (1=basalto 10=riolite)', recharge: 'Tasso di ricarica magma', erupt: 'Forza eruzione', pres: 'Pressione camera', vei: 'VEI',                   phase: 'Fase' },
+    },
+    seasons: {
+      junior:  { month: 'Mese',           nh: 'Metà nord',    sh: 'Metà sud' },
+      student: { month: "Mese dell'anno", nh: 'Emisfero nord', sh: 'Emisfero sud' },
+      scholar: { month: "Mese dell'anno", nh: 'Emisfero nord', sh: 'Emisfero sud' },
+    },
+    chem: {
+      junior:  { temp: 'Temperatura', reset: 'Reset', mols: 'Molecole', t: 'Temp' },
+      student: { temp: 'Temperatura', reset: 'Reset', mols: 'Molecole', t: 'Temp' },
+      scholar: { temp: 'Temperatura', reset: 'Reset', mols: 'Molecole', t: 'Temp' },
+    },
+    electrochem: {
+      junior:  { load: 'Carico (velocità scarica)', discharge: 'Scarica', charge: 'Carica', reset: 'Reset', volts: 'Tensione', soc: 'Livello batteria',   mode: 'Modalità' },
+      student: { load: 'Carico (velocità scarica)', discharge: 'Scarica', charge: 'Carica', reset: 'Reset', volts: 'Tensione', soc: 'Livello di carica',  mode: 'Modalità' },
+      scholar: { load: 'Carico (velocità scarica)', discharge: 'Scarica', charge: 'Carica', reset: 'Reset', volts: 'Tensione', soc: 'Stato di carica',    mode: 'Modalità' },
+    },
+    kinetics: {
+      junior:  { temp: 'Temperatura (K)', ea: 'Energia di attivazione (kJ/mol)', cat: 'Aggiungi catalizzatore', reset: 'Reset', react: 'Reagente rimasto', prod: 'Prodotto formato', rate: 'Velocità' },
+      student: { temp: 'Temperatura (K)', ea: 'Energia di attivazione (kJ/mol)', cat: 'Aggiungi catalizzatore', reset: 'Reset', react: '[Reagente]',       prod: '[Prodotto]',       rate: 'Velocità' },
+      scholar: { temp: 'Temperatura (K)', ea: 'Energia di attivazione (kJ/mol)', cat: 'Aggiungi catalizzatore', reset: 'Reset', react: '[Reagente]',       prod: '[Prodotto]',       rate: 'Velocità' },
+    },
+    organic: {
+      junior:  { sel: 'Selettore molecola', mol: 'Molecola', atoms: 'Atomi', type: 'Tipo' },
+      student: { sel: 'Selettore molecola', mol: 'Molecola', atoms: 'Atomi', type: 'Tipo' },
+      scholar: { sel: 'Selettore molecola', mol: 'Molecola', atoms: 'Atomi', type: 'Tipo' },
+    },
+    acids: {
+      junior:  { base: 'Base aggiunta',       pka: "Forza dell'acido", ph: 'pH', state: 'Acido o base?' },
+      student: { base: 'Base aggiunta (mL)',   pka: 'pKₐ acido',        ph: 'pH', state: 'Natura' },
+      scholar: { base: 'Titolante aggiunto (mL)', pka: 'pKₐ acido',     ph: 'pH', state: 'Regione' },
+    },
+    periodic: {
+      junior:  { el: 'Elemento', trend: 'Cosa stai vedendo' },
+      student: { el: 'Elemento', trend: 'Vista' },
+      scholar: { el: 'Elemento', trend: 'Vista' },
+    },
+    balancing: {
+      junior:  { next: 'Reazione successiva', bal: 'Bilanciata?', check: 'Conta atomi' },
+      student: { next: 'Reazione successiva', bal: 'Bilanciata?', check: 'Conta atomi' },
+      scholar: { next: 'Reazione successiva', bal: 'Bilanciata?', check: 'Conta atomi' },
+    },
+    astro: {
+      junior:  { mass: 'Massa stella (masse solari)', reset: 'Reimposta stella', age: 'Età', stage: 'Stadio' },
+      student: { mass: 'Massa stella (masse solari)', reset: 'Reimposta stella', age: 'Età', stage: 'Stadio' },
+      scholar: { mass: 'Massa stella (masse solari)', reset: 'Reimposta stella', age: 'Età', stage: 'Stadio' },
+    },
+    cosmology: {
+      junior:  { lam: 'Energia oscura Ω_Λ', mat: 'Materia Ω_m (%)', reset: 'Reset', age: 'Età (Gyr)', h: 'Tasso di espansione', z: 'Redshift z' },
+      student: { lam: 'Energia oscura Ω_Λ', mat: 'Materia Ω_m (%)', reset: 'Reset', age: 'Età (Gyr)', h: 'H(z)',                 z: 'Redshift z' },
+      scholar: { lam: 'Energia oscura Ω_Λ', mat: 'Materia Ω_m (%)', reset: 'Reset', age: 'Età (Gyr)', h: 'H(z)',                 z: 'Redshift z' },
+    },
+    neuro: {
+      junior:  { stim: 'Forza dello stimolo', fire: 'Attiva neurone', rate: 'Frequenza di scarica', pot: 'Potenziale' },
+      student: { stim: 'Forza dello stimolo', fire: 'Attiva neurone', rate: 'Frequenza di scarica', pot: 'Potenziale' },
+      scholar: { stim: 'Forza dello stimolo', fire: 'Attiva neurone', rate: 'Frequenza di scarica', pot: 'Potenziale' },
+    },
+    neuron: {
+      junior:  { cur: 'Forza dello stimolo',    pulse: 'Impulso singolo', reset: 'Reset', v: 'Tensione interna', state: 'Stato', spikes: 'Picchi' },
+      student: { cur: 'Corrente di stimolo (I)', pulse: 'Impulso singolo', reset: 'Reset', v: 'V di membrana',    state: 'Stato', spikes: 'Picchi' },
+      scholar: { cur: 'Corrente di stimolo (I)', pulse: 'Impulso singolo', reset: 'Reset', v: 'V di membrana',    state: 'Stato', spikes: 'Picchi' },
+    },
+    memory: {
+      junior:  { rate: 'Frequenza di stimolazione (Hz)', ltp: 'Rafforza (LTP)', ltd: 'Indebolisci (LTD)', reset: 'Reset', w: 'Forza sinaptica', last: 'Ultimo evento', events: 'Eventi' },
+      student: { rate: 'Frequenza di stimolazione (Hz)', ltp: 'Accoppia (LTP)', ltd: 'Inverti (LTD)',     reset: 'Reset', w: 'Forza sinaptica', last: 'Ultimo evento', events: 'Eventi' },
+      scholar: { rate: 'Frequenza di stimolazione (Hz)', ltp: 'Accoppia (LTP)', ltd: 'Inverti (LTD)',     reset: 'Reset', w: 'Forza sinaptica', last: 'Ultimo evento', events: 'Eventi' },
+    },
+    sleep: {
+      junior:  { speed: 'Velocità ciclo del sonno', next: 'Fase successiva', wake: 'Sveglia', stage: 'Fase del sonno', freq: 'Velocità onde cerebrali', ad: 'Pressione del sonno' },
+      student: { speed: 'Velocità ciclo del sonno', next: 'Fase successiva', wake: 'Sveglia', stage: 'Fase del sonno', freq: 'Freq. EEG',               ad: 'Adenosina' },
+      scholar: { speed: 'Velocità ciclo del sonno', next: 'Fase successiva', wake: 'Sveglia', stage: 'Fase del sonno', freq: 'Freq. EEG',               ad: 'Adenosina' },
+    },
+    seriesparallel: {
+      junior:  { mode: 'Serie / Parallelo', volt: 'Batteria',     rtot: 'Resistenza totale', cur: 'Corrente',        bulb: 'Luminosità lampadina' },
+      student: { mode: 'Serie / Parallelo', volt: 'Tensione (V)', rtot: 'Resistenza totale', cur: 'Corrente totale', bulb: 'Potenza per lampadina' },
+      scholar: { mode: 'Serie / Parallelo', volt: 'Tensione (V)', rtot: 'Resistenza totale', cur: 'Corrente totale', bulb: 'Potenza per lampadina' },
+    },
+    respiration: {
+      junior:  { o2: 'Ossigeno',           atp: 'Energia (ATP)',    co2: 'CO₂ in uscita',    mode: 'Modalità' },
+      student: { o2: 'Livello di ossigeno', atp: 'ATP per glucosio', co2: 'CO₂ per glucosio', mode: 'Via metabolica' },
+      scholar: { o2: 'Livello di ossigeno', atp: 'ATP per glucosio', co2: 'CO₂ per glucosio', mode: 'Via metabolica' },
+    },
+    watercycle: {
+      junior:  { temp: 'Calore del Sole', evap: 'Evaporazione', cloud: 'Nuvola',          rain: 'Pioggia' },
+      student: { temp: 'Temperatura',     evap: 'Evaporazione', cloud: 'Acqua in nuvola', rain: 'Precipitazione' },
+      scholar: { temp: 'Temperatura',     evap: 'Evaporazione', cloud: 'Acqua in nuvola', rain: 'Precipitazione' },
+    },
+    energy: {
+      junior:  { drop: 'Altezza di caduta',  fric: 'Attrito', ke: 'Energia di movimento', pe: 'Energia di altezza',  tot: 'Totale' },
+      student: { drop: 'Altezza iniziale (h)', fric: 'Attrito', ke: 'Cinetica (KE)',        pe: 'Potenziale (PE)',     tot: 'Energia totale' },
+      scholar: { drop: 'Altezza iniziale (h)', fric: 'Attrito', ke: 'Cinetica (KE)',        pe: 'Potenziale (PE)',     tot: 'Energia totale' },
+    },
+    gaslaws: {
+      junior:  { temp: 'Temperatura',     vol: 'Dimensione contenitore', pres: 'Pressione',     pv: 'Pressione × dimensione' },
+      student: { temp: 'Temperatura (T)',  vol: 'Volume (V)',             pres: 'Pressione (P)', pv: 'P × V' },
+      scholar: { temp: 'Temperatura (T)',  vol: 'Volume (V)',             pres: 'Pressione (P)', pv: 'P × V' },
+    },
+    moonphases: {
+      junior:  { day: 'Giorno del mese', phase: 'Fase', lit: 'Quanto è illuminata' },
+      student: { day: 'Giorno (su 29,5)', phase: 'Fase', lit: 'Illuminata' },
+      scholar: { day: 'Giorno (su 29,5)', phase: 'Fase', lit: 'Illuminata' },
+    },
+    protein: {
+      junior:  { play: 'Costruisci', codon: 'Lettura',              len: 'Perline finora' },
+      student: { play: 'Traduci',    codon: 'Codone → amminoacido', len: 'Lunghezza catena' },
+      scholar: { play: 'Traduci',    codon: 'Codone → amminoacido', len: 'Lunghezza catena' },
+    },
+    pendulum: {
+      junior:  { len: 'Lunghezza',     amp: 'Quanto oscilla', per: 'Tempo per oscillazione', freq: 'Oscillazioni al secondo' },
+      student: { len: 'Lunghezza (L)', amp: 'Ampiezza (θ₀)',  per: 'Periodo (T)',            freq: 'Frequenza (f)' },
+      scholar: { len: 'Lunghezza (L)', amp: 'Ampiezza (θ₀)',  per: 'Periodo (T)',            freq: 'Frequenza (f)' },
+    },
+    optics: {
+      junior:  { obj: 'Distanza oggetto',      foc: 'Forza della lente',    img: 'Dov\'è l\'immagine',      mag: 'Quanto grande',      type: 'Immagine' },
+      student: { obj: 'Distanza oggetto (dₒ)', foc: 'Lunghezza focale (f)', img: 'Distanza immagine (dᵢ)', mag: 'Ingrandimento (m)',  type: 'Immagine' },
+      scholar: { obj: 'Distanza oggetto (dₒ)', foc: 'Lunghezza focale (f)', img: 'Distanza immagine (dᵢ)', mag: 'Ingrandimento (m)',  type: 'Immagine' },
+    },
     blackholes: {
       junior:  { mass: 'Massa del buco nero (M☉)', dist: 'Distanza dal buco',            wave: 'Onda gravitazionale', km: 'Distanza', dilat: 'Dilatazione del tempo', z: 'Stiramento della luce' },
       student: { mass: 'Massa del buco nero (M☉)', dist: 'Distanza particella test (r_S)', wave: 'Onda gravitazionale', km: 'Distanza', dilat: 'Dilatazione del tempo', z: 'Redshift' },

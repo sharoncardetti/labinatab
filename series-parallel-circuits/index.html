@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Series &amp; Parallel Circuits | Lab-in-a-Tab</title>
+<meta name="description" content="Wire two bulbs one after another and both go dim; wire them side by side and both blaze. Same parts, opposite behaviour — and it's exactly why your house…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/series-parallel-circuits/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/series-parallel-circuits/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/circuiti-serie-parallelo/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/circuits-serie-parallele/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/series-parallel-circuits/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Series &amp; Parallel Circuits — Explained &amp; Simulated">
+<meta property="og:description" content="Wire two bulbs one after another and both go dim; wire them side by side and both blaze. Same parts, opposite behaviour — and it's exactly why your house…">
+<meta property="og:url" content="https://labinatab.com/series-parallel-circuits/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Series &amp; Parallel Circuits — Explained &amp; Simulated">
+<meta name="twitter:description" content="Wire two bulbs one after another and both go dim; wire them side by side and both blaze. Same parts, opposite behaviour — and it's exactly why your house…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/series-parallel-circuits/#article",
+   "headline": "Series & Parallel Circuits",
+   "name": "Series & Parallel Circuits",
+   "description": "Wire two bulbs one after another and both go dim; wire them side by side and both blaze. Same parts, opposite behaviour — and it's exactly why your house…",
+   "url": "https://labinatab.com/series-parallel-circuits/",
+   "mainEntityOfPage": "https://labinatab.com/series-parallel-circuits/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-09",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Circuits",
+    "Resistance",
+    "Current"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Series & Parallel Circuits",
+    "sameAs": "https://en.wikipedia.org/wiki/Series_and_parallel_circuits"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Series & Parallel Circuits",
+     "item": "https://labinatab.com/series-parallel-circuits/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/series-parallel-circuits/" hreflang="en" aria-current="true"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/circuiti-serie-parallelo/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/circuits-serie-parallele/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physics</nav>
+  <h1>Series &amp; Parallel Circuits</h1>
+  <p class="lead">Wire two bulbs one after another and both go dim; wire them side by side and both blaze. Same parts, opposite behaviour — and it's exactly why your house is wired the way it is.</p>
+  <div class="chips"><span>Circuits</span><span>Resistance</span><span>Current</span></div>
+  <section class="sim-embed" data-sim="seriesparallel" data-color="#ca8a04" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#ca8a04"><span class="sg-lbl">Try this</span><span>Start in series and note how bright the bulbs are. Press the <b>Series / Parallel</b> button to switch to parallel. Do the bulbs get brighter or dimmer? Watch <b>Current</b> change too.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Try this</span><span>Fix <b>Voltage (V)</b> and read <b>Total resistance</b> and <b>Total current</b> in series, then switch to parallel. By what factor does <b>Total current</b> jump, and how does <b>Power per bulb</b> compare?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Try this</span><span>Compare <b>Total resistance</b> and <b>Total current</b> across the toggle and confirm the parallel total sits below either branch. Then consider how a real internal resistance \(r\) would cap the parallel current the model lets grow freely.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>On the left is the <b>battery</b>; the two glowing circles are <b>bulbs</b>. The yellow dots are the <b>electric current</b> flowing round the wires. The button flips the wiring between <b>series</b> (one loop) and <b>parallel</b> (two branches).</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>In parallel the bulbs blaze; in series they are dim — same battery, same bulbs.</b> In series the two bulbs share one battery's push, so each gets half. In parallel each bulb gets the full push on its own branch, so both shine bright and the battery pours out far more current. That's why your house is wired in parallel.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Two \(10\,\Omega\) bulbs on a battery you set with <b>Voltage (V)</b>. The <b>Series / Parallel</b> button switches between series (\(R=R_1+R_2\), shared current) and parallel (\(1/R=1/R_1+1/R_2\), shared voltage). Pills read total resistance, total current and power per bulb.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Series gives \(20\,\Omega\); parallel gives \(5\,\Omega\) — four times the current, and four times the power per bulb.</b> Resistances add in series but combine reciprocally in parallel, always dropping below the smallest branch. Since \(P=I^2R\), the parallel bulbs dissipate \(4\times\) the power and shine far brighter — the visible payoff of the wiring choice.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A two-resistor network toggled between series and parallel by <b>Series / Parallel</b>, driven at voltage <b>Voltage (V)</b>. The reductions \(R_s=R_1+R_2\) and \(R_p^{-1}=R_1^{-1}+R_2^{-1}\) are special cases of Kirchhoff's laws; the source here is treated as ideal (no internal resistance).</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Series and parallel are just Kirchhoff's current and voltage laws applied to one loop or one junction.</b> Any resistor network reduces this way — except bridge topologies, which need full node/mesh analysis. This idealised source has no internal resistance, so parallel current climbs without limit; a real battery would sag as \(V=\varepsilon-Ir\), the effect that dims headlights when the starter draws hundreds of amps.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Two ways to wire, two very different results</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Take a battery and two identical light bulbs. There are two ways to connect them, and they behave in surprisingly opposite ways. Wire the bulbs one after the other, in a single loop, and you have a <strong>series circuit</strong>. Wire each bulb on its own separate branch, side by side, and you have a <strong>parallel circuit</strong>. Same battery, same bulbs — completely different results.</p>
+<p>In <strong>series</strong>, the same current must thread through both bulbs, one then the other, like beads on a single string. Because the two bulbs share the push of one battery between them, each gets only half, so both glow dimly. Worse, if one bulb blows, the loop is broken and <em>both</em> go dark — which is exactly how old Christmas lights infuriated everyone: one dud killed the whole string.</p>
+<p>In <strong>parallel</strong>, each bulb gets its own path straight back to the battery, so each one feels the battery's full push and shines brightly. Unscrew one and the other keeps glowing, because its path is untouched. This is why your home is wired in parallel: every lamp and appliance gets the full voltage, and switching off the kettle doesn't plunge the whole house into darkness. In the simulation below, flip between the two and watch the bulbs.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🎄</span> Old Christmas lights were wired in series, so a single burned-out bulb switched off the entire string — modern ones use clever parallel-like tricks to avoid it.</li><li><span aria-hidden="true">🏠</span> Every home is wired in parallel: that's why each socket delivers the full 230 (or 120) volts, and why one appliance failing doesn't kill all the others.</li><li><span aria-hidden="true">🔦</span> A torch with two batteries in series doubles the voltage to push harder; putting them in parallel instead would keep the voltage but make the batteries last twice as long.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Adding resistances, and how current and voltage split</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>The two wirings obey mirror-image rules. In <strong>series</strong>, there is only one path, so the same current \(I\) flows everywhere, and the resistances simply add: \(R_{\text{series}} = R_1 + R_2\). The battery's voltage divides between the components in proportion to their resistance. Two \(10\ \Omega\) bulbs on a \(6\ \text{V}\) battery give \(20\ \Omega\) total and a current of just \(0.3\ \text{A}\), with \(3\ \text{V}\) dropped across each bulb.</p>
+<p>In <strong>parallel</strong>, every branch feels the <em>full</em> battery voltage, and the currents add instead. The resistances combine reciprocally: \(\dfrac{1}{R_{\text{parallel}}} = \dfrac{1}{R_1} + \dfrac{1}{R_2}\), which always gives a total <em>smaller</em> than either branch. Those same two \(10\ \Omega\) bulbs now make just \(5\ \Omega\), pulling \(1.2\ \text{A}\) from the battery — four times the series current — with each bulb getting the full \(6\ \text{V}\) and glowing far brighter.</p>
+<p>Brightness follows <strong>power</strong>, \(P = VI = I^2R\). In series each bulb dissipates \(I^2R = 0.3^2\times10 \approx 0.9\ \text{W}\); in parallel each burns \(0.6^2\times10 = 3.6\ \text{W}\), four times as much. That factor of four is exactly what you see as the jump in brightness. It also warns why parallel branches can overload a supply: add more of them and the total current keeps climbing, which is what trips a household breaker.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Series resistance</th><td>\(R_s = R_1 + R_2\)</td><td class="cmt">same current I</td></tr>
+<tr><th scope="row">Parallel resistance</th><td>\(\dfrac{1}{R_p} = \dfrac{1}{R_1} + \dfrac{1}{R_2}\)</td><td class="cmt">same voltage V</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Ohm's law</th><td>\(V = IR\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Power</th><td>\(P = VI = I^2 R\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Series divides V</th><td>\(V_1:V_2 = R_1:R_2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Parallel divides I</th><td>\(I_1:I_2 = R_2:R_1\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⚡</span> Parallel resistance is always less than the smallest branch: add a second identical resistor and the total halves, because you've opened a second lane for current.</li><li><span aria-hidden="true">🔌</span> Adding appliances in parallel increases the total current drawn — plug too many into one circuit and the wire overheats, which is exactly what a fuse or breaker is there to stop.</li><li><span aria-hidden="true">🔋</span> Batteries in series add their voltages (two 1.5 V cells → 3 V); in parallel they keep the voltage but share the load, lasting longer and delivering more current.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Kirchhoff's laws, real sources and network reduction</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The two conservation laws behind every circuit</h3>
+<p>Series and parallel are just special cases of two deeper rules. <strong>Kirchhoff's current law</strong> says charge is conserved at any junction — currents in equal currents out, \(\sum I = 0\) — which is <em>why</em> parallel branch currents add. <strong>Kirchhoff's voltage law</strong> says energy is conserved around any loop — the voltage rises and drops sum to zero, \(\sum V = 0\) — which is <em>why</em> series voltages divide. Every circuit analysis, however tangled, reduces to applying these two statements.</p>
+<h3><span class="hn">02</span>Collapsing a network</h3>
+<p>With those laws you can shrink any resistor network by repeatedly merging series and parallel groups into equivalents, until a single resistance remains. Circuits that resist this — the classic <em>Wheatstone bridge</em> — need the full simultaneous equations (node or mesh analysis), which is really just Kirchhoff's laws written as linear algebra. The bridge is not a curiosity: balanced, it measures an unknown resistance with exquisite precision, and it underlies strain gauges and countless sensors.</p>
+<h3><span class="hn">03</span>No battery is ideal</h3>
+<p>Real sources have <strong>internal resistance</strong> \(r\), so the voltage you actually get sags under load: \(V_{\text{terminal}} = \varepsilon - Ir\). This is why a car's headlights dim for an instant when the starter motor — a huge, low-resistance load — draws hundreds of amps, and why a nearly-flat battery (whose \(r\) has climbed) can read a healthy voltage yet collapse the moment you ask it for current. The ideal battery of the diagrams is always an approximation.</p>
+<h3><span class="hn">04</span>Maximum power, and its cost</h3>
+<p>How much load extracts the most power from a real source? The <strong>maximum power transfer theorem</strong> says power delivered peaks when the load resistance equals the source's internal resistance, \(R_L = r\). But at that match only <em>half</em> the energy reaches the load; the rest is wasted heating the source. Power electronics therefore deliberately avoids the matched condition — the grid runs \(R_L \gg r\) for efficiency — while radio and audio engineers embrace matching, where transferring the signal matters more than wasting a little power.</p>
+<h3><span class="hn">05</span>When components remember: transients</h3>
+<p>Add a capacitor or inductor and the circuit gains memory of time. An <em>RC</em> circuit charges and discharges on a timescale \(\tau = RC\), following \(V(t) = V_0(1 - e^{-t/\tau})\); an <em>RL</em> circuit does the analogous thing with \(\tau = L/R\). These exponential transients set how fast a circuit can switch, filter which frequencies pass, and — chained together — become the timing elements and filters at the heart of every electronic device.</p>
+<h3><span class="hn">06</span>Beyond lumped elements</h3>
+<p>All of this assumes <em>lumped</em> components joined by resistanceless wires — an approximation that holds while the circuit is far smaller than the signal's wavelength. Push to high frequencies and the wires themselves become transmission lines with their own impedance, signals reflect off mismatches, and Kirchhoff's tidy laws give way to Maxwell's equations. The humble series-parallel distinction is the first rung of a ladder that climbs all the way to microwave engineering and the design of every fast digital chip.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Kirchhoff current</th><td>\(\textstyle\sum I_{\text{in}} = \sum I_{\text{out}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Kirchhoff voltage</th><td>\(\textstyle\sum_{\text{loop}} V = 0\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Terminal voltage</th><td>\(V = \varepsilon - Ir\)</td><td class="cmt">internal resistance r</td></tr>
+<tr><th scope="row">Max power transfer</th><td>\(R_L = r\)</td><td class="cmt">only 50% efficient</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">RC transient</th><td>\(V(t) = V_0(1 - e^{-t/RC})\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Time constant</th><td>\(\tau = RC\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌉</span> The Wheatstone bridge, unbalanceable by simple series-parallel reduction, measures unknown resistances to high precision and is the basis of strain gauges in scales and load sensors.</li><li><span aria-hidden="true">🚗</span> Internal resistance explains why headlights dim when you crank the starter: the starter's huge current draw pulls the terminal voltage down through the battery's own resistance.</li><li><span aria-hidden="true">⏱️</span> An RC circuit's time constant τ = RC sets the speed of everything from camera flashes to the clock timing inside microprocessors — exponential charging is everywhere.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Series_and_parallel_circuits" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Physics</h2>
+    <ul><li><a href="/gravity-orbits/">Gravity &amp; Orbits</a></li><li><a href="/projectile-motion/">Projectile Motion</a></li><li><a href="/waves-interference/">Waves &amp; Interference</a></li><li><a href="/thermodynamics/">Heat &amp; Thermodynamics</a></li><li><a href="/standard-model/">The Standard Model</a></li><li><a href="/newtons-laws-of-motion/">Newton's Laws of Motion</a></li><li><a href="/ohms-law-circuits/">Ohm's Law &amp; Circuits</a></li><li><a href="/states-of-matter/">States of Matter</a></li><li><a href="/optics-light-lenses/">Optics: Light, Lenses &amp; Refraction</a></li><li><a href="/pendulum-simple-harmonic-motion/">Pendulums &amp; Simple Harmonic Motion</a></li><li><a href="/energy-conservation/">Energy &amp; Conservation</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

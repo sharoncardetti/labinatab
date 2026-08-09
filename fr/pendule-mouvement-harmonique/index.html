@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendules et mouvement harmonique simple | Lab-in-a-Tab</title>
+<meta name="description" content="Un poids qui oscille garde un temps presque parfait — et il se moque de son poids ou de l'amplitude de son balancement. Pourquoi le même rythme fait-il…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/pendule-mouvement-harmonique/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/pendulum-simple-harmonic-motion/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/pendolo-moto-armonico/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/pendule-mouvement-harmonique/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/pendulum-simple-harmonic-motion/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Pendules et mouvement harmonique simple — Expliqué et simulé">
+<meta property="og:description" content="Un poids qui oscille garde un temps presque parfait — et il se moque de son poids ou de l'amplitude de son balancement. Pourquoi le même rythme fait-il…">
+<meta property="og:url" content="https://labinatab.com/fr/pendule-mouvement-harmonique/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pendules et mouvement harmonique simple — Expliqué et simulé">
+<meta name="twitter:description" content="Un poids qui oscille garde un temps presque parfait — et il se moque de son poids ou de l'amplitude de son balancement. Pourquoi le même rythme fait-il…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/pendule-mouvement-harmonique/#article",
+   "headline": "Pendules et mouvement harmonique simple",
+   "name": "Pendules et mouvement harmonique simple",
+   "description": "Un poids qui oscille garde un temps presque parfait — et il se moque de son poids ou de l'amplitude de son balancement. Pourquoi le même rythme fait-il…",
+   "url": "https://labinatab.com/fr/pendule-mouvement-harmonique/",
+   "mainEntityOfPage": "https://labinatab.com/fr/pendule-mouvement-harmonique/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-09",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Oscillation",
+    "Période",
+    "Résonance"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Pendules et mouvement harmonique simple",
+    "sameAs": "https://en.wikipedia.org/wiki/Pendulum"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Pendules et mouvement harmonique simple",
+     "item": "https://labinatab.com/fr/pendule-mouvement-harmonique/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/pendulum-simple-harmonic-motion/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/pendolo-moto-armonico/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/pendule-mouvement-harmonique/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physique</nav>
+  <h1>Pendules et mouvement harmonique simple</h1>
+  <p class="lead">Un poids qui oscille garde un temps presque parfait — et il se moque de son poids ou de l'amplitude de son balancement. Pourquoi le même rythme fait-il tourner horloges, ressorts, atomes et ponts ?</p>
+  <div class="chips"><span>Oscillation</span><span>Période</span><span>Résonance</span></div>
+  <section class="sim-embed" data-sim="pendulum" data-color="#7c3aed" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Mets <b>Amplitude du balancement</b> large et lis <b>Temps par oscillation</b>. Maintenant fais glisser <b>Amplitude du balancement</b> bien plus petite. Le temps par oscillation change-t-il beaucoup ? Puis double <b>Longueur</b> et regarde <b>Temps par oscillation</b>.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Garde <b>Amplitude (θ₀)</b> petite et quadruple <b>Longueur (L)</b> de 0,5 à 2,0 — <b>Période (T)</b> double-t-il exactement ? Puis garde <b>Longueur (L)</b> et pousse <b>Amplitude (θ₀)</b> jusqu'à 70°, en regardant <b>Période (T)</b> monter.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Essaie</span><span>Enregistre <b>Période (T)</b> contre <b>Longueur (L)</b> à <b>Amplitude (θ₀)</b> petite fixe et contrôle la pente de \(\log T\) contre \(\log L\). Puis fixe <b>Longueur (L)</b> et balaie <b>Amplitude (θ₀)</b> de 10° à 80°, en suivant de combien \(T\) s'écarte de \(T_0\).</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le point suspendu au fil est le <b>pendule</b>. Il oscille d'un côté à l'autre, et l'arc pâle montre le chemin qu'il balaie. La pastille compte le <b>temps d'une oscillation complète</b> — aller et retour.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Changer l'amplitude du balancement ne change presque pas le temps — mais allonger le fil le ralentit clairement.</b> C'est le secret du pendule : le rythme est fixé presque uniquement par la <em>longueur</em>, non par l'amplitude de l'oscillation ni par le poids du lest. Fil plus long, oscillation plus lente.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Pendule de longueur \(L\) oscillant avec amplitude \(\theta_0\). L'arc est son chemin ; les pastilles lisent la période \(T\) et la fréquence \(f\). Le mouvement est (quasi-)harmonique simple, \(\theta(t)=\theta_0\cos(\omega t)\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Quadrupler \(L\) double \(T\), parce que \(T = 2\pi\sqrt{L/g}\) — la racine carrée.</b> Masse et amplitude sont absentes de cette formule, et c'est pourquoi les petites oscillations sont isochrones. Pousse cependant l'amplitude au grand et l'approximation des petits angles s'effiloche : \(T\) croît d'environ \(\theta_0^2/16\), la correction que tu peux voir apparaître.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Longueur \(L\), amplitude \(\theta_0\). Le lest obéit à \(\ddot\theta + (g/L)\sin\theta = 0\) ; la simulation utilise la période corrigée pour l'amplitude \(T = T_0(1+\theta_0^2/16)\) avec \(T_0 = 2\pi\sqrt{L/g}\). Les pastilles lisent \(T\) et \(f = 1/T\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La pente log-log est \(1/2\) (donc \(T\propto\sqrt L\)), et \(T\) monte au-dessus de \(T_0\) à mesure que l'amplitude croît.</b> La période exacte est l'intégrale elliptique \(T = 4\sqrt{L/g}\,K(\sin\tfrac{\theta_0}{2})\) ; le premier terme de son développement, \(\theta_0^2/16\), est ce que la simulation applique — 1,7% à 30°, ~18% à 90°. L'isochronisme est rigoureusement une limite de petit angle.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Le balancement régulier qui donne l'heure</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Attache un poids à une ficelle, tire-le d'un côté et lâche : il balaie, revient, balaie, revient — encore et encore, dans un rythme si régulier que tu pourrais régler une horloge dessus. Les gens ont fait exactement cela pendant trois cents ans. Ce poids qui oscille est un <strong>pendule</strong>, et la régularité de son battement est l'une des merveilles tranquilles de la physique.</p>
+<p>Le surprenant est ce dont dépend le rythme — et ce dont il ne dépend pas. Rends le poids plus lourd : le tempo ne change pas. Tire-le plus loin pour qu'il balaie plus large : il voyage plus vite mais met le <em>même temps</em> pour revenir, donc le tempo ne change guère non plus. La seule chose qui compte vraiment est la <strong>longueur</strong> de la ficelle. Ficelle courte, tics rapides et pressés ; ficelle longue, balancements lents et paresseux. La légende dit que Galilée le remarqua enfant, chronométrant une lampe oscillante dans une cathédrale contre son propre pouls.</p>
+<p>Cette fiabilité fit du pendule le cœur des horloges les plus précises du monde pendant des siècles. Et le même rythme de va-et-vient est partout dès qu'on regarde : un enfant sur une balançoire, une corde de guitare qui vibre, un ressort qui rebondit, même un gratte-ciel qui oscille au vent. Dans la simulation ci-dessous, change la longueur et l'amplitude et regarde ce qui arrive au battement.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">⛪</span> Galilée chronométra une lampe de cathédrale oscillante contre son propre pouls vers 1583 et réalisa que la période change à peine avec l'amplitude — la découverte derrière l'horloge à pendule.</li><li><span aria-hidden="true">🌍</span> Un pendule oscille plus lentement sur la Lune : avec un sixième de la gravité terrestre, le même pendule met environ 2,5 fois plus de temps par balancement.</li><li><span aria-hidden="true">🏢</span> Les gratte-ciel suspendent de géants « amortisseurs à masse accordée » — des pendules pesant des centaines de tonnes — qui oscillent à l'opposé du bâtiment pour annuler le balancement dans le vent.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Le mouvement harmonique simple et la période du pendule</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Écarte un pendule du centre et la gravité le rappelle — et fait crucial, pour de petits balancements le rappel est très proche de <em>proportionnel au déplacement</em>, \(F \approx -kx\). Tout système obéissant à cette seule règle exécute un <strong>mouvement harmonique simple</strong> : la position trace une parfaite sinusoïde dans le temps, \(x(t) = A\cos(\omega t)\), avec la pulsation \(\omega = \sqrt{k/m}\). La même équation gouverne une masse sur un ressort, une bouée flottante et la vibration d'une molécule.</p>
+<p>Pour un pendule la mathématique livre le célèbre résultat \(T = 2\pi\sqrt{L/g}\) : la période croît avec la racine carrée de la longueur et rétrécit dans une gravité plus forte — et ne contient <em>ni la masse ni l'amplitude</em>. C'est l'<strong>isochronisme</strong> du pendule : quadruple la longueur pour doubler la période ; échange le lest contre un deux fois plus lourd et rien ne change. La fréquence est juste \(f = 1/T\), le nombre de balancements par seconde.</p>
+<p>L'énergie est ce qui l'entretient. Aux extrémités du balancement toute l'énergie est <em>potentielle</em> (le lest est au plus haut, momentanément immobile) ; en bas elle est toute <em>cinétique</em> (au plus bas et au plus vite), et le total \(E = \tfrac{1}{2}kA^2\) reste fixe tandis qu'il ballotte sans fin entre les deux. Rigoureusement, tout cela ne tient que pour de petits angles — balaie trop large et le rappel cesse d'être parfaitement linéaire, et la période s'allonge un peu.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Force de rappel</th><td>\(F = -kx\)</td><td class="cmt">petit déplacement</td></tr>
+<tr><th scope="row">Solution du MHS</th><td>\(x(t) = A\cos(\omega t)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Pulsation</th><td>\(\omega = \sqrt{k/m}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Période du pendule</th><td>\(T = 2\pi\sqrt{L/g}\)</td><td class="cmt">ni masse ni amplitude</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Fréquence</th><td>\(f = 1/T = \omega/2\pi\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Énergie totale</th><td>\(E = \tfrac{1}{2}kA^2\)</td><td class="cmt">EC + EP conservées</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">⏱️</span> Un pendule d'exactement 1 mètre de long (avec un petit balancement) a une période très proche de 2 secondes sur Terre — une seconde par côté, la base du « pendule à secondes ».</li><li><span aria-hidden="true">🎸</span> Une corde de guitare, une suspension de voiture et le quartz d'une montre sont tous des oscillateurs harmoniques simples — même mouvement sinusoïdal, fréquences follement différentes.</li><li><span aria-hidden="true">🌀</span> Le pendule de Foucault oscille dans un plan fixe tandis que la Terre tourne dessous — un géant pendule qui prouve visiblement que la planète tourne.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Non-linéarité, amortissement, résonance et chaos</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Pourquoi l'astuce des petits angles fonctionne</h3>
+<p>La vraie équation d'un pendule est non linéaire : \(\ddot\theta + (g/L)\sin\theta = 0\). Elle n'a pas de solution en fonctions élémentaires. L'échappatoire est l'approximation \(\sin\theta \approx \theta\), valable à 1% près jusqu'à environ 14°, qui linéarise l'équation en l'oscillateur harmonique \(\ddot\theta + \omega^2\theta = 0\) avec \(\omega = \sqrt{g/L}\). Presque tout le mouvement harmonique « simple » n'est en réalité que cette décision tranquille de jeter les termes supérieurs d'un sinus.</p>
+<h3><span class="hn">02</span>Ce que coûte l'approximation</h3>
+<p>Garde le \(\sin\theta\) complet et la période cesse d'être constante — elle s'allonge avec l'amplitude, exactement, comme une <em>intégrale elliptique</em> complète \(T = 4\sqrt{L/g}\,K(\sin\tfrac{\theta_0}{2})\). Développée, \(T \approx T_0\left(1 + \tfrac{1}{16}\theta_0^2 + \cdots\right)\) : un balancement de 30° tourne environ 1,7% lent, un de 90° presque 18%. L'isochronisme est une fiction de petit angle — les vraies horloges à pendule sont conçues pour garder l'amplitude minuscule et constante pour exactement cette raison.</p>
+<h3><span class="hn">03</span>Ajouter le frottement : l'oscillateur amorti</h3>
+<p>La réalité draine l'énergie. Une force résistive proportionnelle à la vitesse donne \(\ddot x + 2\gamma\dot x + \omega_0^2 x = 0\), dont le comportement se scinde en trois selon le taux d'amortissement \(\zeta\) : <em>sous-amorti</em> (\(\zeta<1\)) s'éteint en oscillant sous une enveloppe décroissante \(e^{-\gamma t}\) ; <em>amortissement critique</em> (\(\zeta=1\)) revient au repos le plus vite sans dépassement — la cible d'une suspension de voiture ou d'un ferme-porte ; <em>suramorti</em> (\(\zeta>1\)) rampe en arrière avec lenteur.</p>
+<h3><span class="hn">04</span>Pousser au bon moment : la résonance</h3>
+<p>Excite un oscillateur avec une force périodique et sa réponse permanente culmine brusquement quand la fréquence d'excitation approche la naturelle \(\omega_0\) — la <strong>résonance</strong>, amplitude \(A(\omega) = F_0/m\big/\sqrt{(\omega_0^2-\omega^2)^2 + 4\gamma^2\omega^2}\). Pousse une balançoire en cadence et elle grimpe de plus en plus haut sur de minuscules poussées. Le même effet brise un verre à vin avec une note chantée, et c'est pourquoi les soldats rompent le pas en traversant un pont.</p>
+<h3><span class="hn">05</span>À quel point le pic est aigu : le facteur Q</h3>
+<p>Le <em>facteur de qualité</em> \(Q = \omega_0/2\gamma\) mesure combien un oscillateur est faiblement amorti — le nombre de radians qu'il parcourt en oscillant avant que son énergie ne chute de \(1/e\), et l'acuité de sa résonance. Une suspension de voiture a \(Q \sim 1\) ; un cristal de quartz de montre atteint \(10^4\text{–}10^6\) ; les miroirs du détecteur d'ondes gravitationnelles LIGO sont conçus vers \(Q \sim 10^7\), ce qui leur permet d'enregistrer un changement de longueur de \(10^{-18}\) m.</p>
+<h3><span class="hn">06</span>Deux tiges, aucune prédiction : le chaos</h3>
+<p>Suspends un pendule au bout d'un autre et le monde ordonné s'effondre. Le <strong>double pendule</strong> est pleinement déterministe et pourtant <em>chaotique</em> : son mouvement dépend si sensiblement de l'angle de départ que deux lâchers différant d'un cheveu divergent complètement en quelques secondes, un exposant de Lyapunov positif en action. Sa trajectoire dans l'espace des phases remplit une région étrange et repliée plutôt que de se refermer en une boucle nette — la même mathématique qui rend la météo imprévisible au-delà de quelques semaines.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Pendule non linéaire</th><td>\(\ddot\theta + \tfrac{g}{L}\sin\theta = 0\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Période exacte</th><td>\(T = 4\sqrt{L/g}\,K\!\left(\sin\tfrac{\theta_0}{2}\right)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Correction d'amplitude</th><td>\(T \approx T_0\left(1 + \tfrac{1}{16}\theta_0^2\right)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Oscillateur amorti</th><td>\(\ddot x + 2\gamma\dot x + \omega_0^2 x = 0\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Résonance</th><td>\(A(\omega) = \dfrac{F_0/m}{\sqrt{(\omega_0^2-\omega^2)^2 + 4\gamma^2\omega^2}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Facteur de qualité</th><td>\(Q = \omega_0/2\gamma\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📡</span> Le facteur Q des masses d'essai des miroirs de LIGO dépasse 10 millions — si faiblement amorties qu'une seule poussée résonnerait pendant des heures, essentiel pour détecter les ondes gravitationnelles.</li><li><span aria-hidden="true">🌉</span> Le pont de Tacoma Narrows se déchira en 1940 quand le vent le poussa près d'une fréquence naturelle — une leçon de manuel sur la résonance (bien que le vrai mécanisme fût un flottement aéroélastique).</li><li><span aria-hidden="true">🎲</span> Un double pendule est un exemple de classe de chaos déterministe : des lâchers d'apparence identique produisent des mouvements follement différents, rendant sa trajectoire à long terme impossible à prévoir.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Pendulum" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Physique</h2>
+    <ul><li><a href="/fr/gravite-orbites/">Gravité et orbites</a></li><li><a href="/fr/mouvement-des-projectiles/">Le mouvement des projectiles</a></li><li><a href="/fr/ondes-interferences/">Ondes et interférences</a></li><li><a href="/fr/chaleur-thermodynamique/">Chaleur et thermodynamique</a></li><li><a href="/fr/modele-standard/">Le Modèle standard</a></li><li><a href="/fr/lois-du-mouvement-de-newton/">Les lois du mouvement de Newton</a></li><li><a href="/fr/loi-d-ohm-circuits/">Loi d'Ohm et circuits</a></li><li><a href="/fr/etats-de-la-matiere/">Les états de la matière</a></li><li><a href="/fr/optique-lumiere-lentilles/">Optique : lumière, lentilles et réfraction</a></li><li><a href="/fr/conservation-de-l-energie/">La conservation de l'énergie</a></li><li><a href="/fr/circuits-serie-parallele/">Circuits série et parallèle</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

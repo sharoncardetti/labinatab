@@ -5,6 +5,7 @@
 # ── Solo sviluppo locale (mai in produzione) ──────
 serve.bat
 serve_out.txt
+comandi per testare il sito.md
 
 # ── Node (se un domani aggiungi tooling) ──────────
 node_modules/

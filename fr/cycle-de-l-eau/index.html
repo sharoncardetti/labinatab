@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le cycle de l'eau | Lab-in-a-Tab</title>
+<meta name="description" content="La Terre a presque exactement la même eau qu'il y a quatre milliards d'années — utilisée, nettoyée et réutilisée sans fin. Le Soleil la soulève, les…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/cycle-de-l-eau/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/water-cycle/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/ciclo-dell-acqua/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/cycle-de-l-eau/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/water-cycle/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Le cycle de l'eau — Expliqué et simulé">
+<meta property="og:description" content="La Terre a presque exactement la même eau qu'il y a quatre milliards d'années — utilisée, nettoyée et réutilisée sans fin. Le Soleil la soulève, les…">
+<meta property="og:url" content="https://labinatab.com/fr/cycle-de-l-eau/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Le cycle de l'eau — Expliqué et simulé">
+<meta name="twitter:description" content="La Terre a presque exactement la même eau qu'il y a quatre milliards d'années — utilisée, nettoyée et réutilisée sans fin. Le Soleil la soulève, les…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/cycle-de-l-eau/#article",
+   "headline": "Le cycle de l'eau",
+   "name": "Le cycle de l'eau",
+   "description": "La Terre a presque exactement la même eau qu'il y a quatre milliards d'années — utilisée, nettoyée et réutilisée sans fin. Le Soleil la soulève, les…",
+   "url": "https://labinatab.com/fr/cycle-de-l-eau/",
+   "mainEntityOfPage": "https://labinatab.com/fr/cycle-de-l-eau/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-09",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Évaporation",
+    "Nuages",
+    "Précipitations"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Le cycle de l'eau",
+    "sameAs": "https://en.wikipedia.org/wiki/Water_cycle"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Le cycle de l'eau",
+     "item": "https://labinatab.com/fr/cycle-de-l-eau/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/water-cycle/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/ciclo-dell-acqua/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/cycle-de-l-eau/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Sciences de la Terre</nav>
+  <h1>Le cycle de l'eau</h1>
+  <p class="lead">La Terre a presque exactement la même eau qu'il y a quatre milliards d'années — utilisée, nettoyée et réutilisée sans fin. Le Soleil la soulève, les nuages la portent, la pluie la restitue.</p>
+  <div class="chips"><span>Évaporation</span><span>Nuages</span><span>Précipitations</span></div>
+  <section class="sim-embed" data-sim="watercycle" data-color="#0284c7" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0284c7"><span class="sg-lbl">Essaie</span><span>Baisse <b>Chaleur du Soleil</b> au minimum et regarde à quelle vitesse le nuage se remplit. Maintenant monte-le au maximum. Le nuage se remplit-il et pleut-il plus tôt ?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Essaie</span><span>Mets <b>Température</b> bas et note le taux de remplissage de <b>Eau dans le nuage</b>, puis mets-le haut. Regarde comment <b>Précipitation</b> passe de « Building » à « Raining » plus vite avec plus de chaleur.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Essaie</span><span>Balaie <b>Température</b> et observe que le taux de remplissage du nuage et la fréquence de la pluie montent tous deux avec elle — un substitut de l'échelle de Clausius-Clapeyron de l'humidité avec la température.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le bleu en bas est l'<b>océan</b>, la boule jaune est le <b>Soleil</b>. L'eau chaude monte en gouttelettes (<b>évaporation</b>), se rassemble en un <b>nuage</b> en haut, et quand le nuage se remplit il <b>pleut</b> de nouveau vers la mer. Encore et encore.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Plus de Soleil signifie une évaporation plus rapide, donc le nuage se remplit et pleut plus tôt — tout le cycle accélère.</b> Le Soleil est le moteur du cycle de l'eau : sa chaleur soulève l'eau dans le ciel, et la gravité la ramène en bas sous forme de pluie. On ne fabrique jamais d'eau nouvelle — les mêmes gouttelettes tournent et retournent.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le Soleil pilote l'<b>évaporation</b> depuis l'océan ; la vapeur monte, se refroidit et <b>condense</b> dans le nuage ; une fois saturée elle tombe en <b>précipitation</b> et retourne à la mer. Les pastilles lisent le niveau d'évaporation, le remplissage du nuage et s'il pleut.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>L'air plus chaud évapore l'eau plus vite et peut en contenir davantage — donc la chaleur accélère tout le cycle.</b> L'évaporation absorbe de la chaleur latente (2,26 MJ/kg) et la condensation la libère en altitude, déplaçant silencieusement d'énormes quantités d'énergie vers le haut. Globalement évaporation et précipitation doivent s'équilibrer, les rivières restituant le léger déficit de l'océan.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Un modèle schématique à réservoirs et flux : le flux d'évaporation croît avec <b>Température</b>, la vapeur condense au nuage, et la précipitation ferme la boucle. Le nuage est un tampon qui se vide au moment où sa capacité est atteinte.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La capacité de l'air à retenir l'eau monte exponentiellement avec la température (~7% par °C), et c'est pourquoi un climat plus chaud intensifie le cycle.</b> La chaleur latente fait de l'évaporation le principal oléoduc énergétique de l'atmosphère (elle alimente les ouragans), le temps de résidence \(\tau=V/F\) fixe la vitesse de réponse de chaque réservoir, et le fractionnement isotopique à chaque changement d'état permet aux carottes de glace d'enregistrer les températures passées.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>L'infinie machine de recyclage de l'eau de la Terre</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Voici une pensée étrange : l'eau dans ton verre est <em>vieille</em>. Les mêmes molécules d'eau sont là depuis des milliards d'années, bues par des dinosaures, gelées dans d'anciens glaciers, tombées en pluie sur des routes romaines — sans fin utilisées, nettoyées et réutilisées. La Terre ne fabrique jamais d'eau nouvelle et n'en perd jamais ; elle ne fait que déplacer la même réserve dans une boucle géante appelée le <strong>cycle de l'eau</strong>.</p>
+<p>Le moteur est le <strong>Soleil</strong>. Sa chaleur soulève l'eau des océans, des lacs et des rivières sous forme d'un gaz invisible — la <strong>vapeur d'eau</strong> — dans un processus appelé <strong>évaporation</strong>. La vapeur flotte vers le haut, et haut dans le ciel où l'air est froid elle se refroidit et se regroupe de nouveau en minuscules gouttelettes, se rassemblant en <strong>nuages</strong>. C'est la <strong>condensation</strong> : la même chose qui embue une fenêtre froide ou perle sur une boisson glacée.</p>
+<p>Quand les gouttelettes d'un nuage deviennent assez lourdes, elles tombent — en pluie, neige ou grêle — c'est la <strong>précipitation</strong>. Une partie s'infiltre dans le sol pour devenir eau souterraine, une partie coule en aval dans ruisseaux et rivières, et toute finit par retourner à la mer, prête à remonter. Encore et encore, à jamais. Dans la simulation ci-dessous, chauffe le Soleil et regarde l'eau s'évaporer, former des nuages et repleuvoir.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🦕</span> L'eau que tu as bue aujourd'hui est recyclée depuis plus de 4 milliards d'années — certaines de ces molécules étaient presque certainement un jour à l'intérieur d'un dinosaure.</li><li><span aria-hidden="true">☁️</span> Un seul nuage peut contenir des centaines de tonnes d'eau, et pourtant il flotte parce que cette eau est répartie en milliards de gouttelettes bien trop petites et légères pour tomber.</li><li><span aria-hidden="true">🌊</span> Environ 90% de l'eau qui s'évapore vient des océans — et une molécule d'eau passe, en moyenne, seulement environ neuf jours dans l'air avant de retomber.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Changements d'état, chaleur latente et le bilan hydrique global</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Le cycle de l'eau est en réalité une histoire de <strong>changements d'état</strong> et de l'énergie qu'ils portent. Pour transformer l'eau liquide en vapeur tu dois fournir sa <strong>chaleur latente de vaporisation</strong>, un solide \(2.26\ \text{MJ/kg}\) — énergie absorbée de l'environnement (c'est exactement pourquoi transpirer te refroidit). Quand cette vapeur se condense plus tard dans un nuage, toute cette chaleur est relâchée de nouveau, réchauffant l'atmosphère. L'évaporation déplace silencieusement d'énormes quantités d'énergie de la surface vers le ciel.</p>
+<p>Combien de vapeur l'air peut contenir monte abruptement avec la température : l'air plus chaud est plus assoiffé. Une fois l'air saturé (humidité relative 100%), tout refroidissement supplémentaire force la condensation. C'est pourquoi les nuages se forment quand l'air humide monte et se refroidit, pourquoi la rosée apparaît par matins froids, et pourquoi la température à laquelle la condensation commence — le <strong>point de rosée</strong> — est un nombre météorologique si utile.</p>
+<p>Globalement les comptes doivent s'équilibrer. Chaque année environ \(5\times10^{5}\ \text{km}^3\) d'eau s'évapore et la même quantité tombe en précipitation. Les océans perdent un peu plus par évaporation qu'ils ne récupèrent en pluie, et ce déficit est comblé par les <strong>rivières</strong> qui portent l'eau depuis les terres — le trajet de retour qui ferme la boucle. Une molécule d'eau reste dans l'air environ neuf jours, mais peut siéger dans un aquifère profond ou une calotte glaciaire des milliers d'années.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Chaleur latente (vaporisation)</th><td>\(L_v \approx 2.26\ \text{MJ/kg}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Chaleur latente (fusion)</th><td>\(L_f \approx 0.334\ \text{MJ/kg}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Humidité relative</th><td>\(\text{HR} = \dfrac{e}{e_s(T)}\times100\%\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Saturation (Clausius-Clapeyron)</th><td>\(\dfrac{de_s}{dT} = \dfrac{L_v\,e_s}{R_v T^2}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Flux global</th><td>\(\approx 5\times10^{5}\ \text{km}^3/\text{an}\)</td><td class="cmt">évaporation = précipitation</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔥</span> Évaporer un kilogramme d'eau absorbe environ 2,26 millions de joules — assez pour soulever une petite voiture de deux mètres. C'est pourquoi le refroidissement par évaporation (sueur, rafraîchisseurs) marche si bien.</li><li><span aria-hidden="true">💨</span> L'air chaud contient bien plus d'humidité que le froid : l'air à 30°C peut porter environ quatre fois la vapeur d'eau de l'air à 10°C, ce qui est pourquoi les tempêtes tropicales sont si pluvieuses.</li><li><span aria-hidden="true">🏔️</span> L'eau peut sauter entièrement l'étape liquide : neige et glace peuvent passer directement à la vapeur par sublimation, et c'est ainsi que les glaciers rétrécissent même quand il ne monte jamais au-dessus de zéro.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Clausius-Clapeyron, humidité atmosphérique et un cycle qui s'intensifie</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>La loi exponentielle derrière chaque nuage</h3>
+<p>Presque tout sur l'humidité atmosphérique découle d'une relation. Intégrer l'équation de Clausius-Clapeyron donne la pression de vapeur saturante \(e_s(T) \approx e_0\exp\!\left[\dfrac{L_v}{R_v}\left(\dfrac{1}{T_0}-\dfrac{1}{T}\right)\right]\) — une montée <em>exponentielle</em> avec la température. La règle pratique est que la capacité de l'air à retenir l'eau monte d'environ <strong>7% par degré</strong> Celsius. Ce seul nombre gouverne la rosée, le brouillard, la hauteur de la base des nuages et l'humidité disponible pour chaque tempête.</p>
+<h3><span class="hn">02</span>La chaleur latente comme conduite de carburant de l'atmosphère</h3>
+<p>L'évaporation est un oléoduc énergétique caché. Environ la moitié de l'énergie solaire absorbée à la surface de la Terre la quitte non comme rayonnement ou conduction mais comme <em>chaleur latente</em> enfermée dans la vapeur d'eau, libérée en altitude quand la vapeur se condense. C'est la source de puissance dominante des orages et des ouragans : un grand ouragan libère de la chaleur latente à un rythme équivalent à des centaines de fois toute la production électrique de l'humanité, ce qui est pourquoi les mers chaudes les nourrissent et les mers froides les affament.</p>
+<h3><span class="hn">03</span>Temps de résidence et la forme du réservoir</h3>
+<p>Le cycle est un ensemble de réservoirs au renouvellement follement différent. L'atmosphère n'en contient qu'environ \(1.3\times10^{4}\ \text{km}^3\) à tout instant — un temps de résidence moyen de ~9 jours — et pourtant elle traite le flux global entier plusieurs fois par an. Contraste avec l'eau souterraine profonde ou les grandes calottes, où une molécule peut s'attarder des milliers à des centaines de milliers d'années. Le temps de résidence \(\tau = V/F\) (volume sur flux) est le seul nombre qui te dit à quelle vitesse chaque bassin répond au changement.</p>
+<h3><span class="hn">04</span>Les isotopes qui identifient le cycle</h3>
+<p>Les molécules d'eau ne sont pas identiques : celles bâties avec les isotopes plus lourds \(^{18}\text{O}\) et le deutérium s'évaporent un peu moins volontiers et se condensent un peu plus tôt. Chaque changement d'état les <em>fractionne</em> donc, et les rapports conservés dans la pluie, les carottes de glace et les stalagmites deviennent un thermomètre du passé. Lire le \(\delta^{18}\text{O}\) le long d'une carotte de glace reconstruit des dizaines de milliers d'années de température — le cycle de l'eau écrivant sa propre histoire.</p>
+<h3><span class="hn">05</span>Un cycle qu'on resserre</h3>
+<p>Comme la capacité varie avec la loi de Clausius-Clapeyron, une atmosphère plus chaude retient plus d'eau, et tout le cycle <em>s'intensifie</em>. Observations et modèles s'accordent sur le schéma résumé par « le mouillé devient plus mouillé, le sec plus sec » : les extrêmes de précipitation intense varient avec l'augmentation d'humidité de ~7%/K (parfois plus vite dans la convection intense), tandis que les zones sèches subtropicales s'étendent. Un monde plus chaud n'a pas simplement plus d'eau dans l'air — il la redistribue plus violemment.</p>
+<h3><span class="hn">06</span>Observer toute la boucle depuis l'orbite</h3>
+<p>Le cycle moderne se mesure depuis l'espace. Les satellites GRACE pèsent les eaux souterraines et les calottes en percevant de minuscules changements de la gravité terrestre ; des missions comme GPM cartographient la pluie globale toutes les quelques heures ; et les diffusomètres suivent l'humidité du sol et l'évaporation océanique. Ensemble ils transforment un schéma de manuel en un système surveillé et quantitatif — et révèlent que l'usage humain de l'eau, la construction de barrages et l'épuisement des aquifères sont eux-mêmes devenus des termes mesurables dans le bilan hydrique de la planète.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Pression de saturation</th><td>\(e_s(T) = e_0\exp\!\left[\tfrac{L_v}{R_v}\left(\tfrac{1}{T_0}-\tfrac{1}{T}\right)\right]\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Sensibilité C-C</th><td>\(\dfrac{1}{e_s}\dfrac{de_s}{dT} \approx 7\%\ \text{par °C}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Temps de résidence</th><td>\(\tau = V/F\)</td><td class="cmt">atmosphère ≈ 9 jours</td></tr>
+<tr><th scope="row">Réserve atmosphérique</th><td>\(V_{\text{atm}} \approx 1.3\times10^{4}\ \text{km}^3\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Bilan énergétique de surface</th><td>\(R_n = H + LE + G\)</td><td class="cmt">LE = flux de chaleur latente</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🛰️</span> Les satellites GRACE détectent la perte d'eaux souterraines en mesurant les changements du champ gravitationnel terrestre — assez précis pour peser l'eau pompée des aquifères à travers des continents entiers.</li><li><span aria-hidden="true">📈</span> La capacité de l'air à retenir l'eau monte de ~7% par °C de réchauffement (Clausius-Clapeyron), intensifiant directement les averses les plus fortes — la physique derrière des inondations plus extrêmes.</li><li><span aria-hidden="true">🧊</span> Les rapports des isotopes de l'oxygène (δ¹⁸O) dans les carottes de glace font office de paléothermomètre, reconstruisant les températures sur plus de 800 000 ans à partir du registre même du cycle de l'eau.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Water_cycle" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Sciences de la Terre</h2>
+    <ul><li><a href="/fr/climat-atmosphere/">Le climat et l'atmosphère</a></li><li><a href="/fr/tectonique-des-plaques-seismes/">Tectonique des plaques et séismes</a></li><li><a href="/fr/oceanographie-courants-marins/">Océanographie et courants marins</a></li><li><a href="/fr/volcanologie/">Volcanologie</a></li><li><a href="/fr/pourquoi-nous-avons-des-saisons/">Pourquoi nous avons des saisons</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

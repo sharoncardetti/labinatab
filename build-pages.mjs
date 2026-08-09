@@ -116,7 +116,7 @@ const ENGINE = [
     'simSorting', 'simML', 'simCrypto', 'simComplexity', 'simClimate', 'simTectonics',
     'simOcean', 'simVolcano', 'simChem', 'simElectrochem', 'simKinetics', 'simOrganic', 'simAcids', 'simPeriodic',
     'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simEclipse', 'simMeteors', 'simNeuro', 'simNeuron',
-    'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein'].map(decl),
+    'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein', 'simWater', 'simEnergy', 'simSeriesParallel', 'simRespiration'].map(decl),
 ].join('\n\n');
 
 // The embedded sim, localized. Guide text + tab labels come from the language;

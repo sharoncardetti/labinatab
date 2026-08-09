@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les phases de la Lune | Lab-in-a-Tab</title>
+<meta name="description" content="La Lune ne produit aucune lumière propre — alors pourquoi croît-elle d'un croissant à un disque plein et retour chaque mois ? Tout est dans l'angle d'où…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/phases-de-la-lune/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/moon-phases/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/fasi-lunari/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/phases-de-la-lune/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/moon-phases/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Les phases de la Lune — Expliqué et simulé">
+<meta property="og:description" content="La Lune ne produit aucune lumière propre — alors pourquoi croît-elle d'un croissant à un disque plein et retour chaque mois ? Tout est dans l'angle d'où…">
+<meta property="og:url" content="https://labinatab.com/fr/phases-de-la-lune/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Les phases de la Lune — Expliqué et simulé">
+<meta name="twitter:description" content="La Lune ne produit aucune lumière propre — alors pourquoi croît-elle d'un croissant à un disque plein et retour chaque mois ? Tout est dans l'angle d'où…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/phases-de-la-lune/#article",
+   "headline": "Les phases de la Lune",
+   "name": "Les phases de la Lune",
+   "description": "La Lune ne produit aucune lumière propre — alors pourquoi croît-elle d'un croissant à un disque plein et retour chaque mois ? Tout est dans l'angle d'où…",
+   "url": "https://labinatab.com/fr/phases-de-la-lune/",
+   "mainEntityOfPage": "https://labinatab.com/fr/phases-de-la-lune/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-09",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Lune",
+    "Phases",
+    "Orbites"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Les phases de la Lune",
+    "sameAs": "https://en.wikipedia.org/wiki/Lunar_phase"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Les phases de la Lune",
+     "item": "https://labinatab.com/fr/phases-de-la-lune/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/moon-phases/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/fasi-lunari/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/phases-de-la-lune/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomie</nav>
+  <h1>Les phases de la Lune</h1>
+  <p class="lead">La Lune ne produit aucune lumière propre — alors pourquoi croît-elle d'un croissant à un disque plein et retour chaque mois ? Tout est dans l'angle d'où tu la regardes.</p>
+  <div class="chips"><span>Lune</span><span>Phases</span><span>Orbites</span></div>
+  <section class="sim-embed" data-sim="moonphases" data-color="#475569" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#475569"><span class="sg-lbl">Essaie</span><span>Fais glisser <b>Jour du mois</b> lentement sur tout le mois. Regarde le disque « depuis la Terre » à droite, et lis <b>Phase</b> et <b>Fraction éclairée</b>.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#475569"><span class="sg-lbl">Essaie</span><span>Porte <b>Jour (sur 29,5)</b> à 0, ~7, ~15 et ~22 et nomme chaque <b>Phase</b>. Regarde comment <b>Éclairée</b> suit l'angle de phase au lieu de sauter.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#475569"><span class="sg-lbl">Essaie</span><span>Balaie <b>Jour (sur 29,5)</b> et confirme la séquence des phases et la symétrie entre croissant et décroissant. Note que le modèle ne montre que la phase géométrique — non la poussée de luminosité en opposition ni la libration.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le disque lumineux à gauche est le <b>Soleil</b>, qui éclaire tout de ce côté. La boule bleue est la <b>Terre</b>, et la boule grise qui tourne autour d'elle est la <b>Lune</b> — toujours éclairée à moitié du côté du Soleil. Le petit disque à droite montre la <b>phase que tu verrais depuis la Terre</b>.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La forme de la Lune ne change pas — tu vois seulement sa moitié éclairée sous différents angles.</b> Quand la Lune est entre la Terre et le Soleil son côté sombre est tourné vers nous (nouvelle lune) ; quand elle est du côté opposé nous voyons toute la face éclairée (pleine lune). Un tour complet dure environ 29,5 jours.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Vue de dessus : direction éclairée par le Soleil depuis la gauche, Terre au centre, Lune sur son orbite. La moitié tournée vers le Soleil est toujours éclairée ; le disque inséré reconstruit la vue depuis la Terre. Les pastilles lisent le nom de la phase et la fraction éclairée \(k=\tfrac{1}{2}(1-\cos\theta)\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>L'éclairement varie avec continuité comme \(k=\tfrac{1}{2}(1-\cos\theta)\) : 0% nouvelle, 50% aux quartiers, 100% pleine.</b> La phase que nous suivons se répète chaque mois synodique (29,5 j), plus long que l'orbite de 27,3 jours parce qu'entretemps la Terre se déplace autour du Soleil. Et comme l'orbite est inclinée d'environ 5°, la plupart des mois la Lune manque la ligne Soleil-Terre, donc les éclipses sont rares.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Direction du Soleil fixe à gauche ; Terre au centre ; Lune sur orbite circulaire avec l'hémisphère solaire éclairé. Insert = aspect géocentrique. Fraction éclairée \(k=\tfrac{1}{2}(1-\cos\theta)\) avec \(\theta\) l'angle de phase Soleil-Terre-Lune.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La géométrie est exacte, mais la luminosité lunaire réelle n'est pas linéaire en \(k\).</b> L'albédo de la Lune est ~0,12 et près de la pleine il augmente plus que la seule aire ne le prédit (l'effet d'opposition). Superpose la précession des nœuds de 18,6 ans et l'excentricité de l'orbite (libration) et tu as tout l'appareil derrière la prévision des éclipses et le cycle de Saros.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Pourquoi la Lune change de forme chaque nuit</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Regarde la Lune au fil d'un mois et elle semble croître et rétrécir — un mince croissant, une moitié, un disque bombé, un cercle plein, puis de nouveau. Mais la Lune ne change jamais vraiment de forme. Le secret est que la Lune ne produit <em>aucune lumière propre</em>. Comme une balle géante suspendue dans l'espace, elle attrape simplement la lumière du soleil et nous la renvoie — et le Soleil ne peut jamais éclairer qu'<strong>une moitié</strong> d'elle à la fois, la moitié qui se trouve face au Soleil.</p>
+<p>Tandis que la Lune tourne autour de la Terre une fois par mois, nous regardons cette moitié éclairée sous des angles différents. Quand la Lune est entre nous et le Soleil, son côté éclairé est tourné loin de nous et nous voyons l'obscurité — une <strong>nouvelle lune</strong>. Quand elle est de l'autre côté, toute la face éclairée se tourne vers nous — une <strong>pleine lune</strong>. Entre les deux nous la saisissons de côté et ne voyons qu'une tranche : un croissant ou une moitié. La forme que tu vois est simplement quelle part de la moitié éclairée pointe vers toi.</p>
+<p>Le cycle complet — de nouvelle, à pleine, et retour à nouvelle — prend environ <strong>29 jours et demi</strong>, ce qui est à peu près d'où vient l'idée de « mois ». Et voici une jolie bizarrerie : la Lune garde toujours la <em>même face</em> tournée vers la Terre, donc de chez nous nous ne voyons jamais sa face cachée. Dans la simulation ci-dessous, déplace la Lune sur son orbite et regarde sa phase changer.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🌑</span> Tu ne peux jamais voir une « nouvelle lune » — son côté éclairé est tourné entièrement loin de la Terre, donc elle est dans le ciel diurne, invisible contre l'éclat du Soleil.</li><li><span aria-hidden="true">🔄</span> La Lune garde la même face vers la Terre parce qu'elle tourne exactement une fois par orbite — un équilibre appelé verrouillage par effet de marée. La « face cachée » resta invisible à quiconque jusqu'à ce qu'une sonde soviétique la photographie en 1959.</li><li><span aria-hidden="true">📅</span> Le cycle de ~29,5 jours des phases est à l'origine du mot « mois » — et règle encore aujourd'hui les calendriers islamique, hébraïque et chinois.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>La géométrie des phases, et pourquoi les éclipses sont rares</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Une phase lunaire est de la pure géométrie. La lumière solaire éclaire toujours exactement la moitié de la Lune ; ce qui change est l'<em>angle entre le Soleil, la Terre et la Lune</em>. Appelle-le l'angle de phase : à 0° la Lune est grosso modo entre nous et le Soleil (nouvelle), à 180° elle est opposée au Soleil (pleine), et la fraction éclairée que nous voyons suit \(k = \tfrac{1}{2}(1 - \cos\theta)\). La moitié croissante du cycle et la moitié décroissante sont des images miroir, éclairées sur des côtés opposés.</p>
+<p>Il y a une subtilité dans le timing. La Lune met 27,3 jours pour compléter une orbite par rapport aux étoiles de fond — le <em>mois sidéral</em> — mais 29,5 jours pour revenir à la même phase — le <em>mois synodique</em>. L'écart existe parce que la Terre s'est entretemps déplacée sur sa propre orbite, donc la Lune doit osciller un peu plus loin pour se réaligner avec le Soleil. Le cycle des phases que nous voyons réellement est le synodique.</p>
+<p>Alors pourquoi n'y a-t-il pas d'éclipse à chaque nouvelle et pleine lune ? Parce que l'orbite de la Lune est inclinée d'environ <strong>5°</strong> par rapport au plan de l'orbite terrestre. La plupart des mois la Lune passe un peu au-dessus ou au-dessous de la ligne directe Soleil-Terre, et son ombre manque la cible. Ce n'est que lorsqu'une nouvelle ou pleine lune tombe près des deux points où les orbites se croisent — les <em>nœuds</em> — que nous obtenons une éclipse solaire ou lunaire. Cette inclinaison est la raison pour laquelle les éclipses sont des cadeaux occasionnels rares, non des événements mensuels.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Fraction éclairée</th><td>\(k = \tfrac{1}{2}(1 - \cos\theta)\)</td><td class="cmt">θ = angle de phase</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Mois sidéral</th><td>\(T_{\text{sid}} \approx 27.3\ \text{jours}\)</td><td class="cmt">orbite vs étoiles</td></tr>
+<tr><th scope="row">Mois synodique</th><td>\(T_{\text{syn}} \approx 29.5\ \text{jours}\)</td><td class="cmt">de phase à phase</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Relation synodique</th><td>\(\dfrac{1}{T_{\text{syn}}} = \dfrac{1}{T_{\text{sid}}} - \dfrac{1}{T_{\text{an}}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Inclinaison orbitale</th><td>\(i \approx 5.14°\)</td><td class="cmt">pourquoi les éclipses sont rares</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🌗</span> Le mois synodique (29,5 jours, de phase à phase) est plus long que le mois sidéral (27,3 jours, d'orbite à orbite) parce que la Terre continue de se déplacer autour du Soleil — la Lune doit rattraper.</li><li><span aria-hidden="true">🌍</span> Comme l'orbite de la Lune est légèrement elliptique, elle semble tanguer et hocher — une oscillation appelée libration qui nous laisse entrevoir environ 59% de sa surface au fil du temps, non seulement 50%.</li><li><span aria-hidden="true">🌘</span> Sur un mince croissant tu peux souvent voir tout le disque sombre briller faiblement — la « lumière cendrée », lumière solaire réfléchie par la Terre sur la Lune et de retour, expliquée dès Léonard de Vinci.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Verrouillage par effet de marée, récession orbitale et longs cycles</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Pourquoi une face est cachée à jamais</h3>
+<p>La période de rotation de la Lune égale exactement sa période orbitale, elle est donc <strong>verrouillée par effet de marée</strong>. Ce n'est pas un hasard : la gravité terrestre soulève un léger renflement sur la Lune, et tout décalage entre rotation et orbite tire sur ce renflement, appliquant un couple qui freine la rotation jusqu'à ce que les deux rythmes coïncident. Presque chaque grande lune du Système solaire est arrivée à la même résonance spin-orbite 1:1 par la même voie — la rotation synchrone est le point d'arrivée naturel de la friction de marée.</p>
+<h3><span class="hn">02</span>Les marées volent l'orbite de la Lune vers l'extérieur</h3>
+<p>Le couplage de marée va dans les deux sens. La Lune soulève des renflements océaniques sur la Terre, et la rotation plus rapide de la Terre les traîne en avant de la ligne Terre-Lune ; leur attraction gravitationnelle ajoute du moment cinétique à l'orbite de la Lune, la poussant <em>vers l'extérieur</em> d'environ \(3.8\ \text{cm}\) par an — un taux désormais mesuré au millimètre en faisant rebondir des lasers sur les réflecteurs laissés par les astronautes d'Apollo. Le même transfert ralentit la rotation terrestre, allongeant le jour d'environ 1,7 milliseconde par siècle.</p>
+<h3><span class="hn">03</span>La comptabilité de la conservation</h3>
+<p>Tout cela n'est qu'une seule quantité conservée remaniée. Le moment cinétique total du système Terre-Lune est fixe, donc à mesure que la part rotationnelle de la Terre se vide, la part orbitale de la Lune doit croître — ce qui est précisément pourquoi une Lune qui s'éloigne et un jour qui s'allonge vont de pair. Fais avancer l'horloge et le processus ne finit que lorsque le jour terrestre et le mois lunaire s'étirent à la même valeur, un verrouillage mutuel par effet de marée à des dizaines de milliards d'années.</p>
+<h3><span class="hn">04</span>L'orbite inclinée et tournante</h3>
+<p>L'inclinaison de 5,14° n'est pas fixe dans l'espace : la ligne des nœuds où l'orbite de la Lune croise l'écliptique <em>précesse</em> tout autour en 18,6 ans, et le grand axe de l'orbite précesse en 8,85 ans. Ces lentes oscillations modulent quand et où les éclipses peuvent se produire et les enfilent dans le fameux <strong>cycle de Saros</strong> de 18 ans et 11 jours et ⅓, après lequel la géométrie Soleil-Terre-Lune se répète presque et une éclipse quasi jumelle revient.</p>
+<h3><span class="hn">05</span>Lire une phase quantitativement</h3>
+<p>La fraction éclairée \(k = \tfrac{1}{2}(1+\cos\alpha)\), écrite en termes d'<em>élongation</em> Soleil-Lune, n'est que le squelette géométrique. La Lune est un miroir étonnamment médiocre — son albédo est d'environ 0,12, plus sombre que l'asphalte usé — et sa luminosité ne varie pas linéairement avec l'aire éclairée. Près de la pleine lune elle surgit démesurément brillante, la <em>poussée d'opposition</em>, tandis que les ombres de surface s'évanouissent et que les billes vitreuses du régolithe rétrodiffusent la lumière solaire droit vers la source.</p>
+<h3><span class="hn">06</span>Un calendrier qui ne colle jamais tout à fait</h3>
+<p>Le mois synodique n'est pas un nombre entier de jours, ni un nombre entier d'entre eux ne tient dans une année solaire — douze mois synodiques tombent environ 11 jours courts. Chaque calendrier lunaire de l'histoire s'est débattu avec ce désaccord, du <em>cycle métonique</em> de 19 ans qui réaligne Lune et Soleil (la base du calcul de Pâques) aux mois intercalaires des calendriers hébraïque et chinois. Le rythme d'apparence soignée de la Lune est, au fond, glorieusement incommensurable avec l'année.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Fraction éclairée</th><td>\(k = \tfrac{1}{2}(1 + \cos\alpha)\)</td><td class="cmt">α = élongation</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Récession orbitale</th><td>\(\dot r \approx 3.8\ \text{cm/an}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Allongement du jour</th><td>\(\approx 1.7\ \text{ms/siècle}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Précession des nœuds</th><td>\(T_{\text{nœud}} \approx 18.6\ \text{ans}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Cycle de Saros</th><td>\(\approx 6585.3\ \text{jours}\)</td><td class="cmt">répétition des éclipses</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📡</span> La télémétrie laser sur les rétroréflecteurs de l'ère Apollo mesure la distance Terre-Lune au millimètre, confirmant que la Lune s'éloigne de 3,8 cm par an — à peu près la vitesse à laquelle poussent les ongles.</li><li><span aria-hidden="true">🔁</span> Le cycle de Saros (18 ans, 11 jours et ⅓) permet de prévoir les éclipses des siècles à l'avance : après un Saros la géométrie Soleil-Terre-Lune se répète presque, produisant une éclipse quasi identique décalée de 120° en longitude.</li><li><span aria-hidden="true">🌑</span> L'albédo de la Lune n'est que ~0,12 — elle ne réfléchit qu'à peine 12% de la lumière solaire, à peu près comme le vieil asphalte. La pleine lune « brillante » est en réalité un objet gris très sombre éclairé par un Soleil très brillant.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Lunar_phase" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Astronomie</h2>
+    <ul><li><a href="/fr/etoiles-univers/">Les étoiles et l'univers</a></li><li><a href="/fr/trous-noirs/">Trous noirs et relativité</a></li><li><a href="/fr/cosmologie-big-bang/">Cosmologie et le Big Bang</a></li><li><a href="/fr/systeme-solaire/">Le Système solaire</a></li><li><a href="/fr/eclipses/">Éclipses</a></li><li><a href="/fr/etoiles-filantes/">Étoiles filantes et pluies de météores</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

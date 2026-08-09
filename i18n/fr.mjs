@@ -63,8 +63,633 @@ export default {
     runSim:'▶ Lancer la simulation interactive',
     explainedSimulated:'Expliqué et simulé'
   },
-  slugs: { astro: 'etoiles-univers', cosmology: 'cosmologie-big-bang', neuro: 'cerveau-neurones', neuron: 'cerveau-electrique', memory: 'comment-fonctionne-la-memoire', sleep: 'sommeil-conscience', chem: 'atomes-liaisons-chimiques', electrochem: 'electrochimie-batteries', kinetics: 'cinetique-equilibre', organic: 'chimie-organique-molecules-du-vivant', acids: 'acides-bases-ph', periodic: 'tableau-periodique', balancing: 'equilibrer-equations-chimiques', climate: 'climat-atmosphere', tectonics: 'tectonique-des-plaques-seismes', ocean: 'oceanographie-courants-marins', volcano: 'volcanologie', seasons: 'pourquoi-nous-avons-des-saisons', sorting: 'algorithmes-de-tri', ml: 'apprentissage-automatique-reseaux-neurones', crypto: 'cryptographie-securite', complexity: 'calcul-complexite', ecosystem: 'ecosystemes-reseaux-trophiques', cell: 'cellule-osmose-diffusion', mitosis: 'mitose-meiose', punnett: 'echiquiers-de-punnett-genetique', life: 'regles-de-la-vie', dna: 'adn-genetique', evolution: 'evolution-selection-naturelle', graphs: 'theorie-des-graphes-reseaux', trig: 'trigonometrie-cercle-unite', prob: 'probabilites-courbe-en-cloche', fractal: 'fractales-infini', calculus: 'calcul-changement', circuits: 'loi-d-ohm-circuits', states: 'etats-de-la-matiere', thermo: 'chaleur-thermodynamique', particles: 'modele-standard', newton: 'lois-du-mouvement-de-newton', gravity: 'gravite-orbites', projectile: 'mouvement-des-projectiles', waves: 'ondes-interferences', photosynthesis: 'photosynthese', eclipse: 'eclipses', meteors: 'etoiles-filantes', blackholes: 'trous-noirs', solarsystem: 'systeme-solaire' },
+  slugs: { energy: 'conservation-de-l-energie', seriesparallel: 'circuits-serie-parallele', respiration: 'respiration-cellulaire', moonphases: 'phases-de-la-lune', protein: 'synthese-des-proteines', watercycle: 'cycle-de-l-eau', optics: 'optique-lumiere-lentilles', pendulum: 'pendule-mouvement-harmonique', gaslaws: 'lois-des-gaz', astro: 'etoiles-univers', cosmology: 'cosmologie-big-bang', neuro: 'cerveau-neurones', neuron: 'cerveau-electrique', memory: 'comment-fonctionne-la-memoire', sleep: 'sommeil-conscience', chem: 'atomes-liaisons-chimiques', electrochem: 'electrochimie-batteries', kinetics: 'cinetique-equilibre', organic: 'chimie-organique-molecules-du-vivant', acids: 'acides-bases-ph', periodic: 'tableau-periodique', balancing: 'equilibrer-equations-chimiques', climate: 'climat-atmosphere', tectonics: 'tectonique-des-plaques-seismes', ocean: 'oceanographie-courants-marins', volcano: 'volcanologie', seasons: 'pourquoi-nous-avons-des-saisons', sorting: 'algorithmes-de-tri', ml: 'apprentissage-automatique-reseaux-neurones', crypto: 'cryptographie-securite', complexity: 'calcul-complexite', ecosystem: 'ecosystemes-reseaux-trophiques', cell: 'cellule-osmose-diffusion', mitosis: 'mitose-meiose', punnett: 'echiquiers-de-punnett-genetique', life: 'regles-de-la-vie', dna: 'adn-genetique', evolution: 'evolution-selection-naturelle', graphs: 'theorie-des-graphes-reseaux', trig: 'trigonometrie-cercle-unite', prob: 'probabilites-courbe-en-cloche', fractal: 'fractales-infini', calculus: 'calcul-changement', circuits: 'loi-d-ohm-circuits', states: 'etats-de-la-matiere', thermo: 'chaleur-thermodynamique', particles: 'modele-standard', newton: 'lois-du-mouvement-de-newton', gravity: 'gravite-orbites', projectile: 'mouvement-des-projectiles', waves: 'ondes-interferences', photosynthesis: 'photosynthese', eclipse: 'eclipses', meteors: 'etoiles-filantes', blackholes: 'trous-noirs', solarsystem: 'systeme-solaire' },
   t: {
+    energy: {
+      title: `La conservation de l'énergie`,
+      teaser: `L'énergie ne peut ni être créée ni détruite — seulement transformée d'une forme à l'autre. Un pendule échange hauteur contre vitesse, à jamais, gardant le même total.`,
+      chips: ['Énergie cinétique', 'Énergie potentielle', 'Conservation'],
+      lvls: {
+        junior: {
+          title: `L'énergie ne disparaît jamais — elle change juste de forme`,
+          body: `<p>Lance une balle en l'air et regarde-la ralentir, s'arrêter, puis retomber en accélérant. Quelque chose se transmet d'avant en arrière. En montant la balle échange sa vitesse contre de la <strong>hauteur</strong> ; en redescendant elle réechange cette hauteur contre de la <strong>vitesse</strong>. Rien ne se perd vraiment — c'est juste de l'<strong>énergie</strong> qui passe d'une forme à une autre.</p>
+<p>Les physiciens donnent des noms à ces formes. L'énergie du <em>mouvement</em> s'appelle <strong>énergie cinétique</strong> — plus une chose va vite, plus elle en a. L'énergie stockée de la <em>position</em>, comme une balle tenue haut ou un ressort comprimé, s'appelle <strong>énergie potentielle</strong> — prête à se libérer. Tandis que la balle vole, l'énergie coule sans cesse entre ces deux réservoirs, mais l'addition des deux reste la même à chaque instant.</p>
+<p>C'est l'une des règles les plus profondes de toute la physique : l'énergie ne peut être <em>ni créée ni détruite</em>, seulement changée d'une forme à l'autre. Une montagne russe l'échange entre hauteur et vitesse. Une plante la stocke depuis la lumière solaire. Ton corps la brûle depuis la nourriture. Dans la simulation ci-dessous, regarde une balle rouler dans un bol et vois l'énergie cinétique et potentielle se transformer l'une en l'autre — leur somme tenant ferme.</p>`,
+          facts: [
+            { e: '🎢', t: `Au sommet d'une montagne russe le wagon est tout énergie potentielle stockée ; en bas c'est tout énergie cinétique de mouvement. Le total est le même — c'est pourquoi aucune bosse ne peut être plus haute que la première.` },
+            { e: '🔋', t: `L'énergie change de forme sans cesse : chimique dans une pile → électrique dans les fils → lumière et chaleur dans une ampoule. À chaque étape le total est conservé.` },
+            { e: '🌞', t: `Presque toute l'énergie sur Terre a démarré dans le Soleil — stockée dans la nourriture, le bois, le charbon et le pétrole, pour être relâchée à nouveau bien plus tard.` },
+          ],
+          formula: null, sim: 'energy',
+        },
+        student: {
+          title: `Énergie cinétique, potentielle et le théorème de l'énergie mécanique`,
+          body: `<p>Deux formes dominent la mécanique. L'<strong>énergie cinétique</strong> \\(KE = \\tfrac{1}{2}mv^2\\) croît avec le <em>carré</em> de la vitesse — double la vitesse et tu quadruples l'énergie, ce qui est pourquoi les accidents à haute vitesse sont si démesurément dangereux. L'<strong>énergie potentielle gravitationnelle</strong> \\(PE = mgh\\) croît linéairement avec la hauteur. Un ressort en stocke une autre variété, \\(PE = \\tfrac{1}{2}kx^2\\), dans son étirement ou sa compression.</p>
+<p>En l'absence de frottement leur somme, l'<strong>énergie mécanique</strong> \\(E = KE + PE\\), est <em>conservée</em> : constante à chaque instant. Un pendule au sommet de son balancement est tout PE et zéro vitesse ; au fond il est tout KE à vitesse maximale ; partout entre les deux le total est identique. C'est ce qui te laisse résoudre pour la vitesse sans jamais toucher au temps : égale simplement l'énergie au départ et à l'arrivée et résous.</p>
+<p>Le pont vers les forces est le <strong>théorème de l'énergie cinétique</strong> : le travail net fait sur un objet égale son changement d'énergie cinétique, \\(W = \\Delta KE\\), où le travail est force fois déplacement \\(W = Fd\\). Le frottement ne <em>détruit</em> pas l'énergie — il la convertit en <strong>chaleur</strong>, énergie cinétique désordonnée dans d'innombrables molécules. Compte cette chaleur et le total tient toujours parfaitement ; c'est simplement passé sous une forme dont tu ne peux plus facilement te resservir.</p>`,
+          facts: [
+            { e: '🚗', t: `L'énergie cinétique varie comme la vitesse au carré : une voiture à 100 km/h a quatre fois l'énergie de la même voiture à 50 km/h — et met quatre fois la distance pour s'arrêter.` },
+            { e: '🎯', t: `La conservation de l'énergie te laisse prédire des vitesses sans connaître le temps ni la trajectoire : seules les hauteurs de départ et d'arrivée comptent, pas le chemin suivi.` },
+            { e: '🔥', t: `Le frottement ne « perd » pas l'énergie — il la transforme en chaleur. Frotte tes mains : le travail mécanique devient énergie thermique, et le grand livre s'équilibre toujours exactement.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Énergie cinétique', e: 'KE = \\tfrac{1}{2}mv^2', c: '∝ vitesse au carré' },
+            { n: 'Énergie potentielle gravit.', e: 'PE = mgh' },
+            { n: 'Énergie potentielle élastique', e: 'PE = \\tfrac{1}{2}kx^2' },
+            { sep: 1 },
+            { n: 'Énergie mécanique', e: 'E = KE + PE', c: 'conservée sans frottement' },
+            { n: 'Théorème énergie-travail', e: 'W = \\Delta KE = Fd' },
+            { sep: 1 },
+            { n: 'Puissance', e: 'P = \\dfrac{W}{t} = Fv', c: "taux de transfert d'énergie" },
+          ] }, sim: 'energy',
+        },
+        scholar: {
+          title: `Symétries, potentiels et pourquoi l'énergie se conserve`,
+          body: `<h4><span class="hn">01</span>La loi profonde : le théorème de Noether</h4>
+<p>Pourquoi l'énergie se conserve-t-elle un tant soit peu ? La réponse, prouvée par Emmy Noether en 1918, est l'une des plus belles de la physique : <strong>chaque symétrie continue engendre une loi de conservation</strong>. La conservation de l'énergie est la conséquence directe de l'<em>invariance par translation dans le temps</em> — le fait que les lois de la physique sont les mêmes aujourd'hui que demain. La conservation de la quantité de mouvement vient de la même façon de la symétrie spatiale, et celle du moment cinétique de la symétrie de rotation. La conservation n'est pas un hasard ; c'est la symétrie déguisée.</p>
+<h4><span class="hn">02</span>Forces conservatives et potentiels</h4>
+<p>Une force est <em>conservative</em> si le travail qu'elle fait est indépendant du chemin — nul sur toute boucle fermée. Précisément quand cela tient, on peut définir une énergie potentielle \\(U\\) avec \\(\\mathbf{F} = -\\nabla U\\) : la force pointe en descente sur le paysage d'énergie potentielle. La gravité et les forces de ressort sont conservatives ; le frottement ne l'est pas, parce que le travail qu'il fait dépend du trajet parcouru. C'est la ligne de partage propre entre l'énergie que tu peux récupérer et l'énergie que tu ne peux pas.</p>
+<h4><span class="hn">03</span>Le formalisme qui remplace les forces</h4>
+<p>Toute la mécanique se reformule autour de l'énergie plutôt que des forces. Le <em>lagrangien</em> \\(L = T - V\\) (cinétique moins potentielle) alimente les équations d'Euler-Lagrange, qui reproduisent les lois de Newton sans jamais dessiner un vecteur force. Passe à l'<em>hamiltonien</em> \\(H = T + V\\) et tu obtiens l'énergie totale comme générateur de l'évolution temporelle même. Ces cadres, non les forces, sont ce qui se porte tout entier dans la relativité et la mécanique quantique.</p>
+<h4><span class="hn">04</span>L'énergie dans un univers relativiste</h4>
+<p>Einstein élargit le bilan : masse et énergie sont la même chose, \\(E^2 = (pc)^2 + (mc^2)^2\\), et au repos cela se réduit au célèbre \\(E = mc^2\\). La masse est de l'énergie extraordinairement concentrée — un seul gramme en contient l'équivalent d'environ 20 kilotonnes de TNT. Les réactions nucléaires et l'annihilation matière-antimatière ne créent pas d'énergie ; elles convertissent la masse en d'autres formes, et la quantité conservée est l'énergie totale masse-plus-énergie.</p>
+<h4><span class="hn">05</span>Le quantum : l'énergie vient en paquets</h4>
+<p>À l'échelle atomique l'énergie cesse d'être continue. Un système lié ne peut occuper que des <em>niveaux d'énergie</em> discrets, et il ne saute entre eux qu'en absorbant ou émettant un quantum exact \\(E = hf\\). C'est pourquoi les atomes n'émettent que des couleurs précises, pourquoi les lasers existent, et pourquoi le monde quantique est granuleux. Même le vide « vide » porte une énergie de point zéro irréductible que le principe d'incertitude interdit d'annuler.</p>
+<h4><span class="hn">06</span>Le grand livre cosmique et la flèche du temps</h4>
+<p>Deux subtilités bornent l'image. D'abord, l'énergie est toujours conservée mais devient sans cesse <em>moins utile</em> : la deuxième loi de la thermodynamique dit que l'entropie croît, dégradant l'énergie concentrée en chaleur diffuse — c'est la vraie flèche du temps. Ensuite, à l'échelle cosmique la conservation de l'énergie se complique, car dans un espace-temps en expansion la symétrie de translation temporelle qui protège l'énergie ne tient plus globalement. Les photons perdent de l'énergie en s'étirant avec l'univers, et il n'existe aucune énergie totale universellement acceptée pour le cosmos entier.</p>`,
+          facts: [
+            { e: '💥', t: `E = mc² signifie que la masse est de l'énergie ultra-concentrée : convertir un seul gramme entièrement en énergie libérerait environ l'équivalent de la bombe d'Hiroshima.` },
+            { e: '🎭', t: `Le théorème de Noether (1918) prouva que la conservation de l'énergie découle de l'invariance des lois de la physique dans le temps — chaque loi de conservation est cachée derrière une symétrie.` },
+            { e: '🌡️', t: `L'énergie est toujours conservée mais se dégrade : la deuxième loi dit qu'à chaque conversion une part devient chaleur inutilisable. Tu ne peux jamais casser sa quantité, seulement gaspiller sa qualité.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Force ⇄ potentiel', e: '\\mathbf{F} = -\\nabla U' },
+            { n: 'Lagrangien', e: 'L = T - V' },
+            { n: 'Hamiltonien', e: 'H = T + V', c: 'énergie totale' },
+            { sep: 1 },
+            { n: 'Masse-énergie', e: 'E^2 = (pc)^2 + (mc^2)^2' },
+            { n: `Quantum d'énergie`, e: 'E = hf' },
+            { sep: 1 },
+            { n: 'Première loi (thermo)', e: '\\Delta U = Q - W' },
+            { n: 'Noether', e: '\\text{symétrie} \\Rightarrow \\text{conservation}' },
+          ] }, sim: 'energy',
+        },
+      },
+    },
+    seriesparallel: {
+      title: 'Circuits série et parallèle',
+      teaser: `Deux ampoules, une pile — mais câble-les en chaîne ou côte à côte et tout change : luminosité, courant et ce qui arrive quand l'une grille.`,
+      chips: ['Circuits', 'Résistance', 'Courant'],
+      lvls: {
+        junior: {
+          title: `Deux façons de câbler, deux résultats très différents`,
+          body: `<p>Prends une pile et deux ampoules. Il y a deux façons de les brancher, et elles se comportent d'une manière étonnamment différente. Câble-les en une seule boucle, l'une après l'autre, et tu as un circuit <strong>série</strong>. Donne à chaque ampoule son propre chemin séparé de retour vers la pile, et tu as un circuit <strong>parallèle</strong>.</p>
+<p>Dans un circuit <strong>série</strong> le courant électrique n'a qu'une seule route, il doit donc passer <em>à travers chaque ampoule à tour de rôle</em>. Cela crée un piège célèbre : si une ampoule grille, la boucle est brisée et <em>les deux</em> s'éteignent — exactement le tracas des vieilles guirlandes de Noël où une lampe morte assombrissait tout le fil. Ajoute plus d'ampoules en série et chacune reçoit une part du courant, donc toutes s'affaiblissent.</p>
+<p>Dans un circuit <strong>parallèle</strong> chaque ampoule a son propre chemin, elles brillent donc à pleine luminosité et fonctionnent indépendamment — dévisses-en une et l'autre continue de briller joyeusement. C'est pourquoi ta maison est câblée en parallèle : tu veux pouvoir éteindre une lampe sans plonger toute la pièce dans le noir. Dans la simulation ci-dessous, bascule entre série et parallèle et regarde le courant et la luminosité changer.</p>`,
+          facts: [
+            { e: '🎄', t: `Les vieilles guirlandes de Noël étaient câblées en série — une seule ampoule grillée brisait la boucle et toutes s'éteignaient, menant à la frustrante chasse à la lampe morte.` },
+            { e: '🏠', t: `Ta maison est câblée en parallèle, si bien que chaque prise et lampe reçoit la pleine tension et fonctionne indépendamment — éteins-en une et le reste continue.` },
+            { e: '🔦', t: `Empile deux piles en série dans une lampe torche et tu doubles la tension pour une lumière plus vive ; place-les en parallèle et la tension reste la même mais elles durent deux fois plus longtemps.` },
+          ],
+          formula: null, sim: 'seriesparallel',
+        },
+        student: {
+          title: `La loi d'Ohm et la combinaison des résistances`,
+          body: `<p>Tout circuit obéit à la <strong>loi d'Ohm</strong> \\(V = IR\\), liant tension, courant et résistance. La clé pour analyser n'importe quel réseau est de savoir comment les résistances se combinent, et série contre parallèle sont les deux règles opposées. <strong>En série</strong> les résistances s'additionnent simplement : \\(R_{\\text{tot}} = R_1 + R_2 + \\cdots\\). Le même courant traverse toutes, tandis que la tension se <em>répartit</em> entre elles.</p>
+<p><strong>En parallèle</strong> les inverses s'additionnent : \\(\\frac{1}{R_{\\text{tot}}} = \\frac{1}{R_1} + \\frac{1}{R_2} + \\cdots\\), donnant toujours une résistance <em>plus petite</em> que la moindre branche — parce que tu as ouvert plus de chemins au courant. Ici chaque branche voit la <em>même</em> tension, tandis que le courant se <em>répartit</em> entre elles. Ces deux comportements — courant partagé contre tension partagée — sont la clé entière de la lecture d'un circuit.</p>
+<p>Derrière tout cela il y a les <strong>lois de Kirchhoff</strong>, deux énoncés de conservation. La loi des nœuds (le courant qui entre dans un nœud égale le courant qui en sort) est la conservation de la charge ; la loi des mailles (les tensions autour de toute boucle s'annulent) est la conservation de l'énergie. La puissance dissipée dans un élément est \\(P = IV = I^2R\\), ce qui est pourquoi une ampoule en série — recevant moins de courant — brille plus faiblement que la même ampoule en parallèle.</p>`,
+          facts: [
+            { e: '⚡', t: `Les résistances en parallèle donnent toujours moins de résistance que la plus petite branche seule — ajouter des chemins facilite toujours l'écoulement du courant, jamais l'inverse.` },
+            { e: '🔌', t: `Les lois de Kirchhoff ne sont que la conservation déguisée : la loi des nœuds est la conservation de la charge, la loi des mailles la conservation de l'énergie. Toute l'analyse de circuit en découle.` },
+            { e: '💡', t: `La puissance varie comme le carré du courant (P = I²R) : c'est pourquoi les lignes à haute tension transportent l'électricité à tension élevée et courant faible — pour minimiser la puissance gaspillée en chaleur dans les câbles.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Loi d'Ohm`, e: 'V = IR' },
+            { sep: 1 },
+            { n: 'Série', e: 'R_{\\text{tot}} = R_1 + R_2 + \\cdots', c: 'même courant' },
+            { n: 'Parallèle', e: '\\dfrac{1}{R_{\\text{tot}}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2}', c: 'même tension' },
+            { sep: 1 },
+            { n: 'Loi des nœuds', e: '\\sum I_{\\text{entrant}} = \\sum I_{\\text{sortant}}' },
+            { n: 'Loi des mailles', e: '\\sum V = 0', c: "autour d'une boucle" },
+            { n: 'Puissance', e: 'P = IV = I^2R' },
+          ] }, sim: 'seriesparallel',
+        },
+        scholar: {
+          title: `Régimes transitoires, impédance et réseaux réels`,
+          body: `<h4><span class="hn">01</span>Au-delà des résistances : condensateurs et bobines</h4>
+<p>Les résistances dissipent l'énergie ; deux autres éléments la <em>stockent</em>. Un <strong>condensateur</strong> stocke de l'énergie dans un champ électrique, \\(Q = CV\\), et résiste aux changements de tension ; une <strong>bobine</strong> stocke de l'énergie dans un champ magnétique, \\(V = L\\,dI/dt\\), et résiste aux changements de courant. Contrairement aux résistances leur comportement dépend de la <em>vitesse</em> à laquelle les choses changent, ce qui rend les circuits qui les contiennent dynamiques plutôt que statiques.</p>
+<h4><span class="hn">02</span>La montée et la descente : les transitoires RC</h4>
+<p>Relie une résistance et un condensateur et le circuit acquiert une mémoire du temps. La tension se charge ou se décharge exponentiellement, \\(V(t) = V_0\\,e^{-t/RC}\\), avec une <em>constante de temps</em> \\(\\tau = RC\\) qui fixe la vitesse. Ce simple comportement est partout : il cadence les clignotants, débruite les signaux, met en forme les ondes audio et définit combien de fois par seconde une puce numérique peut basculer proprement.</p>
+<h4><span class="hn">03</span>Le courant alternatif et l'impédance</h4>
+<p>Excite un circuit avec du courant alternatif et la résistance se généralise en <strong>impédance</strong> \\(Z\\), un nombre complexe qui capte à la fois combien un élément s'oppose au courant et de combien il déphase tension et courant. Les condensateurs et les bobines ont des réactances qui dépendent de la fréquence, \\(X_C = 1/\\omega C\\) et \\(X_L = \\omega L\\), donc un circuit répond différemment à chaque fréquence — le fondement de tout filtre, égaliseur et étage de syntonisation.</p>
+<h4><span class="hn">04</span>La résonance dans les circuits</h4>
+<p>Un circuit avec inductance et capacité a une <em>fréquence de résonance</em> \\(\\omega_0 = 1/\\sqrt{LC}\\) où leurs réactances opposées s'annulent. À cette fréquence la réponse culmine brusquement — exactement l'oscillateur harmonique de la mécanique, désormais en tension et courant. C'est ainsi qu'une radio sélectionne une seule station sur la multitude : accorde \\(LC\\) pour que la fréquence désirée résonne et toutes les autres soient étouffées.</p>
+<h4><span class="hn">05</span>Résoudre les grands réseaux</h4>
+<p>Les vrais circuits ont trop de nœuds pour la réduction série-parallèle à la main. Les lois de Kirchhoff deviennent un système linéaire, résolu systématiquement par l'<em>analyse nodale</em> ou l'<em>analyse des mailles</em> — la même algèbre matricielle qu'un simulateur comme SPICE exécute des millions de fois pour vérifier une puce. Les théorèmes de <em>Thévenin</em> et <em>Norton</em> ajoutent une élégance de paresseux : tout réseau linéaire complexe, vu de deux bornes, se réduit à une seule source équivalente et une seule résistance.</p>
+<h4><span class="hn">06</span>Quand le modèle simple s'effondre</h4>
+<p>L'idée que les fils sont parfaits et que le courant est instantané n'est qu'une approximation basse fréquence. À hautes fréquences chaque fil a inductance et capacité, les signaux voyagent comme des <em>ondes</em> à vitesse finie, et les pistes doivent être traitées comme des <em>lignes de transmission</em> avec adaptation d'impédance pour éviter les réflexions. Descends encore et le courant se quantifie en électrons individuels ; l'électronique moderne vit à la frontière où la théorie des circuits soignée cède la place à l'électromagnétisme et à la physique quantique.</p>`,
+          facts: [
+            { e: '📻', t: `Une radio choisit une station par résonance : accorder un circuit LC à ω₀ = 1/√(LC) fait culminer une seule fréquence tandis que toutes les autres sont supprimées — le même pic que la résonance mécanique.` },
+            { e: '⏱️', t: `La constante de temps RC (τ = RC) cadence d'innombrables dispositifs, des clignotants aux horloges numériques — le circuit fondamental de « charge puis déclenche » de l'électronique.` },
+            { e: '🖥️', t: `Les concepteurs de puces ne câblent pas des millions de composants à la main — ils résolvent les lois de Kirchhoff numériquement avec SPICE, la même analyse nodale et de mailles enseignée pour les circuits à deux résistances.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Condensateur', e: 'Q = CV', c: 'stocke un champ E' },
+            { n: 'Bobine', e: 'V = L\\,dI/dt', c: 'stocke un champ B' },
+            { sep: 1 },
+            { n: 'Constante de temps RC', e: '\\tau = RC', c: 'V(t) = V_0 e^{-t/RC}' },
+            { n: 'Réactances', e: 'X_C = \\dfrac{1}{\\omega C},\\ X_L = \\omega L' },
+            { sep: 1 },
+            { n: 'Résonance', e: '\\omega_0 = \\dfrac{1}{\\sqrt{LC}}' },
+            { n: 'Impédance', e: 'Z = R + jX', c: 'l\'AC généralise R' },
+          ] }, sim: 'seriesparallel',
+        },
+      },
+    },
+    respiration: {
+      title: 'La respiration cellulaire',
+      teaser: `Comment ta nourriture devient-elle réellement énergie ? Chaque cellule brûle lentement le sucre avec l'oxygène, capturant la puissance libérée dans la monnaie universelle de la vie : l'ATP.`,
+      chips: ['ATP', 'Mitochondries', 'Métabolisme'],
+      lvls: {
+        junior: {
+          title: `Comment tes cellules transforment la nourriture en énergie`,
+          body: `<p>Tu manges pour obtenir de l'énergie — mais tu ne peux pas alimenter tes muscles avec un sandwich directement. Ta nourriture doit d'abord être transformée en une sorte d'énergie que tes cellules peuvent réellement utiliser. Ce processus s'appelle la <strong>respiration cellulaire</strong>, et il se produit à l'intérieur de chacune des billions de cellules de ton corps, en ce moment même.</p>
+<p>L'idée de base est étonnamment simple : les cellules <em>brûlent du sucre avec de l'oxygène</em>, un peu comme un feu — mais si lentement et sous tant de contrôle qu'au lieu d'une flamme tu obtiens une libération d'énergie soignée et pas à pas. C'est exactement pourquoi tu dois respirer : l'<strong>oxygène</strong> que tu inspires est utilisé pour décomposer le sucre de ta nourriture, et le <strong>dioxyde de carbone</strong> que tu expires est le déchet qui en résulte.</p>
+<p>L'énergie libérée est empaquetée dans une petite molécule appelée <strong>ATP</strong> — pense à elle comme à une batterie rechargeable que tes cellules utilisent pour tout : bouger, penser, grandir et se réparer. La plupart de ce travail se fait dans de minuscules structures en forme de haricot appelées <strong>mitochondries</strong>, les « centrales électriques » de la cellule. Dans la simulation ci-dessous, envoie du sucre et de l'oxygène dans une mitochondrie et regarde-la pomper de l'ATP.</p>`,
+          facts: [
+            { e: '🔋', t: `Ton corps fabrique et dépense environ ton propre poids en ATP chaque jour — non parce que tu en stockes autant, mais parce que chaque molécule est recyclée des milliers de fois par jour.` },
+            { e: '🫁', t: `C'est pourquoi tu respires : l'oxygène que tu inspires brûle le sucre de ta nourriture, et le dioxyde de carbone que tu expires est le déchet — chaque expiration est littéralement ton métabolisme sortant.` },
+            { e: '🦠', t: `Les mitochondries furent jadis des bactéries libres, avalées par une cellule ancestrale il y a des milliards d'années. Elles ont encore leur propre ADN et se dupliquent seules à l'intérieur de tes cellules.` },
+          ],
+          formula: null, sim: 'respiration',
+        },
+        student: {
+          title: `Glycolyse, cycle de Krebs et la chaîne de transport d'électrons`,
+          body: `<p>La respiration cellulaire brûle le glucose en trois étapes couplées. D'abord vient la <strong>glycolyse</strong> dans le cytoplasme : une molécule de glucose à six carbones est fendue en deux molécules de pyruvate à trois carbones, avec un gain net modeste de 2 ATP et quelques transporteurs d'électrons NADH. Cette étape ancienne ne requiert aucun oxygène du tout.</p>
+<p>Si l'oxygène est présent, le pyruvate entre dans une mitochondrie pour le <strong>cycle de Krebs</strong> (l'acide citrique), qui l'oxyde complètement en \\(CO_2\\), récoltant plus d'ATP et — surtout — chargeant beaucoup de transporteurs d'électrons NADH et FADH₂. Ces transporteurs sont le vrai butin : ils portent des électrons de haute énergie vers l'étape finale et la plus productive.</p>
+<p>Cette étape finale est la <strong>chaîne de transport d'électrons</strong> sur la membrane interne de la mitochondrie. Les électrons cascadent le long d'une série de protéines, libérant de l'énergie qui pompe des protons pour bâtir un gradient — et le flux de ces protons de retour à travers l'enzyme ATP synthase forge le gros de l'ATP. L'oxygène joue le rôle vital d'<em>accepteur final d'électrons</em>, se combinant avec électrons et protons pour former l'eau. Le décompte total : environ \\(30\\text{–}38\\) ATP par molécule de glucose, résumé par \\(C_6H_{12}O_6 + 6O_2 \\to 6CO_2 + 6H_2O\\).</p>`,
+          facts: [
+            { e: '⚡', t: `La chaîne de transport d'électrons produit la grande majorité de ton ATP — la glycolyse et le cycle de Krebs n'en font directement que quelques-uns chacun, mais chargent les transporteurs qui alimentent l'étape finale.` },
+            { e: '💪', t: `Quand l'oxygène manque, tes muscles se rabattent sur la fermentation — un gain rapide mais maigre de 2 ATP, produisant l'acide lactique qui brûle pendant l'effort intense.` },
+            { e: '🌍', t: `La respiration cellulaire est presque exactement l'inverse de la photosynthèse : l'une brûle le sucre avec l'oxygène pour libérer l'énergie, l'autre utilise l'énergie solaire pour refabriquer sucre et oxygène.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Réaction globale', e: 'C_6H_{12}O_6 + 6O_2 \\to 6CO_2 + 6H_2O' },
+            { sep: 1 },
+            { n: 'Glycolyse', e: '\\text{glucose} \\to 2\\ \\text{pyruvate}', c: '+2 ATP, sans O₂' },
+            { n: 'Cycle de Krebs', e: '\\text{pyruvate} \\to CO_2', c: 'charge NADH, FADH₂' },
+            { n: 'Chaîne de transport', e: '\\text{NADH} \\to O_2', c: "le gros de l'ATP" },
+            { sep: 1 },
+            { n: 'Rendement total', e: '\\approx 30\\text{–}38\\ \\text{ATP / glucose}' },
+          ] }, sim: 'respiration',
+        },
+        scholar: {
+          title: `Chimiosmose, rendement et l'origine symbiotique des mitochondries`,
+          body: `<h4><span class="hn">01</span>La grande idée : la chimiosmose</h4>
+<p>La perspicacité qui valut à Peter Mitchell le Nobel 1978 fut contre-intuitive : l'ATP n'est pas fabriqué directement par les réactions chimiques de la chaîne d'électrons. À la place, la chaîne pompe des protons à travers la membrane interne pour bâtir un gradient électrochimique — la <strong>force protonmotrice</strong> — et cette énergie stockée entraîne ensuite séparément la synthèse d'ATP. L'énergie est momentanément détenue non dans une liaison chimique mais comme une <em>batterie</em> à travers une membrane, exactement comme l'eau retenue derrière un barrage.</p>
+<h4><span class="hn">02</span>La turbine moléculaire</h4>
+<p>Les protons retournent à travers l'<strong>ATP synthase</strong>, l'une des machines les plus remarquables de la biologie : un authentique moteur rotatif. Le flux de protons fait tourner physiquement un rotor à plus de 100 tours par seconde, et chaque rotation force des changements de conformation qui pressent ADP et phosphate en ATP. C'est une turbine hydroélectrique rétrécie à l'échelle nanométrique, et virtuellement toute vie sur Terre — animaux, plantes, bactéries — l'emploie.</p>
+<h4><span class="hn">03</span>Compter la vraie facture énergétique</h4>
+<p>Le chiffre manuel de 38 ATP est un plafond idéalisé. En réalité le rendement est plus proche de <em>30-32 ATP</em> par glucose, car le gradient de protons fuit, transporter le NADH cytoplasmique dans la mitochondrie coûte de l'énergie, et le rapport protons-par-ATP n'est pas un entier propre. Même ainsi, la respiration aérobie capture environ 34% de l'énergie disponible du glucose comme ATP — nettement plus efficace que la plupart des moteurs à combustion, le reste apparaissant comme chaleur qui te garde au chaud.</p>
+<h4><span class="hn">04</span>Quand l'oxygène manque</h4>
+<p>Sans oxygène pour accepter les électrons au bout de la chaîne, tout se bloque en amont — le NADH ne peut se décharger et la glycolyse elle-même caterait. La <em>fermentation</em> résout cela en réoxydant le NADH, produisant du lactate (dans tes muscles) ou de l'éthanol et du \\(CO_2\\) (dans la levure). Cela ne rend que les 2 ATP maigres de la glycolyse mais reste en marche instantanément et sans oxygène — un compromis ancien entre vitesse et rendement que ton corps engage encore lors d'un sprint.</p>
+<h4><span class="hn">05</span>Les mitochondries : autrefois des êtres à part entière</h4>
+<p>La <strong>théorie endosymbiotique</strong>, jadis radicale et désormais bien établie, soutient que les mitochondries descendent de bactéries libres englouties par une cellule ancestrale il y a environ 1,5 à 2 milliards d'années. Les preuves sont convaincantes : elles gardent leur propre ADN circulaire, se divisent indépendamment par fission, ont une double membrane et fabriquent leurs propres ribosomes de type bactérien. Ta mitochondrie est le descendant apprivoisé d'un microbe qui n'a jamais tout à fait cessé d'être lui-même.</p>
+<h4><span class="hn">06</span>Bien plus que des batteries</h4>
+<p>Les mitochondries font bien plus que fabriquer de l'ATP. Elles déclenchent l'<em>apoptose</em> (la mort cellulaire programmée) en libérant du cytochrome c, tamponnent le calcium cellulaire, synthétisent des groupes clés, et leur fuite d'électrons est une source majeure des espèces réactives de l'oxygène liées au vieillissement. Comme l'ADN mitochondrial se transmet presque uniquement par la mère, il trace des lignées maternelles à travers des millénaires — jusqu'à l'« Ève mitochondriale ». Les défaillances de la fonction mitochondriale sous-tendent un large spectre de maladies métaboliques et neurodégénératives.</p>`,
+          facts: [
+            { e: '🏆', t: `Peter Mitchell remporta le Nobel 1978 pour la chimiosmose — l'idée choquante que l'ATP est alimenté par un gradient de protons à travers une membrane, non fabriqué directement par des réactions chimiques.` },
+            { e: '⚙️', t: `L'ATP synthase est un authentique moteur rotatif qui tourne à plus de 100 fois par seconde, entraîné par le flux de protons — une turbine hydroélectrique nanométrique que presque toute vie partage.` },
+            { e: '👩', t: `L'ADN mitochondrial ne se transmet que par la mère, permettant de retracer les lignées maternelles jusqu'à l'« Ève mitochondriale », une femme ayant vécu il y a environ 150 000 ans.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Force protonmotrice', e: '\\Delta p = \\Delta\\psi - \\tfrac{2.3RT}{F}\\Delta\\text{pH}' },
+            { n: `Synthèse d'ATP`, e: '\\text{ADP} + P_i \\to \\text{ATP}', c: 'via ATP synthase' },
+            { sep: 1 },
+            { n: `Hydrolyse de l'ATP`, e: '\\Delta G \\approx -30.5\\ \\text{kJ/mol}' },
+            { n: 'Rendement réel', e: '\\approx 30\\text{–}32\\ \\text{ATP / glucose}' },
+            { sep: 1 },
+            { n: 'Fermentation', e: '\\text{glucose} \\to 2\\ \\text{lactate} + 2\\ \\text{ATP}' },
+            { n: 'Efficacité', e: '\\approx 34\\%', c: 'du glucose disponible' },
+          ] }, sim: 'respiration',
+        },
+      },
+    },
+    moonphases: {
+      title: 'Les phases de la Lune',
+      teaser: `La Lune ne produit aucune lumière propre — alors pourquoi croît-elle d'un croissant à un disque plein et retour chaque mois ? Tout est dans l'angle d'où tu la regardes.`,
+      chips: ['Lune', 'Phases', 'Orbites'],
+      lvls: {
+        junior: {
+          title: `Pourquoi la Lune change de forme chaque nuit`,
+          body: `<p>Regarde la Lune au fil d'un mois et elle semble croître et rétrécir — un mince croissant, une moitié, un disque bombé, un cercle plein, puis de nouveau. Mais la Lune ne change jamais vraiment de forme. Le secret est que la Lune ne produit <em>aucune lumière propre</em>. Comme une balle géante suspendue dans l'espace, elle attrape simplement la lumière du soleil et nous la renvoie — et le Soleil ne peut jamais éclairer qu'<strong>une moitié</strong> d'elle à la fois, la moitié qui se trouve face au Soleil.</p>
+<p>Tandis que la Lune tourne autour de la Terre une fois par mois, nous regardons cette moitié éclairée sous des angles différents. Quand la Lune est entre nous et le Soleil, son côté éclairé est tourné loin de nous et nous voyons l'obscurité — une <strong>nouvelle lune</strong>. Quand elle est de l'autre côté, toute la face éclairée se tourne vers nous — une <strong>pleine lune</strong>. Entre les deux nous la saisissons de côté et ne voyons qu'une tranche : un croissant ou une moitié. La forme que tu vois est simplement quelle part de la moitié éclairée pointe vers toi.</p>
+<p>Le cycle complet — de nouvelle, à pleine, et retour à nouvelle — prend environ <strong>29 jours et demi</strong>, ce qui est à peu près d'où vient l'idée de « mois ». Et voici une jolie bizarrerie : la Lune garde toujours la <em>même face</em> tournée vers la Terre, donc de chez nous nous ne voyons jamais sa face cachée. Dans la simulation ci-dessous, déplace la Lune sur son orbite et regarde sa phase changer.</p>`,
+          facts: [
+            { e: '🌑', t: `Tu ne peux jamais voir une « nouvelle lune » — son côté éclairé est tourné entièrement loin de la Terre, donc elle est dans le ciel diurne, invisible contre l'éclat du Soleil.` },
+            { e: '🔄', t: `La Lune garde la même face vers la Terre parce qu'elle tourne exactement une fois par orbite — un équilibre appelé verrouillage par effet de marée. La « face cachée » resta invisible à quiconque jusqu'à ce qu'une sonde soviétique la photographie en 1959.` },
+            { e: '📅', t: `Le cycle de ~29,5 jours des phases est à l'origine du mot « mois » — et règle encore aujourd'hui les calendriers islamique, hébraïque et chinois.` },
+          ],
+          formula: null, sim: 'moonphases',
+        },
+        student: {
+          title: `La géométrie des phases, et pourquoi les éclipses sont rares`,
+          body: `<p>Une phase lunaire est de la pure géométrie. La lumière solaire éclaire toujours exactement la moitié de la Lune ; ce qui change est l'<em>angle entre le Soleil, la Terre et la Lune</em>. Appelle-le l'angle de phase : à 0° la Lune est grosso modo entre nous et le Soleil (nouvelle), à 180° elle est opposée au Soleil (pleine), et la fraction éclairée que nous voyons suit \\(k = \\tfrac{1}{2}(1 - \\cos\\theta)\\). La moitié croissante du cycle et la moitié décroissante sont des images miroir, éclairées sur des côtés opposés.</p>
+<p>Il y a une subtilité dans le timing. La Lune met 27,3 jours pour compléter une orbite par rapport aux étoiles de fond — le <em>mois sidéral</em> — mais 29,5 jours pour revenir à la même phase — le <em>mois synodique</em>. L'écart existe parce que la Terre s'est entretemps déplacée sur sa propre orbite, donc la Lune doit osciller un peu plus loin pour se réaligner avec le Soleil. Le cycle des phases que nous voyons réellement est le synodique.</p>
+<p>Alors pourquoi n'y a-t-il pas d'éclipse à chaque nouvelle et pleine lune ? Parce que l'orbite de la Lune est inclinée d'environ <strong>5°</strong> par rapport au plan de l'orbite terrestre. La plupart des mois la Lune passe un peu au-dessus ou au-dessous de la ligne directe Soleil-Terre, et son ombre manque la cible. Ce n'est que lorsqu'une nouvelle ou pleine lune tombe près des deux points où les orbites se croisent — les <em>nœuds</em> — que nous obtenons une éclipse solaire ou lunaire. Cette inclinaison est la raison pour laquelle les éclipses sont des cadeaux occasionnels rares, non des événements mensuels.</p>`,
+          facts: [
+            { e: '🌗', t: `Le mois synodique (29,5 jours, de phase à phase) est plus long que le mois sidéral (27,3 jours, d'orbite à orbite) parce que la Terre continue de se déplacer autour du Soleil — la Lune doit rattraper.` },
+            { e: '🌍', t: `Comme l'orbite de la Lune est légèrement elliptique, elle semble tanguer et hocher — une oscillation appelée libration qui nous laisse entrevoir environ 59% de sa surface au fil du temps, non seulement 50%.` },
+            { e: '🌘', t: `Sur un mince croissant tu peux souvent voir tout le disque sombre briller faiblement — la « lumière cendrée », lumière solaire réfléchie par la Terre sur la Lune et de retour, expliquée dès Léonard de Vinci.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Fraction éclairée', e: 'k = \\tfrac{1}{2}(1 - \\cos\\theta)', c: 'θ = angle de phase' },
+            { sep: 1 },
+            { n: 'Mois sidéral', e: 'T_{\\text{sid}} \\approx 27.3\\ \\text{jours}', c: 'orbite vs étoiles' },
+            { n: 'Mois synodique', e: 'T_{\\text{syn}} \\approx 29.5\\ \\text{jours}', c: 'de phase à phase' },
+            { sep: 1 },
+            { n: 'Relation synodique', e: '\\dfrac{1}{T_{\\text{syn}}} = \\dfrac{1}{T_{\\text{sid}}} - \\dfrac{1}{T_{\\text{an}}}' },
+            { n: 'Inclinaison orbitale', e: 'i \\approx 5.14°', c: 'pourquoi les éclipses sont rares' },
+          ] }, sim: 'moonphases',
+        },
+        scholar: {
+          title: `Verrouillage par effet de marée, récession orbitale et longs cycles`,
+          body: `<h4><span class="hn">01</span>Pourquoi une face est cachée à jamais</h4>
+<p>La période de rotation de la Lune égale exactement sa période orbitale, elle est donc <strong>verrouillée par effet de marée</strong>. Ce n'est pas un hasard : la gravité terrestre soulève un léger renflement sur la Lune, et tout décalage entre rotation et orbite tire sur ce renflement, appliquant un couple qui freine la rotation jusqu'à ce que les deux rythmes coïncident. Presque chaque grande lune du Système solaire est arrivée à la même résonance spin-orbite 1:1 par la même voie — la rotation synchrone est le point d'arrivée naturel de la friction de marée.</p>
+<h4><span class="hn">02</span>Les marées volent l'orbite de la Lune vers l'extérieur</h4>
+<p>Le couplage de marée va dans les deux sens. La Lune soulève des renflements océaniques sur la Terre, et la rotation plus rapide de la Terre les traîne en avant de la ligne Terre-Lune ; leur attraction gravitationnelle ajoute du moment cinétique à l'orbite de la Lune, la poussant <em>vers l'extérieur</em> d'environ \\(3.8\\ \\text{cm}\\) par an — un taux désormais mesuré au millimètre en faisant rebondir des lasers sur les réflecteurs laissés par les astronautes d'Apollo. Le même transfert ralentit la rotation terrestre, allongeant le jour d'environ 1,7 milliseconde par siècle.</p>
+<h4><span class="hn">03</span>La comptabilité de la conservation</h4>
+<p>Tout cela n'est qu'une seule quantité conservée remaniée. Le moment cinétique total du système Terre-Lune est fixe, donc à mesure que la part rotationnelle de la Terre se vide, la part orbitale de la Lune doit croître — ce qui est précisément pourquoi une Lune qui s'éloigne et un jour qui s'allonge vont de pair. Fais avancer l'horloge et le processus ne finit que lorsque le jour terrestre et le mois lunaire s'étirent à la même valeur, un verrouillage mutuel par effet de marée à des dizaines de milliards d'années.</p>
+<h4><span class="hn">04</span>L'orbite inclinée et tournante</h4>
+<p>L'inclinaison de 5,14° n'est pas fixe dans l'espace : la ligne des nœuds où l'orbite de la Lune croise l'écliptique <em>précesse</em> tout autour en 18,6 ans, et le grand axe de l'orbite précesse en 8,85 ans. Ces lentes oscillations modulent quand et où les éclipses peuvent se produire et les enfilent dans le fameux <strong>cycle de Saros</strong> de 18 ans et 11 jours et ⅓, après lequel la géométrie Soleil-Terre-Lune se répète presque et une éclipse quasi jumelle revient.</p>
+<h4><span class="hn">05</span>Lire une phase quantitativement</h4>
+<p>La fraction éclairée \\(k = \\tfrac{1}{2}(1+\\cos\\alpha)\\), écrite en termes d'<em>élongation</em> Soleil-Lune, n'est que le squelette géométrique. La Lune est un miroir étonnamment médiocre — son albédo est d'environ 0,12, plus sombre que l'asphalte usé — et sa luminosité ne varie pas linéairement avec l'aire éclairée. Près de la pleine lune elle surgit démesurément brillante, la <em>poussée d'opposition</em>, tandis que les ombres de surface s'évanouissent et que les billes vitreuses du régolithe rétrodiffusent la lumière solaire droit vers la source.</p>
+<h4><span class="hn">06</span>Un calendrier qui ne colle jamais tout à fait</h4>
+<p>Le mois synodique n'est pas un nombre entier de jours, ni un nombre entier d'entre eux ne tient dans une année solaire — douze mois synodiques tombent environ 11 jours courts. Chaque calendrier lunaire de l'histoire s'est débattu avec ce désaccord, du <em>cycle métonique</em> de 19 ans qui réaligne Lune et Soleil (la base du calcul de Pâques) aux mois intercalaires des calendriers hébraïque et chinois. Le rythme d'apparence soignée de la Lune est, au fond, glorieusement incommensurable avec l'année.</p>`,
+          facts: [
+            { e: '📡', t: `La télémétrie laser sur les rétroréflecteurs de l'ère Apollo mesure la distance Terre-Lune au millimètre, confirmant que la Lune s'éloigne de 3,8 cm par an — à peu près la vitesse à laquelle poussent les ongles.` },
+            { e: '🔁', t: `Le cycle de Saros (18 ans, 11 jours et ⅓) permet de prévoir les éclipses des siècles à l'avance : après un Saros la géométrie Soleil-Terre-Lune se répète presque, produisant une éclipse quasi identique décalée de 120° en longitude.` },
+            { e: '🌑', t: `L'albédo de la Lune n'est que ~0,12 — elle ne réfléchit qu'à peine 12% de la lumière solaire, à peu près comme le vieil asphalte. La pleine lune « brillante » est en réalité un objet gris très sombre éclairé par un Soleil très brillant.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Fraction éclairée', e: 'k = \\tfrac{1}{2}(1 + \\cos\\alpha)', c: 'α = élongation' },
+            { sep: 1 },
+            { n: 'Récession orbitale', e: '\\dot r \\approx 3.8\\ \\text{cm/an}' },
+            { n: 'Allongement du jour', e: '\\approx 1.7\\ \\text{ms/siècle}' },
+            { sep: 1 },
+            { n: 'Précession des nœuds', e: 'T_{\\text{nœud}} \\approx 18.6\\ \\text{ans}' },
+            { n: 'Cycle de Saros', e: '\\approx 6585.3\\ \\text{jours}', c: 'répétition des éclipses' },
+          ] }, sim: 'moonphases',
+        },
+      },
+    },
+    protein: {
+      title: 'La synthèse des protéines',
+      teaser: `Ton ADN n'est qu'une bibliothèque de recettes. Comment une cellule lit-elle ces recettes et construit-elle les vraies machines — les protéines — qui te font fonctionner ?`,
+      chips: ['ADN', 'Ribosome', 'Code génétique'],
+      lvls: {
+        junior: {
+          title: `Comment ton corps lit l'ADN pour se construire`,
+          body: `<p>Chaque cellule de ton corps porte une copie complète de ton <strong>ADN</strong> — un colossal manuel d'instructions écrit avec seulement quatre « lettres » chimiques. Mais l'ADN ne <em>fait</em> rien tout seul. C'est une bibliothèque de recettes, et les choses que ces recettes construisent sont les <strong>protéines</strong> : les minuscules machines moléculaires qui digèrent ta nourriture, transportent l'oxygène dans ton sang, combattent les germes et tiennent tout ton corps ensemble.</p>
+<p>Pour cuisiner une protéine, la cellule travaille en deux étapes. D'abord elle fait une copie jetable de la seule recette dont elle a besoin, écrite dans une molécule apparentée appelée <strong>ARNm</strong> — un peu comme photocopier une seule page pour que l'original précieux ne quitte jamais la bibliothèque. Cette copie voyage ensuite vers un atelier moléculaire appelé <strong>ribosome</strong>.</p>
+<p>Le ribosome lit l'ARNm <em>trois lettres à la fois</em>. Chaque petit mot de trois lettres, appelé <strong>codon</strong>, nomme un <strong>acide aminé</strong> — et les acides aminés sont les perles qu'on enfile ensemble pour faire une protéine. Le ribosome avance, appelant codon après codon, et une chaîne croissante d'acides aminés s'emboîte. Quand la chaîne est complète elle se replie en une forme tridimensionnelle précise, et c'est cette forme qui lui dit quoi faire. Regarde-le se produire dans la simulation ci-dessous.</p>`,
+          facts: [
+            { e: '📖', t: `Si tu lisais ton ADN à voix haute à une lettre par seconde, il te faudrait près de cent ans pour finir — 3 milliards de lettres dans chaque cellule.` },
+            { e: '⚡', t: `Un ribosome ajoute environ 10 à 20 acides aminés par seconde, et une seule cellule peut faire tourner des millions de ribosomes à la fois, produisant des protéines sans arrêt.` },
+            { e: '🧩', t: `Il n'y a que 20 acides aminés différents, et pourtant enfilés ensemble dans des ordres différents ils construisent chacune des ~100 000 sortes de protéines de ton corps.` },
+          ],
+          formula: null, sim: 'protein',
+        },
+        student: {
+          title: `Le dogme central : transcription et traduction`,
+          body: `<p>Le flux de l'information génétique suit le <strong>dogme central</strong> : ADN → ARN → protéine. Dans la <strong>transcription</strong>, une enzyme appelée ARN polymérase ouvre une portion d'ADN et construit un brin correspondant d'ARN messager, échangeant la base thymine (T) contre l'uracile (U). Cet ARNm porte le message hors du noyau vers les ribosomes dans le cytoplasme.</p>
+<p>Le message est écrit dans le <strong>code génétique</strong> : chaque <em>codon</em> de trois bases spécifie un acide aminé. Avec quatre bases il y a \\(4^3 = 64\\) codons possibles mais seulement 20 acides aminés, donc le code est <em>redondant</em> — la plupart des acides aminés ont plusieurs codons. Un codon, AUG, sert aussi de signal de « départ » (et code la méthionine) ; trois autres (UAA, UAG, UGA) sont des signaux d'« arrêt » qui terminent la chaîne.</p>
+<p>Dans la <strong>traduction</strong>, le ribosome se referme sur l'ARNm et le lit codon par codon. Pour chaque codon un <strong>ARNt</strong> correspondant — portant le bon acide aminé et un <em>anticodon</em> complémentaire de trois bases — vient s'ancrer, et le ribosome relie son acide aminé à la chaîne croissante, puis avance à cliquet. Atteint un codon d'arrêt, le polypeptide fini est libéré pour se replier en une protéine fonctionnelle. C'est une chaîne de montage moléculaire d'une vitesse et d'une fidélité stupéfiantes.</p>`,
+          facts: [
+            { e: '🔡', t: `Le code génétique est presque universel — les mêmes codons signifient les mêmes acides aminés chez une bactérie, une banane et un humain, preuve que toute la vie partage un ancêtre unique.` },
+            { e: '🧬', t: `Les molécules d'ARNt sont les « adaptateurs » que Francis Crick prédit avant qu'on ne les trouve : une extrémité lit le codon, l'autre porte l'acide aminé correspondant.` },
+            { e: '💉', t: `Les vaccins à ARNm fonctionnent en livrant un ARNm fabriqué en laboratoire que tes propres ribosomes traduisent en une protéine virale, entraînant ton système immunitaire sans aucun virus vivant.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Dogme central', e: '\\text{ADN} \\to \\text{ARN} \\to \\text{protéine}' },
+            { sep: 1 },
+            { n: 'Taille du codon', e: '4^3 = 64\\ \\text{codons}', c: 'pour 20 acides aminés' },
+            { n: 'Codon de départ', e: '\\text{AUG}', c: 'code aussi Met' },
+            { n: `Codons d'arrêt`, e: '\\text{UAA, UAG, UGA}' },
+            { sep: 1 },
+            { n: 'Appariement des bases', e: '\\text{A–U},\\ \\text{G–C}', c: "l'ARN utilise U pas T" },
+          ] }, sim: 'protein',
+        },
+        scholar: {
+          title: `Le code, la fidélité, le repliement et la régulation`,
+          body: `<h4><span class="hn">01</span>Pourquoi le code est dégénéré — et robuste</h4>
+<p>La correspondance 64-vers-20 n'est pas aléatoire. Les codons d'un même acide aminé ne diffèrent d'ordinaire que par leur <em>troisième</em> base, et l'<strong>hypothèse du flottement</strong> (wobble) de Crick explique pourquoi : l'appariement en troisième position est lâche, donc un seul ARNt peut lire plusieurs codons synonymes. Le résultat est un code tamponné contre l'erreur — beaucoup de mutations ponctuelles sont <em>silencieuses</em>, et même les erreurs de traduction tendent à insérer un acide aminé chimiquement semblable. Le code génétique paraît optimisé pour minimiser le dommage des fautes.</p>
+<h4><span class="hn">02</span>Bien faire : la fidélité traductionnelle</h4>
+<p>Le ribosome ne commet une erreur qu'environ une fois tous les \\(10^{4}\\) codons, bien mieux que ne le permettraient les seules énergies de liaison codon-anticodon. Il achète cette précision par la <em>relecture cinétique</em> : un ARNt correct est vérifié deux fois, avec une étape irréversible et énergivore entre les deux qui donne aux mauvais ARNt plus de chances de tomber avant que la liaison ne soit scellée. La fidélité, ici, se paie en GTP — la précision coûte de l'énergie.</p>
+<h4><span class="hn">03</span>Le ribosome est un ribozyme</h4>
+<p>Pendant des décennies on supposa que le ribosome était une enzyme protéique. Les structures cristallines de 2000 révélèrent le contraire : le cœur catalytique qui forme la liaison peptidique est bâti entièrement d'<strong>ARN</strong>, sans aucune protéine à portée de la réaction. Le ribosome est un <em>ribozyme</em>. C'est un fossile moléculaire du <em>monde à ARN</em> — une époque avant l'ADN et les protéines où l'ARN à la fois stockait l'information et faisait la chimie — et cela remporta le prix Nobel de Chimie 2009.</p>
+<h4><span class="hn">04</span>Le repliement, et le repliement qui tourne mal</h4>
+<p>La fonction d'une protéine vit dans son repliement tridimensionnel, et une grande partie de ce repliement commence <em>co-traductionnellement</em>, tandis que la chaîne émerge encore du ribosome. Les protéines <em>chaperonnes</em> accompagnent le processus et protègent les intermédiaires collants. Quand le repliement échoue, les débris peuvent s'agréger — la racine moléculaire de l'Alzheimer, du Parkinson et des maladies à prions. Prédire le repliement à partir de la seule séquence dérouta la biologie pendant cinquante ans jusqu'à ce qu'AlphaFold le résolve en 2021.</p>
+<h4><span class="hn">05</span>Un gène, beaucoup de protéines</h4>
+<p>Chez les eucaryotes le chemin ADN-vers-protéine est lourdement édité. L'ARN fraîchement fait subit l'<em>épissage</em> : les introns sont coupés et les exons cousus ensemble, et l'<strong>épissage alternatif</strong> laisse un seul gène rendre des dizaines de protéines différentes à partir de combinaisons d'exons différentes — c'est ainsi que ~20 000 gènes humains spécifient un protéome bien plus grand. Ajoute le coiffage, la queue et les modifications chimiques des bases et le slogan « un gène, une protéine » s'effondre complètement.</p>
+<h4><span class="hn">06</span>Monter et baisser le volume</h4>
+<p>Les cellules contrôlent non seulement <em>ce qu'</em>elles traduisent mais <em>combien</em> et <em>quand</em>. Les <em>microARN</em> réduisent au silence des ARNm spécifiques, les riborégulateurs perçoivent des métabolites et se replient pour verrouiller leur propre traduction, et les ribosomes peuvent caler, changer de cadre ou réinitier sous stress. Cette couche régulatrice est là où la biologie synthétique intervient désormais — ingénierant des ARNm, réécrivant des codons, ajoutant même de tout nouveaux acides aminés au code — transformant la lecture des gènes en quelque chose que nous pouvons délibérément programmer.</p>`,
+          facts: [
+            { e: '🏆', t: `Déterminer la structure atomique du ribosome — et prouver que son cœur catalytique est de l'ARN, non une protéine — remporta le prix Nobel de Chimie 2009, le confirmant comme relique du monde à ARN.` },
+            { e: '🤖', t: `AlphaFold (2021) résolut le problème du repliement des protéines vieux de 50 ans, prédisant des structures 3-D à partir de la séquence d'acides aminés avec une précision quasi expérimentale pour plus de 200 millions de protéines.` },
+            { e: '🧬', t: `L'épissage alternatif laisse un gène faire beaucoup de protéines : le gène humain Dscam peut, en principe, être épissé en plus de 38 000 variantes protéiques distinctes.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Taux d'erreur de traduction`, e: '\\sim 10^{-4}\\ \\text{par codon}', c: 'via relecture cinétique' },
+            { n: 'Appariement wobble', e: '\\text{3e base à liaison lâche}' },
+            { sep: 1 },
+            { n: 'Liaison peptidique', e: '\\text{-COOH} + \\text{H}_2\\text{N-} \\to \\text{amide} + \\text{H}_2\\text{O}' },
+            { n: 'Catalyse', e: '\\text{ARNr (un ribozyme)}' },
+            { sep: 1 },
+            { n: 'Épissage', e: '\\text{introns dehors, exons joints}' },
+            { n: 'Expansion du protéome', e: '\\sim\\!20{,}000\\ \\text{gènes} \\to 10^5\\ \\text{protéines}' },
+          ] }, sim: 'protein',
+        },
+      },
+    },
+    watercycle: {
+      title: `Le cycle de l'eau`,
+      teaser: `La Terre a presque exactement la même eau qu'il y a quatre milliards d'années — utilisée, nettoyée et réutilisée sans fin. Le Soleil la soulève, les nuages la portent, la pluie la restitue.`,
+      chips: ['Évaporation', 'Nuages', 'Précipitations'],
+      lvls: {
+        junior: {
+          title: `L'infinie machine de recyclage de l'eau de la Terre`,
+          body: `<p>Voici une pensée étrange : l'eau dans ton verre est <em>vieille</em>. Les mêmes molécules d'eau sont là depuis des milliards d'années, bues par des dinosaures, gelées dans d'anciens glaciers, tombées en pluie sur des routes romaines — sans fin utilisées, nettoyées et réutilisées. La Terre ne fabrique jamais d'eau nouvelle et n'en perd jamais ; elle ne fait que déplacer la même réserve dans une boucle géante appelée le <strong>cycle de l'eau</strong>.</p>
+<p>Le moteur est le <strong>Soleil</strong>. Sa chaleur soulève l'eau des océans, des lacs et des rivières sous forme d'un gaz invisible — la <strong>vapeur d'eau</strong> — dans un processus appelé <strong>évaporation</strong>. La vapeur flotte vers le haut, et haut dans le ciel où l'air est froid elle se refroidit et se regroupe de nouveau en minuscules gouttelettes, se rassemblant en <strong>nuages</strong>. C'est la <strong>condensation</strong> : la même chose qui embue une fenêtre froide ou perle sur une boisson glacée.</p>
+<p>Quand les gouttelettes d'un nuage deviennent assez lourdes, elles tombent — en pluie, neige ou grêle — c'est la <strong>précipitation</strong>. Une partie s'infiltre dans le sol pour devenir eau souterraine, une partie coule en aval dans ruisseaux et rivières, et toute finit par retourner à la mer, prête à remonter. Encore et encore, à jamais. Dans la simulation ci-dessous, chauffe le Soleil et regarde l'eau s'évaporer, former des nuages et repleuvoir.</p>`,
+          facts: [
+            { e: '🦕', t: `L'eau que tu as bue aujourd'hui est recyclée depuis plus de 4 milliards d'années — certaines de ces molécules étaient presque certainement un jour à l'intérieur d'un dinosaure.` },
+            { e: '☁️', t: `Un seul nuage peut contenir des centaines de tonnes d'eau, et pourtant il flotte parce que cette eau est répartie en milliards de gouttelettes bien trop petites et légères pour tomber.` },
+            { e: '🌊', t: `Environ 90% de l'eau qui s'évapore vient des océans — et une molécule d'eau passe, en moyenne, seulement environ neuf jours dans l'air avant de retomber.` },
+          ],
+          formula: null, sim: 'watercycle',
+        },
+        student: {
+          title: `Changements d'état, chaleur latente et le bilan hydrique global`,
+          body: `<p>Le cycle de l'eau est en réalité une histoire de <strong>changements d'état</strong> et de l'énergie qu'ils portent. Pour transformer l'eau liquide en vapeur tu dois fournir sa <strong>chaleur latente de vaporisation</strong>, un solide \\(2.26\\ \\text{MJ/kg}\\) — énergie absorbée de l'environnement (c'est exactement pourquoi transpirer te refroidit). Quand cette vapeur se condense plus tard dans un nuage, toute cette chaleur est relâchée de nouveau, réchauffant l'atmosphère. L'évaporation déplace silencieusement d'énormes quantités d'énergie de la surface vers le ciel.</p>
+<p>Combien de vapeur l'air peut contenir monte abruptement avec la température : l'air plus chaud est plus assoiffé. Une fois l'air saturé (humidité relative 100%), tout refroidissement supplémentaire force la condensation. C'est pourquoi les nuages se forment quand l'air humide monte et se refroidit, pourquoi la rosée apparaît par matins froids, et pourquoi la température à laquelle la condensation commence — le <strong>point de rosée</strong> — est un nombre météorologique si utile.</p>
+<p>Globalement les comptes doivent s'équilibrer. Chaque année environ \\(5\\times10^{5}\\ \\text{km}^3\\) d'eau s'évapore et la même quantité tombe en précipitation. Les océans perdent un peu plus par évaporation qu'ils ne récupèrent en pluie, et ce déficit est comblé par les <strong>rivières</strong> qui portent l'eau depuis les terres — le trajet de retour qui ferme la boucle. Une molécule d'eau reste dans l'air environ neuf jours, mais peut siéger dans un aquifère profond ou une calotte glaciaire des milliers d'années.</p>`,
+          facts: [
+            { e: '🔥', t: `Évaporer un kilogramme d'eau absorbe environ 2,26 millions de joules — assez pour soulever une petite voiture de deux mètres. C'est pourquoi le refroidissement par évaporation (sueur, rafraîchisseurs) marche si bien.` },
+            { e: '💨', t: `L'air chaud contient bien plus d'humidité que le froid : l'air à 30°C peut porter environ quatre fois la vapeur d'eau de l'air à 10°C, ce qui est pourquoi les tempêtes tropicales sont si pluvieuses.` },
+            { e: '🏔️', t: `L'eau peut sauter entièrement l'étape liquide : neige et glace peuvent passer directement à la vapeur par sublimation, et c'est ainsi que les glaciers rétrécissent même quand il ne monte jamais au-dessus de zéro.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Chaleur latente (vaporisation)', e: 'L_v \\approx 2.26\\ \\text{MJ/kg}' },
+            { n: 'Chaleur latente (fusion)', e: 'L_f \\approx 0.334\\ \\text{MJ/kg}' },
+            { sep: 1 },
+            { n: 'Humidité relative', e: '\\text{HR} = \\dfrac{e}{e_s(T)}\\times100\\%' },
+            { n: 'Saturation (Clausius-Clapeyron)', e: '\\dfrac{de_s}{dT} = \\dfrac{L_v\\,e_s}{R_v T^2}' },
+            { sep: 1 },
+            { n: 'Flux global', e: '\\approx 5\\times10^{5}\\ \\text{km}^3/\\text{an}', c: 'évaporation = précipitation' },
+          ] }, sim: 'watercycle',
+        },
+        scholar: {
+          title: `Clausius-Clapeyron, humidité atmosphérique et un cycle qui s'intensifie`,
+          body: `<h4><span class="hn">01</span>La loi exponentielle derrière chaque nuage</h4>
+<p>Presque tout sur l'humidité atmosphérique découle d'une relation. Intégrer l'équation de Clausius-Clapeyron donne la pression de vapeur saturante \\(e_s(T) \\approx e_0\\exp\\!\\left[\\dfrac{L_v}{R_v}\\left(\\dfrac{1}{T_0}-\\dfrac{1}{T}\\right)\\right]\\) — une montée <em>exponentielle</em> avec la température. La règle pratique est que la capacité de l'air à retenir l'eau monte d'environ <strong>7% par degré</strong> Celsius. Ce seul nombre gouverne la rosée, le brouillard, la hauteur de la base des nuages et l'humidité disponible pour chaque tempête.</p>
+<h4><span class="hn">02</span>La chaleur latente comme conduite de carburant de l'atmosphère</h4>
+<p>L'évaporation est un oléoduc énergétique caché. Environ la moitié de l'énergie solaire absorbée à la surface de la Terre la quitte non comme rayonnement ou conduction mais comme <em>chaleur latente</em> enfermée dans la vapeur d'eau, libérée en altitude quand la vapeur se condense. C'est la source de puissance dominante des orages et des ouragans : un grand ouragan libère de la chaleur latente à un rythme équivalent à des centaines de fois toute la production électrique de l'humanité, ce qui est pourquoi les mers chaudes les nourrissent et les mers froides les affament.</p>
+<h4><span class="hn">03</span>Temps de résidence et la forme du réservoir</h4>
+<p>Le cycle est un ensemble de réservoirs au renouvellement follement différent. L'atmosphère n'en contient qu'environ \\(1.3\\times10^{4}\\ \\text{km}^3\\) à tout instant — un temps de résidence moyen de ~9 jours — et pourtant elle traite le flux global entier plusieurs fois par an. Contraste avec l'eau souterraine profonde ou les grandes calottes, où une molécule peut s'attarder des milliers à des centaines de milliers d'années. Le temps de résidence \\(\\tau = V/F\\) (volume sur flux) est le seul nombre qui te dit à quelle vitesse chaque bassin répond au changement.</p>
+<h4><span class="hn">04</span>Les isotopes qui identifient le cycle</h4>
+<p>Les molécules d'eau ne sont pas identiques : celles bâties avec les isotopes plus lourds \\(^{18}\\text{O}\\) et le deutérium s'évaporent un peu moins volontiers et se condensent un peu plus tôt. Chaque changement d'état les <em>fractionne</em> donc, et les rapports conservés dans la pluie, les carottes de glace et les stalagmites deviennent un thermomètre du passé. Lire le \\(\\delta^{18}\\text{O}\\) le long d'une carotte de glace reconstruit des dizaines de milliers d'années de température — le cycle de l'eau écrivant sa propre histoire.</p>
+<h4><span class="hn">05</span>Un cycle qu'on resserre</h4>
+<p>Comme la capacité varie avec la loi de Clausius-Clapeyron, une atmosphère plus chaude retient plus d'eau, et tout le cycle <em>s'intensifie</em>. Observations et modèles s'accordent sur le schéma résumé par « le mouillé devient plus mouillé, le sec plus sec » : les extrêmes de précipitation intense varient avec l'augmentation d'humidité de ~7%/K (parfois plus vite dans la convection intense), tandis que les zones sèches subtropicales s'étendent. Un monde plus chaud n'a pas simplement plus d'eau dans l'air — il la redistribue plus violemment.</p>
+<h4><span class="hn">06</span>Observer toute la boucle depuis l'orbite</h4>
+<p>Le cycle moderne se mesure depuis l'espace. Les satellites GRACE pèsent les eaux souterraines et les calottes en percevant de minuscules changements de la gravité terrestre ; des missions comme GPM cartographient la pluie globale toutes les quelques heures ; et les diffusomètres suivent l'humidité du sol et l'évaporation océanique. Ensemble ils transforment un schéma de manuel en un système surveillé et quantitatif — et révèlent que l'usage humain de l'eau, la construction de barrages et l'épuisement des aquifères sont eux-mêmes devenus des termes mesurables dans le bilan hydrique de la planète.</p>`,
+          facts: [
+            { e: '🛰️', t: `Les satellites GRACE détectent la perte d'eaux souterraines en mesurant les changements du champ gravitationnel terrestre — assez précis pour peser l'eau pompée des aquifères à travers des continents entiers.` },
+            { e: '📈', t: `La capacité de l'air à retenir l'eau monte de ~7% par °C de réchauffement (Clausius-Clapeyron), intensifiant directement les averses les plus fortes — la physique derrière des inondations plus extrêmes.` },
+            { e: '🧊', t: `Les rapports des isotopes de l'oxygène (δ¹⁸O) dans les carottes de glace font office de paléothermomètre, reconstruisant les températures sur plus de 800 000 ans à partir du registre même du cycle de l'eau.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Pression de saturation', e: 'e_s(T) = e_0\\exp\\!\\left[\\tfrac{L_v}{R_v}\\left(\\tfrac{1}{T_0}-\\tfrac{1}{T}\\right)\\right]' },
+            { n: 'Sensibilité C-C', e: '\\dfrac{1}{e_s}\\dfrac{de_s}{dT} \\approx 7\\%\\ \\text{par °C}' },
+            { sep: 1 },
+            { n: 'Temps de résidence', e: '\\tau = V/F', c: 'atmosphère ≈ 9 jours' },
+            { n: 'Réserve atmosphérique', e: 'V_{\\text{atm}} \\approx 1.3\\times10^{4}\\ \\text{km}^3' },
+            { sep: 1 },
+            { n: 'Bilan énergétique de surface', e: 'R_n = H + LE + G', c: 'LE = flux de chaleur latente' },
+          ] }, sim: 'watercycle',
+        },
+      },
+    },
+    optics: {
+      title: 'Optique : lumière, lentilles et réfraction',
+      teaser: `Pourquoi une lentille retourne-t-elle le monde à l'envers, et une paille paraît-elle brisée dans un verre d'eau ? La lumière se courbe — et cette courbure bâtit chaque œil, appareil photo et télescope.`,
+      chips: ['Lentilles', 'Réfraction', 'Optique'],
+      lvls: {
+        junior: {
+          title: `Comment la lumière se courbe pour faire des images`,
+          body: `<p>La lumière voyage presque toujours en lignes parfaitement droites — c'est pourquoi tu obtiens des ombres nettes et pourquoi tu ne peux pas voir au coin d'un mur. Mais à l'instant où la lumière passe d'un matériau transparent à un autre, de l'air à l'eau ou au verre, elle se <strong>courbe</strong>. Cette courbure s'appelle la <strong>réfraction</strong>, et c'est la raison pour laquelle une paille dans un verre d'eau paraît cassée en deux, et pourquoi une pièce au fond d'une piscine semble plus haute qu'elle ne l'est.</p>
+<p>Façonne un morceau de verre juste comme il faut et tu peux diriger cette courbure exprès — c'est une <strong>lentille</strong>. Une loupe se bombe au milieu, donc elle rassemble les rayons épars de lumière et les canalise pour qu'ils se rejoignent en un seul point. Tiens-la à la bonne distance et ces rayons se croisent et reconstruisent une image de ce d'où ils venaient — souvent retournée à l'envers. Ce croisement est exactement pourquoi un appareil photo, un télescope et ton propre œil peuvent tous prendre la lumière qui rebondit sur le monde et la plier en une image nette.</p>
+<p>Ton œil le fait avec une lentille souple et vivante que des muscles pressent pour changer sa forme, faisant la mise au point de près puis de loin en une fraction de seconde. Un appareil photo fait le même travail avec une lentille de verre coulissante. Dans la simulation ci-dessous, déplace l'objet et remodèle la lentille, et regarde les rayons se croiser pour bâtir l'image — réelle, retournée et redimensionnée.</p>`,
+          facts: [
+            { e: '👁️', t: `La lentille de ton œil retourne chaque image à l'envers avant qu'elle n'atteigne la rétine — ton cerveau remet discrètement le monde entier à l'endroit.` },
+            { e: '🌈', t: `Un arc-en-ciel est la réfraction en action : la lumière du soleil se courbe en entrant dans chaque goutte de pluie, se séparant en couleurs parce que chaque couleur se courbe d'une quantité légèrement différente.` },
+            { e: '🔭', t: `La lentille d'un grand télescope peut faire plus d'un mètre de large — plus la lentille est large, plus elle recueille de lumière stellaire, et plus les choses qu'elle peut voir sont faibles.` },
+          ],
+          formula: null, sim: 'optics',
+        },
+        student: {
+          title: `La loi de Snell et l'équation des lentilles minces`,
+          body: `<p>La réfraction se produit parce que la lumière voyage à des vitesses différentes dans différents matériaux, et chaque matériau est noté par son <strong>indice de réfraction</strong> \\(n = c/v\\) — combien de fois plus lentement la lumière y va que dans le vide (l'eau vaut 1,33, le verre environ 1,5). À une frontière le rayon se courbe exactement de la quantité qui garde ses fronts d'onde en phase, capturée par la <strong>loi de Snell</strong> \\(n_1\\sin\\theta_1 = n_2\\sin\\theta_2\\). Entrer dans un milieu plus dense courbe le rayon vers la normale ; en sortir le courbe à l'opposé.</p>
+<p>Pousse cet angle de sortie assez loin et quelque chose de spectaculaire arrive : au-delà de l'<em>angle critique</em> \\(\\theta_c = \\arcsin(n_2/n_1)\\) le rayon ne peut plus s'échapper du tout et se réfléchit entièrement à l'intérieur — la <strong>réflexion totale interne</strong>, l'astuce qui canalise la lumière dans une fibre optique sur des milliers de kilomètres avec à peine de perte. Une lentille réfracte simplement un rayon deux fois, une fois à chaque surface courbe, et sa puissance de focalisation est fixée par l'<em>équation des lentilleurs</em> à partir de ces courbures et de l'indice du verre.</p>
+<p>Là où une lentille forme son image suit la magnifiquement simple <strong>équation des lentilles minces</strong> \\(\\frac{1}{f} = \\frac{1}{d_o} + \\frac{1}{d_i}\\), liant la distance focale \\(f\\), la distance objet \\(d_o\\) et la distance image \\(d_i\\). La taille et l'orientation de l'image viennent du grandissement \\(m = -d_i/d_o\\) : un \\(m\\) négatif signifie renversée. Place l'objet au-delà de \\(f\\) et tu obtiens une image <em>réelle</em>, retournée, que tu peux capter sur un écran (un appareil photo) ; amène-le en deçà de \\(f\\) et l'image devient <em>virtuelle</em>, droite et agrandie (une loupe).</p>`,
+          facts: [
+            { e: '💎', t: `L'indice de réfraction du diamant est un énorme 2,42, lui donnant un minuscule angle critique de 24° — la lumière rebondit à l'intérieur pendant des lustres avant de s'échapper, ce qui est pourquoi les diamants taillés scintillent si férocement.` },
+            { e: '📡', t: `Une seule fibre optique repose sur la réflexion totale interne pour porter la lumière — les câbles modernes déplacent plus de 100 térabits par seconde, l'épine dorsale de tout l'internet.` },
+            { e: '👓', t: `Les lunettes corrigent la vue en ajoutant juste la bonne distance focale : lentilles convergentes pour l'hypermétropie, lentilles divergentes (f négatif) pour la myopie.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Indice de réfraction`, e: 'n = c/v', c: 'eau 1,33, verre ~1,5' },
+            { n: `Loi de Snell`, e: 'n_1\\sin\\theta_1 = n_2\\sin\\theta_2' },
+            { sep: 1 },
+            { n: `Angle critique`, e: '\\theta_c = \\arcsin(n_2/n_1)', c: 'réflexion totale interne' },
+            { n: `Équation des lentilles minces`, e: '\\dfrac{1}{f} = \\dfrac{1}{d_o} + \\dfrac{1}{d_i}' },
+            { sep: 1 },
+            { n: `Grandissement`, e: 'm = -\\dfrac{d_i}{d_o}', c: 'm<0 = renversée' },
+            { n: `Lentilleurs`, e: '\\dfrac{1}{f} = (n-1)\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)' },
+          ] }, sim: 'optics',
+        },
+        scholar: {
+          title: `Optique ondulatoire, aberrations et limite de diffraction`,
+          body: `<h4><span class="hn">01</span>Les rayons sont des raccourcis ; la lumière est une onde</h4>
+<p>L'optique géométrique — des lignes droites qui se courbent aux surfaces — est une superbe approximation, mais elle n'est que la limite à courte longueur d'onde de quelque chose de plus profond. Le <strong>principe de Fermat</strong> reformule chaque chemin que prend la lumière comme celui de <em>longueur de chemin optique stationnaire</em>, \\(\\delta\\!\\int n\\,ds = 0\\). La loi de Snell, la loi de la réflexion, l'existence même des points focaux découlent tous de ce seul énoncé variationnel — la lumière se comporte comme si elle flairait la route extrémale. C'est la même mathématique qui réapparaît comme principe de moindre action en mécanique.</p>
+<h4><span class="hn">02</span>La réfraction : des fronts d'onde qui changent de vitesse</h4>
+<p>Pourquoi un rayon se courbe-t-il vers la normale dans le verre ? Imagine le front d'onde comme une rangée en marche : quand une extrémité entre la première dans le milieu plus lent, elle traîne tandis que l'autre garde l'allure, et tout le front pivote — la construction de Huygens rendue littérale. La vitesse et la longueur d'onde chutent du facteur \\(n\\) tandis que la fréquence est conservée, donc \\(\\lambda_{\\text{milieu}} = \\lambda_0/n\\). L'image des rayons et celle des ondes s'accordent exactement, mais seule l'image ondulatoire survit quand la lentille devient petite.</p>
+<h4><span class="hn">03</span>Pourquoi aucune lentille n'est parfaite : les aberrations</h4>
+<p>L'équation soignée des lentilles minces suppose que les rayons rasent l'axe. Les vraies lentilles la violent. L'<em>aberration sphérique</em> focalise les rayons de bord et les rayons centraux en des points différents parce qu'une sphère n'est pas la forme idéale ; l'<em>aberration chromatique</em> étale la couleur parce que \\(n(\\lambda)\\) signifie que la lumière bleue se courbe plus que la rouge, donc une lentille a une distance focale différente pour chaque couleur. Les concepteurs ripostent en cimentant verres crown et flint en <em>doublets achromatiques</em> et en polissant des surfaces <em>asphériques</em> — tout un artisanat voué à défaire les imperfections de la sphère.</p>
+<h4><span class="hn">04</span>Le mur qu'on ne peut escalader : la diffraction</h4>
+<p>Même une lentille sans défaut ne peut focaliser la lumière en un point. Parce que la lumière est une onde traversant une ouverture finie, elle s'étale en une <strong>tache d'Airy</strong>, et deux points se brouillent ensemble dès qu'ils sont plus proches que le <em>critère de Rayleigh</em> \\(\\theta_{\\min} = 1.22\\,\\lambda/D\\). La résolution est fixée par l'<em>ouverture numérique</em>, \\(d_{\\min} = 0.61\\,\\lambda/\\text{NA}\\) : la plus petite chose qu'un microscope peut séparer proprement est à peu près une demi-longueur d'onde, quelques centaines de nanomètres. C'est une limite de la physique, non de l'ingénierie.</p>
+<h4><span class="hn">05</span>Une lentille calcule une transformée de Fourier</h4>
+<p>Il y a une identité saisissante au cœur de l'optique : le champ lumineux dans le plan focal arrière d'une lentille est la <strong>transformée de Fourier spatiale</strong> du champ dans son plan focal avant. Le détail fin de l'objet devient une haute fréquence spatiale loin de l'axe, donc une ouverture qui coupe ces rayons est littéralement un filtre passe-bas. C'est le fondement de l'<em>optique de Fourier</em>, du filtrage spatial, et de la fonction de transfert de modulation qui quantifie exactement combien de contraste une lentille préserve à chaque niveau de détail.</p>
+<h4><span class="hn">06</span>Tricher avec la limite de diffraction</h4>
+<p>Pendant un siècle la limite de Rayleigh parut absolue — puis la microscopie l'a simplement contournée. Le <em>STED</em> rétrécit la tache brillante avec un beignet de lumière de déplétion ; le <em>PALM/STORM</em> allume et éteint des molécules uniques et localise chacune bien plus précisément qu'elle ne se brouille, remportant le prix Nobel de Chimie 2014. Pendant ce temps les <em>métamatériaux</em> et les sondes de champ proche exploitent les ondes évanescentes que les lentilles ordinaires jettent. La limite de diffraction tient toujours pour la lumière propagative en champ lointain — mais l'astuce sur <em>quelle</em> lumière on utilise a poussé l'imagerie optique jusqu'à l'échelle des molécules individuelles.</p>`,
+          facts: [
+            { e: '🏆', t: `La microscopie à super-résolution (STED, PALM/STORM) a brisé la limite de diffraction et remporté le prix Nobel de Chimie 2014, imageant des structures de ~20 nm — dix fois plus fines que la lumière « devrait » permettre.` },
+            { e: '🔭', t: `Le miroir de 6,5 m du télescope spatial James Webb lui donne une résolution limitée par la diffraction de ~0,1 seconde d'arc dans l'infrarouge — assez nette pour distinguer une pièce à ~40 km.` },
+            { e: '🌀', t: `Une lentille effectue une transformée de Fourier optique à la vitesse de la lumière sans consommation d'énergie — une idée aujourd'hui ravivée pour le calcul analogique et optique ultra-rapide.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Principe de Fermat`, e: '\\delta\\!\\int n\\,ds = 0' },
+            { n: `Longueur d'onde dans le milieu`, e: '\\lambda_{\\text{med}} = \\lambda_0/n' },
+            { sep: 1 },
+            { n: `Critère de Rayleigh`, e: '\\theta_{\\min} = 1.22\\,\\dfrac{\\lambda}{D}' },
+            { n: `Résolution`, e: 'd_{\\min} = 0.61\\,\\dfrac{\\lambda}{\\text{NA}}', c: 'NA = n\\sin\\theta' },
+            { sep: 1 },
+            { n: `Lentilleurs`, e: '\\dfrac{1}{f} = (n-1)\\left(\\dfrac{1}{R_1} - \\dfrac{1}{R_2}\\right)' },
+            { n: `Dispersion`, e: 'n = n(\\lambda)', c: 'aberration chromatique' },
+          ] }, sim: 'optics',
+        },
+      },
+    },
+    pendulum: {
+      title: 'Pendules et mouvement harmonique simple',
+      teaser: `Un poids qui oscille garde un temps presque parfait — et il se moque de son poids ou de l'amplitude de son balancement. Pourquoi le même rythme fait-il tourner horloges, ressorts, atomes et ponts ?`,
+      chips: ['Oscillation', 'Période', 'Résonance'],
+      lvls: {
+        junior: {
+          title: `Le balancement régulier qui donne l'heure`,
+          body: `<p>Attache un poids à une ficelle, tire-le d'un côté et lâche : il balaie, revient, balaie, revient — encore et encore, dans un rythme si régulier que tu pourrais régler une horloge dessus. Les gens ont fait exactement cela pendant trois cents ans. Ce poids qui oscille est un <strong>pendule</strong>, et la régularité de son battement est l'une des merveilles tranquilles de la physique.</p>
+<p>Le surprenant est ce dont dépend le rythme — et ce dont il ne dépend pas. Rends le poids plus lourd : le tempo ne change pas. Tire-le plus loin pour qu'il balaie plus large : il voyage plus vite mais met le <em>même temps</em> pour revenir, donc le tempo ne change guère non plus. La seule chose qui compte vraiment est la <strong>longueur</strong> de la ficelle. Ficelle courte, tics rapides et pressés ; ficelle longue, balancements lents et paresseux. La légende dit que Galilée le remarqua enfant, chronométrant une lampe oscillante dans une cathédrale contre son propre pouls.</p>
+<p>Cette fiabilité fit du pendule le cœur des horloges les plus précises du monde pendant des siècles. Et le même rythme de va-et-vient est partout dès qu'on regarde : un enfant sur une balançoire, une corde de guitare qui vibre, un ressort qui rebondit, même un gratte-ciel qui oscille au vent. Dans la simulation ci-dessous, change la longueur et l'amplitude et regarde ce qui arrive au battement.</p>`,
+          facts: [
+            { e: '⛪', t: `Galilée chronométra une lampe de cathédrale oscillante contre son propre pouls vers 1583 et réalisa que la période change à peine avec l'amplitude — la découverte derrière l'horloge à pendule.` },
+            { e: '🌍', t: `Un pendule oscille plus lentement sur la Lune : avec un sixième de la gravité terrestre, le même pendule met environ 2,5 fois plus de temps par balancement.` },
+            { e: '🏢', t: `Les gratte-ciel suspendent de géants « amortisseurs à masse accordée » — des pendules pesant des centaines de tonnes — qui oscillent à l'opposé du bâtiment pour annuler le balancement dans le vent.` },
+          ],
+          formula: null, sim: 'pendulum',
+        },
+        student: {
+          title: `Le mouvement harmonique simple et la période du pendule`,
+          body: `<p>Écarte un pendule du centre et la gravité le rappelle — et fait crucial, pour de petits balancements le rappel est très proche de <em>proportionnel au déplacement</em>, \\(F \\approx -kx\\). Tout système obéissant à cette seule règle exécute un <strong>mouvement harmonique simple</strong> : la position trace une parfaite sinusoïde dans le temps, \\(x(t) = A\\cos(\\omega t)\\), avec la pulsation \\(\\omega = \\sqrt{k/m}\\). La même équation gouverne une masse sur un ressort, une bouée flottante et la vibration d'une molécule.</p>
+<p>Pour un pendule la mathématique livre le célèbre résultat \\(T = 2\\pi\\sqrt{L/g}\\) : la période croît avec la racine carrée de la longueur et rétrécit dans une gravité plus forte — et ne contient <em>ni la masse ni l'amplitude</em>. C'est l'<strong>isochronisme</strong> du pendule : quadruple la longueur pour doubler la période ; échange le lest contre un deux fois plus lourd et rien ne change. La fréquence est juste \\(f = 1/T\\), le nombre de balancements par seconde.</p>
+<p>L'énergie est ce qui l'entretient. Aux extrémités du balancement toute l'énergie est <em>potentielle</em> (le lest est au plus haut, momentanément immobile) ; en bas elle est toute <em>cinétique</em> (au plus bas et au plus vite), et le total \\(E = \\tfrac{1}{2}kA^2\\) reste fixe tandis qu'il ballotte sans fin entre les deux. Rigoureusement, tout cela ne tient que pour de petits angles — balaie trop large et le rappel cesse d'être parfaitement linéaire, et la période s'allonge un peu.</p>`,
+          facts: [
+            { e: '⏱️', t: `Un pendule d'exactement 1 mètre de long (avec un petit balancement) a une période très proche de 2 secondes sur Terre — une seconde par côté, la base du « pendule à secondes ».` },
+            { e: '🎸', t: `Une corde de guitare, une suspension de voiture et le quartz d'une montre sont tous des oscillateurs harmoniques simples — même mouvement sinusoïdal, fréquences follement différentes.` },
+            { e: '🌀', t: `Le pendule de Foucault oscille dans un plan fixe tandis que la Terre tourne dessous — un géant pendule qui prouve visiblement que la planète tourne.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Force de rappel`, e: 'F = -kx', c: 'petit déplacement' },
+            { n: `Solution du MHS`, e: 'x(t) = A\\cos(\\omega t)' },
+            { sep: 1 },
+            { n: `Pulsation`, e: '\\omega = \\sqrt{k/m}' },
+            { n: `Période du pendule`, e: 'T = 2\\pi\\sqrt{L/g}', c: 'ni masse ni amplitude' },
+            { sep: 1 },
+            { n: `Fréquence`, e: 'f = 1/T = \\omega/2\\pi' },
+            { n: `Énergie totale`, e: 'E = \\tfrac{1}{2}kA^2', c: 'EC + EP conservées' },
+          ] }, sim: 'pendulum',
+        },
+        scholar: {
+          title: `Non-linéarité, amortissement, résonance et chaos`,
+          body: `<h4><span class="hn">01</span>Pourquoi l'astuce des petits angles fonctionne</h4>
+<p>La vraie équation d'un pendule est non linéaire : \\(\\ddot\\theta + (g/L)\\sin\\theta = 0\\). Elle n'a pas de solution en fonctions élémentaires. L'échappatoire est l'approximation \\(\\sin\\theta \\approx \\theta\\), valable à 1% près jusqu'à environ 14°, qui linéarise l'équation en l'oscillateur harmonique \\(\\ddot\\theta + \\omega^2\\theta = 0\\) avec \\(\\omega = \\sqrt{g/L}\\). Presque tout le mouvement harmonique « simple » n'est en réalité que cette décision tranquille de jeter les termes supérieurs d'un sinus.</p>
+<h4><span class="hn">02</span>Ce que coûte l'approximation</h4>
+<p>Garde le \\(\\sin\\theta\\) complet et la période cesse d'être constante — elle s'allonge avec l'amplitude, exactement, comme une <em>intégrale elliptique</em> complète \\(T = 4\\sqrt{L/g}\\,K(\\sin\\tfrac{\\theta_0}{2})\\). Développée, \\(T \\approx T_0\\left(1 + \\tfrac{1}{16}\\theta_0^2 + \\cdots\\right)\\) : un balancement de 30° tourne environ 1,7% lent, un de 90° presque 18%. L'isochronisme est une fiction de petit angle — les vraies horloges à pendule sont conçues pour garder l'amplitude minuscule et constante pour exactement cette raison.</p>
+<h4><span class="hn">03</span>Ajouter le frottement : l'oscillateur amorti</h4>
+<p>La réalité draine l'énergie. Une force résistive proportionnelle à la vitesse donne \\(\\ddot x + 2\\gamma\\dot x + \\omega_0^2 x = 0\\), dont le comportement se scinde en trois selon le taux d'amortissement \\(\\zeta\\) : <em>sous-amorti</em> (\\(\\zeta<1\\)) s'éteint en oscillant sous une enveloppe décroissante \\(e^{-\\gamma t}\\) ; <em>amortissement critique</em> (\\(\\zeta=1\\)) revient au repos le plus vite sans dépassement — la cible d'une suspension de voiture ou d'un ferme-porte ; <em>suramorti</em> (\\(\\zeta>1\\)) rampe en arrière avec lenteur.</p>
+<h4><span class="hn">04</span>Pousser au bon moment : la résonance</h4>
+<p>Excite un oscillateur avec une force périodique et sa réponse permanente culmine brusquement quand la fréquence d'excitation approche la naturelle \\(\\omega_0\\) — la <strong>résonance</strong>, amplitude \\(A(\\omega) = F_0/m\\big/\\sqrt{(\\omega_0^2-\\omega^2)^2 + 4\\gamma^2\\omega^2}\\). Pousse une balançoire en cadence et elle grimpe de plus en plus haut sur de minuscules poussées. Le même effet brise un verre à vin avec une note chantée, et c'est pourquoi les soldats rompent le pas en traversant un pont.</p>
+<h4><span class="hn">05</span>À quel point le pic est aigu : le facteur Q</h4>
+<p>Le <em>facteur de qualité</em> \\(Q = \\omega_0/2\\gamma\\) mesure combien un oscillateur est faiblement amorti — le nombre de radians qu'il parcourt en oscillant avant que son énergie ne chute de \\(1/e\\), et l'acuité de sa résonance. Une suspension de voiture a \\(Q \\sim 1\\) ; un cristal de quartz de montre atteint \\(10^4\\text{–}10^6\\) ; les miroirs du détecteur d'ondes gravitationnelles LIGO sont conçus vers \\(Q \\sim 10^7\\), ce qui leur permet d'enregistrer un changement de longueur de \\(10^{-18}\\) m.</p>
+<h4><span class="hn">06</span>Deux tiges, aucune prédiction : le chaos</h4>
+<p>Suspends un pendule au bout d'un autre et le monde ordonné s'effondre. Le <strong>double pendule</strong> est pleinement déterministe et pourtant <em>chaotique</em> : son mouvement dépend si sensiblement de l'angle de départ que deux lâchers différant d'un cheveu divergent complètement en quelques secondes, un exposant de Lyapunov positif en action. Sa trajectoire dans l'espace des phases remplit une région étrange et repliée plutôt que de se refermer en une boucle nette — la même mathématique qui rend la météo imprévisible au-delà de quelques semaines.</p>`,
+          facts: [
+            { e: '📡', t: `Le facteur Q des masses d'essai des miroirs de LIGO dépasse 10 millions — si faiblement amorties qu'une seule poussée résonnerait pendant des heures, essentiel pour détecter les ondes gravitationnelles.` },
+            { e: '🌉', t: `Le pont de Tacoma Narrows se déchira en 1940 quand le vent le poussa près d'une fréquence naturelle — une leçon de manuel sur la résonance (bien que le vrai mécanisme fût un flottement aéroélastique).` },
+            { e: '🎲', t: `Un double pendule est un exemple de classe de chaos déterministe : des lâchers d'apparence identique produisent des mouvements follement différents, rendant sa trajectoire à long terme impossible à prévoir.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Pendule non linéaire`, e: '\\ddot\\theta + \\tfrac{g}{L}\\sin\\theta = 0' },
+            { n: `Période exacte`, e: 'T = 4\\sqrt{L/g}\\,K\\!\\left(\\sin\\tfrac{\\theta_0}{2}\\right)' },
+            { sep: 1 },
+            { n: `Correction d'amplitude`, e: 'T \\approx T_0\\left(1 + \\tfrac{1}{16}\\theta_0^2\\right)' },
+            { n: `Oscillateur amorti`, e: '\\ddot x + 2\\gamma\\dot x + \\omega_0^2 x = 0' },
+            { sep: 1 },
+            { n: `Résonance`, e: 'A(\\omega) = \\dfrac{F_0/m}{\\sqrt{(\\omega_0^2-\\omega^2)^2 + 4\\gamma^2\\omega^2}}' },
+            { n: `Facteur de qualité`, e: 'Q = \\omega_0/2\\gamma' },
+          ] }, sim: 'pendulum',
+        },
+      },
+    },
+    gaslaws: {
+      title: 'Les lois des gaz',
+      teaser: `Comprime un gaz et il repousse ; chauffe-le et il s'efforce de s'échapper. Trois lois simples — et une équation — capturent comment pression, volume et température dansent ensemble.`,
+      chips: ['Pression', 'Gaz parfait', 'Théorie cinétique'],
+      lvls: {
+        junior: {
+          title: `Pourquoi les gaz poussent, se compriment et gonflent`,
+          body: `<p>Un gaz n'a pas de forme propre — il s'étale pour remplir n'importe quel récipient où tu le mets, ballon, pneu ou pièce entière. C'est parce qu'un gaz est en réalité un essaim de particules inimaginablement minuscules, filant à des centaines de mètres par seconde et rebondissant sur tout ce qu'elles heurtent. Chaque fois qu'une de ces particules cogne une paroi elle donne une minuscule poussée, et le tambourinement constant de milliards d'entre elles est ce que nous ressentons comme la <strong>pression</strong>.</p>
+<p>Maintenant joue avec l'essaim. Comprime le récipient <em>plus petit</em> et les mêmes particules sont entassées dans moins d'espace, donc elles frappent les parois plus souvent — la pression bondit. C'est pourquoi une pompe à vélo devient plus dure à pousser à mesure que tu descends. <strong>Chauffe</strong> plutôt le gaz et les particules accélèrent, percutant les parois plus fort et plus souvent — la pression remonte, et c'est pourquoi une canette scellée jetée au feu finit par éclater.</p>
+<p>Ces règles simples gouvernent une part surprenante du monde : elles gonflent tes poumons, soulèvent les montgolfières, allument les moteurs des voitures et font éclater un sachet de pop-corn. Dans la simulation ci-dessous, change la température et la taille de la boîte et regarde les particules — et la pression — répondre.</p>`,
+          facts: [
+            { e: '🎈', t: `Un ballon d'hélium rétrécit au froid et gonfle à la chaleur : refroidis le gaz et ses particules ralentissent et se serrent, chauffe-le et elles s'étalent.` },
+            { e: '👂', t: `Tes oreilles se « débouchent » en avion parce que la pression de l'air dehors chute avec l'altitude tandis que l'air piégé derrière ton tympan reste en place — jusqu'à ce qu'il s'échappe avec un clic.` },
+            { e: '🍿', t: `Le pop-corn explose parce que l'eau dans chaque grain devient vapeur et sa pression monte jusqu'à ce que l'enveloppe ne tienne plus — une loi des gaz dans ta cuisine.` },
+          ],
+          formula: null, sim: 'gaslaws',
+        },
+        student: {
+          title: `La loi des gaz parfaits et d'où elle vient`,
+          body: `<p>Trois siècles d'expériences ont distillé le comportement des gaz en une poignée de relations. <strong>Loi de Boyle</strong> : à température fixe, pression et volume sont inversement liés, \\(P \\propto 1/V\\) — divise le volume par deux, double la pression. <strong>Loi de Charles</strong> : à pression fixe, le volume croît avec la température absolue, \\(V \\propto T\\). <strong>Loi de Gay-Lussac</strong> : à volume fixe, la pression croît avec la température, \\(P \\propto T\\). Fait crucial, le \\(T\\) ici est mesuré depuis le <em>zéro absolu</em> — l'échelle Kelvin — car c'est là que la pression d'un gaz, en principe, s'évanouirait.</p>
+<p>Assemble-les avec l'intuition d'Avogadro — des volumes égaux de n'importe quel gaz contiennent des nombres égaux de particules — et elles s'effondrent en un seul énoncé propre, la <strong>loi des gaz parfaits</strong> \\(PV = nRT\\). Ici \\(n\\) est la quantité en moles et \\(R\\) la constante universelle des gaz, \\(8.314\\ \\text{J mol}^{-1}\\text{K}^{-1}\\). Chaque loi antérieure n'est que cette équation avec une variable tenue immobile.</p>
+<p>D'où vient-elle ? Des particules elles-mêmes. La <strong>théorie cinétique des gaz</strong> figure la pression comme le recul collectif d'innombrables impacts moléculaires sur les parois, et lie la température directement à leur vitesse : l'énergie cinétique moyenne d'une particule est \\(\\tfrac{3}{2}k_B T\\). La température, autrement dit, <em>est</em> le mouvement moléculaire — chauffe un gaz et tu accélères littéralement ses particules.</p>`,
+          facts: [
+            { e: '🌡️', t: `Le zéro absolu est −273,15°C : extrapole le volume décroissant d'un gaz le long d'une droite de la loi de Charles et il atteindrait zéro exactement là — la chose la plus froide qui puisse exister.` },
+            { e: '⚗️', t: `Une mole de n'importe quel gaz parfait remplit 22,4 litres à 0°C et 1 atm — le même volume que ce soit de l'hydrogène ou du dioxyde de carbone, car seul le nombre de particules compte.` },
+            { e: '🫁', t: `Tu respires par la loi de Boyle : ton diaphragme agrandit ta poitrine, abaissant la pression dans tes poumons sous celle de l'air extérieur, qui se rue alors à l'intérieur.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: `Loi de Boyle`, e: 'P \\propto 1/V', c: 'T constante' },
+            { n: `Loi de Charles`, e: 'V \\propto T', c: 'P constante' },
+            { n: `Gay-Lussac`, e: 'P \\propto T', c: 'V constant' },
+            { sep: 1 },
+            { n: 'Loi des gaz parfaits', e: 'PV = nRT', c: 'R = 8.314 J mol⁻¹K⁻¹' },
+            { n: 'Loi combinée', e: '\\dfrac{P_1V_1}{T_1} = \\dfrac{P_2V_2}{T_2}' },
+            { sep: 1 },
+            { n: 'Énergie cinétique moyenne', e: '\\langle E_k\\rangle = \\tfrac{3}{2}k_B T' },
+          ] }, sim: 'gaslaws',
+        },
+        scholar: {
+          title: `Théorie cinétique, distributions et gaz réels`,
+          body: `<h4><span class="hn">01</span>La pression, dérivée des premiers principes</h4>
+<p>La loi des gaz parfaits n'est pas un axiome — elle tombe de la mécanique. Traite le gaz comme des particules ponctuelles en mouvement élastique et aléatoire et compte la quantité de mouvement qu'elles livrent à une paroi : la pression revient à \\(P = \\tfrac{1}{3}\\dfrac{N}{V}m\\langle v^2\\rangle\\). Compare avec \\(PV = Nk_B T\\) et tu es forcé d'identifier \\(\\tfrac{1}{2}m\\langle v^2\\rangle = \\tfrac{3}{2}k_B T\\). La température émerge comme rien d'autre que l'énergie cinétique translationnelle moyenne par particule — un pont des lois de Newton droit à la thermodynamique.</p>
+<h4><span class="hn">02</span>Non une vitesse mais un spectre</h4>
+<p>Les particules ne partagent pas une vitesse unique ; elles suivent la <strong>distribution de Maxwell-Boltzmann</strong>, \\(f(v) \\propto v^2 e^{-mv^2/2k_B T}\\), une courbe asymétrique à longue queue rapide. Elle donne trois vitesses « moyennes » distinctes — la plus probable, la moyenne et la quadratique moyenne — et la courbe s'élargit et se décale vers la droite à mesure que \\(T\\) monte. Cette queue à haute vitesse compte énormément : ce sont les rares molécules rapides qui franchissent les barrières de réaction, donc elle sous-tend la dépendance exponentielle en température de la chimie elle-même.</p>
+<h4><span class="hn">03</span>Énergie répartie : l'équipartition</h4>
+<p>Pourquoi \\(\\tfrac{3}{2}k_B T\\) ? Le <strong>théorème d'équipartition</strong> attribue à chaque degré de liberté quadratique exactement \\(\\tfrac{1}{2}k_B T\\) d'énergie. Un gaz monoatomique en a trois (mouvement en x, y, z), donnant \\(C_V = \\tfrac{3}{2}R\\) ; un gaz diatomique ajoute deux modes de rotation pour \\(\\tfrac{5}{2}R\\). La part surprenante est que les modes vibrationnels restent silencieux jusqu'à ce que le gaz soit assez chaud — un effet purement quantique que la physique classique ne put jamais expliquer, et une première fissure dans le monde classique.</p>
+<h4><span class="hn">04</span>Quand les gaz réels se comportent mal</h4>
+<p>La loi parfaite suppose que les particules sont des points qui ne s'attirent jamais — faux sur les deux plans. Les vraies molécules occupent de l'espace et sentent de faibles attractions à longue portée, donc <strong>van der Waals</strong> a rapiécé l'équation, \\(\\left(P + \\dfrac{an^2}{V^2}\\right)(V - nb) = nRT\\) : le terme \\(a\\) corrige l'attraction, le terme \\(b\\) la taille finie. Cette seule correction prédit quelque chose que la loi parfaite ne put jamais — qu'un gaz peut se condenser en liquide, avec un point critique au-delà duquel les deux états deviennent indistinguables.</p>
+<h4><span class="hn">05</span>Jusqu'où, à quelle vitesse : le transport</h4>
+<p>Entre deux collisions une molécule parcourt un <em>libre parcours moyen</em> \\(\\lambda = 1/(\\sqrt{2}\\,n\\sigma)\\) — à pression ambiante seulement environ 70 nanomètres, donc une molécule entre en collision des milliards de fois par seconde. Ce zigzag microscopique fixe la viscosité du gaz, la conductivité thermique et le taux de diffusion, et explique la <strong>loi de Graham</strong> : les molécules plus légères vont plus vite et effusent plus rapidement, exactement le principe jadis utilisé pour séparer les isotopes de l'uranium pour les premières bombes atomiques.</p>
+<h4><span class="hn">06</span>Les limites de l'image</h4>
+<p>Refroidis un gaz assez et même van der Waals échoue, car la statistique quantique prend le dessus. Une fois que la longueur d'onde thermique de de Broglie rivalise avec l'espacement entre particules, des particules identiques ne peuvent plus être traitées comme indépendantes : les bosons s'entassent dans un seul état pour former un <em>condensat de Bose-Einstein</em>, tandis que les fermions sont forcés de s'écarter par le principe de Pauli, soutenant naines blanches et étoiles à neutrons contre la gravité. Les humbles lois des gaz sont le coin à haute température et basse densité d'un paysage quantique bien plus étrange.</p>`,
+          facts: [
+            { e: '🥶', t: `En 1995 les physiciens refroidirent un gaz à moins d'un millionième de degré au-dessus du zéro absolu, formant un condensat de Bose-Einstein — des milliers d'atomes partageant un unique état quantique (prix Nobel 2001).` },
+            { e: '☢️', t: `La loi d'effusion de Graham sépara l'uranium-235 de l'uranium-238 pour les premières armes nucléaires : l'isotope plus léger diffuse de très peu plus vite à travers une barrière poreuse.` },
+            { e: '💨', t: `À température ambiante les molécules d'air vont en moyenne à ~500 m/s — plus vite qu'un jet — et pourtant un parfum traverse une pièce lentement car chaque molécule entre en collision des milliards de fois par seconde.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Pression cinétique', e: 'P = \\tfrac{1}{3}\\dfrac{N}{V}m\\langle v^2\\rangle' },
+            { n: 'Lien avec la température', e: '\\tfrac{1}{2}m\\langle v^2\\rangle = \\tfrac{3}{2}k_B T' },
+            { sep: 1 },
+            { n: 'Maxwell-Boltzmann', e: 'f(v) \\propto v^2 e^{-mv^2/2k_B T}' },
+            { n: 'Vitesse quadratique moyenne', e: 'v_{\\text{rms}} = \\sqrt{3k_B T/m}' },
+            { sep: 1 },
+            { n: 'Van der Waals', e: '\\left(P + \\dfrac{an^2}{V^2}\\right)(V - nb) = nRT' },
+            { n: 'Libre parcours moyen', e: '\\lambda = \\dfrac{1}{\\sqrt{2}\\,n\\sigma}' },
+          ] }, sim: 'gaslaws',
+        },
+      },
+    },
     sorting: {
       title: 'Algorithmes de tri',
       teaser: 'Comment un ordinateur trie-t-il un million de nombres en millisecondes — et pourquoi la stratégie compte-t-elle ?',
@@ -3234,6 +3859,873 @@ export default {
     },
   },
   guide: {
+    seriesparallel: {
+      junior: {
+        legend: `À gauche il y a la <b>batterie</b> ; les deux cercles lumineux sont des <b>ampoules</b>. Les points jaunes sont le <b>courant électrique</b> qui coule dans les fils. Le bouton alterne le câblage entre <b>série</b> (une boucle) et <b>parallèle</b> (deux branches).`,
+        try: `Pars en série et note la luminosité des ampoules. Appuie sur le bouton [[mode]] pour passer en parallèle. Les ampoules deviennent-elles plus lumineuses ou plus faibles ? Regarde [[cur]] changer aussi.`,
+        notice: `<b>En parallèle les ampoules brillent ; en série elles sont faibles — même batterie, mêmes ampoules.</b> En série les deux ampoules se partagent la poussée d'une batterie, donc chacune n'en reçoit que la moitié. En parallèle chaque ampoule reçoit la poussée entière sur sa propre branche, donc elles brillent toutes deux et la batterie délivre bien plus de courant. C'est pourquoi ta maison est câblée en parallèle.`,
+      },
+      student: {
+        legend: `Deux ampoules de \\(10\\,\\Omega\\) sur une batterie que tu règles avec [[volt]]. Le bouton [[mode]] alterne entre série (\\(R=R_1+R_2\\), courant partagé) et parallèle (\\(1/R=1/R_1+1/R_2\\), tension partagée). Les pastilles lisent résistance totale, courant total et puissance par ampoule.`,
+        try: `Fixe [[volt]] et lis [[rtot]] et [[cur]] en série, puis passe en parallèle. De quel facteur [[cur]] saute-t-il, et comment [[bulb]] se compare-t-il ?`,
+        notice: `<b>La série donne \\(20\\,\\Omega\\) ; le parallèle donne \\(5\\,\\Omega\\) — quatre fois le courant, et quatre fois la puissance par ampoule.</b> Les résistances s'additionnent en série mais se combinent en inverse en parallèle, descendant toujours sous la branche la plus petite. Comme \\(P=I^2R\\), les ampoules en parallèle dissipent \\(4\\times\\) la puissance et brillent bien plus — le gain visible du choix de câblage.`,
+      },
+      scholar: {
+        legend: `Un réseau à deux résistances alterné entre série et parallèle par [[mode]], alimenté à tension [[volt]]. Les réductions \\(R_s=R_1+R_2\\) et \\(R_p^{-1}=R_1^{-1}+R_2^{-1}\\) sont des cas particuliers des lois de Kirchhoff ; la source ici est traitée comme idéale (aucune résistance interne).`,
+        try: `Compare [[rtot]] et [[cur]] à travers l'alternance et confirme que le total en parallèle est sous les deux branches. Puis considère comment une résistance interne réelle \\(r\\) limiterait le courant en parallèle que le modèle laisse croître librement.`,
+        notice: `<b>Série et parallèle ne sont que les lois des courants et des tensions de Kirchhoff appliquées à une boucle ou à un nœud.</b> Tout réseau de résistances se réduit ainsi — sauf les topologies en pont, qui exigent l'analyse complète aux nœuds/mailles. Cette source idéalisée n'a aucune résistance interne, donc le courant en parallèle monte sans limite ; une batterie réelle céderait comme \\(V=\\varepsilon-Ir\\), l'effet qui affaiblit les phares quand le démarreur tire des centaines d'ampères.`,
+      },
+    },
+    respiration: {
+      junior: {
+        legend: `La grande forme est une <b>mitochondrie</b>, la centrale électrique de ta cellule. Le <b>glucose</b> rouge (sucre) entre à gauche et l'<b>oxygène</b> bleu par le haut ; sortent des jetons d'énergie <b>ATP</b> dorés et du <b>CO₂</b> gris. Fais glisser [[o2]] pour changer la quantité d'oxygène disponible.`,
+        try: `Monte [[o2]] en haut et regarde l'ATP jaillir. Maintenant baisse-le complètement. Qu'arrive-t-il à [[atp]] et à la [[mode]] quand l'oxygène s'épuise ?`,
+        notice: `<b>Avec beaucoup d'oxygène la cellule fait environ 15 fois plus d'énergie que sans.</b> L'oxygène permet à la mitochondrie de finir de brûler le sucre jusqu'au bout, libérant beaucoup d'ATP et expirant du CO₂. Prive-la d'oxygène et la cellule se rabat sur un remède rapide et faible qui fait à peine de l'ATP — le mode « anaérobie » que tes muscles atteignent dans un sprint intense.`,
+      },
+      student: {
+        legend: `Une mitochondrie qui fait tourner \\(C_6H_{12}O_6 + 6O_2 \\to 6CO_2 + 6H_2O + \\text{ATP}\\). Glucose et O₂ (réglés par [[o2]]) entrent ; ATP et CO₂ sortent. Les pastilles lisent l'ATP par glucose, le CO₂ par glucose et si la voie est aérobie ou anaérobie.`,
+        try: `Monte [[o2]] au maximum et lis [[atp]] et [[co2]] ; puis baisse-le près de zéro et regarde [[mode]] passer en anaérobie. Note comment le rendement d'ATP s'effondre.`,
+        notice: `<b>La respiration aérobie rend ~30–32 ATP par glucose ; la fermentation anaérobie n'en récupère qu'à peine 2.</b> La glycolyse (2 ATP) n'a pas besoin d'oxygène, mais le grand gain vient du cycle de Krebs et de la chaîne de transport d'électrons, qui ont besoin d'O₂ comme accepteur final d'électrons. Retire-le et seule la glycolyse tourne — une perte de ~15 fois, et le pourquoi l'oxygène fut la clé de la vie complexe affamée d'énergie.`,
+      },
+      scholar: {
+        legend: `Métabolisme oxydatif schématique : le flux de substrat (glucose) et la disponibilité d'O₂ ([[o2]]) fixent le rendement d'ATP et l'émission de CO₂. L'opération aérobie tient lieu de toute la chaîne — glycolyse, cycle de Krebs et la chaîne de transport d'électrons qui pompe des protons — condensée en entrées et sorties.`,
+        try: `Balaie [[o2]] et note la chute brusque de [[atp]] quand la voie traverse en territoire anaérobie — un substitut du calage de la chaîne de transport d'électrons quand son accepteur terminal a disparu.`,
+        notice: `<b>L'avantage aérobie de ~15× remonte à la chimiosmose : la chaîne pompe des protons pour bâtir un gradient, et l'ATP synthase l'encaisse.</b> Le rôle de l'oxygène n'est que celui d'accepteur final d'électrons, pourtant sans lui les transporteurs restent réduits, le pompage de protons s'arrête et la phosphorylation oxydative se bloque en quelques secondes. La force protonmotrice \\(\\Delta p\\) est le vrai dépôt d'énergie ; l'ATP synthase est un moteur rotatif qui tourne sur ce courant de protons.`,
+      },
+    },
+    watercycle: {
+      junior: {
+        legend: `Le bleu en bas est l'<b>océan</b>, la boule jaune est le <b>Soleil</b>. L'eau chaude monte en gouttelettes (<b>évaporation</b>), se rassemble en un <b>nuage</b> en haut, et quand le nuage se remplit il <b>pleut</b> de nouveau vers la mer. Encore et encore.`,
+        try: `Baisse [[temp]] au minimum et regarde à quelle vitesse le nuage se remplit. Maintenant monte-le au maximum. Le nuage se remplit-il et pleut-il plus tôt ?`,
+        notice: `<b>Plus de Soleil signifie une évaporation plus rapide, donc le nuage se remplit et pleut plus tôt — tout le cycle accélère.</b> Le Soleil est le moteur du cycle de l'eau : sa chaleur soulève l'eau dans le ciel, et la gravité la ramène en bas sous forme de pluie. On ne fabrique jamais d'eau nouvelle — les mêmes gouttelettes tournent et retournent.`,
+      },
+      student: {
+        legend: `Le Soleil pilote l'<b>évaporation</b> depuis l'océan ; la vapeur monte, se refroidit et <b>condense</b> dans le nuage ; une fois saturée elle tombe en <b>précipitation</b> et retourne à la mer. Les pastilles lisent le niveau d'évaporation, le remplissage du nuage et s'il pleut.`,
+        try: `Mets [[temp]] bas et note le taux de remplissage de [[cloud]], puis mets-le haut. Regarde comment [[rain]] passe de « Building » à « Raining » plus vite avec plus de chaleur.`,
+        notice: `<b>L'air plus chaud évapore l'eau plus vite et peut en contenir davantage — donc la chaleur accélère tout le cycle.</b> L'évaporation absorbe de la chaleur latente (2,26 MJ/kg) et la condensation la libère en altitude, déplaçant silencieusement d'énormes quantités d'énergie vers le haut. Globalement évaporation et précipitation doivent s'équilibrer, les rivières restituant le léger déficit de l'océan.`,
+      },
+      scholar: {
+        legend: `Un modèle schématique à réservoirs et flux : le flux d'évaporation croît avec [[temp]], la vapeur condense au nuage, et la précipitation ferme la boucle. Le nuage est un tampon qui se vide au moment où sa capacité est atteinte.`,
+        try: `Balaie [[temp]] et observe que le taux de remplissage du nuage et la fréquence de la pluie montent tous deux avec elle — un substitut de l'échelle de Clausius-Clapeyron de l'humidité avec la température.`,
+        notice: `<b>La capacité de l'air à retenir l'eau monte exponentiellement avec la température (~7% par °C), et c'est pourquoi un climat plus chaud intensifie le cycle.</b> La chaleur latente fait de l'évaporation le principal oléoduc énergétique de l'atmosphère (elle alimente les ouragans), le temps de résidence \\(\\tau=V/F\\) fixe la vitesse de réponse de chaque réservoir, et le fractionnement isotopique à chaque changement d'état permet aux carottes de glace d'enregistrer les températures passées.`,
+      },
+    },
+    energy: {
+      junior: {
+        legend: `La bille roule dans un <b>bol</b>. En haut sur le flanc elle a de l'<b>énergie de hauteur</b> stockée ; au fond elle est toute <b>énergie de mouvement</b>. Les deux barres à droite montrent chaque type — regarde-les s'échanger tandis que la bille roule.`,
+        try: `Mets [[fric]] à 0 et laisse tomber la bille. Les barres continuent-elles de s'échanger pour toujours ? Maintenant ajoute un peu de [[fric]] et regarde ce qui arrive au <b>Total</b>.`,
+        notice: `<b>Sans frottement le total ne change jamais — énergie de hauteur et énergie de mouvement s'échangent d'avant en arrière pour toujours.</b> C'est la conservation de l'énergie. Ajoute du frottement et un peu d'énergie s'échappe en chaleur à chaque oscillation, donc la bille remonte un peu moins haut à chaque fois jusqu'à s'arrêter. L'énergie n'est pas détruite — elle est devenue tiédeur.`,
+      },
+      student: {
+        legend: `Une bille dans un bol parabolique. Énergie potentielle \\(PE=mgh\\) (barre bleue) et énergie cinétique \\(KE=\\tfrac{1}{2}mv^2\\) (barre rouge) s'échangent tandis qu'elle se déplace ; la pastille « Total » est leur somme. [[fric]] retire de l'énergie mécanique sous forme de chaleur.`,
+        try: `Avec [[fric]] = 0, vérifie que \\(KE+PE\\) (le Total) reste constant tandis que KE et PE oscillent. Puis monte [[fric]] et regarde le Total décroître.`,
+        notice: `<b>À frottement nul \\(\\tfrac{1}{2}mv^2 + mgh\\) est constant — chaque joule de hauteur devient un joule de mouvement et vice versa.</b> Cela donne la vitesse d'impact \\(v=\\sqrt{2gh}\\), indépendante de la masse. Le frottement fait un travail négatif, convertissant l'énergie mécanique en chaleur, donc le Total baisse et la bille se stabilise — énergie quand même conservée, seulement déplacée vers le registre thermique.`,
+      },
+      scholar: {
+        legend: `Cuvette parabolique, donc le mouvement est harmonique simple et \\(E=KE+PE\\propto A^2\\) avec amplitude \\(A\\). [[drop]] fixe \\(A\\) ; [[fric]] applique une décroissance exponentielle de l'amplitude. Les barres montrent \\(KE\\) (rouge) et \\(PE\\) (bleu), la pastille leur somme.`,
+        try: `Mets [[fric]]=0 et confirme que le Total est invariant tandis que \\(KE\\) et \\(PE\\) s'échangent. Puis ajoute du frottement et note la décroissance quasi-exponentielle du Total — la signature d'une force non conservative.`,
+        notice: `<b>La conservation découle du théorème de l'énergie-travail plus une force conservative \\(\\vec F=-\\nabla U\\) ; le frottement ne passe pas ce test et dissipe.</b> Plus profondément, le théorème de Noether lie la conservation de l'énergie à la symétrie par translation temporelle. Élargis les comptes avec \\(\\Delta U=Q-W\\) et même l'énergie « perdue » est comptabilisée — conservée dans l'ensemble, mais dégradée vers le désordre.`,
+      },
+    },
+    gaslaws: {
+      junior: {
+        legend: `Les points qui rebondissent dans la boîte sont des <b>particules de gaz</b>. La paroi droite est un <b>piston</b> que tu peux faire glisser pour changer la taille du contenant. Chaque fois qu'un point frappe une paroi il pousse — et toutes ces poussées ensemble sont la <b>pression</b> montrée dans la pastille.`,
+        try: `Garde [[temp]] égale et fais glisser [[vol]] pour rapetisser la boîte. Regarde [[pres]]. Puis refais la boîte grande et monte plutôt [[temp]].`,
+        notice: `<b>Comprime la boîte et la pression monte ; chauffe le gaz et elle monte aussi.</b> Moins d'espace signifie que les mêmes particules frappent les parois plus souvent ; une température plus haute signifie qu'elles volent plus vite et frappent plus fort. Note que « Pression × taille » reste à peu près constant quand tu ne changes que la taille — c'est la loi de Boyle.`,
+      },
+      student: {
+        legend: `Particules en mouvement élastique aléatoire ; leur vitesse croît comme \\(\\sqrt{T}\\) et le piston droit fixe le volume \\(V\\). Les pastilles lisent la pression \\(P\\) et le produit \\(P\\times V\\). Le gaz obéit à \\(PV = nRT\\).`,
+        try: `Garde [[temp]] fixe et divise [[vol]] par deux — [[pres]] double-t-il tandis que \\(P\\times V\\) reste immobile ? Puis garde [[vol]] et monte [[temp]], en regardant \\(P\\) monter de pair.`,
+        notice: `<b>À \\(T\\) fixe, \\(P\\times V\\) est constant (Boyle) ; à \\(V\\) fixe, \\(P\\propto T\\) (Gay-Lussac).</b> Toutes deux sont des faces de \\(PV=nRT\\). La simulation calcule \\(P = nRT/V\\) directement, et les vitesses des particules suivent \\(\\sqrt{T}\\) — une visualisation de la théorie cinétique où la température <em>est</em> l'énergie cinétique moyenne.`,
+      },
+      scholar: {
+        legend: `Un gaz idéal : \\(P = nRT/V\\), vitesse des particules \\(\\propto\\sqrt{T}\\) comme dans l'image de Maxwell-Boltzmann. Le piston fixe \\(V\\) ; les pastilles lisent \\(P\\) et \\(PV\\). Les déviations des gaz réels exigeraient la correction de van der Waals.`,
+        try: `Trace une isotherme : fixe [[temp]] et échantillonne des couples \\((P,V)\\) sur tout l'intervalle, en vérifiant si \\(PV\\) reste constant. Puis trace une isochore : fixe [[vol]] et varie [[temp]].`,
+        notice: `<b>L'isotherme donne \\(PV=\\text{cste}\\) ; l'isochore donne \\(P\\propto T\\) — la loi des gaz idéaux disséquée.</b> Cette idéalisation suppose des particules ponctuelles sans attractions. Les gaz réels dévient à mesure que la densité croît : la taille finie (le terme \\(b\\)) et l'attraction intermoléculaire (le terme \\(a\\)) courbent les isothermes et, sous un point critique, permettent la condensation que la loi idéale ne peut jamais montrer.`,
+      },
+    },
+    moonphases: {
+      junior: {
+        legend: `Le disque lumineux à gauche est le <b>Soleil</b>, qui éclaire tout de ce côté. La boule bleue est la <b>Terre</b>, et la boule grise qui tourne autour d'elle est la <b>Lune</b> — toujours éclairée à moitié du côté du Soleil. Le petit disque à droite montre la <b>phase que tu verrais depuis la Terre</b>.`,
+        try: `Fais glisser [[day]] lentement sur tout le mois. Regarde le disque « depuis la Terre » à droite, et lis [[phase]] et [[lit]].`,
+        notice: `<b>La forme de la Lune ne change pas — tu vois seulement sa moitié éclairée sous différents angles.</b> Quand la Lune est entre la Terre et le Soleil son côté sombre est tourné vers nous (nouvelle lune) ; quand elle est du côté opposé nous voyons toute la face éclairée (pleine lune). Un tour complet dure environ 29,5 jours.`,
+      },
+      student: {
+        legend: `Vue de dessus : direction éclairée par le Soleil depuis la gauche, Terre au centre, Lune sur son orbite. La moitié tournée vers le Soleil est toujours éclairée ; le disque inséré reconstruit la vue depuis la Terre. Les pastilles lisent le nom de la phase et la fraction éclairée \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\).`,
+        try: `Porte [[day]] à 0, ~7, ~15 et ~22 et nomme chaque [[phase]]. Regarde comment [[lit]] suit l'angle de phase au lieu de sauter.`,
+        notice: `<b>L'éclairement varie avec continuité comme \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\) : 0% nouvelle, 50% aux quartiers, 100% pleine.</b> La phase que nous suivons se répète chaque mois synodique (29,5 j), plus long que l'orbite de 27,3 jours parce qu'entretemps la Terre se déplace autour du Soleil. Et comme l'orbite est inclinée d'environ 5°, la plupart des mois la Lune manque la ligne Soleil-Terre, donc les éclipses sont rares.`,
+      },
+      scholar: {
+        legend: `Direction du Soleil fixe à gauche ; Terre au centre ; Lune sur orbite circulaire avec l'hémisphère solaire éclairé. Insert = aspect géocentrique. Fraction éclairée \\(k=\\tfrac{1}{2}(1-\\cos\\theta)\\) avec \\(\\theta\\) l'angle de phase Soleil-Terre-Lune.`,
+        try: `Balaie [[day]] et confirme la séquence des phases et la symétrie entre croissant et décroissant. Note que le modèle ne montre que la phase géométrique — non la poussée de luminosité en opposition ni la libration.`,
+        notice: `<b>La géométrie est exacte, mais la luminosité lunaire réelle n'est pas linéaire en \\(k\\).</b> L'albédo de la Lune est ~0,12 et près de la pleine il augmente plus que la seule aire ne le prédit (l'effet d'opposition). Superpose la précession des nœuds de 18,6 ans et l'excentricité de l'orbite (libration) et tu as tout l'appareil derrière la prévision des éclipses et le cycle de Saros.`,
+      },
+    },
+    protein: {
+      junior: {
+        legend: `La ligne de lettres est l'<b>ARNm</b> — la recette. La forme arrondie qui coule le long est le <b>ribosome</b>, qui lit trois lettres (un <b>codon</b>) à la fois. Chaque codon ajoute une perle colorée — un <b>acide aminé</b> — à la chaîne croissante en dessous. Cette chaîne est la protéine.`,
+        try: `Appuie sur [[play]] et regarde le ribosome se déplacer. Lis chaque codon de trois lettres et la perle qu'il ajoute. Quel codon spécial le fait s'arrêter ?`,
+        notice: `<b>Trois lettres nomment une perle, et la chaîne croît d'une perle par codon jusqu'à ce qu'un codon STOP la termine.</b> Seulement quatre lettres, lues trois par trois, épellent chaque protéine que ton corps construit — le même code simple dans chaque être vivant sur Terre.`,
+      },
+      student: {
+        legend: `L'ARNm est lu 5'→3' en <em>codons</em> non chevauchants. Le ribosome (forme arrondie) traduit chaque codon en un acide aminé via un ARNt correspondant ; la chaîne en dessous est le polypeptide croissant. Les pastilles nomment le codon actuel → acide aminé et la longueur de la chaîne.`,
+        try: `Appuie sur [[play]] et suis [[codon]] tandis que la traduction procède du départ AUG au codon d'arrêt. Compte comment [[len]] croît d'un résidu par codon.`,
+        notice: `<b>Chaque codon correspond exactement à un acide aminé ; AUG commence, et UAA/UAG/UGA arrêtent.</b> Avec \\(4^3=64\\) codons pour 20 acides aminés le code est redondant, donc plusieurs codons partagent un acide aminé. C'est la traduction — la seconde moitié du dogme central, ADN → ARN → protéine.`,
+      },
+      scholar: {
+        legend: `Traduction codon par codon d'un ARNm. Le décodage repose sur l'appariement codon-anticodon, avec le <em>flottement</em> (wobble) de la troisième base qui permet à un ARNt de lire des codons synonymes. Les pastilles montrent codon → acide aminé et la longueur de la chaîne ; l'élongation procède jusqu'à ce qu'un facteur de libération lise un codon d'arrêt.`,
+        try: `Fais tourner [[play]] et note où des codons synonymes donneraient le même acide aminé, et comment le cadre de lecture est fixé par le départ AUG — un décalage d'une base brouillerait tout en aval.`,
+        notice: `<b>Le cadre fixé à AUG est tout : la traduction est strictement à triplets et non chevauchante, donc une insertion ou délétion cause un décalage de cadre.</b> La fidélité (~1 erreur sur 10⁴) vient du proofreading cinétique, et la liaison peptidique est forgée par l'ARN ribosomal — le ribosome est un ribozyme, une relique du monde à ARN.`,
+      },
+    },
+    pendulum: {
+      junior: {
+        legend: `Le point suspendu au fil est le <b>pendule</b>. Il oscille d'un côté à l'autre, et l'arc pâle montre le chemin qu'il balaie. La pastille compte le <b>temps d'une oscillation complète</b> — aller et retour.`,
+        try: `Mets [[amp]] large et lis [[per]]. Maintenant fais glisser [[amp]] bien plus petite. Le temps par oscillation change-t-il beaucoup ? Puis double [[len]] et regarde [[per]].`,
+        notice: `<b>Changer l'amplitude du balancement ne change presque pas le temps — mais allonger le fil le ralentit clairement.</b> C'est le secret du pendule : le rythme est fixé presque uniquement par la <em>longueur</em>, non par l'amplitude de l'oscillation ni par le poids du lest. Fil plus long, oscillation plus lente.`,
+      },
+      student: {
+        legend: `Pendule de longueur \\(L\\) oscillant avec amplitude \\(\\theta_0\\). L'arc est son chemin ; les pastilles lisent la période \\(T\\) et la fréquence \\(f\\). Le mouvement est (quasi-)harmonique simple, \\(\\theta(t)=\\theta_0\\cos(\\omega t)\\).`,
+        try: `Garde [[amp]] petite et quadruple [[len]] de 0,5 à 2,0 — [[per]] double-t-il exactement ? Puis garde [[len]] et pousse [[amp]] jusqu'à 70°, en regardant [[per]] monter.`,
+        notice: `<b>Quadrupler \\(L\\) double \\(T\\), parce que \\(T = 2\\pi\\sqrt{L/g}\\) — la racine carrée.</b> Masse et amplitude sont absentes de cette formule, et c'est pourquoi les petites oscillations sont isochrones. Pousse cependant l'amplitude au grand et l'approximation des petits angles s'effiloche : \\(T\\) croît d'environ \\(\\theta_0^2/16\\), la correction que tu peux voir apparaître.`,
+      },
+      scholar: {
+        legend: `Longueur \\(L\\), amplitude \\(\\theta_0\\). Le lest obéit à \\(\\ddot\\theta + (g/L)\\sin\\theta = 0\\) ; la simulation utilise la période corrigée pour l'amplitude \\(T = T_0(1+\\theta_0^2/16)\\) avec \\(T_0 = 2\\pi\\sqrt{L/g}\\). Les pastilles lisent \\(T\\) et \\(f = 1/T\\).`,
+        try: `Enregistre [[per]] contre [[len]] à [[amp]] petite fixe et contrôle la pente de \\(\\log T\\) contre \\(\\log L\\). Puis fixe [[len]] et balaie [[amp]] de 10° à 80°, en suivant de combien \\(T\\) s'écarte de \\(T_0\\).`,
+        notice: `<b>La pente log-log est \\(1/2\\) (donc \\(T\\propto\\sqrt L\\)), et \\(T\\) monte au-dessus de \\(T_0\\) à mesure que l'amplitude croît.</b> La période exacte est l'intégrale elliptique \\(T = 4\\sqrt{L/g}\\,K(\\sin\\tfrac{\\theta_0}{2})\\) ; le premier terme de son développement, \\(\\theta_0^2/16\\), est ce que la simulation applique — 1,7% à 30°, ~18% à 90°. L'isochronisme est rigoureusement une limite de petit angle.`,
+      },
+    },
+    optics: {
+      junior: {
+        legend: `La flèche bleue à gauche est l'<b>objet</b>. La forme haute au centre est une <b>lentille</b>. Les lignes colorées sont des <b>rayons de lumière</b> qui sortent du sommet de l'objet ; là où ils se croisent de nouveau à droite, la lentille reconstruit l'image — c'est l'<b>image</b> (dessinée en orange).`,
+        try: `Fais glisser [[obj]] pour que l'objet soit loin de la lentille et regarde l'image orange. Maintenant fais-le glisser lentement plus près. Qu'arrive-t-il à l'image à l'instant où l'objet s'approche beaucoup de la lentille ?`,
+        notice: `<b>Loin, l'image est petite et renversée ; de près, elle se redresse et devient énorme.</b> Ce passage est exactement la différence entre un appareil photo (objet lointain, image petite et retournée) et une loupe (objet proche, image grande et droite). La lentille fait les deux — cela ne dépend que de la distance à laquelle tu la tiens.`,
+      },
+      student: {
+        legend: `Flèche bleue = objet à distance \\(d_o\\). Lentille verticale avec les foyers marqués à \\(\\pm f\\). Trois rayons principaux partent de la pointe de l'objet : parallèle-puis-par-le-foyer, droit-par-le-centre, et par-le-foyer-proche-puis-parallèle. Ils se rencontrent à l'image, distance \\(d_i\\) ; les pastilles lisent \\(d_i\\), \\(m\\) et si l'image est réelle ou virtuelle.`,
+        try: `Mets [[foc]] à environ 60 et balaie [[obj]] de 300 jusqu'à 40. Regarde [[img]] et [[mag]] tandis que l'objet traverse \\(d_o = f\\).`,
+        notice: `<b>Quand \\(d_o \\to f\\), l'image gicle à l'infini et \\(m\\) explose.</b> L'équation des lentilles minces \\(1/f = 1/d_o + 1/d_i\\) fait diverger \\(d_i\\) quand \\(d_o = f\\), donc les rayons quittent la lentille parallèles et ne forment aucune image finie. Traverse à l'intérieur de \\(f\\) et \\(d_i\\) devient négatif : l'image devient <em>virtuelle</em>, droite et agrandie — le régime de la loupe.`,
+      },
+      scholar: {
+        legend: `Objet à \\(d_o\\) ; lentille convergente mince de distance focale \\(f\\) avec foyers à \\(\\pm f\\). Les trois rayons principaux construisent l'image à \\(d_i\\) donnée par \\(1/f = 1/d_o + 1/d_i\\), avec grandissement transversal \\(m = -d_i/d_o\\). Les images réelles (\\(d_i>0\\)) apparaissent à droite de la lentille ; les virtuelles (\\(d_i<0\\)) à gauche, en pointillés.`,
+        try: `Fixe [[foc]] et enregistre des couples \\((d_o, d_i)\\) sur tout l'intervalle, puis vérifie si \\(1/d_o + 1/d_i\\) reste constant. Note le signe de [[mag]] quand [[obj]] passe par \\(f\\) et par \\(2f\\).`,
+        notice: `<b>\\(1/d_o + 1/d_i = 1/f\\) vaut exactement, et \\(m = -d_i/d_o\\) suit la géométrie.</b> À \\(d_o = 2f\\), \\(m=-1\\) (même taille, renversée) ; pour \\(f<d_o<2f\\) l'image réelle est agrandie (projecteur) ; pour \\(d_o<f\\), \\(d_i<0\\) donne une image virtuelle droite. La simulation résout \\(d_i = d_o f/(d_o-f)\\) à chaque frame — le pôle à \\(d_o=f\\) est l'image divergente que tu viens de voir.`,
+      },
+    },
+    cell: {
+      junior: {
+        legend: `Deux chambres d'eau reliées par une membrane au milieu. Le côté droit a du <b>sel</b> (points orange) qui ne peut pas traverser ; l'eau, si. Regarde dans quelle direction le niveau d'eau se déplace.`,
+        try: `Ajoute du [[salt]] au côté droit et regarde l'eau. Dans quelle direction se déplace-t-elle — et continue-t-elle pour toujours ?`,
+        notice: `<b>L'eau se déplace vers le côté salé.</b> Elle essaie de diluer le sel qu'elle ne peut atteindre, donc elle coule à travers la membrane jusqu'à ce que le niveau qui monte repousse assez fort pour l'arrêter. Ce point d'équilibre est l'osmose en action — aucun pompage, juste l'eau qui égalise les choses.`,
+      },
+      student: {
+        legend: `Une membrane semi-perméable qui sépare l'eau pure (gauche) d'une solution (droite). Le soluté (orange) ne peut traverser ; l'eau, si. Les niveaux se déplacent jusqu'à ce que l'attraction osmotique équilibre la différence de pression qui s'accumule.`,
+        try: `Monte [[salt]] et regarde [[right]] monter tandis que [[left]] descend, puis se stabiliser. Pousse [[salt]] encore plus haut — la différence de niveau finale croît-elle ?`,
+        notice: `<b>L'eau coule vers la concentration de soluté la plus élevée et s'arrête quand la pression équilibre l'attraction osmotique.</b> Une charge de soluté plus grande pousse plus d'eau à travers et construit une différence de niveau plus grande — une image directe de la pression osmotique, \\(\\Pi = iMRT\\). La membrane ne laisse jamais le soluté s'égaliser, donc c'est l'eau qui fait l'équilibrage.`,
+      },
+      scholar: {
+        legend: `Un modèle d'osmose à deux compartiments : le flux net d'eau est proportionnel à \\((\\Delta\\text{concentration}) - k(\\Delta\\text{niveau})\\), donc le système se relaxe vers un état stationnaire où le gradient osmotique est équilibré par une hauteur hydrostatique.`,
+        try: `Varie [[salt]] et enregistre l'écart de niveau à l'équilibre ; vérifie qu'il croît avec la charge de soluté, reflétant \\(\\Pi = iMRT\\).`,
+        notice: `<b>L'équilibre ici n'est pas une concentration égale — c'est un potentiel hydrique équilibré.</b> Comme le soluté est piégé d'un côté, l'eau se déplace jusqu'à ce que le terme de pression (la différence de niveau) compense le terme de soluté. C'est le potentiel hydrique \\(\\Psi = \\Psi_s + \\Psi_p\\) qui atteint l'égalité, et l'écart de niveau résiduel est la pression osmotique rendue visible.`,
+      },
+    },
+    mitosis: {
+      junior: {
+        legend: `Une cellule qui se divise. Fais glisser le curseur pour te déplacer entre les phases, ou appuie sur Play. Les formes en X colorées sont les <b>chromosomes</b> — la cellule les copie, les aligne, et les sépare en deux nouvelles cellules.`,
+        try: `Fais glisser [[stage]] lentement du début à la fin, en regardant les chromosomes s'aligner au centre puis se diviser vers les extrémités. Avec combien de cellules finis-tu ?`,
+        notice: `<b>Une cellule devient deux, chacune avec un jeu complet et identique de chromosomes.</b> Les copies s'alignent le long du centre, sont tirées vers des extrémités opposées, et la cellule s'étrangle en son milieu. Passe à Méiose et le même début finit en <i>quatre</i> cellules avec la moitié des chromosomes à la place.`,
+      },
+      student: {
+        legend: `Les phases de la division. Fais glisser [[stage]] pour défiler entre prophase, métaphase, anaphase et télophase ; [[phase]] nomme où tu es et [[cells]] compte les cellules. Le bouton mode alterne entre mitose et méiose.`,
+        try: `Défile jusqu'à la métaphase et note les chromosomes alignés sur l'équateur, puis à l'anaphase pour regarder les sœurs se séparer. Puis passe à Méiose et laisse-la faire deux divisions.`,
+        notice: `<b>La mitose finit en 2 cellules diploïdes identiques ; la méiose finit en 4 cellules haploïdes uniques.</b> Métaphase (alignement) et anaphase (séparation) sont le nœud. La méiose ajoute une seconde division et apparie d'abord les chromosomes homologues, ce qui divise par deux le nombre de chromosomes et remélange les gènes.`,
+      },
+      scholar: {
+        legend: `Un schéma de la ségrégation chromosomique. [[stage]] défile la ligne temporelle, [[phase]] étiquette la phase et [[cells]] le compte des produits. Le mode Méiose montre la division réductionnelle (I) suivie de la division équationnelle (II).`,
+        try: `Compare les deux modes à leurs points médians : dans la mitose les chromatides sœurs se séparent une fois ; dans la méiose I les homologues se séparent d'abord, et seulement dans la méiose II les sœurs se divisent.`,
+        notice: `<b>La différence distinctive est la méiose I : ce sont les homologues qui se séparent, non les chromatides sœurs — et c'est ce qui divise par deux le nombre de chromosomes.</b> La séparation des sœurs (mitose, et méiose II) préserve la ploïdie ; la séparation des homologues la réduit. Le schéma omet le crossing over, l'autre grande source de variation, qui recombine les homologues avant qu'ils ne se séparent.`,
+      },
+    },
+    punnett: {
+      junior: {
+        legend: `Deux parents, chacun avec deux copies du gène. La grille montre chaque combinaison que leur enfant pourrait hériter ; les cellules colorées montrent à quoi l'enfant ressemblerait.`,
+        try: `Règle les deux parents à Aa (un dominant, un récessif) avec les boutons, puis regarde les quatre cellules. Combien montrent la couleur dominante, et combien la récessive ?`,
+        notice: `<b>Aa × Aa donne un rapport 3 pour 1.</b> Trois des quatre enfants possibles montrent le trait dominant, un montre le récessif. Ce sont des probabilités, non une certitude — comme des tirages à pile ou face — mais sur beaucoup d'enfants le 3:1 tient.`,
+      },
+      student: {
+        legend: `Un carré de Punnett : les deux allèles de chaque parent en-têtent lignes et colonnes, et chaque cellule est un génotype de descendance également probable, coloré par phénotype. [[pheno]] et [[geno]] donnent les rapports.`,
+        try: `Compare Aa × Aa (deux hétérozygotes) à un test-cross, Aa × aa. En quoi les rapports [[pheno]] et [[geno]] diffèrent-ils ?`,
+        notice: `<b>Aa × Aa → phénotype 3:1 mais génotype 1:2:1 ; Aa × aa → 1:1.</b> Chaque parent passe un allèle au hasard (ségrégation), donc les quatre cellules sont également probables. Le test-cross contre un récessif est exactement la façon de distinguer un AA d'un Aa.`,
+      },
+      scholar: {
+        legend: `Un carré de Punnett monohybride, avec les rapports génotypiques et phénotypiques calculés à partir des quatre combinaisons gamétiques également probables.`,
+        try: `Travaille à travers chaque croisement (AA, Aa, aa chez chaque parent) et prédis les rapports avant de les révéler ; note quels croisements ne peuvent jamais produire un enfant récessif.`,
+        notice: `<b>La grille est la loi de ségrégation de Mendel rendue visuelle.</b> Elle suppose une dominance complète simple ; l'hérédité réelle ajoute dominance incomplète, codominance, allèles multiples, liaison et liaison au sexe — et se met à l'échelle de populations entières via Hardy-Weinberg, la ligne de base \\(p^2 + 2pq + q^2\\) pour détecter l'évolution.`,
+      },
+    },
+    prob: {
+      junior: {
+        legend: `Les billes tombent d'en haut dans un triangle de <b>clous</b>. À chaque clou une bille rebondit à gauche ou à droite par pur hasard — comme lancer une pièce. Elles s'accumulent dans les <b>cases</b> en bas. La ligne blanche pointillée et les barres pâles derrière montrent la forme que la mathématique dit que tu devrais obtenir.`,
+        try: `Appuie sur [[drop]] et arrête-toi après environ 20 billes. La forme est-elle nette ? Maintenant appuie sur [[reset]], laisse-en tomber plus de 200, et compare les barres à la ligne pointillée.`,
+        notice: `<b>Avec 20 billes le tas paraît irrégulier ; avec 200 il croît toujours dans la même bosse au centre — la courbe en cloche.</b> Personne ne peut dire où atterrira une <i>seule</i> bille, car chacune est pure chance. Pourtant des centaines ensemble sont remarquablement prévisibles. Regarde [[mean]] errer au début, puis se stabiliser près du centre et y rester.`,
+      },
+      student: {
+        legend: `Chaque clou est un embranchement équitable 50/50, donc la case finale d'une bille compte combien de fois il lui est arrivé d'aller à droite — une issue <b>binomiale</b>. Barres lumineuses = les comptes que tu as réellement obtenus, barres pâles et la courbe pointillée = la forme en cloche attendue. [[mean]] est l'indice moyen courant de la case.`,
+        try: `Fais-en tomber plus de 300 avec [[rows]] à 7 et regarde où se stabilise [[mean]]. Puis mets [[rows]] à 10 et relance — où est la moyenne maintenant, et qu'arrive-t-il à la largeur du tas ?`,
+        notice: `<b>La moyenne se stabilise à \\(n/2\\) — 3,5 pour 7 rangées, 5 pour 10 — et le tas s'élargit comme \\(\\sqrt{n}\\).</b> Avec \\(n\\) rangées le résultat est \\(\\text{Binomiale}(n, \\tfrac12)\\), dont l'écart-type est \\(\\sqrt{n}/2\\), donc la dispersion croît tandis que le pic s'affine par rapport au total. Rien ici n'a été conçu pour faire une cloche : elle tombe d'elle-même de tirages à pile ou face répétés.`,
+      },
+      scholar: {
+        legend: `Le plateau réalise une somme de \\(n\\) variables i.i.d. \\(\\text{Bernoulli}(\\tfrac12)\\) ; l'indice de la case est le compte des embranchements à droite. Barres lumineuses = la distribution empirique, courbe pointillée = l'approximation normale \\(\\mathcal{N}(n/2,\\, n/4)\\) superposée par la simulation. [[mean]] est la moyenne d'échantillon courante.`,
+        try: `Compare la dispersion empirique à [[rows]] = 4 et [[rows]] = 10 et vérifie si la largeur croît comme \\(\\sqrt{n}\\). Puis regarde comment [[mean]] se stabilise à mesure que les billes s'accumulent — sa fluctuation devrait décroître comme \\(1/\\sqrt{N}\\) dans le nombre \\(N\\) lâché.`,
+        notice: `<b>La dispersion croît comme \\(\\sqrt{n}\\) et la moyenne d'échantillon converge comme \\(1/\\sqrt{N}\\).</b> C'est le <b>théorème de de Moivre–Laplace</b> en miniature : \\(\\text{Binomiale}(n,\\tfrac12) \\to \\mathcal{N}(n/2,\\, n/4)\\) à mesure que \\(n\\) croît — historiquement le premier cas particulier du théorème central limite. La partie remarquable est l'universalité : la limite est normale presque indépendamment de la forme de la distribution de l'embranchement elle-même, pourvu que sa variance soit finie. Voilà pourquoi la même courbe gouverne l'erreur de mesure, le bruit thermique et la diffusion pareillement.`,
+      },
+    },
+    fractal: {
+      junior: {
+        legend: `Ceci est l'<b>ensemble de Mandelbrot</b>. Le centre sombre est l'ensemble lui-même ; les couleurs vives autour du bord montrent la vitesse à laquelle les points voisins s'échappent vers l'infini. Chaque clic te zoome 2,2× plus profond dans l'image.`,
+        try: `Clique sur la partie la plus déchiquetée du bord. Puis clique de nouveau. Et encore — cinq ou six fois, en regardant [[zoom]] monter. Finis-tu jamais le détail ?`,
+        notice: `<b>Non — le détail ne finit jamais. Zoome autant que tu veux et de nouvelles formes continuent de se déployer pour toujours.</b> Plus étrange encore, tu continues de rencontrer de minuscules copies de la forme entière enfouies au fond de son propre bord. Tout cela vient d'une règle absurdement courte, appliquée encore et encore : élève le nombre au carré, ajoute le point de départ, répète. Une complexité sans fin à partir de presque aucune instruction — c'est ça un <b>fractal</b>.`,
+      },
+      student: {
+        legend: `Pour chaque pixel \\(c\\), la suite \\(z_{n+1} = z_n^2 + c\\) est itérée depuis \\(z_0=0\\). Sombre = la suite reste bornée (\\(c\\) est dans l'ensemble) ; couleur = combien de pas il lui a fallu pour s'échapper, donc les bandes sont des courbes de niveau du temps de fuite. [[detail]] borne le nombre d'itérations et [[zoom]] suit l'agrandissement.`,
+        try: `Zoome plusieurs fois dans le bord, puis fais glisser [[detail]] de 20 jusqu'à 240 et retour. Regarde ce qui arrive à la région noire à fort agrandissement.`,
+        notice: `<b>Monter [[detail]] fait fleurir les aires noires en filigrane — la région « pleine » était un artefact d'un arrêt trop précoce.</b> Les points près du bord ne s'échappent qu'après de très nombreuses itérations, donc une borne basse les classe à tort comme intérieurs. Le bord lui-même a une <b>dimension de Hausdorff 2</b> (prouvé par Shishikura, 1998) tout en ayant une aire nulle : il est si froissé qu'il remplit de fait le plan. L'ensemble est aussi connexe — chacun de ces mini-Mandelbrot d'apparence isolée est relié au corps principal par des filaments trop fins à dessiner.`,
+      },
+      scholar: {
+        legend: `Rendu par temps de fuite de \\(M = \\{c \\in \\mathbb{C} : (z_{n+1}=z_n^2+c,\\, z_0=0) \\not\\to \\infty\\}\\), avec coloration à itération lisse (continue) \\(\\nu = n + 1 - \\log_2\\log_2|z_n|\\) pour retirer le banding. [[detail]] fixe le seuil du temps de fuite.`,
+        try: `Zoome sur le bord d'un mini-Mandelbrot et varie [[detail]]. Estime comment croît le nombre d'itérations requis avec l'agrandissement, et considère ce que cela implique sur le fait de décider l'appartenance à \\(M\\) algorithmiquement.`,
+        notice: `<b>Le nombre d'itérations nécessaires croît sans limite à mesure que tu t'approches du bord — l'appartenance n'est pas décidable en temps fini avec cette méthode.</b> \\(M\\) est compact et connexe (Douady–Hubbard), pourtant son bord a une dimension de Hausdorff exactement 2 tout en portant une mesure de Lebesgue nulle. Si \\(M\\) est <em>localement connexe</em> — la conjecture MLC — reste ouvert, et cela impliquerait une classification combinatoire complète de l'ensemble. Sous le modèle de calcul réel de Blum–Shub–Smale \\(M\\) n'est pas décidable, faisant de cette image un objet authentiquement non calculable rendu par approximation.`,
+      },
+    },
+    calculus: {
+      junior: {
+        legend: `La courbe est une fonction. La ligne pointillée orange la touche en un point et montre à quel point elle monte raide là — c'est [[deriv]]. Les rectangles ombrés sous la courbe somment l'aire, montrée comme [[integ]] ; le bleu compte comme positif, le rouge comme négatif.`,
+        try: `Mets [[rects]] à 2 et note [[integ]]. Maintenant fais-le glisser jusqu'à 40 et regarde à la fois l'image et le nombre.`,
+        notice: `<b>Les rectangles s'emboîtent serrés contre la courbe et [[integ]] cesse d'osciller — il se stabilise sur la vraie aire.</b> Une forme courbe n'a pas de formule d'aire facile, donc l'astuce est de la couvrir de rectangles que tu <em>peux</em> mesurer, puis d'en utiliser plus, de plus fins, jusqu'à ce que l'erreur s'évanouisse. Maintenant fais glisser [[x]] et regarde [[deriv]] : là où la courbe monte raide la pente est grande, et au sommet d'une bosse elle passe par zéro.`,
+      },
+      student: {
+        legend: `\\(f(x) = \\sin x + 0.4x\\). La ligne pointillée orange est la tangente en [[x]], dont la pente est [[deriv]]. Les blocs ombrés sont une <b>somme de Riemann</b> par point médian de \\(-3\\) à [[x]], rapportée comme [[integ]] ; signée, donc les blocs sous l'axe soustraient.`,
+        try: `Fixe [[x]] à 0 et porte [[rects]] à travers 2, 8 et 40, en enregistrant [[integ]] chaque fois. Puis garde [[rects]] à 40 et balaie [[x]], en comparant [[deriv]] à la vitesse à laquelle change [[integ]].`,
+        notice: `<b>[[integ]] converge vers −3,790, et son taux de variation quand tu fais glisser [[x]] est exactement [[deriv]].</b> Cette seconde observation est le <b>théorème fondamental du calcul</b> : si \\(A(x) = \\int_{-3}^{x} f(t)\\,dt\\) alors \\(A'(x) = f(x)\\) — dérivation et intégration s'annulent mutuellement. La règle du point médian converge comme \\(O(h^2)\\), et c'est pourquoi le saut de 2 à 8 rectangles achète bien plus d'exactitude que de 8 à 40.`,
+      },
+      scholar: {
+        legend: `\\(f(x)=\\sin x + 0.4x\\) avec tangente de pente \\(f'(x) = \\cos x + 0.4\\) en [[x]]. Les blocs montrent la quadrature du point médian \\(\\sum f(x_i + h/2)\\,h\\) qui approxime \\(\\int_{-3}^{x} f\\), signée.`,
+        try: `Estime l'ordre de convergence empiriquement : enregistre [[integ]] à [[rects]] = 5, 10, 20 pour [[x]] fixe, et vérifie si l'erreur se divise par quatre chaque fois que tu doubles le compte. Puis vérifie \\(\\frac{d}{dx}\\!\\int_{-3}^{x} f = f(x)\\) en un point où \\(f\\) change de signe.`,
+        notice: `<b>L'erreur baisse d'un facteur quatre par doublement — convergence du second ordre, \\(O(h^2)\\).</b> Le terme d'erreur de la règle du point médian est \\(\\frac{(b-a)h^2}{24}f''(\\xi)\\), donc elle est exacte pour des intégrandes linéaires et bat la règle des trapèzes d'un facteur deux tout en utilisant une évaluation par intervalle. Le lien tangente-aire est le premier théorème fondamental, \\(\\frac{d}{dx}\\int_a^x f = f(x)\\) pour \\(f\\) continue ; sa puissance est qu'il convertit un processus de limite infini en antidérivation, et c'est pourquoi le calcul devint calculable.`,
+      },
+    },
+    graphs: {
+      junior: {
+        legend: `Chaque point est une <b>personne</b> et chaque ligne une connexion entre deux d'entre elles. Certains points ont bien plus de lignes que le reste — ce sont les <b>hubs</b>, comptés dans [[hubcount]]. Appuyer sur [[spread]] lance un signal depuis un hub et le laisse voyager le long des lignes.`,
+        try: `Mets [[hubs]] à 1, appuie sur [[reset]], puis [[spread]] et note [[steps]]. Maintenant mets [[hubs]] à 6, appuie sur [[reset]] et propage de nouveau.`,
+        notice: `<b>Avec plus de connexions de hub le signal atteint tout le monde en bien moins de pas — souvent seulement trois ou quatre.</b> Le réseau n'est pas tissé uniformément : la plupart des points ont un ou deux liens tandis qu'une poignée en a des douzaines, et ces quelques hubs font office de raccourcis à travers toute la population. C'est pourquoi deux personnes quelconques sur Terre sont à environ six poignées de main de distance, et pourquoi une rumeur — ou un virus — qui atteint une personne bien connectée se répand si alarmamment vite.`,
+      },
+      student: {
+        legend: `Un <b>réseau sans échelle</b> cultivé par attachement préférentiel : chaque nouveau nœud préfère se relier à des nœuds déjà populaires. [[hubs]] fixe combien de liens fait chaque nouvel arrivant, [[hubcount]] compte les 15% les plus connectés, et [[spread]] fait tourner une cascade de style épidémie déclenchée par un hub. [[reached]] et [[steps]] suivent la cascade.`,
+        try: `Compare [[steps]] pour atteindre tout le monde à [[hubs]] = 1 contre 6, en gardant [[nodes]] fixe. Puis monte [[nodes]] de 10 à 40 et vois de combien [[steps]] croît en réponse.`,
+        notice: `<b>Quadrupler le nombre de nœuds change à peine le nombre de pas.</b> C'est la propriété <b>petit-monde</b> : la longueur des chemins croît comme \\(\\log N\\), non \\(N\\). L'attachement préférentiel produit une distribution des degrés \\(P(k) \\sim k^{-\\gamma}\\) avec \\(\\gamma \\approx 3\\) — une loi de puissance sans échelle typique, donc des hubs de degré énorme ne sont pas les anomalies qu'une cloche prédirait. De tels réseaux résistent très bien à la panne aléatoire mais s'effondrent si leurs hubs sont retirés délibérément.`,
+      },
+      scholar: {
+        legend: `Croissance de Barabási–Albert : les nœuds arrivent en séquence et s'attachent avec une probabilité proportionnelle au degré existant, \\(\\Pi(k_i) = k_i/\\sum_j k_j\\), donnant \\(P(k)\\sim k^{-3}\\). [[spread]] déclenche une cascade de type SIR à un sommet de haut degré ; [[reached]] et [[steps]] en rapportent la progression.`,
+        try: `Mesure comment [[steps]] croît tandis que [[nodes]] va 10 → 20 → 40 à [[hubs]] fixe, et compare à \\(\\log N\\) et \\(\\sqrt{N}\\). Puis considère ce que ferait à [[reached]] le retrait des quelques hubs principaux.`,
+        notice: `<b>La longueur des chemins suit \\(\\log N\\) ; dans les réseaux sans échelle purs elle est même plus courte, \\(\\ell \\sim \\log\\log N\\) — « ultrapetite ».</b> La conséquence profonde est épidémiologique : pour \\(\\gamma \\le 3\\) le second moment \\(\\langle k^2\\rangle\\) diverge quand \\(N\\to\\infty\\), et comme le seuil épidémique croît comme \\(\\lambda_c = \\langle k\\rangle/\\langle k^2\\rangle\\), il s'évanouit. <b>Un réseau sans échelle n'a aucun seuil épidémique</b> : toute infection transmissible, si faible soit-elle, peut persister. C'est précisément pourquoi l'immunisation ciblée des hubs surpasse énormément la vaccination aléatoire.`,
+      },
+    },
+    trig: {
+      junior: {
+        legend: `Un point tourne sur un cercle à gauche. Sa <b>hauteur</b> est dessinée comme une onde à droite — cette onde est le sinus.`,
+        try: `Appuie sur [[play]] (ou fais glisser [[angle]]) et regarde le point tourner tandis que l'onde se dessine d'elle-même. Combien vaut [[sin]] quand le point est tout en haut ?`,
+        notice: `<b>Le cercle dessine l'onde.</b> La hauteur du point est le sinus, et tandis qu'il tourne, cette hauteur trace une onde lisse et répétée — +1 en haut, −1 en bas, 0 sur les côtés. Tout ce qui se répète dans la nature, du son aux marées, est construit à partir de cela.`,
+      },
+      student: {
+        legend: `Le cercle unité (rayon 1) : le point à l'angle θ est en (cos θ, sin θ). Le panneau droit trace sin θ et cos θ à mesure que θ avance ; [[sin]] et [[cos]] lisent les valeurs en temps réel.`,
+        try: `Mets [[angle]] à 90° et lis [[sin]] et [[cos]] ; puis 0°, puis 45°. Confirme que sin² + cos² fait toujours 1.`,
+        notice: `<b>Le cosinus est la coordonnée x, le sinus la coordonnée y d'un point sur le cercle unité.</b> Ils glissent entre +1 et −1 et se répètent tous les 360°. Comme le rayon est 1, Pythagore donne sin²θ + cos²θ = 1 à tout angle — l'identité que tu viens de vérifier.`,
+      },
+      scholar: {
+        legend: `La définition du sinus et du cosinus via le cercle unité, avec leurs formes d'onde générées tandis que θ balaie. Le lien pointillé montre la projection qui devient la hauteur de l'onde.`,
+        try: `Trace un tour complet et note le déphasage d'un quart de tour entre cosinus et sinus, et où tan = sin/cos explose (θ = 90°, 270°).`,
+        notice: `<b>Sinus et cosinus sont la même onde à un quart de tour de distance, et chacun est la dérivée de l'autre.</b> Cette relation, \\(y'' = -y\\), est pourquoi ils décrivent toute oscillation, et à travers la formule d'Euler \\(e^{i\\theta} = \\cos\\theta + i\\sin\\theta\\) ils deviennent le langage naturel des ondes, des rotations et de l'analyse de Fourier.`,
+      },
+    },
+    gravity: {
+      junior: {
+        legend: `La boule ambre au centre est l'<b>étoile</b>. La boule colorée est une <b>planète</b> qui tourne autour d'elle. Le cercle pâle est le chemin qu'elle suit, la traînée lumineuse est où elle vient de passer, et la courte ligne ambre est la <b>gravité</b> — elle pointe toujours droit vers l'étoile.`,
+        try: `Fais glisser [[radius]] jusqu'à 40 et lis [[period]]. Maintenant porte-le à 80 — exactement le double. [[period]] double-t-il aussi ?`,
+        notice: `<b>Non — doubler la distance ne double pas l'année. Elle la triple presque.</b> [[period]] passe d'environ 37s à environ 106s, et la planète voyage aussi plus lentement plus elle est loin. C'est pourquoi Neptune met 165 années terrestres pour un seul tour du Soleil, tandis que la Terre en met une.`,
+      },
+      student: {
+        legend: `Sphère ambre = l'<b>étoile</b> (son rayon dessiné croît avec la masse que tu règles). Point coloré = une <b>planète</b> sur une orbite circulaire. Anneau pâle = le chemin orbital, traînée estompée = trajectoire récente, court vecteur ambre = la <b>force gravitationnelle</b>, toujours dirigée vers l'étoile.`,
+        try: `Double [[radius]] de 40 à 80 et compare les deux lectures de [[period]]. Puis garde le rayon fixe et pousse [[mass]] de 0,5 à 5, en regardant [[speed]].`,
+        notice: `<b>Doubler \\(r\\) ne double pas \\(T\\) — il le multiplie par environ 2,8.</b> C'est la troisième loi de Kepler, \\(T^2 \\propto r^3\\). La vitesse orbitale obéit à \\(v = \\sqrt{GM/r}\\), donc elle baisse à mesure que l'orbite s'élargit et monte avec la masse de l'étoile. Note aussi que la gravité pointe vers l'étoile tout le temps, pourtant la planète n'y tombe jamais — elle continue de se déplacer sur le côté assez vite pour toujours la manquer.`,
+      },
+      scholar: {
+        legend: `Sphère ambre = masse centrale \\(M\\) (dessinée à l'échelle, non en taille). Point coloré = une particule test sur une orbite circulaire de rayon \\(r\\). Anneau pâle = l'orbite, traînée estompée = chemin récent, vecteur ambre = l'accélération gravitationnelle centripète \\(GM/r^2\\).`,
+        try: `Échantillonne [[period]] à \\(r = 40, 80, 120\\) avec [[mass]] fixe, et estime la pente de \\(\\log T\\) contre \\(\\log r\\). Puis varie [[mass]] à rayon fixe et vérifie si \\(T \\propto M^{-1/2}\\).`,
+        notice: `<b>La pente log-log est exactement \\(3/2\\), donc doubler \\(r\\) multiplie \\(T\\) par \\(2^{3/2} \\approx 2,83\\).</b> En égalant accélération gravitationnelle et centripète, \\(GM/r^2 = v^2/r\\), on obtient \\(v = \\sqrt{GM/r}\\) et donc \\[T = \\frac{2\\pi r}{v} = \\frac{2\\pi r^{3/2}}{\\sqrt{GM}},\\] si bien que \\(T^2 = (4\\pi^2/GM)\\,r^3\\) et \\(T \\propto M^{-1/2}\\), comme le confirme le second test. La simulation intègre cette relation directement, donc [[mass]] remet à l'échelle la constante keplérienne \\(4\\pi^2/GM\\).`,
+      },
+    },
+    projectile: {
+      junior: {
+        legend: `La boule colorée est lancée depuis la gauche. La ligne pointillée montre le chemin qu'elle suivra, et le petit marqueur au sol est où elle atterrit. Elle monte tandis que la gravité ralentit sa montée, puis retombe — toujours un arc doux.`,
+        try: `Garde [[speed]] égale et mets [[angle]] à 45. Note [[range]]. Maintenant essaie 20, puis 70. Quel angle la lance le plus loin ?`,
+        notice: `<b>45° gagne à chaque fois.</b> Vise trop bas (20°) et elle touche le sol tôt ; vise trop raide (70°) et elle va haut mais pas loin. Exactement au milieu — 45° — divise le lancer équitablement entre « avant » et « haut », et cela atteint la distance maximale.`,
+      },
+      student: {
+        legend: `La vitesse de lancer se divise en une partie horizontale constante \\(v_0\\cos\\theta\\) et une partie verticale \\(v_0\\sin\\theta\\) que la gravité érode à \\(g\\). Courbe pointillée = la parabole prédite, marqueur au sol = la portée \\(R\\). Les pastilles lisent \\(R\\), la hauteur au sommet \\(H\\) et le temps de vol \\(T\\).`,
+        try: `Garde [[speed]] fixe et lance à [[angle]] = 30° ; lis [[range]]. Maintenant lance à 60° et compare les deux portées.`,
+        notice: `<b>30° et 60° donnent la portée identique.</b> Comme \\(R = v_0^2\\sin 2\\theta/g\\) et \\(\\sin 2\\theta\\) est symétrique autour de \\(\\theta = 45°\\), toute paire d'angles complémentaires \\((\\theta,\\,90°-\\theta)\\) atterrit au même point — l'un sur un arc plat et rapide, l'autre haut et lent. \\(\\sin 2\\theta\\) culmine à \\(2\\theta = 90°\\), et c'est exactement pourquoi 45° est l'angle le plus lointain.`,
+      },
+      scholar: {
+        legend: `Une accélération constante vers le bas \\(g\\) agissant sur la vitesse initiale \\((v_0\\cos\\theta,\\,v_0\\sin\\theta)\\). Éliminer le temps donne la parabole pointillée \\(y = x\\tan\\theta - gx^2/(2v_0^2\\cos^2\\theta)\\) ; le marqueur au sol est à la portée \\(R\\).`,
+        try: `Confirme la symétrie des angles complémentaires en échantillonnant [[range]] à [[angle]] = 30° et 60° à [[speed]] fixe, puis balaie [[angle]] autour de 45° pour localiser où [[range]] culmine.`,
+        notice: `<b>Le maximum est exactement à 45° — mais seulement parce qu'ici les altitudes de lancer et d'atterrissage sont égales.</b> La portée \\(R = (v_0^2/g)\\sin 2\\theta\\) est symétrique autour de 45° et maximale là. Élève le point de lancer et l'optimum glisse sous 45° à \\(\\arctan(v_0/\\sqrt{v_0^2+2gh})\\) ; ajoute une résistance de l'air quadratique et il descend encore — les vraies balles de baseball frappées vont plus loin près de 30–35°, et aucune portée en forme close ne survit.`,
+      },
+    },
+    newton: {
+      junior: {
+        legend: `Un bloc est sur une piste. La flèche verte est la <b>poussée</b> que tu appliques ; la flèche rouge est le <b>frottement</b> qui repousse. Le bloc accélère tant que la poussée l'emporte, puis revient au début et repart.`,
+        try: `Fais [[mass]] petite et [[force]] grande, et regarde [[accel]]. Maintenant double [[mass]] avec la même [[force]]. Qu'arrive-t-il à la vitesse d'accélération ?`,
+        notice: `<b>Doubler la masse divise par deux l'accélération.</b> La même poussée déplace un bloc lourd plus lentement — c'est \\(F = ma\\). Et si tu montes [[fric]] assez, le bloc ne bouge pas du tout : le frottement annule ta poussée, les forces s'équilibrent, et la première loi de Newton le tient immobile.`,
+      },
+      student: {
+        legend: `Un diagramme de corps libre sur une piste : vert = force appliquée, rouge = frottement cinétique \\(f = \\mu m g\\). La force nette \\(F_{\\text{net}} = F - f\\) donne l'accélération \\(a = F_{\\text{net}}/m\\) ; les pastilles lisent force nette, accélération et vitesse en temps réel.`,
+        try: `Garde [[force]] fixe et porte [[mass]] de basse à haute, en lisant [[accel]] chaque fois. Puis monte [[fric]] jusqu'à ce que le bloc refuse de bouger.`,
+        notice: `<b>L'accélération est proportionnelle à la force et inversement proportionnelle à la masse — exactement \\(a = F_{\\text{net}}/m\\).</b> Quand la force appliquée descend sous la limite de frottement \\(\\mu m g\\), la force nette est nulle et le bloc reste immobile : une démonstration de la première loi à forces équilibrées.`,
+      },
+      scholar: {
+        legend: `Une piste qui montre le net entre la force appliquée et le frottement de Coulomb. L'accélération est intégrée par \\(a = F_{\\text{net}}/m\\) et la vitesse par \\(a\\) ; le bloc se réinitialise pour courir à accélération constante à chaque cycle.`,
+        try: `Vérifie \\(a \\propto 1/m\\) en divisant par deux et en doublant [[mass]] à [[force]] fixe, puis localise le seuil de frottement où le mouvement cesse et compare-le à \\(\\mu m g\\).`,
+        notice: `<b>Le mouvement commence exactement à \\(F = \\mu m g\\), et l'accélération croît comme \\(1/m\\).</b> C'est l'angle à force-constante, masse-constante de \\(\\mathbf{F} = d\\mathbf{p}/dt\\). La sim utilise un seul \\(\\mu\\) cinétique ; les surfaces réelles ont un coefficient <i>statique</i> plus grand, donc la vraie force de décollement est un peu plus haute que la valeur dessinée ici.`,
+      },
+    },
+    circuits: {
+      junior: {
+        legend: `Une pile à gauche pousse un <b>courant</b> de charge le long de la boucle pour allumer l'ampoule à droite. Les points en mouvement sont la charge — plus ils courent vite, plus le courant est grand. Monte la pile et ils accélèrent ; ajoute de la résistance et ils ralentissent.`,
+        try: `Monte [[volt]] et regarde les points et l'ampoule. Maintenant monte [[res]] à la place. Lequel rend le courant plus grand, et lequel plus petit ?`,
+        notice: `<b>Plus de tension signifie plus de courant ; plus de résistance signifie moins.</b> C'est la loi d'Ohm, courant = tension ÷ résistance. La luminosité de l'ampoule suit la <i>puissance</i>, donc doubler la tension la rend bien plus que deux fois plus lumineuse.`,
+      },
+      student: {
+        legend: `Une seule boucle : une source de f.é.m. (pile) et une ampoule résistive. Les points se déplacent à une vitesse fixée par le courant \\(I = V/R\\), et l'éclat de l'ampoule suit la puissance \\(P = VI\\). Les pastilles lisent courant et puissance.`,
+        try: `Fixe [[res]] et double [[volt]] — vérifie que [[cur]] double. Puis garde [[volt]] et double [[res]] ; confirme que [[cur]] est divisé par deux.`,
+        notice: `<b>Le courant est exactement \\(V/R\\) : linéaire dans la tension, inversement proportionnel à la résistance.</b> La puissance, cependant, va comme \\(P = VI = V^2/R\\), donc doubler la tension <i>quadruple</i> la puissance — et c'est pourquoi l'ampoule s'illumine si drastiquement.`,
+      },
+      scholar: {
+        legend: `Un circuit ohmique à boucle unique idéalisé. La vitesse des porteurs de charge est dessinée proportionnelle à \\(I = V/R\\) et la luminance de l'ampoule à \\(P = V^2/R\\) ; le modèle suppose une résistance constante (aucun échauffement).`,
+        try: `Trace la droite \\(I\\)–\\(V\\) en variant [[volt]] à [[res]] fixe, puis change [[res]] pour voir changer la pente \\(1/R\\). Regarde comment [[pow]] suit \\(V^2/R\\), non \\(V\\).`,
+        notice: `<b>Le courant suit une droite par l'origine de pente \\(1/R\\) — la signature d'un élément ohmique.</b> Un filament réel se chauffe à mesure que \\(P\\) monte, sa résistance croît, et la droite se courbe. La sim montre le cas idéalisé à \\(R\\) constante : la tangente que seul un métal froid obéit exactement.`,
+      },
+    },
+    states: {
+      junior: {
+        legend: `Une boîte de particules. Le curseur est la <b>température</b>. Froides et elles se figent en un solide ordonné ; plus chaudes et elles glissent comme un liquide ; brûlantes et elles s'envolent comme un gaz. La barre à droite marque les points de fusion et d'ébullition.`,
+        try: `Pars froid et monte lentement [[temp]]. Regarde les particules passer de grille fixe, à fluides, à libres en vol. À quels points l'[[state]] change-t-il ?`,
+        notice: `<b>Mêmes particules — juste plus d'énergie.</b> Rien n'est ajouté ni retiré ; chauffer ne fait que déplacer les particules plus vite jusqu'à ce qu'elles se libèrent les unes des autres. C'est là toute la différence entre glace, eau et vapeur : non de quoi elles sont faites, mais à quelle vitesse elles se déplacent.`,
+      },
+      student: {
+        legend: `Théorie cinétique en action : la température fixe la vitesse moyenne des particules, et l'équilibre entre leur mouvement et leur attraction mutuelle fixe l'état. La barre latérale marque les points de fusion et d'ébullition.`,
+        try: `Monte [[temp]] lentement à travers le point de fusion, puis celui d'ébullition, en regardant l'arrangement changer de réseau → fluide → libre.`,
+        notice: `<b>La température est l'énergie cinétique moyenne, et l'état est un bras de fer.</b> Sous la fusion, l'attraction l'emporte (un réseau rigide) ; au-dessus de l'ébullition, le mouvement l'emporte (un gaz libre) ; entre les deux, un quasi-match nul (un liquide mobile). Les substances réelles font aussi une pause à chaque transition tandis que la chaleur latente rompt les liaisons.`,
+      },
+      scholar: {
+        legend: `Un schéma cinétique-moléculaire : la vitesse des particules croît avec T, et l'arrangement reflète si les forces intermoléculaires ou le mouvement thermique dominent.`,
+        try: `Balaie [[temp]] à travers les deux transitions et note que le changement qualitatif — réseau, liquide, gaz — est brusque, non graduel : la signature d'une transition de phase.`,
+        notice: `<b>Les changements d'état sont des transitions collectives, quasi-discontinues.</b> À pression fixe l'état bascule à des points nets de fusion et d'ébullition, et les franchir coûte de la chaleur latente sans hausse de température. Change la pression et ces points se déplacent — le compte complet est le diagramme de phase, avec ses points triple et critique.`,
+      },
+    },
+    waves: {
+      junior: {
+        legend: `Les deux ondes pâles — une bleue, une violette — sont deux <b>ondes</b> séparées qui voyagent. La ligne épaisse et lumineuse est ce que tu verrais et entendrais vraiment : les deux sommées, crête par crête.`,
+        try: `Laisse [[freq]] à 1 pour que les deux ondes coïncident. Maintenant fais glisser [[phase]] lentement de 0 jusqu'à environ 3,14 et regarde la ligne épaisse.`,
+        notice: `<b>L'onde épaisse se réduit à une ligne plate — deux ondes sommées donnent rien.</b> Quand tu décales une onde d'un demi-pas, ses crêtes tombent exactement sur les creux de l'autre et elles s'annulent. Somme son à son et tu obtiens le silence : c'est exactement comment fonctionnent les écouteurs à réduction de bruit. Pousse [[phase]] jusqu'à 6,28 (un pas entier) et l'onde revient rugissante.`,
+      },
+      student: {
+        legend: `Bleu pâle et violet pâle = les deux <b>ondes sources</b>. La courbe épaisse et lumineuse est leur <b>superposition</b>, la somme point par point. [[type]] rapporte si le résultat renforce ou annule, et [[amp]] donne la hauteur de pic comme multiple de celle d'une seule onde.`,
+        try: `Avec [[freq]] à 1, mets [[phase]] à 0 et lis [[amp]]. Puis porte [[phase]] à \\(\\pi \\approx 3.14\\) et relis-le. Enfin mets [[freq]] à 2 et regarde la forme changer de caractère.`,
+        notice: `<b>[[amp]] va de 2,00× jusqu'à 0,00× — renforcement total à annulation totale — sans changer l'énergie que tu injectes.</b> Les ondes se superposent linéairement : \\(y = A\\sin(kx-\\omega t) + A\\sin(kx-\\omega t+\\phi)\\), qui somme à \\(2A\\cos(\\phi/2)\\sin(kx-\\omega t+\\phi/2)\\). Le facteur d'amplitude \\(2A\\cos(\\phi/2)\\) s'évanouit à \\(\\phi=\\pi\\). Avec des fréquences différentes tu n'obtiens plus une seule onde propre mais un motif de <em>battement</em> répété.`,
+      },
+      scholar: {
+        legend: `Deux termes sources harmoniques d'amplitude égale \\(A\\), le second avec rapport de fréquence [[freq]] et phase relative [[phase]]. La courbe épaisse est leur superposition linéaire ; [[amp]] rapporte \\(\\max|y|/A\\).`,
+        try: `Garde [[freq]] à 1 et balaie [[phase]] sur \\([0, 2\\pi]\\), en comparant [[amp]] à \\(2|\\cos(\\phi/2)|\\). Puis mets [[freq]] à une valeur non entière comme 1,5 et observe que l'enveloppe ne se referme plus en une seule période.`,
+        notice: `<b>[[amp]] trace \\(2|\\cos(\\phi/2)|\\) exactement, et les rapports de fréquence irrationnels ne se répètent jamais.</b> La superposition découle de la linéarité de l'équation des ondes \\(\\partial_t^2 y = c^2 \\partial_x^2 y\\) : des sommes de solutions sont des solutions, et c'est ce qui rend l'analyse de Fourier possible. Pour \\(f_2/f_1 = p/q\\) rationnel le motif est périodique de période \\(q\\) cycles ; les rapports irrationnels sont quasi-périodiques et ne se répètent jamais exactement. Note que l'annulation redistribue l'énergie, ne la détruit pas — l'énergie supprimée ici réapparaît ailleurs dans le champ.`,
+      },
+    },
+    thermo: {
+      junior: {
+        legend: `La boîte tient des <b>particules</b> de gaz qui rebondissent, colorées par leur vitesse — bleu est lent, rouge est rapide. Le thermomètre à droite montre la température. Le graphe en dessous compte combien de particules ont chaque vitesse.`,
+        try: `Regarde le graphe à [[temp]] = 300. Maintenant fais glisser [[temp]] jusqu'à 1200 et compare : où la bosse s'est-elle déplacée, et qu'est-il arrivé à [[press]] ?`,
+        notice: `<b>Chauffer ne donne pas à chaque particule la même vitesse — cela déplace toute la bosse vers la droite et l'étale plus large.</b> Même dans un gaz brûlant certaines particules rampent et certaines courent. La température n'est pas la vitesse d'une particule ; c'est la <em>moyenne</em> sur des milliards. Les particules plus rapides frappent aussi les parois plus fort et plus souvent, et c'est exactement ce que [[press]] mesure — la raison pour laquelle une canette scellée explose dans le feu.`,
+      },
+      student: {
+        legend: `Un gaz idéal 2D à collisions élastiques. La couleur des particules encode la vitesse (bleu lent → rouge rapide), le thermomètre suit [[temp]], et le graphe en bas est la <b>distribution des vitesses</b> en temps réel avec son enveloppe. [[hits]], [[speed]] et [[press]] sont mesurés à partir des particules elles-mêmes, non supposés.`,
+        try: `Enregistre [[speed]] et [[press]] à [[temp]] = 300, puis à 1200 — un facteur 4. La vitesse monte-t-elle aussi de 4 ? Puis reviens à 300 et double plutôt [[num]].`,
+        notice: `<b>Quadrupler la température ne double que la vitesse moyenne, mais doubler le nombre de particules double la pression.</b> C'est \\(v_{\\text{rms}} \\propto \\sqrt{T}\\) — l'énergie cinétique, non la vitesse, est ce qui croît avec \\(T\\), via \\(\\tfrac12 m v^2 = \\tfrac{d}{2} k_B T\\). La pression suit cependant \\(PV = Nk_BT\\), linéaire en \\(N\\) comme en \\(T\\). La distribution que tu vois est la loi de <b>Maxwell–Boltzmann</b> : elle a un plancher rigide à vitesse nulle mais une queue illimitée, donc elle est fondamentalement asymétrique.`,
+      },
+      scholar: {
+        legend: `Gaz de disques rigides à volume fixe avec collisions élastiques à deux corps ; les vitesses sont initialisées et remises à l'échelle comme \\(v \\propto \\sqrt{T}\\). L'histogramme est la densité empirique instantanée des vitesses, et [[press]] est accumulée à partir de l'impulsion mesurée sur les parois par unité de temps.`,
+        try: `Vérifie l'échelle \\(v_{\\text{rms}} \\propto \\sqrt{T}\\) sur [[temp]] = 300, 600, 1200, puis garde \\(T\\) fixe et varie [[num]] pour confirmer \\(P \\propto N\\). Regarde à quelle vitesse l'histogramme se ré-équilibre dans son enveloppe après un saut soudain de température.`,
+        notice: `<b>La distribution se reforme en quelques temps de collision, quelle que soit la façon dont tu la perturbes.</b> En 2D la loi d'équilibre est \\(f(v) \\propto v\\,e^{-mv^2/2k_BT}\\) (la Maxwell–Boltzmann 3D porte \\(v^2\\)), et l'équipartition donne \\(\\langle E\\rangle = \\tfrac{d}{2}k_BT\\) par particule. La partie remarquable est la vitesse de l'approche : le <b>théorème H de Boltzmann</b> montre que le chaos moléculaire pilote toute distribution initiale monotonement vers celle-ci. La dynamique microscopique est parfaitement réversible dans le temps, pourtant la relaxation macroscopique ne l'est pas — l'origine de la flèche du temps.`,
+      },
+    },
+    particles: {
+      junior: {
+        legend: `Ceci est la vue de l'intérieur d'un détecteur de particules — les anneaux bleus sont ses couches. Appuie sur [[collide]] et deux protons courent des côtés et se percutent au centre. Les étincelles avec des lettres qui volent dehors sont les <b>nouvelles particules</b> créées par le choc ; le <b>H</b> rose est un boson de Higgs.`,
+        try: `Mets [[energy]] au minimum, 0,5, et appuie sur [[collide]] quelques fois. Compte à peu près combien d'étincelles volent dehors. Maintenant mets [[energy]] à 14 et percute de nouveau.`,
+        notice: `<b>Plus d'énergie fait plus de particules — le choc crée de la matière qui n'existait pas avant.</b> Les protons ne se fracassent pas en morceaux plus petits comme une assiette tombée ; leur énergie de mouvement se transforme en particules flambant neuves, parce que énergie et masse sont la même chose (\\(E = mc^2\\)). C'est pourquoi les physiciens construisent des accélérateurs de plus en plus grands : pour faire des particules plus lourdes, il faut plus d'énergie, et rien d'autre ne convient.`,
+      },
+      student: {
+        legend: `Une coupe schématique du détecteur : les anneaux concentriques sont des couches de traçage, et chaque point étiqueté est un produit de désintégration — quarks (u, d, s), gluons (g), électrons, photons, neutrinos et le Higgs (H). [[count]] compte les collisions ; [[energy]] est l'énergie du faisceau par proton.`,
+        try: `Compare le nombre et la variété des produits à [[energy]] = 0,5 contre 14. Regarde en particulier à quelle fréquence le <b>H</b> rose apparaît à chaque réglage.`,
+        notice: `<b>La multiplicité des produits monte avec l'énergie du faisceau, et les particules lourdes n'apparaissent que quand il y a de l'énergie pour les payer.</b> Une collision convertit l'énergie cinétique en masse au repos via \\(E = mc^2\\), donc produire un Higgs (125 GeV/c²) exige une énergie de collision bien au-dessus de ce seuil. C'est pourquoi le LHC tourne à 13–14 TeV plutôt qu'à quelque chose de moins cher : le Higgs était simplement inaccessible à des énergies plus basses, et la particule ne fut trouvée qu'en 2012 quand la machine put l'atteindre.`,
+      },
+      scholar: {
+        legend: `Schéma d'un événement de collisionneur de hadrons : couches de traçage concentriques, avec des produits dans l'état final tirés du spectre du Modèle Standard. La multiplicité croît avec \\(\\sqrt{s}\\) dans ce modèle ; le marqueur H dénote un candidat Higgs.`,
+        try: `Porte [[energy]] sur tout son intervalle et note comment croît la multiplicité. Considère quelle fraction d'événements devrait contenir un H pour une revendication de découverte, étant donné que la vraie section efficace de production du Higgs est \\(\\sim\\!10^{-10}\\) du taux inélastique total.`,
+        notice: `<b>Le taux ici est follement généreux — un Higgs réel apparaît dans environ une collision sur \\(10^{10}\\).</b> La découverte est donc un problème de statistique, non de détection : le LHC produit ~600 millions de collisions par seconde et les physiciens chassent une poignée d'événements contre un fond de QCD écrasant, exigeant \\(5\\sigma\\) (une probabilité de fausse alerte de \\(3\\times10^{-7}\\)) avant de revendiquer un signal. Les 17 champs du Modèle Standard rendent compte de chaque particule vue ici, et prédisent le moment magnétique de l'électron à 12 chiffres significatifs — pourtant ils ne contiennent aucun candidat pour la matière noire et aucune gravité.`,
+      },
+    },
+    tectonics: {
+      junior: {
+        legend: `Deux plaques de la croûte terrestre se rencontrent au centre, et les points sont de la roche entraînée avec elles. La barre en haut à gauche est [[stress]] — la tension qui s'accumule là où elles sont coincées ensemble. Quand elle se remplit complètement, la roche se brise.`,
+        try: `Mets [[speed]] à 1 et regarde combien de temps [[stress]] met à se remplir. Maintenant mets-la à 10 et regarde de nouveau.`,
+        notice: `<b>Des plaques plus rapides remplissent la barre de tension bien plus vite, donc les séismes reviennent bien plus souvent — mais chacun attend quand même que la barre soit pleine.</b> Les plaques ne glissent jamais vraiment de façon lisse ; le frottement les coince, la tension s'accumule pendant des décennies ou des siècles, puis se libère en secondes. C'est pourquoi les séismes paraissent soudains même si la cause est angoissamment lente : tes ongles poussent à peu près à la vitesse à laquelle se déplacent les continents. Essaie [[quake]] pour libérer la tension en avance et regarde la barre descendre.`,
+      },
+      student: {
+        legend: `Une limite de plaque en coupe. [[type]] alterne entre géométrie divergente, transformante et convergente ; [[speed]] fixe la vitesse relative des plaques. [[stress]] est la tension élastique accumulée, libérée comme événement quand elle sature, la magnitude étant rapportée dans [[event]].`,
+        try: `Chronomètre combien de temps [[stress]] met à saturer à [[speed]] = 2 contre 8. Puis utilise [[quake]] pour libérer la tension en avance, à répétition, et compare les magnitudes dans [[event]] à celles de la saturation naturelle.`,
+        notice: `<b>La tension s'accumule linéairement et se libère instantanément — le modèle de <b>rebond élastique</b> que Reid déduisit de la rupture de San Francisco de 1906.</b> L'intervalle de récurrence croît inversement avec la vitesse de la plaque, et c'est pourquoi la limite Nazca–Amérique du Sud (~7 cm/an) se rompt bien plus souvent que les contextes intraplaques. Libérer en avance donne des événements plus petits, et c'est le noyau de vérité derrière « les petits séismes déchargent la tension » — mais la vérité est subtile : la magnitude est logarithmique dans l'énergie, donc il faut environ 32 petits M5 pour libérer l'énergie d'un M6, et environ un million de M2 pour remplacer un M6.`,
+      },
+      scholar: {
+        legend: `Limite stick-slip idéalisée avec accumulation linéaire de tension \\(\\dot\\sigma \\propto v_{\\text{plate}}\\) et chute complète de la contrainte à un seuil de rupture fixe — un modèle à séisme caractéristique. [[type]] sélectionne la cinématique de la limite ; [[event]] rapporte la magnitude de moment.`,
+        try: `Examine les statistiques de récurrence que ce modèle produit à [[speed]] fixe. Compare sa distribution de magnitude à la loi de Gutenberg–Richter \\(\\log_{10}N = a - bM\\) avec \\(b \\approx 1\\), et identifie ce que le modèle ne peut reproduire.`,
+        notice: `<b>Ce modèle est délibérément périodique ; la sismicité réelle ne l'est pas, et cet écart est pourquoi la prévision a échoué.</b> Des séismes parfaitement caractéristiques seraient prévisibles, pourtant les catalogues observés suivent Gutenberg–Richter avec \\(b\\approx1\\) — invariant d'échelle, sans dimension caractéristique — et les intervalles de récurrence sur des failles bien étudiées varient de facteurs de plusieurs unités (le cycle « de 22 ans » de Parkfield dura notoirement 38). Le frottement rate-and-state et la criticité auto-organisée impliquent tous deux la même conclusion : les petites ruptures cascadent en grandes sans aucun précurseur distinctif, donc la taille d'un événement pourrait être indéterminée à la nucléation. Le risque sismique est donc coté de façon probabiliste ; la prévision déterministe n'est pas actuellement considérée comme atteignable.`,
+      },
+    },
+    ocean: {
+      junior: {
+        legend: `Ceci est l'Atlantique vu de côté, les tropiques à gauche et l'extrême nord à droite. Les points en mouvement sont de l'eau : l'eau chaude coule vers le nord le long du sommet, se refroidit, devient lourde et plonge, puis revient en rampant vers le sud le long du fond. [[amoc]] montre la force de ce tour.`,
+        try: `Regarde la plongée à droite à [[warm]] = 0. Maintenant fais glisser [[warm]] jusqu'à 10 et continue de regarder à la fois la plongée et [[amoc]].`,
+        notice: `<b>Réchauffer l'océan fait ralentir et s'arrêter le tapis roulant — [[amoc]] descend de 100% à 20%.</b> Le tour fonctionne parce que l'eau froide et salée est assez lourde pour plonger ; réchauffe-la et elle reste à flot, donc toute la courroie bégaie. Cette courroie est ce qui porte la chaleur tropicale à l'Europe, et c'est pourquoi la Grande-Bretagne est bien plus douce que le Canada à la même latitude. Réchauffer la planète pourrait, paradoxalement, rendre l'Europe du nord considérablement plus froide.`,
+      },
+      student: {
+        legend: `Coupe méridienne de la circulation de retournement atlantique. Le flux de surface est piloté par [[wind]] ; la formation d'eau profonde au nord dépend de la densité, que [[warm]] réduit. [[flow]] rapporte le transport en sverdrups (1 Sv = 10⁶ m³/s) et [[amoc]] la force du retournement.`,
+        try: `Garde [[wind]] fixe et porte [[warm]] de 0 à 10, en enregistrant [[amoc]] à chaque pas. La réponse est-elle linéaire ? Puis varie [[wind]] seul et vois s'il peut compenser un [[amoc]] affaibli.`,
+        notice: `<b>[[amoc]] baisse linéairement ici (8% par unité de réchauffement) et le vent ne peut le sauver — les deux moteurs ne sont pas interchangeables.</b> Le retournement est piloté par la densité, donc tant l'adoucissement que le réchauffement le suppriment tandis que le vent ne mélange que la surface. L'AMOC transporte ~1,3 PW vers le nord, environ un quart du flux total de chaleur vers les pôles de la planète, et les observations depuis 2004 (réseau RAPID) suggèrent une tendance à l'affaiblissement contre une forte variabilité. Le danger du système réel est ce que ce modèle linéaire omet : une rétroaction d'advection du sel qui peut rendre l'effondrement auto-renforçant plutôt que graduel.`,
+      },
+      scholar: {
+        legend: `AMOC schématique avec transport de surface piloté par le vent et formation d'eau profonde contrôlée par la flottabilité ; [[warm]] agit comme un forçage de flottabilité qui supprime la convection. [[amoc]] est un substitut linéaire de la force du retournement.`,
+        try: `Note que [[amoc]] ici répond linéairement et réversiblement à [[warm]]. Considère quelle observable distinguerait ce comportement d'un système doté de bistabilité, et ce que cela implique pour l'alerte précoce.`,
+        notice: `<b>La linéarité est la fausseté clé du modèle : l'analyse à deux boîtes de Stommel montre que l'AMOC est plausiblement <em>bistable</em>, avec une bifurcation nœud-col et de l'hystérésis.</b> Le mécanisme est la rétroaction d'advection du sel — un retournement plus faible importe moins de sel vers le nord, réduisant encore la densité et l'affaiblissant de nouveau — qui admet un état « éteint » persistant même si le forçage est retiré. Les preuves paléo (événements de Dansgaard–Oeschger, l'événement de 8,2 ka) montrent des réorganisations brusques sur des échelles de temps décennales. Comme la transition est une bifurcation plutôt qu'un seuil dans le forçage, l'espoir pratique repose sur les indicateurs de ralentissement critique : variance et autocorrélation croissantes dans les empreintes de SST, que diverses analyses affirment désormais détecter, même si le cas statistique reste contesté.`,
+      },
+    },
+    volcano: {
+      junior: {
+        legend: `Sous la montagne il y a une chambre de roche fondue. Du magma frais continue d'arriver d'en bas, donc [[pres]] monte constamment ; quand la chambre n'en peut plus prendre, le volcan entre en éruption. [[phase]] te dit à quel stade il est, et [[vei]] évalue la violence de l'éruption.`,
+        try: `Mets [[visc]] à 1 — fluide, comme à Hawaï — et appuie sur [[erupt]], en notant [[vei]]. Maintenant mets-la à 10, le type collant, et fais éruption de nouveau.`,
+        notice: `<b>Le magma fluide donne une douce explosion d'environ 1 ; le magma collant donne un 7 — des centaines de fois plus violente, à partir de la même pression exacte.</b> La différence est si le gaz parvient à sortir. Dans le magma fluide les bulles s'échappent facilement et la lave se déverse simplement, donc tu peux marcher près d'une éruption hawaïenne. Dans le magma collant le gaz est piégé jusqu'à ce que le tout éclate d'un coup, comme secouer une boisson gazeuse et l'ouvrir brusquement. Même pression, journée toute différente.`,
+      },
+      student: {
+        legend: `Une chambre magmatique et un conduit. [[recharge]] fixe le taux d'apport de magma, donc [[pres]] monte jusqu'à la rupture ; [[visc]] va de composition basaltique (1) à rhyolitique (10). [[vei]] est l'Indice d'Explosivité Volcanique de l'éruption résultante.`,
+        try: `Fais éruption à [[visc]] = 1, 5 et 10 depuis pleine pression, en enregistrant [[vei]] chaque fois. Puis change [[recharge]] et vérifie si cela altère [[vei]] ou seulement le temps d'attente.`,
+        notice: `<b>La viscosité fixe la violence, la recharge ne fixe que la fréquence — [[vei]] va de 1 à 7 sur l'intervalle de viscosité à pression identique.</b> La viscosité est gouvernée principalement par la teneur en silice : le basalte (~50% SiO₂) est assez fluide pour que les bulles s'échappent en continu, tandis que la rhyolite (~70%) polymérise en un fondu si rigide que les volatils restent dissous jusqu'à la fragmentation. Comme le VEI est logarithmique dans le volume émis, cet intervalle de 1 à 7 est environ un million de fois de différence en matière. C'est aussi pourquoi les volcans dangereux sont les tranquilles : les longs intervalles de repos laissent s'accumuler un magma évolué, riche en gaz et visqueux.`,
+      },
+      scholar: {
+        legend: `Système chambre–conduit avec recharge volumétrique et un seuil de rupture. [[visc]] paramétrise la composition du fondu ; la fragmentation explosive est déclenchée au-dessus d'un seuil de viscosité. [[vei]] croît à la fois avec la surpression stockée et la viscosité.`,
+        try: `Cartographie [[vei]] sur le plan ([[visc]], [[pres]]) en forçant des éruptions à différentes pressions. Considère quelle variable physique le modèle omet de façon flagrante, et si son absence rend le modèle optimiste ou pessimiste.`,
+        notice: `<b>L'omission est la teneur en volatils dissous — le vrai moteur de l'explosivité, dont la viscosité n'est ici qu'un substitut.</b> La fragmentation se produit quand la surpression des bulles dépasse la résistance à la traction du fondu, gouvernée par le taux de décompression et la solubilité de \\(\\mathrm{H_2O}\\)/\\(\\mathrm{CO_2}\\) (loi de Henry : \\(\\sim\\)4–6 % en masse d'H₂O aux profondeurs rhyolitiques de chambre). Viscosité et teneur en volatils corrèlent via la silice, donc le substitut tient statistiquement tout en manquant le mécanisme. Deux conséquences que le modèle ne peut montrer : la transition plinienne–effusive peut basculer au sein d'une <em>seule</em> éruption à mesure que les conditions du conduit évoluent (Mount St. Helens 1980), et le VEI, fondé sur le volume, sous-estime systématiquement l'impact climatique d'éruptions riches en soufre mais petites — les 20 Mt de SO₂ du Pinatubo refroidirent la planète de 0,5°C malgré un VEI de seulement 6.`,
+      },
+    },
+    seasons: {
+      junior: {
+        legend: `La Terre (avec son inclinaison) qui orbite le Soleil. Déplace-toi entre les mois et regarde quelle moitié de la Terre s'incline vers le Soleil — cette moitié a l'été.`,
+        try: `Fais glisser [[month]] sur une année entière. Quand la moitié nord s'incline vers le Soleil, que dit [[nh]] — et que fait [[sh]] au même moment ?`,
+        notice: `<b>C'est l'inclinaison, pas la distance.</b> La distance de la Terre au Soleil change à peine ; ce qui change est quelle moitié s'incline vers le Soleil. Cette moitié reçoit une lumière plus directe et des jours plus longs — l'été — tandis que l'autre a l'hiver. C'est pourquoi les deux hémisphères sont toujours en saisons opposées.`,
+      },
+      student: {
+        legend: `La Terre qui orbite le Soleil avec une inclinaison axiale fixe de 23,5°. L'hémisphère éclairé et les étiquettes des saisons se mettent à jour avec le mois ; l'orbite est dessinée quasi circulaire à dessein.`,
+        try: `Porte [[month]] aux solstices de juin et décembre (axe incliné au maximum vers ou loin du Soleil) et aux équinoxes au milieu, en regardant [[nh]] cycler été → automne → hiver → printemps.`,
+        notice: `<b>L'inclinaison reste fixe dans l'espace, donc chaque hémisphère s'incline alternativement vers et loin du Soleil.</b> S'incliner vers donne un Soleil plus haut et des jours plus longs — plus de réchauffement — ce qui est l'été. L'orbite quasi circulaire est tout l'enjeu : la distance est quasi constante, donc elle ne peut pas être la cause.`,
+      },
+      scholar: {
+        legend: `Un schéma de l'orbite terrestre à obliquité fixe. La saison suit l'hémisphère sous-solaire ; l'orbite est dessinée quasi circulaire pour refléter la minuscule excentricité.`,
+        try: `Localise les solstices et les équinoxes, et note que la saison est fixée par la géométrie axe-Soleil, indépendante des petits changements de distance orbitale.`,
+        notice: `<b>L'insolation va comme la constante solaire multipliée par le cosinus de l'angle zénithal du Soleil, multiplié par la durée du jour — et l'inclinaison pilote les deux.</b> L'excentricité (0,017) ne change la distance que de ~3%, une modulation mineure. Sur de longues durées la lente dérive de l'inclinaison, de l'excentricité et de la précession — les cycles de Milankovitch — remélange cette géométrie et rythme les ères glaciaires.`,
+      },
+    },
+    sorting: {
+      junior: {
+        legend: `Chaque barre est un nombre en attente d'être mis en ordre — barres courtes petites, barres hautes grandes. Appuyer sur un bouton de tri fait réordonner l'ordinateur, pas à pas. [[comps]] compte combien de fois il a comparé deux barres, et [[swaps]] combien de fois il les a déplacées.`,
+        try: `Fais glisser [[size]] à 80. Appuie sur [[bubble]] et laisse-le finir — note [[comps]]. Maintenant appuie sur [[merge]] à la même taille et compare.`,
+        notice: `<b>Le tri à bulles a besoin d'environ 3 160 comparaisons ; le tri fusion d'environ 400 — près de huit fois moins, pour exactement le même résultat.</b> Le tri à bulles compare les voisins encore et encore, donc le travail croît avec le carré de la liste. Le tri fusion divise le tas en deux, trie chaque moitié, puis fusionne — et diviser à répétition est énormément moins cher. La stratégie que tu choisis compte plus que la vitesse de ton ordinateur : sur un million d'éléments cet écart devient des jours contre des secondes.`,
+      },
+      student: {
+        legend: `Un visualiseur en direct de tris par comparaison. La hauteur de la barre est la valeur ; [[comps]] et [[swaps]] sont comptés pendant que l'algorithme tourne. [[algo]] nomme la méthode en exécution et sa classe asymptotique.`,
+        try: `Fais tourner [[bubble]] à [[size]] = 20, 40 et 80, en notant [[comps]] chaque fois. Le compte double-t-il quand la taille double, ou fait-il quelque chose de plus dramatique ? Puis répète avec [[merge]].`,
+        notice: `<b>Le compte du tri à bulles quadruple environ quand tu doubles la taille ; celui du tri fusion un peu plus que double.</b> C'est la différence entre \\(\\Theta(n^2)\\) — exactement \\(n(n-1)/2 = 3160\\) comparaisons à \\(n=80\\) — et \\(\\Theta(n\\log n)\\), environ \\(n\\log_2 n \\approx 506\\). L'écart s'élargit sans limite : à un million d'éléments c'est \\(5\\times10^{11}\\) contre \\(2\\times10^{7}\\), environ 25 000 fois. Voilà pourquoi la complexité algorithmique, non la vitesse d'horloge, fixe ce qui est calculatoirement possible.`,
+      },
+      scholar: {
+        legend: `Tris par comparaison instrumentés sur une permutation aléatoire uniforme. [[comps]] est le compte exact des comparaisons, [[swaps]] le compte des écritures — des mesures de coût distinctes que différents matériels pondèrent différemment.`,
+        try: `Ajuste la croissance de [[comps]] contre [[size]] pour les deux algorithmes. Puis considère : un algorithme fondé sur les comparaisons pourrait-il battre le taux de croissance du tri fusion, et qu'exigerait-il ?`,
+        notice: `<b>Aucun tri par comparaison ne peut faire mieux — \\(\\Omega(n\\log n)\\) est une borne inférieure démontrée, et le tri fusion l'atteint.</b> L'argument est de théorie de l'information : une comparaison rend un bit, il y a \\(n!\\) ordonnancements possibles, donc tout arbre de décision a besoin d'une profondeur \\(\\ge \\log_2(n!) = \\Theta(n\\log n)\\) par Stirling. Trier plus vite exige donc d'abandonner les comparaisons entièrement — radix et counting sort atteignent \\(O(n)\\) en exploitant la structure des clés. Note aussi que [[comps]] et [[swaps]] divergent nettement : sur le matériel moderne, le comportement du cache et la prédiction des branchements comptent souvent plus que ces deux comptes.`,
+      },
+    },
+    ml: {
+      junior: {
+        legend: `Les quatre groupes de points sont deux types de chose que l'ordinateur doit apprendre à distinguer — regarde bien, le même type est dans des coins <em>opposés</em>. Le fond coloré est l'hypothèse actuelle de l'ordinateur pour chaque point de la carte. À droite se trouve son petit cerveau : entrées, [[hid]] au milieu, une réponse. [[loss]] montre combien il se trompe encore.`,
+        try: `Essaie de séparer les deux types avec une seule ligne droite — tu n'y arrives pas. Maintenant mets [[hid]] à 2, appuie sur [[reset]] et regarde [[acc]]. Puis mets [[hid]] à 10, appuie sur [[reset]] et regarde de nouveau.`,
+        notice: `<b>Une seule ligne droite ne peut jamais marcher ici, mais avec assez d'unités cachées l'ordinateur plie la frontière dans la bonne forme et [[acc]] monte vers 100%.</b> Personne ne lui a dit quelle forme dessiner. Il est parti d'hypothèses aléatoires et les a simplement ajustées, encore et encore, dans toute direction qui rendait [[loss]] plus petit. Cet ajustement patient — des millions de petites corrections — est tout ce que « apprendre » signifie pour une machine.`,
+      },
+      student: {
+        legend: `Un réseau feed-forward 2-[[hid]]-1 à activations sigmoïdes, entraîné par rétropropagation sur un jeu de données <b>de type XOR</b> : les deux classes occupent des coins diagonalement opposés. La heatmap est la surface de décision actuelle, [[loss]] est l'erreur RMS et [[acc]] le taux de classification.`,
+        try: `Mets [[hid]] à 2 et appuie sur [[reset]] plusieurs fois, en notant où [[acc]] se stabilise à chaque tour. Puis mets [[hid]] à 10 et répète. La même architecture atteint-elle toujours la même réponse ?`,
+        notice: `<b>Avec 2 unités cachées l'issue est incohérente — certains tours le résolvent, d'autres se bloquent près de 75% — tandis que 10 unités réussissent presque à chaque fois.</b> XOR est le problème canonique <em>non linéairement séparable</em> : aucun hyperplan seul ne divise ces classes, et c'est exactement la limite que Minsky et Papert utilisèrent en 1969 pour montrer que les perceptrons étaient fondamentalement restreints, gelant le domaine pendant plus d'une décennie. Deux unités cachées suffisent théoriquement mais laissent presque aucune marge d'erreur, donc la descente de gradient atterrit souvent dans un mauvais minimum local. Les unités supplémentaires n'ajoutent pas tant de puissance qu'elles n'ajoutent de <em>voies</em> vers la solution.`,
+      },
+      scholar: {
+        legend: `MLP à deux couches, \\(2 \\to H \\to 1\\), sigmoïde partout, entraîné par descente de gradient full-batch avec taux d'apprentissage \\(\\propto\\) [[lr]]. Le jeu de données est quatre clusters gaussiens en configuration XOR ; la heatmap rend \\(\\sigma(W_2^\\top\\sigma(W_1x+b_1)+b_2)\\).`,
+        try: `Garde [[hid]] à 2 et re-[[reset]] à répétition, en enregistrant la distribution de la [[acc]] finale. Puis augmente [[hid]] et observe comment cette distribution change. Considère ce que cela implique sur le paysage de la perte plus que sur la capacité représentative.`,
+        notice: `<b>La capacité n'est pas la contrainte serrée — c'est l'optimisation. Deux unités cachées peuvent représenter XOR exactement, pourtant elles échouent souvent à le trouver.</b> Les échecs sont de mauvais minima locaux et des points de selle dans un paysage non convexe. Élargir le réseau n'augmente pas l'expressivité ici ; il rend le paysage plus bénin, et dans la limite sur-paramétrée presque tous les minima locaux s'approchent de la valeur globale. C'est pourquoi la pratique moderne favorise des réseaux bien plus grands que la tâche ne l'exige, et pourquoi ils généralisent malgré tout — une contradiction apparente du raisonnement classique biais–variance qui motiva la littérature sur la double descente.`,
+      },
+    },
+    crypto: {
+      junior: {
+        legend: `Alice à gauche et Bob à droite veulent un nombre secret partagé. L'œil en haut est un <b>espion</b> qui voit absolument tout ce qu'ils envoient. Regarde les nombres voyager à travers, et garde l'œil sur [[key]] à la fin.`,
+        try: `Appuie sur [[run]] et suis chaque nombre qui traverse le centre. Puis demande-toi : la [[key]] finale a-t-elle jamais traversé ?`,
+        notice: `<b>Non — la clé partagée n'a jamais traversé le fil, pourtant Alice et Bob ont fini tous deux avec le même nombre.</b> Chacun a gardé pour soi un nombre secret et n'a envoyé qu'un mélange brassé. Par la façon dont le brassage fonctionne, combiner son propre secret avec le mélange de l'autre personne donne la même réponse dans les deux sens. L'espion a vu chaque message et ne peut toujours pas le reproduire — ce qui est à peu près ce qui protège les données de ta carte chaque fois que tu achètes quelque chose en ligne.`,
+      },
+      student: {
+        legend: `<b>Échange de clés Diffie–Hellman</b> avec paramètres publics \\(p=23\\), \\(g=5\\). Alice et Bob choisissent chacun un exposant privé, publient \\(g^a \\bmod p\\) et \\(g^b \\bmod p\\), puis élèvent la valeur de l'autre à leur propre exposant. [[step]] parcourt le protocole ; [[key]] est le secret convenu.`,
+        try: `Appuie sur [[run]] et note chaque valeur publique qui traverse. En n'utilisant que celles-là et les publics \\(p\\) et \\(g\\), essaie de retrouver l'un des deux exposants privés — puis vérifie ta réponse contre [[key]].`,
+        notice: `<b>Les deux parties calculent \\((g^a)^b = (g^b)^a = g^{ab} \\bmod p\\), une valeur jamais transmise.</b> Récupérer \\(a\\) depuis \\(g^a \\bmod p\\) est le <b>problème du logarithme discret</b>. Avec \\(p=23\\) tu peux le résoudre par force brute en 23 essais ; avec un premier de 2048 bits la même recherche est calculatoirement sans espoir. L'asymétrie est tout : l'exponentiation est bon marché, l'inverser ne l'est pas. Note que cela établit un secret partagé entre étrangers mais ne les <em>authentifie</em> pas — le DH pur est entièrement ouvert à une attaque de l'homme du milieu.`,
+      },
+      scholar: {
+        legend: `DH sur \\(\\mathbb{Z}_p^*\\) avec \\(p=23\\), \\(g=5\\) un générateur. La sécurité repose sur l'hypothèse <b>Diffie–Hellman calculatoire</b> ; l'adversaire passif observe \\((g, p, g^a, g^b)\\) et doit produire \\(g^{ab}\\).`,
+        try: `Note que \\(p=23\\) rend le log discret trivialement cassable par recherche exhaustive. Estime la taille de groupe nécessaire pour résister à l'index calculus, et oppose-la à la taille de clé qu'un groupe à courbe elliptique exigerait pour une sécurité équivalente.`,
+        notice: `<b>Le DH sur corps finis a besoin de ~2048–3072 bits pour ~112–128 bits de sécurité ; une courbe elliptique n'en exige que ~256.</b> L'écart existe parce que \\(\\mathbb{Z}_p^*\\) admet l'index calculus sous-exponentiel, \\(L_p[1/3, 1.923]\\), tandis que les courbes elliptiques générales n'admettent que des attaques génériques \\(O(\\sqrt{n})\\). La sécurité exige aussi un sous-groupe d'ordre premier — Logjam (2015) montra que des premiers partagés de 512 bits plus un downgrade au grade export cassaient le vrai TLS à grande échelle. Tout cela tombe face à un ordinateur quantique assez grand via l'algorithme de Shor, et c'est pourquoi l'accord de clés post-quantique est passé à des constructions sur réseaux comme ML-KEM.`,
+      },
+    },
+    complexity: {
+      junior: {
+        legend: `Chaque courbe montre combien de <b>travail</b> il faut à un type d'algorithme différent à mesure que le problème grandit. Les plates le remarquent à peine ; la raide gicle hors du haut du graphe. [[ops]] est le travail nécessaire pour la taille actuelle, et [[cls]] nomme la méthode sélectionnée.`,
+        try: `Mets [[algo]] à 5 — le type le plus raide. Maintenant fais glisser [[n]] lentement de 2 jusqu'à 22, en regardant [[ops]] tout du long.`,
+        notice: `<b>Le travail explose de 4 à plus de quatre millions — pour un problème qui n'a grandi que de 2 éléments à 22.</b> Chaque élément supplémentaire <em>double</em> le travail, donc peu importe la vitesse de ton ordinateur : ajoute encore trente éléments et aucune machine qui existera jamais ne pourrait finir. Certains problèmes ne sont pas difficiles parce qu'on n'a pas encore trouvé l'astuce maligne ; ils sont difficiles par la façon dont le travail croît. Ramène [[algo]] à 1 et regarde le même problème devenir trivial.`,
+      },
+      student: {
+        legend: `Courbes de croissance pour cinq classes de complexité, de \\(O(\\log n)\\) à \\(O(2^n)\\), tracées contre la taille d'entrée. [[n]] déplace le point d'évaluation, [[algo]] sélectionne une classe, et [[ops]] rapporte le compte d'opérations à l'\\(n\\) actuel.`,
+        try: `À [[n]] = 22, porte [[algo]] de 1 à 5 et enregistre [[ops]] chaque fois. Puis calcule combien de temps de plus prendrait \\(O(2^n)\\) à \\(n = 60\\), en supposant un milliard d'opérations par seconde.`,
+        notice: `<b>À \\(n=22\\) les classes vont de 5 opérations à 4 194 304 — et à \\(n=60\\), \\(2^n\\) est \\(1{,}15\\times10^{18}\\) opérations, environ 36 ans à un milliard par seconde.</b> C'est pourquoi les classes de complexité dominent le calcul pratique : les gains matériels multiplient ta vitesse par une constante, mais une exponentielle avale entière n'importe quelle constante. Doubler la vitesse du CPU achète exactement <em>un</em> élément d'entrée de plus sur un algorithme \\(O(2^n)\\). Note le revers — pour un \\(n\\) petit, un algorithme exponentiel à constante minuscule peut vraiment battre un « meilleur ».`,
+      },
+      scholar: {
+        legend: `Croissance asymptotique de \\(\\log n\\), \\(n\\), \\(n\\log n\\), \\(n^2\\) et \\(2^n\\). [[ops]] évalue la classe sélectionnée à [[n]] ; les intersections illustrent que la dominance asymptotique ne dit rien du comportement à petit \\(n\\).`,
+        try: `Identifie où les courbes \\(n^2\\) et \\(2^n\\) se croisent, et note laquelle est la moins chère sous ce point. Puis considère : un algorithme \\(O(n^{100})\\) appartient-il à la même catégorie pratique que \\(O(n\\log n)\\), puisque les deux sont polynomiaux ?`,
+        notice: `<b>\\(n^2\\) bat \\(2^n\\) seulement jusqu'à \\(n \\approx 4\\) ; pourtant \\(O(n^{100})\\) est « efficace » selon la définition formelle et totalement inutile en pratique.</b> La ligne polynomial/exponentiel est la <b>thèse de Cobham–Edmonds</b> — une frontière théorique robuste (close par composition, indépendante du modèle de machine) qui est malgré tout un mauvais substitut de la faisabilité. Si \\(\\text{P} = \\text{NP}\\) demande si vérification et découverte sont également difficiles, et reste ouvert. En pratique les instances difficiles sont souvent rares : les solveurs SAT expédient couramment des problèmes industriels à des millions de variables, parce que la complexité du pire cas décrit un adversaire, non les entrées que tu rencontres réellement.`,
+      },
+    },
+    life: {
+      junior: {
+        legend: `Chaque carré est une <b>cellule</b> vivante ou morte. À chaque génération, toutes les cellules regardent leurs huit voisins et suivent la même minuscule règle : trop peu de voisins et une cellule meurt de solitude, trop et elle meurt de surpeuplement, juste comme il faut et une nouvelle naît. [[gen]] compte les tours.`,
+        try: `Appuie sur [[random]] pour éparpiller des cellules vivantes partout, puis regarde [[alive]] pendant une minute sans rien toucher.`,
+        notice: `<b>Le chaos se range de lui-même en formes ordonnées et répétées — des blocs immobiles, de petits motifs qui clignotent pour toujours, et de petits planeurs qui marchent sur l'écran.</b> Personne n'a programmé un bloc ou un planeur ; ils tombent simplement de l'unique règle sur les voisins. Appuie sur [[clear]] puis sur [[glider]] pour en regarder un seul marcher tout seul. L'ordre qui émerge de règles très simples sans personne aux commandes s'appelle l'<b>émergence</b>, et c'est ainsi que des colonies de fourmis, des nuées et tes propres cellules s'organisent.`,
+      },
+      student: {
+        legend: `Le <b>Jeu de la vie</b> de Conway sur une grille qui s'enroule (toroïdale). La règle est B3/S23 : une cellule morte avec exactement 3 voisins vivants naît, une vivante survit avec 2 ou 3, tout le reste meurt. [[gen]] est le compte des pas, [[alive]] la population de cellules vivantes. Clique un carré pour le commuter.`,
+        try: `Appuie sur [[random]] et suis [[alive]] pendant quelques centaines de générations. Se range-t-il, et à peu près quelle fraction de la population initiale survit ? Puis [[clear]] et place un seul [[glider]].`,
+        notice: `<b>Une soupe aléatoire s'effondre en une population basse et quasi constante de natures mortes et d'oscillateurs, typiquement seulement quelques pour cent de la grille.</b> Pourtant la même règle soutient un planeur qui voyage d'une cellule en diagonale toutes les quatre générations. Life est <b>Turing-complet</b> : les planeurs peuvent encoder des signaux, et les collisions entre eux construisent des portes logiques, donc tout calcul peut en principe tourner dans cette grille. Deux états et une règle sur les voisins suffisent pour le calcul universel.`,
+      },
+      scholar: {
+        legend: `Automate cellulaire à deux états, externe-totalistique B3/S23 sur \\(\\mathbb{Z}^2\\) avec conditions aux bords périodiques et voisinage de Moore. [[gen]] indexe la mise à jour parallèle ; [[alive]] est la population.`,
+        try: `Compare le comportement de stabilisation et la densité finale à partir de graines [[random]] répétées. Considère ce que tu devrais observer pour prévoir à l'avance si une configuration donnée s'éteint un jour.`,
+        notice: `<b>Tu ne pourrais pas le prévoir — la question est formellement indécidable.</b> Life est Turing-complet (Berlekamp–Conway–Guy ; suivirent des constructeurs universels explicites), donc demander si une configuration arbitraire finit par se stabiliser équivaut au problème de l'arrêt. Les soupes aléatoires convergent de façon fiable vers une densité proche de 0,029 avec une cendre de natures mortes et de blinkers, pourtant aucun raccourci n'existe pour le cas général : l'automate est <em>calculatoirement irréductible</em>, et le simuler pas à pas est la façon la plus rapide de connaître son futur. Une règle énoncée en une phrase contient un comportement qu'aucune théorie ne peut comprimer.`,
+      },
+    },
+    dna: {
+      junior: {
+        legend: `L'échelle torsadée est une <b>molécule d'ADN</b>. Ses barreaux sont des paires de lettres — A s'unit toujours à T, et C toujours à G. La fourche qui voyage le long du centre l'ouvre comme une fermeture éclair, et des lettres fraîches s'enclenchent sur chaque moitié pour construire deux copies complètes. Le violet marque une <b>erreur</b> de copie.`,
+        try: `Appuie sur [[reset]] et regarde défiler une copie complète, en gardant l'œil sur les lettres qui apparaissent sur les nouveaux brins. Peux-tu prédire chaque nouvelle lettre avant qu'elle n'atterrisse ?`,
+        notice: `<b>Oui — chaque nouvelle lettre est forcée. A ne peut s'apparier qu'avec T, C seulement avec G, donc chaque moitié de l'échelle tient des instructions complètes pour reconstruire l'autre.</b> C'est là tout le secret de l'hérédité : divise la molécule et tu as automatiquement deux copies. Regarde cependant [[errors]] — de temps en temps la mauvaise lettre se glisse. Ces rares erreurs sont des <b>mutations</b>, et sans elles l'évolution n'aurait rien sur quoi travailler.`,
+      },
+      student: {
+        legend: `Une fourche de réplication qui ouvre une double hélice. Les bases s'apparient par complémentarité (A–T, C–G) donc chaque brin parental sert de matrice pour un nouveau — réplication <b>semi-conservative</b>. [[speed]] fixe la vitesse de la fourche, [[pairs]] compte les bases copiées et [[errors]] compte les erreurs d'incorporation, surlignées en violet.`,
+        try: `Fais tourner une réplication complète et compare [[errors]] à [[pairs]] pour estimer le taux d'erreur de cette simulation. Puis change [[speed]] et répète — aller plus vite la rend-elle moins exacte ici ?`,
+        notice: `<b>Le taux d'erreur reste autour de 4% quelle que soit la vitesse de la fourche — et 4% est environ cent millions de fois pire que la réalité.</b> L'exagération est délibérée, pour que les erreurs soient visibles. La vraie ADN polymérase incorpore mal environ 1 base sur \\(10^4\\)–\\(10^5\\), puis corrige avec une exonucléase 3′→5′ et passe les restes à la réparation des mésappariements, donnant un taux final proche de 1 sur \\(10^9\\). Copie 3,2 milliards de bases à 4% et tu détruirais le génome en une seule division ; c'est la fidélité, non la copie, le vrai problème d'ingénierie.`,
+      },
+      scholar: {
+        legend: `Réplication semi-conservative schématique à une seule fourche. L'appariement de Watson–Crick (A–T deux liaisons hydrogène, G–C trois) fait de chaque brin une matrice ; [[pairs]] suit l'incorporation et [[errors]] signale les mésappariements. L'asymétrie brin directeur/retardé et les fragments d'Okazaki ne sont pas représentés.`,
+        try: `Estime le taux d'erreur par base à partir de [[errors]]/[[pairs]], puis calcule le nombre attendu de mutations par duplication du génome humain à ce taux, et compare à l'observé ~1–2 par division.`,
+        notice: `<b>Au taux de cette simulation tu accumulerais ~10⁸ erreurs par copie du génome ; la valeur réelle est une ou deux.</b> L'écart est comblé multiplicativement : la fidélité de sélection de la base (~10⁻⁵), le proofreading 3′→5′ (~10²×), et la réparation des mésappariements (~10²–10³×) se composent à ~10⁻⁹–10⁻¹⁰ par base. Pourtant le taux n'est pas minimisé — il est <em>accordé</em>. Zéro mutation signifie zéro adaptation, et les lignées à réparation des mésappariements désactivée (tumeurs déficientes en MMR, bactéries hypermutatrices) montrent que l'optimum se situe à une valeur non nulle fixée par l'équilibre entre charge délétère et apport adaptatif.`,
+      },
+    },
+    evolution: {
+      junior: {
+        legend: `Chaque point est un <b>animal</b>, et sa couleur est le trait qu'il a hérité. Le fond est l'environnement où il doit se camoufler, et il dérive lentement vers une couleur différente avec le temps. Les animaux bien camouflés sont dessinés plus grands — ce sont ceux qui ont le plus de chances d'avoir des petits. [[fit]] montre à quel point le groupe s'adapte à l'environnement alentour.`,
+        try: `Fais glisser [[mut]] jusqu'à 0 et laisse tourner pendant cent générations. Regarde [[div]], puis continue de regarder [[fit]] tandis que la couleur du fond continue de dériver.`,
+        notice: `<b>Sans mutation la population devient toute d'une couleur — [[div]] descend à presque zéro — et puis, tandis que le fond s'éloigne, [[fit]] s'effondre et ne peut se reprendre.</b> La sélection seule ne peut que choisir dans la variété qui existe déjà ; une fois épuisée, il ne reste rien d'où choisir. C'est pourquoi la mutation compte : l'erreur aléatoire d'aujourd'hui est la seule chance de demain de survivre à un monde changé. Remonte [[mut]] et regarde la population remonter.`,
+      },
+      student: {
+        legend: `60 individus portent un seul trait continu (teinte). La fitness baisse avec la distance à l'optimum de l'environnement, qui dérive avec le temps. La reproduction est un échantillonnage pondéré par la fitness mise à l'échelle par [[sel]], la descendance étant perturbée par [[mut]]. [[div]] est l'écart-type du trait dans la population.`,
+        try: `Mets [[mut]] à 0 et fais tourner : regarde [[div]] s'effondrer puis [[fit]] décroître à mesure que l'optimum dérive. Puis mets [[sel]] à 0 avec [[mut]] élevée, et vois si [[fit]] monte jamais.`,
+        notice: `<b>Aucune manette seule ne fonctionne : sans mutation la population épuise la variation, sans sélection elle ne se concentre jamais sur l'optimum.</b> L'évolution a besoin des deux — une source de variation et un filtre. C'est la substance du <b>théorème fondamental de Fisher</b> : le taux d'augmentation de la fitness moyenne égale la variance génétique additive en fitness, donc une population à variance nulle ne peut s'adapter à aucune vitesse. Note aussi que [[sel]] élevée n'est pas simplement mieux : elle dépouille la variation plus vite, laissant la population fragile quand l'environnement bouge.`,
+      },
+      scholar: {
+        legend: `Reproduction proportionnelle à la fitness sur un trait continu unidimensionnel avec un optimum qui dérive. [[sel]] met à l'échelle l'intensité de la sélection, [[mut]] la variance mutationnelle par génération, et [[div]] rapporte l'écart-type du trait de la population — un substitut de la variance génétique additive.`,
+        try: `Explore le plan \\(([[sel]], [[mut]])\\) et trouve où la [[fit]] soutenue est maximisée contre l'optimum qui dérive. Vérifie si le meilleur réglage est la sélection la plus haute disponible, et identifie où la population s'éteint en termes de fitness.`,
+        notice: `<b>L'optimum est intermédiaire dans les deux paramètres — la sélection maximale est activement nuisible.</b> C'est l'équilibre classique mutation–sélection : la variance d'équilibre croît comme \\(\\sigma^2 \\approx V_m/s\\), donc la sélection dure érode la variance même que l'adaptation exige. Avec un optimum en mouvement la population reste en retard de \\(\\propto k/s\\) pour un taux de dérive \\(k\\), et le théorème de Fisher borne le taux de poursuite atteignable par la variance additive. Trop de mutation, cependant, franchit le <b>seuil d'erreur d'Eigen</b>, où la sélection ne peut plus maintenir l'information contre la charge mutationnelle et la population se dissout loin du pic entièrement.`,
+      },
+    },
+    ecosystem: {
+      junior: {
+        legend: `Les points verts sont des <b>plantes</b>, les orange des <b>lapins</b> qui les mangent, et les rouges des <b>renards</b> qui mangent les lapins. Tout a besoin de nourriture pour rester vivant et se reproduire. Les trois compteurs suivent combien de chacun sont vivants en ce moment.`,
+        try: `Regarde les trois nombres un moment — ils ne tiennent jamais en place. Maintenant fais glisser [[pred]] jusqu'à 10 et continue de regarder [[herb]] puis [[preds]].`,
+        notice: `<b>Des renards super-efficaces mangent presque tous les lapins — et puis les renards aussi meurent de faim.</b> Les prédateurs se détruisent eux-mêmes en étant trop bons à la chasse. Note aussi que les nombres montent et descendent à <em>tour de rôle</em> : beaucoup de lapins, puis beaucoup de renards, puis peu de lapins, puis peu de renards, encore et encore. Rien ne coordonne cela — cela tombe de qui mange qui. Tire un fil dans un réseau alimentaire et tout le reste bouge.`,
+      },
+      student: {
+        legend: `Une chaîne alimentaire fondée sur des agents : les plantes repoussent à un taux fixé par [[growth]], les herbivores fourragent et se reproduisent quand leur énergie est assez haute, les prédateurs chassent les herbivores avec un succès mis à l'échelle par [[pred]]. Chaque agent porte un budget énergétique et meurt de faim sans nourriture.`,
+        try: `Laisse les valeurs par défaut et regarde les trois compteurs pendant quelques minutes, en notant lequel culmine en premier. Puis pousse [[pred]] à 10 et regarde ce qui arrive à [[herb]] et [[preds]] à tour de rôle.`,
+        notice: `<b>Les populations oscillent avec les prédateurs qui culminent <em>après</em> les proies, et les prédateurs trop efficaces déclenchent un effondrement qui les emporte avec leur nourriture.</b> C'est la dynamique de <b>Lotka–Volterra</b> : les proies croissent, les prédateurs suivent, les proies s'effondrent, les prédateurs suivent de nouveau — le décalage est ce qui la fait cycler plutôt que se stabiliser. La leçon se généralise mal pour la conservation : un prédateur qui maximise le taux de capture à court terme peut piloter sa propre extinction, et c'est exactement pourquoi les couples prédateur–proie réels ne persistent qu'avec des refuges, et pourquoi retirer un prédateur apical peut déclencher une cascade le long de tout un réseau.`,
+      },
+      scholar: {
+        legend: `Système tri-trophique fondé sur les individus avec budgets énergétiques explicites. L'apport de ressource est fixé par [[growth]], la réponse fonctionnelle par [[pred]] ; la démographie émerge de rencontres locales plutôt que d'une équation de champ moyen.`,
+        try: `Cartographie l'issue à travers le plan \\(([[growth]], [[pred]])\\). Cherche en particulier si <em>augmenter</em> [[growth]] déstabilise jamais le système plutôt que de soutenir plus de vie, et note où les cycles se transforment en extinctions.`,
+        notice: `<b>Enrichir le système peut le déstabiliser : plus de croissance des plantes pilote des oscillations plus sauvages dont les minima touchent zéro, balayant le niveau supérieur.</b> C'est le <b>paradoxe de l'enrichissement</b> (Rosenzweig, 1971) — ajouter des ressources élève l'équilibre mais le déstabilise, puisque l'amplitude du cycle limite croît jusqu'à ce qu'un minimum stochastique cause l'extinction. Fondé sur les individus, le modèle montre aussi ce que le Lotka–Volterra de champ moyen ne peut pas : la stochasticité démographique aux petites tailles de population signifie que l'extinction est un événement <em>probabiliste</em> bien avant que l'équilibre déterministe n'atteigne zéro.`,
+      },
+    },
+    astro: {
+      junior: {
+        legend: `Une seule étoile qui vit sa vie entière, prodigieusement accélérée. [[age]] suit son avancement et [[stage]] nomme ce qu'elle est devenue. Sa couleur et sa taille changent à mesure qu'elle vieillit — et sa façon de finir ne dépend que d'une seule chose que tu contrôles.`,
+        try: `Mets [[mass]] à 1 (une étoile comme notre Soleil) et appuie sur [[reset]], puis regarde jusqu'à la fin. Maintenant mets [[mass]] à 20 et regarde de nouveau.`,
+        notice: `<b>L'étoile de taille solaire se gonfle, souffle ses couches externes et laisse une minuscule naine blanche. La lourde explose en supernova et laisse un trou noir.</b> Tout le destin d'une étoile est fixé à la naissance par sa masse — rien d'autre. Et les grosses meurent absurdement vite : les étoiles les plus lourdes brûlent leur carburant si effrénément qu'une étoile de 20 masses solaires vit quelques millions d'années tandis que le Soleil en fait dix milliards. Être plus grande te donne plus de carburant et une vie bien plus courte.`,
+      },
+      student: {
+        legend: `Évolution stellaire pilotée par la seule [[mass]]. [[stage]] défile entre séquence principale, géante rouge, puis un point final dépendant de la masse : nébuleuse planétaire et naine blanche sous ~8 M☉, ou supergéante, supernova et une étoile à neutrons ou un trou noir au-dessus.`,
+        try: `Compare les points finaux à [[mass]] = 1, 10 et 20, et note combien de temps chacune passe sur la séquence principale. Trouve la [[mass]] où l'issue passe de naine blanche à supernova.`,
+        notice: `<b>La bifurcation se situe près de 8 M☉, et la durée de vie s'effondre comme environ \\(1/M^3\\) — dix milliards d'années pour le Soleil, dix millions pour une étoile de 10 M☉.</b> La luminosité croît fortement avec la masse (\\(L \\propto M^{3.5}\\)) tandis que la réserve de carburant ne croît que comme \\(M\\), donc la durée de vie \\(\\propto M/L \\sim M^{-2.5}\\). Sous la bifurcation, la pression de dégénérescence des électrons arrête l'effondrement à la <b>limite de Chandrasekhar</b> de 1,4 M☉ et une naine blanche survit ; au-dessus, le cœur dépasse ce que la dégénérescence peut soutenir et s'effondre catastrophiquement. Chaque élément plus lourd que le fer dans ton corps fut forgé dans le second type de mort.`,
+      },
+      scholar: {
+        legend: `Évolution schématique d'étoile unique paramétrée par la [[mass]] initiale, avec une durée de vie sur la séquence principale qui croît comme \\(\\propto M^{-3}\\) dans ce modèle. Métallicité, perte de masse, rotation et binarité ne sont pas représentées.`,
+        try: `Localise la frontière naine-blanche / supernova du modèle et sa frontière étoile-à-neutrons / trou noir. Considère de combien chacune des variables omises déplacerait ces seuils dans une population réelle.`,
+        notice: `<b>Les seuils sont bien moins nets que ne l'implique tout modèle à paramètre unique — perte de masse et métallicité les déplacent de plusieurs masses solaires.</b> La relation observée est \\(L \\propto M^{3.5}\\) donnant \\(\\tau \\propto M^{-2.5}\\) ; l'effondrement du cœur exige de dépasser la masse de Chandrasekhar \\(M_{Ch} = 1.44\\,(\\mu_e/2)^{-2}\\) M☉, et la division étoile-à-neutrons/trou-noir dépend de l'équation d'état nucléaire mal contrainte (limite de Tolman–Oppenheimer–Volkoff, ~2,2–2,9 M☉). Les étoiles à faible métallicité retiennent bien plus de masse et s'effondrent directement sans supernova brillante, et comme la plupart des étoiles massives sont dans des binaires en interaction, les tracés d'étoile unique décrivent une minorité des cas réels. Les catalogues d'ondes gravitationnelles fournissent désormais les statistiques de population que les seuls modèles stellaires ne pouvaient pas.`,
+      },
+    },
+    cosmology: {
+      junior: {
+        legend: `L'univers entier en expansion, avec les galaxies emportées à mesure que l'espace lui-même s'étire. [[age]] compte les milliards d'années depuis le Big Bang. Deux ingrédients rivalisent : la <b>matière</b>, dont la gravité rassemble tout, et l'<b>énergie noire</b>, qui l'écarte.`,
+        try: `Fais glisser [[lam]] jusqu'à 0 pour que la gravité n'ait aucun adversaire, et regarde ce qui arrive à l'expansion. Puis remonte-la à 69 et regarde la différence.`,
+        notice: `<b>Sans énergie noire l'expansion ralentit ; avec elle, l'expansion accélère — l'espace s'envole de plus en plus vite.</b> Les astronomes s'attendaient à la première et trouvèrent la seconde en 1998, en remarquant que les supernovae lointaines étaient plus faibles qu'elles n'auraient dû l'être. Environ 69% de tout est cette énergie noire, et personne ne sait ce que c'est. Le plus grand ingrédient de l'univers est un mystère complet, et il a été découvert par hasard.`,
+      },
+      student: {
+        legend: `Un univers FLRW en expansion avec [[mat]] et [[lam]] comme paramètres de densité. [[h]] est le paramètre de Hubble au redshift actuel, qui suit \\(H(z) = H_0\\sqrt{\\Omega_m(1+z)^3 + \\Omega_\\Lambda}\\), et [[age]] le temps cosmique écoulé.`,
+        try: `Mets [[lam]] = 0 avec [[mat]] = 100 et note le comportement de l'expansion et [[age]]. Puis utilise les valeurs standard (31 et 69). Quelle combinaison donne un univers plus vieux, et pourquoi cela compte-t-il observationnellement ?`,
+        notice: `<b>Un univers de matière seule est plus jeune que les plus vieilles étoiles connues — la contradiction qui rendit l'énergie noire inévitable.</b> La densité de matière se dilue comme \\((1+z)^3\\) tandis que \\(\\Omega_\\Lambda\\) reste constante, donc la gravité domina tôt (décélérant) et l'énergie noire prit le dessus autour de \\(z \\approx 0.7\\), commutant l'expansion en accélération. Avec \\(H_0 = 70\\) et matière seule, l'âge est \\(\\tfrac{2}{3}H_0^{-1} \\approx 9.3\\) Gyr, plus jeune que les amas globulaires de 12 Gyr. Ajouter \\(\\Lambda\\) l'étire à 13,8 Gyr et résout le paradoxe — l'une de plusieurs lignes indépendantes convergeant vers la même conclusion.`,
+      },
+      scholar: {
+        legend: `Cosmologie FLRW plate avec \\(H(z) = H_0\\sqrt{\\Omega_m(1+z)^3+\\Omega_\\Lambda}\\), \\(H_0 = 70\\) km/s/Mpc. [[mat]] et [[lam]] sont réglés indépendamment ici, donc le modèle n'impose pas \\(\\Omega_m + \\Omega_\\Lambda = 1\\).`,
+        try: `Règle des combinaisons qui violent la planéité et note que le modèle calcule quand même une réponse. Puis considère ce que \\(\\Omega_{\\text{total}} \\ne 1\\) impliquerait physiquement, et pourquoi la planéité quasi parfaite observée est elle-même un problème qui exige explication.`,
+        notice: `<b>La planéité est instable : tout écart à \\(\\Omega = 1\\) croît avec le temps, donc la planéité d'aujourd'hui à 0,4% près exige un réglage fin absurde à l'ère de Planck — environ 1 part sur \\(10^{60}\\).</b> C'est le problème de la planéité, et avec le problème de l'horizon il a motivé l'<b>inflation</b>, qui pousse \\(\\Omega \\to 1\\) exponentiellement et sème la structure à partir de fluctuations quantiques. Le point de tension actuel du cadre est la <b>tension de Hubble</b> : l'inférence depuis l'univers primitif via le CMB donne \\(H_0 \\approx 67.4\\), les mesures locales de l'échelle des distances donnent \\(\\approx 73\\), et l'écart à \\(\\sim5\\sigma\\) a résisté à toute systématique proposée. Pendant ce temps \\(\\Lambda\\) elle-même reste inexpliquée — l'énergie du vide de la QFT dépasse la valeur observée jusqu'à 120 ordres de grandeur.`,
+      },
+    },
+    neuro: {
+      junior: {
+        legend: `Un petit réseau de <b>neurones</b> — des cellules cérébrales — reliés par leurs connexions. Quand l'un accumule assez de charge, il s'active, envoyant une impulsion courir vers ses voisins, qui peuvent alors s'activer à leur tour. [[rate]] compte les activations par seconde et [[pot]] montre la charge dans une cellule.`,
+        try: `Mets [[stim]] à 0 et appuie sur [[fire]] une fois, en regardant jusqu'où l'impulsion voyage. Maintenant mets [[stim]] à 10 et regarde le réseau un moment.`,
+        notice: `<b>Une pichenette envoie une seule impulsion qui s'évanouit ; une entrée forte et constante fait bavarder tout le réseau sans arrêt.</b> Aucun neurone seul ne décide de rien — chacun ne fait que sommer ce qu'il reçoit et s'active si le total est assez grand. Pensée, mémoire et mouvement sont tous bâtis à partir de cet unique tour répété sur 86 milliards de cellules. Ton cerveau fait tourner toute l'opération sur environ 20 watts, à peu près une ampoule faible.`,
+      },
+      student: {
+        legend: `Un réseau à pics simplifié. Chaque nœud intègre l'entrée de ses voisins et s'active quand il franchit le seuil, propageant l'activité le long de ses connexions. [[stim]] est la poussée externe, [[rate]] le taux d'activation de la population et [[pot]] le potentiel de membrane d'une cellule.`,
+        try: `Augmente [[stim]] graduellement depuis 0 et regarde [[rate]]. L'activité croît-elle de façon lisse en proportion, ou y a-t-il un point où le comportement du réseau change de caractère ?`,
+        notice: `<b>L'activité reste près de zéro jusqu'à une poussée critique, puis le réseau bascule en une activation soutenue auto-propagée — un seuil, pas une pente.</b> C'est l'<em>excitation récurrente</em> : une fois qu'assez de neurones s'activent, leur entrée mutuelle soutient l'activité sans autre poussée externe, et c'est ainsi que la mémoire de travail retient l'information pendant des secondes. La même propriété est dangereuse, car l'excitation récurrente incontrôlée est précisément ce qu'est une crise d'épilepsie. Le cortex réel se tient tout juste sous ce point avec de puissants interneurones inhibiteurs — seulement ~20% des cellules, mais assez pour tenir l'équilibre.`,
+      },
+      scholar: {
+        legend: `Unités intègre-et-tire sur un graphe récurrent creux, avec [[stim]] comme poussée externe tonique. [[rate]] rapporte l'activité de la population ; le modèle est purement excitateur, sans population inhibitrice.`,
+        try: `Caractérise la transition dans [[rate]] à mesure que [[stim]] augmente. Considère ce qu'implique l'absence d'inhibition pour la stabilité de l'état de haute activité, et ce qui changerait avec une population inhibitrice équilibrée.`,
+        notice: `<b>Un réseau récurrent purement excitateur n'a que deux états stables — silencieux ou saturé — et c'est l'omission centrale du modèle.</b> Le cortex réel opère dans l'<b>état équilibré</b>, où de grands courants excitateurs et inhibiteurs s'annulent presque, laissant une petite poussée nette fluctuante. Cela produit l'activation irrégulière, proche de Poisson, observée in vivo, donne une réactivité rapide (l'équilibre peut être rompu plus vite que toute constante de temps de membrane), et rend une courbe \\(f\\)–\\(I\\) approximativement linéaire au lieu d'un échelon. Le régime équilibré se tient aussi près de la criticité, où les avalanches neuronales suivent une loi de puissance d'exposant \\(-3/2\\) — une configuration qui maximise la gamme dynamique et la transmission de l'information, et que ce modèle ne peut atteindre.`,
+      },
+    },
+    neuron: {
+      junior: {
+        legend: `Une cellule cérébrale, la trace montrant la tension en son intérieur instant par instant. La ligne pointillée est le <b>seuil</b>. [[v]] est la tension actuelle, [[state]] dit si elle est au repos ou en activation, et [[spikes]] compte les impulsions.`,
+        try: `Monte [[cur]] très lentement depuis 0, un cran à la fois, en regardant [[v]] et [[state]]. Trouve le point exact où la cellule commence à s'activer — puis va un cran au-delà.`,
+        notice: `<b>Sous le seuil, absolument rien ne se passe. Franchis-le et la cellule tire un pic à pleine grandeur — et pousser plus fort ne rend pas le pic plus grand.</b> C'est l'activation <b>tout-ou-rien</b> : un neurone n'a aucun moyen d'envoyer un « demi » signal. Comme chaque pic est identique, le message ne peut pas tenir dans leur taille — il doit tenir dans la <em>fréquence</em> à laquelle ils arrivent. Un toucher léger et une forte pression se ressentent différents par le taux de pics, non par la force du pic.`,
+      },
+      student: {
+        legend: `Un neurone de FitzHugh–Nagumo : une variable rapide de tension et une lente de récupération, le système minimal reproduisant l'excitabilité. La trace est le potentiel de membrane en fonction du temps, avec le seuil d'activation marqué. [[cur]] injecte un courant constant ; [[spikes]] compte les événements.`,
+        try: `Monte [[cur]] lentement et localise la valeur où l'activation commence. Puis compare l'<em>amplitude</em> du pic juste au-dessus du seuil avec l'amplitude à [[cur]] = 20, et compare la <em>fréquence</em> d'activation aux deux mêmes réglages.`,
+        notice: `<b>L'amplitude est essentiellement identique aux deux courants ; seule la fréquence change — la cellule encode l'intensité dans le taux, non dans la taille.</b> L'apparition est une <b>bifurcation de Hopf</b> : le point fixe de repos perd sa stabilité et un cycle limite apparaît, donc l'oscillation commence à fréquence non nulle. La variable de récupération est ce qui rend le pic auto-terminant et impose la période réfractaire, qui limite l'activation près de 1 kHz et rend la propagation unidirectionnelle. Le modèle de 1952 de Hodgkin et Huxley dériva tout cela de conductances réelles de sodium et de potassium ; FitzHugh–Nagumo le dépouille à deux équations en gardant le comportement qualitatif intact.`,
+      },
+      scholar: {
+        legend: `Dynamique de FitzHugh–Nagumo, \\(\\dot v = v - v^3/3 - w + I\\), \\(\\dot w = \\epsilon(v + a - bw)\\), une réduction planaire de Hodgkin–Huxley qui sépare la tension rapide de la récupération lente. [[cur]] est le courant injecté \\(I\\).`,
+        try: `Localise l'\\(I\\) critique à laquelle l'activation répétitive commence et examine la fréquence juste au-dessus. Détermine si la fréquence d'apparition est nulle ou finie, et identifie quelle classe de bifurcation cela implique.`,
+        notice: `<b>L'activation commence à une fréquence finie, identifiant une bifurcation de Hopf sous-critique — un neurone de Classe II dans la classification de Hodgkin.</b> Les cellules de Classe II ont une courbe \\(f\\)–\\(I\\) discontinue et agissent comme des résonateurs, répondant préférentiellement à une entrée proche de leur fréquence intrinsèque ; les cellules de Classe I naissent au contraire via un nœud-col sur un cercle invariant (SNIC), s'activent arbitrairement lentement à l'apparition, et se comportent comme des intégrateurs. La distinction n'est pas académique : elle détermine les courbes de réponse de phase, et donc si une population se synchronise ou se désynchronise sous entrée partagée — le substrat mathématique des oscillations corticales et de la synchronie pathologique dans la maladie de Parkinson et l'épilepsie.`,
+      },
+    },
+    memory: {
+      junior: {
+        legend: `Deux neurones se rencontrant à une <b>synapse</b>, la jonction où l'un passe des signaux à l'autre. [[w]] est la force de cette jonction en ce moment — une forte passe les messages facilement, une faible à peine. [[last]] rapporte ce qui vient de lui arriver.`,
+        try: `Appuie sur [[ltp]] plusieurs fois et regarde [[w]] monter. Maintenant appuie sur [[ltd]] plusieurs fois et regarde-la descendre. Les deux boutons activent les deux mêmes cellules — la seule différence est laquelle passe en premier.`,
+        notice: `<b>Activer l'émetteur <em>juste avant</em> le récepteur renforce la connexion ; l'activer juste après l'affaiblit. Mêmes cellules, mêmes signaux — seul l'ordre a changé.</b> Cette minuscule asymétrie est la façon dont les cerveaux apprennent cause et effet : si A arrive régulièrement avant B, le lien A→B grandit, parce que A pourrait causer B. Inverse l'ordre et le cerveau conclut que A est sans rapport et élague le lien. L'apprentissage, au fond, est de la comptabilité à l'échelle du millimètre sur ce qui est venu avant.`,
+      },
+      student: {
+        legend: `Une seule synapse sous <b>plasticité dépendante du temps des pics</b>. [[ltp]] active le présynaptique avant le postsynaptique (\\(\\Delta t < 0\\)) et [[ltd]] inverse l'ordre. [[w]] suit le poids synaptique et [[last]] rapporte le signe et la magnitude du dernier changement.`,
+        try: `Monte [[w]] aussi haut que tu peux avec des [[ltp]] répétés, puis essaie de le pousser encore plus haut. Puis varie [[rate]] et vérifie si la taille de chaque changement dépend de la fréquence à laquelle tu stimules.`,
+        notice: `<b>Le poids sature — il ne peut croître sans limite, et chaque couplage près du plafond achète moins que le précédent.</b> Sans une telle limite, l'apprentissage hebbien est instable : les synapses fortes pilotent plus d'activation, ce qui les renforce davantage, jusqu'à ce qu'une entrée domine tout. Les synapses réelles combinent la saturation avec des mécanismes <em>homéostatiques</em> comme le scaling synaptique, qui renormalise multiplicativement toutes les entrées d'un neurone en quelques heures, préservant les poids relatifs tout en gardant la poussée totale constante. L'asymétrie temporelle de la STDP découle des récepteurs NMDA, qui exigent à la fois la liaison du glutamate et la dépolarisation postsynaptique pour éjecter leur blocage Mg²⁺ — un détecteur de coïncidence moléculaire avec une fenêtre de ~20 ms.`,
+      },
+      scholar: {
+        legend: `STDP basée sur les paires à une seule synapse : \\(\\Delta w = A_+e^{\\Delta t/\\tau_+}\\) pour \\(\\Delta t<0\\) et \\(-A_-e^{-\\Delta t/\\tau_-}\\) pour \\(\\Delta t>0\\), avec une limite de saturation sur [[w]]. [[rate]] fixe la fréquence de couplage.`,
+        try: `Considère ce que cette règle basée sur les paires prédit pour le couplage à haute fréquence, et compare-le à la découverte expérimentale que la potentialisation à 50 Hz se produit indépendamment de l'ordre des pics. Demande-toi ce qui doit manquer à la règle.`,
+        notice: `<b>La STDP basée sur les paires échoue au-dessus de ~30 Hz : expérimentalement, le couplage à haute fréquence potentialise quel que soit l'ordre, ce que la règle ne peut produire.</b> Les modèles à triplets et basés sur la tension (Pfister–Gerstner ; Clopath) corrigent cela et récupèrent en prime le seuil glissant de Bienenstock–Cooper–Munro, où la frontière LTP/LTD se déplace avec l'activité postsynaptique récente. La question plus profonde est que la STDP n'est pas un mécanisme unique : son signe, sa fenêtre et sa dépendance en fréquence varient selon le type de synapse, la position dendritique et l'état neuromodulateur, et la dopamine peut régler si une trace d'éligibilité est consolidée du tout — c'est ainsi qu'une règle biologiquement locale peut implémenter l'assignation de crédit dépendante de la récompense et temporellement distale.`,
+      },
+    },
+    sleep: {
+      junior: {
+        legend: `Une nuit de sommeil en avance rapide. La trace ondulée est une vraie activité cérébrale mesurée par un EEG. [[stage]] nomme la phase où tu es, [[freq]] montre la vitesse des ondes, et [[ad]] est la substance chimique qui s'accumule pendant que tu es éveillé et te donne sommeil.`,
+        try: `Appuie sur [[next]] pour défiler chaque phase à tour de rôle, d'Éveil à REM. Regarde la forme de l'onde en N3 (profond), puis en REM — et compare chacune à Éveil.`,
+        notice: `<b>Le sommeil profond a d'énormes ondes lentes, mais le REM ressemble presque exactement à l'état de veille — rapide et petit — même si tu dors profondément et rêves.</b> C'est parce que le REM est appelé sommeil <em>paradoxal</em> : à partir de la seule activité électrique du cerveau, tu ne pourrais pas le distinguer de la veille. Ton corps est paralysé pendant celui-ci, ce qui est une bonne chose, car cela t'empêche de mimer tes rêves.`,
+      },
+      student: {
+        legend: `Architecture du sommeil idéalisée qui cycle entre éveil, N1, N2, N3 et REM, avec des signatures EEG caractéristiques — [[freq]] montre la fréquence dominante de chacune. [[ad]] suit l'adénosine, le signal homéostatique de pression du sommeil.`,
+        try: `Défile les phases avec [[next]] et enregistre [[freq]] pour chacune. Note que N3 a la fréquence la plus basse mais la plus grande amplitude, tandis que la fréquence du REM égale presque la veille. Puis regarde [[ad]] sur un cycle complet.`,
+        notice: `<b>Fréquence et amplitude EEG évoluent en directions opposées — les ondes lentes sont grandes précisément <em>parce qu'</em>elles sont lentes.</b> Les rythmes rapides de la veille reflètent des neurones s'activant indépendamment, donc leurs contributions s'annulent en partie sur le cuir chevelu ; en N3 tout le cortex sonne ensemble entre états synchronisés haut et bas, et le signal sommé est énorme. Le sommeil est régulé par deux processus en interaction : la pression homéostatique de l'adénosine, que la caféine masque en bloquant ses récepteurs sans retirer la pression, et un oscillateur circadien indépendant de la durée de veille.`,
+      },
+      scholar: {
+        legend: `Hypnogramme schématique avec signatures spectrales canoniques par phase. [[freq]] rapporte la bande EEG dominante ; [[ad]] représente le Processus S. Le modèle omet le décalage cycle-par-cycle de la proportion REM/NREM au long d'une vraie nuit.`,
+        try: `Note que ce modèle cycle les phases avec des durées fixes. Considère comment une vraie nuit diffère dans la distribution de N3 et REM au long de cycles successifs, et quel compte fonctionnel explique cette asymétrie.`,
+        notice: `<b>Les vraies nuits chargent N3 au début et le REM à la fin — les cycles initiaux sont dominés par les ondes lentes, les suivants par le REM — ce qu'aucun cycle à durée fixe ne peut capturer.</b> Cela découle du modèle à deux processus : le Processus S se dissipe exponentiellement au long de la nuit, donc l'activité à ondes lentes (son indice direct) est concentrée au début, tandis que la propension au REM chevauche le Processus C circadien et culmine près du minimum de température corporelle. Fonctionnellement l'asymétrie compte : l'hypothèse de l'homéostasie synaptique soutient que la SWA déclasse les synapses potentialisées durant la veille, et sa magnitude croît avec l'apprentissage de la veille. La clairance glymphatique de l'amyloïde-β monte aussi ~60% en NREM — et c'est pourquoi la privation de sommeil est désormais traitée comme un facteur causal candidat de la neurodégénérescence plutôt qu'un simple symptôme.`,
+      },
+    },
+    chem: {
+      junior: {
+        legend: `Les billes colorées sont des <b>atomes</b> qui volent partout. Quand deux d'entre eux s'approchent assez, ils peuvent s'accrocher et former une <b>molécule</b>, dessinée avec une ligne qui les relie. [[mols]] compte combien se sont appariés.`,
+        try: `Mets [[temp]] à 10 et regarde un moment — compte combien de molécules se forment. Maintenant fais glisser [[temp]] jusqu'à 1 et regarde de nouveau.`,
+        notice: `<b>Les atomes chauds ne se lient presque jamais ; les froids s'apparient vite et [[mols]] monte.</b> La liaison exige que les deux atomes s'attardent assez près pour s'accrocher, et les atomes rapides rebondissent simplement avant que cela puisse arriver. C'est la même raison pour laquelle chauffer les choses les décompose — cuire, fondre, brûler — tandis que refroidir laisse les structures se former. Les flocons de neige existent parce que les molécules d'eau se déplacent assez lentement pour s'emboîter.`,
+      },
+      student: {
+        legend: `Atomes dans une boîte 2D avec des vitesses fixées par [[temp]]. La formation des liaisons est probabiliste et permise seulement sous un seuil d'énergie cinétique ; [[mols]] compte les paires liées. Les atomes liés sont maintenus à une séparation d'équilibre, imitant une longueur de liaison covalente.`,
+        try: `Garde [[temp]] à 10 et laisse tourner, puis abaisse-la à 1 sans réinitialiser. Regarde si les liaisons existantes survivent au changement, et à quelle vitesse [[mols]] répond dans chaque direction.`,
+        notice: `<b>Les liaisons se forment volontiers à froid et cessent essentiellement de se former à chaud — le seuil est net, non graduel.</b> C'est la compétition centrale de la chimie : la liaison abaisse l'énergie potentielle du système, tandis que le mouvement thermique fournit l'énergie cinétique pour s'en libérer. Qu'une liaison persiste dépend du rapport entre énergie de liaison et \\(k_BT\\), et c'est pourquoi chaque substance a une température à laquelle elle se décompose, et pourquoi la même réaction peut aller en avant ou en arrière selon la seule chaleur que tu lui donnes.`,
+      },
+      scholar: {
+        legend: `Modèle cinétique d'association en 2D : la formation de paires est régie par un seuil de vitesse relative avec un taux stochastique, et les paires liées sont contraintes à une séparation d'équilibre. [[temp]] met à l'échelle la distribution des vitesses ; [[mols]] est la fraction liée instantanée.`,
+        try: `Établis une population liée à [[temp]] basse, puis monte-la et observe si le système revient à son état précédent quand tu la rabaisses. Considère ce que le modèle représente de \\(\\Delta G = \\Delta H - T\\Delta S\\), et ce qu'il omet.`,
+        notice: `<b>Le modèle capte le terme d'enthalpie mais n'a aucun terme d'entropie — et c'est l'omission intéressante.</b> L'association est enthalpiquement favorable (\\(\\Delta H < 0\\)) mais coûteuse entropiquement, puisque deux particules libres devenant une paire liée réduisent les micro-états translationnels. L'équilibre réel est fixé par \\(\\Delta G = \\Delta H - T\\Delta S\\), donc monter \\(T\\) déplace l'équilibre vers la dissociation non seulement en fournissant de l'énergie cinétique mais en amplifiant la pénalité entropique — le contenu moléculaire du principe de Le Chatelier. La même compétition explique l'assemblage hydrophobe et le repliement des protéines, où l'entropie des molécules de <em>solvant</em>, non du soluté, domine le signe de \\(\\Delta G\\).`,
+      },
+    },
+    electrochem: {
+      junior: {
+        legend: `Ceci est une batterie coupée en deux. Les points sont des particules chargées qui font la navette entre les deux extrémités à travers le liquide au milieu — ce flux est ce qui allume l'ampoule. [[soc]] est la plénitude de la batterie, et [[volts]] est la poussée qu'elle délivre.`,
+        try: `Appuie sur [[discharge]] et regarde [[soc]] descendre de 100% jusqu'à 0. Garde l'œil sur [[volts]] tout du long — de combien baisse-t-il ?`,
+        notice: `<b>La batterie se vide complètement mais la tension bouge à peine — d'environ 3,9 V jusqu'à seulement 3,6 V.</b> C'est pourquoi ton téléphone ne peut pas savoir sa plénitude en mesurant seulement la tension, et pourquoi le pourcentage de batterie ment parfois ou saute. Les téléphones comptent plutôt la charge qui entre et sort, comme un compteur d'eau. Une tension plate est en fait un atout : ton appareil reçoit la même puissance constante que la batterie soit pleine ou presque vide.`,
+      },
+      student: {
+        legend: `Une cellule avec transport d'ions entre les électrodes. [[load]] fixe le courant de décharge, [[soc]] l'état de charge, et [[volts]] suit une relation de style Nernst \\(E = E^0 - \\frac{0.059}{n}\\log_{10}\\frac{1-\\text{soc}}{\\text{soc}}\\), bornée à une fenêtre Li-ion réaliste.`,
+        try: `Décharge complètement et enregistre [[volts]] à [[soc]] = 100%, 50% et 10%. Puis recharge. La tension retrace-t-elle le même chemin, et pourrais-tu l'utiliser pour déduire [[soc]] de façon fiable ?`,
+        notice: `<b>La tension ne parcourt qu'à peine 0,3 V sur toute la capacité — trop plate pour servir de jauge de carburant.</b> L'équation de Nernst est logarithmique dans le rapport entre espèces oxydées et réduites, donc elle n'est raide qu'aux extrêmes et quasi plate au milieu. Les vrais systèmes de gestion de batterie utilisent donc le comptage des coulombs (en intégrant le courant) avec recalibrage périodique de la tension aux extrêmes. Cette platitude est précisément ce qui rend la chimie du lithium si utile — un rail d'alimentation stable — et en même temps ce qui rend l'estimation de l'état de charge un problème d'ingénierie véritablement difficile.`,
+      },
+      scholar: {
+        legend: `Cellule idéalisée avec un potentiel à circuit ouvert nernstien en [[soc]] ; [[load]] met à l'échelle le taux de décharge. Surtensions, limitation par diffusion et hystérésis ne sont pas modélisées.`,
+        try: `Note que [[volts]] ici ne dépend que de [[soc]], jamais de [[load]]. Identifie quels effets physiques cette indépendance élimine, et comment chacun altérerait la courbe observée sous une charge lourde.`,
+        notice: `<b>Faire de la tension une fonction de la seule charge retire tout mécanisme de perte qui compte en pratique.</b> La tension aux bornes est \\(E_{\\text{cell}} = E^0 - \\eta_{\\text{act}} - \\eta_{\\text{conc}} - IR_{\\Omega}\\) : la surtension d'activation suit la cinétique de Butler–Volmer, la surtension de concentration naît de couches de diffusion appauvries, et la chute ohmique croît avec le courant. Ensemble elles signifient que la capacité réelle <em>baisse</em> à mesure que le taux de décharge croît — l'effet Peukert — et elles produisent l'hystérésis charge/décharge qui déjoue le comptage naïf des coulombs. Ajoute la croissance de l'interphase électrolyte-solide et le placage du lithium et tu as toute la dégradation de la batterie, dont rien ne peut être exprimé par un modèle purement thermodynamique.`,
+      },
+    },
+    kinetics: {
+      junior: {
+        legend: `La courbe du panneau inférieur est une colline que les molécules doivent gravir avant de pouvoir réagir — cette hauteur est l'<b>énergie d'activation</b>. Seules les molécules avec assez d'énergie la franchissent. [[react]] est la quantité de matière de départ restante, [[prod]] combien a été converti, et [[rate]] à quelle vitesse cela procède.`,
+        try: `Mets [[temp]] à 400 et note [[rate]]. Maintenant monte-la à 500 — seulement 100 degrés de plus — et relis [[rate]].`,
+        notice: `<b>Seulement 100 degrés de plus et la réaction va environ 20 fois plus vite.</b> La chaleur ne pousse pas les molécules par-dessus la colline ; elle élargit la petite fraction qui avait déjà assez d'énergie pour la gravir, et cette fraction croît explosivement avec la température. C'est pourquoi un frigo conserve la nourriture des semaines tandis que la même nourriture s'abîme en un jour sur le comptoir, et pourquoi la cuisson au four a des températures si précises. Maintenant appuie sur [[cat]] et regarde la colline elle-même rapetisser.`,
+      },
+      student: {
+        legend: `Un diagramme de coordonnée de réaction avec la hauteur de barrière fixée par [[ea]]. Les molécules réagissent à la collision si elles franchissent la barrière ; la constante de vitesse suit Arrhenius, \\(k = A e^{-E_a/RT}\\). [[react]] et [[prod]] suivent les concentrations et [[rate]] la vitesse instantanée.`,
+        try: `Enregistre [[rate]] à [[temp]] = 400 et 500 avec [[ea]] à 50. Puis reviens à 400 et abaisse plutôt [[ea]] à 25. Quel changement t'a acheté le plus de vitesse ?`,
+        notice: `<b>+100 K multiplie la vitesse par environ 20, mais diviser la barrière par deux vaut bien plus — l'exponentielle est bien plus sensible à \\(E_a\\) qu'à \\(T\\).</b> Cette asymétrie est pourquoi la catalyse domine la chimie industrielle : tu ne peux pas toujours chauffer une réaction (les produits se décomposent, l'énergie coûte), mais abaisser \\(E_a\\) en offrant un chemin alternatif atteint le même but à température ambiante. Un catalyseur ne change ni \\(\\Delta G\\) ni la position d'équilibre — il accélère également les réactions directe et inverse, et se régénère inchangé.`,
+      },
+      scholar: {
+        legend: `Cinétique d'Arrhenius avec \\(k = A\\exp(-E_a/RT)\\), \\(A = 10^6\\) ; le chemin du catalyseur réduit \\(E_a\\) de 55%. Note que la [[rate]] affichée est bornée à un maximum, donc les combinaisons les plus extrêmes de [[temp]] haute et [[ea]] basse sont tronquées au lieu d'être rapportées fidèlement.`,
+        try: `Vérifie la forme d'Arrhenius en contrôlant que \\(\\ln k\\) est linéaire en \\(1/T\\), en échantillonnant [[temp]] là où la vitesse est bien sous son plafond. Puis estime \\(E_a\\) à partir de ta pente et compare au réglage [[ea]].`,
+        notice: `<b>Un graphe d'Arrhenius de \\(\\ln k\\) contre \\(1/T\\) donne une droite de pente \\(-E_a/R\\) — c'est ainsi que les énergies d'activation sont réellement mesurées.</b> L'interprétation s'approfondit avec la théorie de l'état de transition : \\(k = \\frac{k_BT}{h}e^{-\\Delta G^\\ddagger/RT}\\) scinde la barrière en parties enthalpique et entropique, donc un « facteur pré-exponentiel » est en réalité \\(e^{\\Delta S^\\ddagger/R}\\) — une exigence d'orientation, non un comptage de collisions. C'est pourquoi les enzymes atteignent des accélérations de \\(10^{17}\\) : ils paient d'avance le coût entropique de l'alignement en liant le substrat, au lieu d'abaisser le seul \\(\\Delta H^\\ddagger\\).`,
+      },
+    },
+    organic: {
+      junior: {
+        legend: `Une molécule dessinée en 3D qui tourne lentement. Les billes grises sont le <b>carbone</b>, les rouges l'<b>hydrogène</b>, les bleues l'<b>oxygène</b> et les violettes l'<b>azote</b> ; les bâtonnets sont les liaisons qui les tiennent ensemble. [[sel]] alterne entre six molécules réelles différentes.`,
+        try: `Fais passer [[sel]] à travers les six, de 1 à 6, et regarde spécifiquement les atomes gris de carbone. Compte combien de bâtonnets sortent de chaque bille grise.`,
+        notice: `<b>Chaque carbone a exactement quatre liaisons, dans les six molécules — gaz naturel, alcool, sucre, aspirine et caféine pareillement.</b> Ce seul fait est pourquoi la vie est bâtie à partir du carbone. Quatre liaisons laissent le carbone former des chaînes, des ramifications et des anneaux de n'importe quelle longueur tout en gardant de la place pour attacher d'autres atomes, donc une poignée d'éléments peut être arrangée en des millions de substances distinctes. Carburant, sucre et médicament ne diffèrent que par la façon dont les mêmes quelques types d'atome sont reliés.`,
+      },
+      student: {
+        legend: `Modèles boules-et-bâtonnets avec ombrage de profondeur : carbone (gris), hydrogène (rouge), oxygène (bleu), azote (violet). [[sel]] sélectionne entre méthane, éthanol, benzène, glucose, aspirine et caféine ; [[atoms]] compte les atomes et [[type]] classe le composé.`,
+        try: `Compare le benzène (3) au glucose (4) — tous deux des anneaux à six membres. Regarde comment les atomes se placent l'un par rapport à l'autre dans chacun, et compte les liaisons entre les carbones de l'anneau.`,
+        notice: `<b>L'anneau du benzène est plat et ses carbones sont identiques ; l'anneau du glucose se gondole et chaque carbone diffère.</b> Les six électrons \\(\\pi\\) du benzène sont délocalisés autour de l'anneau, donnant des liaisons de longueur égale intermédiaire entre simple et double, plus la stabilité supplémentaire appelée <b>aromaticité</b> — et c'est pourquoi le benzène résiste aux réactions d'addition qu'un alcène ordinaire subit volontiers. Le glucose est complètement saturé, donc son anneau adopte une conformation en chaise gondolée pour soulager la tension, et ses quatre stéréocentres distincts font que les formes en miroir, ton corps ne peut pas les métaboliser de façon interchangeable.`,
+      },
+      scholar: {
+        legend: `Géométries statiques boules-et-bâtonnets pour six organiques représentatifs. Note que longueurs et angles de liaison sont schématiques plutôt qu'optimisés, et les représentations sont figées conformationnellement.`,
+        try: `Considère l'aspirine (5) et la caféine (6). Identifie les groupes fonctionnels dans chacune, et raisonne sur quelles caractéristiques structurales rendent l'aspirine un inhibiteur irréversible tandis que la caféine agit comme antagoniste compétitif.`,
+        notice: `<b>La distinction est chimique, non fondée sur la forme : l'aspirine porte un groupe acétyle qui peut se <em>transférer</em>, la caféine n'en porte aucun.</b> L'aspirine acétyle de façon covalente la Ser530 de la COX-1, donc l'inhibition persiste pour la vie de l'enzyme — et c'est pourquoi une seule faible dose supprime le thromboxane plaquettaire pendant des jours, les plaquettes étant anucléées et incapables de resynthétiser l'enzyme. La caféine occupe simplement les récepteurs de l'adénosine de façon réversible, donc son effet suit la concentration et se dissipe avec une demi-vie de ~5 heures. Toutes deux illustrent pourquoi la conception de médicaments fondée sur la structure est si exigeante : la pharmacologie découle d'un seul substituant réactif, non de la forme moléculaire grossière, et aucune des deux n'est déductible de la seule image boules-et-bâtonnets.`,
+      },
+    },
+    acids: {
+      junior: {
+        legend: `Le bécher à gauche montre ta solution, colorée par un indicateur universel — rouge et orange pour les acides, vert pour le neutre, bleu et violet pour les bases. La courbe trace le pH à mesure que tu ajoutes de la base, et le point marque où tu es maintenant.`,
+        try: `Pars avec [[base]] à 0 et lis le [[ph]]. Maintenant fais glisser lentement [[base]] vers le haut pour ajouter de la base, et regarde la couleur et le pH monter. Que se passe-t-il juste autour de la moitié ?`,
+        notice: `<b>Le pH bouge à peine au début, puis bondit d'un coup à travers le neutre.</b> Chaque peu de base est silencieusement absorbé jusqu'à ce que tu atteignes la quantité exactement correspondante — le point d'équivalence — où la goutte suivante envoie le pH gicler vers le haut d'un bond, de l'acide droit à la base.`,
+      },
+      student: {
+        legend: `Un titrage : 25 mL d'acide 0,1 M, avec de la base 0,1 M ajoutée le long de l'axe x et le pH sur l'axe y. Les bandes de fond sont l'échelle de l'indicateur universel, et le bécher reflète le pH actuel. \\([H^+]\\) fixe \\(\\text{pH} = -\\log_{10}[H^+]\\).`,
+        try: `Garde [[pka]] au minimum (un acide fort) et ajoute [[base]] jusqu'à 25 mL. Puis monte [[pka]] pour faire un acide faible et titre de nouveau — comment la forme de la courbe change-t-elle ?`,
+        notice: `<b>Le point d'équivalence est à 25 mL, où les moles de base égalent les moles d'acide.</b> Pour un acide fort il atterrit à pH 7 ; pour un acide faible le bond est plus petit, part plus haut, et le point d'équivalence monte au-dessus de 7 parce que le sel formé est lui-même légèrement basique. Le tronçon plat avant le bond est la région tampon.`,
+      },
+      scholar: {
+        legend: `Un titrage monoprotique fort/faible de 25 mL d'acide 0,1 M avec de la base 0,1 M. Le pH est calculé par morceaux — région tampon via Henderson–Hasselbalch, équivalence via hydrolyse du conjugué, au-delà via excès de base forte — et les bandes de l'indicateur pavent l'axe du pH.`,
+        try: `Mets [[pka]] à une valeur faible et trouve le point de semi-équivalence à 12,5 mL : lis [[ph]] là et compare-le à [[pka]]. Puis confirme que le bond d'équivalence se rétrécit à mesure que l'acide s'affaiblit.`,
+        notice: `<b>À la semi-équivalence, \\(\\text{pH} = pK_a\\) exactement.</b> Là \\([HA] = [A^-]\\), donc Henderson–Hasselbalch \\(\\text{pH} = pK_a + \\log_{10}([A^-]/[HA])\\) se réduit à \\(\\text{pH} = pK_a\\) — la façon standard de lire la force d'un acide faible depuis sa courbe. Le bond vertical se rétrécit à mesure que \\(pK_a\\) croît, parce que la base conjuguée tamponnante l'amortit.`,
+      },
+    },
+    periodic: {
+      junior: {
+        legend: `Toute la table périodique, un carré par élément, colorée par famille chimique — rouges et oranges sont des métaux réactifs à gauche, bleus et violets sont des non-métaux et gaz nobles à droite. Clique un carré pour voir ce que c'est.`,
+        try: `Clique quelques carrés le long de la même colonne, puis quelques-uns le long de la rangée du haut. Puis appuie sur « Rayon atomique » et « Électronégativité » et regarde les couleurs couler à travers la table.`,
+        notice: `<b>Les éléments de la même colonne se comportent pareillement, et les propriétés changent avec continuité à travers la table.</b> La taille atomique croît vers la gauche et vers le bas ; l'attraction sur les électrons croît vers le haut à droite. La forme de la table n'est pas de la décoration — c'est une carte de comment se comporte chaque élément.`,
+      },
+      student: {
+        legend: `Éléments disposés par numéro atomique en périodes (rangées = couches électroniques) et groupes (colonnes = électrons de valence), colorés par famille. Les boutons de tendance re-ombragent la table pour une propriété périodique ; clique une case pour l'inspecter.`,
+        try: `Passe à « Rayon atomique », puis « Électronégativité », et regarde le gradient inverser sa direction. Puis clique le fluor (haut à droite) et le césium (bas à gauche) — les deux extrêmes.`,
+        notice: `<b>Le rayon atomique augmente vers le bas et à gauche ; l'électronégativité augmente vers le haut et à droite.</b> Tous deux jaillissent d'une seule cause : à travers une période la charge nucléaire croissante tire les électrons plus serrés, tandis qu'en descendant un groupe chaque nouvelle couche pousse les électrons externes plus loin.`,
+      },
+      scholar: {
+        legend: `La table à 118 éléments colorée par famille, avec des superpositions de propriétés. Les ombrages de rayon et d'électronégativité codent les tendances périodiques qualitatives qui découlent de la charge nucléaire effective ; l'inspection de la case rapporte \\(Z\\) et la catégorie.`,
+        try: `Compare le gradient d'électronégativité à la structure en blocs : note comment les métaux de transition du bloc d varient bien moins que les blocs s et p, et comment le bloc f reste presque uniforme.`,
+        notice: `<b>Les tendances sont une carte de la charge nucléaire effective \\(Z_{\\text{eff}}\\).</b> Les blocs sont larges de 2, 6, 10 et 14 parce que les orbitales s, p, d et f contiennent ce nombre d'électrons. La variation atténuée à travers les métaux de transition et de transition interne reflète les électrons remplissant les couches d et f internes, qui écrantent les électrons les plus externes et aplatissent les tendances.`,
+      },
+    },
+    balancing: {
+      junior: {
+        legend: `Une réaction chimique dessinée comme des molécules. Les curseurs règlent combien il y en a de chaque molécule. Fais correspondre les comptes d'atomes à gauche avec ceux à droite pour l'équilibrer.`,
+        try: `Utilise les curseurs pour changer les nombres devant chaque molécule jusqu'à ce que chaque compte d'atomes corresponde des deux côtés. [[bal]] passe-t-il à Oui ?`,
+        notice: `<b>Les atomes ne sont jamais perdus — seulement réarrangés.</b> Tu ne peux pas changer les molécules, seulement combien il y en a, jusqu'à ce que les deux côtés portent le même compte de chaque atome. C'est une équation équilibrée, et c'est en réalité juste du comptage attentif.`,
+      },
+      student: {
+        legend: `Réactifs → produits dessinés comme des molécules, avec un curseur de coefficient par espèce. [[check]] compte chaque élément des deux côtés, et [[bal]] confirme quand ils correspondent tous.`,
+        try: `Équilibre la combustion du méthane : ajuste les coefficients jusqu'à ce que carbone, hydrogène et oxygène correspondent tous. Puis appuie sur [[next]] pour une réaction différente.`,
+        notice: `<b>Seuls les coefficients peuvent changer, jamais les indices.</b> L'équilibrage impose la conservation de la masse — les mêmes atomes en sortie qu'en entrée. Les coefficients que tu trouves sont aussi les rapports molaires : CH₄ + 2O₂ → CO₂ + 2H₂O signifie qu'une mole de méthane a besoin de deux d'oxygène.`,
+      },
+      scholar: {
+        legend: `Un équilibreur à conservation des atomes : chaque coefficient met à l'échelle une espèce, et les comptes d'éléments doivent s'égaler à travers la flèche. Plusieurs réactions sont disponibles.`,
+        try: `Trouve les plus petits coefficients entiers pour chaque réaction, et note que l'ensemble équilibré est unique à un multiple commun près.`,
+        notice: `<b>Équilibrer, c'est résoudre un système linéaire construit à partir de la conservation de chaque élément.</b> Il y a toujours une solution à un facteur commun près — le plus petit ensemble d'entiers. Les équations redox ajoutent une seconde contrainte, que la charge aussi doit s'équilibrer, gérée avec les demi-réactions électroniques.`,
+      },
+    },
+    climate: {
+      junior: {
+        legend: `Les flèches jaunes sont la chaleur qui arrive du Soleil, et celles qui montent du sol sont la chaleur qui cherche à s'échapper de nouveau dans l'espace. La bande dégradée est le <b>gaz à effet de serre</b> dans l'air : plus il y en a, plus la chaleur en fuite est renvoyée vers le bas. Le ciel et le sol rougissent à mesure que la planète se réchauffe.`,
+        try: `Appuie sur [[pre]] pour revenir à l'année 1750 et note [[dt]]. Maintenant appuie sur [[now]] pour l'air d'aujourd'hui. Puis fais glisser [[co2]] à 560 — le double de la quantité de 1750.`,
+        notice: `<b>Doubler le CO₂ de 280 à 560 réchauffe la planète d'environ 3°C — et les 420 d'aujourd'hui nous ont déjà engagés à environ 1,7°C.</b> Trois degrés paraissent peu à côté du temps qui change de 10° entre le matin et l'après-midi. Mais c'est la <em>planète entière, chaque jour, en permanence</em> : la différence entre aujourd'hui et la dernière ère glaciaire, quand le Canada gisait sous un kilomètre de glace, n'était que d'environ 5°C. De petits nombres globaux déplacent de très grandes choses.`,
+      },
+      student: {
+        legend: `Un dessin animé du bilan radiatif : ondes courtes solaires entrantes, infrarouge sortant, et une couche à effet de serre absorbante dont l'opacité croît avec [[co2]]. [[forcing]] est le forçage radiatif en W/m² et [[dt]] le réchauffement à l'équilibre qui en résulte.`,
+        try: `Enregistre [[forcing]] à [[co2]] = 280, 560 puis 800. Le saut de 280→560 est-il de la même taille que 560→800 ? Calcule quel [[co2]] il faudrait pour doubler le forçage que tu obtiens à 560.`,
+        notice: `<b>Chaque <em>doublement</em> ajoute les mêmes 3,7 W/m² — 280→560 et 400→800 donnent des incréments identiques.</b> Le forçage est logarithmique, \\(\\Delta F = 5.35\\ln(C/C_0)\\), parce que les bandes d'absorption les plus fortes sont déjà saturées et que seuls les bords des bandes continuent d'absorber. Cela coupe dans les deux sens : le dommage par ppm supplémentaire baisse, mais aussi le bénéfice de chaque ppm que tu évites, et la relation ne s'aplatit jamais à zéro. Multiplier par la sensibilité \\(\\lambda \\approx 0.8\\ \\text{K/(W/m²)}\\) donne ~3°C par doublement — le nombre autour duquel la politique climatique tourne depuis quarante ans.`,
+      },
+      scholar: {
+        legend: `Représentation de bilan énergétique à zéro dimension. [[forcing]] implémente l'approximation de Myhre et al. (1998) \\(\\Delta F = 5.35\\ln(C/C_0)\\) avec \\(C_0 = 280\\) ppm ; [[dt]] applique un paramètre de sensibilité fixe \\(\\lambda = 0.8\\) K/(W/m²), c'est-à-dire réponse d'équilibre plutôt que transitoire.`,
+        try: `Confirme la forme logarithmique en vérifiant que des rapports égaux de [[co2]] donnent des incréments égaux de [[forcing]]. Puis considère ce que ce modèle omet nécessairement, et dans quelle direction chaque omission distord [[dt]].`,
+        notice: `<b>Le modèle donne \\(\\Delta T \\approx 3\\)°C par doublement — mais c'est seulement l'équilibre, et cela cache presque toute l'incertitude réelle.</b> \\(\\lambda\\) n'est pas une constante : elle agrège la réponse de Planck avec les rétroactions de vapeur d'eau, de gradient thermique vertical, d'albédo et de nuages, et les seuls nuages maintiennent l'intervalle probable du GIEC à 2,5–4°C. L'inertie thermique de l'océan signifie que la réponse <em>transitoire</em> n'est que 50–70% de l'équilibre, donc le réchauffement observé est en retard sur celui engagé. Et le cadre est linéaire dans le forçage, donc il ne peut représenter les points de bascule — effondrement des calottes, arrêt de l'AMOC, carbone du pergélisol — où la réponse est hystérétique et la notion d'un unique \\(\\lambda\\) s'effondre complètement.`,
+      },
+    },
     blackholes: {
       junior: {
         legend: `Le disque noir est l'<b>horizon des événements</b> — franchis-le et rien, pas même la lumière, ne peut ressortir. Le point en orbite est une horloge que nous observons de loin. [[dilat]] te dit à quelle vitesse elle bat comparée à la tienne, et [[z]] montre de combien sa lumière est étirée en sortant.`,
@@ -3321,6 +4813,261 @@ export default {
     },
   },
   labels: {
+    astro: {
+      junior:  { mass: `Masse de l'étoile (masses solaires)`, reset: `Réinitialiser l'étoile`, age: `Âge`, stage: `Stade` },
+      student: { mass: `Masse de l'étoile (masses solaires)`, reset: `Réinitialiser l'étoile`, age: `Âge`, stage: `Stade` },
+      scholar: { mass: `Masse de l'étoile (masses solaires)`, reset: `Réinitialiser l'étoile`, age: `Âge`, stage: `Stade` },
+    },
+    cosmology: {
+      junior:  { lam: `Énergie noire Ω_Λ`, mat: `Matière Ω_m (%)`, reset: `Réinit.`, age: `Âge (Gyr)`, h: `Taux d'expansion`, z: `Redshift z` },
+      student: { lam: `Énergie noire Ω_Λ`, mat: `Matière Ω_m (%)`, reset: `Réinit.`, age: `Âge (Gyr)`, h: `H(z)`, z: `Redshift z` },
+      scholar: { lam: `Énergie noire Ω_Λ`, mat: `Matière Ω_m (%)`, reset: `Réinit.`, age: `Âge (Gyr)`, h: `H(z)`, z: `Redshift z` },
+    },
+    neuro: {
+      junior:  { stim: `Force du stimulus`, fire: `Activer le neurone`, rate: `Fréquence de décharge`, pot: `Potentiel` },
+      student: { stim: `Force du stimulus`, fire: `Activer le neurone`, rate: `Fréquence de décharge`, pot: `Potentiel` },
+      scholar: { stim: `Force du stimulus`, fire: `Activer le neurone`, rate: `Fréquence de décharge`, pot: `Potentiel` },
+    },
+    neuron: {
+      junior:  { cur: `Force du stimulus`, pulse: `Impulsion unique`, reset: `Réinit.`, v: `Tension interne`, state: `État`, spikes: `Pics` },
+      student: { cur: `Courant de stimulation (I)`, pulse: `Impulsion unique`, reset: `Réinit.`, v: `V de membrane`, state: `État`, spikes: `Pics` },
+      scholar: { cur: `Courant de stimulation (I)`, pulse: `Impulsion unique`, reset: `Réinit.`, v: `V de membrane`, state: `État`, spikes: `Pics` },
+    },
+    memory: {
+      junior:  { rate: `Fréquence de stimulation (Hz)`, ltp: `Renforcer (LTP)`, ltd: `Affaiblir (LTD)`, reset: `Réinit.`, w: `Force synaptique`, last: `Dernier événement`, events: `Événements` },
+      student: { rate: `Fréquence de stimulation (Hz)`, ltp: `Coupler (LTP)`, ltd: `Inverser (LTD)`, reset: `Réinit.`, w: `Force synaptique`, last: `Dernier événement`, events: `Événements` },
+      scholar: { rate: `Fréquence de stimulation (Hz)`, ltp: `Coupler (LTP)`, ltd: `Inverser (LTD)`, reset: `Réinit.`, w: `Force synaptique`, last: `Dernier événement`, events: `Événements` },
+    },
+    sleep: {
+      junior:  { speed: `Vitesse du cycle de sommeil`, next: `Phase suivante`, wake: `Réveil`, stage: `Phase de sommeil`, freq: `Vitesse des ondes cérébrales`, ad: `Pression de sommeil` },
+      student: { speed: `Vitesse du cycle de sommeil`, next: `Phase suivante`, wake: `Réveil`, stage: `Phase de sommeil`, freq: `Fréq. EEG`, ad: `Adénosine` },
+      scholar: { speed: `Vitesse du cycle de sommeil`, next: `Phase suivante`, wake: `Réveil`, stage: `Phase de sommeil`, freq: `Fréq. EEG`, ad: `Adénosine` },
+    },
+    chem: {
+      junior:  { temp: `Température`, reset: `Réinit.`, mols: `Molécules`, t: `Temp` },
+      student: { temp: `Température`, reset: `Réinit.`, mols: `Molécules`, t: `Temp` },
+      scholar: { temp: `Température`, reset: `Réinit.`, mols: `Molécules`, t: `Temp` },
+    },
+    electrochem: {
+      junior:  { load: `Charge (vitesse de décharge)`, discharge: `Décharger`, charge: `Charger`, reset: `Réinit.`, volts: `Tension`, soc: `Niveau de batterie`, mode: `Mode` },
+      student: { load: `Charge (vitesse de décharge)`, discharge: `Décharger`, charge: `Charger`, reset: `Réinit.`, volts: `Tension`, soc: `Niveau de charge`, mode: `Mode` },
+      scholar: { load: `Charge (vitesse de décharge)`, discharge: `Décharger`, charge: `Charger`, reset: `Réinit.`, volts: `Tension`, soc: `État de charge`, mode: `Mode` },
+    },
+    kinetics: {
+      junior:  { temp: `Température (K)`, ea: `Énergie d'activation (kJ/mol)`, cat: `Ajouter un catalyseur`, reset: `Réinit.`, react: `Réactif restant`, prod: `Produit formé`, rate: `Vitesse` },
+      student: { temp: `Température (K)`, ea: `Énergie d'activation (kJ/mol)`, cat: `Ajouter un catalyseur`, reset: `Réinit.`, react: `[Réactif]`, prod: `[Produit]`, rate: `Vitesse` },
+      scholar: { temp: `Température (K)`, ea: `Énergie d'activation (kJ/mol)`, cat: `Ajouter un catalyseur`, reset: `Réinit.`, react: `[Réactif]`, prod: `[Produit]`, rate: `Vitesse` },
+    },
+    organic: {
+      junior:  { sel: `Sélecteur de molécule`, mol: `Molécule`, atoms: `Atomes`, type: `Type` },
+      student: { sel: `Sélecteur de molécule`, mol: `Molécule`, atoms: `Atomes`, type: `Type` },
+      scholar: { sel: `Sélecteur de molécule`, mol: `Molécule`, atoms: `Atomes`, type: `Type` },
+    },
+    acids: {
+      junior:  { base: `Base ajoutée`, pka: `Force de l'acide`, ph: `pH`, state: `Acide ou base ?` },
+      student: { base: `Base ajoutée (mL)`, pka: `pKₐ de l'acide`, ph: `pH`, state: `Nature` },
+      scholar: { base: `Titrant ajouté (mL)`, pka: `pKₐ de l'acide`, ph: `pH`, state: `Région` },
+    },
+    periodic: {
+      junior:  { el: `Élément`, trend: `Ce que tu regardes` },
+      student: { el: `Élément`, trend: `Vue` },
+      scholar: { el: `Élément`, trend: `Vue` },
+    },
+    balancing: {
+      junior:  { next: `Réaction suivante`, bal: `Équilibrée ?`, check: `Compter les atomes` },
+      student: { next: `Réaction suivante`, bal: `Équilibrée ?`, check: `Compter les atomes` },
+      scholar: { next: `Réaction suivante`, bal: `Équilibrée ?`, check: `Compter les atomes` },
+    },
+    climate: {
+      junior:  { co2: `Concentration de CO₂ (ppm)`, pre: `Préindustriel (280)`, now: `Régler à 2024 (420)`, c: `CO₂`, forcing: `Chaleur supplémentaire piégée`, dt: `Hausse de température` },
+      student: { co2: `Concentration de CO₂ (ppm)`, pre: `Préindustriel (280)`, now: `Régler à 2024 (420)`, c: `CO₂`, forcing: `Forçage`, dt: `ΔT` },
+      scholar: { co2: `Concentration de CO₂ (ppm)`, pre: `Préindustriel (280)`, now: `Régler à 2024 (420)`, c: `CO₂`, forcing: `Forçage`, dt: `ΔT` },
+    },
+    tectonics: {
+      junior:  { speed: `Vitesse de la plaque`, type: `Type de limite (1=divergente 2=transformante 3=convergente)`, quake: `Déclencher un séisme`, stress: `Contrainte`, time: `Millions d'années`, event: `Dernier événement` },
+      student: { speed: `Vitesse de la plaque`, type: `Type de limite (1=divergente 2=transformante 3=convergente)`, quake: `Déclencher un séisme`, stress: `Contrainte`, time: `Ma`, event: `Dernier événement` },
+      scholar: { speed: `Vitesse de la plaque`, type: `Type de limite (1=divergente 2=transformante 3=convergente)`, quake: `Déclencher un séisme`, stress: `Contrainte`, time: `Ma`, event: `Dernier événement` },
+    },
+    ocean: {
+      junior:  { wind: `Force du vent`, warm: `Réchauffement de l'océan`, flow: `Débit`, temp: `Temp. de surface`, amoc: `Tapis roulant océanique` },
+      student: { wind: `Force du vent`, warm: `Réchauffement de l'océan`, flow: `Débit`, temp: `Temp. de surface`, amoc: `AMOC` },
+      scholar: { wind: `Force du vent`, warm: `Réchauffement de l'océan`, flow: `Débit`, temp: `Temp. de surface`, amoc: `AMOC` },
+    },
+    volcano: {
+      junior:  { visc: `Viscosité du magma (1=basalte 10=rhyolite)`, recharge: `Taux de recharge du magma`, erupt: `Force de l'éruption`, pres: `Pression de la chambre`, vei: `Taille de l'explosion`, phase: `Phase` },
+      student: { visc: `Viscosité du magma (1=basalte 10=rhyolite)`, recharge: `Taux de recharge du magma`, erupt: `Force de l'éruption`, pres: `Pression de la chambre`, vei: `VEI`, phase: `Phase` },
+      scholar: { visc: `Viscosité du magma (1=basalte 10=rhyolite)`, recharge: `Taux de recharge du magma`, erupt: `Force de l'éruption`, pres: `Pression de la chambre`, vei: `VEI`, phase: `Phase` },
+    },
+    seasons: {
+      junior:  { month: `Mois`, nh: `Moitié nord`, sh: `Moitié sud` },
+      student: { month: `Mois de l'année`, nh: `Hémisphère nord`, sh: `Hémisphère sud` },
+      scholar: { month: `Mois de l'année`, nh: `Hémisphère nord`, sh: `Hémisphère sud` },
+    },
+    sorting: {
+      junior:  { size: `Taille du tableau`, bubble: `Tri à bulles`, merge: `Tri fusion`, shuffle: `Mélanger`, algo: `Algorithme`, comps: `Comparaisons`, swaps: `Échanges` },
+      student: { size: `Taille du tableau`, bubble: `Tri à bulles`, merge: `Tri fusion`, shuffle: `Mélanger`, algo: `Algorithme`, comps: `Comparaisons`, swaps: `Échanges` },
+      scholar: { size: `Taille du tableau`, bubble: `Tri à bulles`, merge: `Tri fusion`, shuffle: `Mélanger`, algo: `Algorithme`, comps: `Comparaisons`, swaps: `Échanges` },
+    },
+    ml: {
+      junior:  { lr: `Taux d'apprentissage`, hid: `Unités cachées`, reset: `Réinit.`, epoch: `Époque`, loss: `Erreur`, acc: `Précision` },
+      student: { lr: `Taux d'apprentissage`, hid: `Unités cachées`, reset: `Réinit.`, epoch: `Époque`, loss: `Perte`, acc: `Précision` },
+      scholar: { lr: `Taux d'apprentissage`, hid: `Unités cachées`, reset: `Réinit.`, epoch: `Époque`, loss: `Perte`, acc: `Précision` },
+    },
+    crypto: {
+      junior:  { run: `Lancer l'échange`, reset: `Réinit.`, step: `Étape`, key: `Clé partagée` },
+      student: { run: `Lancer l'échange DH`, reset: `Réinit.`, step: `Étape`, key: `Clé partagée` },
+      scholar: { run: `Lancer l'échange DH`, reset: `Réinit.`, step: `Étape`, key: `Clé partagée` },
+    },
+    complexity: {
+      junior:  { n: `Taille d'entrée n`, algo: `Algorithme (1=O(log n) … 5=O(2ⁿ))`, run: `Exécuter`, ops: `Opérations`, cls: `Classe`, nval: `n` },
+      student: { n: `Taille d'entrée n`, algo: `Algorithme (1=O(log n) … 5=O(2ⁿ))`, run: `Exécuter`, ops: `Opérations`, cls: `Classe`, nval: `n` },
+      scholar: { n: `Taille d'entrée n`, algo: `Algorithme (1=O(log n) … 5=O(2ⁿ))`, run: `Exécuter`, ops: `Opérations`, cls: `Classe`, nval: `n` },
+    },
+    life: {
+      junior:  { pause: `Pause`, clear: `Effacer`, random: `Aléatoire`, glider: `Planeur`, gen: `Génération`, alive: `Cellules vivantes` },
+      student: { pause: `Pause`, clear: `Effacer`, random: `Aléatoire`, glider: `Planeur`, gen: `Génération`, alive: `Cellules vivantes` },
+      scholar: { pause: `Pause`, clear: `Effacer`, random: `Aléatoire`, glider: `Planeur`, gen: `Génération`, alive: `Cellules vivantes` },
+    },
+    dna: {
+      junior:  { speed: `Vitesse de réplication`, reset: `Réinit.`, pairs: `Paires de bases copiées`, errors: `Mutations` },
+      student: { speed: `Vitesse de réplication`, reset: `Réinit.`, pairs: `Paires de bases copiées`, errors: `Mutations` },
+      scholar: { speed: `Vitesse de réplication`, reset: `Réinit.`, pairs: `Paires de bases copiées`, errors: `Mutations` },
+    },
+    evolution: {
+      junior:  { sel: `Pression de sélection`, mut: `Taux de mutation`, reset: `Réinit.`, gen: `Génération`, fit: `Fitness moyenne`, div: `Diversité` },
+      student: { sel: `Pression de sélection`, mut: `Taux de mutation`, reset: `Réinit.`, gen: `Génération`, fit: `Fitness moyenne`, div: `Diversité` },
+      scholar: { sel: `Pression de sélection`, mut: `Taux de mutation`, reset: `Réinit.`, gen: `Génération`, fit: `Fitness moyenne`, div: `Diversité` },
+    },
+    ecosystem: {
+      junior:  { growth: `Taux de croissance des plantes`, pred: `Efficacité des prédateurs`, reset: `Réinit.`, plants: `🌿 Plantes`, herb: `🐇 Herbivores`, preds: `🦊 Prédateurs` },
+      student: { growth: `Taux de croissance des plantes`, pred: `Efficacité des prédateurs`, reset: `Réinit.`, plants: `🌿 Plantes`, herb: `🐇 Herbivores`, preds: `🦊 Prédateurs` },
+      scholar: { growth: `Taux de croissance des plantes`, pred: `Efficacité des prédateurs`, reset: `Réinit.`, plants: `🌿 Plantes`, herb: `🐇 Herbivores`, preds: `🦊 Prédateurs` },
+    },
+    cell: {
+      junior:  { salt: `Sel à droite`, reset: `Réinit.`, left: `Eau à gauche`, right: `Eau à droite` },
+      student: { salt: `Soluté ajouté (droite)`, reset: `Réinit.`, left: `Eau (gauche)`, right: `Eau (droite)` },
+      scholar: { salt: `Soluté ajouté (droite)`, reset: `Réinit.`, left: `Eau (gauche)`, right: `Eau (droite)` },
+    },
+    mitosis: {
+      junior:  { stage: `Fais glisser entre les phases`, play: `Play`, phase: `Phase`, cells: `Cellules` },
+      student: { stage: `Phase`, play: `Play`, phase: `Phase`, cells: `Cellules` },
+      scholar: { stage: `Phase`, play: `Play`, phase: `Phase`, cells: `Cellules` },
+    },
+    punnett: {
+      junior:  { p1: `Parent 1`, p2: `Parent 2`, pheno: `Apparence (phénotype)`, geno: `Gènes (génotype)` },
+      student: { p1: `Génotype parent 1`, p2: `Génotype parent 2`, pheno: `Rapport phénotypique`, geno: `Rapport génotypique` },
+      scholar: { p1: `Génotype parent 1`, p2: `Génotype parent 2`, pheno: `Rapport phénotypique`, geno: `Rapport génotypique` },
+    },
+    prob: {
+      junior:  { drop: `Lâcher des billes`, reset: `Réinit.`, rows: `Rangées de clous`, total: `Billes tombées`, mean: `Case moyenne` },
+      student: { drop: `Lâcher des billes`, reset: `Réinit.`, rows: `Rangées de clous`, total: `Taille d'échantillon (N)`, mean: `Indice de la case moyenne` },
+      scholar: { drop: `Lâcher des billes`, reset: `Réinit.`, rows: `Rangées de clous`, total: `Taille d'échantillon (N)`, mean: `Indice de la case moyenne` },
+    },
+    fractal: {
+      junior:  { detail: `Détail (itérations)`, zoom: `Niveau de zoom`, reset: `Réinitialiser la vue` },
+      student: { detail: `Détail (itérations)`, zoom: `Niveau de zoom`, reset: `Réinitialiser la vue` },
+      scholar: { detail: `Détail (itérations)`, zoom: `Niveau de zoom`, reset: `Réinitialiser la vue` },
+    },
+    calculus: {
+      junior:  { x: `position x`, rects: `Rectangles de Riemann`, deriv: `Pente ici`, integ: `Aire jusqu'ici` },
+      student: { x: `position x`, rects: `Rectangles de Riemann`, deriv: `f′(x)`, integ: `∫f dx (−3→x)` },
+      scholar: { x: `position x`, rects: `Rectangles de Riemann`, deriv: `f′(x)`, integ: `∫ de −3 à x` },
+    },
+    graphs: {
+      junior:  { nodes: `Nœuds`, hubs: `Connexions des hubs`, spread: `Propager le signal`, reset: `Nouveau graphe`, reached: `Atteints`, steps: `Étapes`, hubcount: `Hubs` },
+      student: { nodes: `Nœuds`, hubs: `Connexions des hubs`, spread: `Propager le signal`, reset: `Nouveau graphe`, reached: `Atteints`, steps: `Étapes`, hubcount: `Hubs` },
+      scholar: { nodes: `Nœuds`, hubs: `Connexions des hubs`, spread: `Propager le signal`, reset: `Nouveau graphe`, reached: `Atteints`, steps: `Étapes`, hubcount: `Hubs` },
+    },
+    trig: {
+      junior:  { angle: `Angle`, play: `Play`, sin: `Hauteur (sin)`, cos: `Horizontale (cos)` },
+      student: { angle: `Angle θ`, play: `Play`, sin: `sin θ`, cos: `cos θ` },
+      scholar: { angle: `Angle θ`, play: `Play`, sin: `sin θ`, cos: `cos θ` },
+    },
+    gravity: {
+      junior:  { radius: `Distance de l'étoile`, mass: `Masse de l'étoile`, period: `Durée de l'année`, speed: `Vitesse` },
+      student: { radius: `Rayon de l'orbite`, mass: `Masse de l'étoile`, period: `Période (T)`, speed: `Vitesse orbitale (v)` },
+      scholar: { radius: `Rayon de l'orbite (r)`, mass: `Masse de l'étoile (M)`, period: `Période (T)`, speed: `Vitesse orbitale (v)` },
+    },
+    projectile: {
+      junior:  { angle: `Angle de lancer`, speed: `Vitesse de lancer`, launch: `Relancer`, range: `Point de chute`, peak: `Point le plus haut`, time: `Temps en l'air` },
+      student: { angle: `Angle (θ)`, speed: `Vitesse (v₀)`, launch: `Lancer`, range: `Portée (R)`, peak: `Hauteur max (H)`, time: `Temps de vol (T)` },
+      scholar: { angle: `Angle (θ)`, speed: `Vitesse initiale (v₀)`, launch: `Lancer`, range: `Portée (R)`, peak: `Hauteur au sommet (H)`, time: `Temps de vol (T)` },
+    },
+    newton: {
+      junior:  { force: `Force de poussée`, mass: `Masse`, fric: `Frottement`, net: `Poussée totale`, accel: `Accélération`, vel: `Vitesse` },
+      student: { force: `Force appliquée (N)`, mass: `Masse (kg)`, fric: `Frottement (μ)`, net: `Force nette`, accel: `Accélération (a)`, vel: `Vitesse (v)` },
+      scholar: { force: `Force appliquée (N)`, mass: `Masse (kg)`, fric: `Frottement (μ)`, net: `Force nette (F net)`, accel: `Accélération (a)`, vel: `Vitesse (v)` },
+    },
+    circuits: {
+      junior:  { volt: `Tension de la pile`, res: `Résistance`, cur: `Courant (flux)`, pow: `Luminosité (puissance)` },
+      student: { volt: `Tension (V)`, res: `Résistance (R)`, cur: `Courant (I)`, pow: `Puissance (P)` },
+      scholar: { volt: `Tension (V)`, res: `Résistance (R)`, cur: `Courant (I)`, pow: `Puissance (P)` },
+    },
+    states: {
+      junior:  { temp: `Température`, state: `État de la matière`, tval: `Ressenti` },
+      student: { temp: `Température`, state: `État`, tval: `Ressenti` },
+      scholar: { temp: `Température`, state: `État`, tval: `Ressenti` },
+    },
+    waves: {
+      junior:  { freq: `Fréquence 2`, phase: `Déphasage`, type: `Interférence`, amp: `Hauteur de l'onde` },
+      student: { freq: `Fréquence 2`, phase: `Déphasage`, type: `Interférence`, amp: `Amplitude max` },
+      scholar: { freq: `Fréquence 2`, phase: `Déphasage`, type: `Interférence`, amp: `Amplitude max` },
+    },
+    thermo: {
+      junior:  { temp: `Température (K)`, num: `Particules`, hits: `Chocs/s sur les parois`, speed: `Vitesse moyenne`, press: `Pression` },
+      student: { temp: `Température (K)`, num: `Particules`, hits: `Chocs/s sur les parois`, speed: `Vitesse moyenne`, press: `Pression` },
+      scholar: { temp: `Température (K)`, num: `Particules`, hits: `Chocs/s sur les parois`, speed: `Vitesse moyenne`, press: `Pression` },
+    },
+    particles: {
+      junior:  { energy: `Énergie du faisceau (TeV)`, collide: `Collision !`, count: `Collisions`, e: `Énergie` },
+      student: { energy: `Énergie du faisceau (TeV)`, collide: `Collision !`, count: `Collisions`, e: `Énergie` },
+      scholar: { energy: `Énergie du faisceau (TeV)`, collide: `Collision !`, count: `Collisions`, e: `Énergie` },
+    },
+    seriesparallel: {
+      junior:  { mode: `Série / Parallèle`, volt: `Pile`, rtot: `Résistance totale`, cur: `Courant`, bulb: `Luminosité de l'ampoule` },
+      student: { mode: `Série / Parallèle`, volt: `Tension (V)`, rtot: `Résistance totale`, cur: `Courant total`, bulb: `Puissance par ampoule` },
+      scholar: { mode: `Série / Parallèle`, volt: `Tension (V)`, rtot: `Résistance totale`, cur: `Courant total`, bulb: `Puissance par ampoule` },
+    },
+    respiration: {
+      junior:  { o2: `Oxygène`, atp: `Énergie (ATP)`, co2: `CO₂ rejeté`, mode: `Mode` },
+      student: { o2: `Niveau d'oxygène`, atp: `ATP par glucose`, co2: `CO₂ par glucose`, mode: `Voie métabolique` },
+      scholar: { o2: `Niveau d'oxygène`, atp: `ATP par glucose`, co2: `CO₂ par glucose`, mode: `Voie métabolique` },
+    },
+    watercycle: {
+      junior:  { temp: `Chaleur du Soleil`, evap: `Évaporation`, cloud: `Nuage`, rain: `Pluie` },
+      student: { temp: `Température`, evap: `Évaporation`, cloud: `Eau dans le nuage`, rain: `Précipitation` },
+      scholar: { temp: `Température`, evap: `Évaporation`, cloud: `Eau dans le nuage`, rain: `Précipitation` },
+    },
+    energy: {
+      junior:  { drop: `Hauteur de chute`, fric: `Frottement`, ke: `Énergie de mouvement`, pe: `Énergie de hauteur`, tot: `Total` },
+      student: { drop: `Hauteur initiale (h)`, fric: `Frottement`, ke: `Cinétique (KE)`, pe: `Potentielle (PE)`, tot: `Énergie totale` },
+      scholar: { drop: `Hauteur initiale (h)`, fric: `Frottement`, ke: `Cinétique (KE)`, pe: `Potentielle (PE)`, tot: `Énergie totale` },
+    },
+    gaslaws: {
+      junior:  { temp: `Température`, vol: `Taille du contenant`, pres: `Pression`, pv: `Pression × taille` },
+      student: { temp: `Température (T)`, vol: `Volume (V)`, pres: `Pression (P)`, pv: `P × V` },
+      scholar: { temp: `Température (T)`, vol: `Volume (V)`, pres: `Pression (P)`, pv: `P × V` },
+    },
+    moonphases: {
+      junior:  { day: `Jour du mois`, phase: `Phase`, lit: `Fraction éclairée` },
+      student: { day: `Jour (sur 29,5)`, phase: `Phase`, lit: `Éclairée` },
+      scholar: { day: `Jour (sur 29,5)`, phase: `Phase`, lit: `Éclairée` },
+    },
+    protein: {
+      junior:  { play: `Construire`, codon: `Lecture`, len: `Perles jusqu'ici` },
+      student: { play: `Traduire`, codon: `Codon → acide aminé`, len: `Longueur de la chaîne` },
+      scholar: { play: `Traduire`, codon: `Codon → acide aminé`, len: `Longueur de la chaîne` },
+    },
+    pendulum: {
+      junior:  { len: `Longueur`, amp: `Amplitude du balancement`, per: `Temps par oscillation`, freq: `Oscillations par seconde` },
+      student: { len: `Longueur (L)`, amp: `Amplitude (θ₀)`, per: `Période (T)`, freq: `Fréquence (f)` },
+      scholar: { len: `Longueur (L)`, amp: `Amplitude (θ₀)`, per: `Période (T)`, freq: `Fréquence (f)` },
+    },
+    optics: {
+      junior:  { obj: `Distance de l'objet`, foc: `Force de la lentille`, img: `Position de l'image`, mag: `Taille`, type: `Image` },
+      student: { obj: `Distance objet (dₒ)`, foc: `Distance focale (f)`, img: `Distance image (dᵢ)`, mag: `Grandissement (m)`, type: `Image` },
+      scholar: { obj: `Distance objet (dₒ)`, foc: `Distance focale (f)`, img: `Distance image (dᵢ)`, mag: `Grandissement (m)`, type: `Image` },
+    },
     blackholes: {
       junior:  { mass: 'Masse du trou noir (M☉)', dist: 'Distance du trou',            wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Étirement de la lumière' },
       student: { mass: 'Masse du trou noir (M☉)', dist: 'Distance particule test (r_S)', wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Redshift' },

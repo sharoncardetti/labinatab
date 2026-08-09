@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energia e conservazione | Lab-in-a-Tab</title>
+<meta name="description" content="L'energia non è mai creata né distrutta — solo scambiata tra forme. Una pallina che rotola baratta altezza con velocità e viceversa, e i conti tornano…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/energia-conservazione/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/energy-conservation/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/energia-conservazione/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/conservation-de-l-energie/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/energy-conservation/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Energia e conservazione — Spiegato e simulato">
+<meta property="og:description" content="L'energia non è mai creata né distrutta — solo scambiata tra forme. Una pallina che rotola baratta altezza con velocità e viceversa, e i conti tornano…">
+<meta property="og:url" content="https://labinatab.com/it/energia-conservazione/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Energia e conservazione — Spiegato e simulato">
+<meta name="twitter:description" content="L'energia non è mai creata né distrutta — solo scambiata tra forme. Una pallina che rotola baratta altezza con velocità e viceversa, e i conti tornano…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/energia-conservazione/#article",
+   "headline": "Energia e conservazione",
+   "name": "Energia e conservazione",
+   "description": "L'energia non è mai creata né distrutta — solo scambiata tra forme. Una pallina che rotola baratta altezza con velocità e viceversa, e i conti tornano…",
+   "url": "https://labinatab.com/it/energia-conservazione/",
+   "mainEntityOfPage": "https://labinatab.com/it/energia-conservazione/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-09",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Cinetica",
+    "Potenziale",
+    "Conservazione"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Energia e conservazione",
+    "sameAs": "https://en.wikipedia.org/wiki/Conservation_of_energy"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Energia e conservazione",
+     "item": "https://labinatab.com/it/energia-conservazione/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/energy-conservation/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/energia-conservazione/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/conservation-de-l-energie/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Fisica</nav>
+  <h1>Energia e conservazione</h1>
+  <p class="lead">L'energia non è mai creata né distrutta — solo scambiata tra forme. Una pallina che rotola baratta altezza con velocità e viceversa, e i conti tornano sempre.</p>
+  <div class="chips"><span>Cinetica</span><span>Potenziale</span><span>Conservazione</span></div>
+  <section class="sim-embed" data-sim="energy" data-color="#d97706" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#d97706"><span class="sg-lbl">Prova</span><span>Metti <b>Attrito</b> a 0 e lascia cadere la pallina. Le barre continuano a scambiarsi per sempre? Ora aggiungi un po' di <b>Attrito</b> e guarda cosa succede al <b>Totale</b>.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#d97706"><span class="sg-lbl">Prova</span><span>Con <b>Attrito</b> = 0, verifica che \(KE+PE\) (il Totale) resti costante mentre KE e PE oscillano. Poi alza <b>Attrito</b> e guarda il Totale decadere.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#d97706"><span class="sg-lbl">Prova</span><span>Metti <b>Attrito</b>=0 e conferma che il Totale è invariante mentre \(KE\) e \(PE\) si scambiano. Poi aggiungi attrito e nota il decadimento quasi-esponenziale del Totale — la firma di una forza non conservativa.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>La pallina rotola in una <b>ciotola</b>. In alto sul fianco ha <b>energia d'altezza</b> immagazzinata; in fondo è tutta <b>energia di movimento</b>. Le due barre a destra mostrano ogni tipo — guardale scambiarsi mentre la pallina rotola.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Senza attrito il totale non cambia mai — energia d'altezza ed energia di movimento si scambiano avanti e indietro per sempre.</b> È la conservazione dell'energia. Aggiungi attrito e un po' di energia sfugge come calore a ogni oscillazione, così la pallina risale un po' più in basso ogni volta finché non si ferma. L'energia non è distrutta — è diventata tepore.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Una pallina in una ciotola parabolica. Energia potenziale \(PE=mgh\) (barra blu) ed energia cinetica \(KE=\tfrac{1}{2}mv^2\) (barra rossa) si scambiano mentre si muove; la pill "Total" è la loro somma. <b>Attrito</b> rimuove energia meccanica come calore.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Ad attrito zero \(\tfrac{1}{2}mv^2 + mgh\) è costante — ogni joule di altezza diventa un joule di movimento e viceversa.</b> Questo dà la velocità d'impatto \(v=\sqrt{2gh}\), indipendente dalla massa. L'attrito compie lavoro negativo, convertendo energia meccanica in calore, così il Totale cala e la pallina si assesta — energia comunque conservata, solo spostata al registro termico.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Buca parabolica, quindi il moto è armonico semplice e \(E=KE+PE\propto A^2\) con ampiezza \(A\). <b>Altezza iniziale (h)</b> fissa \(A\); <b>Attrito</b> applica un decadimento esponenziale dell'ampiezza. Le barre mostrano \(KE\) (rosso) e \(PE\) (blu), la pill la loro somma.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>La conservazione segue dal teorema dell'energia-lavoro più una forza conservativa \(\vec F=-\nabla U\); l'attrito non supera quel test e dissipa.</b> Più in profondità, il teorema di Noether lega la conservazione dell'energia alla simmetria per traslazione temporale. Allarga i libri con \(\Delta U=Q-W\) e persino l'energia "persa" è contabilizzata — conservata nel complesso, ma degradata verso il disordine.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>L'unica regola che l'universo non infrange mai</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Di tutte le leggi della fisica, una spicca per non essere mai, mai infranta: <strong>l'energia non può essere creata né distrutta</strong>. Puoi spostarla e cambiare la forma che assume, ma non puoi mai farne una sola goccia dal nulla, e non puoi mai farne sparire un po'. È la <strong>conservazione dell'energia</strong>, e vale ovunque, da una lucciola a una supernova.</p>
+<p>L'energia indossa solo costumi diversi. Una pallina tenuta in alto ha <strong>energia potenziale</strong> — energia immagazzinata di posizione, in attesa di essere usata. Lasciala andare e quell'energia immagazzinata si trasforma in <strong>energia cinetica</strong>, l'energia del movimento, mentre la pallina accelera scendendo. In fondo è tutta movimento; in cima era tutta immagazzinata. Il totale non cambia mai — la pallina si limita a barattare un tipo con l'altro.</p>
+<p>Puoi vedere questo baratto ovunque: uno skater che pompa su e giù per una rampa, un'altalena che arca avanti e indietro, un ottovolante che scavalca una collina e si tuffa dall'altra parte. Allora perché tutto alla fine si ferma? Perché un terzo costume, l'<strong>attrito</strong>, ruba silenziosamente un po' di energia a ogni ciclo e la trasforma in <em>calore</em>. L'energia non è sparita — è solo sparpagliata come tepore, troppo dispersa per essere usata. Nella simulazione qui sotto, lascia cadere una pallina in una ciotola e guarda l'altezza diventare velocità e la velocità diventare altezza.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🎢</span> Un ottovolante non ha bisogno di motore dopo la prima collina — baratta solo altezza con velocità e viceversa, ed è per questo che ogni discesa è più bassa della precedente (l'attrito si prende la sua parte).</li><li><span aria-hidden="true">🔥</span> Sfrega le mani e si scaldano: stai convertendo l'energia cinetica del movimento direttamente in calore, la forma più dispersa che l'energia possa assumere.</li><li><span aria-hidden="true">🌱</span> L'energia chimica del tuo pranzo risale fino alla luce solare catturata dalle piante — energia passata di forma in forma lungo una lunga catena per arrivare a te.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Energia cinetica, energia potenziale e conservazione meccanica</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Due grandezze fanno la maggior parte del lavoro in meccanica. L'<strong>energia cinetica</strong>, l'energia del movimento, è \(KE = \tfrac{1}{2}mv^2\) — nota il \(v^2\): raddoppiare la velocità <em>quadruplica</em> l'energia, ed è esattamente perché gli spazi di frenata esplodono ad alta velocità. L'<strong>energia potenziale gravitazionale</strong>, l'energia dell'altezza, è \(PE = mgh\). In qualsiasi sistema dove solo la gravità compie lavoro, la loro somma è fissa: \(\tfrac{1}{2}mv^2 + mgh = \text{costante}\).</p>
+<p>Quella singola equazione risolve una vasta gamma di problemi senza mai seguire i dettagli disordinati del moto. Lascia cadere la pallina da altezza \(h\) e tutto il suo \(mgh\) si converte in \(\tfrac{1}{2}mv^2\), dando una velocità d'impatto \(v = \sqrt{2gh}\) — indipendente dalla massa, lo stesso risultato che trovò Galileo. Un pendolo, un ottovolante, un salto con gli sci: ciascuno è solo energia potenziale ed energia cinetica che si scambiano di posto mentre il loro totale resta fermo.</p>
+<p>L'energia si collega anche alla forza tramite il <strong>lavoro</strong>, \(W = Fd\), e al tempo tramite la <strong>potenza</strong>, \(P = W/t\) — il <em>ritmo</em> di trasferimento dell'energia, misurato in watt. I sistemi reali, però, non sono mai perfettamente conservativi: <strong>attrito</strong> e resistenza dell'aria compiono lavoro negativo e convertono l'energia meccanica in calore. L'energia è comunque conservata nel complesso — ha solo lasciato l'ordinato registro meccanico per quello disordinato termico, ed è per questo che i pendoli reali si smorzano.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Energia cinetica</th><td>\(KE = \tfrac{1}{2}mv^2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Energia potenziale</th><td>\(PE = mgh\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Conservazione</th><td>\(\tfrac{1}{2}mv^2 + mgh = \text{cost}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Velocità d'impatto</th><td>\(v = \sqrt{2gh}\)</td><td class="cmt">indipendente dalla massa</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Lavoro</th><td>\(W = Fd\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Potenza</th><td>\(P = W/t\ \ [\text{watt}]\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🚗</span> Poiché KE ∝ v², un'auto a 100 km/h porta quattro volte l'energia che ha a 50 km/h — e serve circa quattro volte la distanza per fermarsi. La velocità è ingannevolmente pericolosa.</li><li><span aria-hidden="true">⚡</span> Un watt è un joule al secondo. Una lampadina da 100 watt converte 100 joule di energia elettrica ogni secondo; anche un umano a riposo &quot;gira&quot; a circa 100 watt.</li><li><span aria-hidden="true">🎯</span> La velocità d'impatto da un'altezza dipende solo dall'altezza, non dalla massa: v = √(2gh). Una palla da bowling e una biglia lasciate cadere insieme toccano terra alla stessa velocità (ignorando l'aria).</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Il teorema dell'energia-lavoro, i potenziali e perché l'energia si conserva</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Il lavoro come ponte dalla forza all'energia</h3>
+<p>L'energia non è un postulato separato bullonato su Newton — segue dalla sua seconda legge. Integra \(F = ma\) lungo un percorso e ottieni il <strong>teorema dell'energia-lavoro</strong>, \(W_{\text{net}} = \int \vec{F}\cdot d\vec{r} = \Delta KE\): il lavoro netto compiuto su un corpo eguaglia il suo cambiamento di energia cinetica. L'energia cinetica \(\tfrac{1}{2}mv^2\) non è una definizione tirata fuori dal nulla; è precisamente la grandezza che questo integrale di forza-per-distanza cambia.</p>
+<h3><span class="hn">02</span>Forze conservative e la nascita dell'energia potenziale</h3>
+<p>Alcune forze — gravità, molle, elettrostatica — compiono un lavoro che dipende solo dai punti di partenza e arrivo, mai dal percorso preso. Tali <strong>forze conservative</strong> hanno \(\nabla\times\vec{F} = 0\), il che ci permette di definire un'<em>energia potenziale</em> \(U\) con \(\vec{F} = -\nabla U\). L'energia potenziale è la contabilità del lavoro che una forza conservativa <em>compirebbe</em>, e per esattamente questa classe di forze il totale \(E = KE + U\) è costante. L'attrito non supera il test — il suo lavoro dipende dalla lunghezza del percorso — quindi non ha potenziale e drena energia meccanica.</p>
+<h3><span class="hn">03</span>La ragione più profonda: la simmetria</h3>
+<p>Perché l'energia si conserva del tutto? La risposta profonda è il <strong>teorema di Noether</strong> (1918): ogni simmetria continua delle leggi di un sistema produce una grandezza conservata, e la simmetria dietro l'energia è l'<em>invarianza per traslazione temporale</em> — il fatto che le leggi della fisica siano le stesse oggi e domani. La conservazione dell'energia non è un incidente della meccanica; è l'ombra proiettata dall'uniformità del tempo stesso. La conservazione della quantità di moto segue identicamente dall'uniformità dello spazio.</p>
+<h3><span class="hn">04</span>Quando l'energia sembra sparire</h3>
+<p>Le apparenti violazioni sono sempre contabilità incompleta. Una pallina lasciata cadere nel miele non conserva l'energia <em>meccanica</em>, ma segui il calore e i conti tornano — la prima legge della termodinamica, \(\Delta U = Q - W\), allarga semplicemente i libri per includere l'energia interna. Storicamente ogni "perdita" costrinse il concetto a crescere: energia chimica, poi l'equivalenza di calore e lavoro (Joule), poi \(E = mc^2\), che rivelò la massa stessa come energia concentrata e chiuse l'ultimo apparente divario nelle reazioni nucleari.</p>
+<h3><span class="hn">05</span>Il caso sottile di un universo in espansione</h3>
+<p>C'è un luogo dove la legge ordinata diventa scivolosa. Nella relatività generale, la conservazione dell'energia è rigorosamente locale; globalmente, in un universo in espansione, non c'è simmetria per traslazione temporale, quindi l'energia totale non è conservata in modo diretto. I fotoni del fondo cosmico a microonde perdono energia mentre lo spazio si stira (le loro lunghezze d'onda arrossano) senza nulla di ovvio a raccoglierla. Lungi dall'infrangere il teorema di Noether, questo è il suo carattere in piccolo: niente simmetria temporale, niente legge di conservazione globale.</p>
+<h3><span class="hn">06</span>L'energia libera: la valuta che scorre davvero</h3>
+<p>Per i processi reali, l'energia grezza è la contabilità sbagliata. La seconda legge dice che l'energia utilizzabile si degrada: ciò che conta è l'<strong>energia libera</strong>, \(G = H - TS\), la porzione effettivamente disponibile a compiere lavoro una volta pagata l'entropia. Ogni motore, batteria, muscolo e cellula vivente commercia in energia libera, non in energia, e il suo inesorabile declino — energia conservata ma sempre più disordinata — è ciò che dà al tempo la sua direzione e in ultima analisi punta verso la morte termica dell'universo.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Teorema energia-lavoro</th><td>\(W_{\text{net}} = \int \vec{F}\cdot d\vec{r} = \Delta KE\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Forza conservativa</th><td>\(\vec{F} = -\nabla U,\quad \nabla\times\vec{F} = 0\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Energia meccanica</th><td>\(E = KE + U = \text{cost}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Prima legge</th><td>\(\Delta U = Q - W\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Massa-energia</th><td>\(E = mc^2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Energia libera</th><td>\(G = H - TS\)</td><td class="cmt">lavoro disponibile</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔗</span> Il teorema di Noether lega ogni legge di conservazione a una simmetria: energia ↔ tempo, quantità di moto ↔ spazio, momento angolare ↔ rotazione. È uno dei risultati più belli di tutta la fisica.</li><li><span aria-hidden="true">☀️</span> E = mc² significa che il Sole perde circa 4 milioni di tonnellate di massa ogni secondo, convertite nell'energia della luce solare — massa ed energia sono la stessa valuta.</li><li><span aria-hidden="true">🌡️</span> L'energia è sempre conservata, ma l'energia utilizzabile (libera) no — la seconda legge garantisce che si degradi verso il disordine, ed è per questo che nessun motore può essere efficiente al 100%.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Conservation_of_energy" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Fisica</h2>
+    <ul><li><a href="/it/gravita-orbite/">Gravità e orbite</a></li><li><a href="/it/moto-dei-proiettili/">Moto dei proiettili</a></li><li><a href="/it/onde-interferenza/">Onde e interferenza</a></li><li><a href="/it/calore-termodinamica/">Calore e termodinamica</a></li><li><a href="/it/modello-standard/">Il Modello Standard</a></li><li><a href="/it/leggi-del-moto-di-newton/">Le leggi del moto di Newton</a></li><li><a href="/it/legge-di-ohm-circuiti/">Legge di Ohm e circuiti</a></li><li><a href="/it/stati-della-materia/">Stati della materia</a></li><li><a href="/it/ottica-luce-lenti/">Ottica: luce, lenti e rifrazione</a></li><li><a href="/it/pendolo-moto-armonico/">Pendoli e moto armonico semplice</a></li><li><a href="/it/circuiti-serie-parallelo/">Circuiti in serie e in parallelo</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La respirazione cellulare | Lab-in-a-Tab</title>
+<meta name="description" content="Ogni cellula del tuo corpo brucia zucchero con l'ossigeno per fare ATP, il carburante universale della vita — un fuoco lento e squisitamente controllato…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/respirazione-cellulare/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/cellular-respiration/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/respirazione-cellulare/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/respiration-cellulaire/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/cellular-respiration/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="La respirazione cellulare — Spiegato e simulato">
+<meta property="og:description" content="Ogni cellula del tuo corpo brucia zucchero con l'ossigeno per fare ATP, il carburante universale della vita — un fuoco lento e squisitamente controllato…">
+<meta property="og:url" content="https://labinatab.com/it/respirazione-cellulare/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La respirazione cellulare — Spiegato e simulato">
+<meta name="twitter:description" content="Ogni cellula del tuo corpo brucia zucchero con l'ossigeno per fare ATP, il carburante universale della vita — un fuoco lento e squisitamente controllato…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/respirazione-cellulare/#article",
+   "headline": "La respirazione cellulare",
+   "name": "La respirazione cellulare",
+   "description": "Ogni cellula del tuo corpo brucia zucchero con l'ossigeno per fare ATP, il carburante universale della vita — un fuoco lento e squisitamente controllato…",
+   "url": "https://labinatab.com/it/respirazione-cellulare/",
+   "mainEntityOfPage": "https://labinatab.com/it/respirazione-cellulare/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-09",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "ATP",
+    "Mitocondri",
+    "Metabolismo"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "La respirazione cellulare",
+    "sameAs": "https://en.wikipedia.org/wiki/Cellular_respiration"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "La respirazione cellulare",
+     "item": "https://labinatab.com/it/respirazione-cellulare/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/cellular-respiration/" hreflang="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/respirazione-cellulare/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/respiration-cellulaire/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Biologia</nav>
+  <h1>La respirazione cellulare</h1>
+  <p class="lead">Ogni cellula del tuo corpo brucia zucchero con l'ossigeno per fare ATP, il carburante universale della vita — un fuoco lento e squisitamente controllato che alimenta tutto ciò che fai.</p>
+  <div class="chips"><span>ATP</span><span>Mitocondri</span><span>Metabolismo</span></div>
+  <section class="sim-embed" data-sim="respiration" data-color="#e11d48" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#e11d48"><span class="sg-lbl">Prova</span><span>Alza <b>Ossigeno</b> in alto e guarda l'ATP sgorgare. Ora abbassalo del tutto. Cosa succede a <b>Energia (ATP)</b> e alla <b>Modalità</b> quando l'ossigeno si esaurisce?</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#e11d48"><span class="sg-lbl">Prova</span><span>Alza <b>Livello di ossigeno</b> al massimo e leggi <b>ATP per glucosio</b> e <b>CO₂ per glucosio</b>; poi abbassalo vicino a zero e guarda <b>Via metabolica</b> passare ad anaerobica. Nota come la resa di ATP crolla.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#e11d48"><span class="sg-lbl">Prova</span><span>Spazza <b>Livello di ossigeno</b> e nota il calo brusco di <b>ATP per glucosio</b> quando la via attraversa in territorio anaerobico — un surrogato dello stallo della catena di trasporto degli elettroni quando il suo accettore terminale è sparito.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>La grande forma è un <b>mitocondrio</b>, la centrale elettrica della tua cellula. Il <b>glucosio</b> rosso (zucchero) entra da sinistra e l'<b>ossigeno</b> blu dall'alto; escono gettoni d'energia <b>ATP</b> dorati e <b>CO₂</b> grigia. Fai scorrere <b>Ossigeno</b> per cambiare quanto ossigeno è disponibile.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Con tanto ossigeno la cellula fa circa 15 volte più energia che senza.</b> L'ossigeno permette al mitocondrio di finire di bruciare lo zucchero fino in fondo, rilasciando tanto ATP ed espirando CO₂. Privalo di ossigeno e la cellula ripiega su un rimedio rapido e fiacco che fa a malapena ATP — la modalità "anaerobica" che i tuoi muscoli raggiungono in uno scatto intenso.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Un mitocondrio che fa girare \(C_6H_{12}O_6 + 6O_2 \to 6CO_2 + 6H_2O + \text{ATP}\). Glucosio e O₂ (impostati da <b>Livello di ossigeno</b>) entrano; ATP e CO₂ escono. Le pill leggono ATP per glucosio, CO₂ per glucosio e se la via è aerobica o anaerobica.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>La respirazione aerobica rende ~30–32 ATP per glucosio; la fermentazione anaerobica ne recupera appena 2.</b> La glicolisi (2 ATP) non ha bisogno di ossigeno, ma il grande guadagno viene dal ciclo di Krebs e dalla catena di trasporto degli elettroni, che hanno bisogno di O₂ come accettore finale di elettroni. Toglilo e gira solo la glicolisi — una perdita di ~15 volte, e il perché l'ossigeno fu la chiave della vita complessa affamata di energia.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Metabolismo ossidativo schematico: il flusso di substrato (glucosio) e la disponibilità di O₂ (<b>Livello di ossigeno</b>) fissano la resa di ATP e l'emissione di CO₂. L'operazione aerobica sta al posto dell'intera catena — glicolisi, ciclo di Krebs e la catena di trasporto degli elettroni che pompa protoni — condensata in ingressi e uscite.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Il vantaggio aerobico di ~15× risale alla chemiosmosi: la catena pompa protoni per costruire un gradiente, e l'ATP sintasi lo riscuote.</b> Il ruolo dell'ossigeno è solo quello di accettore finale di elettroni, eppure senza di esso i portatori restano ridotti, il pompaggio di protoni si ferma e la fosforilazione ossidativa si arresta in pochi secondi. La forza proton-motrice \(\Delta p\) è il vero deposito d'energia; l'ATP sintasi è un motore rotante che gira su quella corrente di protoni.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Come le tue cellule trasformano il cibo in energia</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Mangi cibo per ottenere energia — ma il tuo corpo non può bruciare un panino in una grande fiammata. Invece, ognuna dei tuoi migliaia di miliardi di cellule fa girare una versione lenta, attenta e controllata della combustione chiamata <strong>respirazione cellulare</strong>. Prende lo zucchero dal tuo cibo, lo combina con l'ossigeno che respiri e rilascia l'energia immagazzinata poco a poco, in sicurezza, esattamente dove e quando la cellula ne ha bisogno.</p>
+<p>L'energia non esce come una fiamma — esce come una minuscola molecola-batteria ricaricabile chiamata <strong>ATP</strong>. Pensa all'ATP come alla valuta energetica universale della vita: ogni volta che una cellula deve fare qualcosa — flettere un muscolo, far scattare un nervo, costruire una proteina — spende ATP. L'intero compito della respirazione è continuare a fabbricare ATP fresco, e lo fa a un ritmo stupefacente.</p>
+<p>La maggior parte di questo avviene dentro minuscole strutture a forma di fagiolo chiamate <strong>mitocondri</strong>, le centrali elettriche della cellula. Entrano glucosio e ossigeno; escono anidride carbonica, acqua e tanto ATP. Quell'anidride carbonica è esattamente ciò che espiri — così ogni espirazione è le tue cellule che finiscono il lavoro. Nella simulazione qui sotto, dai a un mitocondrio glucosio e ossigeno e guarda l'ATP sgorgare.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔋</span> Il tuo corpo fabbrica e spende ogni singolo giorno il proprio peso in ATP — ma ne trattieni solo una quantità minuscola alla volta, riciclando ogni molecola migliaia di volte al giorno.</li><li><span aria-hidden="true">🫁</span> L'anidride carbonica che espiri viene dritta dalle tue cellule che bruciano zucchero — ogni espirazione è lo scarico della respirazione cellulare.</li><li><span aria-hidden="true">🏃</span> Quando scatti più forte di quanto i polmoni possano fornire ossigeno, i muscoli passano a un rapido rimedio senza ossigeno che produce molta meno energia e lascia dietro di sé l'acido lattico che ti fa indolenzire.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Glicolisi, ciclo di Krebs e catena di trasporto degli elettroni</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>La respirazione cellulare estrae energia dal glucosio in tre stadi collegati, riassunti da un'equazione ingannevolmente semplice: \(C_6H_{12}O_6 + 6O_2 \to 6CO_2 + 6H_2O + \text{ATP}\). Prima viene la <strong>glicolisi</strong>, nel citoplasma: il glucosio è scisso in due molecole di piruvato, con una piccola resa netta di 2 ATP e un po' di NADH portatore di elettroni. Fatto cruciale, la glicolisi non ha bisogno di ossigeno — è il nucleo antico che tutta la vita condivide.</p>
+<p>Se l'ossigeno è presente, il piruvato entra nel mitocondrio per il <strong>ciclo di Krebs</strong> (ciclo dell'acido citrico), che lo smonta, rilasciando \(CO_2\) e caricando altri portatori di elettroni — NADH e FADH₂. Questi portatori sono il vero premio: traghettano elettroni ad alta energia al terzo stadio, la <strong>catena di trasporto degli elettroni</strong>, costellata sulla membrana interna del mitocondrio, dove il grosso dell'ATP è finalmente fatto.</p>
+<p>Il conteggio è sbilanciato. Glicolisi e ciclo di Krebs fanno solo una manciata di ATP direttamente; la catena di trasporto degli elettroni, usando l'ossigeno come accettore finale di elettroni, produce l'altro ~90% — circa 30–32 ATP per glucosio in totale. Togli l'ossigeno e può girare solo la glicolisi: le cellule ripiegano sulla <strong>fermentazione</strong>, recuperando appena 2 ATP e producendo lattato (nei tuoi muscoli) o etanolo e \(CO_2\) (nel lievito). L'ossigeno vale grosso modo un aumento di quindici volte in energia.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Reazione complessiva</th><td>\(C_6H_{12}O_6 + 6O_2 \to 6CO_2 + 6H_2O\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Glicolisi</th><td>\(\text{glucosio} \to 2\,\text{piruvato} + 2\,\text{ATP}\)</td><td class="cmt">senza ossigeno</td></tr>
+<tr><th scope="row">Ciclo di Krebs</th><td>\(\to CO_2 + \text{NADH} + \text{FADH}_2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Trasporto elettroni</th><td>\(\text{NADH} + O_2 \to \text{ATP} + H_2O\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Resa aerobica</th><td>\(\approx 30\text{–}32\ \text{ATP/glucosio}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fermentazione</th><td>\(2\ \text{ATP/glucosio}\)</td><td class="cmt">anaerobica</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🧬</span> La glicolisi è così antica e universale che gira in quasi ogni essere vivente, dai batteri a te — si è evoluta prima che l'atmosfera terrestre avesse persino ossigeno.</li><li><span aria-hidden="true">🍞</span> La fermentazione del lievito fa lievitare il pane e fermentare la birra: privo di ossigeno, il lievito trasforma lo zucchero in etanolo e CO₂ — la stessa via che usano i tuoi muscoli affamati di ossigeno, solo con un prodotto finale diverso.</li><li><span aria-hidden="true">⚡</span> La respirazione aerobica rende ~15× più ATP per glucosio della fermentazione. Quell'efficienza è perché la vita complessa e affamata di energia poté fiorire solo dopo che l'ossigeno riempì l'aria.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Chemiosmosi, forza proton-motrice e l'origine dei mitocondri</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>L'idea che sembrava impossibile</h3>
+<p>Per decenni i biochimici cercarono un intermedio chimico che portasse l'energia dal cibo all'ATP, e non lo trovarono mai. L'<strong>ipotesi chemiosmotica</strong> di Peter Mitchell (1961) spiegò perché: non ce n'è uno. La catena di trasporto degli elettroni pompa invece protoni attraverso la membrana interna del mitocondrio, immagazzinando energia non in una molecola ma in un <em>gradiente</em> — una batteria elettrochimica di \(H^+\). L'idea era così eterodossa da essere ridicolizzata per anni prima di vincere il premio Nobel 1978.</p>
+<h3><span class="hn">02</span>La forza proton-motrice</h3>
+<p>Quel gradiente è la <strong>forza proton-motrice</strong>, e ha due parti: una differenza di concentrazione di \(H^+\) (un gradiente di pH) e una differenza di carica (una tensione di membrana di circa \(-150\ \text{mV}\)), combinate come \(\Delta p = \Delta\psi - \tfrac{2.3RT}{F}\Delta\text{pH}\). Gli elettroni che scendono a cascata lungo la catena da NADH all'ossigeno rilasciano energia a gradini, e ogni complesso principale la usa per spingere protoni in salita, fuori dalla matrice — caricando la membrana come un condensatore.</p>
+<h3><span class="hn">03</span>Un motore rotante fatto di proteina</h3>
+<p>L'energia immagazzinata è riscossa dall'<strong>ATP sintasi</strong>, una delle macchine più stupefacenti della biologia: una turbina molecolare. I protoni che rifluiscono giù per il loro gradiente attraverso l'enzima fanno fisicamente <em>ruotare</em> un rotore fino a cento giri al secondo, e quella rotazione forza meccanicamente ADP e fosfato insieme in ATP. È un motore rotante di pochi nanometri, alimentato da una corrente di protoni — conferma diretta e visibile del gradiente di Mitchell, poiché la rotazione dell'albero è stata filmata.</p>
+<h3><span class="hn">04</span>Perché l'ossigeno, e perché conta</h3>
+<p>Il ruolo dell'ossigeno è sottile ma decisivo: è semplicemente l'<em>accettore finale di elettroni</em>, seduto alla fine della catena a raccogliere gli elettroni esausti e formare acqua. Eppure senza di esso l'intera catena si ingorga — i portatori restano ridotti, il pompaggio di protoni si ferma, e la sintesi di ATP tramite fosforilazione ossidativa si arresta in pochi secondi. L'eccezionale affinità elettronica dell'ossigeno è ciò che rende l'intera cascata così energeticamente ripida, e quindi così produttiva; è la ragione termodinamica per cui la vita aerobica surclassa in potenza tutto ciò che è anaerobico.</p>
+<h3><span class="hn">05</span>Ospiti diventati organi</h3>
+<p>I mitocondri hanno il proprio DNA circolare, i propri ribosomi e doppie membrane — perché un tempo erano batteri a vita libera. La <strong>teoria endosimbiotica</strong> (Lynn Margulis) sostiene che circa due miliardi di anni fa una cellula inghiottì un batterio aerobico e, invece di digerirlo, lo tenne come centrale elettrica. Ogni mitocondrio nel tuo corpo è un discendente di quell'antico prigioniero, e li erediti tutti da tua madre — ed è così che il DNA mitocondriale traccia le linee materne indietro attraverso la storia umana.</p>
+<h3><span class="hn">06</span>Il doppio taglio della catena</h3>
+<p>La stessa macchina che ti alimenta ti mette anche in pericolo. Gli elettroni occasionalmente sfuggono dalla catena e riducono l'ossigeno solo in parte, producendo <strong>specie reattive dell'ossigeno</strong> — radicali liberi implicati nell'invecchiamento e nella malattia. Le cellule sfruttano deliberatamente anche fughe controllate: le <em>proteine disaccoppianti</em> lasciano rifluire i protoni senza fare ATP, dissipando il gradiente come puro calore, ed è così che il grasso bruno scalda i neonati e gli animali in letargo. La respirazione non è solo una fonte di energia ma una manopola finemente regolata tra fare ATP e fare calore.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Forza proton-motrice</th><td>\(\Delta p = \Delta\psi - \tfrac{2.3RT}{F}\Delta\text{pH}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Potenziale di membrana</th><td>\(\Delta\psi \approx -150\ \text{mV}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">ATP sintasi</th><td>\(\text{ADP} + P_i + H^+_{\text{out}} \to \text{ATP}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Stechiometria</th><td>\(\approx 4\,H^+\ \text{per ATP}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Salto redox</th><td>\(\text{NADH}\to O_2:\ \Delta E \approx 1.14\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Energia libera ATP</th><td>\(\Delta G \approx -30.5\ \text{kJ/mol}\)</td><td class="cmt">idrolisi</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔄</span> L'ATP sintasi è un motore rotante: i protoni che vi scorrono attraverso fanno girare un albero proteico fino a 100 volte al secondo, forgiando meccanicamente ATP — una turbina larga appena 10 nanometri.</li><li><span aria-hidden="true">🧬</span> I mitocondri portano il proprio DNA ed erano un tempo batteri a vita libera (teoria endosimbiotica). Li erediti solo da tua madre, rendendo il DNA mitocondriale un tracciante dell'ascendenza materna.</li><li><span aria-hidden="true">🔥</span> Il grasso bruno &quot;disaccoppia&quot; deliberatamente la respirazione — lasciando rifluire i protoni senza fare ATP — per bruciare carburante puramente come calore, tenendo caldi neonati e animali in letargo.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Cellular_respiration" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Biologia</h2>
+    <ul><li><a href="/it/regole-della-vita/">Le regole della vita</a></li><li><a href="/it/dna-genetica/">DNA e genetica</a></li><li><a href="/it/evoluzione-selezione-naturale/">Evoluzione e selezione naturale</a></li><li><a href="/it/ecosistemi-reti-alimentari/">Ecosistemi e reti alimentari</a></li><li><a href="/it/fotosintesi/">Fotosintesi</a></li><li><a href="/it/cellula-osmosi-diffusione/">La cellula: osmosi e diffusione</a></li><li><a href="/it/mitosi-meiosi/">Mitosi e meiosi</a></li><li><a href="/it/quadrati-di-punnett-genetica/">Quadrati di Punnett e genetica</a></li><li><a href="/it/sintesi-proteica/">La sintesi proteica</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>
