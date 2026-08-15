@@ -9,6 +9,7 @@ export default {
     levelName:{junior:'Débutant',student:'Élève',scholar:'Expert'},
     htag:'✨ L\'expérience scientifique interactive',
     h1:'Découvre le monde<br>avec <em>curiosité</em>',
+    metaDesc:'Simulations scientifiques interactives : gravité, ADN, trous noirs, machine learning et plus. Chaque sujet sur trois niveaux. Gratuit, sans inscription.',
     heroSub:{
       junior:'Choisis un sujet qui te passionne : chaque carte ouvre un monde de simulations interactives et d\'explications pensées pour toi.',
       student:'Explore la science avec de vraies équations, des simulations interactives et des explications approfondies. Clique sur une carte pour plonger !',
@@ -3895,19 +3896,19 @@ export default {
     },
     watercycle: {
       junior: {
-        legend: `Le bleu en bas est l'<b>océan</b>, la boule jaune est le <b>Soleil</b>. L'eau chaude monte en gouttelettes (<b>évaporation</b>), se rassemble en un <b>nuage</b> en haut, et quand le nuage se remplit il <b>pleut</b> de nouveau vers la mer. Encore et encore.`,
-        try: `Baisse [[temp]] au minimum et regarde à quelle vitesse le nuage se remplit. Maintenant monte-le au maximum. Le nuage se remplit-il et pleut-il plus tôt ?`,
-        notice: `<b>Plus de Soleil signifie une évaporation plus rapide, donc le nuage se remplit et pleut plus tôt — tout le cycle accélère.</b> Le Soleil est le moteur du cycle de l'eau : sa chaleur soulève l'eau dans le ciel, et la gravité la ramène en bas sous forme de pluie. On ne fabrique jamais d'eau nouvelle — les mêmes gouttelettes tournent et retournent.`,
+        legend: `Le Soleil réchauffe la mer à gauche et des gouttelettes s'en élèvent (<b>évaporation</b>). En altitude elles se rassemblent en un <b>nuage</b>. Le vent pousse ce nuage au-dessus des terres, et c'est seulement là qu'il <b>pleut</b>. La pluie imbibe les collines, alimente la <b>rivière</b>, et la rivière ramène l'eau à la mer.`,
+        try: `Monte [[temp]] et regarde à quelle vitesse le nuage se remplit. Monte ensuite [[wind]] : la pluie tombe-t-elle plus près de la plage ou plus loin dans les terres ? Regarde la rivière gonfler juste après une averse.`,
+        notice: `<b>Rien ne se perd.</b> Chaque goutte qui monte redescend et rentre chez elle par la rivière. Baisse le Soleil et toute la machine ralentit ; baisse le vent et le nuage plein met bien plus longtemps à atteindre la terre, donc la pluie doit attendre.`,
       },
       student: {
-        legend: `Le Soleil pilote l'<b>évaporation</b> depuis l'océan ; la vapeur monte, se refroidit et <b>condense</b> dans le nuage ; une fois saturée elle tombe en <b>précipitation</b> et retourne à la mer. Les pastilles lisent le niveau d'évaporation, le remplissage du nuage et s'il pleut.`,
-        try: `Mets [[temp]] bas et note le taux de remplissage de [[cloud]], puis mets-le haut. Regarde comment [[rain]] passe de « Building » à « Raining » plus vite avec plus de chaleur.`,
-        notice: `<b>L'air plus chaud évapore l'eau plus vite et peut en contenir davantage — donc la chaleur accélère tout le cycle.</b> L'évaporation absorbe de la chaleur latente (2,26 MJ/kg) et la condensation la libère en altitude, déplaçant silencieusement d'énormes quantités d'énergie vers le haut. Globalement évaporation et précipitation doivent s'équilibrer, les rivières restituant le léger déficit de l'océan.`,
+        legend: `Le chauffage solaire entraîne l'évaporation depuis l'océan ; la vapeur monte, condense au niveau des nuages, et le vent transporte le nuage vers la terre. La précipitation ne tombe qu'au-dessus des terres, s'infiltre, et retourne à l'océan en ruissellement le long de la rivière. Les pastilles donnent l'évaporation ([[evap]]), l'eau du nuage ([[cloud]]) et l'état de la précipitation ([[rain]]).`,
+        try: `Mets [[temp]] à 1, puis à 10, et chronomètre le remplissage du nuage. Garde ensuite le Soleil fixe et change [[wind]] : le temps de remplissage bouge à peine, celui pour atteindre la terre beaucoup.`,
+        notice: `<b>L'évaporation fixe la vitesse à laquelle l'eau entre dans l'atmosphère ; le vent fixe l'endroit où elle redescend.</b> Sur terre la pluie se partage entre infiltration et ruissellement — la rivière est la branche de retour qui boucle le bilan, et c'est pourquoi le total d'eau ne change jamais.`,
       },
       scholar: {
-        legend: `Un modèle schématique à réservoirs et flux : le flux d'évaporation croît avec [[temp]], la vapeur condense au nuage, et la précipitation ferme la boucle. Le nuage est un tampon qui se vide au moment où sa capacité est atteinte.`,
-        try: `Balaie [[temp]] et observe que le taux de remplissage du nuage et la fréquence de la pluie montent tous deux avec elle — un substitut de l'échelle de Clausius-Clapeyron de l'humidité avec la température.`,
-        notice: `<b>La capacité de l'air à retenir l'eau monte exponentiellement avec la température (~7% par °C), et c'est pourquoi un climat plus chaud intensifie le cycle.</b> La chaleur latente fait de l'évaporation le principal oléoduc énergétique de l'atmosphère (elle alimente les ouragans), le temps de résidence \\(\\tau=V/F\\) fixe la vitesse de réponse de chaque réservoir, et le fractionnement isotopique à chaque changement d'état permet aux carottes de glace d'enregistrer les températures passées.`,
+        legend: `Un schéma à bilan fermé du cycle hydrologique : un flux d'évaporation depuis l'océan mis à l'échelle par [[temp]], condensation dans un réservoir nuageux, advection de ce réservoir par le vent, précipitation confinée à la surface terrestre, puis stockage dans le sol qui se décharge par un chenal jusqu'à l'océan. Le nombre de gouttelettes se conserve entre tous les réservoirs.`,
+        try: `Amène le système à l'état stationnaire à Soleil fixe, puis augmente [[wind]] par paliers et observe l'empreinte de la précipitation se déplacer vers l'intérieur pendant que le flux d'évaporation reste inchangé.`,
+        notice: `<b>Les deux commandes sont volontairement orthogonales :</b> le Soleil fixe le flux vers l'atmosphère, le vent fixe le temps de transport et le point de chute. Les cycles réels ajoutent la précipitation océanique (environ 80 % du total mondial), le stockage en neige et en glace et l'évapotranspiration des plantes — écartés ici pour que la branche de retour par la rivière reste lisible.`,
       },
     },
     energy: {
@@ -3963,12 +3964,12 @@ export default {
     },
     protein: {
       junior: {
-        legend: `La ligne de lettres est l'<b>ARNm</b> — la recette. La forme arrondie qui coule le long est le <b>ribosome</b>, qui lit trois lettres (un <b>codon</b>) à la fois. Chaque codon ajoute une perle colorée — un <b>acide aminé</b> — à la chaîne croissante en dessous. Cette chaîne est la protéine.`,
+        legend: `La ligne de lettres est l'<b>ARNm</b> — la recette. La forme arrondie qui coule le long est le <b>ribosome</b>, qui lit trois lettres (un <b>codon</b>) à la fois. Chaque codon ajoute une perle colorée — un <b>acide aminé</b> — apporté par un <b>ARNt</b> correspondant et ajouté à la chaîne qui croît en haut. Cette chaîne est la protéine.`,
         try: `Appuie sur [[play]] et regarde le ribosome se déplacer. Lis chaque codon de trois lettres et la perle qu'il ajoute. Quel codon spécial le fait s'arrêter ?`,
         notice: `<b>Trois lettres nomment une perle, et la chaîne croît d'une perle par codon jusqu'à ce qu'un codon STOP la termine.</b> Seulement quatre lettres, lues trois par trois, épellent chaque protéine que ton corps construit — le même code simple dans chaque être vivant sur Terre.`,
       },
       student: {
-        legend: `L'ARNm est lu 5'→3' en <em>codons</em> non chevauchants. Le ribosome (forme arrondie) traduit chaque codon en un acide aminé via un ARNt correspondant ; la chaîne en dessous est le polypeptide croissant. Les pastilles nomment le codon actuel → acide aminé et la longueur de la chaîne.`,
+        legend: `L'ARNm est lu 5'→3' en <em>codons</em> non chevauchants. Le ribosome (forme arrondie) traduit chaque codon en un acide aminé via un ARNt correspondant ; l'anticodon de l'ARNt s'apparie au codon dans la fenêtre de lecture et la chaîne en haut est le polypeptide croissant. Les pastilles nomment le codon actuel → acide aminé et la longueur de la chaîne.`,
         try: `Appuie sur [[play]] et suis [[codon]] tandis que la traduction procède du départ AUG au codon d'arrêt. Compte comment [[len]] croît d'un résidu par codon.`,
         notice: `<b>Chaque codon correspond exactement à un acide aminé ; AUG commence, et UAA/UAG/UGA arrêtent.</b> Avec \\(4^3=64\\) codons pour 20 acides aminés le code est redondant, donc plusieurs codons partagent un acide aminé. C'est la traduction — la seconde moitié du dogme central, ADN → ARN → protéine.`,
       },
@@ -4031,19 +4032,19 @@ export default {
     },
     mitosis: {
       junior: {
-        legend: `Une cellule qui se divise. Fais glisser le curseur pour te déplacer entre les phases, ou appuie sur Play. Les formes en X colorées sont les <b>chromosomes</b> — la cellule les copie, les aligne, et les sépare en deux nouvelles cellules.`,
-        try: `Fais glisser [[stage]] lentement du début à la fin, en regardant les chromosomes s'aligner au centre puis se diviser vers les extrémités. Avec combien de cellules finis-tu ?`,
-        notice: `<b>Une cellule devient deux, chacune avec un jeu complet et identique de chromosomes.</b> Les copies s'alignent le long du centre, sont tirées vers des extrémités opposées, et la cellule s'étrangle en son milieu. Passe à Méiose et le même début finit en <i>quatre</i> cellules avec la moitié des chromosomes à la place.`,
+        legend: `Deux divisions côte à côte : la <b>mitose</b> à gauche, la <b>méiose</b> à droite. Fais glisser le curseur ou appuie sur Play : les deux avancent ensemble, étape par étape. Les formes en X colorées sont les <b>chromosomes</b> ; la rangée de points sous chaque côté montre où tu en es.`,
+        try: `Fais glisser [[stage]] lentement et arrête-toi au milieu. À gauche les X se fendent par le milieu ; à droite ce sont des chromosomes entiers qui partent vers les extrémités opposées. Compte les cellules à la fin de chaque côté.`,
+        notice: `<b>La mitose finit avec 2 cellules identiques à la cellule mère ; la méiose avec 4 cellules, chacune avec la moitié des chromosomes et un mélange tout neuf.</b> L'étincelle orange à droite est le crossing over — deux chromosomes appariés qui échangent des morceaux : voilà pourquoi les extrémités changent de couleur et pourquoi aucune des quatre cellules n'est identique à une autre.`,
       },
       student: {
-        legend: `Les phases de la division. Fais glisser [[stage]] pour défiler entre prophase, métaphase, anaphase et télophase ; [[phase]] nomme où tu es et [[cells]] compte les cellules. Le bouton mode alterne entre mitose et méiose.`,
-        try: `Défile jusqu'à la métaphase et note les chromosomes alignés sur l'équateur, puis à l'anaphase pour regarder les sœurs se séparer. Puis passe à Méiose et laisse-la faire deux divisions.`,
-        notice: `<b>La mitose finit en 2 cellules diploïdes identiques ; la méiose finit en 4 cellules haploïdes uniques.</b> Métaphase (alignement) et anaphase (séparation) sont le nœud. La méiose ajoute une seconde division et apparie d'abord les chromosomes homologues, ce qui divise par deux le nombre de chromosomes et remélange les gènes.`,
+        legend: `Les deux divisions sur une seule ligne temporelle : mitose à gauche, méiose à droite. [[stage]] défile, [[phase]] nomme la phase de chaque côté et [[cells]] compte les cellules de chaque côté. La légende sous chaque cellule dit ce qui définit cette étape, et la ligne pointillée marque la plaque métaphasique.`,
+        try: `Arrête-toi à l'anaphase à gauche et à l'anaphase I à droite, puis compare ce qui est séparé : des chromatides sœurs à gauche, des paires d'homologues entières à droite.`,
+        notice: `<b>La mitose finit en 2 cellules diploïdes identiques ; la méiose en 4 cellules haploïdes uniques.</b> La réduction de moitié a lieu en méiose I, où ce sont les homologues — et non les sœurs — qui se séparent. Le crossing over (l'étincelle en prophase I) et l'orientation aléatoire de chaque paire en métaphase I expliquent pourquoi les quatre produits diffèrent tous.`,
       },
       scholar: {
-        legend: `Un schéma de la ségrégation chromosomique. [[stage]] défile la ligne temporelle, [[phase]] étiquette la phase et [[cells]] le compte des produits. Le mode Méiose montre la division réductionnelle (I) suivie de la division équationnelle (II).`,
-        try: `Compare les deux modes à leurs points médians : dans la mitose les chromatides sœurs se séparent une fois ; dans la méiose I les homologues se séparent d'abord, et seulement dans la méiose II les sœurs se divisent.`,
-        notice: `<b>La différence distinctive est la méiose I : ce sont les homologues qui se séparent, non les chromatides sœurs — et c'est ce qui divise par deux le nombre de chromosomes.</b> La séparation des sœurs (mitose, et méiose II) préserve la ploïdie ; la séparation des homologues la réduit. Le schéma omet le crossing over, l'autre grande source de variation, qui recombine les homologues avant qu'ils ne se séparent.`,
+        legend: `La ségrégation chromosomique comparée étape par étape : mitose (gauche) contre méiose (droite), pilotées par une seule ligne temporelle. [[phase]] étiquette chaque côté et [[cells]] donne le compte des produits. La méiose montre la division réductionnelle (I) puis la division équationnelle (II), avec le crossing over et l'assortiment indépendant dessinés.`,
+        try: `Maintiens le curseur sur l'anaphase I de la méiose : les homologues se séparent alors que les chromatides sœurs restent unies à leur centromère. Compare ensuite l'anaphase mitotique à gauche, où les centromères se sont déjà divisés.`,
+        notice: `<b>La différence distinctive est la méiose I : ce sont les homologues, non les chromatides sœurs, qui se séparent — et c'est cela qui divise la ploïdie par deux.</b> La séparation des sœurs (mitose, et méiose II) la préserve. Les deux sources de variation sont dessinées : le crossing over en prophase I, et l'orientation indépendante de chaque bivalent en métaphase I, qui fait que la petite paire finit dans des cellules filles différentes de la grande paire.`,
       },
     },
     punnett: {
@@ -4490,17 +4491,17 @@ export default {
     },
     astro: {
       junior: {
-        legend: `Une seule étoile qui vit sa vie entière, prodigieusement accélérée. [[age]] suit son avancement et [[stage]] nomme ce qu'elle est devenue. Sa couleur et sa taille changent à mesure qu'elle vieillit — et sa façon de finir ne dépend que d'une seule chose que tu contrôles.`,
+        legend: `Une étoile, de la naissance à la mort, à rythme fixe : la vie entière dure toujours environ 34 secondes quelle que soit la [[mass]] choisie — seule l'échelle de temps réelle écrite sous la barre change. La bande du bas est l'histoire de sa vie avec le chapitre en cours allumé, et le panneau de droite la situe parmi toutes les autres étoiles.`,
         try: `Mets [[mass]] à 1 (une étoile comme notre Soleil) et appuie sur [[reset]], puis regarde jusqu'à la fin. Maintenant mets [[mass]] à 20 et regarde de nouveau.`,
         notice: `<b>L'étoile de taille solaire se gonfle, souffle ses couches externes et laisse une minuscule naine blanche. La lourde explose en supernova et laisse un trou noir.</b> Tout le destin d'une étoile est fixé à la naissance par sa masse — rien d'autre. Et les grosses meurent absurdement vite : les étoiles les plus lourdes brûlent leur carburant si effrénément qu'une étoile de 20 masses solaires vit quelques millions d'années tandis que le Soleil en fait dix milliards. Être plus grande te donne plus de carburant et une vie bien plus courte.`,
       },
       student: {
-        legend: `Évolution stellaire pilotée par la seule [[mass]]. [[stage]] défile entre séquence principale, géante rouge, puis un point final dépendant de la masse : nébuleuse planétaire et naine blanche sous ~8 M☉, ou supergéante, supernova et une étoile à neutrons ou un trou noir au-dessus.`,
+        legend: `Évolution stellaire pilotée par la seule [[mass]]. La bande des phases va de protoétoile → séquence principale → géante → destin final, ce destin étant fixé par la masse : nébuleuse planétaire et naine blanche sous ~8 M☉, supernova laissant une étoile à neutrons ou un trou noir au-dessus. Les valeurs à gauche donnent rayon, température de surface et luminosité instantanés, et le panneau H–R place l'étoile sur la séquence principale puis trace son déplacement.`,
         try: `Compare les points finaux à [[mass]] = 1, 10 et 20, et note combien de temps chacune passe sur la séquence principale. Trouve la [[mass]] où l'issue passe de naine blanche à supernova.`,
         notice: `<b>La bifurcation se situe près de 8 M☉, et la durée de vie s'effondre comme environ \\(1/M^3\\) — dix milliards d'années pour le Soleil, dix millions pour une étoile de 10 M☉.</b> La luminosité croît fortement avec la masse (\\(L \\propto M^{3.5}\\)) tandis que la réserve de carburant ne croît que comme \\(M\\), donc la durée de vie \\(\\propto M/L \\sim M^{-2.5}\\). Sous la bifurcation, la pression de dégénérescence des électrons arrête l'effondrement à la <b>limite de Chandrasekhar</b> de 1,4 M☉ et une naine blanche survit ; au-dessus, le cœur dépasse ce que la dégénérescence peut soutenir et s'effondre catastrophiquement. Chaque élément plus lourd que le fer dans ton corps fut forgé dans le second type de mort.`,
       },
       scholar: {
-        legend: `Évolution schématique d'étoile unique paramétrée par la [[mass]] initiale, avec une durée de vie sur la séquence principale qui croît comme \\(\\propto M^{-3}\\) dans ce modèle. Métallicité, perte de masse, rotation et binarité ne sont pas représentées.`,
+        legend: `Évolution schématique d'une étoile isolée paramétrée par la [[mass]] initiale, avec une durée de séquence principale en \\(\\tau \\propto M^{-2.5}\\) et \\(L \\propto M^{3.5}\\). L'animation tourne sur une horloge fixe, de sorte que des trajectoires de durées très différentes restent comparables ; le panneau H–R montre la séquence principale et la trajectoire évolutive de l'étoile. Métallicité, perte de masse, rotation et binarité ne sont pas représentées.`,
         try: `Localise la frontière naine-blanche / supernova du modèle et sa frontière étoile-à-neutrons / trou noir. Considère de combien chacune des variables omises déplacerait ces seuils dans une population réelle.`,
         notice: `<b>Les seuils sont bien moins nets que ne l'implique tout modèle à paramètre unique — perte de masse et métallicité les déplacent de plusieurs masses solaires.</b> La relation observée est \\(L \\propto M^{3.5}\\) donnant \\(\\tau \\propto M^{-2.5}\\) ; l'effondrement du cœur exige de dépasser la masse de Chandrasekhar \\(M_{Ch} = 1.44\\,(\\mu_e/2)^{-2}\\) M☉, et la division étoile-à-neutrons/trou-noir dépend de l'équation d'état nucléaire mal contrainte (limite de Tolman–Oppenheimer–Volkoff, ~2,2–2,9 M☉). Les étoiles à faible métallicité retiennent bien plus de masse et s'effondrent directement sans supernova brillante, et comme la plupart des étoiles massives sont dans des binaires en interaction, les tracés d'étoile unique décrivent une minorité des cas réels. Les catalogues d'ondes gravitationnelles fournissent désormais les statistiques de population que les seuls modèles stellaires ne pouvaient pas.`,
       },
@@ -4626,19 +4627,19 @@ export default {
     },
     kinetics: {
       junior: {
-        legend: `La courbe du panneau inférieur est une colline que les molécules doivent gravir avant de pouvoir réagir — cette hauteur est l'<b>énergie d'activation</b>. Seules les molécules avec assez d'énergie la franchissent. [[react]] est la quantité de matière de départ restante, [[prod]] combien a été converti, et [[rate]] à quelle vitesse cela procède.`,
-        try: `Mets [[temp]] à 400 et note [[rate]]. Maintenant monte-la à 500 — seulement 100 degrés de plus — et relis [[rate]].`,
-        notice: `<b>Seulement 100 degrés de plus et la réaction va environ 20 fois plus vite.</b> La chaleur ne pousse pas les molécules par-dessus la colline ; elle élargit la petite fraction qui avait déjà assez d'énergie pour la gravir, et cette fraction croît explosivement avec la température. C'est pourquoi un frigo conserve la nourriture des semaines tandis que la même nourriture s'abîme en un jour sur le comptoir, et pourquoi la cuisson au four a des températures si précises. Maintenant appuie sur [[cat]] et regarde la colline elle-même rapetisser.`,
+        legend: `Deux cadres. Dans celui du haut les molécules rebondissent : quand deux <b>R</b> bleues se heurtent assez fort elles deviennent des <b>P</b> orange — et deux orange peuvent redevenir bleues. La barre en dessous montre combien tu en as de chaque en ce moment, et le repère blanc montre où le mélange va se stabiliser. Le cadre du bas est la colline d'énergie à franchir, dans les deux sens.`,
+        try: `Monte [[temp]] au maximum et [[ea]] au minimum, puis attends. Le mélange devient-il un jour entièrement orange ? Appuie maintenant sur le bouton catalyseur : tout accélère — mais le repère blanc bouge-t-il ?`,
+        notice: `<b>Non. Même à 800 K avec la colline la plus basse, il reste toujours du bleu.</b> La chaleur et le catalyseur changent À QUELLE VITESSE le mélange se stabilise ; seule la chaleur change OÙ il se stabilise, et comme l'étape directe libère de l'énergie, chauffer renvoie un peu de produit vers les réactifs.`,
       },
       student: {
-        legend: `Un diagramme de coordonnée de réaction avec la hauteur de barrière fixée par [[ea]]. Les molécules réagissent à la collision si elles franchissent la barrière ; la constante de vitesse suit Arrhenius, \\(k = A e^{-E_a/RT}\\). [[react]] et [[prod]] suivent les concentrations et [[rate]] la vitesse instantanée.`,
-        try: `Enregistre [[rate]] à [[temp]] = 400 et 500 avec [[ea]] à 50. Puis reviens à 400 et abaisse plutôt [[ea]] à 25. Quel changement t'a acheté le plus de vitesse ?`,
-        notice: `<b>+100 K multiplie la vitesse par environ 20, mais diviser la barrière par deux vaut bien plus — l'exponentielle est bien plus sensible à \\(E_a\\) qu'à \\(T\\).</b> Cette asymétrie est pourquoi la catalyse domine la chimie industrielle : tu ne peux pas toujours chauffer une réaction (les produits se décomposent, l'énergie coûte), mais abaisser \\(E_a\\) en offrant un chemin alternatif atteint le même but à température ambiante. Un catalyseur ne change ni \\(\\Delta G\\) ni la position d'équilibre — il accélère également les réactions directe et inverse, et se régénère inchangé.`,
+        legend: `Cadre du haut : le récipient réactionnel, où R ⇌ P se produit par collision. Cadre du bas : le profil énergétique, avec la barrière directe Ea→ et la barrière inverse ←Ea, plus haute de |ΔH|. Les deux constantes suivent Arrhenius, \\(k = Ae^{-E_a/RT}\\). La barre entre les cadres est la composition instantanée ; le repère blanc est la position d'équilibre prédite par \\(K = k_→/k_←\\).`,
+        try: `Mets [[ea]] au minimum et [[temp]] au maximum et laisse tourner. Compare [[react]] au repère d'équilibre prédit — reste-t-il du réactif ? Ajoute ensuite le catalyseur et vérifie si ce repère se déplace.`,
+        notice: `<b>Le catalyseur abaisse les deux barrières d'autant, donc K est inchangé — il te fait seulement arriver plus tôt.</b> La température, elle, change K : pour cette réaction exothermique \\(K = e^{|\\Delta H|/RT}\\) diminue quand T monte, donc chaud et rapide laisse quand même du réactif. Vitesse et rendement sont deux questions différentes.`,
       },
       scholar: {
-        legend: `Cinétique d'Arrhenius avec \\(k = A\\exp(-E_a/RT)\\), \\(A = 10^6\\) ; le chemin du catalyseur réduit \\(E_a\\) de 55%. Note que la [[rate]] affichée est bornée à un maximum, donc les combinaisons les plus extrêmes de [[temp]] haute et [[ea]] basse sont tronquées au lieu d'être rapportées fidèlement.`,
-        try: `Vérifie la forme d'Arrhenius en contrôlant que \\(\\ln k\\) est linéaire en \\(1/T\\), en échantillonnant [[temp]] là où la vitesse est bien sous son plafond. Puis estime \\(E_a\\) à partir de ta pente et compare au réglage [[ea]].`,
-        notice: `<b>Un graphe d'Arrhenius de \\(\\ln k\\) contre \\(1/T\\) donne une droite de pente \\(-E_a/R\\) — c'est ainsi que les énergies d'activation sont réellement mesurées.</b> L'interprétation s'approfondit avec la théorie de l'état de transition : \\(k = \\frac{k_BT}{h}e^{-\\Delta G^\\ddagger/RT}\\) scinde la barrière en parties enthalpique et entropique, donc un « facteur pré-exponentiel » est en réalité \\(e^{\\Delta S^\\ddagger/R}\\) — une exigence d'orientation, non un comptage de collisions. C'est pourquoi les enzymes atteignent des accélérations de \\(10^{17}\\) : ils paient d'avance le coût entropique de l'alignement en liant le substrat, au lieu d'abaisser le seul \\(\\Delta H^\\ddagger\\).`,
+        legend: `Un système bimoléculaire stochastique \\(2R \\rightleftharpoons 2P\\). Les probabilités par collision sont proportionnelles à \\(k = A\\exp(-E_a/RT)\\) dans chaque sens, avec \\(E_{a,\\text{inv}} = E_{a,\\text{dir}} + |\\Delta H|\\) ; les deux sont mises à l'échelle par un facteur commun, de sorte que le rapport \\(K = k_→/k_←\\) est conservé à tous les réglages. Le repère sur la barre de composition vaut \\(\\sqrt{K}/(1+\\sqrt{K})\\), la fraction molaire de P à l'équilibre.`,
+        try: `Teste le comportement de van 't Hoff : relève la composition stationnaire à 300 K, puis à 800 K, et compare le décalage à \\(K = \\exp(|\\Delta H|/RT)\\). Confirme ensuite que le catalyseur laisse cet état stationnaire intact tout en changeant le temps pour l'atteindre.`,
+        notice: `<b>La catalyse est cinétique, pas thermodynamique :</b> abaisser l'état de transition abaisse également les deux barrières, laissant \\(\\Delta G^\\circ\\) — et donc K — fixe. Seule la température déplace l'équilibre, et pour une réaction exothermique elle le déplace vers l'arrière. La dispersion autour de la fraction prédite est un bruit de taille finie : avec 60 particules, les fluctuations en \\(\\sqrt{N}\\) valent quelques pour cent.`,
       },
     },
     organic: {
@@ -4728,18 +4729,18 @@ export default {
     },
     blackholes: {
       junior: {
-        legend: `Le disque noir est l'<b>horizon des événements</b> — franchis-le et rien, pas même la lumière, ne peut ressortir. Le point en orbite est une horloge que nous observons de loin. [[dilat]] te dit à quelle vitesse elle bat comparée à la tienne, et [[z]] montre de combien sa lumière est étirée en sortant.`,
+        legend: `Trois cercles comptent ici. Le noir est l'<b>horizon des événements</b> : si tu le franchis, rien ne revient, pas même la lumière. Le jaune est là où la lumière elle-même peut orbiter. Le bleu en pointillés est l'orbite la plus proche que l'on puisse parcourir sans danger. Les deux horloges à droite sont l'essentiel : l'une reste loin avec toi, l'autre voyage sur le point en orbite — regarde les aiguilles se décaler. Le bouton lâche une sonde droit dedans.`,
         try: `Mets [[dist]] à 20 (loin) et lis [[dilat]]. Descends-la maintenant à 2, tout contre l'horizon, et relis-la.`,
         notice: `<b>Loin, l'horloge bat presque à ta vitesse (0,975×) ; tout près, elle ralentit à 0,707× — elle perd près d'un tiers de chaque seconde.</b> Le temps lui-même s'écoule plus lentement près des choses lourdes. Ce n'est pas un tour de lumière ni une horloge cassée : quelqu'un qui tombe dedans vieillit réellement moins que toi. Rien dans la vie quotidienne ne t'y prépare, pourtant le GPS de ton téléphone corrige exactement cet effet chaque seconde, sinon il te placerait à des kilomètres.`,
       },
       student: {
-        legend: `Un trou noir de Schwarzschild de masse [[mass]]. [[dist]] place une particule test en unités du rayon de Schwarzschild \\(r_S\\) ; [[dilat]] donne \\(\\sqrt{1-r_S/r}\\) et [[z]] le redshift gravitationnel \\((1-r_S/r)^{-1/2}-1\\).`,
+        legend: `Un trou noir de Schwarzschild de masse [[mass]], avec les trois rayons caractéristiques tracés à l'échelle en unités de \\(r_S\\) : horizon à 1, sphère de photons à 1,5, ISCO à 3. [[dist]] place une particule test ; [[dilat]] donne \\(\\sqrt{1-r_S/r}\\) et [[z]] le décalage gravitationnel \\((1-r_S/r)^{-1/2}-1\\). Les deux horloges montrent la même dilatation sous forme d'aiguilles, et l'échantillon de couleur montre la lumière de la particule telle qu'elle nous parvient. À l'intérieur de l'ISCO l'orbite est tracée instable, et le disque d'accrétion est tronqué là pour la même raison.`,
         try: `Note [[dilat]] et [[z]] à [[dist]] = 20, 6 et 2. Raisonne ensuite sur ce que font les deux grandeurs quand [[dist]] approche 1, et vérifie si [[mass]] les change à [[dist]] fixé.`,
         notice: `<b>Toutes deux divergent à \\(r = r_S\\) : la dilatation du temps tend vers zéro et le redshift vers l'infini — pourtant aucune ne dépend de la masse du trou à \\(r/r_S\\) fixé.</b> L'horizon n'est pas un lieu où la physique se brise ; c'est là où la vitesse de libération atteint \\(c\\), et un observateur en chute libre ne remarque rien de spécial en le franchissant. La divergence est un artefact de coordonnées du référentiel de l'observateur lointain. Note que \\(r_S = 2GM/c^2\\) est <em>linéaire</em> en la masse, si bien qu'un trou supermassif a un horizon doux : les forces de marée à \\(r_S\\) varient comme \\(M^{-2}\\), et tu franchirais l'horizon de Sagittarius A* tout à fait intact.`,
       },
       scholar: {
-        legend: `Géométrie de Schwarzschild, \\(ds^2 = -(1-r_S/r)c^2dt^2 + (1-r_S/r)^{-1}dr^2 + r^2d\\Omega^2\\). [[dilat]] est le rapport du temps propre au temps coordonnée pour un observateur statique ; [[z]] le redshift gravitationnel correspondant. L'ISCO à \\(3r_S\\) n'est pas marquée.`,
-        try: `Examine le comportement quand [[dist]] approche 1 et demande-toi si la divergence est physique. Détermine ensuite où une orbite circulaire cesse d'être stable et compare ce rayon à l'horizon.`,
+        legend: `Géométrie de Schwarzschild, \\(ds^2 = -(1-r_S/r)c^2dt^2 + (1-r_S/r)^{-1}dr^2 + r^2d\\Omega^2\\). [[dilat]] est le rapport du temps propre au temps coordonné pour un observateur statique ; [[z]] le décalage gravitationnel correspondant. Horizon, sphère de photons \\(1{,}5r_S\\) et ISCO \\(3r_S\\) sont tous marqués, et la sonde lâchée est intégrée en temps coordonné : d'où son approche asymptotique de l'horizon sans jamais le franchir à l'écran.`,
+        try: `Observe l'horloge propre de la sonde lâchée face à l'horloge coordonnée à mesure qu'elle approche \\(r_S\\), et décide si le gel est physique. Fais ensuite passer [[dist]] de part et d'autre de \\(3r_S\\) et relie la perte des orbites circulaires stables à l'endroit où est tracé le bord interne du disque d'accrétion.`,
         notice: `<b>La divergence est purement une pathologie de coordonnées — les invariants de courbure restent finis à \\(r_S\\) et n'explosent qu'à \\(r=0\\).</b> Les coordonnées de Kruskal–Szekeres l'éliminent entièrement, et l'observateur en chute franchit en temps propre fini. Le rayon physiquement pertinent pour l'accrétion est l'<b>ISCO</b> à \\(3r_S\\) (Schwarzschild), en deçà duquel aucune orbite circulaire stable n'existe — cela fixe l'efficacité du disque d'accrétion à 5,7 %, montant à 42 % pour un trou de Kerr en rotation maximale, ce qui explique pourquoi les quasars surpassent leurs galaxies hôtes. Le vrai problème ouvert siège à l'horizon : le rayonnement de Hawking est thermique, \\(T_H = \\hbar c^3/8\\pi GMk_B\\), ce qui paraît détruire l'information, et le paradoxe qui en résulte reste irrésolu.`,
       },
     },
@@ -5034,9 +5035,9 @@ export default {
       scholar: { o2: `Niveau d'oxygène`, atp: `ATP par glucose`, co2: `CO₂ par glucose`, mode: `Voie métabolique` },
     },
     watercycle: {
-      junior:  { temp: `Chaleur du Soleil`, evap: `Évaporation`, cloud: `Nuage`, rain: `Pluie` },
-      student: { temp: `Température`, evap: `Évaporation`, cloud: `Eau dans le nuage`, rain: `Précipitation` },
-      scholar: { temp: `Température`, evap: `Évaporation`, cloud: `Eau dans le nuage`, rain: `Précipitation` },
+      junior:  { wind: "Vent", temp: `Chaleur du Soleil`, evap: `Évaporation`, cloud: `Nuage`, rain: `Pluie` },
+      student: { wind: "Vitesse du vent", temp: `Température`, evap: `Évaporation`, cloud: `Eau dans le nuage`, rain: `Précipitation` },
+      scholar: { wind: "Vitesse du vent", temp: `Température`, evap: `Évaporation`, cloud: `Eau dans le nuage`, rain: `Précipitation` },
     },
     energy: {
       junior:  { drop: `Hauteur de chute`, fric: `Frottement`, ke: `Énergie de mouvement`, pe: `Énergie de hauteur`, tot: `Total` },
@@ -5069,14 +5070,14 @@ export default {
       scholar: { obj: `Distance objet (dₒ)`, foc: `Distance focale (f)`, img: `Distance image (dᵢ)`, mag: `Grandissement (m)`, type: `Image` },
     },
     blackholes: {
-      junior:  { mass: 'Masse du trou noir (M☉)', dist: 'Distance du trou',            wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Étirement de la lumière' },
-      student: { mass: 'Masse du trou noir (M☉)', dist: 'Distance particule test (r_S)', wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Redshift' },
-      scholar: { mass: 'Masse du trou noir (M☉)', dist: 'Distance particule test (r_S)', wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Redshift' },
+      junior:  { probe: "Lâcher une sonde", mass: 'Masse du trou noir (M☉)', dist: 'Distance du trou',            wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Étirement de la lumière' },
+      student: { probe: "Lâcher une sonde", mass: 'Masse du trou noir (M☉)', dist: 'Distance particule test (r_S)', wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Redshift' },
+      scholar: { probe: "Lâcher une sonde", mass: 'Masse du trou noir (M☉)', dist: 'Distance particule test (r_S)', wave: 'Onde gravitationnelle', km: 'Distance', dilat: 'Dilatation du temps', z: 'Redshift' },
     },
     solarsystem: {
-      junior:  { speed: 'Vitesse du temps', zoom: 'Zoom', sel: 'Sélectionné', period: 'Période', dist: 'Distance' },
-      student: { speed: 'Vitesse du temps', zoom: 'Zoom', sel: 'Sélectionné', period: 'Période', dist: 'Distance' },
-      scholar: { speed: 'Vitesse du temps', zoom: 'Zoom', sel: 'Sélectionné', period: 'Période', dist: 'Distance' },
+      junior:  { probe: "Lâcher une sonde", speed: 'Vitesse du temps', zoom: 'Zoom', sel: 'Sélectionné', period: 'Période', dist: 'Distance' },
+      student: { probe: "Lâcher une sonde", speed: 'Vitesse du temps', zoom: 'Zoom', sel: 'Sélectionné', period: 'Période', dist: 'Distance' },
+      scholar: { probe: "Lâcher une sonde", speed: 'Vitesse du temps', zoom: 'Zoom', sel: 'Sélectionné', period: 'Période', dist: 'Distance' },
     },
     eclipse: {
       junior:  { moon: 'Déplace la Lune', node: 'Aligne l\'orbite',      phase: 'Phase lunaire', ecl: 'Éclipse ?' },

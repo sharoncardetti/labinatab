@@ -1,0 +1,66 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>sim shot bench</title>
+<!--
+  Dev-only bench for screenshotting simulations deterministically.
+
+  A browser throttles requestAnimationFrame whenever its window is hidden, so a
+  screenshot of a live topic page can show a sim that has barely advanced. Here
+  rAF is stubbed with a queue and stepped by hand, so the canvas is rendered at
+  exactly frame N every time.
+
+    /dev/shot.html?sim=watercycle&level=junior&frames=600&w=760&r=0:9,1:7
+      sim    engine id (watercycle, kinetics, optics, mitosis, …)
+      level  junior | student | scholar     frames  how many frames to advance
+      w      canvas width in px             r       slider overrides, index:value
+      c      button clicks by index, e.g. c=0 (clicked before stepping)
+-->
+<style>
+  body{margin:0;padding:14px;background:#faf7f2;font:14px system-ui}
+  #host{width:var(--w,760px)}
+  .sim-canvas-wrap{display:block}
+  .sim-controls{display:flex;gap:14px;align-items:center;margin:8px 0}
+  .rng-wrap{flex:1}.rng-top{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
+  input[type=range]{width:100%}
+  .sim-pills{display:flex;gap:8px;flex-wrap:wrap}
+  .spill{background:#fff;border:1px solid #ddd;border-radius:999px;padding:3px 10px;font-size:12px}
+  .cbtn{border:1px solid #ccc;background:#fff;border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer}
+  #meta{margin-top:10px;font:12px ui-monospace,monospace;color:#555}
+</style>
+<div id="host"></div>
+<div id="meta"></div>
+<script src="/sim-engine.js"></script>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search);
+  var sim=q.get('sim')||'watercycle', level=q.get('level')||'junior';
+  var frames=parseInt(q.get('frames')||'300',10), width=parseInt(q.get('w')||'760',10);
+  var host=document.getElementById('host');
+  host.style.setProperty('--w',width+'px'); host.style.width=width+'px';
+
+  var queue=[], realRaf=window.requestAnimationFrame;
+  window.requestAnimationFrame=function(cb){queue.push(cb);return queue.length;};
+  window.cancelAnimationFrame=function(){};
+
+  buildSim(sim,host,q.get('color')||'#0284c7',level);
+
+  (q.get('c')||'').split(',').filter(Boolean).forEach(function(i){
+    var b=host.querySelectorAll('.cbtn')[+i]; if(b)b.click();
+  });
+  (q.get('r')||'').split(',').filter(Boolean).forEach(function(pair){
+    var p=pair.split(':'), inp=host.querySelectorAll('input[type=range]')[+p[0]];
+    if(inp){inp.value=p[1];inp.dispatchEvent(new Event('input'));}
+  });
+
+  var t0=performance.now(), start=t0;
+  for(var i=0;i<frames;i++){
+    var cb=queue.shift(); if(!cb)break;
+    t0+=1000/60;            // fake a steady 60 fps clock for time-based sims
+    cb(t0);
+  }
+  document.getElementById('meta').textContent=
+    sim+' · '+level+' · frame '+frames+' · '+Math.round(performance.now()-start)+'ms · '+
+    [].map.call(host.querySelectorAll('.spill'),function(p){return p.textContent;}).join('  |  ');
+})();
+</script>

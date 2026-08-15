@@ -5,6 +5,7 @@
 //   node build-pages.mjs
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import itLang from './i18n/it.mjs';
 import frLang from './i18n/fr.mjs';
 
@@ -39,7 +40,7 @@ const fillLabels = (txt, lab) =>
 // ── languages ──────────────────────────────────────────────────────────
 // English is the base: empty overlays, so every topic resolves to `S` as-is.
 const EN = {
-  code: 'en', name: 'English', flag: '<svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg>', htmlLang: 'en', locale: 'en_US', prefix: '',
+  code: 'en', name: 'English', flag: '<svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg>', htmlLang: 'en', locale: 'en_US', prefix: '',
   ui: UI,
   slugs: {}, t: {}, guide: {}, labels: {},
 };
@@ -119,6 +120,10 @@ const ENGINE = [
     'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein', 'simWater', 'simEnergy', 'simSeriesParallel', 'simRespiration'].map(decl),
 ].join('\n\n');
 
+// Cache-buster: browsers hold on to sim-engine.js, so an engine change has to
+// change its URL or readers keep running the old simulations.
+const ENGINE_V = crypto.createHash('sha1').update(ENGINE).digest('hex').slice(0, 8);
+
 // The embedded sim, localized. Guide text + tab labels come from the language;
 // the canvas control labels remain the engine's (English) for now.
 function simEmbedHTML(T, lang) {
@@ -182,7 +187,7 @@ header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px s
 .tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
 .langsel{position:relative}
 .langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
-.flag{height:13px;width:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
 .langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
 .langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
 .langmenu a:hover{background:var(--bg);color:var(--ink)}
@@ -330,7 +335,7 @@ ${JSON.stringify(ld, null, 1)}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js"></script>
+<script defer src="/sim-engine.js?v=${ENGINE_V}"></script>
 <style>${CSS}</style>
 </head>
 <body>
@@ -418,7 +423,9 @@ function buildSPAClone(lang) {
   const ui = lang.ui;
   const url = `${ORIGIN}/${lang.prefix}`;
   const cleanHtag = String(ui.htag).replace(/^\S+\s*/, '').trim();
-  const desc = clamp(ui.heroSub.junior);
+  // SEO description for the hub: a dedicated `metaDesc` if the overlay has one,
+  // otherwise the hero subtitle (which reads well on-page but is keyword-poor).
+  const desc = clamp(ui.metaDesc || ui.heroSub.junior);
   let html = src;
   // data blocks
   html = swapBlock(html, 'const UI={', '}; // end UI', `const UI=${jsonInline(ui)}; // end UI`);
@@ -434,6 +441,7 @@ function buildSPAClone(lang) {
   html = html.replace(/<title>[^<]*<\/title>/, `<title>Lab-in-a-Tab — ${esc(cleanHtag)}</title>`);
   html = html.replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${esc(desc)}">`);
   html = html.replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="Lab-in-a-Tab — ${esc(cleanHtag)}">`);
+  html = html.replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${esc(desc)}">`);
   // language switcher: this language's flag on the button, mark its menu item current
   html = html.replace(/(<button class="icon-btn langbtn" id="lb"[^>]*>)[\s\S]*?(<\/button>)/, (m, open, close) => open + lang.flag + close);
   html = html.replace('href="/ai/"', `href="/${lang.prefix}ai/"`);
@@ -489,7 +497,7 @@ if (fs.existsSync('.build-pages.json')) {
 fs.writeFileSync('.build-pages.json', JSON.stringify(built, null, 1));
 
 // sitemap.xml — every localized page plus the English home.
-const urls = ['', ...hubs, ...built.map(b => b.slug + '/')];
+const urls = ['', 'ai/', ...hubs, ...hubs.map(h => h + 'ai/'), ...built.map(b => b.slug + '/')];
 fs.writeFileSync('sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   urls.map(u => `  <url>\n    <loc>${ORIGIN}/${u}</loc>\n    <lastmod>${TODAY}</lastmod>\n  </url>`).join('\n') +
