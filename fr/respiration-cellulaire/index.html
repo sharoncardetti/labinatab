@@ -41,7 +41,7 @@
    "url": "https://labinatab.com/fr/respiration-cellulaire/",
    "mainEntityOfPage": "https://labinatab.com/fr/respiration-cellulaire/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-08-10",
+   "dateModified": "2026-08-19",
    "inLanguage": "fr",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -103,7 +103,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js?v=70239486"></script>
+<script defer src="/sim-engine.js?v=1d968360"></script>
 <style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
 :root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -208,7 +208,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <h1>La respiration cellulaire</h1>
   <p class="lead">Comment ta nourriture devient-elle réellement énergie ? Chaque cellule brûle lentement le sucre avec l'oxygène, capturant la puissance libérée dans la monnaie universelle de la vie : l'ATP.</p>
   <div class="chips"><span>ATP</span><span>Mitochondries</span><span>Métabolisme</span></div>
-  <section class="sim-embed" data-sim="respiration" data-color="#e11d48" aria-label="Interactive simulation">
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"respiration":{"junior":{"o2":"Oxygène","atp":"Énergie (ATP)","co2":"CO₂ rejeté","mode":"Mode"},"student":{"o2":"Niveau d'oxygène","atp":"ATP par glucose","co2":"CO₂ par glucose","mode":"Voie métabolique"},"scholar":{"o2":"Niveau d'oxygène","atp":"ATP par glucose","co2":"CO₂ par glucose","mode":"Voie métabolique"}}});</script>
+<section class="sim-embed" data-sim="respiration" data-color="#e11d48" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
   <div class="sim-try" data-l="junior" style="border-left-color:#e11d48"><span class="sg-lbl">Essaie</span><span>Monte <b>Oxygène</b> en haut et regarde l'ATP jaillir. Maintenant baisse-le complètement. Qu'arrive-t-il à <b>Énergie (ATP)</b> et à la <b>Mode</b> quand l'oxygène s'épuise ?</span></div>
 <div class="sim-try" data-l="student" hidden style="border-left-color:#e11d48"><span class="sg-lbl">Essaie</span><span>Monte <b>Niveau d'oxygène</b> au maximum et lis <b>ATP par glucose</b> et <b>CO₂ par glucose</b> ; puis baisse-le près de zéro et regarde <b>Voie métabolique</b> passer en anaérobie. Note comment le rendement d'ATP s'effondre.</span></div>

@@ -41,7 +41,7 @@
    "url": "https://labinatab.com/it/quadrati-di-punnett-genetica/",
    "mainEntityOfPage": "https://labinatab.com/it/quadrati-di-punnett-genetica/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-08-10",
+   "dateModified": "2026-08-19",
    "inLanguage": "it",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -103,7 +103,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js?v=70239486"></script>
+<script defer src="/sim-engine.js?v=1d968360"></script>
 <style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
 :root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -208,7 +208,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <h1>Quadrati di Punnett e genetica</h1>
   <p class="lead">Incrocia due genitori e prevedi i figli — la piccola griglia che Mendel costruì da un giardino di piselli.</p>
   <div class="chips"><span>Genetica</span><span>Alleli</span><span>Ereditarietà</span></div>
-  <section class="sim-embed" data-sim="punnett" data-color="#c026d3" aria-label="Interactive simulation">
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"punnett":{"junior":{"p1":"Genitore 1","p2":"Genitore 2","pheno":"Aspetto (fenotipo)","geno":"Geni (genotipo)"},"student":{"p1":"Genotipo genitore 1","p2":"Genotipo genitore 2","pheno":"Rapporto fenotipico","geno":"Rapporto genotipico"},"scholar":{"p1":"Genotipo genitore 1","p2":"Genotipo genitore 2","pheno":"Rapporto fenotipico","geno":"Rapporto genotipico"}}});</script>
+<section class="sim-embed" data-sim="punnett" data-color="#c026d3" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
   <div class="sim-try" data-l="junior" style="border-left-color:#c026d3"><span class="sg-lbl">Prova</span><span>Imposta entrambi i genitori a Aa (uno dominante, uno recessivo) con i pulsanti, poi guarda le quattro celle. Quante mostrano il colore dominante, e quante il recessivo?</span></div>
 <div class="sim-try" data-l="student" hidden style="border-left-color:#c026d3"><span class="sg-lbl">Prova</span><span>Confronta Aa × Aa (entrambi eterozigoti) con un testcross, Aa × aa. Come differiscono i rapporti <b>Rapporto fenotipico</b> e <b>Rapporto genotipico</b>?</span></div>

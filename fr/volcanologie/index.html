@@ -41,7 +41,7 @@
    "url": "https://labinatab.com/fr/volcanologie/",
    "mainEntityOfPage": "https://labinatab.com/fr/volcanologie/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-08-10",
+   "dateModified": "2026-08-19",
    "inLanguage": "fr",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -103,7 +103,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js?v=70239486"></script>
+<script defer src="/sim-engine.js?v=1d968360"></script>
 <style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
 :root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -208,7 +208,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <h1>Volcanologie</h1>
   <p class="lead">Un volcan est une fenêtre sur l'intérieur de notre planète. Le même processus qui détruit des villes a bâti les continents, créé les océans et fabriqué l'atmosphère que nous respirons.</p>
   <div class="chips"><span>Magma</span><span>Éruptions</span><span>Géorisques</span></div>
-  <section class="sim-embed" data-sim="volcano" data-color="#dc2626" aria-label="Interactive simulation">
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"volcano":{"junior":{"visc":"Viscosité du magma (1=basalte 10=rhyolite)","recharge":"Taux de recharge du magma","erupt":"Force de l'éruption","pres":"Pression de la chambre","vei":"Taille de l'explosion","phase":"Phase"},"student":{"visc":"Viscosité du magma (1=basalte 10=rhyolite)","recharge":"Taux de recharge du magma","erupt":"Force de l'éruption","pres":"Pression de la chambre","vei":"VEI","phase":"Phase"},"scholar":{"visc":"Viscosité du magma (1=basalte 10=rhyolite)","recharge":"Taux de recharge du magma","erupt":"Force de l'éruption","pres":"Pression de la chambre","vei":"VEI","phase":"Phase"}}});</script>
+<section class="sim-embed" data-sim="volcano" data-color="#dc2626" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
   <div class="sim-try" data-l="junior" style="border-left-color:#dc2626"><span class="sg-lbl">Essaie</span><span>Mets <b>Viscosité du magma (1=basalte 10=rhyolite)</b> à 1 — fluide, comme à Hawaï — et appuie sur <b>Force de l'éruption</b>, en notant <b>Taille de l'explosion</b>. Maintenant mets-la à 10, le type collant, et fais éruption de nouveau.</span></div>
 <div class="sim-try" data-l="student" hidden style="border-left-color:#dc2626"><span class="sg-lbl">Essaie</span><span>Fais éruption à <b>Viscosité du magma (1=basalte 10=rhyolite)</b> = 1, 5 et 10 depuis pleine pression, en enregistrant <b>VEI</b> chaque fois. Puis change <b>Taux de recharge du magma</b> et vérifie si cela altère <b>VEI</b> ou seulement le temps d'attente.</span></div>

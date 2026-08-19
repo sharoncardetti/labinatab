@@ -65,7 +65,7 @@ export default {
     runSim:'▶ Avvia la simulazione interattiva',
     explainedSimulated:'Spiegato e simulato'
   },
-  slugs: { seriesparallel: 'circuiti-serie-parallelo', respiration: 'respirazione-cellulare', watercycle: 'ciclo-dell-acqua', energy: 'energia-conservazione', gaslaws: 'leggi-dei-gas', moonphases: 'fasi-lunari', protein: 'sintesi-proteica', pendulum: 'pendolo-moto-armonico', optics: 'ottica-luce-lenti', memory: 'come-funziona-la-memoria', sleep: 'sonno-coscienza', neuro: 'cervello-neuroni', neuron: 'cervello-elettrico', astro: 'stelle-universo', cosmology: 'cosmologia-big-bang', organic: 'chimica-organica-molecole-vita', acids: 'acidi-basi-ph', periodic: 'tavola-periodica', balancing: 'bilanciare-equazioni-chimiche', chem: 'atomi-legami-chimici', electrochem: 'elettrochimica-batterie', kinetics: 'cinetica-equilibrio', volcano: 'vulcanologia', seasons: 'perche-abbiamo-le-stagioni', climate: 'clima-atmosfera', tectonics: 'tettonica-a-placche-terremoti', ocean: 'oceanografia-correnti-oceaniche', sorting: 'algoritmi-di-ordinamento', ml: 'machine-learning-reti-neurali', crypto: 'crittografia-sicurezza', complexity: 'computazione-complessita', ecosystem: 'ecosistemi-reti-alimentari', cell: 'cellula-osmosi-diffusione', mitosis: 'mitosi-meiosi', punnett: 'quadrati-di-punnett-genetica', life: 'regole-della-vita', dna: 'dna-genetica', evolution: 'evoluzione-selezione-naturale', graphs: 'teoria-dei-grafi-reti', trig: 'trigonometria-cerchio-unitario', prob: 'probabilita-curva-a-campana', fractal: 'frattali-infinito', calculus: 'calcolo-cambiamento', circuits: 'legge-di-ohm-circuiti', states: 'stati-della-materia', thermo: 'calore-termodinamica', particles: 'modello-standard', newton: 'leggi-del-moto-di-newton', gravity: 'gravita-orbite', projectile: 'moto-dei-proiettili', waves: 'onde-interferenza', photosynthesis: 'fotosintesi', eclipse: 'eclissi', meteors: 'stelle-cadenti', blackholes: 'buchi-neri', solarsystem: 'sistema-solare' },
+  slugs: { seriesparallel: 'circuiti-serie-parallelo', respiration: 'respirazione-cellulare', watercycle: 'ciclo-dell-acqua', energy: 'energia-conservazione', gaslaws: 'leggi-dei-gas', moonphases: 'fasi-lunari', protein: 'sintesi-proteica', pendulum: 'pendolo-moto-armonico', optics: 'ottica-luce-lenti', memory: 'come-funziona-la-memoria', sleep: 'sonno-coscienza', neuro: 'cervello-neuroni', neuron: 'cervello-elettrico', astro: 'stelle-universo', cosmology: 'cosmologia-big-bang', organic: 'chimica-organica-molecole-vita', acids: 'acidi-basi-ph', periodic: 'tavola-periodica', balancing: 'bilanciare-equazioni-chimiche', chem: 'atomi-legami-chimici', electrochem: 'elettrochimica-batterie', kinetics: 'cinetica-equilibrio', volcano: 'vulcanologia', seasons: 'perche-abbiamo-le-stagioni', climate: 'clima-atmosfera', tectonics: 'tettonica-a-placche-terremoti', ocean: 'oceanografia-correnti-oceaniche', sorting: 'algoritmi-di-ordinamento', ml: 'machine-learning-reti-neurali', crypto: 'crittografia-sicurezza', complexity: 'computazione-complessita', ecosystem: 'ecosistemi-reti-alimentari', cell: 'cellula-osmosi-diffusione', mitosis: 'mitosi-meiosi', punnett: 'quadrati-di-punnett-genetica', life: 'regole-della-vita', dna: 'dna-genetica', evolution: 'evoluzione-selezione-naturale', graphs: 'teoria-dei-grafi-reti', trig: 'trigonometria-cerchio-unitario', prob: 'probabilita-curva-a-campana', fractal: 'frattali-infinito', calculus: 'calcolo-cambiamento', circuits: 'legge-di-ohm-circuiti', states: 'stati-della-materia', thermo: 'calore-termodinamica', particles: 'modello-standard', newton: 'leggi-del-moto-di-newton', gravity: 'gravita-orbite', projectile: 'moto-dei-proiettili', waves: 'onde-interferenza', photosynthesis: 'fotosintesi', eclipse: 'eclissi', meteors: 'stelle-cadenti', bloodmoon: 'perche-la-luna-diventa-rossa', aurora: 'aurora-boreale', comets: 'comete', blackholes: 'buchi-neri', solarsystem: 'sistema-solare' },
   t: {
     seriesparallel: {
       title: 'Circuiti in serie e in parallelo',
@@ -3682,11 +3682,11 @@ export default {
       lvls: {
         junior: {
           title: `Quando il Sole o la Luna si oscurano`,
-          body: `<p>Ogni tanto il cielo fa qualcosa di spettacolare: il Sole viene cancellato in pieno giorno, oppure la Luna piena diventa di un rosso ramato intenso. Sono le <strong>eclissi</strong>, e succedono perché tre sfere nello spazio - il Sole, la Terra e la Luna - si allineano per un attimo in fila, così che una getti la sua ombra su un'altra. Il <strong>12 agosto 2026</strong> un'eclissi solare totale attraverserà l'Islanda e il nord della Spagna, la prima visibile dall'Europa continentale dal 1999.</p>
+          body: `<p>Ogni tanto il cielo fa qualcosa di spettacolare: il Sole viene cancellato in pieno giorno, oppure la Luna piena diventa di un rosso ramato intenso. Sono le <strong>eclissi</strong>, e succedono perché tre sfere nello spazio - il Sole, la Terra e la Luna - si allineano per un attimo in fila, così che una getti la sua ombra su un'altra. Il <strong>12 agosto 2026</strong> un'eclissi solare totale ha attraversato l'Islanda e il nord della Spagna, la prima visibile dall'Europa continentale dal 1999. Il seguito è vicino: il <strong>27-28 agosto 2026</strong> la Luna entra per il 96% nell'ombra della Terra, e il <strong>2 agosto 2027</strong> un'eclissi solare totale attraversa Spagna meridionale, Nord Africa ed Egitto con 6 minuti e 23 secondi di totalità, la più lunga sulla terraferma dal 1991.</p>
 <p>Un'<strong>eclissi solare</strong> avviene con la Luna nuova, quando la Luna si infila esattamente tra noi e il Sole e lascia cadere la sua ombra sulla Terra. Chi si trova dentro quell'ombra vede la Luna coprire del tutto il Sole per un paio di minuti - il giorno diventa crepuscolo, spuntano le stelle e la spettrale atmosfera esterna del Sole brilla attorno a un disco nero. Un'<strong>eclissi lunare</strong> è l'immagine speculare: con la Luna piena la Terra si mette tra Sole e Luna, e la nostra ombra cade sulla Luna, tingendola di rosso.</p>
 <p>Ma perché non c'è un'eclissi ogni singolo mese, a ogni Luna nuova e piena? Perché l'orbita della Luna è inclinata di qualche grado, così per la maggior parte dei mesi la sua ombra passa appena sopra o sotto la Terra e manca del tutto. Solo quando l'allineamento è quasi perfetto - poche volte l'anno - un'ombra colpisce davvero. È proprio quel mancare quasi sempre a rendere un'eclissi così speciale.</p>`,
           facts: [
-            { e: '🌘', t: `L'eclissi solare totale del 12 agosto 2026 è la prima visibile dall'Europa continentale dal 1999, attraversa Islanda e nord della Spagna.` },
+            { e: '🌘', t: `La prossima eclissi solare totale, il 2 agosto 2027, dura 6 min 23 s su Spagna meridionale, Nord Africa ed Egitto - passa esattamente sopra le piramidi di Giza.` },
             { e: '🔴', t: `Una "luna di sangue" è solo un'eclissi lunare: la Luna brilla di rosso perché illuminata solo dalla luce solare piegata dall'atmosfera terrestre - tutte le albe e i tramonti insieme.` },
             { e: '🎯', t: `Per pura coincidenza il Sole è ~400 volte più largo della Luna e ~400 volte più lontano, così in cielo sembrano della stessa dimensione - ed è per questo che le eclissi totali sono possibili.` },
           ],
@@ -3737,20 +3737,201 @@ export default {
         },
       },
     },
+    bloodmoon: {
+      title: 'Perché la Luna diventa rossa',
+      teaser: `Una luna di sangue è ogni alba e ogni tramonto della Terra insieme, proiettati sulla Luna.`,
+      chips: ['Eclissi lunare', 'Luna rossa', 'Diffusione'],
+      lvls: {
+        junior: {
+          title: `La Luna dentro la nostra ombra`,
+          body: `<p>Certe notti la Luna piena fa una cosa inquietante: invece di sparire nel nero, diventa di un rosso profondo e polveroso. La chiamano <strong>luna di sangue</strong>, e succede durante un'<strong>eclissi lunare</strong> - quando la Terra passa esattamente tra il Sole e la Luna e le lascia sopra la propria ombra.</p>
+<p>Ed ecco la parte strana. Se la Terra si limitasse a bloccare la luce del Sole, la Luna svanirebbe nel buio. Non succede, perché il nostro pianeta ha una cosa che una roccia nuda non avrebbe: l'<strong>aria</strong>. La luce solare che sfiora il bordo della Terra attraversa una lunga fetta di atmosfera, e per strada le capitano due cose. L'aria la <em>piega</em> verso l'interno, arricciando luce dentro un'ombra che sarebbe dovuta restare vuota. E l'aria le <em>toglie il blu</em>, disperdendolo di lato per tutto il cielo e lasciando proseguire dritto il rosso e l'arancione.</p>
+<p>Quindi la luce che arriva sulla Luna eclissata è già stata filtrata dalla nostra atmosfera. È, letteralmente, la luce di ogni alba e di ogni tramonto che in quel momento stanno accadendo sulla Terra, raccolta e lanciata per 384.000 km su una roccia. Se fossi in piedi sulla Luna durante un'eclissi lunare vedresti una Terra nera circondata da un sottile anello di fuoco rosso: tutte le albe e i tramonti del mondo insieme.</p>
+<p>Ed è anche il motivo per cui due lune di sangue non si somigliano mai. Quando l'aria è pulita la Luna brilla di rame acceso. Quando un grande vulcano ha spinto polvere e zolfo in alto nell'atmosfera, più luce viene assorbita lungo il tragitto e la Luna può farsi marrone torbida - o quasi sparire.</p>`,
+          facts: [
+            { e: '🌅', t: `La luce rossa su una Luna eclissata è luce solare filtrata dall'atmosfera terrestre: ogni alba e ogni tramonto del pianeta nello stesso momento.` },
+            { e: '🌋', t: `Dopo l'eruzione del Pinatubo nel 1991 l'eclissi lunare successiva fu così scura che la Luna era difficile persino da trovare: la polvere vulcanica si era mangiata la luce.` },
+            { e: '👀', t: `Un'eclissi lunare si può guardare a occhio nudo senza alcun rischio, al contrario di una solare: stai guardando una Luna fioca, non il Sole.` },
+          ],
+          formula: null,
+          sim: 'bloodmoon',
+        },
+        student: {
+          title: `Ombra, penombra e la scala Danjon`,
+          body: `<p>La Terra proietta due ombre annidate. La <strong>penombra</strong> è il cono esterno, dove il Sole è coperto solo in parte; una Luna che ci entra si affievolisce così poco che quasi nessuno se ne accorge. L'<strong>ombra</strong> (umbra) è il cono interno, dove la Terra copre il Sole per intero. È lì che nasce il colore.</p>
+<p>Alla distanza della Luna l'ombra è larga circa <strong>2,6 volte la Luna stessa</strong>, ed è per questo che la totalità può durare più di un'ora. Quanto in profondità la Luna ci entra dipende da quanto è centrato l'allineamento, e gli astronomi lo esprimono come <em>magnitudine umbrale</em>: 1,0 o più significa totale, 0,96 è una parziale profonda con una sola falce chiara che resiste, sotto lo 0 la Luna non esce mai dalla penombra.</p>
+<p>Dentro l'ombra l'unica illuminazione è <strong>luce solare rifratta e filtrata da Rayleigh</strong>. L'atmosfera terrestre funziona da lente, piegando i raggi radenti fino a circa un grado, e da filtro: la diffusione va come \\(1/\\lambda^4\\), quindi il blu viene disperso circa dieci volte più del rosso. Quel che sopravvive al viaggio è il residuo arrossato, migliaia di volte più debole di una Luna piena normale.</p>
+<p>Siccome quella luce deve sopravvivere alla nostra aria, l'aspetto della Luna diventa una lettura in diretta delle condizioni atmosferiche. Gli osservatori lo valutano con la <strong>scala Danjon</strong>, da L=4 per un'eclissi arancio-rame luminosa fino a L=0 per una così scura che la Luna quasi svanisce. Aerosol vulcanici e nubi spesse lungo il terminatore fanno scendere il punteggio.</p>`,
+          facts: [
+            { e: '📏', t: `L'ombra della Terra alla distanza lunare è larga circa 2,6 diametri lunari, quindi un'eclissi totale centrale può tenere la Luna interamente in ombra per oltre 100 minuti.` },
+            { e: '🔵', t: `La diffusione di Rayleigh va come 1/λ⁴: il blu viene disperso circa dieci volte più del rosso, e la luce che resta è rossa per esclusione.` },
+            { e: '🌘', t: `La scala Danjon va da L=0 (Luna quasi invisibile) a L=4 (arancio-rame luminoso con bordo azzurrino).` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Diffusione di Rayleigh', e: 'I_{\\text{scattered}} \\propto \\dfrac{1}{\\lambda^{4}}', c: 'il blu se ne va, il rosso resta' },
+            { n: 'Magnitudine umbrale', e: 'U = \\dfrac{R_u + r_m - d}{2 r_m}', c: 'totale quando U \\ge 1' },
+            { sep: 1 },
+            { n: 'Ombra alla distanza lunare', e: 'R_u \\approx 1.3^\\circ \\approx 2.6\\, r_m' },
+          ] },
+          sim: 'bloodmoon',
+        },
+        scholar: {
+          title: `Rifrazione, estinzione e il colore variabile`,
+          body: `<p>L'ombra non è buia perché l'atmosfera terrestre vi rifrange dentro la luce solare. I raggi che passano a incidenza radente vengono piegati di circa \\(0.5^\\circ\\)-\\(1^\\circ\\), abbastanza da riempire di luce trasmessa l'ombra geometrica alla distanza lunare. L'illuminazione che raggiunge una Luna eclissata proviene quasi interamente dal lembo terrestre, integrato lungo tutto il terminatore: il suo spettro è dunque lo spettro solare visto attraverso un cammino atmosferico lunghissimo.</p>
+<p>È quel cammino ad arrossarla. La diffusione molecolare di Rayleigh rimuove le lunghezze d'onda corte con dipendenza \\(\\lambda^{-4}\\), mentre l'assorbimento dell'ozono nella banda di Chappuis morde tra 500 e 700 nm. È questo secondo effetto a spiegare perché le eclissi profonde mostrano spesso una netta frangia <em>turchese</em> appena all'interno del bordo dell'ombra, dove la luce ha percorso il tragitto più lungo nello strato di ozono, prima che l'interno viri al rosso.</p>
+<p>La luminosità complessiva è molto variabile: contano la profondità geometrica nell'ombra, il carico di aerosol e persino la copertura nuvolosa lungo il terminatore. Una Luna totalmente eclissata è tipicamente \\(10^{4}\\)-\\(10^{5}\\) volte più debole di una Luna piena non eclissata, un intervallo di parecchie magnitudini che la scala Danjon cattura solo grossolanamente. Dopo le grandi iniezioni stratosferiche - El Chichón nel 1982 e Pinatubo nel 1991 - si sono registrate eclissi a L=0, di fatto invisibili a occhio nudo.</p>
+<p>La geometria si ripete sul <strong>saros</strong>, 6585,32 giorni, perché quell'intervallo è quasi esattamente un numero intero di mesi sinodici, draconitici e anomalistici contemporaneamente. Il terzo di giorno che avanza ruota la Terra di 120°, quindi ogni ripetizione si osserva al meglio a un terzo di globo dalla precedente, e un dato saros torna a casa ogni tre cicli: 54 anni.</p>`,
+          facts: [
+            { e: '🌍', t: `La luce che raggiunge la Luna eclissata viene dal lembo terrestre integrato su tutto il terminatore: un osservatore lì vedrebbe una Terra nera cinta di fuoco.` },
+            { e: '💠', t: `L'assorbimento dell'ozono nella banda di Chappuis (500-700 nm) regala a molte eclissi una frangia turchese appena dentro il bordo dell'ombra.` },
+            { e: '🔁', t: `Il saros dura 6585,32 giorni; il terzo di giorno in più sposta ogni ripetizione di 120° in longitudine, così lo stesso saros torna dalle tue parti ogni 54 anni.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Rifrazione al lembo', e: '\\Delta\\theta \\approx 0.5^\\circ - 1^\\circ', c: 'riempie l\'ombra geometrica' },
+            { n: 'Sezione d\'urto di Rayleigh', e: '\\sigma \\propto \\lambda^{-4}' },
+            { n: 'Luminosità in totalità', e: 'L/L_{\\text{full}} \\sim 10^{-4} - 10^{-5}' },
+            { sep: 1 },
+            { n: 'Saros', e: '223\\ \\text{sinodici} \\approx 6585.32\\ \\text{d}' },
+          ] },
+          sim: 'bloodmoon',
+        },
+      },
+    },
+    aurora: {
+      title: 'Aurora boreale',
+      teaser: `Il Sole ci lancia addosso particelle, il campo magnetico terrestre le cattura, e l'aria si accende con colori decisi dalla quota.`,
+      chips: ['Vento solare', 'Magnetosfera', 'Meteorologia spaziale'],
+      lvls: {
+        junior: {
+          title: `Perché il cielo diventa verde`,
+          body: `<p>Il Sole non ci sta soltanto illuminando: ci sta <strong>lanciando addosso delle cose</strong>. Un vento sottile di particelle cariche soffia via da lui di continuo a centinaia di chilometri al secondo, e ogni tanto una tempesta sulla sua superficie ne scaglia una nube molto più densa.</p>
+<p>Quelle particelle non arrivano quasi mai fino a noi, perché la Terra ha uno scudo invisibile: il suo <strong>campo magnetico</strong>. Avvolge il pianeta come un enorme campo di forza e devia il flusso attorno a noi, come uno scoglio che spacca in due la corrente di un fiume. Ma lo scudo ha due punti deboli - i poli - dove le linee di campo si tuffano nel terreno invece di scavalcarci sopra.</p>
+<p>Le particelle incanalate laggiù sbattono contro l'aria a un centinaio di chilometri di quota. Colpiscono atomi di ossigeno e di azoto e ne spostano gli elettroni; quando quegli elettroni ricadono al loro posto, l'atomo restituisce l'energia sotto forma di luce. Ecco l'aurora: non luce riflessa, non fuoco, ma aria colpita abbastanza forte da illuminarsi.</p>
+<p>Il colore è una misura di altezza. L'ossigeno colpito tra i 100 e i 200 km brilla del <strong>verde</strong> familiare. Molto più in alto, sopra i 250 km, lo stesso ossigeno brilla di <strong>rosso</strong> profondo. L'azoto, più in basso, aggiunge blu e violetto lungo il bordo inferiore delle tende. Quindi il nastro di colore nel cielo ti sta dicendo esattamente quanto in profondità nella nostra atmosfera sono riuscite ad arrivare le particelle.</p>`,
+          facts: [
+            { e: '🧲', t: `Le aurore accadono ai poli perché è lì che le linee del campo magnetico terrestre si tuffano nel suolo, portandosi dietro le particelle.` },
+            { e: '🎨', t: `Il verde viene dall'ossigeno tra 100 e 200 km, il rosso dall'ossigeno sopra i 250 km, il blu e il violetto dall'azoto sotto i 100 km.` },
+            { e: '🪐', t: `La Terra non ha nulla di speciale: anche Giove e Saturno hanno aurore, e Giove è così magnetico che la sua non si spegne mai.` },
+          ],
+          formula: null,
+          sim: 'aurora',
+        },
+        student: {
+          title: `Vento solare, riconnessione e ovale aurorale`,
+          body: `<p>Il vento solare porta con sé il campo magnetico del Sole, e la direzione in cui quel campo punta quando arriva conta più della sua velocità. È il <strong>campo magnetico interplanetario</strong>, e la componente che decide tutto è \\(B_z\\), quella nord-sud.</p>
+<p>Quando \\(B_z\\) punta a nord si allinea con il campo terrestre sul naso della magnetosfera e i due semplicemente si premono l'uno contro l'altro: lo scudo regge e quasi nulla entra. Quando \\(B_z\\) punta a <strong>sud</strong> i due campi sono antiparalleli e si <em>riconnettono</em>: si spezzano e si risaldano incrociati, aprendo lo scudo. L'energia del vento solare entra, carica la coda magnetica dietro di noi, e alla fine la coda scatta all'indietro sparando particelle lungo le linee di campo nell'atmosfera polare.</p>
+<p>Il risultato non è una macchia sopra il polo ma un <strong>anello</strong>: l'ovale aurorale, centrato sul polo magnetico e tipicamente attorno ai 67° di latitudine magnetica. Man mano che la tempesta cresce l'ovale si allarga verso l'equatore, ed è per questo che un evento forte si vede dalla Scozia o dal Michigan e uno severo da Roma o dal Texas. L'attività geomagnetica si misura con l'indice \\(K_p\\), da 0 a 9, e ogni gradino costa circa 2-3 gradi di latitudine.</p>
+<p>La luce stessa nasce da transizioni atomiche proibite. La riga verde dell'ossigeno atomico a 557,7 nm impiega circa 0,7 s a emettere, quella rossa a 630,0 nm oltre 100 s - ed è per questo che il rosso compare solo in alto, dove l'aria è tanto rarefatta che l'atomo eccitato non viene buttato giù dal suo stato da un urto prima di riuscire a emettere.</p>`,
+          facts: [
+            { e: '🧭', t: `L'innesco è un campo interplanetario diretto a sud: campi antiparalleli si riconnettono alla magnetopausa diurna e aprono lo scudo terrestre.` },
+            { e: '⏱️', t: `La riga rossa dell'ossigeno a 630 nm ha vita media oltre 100 s, quindi sopravvive solo sopra i ~250 km dove gli urti sono rari: ecco perché il rosso sta sopra il verde.` },
+            { e: '📉', t: `Ogni unità di Kp spinge l'ovale aurorale circa 2-3 gradi di latitudine più lontano dal polo.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Riga verde dell\'ossigeno', e: '\\lambda = 557.7\\ \\text{nm}', c: 'vita media ~0,7 s, 100-200 km' },
+            { n: 'Riga rossa dell\'ossigeno', e: '\\lambda = 630.0\\ \\text{nm}', c: 'vita media >100 s, sopra 250 km' },
+            { sep: 1 },
+            { n: 'Latitudine dell\'ovale', e: '\\Lambda \\approx 67^\\circ - 2.5\\,K_p', c: 'approssimata, bordo equatoriale' },
+          ] },
+          sim: 'aurora',
+        },
+        scholar: {
+          title: `Riconnessione, ciclo delle sottotempeste e righe proibite`,
+          body: `<p>La magnetosfera è un sistema aperto guidato dal ciclo di Dungey. La riconnessione diurna tra un IMF diretto a sud e il campo geomagnetico erode la magnetopausa, trasportando flusso aperto sopra la calotta polare fin dentro i lobi della coda. Il caricamento prosegue finché il foglio di plasma vicino alla Terra si assottiglia abbastanza da innescare la riconnessione in coda, a circa \\(20\\,R_E\\) sottovento; l'energia liberata accelera elettroni verso la Terra lungo le linee di campo, e la loro precipitazione accende il bulbo aurorale della sottotempesta.</p>
+<p>L'accoppiamento scala con il campo elettrico del vento solare, \\(E_y = -v B_z\\) per \\(B_z\\) diretto a sud: ecco perché un modesto flusso a 500 km/s con campo fortemente meridionale batte un flusso veloce con campo settentrionale. Le espulsioni di massa coronale producono gli eventi più forti perché portano insieme alta velocità e un campo interno ordinato, spesso decisamente a sud; i buchi coronali della fase discendente danno invece flussi veloci ricorrenti che generano tempeste moderate con ritmo di 27 giorni, al ritmo della rotazione solare.</p>
+<p>L'emissione è diagnostica. Le righe dell'ossigeno a 557,7 e 630,0 nm sono entrambe transizioni proibite - \\(^1S \\to {}^1D\\) e \\(^1D \\to {}^3P\\) - con vite radiative di 0,7 s e 110 s. Lo spegnimento collisionale impone quindi una quota minima a ciascuna: sotto i 250 km circa lo stato \\(^1D\\) viene diseccitato prima di poter irraggiare, quindi il rosso manca alle basse quote per quanto duramente l'atmosfera venga colpita. Le bande del primo negativo di N\\(_2^+\\) a 427,8 nm, essendo transizioni permesse, marcano la penetrazione più profonda e quindi gli elettroni precipitanti più energetici.</p>
+<p>La posta in gioco non è estetica. Le stesse correnti che accendono l'ovale inducono correnti geomagneticamente indotte nei lunghi conduttori: la tempesta del marzo 1989 fece collassare la rete dell'Hydro-Québec in 92 secondi, e l'evento di Carrington del 1859 indusse correnti capaci di far prendere fuoco alla carta dei telegrafi.</p>`,
+          facts: [
+            { e: '⚡', t: `Ciclo di Dungey: la riconnessione diurna apre flusso, la coda lo immagazzina, e la riconnessione in coda a ~20 raggi terrestri lo rilascia come sottotempesta.` },
+            { e: '🚫', t: `Entrambe le righe aurorali brillanti dell'ossigeno sono transizioni proibite: esistono solo perché l'alta atmosfera è abbastanza rarefatta da evitare lo spegnimento collisionale.` },
+            { e: '🔌', t: `La tempesta geomagnetica del marzo 1989 fece collassare la rete elettrica dell'Hydro-Québec in 92 secondi tramite correnti geomagneticamente indotte.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Accoppiamento col vento solare', e: 'E_y = -v_x B_z', c: 'il motore del ciclo' },
+            { n: 'Transizioni proibite', e: '{}^1S \\to {}^1D:\\ 557.7\\ \\text{nm};\\quad {}^1D \\to {}^3P:\\ 630.0\\ \\text{nm}' },
+            { n: 'Vite radiative', e: '\\tau \\approx 0.7\\ \\text{s},\\ 110\\ \\text{s}', c: 'fissano la quota di ogni colore' },
+            { sep: 1 },
+            { n: 'Riconnessione in coda', e: 'x \\approx -20\\,R_E' },
+          ] },
+          sim: 'aurora',
+        },
+      },
+    },
+    comets: {
+      title: 'Comete',
+      teaser: `Una palla di neve sporca che mette due code - e nessuna delle due la segue.`,
+      chips: ['Code', 'Sublimazione', 'Halley'],
+      lvls: {
+        junior: {
+          title: `Perché le comete mettono la coda`,
+          body: `<p>Una cometa passa quasi tutta la vita come un grumo scuro di ghiaccio e polvere, largo pochi chilometri, alla deriva nel gelido sistema solare esterno. Non brilla per niente. È, come dicono volentieri gli astronomi, una <strong>palla di neve sporca</strong>.</p>
+<p>Poi la sua lunga orbita a cappio la porta verso l'interno, e attorno alla distanza della fascia degli asteroidi il Sole comincia a farsi sentire. Il ghiaccio non si scioglie in una pozza: nel vuoto passa direttamente da solido a gas, un processo chiamato <strong>sublimazione</strong>. Getti di gas esplodono dal lato illuminato trascinandosi dietro la polvere, e il piccolo nucleo si avvolge in una nube luminosa chiamata <em>chioma</em> che può diventare più grande di un pianeta.</p>
+<p>E adesso la sorpresa. La coda non si trascina dietro la cometa come il fumo dietro un treno. La luce solare e il vento solare spingono il gas e la polvere in fuga <strong>lontano dal Sole</strong>, in qualunque direzione stia andando la cometa. Così all'andata la coda la segue, e al ritorno la cometa insegue la propria coda, viaggiando di coda.</p>
+<p>Guarda bene e di code ce ne sono due, non una. Una <strong>coda di polveri</strong> biancastra e gialla, che si incurva perché i grani pesanti conservano un po' del moto orbitale della cometa, e una <strong>coda di ioni</strong> dritta e azzurra, fatta di gas elettricamente carico, soffiata via dal Sole in linea retta dal vento solare.</p>`,
+          facts: [
+            { e: '❄️', t: `Il ghiaccio delle comete non si scioglie: sublima, passa direttamente da solido a gas, perché nello spazio non c'è pressione atmosferica a tenere insieme un liquido.` },
+            { e: '🔙', t: `La coda di una cometa punta sempre in direzione opposta al Sole, quindi nel tragitto di ritorno la cometa viaggia di coda.` },
+            { e: '💫', t: `Gli sciami meteorici sono avanzi di comete: le Orionidi di ogni ottobre sono polvere persa dalla cometa di Halley.` },
+          ],
+          formula: null,
+          sim: 'comets',
+        },
+        student: {
+          title: `Sublimazione, frost line e due code`,
+          body: `<p>L'attività si accende a una certa distanza, non a una certa data. Il ghiaccio d'acqua comincia a sublimare in modo consistente attorno alle <strong>3 UA</strong> dal Sole, quindi la maggior parte delle comete è un sasso inerte fuori da quella linea e si sveglia solo quando la attraversa. Più vicino, i ghiacci più volatili - anidride carbonica, monossido di carbonio - guidano l'attività ancora prima, ed è per questo che alcune comete mostrano una chioma già molto lontano.</p>
+<p>Il gas in fuga strappa polvere dalla superficie e gonfia la chioma, che può raggiungere \\(10^5\\) km di diametro anche se il nucleo è largo pochi km. Due forze distinte separano poi il materiale in due code:</p>
+<p><strong>La coda di polveri</strong> è spinta dalla pressione di radiazione, cioè dai fotoni che trasportano quantità di moto. I grani sono abbastanza pesanti da conservare memoria della velocità orbitale della cometa, quindi la coda resta indietro rispetto alla direzione antisolare e appare curva, larga e biancastra per la luce solare riflessa.</p>
+<p><strong>La coda di ioni</strong> è un'altra cosa. L'ultravioletto solare ionizza il gas, e il vento solare magnetizzato raccoglie quegli ioni e li spazza via a 400 km/s e oltre - molto più veloce di quanto si muova la cometa, quindi la coda punta quasi esattamente in direzione antisolare, dritta e stretta. Brilla di azzurro perché il monossido di carbonio ionizzato emette intensamente a 420 nm.</p>
+<p>Ogni passaggio costa materiale alla cometa. Una tipica cometa di corto periodo perde un metro circa di superficie per orbita, e i detriti lasciati lungo il percorso sono esattamente ciò in cui la Terra va a sbattere ogni anno come sciame meteorico.</p>`,
+          facts: [
+            { e: '📏', t: `La frost line dell'acqua sta attorno alle 3 UA: fuori la cometa è inerte, dentro la sublimazione alimenta chioma e code.` },
+            { e: '🎨', t: `La coda di ioni brilla di azzurro per l'emissione del CO⁺ a 420 nm; quella di polveri è giallastra perché riflette semplicemente la luce del Sole.` },
+            { e: '⏳', t: `La cometa di Halley perde diversi metri di superficie a ogni passaggio al perielio e ha forse ancora 100.000 anni di vita attiva.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Inizio della sublimazione', e: 'r \\approx 3\\ \\text{UA}', c: 'ghiaccio d\'acqua' },
+            { n: 'Pressione di radiazione', e: 'F_{\\text{rad}} = \\dfrac{L_\\odot A}{4\\pi r^2 c}', c: 'incurva la coda di polveri' },
+            { sep: 1 },
+            { n: 'Velocità del vento solare', e: 'v_{sw} \\approx 400\\ \\text{km/s}', c: 'raddrizza la coda di ioni' },
+          ] },
+          sim: 'comets',
+        },
+        scholar: {
+          title: `Fisica del nucleo, β e i serbatoi`,
+          body: `<p>La forma della coda di polveri discende da un solo numero adimensionale, \\(\\beta\\), il rapporto tra pressione di radiazione e gravità solare su un grano. Poiché entrambe vanno come \\(1/r^2\\), \\(\\beta\\) è indipendente dalla distanza e dipende solo da dimensione e composizione del grano, all'incirca \\(\\beta \\approx 0.6/(\\rho a)\\) in cgs. I grani con \\(\\beta > 1\\) sentono una forza netta verso l'esterno e se ne vanno su traiettorie iperboliche; quelli più pesanti seguono orbite kepleriane modificate. Siccome grani emessi in tempi diversi e con \\(\\beta\\) diversi finiscono in posti diversi, la coda di polveri è una mappa bidimensionale della storia di emissione: è la base dell'analisi di Finson-Probstein per sindini e sincroni.</p>
+<p>Le superfici dei nuclei sono tra le più scure conosciute, albedo attorno a 0,04, e la sublimazione è concentrata in regioni attive che coprono qualche punto percentuale dell'area. Il resto è un mantello isolante di polvere. Questa localizzazione rende l'emissione di gas anisotropa e produce un'accelerazione non gravitazionale che va inclusa nelle soluzioni orbitali: è l'effetto che ha rivelato il comportamento anomalo di 1I/'Oumuamua e che domina l'evoluzione a lungo termine delle comete di corto periodo.</p>
+<p>Le riforniscono due serbatoi. La fascia di Kuiper e il disco disperso alimentano le comete della famiglia di Giove, a bassa inclinazione e corto periodo, mentre la nube di Oort, all'incirca sferica, tra \\(10^4\\) e \\(10^5\\) UA, fornisce le comete di lungo periodo su orbite orientate a caso, spinte verso l'interno dalle maree galattiche e dal passaggio di stelle. La distribuzione delle inclinazioni orbitali è quindi un'impronta digitale dell'origine.</p>
+<p>I due anni di Rosetta attorno a 67P/Churyumov-Gerasimenko hanno riscritto buona parte dei dettagli: un nucleo bilobato ed estremamente poroso con densità media vicina a 0,5 g/cm³, un rapporto D/H tre volte quello degli oceani terrestri - argomento contro le comete della famiglia di Giove come fonte principale dell'acqua terrestre - e molecole organiche complesse in abbondanza, glicina inclusa.</p>`,
+          facts: [
+            { e: '📐', t: `β, il rapporto tra pressione di radiazione e gravità solare, è indipendente dalla distanza: perciò la struttura della coda di polveri mappa direttamente la storia di emissione (sindini e sincroni).` },
+            { e: '🌑', t: `I nuclei cometari sono più scuri del carbone, albedo ~0,04, con la sublimazione confinata a regioni attive pari a pochi punti percentuali della superficie.` },
+            { e: '💧', t: `Rosetta ha trovato in 67P un rapporto D/H tre volte quello dell'acqua oceanica terrestre, argomento contro le comete della famiglia di Giove come via principale di consegna dei nostri oceani.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Rapporto di pressione di radiazione', e: '\\beta = \\dfrac{F_{\\text{rad}}}{F_{\\text{grav}}} \\approx \\dfrac{0.6}{\\rho a}', c: 'indipendente da r' },
+            { n: 'Forza non gravitazionale', e: '\\ddot{r} = A_1 g(r) + \\ldots', c: 'emissione anisotropa' },
+            { sep: 1 },
+            { n: 'Nube di Oort', e: '10^4 - 10^5\\ \\text{UA}' },
+            { n: 'Densità media di 67P', e: '\\rho \\approx 0.5\\ \\text{g/cm}^3', c: 'più vuoto che roccia' },
+          ] },
+          sim: 'comets',
+        },
+      },
+    },
     meteors: {
       title: 'Stelle cadenti e sciami meteorici',
-      teaser: `Perché le stelle cadenti arrivano secondo un calendario - e perché le Perseidi del 2026 saranno spettacolari.`,
+      teaser: `Perché le stelle cadenti arrivano secondo un calendario - le stesse settimane ogni anno, dalla stessa zona di cielo.`,
       chips: ['Perseidi', 'Comete', 'Stelle cadenti'],
       lvls: {
         junior: {
           title: `Perché le stelle cadenti arrivano a sciami`,
           body: `<p>Una "stella cadente" non è affatto una stella - è un granello di polvere spaziale, spesso non più grande di un granello di sabbia, che si schianta contro la sommità della nostra atmosfera a decine di chilometri al secondo. Va così veloce da scaldare l'aria attorno a sé fino al bianco incandescente, e quella scia luminosa è ciò che vedi. La polvere stessa brucia in un secondo o due, molto in alto sopra il suolo.</p>
 <p>In una notte buia qualsiasi ne puoi cogliere qualcuna a caso. Ma poche volte l'anno il cielo offre un vero spettacolo - uno <strong>sciame meteorico</strong> - con decine di meteore all'ora, che sembrano partire tutte dallo stesso punto. Succede quando la Terra attraversa una scia di polvere lasciata da una <strong>cometa</strong>. La cometa perde briciole lungo la sua orbita, e una volta l'anno il nostro pianeta ci passa dentro dritto, come un'auto in uno sciame di moscerini.</p>
-<p>Le più famose sono le <strong>Perseidi</strong>, che culminano ogni agosto - e il 2026 è un'ottima annata, senza Luna luminosa a cancellarle, nella stessa notte straordinaria (12 agosto) di un'eclissi solare totale sull'Europa. Le meteore sembrano irradiarsi dalla costellazione di Perseo, quindi quello è il "radiante" - ma non devi fissarlo. Sdraiati, lascia adattare gli occhi al buio e guarda tutto il cielo.</p>`,
+<p>Le più famose sono le <strong>Perseidi</strong>, che culminano ogni agosto. Le <strong>Orionidi</strong> tornano ogni ottobre - briciole lasciate dalla cometa di Halley - e le <strong>Geminidi</strong> ogni dicembre, lo sciame più ricco dell'anno. Le stesse settimane, ogni anno, perché la Terra incrocia le stesse scie allo stesso punto del giro. Le meteore sembrano irradiarsi dalla costellazione di Perseo, quindi quello è il "radiante" - ma non devi fissarlo. Sdraiati, lascia adattare gli occhi al buio e guarda tutto il cielo.</p>`,
           facts: [
             { e: '☄️', t: `Gli sciami meteorici avvengono quando la Terra attraversa la scia di polvere lasciata da una cometa. Le Perseidi vengono dalla cometa Swift-Tuttle.` },
             { e: '🔥', t: `La maggior parte delle meteore non è più grande di un granello di sabbia - la scia brillante è aria surriscaldata, non il granello che brucia.` },
-            { e: '🌑', t: `Le Perseidi culminano il 12-13 agosto 2026 con la Luna nuova, così un cielo buio potrebbe mostrare fino a 100 meteore all'ora.` },
+            { e: '🌑', t: `Le Geminidi, ogni dicembre, sono lo sciame più affidabile dell'anno: fino a 120 meteore all'ora da un cielo buio, e abbastanza lente da lasciare scie lunghe.` },
           ],
           formula: null, sim: 'meteors',
         },
@@ -3758,11 +3939,11 @@ export default {
           title: `Detriti di cometa, radianti e perché gli sciami sono annuali`,
           body: `<p>Un <strong>meteoroide</strong> è un piccolo frammento di roccia o polvere nello spazio; quando colpisce l'atmosfera (a ~100 km di quota) e si accende è una <strong>meteora</strong>; ciò che sopravvive fino al suolo è una <strong>meteorite</strong>. Le meteore degli sciami sono briciole di cometa. Quando una cometa passa vicino al Sole, il suo ghiaccio sublima e libera polvere che si distribuisce lungo l'orbita della cometa, formando un flusso di detriti. Ogni volta che l'orbita della Terra interseca quel flusso - alla stessa data ogni anno - abbiamo uno sciame.</p>
 <p>Tutte le meteore di uno sciame viaggiano su traiettorie parallele (condividono l'orbita della cometa), così la prospettiva le fa sembrare divergere da un unico punto in cielo - il <strong>radiante</strong> - proprio come binari paralleli sembrano incontrarsi all'orizzonte. Gli sciami prendono il nome dalla costellazione in cui si trova il radiante: Perseidi (Perseo), Geminidi (Gemelli), Leonidi (Leone). L'attività si misura con il <em>Tasso Orario Zenitale</em>, il numero che vedresti con cielo perfettamente buio e radiante allo zenit.</p>
-<p>Il tasso sale e scende nell'arco di giorni man mano che la Terra entra ed esce dalla parte più densa del flusso, con il picco quando ne attraversa il cuore. Il guastafeste è la luce lunare: una Luna luminosa cancella le più deboli, ed è per questo che i previsori si entusiasmano quando un picco cade su una Luna nuova - come fanno le Perseidi nel 2026. Le meteore colpiscono l'aria tra 11 e 72 km/s; le Perseidi sono veloci, circa 59 km/s.</p>`,
+<p>Il tasso sale e scende nell'arco di giorni man mano che la Terra entra ed esce dalla parte più densa del flusso, con il picco quando ne attraversa il cuore. Il guastafeste è la luce lunare: una Luna luminosa cancella le più deboli, ed è per questo che i previsori si entusiasmano quando un picco cade su una Luna nuova. Le meteore colpiscono l'aria tra 11 e 72 km/s; le Perseidi sono veloci, circa 59 km/s.</p>`,
           facts: [
             { e: '🚆', t: `Le meteore di uno sciame corrono parallele ma sembrano irradiarsi da un punto - il "radiante" - lo stesso trucco prospettico dei binari che si incontrano all'orizzonte.` },
             { e: '🌠', t: `Le Perseidi colpiscono l'aria a ~59 km/s. Le tranquille Draconidi arrancano a ~20 km/s; le Leonidi sfrecciano a ~71 km/s.` },
-            { e: '🌙', t: `La vera prova di uno sciame è la Luna: anche uno sciame forte delude con una Luna luminosa, per questo un picco con Luna nuova come quello delle Perseidi 2026 è prezioso.` },
+            { e: '🌙', t: `La vera prova di uno sciame è la Luna: anche uno sciame forte delude con una Luna luminosa, per questo un picco vicino alla Luna nuova è prezioso.` },
           ],
           formula: { tex: 1, rows: [
             { n: 'Meteoroide → meteora → meteorite', e: '\\text{nello spazio} \\to \\text{brilla in aria} \\to \\text{al suolo}' },
@@ -4779,6 +4960,57 @@ export default {
         notice: `<b>La finestra è il limite eclittico — solo pochi gradi di longitudine del nodo.</b> Poiché la linea dei nodi regredisce in 18,6 anni, le stagioni delle eclissi anticipano di ~19 giorni l'anno, e dopo un Saros (223 mesi sinodici) l'intera geometria si ripete. La corrispondenza tra le dimensioni angolari di Sole e Luna è ciò che permette la totalità invece di un anello anulare permanente.`,
       },
     },
+    bloodmoon: {
+      junior: {
+        legend: `La metà sinistra è la vista dallo spazio: la luce del Sole arriva da sinistra, la Terra la blocca, e il cono scuro dietro il pianeta è l'ombra che la Luna deve attraversare. Le linee arancioni curve sono i raggi che sfiorano la nostra atmosfera: l'aria li piega verso l'interno e ne toglie il blu, così l'unica luce che raggiunge la Luna è rossa. Il cerchio in alto a destra è ciò che vedresti davvero dal giardino.`,
+        try: `Metti [[path]] a 0 così la Luna passa dritta nel mezzo dell'ombra, e guarda il cerchio in alto a destra. Poi spingi [[dust]] al massimo, come se fosse appena esploso un vulcano.`,
+        notice: `<b>La Luna non diventa mai completamente nera - e con tanta polvere nell'aria ci va vicinissima.</b> Quella luce rossa è luce solare che si è infilata attraverso il bordo dell'atmosfera terrestre, ed è per questo che il colore cambia quando cambia la nostra aria. Un cielo impolverato dopo una grande eruzione può rendere la Luna eclissata quasi invisibile.`,
+      },
+      student: {
+        legend: `Le distanze sono in raggi lunari: l'ombra della Terra ne è larga 2,6 dove la Luna la attraversa, quindi la Luna può starci dentro per intero più di un'ora. [[path]] sposta la traiettoria dall'asse dell'ombra, [[cover]] legge la magnitudine umbrale \\(U=(R_u+r_m-d)/2r_m\\) e [[shade]] dà il numero Danjon di quanto appare scuro il disco.`,
+        try: `Aumenta [[path]] lentamente e guarda [[cover]] scendere: trova l'offset in cui l'eclissi smette di essere totale e diventa parziale, e poi quello in cui la Luna manca del tutto l'ombra.`,
+        notice: `<b>La totalità finisce a U = 1 e l'ombra si esaurisce attorno a 1,6 raggi lunari di offset.</b> Nota il bordo interno dell'ombra che resta più chiaro e più azzurro del centro: quella luce ha fatto un tragitto più corto nella nostra atmosfera e ha perso meno blu - lo stesso motivo per cui la parte più profonda dell'ombra è la più rossa.`,
+      },
+      scholar: {
+        legend: `La geometria è elementare, la fotometria no: l'ombra è riempita interamente da raggi rifratti attraverso il lembo terrestre di \\(0.5^\\circ-1^\\circ\\), attenuati dalla diffusione di Rayleigh \\(\\propto\\lambda^{-4}\\) e dall'assorbimento dell'ozono nella banda di Chappuis. [[dust]] rappresenta lo spessore ottico degli aerosol stratosferici, [[shade]] la stima Danjon che ne consegue.`,
+        try: `Tieni [[path]] vicino a 0 e spazza [[dust]] da 0 a 10 osservando [[shade]]: è la catena osservativa che rende una stima di colore a occhio nudo un indicatore del carico di aerosol stratosferici dopo una grande eruzione.`,
+        notice: `<b>La luminosità dell'ombra non è una grandezza geometrica: è una misura atmosferica.</b> La totalità è \\(10^4\\)-\\(10^5\\) volte più debole della Luna piena, e la dispersione la fissano aerosol e nubi lungo il terminatore, non l'eclissi in sé. Le eclissi con L=0 seguirono El Chichón (1982) e Pinatubo (1991), le due maggiori iniezioni stratosferiche dell'era satellitare.`,
+      },
+    },
+    aurora: {
+      junior: {
+        legend: `In alto: il Sole a sinistra che ci lancia addosso particelle cariche, e la Terra a destra avvolta nel suo scudo magnetico. Le frecce rosse o azzurre mostrano in che direzione punta il campo magnetico in arrivo: è quello l'interruttore che decide tutto. In basso: cosa vedresti stando fuori all'aperto, con i colori impilati per quota.`,
+        try: `Porta [[bz]] tutto a destra, così il campo in arrivo punta a nord, e guarda il cielo in basso. Poi trascinalo tutto a sinistra, verso sud, e osserva le due metà insieme.`,
+        notice: `<b>Un campo diretto a sud apre lo scudo; uno diretto a nord lo tiene chiuso.</b> La velocità da sola non basta: un vento solare veloce con la direzione sbagliata non ti dà quasi niente, mentre uno più lento diretto a sud accende il cielo. Quando la tempesta cresce il bagliore si allarga dal polo, ed è così che ogni tanto lo vedono anche in Italia o in Texas.`,
+      },
+      student: {
+        legend: `[[wind]] regola la velocità del vento solare e [[bz]] la componente nord-sud del campo interplanetario in arrivo. Un Bz diretto a sud si riconnette col campo terrestre alla magnetopausa diurna, aprendo flusso che carica la coda e precipita elettroni nelle calotte polari. [[kp]] stima l'indice geomagnetico risultante e [[oval]] il bordo equatoriale dell'ovale aurorale.`,
+        try: `Tieni [[wind]] a 900 km/s con [[bz]] tutto a nord e leggi [[kp]]. Poi scendi a 400 km/s e porta [[bz]] tutto a sud. Quale combinazione vince?`,
+        notice: `<b>L'accoppiamento va con il prodotto di velocità e campo diretto a sud, quindi la direzione batte la velocità pura.</b> La pila di colori è un profilo di densità: il verde a 557,7 nm dell'ossigeno domina tra 100 e 250 km, il rosso a 630,0 nm sopravvive solo sopra i ~250 km perché la sua vita media di 110 secondi richiede aria abbastanza rarefatta da evitare lo spegnimento collisionale, e il violetto dell'azoto segna la precipitazione più profonda e più energetica.`,
+      },
+      scholar: {
+        legend: `Uno schema del ciclo di Dungey: riconnessione diurna per IMF diretto a sud, trasporto di flusso sopra la calotta polare, caricamento della coda e precipitazione da sottotempesta nell'ovale aurorale. [[kp]] è un indicatore grossolano del livello di attività e [[oval]] del bordo equatoriale, che segue all'incirca \\(\\Lambda \\approx 67^\\circ - 2.5 K_p\\).`,
+        try: `Ricostruisci tu la funzione di accoppiamento: spazza [[wind]] su tutto il suo intervallo a [[bz]] fisso e diretto a sud, poi spazza [[bz]] a velocità fissa, e confronta quanto ciascuno sposta [[kp]]. L'asimmetria è il contenuto fisico di \\(E_y = -v_x B_z\\).`,
+        notice: `<b>Il varco energetico è la riconnessione, non la pressione.</b> Un IMF diretto a nord può spingere un vento veloce e denso oltre la magnetopausa con scarsa geoefficacia, mentre una CME modesta con campo ordinato verso sud produce una tempesta severa. Le stesse correnti allineate al campo e ionosferiche che generano lo spettacolo inducono correnti geomagneticamente indotte in reti e oleodotti: è il meccanismo dietro il collasso in 92 secondi della rete Hydro-Québec nel marzo 1989.`,
+      },
+    },
+    comets: {
+      junior: {
+        legend: `L'ellisse tratteggiata è l'orbita della cometa e la palla gialla è il Sole. Il cerchio tratteggiato azzurro è la frost line: fuori la cometa è un grumo congelato che non mostra nulla, dentro il ghiaccio passa direttamente a gas e la cometa mette una testa luminosa e due code. La freccia bianca indica dove sta andando davvero la cometa.`,
+        try: `Guarda la cometa sfrecciare vicino al Sole e tieni d'occhio la freccia bianca e le code mentre torna verso l'esterno. Poi ingrandisci la palla di neve con [[size]] e vedi quanto di più riesce a buttare fuori.`,
+        notice: `<b>Nel viaggio di ritorno la cometa insegue la propria coda.</b> La coda non è fumo che si trascina dietro: è materiale soffiato via dal Sole, quindi punta sempre dalla parte opposta al Sole comunque si muova la cometa. E tutto lo spettacolo esiste solo dentro la frost line: lo stesso oggetto resta completamente spento per quasi tutta l'orbita.`,
+      },
+      student: {
+        legend: `Orbita integrata con la seconda legge di Keplero, così la cometa sfreccia visibilmente al perielio e striscia all'afelio. L'attività si accende dentro la frost line a 3 UA e scala con la dimensione del nucleo [[size]]; [[ecc]] allunga l'orbita. Le due code sono disegnate separatamente: quella di ioni, dritta e azzurra, spazzata in direzione antisolare dal vento solare, e quella di polveri, larga e curva, modellata dalla pressione di radiazione su grani che conservano quantità di moto orbitale.`,
+        try: `Metti [[ecc]] a 0,96 e segui [[dist]] e [[act]] lungo un'orbita intera: quanta parte dell'orbita passa a fare qualcosa? Poi confronta un nucleo da 0,5 km con uno da 15 km allo stesso perielio.`,
+        notice: `<b>Una cometa è inerte per quasi tutta l'orbita e spettacolare per poche settimane.</b> Le due code si separano perché agiscono due forze diverse: il vento solare trascina gli ioni a 400 km/s, quindi quella coda è dritta e antisolare, mentre i grani di polvere conservano la velocità orbitale con cui sono stati liberati e la loro coda resta indietro incurvandosi. Nucleo grande, perielio ravvicinato e molti volatili residui: ecco cosa fa una grande cometa.`,
+      },
+      scholar: {
+        legend: `Orbita integrata alla Keplero con attività vincolata alla frost line dell'acqua. La geometria della coda di polveri sta per un quadro alla Finson-Probstein: i grani partono con un intervallo di \\(\\beta = F_{rad}/F_{grav}\\) e, poiché entrambi i termini vanno come \\(1/r^2\\), \\(\\beta\\) dipende solo dalla dimensione del grano, così la coda è di fatto una mappa della storia di emissione.`,
+        try: `Spingi [[ecc]] al suo estremo e nota dove l'attività comincia e finisce rispetto al perielio. Le comete reali sono asimmetriche rispetto al perielio: considera cosa farebbero l'inerzia termica e l'illuminazione stagionale delle regioni attive alla curva che vedi qui.`,
+        notice: `<b>L'emissione di gas non è solo spettacolo, è una forza.</b> La sublimazione anisotropa da regioni attive che coprono pochi punti percentuali di un nucleo scurissimo e porosissimo produce accelerazioni non gravitazionali abbastanza grandi da far fallire le soluzioni orbitali che le ignorano. Rosetta ha misurato in 67P una densità media vicina a 0,5 g/cm³ e un rapporto D/H tre volte quello terrestre: un argomento diretto contro le comete della famiglia di Giove come fonte principale dell'acqua della Terra.`,
+      },
+    },
     meteors: {
       junior: {
         legend: `Il cielo notturno, con le stelle cadenti che sfrecciano da un punto — il radiante. Il piccolo schema mostra la Terra che attraversa la scia di polvere di una cometa: più a fondo nella scia, più meteore.`,
@@ -5084,6 +5316,21 @@ export default {
       junior:  { moon: 'Sposta la Luna',   node: 'Allinea l\'orbita',   phase: 'Fase lunare', ecl: 'Eclissi?' },
       student: { moon: 'Posizione Luna',    node: 'Allineamento nodo',   phase: 'Fase lunare', ecl: 'Eclissi' },
       scholar: { moon: 'Posizione Luna',    node: 'Allineamento nodo',   phase: 'Fase lunare', ecl: 'Eclissi' },
+    },
+    bloodmoon: {
+      junior: { path: 'Quanto è centrato l\'allineamento', dust: 'Polvere nell\'aria', cover: 'Luna nell\'ombra', shade: 'Quanto è scura', look: 'Cosa vedresti', play: 'Avvia', pause: 'Pausa', cSun: "luce del Sole", cAtm: "atmosfera", cEarth: "Terra", cUmbra: "ombra", cPen: "penombra", cSeen: "vista dalla Terra", cDanjon: "scala Danjon", cCap: "la sola luce che raggiunge la Luna è luce solare piegata e arrossata dalla nostra aria", vTotal: "Totale", vDeep: "Parziale profonda", vPartial: "Parziale", vPenOnly: "Solo penombra", vNoEcl: "Nessuna eclissi" },
+      student: { path: 'Scarto dall\'asse', dust: 'Polvere atmosferica', cover: 'Magnitudine umbrale', shade: 'Danjon L', look: 'Tipo di eclissi', play: 'Avvia', pause: 'Pausa', cSun: "luce del Sole", cAtm: "atmosfera", cEarth: "Terra", cUmbra: "ombra", cPen: "penombra", cSeen: "vista dalla Terra", cDanjon: "scala Danjon", cCap: "la sola luce che raggiunge la Luna è luce solare piegata e arrossata dalla nostra aria", vTotal: "Totale", vDeep: "Parziale profonda", vPartial: "Parziale", vPenOnly: "Solo penombra", vNoEcl: "Nessuna eclissi" },
+      scholar: { path: 'Scarto dall\'asse', dust: 'Carico di aerosol', cover: 'Magnitudine umbrale', shade: 'Danjon L', look: 'Tipo di eclissi', play: 'Avvia', pause: 'Pausa', cSun: "luce del Sole", cAtm: "atmosfera", cEarth: "Terra", cUmbra: "ombra", cPen: "penombra", cSeen: "vista dalla Terra", cDanjon: "scala Danjon", cCap: "la sola luce che raggiunge la Luna è luce solare piegata e arrossata dalla nostra aria", vTotal: "Totale", vDeep: "Parziale profonda", vPartial: "Parziale", vPenOnly: "Solo penombra", vNoEcl: "Nessuna eclissi" },
+    },
+    aurora: {
+      junior: { wind: 'Spinta dal Sole', bz: 'Direzione magnetica', kp: 'Forza della tempesta', oval: 'Visibile fino a', glow: 'Colore principale', cSun: "Sole", cEarth: "Terra", cMagPause: "magnetopausa", cRecon: "riconnessione", cSouth: "campo verso SUD - lo scudo si apre", cNorth: "campo verso NORD - lo scudo tiene", cKeyRed: "sopra 250 km  ossigeno rosso", cKeyGreen: "100-250 km  ossigeno verde", cKeyViolet: "sotto 100 km  azoto violetto", vLat: "di latitudine", vAll: "verde + rosso + violetto", vGreenRed: "verde + rosso", vGreen: "verde", vNothing: "quasi nulla" },
+      student: { wind: 'Velocità del vento solare', bz: 'Bz interplanetario', kp: 'Indice Kp', oval: 'Bordo equatoriale', glow: 'Emissione dominante', cSun: "Sole", cEarth: "Terra", cMagPause: "magnetopausa", cRecon: "riconnessione", cSouth: "campo verso SUD - lo scudo si apre", cNorth: "campo verso NORD - lo scudo tiene", cKeyRed: "sopra 250 km  ossigeno rosso", cKeyGreen: "100-250 km  ossigeno verde", cKeyViolet: "sotto 100 km  azoto violetto", vLat: "di latitudine", vAll: "verde + rosso + violetto", vGreenRed: "verde + rosso", vGreen: "verde", vNothing: "quasi nulla" },
+      scholar: { wind: 'Velocità del vento solare', bz: 'Bz interplanetario', kp: 'Indice Kp', oval: 'Bordo equatoriale dell\'ovale', glow: 'Emissione dominante', cSun: "Sole", cEarth: "Terra", cMagPause: "magnetopausa", cRecon: "riconnessione", cSouth: "campo verso SUD - lo scudo si apre", cNorth: "campo verso NORD - lo scudo tiene", cKeyRed: "sopra 250 km  ossigeno rosso", cKeyGreen: "100-250 km  ossigeno verde", cKeyViolet: "sotto 100 km  azoto violetto", vLat: "di latitudine", vAll: "verde + rosso + violetto", vGreenRed: "verde + rosso", vGreen: "verde", vNothing: "quasi nulla" },
+    },
+    comets: {
+      junior: { size: 'Dimensione della palla di neve', ecc: 'Quanto è allungata l\'orbita', dist: 'Distanza dal Sole', act: 'Cosa sta facendo', tail: 'Lunghezza della coda', cTrail: "polvere lasciata lungo l'orbita - è questa ad alimentare gli sciami meteorici", cFrost: "frost line, 3 UA - il ghiaccio inizia a diventare gas", cPeri: "perielio", cAph: "afelio", cGoing: "sta andando di qua", cToSun: "verso il Sole", cNucleus: "nucleo, pochi km di ghiaccio e polvere", cJets: "getti di gas e polvere", cIon: "coda di ioni, spazzata dritta dal vento solare", cDust: "coda di polveri, grani più pesanti che restano indietro e si incurvano", cFar: "troppo lontana dal Sole - nessuna coda, solo un grumo scuro di ghiaccio", cOut: "sta tornando fuori: la coda va avanti e la cometa la insegue", cIn: "sta cadendo verso il Sole: la coda si distende dietro", vDormant: "Dormiente", vWaking: "Si sta svegliando", vActive: "Attiva", vBlazing: "Sfolgorante", vNone: "nessuna", vMkm: "milioni di km" },
+      student: { size: 'Raggio del nucleo', ecc: 'Eccentricità', dist: 'Distanza eliocentrica', act: 'Attività', tail: 'Lunghezza della coda', cTrail: "polvere lasciata lungo l'orbita - è questa ad alimentare gli sciami meteorici", cFrost: "frost line, 3 UA - il ghiaccio inizia a diventare gas", cPeri: "perielio", cAph: "afelio", cGoing: "sta andando di qua", cToSun: "verso il Sole", cNucleus: "nucleo, pochi km di ghiaccio e polvere", cJets: "getti di gas e polvere", cIon: "coda di ioni, spazzata dritta dal vento solare", cDust: "coda di polveri, grani più pesanti che restano indietro e si incurvano", cFar: "troppo lontana dal Sole - nessuna coda, solo un grumo scuro di ghiaccio", cOut: "sta tornando fuori: la coda va avanti e la cometa la insegue", cIn: "sta cadendo verso il Sole: la coda si distende dietro", vDormant: "Dormiente", vWaking: "Si sta svegliando", vActive: "Attiva", vBlazing: "Sfolgorante", vNone: "nessuna", vMkm: "milioni di km" },
+      scholar: { size: 'Raggio del nucleo', ecc: 'Eccentricità', dist: 'Distanza eliocentrica', act: 'Attività', tail: 'Lunghezza della coda', cTrail: "polvere lasciata lungo l'orbita - è questa ad alimentare gli sciami meteorici", cFrost: "frost line, 3 UA - il ghiaccio inizia a diventare gas", cPeri: "perielio", cAph: "afelio", cGoing: "sta andando di qua", cToSun: "verso il Sole", cNucleus: "nucleo, pochi km di ghiaccio e polvere", cJets: "getti di gas e polvere", cIon: "coda di ioni, spazzata dritta dal vento solare", cDust: "coda di polveri, grani più pesanti che restano indietro e si incurvano", cFar: "troppo lontana dal Sole - nessuna coda, solo un grumo scuro di ghiaccio", cOut: "sta tornando fuori: la coda va avanti e la cometa la insegue", cIn: "sta cadendo verso il Sole: la coda si distende dietro", vDormant: "Dormiente", vWaking: "Si sta svegliando", vActive: "Attiva", vBlazing: "Sfolgorante", vNone: "nessuna", vMkm: "milioni di km" },
     },
     meteors: {
       junior:  { pos: 'Periodo dell\'anno',    dens: 'Polvere nella scia', rate: 'Stelle cadenti/ora', status: 'Il cielo ora' },

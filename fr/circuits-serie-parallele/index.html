@@ -41,7 +41,7 @@
    "url": "https://labinatab.com/fr/circuits-serie-parallele/",
    "mainEntityOfPage": "https://labinatab.com/fr/circuits-serie-parallele/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-08-10",
+   "dateModified": "2026-08-19",
    "inLanguage": "fr",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -103,7 +103,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js?v=70239486"></script>
+<script defer src="/sim-engine.js?v=1d968360"></script>
 <style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
 :root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -208,7 +208,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <h1>Circuits série et parallèle</h1>
   <p class="lead">Deux ampoules, une pile — mais câble-les en chaîne ou côte à côte et tout change : luminosité, courant et ce qui arrive quand l'une grille.</p>
   <div class="chips"><span>Circuits</span><span>Résistance</span><span>Courant</span></div>
-  <section class="sim-embed" data-sim="seriesparallel" data-color="#ca8a04" aria-label="Interactive simulation">
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"seriesparallel":{"junior":{"mode":"Série / Parallèle","volt":"Pile","rtot":"Résistance totale","cur":"Courant","bulb":"Luminosité de l'ampoule"},"student":{"mode":"Série / Parallèle","volt":"Tension (V)","rtot":"Résistance totale","cur":"Courant total","bulb":"Puissance par ampoule"},"scholar":{"mode":"Série / Parallèle","volt":"Tension (V)","rtot":"Résistance totale","cur":"Courant total","bulb":"Puissance par ampoule"}}});</script>
+<section class="sim-embed" data-sim="seriesparallel" data-color="#ca8a04" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
   <div class="sim-try" data-l="junior" style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Pars en série et note la luminosité des ampoules. Appuie sur le bouton <b>Série / Parallèle</b> pour passer en parallèle. Les ampoules deviennent-elles plus lumineuses ou plus faibles ? Regarde <b>Courant</b> changer aussi.</span></div>
 <div class="sim-try" data-l="student" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Fixe <b>Tension (V)</b> et lis <b>Résistance totale</b> et <b>Courant total</b> en série, puis passe en parallèle. De quel facteur <b>Courant total</b> saute-t-il, et comment <b>Puissance par ampoule</b> se compare-t-il ?</span></div>

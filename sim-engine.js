@@ -96,6 +96,36 @@ const SIM_LABELS={
   student:{moon:'Moon position',   node:'Node alignment',   phase:'Moon phase',ecl:'Eclipse'},
   scholar:{moon:'Moon position',   node:'Node alignment',   phase:'Moon phase',ecl:'Eclipse'}
  },
+ aurora:{
+  junior :{wind:'Push from the Sun',bz:'Magnetic direction',kp:'Storm strength',oval:'Seen as far south as',glow:'Main colour'},
+  student:{wind:'Solar wind speed', bz:'IMF Bz',            kp:'Kp index',      oval:'Equatorward edge',   glow:'Dominant emission'},
+  scholar:{wind:'Solar wind speed', bz:'IMF Bz',            kp:'Kp index',      oval:'Oval equatorward edge',glow:'Dominant emission'}
+ },
+ comets:{
+  junior :{size:'Size of the snowball',ecc:'How stretched the orbit',dist:'Distance from the Sun',act:'What it is doing',tail:'Tail length'},
+  student:{size:'Nucleus radius',      ecc:'Eccentricity',           dist:'Heliocentric distance',act:'Activity',       tail:'Tail length'},
+  scholar:{size:'Nucleus radius',      ecc:'Eccentricity',           dist:'Heliocentric distance',act:'Activity',       tail:'Tail length'}
+ },
+ elnino:{
+  junior :{wind:'Strength of the trade winds',oni:'How warm the east Pacific is',phase:'What is happening',eff:'What it means on land'},
+  student:{wind:'Trade wind strength',        oni:'ONI anomaly',                phase:'Phase',            eff:'Teleconnections'},
+  scholar:{wind:'Zonal wind stress',          oni:'ONI (Niño 3.4)',             phase:'Phase',            eff:'Teleconnections'}
+ },
+ exoplanets:{
+  junior :{rp:'Size of the planet',dist:'Distance from the star',depth:'How much the star dims',per:'Time for one orbit',kind:'What we can tell'},
+  student:{rp:'Planet radius (R⊕)',dist:'Orbital distance (AU)',depth:'Transit depth',      per:'Period',            kind:'Verdict'},
+  scholar:{rp:'Planet radius (R⊕)',dist:'Semi-major axis (AU)', depth:'Transit depth (δ)',  per:'Period (P)',        kind:'Verdict'}
+ },
+ flight:{
+  junior :{aoa:'Tilt of the wing',speed:'Speed',       lift:'Lift',lifts:'Can it fly?',   drag:'Air resistance'},
+  student:{aoa:'Angle of attack', speed:'Airspeed',    lift:'Lift',lifts:'Flight state',  drag:'Drag'},
+  scholar:{aoa:'Angle of attack', speed:'Airspeed (v)',lift:'Lift (L)',lifts:'Flight state',drag:'Drag (D)'}
+ },
+ bloodmoon:{
+  junior :{path:'How centred the line-up',dust:'Dust in the air',   cover:'Moon in shadow',  shade:'How dark',look:'What you would see',play:'Play',pause:'Pause'},
+  student:{path:'Alignment offset',       dust:'Atmospheric dust',  cover:'Umbral magnitude',shade:'Danjon L', look:'Eclipse type',play:'Play',pause:'Pause'},
+  scholar:{path:'Alignment offset',       dust:'Aerosol loading',   cover:'Umbral magnitude',shade:'Danjon L', look:'Eclipse type',play:'Play',pause:'Pause'}
+ },
  meteors:{
   junior :{pos:'Time of year',     dens:'Dust in the trail',rate:'Shooting stars/hr',status:'The sky now'},
   student:{pos:'Earth\'s position',dens:'Debris density',   rate:'Meteors/hour',     status:'Activity'},
@@ -285,7 +315,13 @@ const SIM_LABELS={
 
 const SIMS={};
 
-function simLabels(id,lvl){return (SIM_LABELS[id]||{})[lvl]||{};}
+function simLabels(id,lvl){
+  // A localized page injects window.SIM_LABELS_OVERRIDE so sliders and pills speak
+  // its language; the SPA and English pages fall through to the baked set.
+  var O=(typeof window!=='undefined')&&window.SIM_LABELS_OVERRIDE;
+  if(O&&O[id]&&O[id][lvl])return O[id][lvl];
+  return (SIM_LABELS[id]||{})[lvl]||{};
+}
 
 function newEl(tag,cls,id){const e=document.createElement(tag);if(cls)e.className=cls;if(id)e.id=id;return e;}
 
@@ -379,7 +415,7 @@ function buildSim(id,container,color,lvl){
             chem:simChem,electrochem:simElectrochem, kinetics:simKinetics, organic:simOrganic,
             acids:simAcids, periodic:simPeriodic,
             astro:simAstro,blackholes:simBlackholes, cosmology:simCosmology, solarsystem:simSolarSystem,
-            eclipse:simEclipse, meteors:simMeteors,
+            eclipse:simEclipse, meteors:simMeteors, bloodmoon:simBloodMoon, flight:simFlight, exoplanets:simExoplanets, elnino:simElNino, aurora:simAurora, comets:simComet,
             neuro:simNeuro,neuron:simNeuron,memory:simMemory,sleep:simSleep,
             optics:simOptics, pendulum:simPendulum,
             gaslaws:simGas, moonphases:simMoon, protein:simProtein,
@@ -4793,6 +4829,1112 @@ function simMeteors(container,color,lvl){
     ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font='10px system-ui';ctx.textAlign='center';ctx.fillText("Earth's orbit",ix,iy+ir+13);ctx.textAlign='left';
     pRate.set(Math.round(rate));
     pStat.set(rate>60?'Peak!':(rate>12?'In the stream':'Quiet sky'));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simBloodMoon(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#dc2626';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.bloodmoon&&SIMS.bloodmoon.raf)cancelAnimationFrame(SIMS.bloodmoon.raf);
+  const W=getSimWidth(container),H=350;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('bloodmoon',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pCover=pill(L.cover),pShade=pill(L.shade),pLook=pill(L.look);
+  pRow.appendChild(pCover.el);pRow.appendChild(pShade.el);pRow.appendChild(pLook.el);
+  const rPath=mkRange(ctrl,L.path,0,2.2,0.4,0.1,color);
+  const rDust=mkRange(ctrl,L.dust,0,10,2,1,color);
+  const bPlay=mkBtn('⏸ '+(L.pause||'Pause'),true,color);ctrl.appendChild(bPlay);
+  const St=SIMS.bloodmoon={raf:null,x:-4.6,run:true};
+  bPlay.addEventListener('click',function(){St.run=!St.run;bPlay.textContent=St.run?('⏸ '+(L.pause||'Pause')):('▶ '+(L.play||'Play'));});
+  // Everything is in Moon radii: the umbra is 2.6 of them wide at the Moon's
+  // distance, which is the whole reason totality can last over an hour.
+  const RU=2.6,RP=4.6,RE=3.67;
+  const cy=Math.round(H*0.50),xE=Math.round(W*0.16),rm=11;
+  const xM=Math.round(W*0.72),span=(xM-xE);
+  const halfU=x=>Math.max(0,RE*rm*(1-(x-xE)/(span*3.7)));
+  const halfP=x=>(RE+(RP-RE)*((x-xE)/span))*rm;
+  function danjon(dust,depth){return Math.max(0,Math.min(4,4-2.2*depth-0.28*dust));}
+  function shadeColor(l){
+    // L=4 bright copper, L=2 deep red, L=0 nearly black
+    const stops=[[38,10,10],[92,20,14],[150,42,24],[205,85,35],[248,152,66]];
+    const f=Math.max(0,Math.min(3.999,l)),i=Math.floor(f),t=f-i;
+    const a=stops[i],b=stops[i+1];
+    return [Math.round(a[0]+(b[0]-a[0])*t),Math.round(a[1]+(b[1]-a[1])*t),Math.round(a[2]+(b[2]-a[2])*t)];
+  }
+  function frame(){
+    const p=rPath.val,dust=rDust.val;
+    if(St.run){St.x+=0.006;if(St.x>4.6)St.x=-4.6;}
+    const d=Math.hypot(St.x,p);                       // Moon centre to shadow axis
+    const U=(RU+1-d)/2;                               // umbral magnitude
+    const depth=Math.max(0,Math.min(1,(RU-d)/RU));
+    const Lv=danjon(dust,depth),col=shadeColor(Lv);
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#05060f');bg.addColorStop(1,'#0d0710');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    for(let i=0;i<70;i++){
+      const sx=(i*151.7)%W,sy=(i*97.3)%H;
+      ctx.beginPath();ctx.arc(sx,sy,0.7,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,'+(0.15+0.3*(i%3)/3)+')';ctx.fill();
+    }
+    // ── sunlight from the left ──
+    ctx.strokeStyle='rgba(255,241,180,0.7)';ctx.lineWidth=1.6;
+    for(let k=-3;k<=3;k++){
+      const y=cy+k*rm*1.25;
+      if(Math.abs(k)<=2){ctx.beginPath();ctx.moveTo(6,y);ctx.lineTo(xE-RE*rm*0.96,y);ctx.stroke();}
+    }
+    ctx.fillStyle='rgba(255,241,180,0.75)';ctx.font='10px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cSun','sunlight'),8,cy-rm*4.6);
+    // rays that grazes the atmosphere: bent inwards and stripped of blue
+    [1,-1].forEach(function(sgn){
+      const y0=cy+sgn*RE*rm*1.02;
+      ctx.strokeStyle='rgba(255,241,180,0.75)';ctx.lineWidth=1.6;
+      ctx.beginPath();ctx.moveTo(6,y0);ctx.lineTo(xE-RE*rm*0.2,y0);ctx.stroke();
+      const g=ctx.createLinearGradient(xE,y0,W-10,cy);
+      g.addColorStop(0,'rgba(255,214,140,0.9)');g.addColorStop(0.35,'rgba(240,110,60,0.85)');
+      g.addColorStop(1,'rgba(200,40,30,0.55)');
+      ctx.strokeStyle=g;ctx.lineWidth=3;
+      ctx.beginPath();ctx.moveTo(xE-RE*rm*0.2,y0);
+      ctx.quadraticCurveTo(xE+span*0.25,y0-sgn*RE*rm*0.35,W-14,cy-sgn*rm*0.6);
+      ctx.stroke();
+    });
+    // ── shadow cones ──
+    ctx.fillStyle='rgba(120,130,190,0.10)';
+    ctx.beginPath();ctx.moveTo(xE,cy-RE*rm);ctx.lineTo(W,cy-halfP(W));ctx.lineTo(W,cy+halfP(W));ctx.lineTo(xE,cy+RE*rm);ctx.closePath();ctx.fill();
+    const ug2=ctx.createLinearGradient(xE,cy,W,cy);
+    ug2.addColorStop(0,'rgba(26,6,6,0.96)');ug2.addColorStop(1,'rgba(60,14,10,0.9)');
+    ctx.fillStyle=ug2;
+    ctx.beginPath();ctx.moveTo(xE,cy-RE*rm);ctx.lineTo(W,cy-halfU(W));ctx.lineTo(W,cy+halfU(W));ctx.lineTo(xE,cy+RE*rm);ctx.closePath();ctx.fill();
+    ctx.strokeStyle='rgba(190,80,60,0.45)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(xE,cy-RE*rm);ctx.lineTo(W,cy-halfU(W));ctx.moveTo(xE,cy+RE*rm);ctx.lineTo(W,cy+halfU(W));ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='10px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cUmbra','umbra'),xE+span*0.55,cy+halfU(xE+span*0.55)-7);
+    ctx.fillText(tx('cPen','penumbra'),xE+span*0.35,cy-halfP(xE+span*0.35)+13);
+    // ── Earth ──
+    const eg=ctx.createRadialGradient(xE-RE*rm*0.3,cy-RE*rm*0.3,2,xE,cy,RE*rm);
+    eg.addColorStop(0,'#4a90d9');eg.addColorStop(0.7,'#1c4e86');eg.addColorStop(1,'#0d2a4d');
+    ctx.beginPath();ctx.arc(xE,cy,RE*rm,0,Math.PI*2);ctx.fillStyle=eg;ctx.fill();
+    ctx.save();
+    ctx.beginPath();ctx.arc(xE,cy,RE*rm*1.30,0,Math.PI*2);
+    ctx.arc(xE,cy,RE*rm*0.99,0,Math.PI*2,true);
+    ctx.clip('evenodd');
+    const ag=ctx.createRadialGradient(xE,cy,RE*rm*0.99,xE,cy,RE*rm*1.30);
+    ag.addColorStop(0,'rgba(255,150,90,0.85)');ag.addColorStop(1,'rgba(255,120,60,0)');
+    ctx.fillStyle=ag;ctx.fillRect(xE-RE*rm*1.4,cy-RE*rm*1.4,RE*rm*2.8,RE*rm*2.8);
+    ctx.restore();
+    ctx.fillStyle='rgba(255,170,110,0.85)';ctx.font='9px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cAtm','atmosphere'),xE,cy-RE*rm*1.45);
+    ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='10px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cEarth','Earth'),xE,cy+RE*rm+16);
+    // ── the Moon on its way through ──
+    const mx0=xE+RE*rm+30,mx1=W-20,mx=mx0+((St.x+4.6)/9.2)*(mx1-mx0),my=cy-p*rm;
+    ctx.beginPath();ctx.arc(mx,my,rm,0,Math.PI*2);
+    ctx.fillStyle=(d<RU+1)?('rgb('+col[0]+','+col[1]+','+col[2]+')'):'#d8d5cc';ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.35)';ctx.lineWidth=1;ctx.stroke();
+    ctx.strokeStyle='rgba(255,255,255,0.18)';ctx.setLineDash([3,4]);
+    ctx.beginPath();ctx.moveTo(mx0,cy-p*rm);ctx.lineTo(W-8,cy-p*rm);ctx.stroke();ctx.setLineDash([]);
+    // ── inset: the same moment, seen from your garden ──
+    const IR=Math.min(52,W*0.11),ix=W-IR-22,iy=IR+34;
+    ctx.fillStyle='rgba(255,255,255,0.06)';ctx.beginPath();ctx.arc(ix,iy,IR+14,0,Math.PI*2);ctx.fill();
+    ctx.save();
+    ctx.beginPath();ctx.arc(ix,iy,IR,0,Math.PI*2);ctx.clip();
+    const mg=ctx.createRadialGradient(ix-IR*0.3,iy-IR*0.3,IR*0.1,ix,iy,IR);
+    mg.addColorStop(0,'#fffdf5');mg.addColorStop(1,'#cfcabc');
+    ctx.fillStyle=mg;ctx.fillRect(ix-IR,iy-IR,IR*2,IR*2);
+    // penumbral dimming, then the umbra with its brighter, bluer rim
+    const sx2=ix-St.x*IR,sy2=iy+p*IR;
+    ctx.fillStyle='rgba(30,25,35,0.22)';
+    ctx.beginPath();ctx.arc(sx2,sy2,RP*IR,0,Math.PI*2);ctx.fill();
+    const ug=ctx.createRadialGradient(sx2,sy2,RU*IR*0.25,sx2,sy2,RU*IR);
+    ug.addColorStop(0,'rgb('+col[0]+','+col[1]+','+col[2]+')');
+    ug.addColorStop(0.82,'rgb('+Math.min(255,col[0]+40)+','+Math.min(255,col[1]+26)+','+col[2]+')');
+    ug.addColorStop(1,'rgba(90,140,150,0.95)');
+    ctx.fillStyle=ug;
+    ctx.beginPath();ctx.arc(sx2,sy2,RU*IR,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(ix,iy,IR,0,Math.PI*2);ctx.stroke();
+    ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='bold 10px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cSeen','seen from Earth'),ix,iy+IR+18);
+    // ── caption ──
+    ctx.textAlign='center';ctx.font='11px system-ui';ctx.fillStyle='rgba(255,220,190,0.9)';
+    ctx.fillText(tx('cCap','the only light reaching the Moon is sunlight bent and reddened by our air'),W/2,H-14);
+    const dx0=14,dy0=H-64,dw=Math.min(200,W*0.3);
+    ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cDanjon','Danjon scale'),dx0,dy0-6);
+    for(let k=0;k<5;k++){
+      const sc=shadeColor(k);
+      ctx.fillStyle='rgb('+sc[0]+','+sc[1]+','+sc[2]+')';
+      ctx.fillRect(dx0+k*(dw/5),dy0,dw/5-2,11);
+      ctx.fillStyle='rgba(255,255,255,0.45)';ctx.textAlign='center';
+      ctx.fillText('L'+k,dx0+k*(dw/5)+dw/10-1,dy0+22);
+    }
+    const mkx=dx0+(Lv/4)*(dw-dw/5)+dw/10-1;
+    ctx.strokeStyle='#fff';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(mkx,dy0-3);ctx.lineTo(mkx,dy0+14);ctx.stroke();
+    pCover.set(U<=0?'0%':Math.round(Math.min(1,U)*100)+'%');
+    pShade.set(d<RU+1?('L '+Lv.toFixed(1)):'-');
+    pLook.set(U>=1?tx('vTotal','Total'):(U>0?(U>0.9?tx('vDeep','Deep partial'):tx('vPartial','Partial')):(d<RP+1?tx('vPenOnly','Penumbral only'):tx('vNoEcl','No eclipse'))));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simAurora(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#10b981';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.aurora&&SIMS.aurora.raf)cancelAnimationFrame(SIMS.aurora.raf);
+  const W=getSimWidth(container),H=380;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('aurora',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pKp=pill(L.kp),pOval=pill(L.oval),pGlow=pill(L.glow);
+  pRow.appendChild(pKp.el);pRow.appendChild(pOval.el);pRow.appendChild(pGlow.el);
+  const rWind=mkRange(ctrl,L.wind,300,900,420,10,color);
+  const rBz=mkRange(ctrl,L.bz,-15,15,-6,1,color);
+  const St=SIMS.aurora={raf:null,t:0,parts:[]};
+  for(let i=0;i<70;i++)St.parts.push({x:Math.random(),y:Math.random(),s:0.5+Math.random()});
+  const SKY=Math.round(H*0.56);                     // ground view starts here
+  const ex=Math.round(W*0.66),ey=Math.round(SKY*0.52),RE=Math.min(26,W*0.045);
+  function dipole(Lsh,squash,tail){
+    // one field-line shell, compressed on the day side and drawn out on the night side
+    ctx.beginPath();
+    for(let a=-88;a<=88;a+=3){
+      const rad=a*Math.PI/180,r=Lsh*RE*Math.cos(rad)*Math.cos(rad);
+      let x=ex-r*Math.cos(rad+Math.PI/2)*0,y=0;
+      const px=ex-r*Math.sin(rad)*0;
+      x=ex+r*Math.sin(rad)*0;
+      const dx=r*Math.cos(rad),dy=-r*Math.sin(rad);
+      const sx=ex-dx*squash,sy=ey+dy;
+      a===-88?ctx.moveTo(sx,sy):ctx.lineTo(sx,sy);
+    }
+    ctx.stroke();
+    if(tail>0){
+      ctx.beginPath();
+      for(let k=0;k<=20;k++){
+        const f=k/20,x=ex+RE*1.2+f*tail,y=ey-Lsh*RE*0.42*(1-f*0.35);
+        k?ctx.lineTo(x,y):ctx.moveTo(x,y);
+      }
+      ctx.stroke();
+      ctx.beginPath();
+      for(let k=0;k<=20;k++){
+        const f=k/20,x=ex+RE*1.2+f*tail,y=ey+Lsh*RE*0.42*(1-f*0.35);
+        k?ctx.lineTo(x,y):ctx.moveTo(x,y);
+      }
+      ctx.stroke();
+    }
+  }
+  function frame(){
+    St.t+=1/60;
+    const v=rWind.val,bz=rBz.val;
+    const south=Math.max(0,-bz)/15;
+    const kp=Math.max(0,Math.min(9,Math.round(0.4+(v-300)/600*2.4+south*6.2)));
+    const lat=Math.round(67-2.5*kp);
+    ctx.clearRect(0,0,W,H);
+    const sky=ctx.createLinearGradient(0,0,0,SKY);sky.addColorStop(0,'#03040e');sky.addColorStop(1,'#070d1c');
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,SKY);
+    // ── the Sun and its wind ──
+    const sg=ctx.createRadialGradient(6,ey,4,6,ey,70);
+    sg.addColorStop(0,'rgba(255,214,120,0.85)');sg.addColorStop(1,'rgba(255,180,60,0)');
+    ctx.fillStyle=sg;ctx.beginPath();ctx.arc(6,ey,70,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#fcc419';ctx.beginPath();ctx.arc(2,ey,26,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(255,220,150,0.8)';ctx.font='10px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cSun','Sun'),10,ey+44);
+    const speed=(v-300)/600;
+    St.parts.forEach(function(p){
+      p.x+=(0.0016+speed*0.0075)*p.s;
+      if(p.x>1){p.x=0;p.y=Math.random();}
+      const px=40+p.x*(ex-90),py=SKY*0.12+p.y*(SKY*0.76);
+      const dodge=Math.max(0,1-Math.abs(py-ey)/(RE*3.2))*Math.max(0,(px-(ex-RE*4.6))/(RE*4.6));
+      const yy=py+(py<ey?-1:1)*dodge*RE*1.5;
+      ctx.beginPath();ctx.arc(px,yy,1.7,0,Math.PI*2);
+      ctx.fillStyle='rgba(160,200,255,'+(0.35+p.s*0.35)+')';ctx.fill();
+      ctx.strokeStyle='rgba(160,200,255,0.25)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(px,yy);ctx.lineTo(px-6-speed*10,yy);ctx.stroke();
+    });
+    // the arriving field direction: the single thing that decides everything
+    ctx.strokeStyle=bz<0?'rgba(248,113,113,0.9)':'rgba(96,165,250,0.9)';ctx.lineWidth=2;ctx.lineCap='round';
+    for(let k=0;k<3;k++){
+      const x=70+k*34,y0=ey-42,y1=ey+42,dir=bz<0?1:-1;
+      ctx.beginPath();ctx.moveTo(x,dir>0?y0:y1);ctx.lineTo(x,dir>0?y1:y0);ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x,dir>0?y1:y0);ctx.lineTo(x-4,(dir>0?y1:y0)-dir*7);ctx.lineTo(x+4,(dir>0?y1:y0)-dir*7);
+      ctx.closePath();ctx.fillStyle=bz<0?'rgba(248,113,113,0.9)':'rgba(96,165,250,0.9)';ctx.fill();
+    }
+    ctx.fillStyle=bz<0?'rgba(248,113,113,0.95)':'rgba(96,165,250,0.95)';ctx.font='bold 10px system-ui';ctx.textAlign='center';
+    ctx.fillText(bz<0?tx('cSouth','field points SOUTH - shield opens'):tx('cNorth','field points NORTH - shield holds'),104,ey-52);
+    // ── magnetosphere ──
+    ctx.strokeStyle='rgba(120,180,255,0.35)';ctx.lineWidth=1.2;
+    dipole(2.4,0.9,W-ex-24);dipole(3.6,0.75,W-ex-24);
+    ctx.strokeStyle='rgba(120,180,255,0.5)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.arc(ex,ey,RE*3.4,Math.PI*0.62,Math.PI*1.38);ctx.stroke();
+    ctx.fillStyle='rgba(150,190,240,0.6)';ctx.font='9px system-ui';ctx.textAlign='right';
+    ctx.fillText(tx('cMagPause','magnetopause'),ex-RE*3.5,ey-RE*2.4);
+    // reconnection only when the arriving field is southward
+    if(south>0.02){
+      const rx=ex-RE*3.4,pulse=0.5+0.5*Math.sin(St.t*5);
+      ctx.strokeStyle='rgba(255,220,120,'+(0.4+0.5*pulse*south)+')';ctx.lineWidth=2;
+      for(let k=-1;k<=1;k+=2){
+        ctx.beginPath();ctx.moveTo(rx-9,ey+k*9);ctx.lineTo(rx+9,ey-k*9);ctx.stroke();
+      }
+      ctx.fillStyle='rgba(255,220,120,0.95)';ctx.font='9px system-ui';ctx.textAlign='right';
+      ctx.fillText(tx('cRecon','reconnection'),rx-12,ey+4);
+      // particles running down the open field lines into both polar caps
+      const n=Math.round(4+south*10);
+      for(let i=0;i<n;i++){
+        const f=((St.t*0.55+i/n)%1);
+        for(let k=-1;k<=1;k+=2){
+          const bx=ex-RE*3.2+f*(RE*3.2),by=ey+k*(RE*2.6)*(1-f*0.72)-k*RE*0.1;
+          ctx.beginPath();ctx.arc(bx,by,1.8,0,Math.PI*2);
+          ctx.fillStyle='rgba(134,239,172,'+(0.35+0.6*(1-Math.abs(f-0.8)*3))+')';ctx.fill();
+        }
+      }
+    }
+    // Earth, with the auroral ovals glowing at both poles
+    const eg=ctx.createRadialGradient(ex-RE*0.3,ey-RE*0.35,2,ex,ey,RE);
+    eg.addColorStop(0,'#4a90d9');eg.addColorStop(0.7,'#17457a');eg.addColorStop(1,'#0a2440');
+    ctx.beginPath();ctx.arc(ex,ey,RE,0,Math.PI*2);ctx.fillStyle=eg;ctx.fill();
+    for(let k=-1;k<=1;k+=2){
+      const og=ctx.createRadialGradient(ex,ey+k*RE*0.82,1,ex,ey+k*RE*0.82,RE*0.75);
+      og.addColorStop(0,'rgba(134,239,172,'+(0.25+kp/9*0.6)+')');og.addColorStop(1,'rgba(134,239,172,0)');
+      ctx.fillStyle=og;ctx.beginPath();ctx.arc(ex,ey+k*RE*0.82,RE*0.75,0,Math.PI*2);ctx.fill();
+    }
+    ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='10px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cEarth','Earth'),ex,ey+RE+14);
+    // ── the same storm, from the ground ──
+    ctx.fillStyle='#050810';ctx.fillRect(0,SKY,W,H-SKY);
+    const bright=0.18+kp/9*0.82;
+    const curtains=2+Math.round(kp/2.4);
+    // A curtain is a folded sheet along a magnetic field line: draw it as many
+    // thin rays whose foot wanders, so the sheet looks draped rather than combed.
+    for(let c2=0;c2<curtains;c2++){
+      const phase=c2*2.3, sweep=W*(0.10+0.80*(c2+0.5)/curtains);
+      const rays=22+Math.round(kp*2.2);
+      const width=W*0.10+kp*3;
+      const hTop=SKY+10+Math.sin(St.t*0.5+phase)*8;
+      const foot=H-18-Math.sin(St.t*0.7+phase)*4;
+      // a broad diffuse glow first, so the rays read as one lit sheet and not as a comb
+      const halo=ctx.createRadialGradient(sweep,foot-40,4,sweep,foot-40,W*0.13+kp*4);
+      halo.addColorStop(0,'rgba(74,222,128,'+bright*0.30+')');
+      halo.addColorStop(0.55,'rgba(52,180,120,'+bright*0.12+')');
+      halo.addColorStop(1,'rgba(52,180,120,0)');
+      ctx.fillStyle=halo;
+      ctx.beginPath();ctx.ellipse(sweep,foot-40,W*0.13+kp*4,(foot-hTop)*0.72,0,0,Math.PI*2);ctx.fill();
+      for(let k=0;k<rays;k++){
+        const u=k/(rays-1)-0.5;
+        const fold=Math.sin(u*7+St.t*1.6+phase);
+        const x=sweep+u*width+fold*7;
+        const lean=fold*10;
+        const a=bright*(0.30+0.70*Math.pow(Math.max(0,Math.cos(u*Math.PI)),0.6))*(0.65+0.35*Math.sin(u*11+St.t*2.4+phase));
+        const jit=(Math.sin((k+c2*17)*12.9898)*43758.5453)%1;
+        const top=hTop+Math.abs(u)*30+Math.abs(jit)*34;
+        const g=ctx.createLinearGradient(x+lean,top,x,foot);
+        g.addColorStop(0,'rgba(248,113,113,'+(kp>=5?a*0.42:0)+')');
+        g.addColorStop(0.22,'rgba(190,220,170,'+a*0.30+')');
+        g.addColorStop(0.5,'rgba(110,231,150,'+a*0.80+')');
+        g.addColorStop(0.9,'rgba(52,211,153,'+a*0.95+')');
+        g.addColorStop(1,'rgba(167,139,250,'+(kp>=7?a*0.75:a*0.10)+')');
+        ctx.strokeStyle=g;ctx.lineWidth=2.6+Math.abs(jit)*2.2;ctx.lineCap='round';
+        ctx.beginPath();ctx.moveTo(x+lean,top);
+        ctx.quadraticCurveTo(x+lean*0.4,(top+foot)/2,x,foot);ctx.stroke();
+      }
+      // the lower edge is the brightest part of a real curtain
+      const eg=ctx.createLinearGradient(sweep-width/2,foot,sweep+width/2,foot);
+      eg.addColorStop(0,'rgba(167,255,200,0)');
+      eg.addColorStop(0.5,'rgba(190,255,215,'+bright*0.5+')');
+      eg.addColorStop(1,'rgba(167,255,200,0)');
+      ctx.strokeStyle=eg;ctx.lineWidth=2.5;
+      ctx.beginPath();ctx.moveTo(sweep-width/2,foot);ctx.lineTo(sweep+width/2,foot);ctx.stroke();
+    }
+    ctx.fillStyle='#010206';
+    ctx.beginPath();ctx.moveTo(0,H);
+    for(let x=0;x<=W;x+=10)ctx.lineTo(x,H-20-11*Math.sin(x*0.013)-6*Math.sin(x*0.047)-3*Math.sin(x*0.11));
+    ctx.lineTo(W,H);ctx.closePath();ctx.fill();
+    ctx.strokeStyle='rgba(120,200,160,0.18)';ctx.lineWidth=1;
+    ctx.beginPath();
+    for(let x=0;x<=W;x+=10){const y=H-20-11*Math.sin(x*0.013)-6*Math.sin(x*0.047)-3*Math.sin(x*0.11);x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+    ctx.stroke();
+    // altitude key, because the colours ARE a height measurement
+    ctx.textAlign='left';ctx.font='9px system-ui';
+    ctx.fillStyle='rgba(248,113,113,0.9)';ctx.fillText(tx('cKeyRed','above 250 km  oxygen red'),10,SKY+18);
+    ctx.fillStyle='rgba(134,239,172,0.95)';ctx.fillText(tx('cKeyGreen','100-250 km  oxygen green'),10,SKY+32);
+    ctx.fillStyle='rgba(167,139,250,0.9)';ctx.fillText(tx('cKeyViolet','below 100 km  nitrogen violet'),10,SKY+46);
+    pKp.set('Kp '+kp);
+    pOval.set(lat+'° '+tx('vLat','latitude'));
+    pGlow.set(kp>=7?tx('vAll','green + red + violet'):(kp>=5?tx('vGreenRed','green + red'):(kp>=1?tx('vGreen','green'):tx('vNothing','almost nothing'))));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simComet(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0ea5e9';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.comet&&SIMS.comet.raf)cancelAnimationFrame(SIMS.comet.raf);
+  const W=getSimWidth(container),H=470;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('comets',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pDist=pill(L.dist),pAct=pill(L.act),pTail=pill(L.tail);
+  pRow.appendChild(pDist.el);pRow.appendChild(pAct.el);pRow.appendChild(pTail.el);
+  const rSize=mkRange(ctrl,L.size,0.5,15,4,0.5,color);
+  const rEcc=mkRange(ctrl,L.ecc,0.3,0.96,0.85,0.01,color);
+  const St=SIMS.comet={raf:null,th:Math.PI,stars:[],grains:[],trail:[],spin:0,t:0};
+  for(let i=0;i<90;i++)St.stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.1});
+  const ORB=Math.round(H*0.57);                     // orbital panel / close-up split
+  const sx=Math.round(W*0.62),sy=Math.round(ORB*0.50);
+  const AU=Math.min(50,W*0.082);
+  const FROST=3;
+  const nx=Math.round(W*0.30),ny=ORB+Math.round((H-ORB)*0.50);
+  // an irregular bilobed nucleus, the shape Rosetta actually found at 67P
+  const LOBE=[];
+  for(let i=0;i<26;i++){const a=i/26*Math.PI*2;LOBE.push(0.78+0.22*Math.sin(a*3.1+1.2)+0.12*Math.sin(a*5.7));}
+  function lobe(cx,cy,r,rot){
+    ctx.beginPath();
+    for(let i=0;i<=26;i++){
+      const k=i%26,a=k/26*Math.PI*2+rot,rr=r*LOBE[k];
+      const x=cx+Math.cos(a)*rr,y=cy+Math.sin(a)*rr*0.86;
+      i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+    }
+    ctx.closePath();
+  }
+  function frame(){
+    St.t+=1/60;St.spin+=0.0032;
+    const e=rEcc.val,size=rSize.val;
+    const a=3.2,p=a*(1-e*e);
+    const r=p/(1+e*Math.cos(St.th));
+    St.th+=0.0016*Math.pow(2.6/r,1.5);
+    if(St.th>Math.PI*2)St.th-=Math.PI*2;
+    const act=Math.max(0,Math.min(1,Math.pow(Math.max(0,(FROST-r)/FROST),1.4)*(0.35+size/15*0.9)));
+    const cxp=sx+r*AU*Math.cos(St.th),cyp=sy+r*AU*Math.sin(St.th)*0.62;
+    const away=Math.atan2(cyp-sy,cxp-sx);
+    const outbound=Math.sin(St.th)>0;
+
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#04050f');bg.addColorStop(1,'#090614');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    St.stars.forEach(function(s){ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,255,255,0.32)';ctx.fill();});
+
+    // ── orbital view ──
+    ctx.strokeStyle='rgba(140,170,220,0.30)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+    ctx.beginPath();
+    for(let t2=0;t2<=360;t2+=3){
+      const th=t2*Math.PI/180,rr=p/(1+e*Math.cos(th));
+      const x=sx+rr*AU*Math.cos(th),y=sy+rr*AU*Math.sin(th)*0.62;
+      t2?ctx.lineTo(x,y):ctx.moveTo(x,y);
+    }
+    ctx.stroke();ctx.setLineDash([]);
+    // dust left along the orbit: the reason meteor showers happen on a schedule
+    if(act>0.05&&St.t%0.1<1/60)St.trail.push([cxp,cyp,1]);
+    if(St.trail.length>420)St.trail.shift();
+    St.trail.forEach(function(g){
+      ctx.beginPath();ctx.arc(g[0],g[1],1.3,0,Math.PI*2);
+      ctx.fillStyle='rgba(255,225,170,'+(0.14+g[2]*0.12)+')';ctx.fill();
+    });
+    if(St.trail.length>40){
+      ctx.fillStyle='rgba(255,225,170,0.5)';ctx.font='9px system-ui';ctx.textAlign='left';
+      ctx.fillText(tx('cTrail','dust left along the orbit - this is what feeds meteor showers'),12,ORB-10);
+    }
+    ctx.strokeStyle='rgba(125,211,252,0.42)';ctx.lineWidth=1.2;ctx.setLineDash([2,5]);
+    ctx.beginPath();ctx.ellipse(sx,sy,FROST*AU,FROST*AU*0.62,0,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='rgba(125,211,252,0.75)';ctx.font='9px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cFrost','frost line, 3 AU - ice starts turning to gas'),sx,sy-FROST*AU*0.62-7);
+    const perX=sx+p/(1+e)*AU,aphX=sx-p/(1-e)*AU;
+    ctx.fillStyle='rgba(200,215,240,0.5)';ctx.font='9px system-ui';
+    ctx.fillText(tx('cPeri','perihelion'),perX+2,sy+((perX-sx)<52?38:13));
+    if(aphX>26)ctx.fillText(tx('cAph','aphelion'),aphX,sy+13);
+    const sg=ctx.createRadialGradient(sx,sy,3,sx,sy,60);
+    sg.addColorStop(0,'rgba(255,236,160,0.95)');sg.addColorStop(1,'rgba(255,190,60,0)');
+    ctx.fillStyle=sg;ctx.beginPath();ctx.arc(sx,sy,60,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#fcc419';ctx.beginPath();ctx.arc(sx,sy,14,0,Math.PI*2);ctx.fill();
+    if(act>0.01){
+      ctx.save();ctx.beginPath();ctx.rect(0,0,W,ORB-1);ctx.clip();
+      const tl=act*(66+size*9);
+      const ig=ctx.createLinearGradient(cxp,cyp,cxp+Math.cos(away)*tl*1.6,cyp+Math.sin(away)*tl*1.6);
+      ig.addColorStop(0,'rgba(120,200,255,'+(0.8*act)+')');ig.addColorStop(1,'rgba(90,150,255,0)');
+      ctx.strokeStyle=ig;ctx.lineWidth=3;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(cxp,cyp);ctx.lineTo(cxp+Math.cos(away)*tl*1.6,cyp+Math.sin(away)*tl*1.6);ctx.stroke();
+      const lag=away-0.44;
+      const dg=ctx.createLinearGradient(cxp,cyp,cxp+Math.cos(lag)*tl,cyp+Math.sin(lag)*tl);
+      dg.addColorStop(0,'rgba(255,240,200,'+(0.72*act)+')');dg.addColorStop(1,'rgba(255,220,150,0)');
+      ctx.strokeStyle=dg;ctx.lineWidth=10;
+      ctx.beginPath();ctx.moveTo(cxp,cyp);
+      ctx.quadraticCurveTo(cxp+Math.cos(away)*tl*0.55,cyp+Math.sin(away)*tl*0.55,cxp+Math.cos(lag)*tl,cyp+Math.sin(lag)*tl);
+      ctx.stroke();
+      const cg=ctx.createRadialGradient(cxp,cyp,1,cxp,cyp,5+act*13);
+      cg.addColorStop(0,'rgba(220,245,255,'+(0.55+act*0.4)+')');cg.addColorStop(1,'rgba(180,225,255,0)');
+      ctx.fillStyle=cg;ctx.beginPath();ctx.arc(cxp,cyp,5+act*13,0,Math.PI*2);ctx.fill();
+      ctx.restore();
+    }
+    ctx.fillStyle='#e8e2d4';ctx.beginPath();ctx.arc(cxp,cyp,3.2+size*0.14,0,Math.PI*2);ctx.fill();
+    const vth=St.th+Math.PI/2,vx=Math.cos(vth),vy=Math.sin(vth)*0.62,vn=Math.hypot(vx,vy);
+    ctx.strokeStyle='rgba(255,255,255,0.8)';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(cxp,cyp);ctx.lineTo(cxp+vx/vn*24,cyp+vy/vn*24);ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(cxp+vx/vn*28,cyp+vy/vn*28);
+    ctx.lineTo(cxp+vx/vn*20-vy/vn*4.5,cyp+vy/vn*20+vx/vn*4.5);
+    ctx.lineTo(cxp+vx/vn*20+vy/vn*4.5,cyp+vy/vn*20-vx/vn*4.5);
+    ctx.closePath();ctx.fillStyle='rgba(255,255,255,0.85)';ctx.fill();
+    ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cGoing','travelling this way'),cxp+vx/vn*30,cyp+vy/vn*30);
+
+    // ── close-up of the nucleus ──
+    ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(0,ORB,W,H-ORB);
+    ctx.strokeStyle='rgba(255,255,255,0.12)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(0,ORB);ctx.lineTo(W,ORB);ctx.stroke();
+    ctx.fillStyle='rgba(255,236,160,0.85)';ctx.font='10px system-ui';ctx.textAlign='left';
+    ctx.fillText('☀ '+tx('cToSun','towards the Sun'),12,ORB+20);
+    ctx.strokeStyle='rgba(255,236,160,0.5)';ctx.lineWidth=1.4;
+    for(let k=0;k<3;k++){
+      const y=ny-18+k*18;
+      ctx.beginPath();ctx.moveTo(14,y);ctx.lineTo(nx-42,y);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(nx-42,y);ctx.lineTo(nx-50,y-3);ctx.moveTo(nx-42,y);ctx.lineTo(nx-50,y+3);ctx.stroke();
+    }
+    // grains: dust curves away and lags, ions are swept straight downstream
+    const spawn=Math.round(act*4);
+    for(let i=0;i<spawn;i++){
+      const ang=(Math.random()-0.5)*1.9+Math.PI,sp=0.6+Math.random()*1.1;
+      const ion=Math.random()<0.45;
+      St.grains.push({x:nx+Math.cos(ang)*20,y:ny+Math.sin(ang)*16,
+        vx:(ion?3.1:1.1)-Math.cos(ang)*sp*(ion?0.4:0.5),
+        vy:ion?(-Math.sin(ang)*sp*0.12):(-Math.sin(ang)*sp*0.5+0.30),ion:ion,life:1});
+    }
+    for(let i=St.grains.length-1;i>=0;i--){
+      const g=St.grains[i];
+      g.x+=g.vx;g.y+=g.vy;g.life-=0.006;
+      if(!g.ion)g.vy+=0.010;                      // heavier grains drift off the axis
+      if(g.life<=0||g.x>W+10){St.grains.splice(i,1);continue;}
+      ctx.beginPath();
+      if(g.ion){
+        ctx.strokeStyle='rgba(130,205,255,'+(g.life*0.75)+')';ctx.lineWidth=1.4;
+        ctx.moveTo(g.x,g.y);ctx.lineTo(g.x-6,g.y);ctx.stroke();
+      }else{
+        ctx.arc(g.x,g.y,1.4,0,Math.PI*2);
+        ctx.fillStyle='rgba(255,238,196,'+(g.life*0.6)+')';ctx.fill();
+      }
+    }
+    if(St.grains.length>900)St.grains.splice(0,St.grains.length-900);
+    // coma haze
+    if(act>0.02){
+      const hg=ctx.createRadialGradient(nx,ny,6,nx,ny,26+act*46);
+      hg.addColorStop(0,'rgba(200,240,255,'+(0.30*act)+')');hg.addColorStop(1,'rgba(160,220,255,0)');
+      ctx.fillStyle=hg;ctx.beginPath();ctx.arc(nx,ny,26+act*46,0,Math.PI*2);ctx.fill();
+    }
+    // the nucleus itself: two lobes, dark as charcoal, lit only from the Sun side
+    [[-15,0,21],[14,4,15]].forEach(function(o){
+      lobe(nx+o[0],ny+o[1],o[2],St.spin);
+      const ng=ctx.createLinearGradient(nx+o[0]-o[2],ny,nx+o[0]+o[2],ny);
+      ng.addColorStop(0,'#6b6152');ng.addColorStop(0.45,'#3a3630');ng.addColorStop(1,'#141310');
+      ctx.fillStyle=ng;ctx.fill();
+      ctx.strokeStyle='rgba(255,235,190,0.22)';ctx.lineWidth=1;ctx.stroke();
+    });
+    // jets erupt only from the sunlit side, and only inside the frost line
+    if(act>0.03){
+      [[-22,-12],[-19,10],[-6,-18]].forEach(function(j,k){
+        const puls=0.6+0.4*Math.sin(St.t*5+k*2.1);
+        const jx=nx+j[0],jy=ny+j[1],len=(22+act*66)*puls;
+        const ex=jx-len,ey=jy+j[1]*0.55;
+        const jg=ctx.createLinearGradient(jx,jy,ex,ey);
+        jg.addColorStop(0,'rgba(255,255,255,'+(0.9*act*puls)+')');
+        jg.addColorStop(0.35,'rgba(190,235,255,'+(0.45*act*puls)+')');
+        jg.addColorStop(1,'rgba(160,215,255,0)');
+        ctx.strokeStyle=jg;ctx.lineWidth=3+act*4;ctx.lineCap='round';
+        ctx.beginPath();ctx.moveTo(jx,jy);ctx.lineTo(ex,ey);ctx.stroke();
+        const bg2=ctx.createRadialGradient(jx,jy,0,jx,jy,7+act*7);
+        bg2.addColorStop(0,'rgba(255,255,255,'+(0.75*act*puls)+')');bg2.addColorStop(1,'rgba(200,240,255,0)');
+        ctx.fillStyle=bg2;ctx.beginPath();ctx.arc(jx,jy,7+act*7,0,Math.PI*2);ctx.fill();
+      });
+    }
+    // labels for the close-up
+    ctx.font='9px system-ui';ctx.textAlign='center';
+    ctx.fillStyle='rgba(255,255,255,0.7)';
+    ctx.fillText(tx('cNucleus','nucleus, a few km of ice and dust'),nx,ny+42);
+    if(act>0.05){
+      ctx.fillStyle='rgba(200,240,255,0.8)';ctx.fillText(tx('cJets','jets of gas and dust'),nx-46,ny-30);
+      ctx.textAlign='right';
+      ctx.fillStyle='rgba(130,205,255,0.9)';ctx.fillText(tx('cIon','ion tail, swept straight by the solar wind'),W-12,ORB+22);
+      ctx.fillStyle='rgba(255,238,196,0.9)';ctx.fillText(tx('cDust','dust tail, heavier grains that lag and curve'),W-12,H-14);
+    }
+    ctx.textAlign='center';ctx.font='11px system-ui';
+    ctx.fillStyle=act>0.05?'rgba(255,230,190,0.95)':'rgba(160,180,210,0.85)';
+    ctx.fillText(act<=0.05?tx('cFar','too far from the Sun - no tail, just a dark lump of ice'):
+      (outbound?tx('cOut','heading back out: the tail leads, the comet follows it'):
+                tx('cIn','falling inwards: the tail streams out behind')),W/2,ORB-26);
+    pDist.set(r.toFixed(2)+' AU');
+    pAct.set(act<=0.02?tx('vDormant','Dormant'):(act<0.25?tx('vWaking','Waking up'):(act<0.6?tx('vActive','Active'):tx('vBlazing','Blazing'))));
+    pTail.set(act<=0.02?tx('vNone','none'):Math.round(act*(8+size*1.2))+' '+tx('vMkm','million km'));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simFlight(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0369a1';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.flight&&SIMS.flight.raf)cancelAnimationFrame(SIMS.flight.raf);
+  const W=getSimWidth(container),H=390;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('flight',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pLift=pill(L.lift),pDrag=pill(L.drag),pState=pill(L.lifts);
+  pRow.appendChild(pLift.el);pRow.appendChild(pDrag.el);pRow.appendChild(pState.el);
+  const rA=mkRange(ctrl,L.aoa,-4,22,6,1,color);
+  const rV=mkRange(ctrl,L.speed,80,320,200,5,color);
+  const St=SIMS.flight={raf:null,t:0,p:[]};
+  const cx=Math.round(W*0.42),cy=Math.round(H*0.42),ch=Math.min(210,W*0.34);
+  const STALL=15, WEIGHT=45;                       // stall angle in degrees, weight in kN
+  for(let i=0;i<230;i++)St.p.push({x:Math.random()*W,lane:Math.random(),s:0});
+  // NACA-like half thickness, plus camber: enough to look and behave like a wing
+  function thick(t){return 0.13*(1.4845*Math.sqrt(t)-0.63*t-1.758*t*t+1.4215*t*t*t-0.5075*t*t*t*t);}
+  function camber(t){return 0.055*Math.sin(Math.PI*Math.pow(t,0.85));}
+  function foilPoint(t,side){
+    const y=-camber(t)+side*thick(t);
+    return [t*ch-ch*0.35, y*ch];
+  }
+  function rot(p,a){const c2=Math.cos(a),s2=Math.sin(a);return [p[0]*c2-p[1]*s2,p[0]*s2+p[1]*c2];}
+  function drawFoil(a){
+    ctx.beginPath();
+    for(let i=0;i<=40;i++){const p=rot(foilPoint(i/40,1),a);i?ctx.lineTo(cx+p[0],cy+p[1]):ctx.moveTo(cx+p[0],cy+p[1]);}
+    for(let i=40;i>=0;i--){const p=rot(foilPoint(i/40,-1),a);ctx.lineTo(cx+p[0],cy+p[1]);}
+    ctx.closePath();
+  }
+  // how far a streamline in lane u is pushed aside as it passes the wing
+  function deflect(x,u,a,stalled){
+    const dx=(x-cx)/ch;
+    const near=Math.exp(-dx*dx*1.7);
+    const side=u<0.5?-1:1;                          // above or below the chord line
+    const strength=Math.sin(a)*(1.1-Math.abs(u-0.5)*1.25);
+    const bend=near*strength*ch*(side<0?1.15:0.75);
+    const down=Math.max(0,Math.min(1,(dx+0.4)/1.6))*Math.sin(a)*ch*0.55;
+    return bend*(side<0?-1:1)+down*(stalled?0.5:1);
+  }
+  function frame(){
+    St.t+=1/60;
+    const aDeg=rA.val, v=rV.val, a=aDeg*Math.PI/180;
+    const stalled=aDeg>STALL;
+    // thin-aerofoil lift, then a hard break at the stall
+    let cl=2*Math.PI*Math.sin(a);
+    if(stalled)cl=Math.max(0.18,2*Math.PI*Math.sin(STALL*Math.PI/180)*(1-(aDeg-STALL)/9));
+    const q=0.5*1.225*v*v/1000;                     // dynamic pressure, kPa-ish
+    const S2=16;                                    // reference wing area, m2
+    const lift=q*S2*cl/10;                          // kN, scaled for a light aircraft
+    const cd=0.02+cl*cl/(Math.PI*7.5*0.8)+(stalled?0.10+(aDeg-STALL)*0.02:0);
+    const drag=q*S2*cd/10;
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#0b1a2b');bg.addColorStop(1,'#071019');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    // pressure field: suction above, packing below - the colours ARE the force
+    const suction=Math.max(0,Math.min(1,cl/3.2));
+    const gTop=ctx.createRadialGradient(cx+ch*0.05,cy-ch*0.10,ch*0.05,cx+ch*0.05,cy-ch*0.10,ch*0.62);
+    gTop.addColorStop(0,'rgba(80,140,255,'+(0.34*suction)+')');gTop.addColorStop(1,'rgba(56,120,255,0)');
+    ctx.fillStyle=gTop;ctx.beginPath();ctx.ellipse(cx+ch*0.05,cy-ch*0.10,ch*0.62,ch*0.42,0,0,Math.PI*2);ctx.fill();
+    const gBot=ctx.createRadialGradient(cx+ch*0.05,cy+ch*0.12,ch*0.05,cx+ch*0.05,cy+ch*0.12,ch*0.55);
+    gBot.addColorStop(0,'rgba(255,90,70,'+(0.30*suction)+')');gBot.addColorStop(1,'rgba(255,90,70,0)');
+    ctx.fillStyle=gBot;ctx.beginPath();ctx.ellipse(cx+ch*0.05,cy+ch*0.12,ch*0.55,ch*0.34,0,0,Math.PI*2);ctx.fill();
+    ctx.font='10px system-ui';ctx.textAlign='left';
+    ctx.fillStyle='rgba(140,180,255,'+(0.4+suction*0.5)+')';ctx.fillText(tx('cLow','lower pressure'),cx-ch*0.72,cy-ch*0.44);
+    ctx.fillStyle='rgba(255,150,130,'+(0.4+suction*0.5)+')';ctx.fillText(tx('cHigh','higher pressure'),cx-ch*0.72,cy+ch*0.42);
+    // streamlines: continuous paths, with packets of air running along them.
+    // Above the wing the lines crowd together, which IS the speed-up.
+    const speed=1.05+v/95;
+    const LANES=15;
+    function laneY(u,x){
+      const baseY=cy-ch*0.52+u*ch*1.04;
+      let y=baseY+deflect(x,u,a,stalled);
+      if(stalled&&u<0.5&&x>cx-ch*0.1){
+        const k=(x-cx)/ch;
+        y+=Math.sin(St.t*5.5+k*7+u*18)*ch*0.10*Math.min(1,(x-(cx-ch*0.1))/(ch*0.35));
+      }
+      return y;
+    }
+    for(let i=0;i<LANES;i++){
+      const u=(i+0.5)/LANES;
+      const crowd=Math.max(0,Math.sin(a))*(u<0.5?1:0.35);
+      const sep=stalled&&u<0.5;
+      ctx.strokeStyle=sep?'rgba(190,225,255,0.16)':'rgba(190,225,255,'+(0.16+crowd*0.16)+')';
+      ctx.lineWidth=1;
+      ctx.beginPath();
+      for(let x=0;x<=W;x+=8){const y=laneY(u,x);x?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+      ctx.stroke();
+    }
+    St.p.forEach(function(pt){
+      const i=Math.floor(pt.lane*LANES),u=(i+0.5)/LANES;
+      const local=1+Math.exp(-Math.pow((pt.x-cx)/ch,2)*1.7)*(u<0.5?0.9:0.28)*Math.max(0,Math.sin(a))*2.4;
+      pt.x+=speed*local;
+      if(pt.x>W+12){pt.x=-12;pt.lane=Math.random();}
+      const y=laneY(u,pt.x),y2=laneY(u,pt.x-(4+local*4));
+      const sep=stalled&&u<0.5&&pt.x>cx-ch*0.1;
+      ctx.strokeStyle=sep?'rgba(255,190,190,0.55)':'rgba(215,240,255,'+(0.55+local*0.18)+')';
+      ctx.lineWidth=sep?1.4:1.8;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(pt.x,y);ctx.lineTo(pt.x-(4+local*4),y2);ctx.stroke();
+    });
+    // the wing
+    ctx.save();
+    drawFoil(a);
+    const fg=ctx.createLinearGradient(cx-ch*0.4,cy-ch*0.1,cx+ch*0.4,cy+ch*0.1);
+    fg.addColorStop(0,'#e8edf5');fg.addColorStop(1,'#9fb0c4');
+    ctx.fillStyle=fg;ctx.fill();
+    ctx.strokeStyle='rgba(20,30,45,0.85)';ctx.lineWidth=1.5;ctx.stroke();
+    ctx.restore();
+    // chord line and the angle it makes with the oncoming air
+    const lead=rot([-ch*0.35,0],a),trail=rot([ch*0.65,0],a);
+    ctx.strokeStyle='rgba(255,255,255,0.35)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(cx+lead[0],cy+lead[1]);ctx.lineTo(cx+trail[0],cy+trail[1]);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(cx-ch*0.55,cy);ctx.lineTo(cx+ch*0.7,cy);ctx.stroke();ctx.setLineDash([]);
+    ctx.strokeStyle=stalled?'#f87171':'#fbbf24';ctx.lineWidth=2;
+    ctx.beginPath();ctx.arc(cx,cy,ch*0.30,Math.min(0,a),Math.max(0,a));ctx.stroke();
+    ctx.fillStyle=stalled?'#f87171':'#fbbf24';ctx.font='bold 11px system-ui';ctx.textAlign='left';
+    ctx.fillText(aDeg+'°',cx+ch*0.32,cy+(a>0?ch*0.15:-ch*0.08));
+    // downwash: the air the wing has thrown at the ground
+    if(!stalled&&aDeg>0){
+      ctx.strokeStyle='rgba(134,239,172,0.75)';ctx.lineWidth=2;
+      for(let k=0;k<3;k++){
+        const x0=cx+ch*(0.55+k*0.22),y0=cy+ch*0.10+k*3;
+        const dy=Math.sin(a)*ch*0.5;
+        ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0,y0+dy);ctx.stroke();
+        ctx.beginPath();ctx.moveTo(x0,y0+dy);ctx.lineTo(x0-4,y0+dy-6);ctx.moveTo(x0,y0+dy);ctx.lineTo(x0+4,y0+dy-6);ctx.stroke();
+      }
+      ctx.fillStyle='rgba(134,239,172,0.9)';ctx.font='10px system-ui';ctx.textAlign='left';
+      ctx.fillText(tx('cDown','air thrown downwards'),cx+ch*0.52,cy+ch*0.10+Math.sin(a)*ch*0.5+16);
+    }
+    // force arrows
+    const liftPx=Math.min(ch*0.72,lift*1.6);
+    ctx.strokeStyle='#4ade80';ctx.lineWidth=3.5;ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(cx,cy-6);ctx.lineTo(cx,cy-6-liftPx);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(cx,cy-8-liftPx);ctx.lineTo(cx-6,cy-liftPx+2);ctx.lineTo(cx+6,cy-liftPx+2);ctx.closePath();
+    ctx.fillStyle='#4ade80';ctx.fill();
+    ctx.fillStyle='#4ade80';ctx.font='bold 11px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cLift','lift'),cx,cy-14-liftPx);
+    const dragPx=Math.min(ch*0.5,drag*3.2);
+    ctx.strokeStyle='#fb7185';ctx.lineWidth=3;
+    ctx.beginPath();ctx.moveTo(cx+ch*0.12,cy+ch*0.02);ctx.lineTo(cx+ch*0.12+dragPx,cy+ch*0.02);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(cx+ch*0.12+dragPx+2,cy+ch*0.02);ctx.lineTo(cx+ch*0.12+dragPx-5,cy+ch*0.02-5);
+    ctx.lineTo(cx+ch*0.12+dragPx-5,cy+ch*0.02+5);ctx.closePath();ctx.fillStyle='#fb7185';ctx.fill();
+    ctx.fillStyle='#fb7185';ctx.textAlign='left';ctx.fillText(tx('cDrag','drag'),cx+ch*0.14+dragPx,cy+ch*0.02-8);
+    // the lift-vs-angle curve, with you on it
+    const gx=W-Math.min(190,W*0.30),gy=H-118,gw=Math.min(176,W*0.27),gh=86;
+    ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(gx,gy,gw,gh);
+    ctx.strokeStyle='rgba(255,255,255,0.18)';ctx.lineWidth=1;ctx.strokeRect(gx,gy,gw,gh);
+    ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cCurve','lift vs angle'),gx+4,gy-5);
+    ctx.strokeStyle='rgba(125,211,252,0.9)';ctx.lineWidth=2;ctx.beginPath();
+    for(let ad=-4;ad<=22;ad+=0.5){
+      let c3=2*Math.PI*Math.sin(ad*Math.PI/180);
+      if(ad>STALL)c3=Math.max(0.18,2*Math.PI*Math.sin(STALL*Math.PI/180)*(1-(ad-STALL)/9));
+      const x=gx+((ad+4)/26)*gw,y=gy+gh-Math.max(0,Math.min(1,c3/2.0))*(gh-8)-4;
+      ad===-4?ctx.moveTo(x,y):ctx.lineTo(x,y);
+    }
+    ctx.stroke();
+    const mx=gx+((aDeg+4)/26)*gw,my=gy+gh-Math.max(0,Math.min(1,cl/2.0))*(gh-8)-4;
+    ctx.beginPath();ctx.arc(mx,my,4,0,Math.PI*2);ctx.fillStyle=stalled?'#f87171':'#fff';ctx.fill();
+    ctx.strokeStyle='rgba(248,113,113,0.6)';ctx.setLineDash([3,3]);ctx.lineWidth=1;
+    const sxp=gx+((STALL+4)/26)*gw;
+    ctx.beginPath();ctx.moveTo(sxp,gy+2);ctx.lineTo(sxp,gy+gh-2);ctx.stroke();ctx.setLineDash([]);
+    if(stalled){
+      ctx.fillStyle='rgba(248,113,113,0.95)';ctx.font='bold 13px system-ui';ctx.textAlign='center';
+      ctx.fillText(tx('cStall','STALLED - the flow has torn away from the wing'),W/2,H-14);
+    }else{
+      ctx.fillStyle='rgba(200,225,255,0.75)';ctx.font='11px system-ui';ctx.textAlign='center';
+      ctx.fillText(tx('cCap','the wing pushes air down, the air pushes the wing up'),W/2,H-14);
+    }
+    pLift.set(lift.toFixed(1)+' kN');
+    pDrag.set(drag.toFixed(1)+' kN');
+    pState.set(stalled?tx('vStall','Stalled'):(lift>=WEIGHT?tx('vClimb','Flying - lift beats weight'):tx('vSink','Sinking - not enough lift')));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simExoplanets(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#7c3aed';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.exoplanets&&SIMS.exoplanets.raf)cancelAnimationFrame(SIMS.exoplanets.raf);
+  const W=getSimWidth(container),H=430;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('exoplanets',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pDepth=pill(L.depth),pPer=pill(L.per),pKind=pill(L.kind);
+  pRow.appendChild(pDepth.el);pRow.appendChild(pPer.el);pRow.appendChild(pKind.el);
+  const rRp=mkRange(ctrl,L.rp,0.5,14,1,0.5,color);
+  const rA=mkRange(ctrl,L.dist,0.03,1.6,0.35,0.01,color);
+  const St=SIMS.exoplanets={raf:null,ph:0,lc:[],rv:[]};
+  const RSUN=109;                                   // solar radii in Earth radii
+  const SKY=Math.round(H*0.46);
+  const sx=Math.round(W*0.38),sy=Math.round(SKY*0.52),SR=Math.min(46,W*0.075);
+  function massOf(rp){                              // crude mass-radius relation, honest about it
+    if(rp<1.6)return Math.pow(rp,3.7);
+    if(rp<4)return 2.7*Math.pow(rp,1.3);
+    return 317*Math.pow(rp/11.2,1.15);
+  }
+  function frame(){
+    const rp=rRp.val,a=rA.val;
+    const depth=Math.pow(rp/RSUN,2);
+    const per=365.25*Math.pow(a,1.5);
+    const mp=massOf(rp);
+    const K=28.4*(mp/317.8)/Math.sqrt(a);           // m/s, solar-mass host
+    St.ph+=0.0042/Math.max(0.35,Math.pow(a,0.5));   // faster when closer in
+    if(St.ph>1)St.ph-=1;
+    const ang=St.ph*Math.PI*2;
+    // orbit projected almost edge-on, so transits actually happen on screen
+    const orbR=Math.min(W*0.30,60+a*150);
+    const px=sx+Math.cos(ang)*orbR, py=sy+Math.sin(ang)*orbR*0.12;
+    const front=Math.sin(ang)>0;                    // in front of the star
+    const prPx=2+SR*(rp/RSUN)*2.2;                  // exaggerated, or an Earth would be invisible
+    ctx.clearRect(0,0,W,H);
+    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#05060f');bg.addColorStop(1,'#0a0716');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    for(let i=0;i<60;i++){const bx=(i*151.7)%W,by=(i*97.3)%SKY;
+      ctx.beginPath();ctx.arc(bx,by,0.7,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.25)';ctx.fill();}
+    // habitable zone, drawn where the orbit is
+    const hz0=Math.min(W*0.30,60+0.95*150),hz1=Math.min(W*0.30,60+1.4*150);
+    ctx.save();
+    ctx.beginPath();ctx.ellipse(sx,sy,hz1,hz1*0.12,0,0,Math.PI*2);
+    ctx.ellipse(sx,sy,hz0,hz0*0.12,0,0,Math.PI*2,true);
+    ctx.fillStyle='rgba(74,222,128,0.20)';ctx.fill('evenodd');
+    ctx.restore();
+    ctx.fillStyle='rgba(74,222,128,0.65)';ctx.font='9px system-ui';ctx.textAlign='right';
+    ctx.fillText(tx('cHZ','habitable zone'),sx-hz0-6,sy-4);
+    ctx.strokeStyle='rgba(160,180,220,0.28)';ctx.lineWidth=1;ctx.setLineDash([3,4]);
+    ctx.beginPath();ctx.ellipse(sx,sy,orbR,orbR*0.12,0,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
+    if(!front){ctx.beginPath();ctx.arc(px,py,prPx,0,Math.PI*2);ctx.fillStyle='#94a3b8';ctx.fill();}
+    // the star, wobbling around the barycentre - the radial-velocity signal made visible
+    const wob=Math.min(SR*0.30,K*0.9);
+    const wx=sx-Math.cos(ang)*wob, wy=sy-Math.sin(ang)*wob*0.12;
+    const shift=Math.cos(ang);                      // >0 receding, <0 approaching
+    const glow=ctx.createRadialGradient(wx,wy,SR*0.3,wx,wy,SR*2.1);
+    glow.addColorStop(0,'rgba(255,236,170,0.35)');glow.addColorStop(1,'rgba(255,210,120,0)');
+    ctx.fillStyle=glow;ctx.beginPath();ctx.arc(wx,wy,SR*2.1,0,Math.PI*2);ctx.fill();
+    const sg=ctx.createRadialGradient(wx-SR*0.25,wy-SR*0.25,SR*0.1,wx,wy,SR);
+    sg.addColorStop(0,'#fffdf0');
+    sg.addColorStop(0.7,shift>0?'#ffd9a8':'#ffeccf');
+    sg.addColorStop(1,shift>0?'#f0a76a':'#cfd8ff');
+    ctx.fillStyle=sg;ctx.beginPath();ctx.arc(wx,wy,SR,0,Math.PI*2);ctx.fill();
+    if(front){ctx.beginPath();ctx.arc(px,py,prPx,0,Math.PI*2);ctx.fillStyle='#0b0b12';ctx.fill();}
+    ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font='9px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cStar','the star wobbles - blue coming, red going'),wx,sy+SR+18);
+    // ── the two measurements, drawn as they would be recorded ──
+    const gw=(W-46)/2,gh=Math.round(H*0.30),gy=SKY+34;
+    function panel(x,title){
+      ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(x,gy,gw,gh);
+      ctx.strokeStyle='rgba(255,255,255,0.16)';ctx.lineWidth=1;ctx.strokeRect(x,gy,gw,gh);
+      ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='bold 10px system-ui';ctx.textAlign='left';
+      ctx.fillText(title,x+3,gy-6);
+    }
+    const transiting=front&&Math.abs(px-wx)<SR+prPx;
+    const overlap=transiting?Math.min(1,(SR+prPx-Math.abs(px-wx))/(2*prPx)):0;
+    St.lc.push(Math.min(0.82,depth*overlap*49));    // 1% (a Jupiter) fills about half the panel
+    if(St.lc.length>gw)St.lc.shift();
+    St.rv.push(shift*Math.min(1,K/60));
+    if(St.rv.length>gw)St.rv.shift();
+    panel(16,tx('cLC','brightness of the star'));
+    ctx.strokeStyle='#facc15';ctx.lineWidth=1.6;ctx.beginPath();
+    St.lc.forEach(function(v,i){const y=gy+gh*0.26+v*gh*0.62;i?ctx.lineTo(16+i,y):ctx.moveTo(16+i,y);});
+    ctx.stroke();
+    ctx.strokeStyle='rgba(250,204,21,0.25)';ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(16,gy+gh*0.26);ctx.lineTo(16+gw,gy+gh*0.26);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='rgba(250,204,21,0.55)';ctx.font='9px system-ui';ctx.textAlign='right';
+    ctx.fillText(tx('cDip','the dip = the planet crossing'),16+gw-4,gy+gh-5);
+    panel(30+gw,tx('cRV','speed of the star towards us'));
+    ctx.strokeStyle='#7dd3fc';ctx.lineWidth=1.6;ctx.beginPath();
+    St.rv.forEach(function(v,i){const y=gy+gh/2-v*gh*0.34;i?ctx.lineTo(30+gw+i,y):ctx.moveTo(30+gw+i,y);});
+    ctx.stroke();
+    ctx.strokeStyle='rgba(255,255,255,0.18)';ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(30+gw,gy+gh/2);ctx.lineTo(30+gw*2,gy+gh/2);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='rgba(125,211,252,0.7)';ctx.font='9px system-ui';ctx.textAlign='right';
+    ctx.fillText('K = '+(K<1?K.toFixed(2):K.toFixed(1))+' m/s',30+gw*2-4,gy+gh-5);
+    // verdict
+    const inHZ=a>=0.95&&a<=1.4;
+    const kind=rp<1.6?tx('vRocky','rocky planet'):(rp<4?tx('vSuper','super-Earth or mini-Neptune'):(rp<8?tx('vNep','Neptune-like'):tx('vJup','gas giant')));
+    const detect=depth*1e6<20?tx('cHard','too small to detect today'):(K<0.3?tx('cRVhard','mass out of reach by wobble'):tx('cOK','both signals detectable'));
+    ctx.textAlign='center';ctx.font='11px system-ui';ctx.fillStyle='rgba(210,225,255,0.85)';
+    ctx.fillText(detect,W/2,H-12);
+    pDepth.set(depth*100>=0.1?(depth*100).toFixed(2)+' %':Math.round(depth*1e6)+' ppm');
+    pPer.set(per<2?(per*24).toFixed(1)+' '+tx('vHours','hours'):(per<400?per.toFixed(0)+' '+tx('vDays','days'):(per/365.25).toFixed(1)+' '+tx('vYears','years')));
+    pKind.set(kind+(inHZ?' · '+tx('vHZ','in the habitable zone'):''));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simElNino(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0891b2';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.elnino&&SIMS.elnino.raf)cancelAnimationFrame(SIMS.elnino.raf);
+  const W=getSimWidth(container),H=520;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('elnino',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pOni=pill(L.oni),pPhase=pill(L.phase),pEff=pill(L.eff);
+  pRow.appendChild(pOni.el);pRow.appendChild(pPhase.el);pRow.appendChild(pEff.el);
+  const rW=mkRange(ctrl,L.wind,-6,10,4,1,color);
+  const St=SIMS.elnino={raf:null,t:0,bub:[]};
+  // Equirectangular map of the tropical Pacific: 100E to 70W, 32N to 40S.
+  const LON0=100,LON1=290,LAT0=32,LAT1=-40;
+  const MAP={x:12,y:30,w:W-24,h:Math.round((W-24)*(LAT0-LAT1)/(LON1-LON0))};
+  if(MAP.h>H*0.60){MAP.h=Math.round(H*0.60);}
+  const SEC={x:12,y:MAP.y+MAP.h+30,w:W-24,h:H-(MAP.y+MAP.h+30)-34};
+  // The coastline and the temperature field only change when the slider does, so
+  // they are painted once into offscreen layers instead of every frame.
+  const DPR=window.devicePixelRatio||1;
+  const bSea=document.createElement('canvas'),bLand=document.createElement('canvas');
+  bSea.width=bLand.width=canvas.width;bSea.height=bLand.height=canvas.height;
+  const sctx=bSea.getContext('2d'),lctx=bLand.getContext('2d');
+  sctx.scale(DPR,DPR);lctx.scale(DPR,DPR);
+  const px=function(lon){return MAP.x+(lon-LON0)/(LON1-LON0)*MAP.w;};
+  const py=function(lat){return MAP.y+(LAT0-lat)/(LAT0-LAT1)*MAP.h;};
+  // Coastlines, simplified but in real coordinates
+  // Real coastlines: Natural Earth 110m, clipped to the Pacific window, simplified
+  // to 0.25 degrees and stored as flat lon,lat strings to keep the engine small.
+  const COAST=['107,77,107.2,76.5,111.1,76.7,114.1,75.8,113.9,75.3,109.4,74.2,113,74,113.5,73.3,115.6,73.8,118.8,73.6,119,73.1,123.2,73,123.3,73.7,127,73.6,128.6,73,129.1,72.4,128.5,72,131.3,70.8,132.3,71.8,133.9,71.4,139.9,71.5,139.1,72.4,140.5,72.8,149.5,72.2,153,70.8,159,70.9,159.8,70.5,159.7,69.7,160.9,69.4,167.8,69.6,169.6,68.7,170.8,69,170,69.7,170.5,70.1,178.6,69.4,180,69,180,65,178.7,64.5,177.4,64.6,178.3,64.1,179.5,62.6,179.2,62.3,177.4,62.5,173.7,61.7,170.3,59.9,168.9,60.6,166.3,59.8,165.8,60.2,164.9,59.7,163.5,59.9,162,58.2,162.1,57.8,163.2,57.6,163.1,56.2,162.1,56.1,161.7,55.3,162.1,54.9,160.4,54.3,160,53.2,158.5,53,158.2,51.9,156.8,51,155.4,55.4,155.9,56.8,156.8,57.4,156.8,57.8,158.4,58.1,163.7,61.1,164.5,62.6,163.3,62.5,162.7,61.6,160.1,60.5,159.3,61.8,156.7,61.4,154.2,59.8,155,59.1,151.3,58.8,151.3,59.5,149.8,59.7,148.5,59.2,142.2,59,135.1,54.7,136.7,54.6,137.2,54,138.2,53.8,138.8,54.3,139.9,54.2,141.3,53.1,141.4,52.2,140.6,51.2,140.1,48.4,138.2,46.3,134.9,43.4,133.5,42.8,132.3,43.3,130,41.9,129.7,40.9,127.5,39.8,127.4,39.2,128.3,38.6,129.5,36.8,129.5,35.6,129.1,35.1,126.5,34.4,126.6,35.7,126.1,36.7,126.9,36.9,126.2,37.7,125.3,37.7,124.7,38.1,125.2,38.7,125.3,39.6,124.3,39.9,121.1,38.9,122.2,40.4,121.6,40.9,119,39.3,118,39.2,117.5,38.7,118.1,38.1,118.9,37.9,118.9,37.4,119.7,37.2,120.8,37.9,122.4,37.5,122.5,36.9,121.1,36.7,119.2,34.9,120.2,34.4,121.9,31.7,121.9,30.9,121.3,30.7,122.1,29.8,121.7,28.2,121.1,28.1,118.7,24.5,115.9,22.8,114.2,22.2,113.8,22.5,113.2,22.1,110.8,21.4,110.4,20.3,109.9,20.3,109.9,21.4,108.5,21.7,106.7,20.7,105.9,19.8,105.7,19.1,108.9,15.3,109.3,13.4,109.2,11.7,105.2,8.6,104.8,9.2,105.1,9.9,103.5,10.6,102.6,12.2,100.8,12.6,101,13.4,100.1,13.4,99.2,9.2,99.9,9.2,100.5,7.4,103,5.5,103.4,4.9,103.5,2.8,104.2,1.3,103.5,1.2,101.4,2.8,100.2,5.3,100.1,6.5,98.5,8.4,98.3,7.8,98.2,8.4,98.8,11.4,97.2,16.9,95.4,15.7,94.2,16,94.5,17.3,94.3,18.2,93.5,19.4,93.7,19.7,92.4,20.7,91.4,22.8,90.5,22.8,90.3,21.8,89,22.1,88.9,21.7,87,21.5,87,20.7,86.5,20.2,85.1,19.5,82.2,17,82.2,16.6,80.3,15.9,79.9,10.4,79.3,10.3,78.9,9.5,79.2,9.2,78.3,8.9,77.5,8,76.6,8.9,74.9,12.7,74.4,14.6,73.5,16,72.6,21.4,71.2,20.8,70.5,20.9,69.2,22.1,69.6,22.5,69.3,22.8,67.4,23.9,66.4,25.4,61.5,25.1,57.4,25.7,57,27,56.5,27.1,54.7,26.5,51.5,27.9,50.1,30.1,48.9,30.3,48,30,48.8,27.7,50.2,26.7,50.1,25.9,50.8,24.8,51,26,51.6,25.8,51.4,24.6,51.8,24,54,24.1,56.4,26.4,56.4,24.9,56.8,24.2,58.7,23.6,59.8,22.3,58.5,20.4,57.8,20.2,57.7,18.9,56.6,18.6,56.3,17.9,55.3,17.6,55.3,17.2,52.4,16.4,52.2,15.6,49.6,14.7,48.7,14,45.6,13.3,45,12.7,43.5,12.6,42.6,15.2,42.6,16.8,40.9,19.5,39.1,21.3,39.1,22.6,38.5,23.7,37.5,24.3,35.1,28.1,34.6,28.1,34.9,29.5,33.9,27.6,32.4,29.9,34.1,26.1,35.7,23.9,35.5,23.1,36.9,22,37.5,18.6,38.4,18,39.3,15.9,43.3,12.4,43.3,12,42.7,11.7,44.1,10.4,44.6,10.4,51.1,12,51,10.6,49.5,6.8,47.7,4.2,40.3,-2.6,39.2,-4.7,38.8,-6.5,39.4,-6.8,39.2,-8.5,40.5,-10.8,40.8,-14.7,39.5,-16.7,37.4,-17.6,34.8,-19.8,34.7,-20.5,35.6,-22.1,35.6,-23.7,35,-24.5,32.6,-25.7,32.9,-26.2,32.2,-28.8,28.2,-32.8,25.8,-33.9,22.6,-33.9,19.6,-34.8,18.4,-34.1,17.9,-32.6,18.2,-32.4,18.2,-31.7,15.2,-27.1,14.3,-22.1,11.8,-18.1,11.8,-15.8,12.5,-13.5,13.6,-12,13.7,-10.7,12.9,-9.2,13.2,-8.6,11.9,-5,8.8,-1.1,9.8,3.1,9.4,3.7,8.5,4.8,5.9,4.3,4.3,6.3,1.9,6.1,-2,4.7,-4.6,5.2,-7.5,4.3,-9,4.8,-12.4,7.3,-14.8,10.9,-16.6,12.2,-16.7,13.6,-17.6,14.7,-16.5,16.1,-16.1,18.1,-16.3,20.1,-17.1,21,-17,21.9,-16,23.7,-15.1,24.5,-14.4,26.3,-12.6,28,-11.7,28.1,-9.6,29.9,-9.8,31.2,-9.3,32.6,-6.9,34.1,-5.9,35.8,-2.2,35.2,1.5,36.6,5.3,36.7,6.3,37.1,8.4,36.9,9.5,37.4,10.2,37.2,10.2,36.7,11.1,36.9,10.6,36.4,10.9,35.7,10.8,34.8,10.1,34.3,10.3,33.8,11.5,33.1,15.2,32.3,15.7,31.4,19.1,30.3,20.1,31,19.8,31.8,20.1,32.2,21.5,32.8,22.9,32.6,23.2,32.2,25.2,31.6,26.5,31.6,28.9,30.9,31,31.6,31.7,31.4,32,30.9,32.2,31.3,33.8,31,34.6,31.5,36,34.6,36.1,35.8,35.8,36.3,36.2,36.7,34.7,36.8,34,36.2,32.5,36.1,31.7,36.6,30.6,36.7,29.7,36.1,28.7,36.7,27.6,36.7,26.3,38.2,26.8,39,26.2,39.5,27.3,40.4,28.8,40.5,29.2,41.2,31.1,41.1,33.5,42,35.2,42,38.3,40.9,40.4,41,41.6,41.5,41.7,42,41.5,42.6,36.7,45.2,37.4,45.4,38.2,46.2,37.7,46.6,39.1,47.3,35,46.3,35,45.7,36.5,45.5,36.3,45.1,33.9,44.4,33.3,44.6,33.5,45,32.5,45.3,33.6,45.9,33.3,46.1,31.7,46.3,31.7,46.7,30.7,46.6,29.6,45,28.8,44.9,28.6,43.7,27.7,42.6,28.1,41.6,29,41.3,28.8,41.1,27.6,41,26.4,40.2,26.1,40.8,24.9,40.9,23.7,40.7,24.4,40.1,23.9,40,22.8,40.5,22.6,40.3,23.4,39.2,23,39,24,38.2,24,37.7,23.1,37.9,23.4,37.4,22.8,37.3,23.2,36.4,22.5,36.4,21.7,36.8,21.1,38.3,19.4,40.3,19.5,41.7,16,43.5,15.2,44.2,14.9,45.1,14.3,45.2,14,44.8,13.7,45.1,13.9,45.6,13.1,45.7,12.3,45.4,12.6,44.1,15.1,42,15.9,42,16.2,41.7,15.9,41.5,18.5,40.2,18.3,39.8,16.9,40.4,16.4,39.8,17.2,39.4,17.1,38.9,16.1,38,15.7,37.9,16.1,39,15.4,40,12.1,41.7,10.5,42.9,10.2,43.9,8.9,44.4,6.5,43.1,4.6,43.4,3.1,43.1,3,41.9,2.1,41.2,0.8,41,-0.3,39.3,0.1,38.7,-0.7,37.6,-1.4,37.4,-2.1,36.7,-4.4,36.7,-5.4,35.9,-5.9,36,-6.5,36.9,-8.9,36.9,-8.8,38.3,-9.5,38.7,-8.8,40.8,-9,42.6,-9.4,43,-8,43.7,-1.9,43.4,-1.4,44,-1.2,46,-3,47.6,-4.5,48,-4.6,48.7,-1.6,48.6,-1.9,49.8,-1,49.3,1.3,50.1,1.6,50.9,3.8,51.6,4.7,53.1,7.1,53.7,8.1,53.5,8.8,54,8.1,55.5,8.1,56.5,8.5,57.1,10.6,57.7,10.3,56.9,10.9,56.5,9.7,55.5,9.9,54.6,11,54.4,10.9,54,12.5,54.5,14.1,53.8,17.6,54.9,19.7,54.4,19.9,54.9,21.3,55.2,21.1,56.8,21.6,57.4,22.5,57.8,23.3,57,24.1,57,24.4,58.4,23.4,58.6,23.3,59.2,25.9,59.6,28,59.5,29.1,60,28.1,60.5,22.9,59.8,21.3,60.7,21.5,61.7,21.1,62.6,21.5,63.2,25.4,65.1,25.3,65.5,23.9,66,22.2,65.7,21.2,65,21.4,64.4,17.8,62.7,17.1,61.3,18.8,60.1,17.9,59,16.8,58.7,15.9,56.1,14.7,56.2,14.1,55.4,12.9,55.4,10.4,59.5,8.4,58.3,7,58.1,5.7,58.6,5,62,10.5,64.5,14.8,67.8,19.2,69.8,23,70.2,24.5,71,28.2,71.2,31.3,70.5,30,70.2,31.1,69.6,32.1,69.9,40.3,67.9,41.1,67.5,41.1,66.8,40,66.3,38.4,66,33.2,66.6,34.8,65.9,34.9,64.4,37,63.8,37.1,64.3,36.5,64.8,37.2,65.1,39.6,64.5,40.4,64.8,39.8,65.5,42.1,66.5,43.9,66.1,44.5,66.8,43.7,67.4,44.2,68,43.5,68.6,46.3,68.3,46.8,67.7,45.6,67.6,45.6,67,46.3,66.7,47.9,66.9,48.1,67.5,53.7,68.9,54.5,68.8,53.5,68.2,54.7,68.1,58.8,68.9,59.9,68.3,61.1,68.9,60,69.5,60.6,69.9,63.5,69.5,68.5,68.1,69.2,68.6,68.1,69.4,66.9,69.5,67.3,69.9,66.7,71,68.5,71.9,69.2,72.8,72.6,72.8,72.8,72.2,71.8,71.4,72.8,70.4,72.6,69,73.7,68.4,71.3,66.3,72.4,66.2,75.1,67.8,74.5,68.3,74.9,69,73.8,69.1,73.6,69.6,74.4,70.6,73.1,71.4,74.9,72.1,74.7,72.8,75.2,72.9,75.7,72.3,75.3,71.3,76.4,71.2,75.9,71.9,77.6,72.3,79.7,72.3,81.5,71.8,80.6,72.6,80.5,73.6,86.8,73.9,86,74.5,87.2,75.1,93.2,76,96.7,75.9,100.8,76.4,102,77.3,104.4,77.7,106.1,77.4,104.7,77.1,107,77','269.5,69.5,269.4,68.5,270.8,69.3,272,68.6,271.7,67.9,272.6,67.2,274.4,68.8,274.5,69.9,277.4,69.7,278.7,69.2,278.8,68.7,278,68.1,278.7,67.6,278.6,67.1,276.7,66.4,274.2,66.6,272.7,64.8,271.5,64.1,270.1,64,269.3,63.6,269.2,63,268.1,62.8,266.8,62,265.8,60.9,265.3,58.9,266.8,58.8,267.7,57.1,269.1,57.3,275,55.3,277.7,55.1,277.9,53.3,278.6,52.2,280.1,51.2,280.9,51.5,281.4,52.6,280.9,54.1,280.2,54.7,281.8,55.1,283.5,56.5,282.7,58.1,281.5,58.8,282.7,59.9,281.9,62.3,286.2,62.4,288.6,61.1,290.4,61.1,290.7,59,292.4,58.2,293.8,58.8,295.4,60.3,298.6,57,298.2,56.3,300.4,55.2,302.7,54.6,303.1,53.8,304.2,53.3,304.3,52.1,300,50.2,293.6,50.2,291.5,49.1,288.9,46.8,289.7,47,291.3,48.3,293.4,49.1,294.9,49.2,295.8,48.7,294.9,48.1,295.5,46.2,296.8,45.7,298.5,45.9,299.5,47,299.6,46.3,300.2,45.9,294.6,43.5,293.9,43.6,293.8,44.5,295.6,45.3,292.9,45.1,293,44.8,289.9,43.7,289.3,43,289.2,42.3,289.5,41.8,289.9,41.8,289.8,42.1,290.1,41.9,290,41.6,286.3,40.9,288.1,40.9,286,40.8,285.8,39.7,285.1,38.9,284.5,39.5,284.9,38.4,284.1,37.2,284.3,37.9,283.8,38.3,283.7,39.2,283.7,38.1,283,38.2,283.7,37.9,284.3,35.6,283.6,34.8,280.9,33.5,278.7,31.4,278.7,30,279.9,26.9,279.6,25.2,278.8,25.2,278.3,25.9,277.1,27.9,277.1,29.1,275.9,30.1,274.9,29.6,273.6,30.4,270.8,30.3,270.4,30.2,270.8,29.3,269.8,29.1,268.4,29.7,266.2,29.7,263.4,28.3,262.6,27.4,262.9,25.9,262.1,22.4,263.7,19.3,265.6,18.1,268,18.7,269.2,19.3,269.7,21,272.9,21.5,273.2,20.8,272.4,19.6,272.2,18.3,271.7,18.5,271.6,16.5,271.1,15.9,275,16,276.6,15.3,276.8,14.3,276.2,11.1,277.8,9,278.6,8.8,280.4,9.6,283.2,8.6,284.3,9.4,284.5,10.6,285.1,11.1,286.6,11.2,288.2,12.4,288.9,12.1,288.6,11.5,288.1,11.4,288.4,10.4,287.9,9.9,288.3,9.1,288.7,9.1,289,9.9,288.6,11,289.8,11.4,289.7,11.8,290.1,12.2,290.4,11.5,291.1,11.4,291.8,10.6,293.8,10.6,295.1,10.1,295.7,10.6,298.1,10.7,297.3,10.4,297.6,9.9,299.2,9.4,299.3,8.6,300.9,8,301.5,6.8,302.9,6,306,5.8,308.7,4.2,309.5,1.9,310,1.7,310.1,1,309.3,0.2,309.6,-0.1,311.4,-0.2,311.4,-1.2,312.2,-0.6,315.1,-1.6,315.6,-2.1,315.4,-2.7,316.6,-2.4,320,-2.9,322.8,-4.8,324.4,-5.1,325.3,-7.3,324.9,-9,321.3,-13.1,320.7,-17.9,319.1,-21.9,318.2,-22.4,318,-23,315.4,-23.4,312.4,-24.9,311.5,-25.9,311.1,-28.7,306.2,-34.4,305.1,-35,303.8,-34.9,302.2,-34.5,301.6,-33.9,301.5,-34.4,302.8,-35.3,302.6,-36,303.3,-36.4,303.2,-36.9,302.3,-38.2,300.8,-38.7,297.7,-38.8,297.9,-40.7,297.3,-41,296.2,-41.2,295.3,-40.8,294.9,-41.1,295,-42.1,295.7,-42.4,296.2,-42,296.5,-42.6,294.8,-43.5,294.4,-45,293.5,-45,292.7,-45.6,292.4,-46.3,294.4,-47.2,294,-48.1,292.8,-48.7,292.2,-49.9,290.9,-50.7,291.2,-51.8,291.8,-52.3,290.5,-52.3,289.2,-52.9,289,-53.8,287.4,-53.5,285.1,-52.3,284.4,-48.7,284.8,-47.7,285.9,-46.9,284.4,-46.6,285.3,-45.8,285.6,-44.1,286.8,-44.5,287.3,-42.4,286.6,-42.1,286.3,-43.4,285.7,-43.2,286.3,-39.9,286.8,-39.3,286.4,-37.2,286.8,-37.1,288.6,-32.4,288.5,-28.9,289.1,-27.6,289.8,-19.8,289.6,-18.3,288.5,-17.4,284,-14.6,283.7,-13.5,280.2,-7.2,278.8,-6.1,279.1,-5.7,278.6,-4.7,280.2,-2.7,280,-2.2,279.6,-2.7,279,-2.2,279.1,-1.1,279.4,-0.9,279.9,0.8,281.1,1.4,281.6,2.6,282.1,2.7,282.9,3.8,282.5,4.1,282.5,6.7,281.8,7.5,281.8,8.3,280.4,8.9,279.5,8.1,280,7.5,279.1,7.2,278.9,7.8,276.5,8.4,276.4,9.1,275,10.1,274.9,9.6,274.3,9.9,274.3,11.1,272.3,12.9,272.7,13,272.5,13.3,271.5,13.2,268.8,13.9,265.3,16.2,263.4,15.7,256.5,18.3,254.5,19.9,254.3,20.4,254.6,20.5,254.7,21.4,254,22.8,251.6,25.2,250.7,25.6,250.7,26.4,247.8,29,246.9,31.2,246.1,31.6,245.2,31.8,245.3,30.2,248.4,26.7,249.3,24.3,249.8,24.3,250.6,23.4,250,22.8,249.7,23.4,247.8,24.7,247.7,26,244.9,27.7,245.4,27.7,245.8,28.6,244.5,29.6,242.7,33,241.5,34,239.4,34.6,235.6,40.3,235.8,42,235.5,42.8,236.1,45.5,235.3,48.2,236.9,48,237.4,47.1,237.7,47.4,237.2,49,234.4,50.4,232.6,50.8,232,51.7,232.1,52.3,230.9,52.8,230.7,53.6,229.5,54.3,229.5,54.8,228,55.5,227.8,56.4,226.5,57.2,225.9,58.1,223.4,58.2,220.1,59.5,216,60,212.9,60.9,211.8,60.7,212,60,208.3,59.2,208.1,59.7,208.6,60.7,209.7,61,209.4,61.3,206,59.4,206.7,58.9,205.8,58.1,203.7,57.4,201.6,56,195.2,54.4,198.2,55.9,199.4,56,202.3,57.6,203,58.9,200.9,58.4,200.3,58.9,200,58.6,199.6,59.1,198,58.7,198.1,59.6,197.5,60,196.2,59.8,194.7,60.5,194.6,61.1,193.9,61.5,195.4,63.1,196.9,63.1,199.2,63.8,198.5,64.4,199.2,64.8,197.2,64.3,195,64.4,193.6,64.7,191.9,65.7,195.5,66.6,196.3,66.6,196.2,66.1,198.3,66.1,194.6,68,193.2,68.4,193.8,68.9,196.8,69.4,198.1,70.3,203.4,71.4,205.7,70.7,216.4,70.2,223.5,68.9,225.6,69.6,227.1,69.5,230.2,70.2,230.9,69.8,231.9,70.5,234.2,69.5,235.6,70.2,235.7,69.4,238.5,69.8,244.8,68.9,246.1,68.4,244.7,67.9,250.1,68,251.1,67.4,252.2,67.9,251.2,68.3,251.8,68.7,253.8,68.8,255.7,68,258.5,67.6,261.6,67.8,261.4,68.4,262.3,68.6,263.9,68.2,263.9,67.3,264.5,68.1,265.3,68.1,265.8,69.1,263.5,70.1,263.6,71.2,264.8,71.9,267.1,71.3,268.5,70.2,267.6,69.7,269.5,69.5','143.6,-13.8,143.9,-14.5,144.6,-14.2,145.4,-15,146.4,-19,148.8,-20.4,149.7,-22.3,150.7,-22.4,150.9,-23.5,152.9,-25.3,153.1,-26.1,153.1,-27.3,153.6,-28.1,152.9,-31.6,150.3,-35.7,150,-37.4,148.3,-37.8,146.3,-39,144.9,-38.4,145,-37.9,143.6,-38.8,140.6,-38,140,-37.4,139.6,-36.1,138.1,-35.6,138.4,-35.1,138.2,-34.4,137.7,-35.1,136.8,-35.3,137.9,-33.6,137.8,-32.9,136.4,-34.1,136,-34.9,135.2,-34.5,135.2,-33.9,134.1,-32.8,134.3,-32.6,131.3,-31.5,126.1,-32.2,124.2,-33,123.7,-33.9,119.9,-34,118,-35.1,116.6,-35,115,-34.2,115,-33.6,115.7,-33.3,115.7,-31.6,113.3,-26.1,113.8,-26.5,113.4,-25.6,114.2,-26.3,113.4,-24.4,114.1,-21.8,114.2,-22.5,114.6,-21.8,116.7,-20.7,120.9,-19.7,122.2,-18.2,122.3,-17.3,123,-16.4,123.4,-17.3,123.9,-17.1,123.5,-16.6,123.8,-16.1,124.3,-16.3,124.4,-15.6,125.7,-14.2,127.1,-13.8,128.4,-14.9,129.6,-15,129.4,-14.4,130.6,-12.5,132.6,-12.1,132.6,-11.6,131.8,-11.3,132.4,-11.1,135.3,-12.2,136.5,-11.9,137,-12.4,136,-13.3,135.5,-15,140.2,-17.7,140.9,-17.4,141.7,-15,141.5,-13.7,142.1,-11,142.5,-10.7,142.8,-11.2,143.6,-13.8','134.1,-1.2,134.4,-2.8,135.5,-3.4,136.3,-2.3,137.4,-1.7,138.3,-1.7,144.6,-3.9,145.8,-4.9,146,-5.5,147.6,-6.1,147.9,-6.6,147,-6.7,147.2,-7.4,148.7,-9.1,149.3,-9.1,149.3,-9.5,150.8,-10.3,150.7,-10.6,147.9,-10.1,146,-8.1,144.7,-7.6,143.3,-8.2,143.4,-9,142.6,-9.3,141,-9.1,140.1,-8.3,139.1,-8.1,137.6,-8.4,138,-7.6,138.7,-7.3,137.9,-5.4,133.7,-3.5,133,-4.1,132.8,-3.3,132,-2.8,133.8,-2.5,133.7,-2.2,132.2,-2.2,130.5,-0.9,132.4,-0.4,134,-0.8,134.1,-1.2','125.2,1.4,124.4,0.4,123.7,0.2,120.2,0.2,120,-0.5,120.9,-1.4,121.5,-1,123.3,-0.6,123.3,-1.1,122.8,-0.9,121.5,-1.9,122.5,-3.2,122.3,-3.5,123.2,-4.7,123.2,-5.3,122.6,-5.6,122.2,-5.3,122.7,-4.5,121.7,-4.9,121.5,-4.6,121.6,-4.2,120.9,-3.6,121,-2.6,120.3,-2.9,120.4,-5.5,119.4,-5.4,119.5,-3.5,119.1,-3.5,118.8,-2.8,120,0.6,120.9,1.3,122.9,0.9,124.1,0.9,125.1,1.6,125.2,1.4','117.9,1.8,119,0.9,117.8,0.8,117.5,-0.8,116.6,-1.5,116.1,-4,116,-3.7,114.9,-4.1,114.5,-3.5,113.3,-3.1,112.1,-3.5,111.7,-3,110.2,-2.9,110.1,-1.6,109.1,-0.5,109.1,1.3,109.7,2,110.4,1.7,111.2,1.9,111.4,2.7,113,3.1,116.7,6.9,117.1,6.9,117.7,6,119.2,5.4,119.1,5,118.4,5,118.6,4.5,117.9,4.1,117.3,3.2,118,2.3,117.9,1.8','141,37.1,140.8,35.8,140.3,35.1,137.2,34.6,135.8,33.5,135.1,33.8,135.1,34.6,131,33.9,132,33.1,131.3,31.5,130.7,31,130.2,31.4,130.4,32.3,129.4,33.3,130.4,33.6,132.6,35.4,135.7,35.5,136.7,37.3,137.4,36.8,139.4,38.2,140.1,39.4,139.9,40.6,140.3,41.2,141.4,41.4,141.9,40,141.9,39.2,141,38.2,141,37.1','126.4,8.4,126.5,7.2,126.2,6.3,125.8,7.3,125.4,6.8,125.7,6,125.4,5.6,124.2,6.2,123.9,6.9,124.2,7.4,123.6,7.8,122.1,6.9,121.9,7.2,122.3,8,123.5,8.7,123.8,8.2,124.6,8.5,124.8,9,125.5,9,125.4,9.8,126.2,9.3,126.4,8.4','121.3,18.5,121.9,18.2,122.2,18.5,122.5,17.1,122.3,16.3,121.7,15.9,121.7,14.3,124,13.8,124.1,12.5,122.9,13.6,122.7,13.2,122,13.8,120.6,13.9,121,14.5,120.7,14.8,120.6,14.4,120.1,15,119.9,16.4,120.3,16,120.7,18.5,121.3,18.5','280.3,22.8,280.7,22.4,281.7,22.5,283.5,21.2,284.4,21,284.3,20.7,285.8,20.3,285,19.9,282.2,19.9,282.9,20.4,281.9,20.7,281.3,21.6,278.2,22.2,277.8,22.4,278.2,22.6,277.2,22.7,275.9,21.9,275,21.9,276.2,22.8,277.7,23.2,280.3,22.8','174.6,-36.2,175.3,-37.2,175.4,-36.5,175.8,-36.8,176,-37.6,176.8,-37.9,178.5,-37.7,178,-39.2,177.2,-39.1,176,-41.3,175.2,-41.7,174.7,-41.3,175.2,-40.5,174.9,-39.9,173.8,-39.5,174.6,-38.8,174.7,-37.4,172.6,-34.5,174.3,-35.3,174.6,-36.2','173,-40.9,173.2,-41.3,174,-40.9,174.2,-41.3,174.2,-41.8,172.7,-43.4,173.1,-43.9,171.5,-44.2,170.6,-45.9,169.3,-46.6,166.7,-46.2,166.5,-45.9,167,-45.1,170.5,-43,172.1,-41,172.8,-40.5,173,-40.9','105.8,-5.9,104.7,-5.9,102.6,-4.2,99.3,0.2,98.6,1.8,95.4,5,95.3,5.5,97.5,5.2,100.6,2.1,101.7,2.1,103.8,0.1,103.4,-0.7,104.4,-1.1,104.9,-2.3,105.6,-2.4,106.1,-3.1,105.8,-5.9','287.4,19.9,290,19.6,291.7,18.6,291.3,18.2,289.3,18.4,288.6,17.6,287.6,18.2,286.1,18,285.5,18.3,285.6,18.7,287.7,18.7,287.2,19.5,286.6,19.6,287.4,19.9','108.6,-6.8,110.5,-6.9,110.8,-6.5,112.6,-6.9,113,-7.6,115.7,-8.4,114.6,-8.8,108.3,-7.8,105.4,-6.9,106.1,-5.9,107.3,-6,108.6,-6.8','152,-5.5,150.2,-6.3,148.3,-5.7,148.4,-5.4,149.8,-5.5,150.1,-5,150.2,-5.5,150.8,-5.5,151.6,-4.8,151.5,-4.2,152.3,-4.3,152,-5.5','128.7,1.1,128.6,0.3,128.1,0.4,128,-0.3,128.4,-0.8,128.1,-0.9,127.4,1,127.6,1.8,127.9,2.2,128,1.6,128.6,1.5,128.7,1.1','145.4,-40.8,146.4,-41.1,148.3,-40.9,148.4,-42.1,147.9,-43.2,147.6,-42.9,146.9,-43.6,146,-43.5,144.7,-41.2,144.7,-40.7,145.4,-40.8','125.5,12.2,125.8,11,125,11.3,125.3,10.4,124.8,10.1,124.3,11.5,124.9,11.4,124.9,11.8,124.3,12.6,125.2,12.5,125.5,12.2','134.6,34.1,134.8,33.8,134.2,33.2,133.8,33.5,133,32.7,132.4,33,132.9,34.1,133.5,33.9,133.9,34.4,134.6,34.1','124,10.3,123,9,122.4,9.7,122.9,10.9,123.5,10.9,123.3,10.3,124.1,11.2,124,10.3','110.3,18.7,109.5,18.2,108.7,18.5,108.6,19.4,109.1,19.8,110.8,20.1,111,19.7,110.3,18.7','124.4,-10.1,123.5,-10.2,124,-9.3,125.1,-8.7,127.3,-8.4,125.1,-9.4,124.4,-10.1','122.9,-8.1,122.8,-8.6,119.9,-8.8,119.9,-8.4,120.7,-8.2,121.3,-8.5,122.9,-8.1','153.1,-4.5,152.8,-4.8,152.4,-3.8,150.7,-2.7,150.9,-2.5,152.2,-3.2,153.1,-4.5','167.1,-22.2,166.7,-22.4,165.5,-21.7,164,-20.1,165,-20.5,167.1,-22.2','178.4,-17.3,178.7,-17.6,178.6,-18.2,177.4,-18.2,177.7,-17.4,178.4,-17.3','179.4,-16.8,178.7,-17,178.6,-16.6,180,-16.1,180,-16.6,179.4,-16.8','130.5,-3.1,130.8,-3.9,130,-3.4,127.9,-3.4,128.1,-2.8,130.5,-3.1','121.2,22.8,120.7,22,120.1,23.6,121.5,25.3,122,25,121.2,22.8','167.1,-14.9,167.3,-15.7,166.6,-15.4,166.6,-14.6,167.1,-14.9','162.1,-10.5,162.4,-10.8,161.7,-10.8,161.3,-10.2,162.1,-10.5','117.9,-8.1,118.9,-8.3,119.1,-8.7,116.7,-9,117.9,-8.1','155.9,-6.8,155.2,-6.5,154.5,-5.1,156,-6.5,155.9,-6.8','127.2,-3.5,126.9,-3.8,126,-3.2,127,-3.1,127.2,-3.5','118.5,9.3,117.2,8.4,119.5,11.4,119.7,10.6,118.5,9.3','121.9,11.9,123.1,11.6,123.1,11.2,122,10.4,121.9,11.9','283.1,17.9,281.7,18.2,283.1,18.4,283.8,17.9,283.1,17.9','204.5,19.1,204.1,19.1,204.1,20.3,205.2,19.5,204.5,19.1','282.5,23.8,281.6,24.6,281.8,25.2,282.1,25.2,282.5,23.8','282.2,26.6,281.1,26.4,281,26.8,282.2,26.8,282.2,26.6','167.8,-16.5,167.5,-16.6,167.2,-15.9,167.8,-16.5','120.7,-10.2,119,-9.6,119.9,-9.4,120.7,-10.2','160.9,-9.9,159.8,-9.8,159.7,-9.2,160.9,-9.9','161.7,-9.6,160.6,-8.3,160.9,-8.3,161.7,-9.6','134.7,-6.2,134.2,-6.9,134.5,-5.4,134.7,-6.2','121.5,13.1,121.3,12.2,120.3,13.5,121.5,13.1','294.4,18.2,292.8,17.9,292.8,18.4,294.4,18.2','283,26.6,282.8,25.9,282.2,27,283,26.6'];
+  const LAND=COAST.map(function(cs){const a=cs.split(',');const o=[];for(let i=0;i<a.length;i+=2)o.push([+a[i],+a[i+1]]);return o;});;
+  // The real equatorial current system. Each entry: path in lon/lat, and how its
+  // strength responds to the trade winds.
+  const CURRENTS=[
+    {n:'NEC', label:'North Equatorial Current', lat:15, pts:[[250,14],[220,15],[190,16],[160,15],[132,14]], f:function(w){return 0.35+Math.max(0,w)/10*0.65;}},
+    {n:'NECC',label:'North Equatorial Countercurrent', lat:6, pts:[[132,6],[160,6],[190,7],[220,6],[262,7]], f:function(w){return 0.30+(10-w)/16*0.85;}},
+    {n:'SEC', label:'South Equatorial Current', lat:-2, pts:[[268,-2],[240,-2],[210,-1],[175,-2],[145,-3]], f:function(w){return w/10;}},
+    {n:'Humboldt', label:'Humboldt Current', lat:-20, pts:[[288,-36],[285,-28],[282,-19],[280,-11],[278,-5],[271,-3]], f:function(w){return 0.25+Math.max(0,w)/10*0.75;}}
+  ];
+  function sstColor(v){
+    const t=Math.max(-1,Math.min(1,v));
+    if(t>=0)return [Math.round(30+225*t),Math.round(80+70*(1-t)),Math.round(160-120*t)];
+    return [Math.round(20+40*(1+t)),Math.round(70+80*(1+t)),Math.round(170+70*(1+t))];
+  }
+  function landPath(poly){
+    ctx.beginPath();
+    poly.forEach(function(p,i){i?ctx.lineTo(px(p[0]),py(p[1])):ctx.moveTo(px(p[0]),py(p[1]));});
+    ctx.closePath();
+  }
+  function polyPix(pts){return pts.map(function(p){return [px(p[0]),py(p[1])];});}
+  function polyLen(p){let s=0;for(let i=1;i<p.length;i++)s+=Math.hypot(p[i][0]-p[i-1][0],p[i][1]-p[i-1][1]);return s;}
+  function ptAt(p,d){for(let i=1;i<p.length;i++){const seg=Math.hypot(p[i][0]-p[i-1][0],p[i][1]-p[i-1][1]);
+    if(d<=seg){const t=seg?d/seg:0;return [p[i-1][0]+(p[i][0]-p[i-1][0])*t,p[i-1][1]+(p[i][1]-p[i-1][1])*t,Math.atan2(p[i][1]-p[i-1][1],p[i][0]-p[i-1][0])];}d-=seg;}
+    const n=p.length-1;return [p[n][0],p[n][1],Math.atan2(p[n][1]-p[n-1][1],p[n][0]-p[n-1][0])];}
+  function drawSea(w){
+    const lonWP=145+(10-w)/16*72;
+    sctx.clearRect(0,0,W,H);
+    sctx.save();
+    sctx.beginPath();sctx.rect(MAP.x,MAP.y,MAP.w,MAP.h);sctx.clip();
+    if(typeof sctx.filter==='string')sctx.filter='blur(7px)';
+    const NX=54,NY=22;
+    for(let i=0;i<NX;i++)for(let k=0;k<NY;k++){
+      const lon=LON0+(i+0.5)/NX*(LON1-LON0), lat=LAT0-(k+0.5)/NY*(LAT0-LAT1);
+      const warm=Math.exp(-Math.pow((lon-lonWP)/34,2))*Math.exp(-Math.pow(lat/16,2));
+      const tongue=Math.max(0,(lon-205)/85)*Math.exp(-Math.pow(lat/9,2))*Math.max(0,w)/10;
+      const band=Math.exp(-Math.pow(lat/26,2));
+      const v=warm*1.05+band*0.32-0.42-tongue*1.25;
+      const c=sstColor(v);
+      sctx.fillStyle='rgb('+c[0]+','+c[1]+','+c[2]+')';
+      sctx.fillRect(MAP.x+i/NX*MAP.w,MAP.y+k/NY*MAP.h,MAP.w/NX+1,MAP.h/NY+1);
+    }
+    if(typeof sctx.filter==='string')sctx.filter='none';
+    sctx.restore();
+    sctx.strokeStyle='rgba(255,255,255,0.09)';sctx.lineWidth=1;
+    sctx.fillStyle='rgba(255,255,255,0.32)';sctx.font='8px system-ui';sctx.textAlign='center';
+    for(let lon=120;lon<=280;lon+=20){
+      const x=px(lon);
+      if(x<MAP.x+2||x>MAP.x+MAP.w-2)continue;
+      sctx.beginPath();sctx.moveTo(x,MAP.y);sctx.lineTo(x,MAP.y+MAP.h);sctx.stroke();
+      const lbl=lon<180?(lon+'°E'):(lon===180?'180°':((360-lon)+'°W'));
+      sctx.fillText(lbl,x,MAP.y+MAP.h-4);
+    }
+    for(let lat=-30;lat<=30;lat+=15){
+      const y=py(lat);
+      if(y<MAP.y+2||y>MAP.y+MAP.h-2)continue;
+      sctx.beginPath();sctx.moveTo(MAP.x,y);sctx.lineTo(MAP.x+MAP.w,y);sctx.stroke();
+    }
+    sctx.strokeStyle='rgba(255,255,255,0.28)';sctx.setLineDash([4,5]);
+    sctx.beginPath();sctx.moveTo(MAP.x,py(0));sctx.lineTo(MAP.x+MAP.w,py(0));sctx.stroke();sctx.setLineDash([]);
+  }
+  function drawLandLayer(){
+    lctx.clearRect(0,0,W,H);
+    lctx.save();
+    lctx.beginPath();lctx.rect(MAP.x,MAP.y,MAP.w,MAP.h);lctx.clip();
+    LAND.forEach(function(poly){
+      lctx.beginPath();
+      poly.forEach(function(p,i){i?lctx.lineTo(px(p[0]),py(p[1])):lctx.moveTo(px(p[0]),py(p[1]));});
+      lctx.closePath();
+      lctx.fillStyle='#33463a';lctx.fill();
+      lctx.strokeStyle='rgba(230,245,255,0.35)';lctx.lineWidth=0.8;lctx.stroke();
+    });
+    lctx.restore();
+    lctx.fillStyle='rgba(255,255,255,0.78)';lctx.font='9px system-ui';lctx.textAlign='left';
+    lctx.fillText('Australia',px(133),py(-26));
+    lctx.fillText('Indonesia',px(118),py(-2));
+    lctx.textAlign='right';
+    lctx.fillText('Peru',px(279),py(-10));
+    lctx.fillText('Mexico',px(258),py(22));
+    lctx.fillStyle='rgba(255,255,255,0.6)';
+    lctx.beginPath();lctx.arc(px(269),py(-0.5),2,0,Math.PI*2);lctx.fill();
+    lctx.textAlign='left';lctx.fillText('Galápagos',px(263),py(-4));
+    const bw=Math.min(150,MAP.w*0.22),bx=MAP.x+MAP.w-bw-4,by=MAP.y+MAP.h+13;
+    const cbg=lctx.createLinearGradient(bx,0,bx+bw,0);
+    for(let i=0;i<=10;i++){const c2=sstColor(-1+i/5);cbg.addColorStop(i/10,'rgb('+c2[0]+','+c2[1]+','+c2[2]+')');}
+    lctx.fillStyle=cbg;lctx.fillRect(bx,by,bw,8);
+    lctx.strokeStyle='rgba(255,255,255,0.35)';lctx.lineWidth=1;lctx.strokeRect(bx,by,bw,8);
+    lctx.fillStyle='rgba(255,255,255,0.6)';lctx.font='8px system-ui';lctx.textAlign='left';
+    lctx.fillText(tx('cCool','cooler'),bx,by-3);
+    lctx.textAlign='right';lctx.fillText(tx('cWarm','warmer'),bx+bw,by-3);
+    lctx.strokeStyle='rgba(255,255,255,0.22)';lctx.lineWidth=1;lctx.strokeRect(MAP.x,MAP.y,MAP.w,MAP.h);
+  }
+  function frame(){
+    St.t+=1/60;
+    const w=rW.val;
+    const oni=Math.max(-2.2,Math.min(2.8,(4.5-w)*0.34));
+    const elnino=oni>=0.5, lanina=oni<=-0.5;
+    const lonWP=145+(10-w)/16*72;                   // warm pool centre, in longitude
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#050c14';ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='bold 11px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cMap','sea surface temperature and the real Pacific currents'),MAP.x,MAP.y-9);
+    if(St.baseW!==w){drawSea(w);St.baseW=w;}
+    if(!St.landReady){drawLandLayer();St.landReady=1;}
+    ctx.drawImage(bSea,0,0,W,H);
+    // currents
+    const labels=[];
+    CURRENTS.forEach(function(cu){
+      const str=cu.f(w), pts=polyPix(cu.pts), Lp=polyLen(pts);
+      const rev=str<0, mag=Math.min(1.4,Math.abs(str));
+      if(mag<0.06)return;
+      ctx.strokeStyle='rgba(255,255,255,'+(0.10+mag*0.16)+')';ctx.lineWidth=9;ctx.lineCap='round';ctx.lineJoin='round';
+      ctx.beginPath();pts.forEach(function(p,i){i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]);});ctx.stroke();
+      const n=Math.max(3,Math.round(Lp/48));
+      for(let i=0;i<n;i++){
+        let d=((St.t*(0.05+mag*0.22)+i/n)%1);
+        if(rev)d=1-d;
+        const q=ptAt(pts,d*Lp), ang=q[2]+(rev?Math.PI:0);
+        ctx.save();ctx.translate(q[0],q[1]);ctx.rotate(ang);
+        ctx.fillStyle='rgba(255,255,255,'+(0.45+mag*0.45)+')';
+        ctx.beginPath();ctx.moveTo(7,0);ctx.lineTo(-4,-4);ctx.lineTo(-4,4);ctx.closePath();ctx.fill();
+        ctx.restore();
+      }
+      const mid=ptAt(pts,Lp*0.5);
+      labels.push([cu.n+(rev?' '+tx('cRev','(reversed)'):''),mid[0],mid[1]-9,0.5+mag*0.4]);
+    });
+    // convection: rain sits over the warm pool
+    for(let k=0;k<7;k++){
+      const lon=lonWP+(k-3)*7,lat=Math.sin(St.t*0.6+k)*4;
+      const x=px(lon),y=py(lat);
+      ctx.fillStyle='rgba(255,255,255,0.85)';
+      ctx.beginPath();ctx.arc(x,y,7-Math.abs(k-3)*1.1,0,Math.PI*2);ctx.fill();
+      for(let r=0;r<3;r++){
+        const ry=y+10+((St.t*40+r*9+k*5)%22);
+        ctx.strokeStyle='rgba(190,225,255,0.55)';ctx.lineWidth=1.2;
+        ctx.beginPath();ctx.moveTo(x-3+r*3,ry);ctx.lineTo(x-3+r*3,ry+4);ctx.stroke();
+      }
+    }
+    ctx.fillStyle='rgba(255,255,255,0.9)';ctx.font='bold 9px system-ui';ctx.textAlign='center';
+    ctx.fillText(tx('cRain','rain follows the warm pool'),px(lonWP),py(0)-22);
+    // trade winds across the tropics
+    for(let k=0;k<7;k++){
+      const lon=125+k*24, dir=w>=0?-1:1, len=7+Math.abs(w)*2.6;
+      const x=px(lon)+((St.t*(14+Math.abs(w)*10))%50)*dir*0.6, y=py(24);
+      ctx.strokeStyle='rgba(255,236,180,'+(0.22+Math.abs(w)/10*0.5)+')';ctx.lineWidth=2;
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+dir*len,y);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(x+dir*len,y);ctx.lineTo(x+dir*(len-5),y-3);
+      ctx.moveTo(x+dir*len,y);ctx.lineTo(x+dir*(len-5),y+3);ctx.stroke();
+    }
+    ctx.fillStyle='rgba(255,236,180,0.85)';ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillText(w>=0?tx('cTrades','trade winds'):tx('cWesterly','westerly burst - trades reversed'),px(150),py(24)-8);
+    ctx.drawImage(bLand,0,0,W,H);
+    ctx.font='bold 9px system-ui';ctx.textAlign='center';
+    labels.forEach(function(l){
+      const half=ctx.measureText(l[0]).width/2;
+      const lx=Math.max(MAP.x+half+4,Math.min(MAP.x+MAP.w-half-4,l[1]));
+      ctx.fillStyle='rgba(6,20,32,0.65)';ctx.fillRect(lx-half-3,l[2]-9,half*2+6,12);
+      ctx.fillStyle='rgba(255,255,255,'+l[3]+')';ctx.fillText(l[0],lx,l[2]);
+    });
+    ctx.font='bold 9px system-ui';ctx.textAlign='center';
+    labels.forEach(function(l){
+      const half=ctx.measureText(l[0]).width/2;
+      const lx=Math.max(MAP.x+half+4,Math.min(MAP.x+MAP.w-half-4,l[1]));
+      ctx.fillStyle='rgba(6,20,32,0.65)';ctx.fillRect(lx-half-3,l[2]-9,half*2+6,12);
+      ctx.fillStyle='rgba(255,255,255,'+l[3]+')';ctx.fillText(l[0],lx,l[2]);
+    });
+    ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cEq','equator'),MAP.x+4,py(0)-4);
+    // ── equatorial cross-section, west to east ──
+    ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='bold 11px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cSec','a slice along the equator, down to 300 m'),SEC.x,SEC.y-9);
+    ctx.fillStyle='#041826';ctx.fillRect(SEC.x,SEC.y,SEC.w,SEC.h);
+    const tilt=w/10;
+    function thermo(f){return SEC.y+SEC.h*(0.55+tilt*0.26*(0.5-f)*2);}
+    ctx.beginPath();ctx.moveTo(SEC.x,SEC.y);
+    for(let i=0;i<=40;i++)ctx.lineTo(SEC.x+i/40*SEC.w,thermo(i/40));
+    ctx.lineTo(SEC.x+SEC.w,SEC.y);ctx.closePath();
+    const wg=ctx.createLinearGradient(0,SEC.y,0,SEC.y+SEC.h);
+    wg.addColorStop(0,'#fb923c');wg.addColorStop(1,'#9a3412');
+    ctx.fillStyle=wg;ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.6)';ctx.lineWidth=1.6;
+    ctx.beginPath();
+    for(let i=0;i<=40;i++){const x=SEC.x+i/40*SEC.w,y=thermo(i/40);i?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+    ctx.stroke();
+    ctx.fillStyle='rgba(255,255,255,0.85)';ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cWarmLayer','warm surface layer'),SEC.x+6,SEC.y+14);
+    ctx.fillStyle='rgba(190,225,255,0.85)';
+    ctx.fillText(tx('cThermo','thermocline'),SEC.x+6,thermo(0.1)+13);
+    // surface flow: the SEC, which reverses when the trades do
+    const secStr=w/10, dirS=secStr>=0?-1:1;
+    for(let i=0;i<7;i++){
+      const f=((St.t*(0.04+Math.abs(secStr)*0.16)+i/7)%1);
+      const x=SEC.x+(dirS<0?(1-f):f)*SEC.w, y=SEC.y+SEC.h*0.14;
+      ctx.strokeStyle='rgba(255,255,255,0.6)';ctx.lineWidth=2;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+dirS*13,y);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(x+dirS*13,y);ctx.lineTo(x+dirS*8,y-4);ctx.moveTo(x+dirS*13,y);ctx.lineTo(x+dirS*8,y+4);ctx.stroke();
+    }
+    ctx.fillStyle='rgba(255,255,255,0.7)';ctx.textAlign='center';
+    ctx.fillText(secStr>=0?tx('cSECw','South Equatorial Current, flowing west'):tx('cSECe','surface flow has reversed, running east'),SEC.x+SEC.w/2,SEC.y+SEC.h*0.14-9);
+    // the Equatorial Undercurrent, hidden inside the thermocline and running the other way
+    const euc=0.25+Math.max(0,w)/10*0.75;
+    for(let i=0;i<8;i++){
+      const f=((St.t*(0.05+euc*0.18)+i/8)%1);
+      const x=SEC.x+f*SEC.w, y=thermo(f)-4;
+      ctx.strokeStyle='rgba(125,211,252,'+(0.35+euc*0.5)+')';ctx.lineWidth=2.4;
+      ctx.beginPath();ctx.moveTo(x-11,y);ctx.lineTo(x,y);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-5,y-3.5);ctx.moveTo(x,y);ctx.lineTo(x-5,y+3.5);ctx.stroke();
+    }
+    ctx.fillStyle='rgba(125,211,252,'+(0.5+euc*0.4)+')';ctx.textAlign='center';
+    ctx.fillText(tx('cEUC','Equatorial Undercurrent - runs east, 100 m down'),SEC.x+SEC.w*0.42,thermo(0.42)+16);
+    // upwelling off South America
+    const up=Math.max(0,w)/10;
+    if(St.t%0.05<1/60&&up>0.05)St.bub.push({x:SEC.x+SEC.w*(0.94-Math.random()*0.05),y:SEC.y+SEC.h*0.94,v:0.5+up});
+    for(let i=St.bub.length-1;i>=0;i--){
+      const b=St.bub[i];b.y-=b.v;
+      if(b.y<SEC.y+SEC.h*0.18){St.bub.splice(i,1);continue;}
+      ctx.beginPath();ctx.arc(b.x,b.y,1.8,0,Math.PI*2);
+      ctx.fillStyle='rgba(125,211,252,0.8)';ctx.fill();
+    }
+    ctx.textAlign='right';
+    if(up>0.08){ctx.fillStyle='rgba(125,211,252,0.9)';ctx.fillText(tx('cUpwell','cold water rising - this feeds the fishery'),SEC.x+SEC.w-8,SEC.y+SEC.h*0.30);}
+    else{ctx.fillStyle='rgba(248,113,113,0.9)';ctx.fillText(tx('cNoUpwell','upwelling shut off - the fishery collapses'),SEC.x+SEC.w-8,SEC.y+SEC.h*0.30);}
+    ctx.fillStyle='rgba(255,255,255,0.45)';ctx.textAlign='left';ctx.fillText(tx('cWestSide','west'),SEC.x+4,SEC.y+SEC.h-6);
+    ctx.textAlign='right';ctx.fillText(tx('cEastSide','east'),SEC.x+SEC.w-4,SEC.y+SEC.h-6);
+    ctx.strokeStyle='rgba(255,255,255,0.22)';ctx.lineWidth=1;ctx.strokeRect(SEC.x,SEC.y,SEC.w,SEC.h);
+    const phase=elnino?tx('vElnino','El Niño'):(lanina?tx('vLanina','La Niña'):tx('vNeutral','Neutral'));
+    const eff=elnino?tx('cEffEl','drought in Australia · floods in Peru · fewer Atlantic hurricanes')
+      :(lanina?tx('cEffLa','rain in Australia · dry Peru · more Atlantic hurricanes')
+             :tx('cEffN','close to an average year'));
+    ctx.textAlign='center';ctx.font='11px system-ui';
+    ctx.fillStyle=elnino?'rgba(255,180,140,0.95)':(lanina?'rgba(150,215,255,0.95)':'rgba(210,225,240,0.85)');
+    ctx.fillText(phase+' — '+eff,W/2,H-11);
+    pOni.set((oni>0?'+':'')+oni.toFixed(1)+' °C');
+    pPhase.set(phase);
+    pEff.set(elnino?tx('vDry','Australia dry, Peru wet'):(lanina?tx('vWet','Australia wet, Peru dry'):tx('vNormal','near normal')));
     St.raf=requestAnimationFrame(frame);
   }
   frame();

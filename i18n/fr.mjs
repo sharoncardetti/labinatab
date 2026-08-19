@@ -64,7 +64,7 @@ export default {
     runSim:'▶ Lancer la simulation interactive',
     explainedSimulated:'Expliqué et simulé'
   },
-  slugs: { energy: 'conservation-de-l-energie', seriesparallel: 'circuits-serie-parallele', respiration: 'respiration-cellulaire', moonphases: 'phases-de-la-lune', protein: 'synthese-des-proteines', watercycle: 'cycle-de-l-eau', optics: 'optique-lumiere-lentilles', pendulum: 'pendule-mouvement-harmonique', gaslaws: 'lois-des-gaz', astro: 'etoiles-univers', cosmology: 'cosmologie-big-bang', neuro: 'cerveau-neurones', neuron: 'cerveau-electrique', memory: 'comment-fonctionne-la-memoire', sleep: 'sommeil-conscience', chem: 'atomes-liaisons-chimiques', electrochem: 'electrochimie-batteries', kinetics: 'cinetique-equilibre', organic: 'chimie-organique-molecules-du-vivant', acids: 'acides-bases-ph', periodic: 'tableau-periodique', balancing: 'equilibrer-equations-chimiques', climate: 'climat-atmosphere', tectonics: 'tectonique-des-plaques-seismes', ocean: 'oceanographie-courants-marins', volcano: 'volcanologie', seasons: 'pourquoi-nous-avons-des-saisons', sorting: 'algorithmes-de-tri', ml: 'apprentissage-automatique-reseaux-neurones', crypto: 'cryptographie-securite', complexity: 'calcul-complexite', ecosystem: 'ecosystemes-reseaux-trophiques', cell: 'cellule-osmose-diffusion', mitosis: 'mitose-meiose', punnett: 'echiquiers-de-punnett-genetique', life: 'regles-de-la-vie', dna: 'adn-genetique', evolution: 'evolution-selection-naturelle', graphs: 'theorie-des-graphes-reseaux', trig: 'trigonometrie-cercle-unite', prob: 'probabilites-courbe-en-cloche', fractal: 'fractales-infini', calculus: 'calcul-changement', circuits: 'loi-d-ohm-circuits', states: 'etats-de-la-matiere', thermo: 'chaleur-thermodynamique', particles: 'modele-standard', newton: 'lois-du-mouvement-de-newton', gravity: 'gravite-orbites', projectile: 'mouvement-des-projectiles', waves: 'ondes-interferences', photosynthesis: 'photosynthese', eclipse: 'eclipses', meteors: 'etoiles-filantes', blackholes: 'trous-noirs', solarsystem: 'systeme-solaire' },
+  slugs: { energy: 'conservation-de-l-energie', seriesparallel: 'circuits-serie-parallele', respiration: 'respiration-cellulaire', moonphases: 'phases-de-la-lune', protein: 'synthese-des-proteines', watercycle: 'cycle-de-l-eau', optics: 'optique-lumiere-lentilles', pendulum: 'pendule-mouvement-harmonique', gaslaws: 'lois-des-gaz', astro: 'etoiles-univers', cosmology: 'cosmologie-big-bang', neuro: 'cerveau-neurones', neuron: 'cerveau-electrique', memory: 'comment-fonctionne-la-memoire', sleep: 'sommeil-conscience', chem: 'atomes-liaisons-chimiques', electrochem: 'electrochimie-batteries', kinetics: 'cinetique-equilibre', organic: 'chimie-organique-molecules-du-vivant', acids: 'acides-bases-ph', periodic: 'tableau-periodique', balancing: 'equilibrer-equations-chimiques', climate: 'climat-atmosphere', tectonics: 'tectonique-des-plaques-seismes', ocean: 'oceanographie-courants-marins', volcano: 'volcanologie', seasons: 'pourquoi-nous-avons-des-saisons', sorting: 'algorithmes-de-tri', ml: 'apprentissage-automatique-reseaux-neurones', crypto: 'cryptographie-securite', complexity: 'calcul-complexite', ecosystem: 'ecosystemes-reseaux-trophiques', cell: 'cellule-osmose-diffusion', mitosis: 'mitose-meiose', punnett: 'echiquiers-de-punnett-genetique', life: 'regles-de-la-vie', dna: 'adn-genetique', evolution: 'evolution-selection-naturelle', graphs: 'theorie-des-graphes-reseaux', trig: 'trigonometrie-cercle-unite', prob: 'probabilites-courbe-en-cloche', fractal: 'fractales-infini', calculus: 'calcul-changement', circuits: 'loi-d-ohm-circuits', states: 'etats-de-la-matiere', thermo: 'chaleur-thermodynamique', particles: 'modele-standard', newton: 'lois-du-mouvement-de-newton', gravity: 'gravite-orbites', projectile: 'mouvement-des-projectiles', waves: 'ondes-interferences', photosynthesis: 'photosynthese', eclipse: 'eclipses', meteors: 'etoiles-filantes', bloodmoon: 'pourquoi-la-lune-devient-rouge', aurora: 'aurores-boreales', comets: 'cometes', blackholes: 'trous-noirs', solarsystem: 'systeme-solaire' },
   t: {
     energy: {
       title: `La conservation de l'énergie`,
@@ -3681,11 +3681,11 @@ export default {
       lvls: {
         junior: {
           title: `Quand le Soleil ou la Lune s'assombrit`,
-          body: `<p>De temps en temps le ciel fait quelque chose de spectaculaire : le Soleil est effacé en plein jour, ou la pleine Lune devient d'un rouge cuivré profond. Ce sont les <strong>éclipses</strong>, et elles se produisent parce que trois boules dans l'espace - le Soleil, la Terre et la Lune - s'alignent un instant en file, de sorte que l'une projette son ombre sur une autre. Le <strong>12 août 2026</strong>, une éclipse solaire totale traversera l'Islande et le nord de l'Espagne, la première visible depuis l'Europe continentale depuis 1999.</p>
+          body: `<p>De temps en temps le ciel fait quelque chose de spectaculaire : le Soleil est effacé en plein jour, ou la pleine Lune devient d'un rouge cuivré profond. Ce sont les <strong>éclipses</strong>, et elles se produisent parce que trois boules dans l'espace - le Soleil, la Terre et la Lune - s'alignent un instant en file, de sorte que l'une projette son ombre sur une autre. Le <strong>12 août 2026</strong>, une éclipse solaire totale a traversé l'Islande et le nord de l'Espagne, la première visible depuis l'Europe continentale depuis 1999. La suite est proche : les <strong>27-28 août 2026</strong>, la Lune entre à 96 % dans l'ombre de la Terre, et le <strong>2 août 2027</strong>, une éclipse solaire totale traverse le sud de l'Espagne, l'Afrique du Nord et l'Égypte avec 6 minutes et 23 secondes de totalité, la plus longue sur terre depuis 1991.</p>
 <p>Une <strong>éclipse solaire</strong> arrive à la nouvelle Lune, quand la Lune se glisse exactement entre nous et le Soleil et laisse tomber son ombre sur la Terre. Qui se trouve dans cette ombre voit la Lune couvrir entièrement le Soleil pendant quelques minutes - le jour devient crépuscule, les étoiles apparaissent, et l'atmosphère externe et spectrale du Soleil flamboie autour d'un disque noir. Une <strong>éclipse lunaire</strong> en est l'image miroir : à la pleine Lune, la Terre se place entre le Soleil et la Lune, et notre ombre tombe sur la Lune, la teintant de rouge.</p>
 <p>Alors pourquoi n'y a-t-il pas d'éclipse chaque mois, à chaque nouvelle et pleine Lune ? Parce que l'orbite de la Lune est inclinée de quelques degrés, si bien que la plupart des mois son ombre passe juste au-dessus ou au-dessous de la Terre et la manque complètement. Ce n'est que lorsque l'alignement est presque parfait - quelques fois par an - qu'une ombre atteint vraiment sa cible. C'est ce quasi-échec le reste du temps qui rend une éclipse si spéciale.</p>`,
           facts: [
-            { e: '🌘', t: `L'éclipse solaire totale du 12 août 2026 est la première visible depuis l'Europe continentale depuis 1999 ; elle traverse l'Islande et le nord de l'Espagne.` },
+            { e: '🌘', t: `La prochaine éclipse solaire totale, le 2 août 2027, offre 6 min 23 s de totalité sur le sud de l'Espagne, l'Afrique du Nord et l'Égypte - elle passe juste au-dessus des pyramides de Gizeh.` },
             { e: '🔴', t: `Une « lune de sang » n'est qu'une éclipse lunaire : la Lune brille en rouge car elle n'est éclairée que par la lumière solaire courbée par l'atmosphère terrestre - tous les levers et couchers de soleil à la fois.` },
             { e: '🎯', t: `Par pure coïncidence, le Soleil est ~400 fois plus large que la Lune et ~400 fois plus loin, si bien qu'ils paraissent de même taille dans notre ciel - et c'est pourquoi les éclipses totales sont possibles.` },
           ],
@@ -3736,20 +3736,201 @@ export default {
         },
       },
     },
+    bloodmoon: {
+      title: 'Pourquoi la Lune devient rouge',
+      teaser: `Une lune de sang, c'est chaque lever et chaque coucher de soleil de la Terre à la fois, projetés sur la Lune.`,
+      chips: ['Éclipse lunaire', 'Lune de sang', 'Diffusion'],
+      lvls: {
+        junior: {
+          title: `La Lune dans notre ombre`,
+          body: `<p>Certaines nuits, la pleine Lune fait quelque chose de troublant : au lieu de devenir noire, elle vire à un rouge profond et poussiéreux. On appelle ça une <strong>lune de sang</strong>, et cela se produit pendant une <strong>éclipse lunaire</strong> - quand la Terre passe exactement entre le Soleil et la Lune et laisse tomber son ombre sur elle.</p>
+<p>Voilà le plus étrange. Si la Terre se contentait de bloquer la lumière du Soleil, la Lune disparaîtrait dans le noir. Ce n'est pas le cas, parce que notre planète possède ce qu'un simple caillou n'aurait pas : de l'<strong>air</strong>. La lumière solaire qui frôle le bord de la Terre traverse une longue tranche d'atmosphère, et deux choses lui arrivent en chemin. L'air la <em>courbe</em> vers l'intérieur, glissant de la lumière dans une ombre qui aurait dû rester vide. Et l'air lui <em>retire le bleu</em>, en le diffusant sur les côtés à travers tout le ciel, laissant filer tout droit le rouge et l'orange.</p>
+<p>La lumière qui atteint une Lune éclipsée a donc déjà été filtrée par notre atmosphère. C'est, littéralement, la lumière de chaque lever et de chaque coucher de soleil en train de se produire sur Terre à cet instant, rassemblée et projetée à 384 000 km sur un caillou. Debout sur la Lune pendant une éclipse lunaire, tu verrais une Terre noire cerclée d'un mince anneau de feu rouge : toutes les aubes et tous les crépuscules du monde d'un coup.</p>
+<p>C'est aussi pourquoi deux lunes de sang ne se ressemblent jamais. Quand l'air est propre, la Lune brille d'un cuivre éclatant. Quand un gros volcan a projeté poussière et soufre haut dans l'atmosphère, plus de lumière est absorbée en route et la Lune peut devenir d'un brun trouble - voire presque disparaître.</p>`,
+          facts: [
+            { e: '🌅', t: `La lumière rouge sur une Lune éclipsée est de la lumière solaire filtrée par l'atmosphère terrestre : chaque lever et chaque coucher de soleil de la planète au même instant.` },
+            { e: '🌋', t: `Après l'éruption du Pinatubo en 1991, l'éclipse lunaire suivante fut si sombre que la Lune était difficile à repérer : la poussière volcanique avait avalé la lumière.` },
+            { e: '👀', t: `Une éclipse lunaire s'observe à l'œil nu sans aucun danger, contrairement à une éclipse solaire : tu regardes une Lune assombrie, pas le Soleil.` },
+          ],
+          formula: null,
+          sim: 'bloodmoon',
+        },
+        student: {
+          title: `Ombre, pénombre et échelle de Danjon`,
+          body: `<p>La Terre projette deux ombres emboîtées. La <strong>pénombre</strong> est le cône extérieur, où le Soleil n'est que partiellement masqué ; une Lune qui y entre s'assombrit si peu que presque personne ne le remarque. L'<strong>ombre</strong> (umbra) est le cône intérieur, où la Terre masque le Soleil en entier. C'est là que naît la couleur.</p>
+<p>À la distance de la Lune, l'ombre est environ <strong>2,6 fois plus large que la Lune elle-même</strong>, et c'est pourquoi la totalité peut durer plus d'une heure. Jusqu'où la Lune y pénètre dépend de la précision de l'alignement, et les astronomes appellent cela la <em>magnitude ombrale</em> : 1,0 ou plus signifie totale, 0,96 une partielle profonde avec un mince croissant clair qui résiste, et sous 0 la Lune ne quitte jamais la pénombre.</p>
+<p>Dans l'ombre, le seul éclairage est de la <strong>lumière solaire réfractée et filtrée par diffusion Rayleigh</strong>. L'atmosphère terrestre agit comme une lentille, courbant les rayons rasants jusqu'à environ un degré, et comme un filtre : la diffusion varie en \\(1/\\lambda^4\\), donc le bleu est diffusé environ dix fois plus que le rouge. Ce qui survit au trajet, c'est le reste rougi, des milliers de fois plus faible qu'une pleine Lune ordinaire.</p>
+<p>Comme cette lumière doit survivre à notre air, l'apparence de la Lune devient une lecture en direct des conditions atmosphériques. Les observateurs la notent sur l'<strong>échelle de Danjon</strong>, de L=4 pour une éclipse cuivre-orangé lumineuse jusqu'à L=0 pour une éclipse si sombre que la Lune s'efface presque. Les aérosols volcaniques et les nuages épais le long du terminateur font chuter la note.</p>`,
+          facts: [
+            { e: '📏', t: `L'ombre de la Terre à la distance lunaire fait environ 2,6 diamètres lunaires, donc une éclipse totale centrale peut garder la Lune entièrement dans l'ombre plus de 100 minutes.` },
+            { e: '🔵', t: `La diffusion Rayleigh varie en 1/λ⁴ : le bleu est diffusé environ dix fois plus que le rouge, et la lumière qui reste est rouge par élimination.` },
+            { e: '🌘', t: `L'échelle de Danjon va de L=0 (Lune presque invisible) à L=4 (cuivre-orangé lumineux avec un liseré bleuté).` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Diffusion Rayleigh', e: 'I_{\\text{scattered}} \\propto \\dfrac{1}{\\lambda^{4}}', c: 'le bleu part, le rouge reste' },
+            { n: 'Magnitude ombrale', e: 'U = \\dfrac{R_u + r_m - d}{2 r_m}', c: 'totale quand U \\ge 1' },
+            { sep: 1 },
+            { n: 'Ombre à la distance lunaire', e: 'R_u \\approx 1.3^\\circ \\approx 2.6\\, r_m' },
+          ] },
+          sim: 'bloodmoon',
+        },
+        scholar: {
+          title: `Réfraction, extinction et couleur variable`,
+          body: `<p>L'ombre n'est pas noire parce que l'atmosphère terrestre y réfracte la lumière solaire. Les rayons en incidence rasante sont courbés d'environ \\(0.5^\\circ\\) à \\(1^\\circ\\), assez pour remplir de lumière transmise l'ombre géométrique à la distance lunaire. L'éclairement qui atteint une Lune éclipsée provient presque entièrement du limbe terrestre, intégré sur tout le terminateur : son spectre est donc le spectre solaire vu à travers un très long trajet atmosphérique.</p>
+<p>C'est ce trajet qui la rougit. La diffusion moléculaire Rayleigh retire les courtes longueurs d'onde avec une dépendance en \\(\\lambda^{-4}\\), tandis que l'absorption de l'ozone dans la bande de Chappuis mord entre 500 et 700 nm. Ce second effet explique pourquoi les éclipses profondes montrent souvent un liseré nettement <em>turquoise</em> juste à l'intérieur du bord de l'ombre, là où la lumière a suivi le plus long trajet dans la couche d'ozone, avant que l'intérieur ne vire au rouge.</p>
+<p>La luminosité totale est très variable : la profondeur géométrique dans l'ombre, la charge en aérosols et même la couverture nuageuse le long du terminateur comptent. Une Lune totalement éclipsée est typiquement \\(10^{4}\\) à \\(10^{5}\\) fois plus faible qu'une pleine Lune non éclipsée - un écart de plusieurs magnitudes que l'échelle de Danjon ne capture que grossièrement. Après les grandes injections stratosphériques, El Chichón en 1982 et Pinatubo en 1991, des éclipses ont été notées L=0, effectivement invisibles à l'œil nu.</p>
+<p>La géométrie se répète selon le <strong>saros</strong>, 6585,32 jours, parce que cet intervalle vaut presque exactement un nombre entier de mois synodiques, draconitiques et anomalistiques à la fois. Le tiers de jour restant fait tourner la Terre de 120°, donc chaque répétition s'observe au mieux à un tiers de globe de la précédente, et un saros donné revient chez toi tous les trois cycles : 54 ans.</p>`,
+          facts: [
+            { e: '🌍', t: `La lumière qui atteint la Lune éclipsée vient du limbe terrestre intégré sur tout le terminateur : un observateur posé là verrait une Terre noire cerclée de feu.` },
+            { e: '💠', t: `L'absorption de l'ozone dans la bande de Chappuis (500-700 nm) donne à de nombreuses éclipses un liseré turquoise juste à l'intérieur du bord de l'ombre.` },
+            { e: '🔁', t: `Le saros dure 6585,32 jours ; le tiers de jour en plus décale chaque répétition de 120° en longitude, si bien que le même saros revient chez toi tous les 54 ans.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Réfraction au limbe', e: '\\Delta\\theta \\approx 0.5^\\circ - 1^\\circ', c: 'remplit l\'ombre géométrique' },
+            { n: 'Section efficace Rayleigh', e: '\\sigma \\propto \\lambda^{-4}' },
+            { n: 'Luminosité en totalité', e: 'L/L_{\\text{full}} \\sim 10^{-4} - 10^{-5}' },
+            { sep: 1 },
+            { n: 'Saros', e: '223\\ \\text{synodiques} \\approx 6585.32\\ \\text{j}' },
+          ] },
+          sim: 'bloodmoon',
+        },
+      },
+    },
+    aurora: {
+      title: 'Les aurores boréales',
+      teaser: `Le Soleil nous envoie des particules, le champ magnétique terrestre les capte, et l'air s'illumine avec des couleurs fixées par l'altitude.`,
+      chips: ['Vent solaire', 'Magnétosphère', 'Météo de l\'espace'],
+      lvls: {
+        junior: {
+          title: `Pourquoi le ciel devient vert`,
+          body: `<p>Le Soleil ne fait pas que briller sur nous : il nous <strong>lance des choses</strong>. Un vent ténu de particules chargées s'en échappe en permanence à des centaines de kilomètres par seconde, et de temps en temps une tempête à sa surface en projette un nuage bien plus dense.</p>
+<p>Ces particules n'atteignent presque jamais la plupart d'entre nous, parce que la Terre possède un bouclier invisible : son <strong>champ magnétique</strong>. Il enveloppe la planète comme un immense champ de force et dévie le flot autour de nous, comme un rocher qui fend le courant d'une rivière. Mais le bouclier a deux points faibles - les pôles - où les lignes de champ plongent dans le sol au lieu de passer au-dessus de nous.</p>
+<p>Les particules canalisées là-bas percutent l'air vers cent kilomètres d'altitude. Elles heurtent des atomes d'oxygène et d'azote et en délogent les électrons ; quand ces électrons retombent en place, l'atome restitue l'énergie sous forme de lumière. Voilà l'aurore : ni lumière réfléchie, ni feu, mais de l'air frappé assez fort pour briller.</p>
+<p>La couleur est une mesure d'altitude. L'oxygène frappé entre 100 et 200 km brille du <strong>vert</strong> familier. Bien plus haut, au-dessus de 250 km, le même oxygène brille d'un <strong>rouge</strong> profond. L'azote, plus bas, ajoute du bleu et du violet le long du bord inférieur des draperies. Le ruban de couleur dans le ciel te dit donc exactement jusqu'où les particules ont réussi à s'enfoncer dans notre atmosphère.</p>`,
+          facts: [
+            { e: '🧲', t: `Les aurores se produisent aux pôles parce que c'est là que les lignes du champ magnétique terrestre plongent dans le sol, entraînant les particules avec elles.` },
+            { e: '🎨', t: `Le vert vient de l'oxygène entre 100 et 200 km, le rouge de l'oxygène au-dessus de 250 km, le bleu et le violet de l'azote sous 100 km.` },
+            { e: '🪐', t: `La Terre n'a rien d'exceptionnel : Jupiter et Saturne ont aussi des aurores, et Jupiter est si magnétique que la sienne ne s'éteint jamais.` },
+          ],
+          formula: null,
+          sim: 'aurora',
+        },
+        student: {
+          title: `Vent solaire, reconnexion et ovale auroral`,
+          body: `<p>Le vent solaire emporte avec lui le champ magnétique du Soleil, et la direction dans laquelle ce champ pointe à son arrivée compte davantage que sa vitesse. C'est le <strong>champ magnétique interplanétaire</strong>, et la composante décisive est \\(B_z\\), la composante nord-sud.</p>
+<p>Quand \\(B_z\\) pointe vers le nord, il s'aligne avec le champ terrestre au nez de la magnétosphère et les deux se contentent d'appuyer l'un contre l'autre : le bouclier tient et presque rien n'entre. Quand \\(B_z\\) pointe vers le <strong>sud</strong>, les deux champs sont antiparallèles et ils se <em>reconnectent</em> : ils se rompent et se ressoudent en croisant, ouvrant le bouclier. L'énergie du vent solaire s'engouffre, charge la queue magnétique derrière nous, et la queue finit par claquer en projetant des particules le long des lignes de champ dans l'atmosphère polaire.</p>
+<p>Le résultat n'est pas une tache au-dessus du pôle mais un <strong>anneau</strong> : l'ovale auroral, centré sur le pôle magnétique et situé typiquement vers 67° de latitude magnétique. Quand la tempête se renforce, l'ovale s'étend vers l'équateur, et c'est pourquoi un événement fort se voit depuis l'Écosse ou le Michigan, et un événement sévère depuis Rome ou le Texas. L'activité géomagnétique se note avec l'indice \\(K_p\\), de 0 à 9, et chaque échelon coûte environ 2 à 3 degrés de latitude.</p>
+<p>La lumière elle-même provient de transitions atomiques interdites. La raie verte de l'oxygène atomique à 557,7 nm met environ 0,7 s à s'émettre, la raie rouge à 630,0 nm plus de 100 s - et c'est pourquoi le rouge n'apparaît qu'en altitude, là où l'air est si ténu que l'atome excité n'est pas délogé de son état par une collision avant d'avoir pu émettre.</p>`,
+          facts: [
+            { e: '🧭', t: `Le déclencheur est un champ interplanétaire dirigé vers le sud : des champs antiparallèles se reconnectent à la magnétopause diurne et ouvrent le bouclier terrestre.` },
+            { e: '⏱️', t: `La raie rouge de l'oxygène à 630 nm a une durée de vie de plus de 100 s : elle ne survit qu'au-dessus de ~250 km où les collisions sont rares - d'où le rouge au-dessus du vert.` },
+            { e: '📉', t: `Chaque unité de Kp repousse l'ovale auroral d'environ 2 à 3 degrés de latitude plus loin du pôle.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Raie verte de l\'oxygène', e: '\\lambda = 557.7\\ \\text{nm}', c: 'durée de vie ~0,7 s, 100-200 km' },
+            { n: 'Raie rouge de l\'oxygène', e: '\\lambda = 630.0\\ \\text{nm}', c: 'durée de vie >100 s, au-dessus de 250 km' },
+            { sep: 1 },
+            { n: 'Latitude de l\'ovale', e: '\\Lambda \\approx 67^\\circ - 2.5\\,K_p', c: 'approché, bord équatorial' },
+          ] },
+          sim: 'aurora',
+        },
+        scholar: {
+          title: `Reconnexion, cycle des sous-orages et raies interdites`,
+          body: `<p>La magnétosphère est un système ouvert piloté par le cycle de Dungey. La reconnexion diurne entre un IMF orienté sud et le champ géomagnétique érode la magnétopause, transportant du flux ouvert au-dessus de la calotte polaire jusque dans les lobes de la queue. Le chargement se poursuit jusqu'à ce que le feuillet de plasma proche de la Terre s'amincisse assez pour déclencher la reconnexion en queue, vers \\(20\\,R_E\\) sous le vent ; l'énergie libérée accélère des électrons vers la Terre le long des lignes de champ, et leur précipitation allume le bulbe auroral du sous-orage.</p>
+<p>Le couplage varie avec le champ électrique du vent solaire, \\(E_y = -v B_z\\) pour \\(B_z\\) sud, ce qui explique qu'un flux modeste à 500 km/s avec un champ fortement sud l'emporte sur un flux rapide à champ nord. Les éjections de masse coronale produisent les événements les plus forts car elles combinent grande vitesse et champ interne ordonné, souvent nettement sud ; les trous coronaux de la phase descendante donnent plutôt des flux rapides récurrents qui produisent des orages modérés au rythme de 27 jours de la rotation solaire.</p>
+<p>L'émission est diagnostique. Les raies de l'oxygène à 557,7 et 630,0 nm sont toutes deux des transitions interdites - \\(^1S \\to {}^1D\\) et \\(^1D \\to {}^3P\\) - de durées de vie radiatives 0,7 s et 110 s. La désexcitation collisionnelle impose donc un plancher d'altitude à chacune : sous environ 250 km, l'état \\(^1D\\) est désexcité avant d'avoir pu rayonner, si bien que le rouge est absent des basses altitudes quelle que soit la violence du bombardement. Les bandes du premier négatif de N\\(_2^+\\) à 427,8 nm, transitions permises, marquent la pénétration la plus profonde et donc les électrons précipitants les plus durs.</p>
+<p>L'enjeu n'est pas esthétique. Les mêmes courants qui allument l'ovale induisent des courants géomagnétiquement induits dans les longs conducteurs : l'orage de mars 1989 a fait s'effondrer le réseau d'Hydro-Québec en 92 secondes, et l'événement de Carrington en 1859 a induit des courants capables d'enflammer le papier des télégraphes.</p>`,
+          facts: [
+            { e: '⚡', t: `Cycle de Dungey : la reconnexion diurne ouvre du flux, la queue le stocke, et la reconnexion en queue vers 20 rayons terrestres le libère en sous-orage.` },
+            { e: '🚫', t: `Les deux raies aurorales brillantes de l'oxygène sont des transitions interdites : elles n'existent que parce que la haute atmosphère est assez ténue pour éviter la désexcitation collisionnelle.` },
+            { e: '🔌', t: `L'orage géomagnétique de mars 1989 a fait s'effondrer le réseau électrique d'Hydro-Québec en 92 secondes par courants géomagnétiquement induits.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Couplage au vent solaire', e: 'E_y = -v_x B_z', c: 'le moteur du cycle' },
+            { n: 'Transitions interdites', e: '{}^1S \\to {}^1D:\\ 557.7\\ \\text{nm};\\quad {}^1D \\to {}^3P:\\ 630.0\\ \\text{nm}' },
+            { n: 'Durées de vie radiatives', e: '\\tau \\approx 0.7\\ \\text{s},\\ 110\\ \\text{s}', c: 'fixent l\'altitude de chaque couleur' },
+            { sep: 1 },
+            { n: 'Reconnexion en queue', e: 'x \\approx -20\\,R_E' },
+          ] },
+          sim: 'aurora',
+        },
+      },
+    },
+    comets: {
+      title: 'Comètes',
+      teaser: `Une boule de neige sale qui se fait pousser deux queues - et aucune des deux ne la suit.`,
+      chips: ['Queues', 'Sublimation', 'Halley'],
+      lvls: {
+        junior: {
+          title: `Pourquoi les comètes ont une queue`,
+          body: `<p>Une comète passe presque toute sa vie sous la forme d'un bloc sombre de glace et de poussière, large de quelques kilomètres, à la dérive dans le système solaire externe et glacé. Rien en elle ne brille. C'est, comme aiment le dire les astronomes, une <strong>boule de neige sale</strong>.</p>
+<p>Puis sa longue orbite en boucle la ramène vers l'intérieur, et vers la distance de la ceinture d'astéroïdes le Soleil devient assez fort pour compter. La glace ne fond pas en flaque : dans le vide elle passe directement du solide au gaz, un processus appelé <strong>sublimation</strong>. Des jets de gaz jaillissent du côté éclairé en entraînant de la poussière, et le petit noyau s'enveloppe d'un nuage lumineux appelé <em>coma</em> qui peut devenir plus grand qu'une planète.</p>
+<p>Et voici la surprise. La queue ne traîne pas derrière la comète comme la fumée derrière un train. La lumière du Soleil et le vent solaire poussent le gaz et la poussière qui s'échappent <strong>à l'opposé du Soleil</strong>, quelle que soit la direction dans laquelle la comète file. À l'aller la queue la suit donc, et au retour la comète poursuit sa propre queue, en voyageant queue en avant.</p>
+<p>Regarde bien : il y a deux queues, pas une. Une <strong>queue de poussière</strong> blanc-jaune, qui s'incurve parce que les gros grains gardent une part du mouvement orbital de la comète, et une <strong>queue d'ions</strong> droite et bleue, faite de gaz électriquement chargé, soufflée en ligne droite à l'opposé du Soleil par le vent solaire.</p>`,
+          facts: [
+            { e: '❄️', t: `La glace des comètes ne fond pas, elle se sublime - passe directement du solide au gaz - car il n'y a pas de pression atmosphérique dans l'espace pour tenir un liquide.` },
+            { e: '🔙', t: `La queue d'une comète pointe toujours à l'opposé du Soleil, donc sur le trajet de retour la comète voyage queue en avant.` },
+            { e: '💫', t: `Les pluies de météores sont des restes de comètes : les Orionides de chaque octobre sont de la poussière perdue par la comète de Halley.` },
+          ],
+          formula: null,
+          sim: 'comets',
+        },
+        student: {
+          title: `Sublimation, ligne des glaces et deux queues`,
+          body: `<p>L'activité s'allume à une distance, pas à une date. La glace d'eau commence à se sublimer fortement vers <strong>3 UA</strong> du Soleil, si bien que la plupart des comètes sont des cailloux inertes au-delà de cette ligne et ne se réveillent qu'en la franchissant. Plus près, des glaces plus volatiles - dioxyde et monoxyde de carbone - entretiennent l'activité encore plus tôt, ce qui explique que certaines comètes montrent un coma alors qu'elles sont encore loin.</p>
+<p>Le gaz qui s'échappe arrache de la poussière à la surface et gonfle le coma, qui peut atteindre \\(10^5\\) km de diamètre alors que le noyau ne fait que quelques km. Deux forces distinctes trient ensuite la matière échappée en deux queues :</p>
+<p><strong>La queue de poussière</strong> est poussée par la pression de radiation - des photons qui transportent une quantité de mouvement. Les grains sont assez lourds pour garder la mémoire de la vitesse orbitale de la comète, donc la queue reste en retard sur la direction antisolaire et paraît courbe, large et blanc-jaune de lumière solaire réfléchie.</p>
+<p><strong>La queue d'ions</strong>, c'est autre chose. L'ultraviolet solaire ionise le gaz, et le vent solaire magnétisé happe ces ions et les balaie à 400 km/s ou plus - bien plus vite que la comète ne se déplace, si bien que la queue pointe presque exactement à l'opposé du Soleil, droite et étroite. Elle brille en bleu parce que le monoxyde de carbone ionisé émet fortement à 420 nm.</p>
+<p>Chaque passage coûte de la matière à la comète. Une comète à courte période typique perd environ un mètre de surface par orbite, et les débris laissés le long du trajet sont exactement ce que la Terre percute chaque année sous forme de pluie de météores.</p>`,
+          facts: [
+            { e: '📏', t: `La ligne des glaces d'eau se situe vers 3 UA : au-delà la comète est inerte, en deçà la sublimation alimente coma et queues.` },
+            { e: '🎨', t: `La queue d'ions brille en bleu grâce à l'émission du CO⁺ à 420 nm ; la queue de poussière est jaunâtre parce qu'elle ne fait que réfléchir la lumière du Soleil.` },
+            { e: '⏳', t: `La comète de Halley perd plusieurs mètres de surface à chaque passage au périhélie et il lui reste peut-être 100 000 ans de vie active.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Début de la sublimation', e: 'r \\approx 3\\ \\text{UA}', c: 'glace d\'eau' },
+            { n: 'Pression de radiation', e: 'F_{\\text{rad}} = \\dfrac{L_\\odot A}{4\\pi r^2 c}', c: 'incurve la queue de poussière' },
+            { sep: 1 },
+            { n: 'Vitesse du vent solaire', e: 'v_{sw} \\approx 400\\ \\text{km/s}', c: 'redresse la queue d\'ions' },
+          ] },
+          sim: 'comets',
+        },
+        scholar: {
+          title: `Physique du noyau, β et les réservoirs`,
+          body: `<p>La forme de la queue de poussière découle d'un seul nombre sans dimension, \\(\\beta\\), le rapport de la pression de radiation à la gravité solaire sur un grain. Comme les deux varient en \\(1/r^2\\), \\(\\beta\\) est indépendant de la distance et ne dépend que de la taille et de la composition du grain, environ \\(\\beta \\approx 0.6/(\\rho a)\\) en cgs. Les grains avec \\(\\beta > 1\\) subissent une force nette vers l'extérieur et partent sur des trajectoires hyperboliques ; les plus lourds suivent des orbites képlériennes modifiées. Puisque des grains libérés à des instants différents et avec des \\(\\beta\\) différents aboutissent à des endroits différents, la queue de poussière est une carte bidimensionnelle de l'histoire d'émission - la base de l'analyse de Finson-Probstein en syndynes et synchrones.</p>
+<p>Les surfaces des noyaux comptent parmi les plus sombres connues, albédo autour de 0,04, et la sublimation se concentre dans des régions actives couvrant quelques pour cent de l'aire. Le reste est un manteau isolant de poussière. Cette localisation rend le dégazage anisotrope et produit une accélération non gravitationnelle qu'il faut inclure dans les ajustements d'orbite - l'effet qui a révélé le comportement anormal de 1I/'Oumuamua et qui domine l'évolution à long terme des comètes à courte période.</p>
+<p>Deux réservoirs les alimentent. La ceinture de Kuiper et le disque des objets épars fournissent les comètes de la famille de Jupiter, à faible inclinaison et courte période, tandis que le nuage d'Oort, à peu près sphérique, entre \\(10^4\\) et \\(10^5\\) UA, fournit les comètes à longue période sur des orbites d'orientation aléatoire, poussées vers l'intérieur par les marées galactiques et le passage d'étoiles. La distribution des inclinaisons orbitales signe donc l'origine d'un objet.</p>
+<p>Les deux années de Rosetta autour de 67P/Tchourioumov-Guérassimenko ont réécrit une bonne part des détails : un noyau bilobé et extrêmement poreux de densité moyenne proche de 0,5 g/cm³, un rapport D/H trois fois celui des océans terrestres - argument contre les comètes de la famille de Jupiter comme source principale de l'eau terrestre - et des molécules organiques complexes en abondance, glycine comprise.</p>`,
+          facts: [
+            { e: '📐', t: `β, le rapport de la pression de radiation à la gravité solaire, est indépendant de la distance : la structure de la queue de poussière cartographie donc directement l'histoire d'émission (syndynes et synchrones).` },
+            { e: '🌑', t: `Les noyaux cométaires sont plus sombres que du charbon, albédo ~0,04, la sublimation étant confinée à des régions actives de quelques pour cent de la surface.` },
+            { e: '💧', t: `Rosetta a trouvé pour 67P un rapport D/H trois fois celui de l'eau océanique terrestre, argument contre les comètes de la famille de Jupiter comme voie principale d'apport de nos océans.` },
+          ],
+          formula: { tex: 1, rows: [
+            { n: 'Rapport de pression de radiation', e: '\\beta = \\dfrac{F_{\\text{rad}}}{F_{\\text{grav}}} \\approx \\dfrac{0.6}{\\rho a}', c: 'indépendant de r' },
+            { n: 'Force non gravitationnelle', e: '\\ddot{r} = A_1 g(r) + \\ldots', c: 'dégazage anisotrope' },
+            { sep: 1 },
+            { n: 'Nuage d\'Oort', e: '10^4 - 10^5\\ \\text{UA}' },
+            { n: 'Densité moyenne de 67P', e: '\\rho \\approx 0.5\\ \\text{g/cm}^3', c: 'plus de vide que de roche' },
+          ] },
+          sim: 'comets',
+        },
+      },
+    },
     meteors: {
       title: 'Étoiles filantes et pluies de météores',
-      teaser: `Pourquoi les étoiles filantes arrivent selon un calendrier - et pourquoi les Perséides de 2026 s'annoncent spectaculaires.`,
+      teaser: `Pourquoi les étoiles filantes arrivent selon un calendrier - les mêmes semaines chaque année, depuis le même coin du ciel.`,
       chips: ['Perséides', 'Comètes', 'Étoiles filantes'],
       lvls: {
         junior: {
           title: `Pourquoi les étoiles filantes arrivent par pluies`,
           body: `<p>Une « étoile filante » n'est pas du tout une étoile - c'est un grain de poussière spatiale, souvent pas plus gros qu'un grain de sable, qui percute le sommet de notre atmosphère à des dizaines de kilomètres par seconde. Il va si vite qu'il chauffe l'air autour de lui jusqu'au blanc incandescent, et cette traînée lumineuse est ce que tu vois. La poussière elle-même brûle en une seconde ou deux, très haut au-dessus du sol.</p>
 <p>N'importe quelle nuit noire, tu peux en attraper quelques-unes au hasard. Mais quelques fois par an le ciel offre un vrai spectacle - une <strong>pluie de météores</strong> - avec des dizaines par heure, qui semblent toutes jaillir du même point. Cela arrive quand la Terre traverse une traînée de poussière laissée par une <strong>comète</strong>. La comète sème des miettes le long de son orbite, et une fois par an notre planète fonce droit dedans, comme une voiture dans un nuage de moucherons.</p>
-<p>Les plus célèbres sont les <strong>Perséides</strong>, dont le pic revient chaque août - et 2026 est un excellent cru, sans Lune brillante pour les effacer, la même nuit remarquable (12 août) qu'une éclipse solaire totale sur l'Europe. Les météores semblent rayonner depuis la constellation de Persée, c'est donc le « radiant » - mais tu n'as pas à le fixer. Allonge-toi, laisse tes yeux s'habituer à l'obscurité et regarde tout le ciel.</p>`,
+<p>Les plus célèbres sont les <strong>Perséides</strong>, dont le pic revient chaque août. Les <strong>Orionides</strong> reviennent chaque octobre - des miettes laissées par la comète de Halley - et les <strong>Géminides</strong> chaque décembre, l'essaim le plus riche de l'année. Les mêmes semaines, chaque année, parce que la Terre croise les mêmes traînées au même point de son tour. Les météores semblent rayonner depuis la constellation de Persée, c'est donc le « radiant » - mais tu n'as pas à le fixer. Allonge-toi, laisse tes yeux s'habituer à l'obscurité et regarde tout le ciel.</p>`,
           facts: [
             { e: '☄️', t: `Les pluies de météores se produisent quand la Terre traverse la traînée de poussière laissée par une comète. Les Perséides viennent de la comète Swift-Tuttle.` },
             { e: '🔥', t: `La plupart des météores ne sont pas plus gros qu'un grain de sable - la traînée éclatante est de l'air surchauffé, pas le grain qui brûle.` },
-            { e: '🌑', t: `Les Perséides culminent les 12-13 août 2026 sous une nouvelle Lune, si bien qu'un ciel noir pourrait révéler jusqu'à 100 météores par heure.` },
+            { e: '🌑', t: `Les Géminides, chaque décembre, sont l'essaim le plus fiable de l'année : jusqu'à 120 météores par heure sous un ciel noir, et assez lentes pour laisser de longues traînées.` },
           ],
           formula: null, sim: 'meteors',
         },
@@ -3757,11 +3938,11 @@ export default {
           title: `Débris de comète, radiants, et pourquoi les pluies sont annuelles`,
           body: `<p>Un <strong>météoroïde</strong> est un petit fragment de roche ou de poussière dans l'espace ; quand il frappe l'atmosphère (~100 km d'altitude) et s'embrase, c'est un <strong>météore</strong> ; ce qui survit jusqu'au sol est une <strong>météorite</strong>. Les météores des pluies sont des miettes de comète. Quand une comète passe près du Soleil, sa glace se sublime et libère de la poussière qui s'étale le long de l'orbite de la comète, formant un courant de débris. Chaque fois que l'orbite de la Terre croise ce courant - à la même date chaque année - nous avons une pluie.</p>
 <p>Tous les météores d'une pluie voyagent sur des trajectoires parallèles (ils partagent l'orbite de la comète), si bien que la perspective les fait sembler diverger d'un seul point du ciel - le <strong>radiant</strong> - comme des rails parallèles semblent se rejoindre à l'horizon. Les pluies portent le nom de la constellation où se trouve le radiant : Perséides (Persée), Géminides (Gémeaux), Léonides (Lion). L'activité se mesure par le <em>Taux Horaire Zénithal</em>, le nombre que tu verrais sous un ciel parfaitement noir avec le radiant au zénith.</p>
-<p>Le taux monte et descend sur plusieurs jours à mesure que la Terre entre et sort de la partie la plus dense du courant, avec un pic quand elle en traverse le cœur. Le trouble-fête est le clair de lune : une Lune brillante noie les plus faibles, et c'est pourquoi les prévisionnistes s'enthousiasment quand un pic tombe sur une nouvelle Lune - comme les Perséides en 2026. Les météores frappent l'air entre 11 et 72 km/s ; les Perséides sont rapides, environ 59 km/s.</p>`,
+<p>Le taux monte et descend sur plusieurs jours à mesure que la Terre entre et sort de la partie la plus dense du courant, avec un pic quand elle en traverse le cœur. Le trouble-fête est le clair de lune : une Lune brillante noie les plus faibles, et c'est pourquoi les prévisionnistes s'enthousiasment quand un pic tombe sur une nouvelle Lune. Les météores frappent l'air entre 11 et 72 km/s ; les Perséides sont rapides, environ 59 km/s.</p>`,
           facts: [
             { e: '🚆', t: `Les météores d'une pluie courent en parallèle mais semblent rayonner d'un point - le « radiant » - le même effet de perspective que des rails se rejoignant à l'horizon.` },
             { e: '🌠', t: `Les Perséides frappent l'air à ~59 km/s. Les douces Draconides rampent à ~20 km/s ; les Léonides filent à ~71 km/s.` },
-            { e: '🌙', t: `Le vrai test d'une pluie, c'est la Lune : même une pluie forte déçoit sous une Lune brillante, d'où le prix d'un pic à nouvelle Lune comme celui des Perséides 2026.` },
+            { e: '🌙', t: `Le vrai test d'une pluie, c'est la Lune : même une pluie forte déçoit sous une Lune brillante, d'où le prix d'un pic proche de la nouvelle Lune.` },
           ],
           formula: { tex: 1, rows: [
             { n: 'Météoroïde → météore → météorite', e: `\\text{dans l'espace} \\to \\text{l'air brille} \\to \\text{au sol}` },
@@ -4778,6 +4959,57 @@ export default {
         notice: `<b>La fenêtre est la limite écliptique — quelques degrés de longitude du nœud seulement.</b> Comme la ligne des nœuds recule sur 18,6 ans, les saisons d'éclipses avancent de ~19 jours par an, et après un Saros (223 mois synodiques) toute la géométrie se répète. La correspondance des tailles angulaires du Soleil et de la Lune est ce qui permet la totalité plutôt qu'un anneau annulaire permanent.`,
       },
     },
+    bloodmoon: {
+      junior: {
+        legend: `La moitié gauche est la vue depuis l'espace : la lumière du Soleil arrive par la gauche, la Terre la bloque, et le cône sombre derrière notre planète est l'ombre que la Lune doit traverser. Les lignes orange courbes sont les rayons qui frôlent notre atmosphère - l'air les courbe vers l'intérieur et leur retire le bleu, si bien que la seule lumière qui atteint la Lune est rouge. Le cercle en haut à droite est ce que tu verrais vraiment depuis ton jardin.`,
+        try: `Mets [[path]] à 0 pour que la Lune passe droit au milieu de l'ombre, et regarde le cercle en haut à droite. Pousse ensuite [[dust]] à fond, comme si un volcan venait d'entrer en éruption.`,
+        notice: `<b>La Lune ne devient jamais totalement noire - et avec beaucoup de poussière dans l'air, elle en approche.</b> Cette lumière rouge est de la lumière solaire qui s'est faufilée par le bord de l'atmosphère terrestre, et c'est pourquoi la couleur change quand notre air change. Un ciel empoussiéré après une grosse éruption peut rendre la Lune éclipsée presque invisible.`,
+      },
+      student: {
+        legend: `Les distances sont en rayons lunaires : l'ombre de la Terre en fait 2,6 de large là où la Lune la traverse, donc la Lune peut y tenir entièrement pendant plus d'une heure. [[path]] écarte la trajectoire de l'axe de l'ombre, [[cover]] donne la magnitude ombrale \\(U=(R_u+r_m-d)/2r_m\\), et [[shade]] le nombre de Danjon correspondant à l'assombrissement du disque.`,
+        try: `Augmente [[path]] lentement et regarde [[cover]] chuter : trouve l'écart où l'éclipse cesse d'être totale pour devenir partielle, puis celui où la Lune manque complètement l'ombre.`,
+        notice: `<b>La totalité s'arrête à U = 1 et l'ombre s'épuise vers 1,6 rayon lunaire d'écart.</b> Remarque le liseré intérieur du bord de l'ombre, plus clair et plus bleuté que le centre : cette lumière a suivi un trajet plus court dans notre atmosphère et a perdu moins de bleu - la même raison qui rend la partie la plus profonde de l'ombre la plus rouge.`,
+      },
+      scholar: {
+        legend: `La géométrie est élémentaire, la photométrie beaucoup moins : l'ombre est entièrement remplie par des rayons réfractés à travers le limbe terrestre de \\(0.5^\\circ-1^\\circ\\), atténués par la diffusion Rayleigh \\(\\propto\\lambda^{-4}\\) et par l'absorption de l'ozone dans la bande de Chappuis. [[dust]] représente l'épaisseur optique des aérosols stratosphériques, [[shade]] l'estimation de Danjon qui en découle.`,
+        try: `Garde [[path]] proche de 0 et balaie [[dust]] de 0 à 10 en surveillant [[shade]] : c'est la chaîne d'observation qui fait d'une estimation de couleur à l'œil nu un indicateur de la charge en aérosols stratosphériques après une grande éruption.`,
+        notice: `<b>La luminosité de l'ombre n'est pas une grandeur géométrique : c'est une mesure atmosphérique.</b> La totalité est \\(10^4\\) à \\(10^5\\) fois plus faible que la pleine Lune, et la dispersion est fixée par les aérosols et les nuages du terminateur, pas par l'éclipse elle-même. Des éclipses à L=0 ont suivi El Chichón (1982) et Pinatubo (1991), les deux plus grandes injections stratosphériques de l'ère satellitaire.`,
+      },
+    },
+    aurora: {
+      junior: {
+        legend: `En haut : le Soleil à gauche qui nous envoie des particules chargées, et la Terre à droite enveloppée dans son bouclier magnétique. Les flèches rouges ou bleues montrent dans quel sens pointe le champ magnétique qui arrive - c'est l'interrupteur qui décide de tout. En bas : ce que tu verrais dehors, avec les couleurs empilées par altitude.`,
+        try: `Mets [[bz]] tout à droite, pour que le champ arrivant pointe vers le nord, et regarde le ciel en bas. Fais-le ensuite glisser tout à gauche, vers le sud, et observe les deux moitiés en même temps.`,
+        notice: `<b>Un champ orienté sud ouvre le bouclier ; un champ orienté nord le garde fermé.</b> La vitesse seule ne suffit pas : un vent solaire rapide avec la mauvaise orientation ne donne presque rien, alors qu'un vent plus lent orienté sud enflamme le ciel. Quand la tempête se renforce, la lueur s'éloigne du pôle - c'est ainsi qu'on la voit parfois depuis l'Italie ou le Texas.`,
+      },
+      student: {
+        legend: `[[wind]] règle la vitesse du vent solaire et [[bz]] la composante nord-sud du champ interplanétaire qui arrive. Un Bz sud se reconnecte au champ terrestre à la magnétopause diurne, ouvrant du flux qui charge la queue et précipite des électrons dans les calottes polaires. [[kp]] estime l'indice géomagnétique obtenu et [[oval]] le bord équatorial de l'ovale auroral.`,
+        try: `Garde [[wind]] à 900 km/s avec [[bz]] plein nord et lis [[kp]]. Descends ensuite à 400 km/s et mets [[bz]] plein sud. Quelle combinaison l'emporte ?`,
+        notice: `<b>Le couplage suit le produit de la vitesse et du champ orienté sud : l'orientation bat la vitesse brute.</b> L'empilement des couleurs est un profil de densité : le vert 557,7 nm de l'oxygène domine entre 100 et 250 km, le rouge 630,0 nm ne survit qu'au-dessus de ~250 km car sa durée de vie de 110 secondes exige un air assez ténu pour éviter la désexcitation collisionnelle, et le violet de l'azote marque la précipitation la plus profonde et la plus dure.`,
+      },
+      scholar: {
+        legend: `Un schéma du cycle de Dungey : reconnexion diurne pour un IMF sud, transport de flux au-dessus de la calotte polaire, chargement de la queue et précipitation de sous-orage dans l'ovale auroral. [[kp]] est un indicateur grossier du niveau d'activité et [[oval]] du bord équatorial, qui suit approximativement \\(\\Lambda \\approx 67^\\circ - 2.5 K_p\\).`,
+        try: `Reconstruis toi-même la fonction de couplage : balaie [[wind]] sur toute sa plage à [[bz]] fixe orienté sud, puis balaie [[bz]] à vitesse fixe, et compare l'effet de chacun sur [[kp]]. L'asymétrie est le contenu physique de \\(E_y = -v_x B_z\\).`,
+        notice: `<b>La porte énergétique est la reconnexion, pas la pression.</b> Un IMF nord peut pousser un vent rapide et dense au-delà de la magnétopause avec une faible géoefficacité, tandis qu'une CME modeste au champ ordonné sud produit un orage sévère. Les mêmes courants alignés et ionosphériques qui produisent le spectacle induisent des courants géomagnétiquement induits dans les réseaux et les pipelines - le mécanisme derrière l'effondrement en 92 secondes du réseau d'Hydro-Québec en mars 1989.`,
+      },
+    },
+    comets: {
+      junior: {
+        legend: `L'ellipse en pointillés est l'orbite de la comète et la boule jaune est le Soleil. Le cercle bleu en pointillés est la ligne des glaces : au-delà la comète est un bloc gelé qui ne montre rien, en deçà la glace passe directement en gaz et la comète se fait pousser une tête lumineuse et deux queues. La flèche blanche indique dans quel sens la comète file vraiment.`,
+        try: `Regarde la comète passer près du Soleil et garde un œil sur la flèche blanche et sur les queues pendant qu'elle repart vers l'extérieur. Agrandis ensuite la boule de neige avec [[size]] et vois combien de matière en plus elle peut éjecter.`,
+        notice: `<b>Sur le trajet de retour, la comète poursuit sa propre queue.</b> La queue n'est pas de la fumée qui traîne derrière : c'est de la matière soufflée à l'opposé du Soleil, elle pointe donc toujours du côté opposé au Soleil quel que soit le sens de marche de la comète. Et tout le spectacle n'existe qu'en deçà de la ligne des glaces : le même objet reste totalement éteint pendant presque toute son orbite.`,
+      },
+      student: {
+        legend: `Orbite intégrée avec la deuxième loi de Kepler : la comète fonce visiblement au périhélie et rampe à l'aphélie. L'activité s'allume en deçà de la ligne des glaces à 3 UA et varie avec la taille du noyau [[size]] ; [[ecc]] allonge l'orbite. Les deux queues sont tracées séparément : la queue d'ions, droite et bleue, balayée à l'opposé du Soleil par le vent solaire, et la queue de poussière, large et courbe, façonnée par la pression de radiation sur des grains qui conservent leur quantité de mouvement orbitale.`,
+        try: `Mets [[ecc]] à 0,96 et suis [[dist]] et [[act]] sur une orbite complète : quelle fraction de l'orbite passe-t-elle à faire quoi que ce soit ? Compare ensuite un noyau de 0,5 km et un de 15 km au même périhélie.`,
+        notice: `<b>Une comète est inerte presque toute son orbite et spectaculaire quelques semaines.</b> Les deux queues se séparent parce que deux forces différentes agissent : le vent solaire entraîne les ions à 400 km/s, d'où une queue droite et antisolaire, tandis que les grains de poussière conservent la vitesse orbitale qu'ils avaient en partant, d'où une queue en retard et incurvée. Gros noyau, périhélie serré et beaucoup de volatils restants : voilà ce qui fait une grande comète.`,
+      },
+      scholar: {
+        legend: `Orbite képlérienne intégrée, avec activité conditionnée à la ligne des glaces d'eau. La géométrie de la queue de poussière tient lieu de tableau de Finson-Probstein : les grains partent avec une gamme de \\(\\beta = F_{rad}/F_{grav}\\) et, comme les deux termes varient en \\(1/r^2\\), \\(\\beta\\) ne dépend que de la taille du grain, si bien que la queue est de fait une carte de l'histoire d'émission.`,
+        try: `Pousse [[ecc]] à son extrême et note où l'activité commence et s'arrête par rapport au périhélie. Les comètes réelles sont asymétriques autour du périhélie : demande-toi ce que l'inertie thermique et l'éclairement saisonnier des régions actives feraient à la courbe que tu vois ici.`,
+        notice: `<b>Le dégazage n'est pas qu'un spectacle, c'est une force.</b> La sublimation anisotrope depuis des régions actives couvrant quelques pour cent d'un noyau très sombre et très poreux produit des accélérations non gravitationnelles assez grandes pour faire échouer les solutions d'orbite qui les ignorent. Rosetta a mesuré pour 67P une densité moyenne proche de 0,5 g/cm³ et un rapport D/H trois fois terrestre, argument direct contre les comètes de la famille de Jupiter comme source principale de l'eau terrestre.`,
+      },
+    },
     meteors: {
       junior: {
         legend: `Le ciel nocturne, avec les étoiles filantes qui jaillissent d'un point — le radiant. Le petit schéma montre la Terre traversant la traînée de poussière d'une comète : plus on s'enfonce dans la traînée, plus il y a de météores.`,
@@ -5083,6 +5315,21 @@ export default {
       junior:  { moon: 'Déplace la Lune', node: 'Aligne l\'orbite',      phase: 'Phase lunaire', ecl: 'Éclipse ?' },
       student: { moon: 'Position Lune',    node: 'Alignement du nœud',   phase: 'Phase lunaire', ecl: 'Éclipse' },
       scholar: { moon: 'Position Lune',    node: 'Alignement du nœud',   phase: 'Phase lunaire', ecl: 'Éclipse' },
+    },
+    bloodmoon: {
+      junior:  { path: 'Alignement plus ou moins centré', dust: 'Poussière dans l\'air', cover: 'Lune dans l\'ombre', shade: 'À quel point c\'est sombre', look: 'Ce que tu verrais', play: 'Lancer', pause: 'Pause', cSun: "lumière du Soleil", cAtm: "atmosphère", cEarth: "Terre", cUmbra: "ombre", cPen: "pénombre", cSeen: "vue depuis la Terre", cDanjon: "échelle de Danjon", cCap: "la seule lumière qui atteint la Lune est du soleil courbé et rougi par notre air", vTotal: "Totale", vDeep: "Partielle profonde", vPartial: "Partielle", vPenOnly: "Pénombre seule", vNoEcl: "Pas d'éclipse" },
+      student: { path: 'Écart à l\'axe', dust: 'Poussière atmosphérique', cover: 'Magnitude ombrale', shade: 'Danjon L', look: 'Type d\'éclipse', play: 'Lancer', pause: 'Pause', cSun: "lumière du Soleil", cAtm: "atmosphère", cEarth: "Terre", cUmbra: "ombre", cPen: "pénombre", cSeen: "vue depuis la Terre", cDanjon: "échelle de Danjon", cCap: "la seule lumière qui atteint la Lune est du soleil courbé et rougi par notre air", vTotal: "Totale", vDeep: "Partielle profonde", vPartial: "Partielle", vPenOnly: "Pénombre seule", vNoEcl: "Pas d'éclipse" },
+      scholar: { path: 'Écart à l\'axe', dust: 'Charge en aérosols', cover: 'Magnitude ombrale', shade: 'Danjon L', look: 'Type d\'éclipse', play: 'Lancer', pause: 'Pause', cSun: "lumière du Soleil", cAtm: "atmosphère", cEarth: "Terre", cUmbra: "ombre", cPen: "pénombre", cSeen: "vue depuis la Terre", cDanjon: "échelle de Danjon", cCap: "la seule lumière qui atteint la Lune est du soleil courbé et rougi par notre air", vTotal: "Totale", vDeep: "Partielle profonde", vPartial: "Partielle", vPenOnly: "Pénombre seule", vNoEcl: "Pas d'éclipse" },
+    },
+    aurora: {
+      junior:  { wind: 'Poussée du Soleil', bz: 'Direction magnétique', kp: 'Force de la tempête', oval: 'Visible jusqu\'à', glow: 'Couleur principale', cSun: "Soleil", cEarth: "Terre", cMagPause: "magnétopause", cRecon: "reconnexion", cSouth: "champ vers le SUD - le bouclier s'ouvre", cNorth: "champ vers le NORD - le bouclier tient", cKeyRed: "au-dessus de 250 km  oxygène rouge", cKeyGreen: "100-250 km  oxygène vert", cKeyViolet: "sous 100 km  azote violet", vLat: "de latitude", vAll: "vert + rouge + violet", vGreenRed: "vert + rouge", vGreen: "vert", vNothing: "presque rien" },
+      student: { wind: 'Vitesse du vent solaire', bz: 'Bz interplanétaire', kp: 'Indice Kp', oval: 'Bord équatorial', glow: 'Émission dominante', cSun: "Soleil", cEarth: "Terre", cMagPause: "magnétopause", cRecon: "reconnexion", cSouth: "champ vers le SUD - le bouclier s'ouvre", cNorth: "champ vers le NORD - le bouclier tient", cKeyRed: "au-dessus de 250 km  oxygène rouge", cKeyGreen: "100-250 km  oxygène vert", cKeyViolet: "sous 100 km  azote violet", vLat: "de latitude", vAll: "vert + rouge + violet", vGreenRed: "vert + rouge", vGreen: "vert", vNothing: "presque rien" },
+      scholar: { wind: 'Vitesse du vent solaire', bz: 'Bz interplanétaire', kp: 'Indice Kp', oval: 'Bord équatorial de l\'ovale', glow: 'Émission dominante', cSun: "Soleil", cEarth: "Terre", cMagPause: "magnétopause", cRecon: "reconnexion", cSouth: "champ vers le SUD - le bouclier s'ouvre", cNorth: "champ vers le NORD - le bouclier tient", cKeyRed: "au-dessus de 250 km  oxygène rouge", cKeyGreen: "100-250 km  oxygène vert", cKeyViolet: "sous 100 km  azote violet", vLat: "de latitude", vAll: "vert + rouge + violet", vGreenRed: "vert + rouge", vGreen: "vert", vNothing: "presque rien" },
+    },
+    comets: {
+      junior:  { size: 'Taille de la boule de neige', ecc: 'Orbite plus ou moins allongée', dist: 'Distance au Soleil', act: 'Ce qu\'elle fait', tail: 'Longueur de la queue', cTrail: "poussière laissée le long de l'orbite - c'est elle qui alimente les pluies de météores", cFrost: "ligne des glaces, 3 UA - la glace commence à passer en gaz", cPeri: "périhélie", cAph: "aphélie", cGoing: "elle va par là", cToSun: "vers le Soleil", cNucleus: "noyau, quelques km de glace et de poussière", cJets: "jets de gaz et de poussière", cIon: "queue d'ions, balayée tout droit par le vent solaire", cDust: "queue de poussière, grains plus lourds qui traînent et s'incurvent", cFar: "trop loin du Soleil - pas de queue, juste un bloc sombre de glace", cOut: "elle repart vers l'extérieur : la queue précède, la comète suit", cIn: "elle tombe vers le Soleil : la queue se déploie derrière", vDormant: "Dormante", vWaking: "Elle se réveille", vActive: "Active", vBlazing: "Flamboyante", vNone: "aucune", vMkm: "millions de km" },
+      student: { size: 'Rayon du noyau', ecc: 'Excentricité', dist: 'Distance héliocentrique', act: 'Activité', tail: 'Longueur de la queue', cTrail: "poussière laissée le long de l'orbite - c'est elle qui alimente les pluies de météores", cFrost: "ligne des glaces, 3 UA - la glace commence à passer en gaz", cPeri: "périhélie", cAph: "aphélie", cGoing: "elle va par là", cToSun: "vers le Soleil", cNucleus: "noyau, quelques km de glace et de poussière", cJets: "jets de gaz et de poussière", cIon: "queue d'ions, balayée tout droit par le vent solaire", cDust: "queue de poussière, grains plus lourds qui traînent et s'incurvent", cFar: "trop loin du Soleil - pas de queue, juste un bloc sombre de glace", cOut: "elle repart vers l'extérieur : la queue précède, la comète suit", cIn: "elle tombe vers le Soleil : la queue se déploie derrière", vDormant: "Dormante", vWaking: "Elle se réveille", vActive: "Active", vBlazing: "Flamboyante", vNone: "aucune", vMkm: "millions de km" },
+      scholar: { size: 'Rayon du noyau', ecc: 'Excentricité', dist: 'Distance héliocentrique', act: 'Activité', tail: 'Longueur de la queue', cTrail: "poussière laissée le long de l'orbite - c'est elle qui alimente les pluies de météores", cFrost: "ligne des glaces, 3 UA - la glace commence à passer en gaz", cPeri: "périhélie", cAph: "aphélie", cGoing: "elle va par là", cToSun: "vers le Soleil", cNucleus: "noyau, quelques km de glace et de poussière", cJets: "jets de gaz et de poussière", cIon: "queue d'ions, balayée tout droit par le vent solaire", cDust: "queue de poussière, grains plus lourds qui traînent et s'incurvent", cFar: "trop loin du Soleil - pas de queue, juste un bloc sombre de glace", cOut: "elle repart vers l'extérieur : la queue précède, la comète suit", cIn: "elle tombe vers le Soleil : la queue se déploie derrière", vDormant: "Dormante", vWaking: "Elle se réveille", vActive: "Active", vBlazing: "Flamboyante", vNone: "aucune", vMkm: "millions de km" },
     },
     meteors: {
       junior:  { pos: 'Période de l\'année',    dens: 'Poussière dans la traînée', rate: 'Étoiles filantes/h', status: 'Le ciel maintenant' },

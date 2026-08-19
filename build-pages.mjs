@@ -116,7 +116,7 @@ const ENGINE = [
     'simPhotosynthesis', 'simCell', 'simMitosis',
     'simSorting', 'simML', 'simCrypto', 'simComplexity', 'simClimate', 'simTectonics',
     'simOcean', 'simVolcano', 'simChem', 'simElectrochem', 'simKinetics', 'simOrganic', 'simAcids', 'simPeriodic',
-    'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simEclipse', 'simMeteors', 'simNeuro', 'simNeuron',
+    'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simEclipse', 'simMeteors', 'simBloodMoon', 'simAurora', 'simComet', 'simFlight', 'simExoplanets', 'simElNino', 'simNeuro', 'simNeuron',
     'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein', 'simWater', 'simEnergy', 'simSeriesParallel', 'simRespiration'].map(decl),
 ].join('\n\n');
 
@@ -142,7 +142,10 @@ function simEmbedHTML(T, lang) {
     const g = guide[l], lab = labelsFor[l] || {};
     return `<div class="sim-guide" data-l="${l}"${l === active ? '' : ' hidden'}><div class="sg-legend"><span class="sg-lbl">${ui.whatSeeing}</span>${fillLabels(g.legend, lab)}</div><details class="sg-notice"><summary>${ui.whatNotice}</summary><div class="sg-body">${fillLabels(g.notice, lab)}</div></details></div>`;
   }).join('\n');
-  return `<section class="sim-embed" data-sim="${T.id}" data-color="${T.color}" aria-label="Interactive simulation">
+  const labelScript = lang.code === 'en' ? ''
+    : `<script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},${jsonInline({ [T.id]: labelsFor })});</script>
+`;
+  return `${labelScript}<section class="sim-embed" data-sim="${T.id}" data-color="${T.color}" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level">${tabs}</div>
   ${tries}
   <div class="sim-host"></div>
@@ -530,4 +533,8 @@ fs.writeFileSync('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/si
 }
 
 console.log(`built ${n} pages (${LANGS.map(l => l.code + ':' + built.filter(b => b.lang === l.code).length).join(' ')})${removed ? `, removed ${removed} stale` : ''}`);
+// A topic whose sim id does not match its guide/labels key silently degrades to a
+// "run the simulation" link instead of the embedded sim - warn loudly instead.
+const orphans = S.filter(t => !SIM_GUIDE[t.id] || !SIM_LABELS[t.id]);
+if (orphans.length) console.warn('WARNING: no sim guide/labels for -> ' + orphans.map(t => t.id).join(', '));
 console.log(`sitemap.xml: ${urls.length} urls · robots.txt written`);

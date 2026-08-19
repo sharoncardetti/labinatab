@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comete | Lab-in-a-Tab</title>
+<meta name="description" content="Una palla di neve sporca che mette due code - e nessuna delle due la segue.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/comete/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/comets/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/comete/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/cometes/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/comets/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Comete — Spiegato e simulato">
+<meta property="og:description" content="Una palla di neve sporca che mette due code - e nessuna delle due la segue.">
+<meta property="og:url" content="https://labinatab.com/it/comete/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comete — Spiegato e simulato">
+<meta name="twitter:description" content="Una palla di neve sporca che mette due code - e nessuna delle due la segue.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/comete/#article",
+   "headline": "Comete",
+   "name": "Comete",
+   "description": "Una palla di neve sporca che mette due code - e nessuna delle due la segue.",
+   "url": "https://labinatab.com/it/comete/",
+   "mainEntityOfPage": "https://labinatab.com/it/comete/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-19",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Code",
+    "Sublimazione",
+    "Halley"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Comete",
+    "sameAs": "https://en.wikipedia.org/wiki/Comet"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Comete",
+     "item": "https://labinatab.com/it/comete/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=1d968360"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/comets/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/comete/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/cometes/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Astronomia</nav>
+  <h1>Comete</h1>
+  <p class="lead">Una palla di neve sporca che mette due code - e nessuna delle due la segue.</p>
+  <div class="chips"><span>Code</span><span>Sublimazione</span><span>Halley</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"comets":{"junior":{"size":"Dimensione della palla di neve","ecc":"Quanto è allungata l'orbita","dist":"Distanza dal Sole","act":"Cosa sta facendo","tail":"Lunghezza della coda","cTrail":"polvere lasciata lungo l'orbita - è questa ad alimentare gli sciami meteorici","cFrost":"frost line, 3 UA - il ghiaccio inizia a diventare gas","cPeri":"perielio","cAph":"afelio","cGoing":"sta andando di qua","cToSun":"verso il Sole","cNucleus":"nucleo, pochi km di ghiaccio e polvere","cJets":"getti di gas e polvere","cIon":"coda di ioni, spazzata dritta dal vento solare","cDust":"coda di polveri, grani più pesanti che restano indietro e si incurvano","cFar":"troppo lontana dal Sole - nessuna coda, solo un grumo scuro di ghiaccio","cOut":"sta tornando fuori: la coda va avanti e la cometa la insegue","cIn":"sta cadendo verso il Sole: la coda si distende dietro","vDormant":"Dormiente","vWaking":"Si sta svegliando","vActive":"Attiva","vBlazing":"Sfolgorante","vNone":"nessuna","vMkm":"milioni di km"},"student":{"size":"Raggio del nucleo","ecc":"Eccentricità","dist":"Distanza eliocentrica","act":"Attività","tail":"Lunghezza della coda","cTrail":"polvere lasciata lungo l'orbita - è questa ad alimentare gli sciami meteorici","cFrost":"frost line, 3 UA - il ghiaccio inizia a diventare gas","cPeri":"perielio","cAph":"afelio","cGoing":"sta andando di qua","cToSun":"verso il Sole","cNucleus":"nucleo, pochi km di ghiaccio e polvere","cJets":"getti di gas e polvere","cIon":"coda di ioni, spazzata dritta dal vento solare","cDust":"coda di polveri, grani più pesanti che restano indietro e si incurvano","cFar":"troppo lontana dal Sole - nessuna coda, solo un grumo scuro di ghiaccio","cOut":"sta tornando fuori: la coda va avanti e la cometa la insegue","cIn":"sta cadendo verso il Sole: la coda si distende dietro","vDormant":"Dormiente","vWaking":"Si sta svegliando","vActive":"Attiva","vBlazing":"Sfolgorante","vNone":"nessuna","vMkm":"milioni di km"},"scholar":{"size":"Raggio del nucleo","ecc":"Eccentricità","dist":"Distanza eliocentrica","act":"Attività","tail":"Lunghezza della coda","cTrail":"polvere lasciata lungo l'orbita - è questa ad alimentare gli sciami meteorici","cFrost":"frost line, 3 UA - il ghiaccio inizia a diventare gas","cPeri":"perielio","cAph":"afelio","cGoing":"sta andando di qua","cToSun":"verso il Sole","cNucleus":"nucleo, pochi km di ghiaccio e polvere","cJets":"getti di gas e polvere","cIon":"coda di ioni, spazzata dritta dal vento solare","cDust":"coda di polveri, grani più pesanti che restano indietro e si incurvano","cFar":"troppo lontana dal Sole - nessuna coda, solo un grumo scuro di ghiaccio","cOut":"sta tornando fuori: la coda va avanti e la cometa la insegue","cIn":"sta cadendo verso il Sole: la coda si distende dietro","vDormant":"Dormiente","vWaking":"Si sta svegliando","vActive":"Attiva","vBlazing":"Sfolgorante","vNone":"nessuna","vMkm":"milioni di km"}}});</script>
+<section class="sim-embed" data-sim="comets" data-color="#0ea5e9" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0ea5e9"><span class="sg-lbl">Prova</span><span>Guarda la cometa sfrecciare vicino al Sole e tieni d'occhio la freccia bianca e le code mentre torna verso l'esterno. Poi ingrandisci la palla di neve con <b>Dimensione della palla di neve</b> e vedi quanto di più riesce a buttare fuori.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0ea5e9"><span class="sg-lbl">Prova</span><span>Metti <b>Eccentricità</b> a 0,96 e segui <b>Distanza eliocentrica</b> e <b>Attività</b> lungo un'orbita intera: quanta parte dell'orbita passa a fare qualcosa? Poi confronta un nucleo da 0,5 km con uno da 15 km allo stesso perielio.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0ea5e9"><span class="sg-lbl">Prova</span><span>Spingi <b>Eccentricità</b> al suo estremo e nota dove l'attività comincia e finisce rispetto al perielio. Le comete reali sono asimmetriche rispetto al perielio: considera cosa farebbero l'inerzia termica e l'illuminazione stagionale delle regioni attive alla curva che vedi qui.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>L'ellisse tratteggiata è l'orbita della cometa e la palla gialla è il Sole. Il cerchio tratteggiato azzurro è la frost line: fuori la cometa è un grumo congelato che non mostra nulla, dentro il ghiaccio passa direttamente a gas e la cometa mette una testa luminosa e due code. La freccia bianca indica dove sta andando davvero la cometa.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Nel viaggio di ritorno la cometa insegue la propria coda.</b> La coda non è fumo che si trascina dietro: è materiale soffiato via dal Sole, quindi punta sempre dalla parte opposta al Sole comunque si muova la cometa. E tutto lo spettacolo esiste solo dentro la frost line: lo stesso oggetto resta completamente spento per quasi tutta l'orbita.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Orbita integrata con la seconda legge di Keplero, così la cometa sfreccia visibilmente al perielio e striscia all'afelio. L'attività si accende dentro la frost line a 3 UA e scala con la dimensione del nucleo <b>Raggio del nucleo</b>; <b>Eccentricità</b> allunga l'orbita. Le due code sono disegnate separatamente: quella di ioni, dritta e azzurra, spazzata in direzione antisolare dal vento solare, e quella di polveri, larga e curva, modellata dalla pressione di radiazione su grani che conservano quantità di moto orbitale.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Una cometa è inerte per quasi tutta l'orbita e spettacolare per poche settimane.</b> Le due code si separano perché agiscono due forze diverse: il vento solare trascina gli ioni a 400 km/s, quindi quella coda è dritta e antisolare, mentre i grani di polvere conservano la velocità orbitale con cui sono stati liberati e la loro coda resta indietro incurvandosi. Nucleo grande, perielio ravvicinato e molti volatili residui: ecco cosa fa una grande cometa.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Orbita integrata alla Keplero con attività vincolata alla frost line dell'acqua. La geometria della coda di polveri sta per un quadro alla Finson-Probstein: i grani partono con un intervallo di \(\beta = F_{rad}/F_{grav}\) e, poiché entrambi i termini vanno come \(1/r^2\), \(\beta\) dipende solo dalla dimensione del grano, così la coda è di fatto una mappa della storia di emissione.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>L'emissione di gas non è solo spettacolo, è una forza.</b> La sublimazione anisotropa da regioni attive che coprono pochi punti percentuali di un nucleo scurissimo e porosissimo produce accelerazioni non gravitazionali abbastanza grandi da far fallire le soluzioni orbitali che le ignorano. Rosetta ha misurato in 67P una densità media vicina a 0,5 g/cm³ e un rapporto D/H tre volte quello terrestre: un argomento diretto contro le comete della famiglia di Giove come fonte principale dell'acqua della Terra.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Perché le comete mettono la coda</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Una cometa passa quasi tutta la vita come un grumo scuro di ghiaccio e polvere, largo pochi chilometri, alla deriva nel gelido sistema solare esterno. Non brilla per niente. È, come dicono volentieri gli astronomi, una <strong>palla di neve sporca</strong>.</p>
+<p>Poi la sua lunga orbita a cappio la porta verso l'interno, e attorno alla distanza della fascia degli asteroidi il Sole comincia a farsi sentire. Il ghiaccio non si scioglie in una pozza: nel vuoto passa direttamente da solido a gas, un processo chiamato <strong>sublimazione</strong>. Getti di gas esplodono dal lato illuminato trascinandosi dietro la polvere, e il piccolo nucleo si avvolge in una nube luminosa chiamata <em>chioma</em> che può diventare più grande di un pianeta.</p>
+<p>E adesso la sorpresa. La coda non si trascina dietro la cometa come il fumo dietro un treno. La luce solare e il vento solare spingono il gas e la polvere in fuga <strong>lontano dal Sole</strong>, in qualunque direzione stia andando la cometa. Così all'andata la coda la segue, e al ritorno la cometa insegue la propria coda, viaggiando di coda.</p>
+<p>Guarda bene e di code ce ne sono due, non una. Una <strong>coda di polveri</strong> biancastra e gialla, che si incurva perché i grani pesanti conservano un po' del moto orbitale della cometa, e una <strong>coda di ioni</strong> dritta e azzurra, fatta di gas elettricamente carico, soffiata via dal Sole in linea retta dal vento solare.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">❄️</span> Il ghiaccio delle comete non si scioglie: sublima, passa direttamente da solido a gas, perché nello spazio non c'è pressione atmosferica a tenere insieme un liquido.</li><li><span aria-hidden="true">🔙</span> La coda di una cometa punta sempre in direzione opposta al Sole, quindi nel tragitto di ritorno la cometa viaggia di coda.</li><li><span aria-hidden="true">💫</span> Gli sciami meteorici sono avanzi di comete: le Orionidi di ogni ottobre sono polvere persa dalla cometa di Halley.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Sublimazione, frost line e due code</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>L'attività si accende a una certa distanza, non a una certa data. Il ghiaccio d'acqua comincia a sublimare in modo consistente attorno alle <strong>3 UA</strong> dal Sole, quindi la maggior parte delle comete è un sasso inerte fuori da quella linea e si sveglia solo quando la attraversa. Più vicino, i ghiacci più volatili - anidride carbonica, monossido di carbonio - guidano l'attività ancora prima, ed è per questo che alcune comete mostrano una chioma già molto lontano.</p>
+<p>Il gas in fuga strappa polvere dalla superficie e gonfia la chioma, che può raggiungere \(10^5\) km di diametro anche se il nucleo è largo pochi km. Due forze distinte separano poi il materiale in due code:</p>
+<p><strong>La coda di polveri</strong> è spinta dalla pressione di radiazione, cioè dai fotoni che trasportano quantità di moto. I grani sono abbastanza pesanti da conservare memoria della velocità orbitale della cometa, quindi la coda resta indietro rispetto alla direzione antisolare e appare curva, larga e biancastra per la luce solare riflessa.</p>
+<p><strong>La coda di ioni</strong> è un'altra cosa. L'ultravioletto solare ionizza il gas, e il vento solare magnetizzato raccoglie quegli ioni e li spazza via a 400 km/s e oltre - molto più veloce di quanto si muova la cometa, quindi la coda punta quasi esattamente in direzione antisolare, dritta e stretta. Brilla di azzurro perché il monossido di carbonio ionizzato emette intensamente a 420 nm.</p>
+<p>Ogni passaggio costa materiale alla cometa. Una tipica cometa di corto periodo perde un metro circa di superficie per orbita, e i detriti lasciati lungo il percorso sono esattamente ciò in cui la Terra va a sbattere ogni anno come sciame meteorico.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Inizio della sublimazione</th><td>\(r \approx 3\ \text{UA}\)</td><td class="cmt">ghiaccio d'acqua</td></tr>
+<tr><th scope="row">Pressione di radiazione</th><td>\(F_{\text{rad}} = \dfrac{L_\odot A}{4\pi r^2 c}\)</td><td class="cmt">incurva la coda di polveri</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Velocità del vento solare</th><td>\(v_{sw} \approx 400\ \text{km/s}\)</td><td class="cmt">raddrizza la coda di ioni</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📏</span> La frost line dell'acqua sta attorno alle 3 UA: fuori la cometa è inerte, dentro la sublimazione alimenta chioma e code.</li><li><span aria-hidden="true">🎨</span> La coda di ioni brilla di azzurro per l'emissione del CO⁺ a 420 nm; quella di polveri è giallastra perché riflette semplicemente la luce del Sole.</li><li><span aria-hidden="true">⏳</span> La cometa di Halley perde diversi metri di superficie a ogni passaggio al perielio e ha forse ancora 100.000 anni di vita attiva.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Fisica del nucleo, β e i serbatoi</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <p>La forma della coda di polveri discende da un solo numero adimensionale, \(\beta\), il rapporto tra pressione di radiazione e gravità solare su un grano. Poiché entrambe vanno come \(1/r^2\), \(\beta\) è indipendente dalla distanza e dipende solo da dimensione e composizione del grano, all'incirca \(\beta \approx 0.6/(\rho a)\) in cgs. I grani con \(\beta > 1\) sentono una forza netta verso l'esterno e se ne vanno su traiettorie iperboliche; quelli più pesanti seguono orbite kepleriane modificate. Siccome grani emessi in tempi diversi e con \(\beta\) diversi finiscono in posti diversi, la coda di polveri è una mappa bidimensionale della storia di emissione: è la base dell'analisi di Finson-Probstein per sindini e sincroni.</p>
+<p>Le superfici dei nuclei sono tra le più scure conosciute, albedo attorno a 0,04, e la sublimazione è concentrata in regioni attive che coprono qualche punto percentuale dell'area. Il resto è un mantello isolante di polvere. Questa localizzazione rende l'emissione di gas anisotropa e produce un'accelerazione non gravitazionale che va inclusa nelle soluzioni orbitali: è l'effetto che ha rivelato il comportamento anomalo di 1I/'Oumuamua e che domina l'evoluzione a lungo termine delle comete di corto periodo.</p>
+<p>Le riforniscono due serbatoi. La fascia di Kuiper e il disco disperso alimentano le comete della famiglia di Giove, a bassa inclinazione e corto periodo, mentre la nube di Oort, all'incirca sferica, tra \(10^4\) e \(10^5\) UA, fornisce le comete di lungo periodo su orbite orientate a caso, spinte verso l'interno dalle maree galattiche e dal passaggio di stelle. La distribuzione delle inclinazioni orbitali è quindi un'impronta digitale dell'origine.</p>
+<p>I due anni di Rosetta attorno a 67P/Churyumov-Gerasimenko hanno riscritto buona parte dei dettagli: un nucleo bilobato ed estremamente poroso con densità media vicina a 0,5 g/cm³, un rapporto D/H tre volte quello degli oceani terrestri - argomento contro le comete della famiglia di Giove come fonte principale dell'acqua terrestre - e molecole organiche complesse in abbondanza, glicina inclusa.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Rapporto di pressione di radiazione</th><td>\(\beta = \dfrac{F_{\text{rad}}}{F_{\text{grav}}} \approx \dfrac{0.6}{\rho a}\)</td><td class="cmt">indipendente da r</td></tr>
+<tr><th scope="row">Forza non gravitazionale</th><td>\(\ddot{r} = A_1 g(r) + \ldots\)</td><td class="cmt">emissione anisotropa</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Nube di Oort</th><td>\(10^4 - 10^5\ \text{UA}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Densità media di 67P</th><td>\(\rho \approx 0.5\ \text{g/cm}^3\)</td><td class="cmt">più vuoto che roccia</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📐</span> β, il rapporto tra pressione di radiazione e gravità solare, è indipendente dalla distanza: perciò la struttura della coda di polveri mappa direttamente la storia di emissione (sindini e sincroni).</li><li><span aria-hidden="true">🌑</span> I nuclei cometari sono più scuri del carbone, albedo ~0,04, con la sublimazione confinata a regioni attive pari a pochi punti percentuali della superficie.</li><li><span aria-hidden="true">💧</span> Rosetta ha trovato in 67P un rapporto D/H tre volte quello dell'acqua oceanica terrestre, argomento contro le comete della famiglia di Giove come via principale di consegna dei nostri oceani.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Comet" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Astronomia</h2>
+    <ul><li><a href="/it/stelle-universo/">Stelle e universo</a></li><li><a href="/it/buchi-neri/">Buchi neri e relatività</a></li><li><a href="/it/cosmologia-big-bang/">Cosmologia e Big Bang</a></li><li><a href="/it/sistema-solare/">Il Sistema Solare</a></li><li><a href="/it/eclissi/">Eclissi</a></li><li><a href="/it/stelle-cadenti/">Stelle cadenti e sciami meteorici</a></li><li><a href="/it/perche-la-luna-diventa-rossa/">Perché la Luna diventa rossa</a></li><li><a href="/it/aurora-boreale/">Aurora boreale</a></li><li><a href="/it/fasi-lunari/">Le fasi lunari</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>
