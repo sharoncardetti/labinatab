@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment les chauves-souris voient avec le son | Lab-in-a-Tab</title>
+<meta name="description" content="Une chauve-souris crie dans le noir et se construit une image à partir de l'écho. Chaque partie de cette image - à quelle distance, quelle taille, quelle…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-bats-use-echolocation/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-bats-use-echolocation/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Comment les chauves-souris voient avec le son — Expliqué et simulé">
+<meta property="og:description" content="Une chauve-souris crie dans le noir et se construit une image à partir de l'écho. Chaque partie de cette image - à quelle distance, quelle taille, quelle…">
+<meta property="og:url" content="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment les chauves-souris voient avec le son — Expliqué et simulé">
+<meta name="twitter:description" content="Une chauve-souris crie dans le noir et se construit une image à partir de l'écho. Chaque partie de cette image - à quelle distance, quelle taille, quelle…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/#article",
+   "headline": "Comment les chauves-souris voient avec le son",
+   "name": "Comment les chauves-souris voient avec le son",
+   "description": "Une chauve-souris crie dans le noir et se construit une image à partir de l'écho. Chaque partie de cette image - à quelle distance, quelle taille, quelle…",
+   "url": "https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/",
+   "mainEntityOfPage": "https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Écholocation",
+    "Son",
+    "Doppler"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Comment les chauves-souris voient avec le son",
+    "sameAs": "https://en.wikipedia.org/wiki/Animal_echolocation"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Comment les chauves-souris voient avec le son",
+     "item": "https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-bats-use-echolocation/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Règne animal</nav>
+  <h1>Comment les chauves-souris voient avec le son</h1>
+  <p class="lead">Une chauve-souris crie dans le noir et se construit une image à partir de l'écho. Chaque partie de cette image - à quelle distance, quelle taille, quelle vitesse - est un nombre extrait du temps.</p>
+  <div class="chips"><span>Écholocation</span><span>Son</span><span>Doppler</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"bats":{"junior":{"dist":"Distance du papillon","freq":"Hauteur du cri","delay":"Attente de l'écho","detail":"La plus petite chose visible","rate":"Cris par seconde","cTop":"un cri, et le temps qu'il met à revenir","cMoth":"papillon","cLost":"trop loin — l'écho meurt dans l'air","cWave":"longueur d'onde","cReach":"cette hauteur porte à environ","cTime":"une chauve-souris ne peut pas crier et écouter à la fois","cCall":"le cri","cEcho":"l'écho","cNext":"au plus tôt pour le cri suivant","cPerSec":"cris par seconde","cBuzz":"c'est le bourdonnement terminal — l'instant avant la capture","cSearch":"un rythme de recherche régulier"},"student":{"dist":"Distance de la cible","freq":"Fréquence du cri","delay":"Délai de l'écho","detail":"Limite de longueur d'onde","rate":"Cadence maximale","cTop":"temps de vol, et ce qu'il achète","cMoth":"papillon","cLost":"hors de portée — absorbé par l'air","cWave":"λ","cReach":"portée utile à cette fréquence","cTime":"la contrainte de recouvrement","cCall":"le cri","cEcho":"l'écho","cNext":"au plus tôt pour le cri suivant","cPerSec":"cris par seconde","cBuzz":"bourdonnement terminal — cadence à la limite physique","cSearch":"phase de recherche"},"scholar":{"dist":"Portée d de la cible","freq":"Fréquence porteuse f","delay":"Délai aller-retour","detail":"λ = c/f","rate":"Plafond de PRF","cTop":"imagerie active dans le domaine temporel","cMoth":"papillon","cLost":"hors du budget d'écho","cWave":"λ","cReach":"portée pour un budget de 60 dB à α(f)","cTime":"la contrainte de recouvrement","cCall":"le cri","cEcho":"l'écho","cNext":"première émission admissible","cPerSec":"impulsions par seconde","cBuzz":"bourdonnement terminal — PRF à la limite de recouvrement","cSearch":"phase de recherche"}}});</script>
+<section class="sim-embed" data-sim="bats" data-color="#6d28d9" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#6d28d9"><span class="sg-lbl">Essaie</span><span>Mettez <b>Distance du papillon</b> à 10 m et lisez l'écart dans <b>Attente de l'écho</b>, puis divisez la distance par deux à 5 m et relisez-le. Regardez maintenant la ligne jaune qui marque le premier instant où le cri suivant peut partir, et descendez <b>Distance du papillon</b> jusqu'à un demi-mètre en surveillant <b>Cris par seconde</b>. Laissez ensuite la distance tranquille et tirez plutôt <b>Hauteur du cri</b> de haut en bas.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#6d28d9"><span class="sg-lbl">Essaie</span><span>Vérifiez d'abord la linéarité : lisez <b>Délai de l'écho</b> à <b>Distance de la cible</b> = 2, 4 et 8 m. Tenez ensuite la distance et balayez <b>Fréquence du cri</b> de 15 à 120 kHz, en regardant <b>Limite de longueur d'onde</b> s'affiner tandis que la portée utile annoncée s'effondre. Enfin, descendez <b>Distance de la cible</b> vers le minimum et lisez <b>Cadence maximale</b> pendant qu'elle grimpe.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#6d28d9"><span class="sg-lbl">Essaie</span><span>Dérivez vous-même la surface de compromis. Balayez <b>Fréquence porteuse f</b> à <b>Portée d de la cible</b> fixe et notez comment la portée utile se réduit tandis que <b>λ = c/f</b> s'affine : le produit des deux est à peu près ce que le budget d'écho peut se permettre. Balayez ensuite <b>Portée d de la cible</b> et confirmez que <b>Plafond de PRF</b> monte comme l'inverse de \(2d/c + \tau\) et non par un quelconque choix comportemental.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>La chauve-souris est à gauche, le papillon à la distance que vous réglez, et la règle du bas est en mètres réels. Les arcs violets sont le cri qui part ; les verts sont l'écho qui revient. La bande en dessous est un chronomètre : le bloc violet est le cri, le bloc vert est l'écho qui arrive, et l'écart entre les deux est ce que la chauve-souris mesure.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>De près, l'écho revient si vite que la chauve-souris peut crier des centaines de fois par seconde, et ce crépitement est le bruit de quelque chose qui se fait attraper.</b> Une chauve-souris ne peut pas crier et écouter à la fois, donc elle doit attendre l'écho avant de crier de nouveau. De loin cela donne un rythme lent et patient ; de près l'attente disparaît presque et les cris deviennent une mitraillette. La hauteur du son est un tout autre marché : criez plus aigu et vous distinguez des détails plus fins, parce que les ondes sont plus courtes, mais l'air avale vite les notes aiguës, donc vous ne voyez pas du tout aussi loin.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Distance par le temps de vol, \(t = 2d/c\) avec \(c \approx 343\ \text{m/s}\), soit environ 5,8 ms par mètre. Fronts d'onde sortants en violet, écho de retour en vert. <b>Fréquence du cri</b> fixe \(\lambda = c/f\) et donc le plancher de résolution, ainsi que l'absorption atmosphérique qui plafonne la portée utile. La bande du bas montre la contrainte de recouvrement : l'intervalle entre impulsions doit dépasser l'aller-retour plus la durée du cri.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Chaque gain se paie. La résolution achète de la portée, et la portée achète de la résolution.</b> La puissance d'écho d'une petite cible croît comme \(f^4\) en régime de Rayleigh, ce qui pousse les chauves-souris vers les hautes fréquences ; l'absorption atmosphérique passe d'environ 1 dB/m à 40 kHz à plus de 3 dB/m après 100 kHz, ce qui les repousse vers le bas. L'éventail observé des fréquences de cri selon les espèces est ce compromis rendu visible. La cadence n'est pas non plus une décision : c'est la contrainte de recouvrement, \(T > 2d/c + \tau\), et le bourdonnement terminal à 150-200 cris par seconde n'est qu'une chauve-souris tournant au plafond physique.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Imagerie active dans le domaine temporel. Distance par \(d = ct/2\) ; résolution fixée conjointement par \(\lambda = c/f\) et, pour un cri balayé, par \(\Delta d = c/2B\). Le budget d'écho est gouverné par la divergence aller-retour \(\propto d^{-4}\) et par l'absorption dépendante de la fréquence \(\alpha(f)\). La bande du bas rend la contrainte \(\text{PRI} > 2d/c + \tau\), qui est ce qui fixe réellement <b>Plafond de PRF</b>.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La chauve-souris résout un problème de radar avec une tête de quelques centimètres, et le compromis d'ambiguïté se manifeste par deux familles de conception du cri.</b> Les balayages FM maximisent le produit temps-bande et donnent donc la résolution en distance ; les cris à fréquence constante donnent la résolution en vitesse - les deux extrêmes de la fonction d'ambiguïté radar classique, atteints par l'évolution. Deux questions non résolues méritent d'être connues : la discrimination de gigue de quelques dizaines de nanosecondes rapportée par Simmons implique une télémétrie sous le millimètre qu'aucun chronomètre neuronal simple ne peut fournir, et le débat entre corrélation croisée cohérente, lecture spectrale et artefact méthodologique reste ouvert. Pendant ce temps les cibles ripostent : <em>Bertholdia trigona</em> brouille réellement le sonar en calant ses clics sur les échos de retour, et les écailles de certains papillons absorbent les ultrasons comme un métamatériau acoustique, réduisant l'intensité de l'écho jusqu'à 85 %.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Crier au monde pour le voir</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Une chauve-souris qui chasse par une nuit sans lune attrape en plein vol un papillon de la taille de votre ongle de pouce, sans jamais l'avoir vu. Elle y arrive en criant, et fort. Les cris de chauve-souris comptent parmi les sons les plus intenses produits par un animal, bien au-delà de 100 décibels à la bouche, ce qui relève du marteau-piqueur. Vous ne les entendez pas seulement parce qu'ils sont bien trop aigus pour l'oreille humaine.</p>
+<p>L'astuce, c'est le temps. Le son voyage à environ 343 mètres par seconde, ce qui est rapide mais pas instantané. Criez vers quelque chose à cinq mètres et le son met environ 15 millièmes de seconde à y arriver et 15 autres à revenir : environ 29 millièmes en tout. Le cerveau de la chauve-souris mesure cet écart et le transforme directement en une distance. Deux fois plus loin, deux fois l'attente. L'écholocation, au fond, n'est que cela : un chronomètre, utilisé très précisément.</p>
+<p>La hauteur du son commande le détail. Le son voyage en ondes, et une onde ne peut pas vous montrer grand-chose de plus petit qu'elle-même, comme essayer de sentir le grain d'une page avec un gant de boxe. Un cri à 55 kHz a des ondes longues d'environ 6 mm, donc 6 mm est à peu près la plus petite chose que ce cri peut distinguer. Criez plus aigu et les ondes raccourcissent et le détail s'affine, mais les notes aiguës sont absorbées par l'air bien plus vite, donc elles ne portent pas aussi loin. Chaque chauve-souris doit choisir entre voir le détail et voir loin, et les espèces ont choisi différemment.</p>
+<p>Puis il y a le problème qui rend tout cela dramatique. Une chauve-souris ne peut pas crier et écouter en même temps : sa propre voix l'assourdirait. Elle doit crier, attendre le retour de l'écho, et seulement alors crier de nouveau. De loin, l'attente est longue et elle crie lentement, peut-être dix fois par seconde. En se rapprochant, l'attente rétrécit et elle peut crier de plus en plus vite, jusqu'à tirer près de deux cents cris par seconde dans la dernière fraction de seconde avant la capture. Ce crépitement s'appelle le <strong>bourdonnement terminal</strong>, et si vous entendez un jour un détecteur de chauves-souris s'emballer, quelque chose vient d'être attrapé.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔊</span> Les cris de chauve-souris dépassent 100 décibels à la bouche, comme un marteau-piqueur. Vous ne les entendez pas seulement parce qu'ils sont bien au-dessus de l'audition humaine.</li><li><span aria-hidden="true">⏱️</span> L'écholocation est un chronomètre. Le son couvre environ 343 mètres par seconde, donc un écho venu de 5 m revient en 29 millièmes de seconde, et la chauve-souris lit la distance directement sur ce délai.</li><li><span aria-hidden="true">🐛</span> Certains papillons de nuit entendent venir les chauves-souris et se laissent tomber. D'autres répondent par des clics ultrasonores qui brouillent le sonar : une course aux armements qui dure depuis cinquante millions d'années.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Délai, longueur d'onde et la contrainte temporelle</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>La distance vient du temps de vol. Un écho venu d'une cible à la distance \(d\) revient après \(t = 2d/c\), avec \(c \approx 343\ \text{m/s}\) dans l'air, soit environ 5,8 ms par mètre de portée. Les chauves-souris résolvent ces délais remarquablement finement : des expériences comportementales placent la discrimination de gigue bien en dessous de la microseconde chez certaines espèces, ce qui correspond à une résolution en distance inférieure au millimètre, à la limite de ce que le système auditif devrait pouvoir faire et toujours débattu.</p>
+<p>La résolution vient de la longueur d'onde. \(\lambda = c/f\), donc un cri à 55 kHz a \(\lambda \approx 6{,}2\ \text{mm}\) et un cri à 120 kHz environ 2,9 mm. Une cible bien plus petite qu'une longueur d'onde diffuse dans le régime de Rayleigh, la puissance renvoyée décroissant comme \(f^4\), si bien que détecter de petits insectes favorise fortement les hautes fréquences. À l'inverse joue l'<strong>absorption atmosphérique</strong>, qui croît fortement avec la fréquence : environ 1 dB/m à 40 kHz mais 3 dB/m ou plus au-dessus de 100 kHz. Avec un budget d'écho fini, portée et résolution s'échangent directement, et l'éventail observé des fréquences de cri selon les espèces recouvre exactement ce compromis.</p>
+<p>La troisième contrainte est temporelle. Comme une chauve-souris ne peut émettre et recevoir simultanément sans s'assourdir, l'intervalle entre impulsions doit dépasser le délai d'aller-retour plus la durée du cri : c'est la <strong>contrainte de recouvrement</strong>. Ce n'est pas une curiosité, elle dicte toute la structure d'une attaque. En phase de recherche, une chauve-souris émet des cris longs, à bande étroite et basse fréquence, 5 à 15 par seconde. En approche, elle les raccourcit et les fait balayer. Dans le bourdonnement terminal, elle en tire 150 à 200 par seconde, chacun de moins d'une milliseconde, ce qui est le maximum permis par les échos de retour : la cadence est fixée par la physique de la distance qui se referme.</p>
+<p>La vitesse vient de l'effet Doppler, \(\Delta f/f \approx 2v/c\) pour un réflecteur se déplaçant le long de la ligne de visée. Un papillon se rapprochant à 5 m/s décale un cri de 60 kHz d'environ 1,75 kHz. Les rhinolophes l'exploitent avec des cris à fréquence constante et une <strong>compensation du décalage Doppler</strong> : ils abaissent en vol la fréquence émise pour maintenir l'écho de retour à une fréquence fixe, la « fovéa acoustique », où leur cochlée est massivement surreprésentée, puis lisent le battement d'ailes résiduel de l'insecte comme une modulation sur cette porteuse.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Délai de l'écho</th><td>\(t = \dfrac{2d}{c}\)</td><td class="cmt">≈ 5,8 ms par mètre</td></tr>
+<tr><th scope="row">Vitesse du son</th><td>\(c \approx 343\ \text{m/s}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Longueur d'onde</th><td>\(\lambda = \dfrac{c}{f}\)</td><td class="cmt">55 kHz → 6,2 mm</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Diffusion de Rayleigh</th><td>\(P_{\text{écho}} \propto f^4\)</td><td class="cmt">les petites cibles exigent des f élevées</td></tr>
+<tr><th scope="row">Absorption atmosphérique</th><td>\(\alpha \approx 1\text{–}3\ \text{dB/m}\)</td><td class="cmt">croît fortement avec f</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Contrainte de recouvrement</th><td>\(T_{\text{imp}} &gt; \dfrac{2d}{c} + \tau\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Décalage Doppler</th><td>\(\dfrac{\Delta f}{f} \approx \dfrac{2v}{c}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔬</span> Certaines chauves-souris discriminent des gigues de délai d'écho bien inférieures à la microseconde : une résolution en distance sous le millimètre. Comment le système auditif y parvient n'est pas entièrement expliqué.</li><li><span aria-hidden="true">⚖️</span> Haute fréquence signifie détail fin mais portée courte : l'absorption dans l'air passe d'environ 1 dB/m à 40 kHz à plus de 3 dB/m au-dessus de 100 kHz. Chaque espèce se situe quelque part sur ce compromis.</li><li><span aria-hidden="true">🎯</span> Les rhinolophes abaissent en vol la fréquence de leur cri pour que l'écho de retour tombe sur une « fovéa acoustique » hypersensible de la cochlée : une compensation Doppler active, chez un animal vivant.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Imagerie dans le domaine temporel, le problème de la gigue et une course aux armements en ultrasons</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Le sonar, biologiquement</h3>
+<p>L'écholocation est une imagerie active dans le domaine temporel. L'information disponible est entièrement contenue dans la forme d'onde de l'écho : le délai donne la distance, les différences interaurales de niveau et de temps plus les encoches spectrales des pavillons donnent azimut et élévation, la coloration spectrale donne la structure de la cible, et le Doppler la vitesse radiale. Les chauves-souris opèrent avec une très mauvaise antenne - une tête de quelques centimètres - et compensent par la conception du signal. Les balayages modulés en fréquence donnent une excellente résolution en distance grâce à leur grand produit temps-bande ; les cris à fréquence constante donnent une excellente résolution en vitesse. Les deux familles de conception sont les deux extrêmes du compromis d'ambiguïté radar classique, atteints indépendamment par l'évolution.</p>
+<h3><span class="hn">02</span>Le problème de la gigue</h3>
+<p>Simmons a rapporté qu'<em>Eptesicus fuscus</em> discrimine des gigues de délai d'écho de l'ordre de 10 à 50 ns, ce qui implique une résolution en distance bien inférieure au millimètre. La difficulté est que la précision temporelle du nerf auditif est de l'ordre de la dizaine de microsecondes, si bien qu'aucun chronomètre neuronal simple ne suffit. Parmi les résolutions proposées figurent des récepteurs à corrélation croisée cohérente opérant sur la phase de la porteuse, une lecture d'indices spectraux où l'interférence entre composantes d'écho superposées est lue dans le domaine fréquentiel plutôt que temporel, et des artefacts méthodologiques du paradigme original. Le débat n'est pas clos et constitue l'une des questions ouvertes les plus aiguës des neurosciences sensorielles.</p>
+<h3><span class="hn">03</span>La fovéa acoustique</h3>
+<p>Les rhinolophidés émettent de longs cris à fréquence constante près de 83 kHz et abaissent en vol la fréquence émise pour que l'écho décalé par Doppler revienne à une fréquence de référence propre à l'espèce. La cochlée est massivement surreprésentée à cette fréquence - une région étendue de la membrane basilaire à filtres finement accordés, l'analogue auditif d'une fovéa visuelle. Sa fonction n'est pas la télémétrie mais la reconnaissance : le battement d'ailes d'un insecte en vol impose des modulations d'amplitude et de fréquence sur la porteuse de retour, et la fovéa acoustique résout ces éclats. La chauve-souris ne mesure pas tant où se trouve le papillon qu'elle n'en lit la signature de battement d'ailes.</p>
+<h3><span class="hn">04</span>Résoudre l'auto-assourdissement</h3>
+<p>Émettre à plus de 120 dB SPL à côté d'une oreille qui doit détecter des échos à quelques dizaines de décibels au-dessus du seuil exige de l'isolement. Les muscles de l'oreille moyenne se contractent quelques millisecondes avant chaque émission, atténuant de 20 dB ou plus, et se relâchent en quelques millisecondes - un cycle neuromusculaire répété jusqu'à 200 fois par seconde pendant le bourdonnement terminal, parmi les contractions musculaires soutenues les plus rapides des mammifères. Le gain neuronal dans la voie auditive est en outre modulé en phase avec l'émission. La contrainte de recouvrement qui fixe la cadence est donc imposée à la fois acoustiquement et neuronalement.</p>
+<h3><span class="hn">05</span>Les papillons répliquent</h3>
+<p>L'audition tympanique a évolué indépendamment de nombreuses fois chez les lépidoptères, accordée sur les fréquences des cris de chauves-souris, et déclenche des piqués évasifs à forte intensité de stimulus. Les arctiines vont plus loin : certaines produisent des clics ultrasonores qui surprennent, certaines annoncent leur mauvais goût - le premier aposématisme acoustique démontré - et <em>Bertholdia trigona</em> brouille de façon démontrée le sonar en émettant des clics calés sur les échos de retour, dégradant la télémétrie plutôt que se contentant d'avertir. Certains papillons portent des écailles qui absorbent les ultrasons comme un métamatériau acoustique, réduisant l'intensité de l'écho jusqu'à 85 %. Quelques chauves-souris ont riposté en décalant la fréquence de leur cri hors de l'audition des papillons, ou en chassant presque en silence et en écoutant les sons produits par la proie.</p>
+<h3><span class="hn">06</span>Convergence, deux fois</h3>
+<p>L'écholocation laryngée et le biosonar des odontocètes ont convergé vers la même solution depuis des matériels non apparentés, et tous deux ont aussi convergé sur le même détail moléculaire : la protéine motrice <em>prestine</em>, responsable de l'électromotilité des cellules ciliées externes et de l'amplification cochléaire, montre une convergence de séquence frappante entre chauves-souris écholocatrices et cétacés à dents - les mêmes substitutions d'acides aminés atteintes indépendamment. Au sein des chiroptères, la position phylogénétique des ptéropodidés non écholocateurs implique soit que l'écholocation laryngée est apparue une fois puis a été perdue, soit qu'elle est apparue deux fois ; la question reste disputée, ce qui signifie qu'un sens aussi élaboré a peut-être été inventé plus d'une fois.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Distance par le délai</th><td>\(d = \dfrac{c\,t}{2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Résolution en distance</th><td>\(\Delta d = \dfrac{c}{2B}\)</td><td class="cmt">B = bande du balayage</td></tr>
+<tr><th scope="row">Produit temps-bande</th><td>\(TB \gg 1\)</td><td class="cmt">pourquoi les balayages FM battent les tons purs</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Régime de Rayleigh</th><td>\(\sigma \propto \dfrac{a^6}{\lambda^4}\)</td><td class="cmt">cibles plus petites que λ</td></tr>
+<tr><th scope="row">Divergence aller-retour</th><td>\(P_{\text{écho}} \propto d^{-4}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Absorption</th><td>\(P \propto 10^{-2\alpha d/10}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Doppler</th><td>\(f_{\text{écho}} = f_0\,\dfrac{c+v}{c-v}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Contrainte de recouvrement</th><td>\(\text{PRI} &gt; \dfrac{2d_{\max}}{c} + \tau\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🎚️</span> Les muscles de l'oreille moyenne se contractent avant chaque cri pour protéger l'oreille, puis se relâchent à temps pour entendre l'écho : jusqu'à 200 fois par seconde dans le bourdonnement terminal, parmi les contractions musculaires soutenues les plus rapides des mammifères.</li><li><span aria-hidden="true">📵</span> Le papillon Bertholdia trigona brouille réellement le sonar des chauves-souris en calant des clics ultrasonores sur les échos de retour pour corrompre la télémétrie. D'autres papillons portent des écailles qui absorbent les ultrasons, réduisant l'intensité de l'écho jusqu'à 85 %.</li><li><span aria-hidden="true">🧬</span> La protéine auditive prestine montre les mêmes substitutions d'acides aminés convergentes chez les chauves-souris écholocatrices et les cétacés à dents : deux lignées qui ont inventé le biosonar séparément et ont abouti à la même molécule.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Animal_echolocation" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Règne animal</h2>
+    <ul><li><a href="/fr/comment-s-orientent-les-tortues-marines/">Comment s'orientent les tortues marines</a></li><li><a href="/fr/temperature-du-nid-decide-le-sexe/">Comment la température du nid décide le sexe</a></li><li><a href="/fr/comment-les-requins-sentent-electricite/">Comment les requins sentent l'électricité</a></li><li><a href="/fr/comment-communiquent-les-abeilles-danse/">Comment les abeilles se disent où aller</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

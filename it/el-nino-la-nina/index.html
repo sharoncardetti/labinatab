@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Niño e La Niña | Lab-in-a-Tab</title>
+<meta name="description" content="Una fascia di vento sul Pacifico decide se l'Australia brucia e il Perù si allaga.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/el-nino-la-nina/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/el-nino-la-nina/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/el-nino-la-nina/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/el-nino-la-nina/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/el-nino-la-nina/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="El Niño e La Niña — Spiegato e simulato">
+<meta property="og:description" content="Una fascia di vento sul Pacifico decide se l'Australia brucia e il Perù si allaga.">
+<meta property="og:url" content="https://labinatab.com/it/el-nino-la-nina/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="El Niño e La Niña — Spiegato e simulato">
+<meta name="twitter:description" content="Una fascia di vento sul Pacifico decide se l'Australia brucia e il Perù si allaga.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/el-nino-la-nina/#article",
+   "headline": "El Niño e La Niña",
+   "name": "El Niño e La Niña",
+   "description": "Una fascia di vento sul Pacifico decide se l'Australia brucia e il Perù si allaga.",
+   "url": "https://labinatab.com/it/el-nino-la-nina/",
+   "mainEntityOfPage": "https://labinatab.com/it/el-nino-la-nina/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Alisei",
+    "Termoclino",
+    "ENSO"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "El Niño e La Niña",
+    "sameAs": "https://en.wikipedia.org/wiki/El_Ni%C3%B1o%E2%80%93Southern_Oscillation"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "El Niño e La Niña",
+     "item": "https://labinatab.com/it/el-nino-la-nina/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/el-nino-la-nina/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/el-nino-la-nina/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/el-nino-la-nina/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Scienze della Terra</nav>
+  <h1>El Niño e La Niña</h1>
+  <p class="lead">Una fascia di vento sul Pacifico decide se l'Australia brucia e il Perù si allaga.</p>
+  <div class="chips"><span>Alisei</span><span>Termoclino</span><span>ENSO</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"elnino":{"junior":{"wind":"Forza degli alisei","oni":"Quanto è caldo il Pacifico est","phase":"Che cosa sta succedendo","eff":"Che cosa significa a terra"},"student":{"wind":"Intensità degli alisei","oni":"Anomalia ONI","phase":"Fase","eff":"Teleconnessioni"},"scholar":{"wind":"Sforzo del vento zonale","oni":"ONI (Niño 3.4)","phase":"Fase","eff":"Teleconnessioni"}}});</script>
+<section class="sim-embed" data-sim="elnino" data-color="#0891b2" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Parti con i venti forti e guarda dov'è la pioggia. Ora trascina <b>Forza degli alisei</b> verso lo zero e oltre, e guarda tre cose insieme: l'acqua calda che scivola a est, la pioggia che la segue e l'acqua fredda davanti al Perù che si spegne.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Riduci <b>Intensità degli alisei</b> passo dopo passo e annota il valore di <b>Anomalia ONI</b> a cui la fase passa a El Niño. Poi guarda il termoclino: quale estremità si muove di più, e perché è proprio quella a controllare la risalita?</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Percorri a mano l'anello di Bjerknes: perturba <b>Sforzo del vento zonale</b> leggermente in negativo, segui la risposta del termoclino e della risalita, e chiediti che cosa faccia al gradiente zonale di temperatura e quindi di ritorno allo sforzo del vento. Poi considera che cosa vada aggiunto per impedirgli di divergere.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>In alto: il Pacifico visto dall'alto, con Indonesia e Australia a sinistra e il Perù a destra. I colori sono la temperatura del mare - rosso caldo, blu freddo - e le frecce bianche sono gli alisei. Le nuvole e la pioggia stanno sopra l'acqua più calda. In basso: lo stesso oceano tagliato, così vedi lo strato caldo che galleggia sul freddo profondo e come si inclina.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Non è stato aggiunto né tolto nulla: la stessa acqua calda si è solo spostata.</b> È tutto qui il trucco di El Niño: indebolisci una fascia di vento e il Pacifico sciaborda a est, portandosi dietro la pioggia. L'Australia si secca, il Perù si allaga, e i pesci spariscono perché l'acqua fredda che li nutriva ha smesso di salire.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span><b>Intensità degli alisei</b> imposta lo sforzo del vento zonale. La mappa mostra il campo di temperatura superficiale del mare e la convezione che segue la piscina calda; la sezione sotto mostra il termoclino, disegnato profondo a ovest e superficiale a est sotto alisei forti. <b>Anomalia ONI</b> riporta l'anomalia Niño 3.4 e <b>Fase</b> applica le soglie di ±0,5 °C.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Il termoclino è la cerniera.</b> Alisei forti lo inclinano ripidamente, tenendo l'acqua fredda a portata di superficie davanti al Sud America; allentali e si appiattisce, così la risalita porta su acqua calda invece che fredda e smette di raffreddare l'est. Il contrasto di temperatura che guidava i venti a quel punto non c'è più, il che indebolisce ulteriormente i venti. Quel ciclo che si autoalimenta è la retroazione di Bjerknes.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Uno schema del sistema equatoriale accoppiato: sforzo del vento, pendenza del termoclino e anomalia di temperatura superficiale sono disegnati come un unico stato incastrato anziché come tre indipendenti. <b>ONI (Niño 3.4)</b> fa le veci dell'indice Niño 3.4; la risposta disegnata è quella di equilibrio, quindi la dinamica ondosa che fissa i tempi - onde di Kelvin e di Rossby riflesse - è sottintesa e non integrata.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Una retroazione positiva da sola dà una divergenza, non un'oscillazione.</b> Ciò che trasforma ENSO in un ciclo è il ritardo: le onde di Rossby riflesse sul bordo occidentale tornano mesi dopo come onde di Kelvin di segno opposto, e lo scarico del volume di acqua calda equatoriale rimuove il serbatoio di cui l'evento si nutriva. Quel ritardo è anche la fonte della barriera di prevedibilità primaverile, che limita le previsioni deterministiche a circa 6-9 mesi.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>L'altalena del Pacifico</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Attraverso il centro del Pacifico il vento soffia normalmente sempre nella stessa direzione, tutto l'anno: dal Sud America verso l'Indonesia. Sono gli <strong>alisei</strong>, e trascinano la superficie dell'oceano verso ovest da quando esiste un oceano.</p>
+<p>Trascinare acqua ha delle conseguenze. L'acqua calda di superficie si accumula a ovest, dove il mare è davvero più alto e più caldo: una piscina d'acqua tiepida grande abbastanza da cambiare il tempo su un continente. E dall'altra parte, al largo del Perù, l'acqua tirata via dalla costa viene rimpiazzata dal basso: acqua fredda, scura, ricca di nutrienti che sale a prendere il suo posto. Quella risalita alimenta una delle pesche più ricche della Terra.</p>
+<p>Adesso lascia che il vento si allenti. Niente tiene più al suo posto la piscina calda, che scivola verso est attraverso il Pacifico come acqua che sciaborda in una vasca. Le nuvole di pioggia seguono l'acqua calda, perché la pioggia si forma sopra il mare caldo. Indonesia e Australia, che normalmente stanno sotto tutta quella pioggia, restano a secco. Il Perù, di solito una costa desertica, si allaga. E la risalita fredda si spegne, così i pesci se ne vanno.</p>
+<p>Questo è <strong>El Niño</strong>. Quando invece i venti soffiano più forte del solito e tutto viene spinto ancora più a ovest, si chiama <strong>La Niña</strong>. Tutto il Pacifico oscilla avanti e indietro fra i due ogni pochi anni, e il tempo su cinque continenti oscilla con lui.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🐟</span> Furono i pescatori peruviani a dargli il nome: El Niño, il Bambin Gesù, perché l'acqua calda e i pesci scomparsi tendevano ad arrivare attorno a Natale.</li><li><span aria-hidden="true">📏</span> Gli alisei tengono il Pacifico occidentale circa mezzo metro più alto di quello orientale: il mare è davvero inclinato.</li><li><span aria-hidden="true">🌏</span> Un El Niño forte sposta le piogge su cinque continenti insieme, ed è per questo che una sola fascia di vento nel Pacifico si vede nelle siccità australiane e nelle alluvioni dell'Africa orientale.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Inclinazione del termoclino e circolazione di Walker</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Il sistema ha tre parti incastrate. Gli <strong>alisei</strong> trascinano l'acqua superficiale verso ovest. Quell'acqua si accumula nella piscina calda, alzando il livello del mare di 40-60 cm e spingendo il <strong>termoclino</strong> - il confine netto fra l'acqua calda di superficie e l'oceano profondo freddo - fino a circa 150 m a ovest, mentre a est risale a 50 m o meno. Poiché il termoclino è poco profondo davanti al Sud America, la risalita costiera attinge acqua fredda e il Pacifico orientale resta di parecchi gradi più fresco di quello occidentale.</p>
+<p>Quel contrasto di temperatura guida la <strong>circolazione di Walker</strong>: l'aria sale sopra l'ovest caldo, scorre verso est in quota, scende sopra l'est fresco e torna a ovest in superficie come gli alisei stessi. I venti creano il contrasto di temperatura, e il contrasto crea i venti: una retroazione positiva nota come retroazione di Bjerknes.</p>
+<p>Il che significa che tutto l'insieme può ribaltarsi. Indebolisci gli alisei e la piscina calda scivola a est; il Pacifico orientale si scalda, il contrasto cala e gli alisei si indeboliscono ancora. L'acqua calda che sciaborda verso est come <em>onda di Kelvin</em> di downwelling approfondisce il termoclino orientale, tagliando la risalita fredda e bloccando il riscaldamento. Questo è <strong>El Niño</strong>. Lo stato opposto, con alisei rinforzati e un est insolitamente freddo e ripido, è <strong>La Niña</strong>.</p>
+<p>L'intensità si segue con l'<strong>Oceanic Niño Index</strong>, l'anomalia mobile su tre mesi della temperatura superficiale del mare nel Pacifico centro-orientale. Sopra +0,5 °C per cinque stagioni sovrapposte è un El Niño; sotto -0,5 °C è una La Niña.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Oceanic Niño Index</th><td>\(\text{ONI} = \overline{\Delta T}_{\text{Niño 3.4}}\)</td><td class="cmt">anomalia mobile su 3 mesi</td></tr>
+<tr><th scope="row">El Niño / La Niña</th><td>\(\text{ONI} \ge +0{,}5^\circ\text{C}\ /\ \le -0{,}5^\circ\text{C}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Inclinazione del termoclino</th><td>\(\sim 150\ \text{m a ovest},\ 50\ \text{m a est}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Dislivello del mare</th><td>\(\approx 0{,}5\ \text{m}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔁</span> La retroazione di Bjerknes: gli alisei creano il contrasto di temperatura, e il contrasto guida gli alisei. È esattamente per questo che il sistema ha due stati quasi stabili invece di uno.</li><li><span aria-hidden="true">🌊</span> Le onde di Kelvin di downwelling portano acqua calda verso est attraverso il Pacifico in circa due mesi, approfondendo il termoclino orientale e spegnendo la risalita.</li><li><span aria-hidden="true">📈</span> Un ONI sopra +0,5 °C per cinque stagioni trimestrali sovrapposte definisce un El Niño; sotto -0,5 °C definisce una La Niña.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Oscillatore ritardato, teleconnessioni e limiti di previsione</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <p>ENSO è il maggiore segnale interannuale del sistema climatico e si comprende meglio come un oscillatore accoppiato oceano-atmosfera. La retroazione di Bjerknes fornisce la crescita; il ritardo che trasforma la crescita in oscillazione viene dalla dinamica delle onde equatoriali. Le onde di Rossby che si propagano verso ovest si riflettono sul bordo occidentale come onde di Kelvin verso est di segno opposto, tornando mesi dopo a invertire l'anomalia: è il quadro dell'oscillatore ritardato. Lo schema ricarica-scarica aggiunge la vista complementare: il volume di acqua calda sopra il termoclino si accumula prima di un evento e viene scaricato verso i poli durante l'evento, il che spiega perché il contenuto di calore equatoriale è un predittore migliore della temperatura superficiale stessa.</p>
+<p>Le teleconnessioni si propagano attraverso l'atmosfera. La convezione tropicale anomala eccita treni di onde di Rossby - il più noto è il pattern Pacifico-Nordamericano - riorganizzando le traiettorie delle perturbazioni alle medie latitudini. La risposta atlantica conta sul piano pratico: El Niño aumenta il wind shear verticale sull'Atlantico tropicale, sopprimendo la genesi degli uragani, mentre La Niña fa il contrario. Quel solo meccanismo è il motivo per cui una previsione ENSO entra in ogni proiezione stagionale sugli uragani.</p>
+<p>La previsione incontra la <strong>barriera di prevedibilità primaverile</strong>: le previsioni inizializzate prima di aprile circa perdono bruscamente abilità, perché la retroazione accoppiata è più debole e il rapporto segnale-rumore più basso mentre il ciclo annuale attraversa il suo punto di passaggio. Le raffiche di vento occidentali, in parte stocastiche, possono innescare o abortire un evento, ponendo un limite intrinseco alla previsione deterministica di forse 6-9 mesi.</p>
+<p>Come ENSO risponda al forzante serra è irrisolto. I modelli concordano in linea di massima sul fatto che la variabilità delle piogge legate a ENSO aumenti, dato che uno stato medio più caldo sposta la convezione per un'anomalia di temperatura minore, ma sono in disaccordo sull'ampiezza della variabilità della temperatura stessa.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Oscillatore ritardato</th><td>\(\dfrac{dT}{dt} = aT - bT(t-\tau) - \varepsilon T^{3}\)</td><td class="cmt">crescita, retroazione ritardata, smorzamento</td></tr>
+<tr><th scope="row">Retroazione di Bjerknes</th><td>\(\tau_x \uparrow\ \Rightarrow\ \Delta T \uparrow\ \Rightarrow\ \tau_x \uparrow\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Volume di acqua calda</th><td>\(\text{WWV precede ONI di} \sim 6\ \text{mesi}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">⏳</span> Dinamica dell'oscillatore ritardato: le onde di Rossby equatoriali riflesse tornano mesi dopo come onde di Kelvin di segno opposto, ed è questo che trasforma una retroazione positiva in un'oscillazione.</li><li><span aria-hidden="true">🌀</span> El Niño alza il wind shear atlantico e sopprime gli uragani; La Niña lo abbassa e li favorisce. Quel legame è integrato in ogni proiezione stagionale sugli uragani.</li><li><span aria-hidden="true">🚧</span> La barriera di prevedibilità primaverile limita la previsione deterministica di ENSO a circa 6-9 mesi, in parte perché raffiche di vento occidentali stocastiche possono innescare o abortire un evento.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/El_Ni%C3%B1o%E2%80%93Southern_Oscillation" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Scienze della Terra</h2>
+    <ul><li><a href="/it/clima-atmosfera/">Clima e atmosfera</a></li><li><a href="/it/tettonica-a-placche-terremoti/">Tettonica a placche e terremoti</a></li><li><a href="/it/oceanografia-correnti-oceaniche/">Oceanografia e correnti oceaniche</a></li><li><a href="/it/vulcanologia/">Vulcanologia</a></li><li><a href="/it/perche-abbiamo-le-stagioni/">Perché abbiamo le stagioni</a></li><li><a href="/it/ciclo-dell-acqua/">Il ciclo dell'acqua</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

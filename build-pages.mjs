@@ -117,7 +117,7 @@ const ENGINE = [
     'simSorting', 'simML', 'simCrypto', 'simComplexity', 'simClimate', 'simTectonics',
     'simOcean', 'simVolcano', 'simChem', 'simElectrochem', 'simKinetics', 'simOrganic', 'simAcids', 'simPeriodic',
     'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simEclipse', 'simMeteors', 'simBloodMoon', 'simAurora', 'simComet', 'simFlight', 'simExoplanets', 'simElNino', 'simNeuro', 'simNeuron',
-    'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein', 'simWater', 'simEnergy', 'simSeriesParallel', 'simRespiration'].map(decl),
+    'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein', 'simWater', 'simEnergy', 'simSeriesParallel', 'simRespiration', 'simImmunity', 'simMagnets', 'simTurtles', 'simNestSex', 'simSharks', 'simBees', 'simBats'].map(decl),
 ].join('\n\n');
 
 // Cache-buster: browsers hold on to sim-engine.js, so an engine change has to

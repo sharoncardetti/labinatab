@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment volent les avions | Lab-in-a-Tab</title>
+<meta name="description" content="Une aile ne s'aspire pas vers le haut : elle projette de l'air vers le bas, et l'air rend la poussée.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/comment-volent-les-avions/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-planes-fly/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-volano-gli-aerei/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-volent-les-avions/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-planes-fly/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Comment volent les avions — Expliqué et simulé">
+<meta property="og:description" content="Une aile ne s'aspire pas vers le haut : elle projette de l'air vers le bas, et l'air rend la poussée.">
+<meta property="og:url" content="https://labinatab.com/fr/comment-volent-les-avions/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment volent les avions — Expliqué et simulé">
+<meta name="twitter:description" content="Une aile ne s'aspire pas vers le haut : elle projette de l'air vers le bas, et l'air rend la poussée.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/comment-volent-les-avions/#article",
+   "headline": "Comment volent les avions",
+   "name": "Comment volent les avions",
+   "description": "Une aile ne s'aspire pas vers le haut : elle projette de l'air vers le bas, et l'air rend la poussée.",
+   "url": "https://labinatab.com/fr/comment-volent-les-avions/",
+   "mainEntityOfPage": "https://labinatab.com/fr/comment-volent-les-avions/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Portance",
+    "Angle d'attaque",
+    "Décrochage"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Comment volent les avions",
+    "sameAs": "https://en.wikipedia.org/wiki/Lift_(force)"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Comment volent les avions",
+     "item": "https://labinatab.com/fr/comment-volent-les-avions/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-planes-fly/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-volano-gli-aerei/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-volent-les-avions/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physique</nav>
+  <h1>Comment volent les avions</h1>
+  <p class="lead">Une aile ne s'aspire pas vers le haut : elle projette de l'air vers le bas, et l'air rend la poussée.</p>
+  <div class="chips"><span>Portance</span><span>Angle d'attaque</span><span>Décrochage</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"flight":{"junior":{"aoa":"Inclinaison de l'aile","speed":"Vitesse","lift":"Portance","lifts":"Peut-elle voler ?","drag":"Résistance de l'air"},"student":{"aoa":"Angle d'attaque","speed":"Vitesse air","lift":"Portance","lifts":"État de vol","drag":"Traînée"},"scholar":{"aoa":"Angle d'attaque (α)","speed":"Vitesse air (v)","lift":"Portance (L)","lifts":"État de vol","drag":"Traînée (D)"}}});</script>
+<section class="sim-embed" data-sim="flight" data-color="#0369a1" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0369a1"><span class="sg-lbl">Essaie</span><span>Partez de 6° et montez lentement <b>Inclinaison de l'aile</b>. La flèche de portance grandit... puis quelque part au-delà de 15° elle s'effondre. À ce moment-là, regardez l'air au-dessus de l'aile.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0369a1"><span class="sg-lbl">Essaie</span><span>Tenez <b>Angle d'attaque</b> à 6° et doublez <b>Vitesse air</b> de 100 à 200 : de quel facteur change <b>Portance</b> ? Puis remettez la vitesse et balayez <b>Angle d'attaque</b> à travers 15° en surveillant la courbe de l'encart.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0369a1"><span class="sg-lbl">Essaie</span><span>Suivez la traînée en augmentant <b>Angle d'attaque (α)</b> à <b>Vitesse air (v)</b> fixe : séparez la contribution induite, qui croît en \(C_L^2\), du terme de profil. Puis trouvez l'angle où la finesse est maximale, et demandez-vous pourquoi les planeurs sont conçus pour voler à proximité.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Une coupe d'aile, avec l'air qui file depuis la gauche. Les courts tirets blancs sont l'air lui-même : regardez comme il se courbe. Le bleu au-dessus de l'aile signifie que l'air y est plus raréfié et pousse moins vers le bas ; le rouge en dessous qu'il est comprimé et pousse davantage vers le haut. La flèche verte est la portance, les flèches vertes derrière l'aile sont l'air projeté vers le sol, et le petit graphique montre comment la portance change avec l'inclinaison.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Au-delà d'environ 15°, l'air cesse de suivre l'aile et se brise en un désordre tourbillonnant, et la portance disparaît presque.</b> C'est un décrochage, et remarquez qu'il survient au même angle quelle que soit la vitesse choisie. Plus de puissance moteur n'y changera rien : le seul remède est de baisser le nez et de laisser l'air se recoller à l'aile.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Profil bidimensionnel à l'angle d'attaque <b>Angle d'attaque</b> dans un écoulement de vitesse <b>Vitesse air</b>. L'espacement des lignes de courant se resserre sur l'extrados, où l'écoulement accélère ; le dégradé de couleur montre la différence de pression qui en résulte. <b>Portance</b> suit \(L=\tfrac12\rho v^2 S C_L\) avec \(C_L \approx 2\pi\alpha\) jusqu'au décrochage, et l'encart trace cette courbe avec votre point actuel dessus.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La portance varie comme le carré de la vitesse mais seulement linéairement avec l'angle, jusqu'au décrochage qui tronche net la partie linéaire.</b> L'image des pressions et celle de la quantité de mouvement sont dessinées ensemble à dessein : le dégradé bleu-rouge et les flèches de déflexion sont deux descriptions d'une seule force, pas deux causes concurrentes.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Un schéma de la solution à écoulement attaché : la circulation fixée par la condition de Kutta produit l'asymétrie de vitesse, le champ de pression découle de Bernoulli, et la même solution lue comme flux de quantité de mouvement donne la déflexion. \(C_L\) est linéaire selon la théorie du profil mince jusqu'à \(\alpha_{\text{décr}}\), puis modélisé comme un effondrement post-décrochage ; la traînée inclut un terme induit \(C_L^2/(\pi AR e)\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La portance a besoin de la viscosité, bien que les équations de travail soient non visqueuses.</b> Sans elle, la condition de Kutta ne peut pas être imposée, la circulation reste nulle et le paradoxe de d'Alembert s'applique. Le décrochage dessiné ici est cette même viscosité qui se réaffirme : un gradient de pression adverse épaissit la couche limite jusqu'à la séparation, d'où le fait que les remèdes pratiques soient becs, générateurs de tourbillons et soufflage plutôt que davantage de poussée.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Ce qui tient un avion en l'air</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Un avion de ligne chargé pèse à peu près autant que cinquante voitures. Il repose sur rien d'autre que de l'air, et l'air le tient. Cela paraît impossible jusqu'à ce qu'on remarque ce que fait réellement l'aile.</p>
+<p>L'aile n'est pas plate. Elle est légèrement inclinée nez vers le haut et bombée sur le dessus, et en avançant elle <strong>pousse l'air vers le bas</strong>. Chaque seconde, une aile projette des tonnes d'air vers le sol. Et l'air, comme n'importe quoi d'autre, repousse exactement aussi fort qu'il est poussé. Cette poussée en retour, c'est la <strong>portance</strong>, et c'est elle qui porte l'avion.</p>
+<p>Vous l'avez déjà senti vous-même. Sortez la main à plat par la vitre d'une voiture et rien ne se passe. Inclinez-la légèrement et votre main bondit vers le haut, parce que vous avez commencé à projeter de l'air vers le bas. Une aile fait le même tour, soigneusement et à 900 km/h.</p>
+<p>Inclinez trop, en revanche, et le tour se casse. Au-delà d'une quinzaine de degrés, l'air ne peut plus suivre la courbure de l'aile : il se détache en un désordre tourbillonnant et la portance s'effondre presque instantanément. Les pilotes appellent cela un <strong>décrochage</strong>, et cela n'a rien à voir avec les moteurs : une aile peut décrocher à pleine puissance.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🖐️</span> Sortir une main inclinée d'une voiture en marche, c'est exactement la physique d'une aile : on l'incline, on se met à pousser de l'air vers le bas, et l'air pousse la main vers le haut.</li><li><span aria-hidden="true">💨</span> Un Boeing 747 au décollage pousse vers le bas environ une tonne d'air par seconde : cette poussée est ce qui soutient 400 tonnes d'avion.</li><li><span aria-hidden="true">⚠️</span> Le décrochage est une affaire d'angle, pas de vitesse ni de moteurs : inclinez trop l'aile, l'écoulement se détache et la portance disparaît même plein gaz.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Angle d'attaque, coefficient de portance et décrochage</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>La portance dépend de quatre choses, et tout le pilotage pratique tient dans une seule équation : \(L = \tfrac{1}{2}\rho v^2 S C_L\). La masse volumique de l'air \(\rho\) et la surface alaire \(S\) sont fixées pour un avion donné à une altitude donnée, ce qui laisse la vitesse et le <strong>coefficient de portance</strong> \(C_L\).</p>
+<p>Remarquez que la portance varie comme le <em>carré</em> de la vitesse. Doublez la vitesse et vous obtenez quatre fois la portance : voilà pourquoi un appareil incapable de voler à 200 km/h vole confortablement à 280.</p>
+<p>\(C_L\) est là où intervient l'<strong>angle d'attaque</strong>, l'angle entre l'aile et l'air qui arrive, et non entre l'aile et le sol. Pour un profil mince, la théorie donne \(C_L \approx 2\pi\alpha\) avec \(\alpha\) en radians : une droite, donc incliner davantage donne plus de portance, jusqu'au moment où ce n'est plus vrai.</p>
+<p>Vers 15°, la couche limite ne parvient plus à rester attachée contre la pression croissante à l'arrière de l'extrados. Elle se sépare, l'écoulement régulier s'effondre en un sillage turbulent, \(C_L\) chute brutalement et la traînée bondit. C'est le <strong>décrochage</strong>, et l'angle auquel il survient change à peine avec la vitesse ou la masse : c'est exactement pourquoi tout avion possède une limite d'angle d'attaque et pas seulement une limite de vitesse.</p>
+<p>Une dernière chose à désapprendre : la vieille histoire selon laquelle l'air devrait « se retrouver » derrière l'aile, si bien que le trajet plus long au-dessus l'obligerait à accélérer. Il ne se retrouve pas du tout : l'air de l'extrados arrive bien avant celui de l'intrados. L'écart de vitesse est réel et Bernoulli le relie correctement à la pression, mais la cause est la circulation que l'aile met en place, pas une règle de rendez-vous.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Portance</th><td>\(L = \tfrac{1}{2}\rho v^{2} S C_L\)</td><td class="cmt">la vitesse compte deux fois</td></tr>
+<tr><th scope="row">Profil mince</th><td>\(C_L \approx 2\pi\alpha\)</td><td class="cmt">\alpha en radians, jusqu'au décrochage</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Angle de décrochage</th><td>\(\alpha_{\text{décr}} \approx 15^\circ\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Traînée</th><td>\(D = \tfrac{1}{2}\rho v^{2} S C_D\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📈</span> La portance varie comme le carré de la vitesse : une augmentation de 40 % de la vitesse double à peu près la portance disponible.</li><li><span aria-hidden="true">🔬</span> La théorie du profil mince donne CL ≈ 2πα, linéaire en angle d'attaque, et elle tient bien jusqu'au décrochage.</li><li><span aria-hidden="true">❌</span> L'histoire des temps de transit égaux est fausse : l'air qui passe sur l'extrados atteint le bord de fuite bien avant celui de l'intrados, pas au même instant.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Circulation, déflexion et traînée induite</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <p>L'énoncé rigoureux est le théorème de Kutta-Joukowski : pour un écoulement bidimensionnel non visqueux, la portance par unité d'envergure vaut \(L' = \rho v \Gamma\), où \(\Gamma\) est la circulation autour du profil. La circulation ne se postule pas, elle se <em>sélectionne</em>, par la condition de Kutta, qui impose au point d'arrêt arrière de se placer au bord de fuite aigu. C'est la viscosité qui fait respecter cette condition, et c'est pourquoi un fluide parfait non visqueux ne produit aucune portance : le paradoxe de d'Alembert.</p>
+<p>Bernoulli et Newton ne sont pas des explications concurrentes, ce sont deux lectures de la même solution. Une fois la circulation fixée, le champ de vitesse suit, Bernoulli donne la distribution de pression pariétale et son intégrale donne la force ; de manière équivalente, le flux de quantité de mouvement à travers un volume de contrôle montre l'aile communiquant à l'air une quantité de mouvement vers le bas. Tout récit qui utilise l'un pour réfuter l'autre a pris un choix comptable pour de la physique.</p>
+<p>Les ailes finies ajoutent un terme que la théorie bidimensionnelle ignore. L'égalisation de pression le long de l'envergure s'enroule en tourbillons marginaux, la déflexion incline le vent relatif local, et le vecteur portance s'incline avec lui. La composante vers l'arrière est la <strong>traînée induite</strong>, \(C_{D,i} = C_L^2/(\pi AR e)\) : elle croît comme le carré de la portance et décroît avec l'allongement, ce qui explique les ailes longues et fines des planeurs et pourquoi la traînée induite domine à basse vitesse, précisément quand on a le moins d'énergie à dépenser.</p>
+<p>Le décrochage lui-même est un phénomène de couche limite : le gradient de pression adverse en aval du pic de dépression épaissit la couche jusqu'à la séparation. D'où le fait que le remède soit la gestion de couche limite - générateurs de tourbillons, becs, volets soufflés - plutôt que davantage de poussée.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Kutta-Joukowski</th><td>\(L' = \rho v \Gamma\)</td><td class="cmt">par unité d'envergure</td></tr>
+<tr><th scope="row">Traînée induite</th><td>\(C_{D,i} = \dfrac{C_L^{2}}{\pi\,AR\,e}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Allongement</th><td>\(AR = b^{2}/S\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Nombre de Reynolds</th><td>\(Re = \dfrac{\rho v c}{\mu}\)</td><td class="cmt">gouverne la couche limite</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔄</span> Kutta-Joukowski : la portance par unité d'envergure vaut ρvΓ. La circulation Γ est fixée par la condition de Kutta au bord de fuite aigu, et c'est la viscosité qui l'impose.</li><li><span aria-hidden="true">⚖️</span> Bernoulli et Newton sont deux lectures de la même solution : intégrale de pression ou flux de quantité de mouvement. Aucune ne réfute l'autre.</li><li><span aria-hidden="true">🛩️</span> La traînée induite varie comme CL²/(πARe), donc elle domine à basse vitesse et récompense les ailes longues à fort allongement : la raison de la silhouette des planeurs.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Lift_(force)" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Physique</h2>
+    <ul><li><a href="/fr/gravite-orbites/">Gravité et orbites</a></li><li><a href="/fr/mouvement-des-projectiles/">Le mouvement des projectiles</a></li><li><a href="/fr/ondes-interferences/">Ondes et interférences</a></li><li><a href="/fr/chaleur-thermodynamique/">Chaleur et thermodynamique</a></li><li><a href="/fr/modele-standard/">Le Modèle standard</a></li><li><a href="/fr/lois-du-mouvement-de-newton/">Les lois du mouvement de Newton</a></li><li><a href="/fr/loi-d-ohm-circuits/">Loi d'Ohm et circuits</a></li><li><a href="/fr/etats-de-la-matiere/">Les états de la matière</a></li><li><a href="/fr/optique-lumiere-lentilles/">Optique : lumière, lentilles et réfraction</a></li><li><a href="/fr/pendule-mouvement-harmonique/">Pendules et mouvement harmonique simple</a></li><li><a href="/fr/conservation-de-l-energie/">La conservation de l'énergie</a></li><li><a href="/fr/circuits-serie-parallele/">Circuits série et parallèle</a></li><li><a href="/fr/aimants-electromagnetisme/">Aimants et électromagnétisme</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

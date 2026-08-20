@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aimants et électromagnétisme | Lab-in-a-Tab</title>
+<meta name="description" content="Un aimant n'est que de la charge en mouvement, et bouger un aimant remet la charge en mouvement. Cette voie à double sens fait tourner tous les moteurs et…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/aimants-electromagnetisme/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/magnets-electromagnetism/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/magneti-elettromagnetismo/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/aimants-electromagnetisme/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/magnets-electromagnetism/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Aimants et électromagnétisme — Expliqué et simulé">
+<meta property="og:description" content="Un aimant n'est que de la charge en mouvement, et bouger un aimant remet la charge en mouvement. Cette voie à double sens fait tourner tous les moteurs et…">
+<meta property="og:url" content="https://labinatab.com/fr/aimants-electromagnetisme/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aimants et électromagnétisme — Expliqué et simulé">
+<meta name="twitter:description" content="Un aimant n'est que de la charge en mouvement, et bouger un aimant remet la charge en mouvement. Cette voie à double sens fait tourner tous les moteurs et…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/aimants-electromagnetisme/#article",
+   "headline": "Aimants et électromagnétisme",
+   "name": "Aimants et électromagnétisme",
+   "description": "Un aimant n'est que de la charge en mouvement, et bouger un aimant remet la charge en mouvement. Cette voie à double sens fait tourner tous les moteurs et…",
+   "url": "https://labinatab.com/fr/aimants-electromagnetisme/",
+   "mainEntityOfPage": "https://labinatab.com/fr/aimants-electromagnetisme/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Champ magnétique",
+    "Induction",
+    "Lenz"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Aimants et électromagnétisme",
+    "sameAs": "https://en.wikipedia.org/wiki/Electromagnetism"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Aimants et électromagnétisme",
+     "item": "https://labinatab.com/fr/aimants-electromagnetisme/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/magnets-electromagnetism/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/magneti-elettromagnetismo/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/aimants-electromagnetisme/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physique</nav>
+  <h1>Aimants et électromagnétisme</h1>
+  <p class="lead">Un aimant n'est que de la charge en mouvement, et bouger un aimant remet la charge en mouvement. Cette voie à double sens fait tourner tous les moteurs et tous les générateurs de la Terre.</p>
+  <div class="chips"><span>Champ magnétique</span><span>Induction</span><span>Lenz</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"magnets":{"junior":{"cur":"Courant dans la bobine","spd":"Vitesse de déplacement de l'aimant","bfield":"Force de la bobine","emf":"Tension produite","lenz":"Ce que fait la bobine","rev":"🔄 Inverser","cTop":"un courant fabrique un aimant","cEarth":"aiguilles grises : la Terre, 50 µT","cReach":"jusqu'ici la bobine l'emporte","cOff":"pas de courant : chaque aiguille pointe vers la Terre","cBot":"un aimant en mouvement fabrique un courant","cPush":"la bobine repousse","cPull":"la bobine retient","cNone":"rien ne bouge, rien ne se produit","cTrace":"tension produite dans la bobine, au fil du temps","cZero":"zéro — aimant au milieu, là où le champ est le plus fort","vIdle":"rien","vPush":"repousse","vPull":"retient"},"student":{"cur":"Courant de bobine (I)","spd":"Vitesse de l'aimant (v)","bfield":"B dans la bobine","emf":"Fém induite","lenz":"Réponse de Lenz","rev":"🔄 Inverser","cTop":"un courant crée un champ magnétique","cEarth":"aiguilles grises : la Terre, 50 µT","cReach":"ici la bobine dépasse la Terre","cOff":"pas de courant : le champ est celui de la Terre seule","cBot":"un flux qui change crée une fém","cPush":"le champ induit s'oppose à l'approche","cPull":"le champ induit s'oppose au retrait","cNone":"flux constant, pas de fém","cTrace":"fém induite au fil du temps","cZero":"fém nulle — aimant centré, flux maximal","vIdle":"aucun changement","vPush":"s'oppose à l'approche","vPull":"s'oppose au retrait"},"scholar":{"cur":"Courant I de bobine","spd":"Vitesse v de l'aimant","bfield":"B = µ₀nI","emf":"ℰ = −dΦ/dt","lenz":"Signe de la réponse","rev":"🔄 Inverser","cTop":"Ampère : un courant enfile un champ autour de lui","cEarth":"champ ambiant 50 µT","cReach":"ici |B_bobine| = |B_Terre|","cOff":"I = 0 : champ ambiant seul","cBot":"Faraday : dΦ/dt engendre une fém","cPush":"moment induit antiparallèle à l'approche","cPull":"moment induit opposé au retrait","cNone":"dΦ/dt = 0","cTrace":"ℰ(t) — la trace suit dB/dx, pas B","cZero":"ℰ = 0 au maximum de Φ","vIdle":"dΦ/dt = 0","vPush":"s'oppose à l'approche","vPull":"s'oppose au retrait"}}});</script>
+<section class="sim-embed" data-sim="magnets" data-color="#b91c1c" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#b91c1c"><span class="sg-lbl">Essaie</span><span>Commencez avec <b>Courant dans la bobine</b> à zéro et regardez les boussoles. Montez-le doucement et regardez l'anneau grandir. Poussez ensuite <b>Courant dans la bobine</b> jusqu'en haut : l'anneau devient-il vingt fois plus grand, ou à peine plus grand ? Ensuite, regardez la ligne ondulée du bas quand l'aimant traverse le milieu.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#b91c1c"><span class="sg-lbl">Essaie</span><span>Lisez le champ de la bobine dans <b>B dans la bobine</b> à <b>Courant de bobine (I)</b> = 1 A, puis à 5 A : un facteur cinq net, puisque \(B = \mu_0 n I\). Comparez maintenant le contour en pointillé à ces deux mêmes réglages. Puis mettez <b>Vitesse de l'aimant (v)</b> au minimum et au maximum, et lisez <b>Fém induite</b> dans chaque cas.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#b91c1c"><span class="sg-lbl">Essaie</span><span>Comparez les deux lois d'échelle. Faites varier <b>Courant I de bobine</b> sur toute sa plage en lisant <b>B = µ₀nI</b>, puis mesurez jusqu'où s'étend le contour à chaque réglage. Tenez ensuite <b>Courant I de bobine</b> fixe et faites varier <b>Vitesse v de l'aimant</b>, en regardant si la forme de la trace change ou seulement sa hauteur.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Moitié supérieure : une bobine de fil vue de côté, posée dans un champ de petites boussoles. Chaque boussole pointe là où la pousse le champ magnétique total. Sans courant, elles obéissent toutes à la Terre. L'anneau rouge en pointillé est la limite du territoire de la bobine : à l'intérieur, la bobine l'emporte. Moitié inférieure : un barreau aimanté qui glisse d'avant en arrière devant une seconde bobine, avec la tension qu'il produit tracée en dessous.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Le fil devient réellement un aimant, et la tension est exactement nulle précisément quand l'aimant est au milieu.</b> Multiplier le courant par cinq n'élargit qu'à peine le territoire de la bobine, car l'attraction d'un aimant meurt comme le cube de la distance. Et la trace du bas a deux bosses de signes opposés avec un zéro entre elles : à l'instant où l'aimant est exactement au centre, le champ à travers la bobine est à son maximum et pourtant rien n'est produit. Ce qui crée une tension, ce n'est pas le champ. C'est le champ qui <em>change</em>.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>En haut : un solénoïde de 4000 spires par mètre dans le champ terrestre de 50 µT. Chaque aiguille montre la somme vectorielle des deux champs, si bien que les aiguilles cartographient directement \(\vec B_{\text{bobine}} + \vec B_{\text{Terre}}\). Le contour en pointillé est là où les deux sont égaux en module. En bas : un barreau aimanté sur un rail traversant une bobine de captation de 200 spires, avec \(\mathcal{E}(t)\) tracée dessous et le pôle induit indiqué sur la face de la bobine.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Le champ varie linéairement avec le courant mais la portée seulement en \(I^{1/3}\).</b> Cinq fois le courant donne cinq fois le champ au centre et seulement 1,7 fois la distance à laquelle la bobine bat encore la Terre, parce que le champ extérieur est un dipôle décroissant en \(1/r^3\). Dans le panneau inférieur, \(\mathcal{E} = -NA\,(dB/dx)\,v\) : la fém suit le <em>gradient</em>, d'où le fait que la trace passe par zéro précisément là où le flux est maximal, et que doubler <b>Vitesse de l'aimant (v)</b> double <b>Fém induite</b> sans en changer la forme du tout.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Panneau supérieur : la superposition \(\vec B_{\text{bobine}} + \vec B_{\text{ambiant}}\) échantillonnée sur une grille, avec le solénoïde dessiné en coupe et le fil marqué du sens du courant. Le contour satisfait \(|\vec B_{\text{bobine}}| = |\vec B_{\text{Terre}}|\), soit \(r(\theta) = [\mu_0 m\sqrt{1+3\cos^2\theta}\,/\,4\pi B_T]^{1/3}\). Panneau inférieur : un dipôle traversant une bobine à vitesse constante, avec \(\mathcal{E}(t)\) et le signe du moment induit.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Deux lois de puissance différentes, et le signe moins n'est pas une convention.</b> Le champ intérieur varie en \(I^1\), la portée extérieure en \(I^{1/3}\) ; la vitesse met à l'échelle l'amplitude de la fém sans toucher à sa forme, car \(\mathcal{E} = -NA(dB/dx)v\) est séparable. Le signe de Lenz est fixé par l'énergie : le courant induit dissipe \(\mathcal{E}^2/R\), qui doit venir de ce qui déplace l'aimant, donnant une force de freinage \(F = \mathcal{E}^2/(Rv)\) - le même frottement par courants de Foucault qui donne à un aimant une vitesse limite dans un tube de cuivre. Inversez ce signe et vous avez une machine à mouvement perpétuel.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>L'électricité et le magnétisme sont la même chose</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Les aimants ont l'air d'une magie à part : un bout de métal qui tend la main et en attrape un autre à travers le vide. Pendant des siècles personne ne les a reliés à l'électricité. Puis, en 1820, un enseignant danois nommé Hans Christian Ørsted montrait un circuit électrique à sa classe et remarqua qu'une aiguille de boussole posée à côté sursautait chaque fois qu'il allumait le courant. Ce sursaut a changé la physique pour toujours.</p>
+<p>Ce sur quoi Ørsted était tombé, c'est ceci : <strong>un courant électrique crée un champ magnétique</strong>. Pas un soupçon de champ : un vrai. Enroulez un fil en bobine, poussez-y du courant, et vous avez fabriqué un aimant aussi authentique qu'un morceau de fer, avec un pôle nord et un pôle sud. Coupez le courant et le magnétisme s'évanouit. Inversez le courant et le pôle nord devient le sud. Dans la simulation ci-dessus, montez le courant et regardez tout un champ d'aiguilles de boussole pivoter pour obéir à votre bobine plutôt qu'à la Terre.</p>
+<p>Puis vient la belle partie, trouvée par Michael Faraday onze ans plus tard : la voie va dans les deux sens. <strong>Bougez un aimant près d'une bobine de fil et un courant apparaît dans le fil.</strong> Pas parce que vous avez branché une pile - il n'y a pas de pile - mais uniquement parce que l'aimant a bougé. Poussez-le dedans, le courant circule dans un sens. Retirez-le, il circule dans l'autre. Tenez-le parfaitement immobile dans la bobine et, quelle que soit la puissance de l'aimant, il ne se passe absolument rien. C'est le <em>changement</em> qui compte.</p>
+<p>La nature résiste aussi, et c'est la partie que les gens trouvent inquiétante. Le courant qui apparaît circule toujours dans le sens qui s'oppose à ce que vous faites. Poussez l'aimant dedans et la bobine devient un aimant qui repousse. Retirez-le et la bobine le retient. C'est la <strong>loi de Lenz</strong>, et au fond ce n'est que la conservation de l'énergie déguisée : si la bobine vous aidait au lieu de vous résister, vous auriez de l'électricité gratuite. Chaque centrale électrique de la planète est quelqu'un qui force un aimant à passer devant une bobine contre exactement cette résistance.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧭</span> Ørsted a découvert l'électromagnétisme par accident en 1820, quand une aiguille de boussole près du circuit de sa démonstration a sursauté à l'allumage du courant. Il a passé trois mois à vérifier avant d'oser publier.</li><li><span aria-hidden="true">🔌</span> Presque toute l'électricité que vous avez utilisée a été produite de la même façon : quelque chose fait tourner un aimant devant une bobine. Charbon, gaz, nucléaire et éolien ne diffèrent que par ce qui fait tourner.</li><li><span aria-hidden="true">🛑</span> Lâchez un aimant puissant dans un tube de cuivre et il descend absurdement lentement. Le cuivre n'est pas magnétique, mais l'aimant qui tombe y induit des courants, et ces courants combattent la chute.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Champs, flux et loi de Faraday</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Un fil parcouru par un courant est entouré d'un champ magnétique qui tourne autour de lui, et l'intensité de ce champ suit la loi d'Ampère. Enroulez le fil en un long solénoïde et les champs des spires s'additionnent le long de l'axe, donnant un champ intérieur presque uniforme \(B = \mu_0 n I\), où \(n\) est le nombre de spires par mètre. Quatre mille spires par mètre à 3 A donnent environ 15 mT, soit à peu près trois cents fois les 50 µT terrestres : d'où le fait qu'une boussole placée à proximité cesse de s'intéresser au nord.</p>
+<p>Hors du solénoïde, le champ est un <strong>dipôle</strong>, de forme identique à celui d'un barreau aimanté, et il décroît en \(1/r^3\). Ce cube mérite qu'on s'y arrête. Le rayon auquel la bobine bat encore le champ terrestre ne varie qu'en \(I^{1/3}\) : pour doubler la portée il faut huit fois le courant. Les aimants puissants ne sont pas des aimants à longue portée.</p>
+<p>La loi de Faraday traite le sens inverse. Définissez le <strong>flux magnétique</strong> à travers une bobine de \(N\) spires et d'aire \(A\) par \(\Phi = NBA\) ; la force électromotrice induite vaut \(\mathcal{E} = -\,d\Phi/dt\). Tout dans cette expression est une vitesse de variation. Un aimant immobile, si puissant soit-il, donne \(d\Phi/dt = 0\) et donc rien. Bougez-le et la fém suit le <em>gradient</em> du champ, pas le champ : voilà pourquoi, tandis qu'un aimant traverse une bobine, la tension induite culmine deux fois avec des signes opposés et passe exactement par zéro à l'instant où l'aimant est centré et où le champ à travers la bobine est le plus fort.</p>
+<p>Le signe moins est la <strong>loi de Lenz</strong>, et ce n'est pas un ornement. Le courant induit circule de façon que son propre champ magnétique s'oppose au changement qui l'a produit : à un pôle nord qui approche répond un pôle nord induit, à un qui s'éloigne un pôle sud. Inversez le signe et vous auriez une bobine qui accélère l'aimant, extrayant de l'énergie de nulle part. Le travail mécanique que vous fournissez contre cette opposition est exactement l'énergie électrique que vous obtenez. C'est cela, un générateur.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Champ dans un solénoïde</th><td>\(B = \mu_0 n I\)</td><td class="cmt">n = spires par mètre</td></tr>
+<tr><th scope="row">Perméabilité du vide</th><td>\(\mu_0 = 4\pi \times 10^{-7}\ \text{T·m/A}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Champ dipolaire extérieur</th><td>\(B \propto \dfrac{1}{r^3}\)</td><td class="cmt">la portée varie en I^{1/3}</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Flux magnétique</th><td>\(\Phi = N B A\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Loi de Faraday–Lenz</th><td>\(\mathcal{E} = -\dfrac{d\Phi}{dt}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Aimant en mouvement</th><td>\(\mathcal{E} = -NA\,\dfrac{dB}{dx}\,v\)</td><td class="cmt">la fém suit le gradient</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Force sur une charge en mouvement</th><td>\(\vec F = q\,\vec v \times \vec B\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📐</span> Le champ hors d'un solénoïde décroît en 1/r³, donc la portée ne varie que comme la racine cubique du courant. Huit fois le courant n'achète que le double de la distance.</li><li><span aria-hidden="true">0️⃣</span> Tandis qu'un aimant traverse une bobine, la tension induite est exactement nulle à l'instant où l'aimant est centré, précisément là où le champ à travers la bobine est maximal. C'est la vitesse de variation qui compte, pas l'intensité.</li><li><span aria-hidden="true">⚖️</span> La loi de Lenz est la conservation de l'énergie déguisée. Si le courant induit accompagnait le mouvement au lieu de s'y opposer, une seule poussée ferait tourner un générateur pour toujours.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>D'Ørsted à Maxwell, et pourquoi le magnétisme est de la relativité</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Deux lois, un champ</h3>
+<p>La loi circuitale d'Ampère, \(\oint \vec B \cdot d\vec l = \mu_0 I_{\text{enc}}\), dit qu'un courant enfile un champ magnétique autour de lui. La loi de Faraday, \(\oint \vec E \cdot d\vec l = -\,d\Phi_B/dt\), dit qu'un flux magnétique variable enfile autour de lui un champ électrique. Écrites en paire elles paraissent déjà suspectement symétriques, et cette symétrie est la graine de tout ce qui suit. En forme différentielle : \(\nabla \times \vec B = \mu_0 \vec J\) et \(\nabla \times \vec E = -\partial \vec B / \partial t\).</p>
+<h3><span class="hn">02</span>Le terme qu'a ajouté Maxwell</h3>
+<p>La loi d'Ampère telle qu'énoncée est incohérente : prenez la divergence des deux membres et vous obtenez \(\nabla \cdot \vec J = 0\), ce qui est faux dès que la charge s'accumule, comme sur un condensateur en charge. Maxwell l'a réparée avec le <strong>courant de déplacement</strong>, \(\nabla \times \vec B = \mu_0 \vec J + \mu_0 \varepsilon_0\,\partial \vec E/\partial t\). La réparation n'était pas cosmétique. Avec elle, les équations dans le vide se combinent en une équation d'onde de vitesse \(c = 1/\sqrt{\mu_0 \varepsilon_0}\), un nombre que Maxwell pouvait évaluer à partir de mesures purement électriques et qui se trouva égal à la vitesse de la lumière mesurée. Que la lumière soit une onde électromagnétique fut révélé par une correction de cohérence algébrique.</p>
+<h3><span class="hn">03</span>Le signe de Lenz, et pourquoi il ne peut être autrement</h3>
+<p>Le signe moins de la loi de Faraday est fixé par la conservation de l'énergie, pas par convention. Considérez une bobine de résistance \(R\) : le courant induit \(I = \mathcal{E}/R\) dissipe \(\mathcal{E}^2/R\), et cette puissance doit venir de qui déplace l'aimant. La force de freinage sur l'aimant vaut donc \(F = \mathcal{E}^2/(Rv)\), qui varie en \(v\) à géométrie donnée, ce qui est précisément pourquoi un aimant atteint une vitesse limite dans un tube de cuivre, les courants de Foucault dissipant exactement la puissance gravitationnelle entrante. Inversez le signe et le système devient divergent.</p>
+<h3><span class="hn">04</span>Règle du flux contre loi de force</h3>
+<p>Feynman a signalé la règle du flux \(\mathcal{E} = -d\Phi/dt\) comme un cas rare où une seule formule couvre deux mécanismes physiquement distincts. Quand le circuit se déplace, la fém vient de la partie magnétique de la force de Lorentz, \(q\vec v \times \vec B\), agissant sur des charges entraînées à travers un champ statique. Quand le champ varie et que le circuit est immobile, la fém vient d'un véritable champ électrique induit, \(\nabla \times \vec E = -\partial\vec B/\partial t\). Deux termes différents de la force de Lorentz conspirent pour donner la même réponse, et il existe des géométries artificielles où la règle du flux échoue alors que la loi de force tient.</p>
+<h3><span class="hn">05</span>Le magnétisme, ou l'électrostatique vue d'un train</h3>
+<p>La conspiration n'est pas une coïncidence. Prenez un fil neutre parcouru par un courant et une charge qui dérive à côté. Dans le référentiel du laboratoire le fil est neutre et la force sur la charge est purement magnétique. Passez dans le référentiel de la charge et la force magnétique disparaît, mais la contraction de Lorentz des densités de charge positive et négative diffère, car elles se déplacent à des vitesses différentes, si bien que le fil <em>n'est plus neutre</em> et qu'il y a une force électrique à la place. Même force, noms différents. Le magnétisme est ce à quoi ressemble l'électrostatique depuis un référentiel en mouvement, et le facteur \(1/c^2\) entre les deux explique pourquoi les effets magnétiques, à des vitesses de dérive quotidiennes de millimètres par seconde, sont malgré tout si forts : les énormes densités de charge compensent.</p>
+<h3><span class="hn">06</span>Le monopôle manquant</h3>
+<p>Les équations de Maxwell sont presque symétriques par échange de \(\vec E\) et \(\vec B\). Presque, car \(\nabla \cdot \vec B = 0\) n'a aucune contrepartie de charge magnétique à \(\nabla \cdot \vec E = \rho/\varepsilon_0\). Coupez un barreau aimanté en deux et vous obtenez deux aimants, jamais un pôle isolé. Dirac a montré en 1931 que l'existence ne serait-ce que d'un monopôle quelque part dans l'univers forcerait la charge électrique à être quantifiée, en unités \(eg = n\hbar c/2\), ce qui expliquerait le fait autrement inexpliqué que chaque électron porte exactement la même charge. On n'en a jamais trouvé, et la quantification de la charge reste inexpliquée.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Gauss, électrique</th><td>\(\nabla \cdot \vec E = \rho/\varepsilon_0\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Gauss, magnétique</th><td>\(\nabla \cdot \vec B = 0\)</td><td class="cmt">pas de monopôles</td></tr>
+<tr><th scope="row">Faraday</th><td>\(\nabla \times \vec E = -\dfrac{\partial \vec B}{\partial t}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Ampère–Maxwell</th><td>\(\nabla \times \vec B = \mu_0 \vec J + \mu_0\varepsilon_0 \dfrac{\partial \vec E}{\partial t}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Vitesse des ondes</th><td>\(c = \dfrac{1}{\sqrt{\mu_0 \varepsilon_0}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Force de Lorentz</th><td>\(\vec F = q(\vec E + \vec v \times \vec B)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Quantification de Dirac</th><td>\(eg = \dfrac{n\hbar c}{2}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">💡</span> Maxwell a réparé une incohérence de la loi d'Ampère avec le courant de déplacement, et les équations corrigées prédisaient des ondes voyageant à 1/√(μ₀ε₀) : la vitesse de la lumière mesurée. La lumière s'est révélée être de l'électromagnétisme.</li><li><span aria-hidden="true">🚄</span> Le magnétisme est de l'électrostatique vue d'un référentiel en mouvement. Passez dans le référentiel d'une charge en dérive et la force magnétique devient électrique, parce que la contraction de Lorentz déséquilibre les densités de charge du fil.</li><li><span aria-hidden="true">🧲</span> Dirac a montré qu'un seul monopôle magnétique où que ce soit dans l'univers forcerait la charge électrique à être quantifiée. La charge est quantifiée, mais aucun monopôle n'a jamais été trouvé.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Electromagnetism" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Physique</h2>
+    <ul><li><a href="/fr/gravite-orbites/">Gravité et orbites</a></li><li><a href="/fr/mouvement-des-projectiles/">Le mouvement des projectiles</a></li><li><a href="/fr/ondes-interferences/">Ondes et interférences</a></li><li><a href="/fr/chaleur-thermodynamique/">Chaleur et thermodynamique</a></li><li><a href="/fr/modele-standard/">Le Modèle standard</a></li><li><a href="/fr/lois-du-mouvement-de-newton/">Les lois du mouvement de Newton</a></li><li><a href="/fr/loi-d-ohm-circuits/">Loi d'Ohm et circuits</a></li><li><a href="/fr/etats-de-la-matiere/">Les états de la matière</a></li><li><a href="/fr/optique-lumiere-lentilles/">Optique : lumière, lentilles et réfraction</a></li><li><a href="/fr/pendule-mouvement-harmonique/">Pendules et mouvement harmonique simple</a></li><li><a href="/fr/comment-volent-les-avions/">Comment volent les avions</a></li><li><a href="/fr/conservation-de-l-energie/">La conservation de l'énergie</a></li><li><a href="/fr/circuits-serie-parallele/">Circuits série et parallèle</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment les abeilles se disent où aller | Lab-in-a-Tab</title>
+<meta name="description" content="Une butineuse de retour danse un huit dans le noir, et ses sœurs volent droit vers un parterre de fleurs à des kilomètres. L'angle donne la direction, la…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-bees-communicate-waggle-dance/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-comunicano-le-api-danza-delle-api/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-bees-communicate-waggle-dance/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Comment les abeilles se disent où aller — Expliqué et simulé">
+<meta property="og:description" content="Une butineuse de retour danse un huit dans le noir, et ses sœurs volent droit vers un parterre de fleurs à des kilomètres. L'angle donne la direction, la…">
+<meta property="og:url" content="https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment les abeilles se disent où aller — Expliqué et simulé">
+<meta name="twitter:description" content="Une butineuse de retour danse un huit dans le noir, et ses sœurs volent droit vers un parterre de fleurs à des kilomètres. L'angle donne la direction, la…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/#article",
+   "headline": "Comment les abeilles se disent où aller",
+   "name": "Comment les abeilles se disent où aller",
+   "description": "Une butineuse de retour danse un huit dans le noir, et ses sœurs volent droit vers un parterre de fleurs à des kilomètres. L'angle donne la direction, la…",
+   "url": "https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/",
+   "mainEntityOfPage": "https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Danse frétillante",
+    "Navigation",
+    "Von Frisch"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Comment les abeilles se disent où aller",
+    "sameAs": "https://en.wikipedia.org/wiki/Waggle_dance"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Comment les abeilles se disent où aller",
+     "item": "https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-bees-communicate-waggle-dance/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-comunicano-le-api-danza-delle-api/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Règne animal</nav>
+  <h1>Comment les abeilles se disent où aller</h1>
+  <p class="lead">Une butineuse de retour danse un huit dans le noir, et ses sœurs volent droit vers un parterre de fleurs à des kilomètres. L'angle donne la direction, la durée la distance : c'est une vraie langue, dansée.</p>
+  <div class="chips"><span>Danse frétillante</span><span>Navigation</span><span>Von Frisch</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"bees":{"junior":{"bear":"Direction des fleurs","dist":"Distance des fleurs","ang":"Angle de la danse","dur":"Durée du frétillement","read":"Ce que comprennent les autres","sun":"🕐 Changer l'heure","cOut":"dehors : où sont vraiment les fleurs","cIn":"dans la ruche obscure : la danse","cHive":"ruche","cUp":"droit vers le haut = droit vers le soleil","cWag":"elle frétille","cRule":"une seconde de frétillement ≈ un kilomètre","cSame":"déplacez le soleil et la danse tourne, alors que les fleurs n'ont pas bougé","vFromUp":"depuis la verticale","vThatWay":"par là"},"student":{"bear":"Azimut de la nourriture","dist":"Distance de la nourriture","ang":"Angle de la danse","dur":"Durée du frétillement","read":"Distance décodée","sun":"🕐 Heure du jour","cOut":"dehors : direction et distance réelles","cIn":"dans la ruche : la danse sur rayon vertical","cHive":"ruche","cUp":"verticale = azimut du soleil","cWag":"phase de frétillement","cRule":"environ une seconde de frétillement par kilomètre","cSame":"déplacez le soleil et l'angle de la danse se déplace avec lui — la nourriture n'a pas bougé","vFromUp":"depuis la verticale","vThatWay":"dans cette direction"},"scholar":{"bear":"Azimut de la nourriture θ_n","dist":"Portée d","ang":"θ_danse depuis la verticale","dur":"Durée t du frétillement","read":"Portée décodée","sun":"🕐 Azimut solaire","cOut":"référentiel horizontal rapporté au soleil","cIn":"référentiel vertical rapporté à la gravité","cHive":"ruche","cUp":"verticale ≡ azimut solaire","cWag":"phase de frétillement","cRule":"t ≈ d / 1 km, en secondes","cSame":"θ_danse = θ_nourr − θ_soleil : déplacez le soleil, la transposition se déplace","vFromUp":"depuis la verticale","vThatWay":"dans cette direction"}}});</script>
+<section class="sim-embed" data-sim="bees" data-color="#ca8a04" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Tirez <b>Direction des fleurs</b> tout autour du cercle et regardez la danse tourner en conséquence. Laissez ensuite les fleurs tranquilles et appuyez deux ou trois fois sur <b>🕐 Changer l'heure</b> pour changer l'heure du jour. Tirez maintenant <b>Distance des fleurs</b> de 100 m jusqu'à 4000 m et comptez avec <b>Durée du frétillement</b>.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Fixez <b>Azimut de la nourriture</b> et <b>Distance de la nourriture</b>, puis faites avancer <b>🕐 Heure du jour</b> sur les trois heures du jour, en lisant <b>Angle de la danse</b> à chaque fois. Fixez ensuite l'heure et balayez <b>Distance de la nourriture</b>, en vérifiant que <b>Durée du frétillement</b> suit la portée linéairement et non selon une loi plus raide.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Établissez que le code est authentiquement arbitraire et non iconique. Tenez <b>Azimut de la nourriture θ_n</b> et <b>Portée d</b> constants et faites avancer <b>🕐 Azimut solaire</b> : le référent est fixe tandis que le signal change, ce qui est la signature d'une convention. Confirmez ensuite que le terme de portée est linéaire en <b>Portée d</b> et considérez ce qu'annoncerait <b>Portée décodée</b> pour une abeille dont le flux optique aurait été gonflé.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>À gauche, le monde vu d'en haut : la ruche au centre, le soleil sur le bord et une tache rose de fleurs. L'arc jaune est l'angle entre les deux, et c'est tout le message. À droite, la ruche noire comme un four : un rayon vertical avec une abeille qui court son huit. La ligne jaune épaisse est la course de frétillement, le tronçon droit où elle vibre. Droit vers le haut sur le rayon signifie droit vers le soleil.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Les fleurs n'ont pas bougé, et pourtant la danse a tourné, parce que le message se mesure depuis le soleil, pas depuis le paysage.</b> C'est la preuve qu'il s'agit d'un vrai code et non d'un geste qui montre : elle doit échanger une direction prise dehors au soleil contre une direction sur une paroi verticale dans le noir, et ses sœurs doivent la réchanger. L'autre moitié est le chronomètre : environ une seconde de frétillement par kilomètre. Deux nombres, dansés, dans le noir, à des abeilles qui n'ont jamais vu l'endroit.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>À gauche : le référentiel horizontal rapporté au soleil, avec \(\theta_{\text{nourr}}\), l'azimut solaire et l'angle entre les deux. À droite : le référentiel vertical rapporté à la gravité du rayon, où la verticale tient lieu d'azimut solaire et où la course de frétillement est décalée d'exactement cet angle. <b>Durée du frétillement</b> varie avec la portée à environ une seconde par kilomètre. <b>🕐 Heure du jour</b> fait avancer l'azimut solaire entre matin, midi et après-midi.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>\(\theta_{\text{danse}} = \theta_{\text{nourr}} - \theta_{\text{soleil}}\) : le codage est relatif, donc une cible immobile donne un signal mobile.</b> Cela oblige l'abeille à porter une horloge, et elle en a une : une butineuse gardée dans le noir des heures ressort en dansant à un angle mis à jour pour la position atteinte par le soleil. Le terme de distance est plus étrange qu'il n'y paraît. Ce qu'elle mesure n'est pas la distance mais le <em>flux optique</em> accumulé ; faites-la voler dans un tunnel étroit texturé et elle annoncera des centaines de mètres pour un trajet de quelques-uns.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Une transposition entre deux référentiels : solaire-azimutal-horizontal à gauche, gravitationnel-vertical à droite, reliés par \(\theta_{\text{rayon}} = \theta_{\text{nourr}} - \theta_{\text{soleil}}\). La phase de frétillement court à environ 13 Hz d'oscillation du corps avec un battement d'ailes proche de 250 Hz, qui est ce que perçoivent réellement les suiveuses. <b>Durée t du frétillement</b> code la portée par l'odomètre visuel \(D \propto \int \omega_{\text{image}}\,dt\).</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Référence déplacée et arbitraire : voilà pourquoi ceci compte comme communication symbolique alors que presque rien d'autre dans le monde animal ne le fait.</b> Rien dans le fait de courir à 40° de la verticale ne ressemble à voler à 40° du soleil ; émetteur et récepteur partagent une convention et une règle de transposition. Les suiveuses ne peuvent pas la voir dans le noir : elles lisent le flux d'air de champ proche à ~250 Hz avec l'organe de Johnston et la vibration du rayon, puis volent le vecteur et basculent en spirale de recherche locale. Sa valeur dépend de l'habitat : désorienter les danses coûte cher aux colonies en milieux tropicaux morcelés et presque rien en milieux tempérés uniformément riches. Et la dispersion angulaire de 10-15° pourrait elle-même être adaptative, floutant le signal à la taille d'un parterre de fleurs.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Une carte que l'on danse</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Une abeille trouve un beau parterre de fleurs à deux kilomètres de la ruche. Elle rentre, pénètre dans une ruche noire comme un four et bondée de milliers de sœurs, et en quelques minutes des abeilles qui n'ont jamais vu ces fleurs y volent droit. Elle ne les y a pas conduites. Elle le leur a dit.</p>
+<p>Ce qu'elle fait, c'est la <strong>danse frétillante</strong>. Elle court en ligne droite sur le rayon vertical en secouant violemment son corps d'un côté à l'autre, puis revient en boucle et recommence, en alternant gauche et droite pour que son trajet dessine un huit. Deux choses de cette course droite portent le message, et ce sont toutes deux des mesures.</p>
+<p>L'<strong>angle</strong> donne la direction. Dans la ruche il fait noir et il n'y a rien à voir, alors les abeilles utilisent la gravité : droit vers le haut sur le rayon veut dire droit vers le soleil. Si les fleurs sont à 40° à droite du soleil, elle court à 40° à droite de la verticale. Le <strong>temps</strong> pendant lequel elle frétille donne la distance : environ une seconde de frétillement par kilomètre. Les spectatrices se pressent autour, sentent les vibrations dans le noir et décodent les deux nombres.</p>
+<p>Voici la preuve qu'il s'agit bien du soleil et non du paysage. Laissez les fleurs exactement où elles sont et attendez quelques heures. Le soleil traverse le ciel, et la danse tourne pour le suivre, degré par degré, alors que dehors rien n'a changé du tout. Appuyez sur le bouton de l'heure dans la simulation et regardez la danse pivoter pendant que les fleurs restent immobiles. Karl von Frisch a passé des décennies à la décoder et en a reçu un prix Nobel en 1973, et elle reste l'un des très rares langages symboliques connus hors de l'espèce humaine.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🏅</span> Karl von Frisch a partagé le prix Nobel 1973 pour avoir décodé la danse frétillante. C'est l'un des très rares systèmes de communication symbolique connus chez un animal autre que nous.</li><li><span aria-hidden="true">⬆️</span> Dans la ruche obscure, droit vers le haut sur le rayon signifie droit vers le soleil. Les abeilles échangent une direction visuelle contre une direction gravitationnelle et inversement sans perdre l'angle.</li><li><span aria-hidden="true">🕐</span> Les abeilles corrigent le déplacement du soleil. Une abeille gardée dans le noir pendant des heures danse, une fois libérée, à un angle mis à jour : elle a continué à compter la progression du soleil sur une horloge interne.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Coder un vecteur en angle et en durée</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>La danse frétillante code un vecteur bidimensionnel - une direction et une distance - dans deux variables comportementales, et la transformation est authentiquement abstraite. La direction est donnée comme un angle azimutal relatif au soleil, non à un repère du paysage : \(\theta_{\text{danse}} = \theta_{\text{nourriture}} - \theta_{\text{soleil}}\), mesuré sur le rayon depuis la verticale. Comme l'intérieur de la ruche est noir et le rayon vertical, l'abeille transpose un angle horizontal référencé au soleil en un angle vertical référencé à la gravité. Les suiveuses effectuent la transposition inverse en sortant.</p>
+<p>La distance est codée dans la durée de la phase de frétillement, à environ une seconde par kilomètre - même si l'étalonnage exact varie selon la sous-espèce et constitue une vraie différence dialectale, certaines races courant nettement plus ou moins longtemps pour la même distance. Ce que l'abeille mesure n'est pas la distance mais le <strong>flux optique</strong> : le mouvement d'image total balayé par ses yeux au cours du vol aller. Forcez des abeilles dans un tunnel étroit aux parois texturées et elles surestimeront follement la distance, parce que les parois ont défilé bien plus vite qu'un paysage ouvert. C'est un odomètre bâti sur le mouvement visuel, non sur le temps ni sur l'énergie.</p>
+<p>La référence solaire exige une horloge. L'azimut du soleil change en moyenne de 15° par heure, mais non uniformément selon la latitude et la saison, et les abeilles compensent : une butineuse confinée dans le noir plusieurs heures ressort en dansant à un angle mis à jour pour la nouvelle position du soleil. Par temps couvert elles lisent le motif de polarisation du ciel bleu par le bord dorsal de l'œil, ce qui permet de déduire la position du soleil à partir d'une seule tache de ciel clair.</p>
+<p>Quelle quantité d'information passe réellement est une question légitime. La dispersion de la danse est notable - des courses successives d'une même abeille varient de plusieurs degrés - et le suivi radar montre que les recrues cherchent souvent un moment près du point indiqué. La danse transmet un vecteur précis à quelques dizaines de mètres sur un kilomètre, et ce sont les indices olfactifs qui font le travail final. Sa valeur mesurée pour la colonie varie avec l'habitat : désactiver l'information de la danse coûte beaucoup aux colonies en milieux morcelés et presque rien en milieux uniformément riches.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Direction codée</th><td>\(\theta_{\text{danse}} = \theta_{\text{nourr}} - \theta_{\text{soleil}}\)</td><td class="cmt">mesurée depuis la verticale sur le rayon</td></tr>
+<tr><th scope="row">Distance codée</th><td>\(t_{\text{frét}} \approx \dfrac{d}{1\ \text{km}}\ \text{secondes}\)</td><td class="cmt">varie selon la sous-espèce</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Vitesse azimutale du soleil</th><td>\(\approx 15^\circ\ \text{par heure}\)</td><td class="cmt">en moyenne ; varie avec la latitude</td></tr>
+<tr><th scope="row">Odomètre</th><td>\(d \propto \textstyle\int \omega_{\text{image}}\,dt\)</td><td class="cmt">flux optique total</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Fréquence de frétillement</th><td>\(\approx 13\ \text{Hz}\)</td><td class="cmt">oscillation du corps dans la course</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📏</span> Les abeilles mesurent la distance au flux optique, non au temps ni à l'effort. Faites-les voler dans un tunnel étroit texturé et elles annonceront une distance plusieurs fois trop grande, parce que les parois ont défilé trop vite.</li><li><span aria-hidden="true">🔆</span> Sous les nuages, les abeilles lisent le motif de polarisation du ciel par le bord dorsal de l'œil. Une seule tache de bleu suffit à localiser le soleil caché.</li><li><span aria-hidden="true">🗣️</span> Les dialectes de la danse sont réels : différentes sous-espèces d'abeilles utilisent des durées de frétillement mesurablement différentes pour la même distance, et en colonies mixtes elles se comprennent mal.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Un code symbolique, son substrat neuronal et le débat sur son importance</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Ce qui le rend symbolique</h3>
+<p>La danse frétillante se qualifie comme communication symbolique selon un critère strict : le signal est déplacé dans l'espace et le temps par rapport à son référent, et la correspondance entre signal et référent est arbitraire plutôt qu'iconique. Rien dans le fait de courir à 40° de la verticale ne ressemble à voler à 40° du soleil ; la correspondance est une convention, et elle exige que l'émetteur et le récepteur partagent une règle de transposition entre deux référentiels différents - solaire-azimutal-horizontal et gravitationnel-vertical. La démonstration de von Frisch reste, quatre-vingts ans après, l'un des très rares cas incontestés de référence déplacée hors du langage humain.</p>
+<h3><span class="hn">02</span>L'odomètre est visuel</h3>
+<p>Les expériences de Srinivasan en tunnel ont clos un long débat. Des abeilles amenées à un nourrisseur par un tunnel de 6 cm tapissé d'une texture visuelle aléatoire signalaient des distances de plusieurs centaines de mètres pour un trajet de quelques mètres, et l'erreur variait avec la vitesse angulaire de l'image, non avec la dépense énergétique ni le temps écoulé. L'intégrateur est donc \(\int \omega\,dt\) sur le vol aller, ce qui explique que des abeilles volant au-dessus d'une eau sans relief sous-estiment la distance, et que vents contraires et charge pèsent bien moins que ne le prédirait un modèle énergétique naïf.</p>
+<h3><span class="hn">03</span>Lire le ciel</h3>
+<p>La boussole solaire est doublée d'une boussole de polarisation dans la zone du bord dorsal de l'œil composé, où les photorécepteurs ont des microvillosités alignées et des canaux analyseurs orthogonaux. La diffusion de Rayleigh fait de la polarisation de la lumière du ciel un motif concentrique autour du soleil, si bien qu'une lecture du vecteur électrique depuis n'importe quelle tache dégagée contraint l'azimut solaire. Des neurones du complexe central du cerveau des insectes codent le cap relatif au motif de polarisation dans une boussole ordonnée topographiquement - le même circuit dont on a montré ensuite qu'il implémente un attracteur en anneau pour le cap chez la drosophile, ce qui en fait l'un des rares calculs de navigation ramenés à des neurones identifiés.</p>
+<h3><span class="hn">04</span>Comment les suiveuses décodent vraiment</h3>
+<p>La ruche est noire, donc les suiveuses ne voient pas la danse. Elles la détectent par les flux d'air de champ proche engendrés par la vibration des ailes à environ 250 Hz pendant la course de frétillement, perçus par l'organe de Johnston dans les antennes, et par la vibration du rayon. Les recrues suivent typiquement plusieurs circuits et repartent avec un vecteur imparfait ; le suivi par radar harmonique les montre voler la distance et le cap indiqués puis basculer en spirale de recherche locale, l'odeur florale sur le corps de la danseuse faisant l'essentiel de la discrimination finale.</p>
+<h3><span class="hn">05</span>Le débat sur le contenu informationnel</h3>
+<p>Que la danse porte un vecteur n'est pas contesté ; ce que la colonie y gagne l'est. Dornhaus et Chittka ont désorienté les danses - en gardant les rayons horizontaux dans le noir, supprimant la référence gravitationnelle - et ont trouvé que les colonies en habitats tempérés ne faisaient pas moins bien, tandis que celles en milieux tropicaux à ressources morcelées et éphémères étaient nettement pénalisées. La valeur de l'information spatiale dépend du degré d'agrégation et de prévisibilité de la ressource, ce qui est une réponse agréablement quantitative à une question débattue qualitativement pendant des décennies.</p>
+<h3><span class="hn">06</span>Précision, et l'argument en faveur de l'imprécision</h3>
+<p>Des courses de frétillement successives d'une même abeille se dispersent d'environ 10-15° à courte portée, se resserrant avec la distance. Une partie est du bruit, mais Tanya Pankiw et d'autres ont soutenu qu'une partie est adaptative : un vecteur imprécis répartit les recrues sur une aire plutôt que sur un point, ce qui est la bonne stratégie quand la ressource est un parterre de fleurs d'étendue finie et non une source ponctuelle. L'ajustement de la dispersion avec la distance est cohérent avec une répartition des recrues sur une aire au sol à peu près constante : un signal délibérément flouté à la taille de ce qu'il décrit.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Transposition angulaire</th><td>\(\theta_{\text{rayon}} = \theta_{\text{nourr}} - \theta_{\text{soleil}}\)</td><td class="cmt">solaire-horizontal → gravité-vertical</td></tr>
+<tr><th scope="row">Odomètre visuel</th><td>\(D \propto \displaystyle\int_0^{T} \omega_{\text{image}}(t)\,dt\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Durée du frétillement</th><td>\(t \approx 1\ \text{s par km}\)</td><td class="cmt">dépend de la sous-espèce</td></tr>
+<tr><th scope="row">Oscillation du corps</th><td>\(\approx 13\ \text{Hz}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Battement d'ailes dans la course</th><td>\(\approx 250\ \text{Hz}\)</td><td class="cmt">ce que perçoivent vraiment les suiveuses</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Dispersion angulaire</th><td>\(\sigma_\theta \approx 10\text{–}15^\circ\)</td><td class="cmt">se resserre avec la portée</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📡</span> Les suiveuses ne peuvent pas voir la danse dans la ruche obscure. Elles lisent les courants d'air de champ proche issus de la vibration des ailes à environ 250 Hz avec l'organe de Johnston des antennes, plus la vibration du rayon lui-même.</li><li><span aria-hidden="true">🧭</span> La boussole de polarisation passe par le complexe central des insectes, qui code le cap dans un anneau ordonné topographiquement : le même circuit dont on a montré ensuite qu'il est un attracteur en anneau chez la drosophile.</li><li><span aria-hidden="true">🎲</span> La dispersion de la danse pourrait être délibérée. L'imprécision angulaire se resserre avec la distance exactement comme il le faut pour répartir les recrues sur une aire au sol constante : le signal est flouté à la taille d'un parterre de fleurs.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Waggle_dance" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Règne animal</h2>
+    <ul><li><a href="/fr/comment-s-orientent-les-tortues-marines/">Comment s'orientent les tortues marines</a></li><li><a href="/fr/temperature-du-nid-decide-le-sexe/">Comment la température du nid décide le sexe</a></li><li><a href="/fr/comment-les-requins-sentent-electricite/">Comment les requins sentent l'électricité</a></li><li><a href="/fr/comment-les-chauves-souris-utilisent-echolocation/">Comment les chauves-souris voient avec le son</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

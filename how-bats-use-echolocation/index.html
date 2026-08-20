@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Bats See With Sound | Lab-in-a-Tab</title>
+<meta name="description" content="A bat shouts into the dark and builds a picture out of the echo. Every part of that picture - how far, how big, how fast - is a number squeezed out of…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-bats-use-echolocation/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-bats-use-echolocation/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-bats-use-echolocation/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Bats See With Sound — Explained &amp; Simulated">
+<meta property="og:description" content="A bat shouts into the dark and builds a picture out of the echo. Every part of that picture - how far, how big, how fast - is a number squeezed out of…">
+<meta property="og:url" content="https://labinatab.com/how-bats-use-echolocation/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Bats See With Sound — Explained &amp; Simulated">
+<meta name="twitter:description" content="A bat shouts into the dark and builds a picture out of the echo. Every part of that picture - how far, how big, how fast - is a number squeezed out of…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-bats-use-echolocation/#article",
+   "headline": "How Bats See With Sound",
+   "name": "How Bats See With Sound",
+   "description": "A bat shouts into the dark and builds a picture out of the echo. Every part of that picture - how far, how big, how fast - is a number squeezed out of…",
+   "url": "https://labinatab.com/how-bats-use-echolocation/",
+   "mainEntityOfPage": "https://labinatab.com/how-bats-use-echolocation/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Echolocation",
+    "Sound",
+    "Doppler"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Bats See With Sound",
+    "sameAs": "https://en.wikipedia.org/wiki/Animal_echolocation"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Bats See With Sound",
+     "item": "https://labinatab.com/how-bats-use-echolocation/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-bats-use-echolocation/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Animal Kingdom</nav>
+  <h1>How Bats See With Sound</h1>
+  <p class="lead">A bat shouts into the dark and builds a picture out of the echo. Every part of that picture - how far, how big, how fast - is a number squeezed out of timing.</p>
+  <div class="chips"><span>Echolocation</span><span>Sound</span><span>Doppler</span></div>
+  <section class="sim-embed" data-sim="bats" data-color="#6d28d9" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#6d28d9"><span class="sg-lbl">Try this</span><span>Set <b>How far away the moth is</b> to 10 m and read the gap in <b>Wait for the echo</b>, then halve the distance to 5 m and read it again. Now watch the yellow line marked as the earliest the next shout can go, and slide <b>How far away the moth is</b> all the way down to half a metre while you watch <b>Shouts per second</b>. Then leave the distance alone and drag <b>How high the shout is</b> up and down instead.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#6d28d9"><span class="sg-lbl">Try this</span><span>Verify the linearity first: read <b>Echo delay</b> at <b>Target distance</b> = 2, 4 and 8 m. Then hold the distance and sweep <b>Call frequency</b> from 15 to 120 kHz, watching <b>Wavelength limit</b> improve while the stated usable range collapses. Finally drop <b>Target distance</b> towards the minimum and read <b>Max call rate</b> as it climbs.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#6d28d9"><span class="sg-lbl">Try this</span><span>Derive the trade-off surface yourself. Sweep <b>Carrier frequency f</b> at fixed <b>Target range d</b> and note how the usable range shrinks while <b>λ = c/f</b> sharpens — the product of the two is roughly what the echo budget affords. Then sweep <b>Target range d</b> and confirm that <b>PRF ceiling</b> rises as the reciprocal of \(2d/c + \tau\) rather than by any behavioural choice.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>The bat is on the left, the moth is out at whatever distance you set, and the ruler along the bottom is in real metres. Purple arcs are the shout going out; green arcs are the echo coming home. The strip underneath is a stopwatch: the purple block is the shout, the green block is the echo arriving, and the gap between them is what the bat measures.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Close in, the echo comes back so fast that the bat can shout hundreds of times a second — and that rattle is the sound of something being caught.</b> A bat cannot shout and listen at once, so it must wait for the echo before shouting again. Far away that means a slow, patient rhythm; up close the wait almost vanishes and the calls turn into a machine gun. Pitch is a separate bargain entirely: shout higher and you can make out finer detail, because the waves are shorter — but the air swallows high notes fast, so you cannot see nearly as far.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Range from time of flight, \(t = 2d/c\) with \(c \approx 343\ \text{m/s}\), so about 5.8 ms per metre. Outgoing wavefronts in purple, returning echo in green. <b>Call frequency</b> sets \(\lambda = c/f\) and hence the resolution floor, and also the atmospheric absorption that caps usable range. The lower strip shows the overlap constraint: the pulse interval must exceed the round trip plus the call duration.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Every gain is paid for. Resolution buys range, and range buys resolution.</b> Echo power from a small target rises as \(f^4\) in the Rayleigh regime, which pushes bats towards high frequencies; atmospheric absorption climbs from about 1 dB/m at 40 kHz to over 3 dB/m past 100 kHz, which pushes them back down. The observed spread of call frequencies across species is that trade-off made visible. The call rate is not a decision either — it is the overlap constraint, \(T > 2d/c + \tau\), and the terminal buzz at 150–200 calls per second is simply a bat running at the physical ceiling.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Active time-domain imaging. Range from \(d = ct/2\); resolution set jointly by \(\lambda = c/f\) and, for a swept call, by \(\Delta d = c/2B\). Echo budget is governed by two-way spreading \(\propto d^{-4}\) and by frequency-dependent absorption \(\alpha(f)\). The lower strip renders the overlap constraint \(\text{PRI} > 2d/c + \tau\), which is what actually sets <b>PRF ceiling</b>.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The bat is solving a radar problem with a head a few centimetres wide, and the ambiguity trade-off shows up as two families of call design.</b> FM sweeps maximise the time-bandwidth product and so give range resolution; constant-frequency calls give velocity resolution — the two ends of the classical radar ambiguity function, arrived at by evolution. Two unresolved edges are worth knowing: Simmons' reported jitter discrimination of tens of nanoseconds implies sub-millimetre ranging that no straightforward neural stopwatch can deliver, and the argument between coherent cross-correlation, spectral readout and methodological artefact is still open. Meanwhile the targets fight back — <em>Bertholdia trigona</em> genuinely jams the sonar by timing clicks to the returning echoes, and some moth scales absorb ultrasound like acoustic metamaterial, cutting echo strength by up to 85%.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Shouting at the world to see it</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>A bat hunting on a moonless night catches a moth the size of your thumbnail, in mid-air, without ever seeing it. It does it by shouting - loudly. Bat calls are among the loudest sounds any animal makes, well over 100 decibels at the mouth, which is jackhammer territory. You do not hear them only because they are pitched far too high for human ears.</p>
+<p>The trick is timing. Sound travels at about 343 metres per second, which is fast but not instant. Shout at something five metres away and the sound takes about 15 milliseconds to get there and another 15 to come back - about 29 milliseconds in total. The bat's brain measures that gap and turns it straight into a distance. Twice as far away, twice the wait. That is all echolocation fundamentally is: a stopwatch, run very precisely.</p>
+<p>Pitch controls the detail. Sound travels in waves, and a wave cannot show you anything much smaller than itself - like trying to feel the texture of a page with a boxing glove on. A 55 kHz call has waves about 6 mm long, so 6 mm is roughly the smallest thing that call can pick out. Shout higher and the waves get shorter and the detail gets finer - but high notes are absorbed by the air much faster, so they do not travel as far. Every bat has to choose between seeing detail and seeing far, and different species have chosen differently.</p>
+<p>Then there is the problem that makes the whole thing dramatic. A bat cannot shout and listen at the same time - its own voice would deafen it. So it has to shout, wait for the echo to come home, and only then shout again. Far away, the wait is long and the bat calls slowly, maybe ten times a second. As it closes in, the wait shrinks and it can call faster and faster, until in the last fraction of a second before the strike it is firing off nearly two hundred calls a second. That machine-gun rattle is called the <strong>terminal buzz</strong>, and if you ever hear a bat detector click into a frenzy, something just got caught.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔊</span> Bat calls exceed 100 decibels at the mouth — as loud as a jackhammer. You cannot hear them only because they are pitched far above human hearing.</li><li><span aria-hidden="true">⏱️</span> Echolocation is a stopwatch. Sound covers about 343 metres a second, so an echo from 5 m away returns in 29 milliseconds, and the bat reads distance straight off that delay.</li><li><span aria-hidden="true">🐛</span> Some moths hear bats coming and drop out of the air. Others answer back with ultrasonic clicks that jam the bat's sonar — an arms race running for fifty million years.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Delay, wavelength and the timing constraint</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Range comes from time of flight. An echo from a target at distance \(d\) returns after \(t = 2d/c\), with \(c \approx 343\ \text{m/s}\) in air, giving about 5.8 ms per metre of range. Bats resolve these delays remarkably finely - behavioural experiments put jitter discrimination at well under a microsecond in some species, corresponding to sub-millimetre range resolution, which is at the edge of what the auditory system should be able to do and is still argued about.</p>
+<p>Resolution comes from wavelength. \(\lambda = c/f\), so a 55 kHz call has \(\lambda \approx 6.2\ \text{mm}\) and a 120 kHz call about 2.9 mm. A target much smaller than a wavelength scatters in the Rayleigh regime, with returned power falling as \(f^4\) - so detecting small insects strongly favours high frequencies. Working against that is <strong>atmospheric absorption</strong>, which rises steeply with frequency: roughly 1 dB/m at 40 kHz but 3 dB/m or more above 100 kHz. With a finite echo budget, range and resolution trade directly against each other, and the observed spread of call frequencies across species maps onto exactly this trade-off.</p>
+<p>The third constraint is temporal. Because a bat cannot emit and receive simultaneously without self-deafening, the pulse interval must exceed the round-trip delay plus the call duration - the <strong>overlap constraint</strong>. This is not a curiosity; it dictates the whole structure of an attack. In search phase a bat emits long, narrowband, low-frequency calls at 5–15 per second. In approach it shortens and sweeps them. In the terminal buzz it fires 150–200 calls per second of under a millisecond each, which is the maximum the returning echoes permit - the call rate is set by the physics of the closing distance.</p>
+<p>Velocity comes from the Doppler shift, \(\Delta f/f \approx 2v/c\) for a reflector moving along the line of sight. A moth closing at 5 m/s shifts a 60 kHz call by about 1.75 kHz. Horseshoe bats exploit this with constant-frequency calls and <strong>Doppler-shift compensation</strong>: they lower their emitted frequency in flight to hold the returning echo at a fixed 'acoustic fovea' frequency where their cochlea is hugely over-represented, then read the residual flutter of insect wingbeats as a modulation on that carrier.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Echo delay</th><td>\(t = \dfrac{2d}{c}\)</td><td class="cmt">≈ 5.8 ms per metre</td></tr>
+<tr><th scope="row">Speed of sound</th><td>\(c \approx 343\ \text{m/s}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Wavelength</th><td>\(\lambda = \dfrac{c}{f}\)</td><td class="cmt">55 kHz → 6.2 mm</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Rayleigh scattering</th><td>\(P_{\text{echo}} \propto f^4\)</td><td class="cmt">small targets need high f</td></tr>
+<tr><th scope="row">Atmospheric absorption</th><td>\(\alpha \approx 1\text{–}3\ \text{dB/m}\)</td><td class="cmt">rises steeply with f</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Overlap constraint</th><td>\(T_{\text{pulse}} &gt; \dfrac{2d}{c} + \tau\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Doppler shift</th><td>\(\dfrac{\Delta f}{f} \approx \dfrac{2v}{c}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔬</span> Some bats discriminate echo delay jitter of well under a microsecond — sub-millimetre range resolution. How the auditory system achieves this is still not fully explained.</li><li><span aria-hidden="true">⚖️</span> High frequency means fine detail but short range: absorption in air runs about 1 dB/m at 40 kHz and over 3 dB/m above 100 kHz. Every species sits somewhere on that trade-off.</li><li><span aria-hidden="true">🎯</span> Horseshoe bats lower their call frequency in flight so the returning echo lands on a hyper-sensitive 'acoustic fovea' in the cochlea — active Doppler compensation, in a living animal.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Time-domain imaging, the jitter problem and an arms race in ultrasound</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Sonar, biologically</h3>
+<p>Echolocation is active time-domain imaging. The information available is entirely contained in the echo waveform: delay gives range, interaural level and time differences plus spectral notches from the pinnae give bearing and elevation, spectral colouration gives target structure, and Doppler gives radial velocity. Bats operate with a very poor antenna - a head a few centimetres across - and compensate with signal design. Frequency-modulated sweeps give excellent range resolution through their large time-bandwidth product; constant-frequency calls give excellent velocity resolution. The two families of call design are the two ends of the classical radar ambiguity trade-off, arrived at independently by evolution.</p>
+<h3><span class="hn">02</span>The jitter problem</h3>
+<p>Simmons reported that <em>Eptesicus fuscus</em> discriminates echo delay jitter of order 10–50 ns, implying range resolution well below a millimetre. The difficulty is that the auditory nerve's temporal precision is of order tens of microseconds, so no straightforward neural stopwatch suffices. Proposed resolutions include coherent cross-correlation receivers operating on the carrier phase, spectral-cue readout in which the interference between overlapping echo components is read in the frequency domain rather than the time domain, and methodological artefacts in the original paradigm. The debate is not settled and is one of the sharper open questions in sensory neuroscience.</p>
+<h3><span class="hn">03</span>The acoustic fovea</h3>
+<p>Rhinolophid bats emit long constant-frequency calls near 83 kHz and lower the emitted frequency in flight so that the Doppler-shifted echo returns at a species-specific reference frequency. The cochlea is grossly over-represented at that frequency - an expanded region of the basilar membrane with sharply tuned filters, the auditory analogue of a visual fovea. Its function is not range-finding but recognition: the wingbeat of a fluttering insect imposes amplitude and frequency modulations on the returning carrier, and the acoustic fovea resolves those glints. The bat is not measuring where the moth is so much as reading its wingbeat signature.</p>
+<h3><span class="hn">04</span>Solving self-deafening</h3>
+<p>Emission at over 120 dB SPL beside an ear that must detect echoes tens of decibels above threshold demands isolation. Middle-ear muscles contract a few milliseconds before each emission, attenuating by 20 dB or more, and relax within milliseconds - a neuromuscular cycle repeated up to 200 times a second during the terminal buzz, among the fastest sustained muscle contractions in mammals. Neural gain in the auditory pathway is additionally modulated in time with emission. The overlap constraint that sets pulse rate is thus enforced both acoustically and neurally.</p>
+<h3><span class="hn">05</span>The moths answer</h3>
+<p>Tympanate hearing has evolved independently many times in Lepidoptera, tuned to bat call frequencies, and drives evasive dives at high stimulus intensity. Tiger moths go further: some produce ultrasonic clicks that startle, some advertise unpalatability - the first proven acoustic aposematism - and <em>Bertholdia trigona</em> demonstrably jams bat sonar by emitting clicks timed to the returning echoes, degrading ranging rather than merely warning. Some moths carry scales that absorb ultrasound like acoustic metamaterial, cutting echo strength by up to 85%. A few bats have countered by shifting call frequency outside moth hearing, or by hunting in near-silence and listening for prey-generated sound.</p>
+<h3><span class="hn">06</span>Convergence, twice over</h3>
+<p>Laryngeal echolocation and the odontocete biosonar of dolphins converged on the same solution from unrelated hardware, and both converged on the same molecular detail: the motor protein <em>Prestin</em>, responsible for outer hair cell electromotility and cochlear amplification, shows striking sequence convergence between echolocating bats and toothed whales - the same amino acid substitutions arrived at independently. Within bats, the phylogenetic position of the non-echolocating pteropodids implies either that laryngeal echolocation arose once and was lost, or arose twice; the question is still contested, which means a sense this elaborate may have been invented more than once.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Range from delay</th><td>\(d = \dfrac{c\,t}{2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Range resolution</th><td>\(\Delta d = \dfrac{c}{2B}\)</td><td class="cmt">B = sweep bandwidth</td></tr>
+<tr><th scope="row">Time-bandwidth product</th><td>\(TB \gg 1\)</td><td class="cmt">why FM sweeps beat pure tones</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Rayleigh regime</th><td>\(\sigma \propto \dfrac{a^6}{\lambda^4}\)</td><td class="cmt">targets smaller than λ</td></tr>
+<tr><th scope="row">Two-way spreading</th><td>\(P_{\text{echo}} \propto d^{-4}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Absorption</th><td>\(P \propto 10^{-2\alpha d/10}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Doppler</th><td>\(f_{\text{echo}} = f_0\,\dfrac{c+v}{c-v}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Overlap constraint</th><td>\(\text{PRI} &gt; \dfrac{2d_{\max}}{c} + \tau\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🎚️</span> Middle-ear muscles contract before every call to protect the ear, then relax in time to hear the echo — up to 200 times a second in the terminal buzz, among the fastest sustained muscle contractions in mammals.</li><li><span aria-hidden="true">📵</span> The moth Bertholdia trigona genuinely jams bat sonar, timing ultrasonic clicks to the returning echoes to corrupt ranging. Other moths carry scales that absorb ultrasound, cutting echo strength by up to 85%.</li><li><span aria-hidden="true">🧬</span> The hearing protein Prestin shows the same convergent amino acid substitutions in echolocating bats and toothed whales — two lineages that invented biosonar separately and landed on the same molecule.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Animal_echolocation" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Animal Kingdom</h2>
+    <ul><li><a href="/how-sea-turtles-navigate/">How Sea Turtles Find Their Way Home</a></li><li><a href="/nest-temperature-decides-sex/">How a Nest's Temperature Decides Sex</a></li><li><a href="/how-sharks-sense-electricity/">How Sharks Sense Electricity</a></li><li><a href="/how-bees-communicate-waggle-dance/">How Bees Tell Each Other Where to Go</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Bees Tell Each Other Where to Go | Lab-in-a-Tab</title>
+<meta name="description" content="A returning bee dances a figure of eight in the dark, and her sisters fly straight to a flower patch kilometres away. The angle means direction, the…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-bees-communicate-waggle-dance/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-bees-communicate-waggle-dance/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-comunicano-le-api-danza-delle-api/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-bees-communicate-waggle-dance/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Bees Tell Each Other Where to Go — Explained &amp; Simulated">
+<meta property="og:description" content="A returning bee dances a figure of eight in the dark, and her sisters fly straight to a flower patch kilometres away. The angle means direction, the…">
+<meta property="og:url" content="https://labinatab.com/how-bees-communicate-waggle-dance/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Bees Tell Each Other Where to Go — Explained &amp; Simulated">
+<meta name="twitter:description" content="A returning bee dances a figure of eight in the dark, and her sisters fly straight to a flower patch kilometres away. The angle means direction, the…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-bees-communicate-waggle-dance/#article",
+   "headline": "How Bees Tell Each Other Where to Go",
+   "name": "How Bees Tell Each Other Where to Go",
+   "description": "A returning bee dances a figure of eight in the dark, and her sisters fly straight to a flower patch kilometres away. The angle means direction, the…",
+   "url": "https://labinatab.com/how-bees-communicate-waggle-dance/",
+   "mainEntityOfPage": "https://labinatab.com/how-bees-communicate-waggle-dance/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Waggle dance",
+    "Navigation",
+    "Von Frisch"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Bees Tell Each Other Where to Go",
+    "sameAs": "https://en.wikipedia.org/wiki/Waggle_dance"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Bees Tell Each Other Where to Go",
+     "item": "https://labinatab.com/how-bees-communicate-waggle-dance/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-bees-communicate-waggle-dance/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-comunicano-le-api-danza-delle-api/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-communiquent-les-abeilles-danse/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Animal Kingdom</nav>
+  <h1>How Bees Tell Each Other Where to Go</h1>
+  <p class="lead">A returning bee dances a figure of eight in the dark, and her sisters fly straight to a flower patch kilometres away. The angle means direction, the duration means distance - it is a real language, danced.</p>
+  <div class="chips"><span>Waggle dance</span><span>Navigation</span><span>Von Frisch</span></div>
+  <section class="sim-embed" data-sim="bees" data-color="#ca8a04" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#ca8a04"><span class="sg-lbl">Try this</span><span>Drag <b>Which way the flowers are</b> right round in a circle and watch the dance turn to match. Then leave the flowers alone and press <b>🕐 Change the time</b> two or three times to move the time of day. Now drag <b>How far the flowers are</b> from 100 m out to 4000 m and count along with <b>How long she waggles</b>.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Try this</span><span>Fix <b>Bearing to the food</b> and <b>Distance to the food</b>, then step <b>🕐 Time of day</b> through all three times of day, reading <b>Dance angle</b> at each. Next fix the time and sweep <b>Distance to the food</b>, checking that <b>Waggle duration</b> tracks range linearly rather than by some steeper law.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Try this</span><span>Establish that the code is genuinely arbitrary rather than iconic. Hold <b>Food azimuth θ_food</b> and <b>Range d</b> constant and step <b>🕐 Solar azimuth</b>: the referent is fixed while the signal changes, which is the signature of a convention. Then confirm the range term is linear in <b>Range d</b> and note what <b>Decoded range</b> would report for a bee whose optic flow had been inflated.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>On the left, the world from above: the hive in the middle, the sun on the rim, and a pink patch of flowers. The yellow arc is the angle between them, which is the whole message. On the right, the pitch-dark hive: a vertical honeycomb with a bee running her figure of eight. The bold yellow line is the waggle run — the straight bit where she shakes. Straight up on the comb means straight towards the sun.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The flowers never moved, and yet the dance turned — because the message is measured from the sun, not from the landscape.</b> That is the proof it is a real code rather than a pointing gesture: she has to swap a direction out in the sunshine for a direction on a vertical wall in the dark, and her sisters have to swap it back. The other half is timing: about one second of waggling for every kilometre. Two numbers, danced, in the dark, to bees who have never seen the place.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Left: the world above, seen from overhead, with \(\theta_{\text{food}}\), the solar azimuth and the angle between them. Right: the vertical comb in the dark, where straight up stands in for the solar azimuth and the waggle run is offset by exactly that angle. <b>Waggle duration</b> scales with range at roughly one second per kilometre. <b>🕐 Time of day</b> steps the solar azimuth through morning, noon and afternoon.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>\(\theta_{\text{dance}} = \theta_{\text{food}} - \theta_{\text{sun}}\): the encoding is relative, so a stationary target gives a moving signal.</b> That forces the bee to carry a clock — and she does: a forager held in darkness for hours emerges dancing at an angle updated for where the sun has got to. The distance term is stranger than it looks. What she measures is not distance but accumulated <em>optic flow</em>; fly her down a narrow patterned tunnel and she will report hundreds of metres for a journey of a few, because the walls streamed past too fast.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A transposition between two reference frames: solar-azimuthal-horizontal on the left, gravitational-vertical on the right, related by \(\theta_{\text{comb}} = \theta_{\text{food}} - \theta_{\text{sun}}\). The waggle phase runs at about 13 Hz of body oscillation with a wingbeat near 250 Hz, which is what followers actually detect. <b>Waggle duration t</b> encodes range through the visual odometer \(D \propto \int \omega_{\text{image}}\,dt\).</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Displaced, arbitrary reference — which is why this counts as symbolic communication and almost nothing else in the animal world does.</b> Nothing about running 40° from vertical resembles flying 40° from the sun; signaller and receiver share a convention and a transposition rule. Followers cannot see it in the dark: they read near-field air flow at ~250 Hz through Johnston's organ and comb vibration, then fly the vector and switch to a local search spiral. How much it is worth is habitat-dependent — disorienting dances costs colonies dearly in patchy tropical environments and almost nothing in uniformly rich temperate ones. And the angular scatter of 10–15° may itself be adaptive, blurring the signal to the size of a flower patch.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>A map you dance</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>A honeybee finds a good patch of flowers two kilometres from the hive. She flies home, walks into a pitch-dark hive packed with thousands of sisters, and within minutes bees who have never seen those flowers are flying straight to them. She did not lead them there. She told them.</p>
+<p>What she does is the <strong>waggle dance</strong>. She runs in a straight line across the vertical honeycomb, shaking her body violently from side to side, then loops back and does it again, alternating left and right so her path traces a figure of eight. Two things about that straight run carry the message, and they are both measurements.</p>
+<p>The <strong>angle</strong> gives the direction. Inside the hive it is dark and there is nothing to see, so the bees use gravity instead: straight up on the comb stands for straight towards the sun. If the flowers are 40° to the right of the sun, she runs 40° to the right of vertical. The <strong>length of time</strong> she waggles gives the distance - roughly one second of waggling for every kilometre. Watchers crowd around, feel the vibrations in the dark, and decode both numbers.</p>
+<p>Here is the test that proves it is really about the sun and not about the landscape. Leave the flowers exactly where they are and just wait a few hours. The sun moves across the sky - and the dance turns to match, degree for degree, even though nothing outside has changed at all. Press the time button in the simulation and watch the dance swing round while the flowers sit still. Karl von Frisch spent decades decoding this and won a Nobel Prize for it in 1973, and it remains one of the very few symbolic languages known outside humans.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🏅</span> Karl von Frisch shared the 1973 Nobel Prize for decoding the waggle dance. It is one of the very few symbolic communication systems known in any animal other than us.</li><li><span aria-hidden="true">⬆️</span> In the dark hive, straight up on the comb means straight towards the sun. The bees swap a visual direction for a gravitational one and back again without losing the angle.</li><li><span aria-hidden="true">🕐</span> Bees correct for the sun moving. A bee held in the dark for hours will dance at an updated angle when released — she has kept counting the sun's progress on an internal clock.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Encoding a vector in angle and duration</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>The waggle dance encodes a two-dimensional vector - a bearing and a range - into two behavioural variables, and the transformation is genuinely abstract. Direction is given as an azimuthal angle relative to the sun, not to any landmark: \(\theta_{\text{dance}} = \theta_{\text{food}} - \theta_{\text{sun}}\), measured on the comb from vertical. Since the hive interior is dark and the comb vertical, the bee transposes a horizontal, solar-referenced angle onto a vertical, gravity-referenced one. Followers perform the inverse transposition on the way out.</p>
+<p>Distance is encoded in the duration of the waggle phase, at roughly one second per kilometre - though the exact calibration varies by subspecies and is a real dialect difference, with some races running noticeably longer or shorter for the same distance. What the bee measures is not distance but <strong>optic flow</strong>: the total image motion swept across her eyes on the outbound flight. Force bees down a narrow tunnel with patterned walls and they wildly overestimate the distance, because the walls streamed past far faster than open landscape would. It is an odometer built from visual motion, not from time or energy.</p>
+<p>The solar reference requires a clock. The sun's azimuth changes at an average 15° per hour but non-uniformly with latitude and season, and bees compensate: a forager confined in darkness for several hours emerges dancing at an angle updated for where the sun has moved to. On overcast days they read the polarisation pattern of blue sky through the dorsal rim of the eye, which lets them infer the sun's position from a patch of clear sky.</p>
+<p>How much information actually transfers is a fair question. Scatter in the dance is substantial - successive runs by the same bee vary by several degrees - and radar tracking shows recruits often search for some time near the indicated point. The dance conveys a vector accurate to a few tens of metres at a kilometre, with odour cues doing the final work. Its measured value to the colony varies with habitat: disabling dance information costs colonies significantly in patchy environments and hardly at all in uniformly rich ones.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Direction encoded</th><td>\(\theta_{\text{dance}} = \theta_{\text{food}} - \theta_{\text{sun}}\)</td><td class="cmt">measured from vertical on the comb</td></tr>
+<tr><th scope="row">Distance encoded</th><td>\(t_{\text{waggle}} \approx \dfrac{d}{1\ \text{km}}\ \text{seconds}\)</td><td class="cmt">varies by subspecies</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Solar azimuth rate</th><td>\(\approx 15^\circ\ \text{per hour}\)</td><td class="cmt">averaged; varies with latitude</td></tr>
+<tr><th scope="row">Odometer</th><td>\(d \propto \textstyle\int \omega_{\text{image}}\,dt\)</td><td class="cmt">total optic flow</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Waggle frequency</th><td>\(\approx 13\ \text{Hz}\)</td><td class="cmt">body oscillation during the run</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📏</span> Bees measure distance by optic flow, not by time or effort. Fly them through a narrow patterned tunnel and they report a distance several times too large, because the walls streamed past too fast.</li><li><span aria-hidden="true">🔆</span> Under cloud, bees read the polarisation pattern of the sky through the dorsal rim of the eye. A single patch of blue is enough to locate the hidden sun.</li><li><span aria-hidden="true">🗣️</span> Dance dialects are real: different honeybee subspecies use measurably different waggle durations for the same distance, and mixed-race colonies misunderstand each other.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>A symbolic code, its neural substrate and the argument about how much it matters</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>What makes it symbolic</h3>
+<p>The waggle dance qualifies as symbolic communication on a strict criterion: the signal is displaced in space and time from its referent, and the mapping between signal and referent is arbitrary rather than iconic. Nothing about running at 40° from vertical resembles flying at 40° from the sun; the correspondence is a convention, and it requires both signaller and receiver to share a transposition rule between two different reference frames - solar-azimuthal-horizontal and gravitational-vertical. Von Frisch's demonstration remains, after eighty years, one of the very few uncontested cases of displaced reference outside human language.</p>
+<h3><span class="hn">02</span>The odometer is visual</h3>
+<p>Srinivasan's tunnel experiments settled a long argument. Bees flown to a feeder through a 6 cm tunnel lined with a random visual texture signalled distances of several hundred metres for a journey of a few metres, and the error scaled with the angular velocity of the image, not with energy expenditure or elapsed time. The integrator is therefore \(\int \omega\,dt\) over the outbound flight - which explains why bees flying over featureless water underestimate distance, and why headwinds and payload have far less effect than a naive energetic model predicts.</p>
+<h3><span class="hn">03</span>Reading the sky</h3>
+<p>The solar compass is backed up by a polarisation compass in the dorsal rim area of the compound eye, where photoreceptors have aligned microvilli and orthogonal analyser channels. Rayleigh scattering makes skylight polarisation a concentric pattern about the sun, so an e-vector reading from any clear patch constrains the solar azimuth. Central-complex neurons in the insect brain encode heading relative to the polarisation pattern in a topographically ordered compass - the same circuit later found to implement a ring attractor for heading in Drosophila, making this one of the few navigational computations traced to identified neurons.</p>
+<h3><span class="hn">04</span>How followers actually decode it</h3>
+<p>The hive is dark, so followers do not see the dance. They detect it through near-field air flows generated by the wing vibration at about 250 Hz during the waggle run, sensed by Johnston's organ in the antennae, and through substrate vibration of the comb. Recruits typically follow several circuits and leave with an imperfect vector; harmonic-radar tracking shows them flying the indicated distance and heading and then switching to a local search spiral, with floral odour on the dancer's body doing much of the terminal discrimination.</p>
+<h3><span class="hn">05</span>The information-content debate</h3>
+<p>That the dance carries a vector is not in dispute; how much the colony gains from it is. Dornhaus and Chittka disoriented dances - by keeping combs horizontal in the dark, removing the gravitational reference - and found colonies in temperate habitats performed no worse, while colonies in tropical environments with patchy, ephemeral resources were markedly impaired. The value of spatial information depends on how clumped and how predictable the resource is, which is a satisfyingly quantitative answer to a question that was argued qualitatively for decades.</p>
+<h3><span class="hn">06</span>Precision, and the argument for imprecision</h3>
+<p>Successive waggle runs by one bee scatter by roughly 10–15° at short range, narrowing with distance. Some of that is noise, but Tanya Pankiw and others have argued part is adaptive: an imprecise vector spreads recruits over an area rather than a point, which is the right strategy when the resource is a flower patch of finite extent rather than a point source. The tuning of dance scatter with distance is consistent with spreading recruits over a roughly constant ground area - a signal deliberately blurred to the size of the thing it describes.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Angular transposition</th><td>\(\theta_{\text{comb}} = \theta_{\text{food}} - \theta_{\text{sun}}\)</td><td class="cmt">solar-horizontal → gravity-vertical</td></tr>
+<tr><th scope="row">Visual odometer</th><td>\(D \propto \displaystyle\int_0^{T} \omega_{\text{image}}(t)\,dt\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Waggle duration</th><td>\(t \approx 1\ \text{s per km}\)</td><td class="cmt">subspecies-dependent</td></tr>
+<tr><th scope="row">Body oscillation</th><td>\(\approx 13\ \text{Hz}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Wingbeat during waggle</th><td>\(\approx 250\ \text{Hz}\)</td><td class="cmt">what followers actually sense</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Angular scatter</th><td>\(\sigma_\theta \approx 10\text{–}15^\circ\)</td><td class="cmt">narrows with range</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📡</span> Followers cannot see the dance in the dark hive. They read near-field air currents from wing vibration at about 250 Hz using Johnston's organ in the antennae, plus vibration through the comb itself.</li><li><span aria-hidden="true">🧭</span> The polarisation compass runs through the insect central complex, encoding heading in a topographically ordered ring — the same circuit later shown to be a ring attractor in fruit flies.</li><li><span aria-hidden="true">🎲</span> Dance scatter may be deliberate. The angular imprecision narrows with distance in just the way needed to spread recruits over a constant ground area — blurring the signal to the size of a flower patch.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Waggle_dance" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Animal Kingdom</h2>
+    <ul><li><a href="/how-sea-turtles-navigate/">How Sea Turtles Find Their Way Home</a></li><li><a href="/nest-temperature-decides-sex/">How a Nest's Temperature Decides Sex</a></li><li><a href="/how-sharks-sense-electricity/">How Sharks Sense Electricity</a></li><li><a href="/how-bats-use-echolocation/">How Bats See With Sound</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

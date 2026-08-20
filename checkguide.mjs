@@ -32,7 +32,8 @@ for(const id of Object.keys(G)){
   }
 }
 // every label must actually exist in that sim's source
-const FN={gravity:'simOrbit',prob:'simGalton',waves:'simWaves',thermo:'simThermo',particles:'simParticles',fractal:'simFractal',calculus:'simCalculus',graphs:'simGraphs',life:'simLife',dna:'simDNA',evolution:'simEvolution',ecosystem:'simEcosystem',sorting:'simSorting',ml:'simML',crypto:'simCrypto',complexity:'simComplexity',climate:'simClimate',tectonics:'simTectonics',ocean:'simOcean',volcano:'simVolcano',chem:'simChem',electrochem:'simElectrochem',kinetics:'simKinetics',organic:'simOrganic',astro:'simAstro',blackholes:'simBlackholes',cosmology:'simCosmology',solarsystem:'simSolarSystem',neuro:'simNeuro',neuron:'simNeuron',memory:'simMemory',sleep:'simSleep'};
+// topic id -> sim function name, read from the buildSim map so this can never go stale
+const FN=Object.fromEntries([...grab('function buildSim(','if(map[id])').matchAll(/(\w+)\s*:\s*(sim\w+)/g)].map(m=>[m[1],m[2]]));
 function body(fn){const i=src.indexOf('function '+fn+'(');let d=0,st=false,j=i;
   for(;j<src.length;j++){const c=src[j];if(c==='{'){d++;st=true;}else if(c==='}'){d--;if(st&&d===0){j++;break;}}}return src.slice(i,j);}
 for(const id of Object.keys(LAB)){

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come i pipistrelli vedono con il suono | Lab-in-a-Tab</title>
+<meta name="description" content="Un pipistrello urla nel buio e costruisce un'immagine con l'eco. Ogni pezzo di quell'immagine - quanto lontano, quanto grande, quanto veloce - è un numero…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-bats-use-echolocation/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-bats-use-echolocation/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come i pipistrelli vedono con il suono — Spiegato e simulato">
+<meta property="og:description" content="Un pipistrello urla nel buio e costruisce un'immagine con l'eco. Ogni pezzo di quell'immagine - quanto lontano, quanto grande, quanto veloce - è un numero…">
+<meta property="og:url" content="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come i pipistrelli vedono con il suono — Spiegato e simulato">
+<meta name="twitter:description" content="Un pipistrello urla nel buio e costruisce un'immagine con l'eco. Ogni pezzo di quell'immagine - quanto lontano, quanto grande, quanto veloce - è un numero…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/#article",
+   "headline": "Come i pipistrelli vedono con il suono",
+   "name": "Come i pipistrelli vedono con il suono",
+   "description": "Un pipistrello urla nel buio e costruisce un'immagine con l'eco. Ogni pezzo di quell'immagine - quanto lontano, quanto grande, quanto veloce - è un numero…",
+   "url": "https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Ecolocalizzazione",
+    "Suono",
+    "Doppler"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come i pipistrelli vedono con il suono",
+    "sameAs": "https://en.wikipedia.org/wiki/Animal_echolocation"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come i pipistrelli vedono con il suono",
+     "item": "https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-bats-use-echolocation/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-i-pipistrelli-usano-ecolocalizzazione/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-les-chauves-souris-utilisent-echolocation/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Regno animale</nav>
+  <h1>Come i pipistrelli vedono con il suono</h1>
+  <p class="lead">Un pipistrello urla nel buio e costruisce un'immagine con l'eco. Ogni pezzo di quell'immagine - quanto lontano, quanto grande, quanto veloce - è un numero spremuto dal tempo.</p>
+  <div class="chips"><span>Ecolocalizzazione</span><span>Suono</span><span>Doppler</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"bats":{"junior":{"dist":"Quanto è lontana la falena","freq":"Quanto è acuto l'urlo","delay":"Attesa dell'eco","detail":"La cosa più piccola che vede","rate":"Urli al secondo","cTop":"un urlo, e il tempo che ci mette a tornare","cMoth":"falena","cLost":"troppo lontano — l'eco muore nell'aria","cWave":"lunghezza d'onda","cReach":"questa nota arriva a circa","cTime":"un pipistrello non può urlare e ascoltare insieme","cCall":"l'urlo","cEcho":"l'eco","cNext":"il prossimo urlo non può partire prima","cPerSec":"urli al secondo","cBuzz":"questo è il ronzio terminale — l'istante prima della cattura","cSearch":"un ritmo di ricerca regolare"},"student":{"dist":"Distanza del bersaglio","freq":"Frequenza del richiamo","delay":"Ritardo dell'eco","detail":"Limite di lunghezza d'onda","rate":"Cadenza massima","cTop":"tempo di volo, e che cosa ci compri","cMoth":"falena","cLost":"fuori portata — assorbito dall'aria","cWave":"λ","cReach":"portata utile a questa frequenza","cTime":"il vincolo di sovrapposizione","cCall":"l'urlo","cEcho":"l'eco","cNext":"il prossimo richiamo non può partire prima","cPerSec":"richiami al secondo","cBuzz":"ronzio terminale — cadenza al limite fisico","cSearch":"fase di ricerca"},"scholar":{"dist":"Distanza d del bersaglio","freq":"Frequenza portante f","delay":"Ritardo di andata e ritorno","detail":"λ = c/f","rate":"Tetto della PRF","cTop":"formazione attiva d'immagine nel dominio del tempo","cMoth":"falena","cLost":"fuori dal bilancio d'eco","cWave":"λ","cReach":"portata per un bilancio di 60 dB a α(f)","cTime":"il vincolo di sovrapposizione","cCall":"l'urlo","cEcho":"l'eco","cNext":"prima emissione ammissibile","cPerSec":"impulsi al secondo","cBuzz":"ronzio terminale — PRF al limite di sovrapposizione","cSearch":"fase di ricerca"}}});</script>
+<section class="sim-embed" data-sim="bats" data-color="#6d28d9" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#6d28d9"><span class="sg-lbl">Prova</span><span>Metti <b>Quanto è lontana la falena</b> a 10 m e leggi l'intervallo in <b>Attesa dell'eco</b>, poi dimezza la distanza a 5 m e rileggilo. Ora guarda la linea gialla che segna il primo istante in cui può partire l'urlo successivo, e porta <b>Quanto è lontana la falena</b> fino a mezzo metro tenendo d'occhio <b>Urli al secondo</b>. Poi lascia stare la distanza e trascina invece <b>Quanto è acuto l'urlo</b> su e giù.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#6d28d9"><span class="sg-lbl">Prova</span><span>Verifica prima la linearità: leggi <b>Ritardo dell'eco</b> a <b>Distanza del bersaglio</b> = 2, 4 e 8 m. Poi tieni ferma la distanza e spazza <b>Frequenza del richiamo</b> da 15 a 120 kHz, guardando <b>Limite di lunghezza d'onda</b> migliorare mentre la portata utile dichiarata crolla. Infine porta <b>Distanza del bersaglio</b> verso il minimo e leggi <b>Cadenza massima</b> mentre sale.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#6d28d9"><span class="sg-lbl">Prova</span><span>Ricava da te la superficie del compromesso. Spazza <b>Frequenza portante f</b> a <b>Distanza d del bersaglio</b> fissa e nota come la portata utile si restringa mentre <b>λ = c/f</b> si affina: il prodotto dei due è grosso modo quello che il bilancio d'eco può permettersi. Poi spazza <b>Distanza d del bersaglio</b> e conferma che <b>Tetto della PRF</b> salga come il reciproco di \(2d/c + \tau\) e non per una qualche scelta comportamentale.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Il pipistrello è a sinistra, la falena è alla distanza che imposti tu, e il righello in fondo è in metri veri. Gli archi viola sono l'urlo che parte; quelli verdi sono l'eco che torna. La striscia sotto è un cronometro: il blocco viola è l'urlo, il blocco verde è l'eco che arriva, e l'intervallo fra i due è ciò che il pipistrello misura.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Da vicino l'eco torna così in fretta che il pipistrello può urlare centinaia di volte al secondo, e quella raffica è il suono di qualcosa che viene catturato.</b> Un pipistrello non può urlare e ascoltare insieme, quindi deve aspettare l'eco prima di urlare di nuovo. Da lontano questo significa un ritmo lento e paziente; da vicino l'attesa quasi sparisce e i richiami diventano una mitragliatrice. L'acutezza è tutto un altro affare: urla più acuto e distingui dettagli più fini, perché le onde sono più corte, ma l'aria si mangia in fretta le note acute, quindi non vedi affatto altrettanto lontano.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Distanza dal tempo di volo, \(t = 2d/c\) con \(c \approx 343\ \text{m/s}\), cioè circa 5,8 ms per metro. Fronti d'onda uscenti in viola, eco di ritorno in verde. <b>Frequenza del richiamo</b> fissa \(\lambda = c/f\) e quindi il limite di risoluzione, e anche l'assorbimento atmosferico che limita la portata utile. La striscia in basso mostra il vincolo di sovrapposizione: l'intervallo fra impulsi deve superare l'andata e ritorno più la durata del richiamo.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Ogni guadagno si paga. La risoluzione compra portata, e la portata compra risoluzione.</b> La potenza d'eco da un bersaglio piccolo cresce come \(f^4\) nel regime di Rayleigh, il che spinge i pipistrelli verso le alte frequenze; l'assorbimento atmosferico sale da circa 1 dB/m a 40 kHz a oltre 3 dB/m dopo i 100 kHz, il che li respinge in giù. La distribuzione osservata delle frequenze di richiamo fra le specie è quel compromesso reso visibile. Nemmeno la cadenza dei richiami è una scelta: è il vincolo di sovrapposizione, \(T > 2d/c + \tau\), e il ronzio terminale a 150-200 richiami al secondo è semplicemente un pipistrello che gira al soffitto fisico.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Formazione attiva d'immagine nel dominio del tempo. Distanza da \(d = ct/2\); risoluzione fissata congiuntamente da \(\lambda = c/f\) e, per un richiamo spazzato, da \(\Delta d = c/2B\). Il bilancio d'eco è governato dalla divergenza di andata e ritorno \(\propto d^{-4}\) e dall'assorbimento dipendente dalla frequenza \(\alpha(f)\). La striscia in basso rende il vincolo \(\text{PRI} > 2d/c + \tau\), che è ciò che fissa davvero <b>Tetto della PRF</b>.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Il pipistrello sta risolvendo un problema radar con una testa larga qualche centimetro, e il compromesso di ambiguità si manifesta come due famiglie di progetto del richiamo.</b> Le spazzate FM massimizzano il prodotto tempo-banda e danno quindi risoluzione in distanza; i richiami a frequenza costante danno risoluzione in velocità: i due estremi della classica funzione di ambiguità radar, raggiunti dall'evoluzione. Vale la pena conoscere due questioni irrisolte: la discriminazione di jitter di decine di nanosecondi riportata da Simmons implica una misura di distanza sotto il millimetro che nessun cronometro neurale diretto può fornire, e la discussione fra correlazione incrociata coerente, lettura spettrale e artefatto metodologico è ancora aperta. Intanto i bersagli reagiscono: <em>Bertholdia trigona</em> disturba davvero il sonar temporizzando i clic sulle eco di ritorno, e le scaglie di certe falene assorbono gli ultrasuoni come un metamateriale acustico, tagliando l'intensità dell'eco fino all'85%.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Urlare al mondo per vederlo</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Un pipistrello a caccia in una notte senza luna prende al volo una falena grande come l'unghia del tuo pollice, senza averla mai vista. Lo fa urlando, e forte. I richiami dei pipistrelli sono fra i suoni più intensi prodotti da qualunque animale, ben oltre i 100 decibel alla bocca, che è territorio da martello pneumatico. Non li senti solo perché sono acuti molto oltre la portata dell'orecchio umano.</p>
+<p>Il trucco è il tempo. Il suono viaggia a circa 343 metri al secondo, che è veloce ma non istantaneo. Urla verso qualcosa a cinque metri e il suono ci mette circa 15 millesimi di secondo ad arrivare e altri 15 a tornare: circa 29 millesimi in tutto. Il cervello del pipistrello misura quell'intervallo e lo trasforma direttamente in una distanza. Il doppio più lontano, il doppio dell'attesa. L'ecolocalizzazione in fondo è tutta qui: un cronometro, usato molto bene.</p>
+<p>L'acutezza governa il dettaglio. Il suono viaggia in onde, e un'onda non può mostrarti niente di molto più piccolo di se stessa, come cercare di sentire la grana di una pagina con un guantone da boxe. Un richiamo a 55 kHz ha onde lunghe circa 6 mm, quindi 6 mm è all'incirca la cosa più piccola che quel richiamo può distinguere. Urla più acuto e le onde si accorciano e il dettaglio si affina, ma le note acute vengono assorbite dall'aria molto più in fretta, quindi non arrivano lontano. Ogni pipistrello deve scegliere fra vedere il dettaglio e vedere lontano, e specie diverse hanno scelto diversamente.</p>
+<p>Poi c'è il problema che rende drammatica tutta la faccenda. Un pipistrello non può urlare e ascoltare nello stesso momento: la propria voce lo assorderebbe. Deve urlare, aspettare che l'eco torni a casa e solo allora urlare di nuovo. Da lontano l'attesa è lunga e il pipistrello richiama piano, magari dieci volte al secondo. Man mano che si avvicina l'attesa si accorcia e può richiamare sempre più in fretta, finché nell'ultima frazione di secondo prima dell'attacco spara quasi duecento richiami al secondo. Quella raffica si chiama <strong>ronzio terminale</strong>, e se mai senti un rilevatore per pipistrelli impazzire di clic, qualcosa è appena stato catturato.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔊</span> I richiami dei pipistrelli superano i 100 decibel alla bocca, come un martello pneumatico. Non li senti solo perché sono acuti ben oltre la portata dell'udito umano.</li><li><span aria-hidden="true">⏱️</span> L'ecolocalizzazione è un cronometro. Il suono copre circa 343 metri al secondo, quindi un'eco da 5 m torna in 29 millesimi di secondo, e il pipistrello legge la distanza direttamente da quel ritardo.</li><li><span aria-hidden="true">🐛</span> Alcune falene sentono arrivare i pipistrelli e si lasciano cadere. Altre rispondono con clic ultrasonici che disturbano il sonar del pipistrello: una corsa agli armamenti che dura da cinquanta milioni di anni.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Ritardo, lunghezza d'onda e il vincolo temporale</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>La distanza viene dal tempo di volo. Un'eco da un bersaglio a distanza \(d\) torna dopo \(t = 2d/c\), con \(c \approx 343\ \text{m/s}\) in aria, cioè circa 5,8 ms per metro di distanza. I pipistrelli risolvono questi ritardi in modo notevolmente fine: esperimenti comportamentali collocano la discriminazione di jitter ben sotto il microsecondo in alcune specie, corrispondente a una risoluzione in distanza sotto il millimetro, che è al limite di ciò che il sistema uditivo dovrebbe poter fare ed è ancora oggetto di discussione.</p>
+<p>La risoluzione viene dalla lunghezza d'onda. \(\lambda = c/f\), quindi un richiamo a 55 kHz ha \(\lambda \approx 6{,}2\ \text{mm}\) e uno a 120 kHz circa 2,9 mm. Un bersaglio molto più piccolo di una lunghezza d'onda diffonde nel regime di Rayleigh, con la potenza di ritorno che cala come \(f^4\), quindi rilevare piccoli insetti favorisce fortemente le alte frequenze. A remare in senso contrario c'è l'<strong>assorbimento atmosferico</strong>, che cresce ripidamente con la frequenza: circa 1 dB/m a 40 kHz ma 3 dB/m o più sopra i 100 kHz. Con un bilancio d'eco finito, portata e risoluzione si scambiano direttamente l'una con l'altra, e la distribuzione osservata delle frequenze di richiamo fra le specie ricalca esattamente questo compromesso.</p>
+<p>Il terzo vincolo è temporale. Poiché un pipistrello non può emettere e ricevere insieme senza assordarsi, l'intervallo fra impulsi deve superare il ritardo di andata e ritorno più la durata del richiamo: è il <strong>vincolo di sovrapposizione</strong>. Non è una curiosità, detta la struttura di tutto un attacco. In fase di ricerca il pipistrello emette richiami lunghi, a banda stretta e a bassa frequenza, 5-15 al secondo. In avvicinamento li accorcia e li fa spazzare in frequenza. Nel ronzio terminale ne spara 150-200 al secondo, ciascuno sotto il millisecondo, che è il massimo consentito dalle eco di ritorno: la cadenza dei richiami è fissata dalla fisica della distanza che si accorcia.</p>
+<p>La velocità viene dall'effetto Doppler, \(\Delta f/f \approx 2v/c\) per un riflettore in moto lungo la linea di vista. Una falena che si avvicina a 5 m/s sposta un richiamo a 60 kHz di circa 1,75 kHz. I rinolofidi lo sfruttano con richiami a frequenza costante e <strong>compensazione dello spostamento Doppler</strong>: abbassano in volo la frequenza emessa per tenere l'eco di ritorno a una frequenza fissa, la «fovea acustica», dove la loro coclea è enormemente sovrarappresentata, e poi leggono il residuo battito d'ali dell'insetto come modulazione su quella portante.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Ritardo dell'eco</th><td>\(t = \dfrac{2d}{c}\)</td><td class="cmt">≈ 5,8 ms per metro</td></tr>
+<tr><th scope="row">Velocità del suono</th><td>\(c \approx 343\ \text{m/s}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Lunghezza d'onda</th><td>\(\lambda = \dfrac{c}{f}\)</td><td class="cmt">55 kHz → 6,2 mm</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Diffusione di Rayleigh</th><td>\(P_{\text{eco}} \propto f^4\)</td><td class="cmt">i bersagli piccoli chiedono f alte</td></tr>
+<tr><th scope="row">Assorbimento atmosferico</th><td>\(\alpha \approx 1\text{–}3\ \text{dB/m}\)</td><td class="cmt">cresce ripidamente con f</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Vincolo di sovrapposizione</th><td>\(T_{\text{impulso}} &gt; \dfrac{2d}{c} + \tau\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Spostamento Doppler</th><td>\(\dfrac{\Delta f}{f} \approx \dfrac{2v}{c}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔬</span> Alcuni pipistrelli discriminano jitter di ritardo dell'eco ben sotto il microsecondo: risoluzione in distanza sotto il millimetro. Come il sistema uditivo ci riesca non è ancora del tutto spiegato.</li><li><span aria-hidden="true">⚖️</span> Alta frequenza significa dettaglio fine ma portata corta: l'assorbimento in aria va da circa 1 dB/m a 40 kHz a oltre 3 dB/m sopra i 100 kHz. Ogni specie si colloca da qualche parte su quel compromesso.</li><li><span aria-hidden="true">🎯</span> I rinolofidi abbassano in volo la frequenza del richiamo perché l'eco di ritorno cada su una «fovea acustica» ipersensibile della coclea: compensazione Doppler attiva, in un animale vivo.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Immagine nel dominio del tempo, il problema del jitter e una corsa agli armamenti in ultrasuoni</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Sonar, biologicamente</h3>
+<p>L'ecolocalizzazione è formazione attiva d'immagine nel dominio del tempo. L'informazione disponibile è interamente contenuta nella forma d'onda dell'eco: il ritardo dà la distanza, le differenze interaurali di livello e di tempo più le tacche spettrali dei padiglioni danno azimut ed elevazione, la colorazione spettrale dà la struttura del bersaglio e il Doppler la velocità radiale. I pipistrelli operano con un'antenna pessima - una testa larga qualche centimetro - e compensano con il progetto del segnale. Le spazzate modulate in frequenza danno un'eccellente risoluzione in distanza grazie al loro grande prodotto tempo-banda; i richiami a frequenza costante danno un'eccellente risoluzione in velocità. Le due famiglie di progetto sono i due estremi del classico compromesso di ambiguità radar, raggiunti indipendentemente dall'evoluzione.</p>
+<h3><span class="hn">02</span>Il problema del jitter</h3>
+<p>Simmons ha riportato che <em>Eptesicus fuscus</em> discrimina jitter di ritardo dell'eco dell'ordine di 10-50 ns, il che implica una risoluzione in distanza ben sotto il millimetro. La difficoltà è che la precisione temporale del nervo acustico è dell'ordine delle decine di microsecondi, quindi nessun cronometro neurale diretto basta. Fra le risoluzioni proposte ci sono ricevitori a correlazione incrociata coerente che lavorano sulla fase della portante, la lettura di indizi spettrali in cui l'interferenza fra componenti d'eco sovrapposte viene letta nel dominio della frequenza anziché in quello del tempo, e artefatti metodologici nel paradigma originale. La questione non è chiusa ed è una delle domande aperte più affilate delle neuroscienze sensoriali.</p>
+<h3><span class="hn">03</span>La fovea acustica</h3>
+<p>I rinolofidi emettono lunghi richiami a frequenza costante attorno agli 83 kHz e abbassano in volo la frequenza emessa affinché l'eco spostata dal Doppler torni a una frequenza di riferimento specifica della specie. La coclea è enormemente sovrarappresentata a quella frequenza: una regione espansa della membrana basilare con filtri finemente sintonizzati, l'analogo uditivo di una fovea visiva. La sua funzione non è misurare la distanza ma riconoscere: il battito d'ali di un insetto in volo impone modulazioni di ampiezza e di frequenza sulla portante di ritorno, e la fovea acustica risolve quei bagliori. Il pipistrello non sta tanto misurando dove sia la falena quanto leggendone la firma di battito alare.</p>
+<h3><span class="hn">04</span>Risolvere l'autoassordamento</h3>
+<p>Emettere a oltre 120 dB SPL accanto a un orecchio che deve rilevare eco decine di decibel sopra soglia richiede isolamento. I muscoli dell'orecchio medio si contraggono qualche millisecondo prima di ogni emissione, attenuando di 20 dB o più, e si rilassano nel giro di millisecondi: un ciclo neuromuscolare ripetuto fino a 200 volte al secondo durante il ronzio terminale, fra le contrazioni muscolari sostenute più rapide dei mammiferi. Anche il guadagno neurale nella via uditiva è modulato in sincronia con l'emissione. Il vincolo di sovrapposizione che fissa la cadenza degli impulsi è dunque imposto sia acusticamente sia neuralmente.</p>
+<h3><span class="hn">05</span>Le falene rispondono</h3>
+<p>L'udito timpanico è evoluto indipendentemente molte volte nei lepidotteri, sintonizzato sulle frequenze di richiamo dei pipistrelli, e innesca picchiate evasive ad alta intensità di stimolo. Le arctiine vanno oltre: alcune producono clic ultrasonici che spaventano, alcune pubblicizzano la propria sgradevolezza - il primo aposematismo acustico dimostrato - e <em>Bertholdia trigona</em> disturba dimostrabilmente il sonar dei pipistrelli emettendo clic temporizzati sulle eco di ritorno, degradando la misura di distanza invece di limitarsi ad avvertire. Alcune falene portano scaglie che assorbono gli ultrasuoni come un metamateriale acustico, tagliando l'intensità dell'eco fino all'85%. Qualche pipistrello ha risposto spostando la frequenza del richiamo fuori dall'udito delle falene, o cacciando quasi in silenzio e ascoltando i suoni prodotti dalla preda.</p>
+<h3><span class="hn">06</span>Convergenza, due volte</h3>
+<p>L'ecolocalizzazione laringea e il biosonar degli odontoceti sono convergiti sulla stessa soluzione partendo da hardware non imparentato, ed entrambi sono convergiti anche sullo stesso dettaglio molecolare: la proteina motrice <em>prestina</em>, responsabile dell'elettromotilità delle cellule ciliate esterne e dell'amplificazione cocleare, mostra una notevole convergenza di sequenza fra pipistrelli ecolocalizzanti e cetacei odontoceti, con le stesse sostituzioni amminoacidiche raggiunte indipendentemente. All'interno dei chirotteri, la posizione filogenetica degli pteropodidi non ecolocalizzanti implica o che l'ecolocalizzazione laringea sia comparsa una volta e sia stata persa, o che sia comparsa due volte; la questione è ancora contesa, il che significa che un senso così elaborato potrebbe essere stato inventato più di una volta.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Distanza dal ritardo</th><td>\(d = \dfrac{c\,t}{2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Risoluzione in distanza</th><td>\(\Delta d = \dfrac{c}{2B}\)</td><td class="cmt">B = banda della spazzata</td></tr>
+<tr><th scope="row">Prodotto tempo-banda</th><td>\(TB \gg 1\)</td><td class="cmt">perché le spazzate FM battono i toni puri</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Regime di Rayleigh</th><td>\(\sigma \propto \dfrac{a^6}{\lambda^4}\)</td><td class="cmt">bersagli più piccoli di λ</td></tr>
+<tr><th scope="row">Divergenza di andata e ritorno</th><td>\(P_{\text{eco}} \propto d^{-4}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Assorbimento</th><td>\(P \propto 10^{-2\alpha d/10}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Doppler</th><td>\(f_{\text{eco}} = f_0\,\dfrac{c+v}{c-v}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Vincolo di sovrapposizione</th><td>\(\text{PRI} &gt; \dfrac{2d_{\max}}{c} + \tau\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🎚️</span> I muscoli dell'orecchio medio si contraggono prima di ogni richiamo per proteggere l'orecchio, poi si rilassano in tempo per sentire l'eco: fino a 200 volte al secondo nel ronzio terminale, fra le contrazioni muscolari sostenute più rapide dei mammiferi.</li><li><span aria-hidden="true">📵</span> La falena Bertholdia trigona disturba davvero il sonar dei pipistrelli, temporizzando clic ultrasonici sulle eco di ritorno per corrompere la misura di distanza. Altre falene portano scaglie che assorbono gli ultrasuoni, tagliando l'intensità dell'eco fino all'85%.</li><li><span aria-hidden="true">🧬</span> La proteina dell'udito prestina mostra le stesse sostituzioni amminoacidiche convergenti nei pipistrelli ecolocalizzanti e nei cetacei odontoceti: due linee che hanno inventato il biosonar separatamente e sono approdate alla stessa molecola.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Animal_echolocation" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Regno animale</h2>
+    <ul><li><a href="/it/come-si-orientano-le-tartarughe-marine/">Come si orientano le tartarughe marine</a></li><li><a href="/it/temperatura-del-nido-decide-il-sesso/">Come la temperatura del nido decide il sesso</a></li><li><a href="/it/come-gli-squali-sentono-elettricita/">Come gli squali sentono l'elettricità</a></li><li><a href="/it/come-comunicano-le-api-danza-delle-api/">Come le api si dicono dove andare</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

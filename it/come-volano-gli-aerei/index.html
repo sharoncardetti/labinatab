@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come volano gli aerei | Lab-in-a-Tab</title>
+<meta name="description" content="Un'ala non si succhia verso l'alto: butta aria verso il basso, e l'aria ricambia la spinta.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-volano-gli-aerei/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-planes-fly/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-volano-gli-aerei/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-volent-les-avions/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-planes-fly/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come volano gli aerei — Spiegato e simulato">
+<meta property="og:description" content="Un'ala non si succhia verso l'alto: butta aria verso il basso, e l'aria ricambia la spinta.">
+<meta property="og:url" content="https://labinatab.com/it/come-volano-gli-aerei/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come volano gli aerei — Spiegato e simulato">
+<meta name="twitter:description" content="Un'ala non si succhia verso l'alto: butta aria verso il basso, e l'aria ricambia la spinta.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-volano-gli-aerei/#article",
+   "headline": "Come volano gli aerei",
+   "name": "Come volano gli aerei",
+   "description": "Un'ala non si succhia verso l'alto: butta aria verso il basso, e l'aria ricambia la spinta.",
+   "url": "https://labinatab.com/it/come-volano-gli-aerei/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-volano-gli-aerei/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-08-20",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Portanza",
+    "Angolo d'attacco",
+    "Stallo"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come volano gli aerei",
+    "sameAs": "https://en.wikipedia.org/wiki/Lift_(force)"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come volano gli aerei",
+     "item": "https://labinatab.com/it/come-volano-gli-aerei/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=94376aa4"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-planes-fly/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-volano-gli-aerei/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-volent-les-avions/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Fisica</nav>
+  <h1>Come volano gli aerei</h1>
+  <p class="lead">Un'ala non si succhia verso l'alto: butta aria verso il basso, e l'aria ricambia la spinta.</p>
+  <div class="chips"><span>Portanza</span><span>Angolo d'attacco</span><span>Stallo</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"flight":{"junior":{"aoa":"Inclinazione dell'ala","speed":"Velocità","lift":"Portanza","lifts":"Riesce a volare?","drag":"Resistenza dell'aria"},"student":{"aoa":"Angolo d'attacco","speed":"Velocità all'aria","lift":"Portanza","lifts":"Stato di volo","drag":"Resistenza"},"scholar":{"aoa":"Angolo d'attacco (α)","speed":"Velocità (v)","lift":"Portanza (L)","lifts":"Stato di volo","drag":"Resistenza (D)"}}});</script>
+<section class="sim-embed" data-sim="flight" data-color="#0369a1" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0369a1"><span class="sg-lbl">Prova</span><span>Parti da 6° e alza lentamente <b>Inclinazione dell'ala</b>. La freccia della portanza cresce... e poi da qualche parte oltre i 15° crolla. In quel momento guarda l'aria sopra l'ala.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0369a1"><span class="sg-lbl">Prova</span><span>Tieni <b>Angolo d'attacco</b> a 6° e raddoppia <b>Velocità all'aria</b> da 100 a 200: di che fattore cambia <b>Portanza</b>? Poi rimetti la velocità e spazza <b>Angolo d'attacco</b> attraverso i 15° guardando la curva nel riquadro.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0369a1"><span class="sg-lbl">Prova</span><span>Segui la resistenza mentre aumenti <b>Angolo d'attacco (α)</b> a <b>Velocità (v)</b> fissa: separa il contributo indotto, che cresce con \(C_L^2\), dal termine di profilo. Poi trova l'angolo in cui l'efficienza portanza-resistenza è massima, e chiediti perché gli alianti siano progettati per volare lì attorno.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Una sezione di un'ala, con l'aria che sfreccia da sinistra. I trattini bianchi corti sono l'aria stessa: guarda come si piega. Il blu sopra l'ala vuol dire che lì l'aria è più rarefatta e spinge in giù di meno; il rosso sotto vuol dire che è compressa e spinge in su di più. La freccia verde è la portanza, le frecce verdi dietro l'ala sono l'aria buttata verso terra, e il graficetto mostra come cambia la portanza con l'inclinazione.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Oltre i 15° circa l'aria smette di seguire l'ala e si rompe in un groviglio turbolento, e la portanza quasi sparisce.</b> Quello è uno stallo, e nota che avviene allo stesso angolo qualunque velocità tu scelga. Più potenza al motore non lo salva: l'unico rimedio è abbassare il muso e lasciare che l'aria torni ad attaccarsi all'ala.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Profilo alare bidimensionale ad angolo d'attacco <b>Angolo d'attacco</b> in un flusso di velocità <b>Velocità all'aria</b>. La spaziatura delle linee di corrente si stringe sul dorso, dove il flusso accelera; la sfumatura di colore mostra la differenza di pressione che ne risulta. <b>Portanza</b> segue \(L=\tfrac12\rho v^2 S C_L\) con \(C_L \approx 2\pi\alpha\) fino allo stallo, e il riquadro traccia quella curva col tuo punto attuale sopra.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>La portanza va col quadrato della velocità ma solo linearmente con l'angolo, finché lo stallo non tronca di netto la parte lineare.</b> Qui il quadro delle pressioni e quello della quantità di moto sono disegnati insieme apposta: la sfumatura blu-rossa e le frecce del downwash sono due descrizioni di una sola forza, non due cause in competizione.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Uno schema della soluzione a flusso attaccato: la circolazione fissata dalla condizione di Kutta produce l'asimmetria di velocità, il campo di pressione segue da Bernoulli, e la stessa soluzione letta come flusso di quantità di moto dà il downwash. \(C_L\) è lineare da teoria del profilo sottile fino a \(\alpha_{\text{stallo}}\), poi modellato come crollo post-stallo; la resistenza include un termine indotto \(C_L^2/(\pi AR e)\).</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>La portanza ha bisogno della viscosità, benché le equazioni di lavoro siano non viscose.</b> Senza di essa la condizione di Kutta non si può imporre, la circolazione resta nulla e vale il paradosso di d'Alembert. Lo stallo qui disegnato è la stessa viscosità che si riafferma: un gradiente di pressione avverso ispessisce lo strato limite finché non si separa, ed è per questo che i rimedi pratici sono slat, generatori di vortici e soffiaggio invece di più spinta.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Che cosa tiene su un aereo</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Un aereo di linea carico pesa più o meno quanto cinquanta automobili. Sta appoggiato sul nulla, e il nulla lo regge. Sembra impossibile finché non ti accorgi di che cosa sta facendo davvero l'ala.</p>
+<p>L'ala non è piatta. È inclinata leggermente col naso in su e curva sopra, e mentre avanza <strong>spinge l'aria verso il basso</strong>. Ogni secondo un'ala scaraventa tonnellate d'aria verso terra. E l'aria, come qualsiasi altra cosa, restituisce la spinta con la stessa forza esatta con cui è stata spinta. Quella spinta di ritorno è la <strong>portanza</strong>, ed è ciò che porta l'aereo.</p>
+<p>L'hai già sentita sulla pelle. Metti la mano fuori dal finestrino dell'auto, piatta, e non succede niente. Inclinala appena e la mano ti salta verso l'alto, perché hai cominciato a buttare aria verso il basso. Un'ala è lo stesso trucco, fatto con cura e a 900 km/h.</p>
+<p>Inclina troppo, però, e il trucco si rompe. Oltre i quindici gradi circa l'aria non riesce più a seguire la curva dell'ala: si stacca in un groviglio turbolento e la portanza crolla quasi all'istante. I piloti lo chiamano <strong>stallo</strong>, e non c'entra niente con i motori: un'ala può stallare a piena potenza.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🖐️</span> Tenere la mano inclinata fuori da un'auto in corsa è la stessa fisica di un'ala: la inclini e cominci a spingere aria in giù, così l'aria spinge la mano in su.</li><li><span aria-hidden="true">💨</span> Un Boeing 747 al decollo spinge verso il basso circa una tonnellata d'aria al secondo: quella spinta è ciò che regge 400 tonnellate di aeroplano.</li><li><span aria-hidden="true">⚠️</span> Lo stallo è una questione di angolo, non di velocità o di motori: inclina troppo l'ala, il flusso si stacca e la portanza sparisce anche a tutto gas.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Angolo d'attacco, coefficiente di portanza e stallo</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>La portanza dipende da quattro cose, e tutto il volo pratico vive dentro un'unica equazione: \(L = \tfrac{1}{2}\rho v^2 S C_L\). La densità dell'aria \(\rho\) e la superficie alare \(S\) sono fissate per un dato aereo a una data quota, il che lascia la velocità e il <strong>coefficiente di portanza</strong> \(C_L\).</p>
+<p>Nota che la portanza va col <em>quadrato</em> della velocità. Raddoppia la velocità e ottieni quattro volte la portanza: ecco perché un aereo che non riesce a volare a 200 km/h vola tranquillo a 280.</p>
+<p>\(C_L\) è dove entra in gioco l'<strong>angolo d'attacco</strong>, l'angolo fra l'ala e l'aria che arriva, non fra l'ala e il suolo. Per un profilo sottile la teoria dà \(C_L \approx 2\pi\alpha\) con \(\alpha\) in radianti: una retta, quindi inclinare di più dà più portanza, fino al punto in cui smette di darla.</p>
+<p>Attorno ai 15° lo strato limite non riesce più a restare attaccato contro la pressione crescente sul dorso posteriore dell'ala. Si separa, il flusso regolare collassa in una scia turbolenta, \(C_L\) precipita e la resistenza schizza. Quello è lo <strong>stallo</strong>, e l'angolo a cui avviene cambia pochissimo con velocità o peso: ecco perché ogni aereo ha un limite di angolo d'attacco e non soltanto un limite di velocità.</p>
+<p>Un'ultima cosa da disimparare: la vecchia storia secondo cui l'aria dovrebbe «ricongiungersi» dietro l'ala, e quindi il percorso più lungo sopra la costringerebbe ad accelerare. Non si ricongiunge affatto: l'aria del dorso arriva molto prima di quella del ventre. La differenza di velocità è reale e Bernoulli la lega correttamente alla pressione, ma la causa è la circolazione che l'ala instaura, non una regola di appuntamento.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Portanza</th><td>\(L = \tfrac{1}{2}\rho v^{2} S C_L\)</td><td class="cmt">la velocità conta due volte</td></tr>
+<tr><th scope="row">Profilo sottile</th><td>\(C_L \approx 2\pi\alpha\)</td><td class="cmt">\alpha in radianti, fino allo stallo</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Angolo di stallo</th><td>\(\alpha_{\text{stallo}} \approx 15^\circ\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Resistenza</th><td>\(D = \tfrac{1}{2}\rho v^{2} S C_D\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📈</span> La portanza va col quadrato della velocità, quindi un aumento del 40% di velocità raddoppia grosso modo la portanza disponibile.</li><li><span aria-hidden="true">🔬</span> La teoria del profilo sottile dà CL ≈ 2πα, lineare nell'angolo d'attacco, e regge bene fin quasi allo stallo.</li><li><span aria-hidden="true">❌</span> La storia dei tempi di transito uguali è sbagliata: l'aria che scorre sul dorso arriva al bordo d'uscita molto prima di quella del ventre, non nello stesso istante.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Circolazione, downwash e resistenza indotta</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <p>L'enunciato rigoroso è il teorema di Kutta-Žukovskij: per un flusso bidimensionale non viscoso la portanza per unità di apertura è \(L' = \rho v \Gamma\), dove \(\Gamma\) è la circolazione attorno al profilo. La circolazione non si assume, si <em>seleziona</em>, attraverso la condizione di Kutta, che impone al punto di ristagno posteriore di stare sul bordo d'uscita aguzzo. È la viscosità a far rispettare quella condizione: ecco perché un fluido ideale non viscoso non produce alcuna portanza, il paradosso di d'Alembert.</p>
+<p>Bernoulli e Newton non sono spiegazioni rivali, sono la stessa soluzione letta in due modi. Fissata la circolazione, il campo di velocità segue, Bernoulli dà la distribuzione di pressione sulla superficie e il suo integrale dà la forza; in modo equivalente, il flusso di quantità di moto attraverso un volume di controllo mostra l'ala che imprime all'aria quantità di moto verso il basso. Ogni racconto che usa l'uno per confutare l'altro ha scambiato una scelta contabile per fisica.</p>
+<p>Le ali finite aggiungono un termine che la teoria bidimensionale non vede. Il livellamento della pressione lungo l'apertura si arrotola in vortici di estremità, il downwash inclina il vento relativo locale e il vettore portanza si inclina con esso. La componente all'indietro è la <strong>resistenza indotta</strong>, \(C_{D,i} = C_L^2/(\pi AR e)\): cresce col quadrato della portanza e cala con l'allungamento alare, il che spiega perché gli alianti hanno ali lunghe e sottili e perché la resistenza indotta domina alle basse velocità, proprio quando hai meno energia da spendere.</p>
+<p>Lo stallo in sé è un fenomeno di strato limite: il gradiente di pressione avverso a valle del picco di depressione ispessisce lo strato finché non si separa. Ed è per questo che il rimedio è la gestione dello strato limite - generatori di vortici, slat, flap soffiati - e non più spinta.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Kutta-Žukovskij</th><td>\(L' = \rho v \Gamma\)</td><td class="cmt">per unità di apertura</td></tr>
+<tr><th scope="row">Resistenza indotta</th><td>\(C_{D,i} = \dfrac{C_L^{2}}{\pi\,AR\,e}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Allungamento alare</th><td>\(AR = b^{2}/S\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Numero di Reynolds</th><td>\(Re = \dfrac{\rho v c}{\mu}\)</td><td class="cmt">governa lo strato limite</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔄</span> Kutta-Žukovskij: la portanza per unità di apertura è ρvΓ. La circolazione Γ è fissata dalla condizione di Kutta al bordo d'uscita aguzzo, ed è la viscosità a imporla.</li><li><span aria-hidden="true">⚖️</span> Bernoulli e Newton sono due letture della stessa soluzione: integrale di pressione o flusso di quantità di moto. Nessuna delle due confuta l'altra.</li><li><span aria-hidden="true">🛩️</span> La resistenza indotta va come CL²/(πARe), quindi domina alle basse velocità e premia le ali lunghe ad alto allungamento: il motivo per cui gli alianti sono fatti così.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Lift_(force)" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Fisica</h2>
+    <ul><li><a href="/it/gravita-orbite/">Gravità e orbite</a></li><li><a href="/it/moto-dei-proiettili/">Moto dei proiettili</a></li><li><a href="/it/onde-interferenza/">Onde e interferenza</a></li><li><a href="/it/calore-termodinamica/">Calore e termodinamica</a></li><li><a href="/it/modello-standard/">Il Modello Standard</a></li><li><a href="/it/leggi-del-moto-di-newton/">Le leggi del moto di Newton</a></li><li><a href="/it/legge-di-ohm-circuiti/">Legge di Ohm e circuiti</a></li><li><a href="/it/stati-della-materia/">Stati della materia</a></li><li><a href="/it/ottica-luce-lenti/">Ottica: luce, lenti e rifrazione</a></li><li><a href="/it/pendolo-moto-armonico/">Pendoli e moto armonico semplice</a></li><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/circuiti-serie-parallelo/">Circuiti in serie e in parallelo</a></li><li><a href="/it/magneti-elettromagnetismo/">Magneti ed elettromagnetismo</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>
