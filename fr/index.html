@@ -3162,8 +3162,7 @@ function simElNino(container,color,lvl){
         ctx.beginPath();ctx.moveTo(x-3+r*3,ry);ctx.lineTo(x-3+r*3,ry+4);ctx.stroke();
       }
     }
-    ctx.fillStyle='rgba(255,255,255,0.9)';ctx.font='bold 9px system-ui';ctx.textAlign='center';
-    ctx.fillText(tx('cRain','rain follows the warm pool'),px(lonWP),py(0)-22);
+    labels.push([tx('cRain','rain follows the warm pool'),px(lonWP),py(0)-22,0.9]);
     // trade winds across the tropics
     for(let k=0;k<7;k++){
       const lon=125+k*24, dir=w>=0?-1:1, len=7+Math.abs(w)*2.6;
@@ -3177,13 +3176,9 @@ function simElNino(container,color,lvl){
     ctx.fillText(w>=0?tx('cTrades','trade winds'):tx('cWesterly','westerly burst - trades reversed'),px(150),py(24)-8);
     ctx.drawImage(bLand,0,0,W,H);
     ctx.font='bold 9px system-ui';ctx.textAlign='center';
-    labels.forEach(function(l){
-      const half=ctx.measureText(l[0]).width/2;
-      const lx=Math.max(MAP.x+half+4,Math.min(MAP.x+MAP.w-half-4,l[1]));
-      ctx.fillStyle='rgba(6,20,32,0.65)';ctx.fillRect(lx-half-3,l[2]-9,half*2+6,12);
-      ctx.fillStyle='rgba(255,255,255,'+l[3]+')';ctx.fillText(l[0],lx,l[2]);
-    });
-    ctx.font='bold 9px system-ui';ctx.textAlign='center';
+    labels.sort(function(a,b){return a[2]-b[2];});
+    for(let li=1;li<labels.length;li++)
+      if(labels[li][2]-labels[li-1][2]<13)labels[li][2]=labels[li-1][2]+13;
     labels.forEach(function(l){
       const half=ctx.measureText(l[0]).width/2;
       const lx=Math.max(MAP.x+half+4,Math.min(MAP.x+MAP.w-half-4,l[1]));
@@ -4036,6 +4031,7 @@ function simMagnets(container,color,lvl){
     ctx.fillText(tx('cEarth','grey field: the Earth, 50 µT'),W-PAD,18);
     // the boundary where the solenoid overrules the Earth
     if(Math.abs(I)>0.02){
+      ctx.save();ctx.beginPath();ctx.rect(PAD,A_T,W-2*PAD,A_B-A_T);ctx.clip();
       ctx.beginPath();
       for(let k=0;k<=72;k++){
         const th=k/72*Math.PI*2,r=reach(Math.abs(m),th)/MPP;
@@ -4045,6 +4041,7 @@ function simMagnets(container,color,lvl){
       ctx.closePath();
       ctx.fillStyle='rgba(239,68,68,0.07)';ctx.fill();
       ctx.strokeStyle='rgba(248,113,113,0.5)';ctx.lineWidth=1.2;ctx.setLineDash([4,3]);ctx.stroke();ctx.setLineDash([]);
+      ctx.restore();
     }
     // the compass grid
     const GS=Math.max(30,Math.round(W/22));
@@ -4085,7 +4082,8 @@ function simMagnets(container,color,lvl){
       ctx.fillStyle='#60a5fa';ctx.fillText('S',acx+(I>0?-sw/2-13:sw/2+13),acy+4);
       ctx.font='9px system-ui';ctx.fillStyle='#fca5a5';
       const rr=reach(Math.abs(m),0)/MPP;
-      ctx.fillText(tx('cReach','the coil wins out to here')+' · '+(reach(Math.abs(m),0)*100).toFixed(0)+' cm',acx,Math.max(A_T+12,acy-rr-6));
+      ctx.textAlign='right';
+      ctx.fillText(tx('cReach','the coil wins out to here')+' · '+(reach(Math.abs(m),0)*100).toFixed(0)+' cm',Math.min(acx+rr-6,W-PAD-6),A_B-8);
     }else{
       ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
       ctx.fillText(tx('cOff','no current: every needle points to the Earth'),acx,acy-sh/2-10);
@@ -4235,13 +4233,12 @@ function simTurtles(container,color,lvl){
   }
   function turtle(x,y,s,col){
     ctx.save();ctx.translate(x,y);ctx.scale(s,s);
-    ctx.fillStyle=col;
-    ctx.beginPath();ctx.ellipse(0,0,7,5.5,0,0,Math.PI*2);ctx.fill();
-    ctx.beginPath();ctx.ellipse(7.5,0,2.6,2.2,0,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=col;ctx.strokeStyle='rgba(4,24,16,0.8)';ctx.lineWidth=1.1/s;
     for(let s2=-1;s2<=1;s2+=2){
-      ctx.beginPath();ctx.ellipse(2,s2*5,4,2,s2*0.6,0,Math.PI*2);ctx.fill();
-      ctx.beginPath();ctx.ellipse(-4,s2*4.2,3,1.7,-s2*0.6,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.ellipse(3,s2*5.4,5,2,s2*0.7,0,Math.PI*2);ctx.fill();ctx.stroke();
     }
+    ctx.beginPath();ctx.ellipse(0,0,7.5,5.4,0,0,Math.PI*2);ctx.fill();ctx.stroke();
+    ctx.beginPath();ctx.ellipse(8.6,0,2.8,2.2,0,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.restore();
   }
 
@@ -4281,8 +4278,8 @@ function simTurtles(container,color,lvl){
     ctx.strokeStyle='rgba(234,179,8,0.5)';ctx.lineWidth=1.4;
     ctx.beginPath();ctx.moveTo(mx(0.28),M_T);ctx.lineTo(mx(0.28),M_B);ctx.stroke();
     // the faint families, so the bold lines read as members of them
-    for(let d=50;d<=66;d++)isocline(d,'rgba(94,234,212,0.16)',1);
-    for(let f=43;f<=50;f+=0.5)isodynamic(f,'rgba(251,146,60,0.14)',1);
+    for(let d=50;d<=66;d++)isocline(d,'rgba(94,234,212,0.30)',1);
+    for(let f=43;f<=50;f+=0.5)isodynamic(f,'rgba(251,146,60,0.26)',1);
     // home: where her two remembered lines cross
     ctx.setLineDash([5,4]);
     isocline(HOME_I,'rgba(226,232,240,0.55)',1.4);
@@ -4426,7 +4423,7 @@ function simNestSex(container,color,lvl){
 
   function tempColour(T,alpha){
     const f=Math.max(0,Math.min(1,(T-25)/9));
-    const r=Math.round(60+f*195),g=Math.round(90-f*40),b=Math.round(150-f*110);
+    const r=Math.round(58+f*96),g=Math.round(64+f*24),b=Math.round(92-f*46);
     return 'rgba('+r+','+g+','+b+','+alpha+')';
   }
 
@@ -4607,7 +4604,11 @@ function simSharks(container,color,lvl){
     ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
     ctx.fillText(tx('cTop','a fish hiding under the sand still leaks electricity'),PAD,18);
 
+    // everything in the scene stays inside the water and sand, or the rings and
+    // the shark spill over the graph below
+    ctx.save();ctx.beginPath();ctx.rect(0,SEA_T,W,SAND_B-SEA_T);ctx.clip();
     // ── the prey's field, drawn as rings of equal strength ──
+    let lastLab=1e9;                                 // ring labels run outward, so this starts high
     for(let k=0;k<7;k++){
       const lev=[200,100,50,20,10,5,2][k];         // nV/cm
       const r=Math.pow(E1/lev,1/3)/CMPX;
@@ -4616,10 +4617,12 @@ function simSharks(container,color,lvl){
       ctx.strokeStyle=near?'rgba(56,189,248,0.40)':'rgba(56,189,248,0.13)';
       ctx.lineWidth=near?1.3:1;
       ctx.beginPath();ctx.ellipse(pxC,pyC,r,r*DSQ,0,0,Math.PI*2);ctx.stroke();
-      if(r>30&&r<W*0.6){
+      const ly=pyC-r*DSQ+10;
+      if(r>30&&r<W*0.6&&lastLab-ly>12&&ly<SAND_B-18){
         ctx.font='8px system-ui';ctx.textAlign='center';
         ctx.fillStyle=near?'rgba(125,211,252,0.8)':'rgba(125,211,252,0.35)';
-        ctx.fillText(lev+' nV/cm',pxC,pyC-r*DSQ+10);
+        ctx.fillText(lev+' nV/cm',pxC,ly);
+        lastLab=ly;
       }
     }
     // the sand hides the fish but not the field
@@ -4631,7 +4634,9 @@ function simSharks(container,color,lvl){
     ctx.fillText(tx('cPrey','buried fish')+' · '+dep+' cm',pxC,SAND_B-6);
 
     // ── the shark ──
-    const hpx=hw/CMPX/2;
+    // hpx is the true half-width, which is what the physics uses; hvis is what we
+    // draw, because a 120 cm head at scene scale would be taller than the canvas
+    const hpx=hw/CMPX/2, hvis=Math.min(30,7+hw*0.19);
     ctx.save();ctx.translate(sx,swimY);
     ctx.fillStyle='#64748b';
     ctx.beginPath();
@@ -4643,31 +4648,32 @@ function simSharks(container,color,lvl){
     ctx.beginPath();ctx.moveTo(-8,-9);ctx.lineTo(2,-26);ctx.lineTo(12,-8);ctx.closePath();ctx.fill();
     // the head, as wide as the slider says - this is the hammerhead question
     ctx.fillStyle='#94a3b8';
-    ctx.beginPath();ctx.ellipse(38,0,10,Math.max(6,hpx),0,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.ellipse(38,0,10,hvis,0,0,Math.PI*2);ctx.fill();
     // the ampullae: pores that read the water
     for(let k=-4;k<=4;k++){
-      const y=k/4*Math.max(5,hpx-2);
+      const y=k/4*(hvis-2);
       ctx.beginPath();ctx.arc(44,y,1.5,0,Math.PI*2);
       ctx.fillStyle=found?'rgba(250,204,21,0.95)':'rgba(15,23,42,0.8)';ctx.fill();
     }
     if(found){
       ctx.strokeStyle='rgba(250,204,21,'+(0.4+0.4*Math.sin(St.t*9))+')';ctx.lineWidth=1.6;
-      ctx.beginPath();ctx.ellipse(38,0,15,Math.max(10,hpx+5),0,0,Math.PI*2);ctx.stroke();
+      ctx.beginPath();ctx.ellipse(38,0,15,hvis+5,0,0,Math.PI*2);ctx.stroke();
     }
     ctx.restore();
     // what the two ends of the head actually measure
     ctx.strokeStyle=found?'rgba(250,204,21,0.85)':'rgba(148,163,184,0.4)';ctx.lineWidth=1.2;
-    ctx.beginPath();ctx.moveTo(sx+52,swimY-hpx);ctx.lineTo(sx+66,swimY-hpx);
-    ctx.moveTo(sx+66,swimY-hpx);ctx.lineTo(sx+66,swimY+hpx);
-    ctx.moveTo(sx+52,swimY+hpx);ctx.lineTo(sx+66,swimY+hpx);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(sx+52,swimY-hvis);ctx.lineTo(sx+66,swimY-hvis);
+    ctx.moveTo(sx+66,swimY-hvis);ctx.lineTo(sx+66,swimY+hvis);
+    ctx.moveTo(sx+52,swimY+hvis);ctx.lineTo(sx+66,swimY+hvis);ctx.stroke();
     ctx.font='9px system-ui';ctx.textAlign='left';
     ctx.fillStyle=found?'#fcd34d':'#94a3b8';
     ctx.fillText(hw+' cm '+tx('cAcross','across'),sx+70,swimY+3);
     if(found){
       ctx.font='bold 10px system-ui';ctx.textAlign='center';ctx.fillStyle='#fcd34d';
-      ctx.fillText(tx('cGot','got it'),sx+38,swimY-Math.max(16,hpx+12));
+      ctx.fillText(tx('cGot','got it'),sx+38,swimY-hvis-12);
     }
 
+    ctx.restore();                                   // end of the clipped scene
     // ── the reading along the swim ──
     ctx.fillStyle='rgba(15,23,42,0.6)';ctx.fillRect(PAD,G_T,W-2*PAD,G_B-G_T);
     ctx.strokeStyle='rgba(148,163,184,0.22)';ctx.lineWidth=1;
@@ -4752,8 +4758,10 @@ function simBees(container,color,lvl){
     ctx.fillStyle='#0b1220';ctx.fillRect(0,0,W,H);
 
     // ══ outside: hive, sun, flowers ══
+    // each caption owns its column: drop it rather than let it run into the next
     ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
-    ctx.fillText(tx('cOut','outside: where the flowers actually are'),PAD,18);
+    const capOut=tx('cOut','outside: where the flowers actually are');
+    if(PAD+ctx.measureText(capOut).width<SPLIT-6)ctx.fillText(capOut,PAD,18);
     ctx.fillStyle='#0d1a2b';ctx.beginPath();ctx.arc(wcx,wcy,wR,0,Math.PI*2);ctx.fill();
     ctx.strokeStyle='rgba(148,163,184,0.25)';ctx.lineWidth=1;ctx.stroke();
     for(let k=1;k<=3;k++){
@@ -4772,7 +4780,7 @@ function simBees(container,color,lvl){
     ctx.strokeStyle='rgba(253,224,71,0.5)';ctx.setLineDash([4,4]);ctx.lineWidth=1.2;
     ctx.beginPath();ctx.moveTo(wcx,wcy);ctx.lineTo(sxp,syp);ctx.stroke();ctx.setLineDash([]);
     ctx.font='9px system-ui';ctx.fillStyle='#fde047';ctx.textAlign='center';
-    ctx.fillText(HOURS[St.hour][1],sxp,syp-13);
+    ctx.fillText(HOURS[St.hour][1],sxp-Math.cos(sr)*17,syp-Math.sin(sr)*17);
     // the flower patch
     const fr=(bear-90)*Math.PI/180, frr=wR*Math.min(1,dist/4000)*0.94+wR*0.06;
     const fxp=wcx+Math.cos(fr)*frr,fyp=wcy+Math.sin(fr)*frr;
@@ -4798,7 +4806,8 @@ function simBees(container,color,lvl){
 
     // ══ inside: the vertical comb, in the dark ══
     ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
-    ctx.fillText(tx('cIn','inside the dark hive: the dance'),SPLIT+4,18);
+    const capIn=tx('cIn','inside the dark hive: the dance');
+    if(SPLIT+4+ctx.measureText(capIn).width<W-PAD)ctx.fillText(capIn,SPLIT+4,18);
     const cw=W-PAD-SPLIT-4,ch=BOT-TOP;
     ctx.fillStyle='#1a1408';ctx.fillRect(SPLIT+4,TOP,cw,ch);
     // honeycomb, because that is the floor she dances on
@@ -4870,10 +4879,15 @@ function simBees(container,color,lvl){
     ctx.restore();
 
     // ── the message, spelled out ──
-    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#94a3b8';
-    ctx.fillText(tx('cRule','one second of waggling ≈ one kilometre'),PAD,BOT+20);
-    ctx.textAlign='right';ctx.fillStyle='#fcd34d';
-    ctx.fillText(tx('cSame','move the sun and the dance turns, though the flowers never moved'),W-PAD,BOT+20);
+    // the payoff line wraps to its own row instead of colliding on a narrow canvas
+    ctx.font='9px system-ui';
+    const rule=tx('cRule','one second of waggling ≈ one kilometre');
+    const same=tx('cSame','move the sun and the dance turns, though the flowers never moved');
+    const wRule=ctx.measureText(rule).width,wSame=ctx.measureText(same).width;
+    ctx.textAlign='left';ctx.fillStyle='#94a3b8';ctx.fillText(rule,PAD,BOT+20);
+    ctx.fillStyle='#fcd34d';
+    if(PAD+wRule+14+wSame<=W-PAD){ctx.textAlign='right';ctx.fillText(same,W-PAD,BOT+20);}
+    else ctx.fillText(same,PAD,BOT+34);
 
     pA.set(Math.round(ang)+'° '+tx('vFromUp','from straight up'));
     pD.set(secs.toFixed(1)+' s');
@@ -6940,7 +6954,9 @@ function simAstro(container,color,lvl){
       ctx.strokeStyle='rgba(253,230,138,0.55)';ctx.lineWidth=1.2;ctx.setLineDash([4,4]);
       ctx.beginPath();ctx.arc(cx,cy,sunPx,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
       ctx.fillStyle='rgba(253,230,138,0.8)';ctx.font='9px system-ui';ctx.textAlign='center';
-      ctx.fillText('Sun (log scale)',cx,cy+sunPx+12);
+      // below the circle when there is room, above it when the stat column is in the way
+      const sunLabY=cy+sunPx+12;
+      ctx.fillText('Sun (log scale)',cx,sunLabY<HH-196?sunLabY:cy-sunPx-6);
     }
 
     if(state.kind!=='bh'&&St.p<1){
@@ -8122,6 +8138,7 @@ function simComplexity(container, color, lvl) {
     const maxOps = ALGOS[selectedIdx].ops(maxN) || 1;
     const safeMax = Math.max(maxOps, 1);
 
+    const labs = [];
     ALGOS.forEach((algo, ai) => {
       ctx.beginPath();
       for (let xi = 1; xi <= maxN; xi++) {
@@ -8134,13 +8151,20 @@ function simComplexity(container, color, lvl) {
       ctx.lineWidth = ai === selectedIdx ? 2.5 : 1;
       ctx.stroke();
 
-      // label at right end
+      // the label position is collected, not drawn: several curves saturate at
+      // the top of the plot and would otherwise stack on the same pixel
       const lastOps = algo.ops(maxN);
       const lastY = PAD + PH - Math.min((lastOps/safeMax)*PH, PH);
-      ctx.fillStyle = ai === selectedIdx ? algo.col : 'rgba(255,255,255,0.25)';
-      ctx.font = ai === selectedIdx ? 'bold 10px Nunito,sans-serif' : '9px Nunito,sans-serif';
-      ctx.textAlign = 'left';
-      ctx.fillText(algo.name, PAD+PW+3, Math.max(PAD+8, Math.min(lastY, PAD+PH-2)));
+      labs.push({ ai: ai, algo: algo, y: Math.max(PAD+8, Math.min(lastY, PAD+PH-2)) });
+    });
+    labs.sort((p, q) => p.y - q.y);
+    for (let li = 1; li < labs.length; li++)
+      if (labs[li].y - labs[li-1].y < 11) labs[li].y = labs[li-1].y + 11;
+    ctx.textAlign = 'right';                     // right-aligned so none runs off the edge
+    labs.forEach(L => {
+      ctx.fillStyle = L.ai === selectedIdx ? L.algo.col : 'rgba(255,255,255,0.25)';
+      ctx.font = L.ai === selectedIdx ? 'bold 10px Nunito,sans-serif' : '9px Nunito,sans-serif';
+      ctx.fillText(L.algo.name, W-4, L.y);
     });
 
     // animated dot running along selected curve
@@ -9046,13 +9070,21 @@ function simBlackholes(container, color, lvl) {
     ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='9px system-ui';ctx.textAlign='center';
     ctx.fillText(label,x,y+rad+12);
   }
+  // a label that would fall off the canvas flips to the other side instead
+  function clampText(t,x,y,align){
+    ctx.textAlign=align;
+    const tw=ctx.measureText(t).width;
+    let xx=x;
+    if(align==='right'&&x-tw<6){ctx.textAlign='left';xx=6;}
+    else if(align!=='right'&&x+tw>W-6){ctx.textAlign='right';xx=W-6;}
+    ctx.fillText(t,xx,y);
+  }
   function ring(rMult,col,dash,label,side){
     const rr=rsPx*rMult;
     ctx.beginPath();ctx.arc(cx,cy,rr,0,Math.PI*2);
     ctx.strokeStyle=col;ctx.lineWidth=1.5;ctx.setLineDash(dash);ctx.stroke();ctx.setLineDash([]);
     ctx.font='9px system-ui';ctx.fillStyle=col;
-    ctx.textAlign=side<0?'right':'left';
-    ctx.fillText(label,cx+side*(rr+5),cy-rr*0.62);
+    clampText(label,cx+side*(rr+5),cy-rr*0.62,side<0?'right':'left');
   }
   function frame(){
     const M=rMass.val, r=rOrbit.val, rsKm=2.95*M;
@@ -9093,8 +9125,8 @@ function simBlackholes(container, color, lvl) {
     ctx.strokeStyle='rgba(196,181,253,0.9)';ctx.lineWidth=2;ctx.stroke();
     ctx.strokeStyle='rgba(196,181,253,0.5)';ctx.lineWidth=1;
     ctx.beginPath();ctx.moveTo(cx-rsPx*0.7,cy+rsPx*0.7);ctx.lineTo(cx-rsPx*2.6,cy+rsPx*2.4);ctx.stroke();
-    ctx.fillStyle='rgba(196,181,253,0.95)';ctx.font='9px system-ui';ctx.textAlign='right';
-    ctx.fillText('event horizon — nothing gets back out',cx-rsPx*2.7,cy+rsPx*2.5);
+    ctx.fillStyle='rgba(196,181,253,0.95)';ctx.font='9px system-ui';
+    clampText('event horizon — nothing gets back out',cx-rsPx*2.7,cy+rsPx*2.5,'right');
 
     // ── the orbiting observer ──
     const stable=r>=ISCO;
@@ -9137,9 +9169,12 @@ function simBlackholes(container, color, lvl) {
     }
 
     // ── side panel: the two clocks that make dilation concrete ──
-    const panX=W-Math.min(150,W*0.27), panY=24;
-    ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(panX-12,panY-14,Math.min(150,W*0.27),150);
-    ctx.strokeStyle='rgba(255,255,255,0.16)';ctx.lineWidth=1;ctx.strokeRect(panX-12,panY-14,Math.min(150,W*0.27),150);
+    // the contents sit at fixed offsets, so the box needs a fixed width; on a
+    // canvas too narrow to spare it, the panel is dropped rather than overflowed
+    const PW=134, showPan=W>=430, panX=W-PW+6, panY=24;
+    if(showPan){
+    ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(panX-12,panY-14,PW,150);
+    ctx.strokeStyle='rgba(255,255,255,0.16)';ctx.lineWidth=1;ctx.strokeRect(panX-12,panY-14,PW,150);
     clock(panX+22,panY+24,22,St.t/6,'far away',  '#a5b4fc');
     clock(panX+88,panY+24,22,St.t*dil/6,'in orbit','#fbbf24');
     ctx.fillStyle='rgba(255,255,255,0.8)';ctx.font='10px system-ui';ctx.textAlign='center';
@@ -9151,11 +9186,13 @@ function simBlackholes(container, color, lvl) {
     ctx.fillStyle='rgb(255,'+Math.round(255-red*190)+','+Math.round(255-red*235)+')';
     ctx.fillRect(panX+18,panY+116,74,10);
     ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.strokeRect(panX+18,panY+116,74,10);
+    }
 
     // ── scale bar in real kilometres ──
     ctx.textAlign='left';ctx.font='10px ui-monospace,monospace';ctx.fillStyle='rgba(255,255,255,0.75)';
-    ctx.fillText('M = '+M+' M☉   horizon rₛ = '+rsKm.toFixed(1)+' km   photon sphere '+(rsKm*PHOTON).toFixed(1)+
-                 ' km   ISCO '+(rsKm*ISCO).toFixed(1)+' km',12,H-40);
+    ctx.fillText(W>=560
+      ? 'M = '+M+' M☉   horizon rₛ = '+rsKm.toFixed(1)+' km   photon sphere '+(rsKm*PHOTON).toFixed(1)+' km   ISCO '+(rsKm*ISCO).toFixed(1)+' km'
+      : 'M = '+M+' M☉   horizon rₛ = '+rsKm.toFixed(1)+' km',12,H-40);
     ctx.fillStyle='rgba(255,255,255,0.5)';
     ctx.fillText('orbit at '+r.toFixed(1)+' rₛ = '+(rsKm*r).toFixed(0)+' km from the centre',12,H-24);
 

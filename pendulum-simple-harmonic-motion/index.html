@@ -41,7 +41,7 @@
    "url": "https://labinatab.com/pendulum-simple-harmonic-motion/",
    "mainEntityOfPage": "https://labinatab.com/pendulum-simple-harmonic-motion/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-08-20",
+   "dateModified": "2026-08-26",
    "inLanguage": "en",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -103,7 +103,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js?v=94376aa4"></script>
+<script defer src="/sim-engine.js?v=cfffd622"></script>
 <style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
 :root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -216,7 +216,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <div class="sim-host"></div>
   <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>The dot hanging from the string is the <b>pendulum</b>. It swings side to side, and the faint arc shows the path it sweeps. The pill counts the <b>time for one full swing</b> — over there and back.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Changing how far it swings barely changes the timing — but making the string longer clearly slows it down.</b> That's the pendulum's secret: the beat is set almost entirely by the <em>length</em>, not by how wide it swings or how heavy the bob is. Longer string, slower swing.</div></details></div>
 <div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Pendulum of length \(L\) swinging with amplitude \(\theta_0\). The arc is its path; the pills read the period \(T\) and frequency \(f\). The motion is (near-)simple-harmonic, \(\theta(t)=\theta_0\cos(\omega t)\).</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Quadrupling \(L\) doubles \(T\), because \(T = 2\pi\sqrt{L/g}\) — the square root.</b> Mass and amplitude are absent from that formula, which is why small swings are isochronous. Push the amplitude large, though, and the small-angle approximation frays: \(T\) grows by about \(\theta_0^2/16\), the correction you can watch appear.</div></details></div>
-<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Length \(L\), amplitude \(\theta_0\). The bob obeys \(\ddot\theta + (g/L)\sin\theta = 0\); the simulation uses the amplitude-corrected period \(T = T_0(1+\theta_0^2/16)\) with \(T_0 = 2\pi\sqrt{L/g}\). Pills read \(T\) and \(f = 1/T\).</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The log-log slope is \(1/2\) (so \(T\propto\sqrt L\)), and \(T\) rises above \(T_0\) as amplitude grows.</b> The exact period is the elliptic integral \(T = 4\sqrt{L/g}\,K(\sin\tfrac{\theta_0}{2})\); the first term of its expansion, \(\theta_0^2/16\), is what the simulation applies — 1.7% at 30°, ~18% at 90°. Isochronism is strictly a small-angle limit.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A bob on a string of length \(L\), amplitude \(\theta_0\). The bob obeys \(\ddot\theta + (g/L)\sin\theta = 0\); the simulation uses the amplitude-corrected period \(T = T_0(1+\theta_0^2/16)\) with \(T_0 = 2\pi\sqrt{L/g}\). Pills read \(T\) and \(f = 1/T\).</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The log-log slope is \(1/2\) (so \(T\propto\sqrt L\)), and \(T\) rises above \(T_0\) as amplitude grows.</b> The exact period is the elliptic integral \(T = 4\sqrt{L/g}\,K(\sin\tfrac{\theta_0}{2})\); the first term of its expansion, \(\theta_0^2/16\), is what the simulation applies — 1.7% at 30°, ~18% at 90°. Isochronism is strictly a small-angle limit.</div></details></div>
 </section>
   
 <section class="lvl" id="junior">

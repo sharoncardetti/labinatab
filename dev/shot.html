@@ -30,7 +30,9 @@
 </style>
 <div id="host"></div>
 <div id="meta"></div>
-<script src="/sim-engine.js"></script>
+<!-- the engine is regenerated constantly; without a buster the bench silently
+     tests a cached copy and a fix you just made looks like it did not work -->
+<script>document.write(unescape("%3Cscript src=/sim-engine.js?v="+Date.now()+"%3E%3C/script%3E"));</script>
 <script>
 (function(){
   var q=new URLSearchParams(location.search);
