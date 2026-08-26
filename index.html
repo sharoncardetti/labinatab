@@ -7273,7 +7273,8 @@ function simProtein(container,color,lvl){
       rr(tx-cw/2+3,ty-8,cw-6,18,6);ctx.fill();ctx.stroke();
       ctx.fillStyle='#7c3aed';ctx.font='bold 12px ui-monospace,monospace';ctx.textAlign='center';
       ctx.fillText(anti(codons[St.i]),tx,ty+6);
-      ctx.fillStyle='rgba(110,60,130,0.75)';ctx.font='9px system-ui';ctx.fillText('tRNA',tx,ty-40);
+      ctx.fillStyle='rgba(110,60,130,0.75)';ctx.font='9px system-ui';
+      ctx.textAlign='right';ctx.fillText('tRNA',tx-7,ty-22);ctx.textAlign='center';
       // hydrogen bonds, once the anticodon sits over the codon
       if(arrive>0.98&&leave<0.15){
         ctx.strokeStyle='rgba(120,60,140,0.65)';ctx.lineWidth=1.6;ctx.setLineDash([2,2]);
@@ -8509,7 +8510,9 @@ function simExoplanets(container,color,lvl){
     ctx.fillStyle='rgba(74,222,128,0.20)';ctx.fill('evenodd');
     ctx.restore();
     ctx.fillStyle='rgba(74,222,128,0.65)';ctx.font='9px system-ui';ctx.textAlign='right';
-    ctx.fillText(tx('cHZ','habitable zone'),sx-hz0-6,sy-4);
+    const hzT=tx('cHZ','habitable zone'),hzX=sx-hz0-6;
+    if(hzX-ctx.measureText(hzT).width<4){ctx.textAlign='left';ctx.fillText(hzT,4,sy-4);}
+    else ctx.fillText(hzT,hzX,sy-4);
     ctx.strokeStyle='rgba(160,180,220,0.28)';ctx.lineWidth=1;ctx.setLineDash([3,4]);
     ctx.beginPath();ctx.ellipse(sx,sy,orbR,orbR*0.12,0,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
     if(!front){ctx.beginPath();ctx.arc(px,py,prPx,0,Math.PI*2);ctx.fillStyle='#94a3b8';ctx.fill();}
@@ -10786,8 +10789,11 @@ function simBloodMoon(container,color,lvl){
     ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='bold 10px system-ui';ctx.textAlign='center';
     ctx.fillText(tx('cSeen','seen from Earth'),ix,iy+IR+18);
     // ── caption ──
-    ctx.textAlign='center';ctx.font='11px system-ui';ctx.fillStyle='rgba(255,220,190,0.9)';
-    ctx.fillText(tx('cCap','the only light reaching the Moon is sunlight bent and reddened by our air'),W/2,H-14);
+    ctx.textAlign='center';ctx.fillStyle='rgba(255,220,190,0.9)';
+    const cap=tx('cCap','the only light reaching the Moon is sunlight bent and reddened by our air');
+    let capFs=11;ctx.font=capFs+'px system-ui';
+    while(ctx.measureText(cap).width>W-16&&capFs>7){capFs-=0.5;ctx.font=capFs+'px system-ui';}
+    ctx.fillText(cap,W/2,H-14);
     const dx0=14,dy0=H-64,dw=Math.min(200,W*0.3);
     ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font='9px system-ui';ctx.textAlign='left';
     ctx.fillText(tx('cDanjon','Danjon scale'),dx0,dy0-6);
@@ -12044,7 +12050,8 @@ function simAstro(container,color,lvl){
     ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='bold 10px system-ui';ctx.textAlign='center';
     ctx.fillText('H–R diagram',HRx+HRw/2,HRy-8);
     ctx.font='8px system-ui';ctx.fillStyle='rgba(255,255,255,0.45)';
-    ctx.fillText('hot ←  surface temperature  → cool',HRx+HRw/2,HRy+HRh+11);
+    const axT='hot ←  surface temperature  → cool';
+    ctx.fillText(ctx.measureText(axT).width<=HRw?axT:'hot ← temp → cool',HRx+HRw/2,HRy+HRh+11);
     ctx.save();ctx.translate(HRx-7,HRy+HRh/2);ctx.rotate(-Math.PI/2);
     ctx.fillText('dim ← luminosity → bright',0,0);ctx.restore();
     // main sequence band for reference
@@ -12426,7 +12433,9 @@ function simParticles(container,color,lvl){
       ctx.fillStyle=p.col;ctx.globalAlpha=alpha;ctx.fill();ctx.globalAlpha=1;
       ctx.fillStyle='rgba(255,255,255,0.9)';ctx.font=`bold ${p.r+1}px Nunito,sans-serif`;
       ctx.textAlign='center';ctx.textBaseline='middle';ctx.globalAlpha=alpha;
-      ctx.fillText(p.sym,p.x,p.y);ctx.globalAlpha=1;
+      // a symbol riding a particle that has already left shows as a clipped glyph
+      if(p.x>6&&p.x<W-6&&p.y>6&&p.y<H-6)ctx.fillText(p.sym,p.x,p.y);
+      ctx.globalAlpha=1;
     }
     // auto random decay
     if(t%120===0) spawnDecay(cx+(Math.random()-.5)*40,cy+(Math.random()-.5)*40,rE.val*.3);
@@ -12747,7 +12756,11 @@ function simDNA(container, color, lvl) {
       ctx.strokeStyle = '#fbbf24'; ctx.lineWidth = 2;
       ctx.setLineDash([4, 4]); ctx.stroke(); ctx.setLineDash([]);
       ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 10px Nunito,sans-serif';
-      ctx.textAlign = 'center'; ctx.fillText('← replication fork →', cx, fy - 6);
+      // beside the strands where there is room, so it stops sitting on the bases
+      const flT = '← replication fork →', flW = ctx.measureText(flT).width;
+      if (cx + 66 + flW < W - 4) { ctx.textAlign = 'left';  ctx.fillText(flT, cx + 66, fy + 3); }
+      else if (flW + 4 < cx - 66)  { ctx.textAlign = 'right'; ctx.fillText(flT, cx - 66, fy + 3); }
+      else { ctx.textAlign = 'center'; ctx.fillText('replication fork', cx, fy - 9); }
     }
 
     // reset when done
@@ -13852,7 +13865,8 @@ function simElectrochem(container, color, lvl) {
     ctx.fillStyle='rgba(14,165,233,0.07)';
     ctx.fillRect(anodeX+elecW/2, elecY, cathodeX-anodeX-elecW, elecH);
     ctx.fillStyle='rgba(14,165,233,0.3)'; ctx.font='10px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('Electrolyte (LiPF₆)', W/2, elecY+elecH/2);
+    // below the band the ions bob through, now that they actually spread out
+    ctx.fillText('Electrolyte (LiPF₆)', W/2, elecY+elecH-8);
 
     // external circuit (wire + bulb)
     const wireY = elecY - 22;
@@ -13892,7 +13906,9 @@ function simElectrochem(container, color, lvl) {
       const tx = mode==='idle' ? ion.x :
         dir > 0 ? anodeX+elecW/2+20 + prog*(cathodeX-elecW/2-20 - (anodeX+elecW/2+20))
                 : cathodeX-elecW/2-20 - prog*(cathodeX-elecW/2-20 - (anodeX+elecW/2+20));
-      const ty = elecY + 20 + Math.sin(ion.phase*1.3+ion.side==='L'?0:Math.PI)*(elecH-40)*0.4 + elecH*0.3;
+      // the phase offset needs its own parentheses: without them this parsed as
+      // ((phase*1.3 + side) === 'L') and every ion ended up on the same line
+      const ty = elecY + 20 + Math.sin(ion.phase*1.3 + (ion.side==='L'?0:Math.PI))*(elecH-40)*0.4 + elecH*0.3;
       ctx.beginPath(); ctx.arc(tx, ty, 5, 0, Math.PI*2);
       ctx.fillStyle='#34d399'; ctx.fill();
       ctx.fillStyle='#fff'; ctx.font='bold 7px Nunito,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
@@ -14632,7 +14648,10 @@ function simSolarSystem(container, color, lvl) {
         ctx.fillStyle=i===selected?'#fff':'rgba(255,255,255,0.55)';
         ctx.font=`${i===selected?'bold ':''} 9px Nunito,sans-serif`;
         ctx.textAlign='center';
-        const ly = (i%2===0) ? py-pr-4 : py+pr+10;
+        // four-phase stagger: with only two, every other planet shared a row and
+        // the inner ones collided once their orbits crowded on a narrow canvas
+        const lo=[-4,10,-13,19][i%4];
+        const ly = lo<0 ? py-pr+lo : py+pr+lo;
         ctx.fillText(p.name, px, ly);
       }
 
@@ -15163,8 +15182,11 @@ function simSleep(container,color,lvl){
     ctx.fillStyle=`hsl(${30+adenosine*20},80%,55%)`;
     ctx.beginPath(); ctx.roundRect(adX,adY,adW*adenosine,adBarH,7); ctx.fill();
     ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.font='bold 10px Nunito,sans-serif';
-    ctx.textAlign='left'; ctx.fillText('☕ Adenosine (sleep pressure)',adX,adY-5);
-    ctx.textAlign='right'; ctx.fillText((adenosine*100).toFixed(0)+'%',adX+adW,adY-5);
+    const adPct=(adenosine*100).toFixed(0)+'%';
+    const adFull='☕ Adenosine (sleep pressure)';
+    const room=adW-ctx.measureText(adPct).width-8;
+    ctx.textAlign='left'; ctx.fillText(ctx.measureText(adFull).width<=room?adFull:'☕ Adenosine',adX,adY-5);
+    ctx.textAlign='right'; ctx.fillText(adPct,adX+adW,adY-5);
  
     // Glymphatic activity bar
     const glX=W*0.05, glY=botY+30, glW=W*0.38, glBarH=14;
