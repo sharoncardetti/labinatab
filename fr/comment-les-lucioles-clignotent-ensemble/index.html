@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment les lucioles clignotent-elles ensemble | Lab-in-a-Tab</title>
+<meta name="description" content="Des milliers d'insectes pulsent à l'unisson, le long de berges entières, sans personne pour diriger. La règle que chacun suit tient sur une carte postale.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-fireflies-flash-in-sync/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-lampeggiano-insieme-le-lucciole/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-fireflies-flash-in-sync/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Comment les lucioles clignotent-elles ensemble — Expliqué et simulé">
+<meta property="og:description" content="Des milliers d'insectes pulsent à l'unisson, le long de berges entières, sans personne pour diriger. La règle que chacun suit tient sur une carte postale.">
+<meta property="og:url" content="https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment les lucioles clignotent-elles ensemble — Expliqué et simulé">
+<meta name="twitter:description" content="Des milliers d'insectes pulsent à l'unisson, le long de berges entières, sans personne pour diriger. La règle que chacun suit tient sur une carte postale.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/#article",
+   "headline": "Comment les lucioles clignotent-elles ensemble",
+   "name": "Comment les lucioles clignotent-elles ensemble",
+   "description": "Des milliers d'insectes pulsent à l'unisson, le long de berges entières, sans personne pour diriger. La règle que chacun suit tient sur une carte postale.",
+   "url": "https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/",
+   "mainEntityOfPage": "https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Synchronie",
+    "Oscillateurs couplés",
+    "Émergence"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Comment les lucioles clignotent-elles ensemble",
+    "sameAs": "https://en.wikipedia.org/wiki/Kuramoto_model"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Comment les lucioles clignotent-elles ensemble",
+     "item": "https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-fireflies-flash-in-sync/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-lampeggiano-insieme-le-lucciole/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-les-lucioles-clignotent-ensemble/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Règne animal</nav>
+  <h1>Comment les lucioles clignotent-elles ensemble</h1>
+  <p class="lead">Des milliers d'insectes pulsent à l'unisson, le long de berges entières, sans personne pour diriger. La règle que chacun suit tient sur une carte postale.</p>
+  <div class="chips"><span>Synchronie</span><span>Oscillateurs couplés</span><span>Émergence</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"fireflies":{"junior":{"coup":"Combien chacune regarde les autres","spread":"À quel point leurs rythmes diffèrent","num":"Combien de lucioles","sync":"À quel point elles sont ensemble","kk":"Force du regard","kc":"Force nécessaire","nn":"Lucioles","scatter":"Remélangez-les","cField":"une prairie de lucioles, chacune avec son rythme","cCircle":"où en est chacune dans son cycle","cTrace":"leur degré d'accord, instant par instant","cAll":"toutes ensemble","cNone":"aucun motif","cLocked":"elles clignotent comme une seule","cLoose":"chacune pour soi"},"student":{"coup":"Force de couplage","spread":"Dispersion des rythmes propres","num":"Nombre d'oscillateurs","sync":"Paramètre d'ordre","kk":"Couplage K","kc":"Couplage critique","nn":"Oscillateurs","scatter":"Randomiser les phases","cField":"une prairie de lucioles, chacune avec son rythme","cCircle":"la phase de chacune, sur le cercle","cTrace":"paramètre d'ordre au cours du temps","cAll":"entièrement verrouillées","cNone":"incohérentes","cLocked":"verrouillées ensemble","cLoose":"à la dérive"},"scholar":{"coup":"Couplage K","spread":"Dispersion en fréquence","num":"Taille de population N","sync":"Paramètre d'ordre r","kk":"Couplage K","kc":"Seuil Kc","nn":"Oscillateurs","scatter":"Randomiser les phases","cField":"population d'oscillateurs de phase","cCircle":"phases sur le cercle unité, avec le champ moyen","cTrace":"r en fonction du temps","cAll":"r = 1","cNone":"r = 0","cLocked":"partiellement verrouillées","cLoose":"état incohérent"}}});</script>
+<section class="sim-embed" data-sim="fireflies" data-color="#ca8a04" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Commencez avec <b>Combien chacune regarde les autres</b> à zéro, personne ne regarde personne, et observez le cercle : les points sont répartis uniformément et rien n'arrive jamais. Montez-le maintenant lentement et guettez le moment où le cercle se regroupe d'un coup - c'est un changement net, pas progressif. Montez ensuite <b>À quel point leurs rythmes diffèrent</b> pour rendre leurs rythmes propres plus différents et voyez combien il faut alors se regarder davantage pour tenir ensemble.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Maintenez <b>Dispersion des rythmes propres</b> fixe et montez <b>Force de couplage</b> lentement à travers la valeur affichée dans <b>Couplage critique</b>, en regardant <b>Paramètre d'ordre</b> rester près de zéro puis décoller : la croissance juste au-dessus du seuil va comme la racine carrée, d'où une allure de coin plutôt que de rampe. Montez ensuite <b>Dispersion des rythmes propres</b> et regardez le seuil de <b>Couplage critique</b> se déplacer avec lui, exactement proportionnellement.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#ca8a04"><span class="sg-lbl">Essaie</span><span>Approchez <b>Seuil Kc</b> par en dessous avec <b>Couplage K</b> et observez les fluctuations de taille finie dans <b>Paramètre d'ordre r</b> : l'état incohérent a un paramètre d'ordre de l'ordre de un sur racine de N, utilisez donc <b>Taille de population N</b> pour voir ce plancher descendre quand la population grandit. Franchissez ensuite le seuil et confirmez la croissance en racine carrée, qui est la signature expérimentale la plus nette d'une transition du second ordre plutôt que d'un passage graduel.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Une prairie vue de nuit. Chaque point est une luciole avec son rythme interne, et elle s'allume quand son cycle boucle. Le cercle en bas à gauche montre où en est chaque luciole dans son cycle : regroupées veut dire qu'elles vont clignoter ensemble, réparties uniformément veut dire que non. La ligne à droite suit leur degré d'accord au fil du temps.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Personne ne commande, et c'est tout l'intérêt.</b> Chaque luciole ne sait qu'une chose : quand une voisine clignote, avance un peu mon minuteur. Elle n'a aucune idée de ce que fait la prairie et n'en voit presque rien. L'ordre apparaît quand même, parce que la petite poussée s'auto-renforce : plus elles sont d'accord, plus la traction sur celles qui ne le sont pas est forte. Regardez ce que cela fait au seuil. En dessous il ne se passe rien du tout, quelle que soit votre patience ; au-dessus, tout le champ se verrouille en quelques secondes. Cette netteté est la signature du même type de transition qui rend un morceau de fer magnétique en refroidissant, et la trouver chez des insectes sur une berge est la raison pour laquelle ceci est devenu des mathématiques célèbres plutôt qu'une note naturaliste.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Une population d'oscillateurs de phase de fréquences propres tirées d'une distribution de Cauchy, couplés par le champ moyen. Le cercle en bas à gauche trace chaque phase sur le cercle unité, la flèche rouge montrant le paramètre d'ordre complexe : sa longueur est le degré de synchronie et sa direction la phase moyenne. La courbe à droite est cette longueur au cours du temps, et les affichages comparent le couplage au seuil analytique pour cette dispersion.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Le paramètre d'ordre est ce qui rend tout ceci soluble, et c'est aussi ce qui rend la synchronie auto-renforçante.</b> Moyenner les phases comme des vecteurs unitaires donne une longueur et une direction, et une fois substituées le terme de couplage s'effondre en une traction vers la phase moyenne dont la force est proportionnelle au degré de synchronisation déjà atteint. Un petit regroupement accidentel augmente donc la traction sur tout le monde, ce qui produit un regroupement plus grand. En dessous d'un couplage critique, l'état incohérent survit à cette rétroaction et la seule réponse stable est zéro ; au-dessus, une fraction de la population se verrouille tandis que les marginaux dérivent, et le paramètre d'ordre croît comme la racine carrée de l'excès - la même loi d'échelle qu'un ferromagnétique sous son point de Curie, dans la même classe d'universalité. Les vraies lucioles sont couplées par impulsions plutôt que continûment, et la version impulsionnelle est même plus robuste : des oscillateurs identiques couplés par impulsions se synchronisent depuis quasiment n'importe quelle condition initiale.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le modèle de Kuramoto en champ moyen avec des fréquences propres distribuées selon Cauchy, intégré explicitement. Le cercle unité montre la distribution des phases avec le paramètre d'ordre complexe tracé en vecteur ; la courbe est son module au cours du temps. Le couplage critique affiché est la valeur analytique pour cette dispersion, qui pour une lorentzienne vaut exactement le double de la demi-largeur, si bien que le seuil peut être vérifié contre la simulation au lieu d'être simplement affirmé.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Ce modèle possède une réduction exacte, et cela a changé ce qu'on peut lui demander.</b> Pour une distribution lorentzienne de fréquences, l'ansatz d'Ott-Antonsen effondre la dynamique de dimension infinie sur une variété invariante bidimensionnelle, donnant une équation différentielle ordinaire pour le paramètre d'ordre complexe : transitoires, bistabilité et synchronisation forcée sont devenus analytiquement traitables, et non plus le seul régime stationnaire. Deux conséquences à retenir. Sur un réseau plutôt qu'en tous-à-tous, la synchronisabilité est gouvernée par le rapport de valeurs propres laplaciennes via la fonction de stabilité maîtresse, et le résultat contre-intuitif est qu'ajouter des liens peut détruire la synchronie, un paradoxe de Braess pour oscillateurs. Et les états chimères existent : dans un anneau d'oscillateurs identiques et identiquement couplés, une partie de la population se verrouille tandis que le reste dérive, sans rien pour distinguer les deux régions. La symétrie se brise sans rien pour la briser, et c'est pourquoi ils sont passés inaperçus pendant quarante ans.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Aucun chef d'orchestre, et cela marche quand même</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Sur certaines rivières d'Asie du Sud-Est, des milliers de lucioles dans les arbres de la berge clignotent <strong>au même instant</strong>, encore et encore, pendant des heures. Des arbres entiers s'allument et s'éteignent ensemble. Les premiers voyageurs européens qui le rapportèrent ne furent pas crus pendant un siècle, parce que les explications évidentes - un chef, un signal, un battement de paupières de l'observateur - étaient toutes fausses.</p>
+<p>Il n'y a pas de chef. Chaque luciole suit une seule minuscule règle : elle a son rythme interne, et <strong>quand elle voit une voisine clignoter, elle avance un peu son propre minuteur</strong>. C'est toute la règle. Personne ne commande, personne ne sait ce que fait le groupe, et chaque insecte ne réagit qu'à ceux qu'il peut voir.</p>
+<p>De cette petite règle, l'ordre apparaît tout seul. Faites-les partir au hasard et au début ce n'est qu'un fouillis de scintillements. Puis de petits groupes se mettent au pas, ces groupes entraînent leurs voisins, et en une minute ou deux la prairie entière pulse ensemble. Rien n'a été organisé : cela s'est monté tout seul.</p>
+<p>Le plus intéressant est que cela n'arrive pas toujours. Si les lucioles se prêtent à peine attention, ou si leurs rythmes naturels sont trop différents, la petite poussée ne suffit pas et elles restent éparpillées pour toujours. Il y a un <strong>seuil</strong>, et il est net : en dessous, le chaos ; au-dessus, l'ordre soudain. Bougez lentement le curseur de couplage et guettez l'instant où cela bascule.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🌉</span> En 1665, Christiaan Huygens remarqua que deux horloges à pendule suspendues à la même poutre se mettaient au pas. C'est la même mathématique, et il l'a trouvée trois siècles avant que quiconque n'explique les lucioles.</li><li><span aria-hidden="true">👀</span> Une luciole ne voit que ses proches voisines, et pourtant des kilomètres entiers de berge finissent au pas. Se pousser mutuellement à l'échelle locale suffit à organiser quelque chose que personne ne voit en entier.</li><li><span aria-hidden="true">🫀</span> Les cellules du stimulateur de votre cœur font la même chose. Chacune a son rythme et tire les autres, et leur accord est ce que vous appelez un battement.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Le modèle de Kuramoto et une véritable transition de phase</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Réduisez une luciole à l'essentiel et vous obtenez un <strong>oscillateur de phase</strong> : une seule variable \(\theta\) qui défile régulièrement de 0 à \(2\pi\) et clignote au rebouclage. Donnez à chacun sa fréquence propre \(\omega_i\) tirée d'une distribution, et couplez chacun à tous les autres par un terme qui tire sa phase vers celle des voisins. Il en résulte le modèle de Kuramoto, \(\dot\theta_i = \omega_i + \frac{K}{N}\sum_j \sin(\theta_j - \theta_i)\), l'une des équations les plus étudiées de la science non linéaire.</p>
+<p>L'astuce qui le rend soluble est le <strong>paramètre d'ordre</strong>. Définissez \(re^{i\psi}\) comme la moyenne des \(e^{i\theta_j}\) sur tous les oscillateurs : \(r\) mesure le regroupement des phases, de 0 pour dispersées à 1 pour identiques, et \(\psi\) est la phase moyenne. Le terme de couplage s'effondre alors en \(Kr\sin(\psi - \theta_i)\) : chaque oscillateur est tiré vers la moyenne du groupe avec une force proportionnelle au degré de synchronisation déjà atteint. La synchronie s'auto-renforce donc, ce qui explique exactement que la transition soit nette plutôt que progressive.</p>
+<p>En dessous d'un couplage critique \(K_c\), le seul état stable a \(r = 0\) et les oscillateurs dérivent indépendamment. Au-dessus, une fraction d'entre eux se verrouille sur la phase moyenne tandis que les marginaux continuent de dériver, et \(r\) croît comme \(\sqrt{K - K_c}\) : cette croissance en racine carrée est la signature d'une transition de phase du second ordre, la même forme mathématique qu'un aimant s'ordonnant en refroidissant. Pour une dispersion lorentzienne des fréquences propres de demi-largeur \(\gamma\), le seuil vaut exactement \(K_c = 2\gamma\).</p>
+<p>Les vraies lucioles ne sont pas tout à fait cela. Elles interagissent par impulsions discrètes plutôt que par couplage continu, et pour l'essentiel elles ne corrigent pas le cycle en cours mais réinitialisent la phase du suivant. Les modèles à couplage impulsionnel de type Mirollo-Strogatz le capturent mieux, et donnent un résultat plus fort : pour des oscillateurs identiques à couplage excitateur par impulsions, la synchronie est atteinte depuis presque toute condition initiale. La version de la nature est plus robuste que le modèle lisse, pas moins.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Modèle de Kuramoto</th><td>\(\dot\theta_i = \omega_i + \dfrac{K}{N}\sum_{j}\sin(\theta_j-\theta_i)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Paramètre d'ordre</th><td>\(r e^{i\psi} = \dfrac{1}{N}\sum_j e^{i\theta_j}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Forme de champ moyen</th><td>\(\dot\theta_i = \omega_i + Kr\sin(\psi-\theta_i)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Couplage critique</th><td>\(K_c = 2\gamma\)</td><td class="cmt">demi-largeur lorentzienne γ</td></tr>
+<tr><th scope="row">Près du seuil</th><td>\(r \sim \sqrt{K-K_c}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📈</span> Le paramètre d'ordre croît comme la racine carrée de la distance au seuil. C'est la même loi d'échelle qu'un ferromagnétique s'ordonnant sous sa température de Curie - vraiment la même classe d'universalité.</li><li><span aria-hidden="true">⚡</span> Mirollo et Strogatz ont démontré que des oscillateurs identiques couplés par impulsions se synchronisent depuis presque toutes les conditions initiales. La version impulsionnelle du modèle est plus forte que la version lisse.</li><li><span aria-hidden="true">🎯</span> Pour une dispersion lorentzienne des rythmes propres, le seuil vaut exactement le double de la demi-largeur. C'est l'un des rares cas en dynamique non linéaire où un point de transition s'obtient sous forme close.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Solutions exactes, topologie de réseau et la synchronie comme principe de conception</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>L'ansatz d'Ott-Antonsen</h3>
+<p>Pendant des décennies le modèle de Kuramoto n'était traitable qu'en régime stationnaire. Ott et Antonsen ont montré en 2008 que pour une distribution lorentzienne de fréquences la dynamique de dimension infinie s'effondre exactement sur une variété bidimensionnelle, réduisant tout le système à une équation différentielle ordinaire pour le paramètre d'ordre complexe. Cela a rendu soluble le comportement <em>transitoire</em>, et non plus seulement les points fixes, ouvrant à l'analyse exacte les états chimères, la bistabilité et la synchronisation forcée. La réduction n'est pas une approximation : c'est une variété invariante qui attire presque toutes les conditions initiales.</p>
+<h3><span class="hn">02</span>États chimères</h3>
+<p>En 2002, Kuramoto et Battogtokh ont trouvé une chose qu'on croyait impossible : dans un anneau d'oscillateurs identiques et identiquement couplés, un état stable où une région se verrouille en synchronie parfaite tandis qu'une autre dérive de façon incohérente. Rien ne distingue les deux régions - la symétrie se brise spontanément. Des chimères ont depuis été produites dans des oscillateurs chimiques, des métronomes mécaniques et des réseaux de lasers, et on les juge pertinentes pour le sommeil unihémisphérique des dauphins et des oiseaux, où la moitié d'un cerveau dort pendant que l'autre reste éveillée.</p>
+<h3><span class="hn">03</span>Topologie, et la fonction de stabilité maîtresse</h3>
+<p>Le couplage tous-à-tous est une fiction commode. Sur un réseau, la stabilité de la synchronie est déterminée par le spectre du laplacien du graphe : la fonction de stabilité maîtresse de Pecora et Carroll sépare la dynamique de l'oscillateur individuel de la topologie, si bien que la synchronisabilité se réduit au rapport de valeurs propres \(\lambda_N/\lambda_2\). Le recâblage petit-monde l'améliore spectaculairement, ce qui est une raison plausible pour de telles topologies dans le tissu neural. Le résultat contre-intuitif du domaine est qu'ajouter des liens peut <em>détruire</em> la synchronie, l'analogue en réseau du paradoxe de Braess.</p>
+<h3><span class="hn">04</span>Ce que font réellement les lucioles, biologiquement</h3>
+<p>Chez <em>Pteroptyx malaccae</em>, la synchronie s'obtient par ajustement de période plutôt que par réinitialisation de phase : l'insecte modifie sa propre fréquence libre pour l'accorder au stimulus, et peut atteindre un déphasage nul, ce que la simple réinitialisation ne permet pas. La fonction probable relève d'un argument de rapport signal sur bruit : un chœur synchronisé est visible par les femelles bien plus loin à travers la végétation qu'un individu isolé, et à l'intérieur le flash d'un mâle n'est pas masqué par ses voisins. Chez l'espèce américaine <em>Photinus carolinus</em> le schéma diffère encore - des salves de flashs séparées par de l'obscurité, la synchronie émergeant au sein de chaque salve, et des travaux récents montrent qu'elle est médiée par un petit nombre de voisins visibles plutôt que par une moyenne globale.</p>
+<h3><span class="hn">05</span>Où la même équation resurgit</h3>
+<p>Le modèle n'est pas une curiosité entomologique. Les réseaux électriques sont bien décrits par des oscillateurs de Kuramoto du second ordre, les générateurs jouant le rôle des phases et la perte de synchronie celui d'une panne généralisée ; le même paramètre d'ordre mesure la cohérence du réseau. Les cellules stimulatrices circadiennes du noyau suprachiasmatique se synchronisent par un terme de couplage exactement de cette forme. Les réseaux de jonctions Josephson sont mathématiquement identiques. Et la synchronie pathologique du noyau subthalamique est la cible de la stimulation cérébrale profonde dans la maladie de Parkinson, où les protocoles de stimulation désynchronisante sont conçus directement à partir de cette théorie.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Ott-Antonsen</th><td>\(\dot{z} = \dfrac{K}{2}\left(z - |z|^2 z\right) - \gamma z + i\Omega z\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Stabilité maîtresse</th><td>\(\dot{\xi} = \left[DF - \sigma\lambda_k DH\right]\xi\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Synchronisabilité</th><td>\(R = \dfrac{\lambda_N}{\lambda_2}\)</td><td class="cmt">plus petit est meilleur</td></tr>
+<tr><th scope="row">Forme réseau électrique</th><td>\(M\ddot\theta_i + D\dot\theta_i = P_i - \sum_j K_{ij}\sin(\theta_i-\theta_j)\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🪞</span> Les états chimères sont des motifs stables où des oscillateurs identiques et identiquement couplés se scindent spontanément en un groupe synchronisé et un groupe à la dérive. La symétrie se brise sans rien pour la briser.</li><li><span aria-hidden="true">🕸️</span> Ajouter des connexions à un réseau peut détruire la synchronie au lieu de l'aider - l'analogue pour la synchronisation du paradoxe de Braess, où une route nouvelle empire le trafic.</li><li><span aria-hidden="true">🧠</span> La stimulation cérébrale profonde pour Parkinson vise la synchronie pathologique, et les protocoles désynchronisants sont conçus directement à partir de la théorie des oscillateurs couplés.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Kuramoto_model" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Règne animal</h2>
+    <ul><li><a href="/fr/comment-s-orientent-les-tortues-marines/">Comment s'orientent les tortues marines</a></li><li><a href="/fr/temperature-du-nid-decide-le-sexe/">Comment la température du nid décide le sexe</a></li><li><a href="/fr/comment-les-requins-sentent-electricite/">Comment les requins sentent l'électricité</a></li><li><a href="/fr/comment-communiquent-les-abeilles-danse/">Comment les abeilles se disent où aller</a></li><li><a href="/fr/comment-les-chauves-souris-utilisent-echolocation/">Comment les chauves-souris voient avec le son</a></li><li><a href="/fr/comment-les-fourmis-trouvent-leur-chemin/">Comment les fourmis trouvent-elles le plus court chemin</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

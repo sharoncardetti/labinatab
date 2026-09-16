@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment agit vraiment la caféine | Lab-in-a-Tab</title>
+<meta name="description" content="La caféine ne vous donne pas d'énergie. Elle cache le signal qui dit que vous êtes fatigué, et le signal continue de s'accumuler dessous pendant ce temps.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/comment-agit-la-cafeine/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-does-caffeine-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-la-caffeina/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-agit-la-cafeine/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-does-caffeine-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Comment agit vraiment la caféine — Expliqué et simulé">
+<meta property="og:description" content="La caféine ne vous donne pas d'énergie. Elle cache le signal qui dit que vous êtes fatigué, et le signal continue de s'accumuler dessous pendant ce temps.">
+<meta property="og:url" content="https://labinatab.com/fr/comment-agit-la-cafeine/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment agit vraiment la caféine — Expliqué et simulé">
+<meta name="twitter:description" content="La caféine ne vous donne pas d'énergie. Elle cache le signal qui dit que vous êtes fatigué, et le signal continue de s'accumuler dessous pendant ce temps.">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/comment-agit-la-cafeine/#article",
+   "headline": "Comment agit vraiment la caféine",
+   "name": "Comment agit vraiment la caféine",
+   "description": "La caféine ne vous donne pas d'énergie. Elle cache le signal qui dit que vous êtes fatigué, et le signal continue de s'accumuler dessous pendant ce temps.",
+   "url": "https://labinatab.com/fr/comment-agit-la-cafeine/",
+   "mainEntityOfPage": "https://labinatab.com/fr/comment-agit-la-cafeine/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Adénosine",
+    "Demi-vie",
+    "Pression de sommeil"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Comment agit vraiment la caféine",
+    "sameAs": "https://en.wikipedia.org/wiki/Caffeine"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Comment agit vraiment la caféine",
+     "item": "https://labinatab.com/fr/comment-agit-la-cafeine/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-does-caffeine-work/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-la-caffeina/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-agit-la-cafeine/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Neurosciences</nav>
+  <h1>Comment agit vraiment la caféine</h1>
+  <p class="lead">La caféine ne vous donne pas d'énergie. Elle cache le signal qui dit que vous êtes fatigué, et le signal continue de s'accumuler dessous pendant ce temps.</p>
+  <div class="chips"><span>Adénosine</span><span>Demi-vie</span><span>Pression de sommeil</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"caffeine":{"junior":{"cups":"Tasses par jour","last":"Heure de la dernière","wake":"Vous vous réveillez à","bed":"Encore en vous au coucher","occ":"Prises bloquées","lat":"Temps en plus pour s'endormir","tot":"Caféine aujourd'hui","filter":"Grand mug de café","shot":"Petit café serré","cDay":"une journée, heure par heure","cHalf":"la moitié part toutes les 5 heures","cBedtime":"coucher","cAden":"fatigue qui s'accumule","cFelt":"à quel point vous vous sentez fatigué","cCaf":"caféine dans le sang","cRec":"les prises à l'heure du coucher","cBlocked":"tenues fermées par la caféine","cFree":"encore libres pour la fatigue"},"student":{"cups":"Tasses par jour","last":"Heure de la dernière","wake":"Vous vous réveillez à","bed":"Encore en vous au coucher","occ":"Récepteurs bloqués","lat":"Temps en plus pour s'endormir","tot":"Caféine aujourd'hui","filter":"Mug de café filtre","shot":"Un espresso","cDay":"une journée, heure par heure","cHalf":"demi-vie 5 heures","cBedtime":"coucher","cAden":"pression de sommeil qui s'accumule","cFelt":"à quel point vous vous sentez fatigué","cCaf":"caféine dans le sang","cRec":"les récepteurs à l'adénosine au coucher","cBlocked":"tenus fermés par la caféine","cFree":"encore libres pour l'adénosine"},"scholar":{"cups":"Doses par jour","last":"Heure de la dernière dose","wake":"Heure du réveil","bed":"Taux plasmatique au coucher","occ":"Occupation des récepteurs","lat":"Latence d'endormissement ajoutée","tot":"Apport journalier","filter":"Café filtre, 95 mg","shot":"Espresso, 63 mg","cDay":"24 heures, une journée","cHalf":"premier ordre, t demi 5 h","cBedtime":"coucher","cAden":"Processus S, pression homéostatique","cFelt":"somnolence perçue","cCaf":"caféine plasmatique","cRec":"occupation A1 au coucher","cBlocked":"antagoniste lié","cFree":"disponibles pour l'adénosine"}}});</script>
+<section class="sim-embed" data-sim="caffeine" data-color="#b45309" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Déplacez <b>Heure de la dernière</b> de plus en plus tard et regardez la ligne orange encore bien loin du plancher au repère pointillé du coucher. Puis regardez <b>Encore en vous au coucher</b> et voyez combien de milligrammes sont encore vraiment en vous. Descendez <b>Tasses par jour</b> à une et remarquez que la ligne bleue ne change pas du tout : seule la rose change.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Mettez <b>Heure de la dernière</b> à 16:00 et lisez <b>Encore en vous au coucher</b> : une seule tasse d'après-midi est encore nettement présente huit heures plus tard. Puis comparez <b>Récepteurs bloqués</b> entre une tasse et six : l'occupation sature, si bien que la sixième tasse achète bien moins de blocage que la première. Passez de <b>Mug de café filtre</b> à la dose plus petite et voyez quelle part de l'effet du soir tient à la dose plutôt qu'à l'heure.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#b45309"><span class="sg-lbl">Essaie</span><span>Fixez l'apport journalier total et déplacez-le avec <b>Heure de la dernière dose</b> : l'aire sous la courbe de caféine change à peine tandis que <b>Occupation des récepteurs</b> au coucher change énormément, ce qui isole l'horaire de la dose. Puis utilisez <b>Doses par jour</b> pour atteindre la région saturante de la courbe de liaison et notez à quel point l'occupation répond faiblement une fois que le rapport est déjà élevé.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Une journée entière, heure par heure. La zone bleue est la fatigue qui s'accumule dès le moment du réveil : tant que vous êtes éveillé, elle ne peut que monter. La ligne orange en pointillés est la quantité de caféine en vous, qui saute à chaque tasse puis s'efface. La ligne rose est ce que vous ressentez vraiment, c'est-à-dire la ligne bleue dont la caféine cache un morceau. En dessous, les petites prises sur vos cellules cérébrales à l'heure du coucher, colorées selon ce qui s'y trouve.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La caféine ne fabrique pas d'énergie. Elle cache le signal de fatigue pendant que le signal continue de s'accumuler dessous.</b> Regardez les deux lignes : la bleue, la vraie, monte toute la journée quoi que vous buviez. La rose n'est que ce qu'on vous laisse ressentir. Quand la caféine finit par s'en aller, l'écart entre les deux arrive d'un seul coup, et c'est exactement ce qu'est le creux de l'après-midi. Et regardez les délais : la moitié d'une tasse est encore en vous cinq heures plus tard, un quart après dix heures, si bien qu'un café de milieu d'après-midi est mesurablement présent à minuit. C'est le chiffre que presque tout le monde se trompe, et les prises en bas vous montrent ce qu'il fait pendant que vous essayez de dormir.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Un tracé de 24 heures. La pression de sommeil monte comme une exponentielle saturante depuis l'heure du réveil ; la caféine est administrée à chaque tasse et éliminée avec une cinétique du premier ordre à demi-vie de cinq heures. L'occupation des récepteurs suit une liaison compétitive, si bien que la somnolence ressentie est le signal homéostatique multiplié par la fraction de récepteurs encore disponibles. La rangée du bas dessine cette occupation à l'heure du coucher, fixée seize heures après le réveil.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La caféine est un antagoniste compétitif, ce qui veut dire qu'elle bloque le signal sans toucher à ce qui le produit.</b> La courbe homéostatique n'est changée par rien de ce que vous buvez - seule la courbe perçue bouge - si bien que la dette est reportée plutôt que payée, et elle est livrée en entier quand le blocage se relâche. Deux conséquences en découlent, qui valent d'être gardées. Comme la liaison est compétitive, l'occupation dépend du rapport des concentrations, donc la même dose fait moins quand vous êtes vraiment privé de sommeil et que l'adénosine est déjà haute. Et comme l'élimination est du premier ordre avec une demi-vie autour de cinq heures - très variable selon les personnes, puisque CYP1A2 fait presque tout le travail - la question pertinente n'est jamais combien vous avez bu mais il y a combien de temps.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Processus S modélisé comme une exponentielle saturante pendant l'éveil, avec la caféine administrée de façon discrète et éliminée au premier ordre à demi-vie de cinq heures. L'occupation utilise un terme de liaison compétitive de forme michaélienne, et la somnolence perçue est le signal homéostatique mis à l'échelle par la fraction de récepteurs libres ; le processus circadien est délibérément omis pour que l'effet homéostatique se lise proprement. La rangée des récepteurs montre l'occupation à une heure de coucher fixée seize heures après le réveil.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>L'adénosine est un capteur métabolique plutôt qu'une horloge, et cette distinction porte l'essentiel de la physiologie intéressante.</b> L'adénosine extracellulaire monte par dégradation de l'ATP et par libération astrocytaire d'ATP hydrolysé à la membrane - bloquer la gliotransmission chez la souris supprime une grande part du phénotype de privation de sommeil - si bien que la quantité rapportée est une charge métabolique cumulée, pas du temps écoulé. Deux autres points que le modèle laisse ici volontairement de côté. La caféine engage les récepteurs A1 et A2A avec une affinité comparable, si bien qu'une seule molécule livre un stimulant d'éveil par le blocage cortical d'A1 et un renforçateur léger par le blocage striatal d'A2A. Et ce n'est pas seulement un bloqueur : 200 mg trois heures avant le coucher produisent un retard de phase circadien d'environ 40 minutes, à peu près la moitié de celui de la lumière vive, si bien qu'une dose tardive cache à la fois la pression accumulée et déplace l'horloge qui gouverne quand elle peut se décharger.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Emprunter de la lucidité, pas en fabriquer</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Chaque heure que vous passez éveillé, une substance appelée <strong>adénosine</strong> s'accumule dans votre cerveau. C'est un sous-produit du cerveau qui consomme de l'énergie, elle s'accumule donc simplement parce que vous êtes vivant et que vous pensez, et elle s'emboîte dans de petites prises sur vos cellules cérébrales. Plus elle occupe de prises, plus vous vous sentez fatigué. C'est cela, la somnolence : un décompte du temps que vous avez passé éveillé, converti en substance chimique et lu.</p>
+<p>La caféine a une forme presque identique à celle de l'adénosine. Assez proche pour entrer dans les mêmes prises, et pas assez proche pour y faire quoi que ce soit une fois dedans. Elle reste donc dans la prise, sans rien faire, en tenant l'adénosine à l'écart. Le signal de fatigue continue d'être produit, en entier, à l'heure. C'est seulement vous qui cessez de le recevoir.</p>
+<p>Voilà pourquoi la caféine ressemble à de l'énergie sans en être. Rien n'a été ajouté. L'adénosine a continué de s'accumuler pendant tout le temps où la caféine était en travers, et quand la caféine finit par partir, tout arrive d'un coup. Ce creux brutal de l'après-midi n'est pas le café qui cesse d'agir : ce sont plusieurs heures de fatigue reportée livrées en une fois.</p>
+<p>L'autre moitié de l'histoire est le temps. La caféine quitte le corps lentement : environ la moitié est partie après cinq heures, la moitié du reste après cinq heures de plus. Un café à seize heures a encore un quart de sa caféine en vous à deux heures du matin. Mettez le curseur sur l'heure de votre dernier café et regardez ce qu'il en reste au coucher. La plupart des gens sont surpris.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧩</span> La caféine agit en entrant dans une prise qu'elle ne sait pas activer. Les chimistes appellent cela un antagoniste : elle bloque la place au lieu de faire le travail de ce qui s'y assoit normalement.</li><li><span aria-hidden="true">⏳</span> Demi-vie signifie qu'il en reste la moitié après cinq heures, un quart après dix, un huitième après quinze. Un café de seize heures est encore mesurablement présent quand vous essayez de vous endormir.</li><li><span aria-hidden="true">😴</span> La caféine ne réduit pas la pression de sommeil, elle la cache. La dette reste due, et c'est pourquoi une journée très caféinée se termine souvent par un effondrement inhabituellement lourd.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Antagonisme récepteur, cinétique du premier ordre et le modèle à deux processus</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>La somnolence est gouvernée par deux processus qui tournent ensemble. Le <strong>Processus S</strong> est la pression homéostatique de sommeil, qui monte de façon à peu près exponentielle vers un plafond pendant l'éveil et se décharge durant le sommeil ; l'adénosine dans le prosencéphale basal en est le corrélat chimique le mieux connu. Le <strong>Processus C</strong> est le rythme circadien, une oscillation indépendante de 24 heures pilotée par le noyau suprachiasmatique et entraînée par la lumière. La vigilance subjective est l'écart entre les deux, et c'est pourquoi on peut se sentir plus éveillé à 22 h qu'à 16 h malgré cinq heures d'éveil de plus : le signal circadien est à son maximum.</p>
+<p>La caféine n'agit que sur le premier processus, comme antagoniste compétitif des récepteurs A1 et A2A de l'adénosine. Compétitif est important : l'occupation dépend du rapport des concentrations, donc la même dose fait moins quand l'adénosine est déjà haute, ce qui est la raison pharmacologique pour laquelle la caféine marche mal sur quelqu'un de vraiment privé de sommeil. Bloquer les récepteurs A2A dans le striatum désinhibe aussi la signalisation dopaminergique, ce qui rend compte de l'effet sur l'humeur et pas seulement sur la vigilance.</p>
+<p>L'élimination suit une cinétique du premier ordre avec une demi-vie d'environ cinq heures chez un adulte typique, mais ce nombre cache une variabilité énorme. L'enzyme CYP1A2 fait environ 95 % du travail, et des variantes génétiques courantes séparent la population en métaboliseurs rapides et lents dont les demi-vies diffèrent d'un facteur deux ou plus. Les contraceptifs oraux la doublent à peu près ; le tabac la divise à peu près par deux ; la grossesse peut la porter au-delà de quinze heures.</p>
+<p>La tolérance se développe en jours ou en semaines, largement par augmentation du nombre de récepteurs à l'adénosine : plus de prises, donc le même blocage couvre une fraction plus petite. C'est pourquoi les buveurs habituels rapportent que le café se contente de les ramener à la normale : leur ligne de base inclut désormais le blocage, et le mal de tête de sevrage à l'arrêt reflète les récepteurs en trop sans rien en travers.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Élimination</th><td>\(C(t) = C_0\,e^{-t/\tau},\qquad \tau = \dfrac{t_{1/2}}{\ln 2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Demi-vie</th><td>\(t_{1/2} \approx 5\ \text{h}\)</td><td class="cmt">de 2,5 h à 10 h selon les gens</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Occupation des récepteurs</th><td>\(\theta = \dfrac{C}{C + K_d}\)</td><td class="cmt">liaison compétitive</td></tr>
+<tr><th scope="row">Pression de sommeil</th><td>\(S(t) = 1 - e^{-(t-t_{\text{réveil}})/\tau_s}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Somnolence ressentie</th><td>\(\tilde{S} = S\,(1 - \alpha\theta)\)</td><td class="cmt">le signal, moins ce qui est bloqué</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧬</span> Les variantes de CYP1A2 font que certaines personnes éliminent la caféine deux fois plus vite que d'autres. Le même espresso à 18 h est sans conséquence pour l'une et ruine la nuit de la suivante.</li><li><span aria-hidden="true">📈</span> La pression de sommeil et le rythme circadien sont indépendants, et c'est pourquoi le creux de l'après-midi arrive à une heure fixe de l'horloge plutôt qu'à un nombre fixe d'heures après le réveil.</li><li><span aria-hidden="true">🔁</span> La tolérance est une augmentation du nombre de récepteurs, pas une adaptation du foie. C'est aussi pourquoi le mal de tête de sevrage apparaît dans la journée qui suit l'arrêt et passe en une semaine environ.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>L'adénosine comme capteur énergétique, A1 contre A2A, et ce qu'est vraiment la dette de sommeil</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>L'adénosine est une lecture métabolique, pas une horloge</h3>
+<p>L'adénosine extracellulaire monte pendant l'éveil en partie par dégradation de l'ATP et en partie par libération d'ATP par les astrocytes, ensuite hydrolysé en adénosine par les ectonucléotidases. La contribution astrocytaire compte conceptuellement : bloquer la gliotransmission chez la souris abolit une grande part de l'effet de la privation de sommeil sans changer la décharge neuronale, donc le signal qui rapporte la fatigue est au moins en partie glial. L'adénosine n'est donc pas un chronomètre qui compte les heures mais un capteur qui rapporte la charge métabolique cumulée, et c'est pourquoi un travail cognitif intense et le simple temps d'éveil ne sont pas équivalents.</p>
+<h3><span class="hn">02</span>Deux récepteurs, deux médicaments différents dans une seule molécule</h3>
+<p>Les récepteurs A1 sont inhibiteurs, répandus et couplés à Gi ; leur blocage dans le prosencéphale basal et le cortex produit l'éveil. Les récepteurs A2A sont couplés à Gs et concentrés dans le striatum, et leur blocage produit les effets de renforcement et de motivation : la délétion génétique d'A2A abolit la stimulation locomotrice de la caféine alors que celle d'A1 non. Les affinités sont assez proches pour que les doses ordinaires engagent les deux, si bien qu'une seule molécule livre à la fois un stimulant d'éveil et un renforçateur léger. La tomographie par émission de positons situe l'occupation d'A1 autour de 50 % après environ 450 mg, ce qui est un blocage considérable pour une substance vendue sans commentaire.</p>
+<h3><span class="hn">03</span>Le modèle à deux processus, quantitativement</h3>
+<p>La formulation de Borbély fait de la pression de sommeil une fonction exponentielle saturante pendant l'éveil et une décroissance exponentielle pendant le sommeil, avec début et fin du sommeil à des seuils modulés par le processus circadien. Elle prédit la durée du sommeil de récupération et l'activité à ondes lentes après privation assez bien pour être utilisée dans les modèles de risque de fatigue en aviation et en travail posté. L'activité à ondes lentes de l'EEG est l'indice physiologique standard du Processus S, et elle décline au cours de la nuit comme le modèle l'exige : l'un des cas les plus nets d'un construit psychologique doté d'un corrélat physique mesurable.</p>
+<h3><span class="hn">04</span>Décalage de phase, et pourquoi un café tardif coûte double</h3>
+<p>La caféine ne bloque pas seulement le signal homéostatique : elle retarde aussi l'horloge circadienne. Un protocole en double aveugle a trouvé que 200 mg trois heures avant le coucher produisent un retard de phase d'environ 40 minutes, à peu près la moitié du décalage produit par la lumière vive, apparemment via la signalisation AMPc dans le noyau suprachiasmatique. Un café du soir cache donc à la fois la pression accumulée et déplace l'horloge qui gouverne le moment où cette pression peut se décharger : deux mécanismes qui poussent dans le même sens, et c'est pourquoi l'effet sur l'endormissement dépasse ce que la seule pharmacocinétique prédirait.</p>
+<h3><span class="hn">05</span>Ce que l'épidémiologie soutient et ce qu'elle ne soutient pas</h3>
+<p>Les études de cohorte associent avec constance une consommation modérée - trois à quatre tasses par jour - à une mortalité toutes causes légèrement plus basse, et l'association survit à l'ajustement sur le tabac et vaut aussi pour le café décaféiné, ce qui pointe vers les polyphénols plutôt que vers la caféine. C'est précisément ce détail qui invite à la prudence : l'association avec la santé voyage avec le café, la perturbation du sommeil voyage avec la caféine, et les confondre produit des conseils confiants et faux dans les deux directions.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Processus S, éveil</th><td>\(S(t) = 1 - (1-S_0)e^{-t/\tau_r}\)</td><td class="cmt">τ ≈ 18 h</td></tr>
+<tr><th scope="row">Processus S, sommeil</th><td>\(S(t) = S_0\,e^{-t/\tau_d}\)</td><td class="cmt">τ ≈ 4 h</td></tr>
+<tr><th scope="row">Processus C</th><td>\(C(t) = a\sin\!\left(\tfrac{2\pi}{24}(t-\phi)\right)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Décalage compétitif</th><td>\(\text{EC}_{50}^{\text{app}} = \text{EC}_{50}\left(1 + \tfrac{[I]}{K_i}\right)\)</td><td class="cmt">pourquoi elle échoue sur les vrais fatigués</td></tr>
+<tr><th scope="row">Accumulation</th><td>\(C_{\text{ss}} = \dfrac{D}{1 - e^{-\Delta t/\tau}}\)</td><td class="cmt">doses répétées</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧫</span> Bloquer la gliotransmission astrocytaire chez la souris supprime une grande part de l'altération cognitive due à la privation de sommeil, mettant en cause la glie plutôt que les neurones dans la production du signal de pression de sommeil.</li><li><span aria-hidden="true">🕰️</span> 200 mg de caféine trois heures avant le coucher retardent l'horloge circadienne humaine d'environ 40 minutes, soit à peu près la moitié du décalage de phase produit par trois heures de lumière vive.</li><li><span aria-hidden="true">📊</span> L'association avec la mortalité vaut aussi pour le café décaféiné, ce qui est la meilleure preuve que le bénéfice n'est pas la caféine et que le coût sur le sommeil n'est pas le café.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Caffeine" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Neurosciences</h2>
+    <ul><li><a href="/fr/cerveau-neurones/">Le cerveau et les neurones</a></li><li><a href="/fr/cerveau-electrique/">Le cerveau électrique</a></li><li><a href="/fr/comment-fonctionne-la-memoire/">Comment fonctionne la mémoire</a></li><li><a href="/fr/sommeil-conscience/">Sommeil et conscience</a></li><li><a href="/fr/comment-fonctionnent-les-illusions-d-optique/">Comment les illusions d'optique trompent-elles le cerveau</a></li><li><a href="/fr/que-fait-vraiment-la-dopamine/">Que fait vraiment la dopamine</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

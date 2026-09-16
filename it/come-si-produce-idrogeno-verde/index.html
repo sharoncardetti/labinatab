@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come si produce l'idrogeno verde | Lab-in-a-Tab</title>
+<meta name="description" content="Fai passare elettricità nell'acqua e si separa in idrogeno e ossigeno, due bolle contro una, esattamente come dice la formula. Tutto ciò che è…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-si-produce-idrogeno-verde/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-green-hydrogen-is-made/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-si-produce-idrogeno-verde/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-produit-on-l-hydrogene-vert/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-green-hydrogen-is-made/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come si produce l'idrogeno verde — Spiegato e simulato">
+<meta property="og:description" content="Fai passare elettricità nell'acqua e si separa in idrogeno e ossigeno, due bolle contro una, esattamente come dice la formula. Tutto ciò che è…">
+<meta property="og:url" content="https://labinatab.com/it/come-si-produce-idrogeno-verde/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come si produce l'idrogeno verde — Spiegato e simulato">
+<meta name="twitter:description" content="Fai passare elettricità nell'acqua e si separa in idrogeno e ossigeno, due bolle contro una, esattamente come dice la formula. Tutto ciò che è…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-si-produce-idrogeno-verde/#article",
+   "headline": "Come si produce l'idrogeno verde",
+   "name": "Come si produce l'idrogeno verde",
+   "description": "Fai passare elettricità nell'acqua e si separa in idrogeno e ossigeno, due bolle contro una, esattamente come dice la formula. Tutto ciò che è…",
+   "url": "https://labinatab.com/it/come-si-produce-idrogeno-verde/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-si-produce-idrogeno-verde/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Elettrolisi",
+    "Rendimento",
+    "Celle a combustibile"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come si produce l'idrogeno verde",
+    "sameAs": "https://en.wikipedia.org/wiki/Electrolysis_of_water"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come si produce l'idrogeno verde",
+     "item": "https://labinatab.com/it/come-si-produce-idrogeno-verde/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-green-hydrogen-is-made/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-si-produce-idrogeno-verde/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-produit-on-l-hydrogene-vert/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energia</nav>
+  <h1>Come si produce l'idrogeno verde</h1>
+  <p class="lead">Fai passare elettricità nell'acqua e si separa in idrogeno e ossigeno, due bolle contro una, esattamente come dice la formula. Tutto ciò che è interessante nell'idrogeno è quanto ti costa.</p>
+  <div class="chips"><span>Elettrolisi</span><span>Rendimento</span><span>Celle a combustibile</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"hydrogen":{"junior":{"cur":"Quanto spingi la corrente","price":"Prezzo dell'elettricità","use":"🔁 Ritorna a elettricità","use2":"🏭 Usalo come materiale","eff":"Quanta elettricità viene conservata","rate":"Idrogeno prodotto","spec":"Elettricità per chilogrammo","cost":"Costo al chilogrammo","cCell":"acqua con dentro due piastre metalliche","cH2":"idrogeno - due bolle per ogni una di ossigeno","cO2":"bolle di ossigeno","cVolt":"volt applicati alla cella","cHeat":"calore","cWaste":"i volt in più diventano calore, non gas","cChain":"che fine fanno 100 unità di elettricità","cStack":"spaccare l'acqua","cComp":"comprimerlo in un serbatoio","cFC":"riportarlo a elettricità","cOut":"quello che ti resta alla fine","cMol":"usato come materiale - nessuna seconda conversione","cBatt":"una batteria ti avrebbe restituito questo"},"student":{"cur":"Densità di corrente j","price":"Prezzo dell'elettricità","use":"🔁 Ritorno a elettricità","use2":"🏭 Usato come molecola","eff":"Rendimento di sistema","rate":"Idrogeno prodotto","spec":"Consumo specifico","cost":"Costo al kg","cCell":"cella di elettrolisi","cH2":"H₂ al catodo - 2:1 in volume","cO2":"O₂ all'anodo","cVolt":"tensione di cella","cHeat":"calore","cWaste":"ogni volt sopra 1,48 V è calore","cChain":"catena energetica da 100 kWh di elettricità","cStack":"elettrolisi","cComp":"compressione a 700 bar","cFC":"cella a combustibile","cOut":"consegnato","cMol":"usato come materia prima - nessuna riconversione","cBatt":"un ciclo di batteria per confronto"},"scholar":{"cur":"Densità di corrente j","price":"Prezzo dell'elettricità","use":"🔁 Power-to-power","use2":"🏭 Uso come molecola","eff":"Rendimento di sistema (HHV)","rate":"Idrogeno prodotto","spec":"Consumo specifico di energia","cost":"Costo al kg","cCell":"cella PEM","cH2":"sviluppo di H₂ al catodo","cO2":"sviluppo di O₂ all'anodo","cVolt":"tensione di cella","cHeat":"calore","cWaste":"V − 1,48 va in calore","cChain":"rendimento di catena da 100 kWh","cStack":"elettrolisi","cComp":"compressione a 700 bar","cFC":"cella a combustibile","cOut":"consegnato","cMol":"uso come materia prima - nessuna riconversione","cBatt":"ciclo di batteria per confronto"}}});</script>
+<section class="sim-embed" data-sim="hydrogen" data-color="#0d9488" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0d9488"><span class="sg-lbl">Prova</span><span>Trascina <b>Quanto spingi la corrente</b> su e giù e guarda due cose che si combattono: le bolle arrivano più in fretta, quindi <b>Idrogeno prodotto</b> sale, ma la parte verde della barra della tensione si restringe e <b>Quanta elettricità viene conservata</b> cala. Trova il punto in cui secondo te lo scambio conviene. Poi lascia stare la corrente e muovi <b>Prezzo dell'elettricità</b>, guardando solo <b>Costo al chilogrammo</b>: il prezzo dell'elettricità è quasi tutta la fattura. Infine premi il pulsante per passare dal rimandare l'idrogeno in una macchina che rifà elettricità all'usare direttamente l'idrogeno.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0d9488"><span class="sg-lbl">Prova</span><span>Spazza <b>Densità di corrente j</b> da 0,2 a 3 A/cm² e registra <b>Rendimento di sistema</b> e <b>Idrogeno prodotto</b> ai due estremi: la produzione scala quasi linearmente con la corrente mentre il rendimento decade, e quel compromesso è tutto l'argomento capitale contro energia. Verifica la fisica direttamente: a qualunque impostazione, \(1{,}48/V\) deve corrispondere alla frazione verde della barra della tensione e, tolto il consumo degli ausiliari, a <b>Rendimento di sistema</b>. Poi verifica <b>Consumo specifico</b> contro \(39{,}4/\eta\), e infine usa <b>Prezzo dell'elettricità</b> per trovare il prezzo dell'elettricità al quale l'idrogeno costa 2 €/kg.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0d9488"><span class="sg-lbl">Prova</span><span>Individua l'ottimo di costo invece di quello di rendimento. Nota che \(\dot m \propto j\) mentre \(\mathrm{SEC} \propto V(j)\), quindi con un onere di capitale orario il costo totale per chilogrammo ha un minimo interno; stima dove sta guardando quanto in fretta cala <b>Rendimento di sistema (HHV)</b> rispetto a quanto in fretta sale <b>Idrogeno prodotto</b> mentre alzi <b>Densità di corrente j</b>. Poi usa <b>Prezzo dell'elettricità</b> per mostrare che un prezzo dell'elettricità basso sposta quell'ottimo verso densità di corrente più alte. Infine confronta i due usi finali e quantifica quanta parte della perdita di catena sia termodinamica inevitabile e quanta sia hardware di conversione.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A sinistra: una vasca d'acqua con due bacchette metalliche dentro e la corrente che scorre. Le bolle salgono da entrambe e si raccolgono nei due tubi di vetro sopra - e il tubo di destra, quello dell'idrogeno, si riempie sempre esattamente al doppio della velocità di quello dell'ossigeno, perché l'acqua è H₂O. Sotto c'è la tensione, divisa fra la parte che produce davvero gas e la parte che produce solo calore. A destra: che fine fanno 100 unità di elettricità passando per ogni passaggio, con una barra grigia in fondo che mostra quanto avrebbe restituito una batteria.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Ogni freccia di quella catena si prende una percentuale, e alla fine ti resta un terzo di quello che avevi.</b> Spaccare l'acqua è la parte buona: sopravvivono circa sette unità su dieci. Sono la compressione e soprattutto il ritorno a elettricità a finire il lavoro, e la barra grigia ti mostra il confronto che conta: una batteria ne avrebbe restituite quasi nove su dieci. Quindi la domanda onesta sull'idrogeno non è mai se sia pulito: è se quel lavoro si potesse fare con un cavo. Quando la risposta è no, perché ti serve una molecola vera per fare acciaio o fertilizzante o per far volare un aereo, l'idrogeno è eccellente. Quando la risposta è sì, di solito perde.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A sinistra: una cella di elettrolisi percorsa lungo la sua curva di polarizzazione, \(V(j) = E_{\text{rev}} + \eta_{\text{att}} + jR\), con i volumi di gas nel loro rapporto stechiometrico 2:1. La barra sotto la cella divide la tensione applicata al punto termoneutro: la frazione \(1{,}48/V\) fa idrogeno e tutto ciò che sta sopra diventa calore, ed è per questo che il rendimento si legge direttamente su un voltmetro. A destra: la catena di sistema da 100 kWh, con il rendimento di stack, poi la compressione a 700 bar, poi una cella a combustibile - oppure, col pulsante, fermandosi alla molecola.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Il rendimento qui non è un coefficiente di comodo: è un rapporto di tensioni, e lo puoi guardare.</b> La termodinamica fissa 1,48 V come il punto in cui la cella non ha bisogno di calore né lo produce; ogni millivolt aggiunto oltre per forzare la corrente viene dissipato. Alza la densità di corrente e la curva di polarizzazione te lo fa pagare, ma ottieni anche più chilogrammi dallo stesso stack costoso: l'ottimo quindi non è il rendimento massimo, è il costo minimo per chilogrammo, e si sposta col prezzo dell'elettricità. Nota la seconda lezione a destra: la catena moltiplica. Tre passaggi al 70%, 90% e 55% lasciano il 35%, e nessun miglioramento di un singolo passaggio la salva. È la vera ragione per cui l'idrogeno è un pessimo modo di muovere un'auto e un ottimo modo di fare ammoniaca.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Uno stack PEM di 100 celle da 1000 cm², percorso lungo \(V(j) = 1{,}23 + b\ln(j/j_0) + jR\) con un termine di attivazione tipo Tafel dominato dalla reazione di sviluppo di ossigeno e un termine ohmico per la membrana. La produzione segue esattamente Faraday, \(\dot n = NI/2F\), quindi la corrente fissa i chilogrammi e la tensione fissa il prezzo. Il rendimento è riferito al potere calorifico superiore, \(\eta = 0{,}92\times1{,}48/V\), dove il prefattore rappresenta le perdite degli ausiliari. La catena a destra applica compressione a 0,90 e cella a combustibile a 0,55, oppure si ferma alla molecola.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Tutto l'argomento si legge sull'asse delle tensioni: 1,23 V è termodinamica, 1,48 V è termoneutralità e tutto ciò che sta sopra è cinetica che stai pagando.</b> Il divario fra le due è il termine entropico, ed è per questo che una cella ad alta temperatura alimentata da calore di scarto può battere una a bassa temperatura sulla sola elettricità: non è ingegneria migliore, è una ripartizione diversa di \(\Delta H\). Sopra 1,48 V la sovratensione è dominata dallo sviluppo di ossigeno: quattro elettroni, un legame O-O da formare, densità di corrente di scambio di ordini di grandezza sotto il lato idrogeno e un catalizzatore di iridio la cui produzione mondiale è di poche tonnellate all'anno. La conclusione di sistema segue dalla moltiplicazione a destra: una catena di tre conversioni non si salva migliorandone una, quindi il territorio difendibile dell'idrogeno è esattamente dove nessuna catena di conversioni serve - chimica di base, industria ad alta temperatura e accumulo misurato in mesi invece che in ore.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Spaccare l'acqua con l'elettricità</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>L'idrogeno non si estrae. Non esistono miniere di idrogeno, perché sulla Terra l'idrogeno è sempre attaccato a qualcos'altro, di solito all'ossigeno, sotto forma di acqua. Quindi se vuoi idrogeno devi riprendertelo, e questo costa energia. L'idrogeno non è un combustibile che si trova: è un modo di <strong>trasportare</strong> energia che avevi già.</p>
+<p>Il modo più pulito di farlo è splendidamente semplice. Metti due piastre metalliche nell'acqua, collega una batteria e l'acqua si separa: bolle di idrogeno da una piastra e bolle di ossigeno dall'altra. E qui viene il bello: ottieni esattamente il doppio di idrogeno rispetto all'ossigeno, perché l'acqua è H₂O e ogni molecola ha due idrogeni per un ossigeno. Puoi guardare la formula che accade in tempo reale, nella dimensione delle due colonne di gas.</p>
+<p>Brucia quell'idrogeno più tardi, o mandalo in una cella a combustibile, e l'unica cosa che esce è di nuovo acqua. Nient'altro. Per questo l'idea è così attraente, e per questo la parola <em>verde</em> pesa così tanto: l'idrogeno è pulito solo se era pulita l'elettricità che ha spaccato l'acqua. Oggi circa il 95% dell'idrogeno mondiale si fa invece dal gas naturale, e quel processo libera all'incirca dieci chilogrammi di anidride carbonica per ogni chilogrammo di idrogeno.</p>
+<p>La fregatura è che ogni passaggio ti costa. Parti da 100 unità di elettricità e ne ottieni circa 70 immagazzinate come idrogeno. Comprimilo in un serbatoio e ne perdi altre. Riportalo a elettricità in una cella a combustibile e sei sceso attorno a 35. Una batteria te ne avrebbe restituite 90. L'idrogeno quindi non è la risposta a tutto: è la risposta alle cose che un cavo e una batteria davvero non sanno fare - fare acciaio e fertilizzanti, alimentare navi e aerei, e immagazzinare energia per un mese senza vento invece che per una notte.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">⚖️</span> L'idrogeno contiene più energia per chilogrammo di qualunque altro combustibile, circa tre volte il gasolio. Ha anche la peggiore energia per litro fra le cose pratiche, ed è per questo che va compresso a 700 volte la pressione atmosferica o raffreddato a −253 °C.</li><li><span aria-hidden="true">🏭</span> Il mondo usa già circa 95 milioni di tonnellate di idrogeno all'anno, quasi tutte per fare fertilizzanti e raffinare petrolio. Quasi niente di verde: decarbonizzare l'idrogeno che usiamo già è un lavoro più grande che inventarne nuovi usi.</li><li><span aria-hidden="true">💧</span> Servono circa nove litri d'acqua per fare un chilogrammo di idrogeno. Per un programma su scala nazionale è una quantità reale ma piccola: più o meno quanto beve un campo da golf.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Volt, sovratensione e il prezzo di un chilogrammo</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Spaccare l'acqua costa una quantità fissa di energia: \(\Delta H = 286\ \text{kJ/mol}\) per acqua liquida, di cui \(\Delta G = 237\ \text{kJ/mol}\) deve arrivare come lavoro elettrico mentre il resto, \(T\Delta S\), può arrivare come calore. Dividi l'energia libera per \(nF\) e ottieni la tensione reversibile di cella, \(E_{\text{rev}} = 1{,}23\ \text{V}\). Dividi invece l'entalpia e ottieni la <strong>tensione termoneutra</strong>, 1,48 V: il punto in cui la cella non ha bisogno di calore da fuori e non ne produce.</p>
+<p>È questo secondo numero che conta, perché trasforma il rendimento in qualcosa che si legge su un voltmetro: \(\eta = 1{,}48/V_{\text{cella}}\). Fai lavorare una cella a 1,8 V e sei all'82%: ogni volt sopra 1,48 è calore, non idrogeno. I sistemi reali perdono un altro 5-10% fra pompe, essiccazione ed elettronica di potenza, e si assestano fra il 65 e il 75%.</p>
+<p>Perché allora non far lavorare tutte le celle a 1,5 V? Perché è proprio la tensione in più a spingere la corrente. La <strong>curva di polarizzazione</strong> \(V(j) = E_{\text{rev}} + \eta_{\text{att}} + jR\) sale con la densità di corrente: sovratensione di attivazione, dominata dalla lentissima reazione di sviluppo di ossigeno, più la perdita ohmica nella membrana. Spingi di più e fai più idrogeno dallo stesso stack costoso, ma ogni chilogrammo costa più elettricità. L'ottimo economico è un compromesso fra costo di capitale per kilowatt e costo dell'elettricità per chilogrammo, e l'elettricità a buon mercato spinge sempre a spingere di più.</p>
+<p>La produzione in sé è pura legge di Faraday: \(\dot n_{H_2} = I/2F\), due elettroni per molecola, senza eccezioni e senza termini di rendimento: gli elettroni che arrivano fanno idrogeno. Varia solo la tensione che hai pagato per muoverli. In unità pratiche, un sistema al 70% consuma circa 56 kWh per chilogrammo, quindi a 50 €/MWh la sola elettricità costa 2,8 € al chilo: ecco perché tutto il settore è una scommessa su elettricità a buon mercato e molte ore di funzionamento, più che su chimica ingegnosa.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">La reazione</th><td>\(2\mathrm{H_2O} \rightarrow 2\mathrm{H_2} + \mathrm{O_2}\)</td><td class="cmt">due volumi contro uno</td></tr>
+<tr><th scope="row">Energia necessaria</th><td>\(\Delta H = 286\ \text{kJ/mol}\)</td><td class="cmt">ΔG = 237 kJ/mol</td></tr>
+<tr><th scope="row">Tensione reversibile</th><td>\(E_{\text{rev}} = \dfrac{\Delta G}{nF} = 1.23\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Tensione termoneutra</th><td>\(V_{tn} = \dfrac{\Delta H}{nF} = 1.48\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Rendimento di stack</th><td>\(\eta = \dfrac{1.48}{V_{\text{cella}}}\)</td><td class="cmt">base HHV</td></tr>
+<tr><th scope="row">Curva di polarizzazione</th><td>\(V(j) = E_{\text{rev}}+\eta_{\text{att}}+jR\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Portata prodotta</th><td>\(\dot n_{H_2} = \dfrac{I}{2F}\)</td><td class="cmt">F = 96485 C/mol</td></tr>
+<tr><th scope="row">Consumo specifico</th><td>\(\dfrac{39.4}{\eta}\ \text{kWh/kg}\)</td><td class="cmt">≈ 56 kWh/kg al 70%</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">⚡</span> Un chilogrammo di idrogeno contiene 33,3 kWh (potere calorifico inferiore): all'incirca l'energia di un gallone di benzina, e più o meno quanto consuma un'auto elettrica moderna in 200 km.</li><li><span aria-hidden="true">🥇</span> Il collo di bottiglia è il lato ossigeno, non quello idrogeno. Lo sviluppo di ossigeno richiede quattro elettroni e un pesante riarrangiamento di legami, quindi porta quasi tutta la sovratensione di attivazione e pretende iridio, uno dei metalli più rari della Terra.</li><li><span aria-hidden="true">📉</span> Sotto 1,48 V una cella assorbe calore dall'ambiente mentre lavora. Sopra, si scalda da sola: ed è esattamente per questo che gli stack industriali vanno raffreddati e non riscaldati.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Sovratensioni, l'ottimo di densità di corrente e dove l'idrogeno vince davvero</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Due tensioni, e l'aritmetica delle dichiarazioni di rendimento</h3>
+<p>La scissione dell'acqua ha due tensioni caratteristiche, e confonderle è il modo in cui la maggior parte dei numeri divulgativi sbaglia. \(E_{\text{rev}} = \Delta G/nF = 1{,}229\ \text{V}\) in condizioni standard è il lavoro elettrico minimo; il resto, \(T\Delta S = 48{,}6\ \text{kJ/mol}\), può arrivare come calore, ed è per questo che una cella fatta lavorare fra 1,23 e 1,48 V raffredda l'ambiente. \(V_{tn} = \Delta H/nF = 1{,}481\ \text{V}\) è il punto termoneutro. Un rendimento riferito all'HHV usa 1,48; riferito all'LHV usa 1,25; un fornitore può citare l'uno o l'altro, quindi uno stack che è all'82% su una base è al 69% sull'altra senza alcun cambiamento fisico. Le celle ad alta temperatura a ossido solido sfruttano onestamente la stessa termodinamica: alzare \(T\) sposta più \(\Delta H\) nel termine entropico, quindi con una fonte di calore gratuita possono superare il 90% sulla sola elettricità.</p>
+<h3><span class="hn">02</span>Perché il problema è il lato ossigeno</h3>
+<p>Entrambi gli elettrodi obbediscono alla cinetica di Butler-Volmer, con la forma di Tafel \(\eta_{\text{att}} = a + b\log j\) a sovratensione apprezzabile. La reazione di sviluppo di idrogeno sul platino ha una densità di corrente di scambio vicino a \(10^{-3}\ \text{A/cm}^2\) ed è quasi reversibile; quella di sviluppo di ossigeno coinvolge quattro elettroni, richiede la formazione del legame O-O e ha densità di corrente di scambio di ordini di grandezza inferiori, quindi contribuisce quasi tutta la perdita di attivazione. Da questo solo fatto discende il problema dei materiali: gli elettrolizzatori PEM richiedono anodi a ossido di iridio, e la produzione mondiale di iridio si misura in poche tonnellate all'anno. Le celle alcaline evitano l'iridio al prezzo di densità di corrente più basse e peggiore risposta dinamica; quelle a ossido solido evitano entrambi i problemi ed ereditano un problema di degrado dei materiali.</p>
+<h3><span class="hn">03</span>L'ottimo di densità di corrente</h3>
+<p>Il costo livellato dell'idrogeno si divide in un termine di capitale che cala con la densità di corrente e uno di energia che sale con essa: \(\text{LCOH} \approx \frac{C_{\text{cap}}\,\mathrm{CRF}}{8760\,\mathrm{CF}\,\dot m(j)} + p_e\,\text{SEC}(j)\). Poiché \(\dot m \propto j\) e \(\text{SEC} \propto V(j)\), l'ottimo sta dove la penalità marginale di elettricità eguaglia il risparmio marginale di capitale. Elettricità a buon mercato o un fattore di utilizzo basso spostano l'ottimo verso \(j\) alte; elettricità cara e stack economici lo riportano in basso. Ed è anche per questo che il fattore di utilizzo dell'elettrolizzatore è il cardine di ogni progetto: uno stack che gira 2000 ore all'anno su surplus rinnovabile ha un carico di capitale per chilogrammo quattro volte quello di uno che ne gira 8000, ed è la tensione al cuore dell'accoppiare elettrolisi e generazione variabile.</p>
+<h3><span class="hn">04</span>Tutto quello che viene dopo lo stack</h3>
+<p>Il vantaggio gravimetrico dell'idrogeno - 120 MJ/kg contro 43 del gasolio - è pareggiato da un disastro volumetrico: 0,09 kg/m³ in condizioni ambiente. La compressione a 700 bar costa circa il 10-12% dell'energia del combustibile, la liquefazione il 30-35%, ed entrambe aggiungono capitale. Vettori come l'ammoniaca o gli idruri organici liquidi barattano quello con perdite di conversione a entrambi gli estremi. La molecola inoltre trafila attraverso materiali che tengono il metano, infragilisce molti acciai e - risultato quantificato solo di recente - è essa stessa un gas serra indiretto, perché allunga la vita del metano consumando i radicali OH, con un GWP a cento anni oggi stimato attorno a 11. Un'economia dell'idrogeno che perde non è un'economia innocua.</p>
+<h3><span class="hn">05</span>La scala dei rendimenti, e ciò che le sopravvive</h3>
+<p>Il rendimento di catena decide l'uso finale, e i confronti non sono in bilico. Elettricità → idrogeno → auto a cella a combustibile: circa 0,70 × 0,90 × 0,55 ≈ 35%, contro il 77% del caricare direttamente un'auto a batteria. Idrogeno per il riscaldamento domestico: 0,70 × 0,90 ≈ 63% contro una pompa di calore che consegna il 300%. Con questa aritmetica l'idrogeno perde ovunque gli elettroni possano fare il lavoro. Quel che resta è comunque parecchio, perché alcuni lavori richiedono una molecola e non una corrente: sintesi di ammoniaca e metanolo, riduzione diretta del minerale di ferro per l'acciaio, raffinazione, carburanti per aviazione e navigazione, e accumulo stagionale dove un serbatoio economico batte una batteria costosa anche al 35% di ciclo. La distinzione non è ideologica: è se l'alternativa sia un cavo.</p>
+<h3><span class="hn">06</span>Che cosa determina davvero il costo</h3>
+<p>Ai prezzi attuali degli stack, l'elettricità è il 60-80% del costo dell'idrogeno verde, quindi l'LCOH è essenzialmente un prezzo dell'elettricità riscritto e diviso per un rendimento, più un termine di capitale che punisce gli stack fermi. Ecco perché i progetti annunciati si concentrano dove l'energia è più economica e costante, perché quasi ogni curva di costo credibile è in realtà una scommessa sul prezzo dell'elettricità rinnovabile, e perché il divario fra capacità annunciata e capacità in esercizio è rimasto enorme: il vincolo non è la tecnologia. La domanda ingegneristica interessante del prossimo decennio non è come arrivare all'85% di rendimento, ma come costruire uno stack che tolleri di essere acceso e spento col vento senza morire.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Tensione reversibile</th><td>\(E_{\text{rev}} = \dfrac{\Delta G}{nF} = 1.229\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Termoneutra</th><td>\(V_{tn} = \dfrac{\Delta H}{nF} = 1.481\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Tensione di cella</th><td>\(V = E_{\text{rev}}+\eta_{\text{att}}+jR+\eta_{\text{conc}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Tafel</th><td>\(\eta_{\text{att}} = a+b\log j\)</td><td class="cmt">domina la reazione sull'ossigeno</td></tr>
+<tr><th scope="row">Rendimento (HHV)</th><td>\(\eta = \dfrac{1.481}{V}\)</td><td class="cmt">in base LHV si usa 1,253</td></tr>
+<tr><th scope="row">Produzione di Faraday</th><td>\(\dot m = \dfrac{IM}{2F}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Costo livellato</th><td>\(\mathrm{LCOH} = \dfrac{C\,\mathrm{CRF}}{8760\,\mathrm{CF}\,\dot m}+p_e\,\mathrm{SEC}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Ciclo completo</th><td>\(\eta_{el}\,\eta_{comp}\,\eta_{FC} \approx 0.35\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">💎</span> Gli elettrolizzatori PEM usano iridio, di cui il mondo produce circa 7 tonnellate all'anno, quasi tutte come sottoprodotto dell'estrazione del platino. Ridurne il carico per megawatt è un collo di bottiglia reale per la scala, non un dettaglio.</li><li><span aria-hidden="true">🌫️</span> L'idrogeno è un gas serra indiretto: consuma i radicali ossidrile che altrimenti distruggerebbero il metano. Stime recenti collocano il suo potenziale di riscaldamento a cento anni attorno a 11, quindi i tassi di perdita contano per il clima, non solo per i conti.</li><li><span aria-hidden="true">🔁</span> Un ciclo di accumulo al 35% sembra disperato accanto al 90% di una batteria, finché non noti che il serbatoio costa pochi dollari per kilowattora e la batteria cento. Per un accumulo ciclato due volte l'anno, il capitale batte il rendimento di gran lunga.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Electrolysis_of_water" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Energia</h2>
+    <ul><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/come-funzionano-i-pannelli-solari/">Come funzionano i pannelli solari</a></li><li><a href="/it/turbine-eoliche-limite-di-betz/">Turbine eoliche e il limite di Betz</a></li><li><a href="/it/come-funziona-la-pompa-di-calore/">Pompe di calore: più calore di quanto ne paghi</a></li><li><a href="/it/come-funziona-la-rete-elettrica/">La rete elettrica: in equilibrio sul filo del rasoio</a></li><li><a href="/it/come-funziona-un-reattore-nucleare/">Come funziona un reattore nucleare</a></li><li><a href="/it/come-funzionano-le-batterie-di-rete/">Come immagazzinano l'elettricità le batterie di rete</a></li><li><a href="/it/dove-va-a-finire-il-calore-di-casa/">Dove va a finire il calore di casa tua</a></li><li><a href="/it/come-si-produce-l-elettricita/">Come si produce davvero l'elettricità</a></li><li><a href="/it/quanta-elettricita-consuma-casa-tua/">Quanta elettricità consuma casa tua</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

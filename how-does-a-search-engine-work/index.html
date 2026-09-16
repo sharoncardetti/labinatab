@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does a Search Engine Decide What to Show You? | Lab-in-a-Tab</title>
+<meta name="description" content="Two pages both mention what you searched for. One goes first. The decision is made in about a tenth of a second, and it is mostly a question about who…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-does-a-search-engine-work/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-does-a-search-engine-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-un-motore-di-ricerca/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionne-un-moteur-de-recherche/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-does-a-search-engine-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Does a Search Engine Decide What to Show You? — Explained &amp; Simulated">
+<meta property="og:description" content="Two pages both mention what you searched for. One goes first. The decision is made in about a tenth of a second, and it is mostly a question about who…">
+<meta property="og:url" content="https://labinatab.com/how-does-a-search-engine-work/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Does a Search Engine Decide What to Show You? — Explained &amp; Simulated">
+<meta name="twitter:description" content="Two pages both mention what you searched for. One goes first. The decision is made in about a tenth of a second, and it is mostly a question about who…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-does-a-search-engine-work/#article",
+   "headline": "How Does a Search Engine Decide What to Show You?",
+   "name": "How Does a Search Engine Decide What to Show You?",
+   "description": "Two pages both mention what you searched for. One goes first. The decision is made in about a tenth of a second, and it is mostly a question about who…",
+   "url": "https://labinatab.com/how-does-a-search-engine-work/",
+   "mainEntityOfPage": "https://labinatab.com/how-does-a-search-engine-work/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Indexing",
+    "PageRank",
+    "Ranking"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Does a Search Engine Decide What to Show You?",
+    "sameAs": "https://en.wikipedia.org/wiki/PageRank"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Does a Search Engine Decide What to Show You?",
+     "item": "https://labinatab.com/how-does-a-search-engine-work/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-does-a-search-engine-work/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-un-motore-di-ricerca/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionne-un-moteur-de-recherche/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Computer Science</nav>
+  <h1>How Does a Search Engine Decide What to Show You?</h1>
+  <p class="lead">Two pages both mention what you searched for. One goes first. The decision is made in about a tenth of a second, and it is mostly a question about who links to whom.</p>
+  <div class="chips"><span>Indexing</span><span>PageRank</span><span>Ranking</span></div>
+  <section class="sim-embed" data-sim="searchengine" data-color="#4f46e5" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4f46e5"><span class="sg-lbl">Try this</span><span>Drag <b>How much links count</b> to zero so only the words count, and look at which page jumps to the top. Then drag it to a hundred so only the links count, and watch it fall back down. Use <b>Search for something else</b> to try a different search and see how completely the order changes.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4f46e5"><span class="sg-lbl">Try this</span><span>Take <b>Weight given to links</b> to both extremes and watch the shop page - keyword-stuffed, unlinked - win at one end and collapse at the other. Then lower <b>Damping factor</b> towards 0.5 and see the authority distribution flatten, because a surfer who jumps more often spends less time in whichever corner the links lead to. Change <b>Search for something else</b> and watch the inverse document frequency do its work: a rare query term discriminates far more sharply than a common one.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4f46e5"><span class="sg-lbl">Try this</span><span>Sweep <b>Damping factor d</b> and watch both the ranking and the convergence behaviour - the second eigenvalue of the damped operator is bounded by d, so lower damping converges faster and flattens the distribution. Then hold the query and move <b>Authority weight</b> to find the weight at which the keyword-stuffed document crosses the well-linked one, which is a direct reading of how much authority is worth in units of relevance.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A tiny web of nine pages, arranged in a ring with arrows for links. The crawler reads them one by one and the circles wake up as it arrives; a circle is drawn bigger when more pages link to it. Underneath, the top five results for the search, each with a bar split into two parts - the yellow part is how well the words match, the blue part is how many pages point at it.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Counting words is not enough, because anyone can write a word a thousand times.</b> Set the slider to zero and the shop page wins, because it says the search word more often than anyone. Nobody links to it, though, and that is the signal that cannot be faked by the page itself - it has to be given by other people. That is the idea that made search work: treat a link as a vote, and count votes from well-linked pages as worth more than votes from nowhere. Notice also that nothing is searched when you press enter. All the reading happened in advance, and what you query is an index - which is the only reason an answer can arrive in a fifth of a second.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Left: a nine-page link graph, crawled in sequence, with node radius proportional to PageRank. Right: the top five documents for the query, with each score decomposed into a text component and an authority component. Authority is recomputed live by the power method, so changing the damping factor moves the node sizes as well as the ranking.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Ranking is two different questions blended: is this page about the query, and is this page any good.</b> The text score answers the first and can be gamed by whoever writes the page; the link score answers the second using a signal the page cannot award itself. The recursion in the link score is not circular - it is an eigenvector problem, solved by iterating a damped random-walk operator until it stops moving, which is why the damping factor is both a modelling choice and the thing that guarantees convergence. Real engines add hundreds of further signals, but this two-part structure of relevance and authority is still the skeleton underneath.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A nine-node link graph with PageRank computed by the power method on the damped Google matrix, node radius proportional to the stationary probability. Retrieval scores combine normalised TF-IDF with the authority term under an adjustable weight, and the decomposition is drawn so the two contributions are separable. Term weighting uses log N over document frequency without length normalisation, so the effect of BM25's length term can be reasoned about by its absence.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>PageRank is the principal eigenvector of a stochastic, irreducible, aperiodic operator, and that is why it exists and is unique.</b> Perron-Frobenius supplies existence; the damping term supplies irreducibility and bounds the convergence rate by d, which is what made fifty iterations enough on a web of billions. The deeper point is the adversarial one: this is a ranking problem in which the documents are written by parties who know the ranking function and profit from beating it, so signals are chosen for being costly to forge rather than for being informative in isolation. That constraint - not retrieval quality - is what most distinguishes web search from classical information retrieval, and it is why the details are not published.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Nobody searches the web when you press enter</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>The first thing to get straight is that a search engine does not go and look at the web when you type something. It could not possibly - the answer arrives in about two tenths of a second, which is not enough time to visit even one distant website, let alone a billion. Everything has been done in advance.</p>
+<p>What happens in advance is <strong>crawling</strong>. A program starts at some page, reads it, writes down every word on it, then follows every link on that page to find more pages, and repeats - forever. The web is held together by links, so following links from a few starting points eventually reaches most of it.</p>
+<p>What gets written down is an <strong>index</strong>, and it is built backwards from how you might expect. Instead of a list of pages and the words on them, it is a list of words and the pages containing them. Look up <em>volcano</em> and you immediately have every page that mentions it. That is the trick that makes the answer instant: the hard work happened last week.</p>
+<p>Then comes the interesting part - ordering. Counting how often a page says <em>volcano</em> is a start, but anyone can type a word a thousand times, and in the early web people did exactly that. The idea that fixed it was to look at <strong>links</strong>: treat a link as a vote, and count votes from important pages as worth more than votes from nobody. Move the slider in the simulation and watch the shop page, which mentions volcanoes constantly and which nobody links to, slide down the list where it belongs.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🕷️</span> A crawler that finds a page with no links pointing at it from anywhere has no way to discover it. Pages like that are effectively invisible, which is why site owners submit sitemaps.</li><li><span aria-hidden="true">🗂️</span> An inverted index is the same structure as the index at the back of a book: not &quot;page 47 contains these words&quot; but &quot;this word appears on pages 47, 112 and 340&quot;.</li><li><span aria-hidden="true">🗳️</span> Before link-based ranking, the top results for most queries were pages that had simply repeated the search term hundreds of times in white text on a white background.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Inverted indexes, TF-IDF and the random surfer</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>The index is the foundation. For every term, the engine stores a <strong>posting list</strong>: the documents containing it, usually with positions so that phrase queries work. A query for two words becomes an intersection of two posting lists, which is fast because the lists are sorted and compressed. Everything else - ranking, snippets, filtering - operates on that structure.</p>
+<p>Ranking by text alone uses <strong>TF-IDF</strong>, and both halves matter. Term frequency rewards a document for mentioning the word, usually with a damping function because the fiftieth mention adds less than the second. Inverse document frequency penalises words that appear everywhere: a match on <em>the</em> is worthless, a match on <em>thermocline</em> is highly informative, and the weight is \(\log(N/\text{df})\). The modern refinement is BM25, which adds length normalisation so that long documents cannot win simply by containing more words.</p>
+<p><strong>PageRank</strong> supplies the second half, and its definition is recursive in a way that sounds circular but is not: a page is important if important pages link to it. Model a surfer who clicks links at random and occasionally jumps to a random page instead - the damping factor \(d\), conventionally 0.85, is the probability of clicking rather than jumping. PageRank is the long-run fraction of time the surfer spends on each page, which is the principal eigenvector of the link matrix, computed by iterating until it stops moving.</p>
+<p>The final score blends them, and the blend is where the judgement lives. Too much weight on text and keyword stuffing wins; too much on links and a popular page outranks a relevant one. Real systems add hundreds of further signals - freshness, click behaviour, page speed, and since 2019 neural language models that score the passage against the query's meaning rather than its words - but the two-part structure of <em>relevance</em> and <em>authority</em> is still visible underneath.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Term frequency</th><td>\(\text{tf}(t,d) = \dfrac{f_{t,d}}{\sum_{t'} f_{t',d}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Inverse doc frequency</th><td>\(\text{idf}(t) = \log \dfrac{N}{\text{df}(t)}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">TF-IDF score</th><td>\(\text{score} = \sum_{t \in q} \text{tf}(t,d)\cdot\text{idf}(t)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">PageRank</th><td>\(PR(p) = \dfrac{1-d}{N} + d\!\!\sum_{q \to p} \dfrac{PR(q)}{L(q)}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Final blend</th><td>\(S = (1-w)\,\widehat{\text{tfidf}} + w\,\widehat{PR}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🎯</span> IDF is why searching for a rare technical term works so much better than searching for a common one. The rare word carries nearly all the discriminating power of the query.</li><li><span aria-hidden="true">🎲</span> The damping factor exists to stop the random surfer getting trapped. Without the occasional jump, all the rank would pool in pages that link to each other and out to nothing.</li><li><span aria-hidden="true">📏</span> BM25 was published in the 1990s and is still the default baseline in information retrieval research. Neural rankers are usually measured by how far they beat it.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Eigenvectors, index compression, and ranking after neural retrieval</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>PageRank as a Markov chain</h3>
+<p>Write the web as a column-stochastic matrix \(M\) where \(M_{ij} = 1/L(j)\) if \(j\) links to \(i\). The damped operator \(G = dM + \frac{1-d}{N}\mathbf{1}\mathbf{1}^{\!\top}\) is stochastic, irreducible and aperiodic, so Perron-Frobenius guarantees a unique positive stationary vector - PageRank is its principal eigenvector. The power method converges at a rate governed by the second eigenvalue, which for the damped chain is bounded by \(d\); at \(d = 0.85\) that is roughly one decimal digit every dozen iterations, which is why fifty iterations sufficed on a web of billions of pages. Dangling nodes, which link to nothing, must be handled explicitly or probability mass leaks away.</p>
+<h3><span class="hn">02</span>The index, and why compression is a ranking problem</h3>
+<p>Posting lists are stored as gaps between document identifiers rather than the identifiers themselves, then coded with variable-byte, Elias-Fano or SIMD-friendly schemes. Assigning document identifiers so that similar documents are numbered close together shrinks the gaps and therefore the index - which makes document ordering a compression decision with direct consequences for query latency. Query evaluation then uses dynamic pruning: WAND and block-max WAND skip whole blocks of a posting list whose best possible contribution cannot reach the current top-k threshold, which is what makes exhaustive scoring unnecessary.</p>
+<h3><span class="hn">03</span>Learning to rank</h3>
+<p>Once there are hundreds of signals, hand-tuning stops. Learning-to-rank treats the ordering as a supervised problem over judged query-document pairs, and the useful objectives are listwise rather than pointwise, because the metric that matters - normalised discounted cumulative gain - depends on the whole ordering and is not differentiable. LambdaMART sidesteps that by defining gradients directly from the metric's change under a swap, and remained the production standard for years precisely because gradient-boosted trees handle heterogeneous, poorly scaled features better than networks do.</p>
+<h3><span class="hn">04</span>Dense retrieval and the end of exact matching</h3>
+<p>Inverted indexes retrieve on lexical overlap, so a document that says <em>car</em> is invisible to a query for <em>automobile</em>. Dense retrieval encodes query and document into vectors with a transformer and retrieves by approximate nearest neighbour search over HNSW graphs, matching meaning rather than strings. It is usually paired with the lexical index in a hybrid, because dense retrieval is weak exactly where sparse retrieval is strong: rare entity names, identifiers, and terms the encoder never saw in training. The final stage is a cross-encoder that reads query and candidate jointly - far too expensive for retrieval, affordable for reranking the top hundred.</p>
+<h3><span class="hn">05</span>An adversarial system</h3>
+<p>Uniquely among ranking problems, the documents are written by parties who know the ranking function and profit from beating it. This changes the engineering: signals must be costly to forge, which is why links from trusted sources outweigh links a page can create for itself, and why click signals are heavily denoised. It also explains why ranking details are not published. The arrival of generated text at scale sharpens the problem - the cheap signals of effort that ranking quietly relied on for two decades no longer separate the careful from the automatic.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Google matrix</th><td>\(G = dM + \dfrac{1-d}{N}\mathbf{1}\mathbf{1}^{\!\top}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Stationary vector</th><td>\(\pi = G\pi,\qquad \|\pi\|_1 = 1\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Convergence</th><td>\(\|\pi_k - \pi\| \le C\,d^{\,k}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">BM25</th><td>\(\sum_{t \in q}\text{idf}(t)\dfrac{f_{t,d}(k_1+1)}{f_{t,d}+k_1\left(1-b+b\frac{|d|}{\overline{|d|}}\right)}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">nDCG</th><td>\(\text{nDCG}_k = \dfrac{1}{Z_k}\sum_{i=1}^{k}\dfrac{2^{r_i}-1}{\log_2(i+1)}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📐</span> PageRank's convergence rate is bounded by the damping factor, so d = 0.85 gives about a factor of 10 error reduction every 13 iterations, independent of how large the web is.</li><li><span aria-hidden="true">✂️</span> Block-max WAND lets an engine score a small fraction of the matching documents and still return a provably correct top-k. The saving comes from bounding what a block could contribute before looking inside it.</li><li><span aria-hidden="true">🔀</span> Hybrid retrieval beats either half alone on almost every benchmark, because lexical and dense methods fail on disjoint queries - exact identifiers for one, paraphrases for the other.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/PageRank" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Computer Science</h2>
+    <ul><li><a href="/sorting-algorithms/">Sorting Algorithms</a></li><li><a href="/machine-learning/">Machine Learning &amp; Neural Networks</a></li><li><a href="/cryptography/">Cryptography &amp; Security</a></li><li><a href="/computation-complexity/">Computation &amp; Complexity</a></li><li><a href="/how-does-the-internet-work/">How Does the Internet Actually Work?</a></li><li><a href="/how-does-file-compression-work/">How Does File Compression Work?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come funziona davvero internet | Lab-in-a-Tab</title>
+<meta name="description" content="Dal sito a te non viaggia niente. La pagina viene tagliata in migliaia di pezzi numerati, ognuno si cerca la strada da solo attraverso il pianeta, e la…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-funziona-internet/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-does-the-internet-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-internet/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionne-internet/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-does-the-internet-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come funziona davvero internet — Spiegato e simulato">
+<meta property="og:description" content="Dal sito a te non viaggia niente. La pagina viene tagliata in migliaia di pezzi numerati, ognuno si cerca la strada da solo attraverso il pianeta, e la…">
+<meta property="og:url" content="https://labinatab.com/it/come-funziona-internet/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come funziona davvero internet — Spiegato e simulato">
+<meta name="twitter:description" content="Dal sito a te non viaggia niente. La pagina viene tagliata in migliaia di pezzi numerati, ognuno si cerca la strada da solo attraverso il pianeta, e la…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-funziona-internet/#article",
+   "headline": "Come funziona davvero internet",
+   "name": "Come funziona davvero internet",
+   "description": "Dal sito a te non viaggia niente. La pagina viene tagliata in migliaia di pezzi numerati, ognuno si cerca la strada da solo attraverso il pianeta, e la…",
+   "url": "https://labinatab.com/it/come-funziona-internet/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-funziona-internet/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Pacchetti",
+    "Instradamento",
+    "Latenza"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come funziona davvero internet",
+    "sameAs": "https://en.wikipedia.org/wiki/Internet_protocol_suite"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come funziona davvero internet",
+     "item": "https://labinatab.com/it/come-funziona-internet/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-does-the-internet-work/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-internet/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionne-internet/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Informatica</nav>
+  <h1>Come funziona davvero internet</h1>
+  <p class="lead">Dal sito a te non viaggia niente. La pagina viene tagliata in migliaia di pezzi numerati, ognuno si cerca la strada da solo attraverso il pianeta, e la tua macchina li rimette in ordine.</p>
+  <div class="chips"><span>Pacchetti</span><span>Instradamento</span><span>Latenza</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"internet":{"junior":{"dist":"Quanto è lontano il server","loss":"Ogni quanto un pezzo si perde","size":"Quanto è grande la pagina","rtt":"Andata e ritorno","pk":"Pezzi spediti","re":"Pezzi rispediti","load":"Pagina pronta dopo","send":"Ricarica la pagina","cached":"Indirizzo già ricordato","cHome":"il tuo router","cIsp":"il tuo operatore","cIx":"lo scambio","cBack":"la lunga tratta","cEdge":"il server","cRoute":"il viaggio che fa la tua richiesta","cRtt":"andata e ritorno","cPkts":"pezzi","cLost":"persi e rispediti","cWater":"dove finisce davvero il tempo","cDns":"trovare l'indirizzo","cShake":"mettersi d'accordo","cData":"spedire la pagina","cDone":"pagina pronta"},"student":{"dist":"Distanza dal server","loss":"Perdita di pacchetti","size":"Dimensione della pagina","rtt":"Tempo di andata e ritorno","pk":"Pacchetti","re":"Ritrasmessi","load":"Pagina caricata in","send":"Ricarica la pagina","cached":"Risposta DNS in cache","cHome":"il tuo router","cIsp":"il tuo operatore","cIx":"punto di scambio","cBack":"dorsale","cEdge":"server","cRoute":"il percorso che fa la tua richiesta","cRtt":"andata e ritorno","cPkts":"pacchetti","cLost":"persi e rispediti","cWater":"dove finiscono i millisecondi","cDns":"risoluzione DNS","cShake":"stretta di mano TCP e TLS","cData":"spedire la pagina","cDone":"pagina pronta"},"scholar":{"dist":"Lunghezza del percorso","loss":"Tasso di perdita","size":"Dimensione del trasferimento","rtt":"RTT","pk":"Segmenti","re":"Ritrasmissioni","load":"Pagina completa","send":"Ricarica","cached":"Cache del resolver","cHome":"apparato di casa","cIsp":"rete di accesso","cIx":"IXP","cBack":"transito","cEdge":"origine","cRoute":"percorso di inoltro, salto per salto","cRtt":"andata e ritorno","cPkts":"segmenti","cLost":"persi, ritrasmessi","cWater":"budget di latenza","cDns":"risoluzione DNS","cShake":"stretta di mano TCP e TLS","cData":"corpo della risposta","cDone":"pagina completa"}}});</script>
+<section class="sim-embed" data-sim="internet" data-color="#0ea5e9" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0ea5e9"><span class="sg-lbl">Prova</span><span>Trascina <b>Quanto è lontano il server</b> da un estremo all'altro e guarda allungarsi tutte le barre, non solo l'ultima. Poi porta <b>Ogni quanto un pezzo si perde</b> a dieci e conta i punti rossi confrontandoli con <b>Pezzi rispediti</b>. Infine rendi <b>Quanto è grande la pagina</b> enorme lasciando tutto il resto com'è, e guarda quanto poco cambia il totale.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0ea5e9"><span class="sg-lbl">Prova</span><span>Metti <b>Perdita di pacchetti</b> a zero e annota <b>Pagina caricata in</b>, poi portalo al 10 % e guarda quanto il totale peggiori più del 10 %. Spingi <b>Distanza dal server</b> al massimo e osserva ogni fase della cascata crescere insieme, dato che ognuna è fatta di round trip. Poi premi <b>Risposta DNS in cache</b> e guarda quanto risparmi un resolver caldo su una pagina breve.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0ea5e9"><span class="sg-lbl">Prova</span><span>Tieni <b>Dimensione del trasferimento</b> fisso e spazza <b>Lunghezza del percorso</b> per separare la regione limitata dalla propagazione da quella limitata dalla banda. Poi metti <b>Tasso di perdita</b> a qualche punto percentuale e confronta <b>Ritrasmissioni</b> col crollo della portata: la legge della radice dice che la portata cala come uno su radice del tasso di perdita, molto più ripidamente di quanto suggerisca il solo conteggio delle ritrasmissioni.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>In alto la catena di macchine a cui viene passata la tua richiesta, dal tuo router fino al server. I punti che si muovono da sinistra a destra sono le bustine in cui è stata tagliata la pagina; uno rosso si è perso e va rispedito. Sotto, un diagramma a barre di dove è finito il tempo: trovare l'indirizzo, mettersi d'accordo sul parlare, e solo dopo spedire davvero qualcosa.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Niente viene mai spedito in un pezzo solo, e nessuno lungo la strada conosce l'intero percorso.</b> Ogni macchina guarda l'indirizzo, sceglie il cavo che punta più o meno nella direzione giusta e si dimentica immediatamente la busta. Sembra fragile ed è l'opposto: siccome nessuna macchina sta tenendo insieme niente, una di loro può guastarsi senza rompere la conversazione. L'altra cosa da portarsi via è il diagramma. Gran parte del tempo di caricamento di una pagina non è speso a spedire la pagina. È speso nell'andirivieni che precede il movimento di qualsiasi cosa utile, ed è per questo che un sito lontano sembra lento anche quando la tua connessione è veloce.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Pannello superiore: il percorso di inoltro, disegnato come i salti che una richiesta vera attraversa, con ogni pacchetto mostrato in volo. I pacchetti rossi si perdono e innescano una ritrasmissione dopo un timeout. Pannello inferiore: una cascata del caricamento - risoluzione DNS, poi le strette di mano TCP e TLS che costano circa tre round trip prima di qualsiasi contenuto, poi il trasferimento vero. Il ritardo di propagazione è calcolato a 200 000 km/s, la velocità della luce nel vetro.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Per le pagine normali la latenza batte la banda, e la cascata ti mostra perché.</b> La pagina è una catena di andate e ritorni - risolvi, stringi la mano, poi un trasferimento la cui finestra deve crescere prima di poter andare veloce - quindi dimezzare la distanza aiuta enormemente mentre raddoppiare la banda si nota appena. È tutto qui l'argomento per mettere i contenuti fisicamente più vicini alle persone invece di comprare un tubo più grosso. Nota anche quanto costa la perdita: un pacchetto perso non è solo un pacchetto rispedito, è almeno un round trip completo per accorgersi del buco, ed è per questo che un tasso di perdita dell'1 % può tagliare la portata di più della metà.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Il percorso di inoltro con accodamento per salto, e una cascata di caricamento che separa risoluzione, apertura della connessione e corpo della risposta. La propagazione usa 200 000 km/s; la stretta di mano occupa 1,5 RTT per il TCP più lo scambio TLS; la perdita innesca una ritrasmissione dopo timeout invece che una fast retransmit, che è il caso pessimistico. La fase di trasferimento riflette lo slow start, quindi la sua durata cresce col logaritmo della dimensione invece che linearmente.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>La scelta centrale dell'architettura è che il centro della rete non sa niente.</b> IP promette il massimo sforzo e niente di più; ordinamento, affidabilità, controllo di congestione e cifratura vivono tutti agli estremi. È il principio end-to-end, ed è il motivo per cui i router sono rimasti abbastanza semplici da scalare mentre il macchinario interessante poteva essere sostituito senza toccarli: da TCP a QUIC è esattamente una sostituzione del genere, che porta la logica dei flussi affidabili nello spazio utente sopra UDP per togliere il blocco in testa alla coda. La cascata qui è anche l'argomento del perché l'apertura della connessione sia diventata il bersaglio dell'ottimizzazione: è fatta di puri round trip, e i round trip sono l'unica quantità che nessuna spesa in conto capitale può portare sotto la velocità della luce nel vetro.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Che cosa succede fra il clic e la pagina</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Quando scrivi un indirizzo e premi invio, la prima cosa che il tuo computer deve fare è ammettere di non sapere dove sia quel posto. <strong>labinatab.com</strong> è un nome, e i nomi per la rete non significano niente. Quindi chiede, e il chiedere è già un piccolo viaggio: dal tuo router al tuo operatore fino a una macchina che tiene l'elenco principale, finché non torna una risposta, cioè un numero. Quel numero è l'indirizzo, e solo adesso si può spedire qualcosa.</p>
+<p>Poi arriva la parte sorprendente. La pagina non viene spedita come pagina. Viene tagliata in pezzi da circa millecinquecento caratteri l'uno, e ogni singolo pezzo viene messo in una busta con la destinazione scritta sopra e un numero d'ordine scritto dentro. Una foto può essere quattrocento buste. Ognuna parte per conto suo, e nessuno le tiene insieme.</p>
+<p>Viaggiano passandosele. La tua busta arriva a una macchina che guarda l'indirizzo, decide quale dei suoi cavi punta più o meno nella direzione giusta, la butta in quel cavo e poi se ne dimentica completamente. Dieci o venti macchine fanno questo a turno, e nessuna di loro conosce l'intero percorso. È il sistema postale, non una telefonata: fra te e il server non viene mai aperta nessuna linea.</p>
+<p>Qualche busta si perde. Una macchina è troppo occupata, un cavo fa i capricci, e il pezzo semplicemente non arriva. Il tuo computer si accorge del buco nei numeri d'ordine e richiede quel pezzo: ecco perché una connessione scadente non ti dà mezza foto, te la dà lenta. Muovi i cursori e guarda dove finisce davvero il tempo. Quasi mai dove la gente pensa.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📮</span> Ogni pezzo di ogni pagina che apri porta addosso l'indirizzo completo della destinazione, perché nessuna macchina lungo la strada ricorda niente di quelle passate prima.</li><li><span aria-hidden="true">🌊</span> Circa il 99% del traffico internet intercontinentale passa per cavi sottomarini, non per satelliti. Un cavo grosso come un tubo da giardino può portare il traffico di un paese.</li><li><span aria-hidden="true">⏱️</span> Nella fibra la luce viaggia a circa due terzi della sua velocità nel vuoto, il che mette un pavimento rigido di circa 60 ms sul viaggio di andata e ritorno fra l'Europa e la costa ovest americana. Non c'è somma di denaro che lo accorci.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>DNS, pacchetti, strette di mano e perché la latenza batte la banda</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Il caricamento di una pagina è fatto di quattro cose distinte in sequenza, e capire quale domina è quasi tutta la conoscenza pratica. Prima il <strong>DNS</strong>: il nome viene risolto in un indirizzo IP percorrendo una gerarchia - i server radice, poi il dominio di primo livello, poi il server autoritativo del dominio - a meno che la risposta non sia già in cache, nel qual caso costa quasi nulla. Poi la <strong>stretta di mano TCP</strong>, tre messaggi che stabiliscono la connessione e costano un round trip e mezzo prima che si muova un solo byte di contenuto. Poi il TLS, che costa altri round trip. Solo allora scorrono i dati.</p>
+<p>I dati vengono divisi in pacchetti dimensionati dall'<strong>MTU</strong>, tipicamente 1500 byte, di cui circa 1460 sono carico utile. Una pagina da 240 kB fa quindi circa 170 pacchetti. Vengono spediti a finestra - diversi in volo insieme, perché aspettare una conferma dopo ognuno sarebbe catastroficamente lento - e la finestra cresce man mano che la connessione si dimostra affidabile. È per questo che il primo secondo di una connessione è più lento del resto.</p>
+<p>L'instradamento è salto per salto e senza stato. Ogni router legge la destinazione, consulta una tabella di inoltro e manda il pacchetto fuori da una interfaccia. Pacchetti della stessa pagina possono prendere strade diverse e arrivare in disordine; il TCP li riordina con i numeri di sequenza e richiede la ritrasmissione di quel che manca. Un pacchetto perso costa almeno un round trip completo per accorgersene e sostituirlo, ed è per questo che la perdita fa molto più male di quanto la sua percentuale suggerisca.</p>
+<p>Da qui la regola che sorprende: per le pagine web normali <strong>conta più la latenza della banda</strong>. Passare da 10 a 100 Mbps cambia a malapena il tempo di caricamento, perché la pagina non è mai stata abbastanza grossa da saturare il tubo. Dimezzare il tempo di andata e ritorno lo cambia enormemente, perché il caricamento è una catena di andate e ritorni. È esattamente per questo che esistono le reti di distribuzione dei contenuti: non per spedire più veloce, ma per stare più vicine.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Ritardo di propagazione</th><td>\(t_{\text{prop}} = \dfrac{2d}{c_{\text{fibra}}}\)</td><td class="cmt">c ≈ 200 000 km/s nel vetro</td></tr>
+<tr><th scope="row">Pacchetti necessari</th><td>\(N = \lceil S / \text{MTU} \rceil\)</td><td class="cmt">S = dimensione della pagina</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Tempo al primo byte</th><td>\(t_{\text{TTFB}} \approx t_{\text{DNS}} + 1.5\,\text{RTT} + t_{\text{TLS}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Tempo di trasferimento</th><td>\(t \approx \dfrac{S}{B} + \text{RTT}\log_2\!\left(\dfrac{S}{\text{IW}}\right)\)</td><td class="cmt">slow start, IW = finestra iniziale</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🤝</span> Aprire una connessione HTTPS costa circa 3 round trip prima che arrivi qualsiasi contenuto. A 100 ms di RTT sono 300 ms spesi per mettersi d'accordo sul parlare, che su una pagina breve possono superare il tempo speso a spedirla.</li><li><span aria-hidden="true">📉</span> L'1% di perdita di pacchetti può tagliare la portata del TCP di più della metà, perché l'algoritmo di controllo della congestione tratta la perdita come un segnale di rallentare, non soltanto come un pezzo da rispedire.</li><li><span aria-hidden="true">🗺️</span> Un traceroute verso un server a 1000 km mostra tipicamente da 8 a 15 salti. Nessuno di quei router conosce il percorso completo: ognuno sa solo quale vicino è più vicino alla meta.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Il modello a livelli, il controllo di congestione e perché internet non crolla</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>I livelli, e quello che ciascuno si rifiuta di sapere</h3>
+<p>Il trucco centrale dell'architettura è l'ignoranza deliberata. IP, il livello di rete, promette solo il <em>massimo sforzo</em>: proverà a consegnare un datagramma e non ti dirà niente se fallisce. Non garantisce ordine, consegna né tempistica. Tutto quello che la gente vuole da una rete - affidabilità, ordinamento, controllo di flusso, sicurezza - è costruito sopra, in TCP e TLS, agli estremi. È il <strong>principio end-to-end</strong>, ed è il motivo per cui la rete ha scalato: i router sono rimasti semplici e senza stato mentre la complessità interessante viveva nelle macchine ai bordi, dove poteva essere aggiornata senza toccare il centro.</p>
+<h3><span class="hn">02</span>Il controllo di congestione come algoritmo distribuito</h3>
+<p>Nessuna autorità centrale alloca la banda. Invece ogni mittente TCP esegue un anello di controllo che aumenta il ritmo di invio finché non vede perdita, poi lo dimezza: incremento additivo, decremento moltiplicativo. Milioni di mittenti indipendenti che seguono questa regola convergono su una divisione grossolanamente equa di ogni collegamento condiviso, il che è un risultato distribuito davvero notevole. Le varianti moderne lo complicano in modo utile: CUBIC recupera più in fretta sui percorsi con alto prodotto banda-ritardo, e BBR abbandona del tutto la perdita come segnale, modellando direttamente banda e tempo di andata e ritorno del collo di bottiglia, perché in un'epoca di buffer generosi la perdita arriva molto dopo che la coda ha già rovinato la latenza.</p>
+<h3><span class="hn">03</span>Bufferbloat e la tirannia della coda</h3>
+<p>La memoria a basso costo ha prodotto una patologia. I router con buffer sovradimensionati assorbono le raffiche invece di scartarle, quindi il controllo di congestione basato sulla perdita riceve il suo segnale in ritardo e la coda resta permanentemente piena. La portata sembra ottima mentre la latenza interattiva collassa: è il sintomo classico di un caricamento video che distrugge una chiamata vocale sullo stesso collegamento. Il rimedio è la gestione attiva della coda, CoDel e FQ-CoDel, che scartano o marcano i pacchetti in base a quanto tempo sono stati in coda invece che a quanti ce ne sono.</p>
+<h3><span class="hn">04</span>BGP, e il fatto che l'instradamento è una questione di politica</h3>
+<p>Fra reti diverse i percorsi vengono scelti dal <strong>Border Gateway Protocol</strong>, che non è un algoritmo di cammino minimo ma un sistema per annunciare raggiungibilità e applicare politiche commerciali. Un sistema autonomo preferisce le rotte attraverso i clienti rispetto ai pari e ai fornitori, per ragioni di denaro più che di distanza. Le conseguenze sono strutturali: internet non ha una mappa, i cambi di rotta si propagano come pettegolezzi e possono metterci minuti a stabilizzarsi, e un annuncio sbagliato può tirare il traffico di un paese attraverso il continente sbagliato, cosa già accaduta più di una volta.</p>
+<h3><span class="hn">05</span>Che cosa ha cambiato HTTP/3</h3>
+<p>Far correre flussi affidabili su una sola connessione TCP creava il <em>blocco in testa alla coda</em>: un pacchetto perso ferma tutti i flussi che condividono quella connessione. QUIC sposta il macchinario di affidabilità e cifratura nello spazio utente sopra UDP, dando flussi indipendenti, una stretta di mano che fonde configurazione di trasporto e crittografica in un solo round trip, e identificatori di connessione che sopravvivono a un cambio di indirizzo IP - così un telefono che passa dal wi-fi alla rete cellulare mantiene la connessione invece di ricostruirla.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">AIMD</th><td>\(w \leftarrow w + \tfrac{1}{w}\ \ \text{per ACK};\quad w \leftarrow \tfrac{w}{2}\ \ \text{alla perdita}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Portata TCP</th><td>\(B \approx \dfrac{\text{MSS}}{\text{RTT}\sqrt{p}}\)</td><td class="cmt">legge della radice; p = tasso di perdita</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Prodotto banda-ritardo</th><td>\(\text{BDP} = B \times \text{RTT}\)</td><td class="cmt">byte in volo per riempire il tubo</td></tr>
+<tr><th scope="row">Ritardo di coda</th><td>\(t_q = \dfrac{Q}{B}\)</td><td class="cmt">perché un buffer grande è un buffer lento</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🧮</span> AIMD - incremento additivo, decremento moltiplicativo - è dimostrabilmente equo e stabile per flussi che competono su uno stesso collo di bottiglia. È uno dei pochi casi in cui una semplice regola locale produce in modo affidabile un buon risultato globale.</li><li><span aria-hidden="true">🫧</span> Il bufferbloat può aggiungere secondi di latenza a un collegamento la cui portata misura perfettamente. È il motivo per cui uno speed test può dire 200 Mbps mentre una videochiamata è inutilizzabile.</li><li><span aria-hidden="true">🌍</span> BGP non ha alcuna verifica incorporata di chi possieda quale blocco di indirizzi. La validazione dell'origine delle rotte si sta diffondendo, ma per gran parte della storia di internet qualsiasi rete poteva annunciare qualsiasi prefisso ed essere creduta.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Informatica</h2>
+    <ul><li><a href="/it/algoritmi-di-ordinamento/">Algoritmi di ordinamento</a></li><li><a href="/it/machine-learning-reti-neurali/">Machine learning e reti neurali</a></li><li><a href="/it/crittografia-sicurezza/">Crittografia e sicurezza</a></li><li><a href="/it/computazione-complessita/">Computazione e complessità</a></li><li><a href="/it/come-funziona-la-compressione-dei-file/">Come funziona la compressione dei file</a></li><li><a href="/it/come-funziona-un-motore-di-ricerca/">Come fa un motore di ricerca a decidere che cosa mostrarti</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

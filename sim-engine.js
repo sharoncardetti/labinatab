@@ -130,24 +130,24 @@ const SIM_LABELS={
            vVax:'vaccinated',vEver:'of everyone'}
  },
  seriesparallel:{
-  junior :{mode:'Series / Parallel',volt:'Battery',      rtot:'Total resistance',cur:'Current',      bulb:'Bulb brightness'},
-  student:{mode:'Series / Parallel',volt:'Voltage (V)',  rtot:'Total resistance',cur:'Total current',bulb:'Power per bulb'},
-  scholar:{mode:'Series / Parallel',volt:'Voltage (V)',  rtot:'Total resistance',cur:'Total current',bulb:'Power per bulb'}
+  junior :{mode:'Series / Parallel',volt:'Battery',      rtot:'Total resistance',cur:'Current',      bulb:'Bulb brightness',cSeries:'SERIES',cParallel:'PARALLEL'},
+  student:{mode:'Series / Parallel',volt:'Voltage (V)',  rtot:'Total resistance',cur:'Total current',bulb:'Power per bulb',cSeries:'SERIES',cParallel:'PARALLEL'},
+  scholar:{mode:'Series / Parallel',volt:'Voltage (V)',  rtot:'Total resistance',cur:'Total current',bulb:'Power per bulb',cSeries:'SERIES',cParallel:'PARALLEL'}
  },
  respiration:{
-  junior :{o2:'Oxygen',      atp:'Energy (ATP)',    co2:'CO₂ out',        mode:'Mode'},
-  student:{o2:'Oxygen level', atp:'ATP per glucose', co2:'CO₂ per glucose',mode:'Pathway'},
-  scholar:{o2:'Oxygen level', atp:'ATP per glucose', co2:'CO₂ per glucose',mode:'Pathway'}
+  junior :{o2:'Oxygen',      atp:'Energy (ATP)',    co2:'CO₂ out',        mode:'Mode',cMito:'mitochondrion',cAnaerobic:'Anaerobic'},
+  student:{o2:'Oxygen level', atp:'ATP per glucose', co2:'CO₂ per glucose',mode:'Pathway',cMito:'mitochondrion',cAnaerobic:'Anaerobic'},
+  scholar:{o2:'Oxygen level', atp:'ATP per glucose', co2:'CO₂ per glucose',mode:'Pathway',cMito:'mitochondrion',cAnaerobic:'Anaerobic'}
  },
  watercycle:{
-  junior :{temp:'Sun warmth',wind:'Wind',   evap:'Evaporation',      cloud:'Cloud',       rain:'Rain'},
-  student:{temp:'Temperature',wind:'Wind speed',evap:'Evaporation',cloud:'Cloud water', rain:'Precipitation'},
-  scholar:{temp:'Temperature',wind:'Wind speed',evap:'Evaporation',cloud:'Cloud water', rain:'Precipitation'}
+  junior :{temp:'Sun warmth',wind:'Wind',   evap:'Evaporation',      cloud:'Cloud',       rain:'Rain',cWind:'Wind',cLow:'Low',cMedium:'Medium',cHigh:'High',cRainLand:'Raining on land',cDrift:'Drifting to land',cBuilding:'Building'},
+  student:{temp:'Temperature',wind:'Wind speed',evap:'Evaporation',cloud:'Cloud water', rain:'Precipitation',cWind:'Wind',cLow:'Low',cMedium:'Medium',cHigh:'High',cRainLand:'Raining on land',cDrift:'Drifting to land',cBuilding:'Building'},
+  scholar:{temp:'Temperature',wind:'Wind speed',evap:'Evaporation',cloud:'Cloud water', rain:'Precipitation',cWind:'Wind',cLow:'Low',cMedium:'Medium',cHigh:'High',cRainLand:'Raining on land',cDrift:'Drifting to land',cBuilding:'Building'}
  },
  energy:{
-  junior :{drop:'Drop height',    fric:'Friction', ke:'Motion energy', pe:'Height energy', tot:'Total'},
-  student:{drop:'Start height (h)',fric:'Friction', ke:'Kinetic (KE)',  pe:'Potential (PE)',tot:'Total E'},
-  scholar:{drop:'Start height (h)',fric:'Friction', ke:'Kinetic (KE)',  pe:'Potential (PE)',tot:'Total E'}
+  junior :{drop:'Drop height',    fric:'Friction', ke:'Motion energy', pe:'Height energy', tot:'Total',cHeat:'heat',cChart:'energy against time',cLost:'lost to heat'},
+  student:{drop:'Start height (h)',fric:'Friction', ke:'Kinetic (KE)',  pe:'Potential (PE)',tot:'Total E',cHeat:'heat',cChart:'energy against time',cLost:'lost to heat'},
+  scholar:{drop:'Start height (h)',fric:'Friction', ke:'Kinetic (KE)',  pe:'Potential (PE)',tot:'Total E',cHeat:'heat',cChart:'energy against time',cLost:'lost to heat'}
  },
  gaslaws:{
   junior :{temp:'Temperature',    vol:'Container size',pres:'Pressure',    pv:'Pressure × size'},
@@ -155,14 +155,14 @@ const SIM_LABELS={
   scholar:{temp:'Temperature (T)', vol:'Volume (V)',    pres:'Pressure (P)',pv:'P × V'}
  },
  moonphases:{
-  junior :{day:'Day of the month',phase:'Phase',lit:'How much is lit'},
-  student:{day:'Day (of 29.5)',    phase:'Phase',lit:'Illuminated'},
-  scholar:{day:'Day (of 29.5)',    phase:'Phase',lit:'Illuminated'}
+  junior :{day:'Day of the month',phase:'Phase',lit:'How much is lit',cSun:'Sun',cEarth:'Earth',cFromEarth:'from Earth',cNew:'New Moon',cFull:'Full Moon',cFirstQ:'First Quarter',cLastQ:'Last Quarter',cWaxCres:'Waxing Crescent',cWaxGib:'Waxing Gibbous',cWanCres:'Waning Crescent',cWanGib:'Waning Gibbous'},
+  student:{day:'Day (of 29.5)',    phase:'Phase',lit:'Illuminated',cSun:'Sun',cEarth:'Earth',cFromEarth:'from Earth',cNew:'New Moon',cFull:'Full Moon',cFirstQ:'First Quarter',cLastQ:'Last Quarter',cWaxCres:'Waxing Crescent',cWaxGib:'Waxing Gibbous',cWanCres:'Waning Crescent',cWanGib:'Waning Gibbous'},
+  scholar:{day:'Day (of 29.5)',    phase:'Phase',lit:'Illuminated',cSun:'Sun',cEarth:'Earth',cFromEarth:'from Earth',cNew:'New Moon',cFull:'Full Moon',cFirstQ:'First Quarter',cLastQ:'Last Quarter',cWaxCres:'Waxing Crescent',cWaxGib:'Waxing Gibbous',cWanCres:'Waning Crescent',cWanGib:'Waning Gibbous'}
  },
  protein:{
-  junior :{play:'Build',codon:'Reading',   len:'Beads so far'},
-  student:{play:'Translate',codon:'Codon → amino acid',len:'Chain length'},
-  scholar:{play:'Translate',codon:'Codon → amino acid',len:'Chain length'}
+  junior :{play:'Build',codon:'Reading',   len:'Beads so far',cChain:'protein chain',cMrna:'mRNA — the recipe',cRibo:'ribosome',cStop:'STOP — chain released',cDone:' (done)'},
+  student:{play:'Translate',codon:'Codon → amino acid',len:'Chain length',cChain:'protein chain',cMrna:'mRNA — the recipe',cRibo:'ribosome',cStop:'STOP — chain released',cDone:' (done)'},
+  scholar:{play:'Translate',codon:'Codon → amino acid',len:'Chain length',cChain:'protein chain',cMrna:'mRNA — the recipe',cRibo:'ribosome',cStop:'STOP — chain released',cDone:' (done)'}
  },
  pendulum:{
   junior :{len:'Length',    amp:'How far it swings',per:'Time per swing',freq:'Swings per second'},
@@ -170,9 +170,9 @@ const SIM_LABELS={
   scholar:{len:'Length (L)',amp:'Amplitude (θ₀)',   per:'Period (T)',   freq:'Frequency (f)'}
  },
  optics:{
-  junior :{obj:'Object distance',foc:'Lens strength',   img:'Where the image is',mag:'How big',       type:'Image'},
-  student:{obj:'Object distance (dₒ)',foc:'Focal length (f)',img:'Image distance (dᵢ)',mag:'Magnification (m)',type:'Image'},
-  scholar:{obj:'Object distance (dₒ)',foc:'Focal length (f)',img:'Image distance (dᵢ)',mag:'Magnification (m)',type:'Image'}
+  junior :{obj:'Object distance',foc:'Lens strength',   img:'Where the image is',mag:'How big',       type:'Image',cRealInv:'Real, inverted',cVirtUp:'Virtual, upright',cVirtImg:'virtual image',cReal:' (real)',cVirtual:' (virtual)',cObject:'object',cParallel:'parallel',cCentre:'centre',cFocus:'focus',cImage:'image'},
+  student:{obj:'Object distance (dₒ)',foc:'Focal length (f)',img:'Image distance (dᵢ)',mag:'Magnification (m)',type:'Image',cRealInv:'Real, inverted',cVirtUp:'Virtual, upright',cVirtImg:'virtual image',cReal:' (real)',cVirtual:' (virtual)',cObject:'object',cParallel:'parallel',cCentre:'centre',cFocus:'focus',cImage:'image'},
+  scholar:{obj:'Object distance (dₒ)',foc:'Focal length (f)',img:'Image distance (dᵢ)',mag:'Magnification (m)',type:'Image',cRealInv:'Real, inverted',cVirtUp:'Virtual, upright',cVirtImg:'virtual image',cReal:' (real)',cVirtual:' (virtual)',cObject:'object',cParallel:'parallel',cCentre:'centre',cFocus:'focus',cImage:'image'}
  },
  gravity:{
   junior :{radius:'Distance from star',mass:'Star mass',    period:'Year length',speed:'Speed'},
@@ -195,34 +195,34 @@ const SIM_LABELS={
   scholar:{volt:'Voltage (V)',     res:'Resistance (R)',cur:'Current (I)',   pow:'Power (P)'}
  },
  acids:{
-  junior :{base:'Base added',      pka:'Acid strength',ph:'pH',state:'Acid or base?'},
-  student:{base:'Base added (mL)',  pka:'Acid pKₐ',     ph:'pH',state:'Nature'},
-  scholar:{base:'Titrant added (mL)',pka:'Acid pKₐ',    ph:'pH',state:'Region'}
+  junior :{base:'Base added',      pka:'Acid strength',ph:'pH',state:'Acid or base?',cBase:'base added →',cAcidic:'Acidic',cBasic:'Basic',cNeutral:'Neutral'},
+  student:{base:'Base added (mL)',  pka:'Acid pKₐ',     ph:'pH',state:'Nature',cBase:'base added →',cAcidic:'Acidic',cBasic:'Basic',cNeutral:'Neutral'},
+  scholar:{base:'Titrant added (mL)',pka:'Acid pKₐ',    ph:'pH',state:'Region',cBase:'base added →',cAcidic:'Acidic',cBasic:'Basic',cNeutral:'Neutral'}
  },
  periodic:{
-  junior :{el:'Element',trend:'What you\'re seeing'},
-  student:{el:'Element',trend:'View'},
-  scholar:{el:'Element',trend:'View'}
+  junior :{el:'Element',trend:'What you\'re seeing',cAlkali:'Alkali metal',cAlkEarth:'Alkaline earth metal',cTransition:'Transition metal',cPostTrans:'Post-transition metal',cMetalloid:'Metalloid',cNonmetal:'Reactive nonmetal',cHalogen:'Halogen',cNoble:'Noble gas',cLanth:'Lanthanide',cActin:'Actinide',cFamilies:'Families',cRadius:'Atomic radius',cElectroneg:'Electronegativity',cRadiusHint:'Radius: grows ← and ↓',cEnegHint:'Electronegativity: grows → and ↑',cByFamily:'Coloured by chemical family'},
+  student:{el:'Element',trend:'View',cAlkali:'Alkali metal',cAlkEarth:'Alkaline earth metal',cTransition:'Transition metal',cPostTrans:'Post-transition metal',cMetalloid:'Metalloid',cNonmetal:'Reactive nonmetal',cHalogen:'Halogen',cNoble:'Noble gas',cLanth:'Lanthanide',cActin:'Actinide',cFamilies:'Families',cRadius:'Atomic radius',cElectroneg:'Electronegativity',cRadiusHint:'Radius: grows ← and ↓',cEnegHint:'Electronegativity: grows → and ↑',cByFamily:'Coloured by chemical family'},
+  scholar:{el:'Element',trend:'View',cAlkali:'Alkali metal',cAlkEarth:'Alkaline earth metal',cTransition:'Transition metal',cPostTrans:'Post-transition metal',cMetalloid:'Metalloid',cNonmetal:'Reactive nonmetal',cHalogen:'Halogen',cNoble:'Noble gas',cLanth:'Lanthanide',cActin:'Actinide',cFamilies:'Families',cRadius:'Atomic radius',cElectroneg:'Electronegativity',cRadiusHint:'Radius: grows ← and ↓',cEnegHint:'Electronegativity: grows → and ↑',cByFamily:'Coloured by chemical family'}
  },
  photosynthesis:{
-  junior :{light:'Sunlight',        co2:'Carbon dioxide',rate:'Oxygen made',           limit:'What\'s limiting?'},
-  student:{light:'Light intensity', co2:'CO₂ level',     rate:'Rate of photosynthesis',limit:'Limiting factor'},
-  scholar:{light:'Light intensity', co2:'CO₂ level',     rate:'Rate of photosynthesis',limit:'Limiting factor'}
+  junior :{light:'Sunlight',        co2:'Carbon dioxide',rate:'Oxygen made',           limit:'What\'s limiting?',cBalanced:'Balanced',cLight:'Light'},
+  student:{light:'Light intensity', co2:'CO₂ level',     rate:'Rate of photosynthesis',limit:'Limiting factor',cBalanced:'Balanced',cLight:'Light'},
+  scholar:{light:'Light intensity', co2:'CO₂ level',     rate:'Rate of photosynthesis',limit:'Limiting factor',cBalanced:'Balanced',cLight:'Light'}
  },
  cell:{
-  junior :{salt:'Salt on the right',   reset:'Reset',left:'Water on the left',right:'Water on the right'},
-  student:{salt:'Solute added (right)',reset:'Reset',left:'Water (left)',     right:'Water (right)'},
-  scholar:{salt:'Solute added (right)',reset:'Reset',left:'Water (left)',     right:'Water (right)'}
+  junior :{salt:'Salt on the right',   reset:'Reset',left:'Water on the left',right:'Water on the right',cPure:'pure water',cReset:'Reset'},
+  student:{salt:'Solute added (right)',reset:'Reset',left:'Water (left)',     right:'Water (right)',cPure:'pure water',cReset:'Reset'},
+  scholar:{salt:'Solute added (right)',reset:'Reset',left:'Water (left)',     right:'Water (right)',cPure:'pure water',cReset:'Reset'}
  },
  mitosis:{
-  junior :{stage:'Drag through the stages',play:'Play',phase:'Stage',cells:'Cells'},
-  student:{stage:'Stage',                   play:'Play',phase:'Phase',cells:'Cells'},
-  scholar:{stage:'Stage',                   play:'Play',phase:'Phase',cells:'Cells'}
+  junior :{stage:'Drag through the stages',play:'Play',phase:'Stage',cells:'Cells',cMitosis:'MITOSIS',cMeiosis:'MEIOSIS',cInter:'Interphase',cInterD:'DNA is copied: each chromosome becomes 2 sister chromatids',cPro:'Prophase',cProD:'Chromosomes condense, nuclear envelope breaks down',cMeta:'Metaphase',cMetaD:'All chromosomes line up SINGLE file on the equator',cAna:'Anaphase',cAnaD:'SISTER chromatids are pulled apart',cTelo:'Telophase',cTeloD:'Nuclei reform and the cell pinches in two',cTwoCells:'2 cells (2n)',cTwoD:'Two daughters, diploid and genetically identical',cInterMD:'DNA is copied once — exactly as in mitosis',cPro1:'Prophase I',cPro1D:'Homologues PAIR UP and swap pieces (crossing over)',cMeta1:'Metaphase I',cMeta1D:'Pairs line up DOUBLE file, each pair facing at random',cAna1:'Anaphase I',cAna1D:'WHOLE homologues separate — sisters stay joined',cTelo1:'Telophase I',cTelo1D:'Two cells, already haploid but still doubled',cPro2:'Prophase II',cPro2D:'No second DNA copy — straight into division two',cMeta2:'Metaphase II',cMeta2D:'Chromosomes line up again, in both cells',cAna2:'Anaphase II',cAna2D:'Now the sister chromatids separate',cFourCells:'4 cells (n)',cFourD:'Four haploid gametes, every one a different mix'},
+  student:{stage:'Stage',                   play:'Play',phase:'Phase',cells:'Cells',cMitosis:'MITOSIS',cMeiosis:'MEIOSIS',cInter:'Interphase',cInterD:'DNA is copied: each chromosome becomes 2 sister chromatids',cPro:'Prophase',cProD:'Chromosomes condense, nuclear envelope breaks down',cMeta:'Metaphase',cMetaD:'All chromosomes line up SINGLE file on the equator',cAna:'Anaphase',cAnaD:'SISTER chromatids are pulled apart',cTelo:'Telophase',cTeloD:'Nuclei reform and the cell pinches in two',cTwoCells:'2 cells (2n)',cTwoD:'Two daughters, diploid and genetically identical',cInterMD:'DNA is copied once — exactly as in mitosis',cPro1:'Prophase I',cPro1D:'Homologues PAIR UP and swap pieces (crossing over)',cMeta1:'Metaphase I',cMeta1D:'Pairs line up DOUBLE file, each pair facing at random',cAna1:'Anaphase I',cAna1D:'WHOLE homologues separate — sisters stay joined',cTelo1:'Telophase I',cTelo1D:'Two cells, already haploid but still doubled',cPro2:'Prophase II',cPro2D:'No second DNA copy — straight into division two',cMeta2:'Metaphase II',cMeta2D:'Chromosomes line up again, in both cells',cAna2:'Anaphase II',cAna2D:'Now the sister chromatids separate',cFourCells:'4 cells (n)',cFourD:'Four haploid gametes, every one a different mix'},
+  scholar:{stage:'Stage',                   play:'Play',phase:'Phase',cells:'Cells',cMitosis:'MITOSIS',cMeiosis:'MEIOSIS',cInter:'Interphase',cInterD:'DNA is copied: each chromosome becomes 2 sister chromatids',cPro:'Prophase',cProD:'Chromosomes condense, nuclear envelope breaks down',cMeta:'Metaphase',cMetaD:'All chromosomes line up SINGLE file on the equator',cAna:'Anaphase',cAnaD:'SISTER chromatids are pulled apart',cTelo:'Telophase',cTeloD:'Nuclei reform and the cell pinches in two',cTwoCells:'2 cells (2n)',cTwoD:'Two daughters, diploid and genetically identical',cInterMD:'DNA is copied once — exactly as in mitosis',cPro1:'Prophase I',cPro1D:'Homologues PAIR UP and swap pieces (crossing over)',cMeta1:'Metaphase I',cMeta1D:'Pairs line up DOUBLE file, each pair facing at random',cAna1:'Anaphase I',cAna1D:'WHOLE homologues separate — sisters stay joined',cTelo1:'Telophase I',cTelo1D:'Two cells, already haploid but still doubled',cPro2:'Prophase II',cPro2D:'No second DNA copy — straight into division two',cMeta2:'Metaphase II',cMeta2D:'Chromosomes line up again, in both cells',cAna2:'Anaphase II',cAna2D:'Now the sister chromatids separate',cFourCells:'4 cells (n)',cFourD:'Four haploid gametes, every one a different mix'}
  },
  eclipse:{
-  junior :{moon:'Move the Moon',  node:'Line up the orbit',phase:'Moon phase',ecl:'Eclipse?'},
-  student:{moon:'Moon position',   node:'Node alignment',   phase:'Moon phase',ecl:'Eclipse'},
-  scholar:{moon:'Moon position',   node:'Node alignment',   phase:'Moon phase',ecl:'Eclipse'}
+  junior :{moon:'Move the Moon',  node:'Line up the orbit',phase:'Moon phase',ecl:'Eclipse?',cNewMoon:'New moon',cFullMoon:'Full moon',cWaxing:'Waxing',cWaning:'Waning',cNoEcl:'None — shadow misses'},
+  student:{moon:'Moon position',   node:'Node alignment',   phase:'Moon phase',ecl:'Eclipse',cNewMoon:'New moon',cFullMoon:'Full moon',cWaxing:'Waxing',cWaning:'Waning',cNoEcl:'None — shadow misses'},
+  scholar:{moon:'Moon position',   node:'Node alignment',   phase:'Moon phase',ecl:'Eclipse',cNewMoon:'New moon',cFullMoon:'Full moon',cWaxing:'Waxing',cWaning:'Waning',cNoEcl:'None — shadow misses'}
  },
  aurora:{
   junior :{wind:'Push from the Sun',bz:'Magnetic direction',kp:'Storm strength',oval:'Seen as far south as',glow:'Main colour'},
@@ -235,9 +235,9 @@ const SIM_LABELS={
   scholar:{size:'Nucleus radius',      ecc:'Eccentricity',           dist:'Heliocentric distance',act:'Activity',       tail:'Tail length'}
  },
  elnino:{
-  junior :{wind:'Strength of the trade winds',oni:'How warm the east Pacific is',phase:'What is happening',eff:'What it means on land'},
-  student:{wind:'Trade wind strength',        oni:'ONI anomaly',                phase:'Phase',            eff:'Teleconnections'},
-  scholar:{wind:'Zonal wind stress',          oni:'ONI (Niño 3.4)',             phase:'Phase',            eff:'Teleconnections'}
+  junior :{wind:'Strength of the trade winds',oni:'How warm the east Pacific is',phase:'What is happening',eff:'What it means on land',cAus:'Australia',cIndo:'Indonesia',cPeru:'Peru',cMex:'Mexico',cGal:'Galápagos',cNEC:'North Equatorial Current',cNECC:'North Equatorial Countercurrent',cSEC:'South Equatorial Current',cHumboldt:'Humboldt Current',cHumb:'Humboldt'},
+  student:{wind:'Trade wind strength',        oni:'ONI anomaly',                phase:'Phase',            eff:'Teleconnections',cAus:'Australia',cIndo:'Indonesia',cPeru:'Peru',cMex:'Mexico',cGal:'Galápagos',cNEC:'North Equatorial Current',cNECC:'North Equatorial Countercurrent',cSEC:'South Equatorial Current',cHumboldt:'Humboldt Current',cHumb:'Humboldt'},
+  scholar:{wind:'Zonal wind stress',          oni:'ONI (Niño 3.4)',             phase:'Phase',            eff:'Teleconnections',cAus:'Australia',cIndo:'Indonesia',cPeru:'Peru',cMex:'Mexico',cGal:'Galápagos',cNEC:'North Equatorial Current',cNECC:'North Equatorial Countercurrent',cSEC:'South Equatorial Current',cHumboldt:'Humboldt Current',cHumb:'Humboldt'}
  },
  exoplanets:{
   junior :{rp:'Size of the planet',dist:'Distance from the star',depth:'How much the star dims',per:'Time for one orbit',kind:'What we can tell'},
@@ -255,14 +255,14 @@ const SIM_LABELS={
   scholar:{path:'Alignment offset',       dust:'Aerosol loading',   cover:'Umbral magnitude',shade:'Danjon L', look:'Eclipse type',play:'Play',pause:'Pause'}
  },
  meteors:{
-  junior :{pos:'Time of year',     dens:'Dust in the trail',rate:'Shooting stars/hr',status:'The sky now'},
-  student:{pos:'Earth\'s position',dens:'Debris density',   rate:'Meteors/hour',     status:'Activity'},
-  scholar:{pos:'Earth\'s position',dens:'Stream density',   rate:'Meteors/hour',     status:'Activity'}
+  junior :{pos:'Time of year',     dens:'Dust in the trail',rate:'Shooting stars/hr',status:'The sky now',cOrbit:"Earth's orbit",cPeak:'Peak!',cInStream:'In the stream',cQuiet:'Quiet sky'},
+  student:{pos:'Earth\'s position',dens:'Debris density',   rate:'Meteors/hour',     status:'Activity',cOrbit:"Earth's orbit",cPeak:'Peak!',cInStream:'In the stream',cQuiet:'Quiet sky'},
+  scholar:{pos:'Earth\'s position',dens:'Stream density',   rate:'Meteors/hour',     status:'Activity',cOrbit:"Earth's orbit",cPeak:'Peak!',cInStream:'In the stream',cQuiet:'Quiet sky'}
  },
  states:{
-  junior :{temp:'Temperature',state:'State of matter',tval:'How it feels'},
-  student:{temp:'Temperature',state:'State',          tval:'How it feels'},
-  scholar:{temp:'Temperature',state:'State',          tval:'How it feels'}
+  junior :{temp:'Temperature',state:'State of matter',tval:'How it feels',cBoil:'boil',cMelt:'melt',cGas:'Gas',cCold:'cold',cWarm:'warm',cHot:'hot'},
+  student:{temp:'Temperature',state:'State',          tval:'How it feels',cBoil:'boil',cMelt:'melt',cGas:'Gas',cCold:'cold',cWarm:'warm',cHot:'hot'},
+  scholar:{temp:'Temperature',state:'State',          tval:'How it feels',cBoil:'boil',cMelt:'melt',cGas:'Gas',cCold:'cold',cWarm:'warm',cHot:'hot'}
  },
  trig:{
   junior :{angle:'Angle',   play:'Play',sin:'Height (sin)',cos:'Across (cos)'},
@@ -270,19 +270,19 @@ const SIM_LABELS={
   scholar:{angle:'Angle θ', play:'Play',sin:'sin θ',       cos:'cos θ'}
  },
  punnett:{
-  junior :{p1:'Parent 1',         p2:'Parent 2',         pheno:'Look (phenotype)', geno:'Genes (genotype)'},
-  student:{p1:'Parent 1 genotype',p2:'Parent 2 genotype',pheno:'Phenotype ratio',  geno:'Genotype ratio'},
-  scholar:{p1:'Parent 1 genotype',p2:'Parent 2 genotype',pheno:'Phenotype ratio',  geno:'Genotype ratio'}
+  junior :{p1:'Parent 1',         p2:'Parent 2',         pheno:'Look (phenotype)', geno:'Genes (genotype)',cDomRec:'  (dom:rec)'},
+  student:{p1:'Parent 1 genotype',p2:'Parent 2 genotype',pheno:'Phenotype ratio',  geno:'Genotype ratio',cDomRec:'  (dom:rec)'},
+  scholar:{p1:'Parent 1 genotype',p2:'Parent 2 genotype',pheno:'Phenotype ratio',  geno:'Genotype ratio',cDomRec:'  (dom:rec)'}
  },
  seasons:{
-  junior :{month:'Month',        nh:'Northern half',       sh:'Southern half'},
-  student:{month:'Month of year',nh:'Northern Hemisphere', sh:'Southern Hemisphere'},
-  scholar:{month:'Month of year',nh:'Northern Hemisphere', sh:'Southern Hemisphere'}
+  junior :{month:'Month',        nh:'Northern half',       sh:'Southern half',cWinter:'Winter',cSpring:'Spring',cSummer:'Summer',cAutumn:'Autumn'},
+  student:{month:'Month of year',nh:'Northern Hemisphere', sh:'Southern Hemisphere',cWinter:'Winter',cSpring:'Spring',cSummer:'Summer',cAutumn:'Autumn'},
+  scholar:{month:'Month of year',nh:'Northern Hemisphere', sh:'Southern Hemisphere',cWinter:'Winter',cSpring:'Spring',cSummer:'Summer',cAutumn:'Autumn'}
  },
  balancing:{
-  junior :{next:'Next reaction',bal:'Balanced?',check:'Atom check'},
-  student:{next:'Next reaction',bal:'Balanced?',check:'Atom check'},
-  scholar:{next:'Next reaction',bal:'Balanced?',check:'Atom check'}
+  junior :{next:'Next reaction',bal:'Balanced?',check:'Atom check',cBalanced:'✓ Balanced!',cDiffer:'counts differ'},
+  student:{next:'Next reaction',bal:'Balanced?',check:'Atom check',cBalanced:'✓ Balanced!',cDiffer:'counts differ'},
+  scholar:{next:'Next reaction',bal:'Balanced?',check:'Atom check',cBalanced:'✓ Balanced!',cDiffer:'counts differ'}
  },
  prob:{
   junior :{drop:'Drop balls',reset:'Reset',rows:'Rows of pegs',total:'Balls dropped',  mean:'Average bin'},
@@ -290,14 +290,14 @@ const SIM_LABELS={
   scholar:{drop:'Drop balls',reset:'Reset',rows:'Rows of pegs',total:'Sample size (N)',mean:'Mean bin index'}
  },
  waves:{
-  junior :{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Wave height'},
-  student:{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Max amplitude'},
-  scholar:{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Max amplitude'}
+  junior :{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Wave height',cPhase:'Phase Shift'},
+  student:{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Max amplitude',cPhase:'Phase Shift'},
+  scholar:{freq:'Frequency 2',phase:'Phase Shift',type:'Interference',amp:'Max amplitude',cPhase:'Phase Shift'}
  },
  thermo:{
-  junior :{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure'},
-  student:{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure'},
-  scholar:{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure'}
+  junior :{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure',cSlow:'SLOW',cFast:'FAST',cDist:'Speed distribution  ·  Maxwell–Boltzmann'},
+  student:{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure',cSlow:'SLOW',cFast:'FAST',cDist:'Speed distribution  ·  Maxwell–Boltzmann'},
+  scholar:{temp:'Temperature (K)',num:'Particles',hits:'Wall hits/s',speed:'Avg speed',press:'Pressure',cSlow:'SLOW',cFast:'FAST',cDist:'Speed distribution  ·  Maxwell–Boltzmann'}
  },
  particles:{
   junior :{energy:'Beam energy (TeV)',collide:'Collide!',count:'Collisions',e:'Energy'},
@@ -305,19 +305,19 @@ const SIM_LABELS={
   scholar:{energy:'Beam energy (TeV)',collide:'Collide!',count:'Collisions',e:'Energy'}
  },
  fractal:{
-  junior :{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view'},
-  student:{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view'},
-  scholar:{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view'}
+  junior :{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view',cZoom:'🔍 Click anywhere to zoom in'},
+  student:{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view',cZoom:'🔍 Click anywhere to zoom in'},
+  scholar:{detail:'Detail (iterations)',zoom:'Zoom level',reset:'Reset view',cZoom:'🔍 Click anywhere to zoom in'}
  },
  calculus:{
-  junior :{x:'x position',rects:'Riemann rectangles',deriv:'Slope here',integ:'Area so far'},
-  student:{x:'x position',rects:'Riemann rectangles',deriv:'f′(x)',integ:'∫f dx (−3→x)'},
-  scholar:{x:'x position',rects:'Riemann rectangles',deriv:'f′(x)',integ:'∫ from −3 to x'}
+  junior :{x:'x position',rects:'Riemann rectangles',deriv:'Slope here',integ:'Area so far',cTangent:'tangent at x='},
+  student:{x:'x position',rects:'Riemann rectangles',deriv:'f′(x)',integ:'∫f dx (−3→x)',cTangent:'tangent at x='},
+  scholar:{x:'x position',rects:'Riemann rectangles',deriv:'f′(x)',integ:'∫ from −3 to x',cTangent:'tangent at x='}
  },
  graphs:{
-  junior :{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs'},
-  student:{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs'},
-  scholar:{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs'}
+  junior :{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs',cInfected:'Infected',cRecovered:'Recovered',cSusceptible:'Susceptible',cHub:'Hub'},
+  student:{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs',cInfected:'Infected',cRecovered:'Recovered',cSusceptible:'Susceptible',cHub:'Hub'},
+  scholar:{nodes:'Nodes',hubs:'Hub connections',spread:'Spread signal',reset:'New graph',reached:'Reached',steps:'Steps',hubcount:'Hubs',cInfected:'Infected',cRecovered:'Recovered',cSusceptible:'Susceptible',cHub:'Hub'}
  },
  life:{
   junior :{pause:'Pause',clear:'Clear',random:'Random',glider:'Glider',gen:'Generation',alive:'Alive cells'},
@@ -325,24 +325,24 @@ const SIM_LABELS={
   scholar:{pause:'Pause',clear:'Clear',random:'Random',glider:'Glider',gen:'Generation',alive:'Alive cells'}
  },
  dna:{
-  junior :{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations'},
-  student:{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations'},
-  scholar:{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations'}
+  junior :{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations',cFork:'replication fork',cForkArrow:'← replication fork →'},
+  student:{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations',cFork:'replication fork',cForkArrow:'← replication fork →'},
+  scholar:{speed:'Replication speed',reset:'Reset',pairs:'Base pairs copied',errors:'Mutations',cFork:'replication fork',cForkArrow:'← replication fork →'}
  },
  evolution:{
-  junior :{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Average fitness',div:'Diversity'},
-  student:{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Avg fitness',div:'Diversity'},
-  scholar:{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Avg fitness',div:'Diversity'}
+  junior :{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Average fitness',div:'Diversity',cOptimum:'Environment optimum:'},
+  student:{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Avg fitness',div:'Diversity',cOptimum:'Environment optimum:'},
+  scholar:{sel:'Selection pressure',mut:'Mutation rate',reset:'Reset',gen:'Generation',fit:'Avg fitness',div:'Diversity',cOptimum:'Environment optimum:'}
  },
  ecosystem:{
-  junior :{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators'},
-  student:{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators'},
-  scholar:{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators'}
+  junior :{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators',cNoHerb:'⚠️ Herbivores extinct - ecosystem collapse!',cNoPred:'⚠️ Predators gone - herbivore explosion!'},
+  student:{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators',cNoHerb:'⚠️ Herbivores extinct - ecosystem collapse!',cNoPred:'⚠️ Predators gone - herbivore explosion!'},
+  scholar:{growth:'Plant growth rate',pred:'Predator efficiency',reset:'Reset',plants:'🌿 Plants',herb:'🐇 Herbivores',preds:'🦊 Predators',cNoHerb:'⚠️ Herbivores extinct - ecosystem collapse!',cNoPred:'⚠️ Predators gone - herbivore explosion!'}
  },
  sorting:{
-  junior :{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps'},
-  student:{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps'},
-  scholar:{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps'}
+  junior :{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps',cMergeN:'Merge O(n log n)'},
+  student:{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps',cMergeN:'Merge O(n log n)'},
+  scholar:{size:'Array size',bubble:'Bubble Sort',merge:'Merge Sort',shuffle:'Shuffle',algo:'Algorithm',comps:'Comparisons',swaps:'Swaps',cMergeN:'Merge O(n log n)'}
  },
  ml:{
   junior :{lr:'Learning rate',hid:'Hidden units',reset:'Reset',epoch:'Epoch',loss:'Error',acc:'Accuracy'},
@@ -350,74 +350,74 @@ const SIM_LABELS={
   scholar:{lr:'Learning rate',hid:'Hidden units',reset:'Reset',epoch:'Epoch',loss:'Loss',acc:'Accuracy'}
  },
  crypto:{
-  junior :{run:'Run the exchange',reset:'Reset',step:'Step',key:'Shared key'},
-  student:{run:'Run DH exchange', reset:'Reset',step:'Step',key:'Shared key'},
-  scholar:{run:'Run DH exchange', reset:'Reset',step:'Step',key:'Shared key'}
+  junior :{run:'Run the exchange',reset:'Reset',step:'Step',key:'Shared key',cSees:'sees everything!',cParams:'Public parameters agreed',cAliceKey:'Alice computes shared key',cBobKey:'Bob computes shared key',cChannel:'PUBLIC CHANNEL (eavesdropper can see)'},
+  student:{run:'Run DH exchange', reset:'Reset',step:'Step',key:'Shared key',cSees:'sees everything!',cParams:'Public parameters agreed',cAliceKey:'Alice computes shared key',cBobKey:'Bob computes shared key',cChannel:'PUBLIC CHANNEL (eavesdropper can see)'},
+  scholar:{run:'Run DH exchange', reset:'Reset',step:'Step',key:'Shared key',cSees:'sees everything!',cParams:'Public parameters agreed',cAliceKey:'Alice computes shared key',cBobKey:'Bob computes shared key',cChannel:'PUBLIC CHANNEL (eavesdropper can see)'}
  },
  complexity:{
-  junior :{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n'},
-  student:{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n'},
-  scholar:{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n'}
+  junior :{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n',cInput:'Input size n →',cOps:'Operations',cBinary:'Binary search',cLinear:'Linear scan',cMerge:'Merge sort',cBubble:'Bubble sort',cBrute:'Brute force NP',cPfast:'P (tractable)',cPslow:'P (slow)',cNPhard:'NP-hard ⚠️',cBillion:'>1 billion'},
+  student:{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n',cInput:'Input size n →',cOps:'Operations',cBinary:'Binary search',cLinear:'Linear scan',cMerge:'Merge sort',cBubble:'Bubble sort',cBrute:'Brute force NP',cPfast:'P (tractable)',cPslow:'P (slow)',cNPhard:'NP-hard ⚠️',cBillion:'>1 billion'},
+  scholar:{n:'Input size n',algo:'Algorithm (1=O(log n) … 5=O(2ⁿ))',run:'Run',ops:'Operations',cls:'Class',nval:'n',cInput:'Input size n →',cOps:'Operations',cBinary:'Binary search',cLinear:'Linear scan',cMerge:'Merge sort',cBubble:'Bubble sort',cBrute:'Brute force NP',cPfast:'P (tractable)',cPslow:'P (slow)',cNPhard:'NP-hard ⚠️',cBillion:'>1 billion'}
  },
  climate:{
-  junior :{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Extra heat trapped',dt:'Temperature rise'},
-  student:{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Forcing',dt:'ΔT'},
-  scholar:{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Forcing',dt:'ΔT'}
+  junior :{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Extra heat trapped',dt:'Temperature rise',cSolar:'🟡 Solar radiation',cTrapped:'🔴 Trapped IR heat'},
+  student:{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Forcing',dt:'ΔT',cSolar:'🟡 Solar radiation',cTrapped:'🔴 Trapped IR heat'},
+  scholar:{co2:'CO₂ concentration (ppm)',pre:'Pre-industrial (280)',now:'Set to 2024 (420)',c:'CO₂',forcing:'Forcing',dt:'ΔT',cSolar:'🟡 Solar radiation',cTrapped:'🔴 Trapped IR heat'}
  },
  tectonics:{
-  junior :{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Million years',event:'Last event'},
-  student:{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Myr',event:'Last event'},
-  scholar:{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Myr',event:'Last event'}
+  junior :{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Million years',event:'Last event',cStress:'Stress: '},
+  student:{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Myr',event:'Last event',cStress:'Stress: '},
+  scholar:{speed:'Plate speed',type:'Boundary type (1=diverge 2=transform 3=converge)',quake:'Trigger quake',stress:'Stress',time:'Myr',event:'Last event',cStress:'Stress: '}
  },
  ocean:{
-  junior :{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'Ocean conveyor'},
-  student:{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'AMOC'},
-  scholar:{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'AMOC'}
+  junior :{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'Ocean conveyor',cAmoc:'AMOC strength',cGulf:'Gulf\nStream',cGyre:'N. Atlantic\nGyre',cEqCur:'Equatorial\nCurrent',cDeep:'Deep water\nsinking'},
+  student:{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'AMOC',cAmoc:'AMOC strength',cGulf:'Gulf\nStream',cGyre:'N. Atlantic\nGyre',cEqCur:'Equatorial\nCurrent',cDeep:'Deep water\nsinking'},
+  scholar:{wind:'Wind strength',warm:'Ocean warming',flow:'Flow rate',temp:'Surf. temp',amoc:'AMOC',cAmoc:'AMOC strength',cGulf:'Gulf\nStream',cGyre:'N. Atlantic\nGyre',cEqCur:'Equatorial\nCurrent',cDeep:'Deep water\nsinking'}
  },
  volcano:{
-  junior :{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'Blast size',phase:'Phase'},
-  student:{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'VEI',phase:'Phase'},
-  scholar:{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'VEI',phase:'Phase'}
+  junior :{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'Blast size',phase:'Phase',cRecharge:'Recharging',cErupting:'Erupting!',cCritical:'Critical!',cPressurising:'Pressurising',cCooling:'Cooling'},
+  student:{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'VEI',phase:'Phase',cRecharge:'Recharging',cErupting:'Erupting!',cCritical:'Critical!',cPressurising:'Pressurising',cCooling:'Cooling'},
+  scholar:{visc:'Magma viscosity (1=basalt 10=rhyolite)',recharge:'Magma recharge rate',erupt:'Force eruption',pres:'Chamber pressure',vei:'VEI',phase:'Phase',cRecharge:'Recharging',cErupting:'Erupting!',cCritical:'Critical!',cPressurising:'Pressurising',cCooling:'Cooling'}
  },
  chem:{
-  junior :{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp'},
-  student:{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp'},
-  scholar:{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp'}
+  junior :{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp',cBonds:' bonds'},
+  student:{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp',cBonds:' bonds'},
+  scholar:{temp:'Temperature',reset:'Reset',mols:'Molecules',t:'Temp',cBonds:' bonds'}
  },
  electrochem:{
-  junior :{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'Battery level',mode:'Mode'},
-  student:{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'Charge level',mode:'Mode'},
-  scholar:{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'State of charge',mode:'Mode'}
+  junior :{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'Battery level',mode:'Mode',cAnode:'ANODE',cCathode:'CATHODE',cCharge:'charge',cSoC:'State of Charge: ',cGraphite:'(Graphite)',cLiCoO:'(LiCoO₂)',cElectrolyte:'Electrolyte (LiPF₆)',cDischarging:'Discharging',cCharging:'Charging'},
+  student:{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'Charge level',mode:'Mode',cAnode:'ANODE',cCathode:'CATHODE',cCharge:'charge',cSoC:'State of Charge: ',cGraphite:'(Graphite)',cLiCoO:'(LiCoO₂)',cElectrolyte:'Electrolyte (LiPF₆)',cDischarging:'Discharging',cCharging:'Charging'},
+  scholar:{load:'Load (discharge rate)',discharge:'Discharge',charge:'Charge',reset:'Reset',volts:'Voltage',soc:'State of charge',mode:'Mode',cAnode:'ANODE',cCathode:'CATHODE',cCharge:'charge',cSoC:'State of Charge: ',cGraphite:'(Graphite)',cLiCoO:'(LiCoO₂)',cElectrolyte:'Electrolyte (LiPF₆)',cDischarging:'Discharging',cCharging:'Charging'}
  },
  kinetics:{
-  junior :{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'Reactant left',prod:'Product made',rate:'Rate'},
-  student:{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'[Reactant]',prod:'[Product]',rate:'Rate'},
-  scholar:{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'[Reactant]',prod:'[Product]',rate:'Rate'}
+  junior :{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'Reactant left',prod:'Product made',rate:'Rate',cEq:'predicted equilibrium: ',cEnergy:'energy',cProgress:'reaction progress',cVessel:'Reaction vessel — ',cCat:'catalysed',cUncat:'uncatalysed',cProfile:'Energy profile',cExo:' kJ/mol (exothermic)'},
+  student:{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'[Reactant]',prod:'[Product]',rate:'Rate',cEq:'predicted equilibrium: ',cEnergy:'energy',cProgress:'reaction progress',cVessel:'Reaction vessel — ',cCat:'catalysed',cUncat:'uncatalysed',cProfile:'Energy profile',cExo:' kJ/mol (exothermic)'},
+  scholar:{temp:'Temperature (K)',ea:'Activation energy (kJ/mol)',cat:'Add catalyst',reset:'Reset',react:'[Reactant]',prod:'[Product]',rate:'Rate',cEq:'predicted equilibrium: ',cEnergy:'energy',cProgress:'reaction progress',cVessel:'Reaction vessel — ',cCat:'catalysed',cUncat:'uncatalysed',cProfile:'Energy profile',cExo:' kJ/mol (exothermic)'}
  },
  organic:{
-  junior :{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type'},
-  student:{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type'},
-  scholar:{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type'}
+  junior :{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type',cAlkane:'Alkane',cMethaneD:'Simplest organic molecule - natural gas',cAlcohol:'Alcohol',cEthanolD:'Found in alcoholic drinks and hand sanitiser',cAromatic:'Aromatic',cBenzeneD:'Fundamental aromatic ring - basis of dyes, drugs, plastics',cSugar:'Sugar',cGlucoseD:'Primary fuel for all living cells - C₆H₁₂O₆',cDrug:'Drug',cAspirinD:'First synthetic drug - synthesised by Felix Hoffmann, 1897',cAlkaloid:'Alkaloid',cCarbon:'C Carbon',cHydrogen:'H Hydrogen',cOxygen:'O Oxygen',cNitrogen:'N Nitrogen',cAtoms:' atoms'},
+  student:{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type',cAlkane:'Alkane',cMethaneD:'Simplest organic molecule - natural gas',cAlcohol:'Alcohol',cEthanolD:'Found in alcoholic drinks and hand sanitiser',cAromatic:'Aromatic',cBenzeneD:'Fundamental aromatic ring - basis of dyes, drugs, plastics',cSugar:'Sugar',cGlucoseD:'Primary fuel for all living cells - C₆H₁₂O₆',cDrug:'Drug',cAspirinD:'First synthetic drug - synthesised by Felix Hoffmann, 1897',cAlkaloid:'Alkaloid',cCarbon:'C Carbon',cHydrogen:'H Hydrogen',cOxygen:'O Oxygen',cNitrogen:'N Nitrogen',cAtoms:' atoms'},
+  scholar:{sel:'Molecule selector',mol:'Molecule',atoms:'Atoms',type:'Type',cAlkane:'Alkane',cMethaneD:'Simplest organic molecule - natural gas',cAlcohol:'Alcohol',cEthanolD:'Found in alcoholic drinks and hand sanitiser',cAromatic:'Aromatic',cBenzeneD:'Fundamental aromatic ring - basis of dyes, drugs, plastics',cSugar:'Sugar',cGlucoseD:'Primary fuel for all living cells - C₆H₁₂O₆',cDrug:'Drug',cAspirinD:'First synthetic drug - synthesised by Felix Hoffmann, 1897',cAlkaloid:'Alkaloid',cCarbon:'C Carbon',cHydrogen:'H Hydrogen',cOxygen:'O Oxygen',cNitrogen:'N Nitrogen',cAtoms:' atoms'}
  },
  astro:{
-  junior :{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage'},
-  student:{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage'},
-  scholar:{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage'}
+  junior :{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage',cHR:'H–R diagram',cTemp:'hot ← temp → cool',cLum:'dim ← luminosity → bright',cAnim:'animation: ',cLife:' s = one whole life  ·  1 s ≈ ',cDone:'   ·   done — press reset',cSurfTemp:'hot ←  surface temperature  → cool',cSunLog:'Sun (log scale)',cWas:'was       ',cLifetime:'lifetime  ',cRemnant:'remnant   ~',cBH:' M☉ black hole',cHorizonL:'horizon   ',cAcross:' km across',cNoSurface:'surface   none — light cannot leave',cMass:'mass      ',cRadiusL:'radius    ',cSurface:'surface   ',cOutput:'output    '},
+  student:{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage',cHR:'H–R diagram',cTemp:'hot ← temp → cool',cLum:'dim ← luminosity → bright',cAnim:'animation: ',cLife:' s = one whole life  ·  1 s ≈ ',cDone:'   ·   done — press reset',cSurfTemp:'hot ←  surface temperature  → cool',cSunLog:'Sun (log scale)',cWas:'was       ',cLifetime:'lifetime  ',cRemnant:'remnant   ~',cBH:' M☉ black hole',cHorizonL:'horizon   ',cAcross:' km across',cNoSurface:'surface   none — light cannot leave',cMass:'mass      ',cRadiusL:'radius    ',cSurface:'surface   ',cOutput:'output    '},
+  scholar:{mass:'Star Mass (solar masses)',reset:'Reset star',age:'Age',stage:'Stage',cHR:'H–R diagram',cTemp:'hot ← temp → cool',cLum:'dim ← luminosity → bright',cAnim:'animation: ',cLife:' s = one whole life  ·  1 s ≈ ',cDone:'   ·   done — press reset',cSurfTemp:'hot ←  surface temperature  → cool',cSunLog:'Sun (log scale)',cWas:'was       ',cLifetime:'lifetime  ',cRemnant:'remnant   ~',cBH:' M☉ black hole',cHorizonL:'horizon   ',cAcross:' km across',cNoSurface:'surface   none — light cannot leave',cMass:'mass      ',cRadiusL:'radius    ',cSurface:'surface   ',cOutput:'output    '}
  },
  blackholes:{
-  junior :{mass:'Black hole mass (M☉)',dist:'Distance from hole',wave:'Gravitational wave',probe:'Drop a probe',km:'Distance',dilat:'Time dilation',z:'Light stretching'},
-  student:{mass:'Black hole mass (M☉)',dist:'Test particle distance (r_S)',wave:'Gravitational wave',probe:'Drop a probe',km:'Distance',dilat:'Time dilation',z:'Redshift'},
-  scholar:{mass:'Black hole mass (M☉)',dist:'Test particle distance (r_S)',wave:'Gravitational wave',probe:'Drop a probe',km:'Distance',dilat:'Time dilation',z:'Redshift'}
+  junior :{mass:'Black hole mass (M☉)',dist:'Distance from hole',wave:'Gravitational wave',probe:'Drop a probe',km:'Distance',dilat:'Time dilation',z:'Light stretching',cIsco:'inside the ISCO — no stable orbit exists here, it must spiral in',cProbe:'probe: r = ',cClock:' rₛ · its clock ',cVs:' s vs ',cOutHere:' s out here',cFreeze:'it never quite arrives — from out here it freezes and fades',cTick:' s tick down there',cPerSec:'for every 1 s out here',cColour:'its colour, seen from here:',cHorizon:' M☉   horizon rₛ = ',cPhoton:' km   photon sphere ',cOrbitAt:'orbit at ',cFromCentre:' km from the centre',cDrop:'Drop a probe',cIscoLbl:'ₛ — last stable orbit',cPhotonLbl:'photon sphere 1.5 rₛ',cHorizonLbl:'event horizon — nothing gets back out',cFarAway:'far away',cInOrbit:'in orbit'},
+  student:{mass:'Black hole mass (M☉)',dist:'Test particle distance (r_S)',wave:'Gravitational wave',probe:'Drop a probe',km:'Distance',dilat:'Time dilation',z:'Redshift',cIsco:'inside the ISCO — no stable orbit exists here, it must spiral in',cProbe:'probe: r = ',cClock:' rₛ · its clock ',cVs:' s vs ',cOutHere:' s out here',cFreeze:'it never quite arrives — from out here it freezes and fades',cTick:' s tick down there',cPerSec:'for every 1 s out here',cColour:'its colour, seen from here:',cHorizon:' M☉   horizon rₛ = ',cPhoton:' km   photon sphere ',cOrbitAt:'orbit at ',cFromCentre:' km from the centre',cDrop:'Drop a probe',cIscoLbl:'ₛ — last stable orbit',cPhotonLbl:'photon sphere 1.5 rₛ',cHorizonLbl:'event horizon — nothing gets back out',cFarAway:'far away',cInOrbit:'in orbit'},
+  scholar:{mass:'Black hole mass (M☉)',dist:'Test particle distance (r_S)',wave:'Gravitational wave',probe:'Drop a probe',km:'Distance',dilat:'Time dilation',z:'Redshift',cIsco:'inside the ISCO — no stable orbit exists here, it must spiral in',cProbe:'probe: r = ',cClock:' rₛ · its clock ',cVs:' s vs ',cOutHere:' s out here',cFreeze:'it never quite arrives — from out here it freezes and fades',cTick:' s tick down there',cPerSec:'for every 1 s out here',cColour:'its colour, seen from here:',cHorizon:' M☉   horizon rₛ = ',cPhoton:' km   photon sphere ',cOrbitAt:'orbit at ',cFromCentre:' km from the centre',cDrop:'Drop a probe',cIscoLbl:'ₛ — last stable orbit',cPhotonLbl:'photon sphere 1.5 rₛ',cHorizonLbl:'event horizon — nothing gets back out',cFarAway:'far away',cInOrbit:'in orbit'}
  },
  cosmology:{
-  junior :{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'Expansion rate',z:'Redshift z'},
-  student:{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'H(z)',z:'Redshift z'},
-  scholar:{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'H(z)',z:'Redshift z'}
+  junior :{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'Expansion rate',z:'Redshift z',cBang:'Big Bang',cNow:'Now (13.8 Gyr)',cFirstStars:'First\nstars',cGalaxies:'Galaxies',cSolarSys:'Solar\nSystem',cToday:'Today'},
+  student:{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'H(z)',z:'Redshift z',cBang:'Big Bang',cNow:'Now (13.8 Gyr)',cFirstStars:'First\nstars',cGalaxies:'Galaxies',cSolarSys:'Solar\nSystem',cToday:'Today'},
+  scholar:{lam:'Dark energy Ω_Λ',mat:'Matter Ω_m (%)',reset:'Reset',age:'Age (Gyr)',h:'H(z)',z:'Redshift z',cBang:'Big Bang',cNow:'Now (13.8 Gyr)',cFirstStars:'First\nstars',cGalaxies:'Galaxies',cSolarSys:'Solar\nSystem',cToday:'Today'}
  },
  solarsystem:{
-  junior :{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance'},
-  student:{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance'},
-  scholar:{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance'}
+  junior :{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance',cMercury:'Mercury',cVenus:'Venus',cEarth:'Earth',cMars:'Mars',cJupiter:'Jupiter',cSaturn:'Saturn',cUranus:'Uranus',cNeptune:'Neptune'},
+  student:{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance',cMercury:'Mercury',cVenus:'Venus',cEarth:'Earth',cMars:'Mars',cJupiter:'Jupiter',cSaturn:'Saturn',cUranus:'Uranus',cNeptune:'Neptune'},
+  scholar:{speed:'Time speed',zoom:'Zoom',sel:'Selected',period:'Period',dist:'Distance',cMercury:'Mercury',cVenus:'Venus',cEarth:'Earth',cMars:'Mars',cJupiter:'Jupiter',cSaturn:'Saturn',cUranus:'Uranus',cNeptune:'Neptune'}
  },
  neuro:{
   junior :{stim:'Stimulus strength',fire:'Fire neuron',rate:'Firing rate',pot:'Potential'},
@@ -425,20 +425,530 @@ const SIM_LABELS={
   scholar:{stim:'Stimulus strength',fire:'Fire neuron',rate:'Firing rate',pot:'Potential'}
  },
  neuron:{
-  junior :{cur:'Stimulus strength',      pulse:'Single Pulse',reset:'Reset',v:'Voltage inside',state:'State',spikes:'Spikes'},
-  student:{cur:'Stimulus current (I)',   pulse:'Single Pulse',reset:'Reset',v:'Membrane V',   state:'State',spikes:'Spikes'},
-  scholar:{cur:'Stimulus current (I)',   pulse:'Single Pulse',reset:'Reset',v:'Membrane V',   state:'State',spikes:'Spikes'}
+  junior :{cur:'Stimulus strength',      pulse:'Single Pulse',reset:'Reset',v:'Voltage inside',state:'State',spikes:'Spikes',cThreshold:'threshold',cMembrane:'Membrane potential'},
+  student:{cur:'Stimulus current (I)',   pulse:'Single Pulse',reset:'Reset',v:'Membrane V',   state:'State',spikes:'Spikes',cThreshold:'threshold',cMembrane:'Membrane potential'},
+  scholar:{cur:'Stimulus current (I)',   pulse:'Single Pulse',reset:'Reset',v:'Membrane V',   state:'State',spikes:'Spikes',cThreshold:'threshold',cMembrane:'Membrane potential'}
  },
  memory:{
-  junior :{rate:'Stimulation rate (Hz)',ltp:'Strengthen (LTP)',ltd:'Weaken (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events'},
-  student:{rate:'Stimulation rate (Hz)',ltp:'Pair (LTP)',      ltd:'Reverse (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events'},
-  scholar:{rate:'Stimulation rate (Hz)',ltp:'Pair (LTP)',      ltd:'Reverse (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events'}
+  junior :{rate:'Stimulation rate (Hz)',ltp:'Strengthen (LTP)',ltd:'Weaken (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events',cPre:'Pre-synaptic',cNeuron:'neuron',cSynapse:'synapse',cPost:'Post-synaptic',cStrength:'Synapse strength',cLtp:'▲ LTP - synapse strengthened!',cLtd:'▼ LTD - synapse weakened'},
+  student:{rate:'Stimulation rate (Hz)',ltp:'Pair (LTP)',      ltd:'Reverse (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events',cPre:'Pre-synaptic',cNeuron:'neuron',cSynapse:'synapse',cPost:'Post-synaptic',cStrength:'Synapse strength',cLtp:'▲ LTP - synapse strengthened!',cLtd:'▼ LTD - synapse weakened'},
+  scholar:{rate:'Stimulation rate (Hz)',ltp:'Pair (LTP)',      ltd:'Reverse (LTD)',reset:'Reset',w:'Synapse strength',last:'Last event',events:'Events',cPre:'Pre-synaptic',cNeuron:'neuron',cSynapse:'synapse',cPost:'Post-synaptic',cStrength:'Synapse strength',cLtp:'▲ LTP - synapse strengthened!',cLtd:'▼ LTD - synapse weakened'}
  },
  sleep:{
-  junior :{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'Brain wave speed',ad:'Sleep pressure'},
-  student:{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'EEG freq',ad:'Adenosine'},
-  scholar:{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'EEG freq',ad:'Adenosine'}
- }
+  junior :{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'Brain wave speed',ad:'Sleep pressure',cAden:'☕ Adenosine',cGlym:'🧹 Glymphatic clearing',cAwake:'Awake',cN2:'N2 (spindles)',cN3:'N3 (deep)',cWaveAlert:'β/γ waves - alert',cWaveDrowsy:'θ waves - drowsy',cSpindles:'sleep spindles',cWaveDeep:'δ waves - deep restore',cDreaming:'dreaming - vivid',cAdenP:'☕ Adenosine (sleep pressure)'},
+  student:{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'EEG freq',ad:'Adenosine',cAden:'☕ Adenosine',cGlym:'🧹 Glymphatic clearing',cAwake:'Awake',cN2:'N2 (spindles)',cN3:'N3 (deep)',cWaveAlert:'β/γ waves - alert',cWaveDrowsy:'θ waves - drowsy',cSpindles:'sleep spindles',cWaveDeep:'δ waves - deep restore',cDreaming:'dreaming - vivid',cAdenP:'☕ Adenosine (sleep pressure)'},
+  scholar:{speed:'Sleep cycle speed',next:'Next Stage',wake:'Wake up',stage:'Sleep stage',freq:'EEG freq',ad:'Adenosine',cAden:'☕ Adenosine',cGlym:'🧹 Glymphatic clearing',cAwake:'Awake',cN2:'N2 (spindles)',cN3:'N3 (deep)',cWaveAlert:'β/γ waves - alert',cWaveDrowsy:'θ waves - drowsy',cSpindles:'sleep spindles',cWaveDeep:'δ waves - deep restore',cDreaming:'dreaming - vivid',cAdenP:'☕ Adenosine (sleep pressure)'}
+ },
+ solarpv:{
+  junior :{sun:'How high the Sun is',tilt:'How much the panel leans',temp:'How warm the air is',
+           mpptOn:'🎯 Chasing the best point',mpptOff:'📌 Stuck at one voltage',
+           gpoa:'Sunlight on the panel',pw:'Power right now',tc:'Panel temperature',eff:'How much is turned into electricity',
+           cAoi:'how slanted the light lands',cNorm:'straight-on direction',cRays:'rays land on the glass',
+           cSun:'Sun',cCells:'silicon cells',cIV:'what the panel gives, for every voltage',cPow:'power out of the panel',
+           cMpp:'the best point',cVoc:'no load',cIsc:'short circuit',cNow:'working here',cWaste:'thrown away',
+           cHot:'a hot panel loses volts',cSTC:'what the label on the back promises'},
+  student:{sun:'Sun elevation α',tilt:'Panel tilt β',temp:'Air temperature',
+           mpptOn:'🎯 MPPT tracking',mpptOff:'📌 Fixed voltage',
+           gpoa:'Irradiance on the panel',pw:'Power output',tc:'Cell temperature',eff:'Efficiency',
+           cAoi:'angle of incidence θ',cNorm:'panel normal',cRays:'rays intercepted',
+           cSun:'Sun',cCells:'cells in series',cIV:'I-V curve',cPow:'power P = VI',
+           cMpp:'maximum power point',cVoc:'Voc',cIsc:'Isc',cNow:'operating point',cWaste:'power lost',
+           cHot:'thermal derate',cSTC:'nameplate at STC'},
+  scholar:{sun:'Solar elevation α',tilt:'Array tilt β',temp:'Ambient temperature Ta',
+           mpptOn:'🎯 MPPT tracking',mpptOff:'📌 Clamped voltage',
+           gpoa:'Plane-of-array irradiance',pw:'DC power',tc:'Cell temperature Tc',eff:'Conversion efficiency',
+           cAoi:'angle of incidence θ',cNorm:'array normal',cRays:'rays intercepted',
+           cSun:'Sun',cCells:'series-connected cells',cIV:'I-V characteristic',cPow:'P = VI',
+           cMpp:'maximum power point',cVoc:'Voc',cIsc:'Isc',cNow:'operating point',cWaste:'power forgone',
+           cHot:'thermal derate γΔT',cSTC:'STC nameplate'}
+ },
+
+ wind:{
+  junior :{v:'How hard the wind blows',a:'How much the blades slow the air',d:'How wide the rotor is',
+           pwind:'Energy going past',cp:'Share the turbine takes',pout:'Power made',vwake:'Wind left behind',
+           cUp:'wind arriving',cRot:'at the blades',cWake:'behind the turbine',cTube:'the air that goes through',
+           cBetz:'the best any turbine can do: 0.593',cCpAx:'how much you take, for every amount of braking',
+           cCurve:'what this turbine makes at each wind speed',cCutin:'too little wind to bother',
+           cRated:'flat out - the extra is thrown away',cCutout:'shut down before the storm breaks it',
+           cNow:'right now',cRpm:'turns a minute',cStop:'stop the air completely and nothing can get through'},
+  student:{v:'Wind speed v',a:'Axial induction a',d:'Rotor diameter D',
+           pwind:'Power in the wind',cp:'Power coefficient Cp',pout:'Extracted power',vwake:'Wake speed',
+           cUp:'free-stream v',cRot:'at the disc: v(1−a)',cWake:'far wake: v(1−2a)',cTube:'streamtube',
+           cBetz:'Betz limit 16/27 = 0.593',cCpAx:'Cp against axial induction a',
+           cCurve:'power curve',cCutin:'below cut-in',
+           cRated:'rated - pitching to spill the rest',cCutout:'cut-out, feathered',
+           cNow:'operating point',cRpm:'rpm',cStop:'a = 0.5 stops the flow: nothing gets through'},
+  scholar:{v:'Free-stream velocity',a:'Axial induction factor a',d:'Rotor diameter D',
+           pwind:'Available flux ½ρAv³',cp:'Power coefficient Cp',pout:'Aerodynamic power',vwake:'Far-wake velocity',
+           cUp:'free-stream v₁',cRot:'disc: v₁(1−a)',cWake:'far wake: v₁(1−2a)',cTube:'streamtube A₁v₁ = A_d v_d',
+           cBetz:'Lanchester-Betz-Joukowsky 16/27 = 0.593',cCpAx:'Cp(a) = 4a(1−a)²',
+           cCurve:'power curve with control regions',cCutin:'below cut-in',
+           cRated:'region 3 - collective pitch holds P',cCutout:'cut-out, feathered',
+           cNow:'operating point',cRpm:'rpm',cStop:'momentum theory fails past a ≈ 0.4'}
+ },
+
+ heatpump:{
+  junior :{tout:'How cold it is outside',tflow:'How hot the water has to be',qdem:'Heat the house needs',
+           cop:'Heat out for every unit of electricity',pel:'Electricity you pay for',qfree:'Heat taken from outside',carnot:'The best physics allows',
+           cEvap:'outside coil - the liquid boils here',cComp:'compressor - the squeeze you pay for',
+           cCond:'inside coil - the gas turns back to liquid',cValve:'nozzle - pressure drops, it goes freezing',
+           cQc:'heat pulled out of the cold air',cW:'electricity in',cQh:'heat into the house',
+           cCarnot:'the best physics allows',cReal:'what a real machine gets',cRes:'a plain electric heater',
+           cNow:'now',cFrost:'ice forming on the outside coil',cOut:'outdoors',cIn:'in the house',cLift:'the climb'},
+  student:{tout:'Outdoor air temperature',tflow:'Flow temperature',qdem:'Heat demand',
+           cop:'COP',pel:'Electrical input',qfree:'Heat drawn from outside',carnot:'Carnot ceiling',
+           cEvap:'evaporator - refrigerant boils at low pressure',cComp:'compressor - work in',
+           cCond:'condenser - refrigerant condenses',cValve:'expansion valve - isenthalpic throttle',
+           cQc:'Qc from the source',cW:'W electrical',cQh:'Qh to the house',
+           cCarnot:'Carnot COP',cReal:'real COP',cRes:'resistance heating, COP = 1',
+           cNow:'operating point',cFrost:'defrost band',cOut:'outdoor air',cIn:'indoor',cLift:'temperature lift'},
+  scholar:{tout:'Source temperature',tflow:'Sink flow temperature',qdem:'Heat load',
+           cop:'COP',pel:'Compressor work',qfree:'Source heat Qc',carnot:'Carnot ceiling',
+           cEvap:'evaporator - isobaric boiling plus superheat',cComp:'compressor - near-isentropic',
+           cCond:'condenser - desuperheat and condense',cValve:'throttle - h3 = h4',
+           cQc:'Qc from the source',cW:'W electrical',cQh:'Qh to the sink',
+           cCarnot:'Carnot COP',cReal:'real COP',cRes:'resistance heating, COP = 1',
+           cNow:'operating point',cFrost:'defrost band',cOut:'source side',cIn:'sink side',cLift:'temperature lift'}
+ },
+
+ grid:{
+  junior :{solar:'How much solar is installed',wind:'How much wind is installed',batt:'How big the batteries are',
+           trip:'⚡ Break a power station',
+           freq:'The heartbeat',share:'Made by wind and sun',gas:'Gas filling the gap',soc:'Charge in the batteries',
+           cDay:'one day, from midnight to midnight',cDem:'what the country is using',cBase:'always-on plants',
+           cWind:'wind',cSolar:'solar',cGas:'gas, filling whatever is left',cBatt:'batteries giving back',
+           cCurt:'thrown away - nowhere to put it',cFreq:'the heartbeat, second by second',
+           cBand:'safe',cRoCoF:'how fast it is moving',cSpin:'the spinning steel of the grid',
+           cTrip:'a power station just broke',cShed:'the grid is switching customers off',cNow:'now',cDuck:'the duck curve'},
+  student:{solar:'Solar capacity',wind:'Wind capacity',batt:'Battery power',
+           trip:'⚡ Trip 2 GW',
+           freq:'Frequency',share:'Renewable share',gas:'Dispatchable gas',soc:'Battery state of charge',
+           cDay:'24-hour dispatch stack',cDem:'demand',cBase:'must-run baseload',
+           cWind:'wind',cSolar:'solar',cGas:'gas, following the net load',cBatt:'battery discharge',
+           cCurt:'curtailed',cFreq:'system frequency',
+           cBand:'containment band',cRoCoF:'RoCoF',cSpin:'system inertia',
+           cTrip:'generation loss event',cShed:'under-frequency load shedding',cNow:'now',cDuck:'net load - the duck curve'},
+  scholar:{solar:'Installed solar capacity',wind:'Installed wind capacity',batt:'Storage power rating',
+           trip:'⚡ Trip 2 GW',
+           freq:'System frequency',share:'Non-synchronous share',gas:'Dispatchable output',soc:'State of charge',
+           cDay:'24-hour dispatch stack',cDem:'demand',cBase:'must-run baseload',
+           cWind:'wind',cSolar:'solar',cGas:'dispatchable, chasing the net load',cBatt:'storage discharge',
+           cCurt:'curtailed',cFreq:'system frequency',
+           cBand:'containment band',cRoCoF:'RoCoF',cSpin:'aggregate inertia H',
+           cTrip:'infeed loss event',cShed:'under-frequency load shedding',cNow:'now',cDuck:'net load - the duck curve'}
+ },
+
+ nuclear:{
+  junior :{rod:'How far the control rods are pushed in',water:'How much water is in the core',scram:'🛑 Drop the rods',
+           keff:'Fissions caused by each fission',pw:'Heat coming out',period:'Time to double',decay:'Leftover heat',
+           cCore:'the core, seen in cross-section',cFuel:'uranium fuel rods',cRod:'boron control rods - they eat neutrons',
+           cMod:'water - it slows the neutrons down so they work',cFast:'fast neutron - too quick to split anything',
+           cSlow:'slowed neutron - this one can split a nucleus',cFission:'a nucleus splitting',
+           cTrace:'heat over the last few minutes',cNom:'normal running',cPrompt:'runaway - no rod can catch this',
+           cScram:'rods dropped - the splitting has stopped',cDecay:'still hot: the broken pieces keep decaying',
+           cSub:'dying away',cCrit:'holding steady',cSuper:'climbing'},
+  student:{rod:'Control rod insertion',water:'Moderator level',scram:'🛑 SCRAM',
+           keff:'k effective',pw:'Thermal power',period:'Reactor period',decay:'Decay heat',
+           cCore:'core cross-section',cFuel:'fuel rods, UO₂ at 4% U-235',cRod:'boron control rods, absorbers',
+           cMod:'water moderator - thermalises the neutrons',cFast:'fast neutron, ~2 MeV',
+           cSlow:'thermal neutron, 0.025 eV',cFission:'fission event',
+           cTrace:'thermal power against time',cNom:'nominal power',cPrompt:'prompt critical: ρ ≥ β',
+           cScram:'scrammed - fission terminated',cDecay:'decay heat from fission products',
+           cSub:'subcritical',cCrit:'critical',cSuper:'supercritical'},
+  scholar:{rod:'Control rod insertion',water:'Moderator density',scram:'🛑 SCRAM',
+           keff:'k effective',pw:'Thermal power',period:'Asymptotic period',decay:'Decay heat',
+           cCore:'core cross-section',cFuel:'fuel: UO₂, low-enriched',cRod:'B₄C control absorbers',
+           cMod:'moderator - slowing down to thermal',cFast:'fast neutron, ~2 MeV',
+           cSlow:'thermal neutron, 0.025 eV',cFission:'fission event',
+           cTrace:'thermal power against time',cNom:'nominal power',cPrompt:'prompt critical: ρ ≥ β',
+           cScram:'scrammed - fission terminated',cDecay:'decay heat, 0.066 t^-0.2',
+           cSub:'subcritical',cCrit:'critical',cSuper:'supercritical'}
+ },
+
+ storage:{
+  junior :{pwr:'How fast it can push',dur:'How many hours it holds',eff:'How much comes back out',
+           soc:'How full it is',rev:'Money made today',loss:'Lost as heat',cyc:'Times filled today',
+           cPrice:'what electricity costs through the day',cCharge:'filling up - electricity is cheap',
+           cDisch:'emptying - electricity is dear',cSoc:'how full the battery is',cBatt:'battery',
+           cIn:'went in',cOut:'came back',cLoss:'lost as heat',cRev:'money made',cNow:'now',
+           cSpread:'you need this much of a price gap just to break even',cCheap:'cheapest hours',cDear:'dearest hours'},
+  student:{pwr:'Power rating',dur:'Duration',eff:'Round-trip efficiency',
+           soc:'State of charge',rev:'Daily revenue',loss:'Round-trip losses',cyc:'Equivalent cycles',
+           cPrice:'wholesale price through the day',cCharge:'charging',
+           cDisch:'discharging',cSoc:'state of charge',cBatt:'battery',
+           cIn:'energy in',cOut:'energy out',cLoss:'losses',cRev:'revenue',cNow:'now',
+           cSpread:'break-even spread 1/η',cCheap:'cheapest hours',cDear:'most expensive hours'},
+  scholar:{pwr:'Power rating P',dur:'Duration E/P',eff:'AC round-trip efficiency',
+           soc:'State of charge',rev:'Arbitrage revenue',loss:'Round-trip losses',cyc:'Equivalent full cycles',
+           cPrice:'price duration through the day',cCharge:'charging',
+           cDisch:'discharging',cSoc:'state of charge',cBatt:'battery',
+           cIn:'energy in',cOut:'energy out',cLoss:'losses',cRev:'revenue',cNow:'now',
+           cSpread:'break-even spread 1/η',cCheap:'cheapest hours',cDear:'most expensive hours'}
+ },
+
+ hydrogen:{
+  junior :{cur:'How hard you push the current',price:'Price of the electricity',
+           use:'🔁 Turn it back into electricity',use2:'🏭 Use it as a material',
+           eff:'How much of the electricity is kept',rate:'Hydrogen made',spec:'Electricity per kilogram',cost:'Cost per kilogram',
+           cCell:'water with two metal plates in it',cH2:'hydrogen - two bubbles for every one of oxygen',
+           cO2:'oxygen bubbles',cVolt:'volts pushed across the cell',cHeat:'heat',cWaste:'the extra volts become heat, not gas',
+           cChain:'what happens to 100 units of electricity',cStack:'splitting the water',cComp:'squeezing it into a tank',
+           cFC:'turning it back into electricity',cOut:'what you get back at the end',cMol:'used as a material - no second conversion',
+           cBatt:'a battery would have given back this much'},
+  student:{cur:'Current density j',price:'Electricity price',
+           use:'🔁 Back to electricity',use2:'🏭 Used as a molecule',
+           eff:'System efficiency',rate:'Hydrogen output',spec:'Specific consumption',cost:'Cost per kg',
+           cCell:'electrolysis cell',cH2:'H₂ at the cathode - 2:1 by volume',
+           cO2:'O₂ at the anode',cVolt:'cell voltage',cHeat:'heat',cWaste:'every volt above 1.48 V is heat',
+           cChain:'energy chain from 100 kWh of electricity',cStack:'electrolysis',cComp:'compression to 700 bar',
+           cFC:'fuel cell',cOut:'delivered',cMol:'used as feedstock - no reconversion',
+           cBatt:'a battery round trip for comparison'},
+  scholar:{cur:'Current density j',price:'Electricity price',
+           use:'🔁 Power-to-power',use2:'🏭 Molecule end use',
+           eff:'System efficiency (HHV)',rate:'Hydrogen output',spec:'Specific energy consumption',cost:'Cost per kg',
+           cCell:'PEM cell',cH2:'H₂ evolution at the cathode',
+           cO2:'O₂ evolution at the anode',cVolt:'cell voltage',cHeat:'heat',cWaste:'V − 1.48 goes to heat',
+           cChain:'chain efficiency from 100 kWh',cStack:'electrolysis',cComp:'compression to 700 bar',
+           cFC:'fuel cell',cOut:'delivered',cMol:'feedstock use - no reconversion',
+           cBatt:'battery round trip for comparison'}
+ },
+
+ insulation:{
+  junior :{ins:'Thickness of insulation',glaz:'Panes of glass in the windows',air:'How draughty it is',
+           loss:'Heat leaking out right now',ann:'Heating needed in a year',cost:'Heating bill a year',worst:'Biggest leak',
+           cRoof:'roof',cWall:'walls',cWin:'windows',cFloor:'floor',cAir:'draughts',
+           cIn:'20 °C inside',cOut:'0 °C outside',cSplit:'where the heat is going',
+           cHouse:'a house on a cold night',cPump:'heater you would need',cUval:'leakiness per square metre'},
+  student:{ins:'Insulation thickness',glaz:'Glazing',air:'Air changes per hour',
+           loss:'Heat loss',ann:'Annual heat demand',cost:'Annual heating cost',worst:'Largest term',
+           cRoof:'roof',cWall:'walls',cWin:'windows',cFloor:'floor',cAir:'ventilation',
+           cIn:'20 °C indoors',cOut:'0 °C outdoors',cSplit:'heat loss by element',
+           cHouse:'section through the house',cPump:'design heat load',cUval:'U-value'},
+  scholar:{ins:'Insulation thickness d',glaz:'Glazing',air:'Air change rate n',
+           loss:'Heat loss',ann:'Annual heat demand',cost:'Annual heating cost',worst:'Largest term',
+           cRoof:'roof',cWall:'walls',cWin:'windows',cFloor:'floor',cAir:'ventilation',
+           cIn:'20 °C indoors',cOut:'0 °C outdoors',cSplit:'UA breakdown by element',
+           cHouse:'section through the house',cPump:'design heat load',cUval:'U-value'}
+ },
+
+ generator:{
+  junior :{rpm:'How fast the magnet spins',th:'How hot the steam is',tc:'How cold the cooling water is',
+           eff:'Fuel that becomes electricity',carn:'The best physics allows',freq:'Beats per second',pw:'Electricity made',
+           cGen:'a magnet spinning inside a coil',cWave:'the push on the electrons, moment by moment',
+           cGrid:'the grid needs exactly 50 - that means 3000 turns a minute',
+           cBoil:'boiler - the fire, or the reactor',cTurb:'turbine',cCond:'cooling water takes the leftover heat',
+           cFuel:'fuel in',cElec:'electricity out',cWaste:'warm water and steam - wasted',cSpin:'turns a minute'},
+  student:{rpm:'Rotation speed',th:'Steam temperature',tc:'Condenser temperature',
+           eff:'Thermal efficiency',carn:'Carnot ceiling',freq:'Frequency',pw:'Electrical output',
+           cGen:'synchronous generator',cWave:'induced EMF',
+           cGrid:'50 Hz needs 3000 rpm on two poles',
+           cBoil:'boiler',cTurb:'turbine',cCond:'condenser',
+           cFuel:'fuel in',cElec:'electricity out',cWaste:'heat rejected',cSpin:'rpm'},
+  scholar:{rpm:'Rotation speed n',th:'Live steam temperature Th',tc:'Condenser temperature Tc',
+           eff:'Thermal efficiency',carn:'Carnot bound',freq:'Frequency',pw:'Electrical output',
+           cGen:'synchronous machine',cWave:'induced EMF, N dΦ/dt',
+           cGrid:'f = pn/120',
+           cBoil:'heat addition',cTurb:'turbine',cCond:'heat rejection',
+           cFuel:'fuel in',cElec:'electricity out',cWaste:'heat rejected',cSpin:'rpm'}
+ },
+
+ kwh:{
+  junior :{ppl:'People in the house',ev:'Kilometres a day by electric car',ac:'Hours a day of air conditioning',
+           day:'Used in a day',year:'Used in a year',cost:'Cost in a year',top:'Biggest user',
+           aFridge:'fridge and freezer',aStand:'things left on standby',aWater:'heating water',
+           aCook:'oven and hob',aWash:'washing machine',aDish:'dishwasher',aTV:'TV and computers',
+           aLight:'lights',aAC:'air conditioning',aEV:'electric car',
+           cRank:'a year of electricity, biggest first',cEqT:'one kilowatt-hour is about',
+           cEqA:'10 cups of tea',cEqB:'an hour of the oven',cEqC:'6 km in an electric car',cEqD:'four days of an LED lamp'},
+  student:{ppl:'Occupants',ev:'EV kilometres per day',ac:'Air-conditioning hours per day',
+           day:'Daily consumption',year:'Annual consumption',cost:'Annual cost',top:'Largest load',
+           aFridge:'fridge and freezer',aStand:'standby and always-on',aWater:'electric water heating',
+           aCook:'oven and hob',aWash:'washing machine',aDish:'dishwasher',aTV:'TV and IT',
+           aLight:'lighting',aAC:'air conditioning',aEV:'electric vehicle',
+           cRank:'annual consumption by end use',cEqT:'one kilowatt-hour is roughly',
+           cEqA:'10 cups of tea',cEqB:'an hour of the oven',cEqC:'6 km in an EV',cEqD:'four days of an LED lamp'},
+  scholar:{ppl:'Occupants',ev:'EV kilometres per day',ac:'Cooling hours per day',
+           day:'Daily consumption',year:'Annual consumption',cost:'Annual cost',top:'Largest load',
+           aFridge:'refrigeration',aStand:'standby and always-on',aWater:'electric water heating',
+           aCook:'cooking',aWash:'laundry',aDish:'dishwasher',aTV:'consumer electronics',
+           aLight:'lighting',aAC:'space cooling',aEV:'electric vehicle',
+           cRank:'annual consumption by end use',cEqT:'one kilowatt-hour is roughly',
+           cEqA:'10 cups of tea',cEqB:'an hour of the oven',cEqC:'6 km in an EV',cEqD:'four days of an LED lamp'}
+ },
+
+ internet:{
+  junior :{dist:'How far away the server is',loss:'How often a piece goes missing',size:'How big the page is',
+           rtt:'There and back',pk:'Pieces sent',re:'Pieces sent again',load:'Page ready after',
+           send:'Load the page again',cached:'Address already remembered',
+           cHome:'your router',cIsp:'your provider',cIx:'the exchange',cBack:'the long haul',cEdge:'the server',
+           cRoute:'the journey your request takes',cRtt:'there and back',cPkts:'pieces',
+           cLost:'went missing and were sent again',cWater:'where the time actually goes',
+           cDns:'finding the address',cShake:'agreeing to talk',cData:'sending the page',cDone:'page ready'},
+  student:{dist:'Distance to the server',loss:'Packet loss',size:'Page size',
+           rtt:'Round-trip time',pk:'Packets',re:'Retransmitted',load:'Page loaded in',
+           send:'Load the page again',cached:'DNS answer cached',
+           cHome:'your router',cIsp:'your ISP',cIx:'exchange',cBack:'backbone',cEdge:'server',
+           cRoute:'the route your request takes',cRtt:'round trip',cPkts:'packets',
+           cLost:'lost and sent again',cWater:'where the milliseconds go',
+           cDns:'DNS lookup',cShake:'TCP and TLS handshake',cData:'sending the page',cDone:'page ready'},
+  scholar:{dist:'Path length to origin',loss:'Packet loss rate',size:'Transfer size',
+           rtt:'RTT',pk:'Segments',re:'Retransmissions',load:'Page complete',
+           send:'Reload',cached:'Resolver cache hit',
+           cHome:'CPE',cIsp:'access network',cIx:'IXP',cBack:'transit',cEdge:'origin',
+           cRoute:'forwarding path, hop by hop',cRtt:'round trip',cPkts:'segments',
+           cLost:'lost, retransmitted',cWater:'latency budget',
+           cDns:'DNS resolution',cShake:'TCP and TLS handshake',cData:'response body',cDone:'page complete'}
+ },
+ compression:{
+  junior :{len:'How long the message is',rep:'How repetitive it is',
+           raw:'Written the plain way',huf:'Written the clever way',rat:'How many times smaller',best:'Shortest code',
+           next:'Try another text',
+           cMsg:'the message, one square per letter',cTree:'the tree - rare letters sit deepest',
+           cFixed:'8 bits per letter, no thought applied',cHuff:'short codes for the common letters',cSpace:'space',cBits:'bits',cBytes:'bytes'},
+  student:{len:'Length of the message',rep:'Redundancy',
+           raw:'Plain text',huf:'After Huffman',rat:'Compression ratio',best:'Shortest code',
+           next:'Try another text',
+           cMsg:'the message, one square per letter',cTree:'the Huffman tree - rare letters sit deepest',
+           cFixed:'8 bits per letter, no thought applied',cHuff:'Huffman codes, common letters kept short',cSpace:'space',cBits:'bits',cBytes:'bytes'},
+  scholar:{len:'Message length',rep:'Source redundancy',
+           raw:'Fixed-length coding',huf:'Huffman coded',rat:'Compression ratio',best:'Shortest codeword',
+           next:'Change source',
+           cMsg:'the source, one cell per symbol',cTree:'the Huffman tree - low probability sits deepest',
+           cFixed:'8 bits per symbol, no model at all',cHuff:'Huffman codes, length near minus log p',cSpace:'space',cBits:'bits',cBytes:'bytes'}
+ },
+ searchengine:{
+  junior :{prw:'How much links count',damp:'Chance of following a link',
+           qy:'Looking for',top:'First result',sc:'Its score',cr:'Pages read',
+           nextq:'Search for something else',
+           cWeb:'a nine page web - arrows are links',cQuery:'searching for',
+           cRank:'what the ranking looks like',cTf:'words on the page',cPr:'links pointing at it'},
+  student:{prw:'Weight given to links',damp:'Damping factor',
+           qy:'Query',top:'Top result',sc:'Its score',cr:'Pages crawled',
+           nextq:'Search for something else',
+           cWeb:'a nine page web - arrows are links',cQuery:'searching for',
+           cRank:'what the ranking looks like',cTf:'words on the page',cPr:'links pointing at it'},
+  scholar:{prw:'Authority weight',damp:'Damping factor d',
+           qy:'Query',top:'Top-ranked document',sc:'Score',cr:'Documents indexed',
+           nextq:'Change query',
+           cWeb:'a nine node link graph',cQuery:'query terms',
+           cRank:'ranked retrieval, top five',cTf:'TF-IDF, normalised',cPr:'PageRank authority'}
+ },
+ caffeine:{
+  junior :{cups:'Cups a day',last:'Time of the last one',wake:'You wake up at',
+           bed:'Still in you at bedtime',occ:'Sockets blocked',lat:'Extra time to fall asleep',tot:'Caffeine today',
+           filter:'Big mug of coffee',shot:'Small strong coffee',
+           cDay:'one day, hour by hour',cHalf:'half gone every 5 hours',cBedtime:'bedtime',
+           cAden:'tiredness building up',cFelt:'how sleepy you actually feel',cCaf:'caffeine in your blood',
+           cRec:'the sockets at bedtime',cBlocked:'held shut by caffeine',cFree:'still free for tiredness'},
+  student:{cups:'Cups a day',last:'Time of the last one',wake:'You wake up at',
+           bed:'Still in you at bedtime',occ:'Receptors blocked',lat:'Extra time to fall asleep',tot:'Caffeine today',
+           filter:'Mug of filter coffee',shot:'Single espresso',
+           cDay:'one day, hour by hour',cHalf:'half-life 5 hours',cBedtime:'bedtime',
+           cAden:'sleep pressure building up',cFelt:'how sleepy you actually feel',cCaf:'caffeine in your blood',
+           cRec:'the adenosine receptors at bedtime',cBlocked:'held shut by caffeine',cFree:'still free for adenosine'},
+  scholar:{cups:'Doses per day',last:'Time of last dose',wake:'Wake time',
+           bed:'Plasma level at bedtime',occ:'Receptor occupancy',lat:'Added sleep latency',tot:'Daily intake',
+           filter:'Filter coffee, 95 mg',shot:'Espresso, 63 mg',
+           cDay:'24 hours, one day',cHalf:'first-order, t half 5 h',cBedtime:'bedtime',
+           cAden:'Process S, homeostatic pressure',cFelt:'perceived sleepiness',cCaf:'plasma caffeine',
+           cRec:'A1 occupancy at bedtime',cBlocked:'antagonist bound',cFree:'available to adenosine'}
+ },
+ illusions:{
+  junior :{knob:'Strength of the trick',see:'What you see',truth:'What is really there',why:'Why it happens',
+           next:'Next illusion',proof:'Show me the proof',hide:'Hide the proof',
+           nHermann:'the grey dots grid',nMueller:'the two lines',nChecker:'the checkerboard',nCafe:'the crooked wall',
+           cAllWhite:'every one of these is exactly the same white',
+           cSameEnds:'both lines start and end on the same two marks',
+           cSameGrey:'this connecting strip is one flat grey, and it matches both',
+           cParallel:'every line is straight and every gap is equal',
+           vSmudge:'grey smudges at the crossings',vSameWhite:'one single white everywhere',
+           vLower:'the lower line looks longer',vBoth:'both',
+           vBlighter:'B looks much lighter than A',vIdentical:'exactly the same grey',
+           vWedge:'the rows look bent',vHoriz:'perfectly straight',
+           wInhib:'edges shout, flat areas whisper',wDepth:'your brain reads it as a corner',
+           wDiscount:'your brain subtracts the shadow',wBorders:'tiny borders pulled out of place'},
+  student:{knob:'Strength of the trick',see:'What you see',truth:'What is really there',why:'The mechanism',
+           next:'Next illusion',proof:'Show me the proof',hide:'Hide the proof',
+           nHermann:'Hermann grid',nMueller:'Muller-Lyer',nChecker:'checker shadow',nCafe:'cafe wall',
+           cAllWhite:'every one of these is exactly the same white',
+           cSameEnds:'both shafts start and end on the same two lines',
+           cSameGrey:'this connecting strip is one flat grey, and it matches both',
+           cParallel:'every line is horizontal and every gap is equal',
+           vSmudge:'grey smudges at the crossings',vSameWhite:'one single white everywhere',
+           vLower:'the lower line looks longer',vBoth:'both',
+           vBlighter:'B looks much lighter than A',vIdentical:'identical grey',
+           vWedge:'the rows look wedge shaped',vHoriz:'perfectly parallel',
+           wInhib:'lateral inhibition',wDepth:'depth cues misapplied',
+           wDiscount:'your brain subtracts the shadow',wBorders:'small borders shifted by contrast'},
+  scholar:{knob:'Stimulus parameter',see:'Percept',truth:'Physical stimulus',why:'Mechanism',
+           next:'Next stimulus',proof:'Overlay the ground truth',hide:'Remove the overlay',
+           nHermann:'Hermann grid',nMueller:'Muller-Lyer',nChecker:'checker shadow',nCafe:'cafe wall',
+           cAllWhite:'every one of these is exactly the same white',
+           cSameEnds:'both shafts subtend identical retinal extents',
+           cSameGrey:'this connecting strip is one flat grey, and it matches both',
+           cParallel:'every line is horizontal and every gap is equal',
+           vSmudge:'illusory dark spots at intersections',vSameWhite:'uniform luminance',
+           vLower:'the fins-out shaft appears longer',vBoth:'both',
+           vBlighter:'B appears far lighter than A',vIdentical:'identical luminance',
+           vWedge:'rows appear to converge',vHoriz:'strictly parallel',
+           wInhib:'centre-surround antagonism',wDepth:'size constancy scaling misapplied',
+           wDiscount:'illumination discounted, anchoring within a framework',wBorders:'border displacement from contrast polarity'}
+ },
+ dopamine:{
+  junior :{prob:'How often the reward comes',rate:'How fast it learns',
+           trial:'Go number',vv:'What the light now promises',rcue:'Burst at the light',rrew:'Burst at the juice',
+           skip:'Take the reward away',
+           cTrial:'one go: a light, a wait, a drop of juice',cCue:'the light',cRew:'the juice',cNoRew:'nothing',
+           cFire:'what the dopamine cell does',cBase:'its normal rate',
+           cLearn:'over many goes: the promise moves to the light',
+           cVal:'what the light has come to mean',cAtCue:'burst at the light',cAtRew:'burst at the juice'},
+  student:{prob:'How often the reward comes',rate:'How fast it learns',
+           trial:'Trial',vv:'What the cue now promises',rcue:'Burst at the cue',rrew:'Burst at the reward',
+           skip:'Take the reward away',
+           cTrial:'one trial: a light, a wait, a drop of juice',cCue:'the light',cRew:'the juice',cNoRew:'nothing',
+           cFire:'what the dopamine neuron does',cBase:'background rate',
+           cLearn:'over trials: the promise moves to the light',
+           cVal:'value the light has learnt',cAtCue:'burst at the light',cAtRew:'burst at the juice'},
+  scholar:{prob:'Reward probability',rate:'Learning rate alpha',
+           trial:'Trial',vv:'V of the cue',rcue:'Response at cue',rrew:'Response at reward',
+           skip:'Omit the reward',
+           cTrial:'one trial: conditioned stimulus, delay, reward',cCue:'CS',cRew:'US',cNoRew:'omitted',
+           cFire:'dopamine unit activity',cBase:'baseline firing',
+           cLearn:'across trials: the error transfers to the CS',
+           cVal:'V of the conditioned stimulus',cAtCue:'delta at CS',cAtRew:'delta at reward'}
+ },
+ hurricane:{
+  junior :{sst:'How warm the sea is',lat:'How far from the equator',shear:'Wind high above',
+           cat:'Strength',wind:'Fastest wind',pres:'Pressure in the middle',fuel:'Fuel available',
+           cView:'the storm seen from above',cNothing:'nothing gets going',
+           cNeed:'what a hurricane needs',cWarm:'water warm enough',cSpin:'far enough from the equator',
+           cCalm:'calm winds high up',cWet:'damp air all the way up',cAll:'all four, or nothing happens',
+           cScale:'how the strength is named',cCat:'Category',vNone:'no storm',vTS:'a tropical storm'},
+  student:{sst:'Sea surface temperature',lat:'Latitude',shear:'Wind shear aloft',
+           cat:'Category',wind:'Peak wind',pres:'Central pressure',fuel:'Fuel available',
+           cView:'the storm seen from above',cNothing:'nothing gets going',
+           cNeed:'what a hurricane needs',cWarm:'water warm enough',cSpin:'far enough from the equator',
+           cCalm:'little shear aloft',cWet:'deep moist air',cAll:'all four, or nothing happens',
+           cScale:'the Saffir-Simpson scale',cCat:'Category',vNone:'no storm',vTS:'tropical storm'},
+  scholar:{sst:'Sea surface temperature',lat:'Latitude',shear:'Deep-layer shear',
+           cat:'Category',wind:'Maximum sustained wind',pres:'Minimum central pressure',fuel:'Thermodynamic fuel',
+           cView:'plan view of the vortex',cNothing:'genesis fails',
+           cNeed:'genesis conditions',cWarm:'SST above 26.5 C',cSpin:'Coriolis parameter sufficient',
+           cCalm:'shear below threshold',cWet:'moist mid-troposphere',cAll:'multiplicative, not additive',
+           cScale:'the Saffir-Simpson scale',cCat:'Category',vNone:'no genesis',vTS:'tropical storm'}
+ },
+ tornado:{
+  junior :{shear:'How much the wind changes going up',cape:'How much energy the air holds',lcl:'How low the cloud sits',
+           up:'Speed of the rising air',spin:'How fast it turns',ef:'Rating',touch:'Reaches the ground',
+           cBase:'cloud base',cRoll:'wind change rolls the air into a tube',
+           cUp:'the rising air stands it upright',cDeal:'squeeze it, and it has to spin faster',
+           cWide:'wide and slow',cTight:'narrow and fast',
+           cDown:'on the ground',cHang:'still hanging in the air',vYes:'yes',vNo:'no'},
+  student:{shear:'Change of wind with height',cape:'Energy stored in the air',lcl:'Cloud base height',
+           up:'Updraft speed',spin:'Rotation speed',ef:'Rating',touch:'Reaches the ground',
+           cBase:'cloud base',cRoll:'shear rolls the air into a horizontal tube',
+           cUp:'the updraft tilts it upright',cDeal:'squeeze it, and it has to spin faster',
+           cWide:'wide and slow',cTight:'narrow and fast',
+           cDown:'on the ground',cHang:'still hanging in the air',vYes:'yes',vNo:'no'},
+  scholar:{shear:'Bulk shear over the layer',cape:'CAPE',lcl:'Lifting condensation level',
+           up:'Updraft speed',spin:'Tangential wind',ef:'EF rating',touch:'Surface contact',
+           cBase:'cloud base',cRoll:'shear generates horizontal vorticity',
+           cUp:'tilting into the vertical',cDeal:'stretching conserves angular momentum',
+           cWide:'large radius, low vorticity',cTight:'small radius, high vorticity',
+           cDown:'surface contact',cHang:'aloft only',vYes:'yes',vNo:'no'}
+ },
+ skyblue:{
+  junior :{alt:'How high the Sun is',dust:'Dust and haze',
+           air:'Air in the way',ratio:'Blue bounced vs red',sky:'Colour of the sky',suncol:'Colour of the Sun',
+           eye:'Why not violet?',hideEye:'Hide the eye response',
+           cComputed:'this colour is worked out, not painted',cAirmass:'air the light crosses',
+           cSpec:'every colour, and how much of it bounces',cGot:'the part that came straight through',
+           cEyeCurve:'what your eye can actually see',cViolet:'violet bounces most and is barely seen'},
+  student:{alt:'Sun elevation',dust:'Dust and haze',
+           air:'Air mass',ratio:'Blue scattered vs red',sky:'Colour of the sky',suncol:'Colour of the Sun',
+           eye:'Why not violet?',hideEye:'Hide the eye response',
+           cComputed:'this colour is computed, not painted',cAirmass:'air the light crosses',
+           cSpec:'every wavelength, and how much of it scatters',cGot:'the part that came straight through',
+           cEyeCurve:'what your eye can actually see',cViolet:'violet scatters most and is barely seen'},
+  scholar:{alt:'Solar elevation',dust:'Aerosol loading',
+           air:'Air mass',ratio:'Scattering ratio, blue to red',sky:'Sky chromaticity',suncol:'Direct beam colour',
+           eye:'Overlay the luminous efficiency',hideEye:'Remove the overlay',
+           cComputed:'chromaticity integrated from the spectrum',cAirmass:'relative optical air mass',
+           cSpec:'spectral scattered radiance',cGot:'direct transmitted beam',
+           cEyeCurve:'photopic luminous efficiency',cViolet:'violet scatters most and is barely seen'}
+ },
+ fireflies:{
+  junior :{coup:'How much each watches the others',spread:'How different their own rhythms are',num:'How many fireflies',
+           sync:'How together they are',kk:'Watching strength',kc:'Strength needed',nn:'Fireflies',
+           scatter:'Shuffle them again',
+           cField:'a meadow of fireflies, each with its own rhythm',
+           cCircle:'where each one is in its cycle',cTrace:'how together they are, moment by moment',
+           cAll:'all together',cNone:'no pattern',
+           cLocked:'flashing as one',cLoose:'everyone for themselves'},
+  student:{coup:'Coupling strength',spread:'Spread of natural rhythms',num:'Number of oscillators',
+           sync:'Order parameter',kk:'Coupling K',kc:'Critical coupling',nn:'Oscillators',
+           scatter:'Randomise the phases',
+           cField:'a meadow of fireflies, each with its own rhythm',
+           cCircle:'phase of each one, on the circle',cTrace:'order parameter over time',
+           cAll:'fully locked',cNone:'incoherent',
+           cLocked:'locked together',cLoose:'drifting apart'},
+  scholar:{coup:'Coupling K',spread:'Frequency dispersion',num:'Population size N',
+           sync:'Order parameter r',kk:'Coupling K',kc:'Threshold Kc',nn:'Oscillators',
+           scatter:'Randomise phases',
+           cField:'population of phase oscillators',
+           cCircle:'phases on the unit circle, with the mean field',cTrace:'r against time',
+           cAll:'r = 1',cNone:'r = 0',
+           cLocked:'partially locked',cLoose:'incoherent state'}
+ },
+ ants:{
+  junior :{evap:'How fast the scent fades',num:'How many ants',
+           best:'Shortest route found',trips:'Trips completed',carry:'Carrying food',str:'Strength of the trail',
+           rock:'Drop a rock on the trail',unrock:'Take the rock away',
+           cTop:'the nest, the food, and the scent between them',
+           cNest:'nest',cFood:'food',cRock:'rock',cSteps:'steps',
+           cGreen:'green ants are carrying food home, laying scent',
+           cWhite:'pale ants are still looking, and follow the strongest scent'},
+  student:{evap:'Evaporation rate',num:'Colony size',
+           best:'Shortest route found',trips:'Round trips',carry:'Carrying food',str:'Peak pheromone',
+           rock:'Drop an obstacle on the trail',unrock:'Remove the obstacle',
+           cTop:'the nest, the food, and the pheromone between them',
+           cNest:'nest',cFood:'food',cRock:'obstacle',cSteps:'steps',
+           cGreen:'laden ants heading home, depositing pheromone',
+           cWhite:'searching ants follow the strongest gradient'},
+  scholar:{evap:'Evaporation rate rho',num:'Colony size',
+           best:'Shortest tour found',trips:'Completed tours',carry:'Laden agents',str:'Peak pheromone',
+           rock:'Insert an obstacle',unrock:'Remove the obstacle',
+           cTop:'nest, source, and the pheromone field between them',
+           cNest:'nest',cFood:'source',cRock:'obstacle',cSteps:'steps',
+           cGreen:'laden agents depositing at rate Q over L',
+           cWhite:'searching agents sampling the gradient'}
+ },
+ montyhall:{
+  junior :{doors:'How many doors',speed:'Games per second',
+           pstay:'Wins by staying',pswitch:'Wins by switching',games:'Games played',theory:'Theory says',
+           run:'Play 2000 games',clear:'Start over',
+           cShow:'the last game that was played',cPicked:'you picked this',cOther:'the one left',
+           cOpened:'opened for you',cHost:'the host always opens goat doors, never yours',
+           cConv:'how often each choice wins, as the games pile up',
+           cStayL:'staying',cSwitchL:'switching',
+           cDashed:'dashed lines are where the maths says they must land'},
+  student:{doors:'Number of doors',speed:'Games per second',
+           pstay:'Wins by staying',pswitch:'Wins by switching',games:'Games played',theory:'Theory says',
+           run:'Play 2000 games',clear:'Start over',
+           cShow:'the last game that was played',cPicked:'you picked this',cOther:'the one left',
+           cOpened:'opened for you',cHost:'the host always opens losing doors, never yours',
+           cConv:'how often each choice wins, as the games pile up',
+           cStayL:'staying',cSwitchL:'switching',
+           cDashed:'dashed lines are where the maths says they must land'},
+  scholar:{doors:'Doors n',speed:'Trials per second',
+           pstay:'Empirical P(win | stay)',pswitch:'Empirical P(win | switch)',games:'Trials',theory:'Analytic',
+           run:'Run 2000 trials',clear:'Reset',
+           cShow:'the last realisation',cPicked:'initial choice',cOther:'remaining alternative',
+           cOpened:'revealed by the host',cHost:'the host always opens losing doors, never yours',
+           cConv:'empirical frequencies against trial count',
+           cStayL:'staying',cSwitchL:'switching',
+           cDashed:'dashed lines are the analytic values'}
+ },
 };
 
 const SIMS={};
@@ -449,6 +959,10 @@ function simLabels(id,lvl){
   var O=(typeof window!=='undefined')&&window.SIM_LABELS_OVERRIDE;
   if(O&&O[id]&&O[id][lvl])return O[id][lvl];
   return (SIM_LABELS[id]||{})[lvl]||{};
+}
+
+function simLocale(){
+  try{return (document.documentElement.getAttribute('lang')||'en');}catch(e){return 'en';}
 }
 
 function newEl(tag,cls,id){const e=document.createElement(tag);if(cls)e.className=cls;if(id)e.id=id;return e;}
@@ -549,7 +1063,29 @@ function buildSim(id,container,color,lvl){
             gaslaws:simGas, moonphases:simMoon, protein:simProtein,
             watercycle:simWater, energy:simEnergy,
             seriesparallel:simSeriesParallel, respiration:simRespiration, immunity:simImmunity,
-            magnets:simMagnets, turtles:simTurtles, nestsex:simNestSex, sharks:simSharks, bees:simBees, bats:simBats
+            magnets:simMagnets, turtles:simTurtles, nestsex:simNestSex, sharks:simSharks, bees:simBees, bats:simBats,
+            solarpv:simSolarPV,
+            wind:simWind,
+            heatpump:simHeatPump,
+            grid:simGrid,
+            nuclear:simNuclear,
+            storage:simStorage,
+            hydrogen:simHydrogen,
+            insulation:simInsulation,
+            generator:simGenerator,
+            kwh:simKwh,
+            internet:simInternet,
+            compression:simCompress,
+            searchengine:simSearch,
+            caffeine:simCaffeine,
+            illusions:simIllusion,
+            dopamine:simDopamine,
+            hurricane:simHurricane,
+            tornado:simTornado,
+            skyblue:simSky,
+            fireflies:simFireflies,
+            ants:simAnts,
+            montyhall:simMonty
             };
   if(map[id])map[id](container,color,lvl);
 }
@@ -794,6 +1330,7 @@ function simStates(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('states',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pState=pill(L.state),pTemp=pill(L.tval);
   pRow.appendChild(pState.el);pRow.appendChild(pTemp.el);
   const rT=mkRange(ctrl,L.temp,0,100,15,1,color);
@@ -825,9 +1362,9 @@ function simStates(container,color,lvl){
     ctx.fillStyle='rgba(59,130,246,0.4)';ctx.fillRect(bx,zoneY(Tm),bw,by+bh-zoneY(Tm));
     ctx.strokeStyle='rgba(125,125,125,0.5)';ctx.lineWidth=1;ctx.strokeRect(bx,by,bw,bh);
     ctx.fillStyle='rgba(90,90,90,0.9)';ctx.font='9px system-ui';ctx.textAlign='right';
-    ctx.fillText('boil',bx-2,zoneY(Tb)+3);ctx.fillText('melt',bx-2,zoneY(Tm)+3);ctx.textAlign='left';
+    ctx.fillText(tx('cBoil','boil'),bx-2,zoneY(Tb)+3);ctx.fillText(tx('cMelt','melt'),bx-2,zoneY(Tm)+3);ctx.textAlign='left';
     const my=zoneY(T);ctx.fillStyle=C;ctx.beginPath();ctx.moveTo(bx+bw+2,my);ctx.lineTo(bx+bw+11,my-6);ctx.lineTo(bx+bw+11,my+6);ctx.closePath();ctx.fill();
-    pState.set(state);pTemp.set(T<Tm?'cold':(T<Tb?'warm':'hot'));
+    pState.set(tx('cSt'+state,state));pTemp.set(T<Tm?tx('cCold','cold'):(T<Tb?tx('cWarm','warm'):tx('cHot','hot')));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -903,14 +1440,15 @@ function simSeasons(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('seasons',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pN=pill(L.nh),pS=pill(L.sh);
   pRow.appendChild(pN.el);pRow.appendChild(pS.el);
   const rM=mkRange(ctrl,L.month,1,12,6,1,color);
   const St=SIMS.seasons={raf:null};
   const cx=W/2,cy=H/2,ox=Math.min(W*0.33,155),oy=Math.min(H*0.34,84),tilt=23.5*Math.PI/180;
   const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const NSEAS=['Winter','Winter','Spring','Spring','Spring','Summer','Summer','Summer','Autumn','Autumn','Autumn','Winter'];
-  const SSEAS=['Summer','Summer','Autumn','Autumn','Autumn','Winter','Winter','Winter','Spring','Spring','Spring','Summer'];
+  const NSEAS=[tx('cWinter','Winter'),tx('cWinter','Winter'),tx('cSpring','Spring'),tx('cSpring','Spring'),tx('cSpring','Spring'),tx('cSummer','Summer'),tx('cSummer','Summer'),tx('cSummer','Summer'),tx('cAutumn','Autumn'),tx('cAutumn','Autumn'),tx('cAutumn','Autumn'),tx('cWinter','Winter')];
+  const SSEAS=[tx('cSummer','Summer'),tx('cSummer','Summer'),tx('cAutumn','Autumn'),tx('cAutumn','Autumn'),tx('cAutumn','Autumn'),tx('cWinter','Winter'),tx('cWinter','Winter'),tx('cWinter','Winter'),tx('cSpring','Spring'),tx('cSpring','Spring'),tx('cSpring','Spring'),tx('cSummer','Summer')];
   function frame(){
     const m=rM.val,mi=Math.max(0,Math.min(11,(m-1)|0)),phi=Math.PI+((m-6)/12)*Math.PI*2;
     ctx.clearRect(0,0,W,H);
@@ -946,6 +1484,7 @@ function simBalance(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('balancing',lvl);
+  const lbl=function(k,d){return L[k]||d;};
   const pBal=pill(L.bal),pChk=pill(L.check);
   pRow.appendChild(pBal.el);pRow.appendChild(pChk.el);
   const RX=[
@@ -991,8 +1530,8 @@ function simBalance(container,color,lvl){
     }
     let tx=26,ty=H-74;ctx.font='13px system-ui';ctx.textAlign='left';
     for(const e in elem){const l=elem[e][0],r=elem[e][1],ok=l===r;ctx.fillStyle=ok?'#16a34a':'#dc2626';ctx.fillText(e+':  '+l+(ok?'  =  ':'  ≠  ')+r,tx,ty);ty+=21;if(ty>H-14){ty=H-74;tx+=130;}}
-    if(bal){ctx.fillStyle='#16a34a';ctx.font='bold 15px system-ui';ctx.textAlign='center';ctx.fillText('✓ Balanced!',W-90,H-26);ctx.textAlign='left';}
-    pBal.set(bal?'Yes':'No');pChk.set(bal?'all atoms match':'counts differ');
+    if(bal){ctx.fillStyle='#16a34a';ctx.font='bold 15px system-ui';ctx.textAlign='center';ctx.fillText(lbl('cBalanced','✓ Balanced!'),W-90,H-26);ctx.textAlign='left';}
+    pBal.set(bal?'Yes':'No');pChk.set(bal?'all atoms match':lbl('cDiffer','counts differ'));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -1007,6 +1546,7 @@ function simPunnett(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('punnett',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPh=pill(L.pheno),pGe=pill(L.geno);
   pRow.appendChild(pPh.el);pRow.appendChild(pGe.el);
   const GENO=['AA','Aa','aa'];
@@ -1082,7 +1622,7 @@ function simPunnett(container,color,lvl){
     }
     bar(by,[[dom,C],[rec,'#cbd5e1']]);
     bar(by+bh+7,[[gAA,C],[gAa,'#a78bfa'],[gaa,'#cbd5e1']]);
-    pPh.set(dom+' : '+rec+'  (dom:rec)');pGe.set(gAA+' : '+gAa+' : '+gaa+'  (AA:Aa:aa)');
+    pPh.set(dom+' : '+rec+tx('cDomRec','  (dom:rec)'));pGe.set(gAA+' : '+gAa+' : '+gaa+'  (AA:Aa:aa)');
     St.raf=requestAnimationFrame(frame);
   }
   b1.addEventListener('click',function(){g1=(g1+1)%3;b1.textContent=L.p1+': '+GENO[g1];St.t0=performance.now();});
@@ -1096,10 +1636,11 @@ function simWaves(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('waves',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pType=pill(L.type); const pAmp=pill(L.amp);
   pRow.appendChild(pType.el); pRow.appendChild(pAmp.el);
   const rF=mkRange(ctrl,'Frequency 2',0.5,3,1,0.05,color);
-  const rP=mkRange(ctrl,'Phase Shift',0,6.28,0,0.05,color);
+  const rP=mkRange(ctrl,tx('cPhase','Phase Shift'),0,6.28,0,0.05,color);
 
   let t=0;
   const S=SIMS.waves={raf:null};
@@ -1159,6 +1700,7 @@ function simThermo(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('thermo',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pHits=pill(L.hits); const pAvg=pill(L.speed); const pPres=pill(L.press);
   pRow.appendChild(pHits.el); pRow.appendChild(pAvg.el); pRow.appendChild(pPres.el);
   const rT=mkRange(ctrl,L.temp,50,1200,300,10,safe);
@@ -1243,10 +1785,10 @@ function simThermo(container,color,lvl){
     tops.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();
     // labels
     ctx.fillStyle='rgba(255,255,255,0.45)';ctx.font='800 9.5px Nunito,sans-serif';
-    ctx.textAlign='left'; ctx.fillText('SLOW',hx+10,hy+13);
-    ctx.textAlign='right'; ctx.fillText('FAST',hx+hw-10,hy+13);
+    ctx.textAlign='left'; ctx.fillText(tx('cSlow','SLOW'),hx+10,hy+13);
+    ctx.textAlign='right'; ctx.fillText(tx('cFast','FAST'),hx+hw-10,hy+13);
     ctx.textAlign='center'; ctx.fillStyle='rgba(255,255,255,0.6)';
-    ctx.fillText('Speed distribution  ·  Maxwell–Boltzmann',hx+hw/2,hy+13);
+    ctx.fillText(tx('cDist','Speed distribution  ·  Maxwell–Boltzmann'),hx+hw/2,hy+13);
   }
 
   const S=SIMS.thermo={raf:null};
@@ -1536,6 +2078,7 @@ function simFractal(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('fractal',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pZoom=pill(L.zoom); pRow.appendChild(pZoom.el);
   let maxIter=lvl==='junior'?50:lvl==='student'?90:160;
   const rI=mkRange(ctrl,L.detail,20,240,maxIter,5,color);
@@ -1610,7 +2153,7 @@ function simFractal(container,color,lvl){
     // hint
     ctx.font='800 12px Nunito,sans-serif'; ctx.textAlign='left';
     ctx.fillStyle='rgba(255,255,255,0.6)';
-    ctx.fillText('🔍 Click anywhere to zoom in',12,H-12);
+    ctx.fillText(tx('cZoom','🔍 Click anywhere to zoom in'),12,H-12);
     dirty=false;
   }
 
@@ -1625,6 +2168,7 @@ function simCalculus(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('calculus',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pDeriv=pill(L.deriv); const pInteg=pill(L.integ);
   pRow.appendChild(pDeriv.el); pRow.appendChild(pInteg.el);
   const rX=mkRange(ctrl,L.x,-3,3,0,0.1,color);
@@ -1678,7 +2222,7 @@ function simCalculus(container,color,lvl){
     // labels
     ctx.fillStyle=color;ctx.font='bold 12px Nunito,sans-serif';ctx.textAlign='left';
     ctx.fillText('f(x) = sin(x) + 0.4x',PAD+4,PAD+16);
-    ctx.fillStyle='#f59e0b';ctx.fillText('tangent at x='+xv.toFixed(1),PAD+4,PAD+30);
+    ctx.fillStyle='#f59e0b';ctx.fillText(tx('cTangent','tangent at x=')+xv.toFixed(1),PAD+4,PAD+30);
     pDeriv.set(slope.toFixed(3));pInteg.set(area.toFixed(3));
     S.raf=requestAnimationFrame(frame);
   }
@@ -1691,6 +2235,7 @@ function simGraphs(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('graphs', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pInfected = pill(L.reached); const pSteps = pill(L.steps); const pClustr = pill(L.hubcount);
   pRow.appendChild(pInfected.el); pRow.appendChild(pSteps.el); pRow.appendChild(pClustr.el);
 
@@ -1858,7 +2403,7 @@ function simGraphs(container, color, lvl) {
     });
 
     // legend
-    const leg = [['#f59e0b','Infected'],['#10b981','Recovered'],['#475569','Susceptible'],[color,'Hub']];
+    const leg = [['#f59e0b',tx('cInfected','Infected')],['#10b981',tx('cRecovered','Recovered')],['#475569',tx('cSusceptible','Susceptible')],[color,tx('cHub','Hub')]];
     leg.forEach(([c, lbl], i) => {
       ctx.beginPath(); ctx.arc(14, 14 + i * 18, 5, 0, Math.PI * 2);
       ctx.fillStyle = c; ctx.fill();
@@ -1940,6 +2485,7 @@ function simDNA(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('dna', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPairs = pill(L.pairs); const pErrors = pill(L.errors);
   pRow.appendChild(pPairs.el); pRow.appendChild(pErrors.el);
   const rSpeed = mkRange(ctrl, L.speed, 1, 8, 3, 1, color);
@@ -2057,10 +2603,10 @@ function simDNA(container, color, lvl) {
       ctx.setLineDash([4, 4]); ctx.stroke(); ctx.setLineDash([]);
       ctx.fillStyle = '#fbbf24'; ctx.font = 'bold 10px Nunito,sans-serif';
       // beside the strands where there is room, so it stops sitting on the bases
-      const flT = '← replication fork →', flW = ctx.measureText(flT).width;
+      const flT = tx('cForkArrow','← replication fork →'), flW = ctx.measureText(flT).width;
       if (cx + 66 + flW < W - 4) { ctx.textAlign = 'left';  ctx.fillText(flT, cx + 66, fy + 3); }
       else if (flW + 4 < cx - 66)  { ctx.textAlign = 'right'; ctx.fillText(flT, cx - 66, fy + 3); }
-      else { ctx.textAlign = 'center'; ctx.fillText('replication fork', cx, fy - 9); }
+      else { ctx.textAlign = 'center'; ctx.fillText(tx('cFork','replication fork'), cx, fy - 9); }
     }
 
     // reset when done
@@ -2078,6 +2624,7 @@ function simEvolution(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('evolution', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pGen = pill(L.gen); const pFit = pill(L.fit); const pDiv = pill(L.div);
   pRow.appendChild(pGen.el); pRow.appendChild(pFit.el); pRow.appendChild(pDiv.el);
   const rSel = mkRange(ctrl, L.sel, 0, 10, 5, 1, color);
@@ -2118,7 +2665,7 @@ function simEvolution(container, color, lvl) {
     // env label
     ctx.fillStyle = `hsl(${envHue}, 70%, 70%)`;
     ctx.font = 'bold 11px Nunito,sans-serif'; ctx.textAlign = 'left';
-    ctx.fillText('Environment optimum:', 10, 18);
+    ctx.fillText(tx('cOptimum','Environment optimum:'), 10, 18);
     ctx.beginPath(); ctx.arc(210, 13, 7, 0, Math.PI * 2);
     ctx.fillStyle = `hsl(${envHue}, 80%, 55%)`; ctx.fill();
 
@@ -2183,6 +2730,7 @@ function simEcosystem(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('ecosystem', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPlants = pill(L.plants); const pHerb = pill(L.herb); const pPred = pill(L.preds);
   pRow.appendChild(pPlants.el); pRow.appendChild(pHerb.el); pRow.appendChild(pPred.el);
   const rGrowth = mkRange(ctrl, L.growth, 1, 10, 5, 1, color);
@@ -2304,7 +2852,7 @@ function simEcosystem(container, color, lvl) {
     if (nH === 0 || nPr === 0) {
       ctx.fillStyle = 'rgba(239,68,68,0.85)'; ctx.font = 'bold 13px Nunito,sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(nH === 0 ? '⚠️ Herbivores extinct - ecosystem collapse!' : '⚠️ Predators gone - herbivore explosion!', W / 2, H / 2);
+      ctx.fillText(nH === 0 ? tx('cNoHerb','⚠️ Herbivores extinct - ecosystem collapse!') : tx('cNoPred','⚠️ Predators gone - herbivore explosion!'), W / 2, H / 2);
     }
 
     S.raf = requestAnimationFrame(frame);
@@ -2321,6 +2869,7 @@ function simPhotosynthesis(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('photosynthesis',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pRate=pill(L.rate),pLim=pill(L.limit);
   pRow.appendChild(pRate.el);pRow.appendChild(pLim.el);
   const rL=mkRange(ctrl,L.light,0,100,60,1,color);
@@ -2356,7 +2905,7 @@ function simPhotosynthesis(container,color,lvl){
       if(b.y<6)bubbles.splice(i,1);
     }
     pRate.set(Math.round(rate/0.8*100)+'%');
-    pLim.set(Math.abs(ls-cs)<0.05?'Balanced':(ls<cs?'Light':'CO₂'));
+    pLim.set(Math.abs(ls-cs)<0.05?tx('cBalanced','Balanced'):(ls<cs?tx('cLight','Light'):'CO₂'));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -2371,10 +2920,11 @@ function simCell(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('cell',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pL=pill(L.left),pR=pill(L.right);
   pRow.appendChild(pL.el);pRow.appendChild(pR.el);
   const rS=mkRange(ctrl,L.salt,0,100,60,1,color);
-  const bReset=mkBtn(L.reset||'Reset');ctrl.appendChild(bReset);
+  const bReset=mkBtn(L.reset||tx('cReset','Reset'));ctrl.appendChild(bReset);
   let wL=100,wR=100,dots=[];
   bReset.addEventListener('click',function(){wL=100;wR=100;});
   const St=SIMS.cell={raf:null};
@@ -2408,7 +2958,7 @@ function simCell(container,color,lvl){
       ctx.beginPath();ctx.moveTo(a2,ay);ctx.lineTo(a2-9*dir,ay-5);ctx.lineTo(a2-9*dir,ay+5);ctx.closePath();ctx.fill();
     }
     ctx.fillStyle='rgba(40,40,40,0.7)';ctx.font='11px system-ui';ctx.textAlign='center';
-    ctx.fillText('pure water',pad+tankW/2,bot+15);ctx.fillText('+ solute',midX+8+tankW/2,bot+15);
+    ctx.fillText(tx('cPure','pure water'),pad+tankW/2,bot+15);ctx.fillText(tx('cSolute','+ solute'),midX+8+tankW/2,bot+15);
     ctx.textAlign='left';
     pL.set(Math.round(wL));pR.set(Math.round(wR));
     St.raf=requestAnimationFrame(frame);
@@ -2425,6 +2975,7 @@ function simMitosis(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('mitosis',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPhase=pill(L.phase),pCells=pill(L.cells);
   pRow.appendChild(pPhase.el);pRow.appendChild(pCells.el);
   const rT=mkRange(ctrl,L.stage,0,100,0,1,color);
@@ -2492,23 +3043,23 @@ function simMitosis(container,color,lvl){
     for(let k=0;k<4;k++){const q=k*Math.PI/4;ctx.beginPath();ctx.moveTo(x-Math.cos(q)*7,y-Math.sin(q)*7);ctx.lineTo(x+Math.cos(q)*7,y+Math.sin(q)*7);ctx.stroke();}
   }
   const MIT=[
-    [0,   'Interphase',   'DNA is copied: each chromosome becomes 2 sister chromatids'],
-    [0.16,'Prophase',     'Chromosomes condense, nuclear envelope breaks down'],
-    [0.34,'Metaphase',    'All chromosomes line up SINGLE file on the equator'],
-    [0.50,'Anaphase',     'SISTER chromatids are pulled apart'],
-    [0.72,'Telophase',    'Nuclei reform and the cell pinches in two'],
-    [0.88,'2 cells (2n)', 'Two daughters, diploid and genetically identical']
+    [0,   tx('cInter','Interphase'),   tx('cInterD','DNA is copied: each chromosome becomes 2 sister chromatids')],
+    [0.16,tx('cPro','Prophase'),     tx('cProD','Chromosomes condense, nuclear envelope breaks down')],
+    [0.34,tx('cMeta','Metaphase'),    tx('cMetaD','All chromosomes line up SINGLE file on the equator')],
+    [0.50,tx('cAna','Anaphase'),     tx('cAnaD','SISTER chromatids are pulled apart')],
+    [0.72,tx('cTelo','Telophase'),    tx('cTeloD','Nuclei reform and the cell pinches in two')],
+    [0.88,tx('cTwoCells','2 cells (2n)'), tx('cTwoD','Two daughters, diploid and genetically identical')]
   ];
   const MEI=[
-    [0,   'Interphase',    'DNA is copied once — exactly as in mitosis'],
-    [0.12,'Prophase I',    'Homologues PAIR UP and swap pieces (crossing over)'],
-    [0.26,'Metaphase I',   'Pairs line up DOUBLE file, each pair facing at random'],
-    [0.38,'Anaphase I',    'WHOLE homologues separate — sisters stay joined'],
-    [0.52,'Telophase I',   'Two cells, already haploid but still doubled'],
-    [0.62,'Prophase II',   'No second DNA copy — straight into division two'],
-    [0.70,'Metaphase II',  'Chromosomes line up again, in both cells'],
-    [0.80,'Anaphase II',   'Now the sister chromatids separate'],
-    [0.90,'4 cells (n)',   'Four haploid gametes, every one a different mix']
+    [0,   tx('cInter','Interphase'),    tx('cInterMD','DNA is copied once — exactly as in mitosis')],
+    [0.12,tx('cPro1','Prophase I'),    tx('cPro1D','Homologues PAIR UP and swap pieces (crossing over)')],
+    [0.26,tx('cMeta1','Metaphase I'),   tx('cMeta1D','Pairs line up DOUBLE file, each pair facing at random')],
+    [0.38,tx('cAna1','Anaphase I'),    tx('cAna1D','WHOLE homologues separate — sisters stay joined')],
+    [0.52,tx('cTelo1','Telophase I'),   tx('cTelo1D','Two cells, already haploid but still doubled')],
+    [0.62,tx('cPro2','Prophase II'),   tx('cPro2D','No second DNA copy — straight into division two')],
+    [0.70,tx('cMeta2','Metaphase II'),  tx('cMeta2D','Chromosomes line up again, in both cells')],
+    [0.80,tx('cAna2','Anaphase II'),   tx('cAna2D','Now the sister chromatids separate')],
+    [0.90,tx('cFourCells','4 cells (n)'),   tx('cFourD','Four haploid gametes, every one a different mix')]
   ];
   function stageAt(defs,t){
     let i=0;while(i<defs.length-1&&t>=defs[i+1][0])i++;
@@ -2569,7 +3120,7 @@ function simMitosis(container,color,lvl){
         chromI(x+d*SEP-13,ccy,S-2,RED);chromI(x+d*SEP+13,ccy,S-2,BLUE);
       });
     }
-    header(x,'MITOSIS',s.name);caption(x,s.cap);strip(x,s.n,s.i);
+    header(x,tx('cMitosis','MITOSIS'),s.name);caption(x,s.cap);strip(x,s.n,s.i);
     return {name:s.name,cells:cells};
   }
   function drawMei(t){
@@ -2624,7 +3175,7 @@ function simMitosis(container,color,lvl){
         chromI(xs[i]-9,ccy,12,pair[i][0],pair[i][1]);chromI(xs[i]+9,ccy,10,pair[i][2]);
       }
     }
-    header(x,'MEIOSIS',s.name);caption(x,s.cap);strip(x,s.n,s.i);
+    header(x,tx('cMeiosis','MEIOSIS'),s.name);caption(x,s.cap);strip(x,s.n,s.i);
     return {name:s.name,cells:cells};
   }
   function frame(){
@@ -2649,6 +3200,7 @@ function simSorting(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('sorting',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pAlgo=pill(L.algo); const pComp=pill(L.comps); const pSwap=pill(L.swaps);
   pRow.appendChild(pAlgo.el); pRow.appendChild(pComp.el); pRow.appendChild(pSwap.el);
 
@@ -2680,7 +3232,7 @@ function simSorting(container,color,lvl){
   }
 
   bBubble.addEventListener('click',()=>{shuffle();pAlgo.set('Bubble O(n²)');gen=bubble(arr);active=true;});
-  bMerge.addEventListener('click',()=>{shuffle();pAlgo.set('Merge O(n log n)');gen=merge(arr);active=true;});
+  bMerge.addEventListener('click',()=>{shuffle();pAlgo.set(tx('cMergeN','Merge O(n log n)'));gen=merge(arr);active=true;});
   bRand.addEventListener('click',shuffle);
   rN.inp.addEventListener('input',shuffle);
   shuffle();
@@ -2854,6 +3406,7 @@ function simCrypto(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('crypto', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pStep = pill(L.step); const pKey = pill(L.key);
   pRow.appendChild(pStep.el); pRow.appendChild(pKey.el);
   const bStart = mkBtn('▶ ' + L.run, true, color);
@@ -2882,11 +3435,11 @@ function simCrypto(container, color, lvl) {
   bReset.addEventListener('click', () => { reset(); });
 
   const STEPS = [
-    () => ({ from:'alice', to:'public', label:`g=${g}, p=${p}`, col:'#94a3b8', note:'Public parameters agreed' }),
+    () => ({ from:'alice', to:'public', label:`g=${g}, p=${p}`, col:'#94a3b8', note:tx('cParams','Public parameters agreed') }),
     () => ({ from:'alice', to:'bob',    label:`A = g^a mod p = ${alicePub}`, col:'#818cf8', note:`Alice sends public key A=${alicePub}` }),
     () => ({ from:'bob',   to:'alice',  label:`B = g^b mod p = ${bobPub}`,   col:'#34d399', note:`Bob sends public key B=${bobPub}` }),
-    () => ({ from:'alice', to:'alice',  label:`K = B^a mod p = ${sharedA}`,  col:'#fbbf24', note:`Alice computes shared key` }),
-    () => ({ from:'bob',   to:'bob',    label:`K = A^b mod p = ${sharedB}`,  col:'#fbbf24', note:`Bob computes shared key` }),
+    () => ({ from:'alice', to:'alice',  label:`K = B^a mod p = ${sharedA}`,  col:'#fbbf24', note:tx('cAliceKey','Alice computes shared key') }),
+    () => ({ from:'bob',   to:'bob',    label:`K = A^b mod p = ${sharedB}`,  col:'#fbbf24', note:tx('cBobKey','Bob computes shared key') }),
   ];
 
   const S = SIMS.crypto = { raf: null };
@@ -2904,7 +3457,7 @@ function simCrypto(container, color, lvl) {
     ctx.fillRect(aliceX+personR+5, midY-14, bobX-aliceX-personR*2-10, 28);
     ctx.fillStyle = 'rgba(148,163,184,0.3)';
     ctx.font = '9px Nunito,sans-serif'; ctx.textAlign = 'center';
-    ctx.fillText('PUBLIC CHANNEL (eavesdropper can see)', W/2, midY-18);
+    ctx.fillText(tx('cChannel','PUBLIC CHANNEL (eavesdropper can see)'), W/2, midY-18);
 
     // Alice
     ctx.beginPath(); ctx.arc(aliceX, midY, personR, 0, Math.PI*2);
@@ -2913,7 +3466,7 @@ function simCrypto(container, color, lvl) {
     ctx.fillStyle = '#fff'; ctx.font = 'bold 11px Nunito,sans-serif'; ctx.textAlign = 'center';
     ctx.fillText('Alice', aliceX, midY+4);
     ctx.fillStyle = '#818cf8'; ctx.font = '10px Nunito,sans-serif';
-    ctx.fillText(`secret a=${alicePriv}`, aliceX, midY+personR+14);
+    ctx.fillText(tx('cSecret','secret')+' a='+alicePriv, aliceX, midY+personR+14);
 
     // Bob
     ctx.beginPath(); ctx.arc(bobX, midY, personR, 0, Math.PI*2);
@@ -2922,7 +3475,7 @@ function simCrypto(container, color, lvl) {
     ctx.fillStyle = '#fff'; ctx.font = 'bold 11px Nunito,sans-serif';
     ctx.fillText('Bob', bobX, midY+4);
     ctx.fillStyle = '#34d399'; ctx.font = '10px Nunito,sans-serif';
-    ctx.fillText(`secret b=${bobPriv}`, bobX, midY+personR+14);
+    ctx.fillText(tx('cSecret','secret')+' b='+bobPriv, bobX, midY+personR+14);
 
     // Eavesdropper
     const eaveX = W/2, eaveY = 36;
@@ -2932,7 +3485,7 @@ function simCrypto(container, color, lvl) {
     ctx.fillStyle = '#ef4444'; ctx.font = 'bold 9px Nunito,sans-serif'; ctx.textAlign = 'center';
     ctx.fillText('Eve', eaveX, eaveY+3);
     ctx.fillStyle = 'rgba(239,68,68,0.5)'; ctx.font = '8px Nunito,sans-serif';
-    ctx.fillText('sees everything!', eaveX, eaveY+20);
+    ctx.fillText(tx('cSees','sees everything!'), eaveX, eaveY+20);
 
     // step messages
     msgs.forEach((m, mi) => {
@@ -2987,6 +3540,7 @@ function simComplexity(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('complexity', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pOps = pill(L.ops); const pClass = pill(L.cls); const pN = pill(L.nval);
   pRow.appendChild(pOps.el); pRow.appendChild(pClass.el); pRow.appendChild(pN.el);
   const rN    = mkRange(ctrl, L.n, 2, 22, 8, 1, color);
@@ -2996,11 +3550,11 @@ function simComplexity(container, color, lvl) {
   ctrl.appendChild(bRun);
 
   const ALGOS = [
-    { name:'O(log n)',  col:'#34d399', ops: n => Math.ceil(Math.log2(n+1)),          ex:'Binary search' },
-    { name:'O(n)',      col:'#60a5fa', ops: n => n,                                   ex:'Linear scan' },
-    { name:'O(n log n)',col:'#a78bfa', ops: n => Math.ceil(n*Math.log2(n+1)),         ex:'Merge sort' },
-    { name:'O(n²)',     col:'#f59e0b', ops: n => n*n,                                 ex:'Bubble sort' },
-    { name:'O(2ⁿ)',     col:'#ef4444', ops: n => Math.min(Math.pow(2,n), 1e9),        ex:'Brute force NP' },
+    { name:'O(log n)',  col:'#34d399', ops: n => Math.ceil(Math.log2(n+1)),          ex:tx('cBinary','Binary search') },
+    { name:'O(n)',      col:'#60a5fa', ops: n => n,                                   ex:tx('cLinear','Linear scan') },
+    { name:'O(n log n)',col:'#a78bfa', ops: n => Math.ceil(n*Math.log2(n+1)),         ex:tx('cMerge','Merge sort') },
+    { name:'O(n²)',     col:'#f59e0b', ops: n => n*n,                                 ex:tx('cBubble','Bubble sort') },
+    { name:'O(2ⁿ)',     col:'#ef4444', ops: n => Math.min(Math.pow(2,n), 1e9),        ex:tx('cBrute','Brute force NP') },
   ];
 
   let running = false, progress = 0, currentOps = 0;
@@ -3022,9 +3576,9 @@ function simComplexity(container, color, lvl) {
     ctx.strokeStyle = 'rgba(255,255,255,0.2)'; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(PAD, PAD); ctx.lineTo(PAD, PAD+PH); ctx.lineTo(PAD+PW, PAD+PH); ctx.stroke();
     ctx.fillStyle = 'rgba(255,255,255,0.4)'; ctx.font = '9px Nunito,sans-serif'; ctx.textAlign = 'center';
-    ctx.fillText('Input size n →', PAD+PW/2, PAD+PH+16);
+    ctx.fillText(tx('cInput','Input size n →'), PAD+PW/2, PAD+PH+16);
     ctx.save(); ctx.translate(12, PAD+PH/2); ctx.rotate(-Math.PI/2);
-    ctx.fillText('Operations', 0, 0); ctx.restore();
+    ctx.fillText(tx('cOps','Operations'), 0, 0); ctx.restore();
 
     // n gridline
     const nX = PAD + (n/maxN)*PW;
@@ -3086,12 +3640,12 @@ function simComplexity(container, color, lvl) {
     ctx.fillStyle = algo.col; ctx.font = 'bold 12px Nunito,sans-serif'; ctx.textAlign = 'left';
     ctx.fillText(algo.name + ' - ' + algo.ex, PAD+10, PAD+18);
     ctx.fillStyle = '#cbd5e1'; ctx.font = '10px Nunito,sans-serif';
-    ctx.fillText(`n=${n}  →  ${totalOps.toLocaleString()} operations`, PAD+10, PAD+34);
+    ctx.fillText('n='+n+'  →  '+totalOps.toLocaleString(simLocale())+' '+tx('cOps','operations'), PAD+10, PAD+34);
 
     // complexity class badge
-    const cls = selectedIdx <= 2 ? 'P (tractable)' : selectedIdx === 3 ? 'P (slow)' : 'NP-hard ⚠️';
+    const cls = selectedIdx <= 2 ? tx('cPfast','P (tractable)') : selectedIdx === 3 ? tx('cPslow','P (slow)') : tx('cNPhard','NP-hard ⚠️');
     const clsCol = selectedIdx <= 3 ? '#34d399' : '#ef4444';
-    pOps.set(totalOps >= 1e9 ? '>1 billion' : totalOps.toLocaleString());
+    pOps.set(totalOps >= 1e9 ? tx('cBillion','>1 billion') : totalOps.toLocaleString());
     pClass.set(cls); pN.set(n);
 
     // draw class badge on canvas
@@ -3111,6 +3665,7 @@ function simClimate(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('climate',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pCO2=pill(L.c); const pF=pill(L.forcing); const pDT=pill(L.dt);
   pRow.appendChild(pCO2.el); pRow.appendChild(pF.el); pRow.appendChild(pDT.el);
 
@@ -3159,7 +3714,7 @@ function simClimate(container,color,lvl){
     ctx.fillStyle=`rgba(100,180,80,${atmoAlpha})`;
     ctx.fillRect(0,atmoY,W,atmoH);
     ctx.font='bold 11px Nunito,sans-serif';ctx.fillStyle=`rgba(0,80,0,${0.4+atmoAlpha})`;ctx.textAlign='center';
-    ctx.fillText(`Atmosphere  CO₂: ${co2} ppm`,W/2,atmoY+atmoH*0.62);
+    ctx.fillText(tx('cAtmo','Atmosphere')+'  CO₂: '+co2+' ppm',W/2,atmoY+atmoH*0.62);
 
     // Incoming solar rays (yellow dots)
     for(let i=0;i<5;i++){
@@ -3179,13 +3734,13 @@ function simClimate(container,color,lvl){
 
     // Labels
     ctx.textAlign='left';ctx.fillStyle='rgba(255,255,255,0.8)';ctx.font='bold 12px Nunito,sans-serif';
-    ctx.fillText('🟡 Solar radiation',W*0.02,H*0.55);
+    ctx.fillText(tx('cSolar','🟡 Solar radiation'),W*0.02,H*0.55);
     ctx.fillStyle='rgba(255,120,50,0.9)';
-    ctx.fillText('🔴 Trapped IR heat',W*0.02,H*0.62);
+    ctx.fillText(tx('cTrapped','🔴 Trapped IR heat'),W*0.02,H*0.62);
 
     // Ground label
     ctx.fillStyle='rgba(255,255,255,0.6)';ctx.textAlign='center';ctx.font='bold 11px Nunito,sans-serif';
-    ctx.fillText(`Earth surface - ΔT: ${dT>0?'+':''}${dT.toFixed(2)} °C vs pre-industrial`,W/2,H*0.88);
+    ctx.fillText(tx('cSurf','Earth surface')+' - ΔT: '+(dT>0?'+':'')+dT.toFixed(2)+' °C '+tx('cVsPre','vs pre-industrial'),W/2,H*0.88);
 
     pCO2.set(co2+' ppm');pF.set(dF.toFixed(2)+' W/m²');pDT.set((dT>0?'+':'')+dT.toFixed(2)+'°C');
     S.raf=requestAnimationFrame(frame);
@@ -3199,6 +3754,7 @@ function simTectonics(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('tectonics', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pStress = pill(L.stress); const pTime = pill(L.time); const pEvent = pill(L.event);
   pRow.appendChild(pStress.el); pRow.appendChild(pTime.el); pRow.appendChild(pEvent.el);
   const rSpeed = mkRange(ctrl, L.speed, 1, 10, 4, 1, color);
@@ -3290,7 +3846,7 @@ function simTectonics(container, color, lvl) {
     ctx.fillStyle='rgba(0,0,0,0.4)'; ctx.fillRect(10,10,120,12);
     ctx.fillStyle=`hsl(${120-stress*1.2},80%,50%)`; ctx.fillRect(10,10,stress*1.2,12);
     ctx.fillStyle='#fff'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='left';
-    ctx.fillText('Stress: '+Math.round(stress)+'%', 13, 20);
+    ctx.fillText(tx('cStress','Stress: ')+Math.round(stress)+'%', 13, 20);
 
     // quake flash
     if (quakeAnim > 0) {
@@ -3312,6 +3868,7 @@ function simOcean(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('ocean', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pFlow = pill(L.flow); const pTemp = pill(L.temp); const pAMOC = pill(L.amoc);
   pRow.appendChild(pFlow.el); pRow.appendChild(pTemp.el); pRow.appendChild(pAMOC.el);
   const rWind   = mkRange(ctrl, L.wind, 1, 10, 5, 1, color);
@@ -3387,10 +3944,10 @@ function simOcean(container, color, lvl) {
 
     // Labels
     const labels = [
-      {x:W*.12, y:H*.35, t:'Gulf\nStream', c:'#fbbf24'},
-      {x:W*.5,  y:H*.15, t:'N. Atlantic\nGyre', c:'#93c5fd'},
-      {x:W*.5,  y:H*.58, t:'Equatorial\nCurrent', c:'#6ee7b7'},
-      {x:W*.75, y:H*.8,  t:'Deep water\nsinking', c:'rgba(255,255,255,0.5)'},
+      {x:W*.12, y:H*.35, t:tx('cGulf','Gulf\nStream'), c:'#fbbf24'},
+      {x:W*.5,  y:H*.15, t:tx('cGyre','N. Atlantic\nGyre'), c:'#93c5fd'},
+      {x:W*.5,  y:H*.58, t:tx('cEqCur','Equatorial\nCurrent'), c:'#6ee7b7'},
+      {x:W*.75, y:H*.8,  t:tx('cDeep','Deep water\nsinking'), c:'rgba(255,255,255,0.5)'},
     ];
     labels.forEach(l => {
       ctx.fillStyle = l.c; ctx.font = 'bold 9px Nunito,sans-serif'; ctx.textAlign = 'center';
@@ -3404,7 +3961,7 @@ function simOcean(container, color, lvl) {
     ctx.fillStyle=amoc>60?'#34d399':amoc>30?'#f59e0b':'#ef4444';
     ctx.fillRect(W-86, 22, 74*(amoc/100), 10);
     ctx.fillStyle='#fff'; ctx.font='bold 9px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('AMOC strength', W-49, 19);
+    ctx.fillText(tx('cAmoc','AMOC strength'), W-49, 19);
 
     const surfT = (28 - warm*0.4).toFixed(1);
     pFlow.set(Math.round(wind*3)+' Sv'); pTemp.set(surfT+'°C'); pAMOC.set(Math.round(amoc)+'%');
@@ -3419,6 +3976,7 @@ function simVolcano(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('volcano', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPres = pill(L.pres); const pVEI = pill(L.vei); const pPhase = pill(L.phase);
   pRow.appendChild(pPres.el); pRow.appendChild(pVEI.el); pRow.appendChild(pPhase.el);
   const rVisc  = mkRange(ctrl, L.visc, 1, 10, 4, 1, color);
@@ -3428,10 +3986,10 @@ function simVolcano(container, color, lvl) {
 
   let pressure = 20, erupting = false, eruptT = 0, eruptPower = 0;
   let particles = [], ashCloud = [];
-  let phase = 'Recharging';
+  let phase = tx('cRecharge','Recharging');
 
   bErupt.addEventListener('click', () => {
-    if (!erupting) { erupting = true; eruptT = 0; eruptPower = Math.min(100,pressure); pressure = 5; phase = 'Erupting!'; }
+    if (!erupting) { erupting = true; eruptT = 0; eruptPower = Math.min(100,pressure); pressure = 5; phase = tx('cErupting','Erupting!'); }
   });
 
   const S = SIMS.volcano = { raf: null };
@@ -3444,12 +4002,12 @@ function simVolcano(container, color, lvl) {
     // pressure build-up
     if (!erupting) {
       pressure += 0.06 * rRecharge.val;
-      if (pressure >= 100) { erupting = true; eruptT = 0; eruptPower = 100; pressure = 5; phase = 'Erupting!'; }
-      else phase = pressure > 70 ? 'Critical!' : pressure > 40 ? 'Pressurising' : 'Recharging';
+      if (pressure >= 100) { erupting = true; eruptT = 0; eruptPower = 100; pressure = 5; phase = tx('cErupting','Erupting!'); }
+      else phase = pressure > 70 ? tx('cCritical','Critical!') : pressure > 40 ? tx('cPressurising','Pressurising') : tx('cRecharge','Recharging');
     } else {
       eruptT++;
       pressure = Math.max(5, pressure + 0.1 * rRecharge.val);
-      if (eruptT > 200) { erupting = false; ashCloud = []; particles = []; phase = 'Cooling'; }
+      if (eruptT > 200) { erupting = false; ashCloud = []; particles = []; phase = tx('cCooling','Cooling'); }
     }
 
     // spawn eruption particles
@@ -3568,6 +4126,7 @@ function simChem(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('chem',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pMol=pill(L.mols); const pTemp=pill(L.t);
   pRow.appendChild(pMol.el); pRow.appendChild(pTemp.el);
   const rT=mkRange(ctrl,L.temp,1,10,5,1,color);
@@ -3632,7 +4191,7 @@ function simChem(container,color,lvl){
       ctx.fillText(a.sym,a.x,a.y);
       if(a.bond)molCount++;
     });
-    pMol.set(Math.floor(molCount/2)+' bonds');
+    pMol.set(Math.floor(molCount/2)+tx('cBonds',' bonds'));
     pTemp.set(Math.round(rT.val*100)+'K');
     S.raf=requestAnimationFrame(frame);
   }
@@ -3645,6 +4204,7 @@ function simElectrochem(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('electrochem', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pV    = pill(L.volts); const pQ = pill(L.soc); const pMode = pill(L.mode);
   pRow.appendChild(pV.el); pRow.appendChild(pQ.el); pRow.appendChild(pMode.el);
   const rLoad    = mkRange(ctrl, L.load, 1, 10, 4, 1, color);
@@ -3696,8 +4256,8 @@ function simElectrochem(container, color, lvl) {
     ctx.fillStyle='rgba(255,255,255,0.08)';
     for(let i=0;i<8;i++) ctx.fillRect(anodeX-elecW/2+2, elecY+10+i*(elecH-20)/8, elecW-4, 4);
     ctx.fillStyle='#a5b4fc'; ctx.font='bold 10px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('ANODE', anodeX, elecY-8);
-    ctx.fillText('(Graphite)', anodeX, elecY-18);
+    ctx.fillText(tx('cAnode','ANODE'), anodeX, elecY-8);
+    ctx.fillText(tx('cGraphite','(Graphite)'), anodeX, elecY-18);
 
     // cathode (LiCoO2)
     const cathodeCol = mode==='charge'?'#f59e0b':'#d97706';
@@ -3706,15 +4266,15 @@ function simElectrochem(container, color, lvl) {
     ctx.fillStyle='rgba(255,255,255,0.08)';
     for(let i=0;i<8;i++) ctx.fillRect(cathodeX-elecW/2+2, elecY+10+i*(elecH-20)/8, elecW-4, 4);
     ctx.fillStyle='#fcd34d'; ctx.font='bold 10px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('CATHODE', cathodeX, elecY-8);
-    ctx.fillText('(LiCoO₂)', cathodeX, elecY-18);
+    ctx.fillText(tx('cCathode','CATHODE'), cathodeX, elecY-8);
+    ctx.fillText(tx('cLiCoO','(LiCoO₂)'), cathodeX, elecY-18);
 
     // electrolyte region
     ctx.fillStyle='rgba(14,165,233,0.07)';
     ctx.fillRect(anodeX+elecW/2, elecY, cathodeX-anodeX-elecW, elecH);
     ctx.fillStyle='rgba(14,165,233,0.3)'; ctx.font='10px Nunito,sans-serif'; ctx.textAlign='center';
     // below the band the ions bob through, now that they actually spread out
-    ctx.fillText('Electrolyte (LiPF₆)', W/2, elecY+elecH-8);
+    ctx.fillText(tx('cElectrolyte','Electrolyte (LiPF₆)'), W/2, elecY+elecH-8);
 
     // external circuit (wire + bulb)
     const wireY = elecY - 22;
@@ -3733,7 +4293,7 @@ function simElectrochem(container, color, lvl) {
     ctx.fill();
     ctx.strokeStyle='rgba(255,255,255,0.5)'; ctx.lineWidth=1.5; ctx.stroke();
     ctx.fillStyle='#fff'; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText(mode==='charge'?'⚡':'💡', W/2, wireY+4);
+    ctx.fillText(mode===tx('cCharge','charge')?'⚡':'💡', W/2, wireY+4);
 
     // electron flow arrows on wire
     if (mode !== 'idle') {
@@ -3768,11 +4328,11 @@ function simElectrochem(container, color, lvl) {
     ctx.fillStyle=soc>0.4?'#34d399':soc>0.2?'#f59e0b':'#ef4444';
     ctx.fillRect(10, H-22, (W-20)*soc, 12);
     ctx.fillStyle='#fff'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='left';
-    ctx.fillText('State of Charge: '+Math.round(soc*100)+'%', 14, H-12);
+    ctx.fillText(tx('cSoC','State of Charge: ')+Math.round(soc*100)+'%', 14, H-12);
 
     pV.set(voltage.toFixed(2)+' V');
     pQ.set(Math.round(soc*100)+'%');
-    pMode.set(mode==='discharge'?'Discharging':mode==='charge'?'Charging':'Idle');
+    pMode.set(mode==='discharge'?tx('cDischarging','Discharging'):mode==='charge'?tx('cCharging','Charging'):'Idle');
     S.raf = requestAnimationFrame(frame);
   }
   frame();
@@ -3785,6 +4345,7 @@ function simKinetics(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('kinetics', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pReact = pill(L.react); const pProd = pill(L.prod); const pRate = pill(L.rate);
   pRow.appendChild(pReact.el); pRow.appendChild(pProd.el); pRow.appendChild(pRate.el);
   const rTemp  = mkRange(ctrl, L.temp, 200, 800, 400, 10, color);
@@ -3837,8 +4398,8 @@ function simKinetics(container, color, lvl) {
     ctx.clearRect(0,0,W,H);
     ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
 
-    panel(VES,'Reaction vessel — ' + (catActive?'catalysed':'uncatalysed'));
-    panel(CH,'Energy profile');
+    panel(VES,tx('cVessel','Reaction vessel — ') + (catActive?tx('cCat','catalysed'):tx('cUncat','uncatalysed')));
+    panel(CH,tx('cProfile','Energy profile'));
 
     // molecules stay inside the vessel
     const spd=Math.sqrt(T/300);
@@ -3897,7 +4458,7 @@ function simKinetics(container, color, lvl) {
     ctx.beginPath();ctx.moveTo(eqX,by-5);ctx.lineTo(eqX,by+bh+5);ctx.stroke();
     ctx.fillStyle='rgba(255,255,255,0.85)';ctx.font='9px system-ui';
     ctx.textAlign=eqX>bx+bw*0.8?'right':(eqX<bx+bw*0.2?'left':'center');
-    ctx.fillText('predicted equilibrium: '+Math.round(eqFrac*100)+'% P',eqX,by+bh+11);
+    ctx.fillText(tx('cEq','predicted equilibrium: ')+Math.round(eqFrac*100)+'% P',eqX,by+bh+11);
 
     // ── energy profile ──
     const baseY=CH.y+CH.h-16, reactY=baseY-26, prodY=baseY-26+ (DH/1000)*0.9;
@@ -3906,8 +4467,8 @@ function simKinetics(container, color, lvl) {
     ctx.strokeStyle='rgba(255,255,255,0.25)';ctx.lineWidth=1;
     ctx.beginPath();ctx.moveTo(x0-4,CH.y+10);ctx.lineTo(x0-4,baseY+6);ctx.lineTo(x1,baseY+6);ctx.stroke();
     ctx.fillStyle='rgba(255,255,255,0.45)';ctx.font='9px system-ui';ctx.textAlign='left';
-    ctx.save();ctx.translate(x0-9,CH.y+52);ctx.rotate(-Math.PI/2);ctx.fillText('energy',0,0);ctx.restore();
-    ctx.textAlign='right';ctx.fillText('reaction progress',x1,baseY+16);
+    ctx.save();ctx.translate(x0-9,CH.y+52);ctx.rotate(-Math.PI/2);ctx.fillText(tx('cEnergy','energy'),0,0);ctx.restore();
+    ctx.textAlign='right';ctx.fillText(tx('cProgress','reaction progress'),x1,baseY+16);
     function path(peak,col,dash){
       ctx.beginPath();ctx.moveTo(x0,reactY);
       ctx.bezierCurveTo(midX-50,reactY,midX-26,peak,midX,peak);
@@ -3930,7 +4491,7 @@ function simKinetics(container, color, lvl) {
     ctx.strokeStyle='rgba(255,255,255,0.22)';ctx.setLineDash([3,3]);
     ctx.beginPath();ctx.moveTo(x0,reactY);ctx.lineTo(x1,reactY);ctx.stroke();ctx.setLineDash([]);
     ctx.fillStyle='rgba(255,255,255,0.55)';ctx.textAlign='center';
-    ctx.fillText('ΔH = −'+(DH/1000)+' kJ/mol (exothermic)',midX,prodY+16);
+    ctx.fillText('ΔH = −'+(DH/1000)+tx('cExo',' kJ/mol (exothermic)'),midX,prodY+16);
     ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='bold 10px system-ui';ctx.textAlign='right';
     ctx.fillText('K = k→/k← = '+(K>=100?K.toExponential(1):K.toFixed(1)),x1,CH.y+16);
 
@@ -3947,6 +4508,7 @@ function simOrganic(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('organic', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pMol = pill(L.mol); const pAtoms = pill(L.atoms); const pType = pill(L.type);
   pRow.appendChild(pMol.el); pRow.appendChild(pAtoms.el); pRow.appendChild(pType.el);
   const rMol = mkRange(ctrl, L.sel, 1, 6, 1, 1, color);
@@ -3954,17 +4516,17 @@ function simOrganic(container, color, lvl) {
 
   // Define molecules as atom+bond lists
   const MOLECULES = [
-    { name:'Methane (CH₄)',   type:'Alkane',   atoms:[
+    { name:'Methane (CH₄)',   type:tx('cAlkane','Alkane'),   atoms:[
         {s:'C',x:0,y:0,col:'#6b7280'},{s:'H',x:60,y:0,col:'#ef4444'},
         {s:'H',x:-60,y:0,col:'#ef4444'},{s:'H',x:0,y:60,col:'#ef4444'},{s:'H',x:0,y:-60,col:'#ef4444'}],
-      bonds:[[0,1],[0,2],[0,3],[0,4]], info:'Simplest organic molecule - natural gas' },
-    { name:'Ethanol (C₂H₅OH)', type:'Alcohol', atoms:[
+      bonds:[[0,1],[0,2],[0,3],[0,4]], info:tx('cMethaneD','Simplest organic molecule - natural gas') },
+    { name:'Ethanol (C₂H₅OH)', type:tx('cAlcohol','Alcohol'), atoms:[
         {s:'C',x:-50,y:0,col:'#6b7280'},{s:'C',x:0,y:0,col:'#6b7280'},
         {s:'O',x:50,y:0,col:'#3b82f6'},{s:'H',x:80,y:0,col:'#ef4444'},
         {s:'H',x:-80,y:-30,col:'#ef4444'},{s:'H',x:-80,y:30,col:'#ef4444'},
         {s:'H',x:-10,y:-40,col:'#ef4444'},{s:'H',x:-10,y:40,col:'#ef4444'}],
-      bonds:[[0,1],[1,2],[2,3],[0,4],[0,5],[1,6],[1,7]], info:'Found in alcoholic drinks and hand sanitiser' },
-    { name:'Benzene (C₆H₆)',  type:'Aromatic', atoms:[
+      bonds:[[0,1],[1,2],[2,3],[0,4],[0,5],[1,6],[1,7]], info:tx('cEthanolD','Found in alcoholic drinks and hand sanitiser') },
+    { name:'Benzene (C₆H₆)',  type:tx('cAromatic','Aromatic'), atoms:[
         {s:'C',x:0,y:-60,col:'#6b7280'},{s:'C',x:52,y:-30,col:'#6b7280'},
         {s:'C',x:52,y:30,col:'#6b7280'},{s:'C',x:0,y:60,col:'#6b7280'},
         {s:'C',x:-52,y:30,col:'#6b7280'},{s:'C',x:-52,y:-30,col:'#6b7280'},
@@ -3972,16 +4534,16 @@ function simOrganic(container, color, lvl) {
         {s:'H',x:78,y:45,col:'#ef4444'},{s:'H',x:0,y:90,col:'#ef4444'},
         {s:'H',x:-78,y:45,col:'#ef4444'},{s:'H',x:-78,y:-45,col:'#ef4444'}],
       bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,6],[1,7],[2,8],[3,9],[4,10],[5,11]],
-      aromatic:true, info:'Fundamental aromatic ring - basis of dyes, drugs, plastics' },
-    { name:'Glucose (C₆H₁₂O₆)', type:'Sugar', atoms:[
+      aromatic:true, info:tx('cBenzeneD','Fundamental aromatic ring - basis of dyes, drugs, plastics') },
+    { name:'Glucose (C₆H₁₂O₆)', type:tx('cSugar','Sugar'), atoms:[
         {s:'C',x:-70,y:-20,col:'#6b7280'},{s:'C',x:-30,y:-40,col:'#6b7280'},
         {s:'C',x:10,y:-20,col:'#6b7280'},{s:'C',x:10,y:30,col:'#6b7280'},
         {s:'C',x:-30,y:50,col:'#6b7280'},{s:'O',x:-70,y:30,col:'#3b82f6'},
         {s:'O',x:-70,y:-60,col:'#3b82f6'},{s:'O',x:-30,y:-80,col:'#3b82f6'},
         {s:'O',x:50,y:-20,col:'#3b82f6'},{s:'O',x:50,y:30,col:'#3b82f6'},
         {s:'H',x:-100,y:-60,col:'#ef4444'},{s:'H',x:-30,y:-100,col:'#ef4444'}],
-      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,6],[1,7],[2,8],[3,9],[6,10],[7,11]], info:'Primary fuel for all living cells - C₆H₁₂O₆' },
-    { name:'Aspirin (C₉H₈O₄)', type:'Drug',   atoms:[
+      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,6],[1,7],[2,8],[3,9],[6,10],[7,11]], info:tx('cGlucoseD','Primary fuel for all living cells - C₆H₁₂O₆') },
+    { name:'Aspirin (C₉H₈O₄)', type:tx('cDrug','Drug'),   atoms:[
         {s:'C',x:-30,y:-55,col:'#6b7280'},{s:'C',x:20,y:-55,col:'#6b7280'},
         {s:'C',x:45,y:0,col:'#6b7280'},{s:'C',x:20,y:55,col:'#6b7280'},
         {s:'C',x:-30,y:55,col:'#6b7280'},{s:'C',x:-55,y:0,col:'#6b7280'},
@@ -3989,8 +4551,8 @@ function simOrganic(container, color, lvl) {
         {s:'O',x:110,y:30,col:'#3b82f6'},{s:'C',x:135,y:30,col:'#6b7280'},
         {s:'O',x:-80,y:0,col:'#3b82f6'},{s:'C',x:-110,y:0,col:'#6b7280'},
         {s:'O',x:-130,y:-20,col:'#3b82f6'}],
-      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[2,6],[6,7],[6,8],[8,9],[5,10],[10,11],[11,12]], info:'First synthetic drug - synthesised by Felix Hoffmann, 1897' },
-    { name:'Caffeine (C₈H₁₀N₄O₂)', type:'Alkaloid', atoms:[
+      bonds:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[2,6],[6,7],[6,8],[8,9],[5,10],[10,11],[11,12]], info:tx('cAspirinD','First synthetic drug - synthesised by Felix Hoffmann, 1897') },
+    { name:'Caffeine (C₈H₁₀N₄O₂)', type:tx('cAlkaloid','Alkaloid'), atoms:[
         {s:'N',x:-40,y:-40,col:'#8b5cf6'},{s:'C',x:0,y:-60,col:'#6b7280'},
         {s:'N',x:40,y:-40,col:'#8b5cf6'},{s:'C',x:50,y:0,col:'#6b7280'},
         {s:'N',x:40,y:40,col:'#8b5cf6'},{s:'C',x:0,y:60,col:'#6b7280'},
@@ -4070,7 +4632,7 @@ function simOrganic(container, color, lvl) {
 
     // legend
     const legX = 12;
-    [[`#6b7280`,'C Carbon'],[`#ef4444`,'H Hydrogen'],[`#3b82f6`,'O Oxygen'],[`#8b5cf6`,'N Nitrogen']].forEach(([c,l],i) => {
+    [[`#6b7280`,tx('cCarbon','C Carbon')],[`#ef4444`,tx('cHydrogen','H Hydrogen')],[`#3b82f6`,tx('cOxygen','O Oxygen')],[`#8b5cf6`,tx('cNitrogen','N Nitrogen')]].forEach(([c,l],i) => {
       ctx.beginPath(); ctx.arc(legX+6, H-22+i*0-i*14, 5, 0, Math.PI*2);
       ctx.fillStyle=c; ctx.fill();
       ctx.fillStyle='rgba(255,255,255,0.5)'; ctx.font='9px Nunito,sans-serif'; ctx.textAlign='left';
@@ -4082,7 +4644,7 @@ function simOrganic(container, color, lvl) {
     ctx.fillText(mol.info, W/2, H-8);
 
     pMol.set(mol.name.split(' ')[0]);
-    pAtoms.set(mol.atoms.length+' atoms');
+    pAtoms.set(mol.atoms.length+tx('cAtoms',' atoms'));
     pType.set(mol.type);
     S.raf = requestAnimationFrame(frame);
   }
@@ -4098,6 +4660,7 @@ function simAcids(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('acids',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPH=pill(L.ph),pSt=pill(L.state);
   pRow.appendChild(pPH.el);pRow.appendChild(pSt.el);
   const rV=mkRange(ctrl,L.base,0,50,0,0.5,color);
@@ -4144,7 +4707,7 @@ function simAcids(container,color,lvl){
     ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
     ctx.fillStyle='rgba(125,125,125,0.9)';ctx.font='10px system-ui';ctx.textAlign='left';
     ctx.fillText('pH 14',gx0+3,gyTop+10);ctx.fillText('pH 7',gx0+3,(gyTop+gyBot)/2);ctx.fillText('pH 0',gx0+3,gyBot-4);
-    ctx.textAlign='center';ctx.fillText('base added →',(gx0+gx1)/2,gyBot+14);ctx.textAlign='left';
+    ctx.textAlign='center';ctx.fillText(tx('cBase','base added →'),(gx0+gx1)/2,gyBot+14);ctx.textAlign='left';
     ctx.strokeStyle='rgba(125,125,125,0.8)';ctx.lineWidth=2.5;
     ctx.beginPath();ctx.moveTo(bx,byTop);ctx.lineTo(bx,byTop+bh);ctx.lineTo(bx+bw,byTop+bh);ctx.lineTo(bx+bw,byTop);ctx.stroke();
     const fillTop=byTop+bh*0.3;
@@ -4152,13 +4715,15 @@ function simAcids(container,color,lvl){
     ctx.fillStyle='rgba(255,255,255,0.92)';ctx.font='bold 14px system-ui';ctx.textAlign='center';
     ctx.fillText('pH '+pH.toFixed(1),bx+bw/2,fillTop+bh*0.36);ctx.textAlign='left';
     pPH.set(pH.toFixed(2));
-    pSt.set(pH<6.5?'Acidic':(pH>7.5?'Basic':'Neutral'));
+    pSt.set(pH<6.5?tx('cAcidic','Acidic'):(pH>7.5?tx('cBasic','Basic'):tx('cNeutral','Neutral')));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
 }
 
 function simPeriodic(container,color,lvl){
+  const L=simLabels('periodic',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const C=(typeof color==='string'&&color[0]==='#')?color:'#7c3aed';
   window.SIMS=window.SIMS||{};
   const EL=[
@@ -4172,18 +4737,17 @@ function simPeriodic(container,color,lvl){
    [3,8,57,'La',9],[4,8,58,'Ce',9],[5,8,59,'Pr',9],[6,8,60,'Nd',9],[7,8,61,'Pm',9],[8,8,62,'Sm',9],[9,8,63,'Eu',9],[10,8,64,'Gd',9],[11,8,65,'Tb',9],[12,8,66,'Dy',9],[13,8,67,'Ho',9],[14,8,68,'Er',9],[15,8,69,'Tm',9],[16,8,70,'Yb',9],[17,8,71,'Lu',9],
    [3,9,89,'Ac',10],[4,9,90,'Th',10],[5,9,91,'Pa',10],[6,9,92,'U',10],[7,9,93,'Np',10],[8,9,94,'Pu',10],[9,9,95,'Am',10],[10,9,96,'Cm',10],[11,9,97,'Bk',10],[12,9,98,'Cf',10],[13,9,99,'Es',10],[14,9,100,'Fm',10],[15,9,101,'Md',10],[16,9,102,'No',10],[17,9,103,'Lr',10]
   ];
-  const CAT=['','Alkali metal','Alkaline earth metal','Transition metal','Post-transition metal','Metalloid','Reactive nonmetal','Halogen','Noble gas','Lanthanide','Actinide'];
+  const CAT=['',tx('cAlkali','Alkali metal'),tx('cAlkEarth','Alkaline earth metal'),tx('cTransition','Transition metal'),tx('cPostTrans','Post-transition metal'),tx('cMetalloid','Metalloid'),tx('cNonmetal','Reactive nonmetal'),tx('cHalogen','Halogen'),tx('cNoble','Noble gas'),tx('cLanth','Lanthanide'),tx('cActin','Actinide')];
   const COL=['','#f87171','#fb923c','#fbbf24','#34d399','#22d3ee','#60a5fa','#a78bfa','#f472b6','#4ade80','#2dd4bf'];
   const W=getSimWidth(container),H=340;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
-  const L=simLabels('periodic',lvl);
   const pEl=pill(L.el),pTr=pill(L.trend);
   pRow.appendChild(pEl.el);pRow.appendChild(pTr.el);
   let trend=0,sel=EL.find(e=>e[3]==='C');
   SIMS.periodic={raf:null};
-  const bFam=mkBtn('Families',true,color),bRad=mkBtn('Atomic radius'),bEn=mkBtn('Electronegativity');
+  const bFam=mkBtn(tx('cFamilies','Families'),true,color),bRad=mkBtn(tx('cRadius','Atomic radius')),bEn=mkBtn(tx('cElectroneg','Electronegativity'));
   ctrl.appendChild(bFam);ctrl.appendChild(bRad);ctrl.appendChild(bEn);
   const pad=6,cw=(W-2*pad)/18,ch=Math.min(cw,(H-34)/9);
   function tileXY(col,row){return [pad+(col-1)*cw, 8+(row-1)*ch+(row>=8?10:0)];}
@@ -4204,7 +4768,7 @@ function simPeriodic(container,color,lvl){
     }
     ctx.textAlign='left';
     pEl.set(sel?(sel[3]+' · #'+sel[2]+' · '+CAT[sel[4]]):'—');
-    pTr.set(trend===1?'Radius: grows ← and ↓':trend===2?'Electronegativity: grows → and ↑':'Coloured by chemical family');
+    pTr.set(trend===1?tx('cRadiusHint','Radius: grows ← and ↓'):trend===2?tx('cEnegHint','Electronegativity: grows → and ↑'):tx('cByFamily','Coloured by chemical family'));
   }
   canvas.addEventListener('click',function(ev){
     const r=canvas.getBoundingClientRect(),sxr=W/r.width,syr=H/r.height;
@@ -4231,6 +4795,8 @@ function simAstro(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('astro',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const phN=function(n){return tx('cPh'+n.replace(/[^A-Za-z]/g,''),n);};
   const pAge=pill(L.age); const pStage=pill(L.stage);
   pRow.appendChild(pAge.el); pRow.appendChild(pStage.el);
   const rMass=mkRange(ctrl,L.mass,0.5,20,1,0.5,color);
@@ -4305,12 +4871,12 @@ function simAstro(container,color,lvl){
     ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(HRx,HRy,HRw,HRh);
     ctx.strokeStyle='rgba(255,255,255,0.18)';ctx.lineWidth=1;ctx.strokeRect(HRx,HRy,HRw,HRh);
     ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='bold 10px system-ui';ctx.textAlign='center';
-    ctx.fillText('H–R diagram',HRx+HRw/2,HRy-8);
+    ctx.fillText(tx('cHR','H–R diagram'),HRx+HRw/2,HRy-8);
     ctx.font='8px system-ui';ctx.fillStyle='rgba(255,255,255,0.45)';
-    const axT='hot ←  surface temperature  → cool';
-    ctx.fillText(ctx.measureText(axT).width<=HRw?axT:'hot ← temp → cool',HRx+HRw/2,HRy+HRh+11);
+    const axT=tx('cSurfTemp','hot ←  surface temperature  → cool');
+    ctx.fillText(ctx.measureText(axT).width<=HRw?axT:tx('cTemp','hot ← temp → cool'),HRx+HRw/2,HRy+HRh+11);
     ctx.save();ctx.translate(HRx-7,HRy+HRh/2);ctx.rotate(-Math.PI/2);
-    ctx.fillText('dim ← luminosity → bright',0,0);ctx.restore();
+    ctx.fillText(tx('cLum','dim ← luminosity → bright'),0,0);ctx.restore();
     // main sequence band for reference
     ctx.strokeStyle='rgba(255,255,255,0.22)';ctx.lineWidth=6;ctx.lineCap='round';
     ctx.beginPath();
@@ -4342,7 +4908,7 @@ function simAstro(container,color,lvl){
       if(w>58){
         ctx.fillStyle=i===idx?'rgba(15,15,30,0.95)':'rgba(255,255,255,0.55)';
         ctx.font=(i===idx?'bold ':'')+'9px system-ui';ctx.textAlign='center';
-        ctx.fillText(s.n,x+w/2-1,y+9);
+        ctx.fillText(phN(s.n),x+w/2-1,y+9);
       }
       x+=w;
     });
@@ -4419,7 +4985,7 @@ function simAstro(container,color,lvl){
       ctx.fillStyle='rgba(253,230,138,0.8)';ctx.font='9px system-ui';ctx.textAlign='center';
       // below the circle when there is room, above it when the stat column is in the way
       const sunLabY=cy+sunPx+12;
-      ctx.fillText('Sun (log scale)',cx,sunLabY<HH-196?sunLabY:cy-sunPx-6);
+      ctx.fillText(tx('cSunLog','Sun (log scale)'),cx,sunLabY<HH-196?sunLabY:cy-sunPx-6);
     }
 
     if(state.kind!=='bh'&&St.p<1){
@@ -4434,27 +5000,27 @@ function simAstro(container,color,lvl){
     ctx.textAlign='left';ctx.font='11px ui-monospace,monospace';ctx.fillStyle='rgba(255,255,255,0.8)';
     const bhMass=M*0.32;                     // rough remnant mass after fallback
     const rows=state.kind==='bh'?[
-      'was       '+M.toFixed(1)+' M☉',
-      'lifetime  '+fmtYears(life),
-      'remnant   ~'+bhMass.toFixed(1)+' M☉ black hole',
-      'horizon   '+(2.95*bhMass).toFixed(1)+' km across',
-      'surface   none — light cannot leave'
+      tx('cWas','was       ')+M.toFixed(1)+' M☉',
+      tx('cLifetime','lifetime  ')+fmtYears(life),
+      tx('cRemnant','remnant   ~')+bhMass.toFixed(1)+tx('cBH',' M☉ black hole'),
+      tx('cHorizonL','horizon   ')+(2.95*bhMass).toFixed(1)+tx('cAcross',' km across'),
+      tx('cNoSurface','surface   none — light cannot leave')
     ]:[
-      'mass      '+M.toFixed(1)+' M☉',
-      'lifetime  '+fmtYears(life),
-      'radius    '+(state.R>=0.01?state.R.toFixed(state.R<10?2:0)+' R☉':'~'+(state.R*696000).toFixed(0)+' km'),
-      'surface   '+(state.T>=1000?Math.round(state.T/100)*100:state.T)+' K',
-      'output    '+(state.L>=1000?state.L.toExponential(1):state.L.toFixed(state.L<10?3:0))+' L☉'
+      tx('cMass','mass      ')+M.toFixed(1)+' M☉',
+      tx('cLifetime','lifetime  ')+fmtYears(life),
+      tx('cRadiusL','radius    ')+(state.R>=0.01?state.R.toFixed(state.R<10?2:0)+' R☉':'~'+(state.R*696000).toFixed(0)+' km'),
+      tx('cSurface','surface   ')+(state.T>=1000?Math.round(state.T/100)*100:state.T)+' K',
+      tx('cOutput','output    ')+(state.L>=1000?state.L.toExponential(1):state.L.toFixed(state.L<10?3:0))+' L☉'
     ];
     rows.forEach(function(s,i){ctx.fillText(s,14,HH-186+i*15);});
 
     drawTimeline(sts,idx,St.p);
     ctx.textAlign='center';ctx.font='10px system-ui';ctx.fillStyle='rgba(255,255,255,0.7)';
-    ctx.fillText('animation: '+LIFE_SECONDS+' s = one whole life  ·  1 s ≈ '+fmtYears(life/LIFE_SECONDS)+
-                 (St.p>=1?'   ·   done — press reset':''),W/2,HH-14);
+    ctx.fillText(tx('cAnim','animation: ')+LIFE_SECONDS+tx('cLife',' s = one whole life  ·  1 s ≈ ')+fmtYears(life/LIFE_SECONDS)+
+                 (St.p>=1?tx('cDone','   ·   done — press reset'):''),W/2,HH-14);
 
     pAge.set(fmtYears(life*ageFrac));
-    pStage.set(st.n);
+    pStage.set(phN(st.n));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -4469,11 +5035,12 @@ function simBlackholes(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('blackholes', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pDist = pill(L.km); const pDilat = pill(L.dilat); const pRedshift = pill(L.z);
   pRow.appendChild(pDist.el); pRow.appendChild(pDilat.el); pRow.appendChild(pRedshift.el);
   const rMass = mkRange(ctrl, L.mass, 1, 50, 10, 1, color);
   const rOrbit = mkRange(ctrl, L.dist, 1.2, 20, 6, 0.2, color);
-  const bDrop = mkBtn('🛰 ' + (L.probe||'Drop a probe'), true, color);
+  const bDrop = mkBtn('🛰 ' + (L.probe||tx('cDrop','Drop a probe')), true, color);
   ctrl.appendChild(bDrop);
 
   // Everything is measured in Schwarzschild radii, so the three radii that matter
@@ -4541,8 +5108,8 @@ function simBlackholes(container, color, lvl) {
     }
     ctx.restore();
 
-    ring(ISCO,'rgba(129,140,248,0.85)',[5,4],'ISCO 3 r'+'ₛ — last stable orbit',1);
-    ring(PHOTON,'rgba(251,191,36,0.85)',[3,3],'photon sphere 1.5 rₛ',-1);
+    ring(ISCO,'rgba(129,140,248,0.85)',[5,4],'ISCO 3 r'+tx('cIscoLbl','ₛ — last stable orbit'),1);
+    ring(PHOTON,'rgba(251,191,36,0.85)',[3,3],tx('cPhotonLbl','photon sphere 1.5 rₛ'),-1);
     // light itself orbiting the photon sphere
     const pa=St.t*2.2;
     ctx.beginPath();ctx.arc(cx+Math.cos(pa)*rsPx*PHOTON,cy+Math.sin(pa)*rsPx*PHOTON,2.4,0,Math.PI*2);
@@ -4557,7 +5124,7 @@ function simBlackholes(container, color, lvl) {
     ctx.strokeStyle='rgba(196,181,253,0.5)';ctx.lineWidth=1;
     ctx.beginPath();ctx.moveTo(cx-rsPx*0.7,cy+rsPx*0.7);ctx.lineTo(cx-rsPx*2.6,cy+rsPx*2.4);ctx.stroke();
     ctx.fillStyle='rgba(196,181,253,0.95)';ctx.font='9px system-ui';
-    clampText('event horizon — nothing gets back out',cx-rsPx*2.7,cy+rsPx*2.5,'right');
+    clampText(tx('cHorizonLbl','event horizon — nothing gets back out'),cx-rsPx*2.7,cy+rsPx*2.5,'right');
 
     // ── the orbiting observer ──
     const stable=r>=ISCO;
@@ -4577,7 +5144,7 @@ function simBlackholes(container, color, lvl) {
     ctx.strokeStyle='rgba(255,255,255,0.8)';ctx.lineWidth=1;ctx.stroke();
     if(!stable){
       ctx.fillStyle='#fca5a5';ctx.font='bold 10px system-ui';ctx.textAlign='center';
-      ctx.fillText('inside the ISCO — no stable orbit exists here, it must spiral in',cx,H-58);
+      ctx.fillText(tx('cIsco','inside the ISCO — no stable orbit exists here, it must spiral in'),cx,H-58);
     }
 
     // ── dropped probe: freezes and fades at the horizon, seen from far away ──
@@ -4595,8 +5162,8 @@ function simBlackholes(container, color, lvl) {
       ctx.fillStyle='rgb(255,'+Math.round(240-pr*200)+','+Math.round(230-pr*225)+')';ctx.fill();
       ctx.globalAlpha=1;
       ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='9px system-ui';ctx.textAlign='left';
-      ctx.fillText('probe: r = '+p.r.toFixed(2)+' rₛ · its clock '+p.clock.toFixed(1)+' s vs '+St.t.toFixed(0)+' s out here',12,H-74);
-      if(p.r<1.05)ctx.fillText('it never quite arrives — from out here it freezes and fades',12,H-62);
+      ctx.fillText(tx('cProbe','probe: r = ')+p.r.toFixed(2)+tx('cClock',' rₛ · its clock ')+p.clock.toFixed(1)+tx('cVs',' s vs ')+St.t.toFixed(0)+tx('cOutHere',' s out here'),12,H-74);
+      if(p.r<1.05)ctx.fillText(tx('cFreeze','it never quite arrives — from out here it freezes and fades'),12,H-62);
     }
 
     // ── side panel: the two clocks that make dilation concrete ──
@@ -4606,14 +5173,14 @@ function simBlackholes(container, color, lvl) {
     if(showPan){
     ctx.fillStyle='rgba(255,255,255,0.05)';ctx.fillRect(panX-12,panY-14,PW,150);
     ctx.strokeStyle='rgba(255,255,255,0.16)';ctx.lineWidth=1;ctx.strokeRect(panX-12,panY-14,PW,150);
-    clock(panX+22,panY+24,22,St.t/6,'far away',  '#a5b4fc');
-    clock(panX+88,panY+24,22,St.t*dil/6,'in orbit','#fbbf24');
+    clock(panX+22,panY+24,22,St.t/6,tx('cFarAway','far away'),  '#a5b4fc');
+    clock(panX+88,panY+24,22,St.t*dil/6,tx('cInOrbit','in orbit'),'#fbbf24');
     ctx.fillStyle='rgba(255,255,255,0.8)';ctx.font='10px system-ui';ctx.textAlign='center';
-    ctx.fillText(dil.toFixed(3)+' s tick down there',panX+55,panY+78);
-    ctx.fillText('for every 1 s out here',panX+55,panY+91);
+    ctx.fillText(dil.toFixed(3)+tx('cTick',' s tick down there'),panX+55,panY+78);
+    ctx.fillText(tx('cPerSec','for every 1 s out here'),panX+55,panY+91);
     // the same light, seen from far away
     ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='9px system-ui';
-    ctx.fillText('its colour, seen from here:',panX+55,panY+110);
+    ctx.fillText(tx('cColour','its colour, seen from here:'),panX+55,panY+110);
     ctx.fillStyle='rgb(255,'+Math.round(255-red*190)+','+Math.round(255-red*235)+')';
     ctx.fillRect(panX+18,panY+116,74,10);
     ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.strokeRect(panX+18,panY+116,74,10);
@@ -4622,10 +5189,10 @@ function simBlackholes(container, color, lvl) {
     // ── scale bar in real kilometres ──
     ctx.textAlign='left';ctx.font='10px ui-monospace,monospace';ctx.fillStyle='rgba(255,255,255,0.75)';
     ctx.fillText(W>=560
-      ? 'M = '+M+' M☉   horizon rₛ = '+rsKm.toFixed(1)+' km   photon sphere '+(rsKm*PHOTON).toFixed(1)+' km   ISCO '+(rsKm*ISCO).toFixed(1)+' km'
-      : 'M = '+M+' M☉   horizon rₛ = '+rsKm.toFixed(1)+' km',12,H-40);
+      ? 'M = '+M+tx('cHorizon',' M☉   horizon rₛ = ')+rsKm.toFixed(1)+tx('cPhoton',' km   photon sphere ')+(rsKm*PHOTON).toFixed(1)+' km   ISCO '+(rsKm*ISCO).toFixed(1)+' km'
+      : 'M = '+M+tx('cHorizon',' M☉   horizon rₛ = ')+rsKm.toFixed(1)+' km',12,H-40);
     ctx.fillStyle='rgba(255,255,255,0.5)';
-    ctx.fillText('orbit at '+r.toFixed(1)+' rₛ = '+(rsKm*r).toFixed(0)+' km from the centre',12,H-24);
+    ctx.fillText(tx('cOrbitAt','orbit at ')+r.toFixed(1)+' rₛ = '+(rsKm*r).toFixed(0)+tx('cFromCentre',' km from the centre'),12,H-24);
 
     pDist.set((rsKm*r).toFixed(0)+' km');
     pDilat.set(dil.toFixed(3)+'×');
@@ -4641,6 +5208,7 @@ function simCosmology(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('cosmology', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pAge = pill(L.age); const pH = pill(L.h); const pZ = pill(L.z);
   pRow.appendChild(pAge.el); pRow.appendChild(pH.el); pRow.appendChild(pZ.el);
   const rOmegaL = mkRange(ctrl, L.lam, 0, 100, 69, 1, color);
@@ -4741,11 +5309,11 @@ function simCosmology(container, color, lvl) {
     ctx.fillStyle='rgba(255,255,255,0.1)'; ctx.fillRect(barX,barY,barW,8);
     ctx.fillStyle=color; ctx.fillRect(barX,barY,barW*(cosmicT/13.8),8);
     ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.font='8px Nunito,sans-serif'; ctx.textAlign='left';
-    ctx.fillText('Big Bang', barX, barY-3);
-    ctx.textAlign='right'; ctx.fillText('Now (13.8 Gyr)', barX+barW, barY-3);
+    ctx.fillText(tx('cBang','Big Bang'), barX, barY-3);
+    ctx.textAlign='right'; ctx.fillText(tx('cNow','Now (13.8 Gyr)'), barX+barW, barY-3);
 
     // phase labels
-    const phases=[{t:0.38/1000,l:'CMB'},{t:0.4,l:'First\nstars'},{t:1,l:'Galaxies'},{t:9,l:'Solar\nSystem'},{t:13.8,l:'Today'}];
+    const phases=[{t:0.38/1000,l:'CMB'},{t:0.4,l:tx('cFirstStars','First\nstars')},{t:1,l:tx('cGalaxies','Galaxies')},{t:9,l:tx('cSolarSys','Solar\nSystem')},{t:13.8,l:tx('cToday','Today')}];
     phases.forEach(p=>{
       if(p.t>0.01){
         const px=barX+barW*(p.t/13.8);
@@ -4767,6 +5335,7 @@ function simSolarSystem(container, color, lvl) {
   const ctrl = mkCtrl(container);
   const pRow = mkPills(container);
   const L = simLabels('solarsystem', lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPlanet = pill(L.sel); const pPeriod = pill(L.period); const pDist = pill(L.dist);
   pRow.appendChild(pPlanet.el); pRow.appendChild(pPeriod.el); pRow.appendChild(pDist.el);
   const rSpeed = mkRange(ctrl, L.speed, 1, 10, 4, 1, color);
@@ -4774,14 +5343,14 @@ function simSolarSystem(container, color, lvl) {
   ctrl.appendChild(document.createElement('div'));
 
   const PLANETS = [
-    { name:'Mercury', a:0.39, T:0.24, r:3,  col:'#9ca3af', moons:0 },
-    { name:'Venus',   a:0.72, T:0.62, r:5,  col:'#fbbf24', moons:0 },
-    { name:'Earth',   a:1.00, T:1.00, r:5.5,col:'#3b82f6', moons:1 },
-    { name:'Mars',    a:1.52, T:1.88, r:4,  col:'#ef4444', moons:2 },
-    { name:'Jupiter', a:5.20, T:11.86,r:12, col:'#f59e0b', moons:4 },
-    { name:'Saturn',  a:9.58, T:29.46,r:10, col:'#fcd34d', moons:7, rings:true },
-    { name:'Uranus',  a:19.2, T:84.0, r:7,  col:'#67e8f9', moons:5 },
-    { name:'Neptune', a:30.1, T:164.8,r:7,  col:'#6366f1', moons:2 },
+    { name:tx('cMercury','Mercury'), a:0.39, T:0.24, r:3,  col:'#9ca3af', moons:0 },
+    { name:tx('cVenus','Venus'),   a:0.72, T:0.62, r:5,  col:'#fbbf24', moons:0 },
+    { name:tx('cEarth','Earth'),   a:1.00, T:1.00, r:5.5,col:'#3b82f6', moons:1 },
+    { name:tx('cMars','Mars'),    a:1.52, T:1.88, r:4,  col:'#ef4444', moons:2 },
+    { name:tx('cJupiter','Jupiter'), a:5.20, T:11.86,r:12, col:'#f59e0b', moons:4 },
+    { name:tx('cSaturn','Saturn'),  a:9.58, T:29.46,r:10, col:'#fcd34d', moons:7, rings:true },
+    { name:tx('cUranus','Uranus'),  a:19.2, T:84.0, r:7,  col:'#67e8f9', moons:5 },
+    { name:tx('cNeptune','Neptune'), a:30.1, T:164.8,r:7,  col:'#6366f1', moons:2 },
   ];
 
   let t = 0, selected = 2; // Earth default
@@ -4912,6 +5481,7 @@ function simEclipse(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('eclipse',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPhase=pill(L.phase),pEcl=pill(L.ecl);
   pRow.appendChild(pPhase.el);pRow.appendChild(pEcl.el);
   const rMoon=mkRange(ctrl,L.moon,0,360,180,1,color);
@@ -4938,15 +5508,15 @@ function simEclipse(container,color,lvl){
     ctx.strokeStyle='rgba(255,255,255,0.16)';ctx.lineWidth=1;ctx.setLineDash([3,4]);
     ctx.beginPath();for(let d=0;d<=360;d+=4){const x=Ex+rOrb*Math.cos(d*DEG),y=Ey-A*Math.sin((d-node)*DEG);d?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.stroke();ctx.setLineDash([]);
     ctx.strokeStyle='rgba(255,255,255,0.1)';ctx.beginPath();ctx.moveTo(Ex-rOrb-12,Ey);ctx.lineTo(Ex+rOrb+12,Ey);ctx.stroke();
-    let phase,ecl='None — shadow misses';
-    if(an>150&&an<210)phase='New moon';else if(an<30||an>330)phase='Full moon';else if(an>=30&&an<=150)phase='Waxing';else phase='Waning';
+    let phase,ecl=tx('cNoEcl','None — shadow misses');
+    if(an>150&&an<210)phase=tx('cNewMoon','New moon');else if(an<30||an>330)phase=tx('cFullMoon','Full moon');else if(an>=30&&an<=150)phase=tx('cWaxing','Waxing');else phase=tx('cWaning','Waning');
     if(cosA<0){cone(mx,my,Ex-mx,9,0.5);if(aligned&&an>150&&an<210)ecl='Solar eclipse';}
     else{cone(Ex,Ey,rOrb+34,13,0.42);if(aligned&&(an<30||an>330))ecl='Lunar eclipse';}
     ctx.fillStyle='#2f6fd0';ctx.beginPath();ctx.arc(Ex,Ey,14,0,Math.PI*2);ctx.fill();
     ctx.fillStyle='rgba(120,180,255,0.28)';ctx.beginPath();ctx.arc(Ex,Ey,18,0,Math.PI*2);ctx.fill();
     ctx.fillStyle=(ecl==='Lunar eclipse')?'#b4451f':'#d9d4c8';ctx.beginPath();ctx.arc(mx,my,7,0,Math.PI*2);ctx.fill();
     if(ecl==='Solar eclipse'){ctx.fillStyle='rgba(0,0,0,0.55)';ctx.beginPath();ctx.arc(Ex,Ey,6,0,Math.PI*2);ctx.fill();}
-    pPhase.set(phase);pEcl.set(ecl);
+    pPhase.set(phase);pEcl.set(ecl?tx('cEcl'+ecl.replace(/[^A-Za-z]/g,''),ecl):ecl);
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -4961,6 +5531,7 @@ function simMeteors(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('meteors',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pRate=pill(L.rate),pStat=pill(L.status);
   pRow.appendChild(pRate.el);pRow.appendChild(pStat.el);
   const rPos=mkRange(ctrl,L.pos,0,100,50,1,color);
@@ -4991,9 +5562,9 @@ function simMeteors(container,color,lvl){
     ctx.fillStyle='#ffd24a';ctx.beginPath();ctx.arc(ix,iy,5,0,Math.PI*2);ctx.fill();
     const ea=(pos/100)*Math.PI*2-Math.PI/2;
     ctx.fillStyle='#3b82f6';ctx.beginPath();ctx.arc(ix+ir*Math.cos(ea),iy+ir*Math.sin(ea),4,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font='10px system-ui';ctx.textAlign='center';ctx.fillText("Earth's orbit",ix,iy+ir+13);ctx.textAlign='left';
+    ctx.fillStyle='rgba(255,255,255,0.55)';ctx.font='10px system-ui';ctx.textAlign='center';ctx.fillText(tx('cOrbit',"Earth's orbit"),ix,iy+ir+13);ctx.textAlign='left';
     pRate.set(Math.round(rate));
-    pStat.set(rate>60?'Peak!':(rate>12?'In the stream':'Quiet sky'));
+    pStat.set(rate>60?tx('cPeak','Peak!'):(rate>12?tx('cInStream','In the stream'):tx('cQuiet','Quiet sky')));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -5875,10 +6446,10 @@ function simElNino(container,color,lvl){
   // The real equatorial current system. Each entry: path in lon/lat, and how its
   // strength responds to the trade winds.
   const CURRENTS=[
-    {n:'NEC', label:'North Equatorial Current', lat:15, pts:[[250,14],[220,15],[190,16],[160,15],[132,14]], f:function(w){return 0.35+Math.max(0,w)/10*0.65;}},
-    {n:'NECC',label:'North Equatorial Countercurrent', lat:6, pts:[[132,6],[160,6],[190,7],[220,6],[262,7]], f:function(w){return 0.30+(10-w)/16*0.85;}},
-    {n:'SEC', label:'South Equatorial Current', lat:-2, pts:[[268,-2],[240,-2],[210,-1],[175,-2],[145,-3]], f:function(w){return w/10;}},
-    {n:'Humboldt', label:'Humboldt Current', lat:-20, pts:[[288,-36],[285,-28],[282,-19],[280,-11],[278,-5],[271,-3]], f:function(w){return 0.25+Math.max(0,w)/10*0.75;}}
+    {n:'NEC', label:tx('cNEC','North Equatorial Current'), lat:15, pts:[[250,14],[220,15],[190,16],[160,15],[132,14]], f:function(w){return 0.35+Math.max(0,w)/10*0.65;}},
+    {n:'NECC',label:tx('cNECC','North Equatorial Countercurrent'), lat:6, pts:[[132,6],[160,6],[190,7],[220,6],[262,7]], f:function(w){return 0.30+(10-w)/16*0.85;}},
+    {n:'SEC', label:tx('cSEC','South Equatorial Current'), lat:-2, pts:[[268,-2],[240,-2],[210,-1],[175,-2],[145,-3]], f:function(w){return w/10;}},
+    {n:tx('cHumb','Humboldt'), label:tx('cHumboldt','Humboldt Current'), lat:-20, pts:[[288,-36],[285,-28],[282,-19],[280,-11],[278,-5],[271,-3]], f:function(w){return 0.25+Math.max(0,w)/10*0.75;}}
   ];
   function sstColor(v){
     const t=Math.max(-1,Math.min(1,v));
@@ -5944,14 +6515,14 @@ function simElNino(container,color,lvl){
     });
     lctx.restore();
     lctx.fillStyle='rgba(255,255,255,0.78)';lctx.font='9px system-ui';lctx.textAlign='left';
-    lctx.fillText('Australia',px(133),py(-26));
-    lctx.fillText('Indonesia',px(118),py(-2));
+    lctx.fillText(tx('cAus','Australia'),px(133),py(-26));
+    lctx.fillText(tx('cIndo','Indonesia'),px(118),py(-2));
     lctx.textAlign='right';
-    lctx.fillText('Peru',px(279),py(-10));
-    lctx.fillText('Mexico',px(258),py(22));
+    lctx.fillText(tx('cPeru','Peru'),px(279),py(-10));
+    lctx.fillText(tx('cMex','Mexico'),px(258),py(22));
     lctx.fillStyle='rgba(255,255,255,0.6)';
     lctx.beginPath();lctx.arc(px(269),py(-0.5),2,0,Math.PI*2);lctx.fill();
-    lctx.textAlign='left';lctx.fillText('Galápagos',px(263),py(-4));
+    lctx.textAlign='left';lctx.fillText(tx('cGal','Galápagos'),px(263),py(-4));
     const bw=Math.min(150,MAP.w*0.22),bx=MAP.x+MAP.w-bw-4,by=MAP.y+MAP.h+13;
     const cbg=lctx.createLinearGradient(bx,0,bx+bw,0);
     for(let i=0;i<=10;i++){const c2=sstColor(-1+i/5);cbg.addColorStop(i/10,'rgb('+c2[0]+','+c2[1]+','+c2[2]+')');}
@@ -6111,6 +6682,7 @@ function simNeuro(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('neuro',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pFires=pill(L.rate); const pPot=pill(L.pot);
   pRow.appendChild(pFires.el); pRow.appendChild(pPot.el);
   const rStim=mkRange(ctrl,L.stim,0,10,4,0.5,color);
@@ -6120,8 +6692,8 @@ function simNeuro(container,color,lvl){
   const nodes=[];
   const cx=W/2,cy=H/2-10;
   const positions=[
-    {x:cx,y:60,lbl:'Input'},{x:cx-100,y:cy,lbl:'A'},{x:cx+100,y:cy,lbl:'B'},
-    {x:cx-50,y:cy+100,lbl:'C'},{x:cx+50,y:cy+100,lbl:'D'},{x:cx,y:cy+185,lbl:'Output'}
+    {x:cx,y:60,lbl:tx('cIn','Input')},{x:cx-100,y:cy,lbl:'A'},{x:cx+100,y:cy,lbl:'B'},
+    {x:cx-50,y:cy+100,lbl:'C'},{x:cx+50,y:cy+100,lbl:'D'},{x:cx,y:cy+185,lbl:tx('cOut','Output')}
   ];
   const edges=[[0,1],[0,2],[1,3],[2,3],[1,4],[2,4],[3,5],[4,5]];
   positions.forEach((p,i)=>nodes.push({...p,v:-70,fired:0,t:0}));
@@ -6201,6 +6773,7 @@ function simNeuron(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('neuron',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pV=pill(L.v); const pState=pill(L.state); const pSpikes=pill(L.spikes);
   pRow.appendChild(pV.el); pRow.appendChild(pState.el); pRow.appendChild(pSpikes.el);
  
@@ -6330,7 +6903,7 @@ function simNeuron(container,color,lvl){
     ctx.setLineDash([]);
     ctx.font='bold 10px Nunito,sans-serif'; ctx.fillStyle='rgba(200,30,30,0.7)';
     ctx.textAlign='right';
-    ctx.fillText('threshold',gX+gW-2,threshY-3);
+    ctx.fillText(tx('cThreshold','threshold'),gX+gW-2,threshY-3);
  
     // Voltage trace
     if(traceV.length>1){
@@ -6351,10 +6924,10 @@ function simNeuron(container,color,lvl){
     ctx.textAlign='left'; ctx.fillText('+40 mV',gX+2,gY+16);
     ctx.fillText('−70 mV',gX+2,gY+gH-4);
     ctx.fillStyle=color; ctx.font='bold 11px Nunito,sans-serif';
-    ctx.textAlign='center'; ctx.fillText('Membrane potential',gX+gW/2,gY+gH+10);
+    ctx.textAlign='center'; ctx.fillText(tx('cMembrane','Membrane potential'),gX+gW/2,gY+gH+10);
  
     // State label
-    const stateLabel=v>1.5?'🔥 Firing!':(v>-0.5?'⚡ Depolarising':'💤 Resting');
+    const stateLabel=v>1.5?'🔥 '+tx('cFiring','Firing!'):(v>-0.5?'⚡ '+tx('cDepol','Depolarising'):'💤 '+tx('cRest','Resting'));
     const stateColor=v>1.5?color:(v>-0.5?'#f59e0b':'#64748b');
     ctx.fillStyle=stateColor; ctx.font='bold 12px Nunito,sans-serif';
     ctx.textAlign='left'; ctx.fillText(stateLabel,gX+4,gY+gH-20);
@@ -6375,6 +6948,7 @@ function simMemory(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('memory',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pW=pill(L.w); const pRule=pill(L.last); const pTotal=pill(L.events);
   pRow.appendChild(pW.el); pRow.appendChild(pRule.el); pTotal&&pRow.appendChild(pTotal.el);
  
@@ -6462,8 +7036,8 @@ function simMemory(container,color,lvl){
     ctx.strokeStyle=`${color}88`; ctx.lineWidth=2; ctx.stroke();
     ctx.beginPath(); ctx.arc(preX,neuronY,10,0,Math.PI*2); ctx.fillStyle=`hsl(265,25%,72%)`; ctx.fill();
     ctx.fillStyle=color; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('Pre-synaptic',preX,neuronY+neuronR+18);
-    ctx.fillText('neuron',preX,neuronY+neuronR+31);
+    ctx.fillText(tx('cPre','Pre-synaptic'),preX,neuronY+neuronR+18);
+    ctx.fillText(tx('cNeuron','neuron'),preX,neuronY+neuronR+31);
  
     // Axon terminal bulb
     const termX=gapCx-22;
@@ -6488,7 +7062,7 @@ function simMemory(container,color,lvl){
     ctx.strokeStyle='rgba(0,0,0,0.1)'; ctx.lineWidth=1;
     ctx.beginPath(); ctx.roundRect(gapCx-cleftW/2,neuronY-cleftH/2,cleftW,cleftH,5); ctx.stroke();
     ctx.fillStyle='rgba(0,0,0,0.3)'; ctx.font='bold 9px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('synapse',gapCx,neuronY+4);
+    ctx.fillText(tx('cSynapse','synapse'),gapCx,neuronY+4);
  
     // AMPA receptors on post-synaptic side (size = synapseW)
     const nAMPA=Math.round(2+synapseW*7);
@@ -6523,8 +7097,8 @@ function simMemory(container,color,lvl){
     ctx.beginPath(); ctx.moveTo(gapCx+cleftW/2,neuronY); ctx.lineTo(postX-neuronR,neuronY);
     ctx.strokeStyle=`rgba(14,116,144,0.5)`; ctx.lineWidth=3; ctx.stroke();
     ctx.fillStyle='#0e7490'; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='center';
-    ctx.fillText('Post-synaptic',postX,neuronY+neuronR+18);
-    ctx.fillText('neuron',postX,neuronY+neuronR+31);
+    ctx.fillText(tx('cPost','Post-synaptic'),postX,neuronY+neuronR+18);
+    ctx.fillText(tx('cNeuron','neuron'),postX,neuronY+neuronR+31);
  
     // - Synapse strength bar - (bottom)
     const barX=W*0.1, barY=H*0.76, barW=W*0.8, barH=22;
@@ -6534,16 +7108,16 @@ function simMemory(container,color,lvl){
     ctx.fillStyle=fillColor;
     ctx.beginPath(); ctx.roundRect(barX,barY,barW*synapseW,barH,11); ctx.fill();
     ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.font='bold 11px Nunito,sans-serif'; ctx.textAlign='left';
-    ctx.fillText('Synapse strength',barX,barY-6);
+    ctx.fillText(tx('cStrength','Synapse strength'),barX,barY-6);
     ctx.textAlign='right'; ctx.fillText((synapseW*100).toFixed(0)+'%',barX+barW,barY-6);
  
     // LTP / LTD flash labels
     if(ltpFlash>0.05){
       ctx.fillStyle=`rgba(22,163,74,${ltpFlash})`; ctx.font='bold 15px Nunito,sans-serif';
-      ctx.textAlign='center'; ctx.fillText('▲ LTP - synapse strengthened!',W/2,H*0.91);
+      ctx.textAlign='center'; ctx.fillText(tx('cLtp','▲ LTP - synapse strengthened!'),W/2,H*0.91);
     } else if(ltdFlash>0.05){
       ctx.fillStyle=`rgba(220,38,38,${ltdFlash})`; ctx.font='bold 15px Nunito,sans-serif';
-      ctx.textAlign='center'; ctx.fillText('▼ LTD - synapse weakened',W/2,H*0.91);
+      ctx.textAlign='center'; ctx.fillText(tx('cLtd','▼ LTD - synapse weakened'),W/2,H*0.91);
     }
  
     pW.set((synapseW).toFixed(2));
@@ -6558,15 +7132,16 @@ function simSleep(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('sleep',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pStage=pill(L.stage); const pFreq=pill(L.freq); const pAd=pill(L.ad);
   pRow.appendChild(pStage.el); pRow.appendChild(pFreq.el); pRow.appendChild(pAd.el);
  
   // Stages: awake, N1, N2, N3, REM
-  const stages=['Awake','N1','N2 (spindles)','N3 (deep)','REM'];
+  const stages=[tx('cAwake','Awake'),'N1',tx('cN2','N2 (spindles)'),tx('cN3','N3 (deep)'),'REM'];
   const stageFreqs=[15,6,13,1.2,18];  // Hz
   const stageAmps=[0.18,0.32,0.55,1.0,0.22];
   const stageColors=['#f59e0b','#84cc16','#0ea5e9',color,'#ec4899'];
-  const stageDesc=['β/γ waves - alert','θ waves - drowsy','sleep spindles','δ waves - deep restore','dreaming - vivid'];
+  const stageDesc=[tx('cWaveAlert','β/γ waves - alert'),tx('cWaveDrowsy','θ waves - drowsy'),tx('cSpindles','sleep spindles'),tx('cWaveDeep','δ waves - deep restore'),tx('cDreaming','dreaming - vivid')];
  
   let currentStage=0, stageT=0, cycleT=0;
   const stageDurations=[40,25,35,50,55]; // relative ticks
@@ -6686,9 +7261,9 @@ function simSleep(container,color,lvl){
     ctx.beginPath(); ctx.roundRect(adX,adY,adW*adenosine,adBarH,7); ctx.fill();
     ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.font='bold 10px Nunito,sans-serif';
     const adPct=(adenosine*100).toFixed(0)+'%';
-    const adFull='☕ Adenosine (sleep pressure)';
+    const adFull=tx('cAdenP','☕ Adenosine (sleep pressure)');
     const room=adW-ctx.measureText(adPct).width-8;
-    ctx.textAlign='left'; ctx.fillText(ctx.measureText(adFull).width<=room?adFull:'☕ Adenosine',adX,adY-5);
+    ctx.textAlign='left'; ctx.fillText(ctx.measureText(adFull).width<=room?adFull:tx('cAden','☕ Adenosine'),adX,adY-5);
     ctx.textAlign='right'; ctx.fillText(adPct,adX+adW,adY-5);
  
     // Glymphatic activity bar
@@ -6699,7 +7274,7 @@ function simSleep(container,color,lvl){
     ctx.fillStyle=`hsl(168,60%,45%)`;
     ctx.beginPath(); ctx.roundRect(glX,glY,glW*glAct,glBarH,7); ctx.fill();
     ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.font='bold 10px Nunito,sans-serif';
-    ctx.textAlign='left'; ctx.fillText('🧹 Glymphatic clearing',glX,glY-5);
+    ctx.textAlign='left'; ctx.fillText(tx('cGlym','🧹 Glymphatic clearing'),glX,glY-5);
     ctx.textAlign='right'; ctx.fillText((glAct*100).toFixed(0)+'%',glX+glW,glY-5);
  
     // Brain silhouette (right side of bottom)
@@ -6741,6 +7316,7 @@ function simOptics(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('optics',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pImg=pill(L.img),pMag=pill(L.mag),pType=pill(L.type);
   pRow.appendChild(pImg.el);pRow.appendChild(pMag.el);pRow.appendChild(pType.el);
   const rObj=mkRange(ctrl,L.obj,40,380,260,1,color);
@@ -6842,8 +7418,8 @@ function simOptics(container,color,lvl){
         ray(r1,rayP);ray(r2,rayC);ray(r3,rayF);
         photons(r1,rayP);photons(r2,rayC);photons(r3,rayF);
         arrow(imgx,imgTipY,imgCol,true);
-        tag('image',Math.min(xR-26,Math.max(30,imgx)),cy+34,imgCol);
-        pType.set(m<0?'Real, inverted':'Real');
+        tag(tx('cImage','image'),Math.min(xR-26,Math.max(30,imgx)),cy+34,imgCol);
+        pType.set(m<0?tx('cRealInv','Real, inverted'):'Real');
       }else{
         const d1y=cy-tipY,t1=(xR-cx)/(fpx-cx);
         const r1=[[ox,tipY],[cx,tipY],[xR,tipY+d1y*t1]];
@@ -6855,10 +7431,10 @@ function simOptics(container,color,lvl){
         ray([[cx,tipY],[imgx,imgTipY]],rayP,true);
         ray([[cx,cy],[imgx,imgTipY]],rayC,true);
         arrow(imgx,imgTipY,imgCol,false);
-        tag('virtual image',Math.max(46,imgx),cy+34,imgCol);
-        pType.set('Virtual, upright');
+        tag(tx('cVirtImg','virtual image'),Math.max(46,imgx),cy+34,imgCol);
+        pType.set(tx('cVirtUp','Virtual, upright'));
       }
-      pImg.set(Math.round(di)+(di>0?' (real)':' (virtual)'));
+      pImg.set(Math.round(di)+(di>0?tx('cReal',' (real)'):tx('cVirtual',' (virtual)')));
       pMag.set(m.toFixed(2)+'×');
     }
     // biconvex glass, drawn over the rays so refraction happens "inside" it
@@ -6871,10 +7447,10 @@ function simOptics(container,color,lvl){
     ctx.beginPath();ctx.moveTo(cx-bulge*0.45,cy-lensH*0.30);ctx.quadraticCurveTo(cx-bulge*0.8,cy-lensH*0.1,cx-bulge*0.5,cy);ctx.stroke();
     // object last, so its arrow stays crisp on top of the glow
     arrow(ox,tipY,C,true);
-    tag('object',ox,cy+34,C);
+    tag(tx('cObject','object'),ox,cy+34,C);
     // legend strip along the bottom
     const ly=H-13;let lxp=14;
-    [['parallel',rayP],['centre',rayC],['focus',rayF]].forEach(function(it){
+    [[tx('cParallel','parallel'),rayP],[tx('cCentre','centre'),rayC],[tx('cFocus','focus'),rayF]].forEach(function(it){
       ctx.strokeStyle=it[1];ctx.lineWidth=2.8;ctx.beginPath();ctx.moveTo(lxp,ly-4);ctx.lineTo(lxp+18,ly-4);ctx.stroke();
       ctx.fillStyle='rgba(190,210,240,0.85)';ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillText(it[0],lxp+23,ly);
       lxp+=23+ctx.measureText(it[0]).width+16;
@@ -6993,17 +7569,18 @@ function simMoon(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('moonphases',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pPhase=pill(L.phase),pLit=pill(L.lit);
   pRow.appendChild(pPhase.el);pRow.appendChild(pLit.el);
   const rDay=mkRange(ctrl,L.day,0,29.5,7,0.5,color);
   const St=SIMS.moonphases={raf:null};
   const ex=Math.round(W*0.42),ey=H/2,orbR=Math.min(ex-40,H*0.36);
   function phaseName(k,waxing){
-    if(k<0.03)return 'New Moon';
-    if(k>0.97)return 'Full Moon';
-    if(Math.abs(k-0.5)<0.06)return waxing?'First Quarter':'Last Quarter';
-    if(waxing)return k<0.5?'Waxing Crescent':'Waxing Gibbous';
-    return k<0.5?'Waning Crescent':'Waning Gibbous';
+    if(k<0.03)return tx('cNew','New Moon');
+    if(k>0.97)return tx('cFull','Full Moon');
+    if(Math.abs(k-0.5)<0.06)return waxing?tx('cFirstQ','First Quarter'):tx('cLastQ','Last Quarter');
+    if(waxing)return k<0.5?tx('cWaxCres','Waxing Crescent'):tx('cWaxGib','Waxing Gibbous');
+    return k<0.5?tx('cWanCres','Waning Crescent'):tx('cWanGib','Waning Gibbous');
   }
   function frame(){
     const day=rDay.val,phi=Math.PI+(day/29.5)*Math.PI*2;
@@ -7015,11 +7592,11 @@ function simMoon(container,color,lvl){
     const sg=ctx.createRadialGradient(-30,ey,10,-30,ey,W*0.7);sg.addColorStop(0,'rgba(255,224,120,0.5)');sg.addColorStop(1,'transparent');
     ctx.fillStyle=sg;ctx.fillRect(0,0,W,H);
     ctx.fillStyle='#ffd24a';ctx.beginPath();ctx.arc(2,ey,16,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='rgba(255,220,120,0.85)';ctx.font='11px system-ui';ctx.fillText('Sun',6,ey-22);
+    ctx.fillStyle='rgba(255,220,120,0.85)';ctx.font='11px system-ui';ctx.fillText(tx('cSun','Sun'),6,ey-22);
     // orbit + Earth
     ctx.strokeStyle='rgba(255,255,255,0.13)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(ex,ey,orbR,0,Math.PI*2);ctx.stroke();
     ctx.fillStyle='#3b82f6';ctx.beginPath();ctx.arc(ex,ey,15,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='rgba(180,205,255,0.9)';ctx.fillText('Earth',ex-16,ey+30);
+    ctx.fillStyle='rgba(180,205,255,0.9)';ctx.fillText(tx('cEarth','Earth'),ex-16,ey+30);
     // Moon on orbit, lit half toward the Sun (left)
     const mx=ex+orbR*Math.cos(phi),my=ey+orbR*Math.sin(phi),mr=9;
     ctx.fillStyle='#4b5563';ctx.beginPath();ctx.arc(mx,my,mr,0,Math.PI*2);ctx.fill();
@@ -7036,7 +7613,7 @@ function simMoon(container,color,lvl){
     ctx.fillStyle='#f3f4f6';ctx.beginPath();ctx.arc(ix+off,iy,ir,0,Math.PI*2);ctx.fill();
     ctx.restore();
     ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(ix,iy,ir,0,Math.PI*2);ctx.stroke();
-    ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText('from Earth',ix,iy+ir+18);ctx.textAlign='left';
+    ctx.fillStyle='rgba(255,255,255,0.75)';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText(tx('cFromEarth','from Earth'),ix,iy+ir+18);ctx.textAlign='left';
     pPhase.set(phaseName(k,waxing));pLit.set(Math.round(k*100)+'%');
     St.raf=requestAnimationFrame(frame);
   }
@@ -7052,6 +7629,7 @@ function simProtein(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('protein',lvl);
+  const lbl=function(k,d){return L[k]||d;};
   const pCodon=pill(L.codon),pLen=pill(L.len);
   pRow.appendChild(pCodon.el);pRow.appendChild(pLen.el);
   const bPlay=mkBtn(L.play,true,color);ctrl.appendChild(bPlay);
@@ -7089,14 +7667,14 @@ function simProtein(container,color,lvl){
     const chainY=48,bx=j=>36+j*42;
     let built=0;for(let j=0;j<St.i;j++){if(aa[j]==='STOP')break;built++;}
     ctx.fillStyle='rgba(120,70,140,0.9)';ctx.font='bold 12px system-ui';ctx.textAlign='left';
-    ctx.fillText('protein chain',x0,chainY-30);
+    ctx.fillText(lbl('cChain','protein chain'),x0,chainY-30);
     for(let j=0;j<built;j++){
       if(j>0){ctx.strokeStyle='rgba(120,90,140,0.5)';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(bx(j-1)+16,chainY);ctx.lineTo(bx(j)-16,chainY);ctx.stroke();}
       bead(bx(j),chainY,16,aaCol[j],aa[j]);
     }
     // ── mRNA strand ──
     ctx.fillStyle='rgba(120,70,140,0.9)';ctx.font='bold 12px system-ui';ctx.textAlign='left';
-    ctx.fillText('mRNA — the recipe',x0,strandY-12);
+    ctx.fillText(lbl('cMrna','mRNA — the recipe'),x0,strandY-12);
     ctx.strokeStyle='rgba(150,110,165,0.45)';ctx.lineWidth=3;
     ctx.beginPath();ctx.moveTo(x0+2,strandY+bh+5);ctx.lineTo(x0+n*cw-2,strandY+bh+5);ctx.stroke();
     for(let j=0;j<n;j++){const bxx=x0+j*cw,on=(j===St.i),read=(j<St.i);
@@ -7115,7 +7693,7 @@ function simProtein(container,color,lvl){
     dg.addColorStop(0,'rgba(147,51,180,0.88)');dg.addColorStop(1,'rgba(186,104,214,0.72)');
     ctx.fillStyle=dg;ctx.beginPath();ctx.ellipse(rcx,domeY,cw*1.45,34,0,0,Math.PI*2);ctx.fill();
     ctx.fillStyle='rgba(255,255,255,0.9)';ctx.font='bold 10px system-ui';ctx.textAlign='center';
-    ctx.fillText('ribosome',rcx,domeY-16);
+    ctx.fillText(lbl('cRibo','ribosome'),rcx,domeY-16);
     // reading window: the codon under the site is spotlit
     ctx.strokeStyle='rgba(255,255,255,0.85)';ctx.lineWidth=2;ctx.setLineDash([4,3]);
     rr(rcx-cw/2+2,strandY-2,cw-4,bh+4,8);ctx.stroke();ctx.setLineDash([]);
@@ -7146,10 +7724,10 @@ function simProtein(container,color,lvl){
       bead(ballX,ballY,14,aaCol[St.i],aa[St.i]);   // the amino acid in transit
     }else{
       ctx.fillStyle='#dc2626';ctx.font='bold 12px system-ui';ctx.textAlign='center';
-      ctx.fillText('STOP — chain released',rcx,domeY+2);
+      ctx.fillText(lbl('cStop','STOP — chain released'),rcx,domeY+2);
     }
     ctx.textAlign='left';
-    pCodon.set(codons[St.i]+' → '+aa[St.i]);pLen.set(built+(stop?' (done)':''));
+    pCodon.set(codons[St.i]+' → '+aa[St.i]);pLen.set(built+(stop?lbl('cDone',' (done)'):''));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -7164,10 +7742,11 @@ function simWater(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('watercycle',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pEvap=pill(L.evap),pCloud=pill(L.cloud),pRain=pill(L.rain);
   pRow.appendChild(pEvap.el);pRow.appendChild(pCloud.el);pRow.appendChild(pRain.el);
   const rT=mkRange(ctrl,L.temp,1,10,5,1,color);
-  const rWind=mkRange(ctrl,L.wind||'Wind',1,10,4,1,color);
+  const rWind=mkRange(ctrl,L.wind||tx('cWind','Wind'),1,10,4,1,color);
   const seaY=Math.round(H*0.66),coastX=Math.round(W*0.42),cloudY=Math.round(H*0.20);
   const N=90,LOAD=18;                        // droplets in play, droplets that fill a cloud
   const St=SIMS.watercycle={raf:null,parts:[],clouds:[],spawn:0,t:0,soil:0,flow:0};
@@ -7352,9 +7931,9 @@ function simWater(container,color,lvl){
     const load=St.clouds.reduce(function(a,c){return Math.max(a,c.load);},0);
     const raining=St.clouds.some(function(c){return c.raining;});
     const heavy=St.clouds.some(function(c){return c.load>=LOAD*0.85&&c.x<=coastX+(W-coastX)*0.30;});
-    pEvap.set(warm<4?'Low':warm<8?'Medium':'High');
+    pEvap.set(warm<4?tx('cLow','Low'):warm<8?tx('cMedium','Medium'):tx('cHigh','High'));
     pCloud.set(Math.round(Math.min(1,load/LOAD)*100)+'%');
-    pRain.set(raining?'Raining on land':(heavy?'Drifting to land':'Building'));
+    pRain.set(raining?tx('cRainLand','Raining on land'):(heavy?tx('cDrift','Drifting to land'):tx('cBuilding','Building')));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -7364,47 +7943,129 @@ function simEnergy(container,color,lvl){
   const C=(typeof color==='string'&&color[0]==='#')?color:'#d97706';
   window.SIMS=window.SIMS||{};
   if(SIMS.energy&&SIMS.energy.raf)cancelAnimationFrame(SIMS.energy.raf);
-  const W=getSimWidth(container),H=290;
+  const W=getSimWidth(container),H=440;
   const {canvas,ctx}=mkCanvas(container,W,H);
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('energy',lvl);
-  const pKE=pill(L.ke),pPE=pill(L.pe),pTot=pill(L.tot);
-  pRow.appendChild(pKE.el);pRow.appendChild(pPE.el);pRow.appendChild(pTot.el);
+  const tx=function(k,d){return L[k]||d;};
+  const pKE=pill(L.ke),pPE=pill(L.pe),pTot=pill(L.tot),pHt=pill(tx('cHeat','heat'));
+  pRow.appendChild(pKE.el);pRow.appendChild(pPE.el);pRow.appendChild(pTot.el);pRow.appendChild(pHt.el);
   const rH=mkRange(ctrl,L.drop,0.3,1,0.9,0.05,color);
   const rF=mkRange(ctrl,L.fric,0,0.5,0.05,0.01,color);
-  const St=SIMS.energy={raf:null,t:0,A:0.9,lastH:0.9};
-  const cx=W*0.40,halfW=Math.min(W*0.34,150),depth=150,bottomY=H-54,ww=1.7;
+  const St=SIMS.energy={raf:null,t:0,A:0.9,lastH:0.9,E0:81,hist:[],trail:[]};
+
+  // ── layout: the bowl on top, where the energy went underneath ──
+  const BARX=W-66,cx=(W-96)/2,halfW=Math.min(W*0.36,250),depth=166,bottomY=256,ww=1.7;
+  const CT=306,CB=H-24,CL=46,CR=W-16;
   function trackY(u){return bottomY-depth*u*u;}
+
   function frame(){
-    if(rH.val!==St.lastH){St.lastH=rH.val;St.A=rH.val;St.t=0;}
+    if(rH.val!==St.lastH){St.lastH=rH.val;St.A=rH.val;St.t=0;St.E0=100*rH.val*rH.val;St.hist=[];St.trail=[];}
     St.A*=(1-rF.val*0.02);if(St.A<0.02)St.A=0;
     St.t+=0.03;
     const A=St.A,u=A*Math.cos(ww*St.t);
-    const E=100*A*A,PE=100*u*u,KE=Math.max(0,E-PE);
+    const E=100*A*A,PE=100*u*u,KE=Math.max(0,E-PE),HT=Math.max(0,St.E0-E);
+    St.hist.push([KE,PE,HT]);if(St.hist.length>320)St.hist.shift();
+
     ctx.clearRect(0,0,W,H);
-    const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#fffaf0');bg.addColorStop(1,'#fdf1dc');
-    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-    // track
-    ctx.strokeStyle='rgba(120,110,90,0.85)';ctx.lineWidth=4;ctx.beginPath();
+    const bg=ctx.createLinearGradient(0,0,0,290);
+    bg.addColorStop(0,'#fffaf0');bg.addColorStop(1,'#fdeccd');
+    ctx.fillStyle=bg;ctx.fillRect(0,0,W,290);
+
+    // ══ the bowl ══
+    ctx.fillStyle='rgba(180,160,120,0.16)';ctx.beginPath();
+    for(let uu=-1;uu<=1.001;uu+=0.04)ctx.lineTo(cx+uu*halfW,trackY(uu));
+    ctx.lineTo(cx+halfW,bottomY+8);ctx.lineTo(cx-halfW,bottomY+8);ctx.closePath();ctx.fill();
+    ctx.strokeStyle='rgba(120,110,90,0.9)';ctx.lineWidth=4;ctx.beginPath();
     for(let uu=-1;uu<=1.001;uu+=0.04){const x=cx+uu*halfW,y=trackY(uu);(uu===-1)?ctx.moveTo(x,y):ctx.lineTo(x,y);}
     ctx.stroke();
-    // drop-height marker
-    const my=trackY(A);ctx.strokeStyle='rgba(217,119,6,0.4)';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(cx-halfW,my);ctx.lineTo(cx+halfW,my);ctx.stroke();ctx.setLineDash([]);
-    // ball
+
+    // the height it started from, and the lower one it reaches now
+    const y0=trackY(St.lastH),my=trackY(A);
+    ctx.strokeStyle='rgba(120,110,90,0.28)';ctx.lineWidth=1;ctx.setLineDash([3,4]);
+    ctx.beginPath();ctx.moveTo(cx-halfW-10,y0);ctx.lineTo(cx+halfW+10,y0);ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.strokeStyle='rgba(217,119,6,0.75)';ctx.lineWidth=1.4;ctx.setLineDash([5,4]);
+    ctx.beginPath();ctx.moveTo(cx-halfW-10,my);ctx.lineTo(cx+halfW+10,my);ctx.stroke();ctx.setLineDash([]);
+    if(y0<my-6){
+      ctx.strokeStyle='rgba(217,119,6,0.55)';ctx.lineWidth=1.2;
+      ctx.beginPath();ctx.moveTo(cx-halfW-4,y0);ctx.lineTo(cx-halfW-4,my);ctx.stroke();
+      ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#b45309';
+      ctx.fillText(tx('cLost','lost to heat'),cx-halfW,(y0+my)/2+3);
+    }
+
+    // ══ the ball, with the path it just took ══
     const bxp=cx+u*halfW,byp=trackY(u)-9;
-    const gd=ctx.createRadialGradient(bxp-3,byp-3,2,bxp,byp,11);gd.addColorStop(0,'#ffd98a');gd.addColorStop(0.5,C);gd.addColorStop(1,C);
+    St.trail.push([bxp,byp]);if(St.trail.length>14)St.trail.shift();
+    for(let i=0;i<St.trail.length;i++){
+      ctx.fillStyle='rgba(217,119,6,'+(0.02+0.11*i/St.trail.length).toFixed(2)+')';
+      ctx.beginPath();ctx.arc(St.trail[i][0],St.trail[i][1],5,0,Math.PI*2);ctx.fill();
+    }
+    const gd=ctx.createRadialGradient(bxp-3,byp-3,2,bxp,byp,11);
+    gd.addColorStop(0,'#ffd98a');gd.addColorStop(0.5,C);gd.addColorStop(1,C);
     ctx.beginPath();ctx.arc(bxp,byp,9,0,Math.PI*2);ctx.fillStyle=gd;ctx.fill();
-    ctx.strokeStyle='rgba(0,0,0,0.15)';ctx.lineWidth=1;ctx.stroke();
-    // energy bars (top-right)
-    const px=W-64,barW=22,baseY=120,maxH=92;
-    function bar(x,val,col,lbl){const h=Math.max(0,Math.min(1,val/100))*maxH;
-      ctx.strokeStyle='rgba(120,110,90,0.4)';ctx.lineWidth=1;ctx.strokeRect(x,baseY-maxH,barW,maxH);
-      ctx.fillStyle=col;ctx.fillRect(x,baseY-h,barW,h);
-      ctx.fillStyle='rgba(90,80,60,0.9)';ctx.font='bold 10px system-ui';ctx.textAlign='center';ctx.fillText(lbl,x+barW/2,baseY+13);}
-    bar(px,KE,'#ef4444','KE');bar(px+30,PE,'#3b82f6','PE');
-    ctx.textAlign='left';
-    pKE.set(Math.round(KE)+' J');pPE.set(Math.round(PE)+' J');pTot.set(Math.round(E)+' J');
+    ctx.strokeStyle='rgba(0,0,0,0.18)';ctx.lineWidth=1;ctx.stroke();
+    // speed arrow: long at the bottom, gone at the turning points
+    const v=-A*ww*Math.sin(ww*St.t);
+    if(Math.abs(v)>0.05){
+      const sg=v>0?1:-1,ax=bxp+sg*14,ex=bxp+v*46;
+      ctx.strokeStyle='#dc2626';ctx.lineWidth=2.2;
+      ctx.beginPath();ctx.moveTo(ax,byp);ctx.lineTo(ex,byp);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(ex,byp);ctx.lineTo(ex-sg*6,byp-4);
+      ctx.lineTo(ex-sg*6,byp+4);ctx.closePath();ctx.fillStyle='#dc2626';ctx.fill();
+    }
+
+    // ══ the two bars everything trades between ══
+    const baseY=250,maxH=170;
+    function bar(x,val,col,lb){
+      const h=Math.max(0,Math.min(1,val/Math.max(St.E0,1)))*maxH;
+      ctx.fillStyle='rgba(255,255,255,0.65)';ctx.fillRect(x,baseY-maxH,24,maxH);
+      ctx.strokeStyle='rgba(120,110,90,0.45)';ctx.lineWidth=1;ctx.strokeRect(x,baseY-maxH,24,maxH);
+      ctx.fillStyle=col;ctx.fillRect(x,baseY-h,24,h);
+      ctx.fillStyle='rgba(90,80,60,0.95)';ctx.font='bold 10px system-ui';ctx.textAlign='center';
+      ctx.fillText(lb,x+12,baseY+14);
+      ctx.font='9px system-ui';
+      if(h>maxH-14){ctx.fillStyle='#fff';ctx.fillText(Math.round(val)+' J',x+12,baseY-h+11);}
+      else ctx.fillText(Math.round(val)+' J',x+12,baseY-h-5);
+    }
+    bar(BARX,KE,'#ef4444','KE');bar(BARX+30,PE,'#3b82f6','PE');
+
+    // ══ every joule, from the moment it was dropped ══
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,290,W,H-290);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cChart','energy against time'),CL,304);
+    const SY=function(e){return CB-e/Math.max(St.E0,1)*(CB-CT);};
+    ctx.strokeStyle='rgba(148,163,184,0.16)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(CL,CB);ctx.lineTo(CR,CB);ctx.stroke();
+    const n=St.hist.length;
+    const HX=function(i){return CL+i/319*(CR-CL);};
+    function layer(lo,hi,col){
+      ctx.fillStyle=col;ctx.beginPath();
+      for(let i=0;i<n;i++)ctx.lineTo(HX(i),SY(lo(St.hist[i])));
+      for(let i=n-1;i>=0;i--)ctx.lineTo(HX(i),SY(hi(St.hist[i])));
+      ctx.closePath();ctx.fill();
+    }
+    layer(function(){return 0;},function(r){return r[2];},'rgba(251,146,60,0.75)');
+    layer(function(r){return r[2];},function(r){return r[2]+r[1];},'rgba(59,130,246,0.75)');
+    layer(function(r){return r[2]+r[1];},function(r){return r[2]+r[1]+r[0];},'rgba(239,68,68,0.8)');
+    // the flat lid: the number that never changes
+    ctx.strokeStyle='rgba(226,232,240,0.85)';ctx.lineWidth=1.4;ctx.setLineDash([5,4]);
+    ctx.beginPath();ctx.moveTo(CL,SY(St.E0));ctx.lineTo(CR,SY(St.E0));ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='right';ctx.fillStyle='#e2e8f0';
+    ctx.fillText(L.tot+' '+Math.round(St.E0)+' J',CR,SY(St.E0)-5);
+    // legend
+    const lg=[[L.ke,'#ef4444'],[L.pe,'#3b82f6'],[tx('cHeat','heat'),'#fb923c']];
+    let lx=CL;
+    ctx.font='9px system-ui';ctx.textAlign='left';
+    for(let i=0;i<lg.length;i++){
+      ctx.fillStyle=lg[i][1];ctx.fillRect(lx,CB+8,8,8);
+      ctx.fillStyle='#94a3b8';ctx.fillText(lg[i][0],lx+12,CB+16);
+      lx+=ctx.measureText(lg[i][0]).width+34;
+    }
+
+    pKE.set(Math.round(KE)+' J');pPE.set(Math.round(PE)+' J');
+    pTot.set(Math.round(E)+' J');pHt.set(Math.round(HT)+' J');
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -7419,6 +8080,7 @@ function simSeriesParallel(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('seriesparallel',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pR=pill(L.rtot),pI=pill(L.cur),pB=pill(L.bulb);
   pRow.appendChild(pR.el);pRow.appendChild(pI.el);pRow.appendChild(pB.el);
   const bMode=mkBtn(L.mode,true,color);ctrl.appendChild(bMode);
@@ -7497,7 +8159,7 @@ function simSeriesParallel(container,color,lvl){
     ctx.clearRect(0,0,W,H);
     const bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#fffdf3');bg.addColorStop(1,'#fbf3d8');
     ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-    ctx.fillStyle=C;ctx.font='bold 13px system-ui';ctx.textAlign='left';ctx.fillText(series?'SERIES':'PARALLEL',12,20);
+    ctx.fillStyle=C;ctx.font='bold 13px system-ui';ctx.textAlign='left';ctx.fillText(series?tx('cSeries','SERIES'):tx('cParallel','PARALLEL'),12,20);
     const b=battery(V);
     if(series){
       // one loop, both lamps on the top rail
@@ -7537,6 +8199,7 @@ function simRespiration(container,color,lvl){
   const ctrl=mkCtrl(container);
   const pRow=mkPills(container);
   const L=simLabels('respiration',lvl);
+  const tx=function(k,d){return L[k]||d;};
   const pATP=pill(L.atp),pCO2=pill(L.co2),pMode=pill(L.mode);
   pRow.appendChild(pATP.el);pRow.appendChild(pCO2.el);pRow.appendChild(pMode.el);
   const rO=mkRange(ctrl,L.o2,0,100,70,1,color);
@@ -7552,7 +8215,7 @@ function simRespiration(container,color,lvl){
     ctx.beginPath();ctx.ellipse(mx,my,mw,mh,0,0,Math.PI*2);ctx.fill();ctx.stroke();
     ctx.strokeStyle='rgba(190,70,110,0.45)';ctx.lineWidth=2;
     for(let cr=-1;cr<=1;cr+=0.5){const bx=mx+cr*mw*0.55;ctx.beginPath();for(let a=-1;a<=1;a+=0.1){const yy=my+a*mh*0.72,xx=bx+Math.sin(a*6)*9;a===-1?ctx.moveTo(xx,yy):ctx.lineTo(xx,yy);}ctx.stroke();}
-    ctx.fillStyle='rgba(150,50,90,0.85)';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText('mitochondrion',mx,my+mh+16);
+    ctx.fillStyle='rgba(150,50,90,0.85)';ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText(tx('cMito','mitochondrion'),mx,my+mh+16);
     // spawn glucose + oxygen
     St.spawn+=0.02;
     while(St.spawn>=1){St.spawn-=1;St.parts.push({ty:'glu',x:-10,y:my+(Math.random()*44-22),vx:1.1,vy:0});}
@@ -7588,7 +8251,7 @@ function simRespiration(container,color,lvl){
     }
     if(np.length>170)np.splice(0,np.length-170);
     St.parts=np;
-    pATP.set(atpYield+' ATP');pCO2.set(aerobic?'6':'0');pMode.set(aerobic?'Aerobic':'Anaerobic');
+    pATP.set(atpYield+' ATP');pCO2.set(aerobic?'6':'0');pMode.set(aerobic?'Aerobic':tx('cAnaerobic','Anaerobic'));
     St.raf=requestAnimationFrame(frame);
   }
   frame();
@@ -8000,10 +8663,10 @@ function simMagnets(container,color,lvl){
   pRow.appendChild(pB.el);pRow.appendChild(pE.el);pRow.appendChild(pLz.el);
   const bRev=mkBtn(L.rev,true,color);ctrl.appendChild(bRev);
   const rCur=mkRange(ctrl,L.cur,0,5,2.5,0.1,color);
-  const rSpd=mkRange(ctrl,L.spd,0,120,55,5,color);
+  const rSpd=mkRange(ctrl,L.spd,0,120,5,5,color);
   rCur.v.textContent='2.5 A';
   rCur.inp.addEventListener('input',function(){rCur.v.textContent=(+rCur.inp.value).toFixed(1)+' A';});
-  rSpd.v.textContent='55 cm/s';
+  rSpd.v.textContent='5 cm/s';
   rSpd.inp.addEventListener('input',function(){rSpd.v.textContent=rSpd.inp.value+' cm/s';});
 
   // ── layout ──
@@ -9093,6 +9756,3722 @@ function simBats(container,color,lvl){
     pDl.set(dly.toFixed(1)+' ms');
     pDe.set(lam.toFixed(1)+' mm');
     pRt.set(Math.round(rate)+' /s');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simSolarPV(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#f59e0b';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.solarpv&&SIMS.solarpv.raf)cancelAnimationFrame(SIMS.solarpv.raf);
+  const W=getSimWidth(container),H=520;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('solarpv',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pG=pill(tx('gpoa','Irradiance on the panel')),pP=pill(tx('pw','Power output'));
+  const pT=pill(tx('tc','Cell temperature')),pE=pill(tx('eff','Efficiency'));
+  pRow.appendChild(pG.el);pRow.appendChild(pP.el);pRow.appendChild(pT.el);pRow.appendChild(pE.el);
+  const bTrk=mkBtn(tx('mpptOn','MPPT tracking'),true,color);ctrl.appendChild(bTrk);
+  const rSun=mkRange(ctrl,tx('sun','Sun elevation'),5,90,55,1,color);
+  const rTilt=mkRange(ctrl,tx('tilt','Panel tilt'),0,90,30,1,color);
+  const rTa=mkRange(ctrl,tx('temp','Air temperature'),-5,40,20,1,color);
+  rSun.v.textContent='55°';rTilt.v.textContent='30°';rTa.v.textContent='20 °C';
+  rSun.inp.addEventListener('input',function(){rSun.v.textContent=rSun.inp.value+'°';});
+  rTilt.inp.addEventListener('input',function(){rTilt.v.textContent=rTilt.inp.value+'°';});
+  rTa.inp.addEventListener('input',function(){rTa.v.textContent=rTa.inp.value+' °C';});
+
+  const St=SIMS.solarpv={raf:null,t:0,trk:true,q:[]};
+  bTrk.addEventListener('click',function(){
+    St.trk=!St.trk;
+    bTrk.textContent=St.trk?tx('mpptOn','MPPT tracking'):tx('mpptOff','Fixed voltage');
+  });
+  for(let i=0;i<26;i++)St.q.push(Math.random());
+
+  // ── one real module: 2 m2, 440 W at STC, 60 cells in series ──
+  const D=Math.PI/180;
+  const AREA=2.0,ISC0=13.6,VOC0=41.5,NS=60,NID=1.1,RS=0.18,NOCT=45,BVOC=-0.116,PSTC=440,VFIX=24;
+
+  // Meinel clear-sky beam model, then the plane-of-array sum: beam + sky + ground
+  function dni(a){let s=Math.sin(a*D);if(s<0.02)s=0.02;return 1361*Math.pow(0.7,Math.pow(1/s,0.678));}
+  function poa(a,b){
+    const Dn=dni(a),ghi=Dn*Math.max(0,Math.sin(a*D)),dhi=0.12*ghi;
+    const cosT=Math.sin((a+b)*D);
+    return {G:Dn*Math.max(0,cosT)+dhi*(1+Math.cos(b*D))/2+0.2*ghi*(1-Math.cos(b*D))/2,cosT:cosT};
+  }
+  function cellT(ta,G){return ta+(NOCT-20)/800*G;}
+  // the explicit one-diode curve, walked in junction voltage so series resistance is honest
+  function curve(G,tc){
+    const vt=NS*NID*8.617e-5*(tc+273.15);
+    const isc=ISC0*(G/1000)*(1+0.0005*(tc-25));
+    let voc=VOC0+BVOC*(tc-25)+vt*Math.log(Math.max(G,1)/1000);
+    if(voc<0.5)voc=0.5;
+    const pts=[];let best=0,bi=0;
+    for(let k=0;k<=140;k++){
+      const vj=voc*k/140;
+      let i=isc*(1-Math.exp((vj-voc)/vt));if(i<0)i=0;
+      let v=vj-i*RS;if(v<0)v=0;
+      const p=v*i;pts.push([v,i,p]);
+      if(p>best){best=p;bi=k;}
+    }
+    return {pts:pts,isc:isc,voc:voc,mpp:pts[bi],pmax:best};
+  }
+  function atV(cv,v){
+    let best=cv.pts[0],bd=1e9;
+    for(let k=0;k<cv.pts.length;k++){const d=Math.abs(cv.pts[k][0]-v);if(d<bd){bd=d;best=cv.pts[k];}}
+    return best;
+  }
+
+  // ── layout ──
+  const GY=238,PX=Math.min(W*0.60,W-140),PLEN=Math.min(118,W*0.20);
+  const CH_T=292,CH_B=H-32,CH_L=52,CH_R=W-58;
+  const VMAX=46,IMAX=15,PMAX=520;
+  const X=function(v){return CH_L+v/VMAX*(CH_R-CH_L);};
+  const Y=function(i){return CH_B-i/IMAX*(CH_B-CH_T);};
+  const YP=function(p){return CH_B-p/PMAX*(CH_B-CH_T);};
+
+  function frame(){
+    St.t+=1/60;
+    const al=rSun.val,bt=rTilt.val,ta=rTa.val;
+    const ir=poa(al,bt),G=Math.max(0,ir.G),theta=Math.abs(90-al-bt);
+    const tc=cellT(ta,G),cv=curve(G,tc);
+    const op=St.trk?cv.mpp:atV(cv,VFIX);
+    const P=op[2];
+
+    // ══ sky ══
+    ctx.clearRect(0,0,W,H);
+    const sky=ctx.createLinearGradient(0,0,0,GY);
+    const low=Math.max(0,1-al/45);
+    sky.addColorStop(0,'#0b3a6b');
+    sky.addColorStop(1,low>0.4?'#d97706':'#7dd3fc');
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,GY);
+    ctx.fillStyle='#1f2937';ctx.fillRect(0,GY,W,H-GY);
+    ctx.fillStyle='#374151';ctx.fillRect(0,GY,W,3);
+
+    // ══ the Sun, on its arc ══
+    const R=Math.min(PX-56,196);
+    const sx=PX-R*Math.cos(al*D),sy=GY-R*Math.sin(al*D);
+    const gl=ctx.createRadialGradient(sx,sy,2,sx,sy,42);
+    gl.addColorStop(0,'rgba(254,240,138,0.95)');gl.addColorStop(0.35,'rgba(251,191,36,0.45)');
+    gl.addColorStop(1,'rgba(251,191,36,0)');
+    ctx.fillStyle=gl;ctx.beginPath();ctx.arc(sx,sy,42,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#fde68a';ctx.beginPath();ctx.arc(sx,sy,13,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.18)';ctx.lineWidth=1;ctx.setLineDash([3,5]);
+    ctx.beginPath();ctx.arc(PX,GY,R,-Math.PI,0);ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#fef3c7';
+    ctx.fillText(tx('cSun','Sun')+' · '+al+'°',sx,sy-20);
+
+    // ══ the panel ══
+    const b=bt*D,ux=Math.cos(b),uy=-Math.sin(b);
+    const cyP=GY-54;
+    const ax=PX-ux*PLEN/2,ay=cyP-uy*PLEN/2,bx2=PX+ux*PLEN/2,by2=cyP+uy*PLEN/2;
+    const nx=-Math.sin(b),ny=-Math.cos(b);
+    const dx=Math.cos(al*D),dy=Math.sin(al*D);          // sunlight travel direction
+    const ex=bx2-ax,ey=by2-ay;
+    function hit(ox,oy){
+      const den=ex*dy-dx*ey;
+      if(Math.abs(den)<1e-9)return null;
+      const t=(ex*(ay-oy)-(ax-ox)*ey)/den;
+      const s=(dx*(ay-oy)-dy*(ax-ox))/den;
+      if(t>0&&s>=0&&s<=1)return [ox+dx*t,oy+dy*t];
+      return null;
+    }
+    // the panel shadow, drawn from where the two edge rays reach the ground
+    const g1=ax+(GY-ay)/dy*dx,g2=bx2+(GY-by2)/dy*dx;
+    ctx.fillStyle='rgba(0,0,0,0.35)';
+    ctx.beginPath();ctx.ellipse((g1+g2)/2,GY+4,Math.max(4,Math.abs(g2-g1)/2),4,0,0,Math.PI*2);ctx.fill();
+
+    // ══ parallel sunlight: rays that land on the panel are the whole story ══
+    const px2=-dy,py2=dx;                               // across the beam
+    let hits=0,shots=0;
+    const SPC=PLEN/13;
+    for(let j=-8;j<=8;j++){
+      const o=j*SPC;
+      const ox=PX+px2*o-dx*230,oy=cyP+py2*o-dy*230;
+      const hp=hit(ox,oy);shots++;
+      if(hp){
+        hits++;
+        ctx.strokeStyle='rgba(253,224,71,0.85)';ctx.lineWidth=1.5;
+        ctx.beginPath();ctx.moveTo(ox,oy);ctx.lineTo(hp[0],hp[1]);ctx.stroke();
+        ctx.fillStyle='rgba(255,255,255,'+(0.35+0.3*Math.sin(St.t*6+j)).toFixed(2)+')';
+        ctx.beginPath();ctx.arc(hp[0],hp[1],2.2,0,Math.PI*2);ctx.fill();
+      }else{
+        const tg=(GY-oy)/dy;
+        if(tg>0){
+          ctx.strokeStyle='rgba(253,224,71,0.22)';ctx.lineWidth=1;
+          ctx.beginPath();ctx.moveTo(ox,oy);ctx.lineTo(ox+dx*tg,GY);ctx.stroke();
+        }
+      }
+    }
+    // the module itself, cells and busbars
+    ctx.save();ctx.translate(PX,cyP);ctx.rotate(-b);
+    ctx.fillStyle='#0f172a';ctx.fillRect(-PLEN/2,-7,PLEN,14);
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=1.4;ctx.strokeRect(-PLEN/2,-7,PLEN,14);
+    for(let k=1;k<8;k++){
+      ctx.strokeStyle='rgba(148,163,184,0.5)';ctx.lineWidth=0.8;
+      ctx.beginPath();ctx.moveTo(-PLEN/2+k*PLEN/8,-7);ctx.lineTo(-PLEN/2+k*PLEN/8,7);ctx.stroke();
+    }
+    const shine=Math.max(0,ir.cosT);
+    ctx.fillStyle='rgba(125,211,252,'+(0.10+0.5*shine).toFixed(2)+')';
+    ctx.fillRect(-PLEN/2,-7,PLEN,6);
+    ctx.restore();
+    // the mount
+    ctx.strokeStyle='#64748b';ctx.lineWidth=3;
+    ctx.beginPath();ctx.moveTo(PX,cyP+7);ctx.lineTo(PX,GY);ctx.stroke();
+
+    // ══ the normal, and the angle the light makes with it ══
+    ctx.strokeStyle='rgba(226,232,240,0.75)';ctx.lineWidth=1.2;ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(PX,cyP);ctx.lineTo(PX+nx*62,cyP+ny*62);ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#e2e8f0';
+    ctx.fillText(tx('cNorm','panel normal'),PX+nx*66,cyP+ny*66);
+    const aN=Math.atan2(ny,nx),aS=Math.atan2(-dy,-dx);
+    ctx.strokeStyle='#fbbf24';ctx.lineWidth=1.6;
+    ctx.beginPath();ctx.arc(PX,cyP,34,Math.min(aN,aS),Math.max(aN,aS));ctx.stroke();
+    const am=(aN+aS)/2;
+    ctx.font='10px system-ui';ctx.textAlign='center';ctx.fillStyle='#fcd34d';
+    ctx.textAlign='left';
+    ctx.fillText(tx('cAoi','angle of incidence')+' '+theta.toFixed(0)+'°',PX+ux*44+nx*14,cyP+uy*44+ny*14);
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#fef3c7';
+    ctx.fillText(hits+'/'+shots+' '+tx('cRays','rays land on the glass')+' · cos θ = '+Math.max(0,ir.cosT).toFixed(2),12,20);
+    ctx.fillStyle='#bae6fd';
+    ctx.fillText(Math.round(G)+' W/m² · '+tx('cCells','cells in series')+' · '+tc.toFixed(0)+' °C',12,36);
+    if(tc>45){ctx.fillStyle='#fca5a5';ctx.fillText(tx('cHot','a hot panel loses volts'),12,52);}
+
+    // ══ the electrons leaving, at the speed the current says ══
+    const wy=GY-16,wx0=PX+14,wx1=W-40;
+    ctx.strokeStyle='#475569';ctx.lineWidth=2.5;
+    ctx.beginPath();ctx.moveTo(PX,cyP+8);ctx.lineTo(PX,wy);ctx.lineTo(wx1,wy);ctx.lineTo(wx1,GY-46);ctx.stroke();
+    ctx.fillStyle='#1e293b';ctx.fillRect(wx1-22,GY-72,44,26);
+    ctx.strokeStyle='#64748b';ctx.lineWidth=1;ctx.strokeRect(wx1-22,GY-72,44,26);
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#e2e8f0';
+    ctx.fillText(Math.round(P)+' W',wx1,GY-56);
+    const flow=op[1]/ISC0;
+    for(let k=0;k<St.q.length;k++){
+      const u=(St.q[k]+St.t*flow*0.35)%1;
+      const xx=wx0+u*(wx1-wx0);
+      ctx.fillStyle='rgba(125,211,252,'+(0.35+0.5*flow).toFixed(2)+')';
+      ctx.beginPath();ctx.arc(xx,wy,2,0,Math.PI*2);ctx.fill();
+    }
+
+    // ══ the I-V curve, where all of it is decided ══
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,262,W,H-262);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cIV','I-V curve'),CH_L,278);
+    ctx.textAlign='right';ctx.fillStyle='#fbbf24';
+    ctx.fillText(tx('cPow','power P = VI'),CH_R,278);
+    ctx.strokeStyle='rgba(148,163,184,0.16)';ctx.lineWidth=1;
+    for(let v=0;v<=VMAX;v+=10){
+      ctx.beginPath();ctx.moveTo(X(v),CH_T);ctx.lineTo(X(v),CH_B);ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+      ctx.fillText(v+' V',X(v),CH_B+14);
+    }
+    for(let i=0;i<=IMAX;i+=5){
+      ctx.beginPath();ctx.moveTo(CH_L,Y(i));ctx.lineTo(CH_R,Y(i));ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText(i+' A',CH_L-5,Y(i)+3);
+    }
+    for(let p=0;p<=PMAX;p+=100){
+      ctx.font='8px system-ui';ctx.textAlign='left';ctx.fillStyle='#a16207';
+      ctx.fillText(p+' W',CH_R+5,YP(p)+3);
+    }
+    // what the sticker on the back promises
+    ctx.strokeStyle='rgba(251,191,36,0.35)';ctx.setLineDash([4,4]);ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(CH_L,YP(PSTC));ctx.lineTo(CH_R,YP(PSTC));ctx.stroke();ctx.setLineDash([]);
+    ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#a16207';
+    if(W>=520)ctx.fillText(tx('cSTC','nameplate at STC')+' · '+PSTC+' W',CH_R-4,YP(PSTC)-4);
+    // the rectangle whose area is the power actually taken
+    ctx.fillStyle='rgba(56,189,248,0.13)';
+    ctx.fillRect(X(0),Y(op[1]),X(op[0])-X(0),Y(0)-Y(op[1]));
+    // power curve
+    ctx.strokeStyle='#fbbf24';ctx.lineWidth=1.8;ctx.beginPath();
+    cv.pts.forEach(function(p,k){const xx=X(p[0]),yy=YP(p[2]);if(k===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);});
+    ctx.stroke();
+    // I-V curve
+    ctx.strokeStyle='#38bdf8';ctx.lineWidth=2.6;ctx.beginPath();
+    cv.pts.forEach(function(p,k){const xx=X(p[0]),yy=Y(p[1]);if(k===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);});
+    ctx.stroke();
+    // the two useless ends
+    ctx.fillStyle='#7dd3fc';ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillText(tx('cIsc','Isc')+' '+cv.isc.toFixed(1)+' A',X(0)+6,Y(cv.isc)-6);
+    ctx.textAlign='right';
+    ctx.fillText(tx('cVoc','Voc')+' '+cv.voc.toFixed(1)+' V',X(cv.voc)-4,Y(0)-8);
+    // the best point on the curve, and where we are actually sitting
+    const mx=X(cv.mpp[0]),my=Y(cv.mpp[1]);
+    ctx.strokeStyle='rgba(251,191,36,0.6)';ctx.setLineDash([3,3]);ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(mx,CH_B);ctx.lineTo(mx,my);ctx.lineTo(CH_L,my);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle='#fbbf24';ctx.beginPath();ctx.arc(X(cv.mpp[0]),YP(cv.mpp[2]),4.5,0,Math.PI*2);ctx.fill();
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#fcd34d';
+    if(W>=520||!St.trk)ctx.fillText(tx('cMpp','maximum power point')+' · '+Math.round(cv.pmax)+' W',mx+9,YP(cv.pmax)+4);
+    const okx=X(op[0]),oky=Y(op[1]);
+    ctx.fillStyle='#4ade80';ctx.beginPath();ctx.arc(okx,oky,5,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(74,222,128,0.9)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.arc(okx,oky,5+3*Math.abs(Math.sin(St.t*2.5)),0,Math.PI*2);ctx.stroke();
+    ctx.font='9px system-ui';ctx.textAlign='right';ctx.fillStyle='#86efac';
+    ctx.fillText(tx('cNow','operating point')+' · '+op[0].toFixed(1)+' V',okx-9,oky-7);
+    if(!St.trk&&cv.pmax-P>1){
+      ctx.strokeStyle='#f87171';ctx.lineWidth=1.6;
+      ctx.beginPath();ctx.moveTo(X(op[0]),YP(P));ctx.lineTo(X(op[0]),YP(cv.pmax));ctx.stroke();
+      ctx.fillStyle='#fca5a5';ctx.textAlign='left';
+      ctx.fillText(tx('cWaste','power lost')+': '+Math.round(cv.pmax-P)+' W',X(op[0])+6,YP((P+cv.pmax)/2));
+    }
+
+    pG.set(Math.round(G)+' W/m²');
+    pP.set(Math.round(P)+' W');
+    pT.set(tc.toFixed(0)+' °C');
+    pE.set(G>5?(P/(G*AREA)*100).toFixed(1)+' %':'0 %');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simWind(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0891b2';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.wind&&SIMS.wind.raf)cancelAnimationFrame(SIMS.wind.raf);
+  const W=getSimWidth(container),H=530;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('wind',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pW=pill(tx('pwind','Power in the wind')),pC=pill(tx('cp','Power coefficient'));
+  const pO=pill(tx('pout','Extracted power')),pV=pill(tx('vwake','Wake speed'));
+  pRow.appendChild(pW.el);pRow.appendChild(pC.el);pRow.appendChild(pO.el);pRow.appendChild(pV.el);
+  const rV=mkRange(ctrl,tx('v','Wind speed'),1,30,10,0.5,color);
+  const rA=mkRange(ctrl,tx('a','Axial induction'),0,0.5,0.33,0.01,color);
+  const rD=mkRange(ctrl,tx('d','Rotor diameter'),40,240,120,10,color);
+  rV.v.textContent='10 m/s';rA.v.textContent='0.33';rD.v.textContent='120 m';
+  rV.inp.addEventListener('input',function(){rV.v.textContent=(+rV.inp.value).toFixed(1)+' m/s';});
+  rD.inp.addEventListener('input',function(){rD.v.textContent=rD.inp.value+' m';});
+
+  const RHO=1.225,LAM=7,CUTIN=3,CUTOUT=25,VRATED=12,CPDES=0.45;
+  const St=SIMS.wind={raf:null,t:0,ph:0,p:[]};
+  for(let i=0;i<150;i++)St.p.push([Math.random(),Math.random()*2-1,Math.random()]);
+
+  function fmtP(w){return w>=1e6?(w/1e6).toFixed(2)+' MW':(w/1e3).toFixed(0)+' kW';}
+
+  // ── layout ──
+  const HY=132,GY=286,TX=Math.round(W*0.46);
+  const C1L=44,C1R=Math.round(W*0.46),C2L=Math.round(W*0.58),C2R=W-46;
+  const CT=352,CB=H-26;
+
+  function frame(){
+    St.t+=1/60;
+    const v=rV.val,a=rA.val,Dm=rD.val;
+    const R=Dm/2,A=Math.PI*R*R;
+    const pwind=0.5*RHO*A*v*v*v;
+    const cp=4*a*(1-a)*(1-a);
+    const pout=cp*pwind;
+    const vw=v*(1-2*a);
+    const prated=CPDES*0.5*RHO*A*VRATED*VRATED*VRATED;
+    // pixels per metre, so a 240 m rotor still fits the sky
+    const SC=Math.min(1.05,(HY-30)/R*0.92);
+    const Rp=Math.max(18,R*SC);
+    St.ph+=LAM*v/Math.max(R,1)/60;
+
+    ctx.clearRect(0,0,W,H);
+    const sky=ctx.createLinearGradient(0,0,0,GY);
+    sky.addColorStop(0,'#0c4a6e');sky.addColorStop(1,'#bae6fd');
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,GY);
+    ctx.fillStyle='#365314';ctx.fillRect(0,GY,W,H-GY);
+
+    // ── the streamtube: narrow upstream, fat downstream, because the air slows ──
+    const r1=Math.sqrt(Math.max(0.02,1-a)),r2=Math.sqrt(Math.max(0.02,1-a)/Math.max(0.06,1-2*a));
+    const rAt=function(x){
+      if(x<=TX){const f=Math.min(1,(TX-x)/230);return Rp*(1+(r1-1)*f*f*(3-2*f));}
+      const g=Math.min(1,(x-TX)/260);return Rp*(1+(r2-1)*g*g*(3-2*g));
+    };
+    ctx.fillStyle='rgba(255,255,255,0.14)';
+    ctx.beginPath();
+    for(let x=0;x<=W;x+=6)ctx.lineTo(x,HY-rAt(x));
+    for(let x=W;x>=0;x-=6)ctx.lineTo(x,HY+rAt(x));
+    ctx.closePath();ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.55)';ctx.lineWidth=1.4;ctx.setLineDash([5,4]);
+    ctx.beginPath();for(let x=0;x<=W;x+=6)ctx.lineTo(x,HY-rAt(x));ctx.stroke();
+    ctx.beginPath();for(let x=0;x<=W;x+=6)ctx.lineTo(x,HY+rAt(x));ctx.stroke();
+    ctx.setLineDash([]);
+
+    // ── the air itself, slowing down as it crosses the disc ──
+    St.p.forEach(function(p){
+      const x=p[0]*W,rr=rAt(x);
+      const loc=Math.pow(rAt(0)/rr,2);                       // local speed as a fraction of free stream
+      p[0]+=loc*v*0.0016+0.0006;
+      if(p[0]>1)p[0]-=1;
+      const y=HY+p[1]*rr*0.94;
+      const sh=Math.max(0.15,Math.min(1,loc));
+      ctx.strokeStyle='rgba('+Math.round(190-110*sh)+','+Math.round(210-40*sh)+',255,'+(0.25+0.5*sh).toFixed(2)+')';
+      ctx.lineWidth=2;
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-5-22*sh,y);ctx.stroke();
+    });
+
+    // ── the machine ──
+    ctx.fillStyle='#e2e8f0';
+    ctx.beginPath();ctx.moveTo(TX-5,GY);ctx.lineTo(TX-2.5,HY);ctx.lineTo(TX+2.5,HY);ctx.lineTo(TX+5,GY);ctx.closePath();ctx.fill();
+    ctx.fillStyle='#cbd5e1';ctx.fillRect(TX-4,HY-7,16,13);
+    for(let k=0;k<3;k++){
+      const ph=St.ph+k*2.0944;
+      const bx=TX-4+Math.sin(ph)*Rp*0.30,by=HY-Math.cos(ph)*Rp;
+      ctx.strokeStyle='#f8fafc';ctx.lineWidth=5.5;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(TX-4,HY);
+      ctx.quadraticCurveTo((TX-4+bx)/2+Math.sin(ph)*9,(HY+by)/2,bx,by);ctx.stroke();
+    }
+    ctx.fillStyle='#64748b';ctx.beginPath();ctx.arc(TX-4,HY,5,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.35)';ctx.lineWidth=1;ctx.setLineDash([2,4]);
+    ctx.beginPath();ctx.moveTo(TX-4,HY-Rp);ctx.lineTo(TX-4,HY+Rp);ctx.stroke();ctx.setLineDash([]);
+
+    // ── the three speeds, said out loud ──
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#e0f2fe';
+    ctx.fillText(tx('cUp','free-stream v')+' · '+v.toFixed(1)+' m/s',10,18);
+    ctx.fillText(tx('cTube','streamtube'),10,32);
+    ctx.textAlign='center';ctx.fillStyle='#075985';
+    ctx.fillText(tx('cRot','at the disc')+' · '+(v*(1-a)).toFixed(1)+' m/s',TX,HY+Rp+18);
+    ctx.textAlign='right';ctx.fillStyle=vw<0.6?'#fca5a5':'#e0f2fe';
+    ctx.fillText(tx('cWake','far wake')+' · '+Math.max(0,vw).toFixed(1)+' m/s',W-10,18);
+    if(a>0.46){ctx.fillStyle='#fca5a5';ctx.fillText(tx('cStop','stop the flow and nothing gets through'),W-10,32);}
+    ctx.textAlign='left';ctx.fillStyle='#1e293b';
+    ctx.fillText(Dm+' m · '+Math.round(LAM*v/Math.max(R,1)*9.549)+' '+tx('cRpm','rpm')+' · '+fmtP(pout),10,GY-10);
+
+    // ══ chart 1: Cp against a, and the ceiling ══
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,306,W,H-306);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cCpAx','Cp against axial induction a'),C1L-8,326);
+    const AX=function(u){return C1L+u/0.5*(C1R-C1L);};
+    const AY=function(c){return CB-c/0.68*(CB-CT);};
+    ctx.strokeStyle='rgba(148,163,184,0.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(C1L,CT);ctx.lineTo(C1L,CB);ctx.lineTo(C1R,CB);ctx.stroke();
+    ctx.strokeStyle='rgba(251,191,36,0.65)';ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(C1L,AY(16/27));ctx.lineTo(C1R,AY(16/27));ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.fillStyle='#fcd34d';
+    ctx.fillText(tx('cBetz','Betz limit 0.593'),C1L+4,AY(16/27)-5);
+    ctx.strokeStyle='#38bdf8';ctx.lineWidth=2.4;ctx.beginPath();
+    for(let k=0;k<=100;k++){
+      const u=k/200,c=4*u*(1-u)*(1-u);
+      if(k===0)ctx.moveTo(AX(u),AY(c));else ctx.lineTo(AX(u),AY(c));
+    }
+    ctx.stroke();
+    ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+    for(let k=0;k<=5;k++)ctx.fillText((k/10).toFixed(1),AX(k/10),CB+13);
+    ctx.textAlign='right';
+    for(let k=0;k<=6;k+=2)ctx.fillText((k/10).toFixed(1),C1L-4,AY(k/10)+3);
+    ctx.fillStyle='#f472b6';ctx.beginPath();ctx.arc(AX(a),AY(cp),5,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(244,114,182,0.8)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.arc(AX(a),AY(cp),5+3*Math.abs(Math.sin(St.t*2.4)),0,Math.PI*2);ctx.stroke();
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#fbcfe8';
+    ctx.fillText((cp*100).toFixed(1)+' %',AX(a)+8,AY(cp)-4);
+
+    // ══ chart 2: the power curve this machine actually runs ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cCurve','power curve'),C2L-6,326);
+    const PMX=prated*1.18;
+    const VX=function(u){return C2L+u/30*(C2R-C2L);};
+    const PY=function(p){return CB-p/PMX*(CB-CT);};
+    ctx.fillStyle='rgba(148,163,184,0.10)';ctx.fillRect(VX(0),CT,VX(CUTIN)-VX(0),CB-CT);
+    ctx.fillStyle='rgba(248,113,113,0.10)';ctx.fillRect(VX(CUTOUT),CT,VX(30)-VX(CUTOUT),CB-CT);
+    ctx.strokeStyle='rgba(148,163,184,0.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(C2L,CT);ctx.lineTo(C2L,CB);ctx.lineTo(C2R,CB);ctx.stroke();
+    ctx.strokeStyle='#4ade80';ctx.lineWidth=2.4;ctx.beginPath();
+    let started=false;
+    for(let k=0;k<=120;k++){
+      const u=k/4;
+      let p=0;
+      if(u>=CUTIN&&u<=CUTOUT)p=Math.min(cp*0.5*RHO*A*u*u*u,prated);
+      if(!started){ctx.moveTo(VX(u),PY(p));started=true;}else ctx.lineTo(VX(u),PY(p));
+    }
+    ctx.stroke();
+    ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+    for(let u=0;u<=30;u+=10)ctx.fillText(u+' m/s',VX(u),CB+13);
+    ctx.textAlign='left';ctx.fillStyle='#86efac';
+    ctx.fillText(fmtP(prated),C2L+4,PY(prated)-5);
+    ctx.strokeStyle='rgba(134,239,172,0.4)';ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(C2L,PY(prated));ctx.lineTo(C2R,PY(prated));ctx.stroke();ctx.setLineDash([]);
+    // the two dead bands are too narrow for flat text, so stand it on end
+    ctx.font='8px system-ui';ctx.textAlign='left';
+    function band(s2,x,col){
+      ctx.save();ctx.translate(x,CB-6);ctx.rotate(-Math.PI/2);
+      ctx.fillStyle=col;ctx.fillText(s2,0,0);ctx.restore();
+    }
+    band(tx('cCutin','below cut-in'),VX(0)+11,'#94a3b8');
+    band(tx('cCutout','cut-out'),VX(CUTOUT)+14,'#fca5a5');
+    const pnow=(v>=CUTIN&&v<=CUTOUT)?Math.min(pout,prated):0;
+    if(pnow>=prated-1){ctx.fillStyle='#fcd34d';ctx.textAlign='left';ctx.fillText(tx('cRated','rated'),C2L+4,PY(prated)+13);}
+    ctx.strokeStyle='rgba(226,232,240,0.35)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(VX(v),CT);ctx.lineTo(VX(v),CB);ctx.stroke();
+    ctx.fillStyle='#facc15';ctx.beginPath();ctx.arc(VX(v),PY(pnow),4.5,0,Math.PI*2);ctx.fill();
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#fde68a';
+    ctx.fillText(tx('cNow','operating point')+' · '+fmtP(pnow),Math.min(VX(v)+8,C2R-70),PY(pnow)-8);
+
+    pW.set(fmtP(pwind));
+    pC.set((cp*100).toFixed(1)+' %');
+    pO.set(fmtP(pnow));
+    pV.set(Math.max(0,vw).toFixed(1)+' m/s');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simHeatPump(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#be123c';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.heatpump&&SIMS.heatpump.raf)cancelAnimationFrame(SIMS.heatpump.raf);
+  const W=getSimWidth(container),H=540;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('heatpump',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const short=function(v){return W<520?v.split(/\s[-–]\s/)[0]:v;};
+  const pC=pill(tx('cop','COP')),pE=pill(tx('pel','Electrical input'));
+  const pF=pill(tx('qfree','Heat drawn from outside')),pK=pill(tx('carnot','Carnot ceiling'));
+  pRow.appendChild(pC.el);pRow.appendChild(pE.el);pRow.appendChild(pF.el);pRow.appendChild(pK.el);
+  const rT=mkRange(ctrl,tx('tout','Outdoor air temperature'),-20,15,2,1,color);
+  const rF=mkRange(ctrl,tx('tflow','Flow temperature'),30,60,45,1,color);
+  const rQ=mkRange(ctrl,tx('qdem','Heat demand'),2,12,6,0.5,color);
+  rT.v.textContent='2 °C';rF.v.textContent='45 °C';rQ.v.textContent='6.0 kW';
+  rT.inp.addEventListener('input',function(){rT.v.textContent=rT.inp.value+' °C';});
+  rF.inp.addEventListener('input',function(){rF.v.textContent=rF.inp.value+' °C';});
+  rQ.inp.addEventListener('input',function(){rQ.v.textContent=(+rQ.inp.value).toFixed(1)+' kW';});
+
+  const St=SIMS.heatpump={raf:null,t:0,p:[]};
+  for(let i=0;i<44;i++)St.p.push(i/44);
+
+  // approach temperatures: the coils always work harder than the room-to-air gap suggests
+  function perf(tout,tflow){
+    const Th=tflow+273.15+3,Tc=tout+273.15-5;
+    const carnot=Th/Math.max(4,Th-Tc);
+    let cop=0.45*carnot;
+    if(tout>-6&&tout<6)cop*=0.90;          // frost on the coil, and the defrost cycles it forces
+    return [Math.max(1,cop),carnot];
+  }
+
+  // ── layout: the wall runs down the middle, the loop straddles it ──
+  const WX=Math.round(W*0.44),LX=Math.max(60,WX-150),RX=Math.min(W-56,WX+165);
+  const TY=64,BY=220,GY=300;
+  const CT=356,CB=H-26,GL=54,GR=W-52;
+  const seg=[[LX,BY],[LX,TY],[RX,TY],[RX,BY],[LX,BY]];
+  let tot=0;const cum=[0];
+  for(let i=1;i<seg.length;i++){tot+=Math.hypot(seg[i][0]-seg[i-1][0],seg[i][1]-seg[i-1][1]);cum.push(tot);}
+  function ptAt(u){
+    const d=u*tot;
+    for(let i=1;i<seg.length;i++){
+      if(d<=cum[i]){
+        const f=(d-cum[i-1])/(cum[i]-cum[i-1]);
+        return [seg[i-1][0]+(seg[i][0]-seg[i-1][0])*f,seg[i-1][1]+(seg[i][1]-seg[i-1][1])*f];
+      }
+    }
+    return seg[0];
+  }
+  function hotness(x,y){
+    if(Math.abs(x-LX)<2)return 0.05;
+    if(Math.abs(y-TY)<2)return x<WX?0.05:1;
+    if(Math.abs(x-RX)<2)return 1-0.55*(y-TY)/(BY-TY);
+    return x>WX?0.45:0.05;
+  }
+  function mix(h){
+    const r=Math.round(56+192*h),g=Math.round(189-76*h),b=Math.round(248-135*h);
+    return 'rgb('+r+','+g+','+b+')';
+  }
+  function coil(x,y0,y1,col){
+    ctx.strokeStyle=col;ctx.lineWidth=2;ctx.beginPath();
+    for(let y=y0;y<=y1;y+=8){
+      ctx.moveTo(x-13,y);ctx.lineTo(x+13,y);
+    }
+    ctx.stroke();
+  }
+  function arrow(x0,y0,x1,y1,col,wd){
+    ctx.strokeStyle=col;ctx.lineWidth=wd;ctx.lineCap='round';
+    ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y1);ctx.stroke();
+    const an=Math.atan2(y1-y0,x1-x0);
+    ctx.fillStyle=col;ctx.beginPath();
+    ctx.moveTo(x1,y1);
+    ctx.lineTo(x1-Math.cos(an-0.5)*7,y1-Math.sin(an-0.5)*7);
+    ctx.lineTo(x1-Math.cos(an+0.5)*7,y1-Math.sin(an+0.5)*7);
+    ctx.closePath();ctx.fill();
+  }
+
+  function frame(){
+    St.t+=1/60;
+    const tout=rT.val,tflow=rF.val,qdem=rQ.val;
+    const pf=perf(tout,tflow),cop=pf[0],carnot=pf[1];
+    const wel=qdem/cop,qc=qdem-wel;
+
+    ctx.clearRect(0,0,W,H);
+    // outdoors, cold and blue; indoors, warm and cream
+    const out=ctx.createLinearGradient(0,0,0,GY);
+    out.addColorStop(0,tout<0?'#1e3a8a':'#1e40af');out.addColorStop(1,'#93c5fd');
+    ctx.fillStyle=out;ctx.fillRect(0,0,WX,GY);
+    ctx.fillStyle='#fef3c7';ctx.fillRect(WX,0,W-WX,GY);
+    ctx.fillStyle='#78350f';ctx.fillRect(WX-6,0,12,GY);
+    ctx.fillStyle='#334155';ctx.fillRect(0,GY-14,WX,14);
+    ctx.fillStyle='#a16207';ctx.fillRect(WX+6,GY-14,W-WX-6,14);
+    for(let k=0;k<5;k++){
+      const rx=W-46,ry=TY+40+k*16;
+      ctx.fillStyle='rgba('+Math.round(180+2*tflow)+','+Math.round(140-tflow)+',60,0.9)';
+      ctx.fillRect(rx,ry,26,10);
+    }
+    ctx.strokeStyle='#92400e';ctx.lineWidth=1.2;ctx.strokeRect(W-46,TY+40,26,4*16+10);
+    if(tout<4){
+      ctx.strokeStyle='rgba(224,242,254,0.85)';ctx.lineWidth=1.2;
+      for(let k=0;k<3;k++){
+        const fx=26+k*26,fy=GY-40-k*14;
+        for(let a2=0;a2<3;a2++){
+          const an=a2*Math.PI/3;
+          ctx.beginPath();
+          ctx.moveTo(fx-Math.cos(an)*5,fy-Math.sin(an)*5);
+          ctx.lineTo(fx+Math.cos(an)*5,fy+Math.sin(an)*5);ctx.stroke();
+        }
+      }
+    }
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#dbeafe';
+    ctx.fillText(tx('cOut','outdoor')+' · '+tout+' °C',10,18);
+    ctx.textAlign='right';ctx.fillStyle='#92400e';
+    ctx.fillText(tx('cIn','indoor')+' · '+tflow+' °C',W-10,18);
+
+    // ── the loop ──
+    ctx.strokeStyle='#475569';ctx.lineWidth=6;ctx.lineJoin='round';
+    ctx.beginPath();ctx.moveTo(seg[0][0],seg[0][1]);
+    for(let i=1;i<seg.length;i++)ctx.lineTo(seg[i][0],seg[i][1]);
+    ctx.stroke();
+    coil(LX,TY+26,BY-26,'#38bdf8');
+    coil(RX,TY+26,BY-26,'#f87171');
+
+    // heat in from the cold air, work in at the compressor, heat out into the room
+    const nq=Math.max(1,Math.round(qc*1.6)),nh=Math.max(1,Math.round(qdem*1.6));
+    for(let k=0;k<nq;k++){
+      const y=TY+34+k*(BY-TY-64)/Math.max(1,nq-0.999);
+      arrow(LX-56,y,LX-18,y,'rgba(125,211,252,0.9)',2.2);
+    }
+    for(let k=0;k<nh;k++){
+      const y=TY+34+k*(BY-TY-64)/Math.max(1,nh-0.999);
+      arrow(RX+18,y,RX+58,y,'rgba(248,113,113,0.95)',2.2);
+    }
+    arrow(WX,TY-40,WX,TY-12,'#facc15',Math.max(2,wel*1.6));
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#b45309';
+    ctx.fillText(tx('cW','W electrical')+' · '+wel.toFixed(2)+' kW',WX+16,TY-46);
+    ctx.fillStyle='#0c4a6e';
+    ctx.fillText(tx('cQc','Qc from the source')+' · '+qc.toFixed(2)+' kW',8,BY+18);
+    ctx.textAlign='right';ctx.fillStyle='#991b1b';
+    ctx.fillText(tx('cQh','Qh to the house')+' · '+qdem.toFixed(2)+' kW',W-8,BY+18);
+
+    // ── compressor and throttle, sitting on the wall ──
+    ctx.fillStyle='#facc15';ctx.beginPath();ctx.arc(WX,TY,15,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='#78350f';ctx.lineWidth=2;ctx.beginPath();ctx.arc(WX,TY,15,0,Math.PI*2);ctx.stroke();
+    ctx.save();ctx.translate(WX,TY);ctx.rotate(St.t*6);
+    ctx.strokeStyle='#78350f';ctx.lineWidth=2.4;
+    ctx.beginPath();ctx.moveTo(-9,0);ctx.lineTo(9,0);ctx.moveTo(0,-9);ctx.lineTo(0,9);ctx.stroke();
+    ctx.restore();
+    ctx.fillStyle='#e2e8f0';ctx.beginPath();
+    ctx.moveTo(WX-11,BY-9);ctx.lineTo(WX+11,BY+9);ctx.lineTo(WX+11,BY-9);ctx.lineTo(WX-11,BY+9);
+    ctx.closePath();ctx.fill();
+    ctx.strokeStyle='#475569';ctx.lineWidth=1.5;ctx.stroke();
+
+    // ── the refrigerant going round ──
+    St.p.forEach(function(u,i){
+      const nu=(u+St.t*0.10)%1;
+      const q=ptAt(nu),h=hotness(q[0],q[1]);
+      ctx.fillStyle=mix(h);
+      ctx.beginPath();ctx.arc(q[0],q[1],h>0.5?2.2:3,0,Math.PI*2);ctx.fill();
+      if(h<0.1&&Math.abs(q[0]-LX)<2){
+        ctx.strokeStyle='rgba(224,242,254,0.7)';ctx.lineWidth=1;
+        ctx.beginPath();ctx.arc(q[0]+5,q[1]-3,2.4,0,Math.PI*2);ctx.stroke();
+      }
+    });
+
+    // ── component captions ──
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#0c4a6e';
+    ctx.fillText(short(tx('cEvap','evaporator')),8,BY+32);
+    ctx.fillStyle='#7f1d1d';ctx.textAlign='right';
+    ctx.fillText(short(tx('cCond','condenser')),W-8,BY+32);
+    ctx.fillStyle='#78350f';ctx.textAlign='center';
+    ctx.fillText(short(tx('cComp','compressor')),(WX+RX)/2,TY+22);
+    ctx.textAlign='center';                       // it straddles the wall, so halo it
+    ctx.lineWidth=2.6;ctx.strokeStyle='rgba(15,23,42,0.8)';ctx.lineJoin='round';
+    ctx.strokeText(short(tx('cValve','expansion valve')),WX,BY-12);
+    ctx.fillStyle='#fde68a';ctx.fillText(short(tx('cValve','expansion valve')),WX,BY-12);
+    if(tout>-6&&tout<6){
+      ctx.textAlign='left';ctx.fillStyle='#0369a1';
+      ctx.fillText(tx('cFrost','defrost band'),10,32);
+    }
+
+    // ── one unit paid for, the rest lifted in from outside ──
+    const bw=Math.min(W-140,340),bx=(W-bw)/2,by=GY-38,fw=bw*wel/Math.max(qdem,0.001);
+    ctx.fillStyle='#facc15';ctx.fillRect(bx,by,fw,18);
+    ctx.fillStyle='#38bdf8';ctx.fillRect(bx+fw,by,bw-fw,18);
+    ctx.strokeStyle='rgba(15,23,42,0.35)';ctx.lineWidth=1;ctx.strokeRect(bx,by,bw,18);
+    ctx.font='bold 10px system-ui';ctx.textAlign='center';ctx.fillStyle='#0f172a';
+    ctx.fillText('1 + '+(cop-1).toFixed(2)+' = '+cop.toFixed(2),bx+bw/2,by+13);
+
+    // ══ how the COP falls away with the weather ══
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,GY,W,H-GY);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cLift','temperature lift')+' · '+Math.round(tflow+3-(tout-5))+' K',GL,GY+28);
+    const TXx=function(t){return GL+(t+20)/35*(GR-GL);};
+    const CY=function(c){return CB-c/10*(CB-CT);};
+    ctx.fillStyle='rgba(56,189,248,0.10)';ctx.fillRect(TXx(-6),CT,TXx(6)-TXx(-6),CB-CT);
+    ctx.strokeStyle='rgba(148,163,184,0.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(GL,CT);ctx.lineTo(GL,CB);ctx.lineTo(GR,CB);ctx.stroke();
+    for(let c=2;c<=10;c+=2){
+      ctx.strokeStyle='rgba(148,163,184,0.13)';
+      ctx.beginPath();ctx.moveTo(GL,CY(c));ctx.lineTo(GR,CY(c));ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText(c,GL-5,CY(c)+3);
+    }
+    ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+    for(let t=-20;t<=15;t+=5)ctx.fillText(t+'°',TXx(t),CB+13);
+    // the ceiling
+    ctx.strokeStyle='#fbbf24';ctx.lineWidth=1.6;ctx.setLineDash([5,4]);ctx.beginPath();
+    for(let t=-20;t<=15;t+=1){
+      const c=Math.min(10,perf(t,tflow)[1]);
+      if(t===-20)ctx.moveTo(TXx(t),CY(c));else ctx.lineTo(TXx(t),CY(c));
+    }
+    ctx.stroke();ctx.setLineDash([]);
+    // what you actually get
+    ctx.strokeStyle='#f472b6';ctx.lineWidth=2.6;ctx.beginPath();
+    for(let t=-20;t<=15;t+=1){
+      const c=Math.min(10,perf(t,tflow)[0]);
+      if(t===-20)ctx.moveTo(TXx(t),CY(c));else ctx.lineTo(TXx(t),CY(c));
+    }
+    ctx.stroke();
+    ctx.strokeStyle='rgba(148,163,184,0.55)';ctx.lineWidth=1.4;ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(GL,CY(1));ctx.lineTo(GR,CY(1));ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cRes','resistance heating, COP = 1'),GL+4,CY(1)-7);
+    ctx.fillStyle='#fcd34d';ctx.fillText(tx('cCarnot','Carnot COP'),GL+4,CY(Math.min(9.4,perf(-18,tflow)[1]))-12);
+    ctx.fillStyle='#f9a8d4';ctx.fillText(tx('cReal','real COP'),GR-70,CY(perf(12,tflow)[0])+14);
+    ctx.fillStyle='#f472b6';ctx.beginPath();ctx.arc(TXx(tout),CY(Math.min(10,cop)),5,0,Math.PI*2);ctx.fill();
+    ctx.strokeStyle='rgba(244,114,182,0.85)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.arc(TXx(tout),CY(Math.min(10,cop)),5+3*Math.abs(Math.sin(St.t*2.4)),0,Math.PI*2);ctx.stroke();
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#fbcfe8';
+    ctx.fillText(tx('cNow','operating point')+' · '+cop.toFixed(2),TXx(tout),CY(Math.min(10,cop))-12);
+
+    pC.set(cop.toFixed(2));
+    pE.set(wel.toFixed(2)+' kW');
+    pF.set(qc.toFixed(2)+' kW');
+    pK.set(carnot.toFixed(1));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simGrid(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#4338ca';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.grid&&SIMS.grid.raf)cancelAnimationFrame(SIMS.grid.raf);
+  const W=getSimWidth(container),H=540;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('grid',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pF=pill(tx('freq','Frequency')),pR=pill(tx('share','Renewable share'));
+  const pG=pill(tx('gas','Dispatchable gas')),pS=pill(tx('soc','Battery state of charge'));
+  pRow.appendChild(pF.el);pRow.appendChild(pR.el);pRow.appendChild(pG.el);pRow.appendChild(pS.el);
+  const bTrip=mkBtn(tx('trip','Trip 1.5 GW'),true,color);ctrl.appendChild(bTrip);
+  const rS=mkRange(ctrl,tx('solar','Solar capacity'),0,35,20,1,color);
+  const rW=mkRange(ctrl,tx('wind','Wind capacity'),0,30,12,1,color);
+  const rB=mkRange(ctrl,tx('batt','Battery power'),0,12,4,1,color);
+  rS.v.textContent='20 GW';rW.v.textContent='12 GW';rB.v.textContent='4 GW';
+  rS.inp.addEventListener('input',function(){rS.v.textContent=rS.inp.value+' GW';});
+  rW.inp.addEventListener('input',function(){rW.v.textContent=rW.inp.value+' GW';});
+  rB.inp.addEventListener('input',function(){rB.v.textContent=rB.inp.value+' GW';});
+
+  const St=SIMS.grid={raf:null,t:0,hr:5,f:50,gas:14,soc:0.45,trip:0,shed:0,rocof:0,prim:0,hist:[]};
+  bTrip.addEventListener('click',function(){St.trip=2.0;});
+
+  const BASE=8,GASCAP=34,SBASE=70,HRPS=0.5;
+  function gaus(x,m,s){return Math.exp(-Math.pow((x-m)/s,2));}
+  function demand(h){return 27+7*gaus(h,8.5,2.4)+14*gaus(h,19.5,2.8)+4*gaus(h,13,4.5);}
+  function solarAt(h,cap){const u=(h-6)/12;return (u<=0||u>=1)?0:cap*Math.pow(Math.sin(Math.PI*u),1.25);}
+  function windAt(h,cap){return Math.max(0,cap*(0.34+0.22*Math.sin(h/24*6.283*1.6+1.1)+0.08*Math.sin(h*1.7)));}
+  function ecap(){return Math.max(0.4,rB.val*4);}
+
+  // the whole day, dispatched ahead of time - this is what the stack draws
+  function plan(){
+    const arr=[];let soc=0.45;
+    for(let k=0;k<=96;k++){
+      const h=k/4,d=demand(h),s=solarAt(h,rS.val),w=windAt(h,rW.val);
+      const res=d-BASE-s-w;
+      let b=0,curt=0;
+      if(res<0){
+        b=Math.max(res,-rB.val);
+        b=Math.max(b,-(1-soc)*ecap()*4);
+        curt=b-res;
+        soc-=b*0.25/ecap();
+      }else if(h>16.5&&h<23.5&&soc>0.04){
+        b=Math.min(res,rB.val);
+        b=Math.min(b,soc*ecap()*4);
+        soc-=b*0.25/ecap();
+      }
+      arr.push([h,d,s,w,b,Math.max(0,Math.min(GASCAP,res-b)),curt]);
+    }
+    return arr;
+  }
+
+  // ── layout ──
+  const GL=48,GR=W-52,GT=42,GB=272;
+  const FT=346,FB=H-30,FL=132,FR=W-16;
+  const X=function(h){return GL+h/24*(GR-GL);};
+  const Y=function(p){return GB-p/56*(GB-GT);};
+  const FY=function(f){return FB-(f-48.8)/1.6*(FB-FT);};
+
+  function frame(){
+    const dt=1/60;
+    St.t+=dt;St.hr+=dt*HRPS;if(St.hr>=24)St.hr-=24;
+    const s=solarAt(St.hr,rS.val),w=windAt(St.hr,rW.val);
+    const draw0=demand(St.hr);
+    if(St.f<49.0)St.shed=1;
+    if(St.f>49.8)St.shed=0;
+    const d=draw0*(1+0.012*(St.f-50))*(1-0.10*St.shed);
+    const res=d-BASE-s-w;
+    let b=0;
+    if(res<0){
+      b=Math.max(res,-rB.val);
+      if(St.soc>0.995)b=0;
+    }else if(St.hr>16.5&&St.hr<23.5&&St.soc>0.03){
+      b=Math.min(res,rB.val);
+    }
+    St.soc=Math.max(0,Math.min(1,St.soc-b*HRPS*dt/ecap()));
+    const gtarget=Math.max(0,Math.min(GASCAP,res-b));
+    const step=2.0*dt;
+    St.gas+=Math.max(-step,Math.min(step,gtarget-St.gas));
+    St.trip*=Math.exp(-dt/12);
+    const ptar=Math.max(-3.5,Math.min(3.5,-4*(St.f-50)));
+    St.prim+=(ptar-St.prim)*dt/4;                    // governor lag, about 4 seconds
+    const prim=St.prim;
+    const ffr=Math.max(-rB.val,Math.min(rB.val,-rB.val*2.5*(St.f-50)));   // an inverter, so effectively instant
+    const share=Math.max(0,Math.min(1,(s+w)/Math.max(d,1)));
+    const Hs=2+4*(1-share);
+    // curtailment trims the scheduled surplus - it is dispatch, not control, so it
+    // must not swallow the governors; a deficit has nothing to curtail and the
+    // frequency moves for real
+    const dPsched=BASE+s+w+St.gas+b-St.trip-d;
+    const curt=Math.max(0,Math.min(dPsched,s+w));
+    const dP=dPsched-curt+prim+ffr;
+    const df=50*dP/(2*Hs*SBASE)*dt;
+    St.rocof=St.rocof*0.9+(df/dt)*0.1;
+    St.f=Math.max(47.5,Math.min(52,St.f+df));
+    St.hist.push(St.f);if(St.hist.length>360)St.hist.shift();
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
+
+    // ══ the day, stacked ══
+    const P=plan();
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cDay','24-hour dispatch stack'),GL,22);
+    ctx.strokeStyle='rgba(148,163,184,0.15)';ctx.lineWidth=1;
+    for(let p=0;p<=50;p+=10){
+      ctx.beginPath();ctx.moveTo(GL,Y(p));ctx.lineTo(GR,Y(p));ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText(p+' GW',GL-5,Y(p)+3);
+    }
+    for(let h=0;h<=24;h+=6){
+      ctx.strokeStyle='rgba(148,163,184,0.15)';
+      ctx.beginPath();ctx.moveTo(X(h),GT);ctx.lineTo(X(h),GB);ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+      ctx.fillText(h+':00',X(h),GB+13);
+    }
+    const keys=[2,3,5,4];                       // solar, wind, gas, battery, drawn above baseload
+    const bandCols=['rgba(251,191,36,0.85)','rgba(45,212,191,0.85)','rgba(251,113,133,0.8)','rgba(167,139,250,0.85)'];
+    function band(lo,hi,col){
+      ctx.fillStyle=col;ctx.beginPath();
+      for(let i=0;i<P.length;i++)ctx.lineTo(X(P[i][0]),Y(lo[i]));
+      for(let i=P.length-1;i>=0;i--)ctx.lineTo(X(P[i][0]),Y(hi[i]));
+      ctx.closePath();ctx.fill();
+    }
+    const zero=P.map(function(){return 0;});
+    let acc=P.map(function(){return BASE;});
+    band(zero,acc,'rgba(71,85,105,0.85)');
+    for(let j=0;j<keys.length;j++){
+      const lo=acc.slice();
+      acc=acc.map(function(v,i){return v+Math.max(0,P[i][keys[j]]);});
+      band(lo,acc,bandCols[j]);
+    }
+    // what nothing could absorb
+    const curtTop=acc.map(function(v,i){return v+P[i][6];});
+    band(acc,curtTop,'rgba(248,113,113,0.22)');
+    // demand, over the top of everything
+    ctx.strokeStyle='#f8fafc';ctx.lineWidth=2.2;ctx.beginPath();
+    for(let i=0;i<P.length;i++)ctx.lineTo(X(P[i][0]),Y(P[i][1]));
+    ctx.stroke();
+    // net load, the duck
+    ctx.strokeStyle='rgba(250,204,21,0.8)';ctx.lineWidth=1.4;ctx.setLineDash([4,3]);ctx.beginPath();
+    for(let i=0;i<P.length;i++)ctx.lineTo(X(P[i][0]),Y(Math.max(0,P[i][1]-P[i][2]-P[i][3])));
+    ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='left';
+    const leg=[[tx('cBase','must-run baseload'),'#94a3b8'],[tx('cSolar','solar'),'#fbbf24'],
+               [tx('cWind','wind'),'#2dd4bf'],[tx('cGas','gas'),'#fb7185'],
+               [tx('cBatt','battery discharge'),'#a78bfa'],[tx('cCurt','curtailed'),'#fca5a5'],
+               [tx('cDem','demand'),'#f8fafc'],[tx('cDuck','net load'),'#facc15']];
+    let lx=GL,ly=GB+24;
+    for(let i=0;i<leg.length;i++){
+      const lw=18+ctx.measureText(leg[i][0]).width;
+      if(lx+lw>GR){lx=GL;ly+=13;}
+      ctx.fillStyle=leg[i][1];ctx.fillRect(lx,ly-6,8,8);
+      ctx.fillStyle='#cbd5e1';ctx.fillText(leg[i][0],lx+11,ly);
+      lx+=lw;
+    }
+    // now
+    ctx.strokeStyle='rgba(255,255,255,0.55)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.moveTo(X(St.hr),GT);ctx.lineTo(X(St.hr),GB);ctx.stroke();
+    ctx.fillStyle='#e2e8f0';ctx.font='9px system-ui';ctx.textAlign='center';
+    const hh=Math.floor(St.hr),mm=Math.floor((St.hr-hh)*60);
+    ctx.fillText((hh<10?'0':'')+hh+':'+(mm<10?'0':'')+mm,X(St.hr),GT-6);
+
+    // ══ the frequency, which is the scoreboard ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cFreq','system frequency'),FL,FT-10);
+    ctx.fillStyle='rgba(74,222,128,0.15)';ctx.fillRect(FL,FY(50.1),FR-FL,FY(49.9)-FY(50.1));
+    ctx.fillStyle='rgba(251,191,36,0.10)';ctx.fillRect(FL,FY(49.9),FR-FL,FY(49.5)-FY(49.9));
+    ctx.fillStyle='rgba(248,113,113,0.14)';ctx.fillRect(FL,FY(49.5),FR-FL,FB-FY(49.5));
+    ctx.strokeStyle='rgba(148,163,184,0.14)';ctx.lineWidth=1;
+    for(let g=0;g<=8;g++){
+      const fv=48.8+g*0.2;
+      ctx.beginPath();ctx.moveTo(FL,FY(fv));ctx.lineTo(FR,FY(fv));ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText(fv.toFixed(1),FL-4,FY(fv)+3);
+    }
+    ctx.strokeStyle='rgba(226,232,240,0.5)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(FL,FY(50));ctx.lineTo(FR,FY(50));ctx.stroke();ctx.setLineDash([]);
+    ctx.font='8px system-ui';ctx.textAlign='left';
+    ctx.fillStyle='#4ade80';ctx.fillText(tx('cBand','containment band'),FR-92,FY(50.1)-3);
+    ctx.strokeStyle='#38bdf8';ctx.lineWidth=2.4;ctx.beginPath();
+    for(let i=0;i<St.hist.length;i++){
+      const xx=FL+i/359*(FR-FL),yy=FY(Math.max(48.82,Math.min(50.38,St.hist[i])));
+      if(i===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);
+    }
+    ctx.stroke();
+    const off=Math.abs(St.f-50);
+    ctx.font='bold 22px system-ui';ctx.textAlign='left';
+    ctx.fillStyle=off>0.5?'#f87171':(off>0.1?'#fbbf24':'#4ade80');
+    ctx.fillText(St.f.toFixed(3)+' Hz',10,FT+18);
+    ctx.font='9px system-ui';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cRoCoF','RoCoF')+' '+(St.rocof>=0?'+':'')+St.rocof.toFixed(3)+' Hz/s',10,FT+34);
+    ctx.fillText(tx('cSpin','system inertia')+' '+Hs.toFixed(1)+' s',10,FT+48);
+    // the spinning mass, turning at the frequency
+    const sx=64,sy=FB-26;
+    ctx.strokeStyle='rgba(148,163,184,0.5)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.arc(sx,sy,20,0,Math.PI*2);ctx.stroke();
+    ctx.save();ctx.translate(sx,sy);ctx.rotate(St.t*(1.2+(St.f-50)*2.2));
+    ctx.strokeStyle='#818cf8';ctx.lineWidth=2.6;
+    for(let k=0;k<3;k++){
+      const an=k*2.0944;
+      ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(an)*18,Math.sin(an)*18);ctx.stroke();
+    }
+    ctx.restore();
+    if(St.trip>0.05){
+      ctx.font='10px system-ui';ctx.textAlign='right';ctx.fillStyle='#fca5a5';
+      ctx.fillText(tx('cTrip','generation loss event')+' · -'+St.trip.toFixed(2)+' GW',FR-4,FT+18);
+    }
+    if(St.shed){
+      ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillStyle='#f87171';
+      ctx.fillText(tx('cShed','load shedding'),(FL+FR)/2,FT+18);
+    }
+
+    pF.set(St.f.toFixed(3)+' Hz');
+    pR.set(Math.round(share*100)+' %');
+    pG.set(St.gas.toFixed(1)+' GW');
+    pS.set(Math.round(St.soc*100)+' %');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simNuclear(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#4d7c0f';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.nuclear&&SIMS.nuclear.raf)cancelAnimationFrame(SIMS.nuclear.raf);
+  const W=getSimWidth(container),H=520;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('nuclear',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pK=pill(tx('keff','k effective')),pP=pill(tx('pw','Thermal power'));
+  const pT=pill(tx('period','Reactor period')),pD=pill(tx('decay','Decay heat'));
+  pRow.appendChild(pK.el);pRow.appendChild(pP.el);pRow.appendChild(pT.el);pRow.appendChild(pD.el);
+  const bScram=mkBtn(tx('scram','SCRAM'),true,color);ctrl.appendChild(bScram);
+  const rR=mkRange(ctrl,tx('rod','Control rod insertion'),0,100,35,1,color);
+  const rW=mkRange(ctrl,tx('water','Moderator level'),20,100,100,1,color);
+  rR.v.textContent='35 %';rW.v.textContent='100 %';
+  rR.inp.addEventListener('input',function(){rR.v.textContent=rR.inp.value+' %';St.scram=0;});
+  rW.inp.addEventListener('input',function(){rW.v.textContent=rW.inp.value+' %';});
+
+  const BETA=0.0065,LAM=0.0767,LNP=2e-5,PNOM=3000;
+  const St=SIMS.nuclear={raf:null,t:0,p:1,scram:0,tsc:0,psc:1,n:[],hist:[],flash:[]};
+  bScram.addEventListener('click',function(){
+    St.scram=1;St.tsc=St.t;St.psc=St.p;
+    rR.inp.value=100;rR.v.textContent='100 %';
+  });
+  for(let i=0;i<150;i++)St.n.push([Math.random(),Math.random(),Math.random()*6.28,Math.random()]);
+
+  // ── layout ──
+  const CX=W/2,CT=24,CB=282,CW=Math.min(W-96,520),CL=CX-CW/2,CR=CX+CW/2;
+  const GT=336,GB=H-28,GL=54,GR=W-46;
+  const NROD=7;
+  const PY=function(pc){                       // log axis, 0.1% to 300% of nominal
+    const u=(Math.log10(Math.max(0.0008,pc))-Math.log10(0.001))/(Math.log10(3)-Math.log10(0.001));
+    return GB-Math.max(0,Math.min(1,u))*(GB-GT);
+  };
+
+  function frame(){
+    const dt=1/60;
+    St.t+=dt;
+    const rod=rR.val/100,mod=rW.val/100;
+    // k falls when rods go in, and also when the moderator thins out: a light-water
+    // core cannot sustain the chain reaction without water to slow the neutrons
+    const k=1.2658*(1-0.60*rod)*(1-1.10*Math.pow(1-mod,1.6));
+    const rho=(k-1)/Math.max(k,0.01);
+    let T;
+    if(rho>=BETA*0.985)T=Math.max(0.02,LNP/Math.max(rho-BETA,1e-6));
+    else if(rho>0)T=(BETA-rho)/(LAM*rho);
+    else T=-Math.max(25,Math.abs((BETA-rho)/(LAM*Math.min(rho,-1e-6))));
+    if(!St.scram)St.p*=Math.exp(dt/T);
+    else St.p*=Math.exp(-dt/6);
+    St.p=Math.max(1e-6,Math.min(4,St.p));
+    if(!St.scram&&St.p>2){St.scram=2;St.tsc=St.t;St.psc=St.p;rR.inp.value=100;rR.v.textContent='100 %';}
+    // fission stops in a second, the fission products do not
+    let dec=0;
+    if(St.scram){
+      const ts=Math.max(1,St.t-St.tsc);
+      dec=0.066*St.psc*Math.pow(ts,-0.2);
+    }
+    const ptot=St.p+dec;
+    St.hist.push(ptot);if(St.hist.length>420)St.hist.shift();
+    const prompt=rho>=BETA&&!St.scram;
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
+
+    // ══ the core ══
+    const heat=Math.min(1,ptot);
+    ctx.fillStyle='rgba(30,58,138,'+(0.55+0.2*heat).toFixed(2)+')';
+    ctx.fillRect(CL,CT,CW,CB-CT);
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=3;ctx.strokeRect(CL,CT,CW,CB-CT);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cCore','core cross-section'),CL,CT-8);
+    // water level, because the moderator is a slider here
+    const wl=CB-(CB-CT)*mod;
+    ctx.fillStyle='rgba(56,189,248,0.16)';ctx.fillRect(CL+2,wl,CW-4,CB-wl-2);
+    ctx.strokeStyle='rgba(125,211,252,0.7)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.moveTo(CL+2,wl);ctx.lineTo(CR-2,wl);ctx.stroke();
+    ctx.font='9px system-ui';ctx.fillStyle='#7dd3fc';ctx.textAlign='right';
+    ctx.fillText(tx('cMod','water moderator'),CR-6,wl-5);
+    // fuel rods, glowing with the power
+    const step=CW/(NROD+1);
+    for(let i=0;i<NROD;i++){
+      const x=CL+step*(i+1);
+      const g=ctx.createLinearGradient(x-6,0,x+6,0);
+      g.addColorStop(0,'#4b5563');g.addColorStop(0.5,'rgb('+Math.round(120+120*heat)+','+Math.round(120+40*heat)+',90)');
+      g.addColorStop(1,'#4b5563');
+      ctx.fillStyle=g;ctx.fillRect(x-6,CT+16,12,CB-CT-30);
+    }
+    // control rods, sliding down from the top
+    for(let i=0;i<NROD-1;i++){
+      const x=CL+step*(i+1)+step/2;
+      const len=(CB-CT-30)*rod;
+      ctx.fillStyle='#111827';ctx.fillRect(x-4.5,CT+6,9,len+10);
+      ctx.strokeStyle='#6b7280';ctx.lineWidth=1;ctx.strokeRect(x-4.5,CT+6,9,len+10);
+    }
+    // neutrons: fast and red until the water thermalises them, then blue and useful
+    const nShow=Math.max(4,Math.min(140,Math.round(6+120*Math.min(1.4,ptot))));
+    for(let i=0;i<nShow;i++){
+      const n=St.n[i%St.n.length];
+      const sp=(0.35+n[3])*(1+heat*0.5);
+      n[0]+=Math.cos(n[2])*sp*0.004;n[1]+=Math.sin(n[2])*sp*0.004;
+      if(n[0]<0||n[0]>1){n[2]=Math.PI-n[2];n[0]=Math.max(0,Math.min(1,n[0]));}
+      if(n[1]<0||n[1]>1){n[2]=-n[2];n[1]=Math.max(0,Math.min(1,n[1]));}
+      if(Math.random()<0.02*mod)n[2]+=(Math.random()-0.5)*2;
+      const x=CL+4+n[0]*(CW-8),y=CT+4+n[1]*(CB-CT-8);
+      const thermal=n[3]<mod*0.8;
+      ctx.fillStyle=thermal?'rgba(125,211,252,0.95)':'rgba(248,113,113,0.95)';
+      ctx.beginPath();ctx.arc(x,y,thermal?2:2.6,0,Math.PI*2);ctx.fill();
+      if(!thermal){
+        ctx.strokeStyle='rgba(248,113,113,0.35)';ctx.lineWidth=1;
+        ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-Math.cos(n[2])*7,y-Math.sin(n[2])*7);ctx.stroke();
+      }
+    }
+    // fissions flash on the fuel, at a rate that follows the power
+    if(!St.scram&&Math.random()<Math.min(0.9,ptot*0.7)){
+      St.flash.push([CL+step*(1+Math.floor(Math.random()*NROD)),CT+20+Math.random()*(CB-CT-40),0]);
+    }
+    St.flash=St.flash.filter(function(f){return f[2]<1;});
+    St.flash.forEach(function(f){
+      f[2]+=0.06;
+      ctx.strokeStyle='rgba(253,224,71,'+(1-f[2]).toFixed(2)+')';ctx.lineWidth=1.6;
+      ctx.beginPath();ctx.arc(f[0],f[1],3+f[2]*11,0,Math.PI*2);ctx.stroke();
+    });
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#fde68a';
+    ctx.fillText(tx('cFuel','fuel rods'),CL+4,CB+14);
+    ctx.fillStyle='#9ca3af';ctx.textAlign='right';
+    ctx.fillText(tx('cRod','control rods'),CR-4,CB+14);
+    ctx.textAlign='left';ctx.fillStyle='#7dd3fc';
+    ctx.fillText(tx('cSlow','thermal neutron'),CL+4,CB+27);
+    ctx.fillStyle='#fca5a5';ctx.textAlign='right';
+    ctx.fillText(tx('cFast','fast neutron'),CR-4,CB+27);
+
+    // ══ power, on a log axis, with the line nobody may cross ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cTrace','thermal power against time'),GL,GT-10);
+    ctx.strokeStyle='rgba(148,163,184,0.18)';ctx.lineWidth=1;
+    const marks=[0.001,0.01,0.1,1,3];
+    for(let i=0;i<marks.length;i++){
+      ctx.beginPath();ctx.moveTo(GL,PY(marks[i]));ctx.lineTo(GR,PY(marks[i]));ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText((marks[i]*100)+' %',GL-5,PY(marks[i])+3);
+    }
+    ctx.strokeStyle='rgba(74,222,128,0.55)';ctx.setLineDash([5,4]);ctx.lineWidth=1.2;
+    ctx.beginPath();ctx.moveTo(GL,PY(1));ctx.lineTo(GR,PY(1));ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#86efac';
+    ctx.fillText(tx('cNom','nominal power'),GL+4,PY(1)+13);
+    ctx.strokeStyle='#facc15';ctx.lineWidth=2.4;ctx.beginPath();
+    for(let i=0;i<St.hist.length;i++){
+      const xx=GL+i/419*(GR-GL);
+      if(i===0)ctx.moveTo(xx,PY(St.hist[i]));else ctx.lineTo(xx,PY(St.hist[i]));
+    }
+    ctx.stroke();
+    // state of the reactor, said plainly
+    const stateTxt=St.scram?tx('cScram','scrammed'):(prompt?tx('cPrompt','prompt critical'):
+      (rho>0.00005?tx('cSuper','supercritical'):(rho<-0.00005?tx('cSub','subcritical'):tx('cCrit','critical'))));
+    ctx.font='bold 12px system-ui';ctx.textAlign='right';
+    ctx.fillStyle=prompt?'#f87171':(St.scram?'#93c5fd':(Math.abs(rho)<0.00005?'#4ade80':'#fcd34d'));
+    ctx.fillText(stateTxt,GR,GT+4);
+    ctx.font='9px system-ui';ctx.fillStyle='#94a3b8';
+    ctx.fillText('rho = '+(rho*100000).toFixed(0)+' pcm   beta = 650 pcm',GR,GT+18);
+    if(St.scram){
+      ctx.textAlign='left';ctx.fillStyle='#fca5a5';
+      ctx.fillText(tx('cDecay','decay heat')+' '+Math.round(dec*PNOM)+' MW',GL+4,GT+4);
+    }
+    if(prompt){
+      ctx.font='bold 13px system-ui';ctx.textAlign='center';ctx.fillStyle='#f87171';
+      ctx.fillText(tx('cPrompt','prompt critical'),(GL+GR)/2,GT+34);
+    }
+
+    pK.set(k.toFixed(4));
+    pP.set(Math.round(ptot*PNOM)+' MW');
+    pT.set(St.scram?'-':(Math.abs(rho)<0.00003?'∞':(T>0?'+':'')+Math.round(T)+' s'));
+    pD.set(Math.round(dec*PNOM)+' MW');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simStorage(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#7c3aed';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.storage&&SIMS.storage.raf)cancelAnimationFrame(SIMS.storage.raf);
+  const W=getSimWidth(container),H=450;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('storage',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pS=pill(tx('soc','State of charge')),pR=pill(tx('rev','Daily revenue'));
+  const pL=pill(tx('loss','Round-trip losses')),pC=pill(tx('cyc','Equivalent cycles'));
+  pRow.appendChild(pS.el);pRow.appendChild(pR.el);pRow.appendChild(pL.el);pRow.appendChild(pC.el);
+  const rP=mkRange(ctrl,tx('pwr','Power rating'),10,200,100,10,color);
+  const rD=mkRange(ctrl,tx('dur','Duration'),1,8,2,1,color);
+  const rE=mkRange(ctrl,tx('eff','Round-trip efficiency'),60,98,88,1,color);
+  rP.v.textContent='100 MW';rD.v.textContent='2 h';rE.v.textContent='88 %';
+  rP.inp.addEventListener('input',function(){rP.v.textContent=rP.inp.value+' MW';});
+  rD.inp.addEventListener('input',function(){rD.v.textContent=rD.inp.value+' h';});
+  rE.inp.addEventListener('input',function(){rE.v.textContent=rE.inp.value+' %';});
+
+  const St=SIMS.storage={raf:null,t:0,hr:0,soc:0.5};
+
+  function gaus(x,m,s){return Math.exp(-Math.pow((x-m)/s,2));}
+  // a European day: solar-flooded and cheap at noon, brutal at the evening peak
+  function price(h){
+    return Math.max(2,55+62*gaus(h,19.5,2.0)+22*gaus(h,7.5,1.6)-42*gaus(h,13,3.0)-18*gaus(h,3.5,3.0));
+  }
+  // the whole optimisation, which is small enough to redo every frame: pair the
+  // cheapest hour with the dearest, and keep the pair only if it clears the round trip
+  function plan(){
+    const P=rP.val,hrs=rD.val,eta=rE.val/100;
+    const pr=[];
+    for(let h=0;h<24;h++)pr.push([h,price(h+0.5)]);
+    const byP=pr.slice().sort(function(a,b){return a[1]-b[1];});
+    const ch=[],di=[];let rev=0;
+    for(let i=0;i<hrs;i++){
+      const lo=byP[i],hi=byP[23-i];
+      if(eta*hi[1]>lo[1]){
+        ch.push(lo[0]);di.push(hi[0]);
+        rev+=eta*P*hi[1]-P*lo[1];
+      }
+    }
+    return {ch:ch,di:di,rev:rev,ein:P*ch.length,eout:eta*P*ch.length,P:P,E:P*hrs,eta:eta};
+  }
+
+  // ── layout ──
+  const GL=52,GR=W-52,GT=40,GB=250;
+  const BX=40,BY=310,BW=118,BH=104;
+  const X=function(h){return GL+h/24*(GR-GL);};
+  const Y=function(p){return GB-p/130*(GB-GT);};
+  const YS=function(s){return GB-s*(GB-GT);};
+
+  function frame(){
+    const dt=1/60;
+    St.t+=dt;St.hr+=dt*0.667;if(St.hr>=24)St.hr-=24;
+    const pl=plan();
+    const hNow=Math.floor(St.hr);
+    const charging=pl.ch.indexOf(hNow)>=0,dischg=pl.di.indexOf(hNow)>=0;
+    if(charging)St.soc=Math.min(1,St.soc+pl.P*0.667*dt/pl.E);
+    if(dischg)St.soc=Math.max(0,St.soc-pl.P*0.667*dt/pl.E);
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
+
+    // ══ the price of electricity through the day ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cPrice','wholesale price through the day'),GL,24);
+    for(let i=0;i<pl.ch.length;i++){
+      ctx.fillStyle='rgba(74,222,128,0.16)';
+      ctx.fillRect(X(pl.ch[i]),GT,X(1)-X(0),GB-GT);
+    }
+    for(let i=0;i<pl.di.length;i++){
+      ctx.fillStyle='rgba(251,146,60,0.18)';
+      ctx.fillRect(X(pl.di[i]),GT,X(1)-X(0),GB-GT);
+    }
+    ctx.strokeStyle='rgba(148,163,184,0.16)';ctx.lineWidth=1;
+    for(let p=0;p<=120;p+=40){
+      ctx.beginPath();ctx.moveTo(GL,Y(p));ctx.lineTo(GR,Y(p));ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText(p+' €',GL-5,Y(p)+3);
+    }
+    for(let h=0;h<=24;h+=6){
+      ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+      ctx.fillText(h+':00',X(h),GB+14);
+    }
+    ctx.strokeStyle='#fbbf24';ctx.lineWidth=2.4;ctx.beginPath();
+    for(let h=0;h<=240;h++){
+      const hh=h/10,yy=Y(price(hh));
+      if(h===0)ctx.moveTo(X(hh),yy);else ctx.lineTo(X(hh),yy);
+    }
+    ctx.stroke();
+    // state of charge, drawn over the same panel on its own scale
+    ctx.strokeStyle='rgba(196,181,253,0.9)';ctx.lineWidth=1.8;ctx.setLineDash([4,3]);
+    ctx.beginPath();
+    let sc=0.5;
+    for(let h=0;h<=24;h+=0.25){
+      const hh=Math.floor(h)%24;
+      if(pl.ch.indexOf(hh)>=0)sc=Math.min(1,sc+pl.P*0.25/pl.E);
+      if(pl.di.indexOf(hh)>=0)sc=Math.max(0,sc-pl.P*0.25/pl.E);
+      if(h===0)ctx.moveTo(X(h),YS(sc));else ctx.lineTo(X(h),YS(sc));
+    }
+    ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='right';ctx.fillStyle='#c4b5fd';
+    ctx.fillText(tx('cSoc','state of charge'),GR,GT-9);
+    ctx.font='8px system-ui';ctx.fillStyle='#a5b4fc';
+    for(let s2=0;s2<=1;s2+=0.5)ctx.fillText(Math.round(s2*100)+' %',GR+30,YS(s2)+3);
+    ctx.textAlign='left';ctx.fillStyle='#4ade80';
+    ctx.fillText(tx('cCharge','charging'),GL+4,GT+12);
+    ctx.fillStyle='#fb923c';
+    ctx.fillText(tx('cDisch','discharging'),GL+4,GT+24);
+    // now
+    ctx.strokeStyle='rgba(255,255,255,0.6)';ctx.lineWidth=1.4;
+    ctx.beginPath();ctx.moveTo(X(St.hr),GT);ctx.lineTo(X(St.hr),GB);ctx.stroke();
+    const hh2=Math.floor(St.hr),mm=Math.floor((St.hr-hh2)*60);
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#e2e8f0';
+    ctx.fillText((hh2<10?'0':'')+hh2+':'+(mm<10?'0':'')+mm,X(St.hr),GT-6);
+    ctx.fillStyle='#fcd34d';ctx.textAlign='left';
+    ctx.fillText(Math.round(price(St.hr))+' €/MWh',X(St.hr)+6,GT+38);
+
+    // ══ the battery itself ══
+    ctx.fillStyle='#1e293b';ctx.fillRect(BX,BY,BW,BH);
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=2;ctx.strokeRect(BX,BY,BW,BH);
+    ctx.fillStyle='#94a3b8';ctx.fillRect(BX+BW/2-14,BY-7,28,7);
+    const fh=(BH-8)*St.soc;
+    const gg=ctx.createLinearGradient(0,BY+BH-8,0,BY+BH-8-fh);
+    gg.addColorStop(0,'#7c3aed');gg.addColorStop(1,'#a78bfa');
+    ctx.fillStyle=gg;ctx.fillRect(BX+4,BY+BH-4-fh,BW-8,fh);
+    ctx.font='bold 15px system-ui';ctx.textAlign='center';ctx.fillStyle='#f8fafc';
+    ctx.fillText(Math.round(St.soc*100)+' %',BX+BW/2,BY+BH/2);
+    ctx.font='9px system-ui';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(Math.round(St.soc*pl.E)+' / '+pl.E+' MWh',BX+BW/2,BY+BH/2+16);
+    ctx.fillText(tx('cBatt','battery'),BX+BW/2,BY+BH+14);
+    // the arrow says which way the energy is going
+    if(charging||dischg){
+      const dir=charging?1:-1;
+      ctx.strokeStyle=charging?'#4ade80':'#fb923c';ctx.lineWidth=3;ctx.lineCap='round';
+      const ax=BX+BW+30,ay=BY+BH/2;
+      ctx.beginPath();ctx.moveTo(ax-dir*22,ay);ctx.lineTo(ax+dir*22,ay);ctx.stroke();
+      ctx.fillStyle=charging?'#4ade80':'#fb923c';
+      ctx.beginPath();
+      ctx.moveTo(ax+dir*28,ay);ctx.lineTo(ax+dir*16,ay-7);ctx.lineTo(ax+dir*16,ay+7);
+      ctx.closePath();ctx.fill();
+      ctx.font='10px system-ui';ctx.textAlign='center';
+      ctx.fillText(pl.P+' MW',ax,ay-14);
+    }
+
+    // ══ the ledger ══
+    const LX=BX+BW+80,LY=BY+8;
+    const rows=[[tx('cIn','energy in'),Math.round(pl.ein)+' MWh','#93c5fd'],
+                [tx('cOut','energy out'),Math.round(pl.eout)+' MWh','#93c5fd'],
+                [tx('cLoss','losses'),Math.round(pl.ein-pl.eout)+' MWh','#fca5a5'],
+                [tx('cRev','revenue'),(pl.rev>=0?'+':'')+Math.round(pl.rev).toLocaleString(simLocale())+' €','#4ade80']];
+    ctx.font='11px system-ui';
+    for(let i=0;i<rows.length;i++){
+      ctx.textAlign='left';ctx.fillStyle='#94a3b8';
+      ctx.fillText(rows[i][0],LX,LY+i*22);
+      ctx.textAlign='right';ctx.fillStyle=rows[i][2];
+      ctx.font='bold 11px system-ui';
+      ctx.fillText(rows[i][1],Math.min(LX+230,W-16),LY+i*22);
+      ctx.font='11px system-ui';
+    }
+    ctx.textAlign='left';ctx.font='9px system-ui';ctx.fillStyle='#fcd34d';
+    ctx.fillText(tx('cSpread','break-even spread')+': '+Math.round((1/pl.eta-1)*100)+' %',LX,LY+4*22+4);
+    if(pl.ch.length<rD.val){
+      ctx.fillStyle='#fca5a5';
+      ctx.fillText(pl.ch.length+' / '+rD.val+' h',LX,LY+5*22);
+    }
+
+    pS.set(Math.round(St.soc*100)+' %');
+    pR.set(Math.round(pl.rev).toLocaleString(simLocale())+' €');
+    pL.set(Math.round(pl.ein-pl.eout)+' MWh');
+    pC.set((pl.eout/pl.E).toFixed(2));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simHydrogen(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0d9488';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.hydrogen&&SIMS.hydrogen.raf)cancelAnimationFrame(SIMS.hydrogen.raf);
+  const W=getSimWidth(container),H=430;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('hydrogen',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pE=pill(tx('eff','System efficiency')),pR=pill(tx('rate','Hydrogen output'));
+  const pS=pill(tx('spec','Specific consumption')),pC=pill(tx('cost','Cost per kg'));
+  pRow.appendChild(pE.el);pRow.appendChild(pR.el);pRow.appendChild(pS.el);pRow.appendChild(pC.el);
+  const bUse=mkBtn(tx('use','Back to electricity'),true,color);ctrl.appendChild(bUse);
+  const rJ=mkRange(ctrl,tx('cur','Current density j'),0.2,3,1.5,0.1,color);
+  const rP=mkRange(ctrl,tx('price','Electricity price'),10,200,50,5,color);
+  rJ.v.textContent='1.5 A/cm²';rP.v.textContent='50 €/MWh';
+  rJ.inp.addEventListener('input',function(){rJ.v.textContent=(+rJ.inp.value).toFixed(1)+' A/cm²';});
+  rP.inp.addEventListener('input',function(){rP.v.textContent=rP.inp.value+' €/MWh';});
+
+  const St=SIMS.hydrogen={raf:null,t:0,p2p:true,b:[]};
+  bUse.addEventListener('click',function(){
+    St.p2p=!St.p2p;
+    bUse.textContent=St.p2p?tx('use','Back to electricity'):tx('use2','Used as a molecule');
+  });
+
+  const FAR=96485,HHV=39.4,NCELL=100,AREA=1000;   // 100 cells of 1000 cm2
+  const BOP=0.92,ETA_C=0.90,ETA_FC=0.55,ETA_BATT=0.88;
+  // a PEM polarisation curve: reversible voltage, then activation and ohmic losses
+  function volts(j){return 1.23+0.05*Math.log(Math.max(j,0.02)/0.01)+0.25*j;}
+
+  // ── layout ──
+  const CL=26,CR=Math.round(W*0.44),CT=40,CB=300;
+  const KL=Math.round(W*0.50),KR=W-24,KT=54;
+
+  function frame(){
+    St.t+=1/60;
+    const j=rJ.val,pe=rP.val;
+    const V=volts(j),eta=BOP*1.48/V;
+    const I=j*AREA;                              // amps per cell
+    const molS=NCELL*I/(2*FAR);                  // mol of H2 per second
+    const kgH=molS*2.016e-3*3600;                // kg per hour
+    const pw=NCELL*V*I/1000;                     // kW into the stack
+    const spec=HHV/eta;                          // kWh per kg
+    const cost=spec*pe/1000;
+    const chain=St.p2p?eta*ETA_C*ETA_FC:eta;
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
+
+    // ══ the cell: a Hofmann voltameter, essentially ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cCell','electrolysis cell'),CL,26);
+    const tw=44,th=132,gap=(CR-CL-2*tw)/3;
+    const t1x=CL+gap,t2x=CL+2*gap+tw;            // O2 tube left, H2 tube right
+    ctx.fillStyle='rgba(56,189,248,0.20)';
+    ctx.fillRect(CL,CT+th-24,CR-CL,CB-(CT+th)+8);
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=2;
+    ctx.strokeRect(CL,CT+th-24,CR-CL,CB-(CT+th)+8);
+    // the two collection tubes, filling in a 2 to 1 ratio
+    const fill=Math.min(1,(St.t*0.10)%1.3);
+    const tubes=[[t1x,fill*0.5,'rgba(148,163,184,0.55)',tx('cO2','O2')],
+                 [t2x,fill,'rgba(45,212,191,0.6)',tx('cH2','H2')]];
+    for(let i=0;i<2;i++){
+      const x=tubes[i][0],f=Math.min(1,tubes[i][1]);
+      ctx.fillStyle='rgba(15,23,42,0.6)';ctx.fillRect(x,CT,tw,th);
+      ctx.fillStyle=tubes[i][2];ctx.fillRect(x+2,CT+2,tw-4,(th-4)*f);
+      ctx.strokeStyle='#cbd5e1';ctx.lineWidth=1.6;ctx.strokeRect(x,CT,tw,th);
+      ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#e2e8f0';
+      ctx.fillText(i?'H₂':'O₂',x+tw/2,CT-6);
+    }
+    // electrodes and bubbles: twice as many on the hydrogen side, always
+    const ey=CT+th+6;
+    for(let i=0;i<2;i++){
+      const x=tubes[i][0]+tw/2;
+      ctx.strokeStyle=i?'#5eead4':'#94a3b8';ctx.lineWidth=5;ctx.lineCap='round';
+      ctx.beginPath();ctx.moveTo(x,ey);ctx.lineTo(x,CB-24);ctx.stroke();
+      const n=i?14:7;
+      for(let b=0;b<n;b++){
+        const u=((St.t*(0.35+0.25*j)+b/n)%1);
+        const by=CB-24-u*(CB-24-ey);
+        const r=1.6+2.2*u;
+        ctx.fillStyle=i?'rgba(94,234,212,0.85)':'rgba(203,213,225,0.8)';
+        ctx.beginPath();ctx.arc(x+Math.sin(u*9+b)*4,by,r,0,Math.PI*2);ctx.fill();
+      }
+    }
+    // the power supply, and what the extra volts are doing
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#fcd34d';
+    ctx.fillText(tx('cVolt','cell voltage')+': '+V.toFixed(2)+' V',CL,CB+22);
+    ctx.fillStyle='#94a3b8';ctx.font='9px system-ui';
+    ctx.fillText('1.48 V → H₂   ·   '+(V-1.48).toFixed(2)+' V → '+tx('cHeat','heat'),CL,CB+38);
+    // a small bar showing useful volts against wasted volts
+    const bw=CR-CL-10,uf=1.48/V;
+    ctx.fillStyle='#2dd4bf';ctx.fillRect(CL,CB+46,bw*uf,12);
+    ctx.fillStyle='#f87171';ctx.fillRect(CL+bw*uf,CB+46,bw*(1-uf),12);
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#0f172a';
+    ctx.fillText(Math.round(uf*100)+' %',CL+4,CB+56);
+    ctx.textAlign='left';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cWaste','every volt above 1.48 V is heat'),CL,CB+74);
+    ctx.fillStyle='#cbd5e1';ctx.font='10px system-ui';
+    ctx.fillText(Math.round(pw/BOP)+' kW  →  '+kgH.toFixed(1)+' kg/h',CL,CB+94);
+
+    // ══ the chain: 100 kWh in, and what survives ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cChain','energy chain from 100 kWh'),KL,26);
+    const steps=St.p2p
+      ?[[tx('cStack','electrolysis'),eta,'#2dd4bf'],[tx('cComp','compression'),ETA_C,'#38bdf8'],
+        [tx('cFC','fuel cell'),ETA_FC,'#a78bfa']]
+      :[[tx('cStack','electrolysis'),eta,'#2dd4bf'],[tx('cMol','used as feedstock'),1,'#fbbf24']];
+    let val=100;
+    const barW=KR-KL;
+    ctx.fillStyle='#475569';ctx.fillRect(KL,KT,barW,26);
+    ctx.font='bold 11px system-ui';ctx.textAlign='left';ctx.fillStyle='#f8fafc';
+    ctx.fillText('100 kWh',KL+8,KT+17);
+    for(let i=0;i<steps.length;i++){
+      const y=KT+42+i*54;
+      const before=val;val*=steps[i][1];
+      ctx.fillStyle='rgba(248,113,113,0.30)';
+      ctx.fillRect(KL,y,barW*before/100,22);
+      ctx.fillStyle=steps[i][2];
+      ctx.fillRect(KL,y,barW*val/100,22);
+      ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+      ctx.fillText(steps[i][0]+'  ×'+steps[i][1].toFixed(2),KL,y-6);
+      ctx.font='bold 11px system-ui';ctx.textAlign='right';ctx.fillStyle='#0f172a';
+      if(val>18)ctx.fillText(Math.round(val)+' kWh',KL+barW*val/100-6,y+16);
+      else{ctx.fillStyle='#e2e8f0';ctx.textAlign='left';ctx.fillText(Math.round(val)+' kWh',KL+barW*val/100+6,y+16);}
+    }
+    const yend=KT+42+steps.length*54+8;
+    ctx.font='bold 13px system-ui';ctx.textAlign='left';ctx.fillStyle='#5eead4';
+    ctx.fillText(tx('cOut','delivered')+': '+Math.round(chain*100)+' %',KL,yend+14);
+    if(St.p2p){
+      ctx.fillStyle='rgba(148,163,184,0.35)';ctx.fillRect(KL,yend+26,barW*ETA_BATT,18);
+      ctx.font='10px system-ui';ctx.fillStyle='#94a3b8';
+      ctx.fillText(tx('cBatt','a battery round trip')+': '+Math.round(ETA_BATT*100)+' %',KL+6,yend+39);
+    }
+
+    pE.set(Math.round(eta*100)+' %');
+    pR.set(kgH.toFixed(1)+' kg/h');
+    pS.set(spec.toFixed(1)+' kWh/kg');
+    pC.set(cost.toFixed(2)+' €/kg');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simInsulation(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#c2410c';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.insulation&&SIMS.insulation.raf)cancelAnimationFrame(SIMS.insulation.raf);
+  const W=getSimWidth(container),H=400,TIGHT=W<430;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('insulation',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pQ=pill(tx('loss','Heat loss')),pA=pill(tx('ann','Annual heat demand'));
+  const pC=pill(tx('cost','Annual heating cost')),pB=pill(tx('worst','Largest term'));
+  pRow.appendChild(pQ.el);pRow.appendChild(pA.el);pRow.appendChild(pC.el);pRow.appendChild(pB.el);
+  const rI=mkRange(ctrl,tx('ins','Insulation thickness'),0,25,0,1,color);
+  const rG=mkRange(ctrl,tx('glaz','Glazing'),1,3,1,1,color);
+  const rA=mkRange(ctrl,tx('air','Air changes per hour'),0.2,1.6,1.0,0.1,color);
+  rI.v.textContent='0 cm';rG.v.textContent='1';rA.v.textContent='1.0 /h';
+  rI.inp.addEventListener('input',function(){rI.v.textContent=rI.inp.value+' cm';});
+  rA.inp.addEventListener('input',function(){rA.v.textContent=(+rA.inp.value).toFixed(1)+' /h';});
+
+  const St=SIMS.insulation={raf:null,t:0,snow:[]};
+  for(let i=0;i<46;i++)St.snow.push([Math.random(),Math.random(),0.3+Math.random()]);
+  const A_ROOF=75,A_WALL=110,A_WIN=18,A_FLOOR=75,VOL=300;
+  const DT=20,DD=2500,PRICE=0.10,BOILER=0.90;   // kelvin, degree-days, euro per kWh of gas
+  const UG=[5.0,2.7,0.9];
+
+  function terms(ins,glz,air){
+    const d=ins/100;
+    const uw=1/(0.60+d/0.035);
+    const ur=1/(0.50+1.5*d/0.038);
+    const uf=0.70;
+    return [[tx('cRoof','roof'),ur*A_ROOF,'#f87171',ur],
+            [tx('cWall','walls'),uw*A_WALL,'#fb923c',uw],
+            [tx('cWin','windows'),UG[glz-1]*A_WIN,'#38bdf8',UG[glz-1]],
+            [tx('cAir','ventilation'),0.33*air*VOL,'#4ade80',0],
+            [tx('cFloor','floor'),uf*A_FLOOR,'#a78bfa',uf]];
+  }
+  // the worst the house can be, so the streams can shrink against a fixed reference
+  const WORST=terms(0,1,1.6).reduce(function(s,r){return s+r[1];},0);
+
+  // ── layout: house on the left, what leaves it on the right ──
+  const HS=Math.min(148,W*0.33);
+  const HX=(TIGHT?14:22)+HS/2, HB=H*0.60, HT=HB-HS*0.58, AP=HT-HS*0.44;
+  const RX0=HX+HS*0.52, RX1=W-(TIGHT?58:104), MID=H*0.46, MAXH=H*0.62;
+
+  function frame(){
+    St.t+=1/60;
+    const T=terms(rI.val,rG.val,rA.val);
+    let Htot=0;for(let i=0;i<T.length;i++)Htot+=T[i][1];
+    const qkw=Htot*DT/1000,ann=Htot*24*DD/1000,cost=ann/BOILER*PRICE;
+    let big=0;for(let i=1;i<T.length;i++)if(T[i][1]>T[big][1])big=i;
+    const coat=rI.val/25;
+
+    ctx.clearRect(0,0,W,H);
+    // ── a cold night ──
+    const night=ctx.createLinearGradient(0,0,0,H);
+    night.addColorStop(0,'#070d1c');night.addColorStop(1,'#0d1426');
+    ctx.fillStyle=night;ctx.fillRect(0,0,W,H);
+    for(let i=0;i<St.snow.length;i++){
+      const s=St.snow[i];
+      const x=(s[0]*W+Math.sin(St.t*0.5+i)*9+W)%W, y=((s[1]+St.t*0.035*s[2])%1)*H;
+      ctx.fillStyle='rgba(191,219,254,'+(0.10+0.18*s[2]).toFixed(2)+')';
+      ctx.beginPath();ctx.arc(x,y,1+s[2],0,6.2832);ctx.fill();
+    }
+
+    // ══ the streams: one per route, thickness is how much heat goes that way ══
+    const totalTh=MAXH*Math.pow(Htot/WORST,0.8);
+    const gap=6;
+    let stackY=MID-(totalTh+gap*(T.length-1))/2;
+    const slots=[];
+    for(let i=0;i<T.length;i++){
+      const th=Math.max(3,totalTh*T[i][1]/Htot);
+      slots.push([stackY+th/2,th]);
+      stackY+=th+gap;
+    }
+    // where each one leaves the house, top to bottom, so nothing crosses
+    const origins=[[HX+HS*0.10,AP+HS*0.14],[HX+HS*0.50,HT+(HB-HT)*0.22],
+                   [HX+HS*0.50,HT+(HB-HT)*0.52],[HX+HS*0.50,HT+(HB-HT)*0.80],[HX+HS*0.24,HB]];
+    for(let i=0;i<T.length;i++){
+      const o=origins[i],s=slots[i],th=s[1],yc=s[0];
+      const th0=Math.min(th,13);
+      const c1=RX0+(RX1-RX0)*0.42,c2=RX0+(RX1-RX0)*0.62;
+      function edge(sgn,forward){
+        const a=o[1]+sgn*th0/2,b=yc+sgn*th/2;
+        if(forward){ctx.moveTo(o[0],a);ctx.bezierCurveTo(c1,a,c2,b,RX1,b);}
+        else{ctx.lineTo(RX1,b);ctx.bezierCurveTo(c2,b,c1,a,o[0],a);}
+      }
+      ctx.beginPath();edge(-1,true);ctx.lineTo(RX1,yc+th/2);edge(1,false);ctx.closePath();
+      const g=ctx.createLinearGradient(o[0],0,RX1,0);
+      g.addColorStop(0,T[i][2]+'33');g.addColorStop(0.55,T[i][2]+'99');g.addColorStop(1,T[i][2]+'e6');
+      ctx.fillStyle=g;ctx.fill();
+      // something moving inside, so it reads as a flow and not a shape
+      ctx.save();ctx.clip();
+      ctx.strokeStyle='rgba(255,255,255,0.22)';ctx.lineWidth=Math.max(2,th*0.30);
+      ctx.setLineDash([9,26]);ctx.lineDashOffset=-St.t*46;
+      ctx.beginPath();ctx.moveTo(o[0],o[1]);ctx.bezierCurveTo(c1,o[1],c2,yc,RX1,yc);ctx.stroke();
+      ctx.setLineDash([]);ctx.restore();
+      // the label sits at the end of its own stream
+      const pct=Math.round(100*T[i][1]/Htot);
+      ctx.font=(i===big?'bold ':'')+'11px system-ui';ctx.textAlign='left';
+      ctx.fillStyle=T[i][2];
+      ctx.fillText(TIGHT?pct+'%':T[i][0]+'  '+pct+'%',RX1+9,yc+4);
+    }
+
+    // ══ the house ══
+    function houseShape(grow){
+      ctx.beginPath();
+      ctx.moveTo(HX-HS/2-grow,HB+grow);
+      ctx.lineTo(HX-HS/2-grow,HT-grow*0.2);
+      ctx.lineTo(HX,AP-grow*1.4);
+      ctx.lineTo(HX+HS/2+grow,HT-grow*0.2);
+      ctx.lineTo(HX+HS/2+grow,HB+grow);
+      ctx.closePath();
+    }
+    // the coat: what the insulation slider actually buys you
+    if(coat>0.01){
+      houseShape(4+coat*20);
+      ctx.fillStyle='rgba(125,211,252,'+(0.10+0.16*coat).toFixed(3)+')';ctx.fill();
+      ctx.strokeStyle='rgba(125,211,252,'+(0.30+0.40*coat).toFixed(3)+')';
+      ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.stroke();ctx.setLineDash([]);
+    }
+    // the warm body
+    ctx.save();ctx.shadowColor='rgba(251,146,60,0.55)';ctx.shadowBlur=26;
+    houseShape(0);
+    const warm=ctx.createLinearGradient(0,AP,0,HB);
+    warm.addColorStop(0,'#f59e0b');warm.addColorStop(1,'#b45309');
+    ctx.fillStyle=warm;ctx.fill();ctx.restore();
+    // roof and chimney, so it reads as a house and not a pentagon
+    ctx.fillStyle='rgba(0,0,0,0.22)';
+    ctx.beginPath();ctx.moveTo(HX-HS/2,HT);ctx.lineTo(HX,AP);ctx.lineTo(HX+HS/2,HT);ctx.closePath();ctx.fill();
+    ctx.fillStyle='#b45309';
+    ctx.fillRect(HX+HS*0.22,AP+HS*0.10,HS*0.09,HS*0.20);
+    // windows and a door, lit from inside
+    ctx.save();ctx.shadowColor='rgba(254,240,138,0.9)';ctx.shadowBlur=14;
+    ctx.fillStyle='#fef9c3';
+    ctx.fillRect(HX-HS*0.30,HT+(HB-HT)*0.24,HS*0.20,HS*0.18);
+    ctx.fillRect(HX+HS*0.10,HT+(HB-HT)*0.24,HS*0.20,HS*0.18);
+    ctx.restore();
+    ctx.fillStyle='rgba(120,53,15,0.85)';
+    ctx.fillRect(HX-HS*0.08,HB-HS*0.26,HS*0.16,HS*0.26);
+    // the two temperatures that drive everything, one warm one cold, clear of the drawing
+    ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillStyle='#fcd34d';
+    ctx.fillText(tx('cIn','20 °C indoors'),HX,AP-16-coat*24);
+    ctx.textAlign='left';ctx.fillStyle='#7dd3fc';
+    ctx.font='11px system-ui';
+    ctx.fillText(tx('cOut','0 °C outdoors'),14,22);
+
+    // ══ the one number that matters ══
+    ctx.textAlign='right';
+    ctx.font='bold 30px system-ui';ctx.fillStyle='#fcd34d';
+    ctx.fillText(Math.round(cost).toLocaleString(simLocale())+' €',W-14,44);
+    ctx.font='10px system-ui';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cost','Annual heating cost'),W-14,60);
+
+    // U-values only where the exercises ask for them
+    if(lvl!=='junior'){
+      ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#64748b';
+      let ux=14;const uy=H-10;
+      ctx.fillText(tx('cUval','U-value')+':',ux,uy);ux+=ctx.measureText(tx('cUval','U-value')+':').width+10;
+      for(let i=0;i<T.length;i++){
+        if(!T[i][3])continue;
+        ctx.fillStyle=T[i][2];
+        const s=T[i][0]+' '+T[i][3].toFixed(2);
+        ctx.fillText(s,ux,uy);ux+=ctx.measureText(s).width+14;
+      }
+      ctx.fillStyle='#64748b';ctx.fillText(Math.round(Htot)+' W/K',ux,uy);
+    }
+
+    pQ.set(qkw.toLocaleString(simLocale(),{minimumFractionDigits:1,maximumFractionDigits:1})+' kW');
+    pA.set(Math.round(ann).toLocaleString(simLocale())+' kWh');
+    pC.set(Math.round(cost).toLocaleString(simLocale())+' €');
+    pB.set(T[big][0]);
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simGenerator(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0369a1';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.generator&&SIMS.generator.raf)cancelAnimationFrame(SIMS.generator.raf);
+  const W=getSimWidth(container),H=336;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('generator',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pE=pill(tx('eff','Thermal efficiency')),pK=pill(tx('carn','Carnot ceiling'));
+  const pF=pill(tx('freq','Frequency')),pP=pill(tx('pw','Electrical output'));
+  pRow.appendChild(pE.el);pRow.appendChild(pK.el);pRow.appendChild(pF.el);pRow.appendChild(pP.el);
+  const rN=mkRange(ctrl,tx('rpm','Rotation speed'),600,4200,3000,60,color);
+  const rH=mkRange(ctrl,tx('th','Steam temperature'),300,1500,600,20,color);
+  const rC=mkRange(ctrl,tx('tc','Condenser temperature'),10,70,30,1,color);
+  rN.v.textContent='3000 rpm';rH.v.textContent='600 °C';rC.v.textContent='30 °C';
+  rN.inp.addEventListener('input',function(){rN.v.textContent=rN.inp.value+' rpm';});
+  rH.inp.addEventListener('input',function(){rH.v.textContent=rH.inp.value+' °C';});
+  rC.inp.addEventListener('input',function(){rC.v.textContent=rC.inp.value+' °C';});
+
+  const St=SIMS.generator={raf:null,t:0,ph:0,tr:[]};
+  const QFUEL=1000;                              // MW of fuel into the boiler
+
+  // ── layout ──
+  const GX=Math.round(W*0.23),GY=118,GR=64;
+  const TL=20,TR=Math.round(W*0.46),TT=236,TB=H-24;
+  const PL=Math.round(W*0.52),PR=W-24;
+
+  function frame(){
+    const dt=1/60;
+    St.t+=dt;
+    const n=rN.val,th=rH.val,tc=rC.val;
+    const f=n/60;                                // two poles: 50 Hz at 3000 rpm
+    const om=2*Math.PI*f;
+    St.ph+=om*dt*0.02;                           // slowed 50x so the rotor is watchable
+    const carn=1-(tc+273.15)/(th+273.15);
+    const eff=0.65*carn;
+    const pw=eff*QFUEL;
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
+
+    // ══ the generator: a magnet turning inside a coil ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cGen','synchronous generator'),20,26);
+    ctx.strokeStyle='#64748b';ctx.lineWidth=8;
+    ctx.beginPath();ctx.arc(GX,GY,GR+16,-1.15,1.15);ctx.stroke();
+    ctx.beginPath();ctx.arc(GX,GY,GR+16,Math.PI-1.15,Math.PI+1.15);ctx.stroke();
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=2;
+    ctx.beginPath();ctx.arc(GX,GY,GR+2,0,Math.PI*2);ctx.stroke();
+    // the rotor
+    ctx.save();ctx.translate(GX,GY);ctx.rotate(St.ph);
+    ctx.fillStyle='#ef4444';ctx.fillRect(-13,-GR+6,26,GR-6);
+    ctx.fillStyle='#3b82f6';ctx.fillRect(-13,0,26,GR-6);
+    ctx.font='bold 12px system-ui';ctx.textAlign='center';ctx.fillStyle='#fff';
+    ctx.save();ctx.translate(0,-GR/2);ctx.rotate(-St.ph);ctx.fillText('N',0,4);ctx.restore();
+    ctx.save();ctx.translate(0,GR/2);ctx.rotate(-St.ph);ctx.fillText('S',0,4);ctx.restore();
+    ctx.restore();
+    ctx.fillStyle='#475569';ctx.beginPath();ctx.arc(GX,GY,7,0,Math.PI*2);ctx.fill();
+    // the shaft going off to the turbine
+    ctx.strokeStyle='#475569';ctx.lineWidth=7;
+    ctx.beginPath();ctx.moveTo(GX+GR+18,GY);ctx.lineTo(GX+GR+62,GY);ctx.stroke();
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#94a3b8';
+    ctx.fillText(n+' '+tx('cSpin','rpm'),GX,GY+GR+22);
+
+    // ══ the wave it makes ══
+    const wl=TL,wr=TR,wy=GY+GR+72,wh=30;
+    ctx.strokeStyle='rgba(148,163,184,0.3)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(wl,wy);ctx.lineTo(wr,wy);ctx.stroke();
+    const amp=wh*Math.min(1.4,n/3000);
+    ctx.strokeStyle='#38bdf8';ctx.lineWidth=2.2;ctx.beginPath();
+    for(let x=0;x<=wr-wl;x++){
+      const yy=wy-amp*Math.sin(St.ph-x*0.055*f/50);
+      if(x===0)ctx.moveTo(wl+x,yy);else ctx.lineTo(wl+x,yy);
+    }
+    ctx.stroke();
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#7dd3fc';
+    ctx.fillText(tx('cWave','induced EMF'),wl,wy-wh-6);
+    ctx.textAlign='right';
+    ctx.fillStyle=Math.abs(f-50)<0.6?'#4ade80':'#f87171';
+    ctx.fillText(f.toFixed(1)+' Hz',wr,wy-wh-6);
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cGrid','50 Hz needs 3000 rpm'),wl,wy+wh+16);
+
+    // ══ the heat engine that turns the shaft ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cBoil','boiler')+' → '+tx('cTurb','turbine')+' → '+tx('cCond','condenser'),PL,26);
+    const bx=PL,by=54,bw=PR-PL,bh=52;
+    // boiler
+    const bg=ctx.createLinearGradient(bx,by,bx,by+bh);
+    bg.addColorStop(0,'rgb('+Math.round(120+120*th/1500)+',60,30)');bg.addColorStop(1,'#7c2d12');
+    ctx.fillStyle=bg;ctx.fillRect(bx,by,bw*0.3,bh);
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#fed7aa';
+    ctx.fillText(th+' °C',bx+bw*0.15,by+bh/2+3);
+    // turbine
+    ctx.fillStyle='#334155';ctx.fillRect(bx+bw*0.36,by,bw*0.28,bh);
+    ctx.save();ctx.translate(bx+bw*0.50,by+bh/2);ctx.rotate(St.ph*0.25);
+    ctx.strokeStyle='#cbd5e1';ctx.lineWidth=3;
+    for(let k=0;k<4;k++){
+      const a=k*Math.PI/2;
+      ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(Math.cos(a)*17,Math.sin(a)*17);ctx.stroke();
+    }
+    ctx.restore();
+    // condenser
+    ctx.fillStyle='#1e3a8a';ctx.fillRect(bx+bw*0.70,by,bw*0.3,bh);
+    ctx.fillStyle='#bfdbfe';ctx.textAlign='center';
+    ctx.fillText(tc+' °C',bx+bw*0.85,by+bh/2+3);
+    // steam particles running through the machine
+    for(let i=0;i<26;i++){
+      const u=((St.t*0.28+i/26)%1);
+      const px=bx+u*bw,py=by+bh/2+Math.sin(u*22+i)*13;
+      const hot=1-u;
+      ctx.fillStyle='rgba('+Math.round(120+130*hot)+','+Math.round(190-60*hot)+',255,0.75)';
+      ctx.beginPath();ctx.arc(px,py,2.4,0,Math.PI*2);ctx.fill();
+    }
+
+    // ══ where the fuel actually goes ══
+    const sy=by+bh+40,sw=PR-PL;
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cFuel','fuel in')+': '+QFUEL+' MW',PL,sy-8);
+    ctx.fillStyle='#475569';ctx.fillRect(PL,sy,sw,22);
+    ctx.fillStyle='#facc15';ctx.fillRect(PL,sy,sw*eff,22);
+    ctx.font='bold 11px system-ui';ctx.textAlign='left';ctx.fillStyle='#0f172a';
+    if(eff>0.16)ctx.fillText(Math.round(pw)+' MW',PL+6,sy+15);
+    ctx.textAlign='right';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(Math.round(QFUEL-pw)+' MW',PR-6,sy+15);
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#fde68a';
+    ctx.fillText(tx('cElec','electricity out'),PL,sy+36);
+    ctx.textAlign='right';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cWaste','heat rejected'),PR,sy+36);
+    // the ceiling, and how much of it this machine reaches
+    const cy=sy+58;
+    ctx.fillStyle='rgba(148,163,184,0.22)';ctx.fillRect(PL,cy,sw*carn,16);
+    ctx.fillStyle='#4ade80';ctx.fillRect(PL,cy,sw*eff,16);
+    ctx.strokeStyle='#4ade80';ctx.lineWidth=1;ctx.strokeRect(PL,cy,sw*carn,16);
+    ctx.font='bold 9px system-ui';ctx.textAlign='left';ctx.fillStyle='#052e16';
+    ctx.fillText(Math.round(eff*100)+' %',PL+4,cy+12);
+    ctx.textAlign='right';ctx.fillStyle='#cbd5e1';   // above the box: it is wider than the gap
+    ctx.fillText(tx('carn','Carnot')+' '+Math.round(carn*100)+' %',PL+sw*carn,cy-4);
+
+    pE.set((eff*100).toFixed(1)+' %');
+    pK.set((carn*100).toFixed(1)+' %');
+    pF.set(f.toFixed(1)+' Hz');
+    pP.set(Math.round(pw)+' MW');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simKwh(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#9333ea';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.kwh&&SIMS.kwh.raf)cancelAnimationFrame(SIMS.kwh.raf);
+  const W=getSimWidth(container),H=420;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('kwh',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pD=pill(tx('day','Daily consumption')),pY=pill(tx('year','Annual consumption'));
+  const pC=pill(tx('cost','Annual cost')),pT=pill(tx('top','Largest load'));
+  pRow.appendChild(pD.el);pRow.appendChild(pY.el);pRow.appendChild(pC.el);pRow.appendChild(pT.el);
+  const rP=mkRange(ctrl,tx('ppl','Occupants'),1,6,3,1,color);
+  const rE=mkRange(ctrl,tx('ev','EV kilometres per day'),0,80,0,5,color);
+  const rA=mkRange(ctrl,tx('ac','Air-conditioning hours per day'),0,10,2,1,color);
+  rP.v.textContent='3';rE.v.textContent='0 km';rA.v.textContent='2 h';
+  rE.inp.addEventListener('input',function(){rE.v.textContent=rE.inp.value+' km';});
+  rA.inp.addEventListener('input',function(){rA.v.textContent=rA.inp.value+' h';});
+
+  const St=SIMS.kwh={raf:null,t:0,bars:[]};
+  const PRICE=0.28;
+
+  function loads(){
+    const n=rP.val,ev=rE.val,ac=rA.val;
+    return [[tx('aWater','electric water heating'),350*n,'#f87171'],
+            [tx('aFridge','fridge and freezer'),250,'#38bdf8'],
+            [tx('aStand','standby and always-on'),200,'#94a3b8'],
+            [tx('aCook','oven and hob'),90*n,'#fb923c'],
+            [tx('aTV','TV and IT'),90*n,'#a78bfa'],
+            [tx('aWash','washing machine'),55*n,'#22d3ee'],
+            [tx('aDish','dishwasher'),45*n,'#2dd4bf'],
+            [tx('aLight','lighting'),40*n,'#fbbf24'],
+            [tx('aAC','air conditioning'),ac*1.8*100,'#60a5fa'],
+            [tx('aEV','electric vehicle'),ev*0.18*365,'#4ade80']];
+  }
+
+  // ── layout ──
+  const RL=24,RT=76,ROW=27,LBL=Math.min(190,W*0.30);
+
+  function frame(){
+    St.t+=1/60;
+    const items=loads().filter(function(a){return a[1]>1;});
+    items.sort(function(a,b){return b[1]-a[1];});
+    let tot=0;for(let i=0;i<items.length;i++)tot+=items[i][1];
+    const maxv=items.length?items[0][1]:1;
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,0,W,H);
+
+    // ── the headline numbers ──
+    ctx.font='bold 26px system-ui';ctx.textAlign='left';ctx.fillStyle='#e9d5ff';
+    ctx.fillText(Math.round(tot).toLocaleString(simLocale())+' kWh',RL,42);
+    ctx.font='11px system-ui';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cRank','annual consumption by end use'),RL,60);
+    ctx.font='bold 16px system-ui';ctx.textAlign='right';ctx.fillStyle='#4ade80';
+    ctx.fillText(Math.round(tot*PRICE).toLocaleString(simLocale())+' €',W-24,42);
+    ctx.font='10px system-ui';ctx.fillStyle='#94a3b8';
+    ctx.fillText((tot/365).toFixed(1)+' kWh/'+'d  ·  '+PRICE.toFixed(2)+' €/kWh',W-24,58);
+
+    // ── one bar per end use, biggest first ──
+    const bx=RL+LBL,bw=W-24-bx-52;
+    for(let i=0;i<items.length;i++){
+      const y=RT+i*ROW;
+      ctx.font='11px system-ui';ctx.textAlign='right';ctx.fillStyle='#cbd5e1';
+      ctx.fillText(items[i][0],bx-8,y+12);
+      const w0=bw*items[i][1]/maxv;
+      ctx.fillStyle=items[i][2];ctx.fillRect(bx,y,w0,16);
+      ctx.font='10px system-ui';
+      const vtxt=Math.round(items[i][1]).toLocaleString(simLocale())+' kWh';
+      if(bx+w0+ctx.measureText(vtxt).width+16<W-52){
+        ctx.textAlign='left';ctx.fillStyle='#e2e8f0';ctx.fillText(vtxt,bx+w0+6,y+12);
+      }else{
+        ctx.textAlign='right';ctx.fillStyle='#0f172a';ctx.fillText(vtxt,bx+w0-6,y+12);
+      }
+      ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText(Math.round(100*items[i][1]/tot)+' %',W-24,y+12);
+    }
+
+    // ── what one kilowatt-hour buys ──
+    const ey=RT+items.length*ROW+18;
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#c4b5fd';
+    ctx.fillText(tx('cEqT','one kilowatt-hour is roughly'),RL,ey);
+    const eqs=[tx('cEqA','10 cups of tea'),tx('cEqB','an hour of the oven'),
+               tx('cEqC','6 km in an EV'),tx('cEqD','four days of an LED lamp')];
+    let ex=RL;
+    let ey2=ey+18;
+    ctx.font='10px system-ui';
+    for(let i=0;i<eqs.length;i++){
+      const wd=ctx.measureText(eqs[i]).width+22;
+      if(ex+wd>W-24){ex=RL;ey2+=22;}
+      ctx.fillStyle='rgba(148,163,184,0.16)';
+      ctx.fillRect(ex,ey2-12,wd-8,18);
+      ctx.fillStyle='#cbd5e1';ctx.fillText(eqs[i],ex+7,ey2+1);
+      ex+=wd;
+    }
+
+    pD.set((tot/365).toFixed(1)+' kWh');
+    pY.set(Math.round(tot).toLocaleString(simLocale())+' kWh');
+    pC.set(Math.round(tot*PRICE).toLocaleString(simLocale())+' €');
+    pT.set(items.length?items[0][0]:'-');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simInternet(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0ea5e9';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.internet&&SIMS.internet.raf)cancelAnimationFrame(SIMS.internet.raf);
+  const W=getSimWidth(container),H=404;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('internet',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pRtt=pill(tx('rtt','Round trip')),pPk=pill(tx('pk','Packets'));
+  const pRe=pill(tx('re','Retransmitted')),pLoad=pill(tx('load','Page loaded in'));
+  pRow.appendChild(pRtt.el);pRow.appendChild(pPk.el);pRow.appendChild(pRe.el);pRow.appendChild(pLoad.el);
+  const bSend=mkBtn(tx('send','Load the page again'),true,color);ctrl.appendChild(bSend);
+  const rDist=mkRange(ctrl,tx('dist','Distance to the server'),50,16000,1200,50,color);
+  const rLoss=mkRange(ctrl,tx('loss','Packet loss'),0,30,2,1,color);
+  const rSize=mkRange(ctrl,tx('size','Page size'),20,2000,240,20,color);
+  rDist.v.textContent='1200 km';rLoss.v.textContent='2 %';rSize.v.textContent='240 kB';
+  rDist.inp.addEventListener('input',function(){rDist.v.textContent=rDist.inp.value+' km';reset();});
+  rLoss.inp.addEventListener('input',function(){rLoss.v.textContent=rLoss.inp.value+' %';reset();});
+  rSize.inp.addEventListener('input',function(){rSize.v.textContent=rSize.inp.value+' kB';reset();});
+
+  // the hops a real request goes through, and what each one costs
+  const HOPS=[['cHome','your router'],['cIsp','your ISP'],['cIx','exchange'],['cBack','backbone'],['cEdge','server']];
+  const MTU=1.4,BW=20;                            // kB per packet, Mbit/s of access link
+  const St=SIMS.internet={raf:null,t:0,ph:0,pk:[],done:0,sent:0,lost:0,tload:0,dns:0,cache:0};
+
+  function rtt(){                                 // fibre carries light at about 2/3 c
+    const km=rDist.val;
+    return 2*km/200000*1000+4*2.2;                // propagation both ways plus router queueing
+  }
+  function nPk(){return Math.max(1,Math.ceil(rSize.val/MTU));}
+  // the transfer is modelled, not timed off the animation: serialisation, plus the
+  // round trips slow start spends growing the window, plus the square-root law penalty
+  function tData(){
+    const R=rtt(),N=nPk(),ser=rSize.val*8/BW;
+    const ramp=R*Math.max(0,Math.log2(Math.max(1,N/10)));
+    const pl=rLoss.val/100;
+    return (ser+ramp)*(1+3.2*Math.sqrt(pl));
+  }
+  function reset(){
+    St.t=0;St.ph=0;St.pk=[];St.done=0;St.sent=0;St.lost=0;St.tload=0;
+    St.dns=St.cache?2:4*rtt()/2;                  // a cold lookup walks root, TLD, authoritative
+  }
+  bSend.addEventListener('click',function(){St.cache=St.cache?0:1;
+    bSend.textContent=St.cache?tx('cached','DNS answer cached'):tx('send','Load the page again');
+    reset();});
+  reset();
+
+  const PL=44,PR=W-34,PY=96,TL=54,TR=W-24,TT=214,TB=H-30;
+  function nodeX(i){return PL+i/(HOPS.length-1)*(PR-PL);}
+
+  function frame(){
+    const dt=1/60;
+    St.t+=dt;
+    const R=rtt(),N=nPk(),loss=rLoss.val/100;
+    const tDns=St.dns,tHand=1.5*R,winStart=(tDns+tHand)/1000;
+    const ms=St.t*1000;
+
+    // ── launch packets in flight, a window at a time ──
+    if(St.t>winStart&&St.done+St.pk.length<N){
+      const inflight=St.pk.length;
+      if(inflight<10&&Math.random()<0.55){
+        const drop=Math.random()<loss;
+        St.pk.push({u:0,drop:drop,dx:0.25+Math.random()*0.5,re:0});
+        St.sent++;
+      }
+    }
+    St.pk=St.pk.filter(function(p){
+      p.u+=dt*1000/R*2;
+      if(p.drop&&p.u>p.dx&&!p.re){p.re=1;St.lost++;
+        St.pk.push({u:0,drop:Math.random()<loss,dx:0.25+Math.random()*0.5,re:0});St.sent++;return false;}
+      if(p.u>=1){St.done++;return false;}
+      return true;
+    });
+    if(!St.tload)St.tload=tDns+tHand+tData();
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0b1220';ctx.fillRect(0,0,W,H);
+
+    // ══ the route ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cRoute','the route your request takes'),PL-6,34);
+    ctx.textAlign='right';ctx.fillStyle='#64748b';
+    ctx.fillText(rDist.val.toLocaleString(simLocale())+' km · '+tx('cRtt','round trip')+' '+R.toFixed(0)+' ms',PR,34);
+    ctx.strokeStyle='rgba(148,163,184,0.3)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(PL,PY);ctx.lineTo(PR,PY);ctx.stroke();
+    for(let i=0;i<HOPS.length;i++){
+      const x=nodeX(i);
+      ctx.fillStyle=i===0?'#38bdf8':(i===HOPS.length-1?'#4ade80':'#475569');
+      ctx.beginPath();ctx.arc(x,PY,i===0||i===HOPS.length-1?9:6,0,Math.PI*2);ctx.fill();
+      ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#94a3b8';
+      ctx.fillText(tx(HOPS[i][0],HOPS[i][1]),x,PY+24);
+    }
+    // packets in flight
+    St.pk.forEach(function(p){
+      const u=Math.min(1,p.u),x=PL+u*(PR-PL);
+      const dead=p.drop&&u>=p.dx;
+      ctx.fillStyle=dead?'#f87171':'rgba(56,189,248,0.95)';
+      ctx.beginPath();ctx.arc(x,PY-14-Math.sin(u*Math.PI)*8,3.2,0,Math.PI*2);ctx.fill();
+    });
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#7dd3fc';
+    ctx.fillText(N+' × '+MTU+' kB '+tx('cPkts','packets'),PL-6,PY+52);
+    if(loss>0){ctx.fillStyle='#fca5a5';
+      ctx.fillText(Math.round(N*loss)+' '+tx('cLost','lost and sent again'),PL-6,PY+66);}
+
+    // ══ the waterfall: what actually takes the time ══
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,TT-34,W,H-TT+34);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cWater','where the milliseconds go'),TL-8,TT-14);
+    const total=Math.max(St.tload*1.08,1);
+    const TX=function(m){return TL+Math.min(1,m/total)*(TR-TL);};
+    ctx.strokeStyle='rgba(148,163,184,0.14)';ctx.lineWidth=1;
+    for(let k=0;k<=4;k++){
+      const m=total*k/4,x=TX(m);
+      ctx.beginPath();ctx.moveTo(x,TT);ctx.lineTo(x,TB);ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+      ctx.fillText(Math.round(m)+' ms',x,TB+13);
+    }
+    const bars=[[tx('cDns','finding the address'),0,tDns,'#a78bfa'],
+                [tx('cShake','agreeing to talk'),tDns,tDns+tHand,'#fbbf24'],
+                [tx('cData','sending the page'),tDns+tHand,St.tload,'#38bdf8']];
+    for(let i=0;i<bars.length;i++){
+      const y=TT+18+i*40,b=bars[i];
+      ctx.fillStyle=b[3];ctx.fillRect(TX(b[1]),y,Math.max(2,TX(b[2])-TX(b[1])),16);
+      ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#e2e8f0';
+      ctx.fillText(b[0],TL-8,y-3);
+      ctx.textAlign='right';ctx.fillStyle='#94a3b8';
+      ctx.fillText(Math.round(b[2]-b[1])+' ms',TR,y-3);
+    }
+    if(St.tload){
+      ctx.strokeStyle='#4ade80';ctx.lineWidth=1.5;ctx.setLineDash([4,3]);
+      ctx.beginPath();ctx.moveTo(TX(St.tload),TT);ctx.lineTo(TX(St.tload),TB);ctx.stroke();ctx.setLineDash([]);
+      ctx.font='9px system-ui';ctx.textAlign='right';ctx.fillStyle='#86efac';
+      ctx.fillText(tx('cDone','page ready'),TX(St.tload)-5,TB-4);
+    }
+
+    pRtt.set(R.toFixed(0)+' ms');
+    pPk.set(N+'');
+    pRe.set(Math.round(N*loss)+'');
+    pLoad.set(St.tload?(St.tload/1000).toFixed(2)+' s':'…');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simCompress(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#14b8a6';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.compression&&SIMS.compression.raf)cancelAnimationFrame(SIMS.compression.raf);
+  const W=getSimWidth(container),H=480;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('compression',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pRaw=pill(tx('raw','Plain text')),pHuf=pill(tx('huf','After Huffman'));
+  const pRat=pill(tx('rat','Compression ratio')),pBest=pill(tx('best','Shortest code'));
+  pRow.appendChild(pRaw.el);pRow.appendChild(pHuf.el);pRow.appendChild(pRat.el);pRow.appendChild(pBest.el);
+  const bTxt=mkBtn(tx('next','Try another text'),true,color);ctrl.appendChild(bTxt);
+  const rLen=mkRange(ctrl,tx('len','Length of the message'),40,400,160,10,color);
+  const rRep=mkRange(ctrl,tx('rep','How repetitive it is'),0,100,45,1,color);
+  rLen.v.textContent='160';rRep.v.textContent='45 %';
+  rLen.inp.addEventListener('input',function(){rLen.v.textContent=rLen.inp.value;});
+  rRep.inp.addEventListener('input',function(){rRep.v.textContent=rRep.inp.value+' %';});
+
+  const SRC=['the rain in spain falls mainly on the plain',
+             'aaaabbbcccdddeeefffggghhhiiijjjkkklllmmm',
+             'to be or not to be that is the question'];
+  const St=SIMS.compression={raf:null,t:0,pick:0};
+  bTxt.addEventListener('click',function(){St.pick=(St.pick+1)%SRC.length;});
+
+  function build(){
+    // stretch the chosen sentence to the requested length, biasing towards the
+    // commonest letters as the repetition slider goes up
+    const base=SRC[St.pick],rep=rRep.val/100,n=rLen.val;
+    let s='';
+    for(let i=0;i<n;i++){
+      const c=base[i%base.length];
+      s+=(Math.random()<rep*0.6&&i>0)?s[s.length-1]:c;
+    }
+    const f={};
+    for(let i=0;i<s.length;i++)f[s[i]]=(f[s[i]]||0)+1;
+    const keys=Object.keys(f);
+    // Huffman: merge the two rarest nodes until one is left
+    let nodes=keys.map(function(k){return {ch:k,w:f[k],a:null,b:null};});
+    while(nodes.length>1){
+      nodes.sort(function(p,q){return p.w-q.w;});
+      const a=nodes.shift(),b=nodes.shift();
+      nodes.push({ch:null,w:a.w+b.w,a:a,b:b});
+    }
+    const root=nodes[0],code={};
+    function walk(nd,pre){
+      if(!nd)return;
+      if(nd.ch!==null){code[nd.ch]=pre||'0';return;}
+      walk(nd.a,pre+'0');walk(nd.b,pre+'1');
+    }
+    walk(root,'');
+    let bits=0;
+    for(let i=0;i<s.length;i++)bits+=code[s[i]].length;
+    return {s:s,f:f,keys:keys,code:code,root:root,bits:bits};
+  }
+  let M=build(),dirty=0;
+  rLen.inp.addEventListener('input',function(){dirty=1;});
+  rRep.inp.addEventListener('input',function(){dirty=1;});
+  bTxt.addEventListener('click',function(){dirty=1;});
+
+  const TXT_T=26,TXT_B=118,TR_T=140,TR_B=352,BAR_Y=392;
+  function frame(){
+    St.t+=1/60;
+    if(dirty){M=build();dirty=0;}
+    const raw=M.s.length*8,huf=M.bits;
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0b1220';ctx.fillRect(0,0,W,H);
+
+    // ══ the message, letters tinted by how common they are ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cMsg','the message, one square per letter'),18,TXT_T-8);
+    const cols=Math.floor((W-36)/11),maxf=Math.max.apply(null,M.keys.map(function(k){return M.f[k];}));
+    for(let i=0;i<M.s.length&&i<cols*7;i++){
+      const x=18+(i%cols)*11,y=TXT_T+Math.floor(i/cols)*12;
+      const hot=M.f[M.s[i]]/maxf;
+      ctx.fillStyle='rgba(45,212,191,'+(0.18+0.72*hot).toFixed(2)+')';
+      ctx.fillRect(x,y,9,10);
+    }
+
+    // ══ the tree: rare letters end up deep, common ones shallow ══
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cTree','the Huffman tree - rare letters sit deepest'),18,TR_T-6);
+    let leaf=0;
+    const nLeaf=M.keys.length;
+    function depth(nd){return nd.ch!==null?0:1+Math.max(depth(nd.a),depth(nd.b));}
+    const D=Math.max(1,depth(M.root));
+    function draw(nd,d,x0,x1){
+      const y=TR_T+18+d/D*(TR_B-TR_T-46);
+      if(nd.ch!==null){
+        const x=18+(leaf+0.5)/nLeaf*(W-36);leaf++;
+        ctx.fillStyle='#2dd4bf';ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.fill();
+        ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#042f2e';
+        ctx.fillText(nd.ch===' '?'␣':nd.ch,x,y+3);
+        ctx.fillStyle='#5eead4';ctx.font='8px system-ui';
+        ctx.fillText(M.code[nd.ch],x,y+18);
+        return x;
+      }
+      const xa=draw(nd.a,d+1,x0,x1),xb=draw(nd.b,d+1,x0,x1),x=(xa+xb)/2;
+      ctx.strokeStyle='rgba(94,234,212,0.45)';ctx.lineWidth=1.2;
+      const ya=TR_T+18+(d+1)/D*(TR_B-TR_T-46);
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(xa,ya);ctx.moveTo(x,y);ctx.lineTo(xb,ya);ctx.stroke();
+      ctx.fillStyle='#134e4a';ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='#0d9488';ctx.lineWidth=1;ctx.stroke();
+      return x;
+    }
+    draw(M.root,0,18,W-18);
+
+    // ══ the two bar lengths, which is the whole point ══
+    const bw=W-36;
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cFixed','8 bits per letter, no thought applied'),18,BAR_Y-5);
+    ctx.fillStyle='#475569';ctx.fillRect(18,BAR_Y,bw,16);
+    ctx.font='bold 10px system-ui';ctx.fillStyle='#e2e8f0';
+    ctx.fillText(raw.toLocaleString(simLocale())+' '+tx('cBits','bits'),24,BAR_Y+12);
+    ctx.font='9px system-ui';ctx.fillStyle='#5eead4';
+    ctx.fillText(tx('cHuff','Huffman codes, common letters kept short'),18,BAR_Y+37);
+    ctx.fillStyle='#14b8a6';ctx.fillRect(18,BAR_Y+42,bw*huf/raw,16);
+    ctx.strokeStyle='rgba(148,163,184,0.4)';ctx.lineWidth=1;ctx.strokeRect(18,BAR_Y+42,bw,16);
+    ctx.font='bold 10px system-ui';ctx.fillStyle='#042f2e';
+    ctx.fillText(huf.toLocaleString(simLocale())+' '+tx('cBits','bits'),24,BAR_Y+54);
+    ctx.textAlign='right';ctx.font='9px system-ui';ctx.fillStyle='#5eead4';
+    ctx.fillText('−'+Math.round((1-huf/raw)*100)+' %',W-22,BAR_Y+54);
+
+    let best='',bl=99;
+    for(const k in M.code){if(M.code[k].length<bl){bl=M.code[k].length;best=k;}}
+    pRaw.set(Math.round(raw/8)+' '+tx('cBytes','bytes'));
+    pHuf.set(Math.ceil(huf/8)+' '+tx('cBytes','bytes'));
+    pRat.set((raw/huf).toFixed(2)+'×');
+    pBest.set((best===' '?tx('cSpace','space'):best)+' = '+M.code[best]);
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simSearch(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#6366f1';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.searchengine&&SIMS.searchengine.raf)cancelAnimationFrame(SIMS.searchengine.raf);
+  const W=getSimWidth(container),H=436;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('searchengine',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pQ=pill(tx('qy','Query')),pTop=pill(tx('top','Top result'));
+  const pSc=pill(tx('sc','Its score')),pCr=pill(tx('cr','Pages crawled'));
+  pRow.appendChild(pQ.el);pRow.appendChild(pTop.el);pRow.appendChild(pSc.el);pRow.appendChild(pCr.el);
+  const bQ=mkBtn(tx('nextq','Search for something else'),true,color);ctrl.appendChild(bQ);
+  const rPR=mkRange(ctrl,tx('prw','Weight given to links'),0,100,50,1,color);
+  const rD=mkRange(ctrl,tx('damp','Damping factor'),50,95,85,1,color);
+  rPR.v.textContent='50 %';rD.v.textContent='0.85';
+  rPR.inp.addEventListener('input',function(){rPR.v.textContent=rPR.inp.value+' %';});
+  rD.inp.addEventListener('input',function(){rD.v.textContent=(rD.inp.value/100).toFixed(2);});
+
+  // a nine page web, with the words each page actually contains
+  const PAGES=[
+   {n:'volcano.org',   w:{volcano:9,lava:4,magma:5,eruption:3}},
+   {n:'lava-blog.net', w:{lava:11,volcano:2,heat:3}},
+   {n:'news.today',    w:{volcano:2,eruption:6,lava:1,iceland:4}},
+   {n:'geology.edu',   w:{magma:8,volcano:5,rock:6,eruption:2}},
+   {n:'kids-science',  w:{volcano:6,lava:5,fun:4}},
+   {n:'wiki.encyc',    w:{volcano:7,magma:6,lava:6,eruption:5,rock:4}},
+   {n:'shop-lava',     w:{lava:14,volcano:14,buy:9}},
+   {n:'travel.iceland',w:{iceland:9,volcano:3,tour:5}},
+   {n:'rock-forum',    w:{rock:9,magma:2,geology:4}}
+  ];
+  const LINKS=[[0,5],[1,0],[1,5],[2,0],[2,7],[3,5],[3,8],[4,0],[4,1],[5,0],[5,3],[6,5],[7,2],[8,3],[8,5],[0,3],[2,5],[7,5]];
+  const QUERIES=[['volcano','lava'],['magma','rock'],['iceland','volcano']];
+  const St=SIMS.searchengine={raf:null,t:0,q:0,crawl:0};
+  bQ.addEventListener('click',function(){St.q=(St.q+1)%QUERIES.length;});
+
+  function pagerank(){
+    const n=PAGES.length,d=rD.val/100;
+    let pr=new Array(n).fill(1/n);
+    const out=new Array(n).fill(0);
+    LINKS.forEach(function(l){out[l[0]]++;});
+    for(let it=0;it<40;it++){
+      const nx=new Array(n).fill((1-d)/n);
+      LINKS.forEach(function(l){if(out[l[0]])nx[l[1]]+=d*pr[l[0]]/out[l[0]];});
+      pr=nx;
+    }
+    const mx=Math.max.apply(null,pr);
+    return pr.map(function(v){return v/mx;});
+  }
+  function score(){
+    const q=QUERIES[St.q],n=PAGES.length,pr=pagerank(),wpr=rPR.val/100;
+    const df={};
+    q.forEach(function(t){df[t]=PAGES.filter(function(p){return p.w[t];}).length||1;});
+    const rows=PAGES.map(function(p,i){
+      let tf=0,tot=0;
+      for(const k in p.w)tot+=p.w[k];
+      q.forEach(function(t){
+        const f=p.w[t]||0;
+        if(f)tf+=(f/tot)*Math.log(n/df[t]);
+      });
+      return {i:i,tf:tf,pr:pr[i],s:0};
+    });
+    const mtf=Math.max.apply(null,rows.map(function(r){return r.tf;}))||1;
+    rows.forEach(function(r){r.tf=r.tf/mtf;r.s=(1-wpr)*r.tf+wpr*r.pr;});
+    rows.sort(function(a,b){return b.s-a.s;});
+    return rows;
+  }
+
+  const GT=40,GB=250,GL=30,GR=W-30,RT=286;
+  function frame(){
+    St.t+=1/60;
+    if(St.crawl<PAGES.length)St.crawl+=0.035;
+    const crawled=Math.min(PAGES.length,Math.floor(St.crawl));
+    const rows=score(),q=QUERIES[St.q];
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0b1220';ctx.fillRect(0,0,W,H);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cWeb','a nine page web - arrows are links'),GL,26);
+    ctx.textAlign='right';ctx.fillStyle='#a5b4fc';
+    ctx.fillText(tx('cQuery','searching for')+': '+q.join(' '),GR,26);
+
+    // node positions on a ring, so every link is visible
+    const cx=(GL+GR)/2,cy=(GT+GB)/2,rx=(GR-GL)/2-52,ry=(GB-GT)/2-16;
+    const pos=PAGES.map(function(p,i){
+      const a=-Math.PI/2+i/PAGES.length*Math.PI*2;
+      return [cx+Math.cos(a)*rx,cy+Math.sin(a)*ry];
+    });
+    LINKS.forEach(function(l){
+      if(l[0]>=crawled)return;
+      const a=pos[l[0]],b=pos[l[1]];
+      ctx.strokeStyle='rgba(129,140,248,0.28)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();
+      const u=(St.t*0.35+l[0]*0.13)%1;
+      ctx.fillStyle='rgba(165,180,252,0.7)';
+      ctx.beginPath();ctx.arc(a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u,1.8,0,Math.PI*2);ctx.fill();
+    });
+    const pr=pagerank();
+    PAGES.forEach(function(p,i){
+      const seen=i<crawled,r=6+pr[i]*11;
+      ctx.fillStyle=seen?'rgba(99,102,241,0.9)':'rgba(71,85,105,0.5)';
+      ctx.beginPath();ctx.arc(pos[i][0],pos[i][1],r,0,Math.PI*2);ctx.fill();
+      if(i===rows[0].i&&seen){
+        ctx.strokeStyle='#4ade80';ctx.lineWidth=2;
+        ctx.beginPath();ctx.arc(pos[i][0],pos[i][1],r+4+Math.abs(Math.sin(St.t*2.4))*3,0,Math.PI*2);ctx.stroke();
+      }
+      ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle=seen?'#c7d2fe':'#64748b';
+      ctx.fillText(p.n,pos[i][0],pos[i][1]+r+10);
+    });
+
+    // ══ the ranking, with the score taken apart ══
+    ctx.fillStyle='#0f172a';ctx.fillRect(0,RT-26,W,H-RT+26);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cRank','what the ranking looks like'),GL,RT-8);
+    ctx.textAlign='right';ctx.font='9px system-ui';
+    ctx.fillStyle='#fbbf24';ctx.fillText(tx('cTf','words on the page'),GR-90,RT-8);
+    ctx.fillStyle='#818cf8';ctx.fillText(tx('cPr','links pointing at it'),GR,RT-8);
+    const bx=GL+108,bw=GR-bx-44;
+    for(let i=0;i<5;i++){
+      const r=rows[i],y=RT+8+i*26;
+      ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle=i?'#94a3b8':'#86efac';
+      ctx.fillText((i+1)+'. '+PAGES[r.i].n,GL,y+11);
+      const wpr=rPR.val/100;
+      const a=(1-wpr)*r.tf,b=wpr*r.pr;
+      ctx.fillStyle='#fbbf24';ctx.fillRect(bx,y,bw*a,13);
+      ctx.fillStyle='#818cf8';ctx.fillRect(bx+bw*a,y,bw*b,13);
+      ctx.font='9px system-ui';ctx.textAlign='right';ctx.fillStyle='#cbd5e1';
+      ctx.fillText(r.s.toFixed(3),GR,y+11);
+    }
+
+    pQ.set(q.join(' '));
+    pTop.set(PAGES[rows[0].i].n);
+    pSc.set(rows[0].s.toFixed(3));
+    pCr.set(crawled+'/'+PAGES.length);
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simCaffeine(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#b45309';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.caffeine&&SIMS.caffeine.raf)cancelAnimationFrame(SIMS.caffeine.raf);
+  const W=getSimWidth(container),H=470;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('caffeine',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pBed=pill(tx('bed','Still in you at bedtime')),pOcc=pill(tx('occ','Receptors blocked'));
+  const pLat=pill(tx('lat','Extra time to fall asleep')),pTot=pill(tx('tot','Caffeine today'));
+  pRow.appendChild(pBed.el);pRow.appendChild(pOcc.el);pRow.appendChild(pLat.el);pRow.appendChild(pTot.el);
+  const bKind=mkBtn(tx('filter','Mug of filter coffee'),true,color);ctrl.appendChild(bKind);
+  const rCups=mkRange(ctrl,tx('cups','Cups a day'),0,6,3,1,color);
+  const rLast=mkRange(ctrl,tx('last','Time of the last one'),7,22,16,1,color);
+  const rWake=mkRange(ctrl,tx('wake','You wake up at'),5,10,7,1,color);
+  rCups.v.textContent='3';rLast.v.textContent='16:00';rWake.v.textContent='07:00';
+  rCups.inp.addEventListener('input',function(){rCups.v.textContent=rCups.inp.value;});
+  rLast.inp.addEventListener('input',function(){rLast.v.textContent=(rLast.inp.value<10?'0':'')+rLast.inp.value+':00';});
+  rWake.inp.addEventListener('input',function(){rWake.v.textContent='0'+rWake.inp.value+':00';});
+
+  const HALF=5,TAU=HALF/Math.LN2;                 // caffeine half-life, about five hours
+  const St=SIMS.caffeine={raf:null,t:0,mug:1};
+  bKind.addEventListener('click',function(){St.mug=St.mug?0:1;
+    bKind.textContent=St.mug?tx('filter','Mug of filter coffee'):tx('shot','Single espresso');});
+
+  function dose(){return St.mug?95:63;}           // mg of caffeine in the cup
+  function times(){
+    const n=rCups.val,wake=rWake.val,last=rLast.val;
+    if(n<=0)return [];
+    if(n===1)return [last];
+    const first=Math.min(wake+1,last);
+    const out=[];
+    for(let i=0;i<n;i++)out.push(first+(last-first)*i/(n-1));
+    return out;
+  }
+  function caf(h){                                // mg in the blood at hour h
+    let c=0;
+    times().forEach(function(t){if(h>=t)c+=dose()*Math.exp(-(h-t)/TAU);});
+    return c;
+  }
+  function aden(h){                               // sleep pressure, building since you woke
+    const w=rWake.val;
+    return h<=w?0:1-Math.exp(-(h-w)/6.5);
+  }
+  function occ(h){const c=caf(h);return c/(c+45);} // receptor occupancy, Michaelis style
+
+  const GL=54,GR=W-46,GT=52,GB=286,RY=330;
+  const X=function(h){return GL+(h-4)/22*(GR-GL);};
+  function frame(){
+    St.t+=1/60;
+    const wake=rWake.val,bed=Math.min(25.5,wake+16);
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0f1117';ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#161a23';ctx.fillRect(X(4),GT,X(wake)-X(4),GB-GT);
+    ctx.fillStyle='#161a23';ctx.fillRect(X(bed),GT,X(26)-X(bed),GB-GT);
+
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cDay','one day, hour by hour'),GL-8,34);
+    ctx.textAlign='right';ctx.fillStyle='#64748b';
+    ctx.fillText(tx('cHalf','half-life 5 hours'),GR,34);
+    ctx.strokeStyle='rgba(148,163,184,0.14)';ctx.lineWidth=1;
+    for(let h=6;h<=24;h+=3){
+      ctx.beginPath();ctx.moveTo(X(h),GT);ctx.lineTo(X(h),GB);ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+      ctx.fillText((h%24<10?'0':'')+(h%24)+':00',X(h),GB+14);
+    }
+    // sleep pressure, and what it feels like once caffeine is in the way
+    const AY=function(v){return GB-v*(GB-GT)*0.92;};
+    ctx.fillStyle='rgba(56,189,248,0.16)';ctx.beginPath();ctx.moveTo(X(4),GB);
+    for(let h=4;h<=26;h+=0.25)ctx.lineTo(X(h),AY(aden(h)));
+    ctx.lineTo(X(26),GB);ctx.closePath();ctx.fill();
+    ctx.strokeStyle='#38bdf8';ctx.lineWidth=2;ctx.beginPath();
+    for(let h=4;h<=26;h+=0.25){const y=AY(aden(h));h===4?ctx.moveTo(X(h),y):ctx.lineTo(X(h),y);}
+    ctx.stroke();
+    ctx.strokeStyle='#f472b6';ctx.lineWidth=2.4;ctx.beginPath();
+    for(let h=4;h<=26;h+=0.25){const y=AY(aden(h)*(1-0.85*occ(h)));h===4?ctx.moveTo(X(h),y):ctx.lineTo(X(h),y);}
+    ctx.stroke();
+    // caffeine itself, on its own scale
+    const mx=Math.max(120,dose()*1.6);
+    ctx.strokeStyle='#f59e0b';ctx.lineWidth=2;ctx.setLineDash([5,3]);ctx.beginPath();
+    for(let h=4;h<=26;h+=0.25){const y=GB-caf(h)/mx*(GB-GT)*0.92;h===4?ctx.moveTo(X(h),y):ctx.lineTo(X(h),y);}
+    ctx.stroke();ctx.setLineDash([]);
+    times().forEach(function(t){
+      const y=GB-caf(t+0.01)/mx*(GB-GT)*0.92;
+      ctx.fillStyle='#f59e0b';ctx.beginPath();ctx.arc(X(t),y,4,0,Math.PI*2);ctx.fill();
+      ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillText('☕',X(t),GB-6);
+    });
+    ctx.strokeStyle='rgba(148,163,184,0.7)';ctx.lineWidth=1.4;ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(X(bed),GT);ctx.lineTo(X(bed),GB);ctx.stroke();ctx.setLineDash([]);
+    ctx.font='9px system-ui';ctx.textAlign='right';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cBedtime','bedtime'),X(bed)-5,GT+12);
+    ctx.textAlign='left';
+    ctx.fillStyle='#7dd3fc';ctx.fillText(tx('cAden','sleep pressure building up'),GL-8,GT+12);
+    ctx.fillStyle='#f9a8d4';ctx.fillText(tx('cFelt','how sleepy you actually feel'),GL-8,GT+26);
+    ctx.fillStyle='#fbbf24';ctx.fillText(tx('cCaf','caffeine in your blood'),GL-8,GT+40);
+
+    // ══ the receptors, at bedtime ══
+    ctx.fillStyle='#0b0e14';ctx.fillRect(0,RY-24,W,H-RY+24);
+    const o=occ(bed);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cRec','the adenosine receptors at bedtime'),GL-8,RY-4);
+    const NR=24,rw=Math.min(26,(GR-GL+8)/NR);
+    for(let i=0;i<NR;i++){
+      const x=GL-8+i*rw+rw/2,y=RY+34,blocked=i<Math.round(o*NR);
+      ctx.strokeStyle='#475569';ctx.lineWidth=1.4;
+      ctx.beginPath();ctx.arc(x,y,rw*0.36,Math.PI*0.15,Math.PI*0.85,true);ctx.stroke();
+      ctx.fillStyle=blocked?'#f59e0b':'rgba(56,189,248,'+(0.25+0.6*aden(bed)).toFixed(2)+')';
+      ctx.beginPath();ctx.arc(x,y-rw*0.20,rw*0.24,0,Math.PI*2);ctx.fill();
+    }
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#fbbf24';
+    ctx.fillText(Math.round(o*100)+' % '+tx('cBlocked','held shut by caffeine'),GL-8,RY+62);
+    ctx.textAlign='right';ctx.fillStyle='#7dd3fc';
+    ctx.fillText(tx('cFree','still free for adenosine'),GR,RY+62);
+
+    const lat=Math.round(12+62*o);
+    pBed.set(Math.round(caf(bed))+' mg');
+    pOcc.set(Math.round(o*100)+' %');
+    pLat.set('+'+Math.max(0,lat-12)+' min');
+    pTot.set(Math.round(rCups.val*dose())+' mg');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simIllusion(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#7c3aed';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.illusions&&SIMS.illusions.raf)cancelAnimationFrame(SIMS.illusions.raf);
+  const W=getSimWidth(container),H=460;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('illusions',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pWhat=pill(tx('see','What you see')),pTrue=pill(tx('truth','What is really there'));
+  const pWhy=pill(tx('why','The mechanism'));
+  pRow.appendChild(pWhat.el);pRow.appendChild(pTrue.el);pRow.appendChild(pWhy.el);
+  const bNext=mkBtn(tx('next','Next illusion'),true,color);ctrl.appendChild(bNext);
+  const bProof=mkBtn(tx('proof','Show me the proof'),false,color);ctrl.appendChild(bProof);
+  const rK=mkRange(ctrl,tx('knob','Strength of the trick'),0,100,70,1,color);
+  rK.v.textContent='70 %';
+  rK.inp.addEventListener('input',function(){rK.v.textContent=rK.inp.value+' %';});
+
+  const St=SIMS.illusions={raf:null,t:0,i:0,proof:0};
+  bNext.addEventListener('click',function(){St.i=(St.i+1)%4;});
+  bProof.addEventListener('click',function(){St.proof=St.proof?0:1;
+    bProof.textContent=St.proof?tx('hide','Hide the proof'):tx('proof','Show me the proof');});
+
+  const PT=34,PB=H-22;
+  function frame(){
+    St.t+=1/60;
+    const k=rK.val/100;
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#10131a';ctx.fillRect(0,0,W,H);
+    const cx=W/2,cy=(PT+PB)/2;
+    let name='',see='',truth='',why='';
+
+    if(St.i===0){                                  // ── Hermann grid ──
+      name=tx('nHermann','Hermann grid');
+      const gap=Math.round(8+22*k),sq=Math.round(30+26*(1-k)),n=Math.min(7,Math.floor((W-60)/(sq+gap)));
+      const w=n*(sq+gap)-gap,x0=cx-w/2,y0=cy-w/2;
+      ctx.fillStyle='#e2e8f0';ctx.fillRect(x0-gap,y0-gap,w+gap*2,w+gap*2);
+      ctx.fillStyle='#0f172a';
+      for(let i=0;i<n;i++)for(let j=0;j<n;j++)ctx.fillRect(x0+i*(sq+gap),y0+j*(sq+gap),sq,sq);
+      if(St.proof){
+        ctx.strokeStyle='#f472b6';ctx.lineWidth=1.4;
+        for(let i=1;i<n;i++)for(let j=1;j<n;j++){
+          ctx.beginPath();ctx.arc(x0+i*(sq+gap)-gap/2,y0+j*(sq+gap)-gap/2,gap*0.7,0,Math.PI*2);ctx.stroke();
+        }
+        ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#f9a8d4';
+        ctx.fillText(tx('cAllWhite','every one of these is exactly the same white'),cx,y0+w+gap+22);
+      }
+      see=tx('vSmudge','grey smudges at the crossings');
+      truth=tx('vSameWhite','one single white everywhere');
+      why=tx('wInhib','lateral inhibition');
+    }else if(St.i===1){                            // ── Mueller-Lyer ──
+      name=tx('nMueller','Muller-Lyer');
+      const len=Math.min(260,W*0.44),ang=(12+58*k)*Math.PI/180,fin=34;
+      function shaft(y,out){
+        ctx.strokeStyle='#e2e8f0';ctx.lineWidth=3;
+        ctx.beginPath();ctx.moveTo(cx-len/2,y);ctx.lineTo(cx+len/2,y);ctx.stroke();
+        const s=out?1:-1;
+        [[-1,cx-len/2],[1,cx+len/2]].forEach(function(e){
+          const d=e[0],x=e[1];
+          ctx.beginPath();
+          ctx.moveTo(x,y);ctx.lineTo(x+d*s*Math.cos(ang)*fin,y-Math.sin(ang)*fin);
+          ctx.moveTo(x,y);ctx.lineTo(x+d*s*Math.cos(ang)*fin,y+Math.sin(ang)*fin);
+          ctx.stroke();
+        });
+      }
+      shaft(cy-52,false);shaft(cy+52,true);
+      if(St.proof){
+        ctx.strokeStyle='#4ade80';ctx.lineWidth=1.6;ctx.setLineDash([4,3]);
+        [cy-52,cy+52].forEach(function(y){
+          ctx.beginPath();ctx.moveTo(cx-len/2,y-26);ctx.lineTo(cx-len/2,y+26);
+          ctx.moveTo(cx+len/2,y-26);ctx.lineTo(cx+len/2,y+26);ctx.stroke();
+        });
+        ctx.setLineDash([]);
+        ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#86efac';
+        ctx.fillText(tx('cSameEnds','both shafts start and end on the same two lines'),cx,cy+120);
+      }
+      see=tx('vLower','the lower line looks longer');
+      truth=Math.round(len)+' px '+tx('vBoth','both');
+      why=tx('wDepth','depth cues misapplied');
+    }else if(St.i===2){                            // ── Adelson checker shadow ──
+      name=tx('nChecker','checker shadow');
+      // DARK and LIGHT are chosen so a shadowed light square lands exactly on
+      // an unshadowed dark one at full strength: 170 x 0.529 = 90
+      const DK=90,LT=170,f=1-0.471*k;
+      const sq=Math.min(46,(W-90)/8),x0=cx-sq*4,y0=cy-sq*3;
+      function shaded(i,j){return i>=2.4-0.32*j&&i<=6;}
+      for(let i=0;i<8;i++)for(let j=0;j<6;j++){
+        let v=((i+j)%2===1)?LT:DK;
+        if(shaded(i,j))v=Math.round(v*f);
+        ctx.fillStyle='rgb('+v+','+v+','+v+')';
+        ctx.fillRect(x0+i*sq,y0+j*sq,sq,sq);
+      }
+      // the cylinder that is doing the shadowing, standing on the board
+      const cxx=x0+sq*6.9;
+      ctx.fillStyle='rgba(86,96,112,0.95)';
+      ctx.fillRect(cxx-sq*0.42,y0-sq*1.9,sq*0.84,sq*5.9);
+      ctx.fillStyle='rgba(126,138,156,0.95)';
+      ctx.beginPath();ctx.ellipse(cxx,y0-sq*1.9,sq*0.42,sq*0.16,0,0,Math.PI*2);ctx.fill();
+      const ax=x0+sq*1.5,ay=y0+sq*1.5,bx=x0+sq*4.5,by=y0+sq*3.5;
+      if(St.proof){
+        const v=Math.round(LT*f);
+        ctx.fillStyle='rgb('+v+','+v+','+v+')';
+        const hh=sq*0.34;
+        ctx.fillRect(ax,ay-hh/2,bx-ax,hh);
+        ctx.fillRect(bx-hh/2,ay-hh/2,hh,by-ay+hh/2);
+        ctx.font='9px system-ui';ctx.fillStyle='#f9a8d4';ctx.textAlign='center';
+        ctx.fillText(tx('cSameGrey','this connecting strip is one flat grey, and it matches both'),cx,y0+sq*6+22);
+      }
+      ctx.font='bold 15px system-ui';ctx.textAlign='center';
+      ctx.lineWidth=3;ctx.strokeStyle='rgba(15,19,26,0.9)';ctx.fillStyle='#f472b6';
+      ctx.strokeText('A',ax,ay+5);ctx.fillText('A',ax,ay+5);
+      ctx.strokeText('B',bx,by+5);ctx.fillText('B',bx,by+5);
+      see=tx('vBlighter','B looks much lighter than A');
+      truth=tx('vIdentical','identical grey');
+      why=tx('wDiscount','your brain subtracts the shadow');
+    }else{                                         // ── cafe wall ──
+      name=tx('nCafe','cafe wall');
+      const sq=Math.min(40,(W-80)/9),rows=6,x0=cx-sq*4.5,y0=cy-sq*rows/2;
+      for(let j=0;j<rows;j++){
+        const off=(j%2?1:0)*sq*0.5*k;
+        for(let i=-1;i<10;i++){
+          ctx.fillStyle=i%2?'#f1f5f9':'#0b0f19';
+          ctx.fillRect(x0+i*sq+off,y0+j*sq,sq,sq);
+        }
+        ctx.strokeStyle='#8a8f98';ctx.lineWidth=2;
+        ctx.beginPath();ctx.moveTo(x0,y0+j*sq);ctx.lineTo(x0+sq*9,y0+j*sq);ctx.stroke();
+      }
+      ctx.fillStyle='#10131a';
+      ctx.fillRect(0,y0-sq,x0,sq*(rows+2));ctx.fillRect(x0+sq*9,y0-sq,W,sq*(rows+2));
+      if(St.proof){
+        ctx.strokeStyle='#4ade80';ctx.lineWidth=1.6;ctx.setLineDash([5,4]);
+        for(let j=0;j<=rows;j++){
+          ctx.beginPath();ctx.moveTo(x0-14,y0+j*sq);ctx.lineTo(x0+sq*9+14,y0+j*sq);ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#86efac';
+        ctx.fillText(tx('cParallel','every line is horizontal and every gap is equal'),cx,y0+sq*rows+26);
+      }
+      see=tx('vWedge','the rows look wedge shaped');
+      truth=tx('vHoriz','perfectly parallel');
+      why=tx('wBorders','small borders shifted by contrast');
+    }
+
+    ctx.font='11px system-ui';ctx.textAlign='left';ctx.fillStyle='#c4b5fd';
+    ctx.fillText(name,20,24);
+    ctx.textAlign='right';ctx.fillStyle='#64748b';ctx.font='9px system-ui';
+    ctx.fillText((St.i+1)+'/4',W-20,24);
+    pWhat.set(see);pTrue.set(truth);pWhy.set(why);
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simDopamine(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#db2777';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.dopamine&&SIMS.dopamine.raf)cancelAnimationFrame(SIMS.dopamine.raf);
+  const W=getSimWidth(container),H=490;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('dopamine',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pTr=pill(tx('trial','Trial')),pV=pill(tx('vv','What the cue now promises'));
+  const pCue=pill(tx('rcue','Burst at the cue')),pRew=pill(tx('rrew','Burst at the reward'));
+  pRow.appendChild(pTr.el);pRow.appendChild(pV.el);pRow.appendChild(pCue.el);pRow.appendChild(pRew.el);
+  const bSkip=mkBtn(tx('skip','Take the reward away'),true,color);ctrl.appendChild(bSkip);
+  const rP=mkRange(ctrl,tx('prob','How often the reward comes'),0,100,100,5,color);
+  const rA=mkRange(ctrl,tx('rate','How fast it learns'),2,40,25,1,color);
+  rP.v.textContent='100 %';rA.v.textContent='0.25';
+  rP.inp.addEventListener('input',function(){rP.v.textContent=rP.inp.value+' %';});
+  rA.inp.addEventListener('input',function(){rA.v.textContent=(rA.inp.value/100).toFixed(2);});
+
+  const TRIAL=2.2,CUE=0.55,REW=1.5;
+  const St=SIMS.dopamine={raf:null,t:0,n:0,V:0,hist:[],rc:0,rr:0,got:1,skip:0,paid:0};
+  bSkip.addEventListener('click',function(){St.skip=1;});
+
+  function frame(){
+    const dt=1/60;
+    St.t+=dt;
+    if(St.t>=TRIAL){                               // a trial ends: learn from what happened
+      St.t-=TRIAL;St.n++;
+      St.hist.push([St.V,St.rc,St.rr]);if(St.hist.length>120)St.hist.shift();
+      St.got=St.skip?0:(Math.random()*100<rP.val?1:0);
+      St.skip=0;
+      const a=rA.val/100;
+      St.rc=St.V;                                  // the cue itself now carries the promise
+      St.rr=St.got-St.V;                           // and the reward only reports the surprise
+      St.V=Math.max(0,Math.min(1.4,St.V+a*St.rr));
+      St.paid=0;
+    }
+    const t=St.t;
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0d0b12';ctx.fillRect(0,0,W,H);
+
+    // ══ the trial itself ══
+    const SL=40,SR=W-30,SY=92;
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cTrial','one trial: a light, a wait, a drop of juice'),SL,34);
+    ctx.strokeStyle='rgba(148,163,184,0.25)';ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(SL,SY);ctx.lineTo(SR,SY);ctx.stroke();
+    const TXp=function(s){return SL+s/TRIAL*(SR-SL);};
+    // the cue lamp
+    const lit=t>=CUE&&t<CUE+0.35;
+    ctx.fillStyle=lit?'#fde68a':'#3f3f46';
+    ctx.beginPath();ctx.arc(TXp(CUE),SY,lit?13:9,0,Math.PI*2);ctx.fill();
+    if(lit){ctx.strokeStyle='rgba(253,230,138,0.5)';ctx.lineWidth=2;
+      ctx.beginPath();ctx.arc(TXp(CUE),SY,13+(t-CUE)*40,0,Math.PI*2);ctx.stroke();}
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#fcd34d';
+    ctx.fillText(tx('cCue','the light'),TXp(CUE),SY+26);
+    // the reward drop
+    const rw=t>=REW&&t<REW+0.5;
+    if(St.got){
+      ctx.fillStyle=rw?'#60a5fa':'#312e81';
+      ctx.beginPath();ctx.arc(TXp(REW),SY-(rw?0:0),rw?11:7,0,Math.PI*2);ctx.fill();
+    }else{
+      ctx.strokeStyle='#7f1d1d';ctx.lineWidth=2;
+      ctx.beginPath();ctx.arc(TXp(REW),SY,8,0,Math.PI*2);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(TXp(REW)-6,SY-6);ctx.lineTo(TXp(REW)+6,SY+6);ctx.stroke();
+    }
+    ctx.fillStyle=St.got?'#93c5fd':'#fca5a5';ctx.textAlign='center';
+    ctx.fillText(St.got?tx('cRew','the juice'):tx('cNoRew','nothing'),TXp(REW),SY+26);
+    // the playhead
+    ctx.strokeStyle='rgba(226,232,240,0.5)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(TXp(t),SY-34);ctx.lineTo(TXp(t),SY+34);ctx.stroke();
+
+    // ══ the dopamine trace ══
+    const DT=150,DB=310,ZERO=(DT+DB)*0.58;
+    ctx.fillStyle='#0f0d16';ctx.fillRect(0,DT-26,W,DB-DT+30);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cFire','what the dopamine neuron does'),SL,DT-8);
+    ctx.strokeStyle='rgba(148,163,184,0.3)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+    ctx.beginPath();ctx.moveTo(SL,ZERO);ctx.lineTo(SR,ZERO);ctx.stroke();ctx.setLineDash([]);
+    ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+    ctx.fillText(tx('cBase','background rate'),SR,ZERO-4);
+    function burst(s,amp){
+      if(Math.abs(amp)<0.02)return;
+      const x=TXp(s),h=amp*(ZERO-DT)*0.85;
+      ctx.fillStyle=amp>0?'rgba(219,39,119,0.85)':'rgba(96,165,250,0.85)';
+      ctx.beginPath();ctx.moveTo(x-9,ZERO);
+      for(let u=-9;u<=9;u++)ctx.lineTo(x+u,ZERO-h*Math.exp(-u*u/22));
+      ctx.lineTo(x+9,ZERO);ctx.closePath();ctx.fill();
+    }
+    if(t>=CUE)burst(CUE,St.rc);
+    if(t>=REW)burst(REW,St.rr);
+    ctx.strokeStyle='#e879f9';ctx.lineWidth=1.6;
+    ctx.beginPath();ctx.moveTo(SL,ZERO);ctx.lineTo(Math.min(TXp(t),SR),ZERO);ctx.stroke();
+
+    // ══ the learning curve ══
+    const HT=356,HB=H-28;
+    ctx.fillStyle='#0b0a10';ctx.fillRect(0,HT-24,W,H-HT+24);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cLearn','over trials: the promise moves to the light'),SL,HT-8);
+    const n=St.hist.length,span=Math.max(18,n-1);
+    const HX=function(i){return SL+i/span*(SR-SL);};
+    const HY=function(v){return HB-Math.max(-0.4,Math.min(1.2,v))/1.2*(HB-HT)*0.78-10;};
+    ctx.strokeStyle='rgba(148,163,184,0.2)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(SL,HY(0));ctx.lineTo(SR,HY(0));ctx.stroke();
+    function line(idx,col,wd){
+      ctx.strokeStyle=col;ctx.lineWidth=wd;ctx.beginPath();
+      for(let i=0;i<n;i++){const x=HX(i),y=HY(St.hist[i][idx]);i?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+      ctx.stroke();
+    }
+    line(1,'#fbbf24',1.8);line(2,'#60a5fa',1.8);line(0,'#e879f9',2.4);
+    ctx.font='9px system-ui';ctx.textAlign='left';
+    ctx.fillStyle='#e879f9';ctx.fillText(tx('cVal','value the light has learnt'),SL,HT+14);
+    ctx.fillStyle='#fbbf24';ctx.fillText(tx('cAtCue','burst at the light'),SL+150,HT+14);
+    ctx.fillStyle='#60a5fa';ctx.fillText(tx('cAtRew','burst at the juice'),SL+286,HT+14);
+
+    pTr.set(St.n+'');
+    pV.set(St.V.toFixed(2));
+    pCue.set((St.rc>=0?'+':'')+St.rc.toFixed(2));
+    pRew.set((St.rr>=0?'+':'')+St.rr.toFixed(2));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simHurricane(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0369a1';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.hurricane&&SIMS.hurricane.raf)cancelAnimationFrame(SIMS.hurricane.raf);
+  const W=getSimWidth(container),H=470;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('hurricane',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pCat=pill(tx('cat','Category')),pWind=pill(tx('wind','Peak wind'));
+  const pPres=pill(tx('pres','Central pressure')),pFuel=pill(tx('fuel','Fuel available'));
+  pRow.appendChild(pCat.el);pRow.appendChild(pWind.el);pRow.appendChild(pPres.el);pRow.appendChild(pFuel.el);
+  const rSST=mkRange(ctrl,tx('sst','Sea surface temperature'),22,31,29,0.5,color);
+  const rLat=mkRange(ctrl,tx('lat','Latitude'),0,30,15,1,color);
+  const rShear=mkRange(ctrl,tx('shear','Wind shear aloft'),0,40,8,1,color);
+  rSST.v.textContent='29.0 °C';rLat.v.textContent='15°';rShear.v.textContent='8 kt';
+  rSST.inp.addEventListener('input',function(){rSST.v.textContent=(+rSST.inp.value).toFixed(1)+' °C';});
+  rLat.inp.addEventListener('input',function(){rLat.v.textContent=rLat.inp.value+'°';});
+  rShear.inp.addEventListener('input',function(){rShear.v.textContent=rShear.inp.value+' kt';});
+
+  const St=SIMS.hurricane={raf:null,t:0,p:[]};
+  for(let i=0;i<190;i++)St.p.push([Math.random()*Math.PI*2,0.12+Math.random()*0.88,Math.random()]);
+
+  // four ingredients, each of which can veto the storm on its own
+  function model(){
+    const sst=rSST.val,lat=rLat.val,sh=rShear.val;
+    const fuel=Math.max(0,Math.min(1,(sst-26.5)/4));        // warm water above the 26.5 C threshold
+    const spin=Math.max(0,Math.min(1,(lat-4)/8));           // Coriolis vanishes at the equator
+    const calm=Math.max(0,Math.min(1,(22-sh)/16));          // shear tears the chimney apart
+    const I=fuel*spin*calm;
+    const v=I>0?26+142*Math.pow(I,0.75):0;                  // knots
+    const dp=v>20?0.115*Math.pow(v,1.361):0;
+    return {fuel:fuel,spin:spin,calm:calm,I:I,v:v,p:1013-dp};
+  }
+  function cat(v){
+    if(v<34)return [tx('vNone','no storm'),'#64748b',0];
+    if(v<64)return [tx('vTS','tropical storm'),'#22c55e',0];
+    if(v<83)return ['1','#eab308',1];
+    if(v<96)return ['2','#f59e0b',2];
+    if(v<113)return ['3','#f97316',3];
+    if(v<137)return ['4','#ef4444',4];
+    return ['5','#a855f7',5];
+  }
+
+  const SX=W*0.36,SY=210,SR=Math.min(160,W*0.30);
+  function frame(){
+    St.t+=1/60;
+    const M=model(),ct=cat(M.v);
+    ctx.clearRect(0,0,W,H);
+    const sea=ctx.createLinearGradient(0,0,0,H);
+    sea.addColorStop(0,'#071f33');sea.addColorStop(1,'#0b3352');
+    ctx.fillStyle=sea;ctx.fillRect(0,0,W,H);
+    // warm water, drawn as warmth
+    ctx.fillStyle='rgba(248,113,113,'+(0.05+0.16*M.fuel).toFixed(3)+')';
+    ctx.fillRect(0,0,W,H);
+
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cView','the storm seen from above'),18,26);
+
+    // ══ the spiral bands ══
+    const spin=M.I>0.02?1:0;
+    ctx.save();ctx.translate(SX,SY);
+    if(M.I>0.02){
+      const eye=M.v>64?SR*0.13:0;
+      for(let b=0;b<5;b++){
+        ctx.strokeStyle='rgba(226,232,240,'+(0.10+0.34*M.I).toFixed(2)+')';
+        ctx.lineWidth=5+7*M.I;ctx.beginPath();
+        for(let u=0;u<=1.001;u+=0.02){
+          const r=eye+u*SR,a=b*1.2566+u*3.0*(0.4+M.I)-St.t*(0.5+1.6*M.I);
+          const x=Math.cos(a)*r,y=Math.sin(a)*r*0.86;
+          u===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
+        }
+        ctx.stroke();
+      }
+      if(eye>0){
+        ctx.fillStyle='rgba(8,32,52,0.95)';
+        ctx.beginPath();ctx.ellipse(0,0,eye,eye*0.86,0,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='rgba(226,232,240,0.6)';ctx.lineWidth=2;ctx.stroke();
+      }
+    }
+    // inflow, curved by the spin the latitude allows
+    St.p.forEach(function(q){
+      const r=SR*1.35*((q[1]+St.t*0.07*(0.3+M.I))%1);
+      const a=q[0]+ (1-r/(SR*1.35))*3.4*M.spin*(0.3+M.I) - St.t*0.4*M.I;
+      const x=Math.cos(a)*r,y=Math.sin(a)*r*0.86;
+      ctx.fillStyle='rgba(125,211,252,'+(0.15+0.45*q[2]).toFixed(2)+')';
+      ctx.beginPath();ctx.arc(x,y,1.6,0,Math.PI*2);ctx.fill();
+    });
+    ctx.restore();
+    if(M.I<=0.02){
+      ctx.font='11px system-ui';ctx.textAlign='center';ctx.fillStyle='#94a3b8';
+      ctx.fillText(tx('cNothing','nothing gets going'),SX,SY);
+    }
+
+    // ══ the four ingredients, each able to veto on its own ══
+    const PX=Math.max(W*0.64,W-224),PW=W-PX-20;
+    ctx.fillStyle='rgba(2,10,20,0.55)';ctx.fillRect(PX-12,40,PW+24,180);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cNeed','what a hurricane needs'),PX,60);
+    const rows=[[tx('cWarm','water warm enough'),M.fuel,'#f87171'],
+                [tx('cSpin','far enough from the equator'),M.spin,'#38bdf8'],
+                [tx('cCalm','little shear aloft'),M.calm,'#a78bfa'],
+                [tx('cWet','deep moist air'),1,'#4ade80']];
+    for(let i=0;i<rows.length;i++){
+      const y=80+i*34,ok=rows[i][1]>0.02;
+      ctx.font='11px system-ui';ctx.textAlign='left';
+      ctx.fillStyle=ok?'#86efac':'#f87171';
+      ctx.fillText(ok?'✓':'✕',PX,y+10);
+      ctx.font='9px system-ui';ctx.fillStyle='#cbd5e1';
+      ctx.fillText(rows[i][0],PX+16,y);
+      ctx.fillStyle='rgba(148,163,184,0.2)';ctx.fillRect(PX+16,y+4,PW-16,7);
+      ctx.fillStyle=rows[i][2];ctx.fillRect(PX+16,y+4,(PW-16)*rows[i][1],7);
+    }
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cAll','all four, or nothing happens'),PX,212);
+
+    // ══ the Saffir-Simpson strip ══
+    const BY=H-92,BL=24,BR=W-24;
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cScale','the Saffir-Simpson scale'),BL,BY-10);
+    const bounds=[34,64,83,96,113,137,175];
+    const cols=['#22c55e','#eab308','#f59e0b','#f97316','#ef4444','#a855f7'];
+    for(let i=0;i<6;i++){
+      const x0=BL+(bounds[i]-34)/141*(BR-BL),x1=BL+(bounds[i+1]-34)/141*(BR-BL);
+      ctx.fillStyle=cols[i];ctx.globalAlpha=M.v>=bounds[i]?1:0.25;
+      ctx.fillRect(x0,BY,x1-x0-2,16);ctx.globalAlpha=1;
+      ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+      ctx.fillText(bounds[i]+'',x0,BY+30);
+    }
+    if(M.v>=34){
+      const x=BL+Math.min(1,(M.v-34)/141)*(BR-BL);
+      ctx.strokeStyle='#fff';ctx.lineWidth=2;
+      ctx.beginPath();ctx.moveTo(x,BY-4);ctx.lineTo(x,BY+20);ctx.stroke();
+    }
+    ctx.font='bold 26px system-ui';ctx.textAlign='left';ctx.fillStyle=ct[1];
+    ctx.fillText(ct[2]?tx('cCat','Category')+' '+ct[0]:ct[0],BL,BY-30);
+
+    pCat.set(ct[2]?tx('cCat','Category')+' '+ct[0]:ct[0]);
+    pWind.set(Math.round(M.v)+' kt');
+    pPres.set(Math.round(M.p)+' hPa');
+    pFuel.set(Math.round(M.fuel*100)+' %');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simTornado(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#475569';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.tornado&&SIMS.tornado.raf)cancelAnimationFrame(SIMS.tornado.raf);
+  const W=getSimWidth(container),H=500,NARROW=W<470;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('tornado',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pUp=pill(tx('up','Updraft speed')),pSpin=pill(tx('spin','Rotation speed'));
+  const pEF=pill(tx('ef','Rating')),pTouch=pill(tx('touch','Reaches the ground'));
+  pRow.appendChild(pUp.el);pRow.appendChild(pSpin.el);pRow.appendChild(pEF.el);pRow.appendChild(pTouch.el);
+  const rSh=mkRange(ctrl,tx('shear','Change of wind with height'),0,30,18,1,color);
+  const rCape=mkRange(ctrl,tx('cape','Energy stored in the air'),0,4000,2600,100,color);
+  const rLcl=mkRange(ctrl,tx('lcl','Cloud base height'),400,2400,900,50,color);
+  rSh.v.textContent='18 m/s';rCape.v.textContent='2600 J/kg';rLcl.v.textContent='900 m';
+  rSh.inp.addEventListener('input',function(){rSh.v.textContent=rSh.inp.value+' m/s';});
+  rCape.inp.addEventListener('input',function(){rCape.v.textContent=rCape.inp.value+' J/kg';});
+  rLcl.inp.addEventListener('input',function(){rLcl.v.textContent=rLcl.inp.value+' m';});
+
+  const St=SIMS.tornado={raf:null,t:0,d:[],rain:[],flash:0,nextBolt:2.5,bolt:null};
+  for(let i=0;i<180;i++)St.d.push([Math.random(),Math.random()*6.2832,0.3+Math.random(),Math.random()]);
+  for(let i=0;i<110;i++)St.rain.push([Math.random(),Math.random(),0.5+Math.random()]);
+  // cloud lobes: fixed random field so the storm keeps its shape between frames
+  const lobes=[];for(let i=0;i<26;i++)lobes.push([Math.random(),Math.random(),Math.random()]);
+
+  function model(){
+    const sh=rSh.val,cape=rCape.val,lcl=rLcl.val;
+    const w=0.55*Math.sqrt(2*cape);                     // updraft, entrainment-reduced
+    const eta=sh/1000;                                  // horizontal vorticity, per second
+    const tilt=Math.max(0,Math.min(1,(w-12)/22));       // the updraft has to be strong enough to lift the tube
+    const omega=eta*tilt;                               // vertical vorticity of the mesocyclone
+    const S=Math.max(1,Math.pow(2400/Math.max(300,lcl),0.35)*3.2); // stretching amplifies it
+    // calibrated so the extreme corner lands near the fastest wind ever measured
+    const vrot=Math.min(145,omega*S*778);               // tangential wind at the funnel radius, m/s
+    const ground=lcl<1400&&vrot>29&&tilt>0.25;          // a high cloud base leaves the funnel hanging
+    return {w:w,eta:eta,tilt:tilt,omega:omega,vrot:vrot,ground:ground};
+  }
+  function ef(v){
+    const mph=v*2.237;
+    if(mph<65)return ['-',0];
+    if(mph<86)return ['EF0',0];
+    if(mph<111)return ['EF1',1];
+    if(mph<136)return ['EF2',2];
+    if(mph<166)return ['EF3',3];
+    if(mph<201)return ['EF4',4];
+    return ['EF5',5];
+  }
+  const EFCOL=['#94a3b8','#7dd3fc','#a3e635','#fbbf24','#fb923c','#f87171','#e879f9'];
+
+  const GY=H-76,CX=W*0.47;
+
+  function softBlob(x,y,r,rgb,a){
+    const g=ctx.createRadialGradient(x,y,0,x,y,r);
+    g.addColorStop(0,'rgba('+rgb+','+a+')');
+    g.addColorStop(0.6,'rgba('+rgb+','+(a*0.55).toFixed(3)+')');
+    g.addColorStop(1,'rgba('+rgb+',0)');
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,6.2832);ctx.fill();
+  }
+
+  function frame(){
+    St.t+=1/60;
+    const M=model(),E=ef(M.vrot);
+    const cape=rCape.val;
+
+    // ── lightning timing: busier storms flash more often ──
+    St.flash*=0.86;
+    St.nextBolt-=1/60;
+    if(St.nextBolt<=0){
+      St.nextBolt=0.7+Math.random()*4.5*(1-Math.min(0.85,cape/4000));
+      St.flash=0.55+Math.random()*0.45;
+      const bx=CX+(Math.random()-0.5)*W*0.5;
+      const pts=[[bx,60]];
+      let y=60;while(y<GY-120){y+=26+Math.random()*34;pts.push([pts[pts.length-1][0]+(Math.random()-0.5)*40,y]);}
+      St.bolt=pts;
+    }
+
+    ctx.clearRect(0,0,W,H);
+
+    // ── the storm sky: indigo aloft, a green cast under the hail core, light only at the horizon ──
+    const baseY=GY-(rLcl.val/2400)*(GY-150);
+    const sky=ctx.createLinearGradient(0,0,0,GY);
+    sky.addColorStop(0,'#0c1524');
+    sky.addColorStop(0.48,'#1f2f3d');
+    sky.addColorStop(0.82,'#3b493b');
+    sky.addColorStop(0.95,'#6a6343');
+    sky.addColorStop(1,'#8c7c54');
+    ctx.fillStyle=sky;ctx.fillRect(0,0,W,GY);
+
+    // ── the supercell: a tower under a sheared anvil, sky still visible either side ──
+    const anvilT=16,anvilB=anvilT+44;
+    const towL=CX-W*0.30,towR=CX+W*0.25;
+    function stormPath(){
+      ctx.beginPath();
+      // anvil, blown downwind, then down the right flank of the tower and back up the left
+      ctx.moveTo(W*0.02,anvilB+2);
+      ctx.quadraticCurveTo(W*0.24,anvilT-6,CX-W*0.02,anvilT);
+      ctx.lineTo(W*1.04,anvilT+12);
+      ctx.quadraticCurveTo(W*0.86,anvilB+18,towR+W*0.03,anvilB+22);
+      ctx.quadraticCurveTo(towR-W*0.04,baseY-(baseY-anvilB)*0.42,towR,baseY);
+      ctx.lineTo(towL,baseY);
+      ctx.quadraticCurveTo(towL+W*0.10,baseY-(baseY-anvilB)*0.50,towL+W*0.08,anvilB+16);
+      ctx.closePath();
+    }
+    ctx.save();
+    stormPath();ctx.fillStyle='#0b1017';ctx.fill();
+    // volume: lobes confined to the storm itself
+    stormPath();ctx.clip();
+    for(let i=0;i<lobes.length;i++){
+      const q=lobes[i];
+      const x=q[0]*W,y=anvilT+q[1]*(baseY-anvilT);
+      softBlob(x+Math.sin(St.t*0.25+i)*4,y,20+q[2]*40,'32,43,58',0.42);
+    }
+    // rim light down the upwind flank, the way a storm lights at dusk
+    ctx.strokeStyle='rgba(148,163,184,0.16)';ctx.lineWidth=7;
+    ctx.beginPath();
+    ctx.moveTo(towL+W*0.08,anvilB+16);
+    ctx.quadraticCurveTo(towL+W*0.10,baseY-(baseY-anvilB)*0.50,towL,baseY);
+    ctx.stroke();
+    ctx.restore();
+    // the updraft base is the darkest part of the storm
+    softBlob(CX,baseY-14,W*0.26,'6,9,15',0.9);
+    // mammatus: the pouches that hang under the anvil
+    for(let i=0;i<Math.round(W/36);i++){
+      const x=i*36+18,r=9+((i*7)%8);
+      ctx.fillStyle='rgba(26,34,48,0.8)';
+      ctx.beginPath();ctx.arc(x,anvilB+6,r,0,Math.PI);ctx.fill();
+    }
+    // the rotating wall cloud, lowered under the mesocyclone
+    if(M.tilt>0.12){
+      const wcY=baseY+6+6*M.tilt;
+      for(let i=0;i<5;i++){
+        const a=St.t*0.7*(0.4+M.tilt)+i*1.26;
+        softBlob(CX+Math.cos(a)*28,wcY+Math.sin(a)*6,24,'12,17,25',0.85);
+      }
+    }
+    // under the storm it is dark; the light comes in low, along the horizon
+    const shade=ctx.createLinearGradient(0,baseY,0,GY);
+    shade.addColorStop(0,'rgba(6,9,16,0.86)');
+    shade.addColorStop(0.50,'rgba(6,9,16,0.34)');
+    shade.addColorStop(1,'rgba(6,9,16,0)');
+    ctx.fillStyle=shade;ctx.fillRect(0,baseY,W,GY-baseY);
+
+    // ── the rain curtain on the downdraft flank ──
+    if(cape>300){
+      ctx.strokeStyle='rgba(148,178,196,'+(0.05+0.16*Math.min(1,cape/4000)).toFixed(3)+')';
+      ctx.lineWidth=1;
+      const rx0=CX+W*0.16;
+      for(let i=0;i<St.rain.length;i++){
+        const q=St.rain[i];
+        const x=rx0+q[0]*(W-rx0)+8,y=baseY+((q[1]+St.t*q[2]*0.9)%1)*(GY-baseY);
+        ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-4,y+13);ctx.stroke();
+      }
+    }
+
+    // ── lightning: flash the sky, then the bolt ──
+    if(St.flash>0.02&&St.bolt){
+      ctx.fillStyle='rgba(203,225,255,'+(St.flash*0.20).toFixed(3)+')';
+      ctx.fillRect(0,0,W,GY);
+      ctx.save();
+      ctx.strokeStyle='rgba(226,240,255,'+Math.min(1,St.flash*1.5).toFixed(2)+')';
+      ctx.lineWidth=1.8;ctx.shadowColor='#bfdbfe';ctx.shadowBlur=14;
+      ctx.beginPath();ctx.moveTo(St.bolt[0][0],St.bolt[0][1]);
+      for(let i=1;i<St.bolt.length;i++)ctx.lineTo(St.bolt[i][0],St.bolt[i][1]);
+      ctx.stroke();ctx.restore();
+    }
+
+    // ══ step 1: shear rolls the air into a horizontal tube ══
+    const TY=GY-58,shf=rSh.val/30,TX0=14,TX1=CX-86;
+    const tubeR=6+8*shf;
+    // the tube itself: two rails and a helix winding along them
+    ctx.strokeStyle='rgba(125,211,252,'+(0.16+0.34*shf).toFixed(3)+')';
+    ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(TX0,TY-tubeR);ctx.lineTo(TX1,TY-tubeR);
+    ctx.moveTo(TX0,TY+tubeR);ctx.lineTo(TX1,TY+tubeR);ctx.stroke();
+    // a single helix, near side only, so it reads as a rolling tube and not a lattice
+    ctx.lineWidth=1.8;
+    ctx.strokeStyle='rgba(186,230,253,'+(0.20+0.55*shf).toFixed(3)+')';
+    ctx.beginPath();
+    let pen=false;
+    for(let x=TX0;x<=TX1;x+=2){
+      const a=x*0.055-St.t*2.6;
+      if(Math.cos(a)>0.05){
+        const y=TY+Math.sin(a)*tubeR;
+        pen?ctx.lineTo(x,y):(ctx.moveTo(x,y),pen=true);
+      } else pen=false;
+    }
+    ctx.stroke();
+    // arrowheads: faster air on top, slower below - that is what does the rolling
+    for(let k=0;k<3;k++){
+      const ax=TX0+((St.t*(26+52*shf)+k*((TX1-TX0)/3))%(TX1-TX0));
+      ctx.fillStyle='rgba(186,230,253,'+(0.25+0.6*shf).toFixed(3)+')';
+      ctx.beginPath();ctx.moveTo(ax+7,TY-tubeR-4);ctx.lineTo(ax,TY-tubeR-7.5);ctx.lineTo(ax,TY-tubeR-0.5);ctx.closePath();ctx.fill();
+      const bx=TX1-((St.t*(10+16*shf)+k*((TX1-TX0)/3))%(TX1-TX0));
+      ctx.fillStyle='rgba(125,211,252,'+(0.18+0.4*shf).toFixed(3)+')';
+      ctx.beginPath();ctx.moveTo(bx-6,TY+tubeR+4);ctx.lineTo(bx,TY+tubeR+7);ctx.lineTo(bx,TY+tubeR+1);ctx.closePath();ctx.fill();
+    }
+    if(!NARROW){
+      ctx.font='10px system-ui';ctx.fillStyle='#7dd3fc';ctx.textAlign='left';
+      ctx.fillText(tx('cRoll','shear rolls the air into a horizontal tube'),TX0,TY-tubeR-15);
+    }
+
+    // ══ step 2: the updraft tilts it upright ══
+    const upH=Math.min(1,M.w/40);
+    const beam=ctx.createLinearGradient(0,GY,0,baseY);
+    beam.addColorStop(0,'rgba(251,191,36,'+(0.05+0.20*upH).toFixed(3)+')');
+    beam.addColorStop(1,'rgba(251,191,36,0)');
+    ctx.fillStyle=beam;
+    ctx.beginPath();ctx.moveTo(CX-10-16*upH,GY);ctx.lineTo(CX+10+16*upH,GY);
+    ctx.lineTo(CX+6,baseY+6);ctx.lineTo(CX-6,baseY+6);ctx.closePath();ctx.fill();
+    for(let k=0;k<5;k++){
+      const u=((St.t*0.45*(0.3+upH)+k/5)%1);
+      const y=GY-8-u*(GY-baseY-14),al=(0.85*(1-Math.abs(u-0.5)*1.3)).toFixed(2);
+      ctx.strokeStyle='rgba(253,224,71,'+al+')';ctx.lineWidth=2;
+      ctx.beginPath();ctx.moveTo(CX-8,y+7);ctx.lineTo(CX,y-2);ctx.lineTo(CX+8,y+7);ctx.stroke();
+    }
+    if(!NARROW){
+      ctx.font='10px system-ui';ctx.fillStyle='#fcd34d';ctx.textAlign='left';
+      ctx.fillText(tx('cUp','the updraft tilts it upright'),CX+48,baseY+26);
+    }
+
+    // ══ step 3: stretching spins it up ══
+    if(M.omega>0.0005){
+      const top=baseY+6,bot=M.ground?GY:baseY+6+(GY-baseY)*Math.min(1,M.vrot/45);
+      const rTop=25*Math.min(1,0.5+M.tilt),rBot=Math.max(4,rTop*0.22);
+      const spin=Math.min(1,M.vrot/60);
+      // the funnel bends: a real one is never a straight cone
+      const fx=function(u){return CX+Math.sin(u*2.2-St.t*0.5)*9*(1-u)*(0.4+0.6*spin);};
+      const rAt=function(u){return rTop+(rBot-rTop)*Math.pow(u,0.78);};
+      // condensation core
+      const fg=ctx.createLinearGradient(0,top,0,bot);
+      fg.addColorStop(0,'rgba(216,222,232,'+(0.52+0.30*spin).toFixed(3)+')');
+      fg.addColorStop(0.55,'rgba(192,200,212,'+(0.46+0.34*spin).toFixed(3)+')');
+      fg.addColorStop(1,'rgba(166,158,142,'+(0.40+0.32*spin).toFixed(3)+')');
+      ctx.save();ctx.shadowColor='rgba(226,232,240,0.45)';ctx.shadowBlur=22;
+      ctx.fillStyle=fg;ctx.beginPath();
+      for(let u=0;u<=1.001;u+=0.04){const y=top+u*(bot-top);ctx.lineTo(fx(u)-rAt(u),y);}
+      for(let u=1;u>=-0.001;u-=0.04){const y=top+u*(bot-top);ctx.lineTo(fx(u)+rAt(u),y);}
+      ctx.closePath();ctx.fill();ctx.restore();
+      // a brighter core, so the funnel has depth instead of being a flat cut-out
+      ctx.save();
+      ctx.beginPath();
+      for(let u=0;u<=1.001;u+=0.04){const y=top+u*(bot-top);ctx.lineTo(fx(u)-rAt(u),y);}
+      for(let u=1;u>=-0.001;u-=0.04){const y=top+u*(bot-top);ctx.lineTo(fx(u)+rAt(u),y);}
+      ctx.closePath();ctx.clip();
+      const core=ctx.createLinearGradient(CX-rTop,0,CX+rTop,0);
+      core.addColorStop(0,'rgba(90,96,108,0.35)');
+      core.addColorStop(0.42,'rgba(244,247,251,0.55)');
+      core.addColorStop(1,'rgba(74,78,88,0.40)');
+      ctx.fillStyle=core;ctx.fillRect(CX-rTop-14,top,rTop*2+28,bot-top);
+      ctx.restore();
+      // helical ribbons: only the near side, so it reads as a surface and not a net
+      for(let k=0;k<4;k++){
+        ctx.strokeStyle='rgba(248,250,252,'+(0.08+0.26*spin).toFixed(3)+')';
+        ctx.lineWidth=1+1.2*spin;ctx.beginPath();
+        for(let u=0;u<=1.001;u+=0.025){
+          const y=top+u*(bot-top),r=rAt(u);
+          const a=u*(5+7*spin)+k*1.57-St.t*(1.4+M.vrot*0.12);
+          const cs=Math.cos(a);
+          if(cs>0.15)ctx.lineTo(fx(u)+cs*r,y);else ctx.moveTo(fx(u)+cs*r,y);
+        }
+        ctx.stroke();
+      }
+      // dust whirl and debris at the contact point
+      if(M.ground){
+        softBlob(fx(1),GY-8,rBot*3.2+22,'116,98,68',0.38);
+        for(let i=0;i<St.d.length;i++){
+          const q=St.d[i];
+          const u=(q[0]+St.t*0.55*q[2])%1;
+          const a=q[1]+St.t*(2.2+spin*5)*q[2];
+          const r=rBot*1.4+u*(rBot*3.0+24);
+          const y=GY-4-u*(40+26*spin)-q[3]*6;
+          ctx.fillStyle='rgba('+(q[3]>0.82?'196,178,142':'108,90,62')+','+(0.42*(1-u)).toFixed(3)+')';
+          ctx.beginPath();ctx.arc(fx(1)+Math.cos(a)*r,y,1.2+q[3]*1.8,0,6.2832);ctx.fill();
+        }
+      }
+    }
+
+    // ── ground: horizon haze, then silhouettes that give the thing a scale ──
+    const gnd=ctx.createLinearGradient(0,GY,0,H);
+    gnd.addColorStop(0,'#2e2a1e');gnd.addColorStop(1,'#15130d');
+    ctx.fillStyle=gnd;ctx.fillRect(0,GY,W,H-GY);
+    ctx.fillStyle='rgba(126,112,78,0.35)';ctx.fillRect(0,GY,W,2);
+    ctx.fillStyle='#0d0b07';
+    // fence receding to the left
+    for(let i=0;i<7;i++){const x=16+i*22;ctx.fillRect(x,GY-9,2,9);}
+    ctx.fillRect(16,GY-7,7*22,1.5);
+    // two trees and a barn, the classic storm-chaser foreground
+    function tree(x,s){
+      ctx.fillRect(x-1*s,GY-12*s,2*s,12*s);
+      ctx.beginPath();ctx.arc(x,GY-15*s,6*s,0,6.2832);ctx.fill();
+      ctx.beginPath();ctx.arc(x-4*s,GY-11*s,4.5*s,0,6.2832);ctx.fill();
+      ctx.beginPath();ctx.arc(x+4*s,GY-11*s,4.5*s,0,6.2832);ctx.fill();
+    }
+    tree(W*0.80,1.15);tree(W*0.90,0.85);
+    const bx=W*0.16,bw=30,bh=17;
+    ctx.fillRect(bx,GY-bh,bw,bh);
+    ctx.beginPath();ctx.moveTo(bx-4,GY-bh);ctx.lineTo(bx+bw/2,GY-bh-11);ctx.lineTo(bx+bw+4,GY-bh);ctx.closePath();ctx.fill();
+
+    // ══ the rating, as a badge ══
+    const col=EFCOL[E[1]+(E[0]==='-'?0:1)]||'#94a3b8';
+    const bw2=E[0]==='-'?40:56;
+    ctx.fillStyle='rgba(10,14,24,0.78)';
+    ctx.beginPath();ctx.roundRect(14,H-56,bw2,40,9);ctx.fill();
+    ctx.strokeStyle=col;ctx.lineWidth=1.6;ctx.stroke();
+    ctx.font='bold 19px system-ui';ctx.textAlign='center';ctx.fillStyle=col;
+    ctx.fillText(E[0],14+bw2/2,H-29);
+
+    pUp.set(Math.round(M.w)+' m/s');
+    pSpin.set(Math.round(M.vrot)+' m/s');
+    pEF.set(E[0]);
+    pTouch.set(M.ground?tx('vYes','yes'):tx('vNo','no'));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simSky(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0284c7';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.skyblue&&SIMS.skyblue.raf)cancelAnimationFrame(SIMS.skyblue.raf);
+  const W=getSimWidth(container),H=480;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('skyblue',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pAir=pill(tx('air','Air in the way')),pRatio=pill(tx('ratio','Blue scattered vs red'));
+  const pSky=pill(tx('sky','Colour of the sky')),pSun=pill(tx('suncol','Colour of the Sun'));
+  pRow.appendChild(pAir.el);pRow.appendChild(pRatio.el);pRow.appendChild(pSky.el);pRow.appendChild(pSun.el);
+  const bEye=mkBtn(tx('eye','Why not violet?'),true,color);ctrl.appendChild(bEye);
+  const rAlt=mkRange(ctrl,tx('alt','How high the Sun is'),0,90,55,1,color);
+  const rDust=mkRange(ctrl,tx('dust','Dust and haze'),0,100,12,1,color);
+  rAlt.v.textContent='55°';rDust.v.textContent='12 %';
+  rAlt.inp.addEventListener('input',function(){rAlt.v.textContent=rAlt.inp.value+'°';});
+  rDust.inp.addEventListener('input',function(){rDust.v.textContent=rDust.inp.value+' %';});
+
+  const St=SIMS.skyblue={raf:null,t:0,eye:0};
+  bEye.addEventListener('click',function(){St.eye=St.eye?0:1;
+    bEye.textContent=St.eye?tx('hideEye','Hide the eye response'):tx('eye','Why not violet?');});
+
+  // ── colour done properly: scatter each wavelength, then let CIE decide ──
+  function gauss(x,m,s1,s2){const t=(x-m)/(x<m?s1:s2);return Math.exp(-0.5*t*t);}
+  function xbar(l){return 1.056*gauss(l,599.8,37.9,31.0)+0.362*gauss(l,442.0,16.0,26.7)-0.065*gauss(l,501.1,20.4,26.2);}
+  function ybar(l){return 0.821*gauss(l,568.8,46.9,40.5)+0.286*gauss(l,530.9,16.3,31.1);}
+  function zbar(l){return 1.217*gauss(l,437.0,11.8,36.0)+0.681*gauss(l,459.0,26.0,13.8);}
+  function tauR(l){const u=l/1000;return 0.008569*Math.pow(u,-4)*(1+0.0113*Math.pow(u,-2)+0.00013*Math.pow(u,-4));}
+  function solar(l){const T=5778,c1=3.7418e-16,c2=0.014388,m=l*1e-9;
+    return c1/(Math.pow(m,5)*(Math.exp(c2/(m*T))-1))*1e-13;}
+  function airmass(a){const r=Math.max(a,0)*Math.PI/180;return 1/(Math.sin(r)+0.50572*Math.pow(Math.max(a,0)+6.07995,-1.6364));}
+  function toSRGB(X,Y,Z,bright){
+    let r= 3.2406*X-1.5372*Y-0.4986*Z,g=-0.9689*X+1.8758*Y+0.0415*Z,b= 0.0557*X-0.2040*Y+1.0570*Z;
+    r=Math.max(0,r);g=Math.max(0,g);b=Math.max(0,b);
+    const m=Math.max(r,g,b,1e-9),k=(bright===undefined?1:bright)/m;
+    r*=k;g*=k;b*=k;
+    const f=function(v){v=Math.max(0,Math.min(1,v));
+      v=v<=0.0031308?12.92*v:1.055*Math.pow(v,1/2.4)-0.055;
+      return Math.max(0,Math.min(255,Math.round(v*255)));};
+    return [f(r),f(g),f(b)];
+  }
+  function spectra(){
+    const m=airmass(rAlt.val),d=rDust.val/100;
+    let sX=0,sY=0,sZ=0,dX=0,dY=0,dZ=0,blue=0,red=0,peak=0;
+    const sc=[],tr=[];
+    for(let l=390;l<=730;l+=5){
+      const t=tauR(l)+0.09*d*Math.pow(l/550,-1.0);        // Rayleigh plus a grey-ish haze
+      const T=Math.exp(-t*m),S=1-T;
+      const E=solar(l);
+      sc.push([l,E*S]);tr.push([l,E*T]);
+      if(E*S>peak)peak=E*S;
+      sX+=E*S*xbar(l);sY+=E*S*ybar(l);sZ+=E*S*zbar(l);
+      dX+=E*T*xbar(l);dY+=E*T*ybar(l);dZ+=E*T*zbar(l);
+      if(l>=440&&l<=470)blue+=E*S;
+      if(l>=630&&l<=660)red+=E*S;
+    }
+    const n=Math.max(sY,1e-9),nd=Math.max(dY,1e-9);
+    // the sky darkens as the path lengthens, the Sun stays bright
+    const lum=Math.max(0.30,Math.min(0.92,1.02-0.065*m));
+    return {sky:toSRGB(sX/n,sY/n,sZ/n,lum),
+            sun:toSRGB(dX/nd,dY/nd,dZ/nd,1.0),
+            sc:sc,tr:tr,peak:peak,m:m,ratio:blue/Math.max(red,1e-9)};
+  }
+
+  const HY=250,GL=50,GR=W-24,GT=292,GB=H-34;
+  function frame(){
+    St.t+=1/60;
+    const S=spectra(),alt=rAlt.val;
+    const sky='rgb('+S.sky.join(',')+')',sun='rgb('+S.sun.join(',')+')';
+    ctx.clearRect(0,0,W,H);
+
+    // ══ the sky, painted with the colours the physics produced ══
+    // zenith is the same colour seen through less air, so it is darker and
+    // purer; the horizon is a long path and ends up close to the beam colour
+    const zen=S.sky.map(function(v){return Math.round(v*0.56);});
+    const hor=S.sky.map(function(v,i){return Math.round(Math.min(255,v*0.52+S.sun[i]*0.56));});
+    const g=ctx.createLinearGradient(0,0,0,HY);
+    g.addColorStop(0,'rgb('+zen.join(',')+')');
+    g.addColorStop(0.58,sky);
+    g.addColorStop(1,'rgb('+hor.join(',')+')');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,HY);
+
+    const az=1-alt/90;
+    const sx=W*0.42+az*(W*0.30), sy=HY-18-(alt/90)*(HY-62);
+    // forward scattering piles light up around the Sun, and more of it when hazy
+    const hr=118+S.m*24+rDust.val*1.3;
+    const halo=ctx.createRadialGradient(sx,sy,6,sx,sy,hr);
+    halo.addColorStop(0,'rgba('+S.sun.join(',')+',0.50)');
+    halo.addColorStop(0.42,'rgba('+S.sun.join(',')+',0.15)');
+    halo.addColorStop(1,'rgba('+S.sun.join(',')+',0)');
+    ctx.fillStyle=halo;ctx.fillRect(0,0,W,HY);
+
+    // thin cloud, lit by whatever colour the direct beam has become by now
+    for(let k=0;k<6;k++){
+      const cy2=44+k*30+Math.sin(k*2.1)*7;
+      const cw=W*(0.13+0.09*((k*7)%3)),ch=3.5+((k*3)%3);
+      const cx2=((k*0.23+St.t*0.006)%1.3-0.15)*W;
+      ctx.fillStyle='rgba('+S.sun.join(',')+','+(0.05+0.045*((k*5)%3)).toFixed(3)+')';
+      ctx.beginPath();ctx.ellipse(cx2,cy2,cw,ch,0,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.ellipse(cx2+cw*0.5,cy2+ch*0.6,cw*0.6,ch*0.8,0,0,Math.PI*2);ctx.fill();
+    }
+
+    const gl=ctx.createRadialGradient(sx,sy,2,sx,sy,46);
+    gl.addColorStop(0,sun);gl.addColorStop(0.26,'rgba('+S.sun.join(',')+',0.55)');
+    gl.addColorStop(1,'rgba('+S.sun.join(',')+',0)');
+    ctx.fillStyle=gl;ctx.beginPath();ctx.arc(sx,sy,46,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=sun;ctx.beginPath();ctx.arc(sx,sy,13,0,Math.PI*2);ctx.fill();
+
+    // two ridges; the far one is tinted towards the sky, which is what distance
+    // actually does to a hillside - and the Sun sets behind them
+    function ridge(amp,off,base,col){
+      ctx.fillStyle=col;ctx.beginPath();ctx.moveTo(0,HY+32);
+      for(let x=0;x<=W;x+=6){
+        const y=base-Math.sin(x/W*Math.PI*1.7+off)*amp-Math.sin(x/W*Math.PI*5.3+off*2)*amp*0.34;
+        ctx.lineTo(x,y);
+      }
+      ctx.lineTo(W,HY+32);ctx.closePath();ctx.fill();
+    }
+    const far=S.sky.map(function(v){return Math.round(v*0.40+14);});
+    ridge(13,0.6,HY+5,'rgb('+far.join(',')+')');
+    ridge(9,2.4,HY+17,'#12161f');
+    ctx.font='10px system-ui';ctx.textAlign='left';
+    ctx.fillStyle=(zen[0]+zen[1]+zen[2])>330?'#0f172a':'#e2e8f0';
+    ctx.fillText(tx('cComputed','this colour is computed, not painted'),16,24);
+    ctx.fillText(tx('cAirmass','air the light crosses')+': '+S.m.toFixed(1)+'×',16,40);
+
+    // ══ the spectrum: what got scattered, what got through ══
+    ctx.fillStyle='#0b1220';ctx.fillRect(0,HY+32,W,H-HY-32);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cSpec','every wavelength, and how much of it bounces'),GL-32,GT-12);
+    const X=function(l){return GL+(l-390)/340*(GR-GL);};
+    const Y=function(v){return GB-Math.min(1,v/Math.max(S.peak,1e-9))*(GB-GT);};
+    for(let i=0;i<S.sc.length;i++){
+      const l=S.sc[i][0],c=toSRGB(xbar(l),ybar(l),zbar(l),0.95);
+      ctx.fillStyle='rgba('+c.join(',')+',0.9)';
+      ctx.fillRect(X(l),Y(S.sc[i][1]),(GR-GL)/70,GB-Y(S.sc[i][1]));
+    }
+    ctx.strokeStyle='rgba(148,163,184,0.75)';ctx.lineWidth=1.8;ctx.setLineDash([4,3]);
+    ctx.beginPath();
+    for(let i=0;i<S.tr.length;i++){const x=X(S.tr[i][0]),y=Y(S.tr[i][1]);i?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+    ctx.stroke();ctx.setLineDash([]);
+    if(St.eye){
+      ctx.strokeStyle='#f1f5f9';ctx.lineWidth=1.6;
+      ctx.beginPath();
+      for(let l=390;l<=730;l+=5){const x=X(l),y=GB-ybar(l)*(GB-GT)*0.9;l===390?ctx.moveTo(x,y):ctx.lineTo(x,y);}
+      ctx.stroke();
+      ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#f1f5f9';
+      ctx.fillText(tx('cEyeCurve','what your eye can actually see'),X(560),GB-ybar(560)*(GB-GT)*0.9-8);
+      ctx.fillStyle='rgba(148,163,184,0.18)';ctx.fillRect(X(390),GT,X(430)-X(390),GB-GT);
+      ctx.textAlign='left';ctx.fillStyle='#c4b5fd';
+      ctx.fillText(tx('cViolet','violet scatters most and is barely seen'),X(398),GT+32);
+    }
+    ctx.font='8px system-ui';ctx.textAlign='center';ctx.fillStyle='#64748b';
+    for(let l=400;l<=700;l+=100)ctx.fillText(l+' nm',X(l),GB+14);
+    ctx.textAlign='left';ctx.fillStyle='#94a3b8';ctx.font='9px system-ui';
+    ctx.fillText(tx('cGot','the part that came straight through'),GL+4,GT+12);
+
+    pAir.set(S.m.toFixed(1)+'×');
+    pRatio.set(S.ratio.toFixed(1)+'×');
+    pSky.set(sky);
+    pSun.set(sun);
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simFireflies(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#ca8a04';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.fireflies&&SIMS.fireflies.raf)cancelAnimationFrame(SIMS.fireflies.raf);
+  const W=getSimWidth(container),H=470;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('fireflies',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pSync=pill(tx('sync','How together they are')),pK=pill(tx('kk','Coupling'));
+  const pKc=pill(tx('kc','Coupling needed')),pN=pill(tx('nn','Fireflies'));
+  pRow.appendChild(pSync.el);pRow.appendChild(pK.el);pRow.appendChild(pKc.el);pRow.appendChild(pN.el);
+  const bScatter=mkBtn(tx('scatter','Shuffle them again'),true,color);ctrl.appendChild(bScatter);
+  const rK=mkRange(ctrl,tx('coup','How much each watches the others'),0,300,260,5,color);
+  const rSpread=mkRange(ctrl,tx('spread','How different their own rhythms are'),0,100,25,1,color);
+  const rN=mkRange(ctrl,tx('num','How many fireflies'),20,400,220,10,color);
+  rK.v.textContent='2.60';rSpread.v.textContent='25 %';rN.v.textContent='220';
+  rK.inp.addEventListener('input',function(){rK.v.textContent=(rK.inp.value/100).toFixed(2);});
+  rSpread.inp.addEventListener('input',function(){rSpread.v.textContent=rSpread.inp.value+' %';});
+  rN.inp.addEventListener('input',function(){rN.v.textContent=rN.inp.value;build();});
+
+  const St=SIMS.fireflies={raf:null,t:0,f:[],hist:[]};
+  function build(){
+    St.f=[];
+    const n=rN.val;
+    for(let i=0;i<n;i++){
+      // a Cauchy spread of natural rhythms, which is what makes the threshold exact
+      const u=(i+0.5)/n-0.5;
+      St.f.push({p:Math.random()*Math.PI*2,g:Math.tan(u*Math.PI*0.96),
+                 x:Math.random(),y:Math.random(),s:0});
+    }
+    St.hist=[];
+  }
+  bScatter.addEventListener('click',function(){St.f.forEach(function(q){q.p=Math.random()*Math.PI*2;});St.hist=[];});
+  build();
+
+  const FT=26,FB=300,CY=386;
+  function frame(){
+    const dt=1/60;
+    St.t+=dt;
+    const K=rK.val/100,spread=rSpread.val/100*0.9,W0=2*Math.PI*1.1;
+    // order parameter first, then everyone is pulled towards the mean phase
+    let sx=0,sy=0;
+    St.f.forEach(function(q){sx+=Math.cos(q.p);sy+=Math.sin(q.p);});
+    const n=St.f.length||1;
+    sx/=n;sy/=n;
+    const r=Math.hypot(sx,sy),psi=Math.atan2(sy,sx);
+    St.f.forEach(function(q){
+      const before=q.p;
+      q.p+=(W0+q.g*spread*W0*0.45+K*r*Math.sin(psi-q.p))*dt;
+      if(Math.floor(q.p/(Math.PI*2))>Math.floor(before/(Math.PI*2)))q.s=1;
+      q.s*=0.90;
+    });
+    St.hist.push(r);if(St.hist.length>260)St.hist.shift();
+    const Kc=2*spread*W0*0.45;                        // Kuramoto threshold for this spread
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#070b10';ctx.fillRect(0,0,W,H);
+    const gr=ctx.createLinearGradient(0,FT,0,FB);
+    gr.addColorStop(0,'#0a1018');gr.addColorStop(1,'#0c1a12');
+    ctx.fillStyle=gr;ctx.fillRect(0,FT,W,FB-FT);
+
+    // ══ the meadow ══
+    St.f.forEach(function(q){
+      const x=12+q.x*(W-24),y=FT+8+q.y*(FB-FT-16);
+      const b=q.s;
+      if(b>0.04){
+        const g2=ctx.createRadialGradient(x,y,0,x,y,11);
+        g2.addColorStop(0,'rgba(253,230,138,'+(0.95*b).toFixed(2)+')');
+        g2.addColorStop(1,'rgba(250,204,21,0)');
+        ctx.fillStyle=g2;ctx.beginPath();ctx.arc(x,y,11,0,Math.PI*2);ctx.fill();
+      }
+      ctx.fillStyle='rgba(250,204,21,'+(0.10+0.85*b).toFixed(2)+')';
+      ctx.beginPath();ctx.arc(x,y,1.8,0,Math.PI*2);ctx.fill();
+    });
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cField','a meadow of fireflies, each with its own rhythm'),16,FT-8);
+
+    // ══ the phase circle: the picture of what sync actually means ══
+    const cx=70,cy=CY,cr=42;
+    ctx.strokeStyle='rgba(148,163,184,0.3)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.arc(cx,cy,cr,0,Math.PI*2);ctx.stroke();
+    St.f.forEach(function(q,i){
+      if(i%2)return;
+      ctx.fillStyle='rgba(250,204,21,0.55)';
+      ctx.beginPath();ctx.arc(cx+Math.cos(q.p)*cr,cy+Math.sin(q.p)*cr,1.5,0,Math.PI*2);ctx.fill();
+    });
+    ctx.strokeStyle='#f87171';ctx.lineWidth=2.4;
+    ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+sx*cr,cy+sy*cr);ctx.stroke();
+    ctx.fillStyle='#f87171';ctx.beginPath();ctx.arc(cx+sx*cr,cy+sy*cr,3.4,0,Math.PI*2);ctx.fill();
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cCircle','where each one is in its cycle'),cx,cy+cr+18);
+
+    // ══ togetherness over time, and the threshold ══
+    const TL=150,TR=W-24,TT=CY-46,TB=CY+40;
+    ctx.strokeStyle='rgba(148,163,184,0.16)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(TL,TB);ctx.lineTo(TR,TB);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(TL,TT);ctx.lineTo(TR,TT);ctx.stroke();
+    ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+    ctx.fillText(tx('cAll','all together'),TL-6,TT+4);
+    ctx.fillText(tx('cNone','no pattern'),TL-6,TB+3);
+    ctx.strokeStyle='#facc15';ctx.lineWidth=2;ctx.beginPath();
+    for(let i=0;i<St.hist.length;i++){
+      const x=TL+i/259*(TR-TL),y=TB-St.hist[i]*(TB-TT);
+      i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+    }
+    ctx.stroke();
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cTrace','how together they are, moment by moment'),TL,TT-10);
+    const on=K>=Kc;
+    ctx.font='bold 12px system-ui';ctx.textAlign='right';
+    ctx.fillStyle=on?'#4ade80':'#94a3b8';
+    ctx.fillText(on?tx('cLocked','locked together'):tx('cLoose','everyone for themselves'),TR,TT-10);
+
+    pSync.set(Math.round(r*100)+' %');
+    pK.set(K.toFixed(2));
+    pKc.set(Kc.toFixed(2));
+    pN.set(St.f.length+'');
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simAnts(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#b45309';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.ants&&SIMS.ants.raf)cancelAnimationFrame(SIMS.ants.raf);
+  const W=getSimWidth(container),H=440;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('ants',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pBest=pill(tx('best','Shortest route found')),pTrips=pill(tx('trips','Trips completed'));
+  const pCarry=pill(tx('carry','Carrying food')),pStr=pill(tx('str','Strength of the trail'));
+  pRow.appendChild(pBest.el);pRow.appendChild(pTrips.el);pRow.appendChild(pCarry.el);pRow.appendChild(pStr.el);
+  const bRock=mkBtn(tx('rock','Drop a rock on the trail'),true,color);ctrl.appendChild(bRock);
+  const rEvap=mkRange(ctrl,tx('evap','How fast the scent fades'),1,40,10,1,color);
+  const rNum=mkRange(ctrl,tx('num','How many ants'),20,240,110,10,color);
+  rEvap.v.textContent='10 %';rNum.v.textContent='110';
+  rEvap.inp.addEventListener('input',function(){rEvap.v.textContent=rEvap.inp.value+' %';});
+  rNum.inp.addEventListener('input',function(){rNum.v.textContent=rNum.inp.value;seed();});
+
+  const GW=44,GH=26;
+  const St=SIMS.ants={raf:null,t:0,a:[],ph:null,rock:0,best:0,trips:0,cell:0};
+  const NEST=[4,GH-4],FOOD=[GW-5,4];
+  function seed(){
+    St.a=[];
+    for(let i=0;i<rNum.val;i++)
+      St.a.push({x:NEST[0]+Math.random()-0.5,y:NEST[1]+Math.random()-0.5,
+                 a:Math.random()*Math.PI*2,carry:0,steps:0,wall:0});
+  }
+  function blocked(cx,cy){
+    if(!St.rock)return false;
+    return Math.abs(cx-GW*0.52)<3.4&&Math.abs(cy-GH*0.5)<4.2;
+  }
+  St.ph=new Float32Array(GW*GH);
+  seed();
+  bRock.addEventListener('click',function(){St.rock=St.rock?0:1;
+    bRock.textContent=St.rock?tx('unrock','Take the rock away'):tx('rock','Drop a rock on the trail');});
+
+  function sense(x,y,a){
+    let s=0;
+    for(let d=1;d<=3;d++){
+      const cx=Math.round(x+Math.cos(a)*d),cy=Math.round(y+Math.sin(a)*d);
+      if(cx<0||cy<0||cx>=GW||cy>=GH||blocked(cx,cy))return -1;
+      s+=St.ph[cy*GW+cx];
+    }
+    return s;
+  }
+
+  const PL=14,PT=30,PR=W-14,PB=H-58;
+  const SXc=function(gx){return PL+(gx+0.5)/GW*(PR-PL);};
+  const SYc=function(gy){return PT+(gy+0.5)/GH*(PB-PT);};
+  function frame(){
+    St.t+=1/60;
+    const ev=1-rEvap.val/100*0.035;
+    for(let i=0;i<St.ph.length;i++)St.ph[i]*=ev;
+
+    St.a.forEach(function(q){
+      const tgt=q.carry?NEST:FOOD;
+      const home=Math.atan2(tgt[1]-q.y,tgt[0]-q.x);
+      let a=q.a;
+      if(q.carry){
+        // heading home in a fairly straight line, laying scent as it goes -
+        // unless it has just hit something, in which case follow the edge
+        if(q.wall>0){q.wall--;a=q.a+(Math.random()-0.5)*0.35;}
+        else a=home+(Math.random()-0.5)*0.5;
+        const ci=Math.round(q.y)*GW+Math.round(q.x);
+        if(ci>=0&&ci<St.ph.length)St.ph[ci]+=18/Math.max(20,q.steps);
+      }else{
+        // looking: follow the scent if there is any, otherwise wander towards the food
+        const l=sense(q.x,q.y,q.a-0.6),c=sense(q.x,q.y,q.a),r=sense(q.x,q.y,q.a+0.6);
+        const best=Math.max(l,c,r);
+        if(best<=0)a=q.a+(Math.random()-0.5)*1.2;
+        else if(best===c)a=q.a+(Math.random()-0.5)*0.25;
+        else a=q.a+(best===l?-0.45:0.45)+(Math.random()-0.5)*0.25;
+        if(q.wall>0)q.wall--;else a=a*0.82+home*0.18;
+      }
+      let nx=q.x+Math.cos(a)*0.55,ny=q.y+Math.sin(a)*0.55;
+      // reflect off the edges rather than refusing to move, or ants slide along
+      // the wall for the rest of their lives instead of foraging
+      if(nx<0.5||nx>GW-1.5){a=Math.PI-a;nx=Math.max(0.5,Math.min(GW-1.5,nx));}
+      if(ny<0.5||ny>GH-1.5){a=-a;ny=Math.max(0.5,Math.min(GH-1.5,ny));}
+      if(blocked(Math.round(nx),Math.round(ny))){
+        a+=(Math.random()<0.5?-1:1)*(Math.PI*0.35+Math.random()*0.5);
+        nx=q.x;ny=q.y;q.wall=16;
+      }
+      q.x=nx;q.y=ny;q.a=a;q.steps++;
+      if(!q.carry&&Math.hypot(q.x-FOOD[0],q.y-FOOD[1])<2.0){
+        q.carry=1;q.steps=Math.max(20,q.steps);
+      }else if(q.carry&&Math.hypot(q.x-NEST[0],q.y-NEST[1])<2.0){
+        St.trips++;
+        if(!St.best||q.steps<St.best)St.best=q.steps;
+        q.carry=0;q.steps=0;
+      }
+      if(q.steps>1400){q.carry=0;q.steps=0;q.x=NEST[0];q.y=NEST[1];}
+    });
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#120e08';ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#1a1409';ctx.fillRect(PL-4,PT-4,PR-PL+8,PB-PT+8);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cTop','the nest, the food, and the scent between them'),PL,PT-12);
+
+    // ══ the pheromone field ══
+    let mx=0.0001;
+    for(let i=0;i<St.ph.length;i++)if(St.ph[i]>mx)mx=St.ph[i];
+    const cw=(PR-PL)/GW,ch=(PB-PT)/GH;
+    for(let gy=0;gy<GH;gy++)for(let gx=0;gx<GW;gx++){
+      const v=St.ph[gy*GW+gx]/mx;
+      if(v>0.015){
+        ctx.fillStyle='rgba(74,222,128,'+(0.06+0.62*Math.pow(v,0.6)).toFixed(3)+')';
+        ctx.fillRect(PL+gx*cw,PT+gy*ch,cw+0.6,ch+0.6);
+      }
+    }
+    if(St.rock){
+      ctx.fillStyle='#57534e';
+      ctx.fillRect(SXc(GW*0.52-3.4),SYc(GH*0.5-4.2),6.8*cw,8.4*ch);
+      ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#d6d3d1';
+      ctx.fillText(tx('cRock','rock'),SXc(GW*0.52),SYc(GH*0.5)+3);
+    }
+    // nest and food
+    ctx.fillStyle='#a16207';ctx.beginPath();ctx.arc(SXc(NEST[0]),SYc(NEST[1]),11,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#4ade80';ctx.beginPath();ctx.arc(SXc(FOOD[0]),SYc(FOOD[1]),9,0,Math.PI*2);ctx.fill();
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#fcd34d';
+    ctx.fillText(tx('cNest','nest'),SXc(NEST[0]),SYc(NEST[1])+22);
+    ctx.fillStyle='#86efac';ctx.fillText(tx('cFood','food'),SXc(FOOD[0]),SYc(FOOD[1])-14);
+    // the ants
+    let carrying=0;
+    St.a.forEach(function(q){
+      if(q.carry)carrying++;
+      ctx.fillStyle=q.carry?'#4ade80':'rgba(231,229,228,0.75)';
+      ctx.beginPath();ctx.arc(SXc(q.x),SYc(q.y),q.carry?2.2:1.7,0,Math.PI*2);ctx.fill();
+    });
+
+    ctx.font='9px system-ui';ctx.textAlign='left';ctx.fillStyle='#86efac';
+    ctx.fillText(tx('cGreen','green ants are carrying food home, laying scent'),PL,H-34);
+    ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cWhite','pale ants are still looking, and follow the strongest scent'),PL,H-20);
+
+    pBest.set(St.best?St.best+' '+tx('cSteps','steps'):'…');
+    pTrips.set(St.trips+'');
+    pCarry.set(carrying+'');
+    pStr.set(mx.toFixed(1));
+    St.raf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function simMonty(container,color,lvl){
+  const C=(typeof color==='string'&&color[0]==='#')?color:'#0284c7';
+  window.SIMS=window.SIMS||{};
+  if(SIMS.montyhall&&SIMS.montyhall.raf)cancelAnimationFrame(SIMS.montyhall.raf);
+  const W=getSimWidth(container),H=460;
+  const {canvas,ctx}=mkCanvas(container,W,H);
+  const ctrl=mkCtrl(container);
+  const pRow=mkPills(container);
+  const L=simLabels('montyhall',lvl);
+  const tx=function(k,d){return L[k]||d;};
+  const pStay=pill(tx('pstay','Wins by staying')),pSw=pill(tx('pswitch','Wins by switching'));
+  const pGames=pill(tx('games','Games played')),pTheory=pill(tx('theory','Theory says'));
+  pRow.appendChild(pStay.el);pRow.appendChild(pSw.el);pRow.appendChild(pGames.el);pRow.appendChild(pTheory.el);
+  const bRun=mkBtn(tx('run','Play 2000 games'),true,color);ctrl.appendChild(bRun);
+  const bReset=mkBtn(tx('clear','Start over'),false,color);ctrl.appendChild(bReset);
+  const rDoors=mkRange(ctrl,tx('doors','How many doors'),3,10,3,1,color);
+  const rSpeed=mkRange(ctrl,tx('speed','Games per second'),0,60,10,1,color);
+  rDoors.v.textContent='3';rSpeed.v.textContent='10';
+  rDoors.inp.addEventListener('input',function(){rDoors.v.textContent=rDoors.inp.value;reset();});
+  rSpeed.inp.addEventListener('input',function(){rSpeed.v.textContent=rSpeed.inp.value;});
+
+  const St=SIMS.montyhall={raf:null,t:0,acc:0,nS:0,wS:0,nW:0,wW:0,hist:[],show:null};
+  function reset(){St.nS=St.wS=St.nW=St.wW=0;St.hist=[];St.show=null;}
+  bReset.addEventListener('click',reset);
+
+  // one honest game: host always opens losing doors, never yours, never the prize
+  function play(){
+    const n=rDoors.val;
+    const prize=Math.floor(Math.random()*n),pick=Math.floor(Math.random()*n);
+    const opened=[];
+    for(let d=0;d<n&&opened.length<n-2;d++)if(d!==prize&&d!==pick)opened.push(d);
+    let other=0;
+    for(let d=0;d<n;d++)if(d!==pick&&opened.indexOf(d)<0)other=d;
+    return {n:n,prize:prize,pick:pick,opened:opened,other:other,
+            stayWin:pick===prize,switchWin:other===prize};
+  }
+  function step(){
+    const g=play();
+    St.nS++;if(g.stayWin)St.wS++;
+    St.nW++;if(g.switchWin)St.wW++;
+    St.show=g;
+    St.hist.push([St.wS/St.nS,St.wW/St.nW]);
+    if(St.hist.length>420)St.hist.shift();
+  }
+  bRun.addEventListener('click',function(){for(let i=0;i<2000;i++)step();});
+
+  const DT=44,DB=196,GT=248,GB=H-34,GL=48,GR=W-28;
+  function frame(){
+    St.t+=1/60;
+    St.acc+=rSpeed.val/60;
+    while(St.acc>=1){step();St.acc--;}
+    const n=rDoors.val,g=St.show;
+
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#0d1117';ctx.fillRect(0,0,W,H);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cShow','the last game that was played'),22,30);
+
+    // ══ the doors ══
+    const gap=8,dw=Math.min(78,(W-44-(n-1)*gap)/n),x0=(W-(n*dw+(n-1)*gap))/2;
+    for(let d=0;d<n;d++){
+      const x=x0+d*(dw+gap),open=g&&g.opened.indexOf(d)>=0;
+      const chosen=g&&g.pick===d,alt=g&&g.other===d;
+      ctx.fillStyle=open?'#1c1917':'#7c4a21';
+      ctx.fillRect(x,DT,dw,DB-DT);
+      ctx.strokeStyle=chosen?'#38bdf8':(alt?'#4ade80':'rgba(0,0,0,0.35)');
+      ctx.lineWidth=chosen||alt?3:1.4;
+      ctx.strokeRect(x,DT,dw,DB-DT);
+      if(!open){
+        ctx.fillStyle='rgba(0,0,0,0.25)';ctx.fillRect(x+6,DT+8,dw-12,DB-DT-16);
+        ctx.fillStyle='#fbbf24';ctx.beginPath();
+        ctx.arc(x+dw-13,(DT+DB)/2,3,0,Math.PI*2);ctx.fill();
+      }else{
+        ctx.font='20px system-ui';ctx.textAlign='center';
+        ctx.fillText('🐐',x+dw/2,(DT+DB)/2+8);
+      }
+      if(g&&g.prize===d&&!open){
+        ctx.font='20px system-ui';ctx.textAlign='center';
+        ctx.fillText('🚗',x+dw/2,(DT+DB)/2+8);
+      }
+      ctx.font='9px system-ui';ctx.textAlign='center';
+      if(chosen){ctx.fillStyle='#7dd3fc';ctx.fillText(tx('cPicked','you picked this'),x+dw/2,DB+16);}
+      else if(alt){ctx.fillStyle='#86efac';ctx.fillText(tx('cOther','the one left'),x+dw/2,DB+16);}
+      else{ctx.fillStyle='#64748b';ctx.fillText(tx('cOpened','opened for you'),x+dw/2,DB+16);}
+    }
+    ctx.font='9px system-ui';ctx.textAlign='center';ctx.fillStyle='#94a3b8';
+    ctx.fillText(tx('cHost','the host always opens losing doors, never yours'),W/2,DB+32);
+
+    // ══ the two rates, converging ══
+    ctx.fillStyle='#0b1220';ctx.fillRect(0,GT-18,W,H-GT+18);
+    ctx.font='10px system-ui';ctx.textAlign='left';ctx.fillStyle='#cbd5e1';
+    ctx.fillText(tx('cConv','how often each choice wins, as the games pile up'),GL-24,GT-8);
+    const Y=function(v){return GB-v*(GB-GT);};
+    ctx.strokeStyle='rgba(148,163,184,0.14)';ctx.lineWidth=1;
+    for(let p=0;p<=1.001;p+=0.25){
+      ctx.beginPath();ctx.moveTo(GL,Y(p));ctx.lineTo(GR,Y(p));ctx.stroke();
+      ctx.font='8px system-ui';ctx.textAlign='right';ctx.fillStyle='#64748b';
+      ctx.fillText(Math.round(p*100)+' %',GL-6,Y(p)+3);
+    }
+    // where the maths says they must land
+    const tS=1/n,tW=(n-1)/n;
+    [[tS,'#f87171'],[tW,'#4ade80']].forEach(function(e){
+      ctx.strokeStyle=e[1];ctx.globalAlpha=0.4;ctx.setLineDash([5,4]);ctx.lineWidth=1.4;
+      ctx.beginPath();ctx.moveTo(GL,Y(e[0]));ctx.lineTo(GR,Y(e[0]));ctx.stroke();
+      ctx.setLineDash([]);ctx.globalAlpha=1;
+    });
+    const m=St.hist.length;
+    function curve(idx,col){
+      if(m<2)return;
+      ctx.strokeStyle=col;ctx.lineWidth=2.2;ctx.beginPath();
+      for(let i=0;i<m;i++){
+        const x=GL+i/(m-1)*(GR-GL),y=Y(St.hist[i][idx]);
+        i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+      }
+      ctx.stroke();
+    }
+    curve(0,'#f87171');curve(1,'#4ade80');
+    ctx.font='9px system-ui';ctx.textAlign='right';
+    if(m){
+      ctx.fillStyle='#fca5a5';ctx.fillText(tx('cStayL','staying'),GR,Y(St.hist[m-1][0])-6);
+      ctx.fillStyle='#86efac';ctx.fillText(tx('cSwitchL','switching'),GR,Y(St.hist[m-1][1])-6);
+    }
+    ctx.textAlign='left';ctx.fillStyle='#64748b';
+    ctx.fillText(tx('cDashed','dashed lines are where the maths says they must land'),GL+4,GB-6);
+
+    pStay.set(St.nS?(St.wS/St.nS*100).toFixed(1)+' %':'…');
+    pSw.set(St.nW?(St.wW/St.nW*100).toFixed(1)+' %':'…');
+    pGames.set(St.nS.toLocaleString(simLocale()));
+    pTheory.set(Math.round(tS*100)+' % / '+Math.round(tW*100)+' %');
     St.raf=requestAnimationFrame(frame);
   }
   frame();

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Do Grid Batteries Store Electricity? | Lab-in-a-Tab</title>
+<meta name="description" content="A row of containers full of lithium cells, buying electricity when nobody wants it and selling it back four hours later. The economics are brutally…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-grid-batteries-work/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-grid-batteries-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funzionano-le-batterie-di-rete/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionnent-les-batteries-de-reseau/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-grid-batteries-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Do Grid Batteries Store Electricity? — Explained &amp; Simulated">
+<meta property="og:description" content="A row of containers full of lithium cells, buying electricity when nobody wants it and selling it back four hours later. The economics are brutally…">
+<meta property="og:url" content="https://labinatab.com/how-grid-batteries-work/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Do Grid Batteries Store Electricity? — Explained &amp; Simulated">
+<meta name="twitter:description" content="A row of containers full of lithium cells, buying electricity when nobody wants it and selling it back four hours later. The economics are brutally…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-grid-batteries-work/#article",
+   "headline": "How Do Grid Batteries Store Electricity?",
+   "name": "How Do Grid Batteries Store Electricity?",
+   "description": "A row of containers full of lithium cells, buying electricity when nobody wants it and selling it back four hours later. The economics are brutally…",
+   "url": "https://labinatab.com/how-grid-batteries-work/",
+   "mainEntityOfPage": "https://labinatab.com/how-grid-batteries-work/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Round trip",
+    "Arbitrage",
+    "Duration"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Do Grid Batteries Store Electricity?",
+    "sameAs": "https://en.wikipedia.org/wiki/Grid_energy_storage"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Do Grid Batteries Store Electricity?",
+     "item": "https://labinatab.com/how-grid-batteries-work/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-grid-batteries-work/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funzionano-le-batterie-di-rete/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionnent-les-batteries-de-reseau/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energy</nav>
+  <h1>How Do Grid Batteries Store Electricity?</h1>
+  <p class="lead">A row of containers full of lithium cells, buying electricity when nobody wants it and selling it back four hours later. The economics are brutally simple, and so is the physics that limits them.</p>
+  <div class="chips"><span>Round trip</span><span>Arbitrage</span><span>Duration</span></div>
+  <section class="sim-embed" data-sim="storage" data-color="#7c3aed" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#7c3aed"><span class="sg-lbl">Try this</span><span>Watch one whole day first - it takes about half a minute. Then drag <b>How much comes back out</b> down towards 60% and watch two things: the green and orange columns start disappearing, and <b>Money made today</b> collapses. Put it back to 88 and stretch <b>How many hours it holds</b> from 2 hours to 8 instead: more columns, more energy, but look at where the extra ones sit on the price line. Finally push <b>How fast it can push</b> up and watch the battery fill in a fraction of the time.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Try this</span><span>Start by reading the numbers: <b>Round-trip losses</b> should be exactly \((1-\eta)\) of what the battery took from the grid. Now lower <b>Round-trip efficiency</b> step by step and find the point where pairs start dropping out - then check that the surviving pairs all satisfy the break-even condition. Reset, and sweep <b>Duration</b> from 1 to 8 hours, dividing <b>Daily revenue</b> by the duration each time to get revenue per hour of storage: it falls, and you can see exactly why on the price curve. Finally, raise <b>Power rating</b> at fixed <b>Duration</b> and note that both energy and revenue scale with it, but <b>Equivalent cycles</b> does not.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#7c3aed"><span class="sg-lbl">Try this</span><span>Recover the marginal value of duration. Record <b>Arbitrage revenue</b> at <b>Duration E/P</b> = 1, 2, 4 and 8 hours and difference it: the increments trace the tails of the price duration curve, and they should fall steeply. Then hold duration and sweep <b>AC round-trip efficiency</b> to find the efficiency at which the last pair becomes unprofitable, and check it equals \(p_{\text{buy}}/p_{\text{sell}}\) for that pair. Finally, reason about what this model omits: add a marginal degradation cost per MWh of throughput and decide which pairs would drop out first.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>The amber line across the top is what a megawatt-hour of electricity costs, hour by hour, through one day - dirt cheap at noon when every solar panel is working, painfully dear at seven in the evening. Green columns are the hours the battery picks to fill up; orange columns are the hours it sells everything back. The dotted violet line is how full it is. Down below is the battery itself, filling and emptying as the clock crosses those columns, with the day's books kept beside it: what went in, what came back, what vanished as heat, and what the whole day was worth.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>A battery does not make electricity cheaper. It moves electricity from the hour when nobody wants it to the hour when everybody does - and it takes a cut in heat for the trouble.</b> That cut is why the efficiency slider is so brutal: at 60% you have to sell for nearly twice what you paid before you have made a single cent, and most hours of the day simply do not offer that much of a gap, so the machine sits idle. And notice what happens when you make it hold more hours. The first two hours are the gold: the very cheapest hour of the day paired with the very dearest. Every hour you add after that is worth less than the one before, because you have already used up the best of the day.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Upper panel: an hourly wholesale price curve for a solar-heavy day, with the dispatch found by pairing the cheapest hour with the most expensive, the second cheapest with the second most expensive, and so on for as many pairs as <b>Duration</b> allows. A pair is only taken if \(\eta\,p_{\text{sell}} > p_{\text{buy}}\), so unprofitable pairs simply drop out. Green columns charge, orange columns discharge, the dotted line is state of charge. Lower panel: the battery, and the day's energy and cash accounting, with the break-even spread \(1/\eta - 1\) printed beneath.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Storage is not one product bought once - it is power and energy, priced separately, and the ratio between them is the entire design.</b> Power decides how fast you can act and what the inverter costs; energy decides how long you can keep acting and what the cells cost. The optimal duration falls out of the shape of the price curve rather than out of the technology: a peak four hours wide makes a four-hour battery, and the fifth hour is nearly worthless. Notice also how efficiency enters. It is not a small discount on revenue, it is a threshold - every trade must clear \(1/\eta\), so a poor round trip does not shrink the business, it deletes the marginal hours entirely. That is why a 35% round-trip technology like hydrogen is hopeless for daily arbitrage and yet perfectly sensible for storing a windless fortnight, where nothing else can hold that much energy at all.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A reduced arbitrage model with perfect foresight. The optimal schedule for a price-taking store with symmetric power limits and no cycling cost is the greedy pairing of the price duration curve's tails, taken while \(\eta\,p_{(24-i)} > p_{(i)}\) - the discrete analogue of the linear program \(\max\sum_t p_t(d_t-c_t)\) subject to \(\mathrm{SoC}_{t+1}=\mathrm{SoC}_t+\eta_c c_t - d_t/\eta_d\). Round-trip losses are applied on the discharge leg. The lower panel is the resulting daily energy and cash balance, with the break-even spread \(1/\eta-1\).</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The value of storage is the area between the tails of the price duration curve, and every battery built shaves those tails.</b> That single sentence contains both the business case and its limit: arbitrage revenue is not a property of the technology but of the residual shape of the market, so it declines as storage penetration rises - the only major technology whose deployment directly destroys its own revenue stack. Two honest omissions here. Perfect foresight is generous; real operators bid against forecasts and lose a meaningful slice of the theoretical optimum. And no degradation cost is charged, whereas in practice each cycle consumes warranty throughput, which is exactly why real dispatch leaves shallow, marginal spreads untaken and why operators prize frequency response - it pays for power and speed while consuming almost no energy.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>The warehouse the grid never had</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Electricity has always had one embarrassing problem: it has to be used the instant it is made. There is no shed at the back of the power station with yesterday's electricity in it. For a century that meant every power plant had to chase demand up and down, minute by minute, all day.</p>
+<p>A grid battery is the shed. It looks like a row of shipping containers in a field, and inside are the same lithium cells that are in your phone, just millions of them. A typical one is rated <strong>100 megawatts and 200 megawatt-hours</strong>, and those two numbers mean different things: the first is how fast it can push, the second is how much it holds. Full power for two hours. It is exactly like a bucket - how wide the tap is, and how big the bucket is.</p>
+<p>What it does with that is simple arithmetic. Around midday, when every solar panel in the country is producing at once, electricity is cheap and sometimes worth less than nothing. In the evening, when everyone comes home and the sun has gone, it is expensive. So the battery fills up in the middle of the day and empties itself into the evening rush. It is buying low and selling high, except the thing it is trading is the electricity in your walls.</p>
+<p>Two catches. The first is that you never get back everything you put in - about ten per cent is lost as heat on the way in and out, so ten stored units come back as nine. The second is time. Four hours of storage is easy and cheap; four days is not, and four months is a completely different problem that batteries cannot solve at any sensible price. That gap is where pumped hydro, hydrogen and a lot of unfinished argument live.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⚡</span> A battery can go from nothing to full output in under a second - a gas turbine needs tens of seconds. That speed is worth more to the grid than the energy itself, which is why batteries earn most of their money holding the frequency steady rather than shifting energy.</li><li><span aria-hidden="true">🏔️</span> The biggest battery on Earth is still a lake. Pumped hydro stores over 90% of the world's grid storage: pump water uphill when power is cheap, let it fall through turbines when it is not.</li><li><span aria-hidden="true">📉</span> Lithium battery prices have fallen roughly 90% since 2010. Grid storage was a niche curiosity in 2015; it is now routinely the cheapest way to cover an evening peak.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Power, energy and the spread you have to beat</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>A storage asset is described by two independent numbers and their ratio. <strong>Power</strong> \(P\) in MW is what the inverter and cells can deliver instantaneously; <strong>energy</strong> \(E\) in MWh is what the chemistry holds. Their ratio \(E/P\) is the <strong>duration</strong>, and it is the single most important design choice, because power and energy are bought separately: the inverter and connection cost per MW, the cells cost per MWh. Most grid batteries land at two to four hours because that is the shape of an evening peak.</p>
+<p>Then there is the tax on every round trip. <strong>Round-trip efficiency</strong> \(\eta = E_{\text{out}}/E_{\text{in}}\) runs 85-92% for lithium at grid scale, the losses being ohmic heating, electrochemical overpotentials, inverter conversion and the air conditioning that keeps the cells at 25 °C. That efficiency sets a hard economic threshold: arbitrage only pays if the price at which you sell exceeds the price at which you bought by a factor of at least \(1/\eta\). At 85% you need an 18% spread just to break even before you have paid for the hardware.</p>
+<p>Which explains the daily pattern the market produces on its own. Charge in the cheapest hours - usually the solar-flooded middle of the day, sometimes overnight - and discharge into the highest-priced hours, typically the evening ramp. Making the battery bigger does not scale the revenue linearly, because each extra hour of duration forces you into the next-cheapest hour to buy and the next-least-expensive hour to sell. The marginal value of duration falls, quickly, and it falls faster as more storage arrives and flattens the spreads that made it profitable.</p>
+<p>Finally, batteries wear out by being used. Cycle life depends strongly on depth of discharge and on the C-rate; running from 100% to 0% every day ages a cell far faster than running 80% to 20% twice. Modern warranties are written in megawatt-hours of throughput rather than in years, which tells you exactly what the manufacturer thinks the limiting variable is.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Duration</th><td>\(t = \dfrac{E}{P}\)</td><td class="cmt">MWh divided by MW</td></tr>
+<tr><th scope="row">Round-trip efficiency</th><td>\(\eta = \dfrac{E_{\text{out}}}{E_{\text{in}}}\)</td><td class="cmt">0.85–0.92 for lithium</td></tr>
+<tr><th scope="row">Break-even spread</th><td>\(\dfrac{p_{\text{sell}}}{p_{\text{buy}}} &gt; \dfrac{1}{\eta}\)</td><td class="cmt">before any capital cost</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">C-rate</th><td>\(C = \dfrac{P}{E}\)</td><td class="cmt">0.5C = two-hour battery</td></tr>
+<tr><th scope="row">Daily revenue</th><td>\(R = \sum p_i E_{\text{out},i} - \sum p_j E_{\text{in},j}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">State of charge</th><td>\(\mathrm{SoC}(t) = \mathrm{SoC}_0 + \dfrac{1}{E}\int P\,dt\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Throughput life</th><td>\(N_{\text{cycles}}\times \mathrm{DoD}\times E\)</td><td class="cmt">what warranties actually count</td></tr>
+<tr><th scope="row">Levelised cost</th><td>\(\mathrm{LCOS} = \dfrac{\text{capital}+\text{operating}}{\sum E_{\text{out}}}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🧮</span> C-rate is power divided by capacity: a 100 MW / 200 MWh battery runs at 0.5C. Higher C-rates mean more ohmic loss and faster degradation, which is why a one-hour battery is not simply a four-hour battery in a hurry.</li><li><span aria-hidden="true">💸</span> Storage cannibalises its own business case. Every battery added flattens the price spread that pays for it, so the tenth battery on a system earns much less than the first - a rare case where the technology's success limits its own deployment.</li><li><span aria-hidden="true">🌡️</span> Grid batteries spend a slice of their own stored energy running air conditioning. Cells last far longer near 25 °C, so the container's HVAC is a permanent parasitic load - part of why the round trip is 88% and not 95%.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Where the losses live, how arbitrage eats itself, and the duration wall</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Three products, not one</h3>
+<p>Storage is habitually discussed as if it were a single commodity, but a grid buys at least three distinct things from it, on different timescales and with different physics. Sub-second: inverters can inject or absorb real power almost instantly, which is frequency containment and is limited by power rating alone. Hours: energy arbitrage and peak shifting, limited by \(E\). Days to seasons: covering wind droughts, limited by \(E\) again but at a cost per kWh that lithium cannot reach. The cost structure explains the split - power capacity is priced per kW and energy capacity per kWh, and the ratio between them decides which technology wins at which duration.</p>
+<h3><span class="hn">02</span>Accounting for the round trip</h3>
+<p>The DC round trip of a good lithium cell is above 95%: ohmic loss through \(I^2R\), charge-transfer overpotential from Butler-Volmer kinetics, and a small hysteresis in the open-circuit voltage. What turns that into an AC round trip of 86-90% is everything else - inverter and transformer conversion at each direction, auxiliary loads, and thermal management, since cycle life depends steeply on cell temperature. Because ohmic losses scale as \(I^2\), efficiency falls with C-rate: the same asset is more efficient shifting energy over four hours than over one.</p>
+<h3><span class="hn">03</span>Arbitrage as an optimisation, and its self-destruction</h3>
+<p>With perfect foresight, optimal dispatch is a linear program: maximise \(\sum_t p_t(d_t - c_t)\) subject to power limits, an energy balance \(\text{SoC}_{t+1} = \text{SoC}_t + \eta_c c_t - d_t/\eta_d\), and SoC bounds. The structure of the solution is simple - buy in the cheapest \(n\) hours, sell in the most expensive \(m\) - and its value is the area between the sorted price duration curve's tails. Two consequences follow. Marginal duration has sharply diminishing returns, because each added hour reaches into a less extreme part of the curve. And as installed storage grows, it flattens exactly the tails it feeds on: the spread collapses, and the last battery built earns a fraction of what the first did.</p>
+<h3><span class="hn">04</span>Degradation, briefly and honestly</h3>
+<p>Two mechanisms dominate. Calendar ageing comes mainly from growth of the solid-electrolyte interphase, roughly \(\propto\sqrt{t}\) and strongly Arrhenius in temperature, which is why a hot cell at high state of charge ages fastest even sitting still. Cycle ageing adds mechanical fatigue from lattice expansion and, at low temperature or high charge rate, lithium plating on the anode - irreversible, capacity-destroying and a safety concern. This is why operators cycle within a window rather than end to end, keep cells near 25 °C, and accept a lower charge rate in winter. It also explains warranties written in throughput: the physics counts energy pushed through, not calendar years.</p>
+<h3><span class="hn">05</span>The duration wall</h3>
+<p>Lithium's energy cost sits near 100-150 $/kWh installed, so a 100-hour system would cost ten times a ten-hour one. Pumped hydro's marginal energy cost is the reservoir - single-digit dollars per kWh - which is precisely why it dominates long-duration storage despite needing geography. Beyond a day or two, the economics stop being about efficiency at all: hydrogen at 35% round trip is a poor engine but a cheap tank, and for a store cycled a handful of times a year, capital per kWh dwarfs efficiency. The right question at every duration is not what is most efficient but what is cheapest per unit of energy delivered, given how rarely it will be used.</p>
+<h3><span class="hn">06</span>What it does to the system</h3>
+<p>Storage's contribution to reliability - its capacity credit - starts near 100% for the first few gigawatts and falls as penetration grows, because a fleet of four-hour batteries cannot cover a six-hour peak once it has flattened the first four. The literature on very high renewable shares converges on the same shape: a large amount of short-duration storage does most of the work cheaply, and then a small, awkward, expensive residue of multi-day energy has to come from somewhere else - long-duration storage, overbuild and curtailment, interconnection, or a little firm generation. Which of those wins is an economics question, and the answer moves every time a technology's cost curve does.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Dispatch objective</th><td>\(\max \sum_t p_t\left(d_t-c_t\right)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Energy balance</th><td>\(\mathrm{SoC}_{t+1} = \mathrm{SoC}_t+\eta_c c_t-\dfrac{d_t}{\eta_d}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Break-even</th><td>\(p_{\text{sell}} &gt; \dfrac{p_{\text{buy}}}{\eta}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Ohmic loss</th><td>\(P_{\text{loss}} = I^2R\)</td><td class="cmt">so η falls with C-rate</td></tr>
+<tr><th scope="row">Calendar ageing</th><td>\(\Delta Q \propto \sqrt{t}\,e^{-E_a/kT}\)</td><td class="cmt">SEI growth</td></tr>
+<tr><th scope="row">Capacity credit</th><td>\(\text{falls with penetration}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Cost split</th><td>\(\text{CAPEX} = c_P P + c_E E\)</td><td class="cmt">per kW and per kWh</td></tr>
+<tr><th scope="row">LCOS</th><td>\(\dfrac{\text{CAPEX}+\sum \text{OPEX}}{\sum E_{\text{out}}}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔬</span> The round-trip efficiency quoted for a project is an AC-to-AC figure at a defined C-rate. The same cells measured DC-to-DC look several points better, which is why comparing datasheets requires reading the footnotes.</li><li><span aria-hidden="true">🇦🇺</span> The Hornsdale battery in South Australia repaid a large share of its cost in its first two years mostly by selling frequency control, not stored energy - and cut the cost of that service in the state by around 90%.</li><li><span aria-hidden="true">⚗️</span> Sodium-ion and iron-air chemistries are arriving for exactly the two ends of this problem: sodium for cheap, cold-tolerant daily cycling, iron-air for hundred-hour storage at an energy cost lithium cannot approach, at a round trip of about 50%.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Grid_energy_storage" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Energy</h2>
+    <ul><li><a href="/energy-conservation/">Energy &amp; Conservation</a></li><li><a href="/how-solar-panels-work/">How Solar Panels Work</a></li><li><a href="/wind-turbines-betz-limit/">Wind Turbines &amp; the Betz Limit</a></li><li><a href="/how-heat-pumps-work/">Heat Pumps: More Heat Than You Pay For</a></li><li><a href="/how-the-power-grid-works/">The Power Grid: Balancing on a Knife Edge</a></li><li><a href="/how-does-a-nuclear-reactor-work/">How Does a Nuclear Reactor Work?</a></li><li><a href="/how-green-hydrogen-is-made/">How Is Green Hydrogen Made?</a></li><li><a href="/how-home-insulation-works/">Where Does the Heat in Your House Go?</a></li><li><a href="/how-electricity-is-generated/">How Is Electricity Actually Made?</a></li><li><a href="/how-much-electricity-appliances-use/">How Much Electricity Does Your Home Use?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

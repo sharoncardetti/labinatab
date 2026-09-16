@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turbine eoliche e il limite di Betz | Lab-in-a-Tab</title>
+<meta name="description" content="Una turbina non può prendere tutta l'energia del vento - e il motivo è uno degli argomenti più eleganti dell'ingegneria. Rallenta troppo l'aria e l'aria…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/turbine-eoliche-limite-di-betz/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/wind-turbines-betz-limit/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/turbine-eoliche-limite-di-betz/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/eoliennes-limite-de-betz/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/wind-turbines-betz-limit/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Turbine eoliche e il limite di Betz — Spiegato e simulato">
+<meta property="og:description" content="Una turbina non può prendere tutta l'energia del vento - e il motivo è uno degli argomenti più eleganti dell'ingegneria. Rallenta troppo l'aria e l'aria…">
+<meta property="og:url" content="https://labinatab.com/it/turbine-eoliche-limite-di-betz/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Turbine eoliche e il limite di Betz — Spiegato e simulato">
+<meta name="twitter:description" content="Una turbina non può prendere tutta l'energia del vento - e il motivo è uno degli argomenti più eleganti dell'ingegneria. Rallenta troppo l'aria e l'aria…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/turbine-eoliche-limite-di-betz/#article",
+   "headline": "Turbine eoliche e il limite di Betz",
+   "name": "Turbine eoliche e il limite di Betz",
+   "description": "Una turbina non può prendere tutta l'energia del vento - e il motivo è uno degli argomenti più eleganti dell'ingegneria. Rallenta troppo l'aria e l'aria…",
+   "url": "https://labinatab.com/it/turbine-eoliche-limite-di-betz/",
+   "mainEntityOfPage": "https://labinatab.com/it/turbine-eoliche-limite-di-betz/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Limite di Betz",
+    "Legge del cubo",
+    "Curva di potenza"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Turbine eoliche e il limite di Betz",
+    "sameAs": "https://en.wikipedia.org/wiki/Betz%27s_law"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Turbine eoliche e il limite di Betz",
+     "item": "https://labinatab.com/it/turbine-eoliche-limite-di-betz/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/wind-turbines-betz-limit/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/turbine-eoliche-limite-di-betz/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/eoliennes-limite-de-betz/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energia</nav>
+  <h1>Turbine eoliche e il limite di Betz</h1>
+  <p class="lead">Una turbina non può prendere tutta l'energia del vento - e il motivo è uno degli argomenti più eleganti dell'ingegneria. Rallenta troppo l'aria e l'aria smette di arrivare.</p>
+  <div class="chips"><span>Limite di Betz</span><span>Legge del cubo</span><span>Curva di potenza</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"wind":{"junior":{"v":"Quanto soffia forte il vento","a":"Quanto le pale frenano l'aria","d":"Quanto è largo il rotore","pwind":"Energia che passa","cp":"Quota che prende la turbina","pout":"Potenza prodotta","vwake":"Vento che resta dietro","cUp":"vento in arrivo","cRot":"alle pale","cWake":"dietro la turbina","cTube":"l'aria che passa dentro","cBetz":"il massimo che una turbina può fare: 0,593","cCpAx":"quanto prendi, per ogni quantità di frenata","cCurve":"quello che questa turbina fa a ogni velocità del vento","cCutin":"vento troppo debole","cRated":"a tutta - il resto si butta","cCutout":"ferma prima che la tempesta la rompa","cNow":"adesso","cRpm":"giri al minuto","cStop":"ferma del tutto l'aria e non passa più niente"},"student":{"v":"Velocità del vento v","a":"Induzione assiale a","d":"Diametro del rotore D","pwind":"Potenza del vento","cp":"Coefficiente di potenza Cp","pout":"Potenza estratta","vwake":"Velocità di scia","cUp":"corrente indisturbata v","cRot":"al disco: v(1−a)","cWake":"scia lontana: v(1−2a)","cTube":"tubo di flusso","cBetz":"limite di Betz 16/27 = 0,593","cCpAx":"Cp in funzione dell'induzione assiale a","cCurve":"curva di potenza","cCutin":"sotto la velocità di avvio","cRated":"nominale - il pitch scarica il resto","cCutout":"distacco, pale in bandiera","cNow":"punto di lavoro","cRpm":"giri/min","cStop":"a = 0,5 ferma il flusso: non passa più niente"},"scholar":{"v":"Velocità indisturbata","a":"Fattore di induzione assiale a","d":"Diametro del rotore D","pwind":"Flusso disponibile ½ρAv³","cp":"Coefficiente di potenza Cp","pout":"Potenza aerodinamica","vwake":"Velocità di scia lontana","cUp":"corrente indisturbata v₁","cRot":"disco: v₁(1−a)","cWake":"scia lontana: v₁(1−2a)","cTube":"tubo di flusso A₁v₁ = A_d v_d","cBetz":"Lanchester-Betz-Žukovskij 16/27 = 0,593","cCpAx":"Cp(a) = 4a(1−a)²","cCurve":"curva di potenza con le regioni di controllo","cCutin":"sotto la velocità di avvio","cRated":"regione 3 - il pitch tiene P","cCutout":"distacco, pale in bandiera","cNow":"punto di lavoro","cRpm":"giri/min","cStop":"la teoria della quantità di moto cede oltre a ≈ 0,4"}}});</script>
+<section class="sim-embed" data-sim="wind" data-color="#0891b2" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Comincia mettendo <b>Quanto le pale frenano l'aria</b> a zero - le pale sfiorano appena l'aria - e leggi <b>Potenza prodotta</b>. Adesso portalo tutto in cima, così le pale provano a fermare il vento di netto, e rileggi <b>Potenza prodotta</b>. Ai due estremi non ottieni niente, quindi cerca il picco in mezzo e nota dove sta. Poi metti <b>Quanto soffia forte il vento</b> a 5 e leggi <b>Potenza prodotta</b>, e cambialo a 10: il risultato è il doppio o molto di più? Infine porta <b>Quanto è largo il rotore</b> da 60 a 120 metri e guarda quanto vale raddoppiare la larghezza.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Verifica la teoria invece di fidarti. Metti <b>Induzione assiale a</b> a 0,33 e conferma che <b>Coefficiente di potenza Cp</b> segna 59,3%; poi controlla che <b>Velocità di scia</b> sia un terzo di <b>Velocità del vento v</b>, come impone \(v(1-2a)\). Metti <b>Induzione assiale a</b> a 0,5 e spiega lo zero. Poi tieni <b>Induzione assiale a</b> a 0,33 e leggi <b>Potenza del vento</b> a <b>Velocità del vento v</b> = 6 e di nuovo a 12: il rapporto deve essere 8, non 2. Quindi porta <b>Diametro del rotore D</b> da 60 a 120 m e controlla che il rapporto sia 4. Infine spingi <b>Velocità del vento v</b> oltre i 12 m/s e guarda la curva verde appiattirsi mentre il vento continua a salire.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0891b2"><span class="sg-lbl">Prova</span><span>Sonda dove il modello è onesto e dove non lo è. Conferma l'ottimo a \(a=1/3\) con <b>Coefficiente di potenza Cp</b> = 0,593, poi spingi <b>Fattore di induzione assiale a</b> oltre 0,4 e nota che <b>Velocità di scia lontana</b> va verso zero: una scia lontana ferma è fisicamente impossibile, quindi il bilancio di quantità di moto ha già ceduto e i rotori veri qui hanno bisogno di curve di spinta empiriche. Poi valuta a mente il coefficiente di spinta, \(C_T = 4a(1-a)\), e nota che ha il massimo per \(a=0,5\) e non all'ottimo di potenza: carichi ed energia non vogliono lo stesso punto di lavoro. Infine tieni <b>Fattore di induzione assiale a</b> fisso, spazza <b>Velocità indisturbata</b> e osserva quanta parte della curva viene passata troncata.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>In alto: una turbina vista di lato, con il contorno tratteggiato che mostra il tubo d'aria che passa davvero fra le pale. Guardane la forma: stretto davanti e grasso dietro, perché l'aria lenta ha bisogno di più spazio per portare via la stessa roba. I trattini piccoli sono pacchetti d'aria: luminosi e lunghi quando vanno veloci, corti e scuri una volta che le pale hanno preso la loro energia. I tre numeri danno la velocità del vento prima, dentro e dopo il rotore. In basso a sinistra: quanta energia del vento ottieni per ogni quantità di frenata, con il soffitto ambra che nessuno può superare. In basso a destra: quello che questa macchina fa a ogni velocità del vento, dal troppo poco al pieno regime allo spegnimento.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>L'avidità non paga. Prendi tutto e non ottieni niente, perché l'aria ferma blocca l'aria che sta dietro.</b> Il picco sta a circa un terzo di frenata - rallenta il vento a due terzi fra le pale e lascialo uscire a un terzo - e ti consegna il 59,3% dell'energia dell'aria. È il limite di Betz, ed è un soffitto per ogni rotore aperto mai costruito. Le altre due lezioni sono altrettanto brutali: raddoppiare il vento dà otto volte la potenza, non il doppio, perché l'aria più veloce porta più energia e arriva più spesso; e raddoppiare la larghezza del rotore ne dà quattro, perché stai catturando un cerchio, e i cerchi crescono col quadrato della larghezza.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>In alto: la teoria monodimensionale del disco attuatore disegnata come si comporta davvero. Il contorno tratteggiato è il tubo di flusso, la cui area rispetta \(A_1v_1 = A_dv_d = A_2v_2\), quindi si espande esattamente mentre il flusso decelera. <b>Induzione assiale a</b> fissa l'induzione assiale: il disco vede \(v(1-a)\) e la scia lontana si assesta a \(v(1-2a)\), essendo la velocità al disco la media delle due. In basso a sinistra: \(C_p = 4a(1-a)^2\) con la linea ambra a \(16/27\) e il punto rosa su dove ti trovi. In basso a destra: la curva di esercizio della macchina, \(P = \min(C_p\cdot\tfrac{1}{2}\rho Av^3,\ P_{\text{nom}})\) fra l'avvio a 3 m/s e il distacco a 25.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Il 59,3% non è un'insufficienza ingegneristica: esce da massa e quantità di moto soltanto, prima ancora che qualcuno parli di pale.</b> \(C_p = 4a(1-a)^2\) è zero per \(a=0\) perché non hai preso niente ed è zero per \(a=0,5\) perché la scia si è fermata e il tubo di flusso non riesce più a scaricare; in mezzo \(dC_p/da = 4(1-a)(1-3a)\) sceglie \(a = 1/3\) e \(16/27\). Due conseguenze modellano ogni turbina vera. Poiché \(P\propto v^3\), la risorsa eolica conta molto più della macchina, e poiché \(P\propto D^2\) a vento fissato, crescere in diametro è l'energia più economica sul mercato. E il tetto piatto della curva di potenza non è un limite del vento: è il soffitto del generatore, con le pale messe apposta a buttare via tutto quello che c'è sopra.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Teoria della quantità di moto disegnata invece che affermata. Applicando Bernoulli separatamente ai due lati del disco e uguagliando \(A\Delta p\) a \(\dot m\Delta v\) si impone \(v_d = \tfrac{1}{2}(v_1+v_2)\), quindi le stazioni \(1-a\) e \(1-2a\) che leggi sullo schermo, e il contorno del tubo segue \(r(x)\propto\sqrt{A(x)}\) per continuità. In basso a sinistra è tracciata \(C_p(a) = 4a(1-a)^2\) contro il soffitto di Lanchester-Betz-Žukovskij. In basso a destra c'è l'inviluppo di controllo: potenza aerodinamica sotto la nominale, poi un troncamento netto a \(P_{\text{nom}}\) che sta per il pitch collettivo, con avvio e distacco ombreggiati.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Due ottimi diversi, una sola macchina: ecco perché una turbina è un problema di controllo tanto quanto di aerodinamica.</b> La potenza ha il picco per \(a=1/3\) ma la spinta per \(a=1/2\), quindi il punto che massimizza l'energia non è quello che massimizza il carico strutturale, e tutto il progetto vive nello spazio fra i due. Sotto la nominale, tenere \(a\) vicino a un terzo significa tenere \(\lambda = \omega R/v\) vicino a sette, cosa che una legge di coppia \(Q = K\omega^2\) ottiene senza misurare affatto il vento. Sopra la nominale il pitch butta via energia di proposito perché generatore, convertitore e cavi costa meno dimensionarli sulla media che sul massimo. E nota che cosa lascia fuori questa immagine di macchina singola: i parchi veri perdono il 5-15% per le scie reciproche, ed è per questo che le turbine stanno a sette-dieci diametri di distanza e per cui ottimizzare il layout vale più di un altro punto di \(C_p\).</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Perché una turbina deve lasciar andare il vento</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Il vento è solo aria che ha fretta di andare da qualche parte. Porta energia perché si muove, e il mestiere di una turbina è rubarne un po' al volo. Quello che stupisce è quanta ce n'è, e quanto brutalmente dipenda dalla velocità. Raddoppia il vento e non ottieni il doppio della potenza: ne ottieni <strong>otto volte tanto</strong>. Raddoppiano due cose insieme: quanto va veloce ogni pacchetto d'aria e quanti pacchetti arrivano ogni secondo. Moltiplica e la potenza va col cubo della velocità.</p>
+<p>Per questo la mappa dei venti conta più della macchina. Un sito con vento più forte del 20% rende circa il 70% di energia in più con la stessa identica turbina, ed è per questo che gli sviluppatori litigano tanto sull'altezza del mozzo: sali di 50 metri e ti lasci alle spalle l'attrito del suolo, dove il vento è più veloce e più regolare.</p>
+<p>E ora la parte bella. Verrebbe da pensare che la turbina perfetta prenda <em>tutta</em> l'energia del vento. Non può - e non perché siamo incapaci di costruirle. Se le pale prendessero davvero tutto, l'aria dietro sarebbe ferma. L'aria ferma non si toglie di mezzo, e l'aria che non si toglie di mezzo blocca tutta quella che sta arrivando dietro. Prendi tutto e non arriva più niente. Non prendere niente e l'aria passa oltre intatta. Da qualche parte fra questi due fallimenti sta il miglior compromesso possibile.</p>
+<p>Albert Betz calcolò dove nel 1919. Rallenta il vento a due terzi della velocità iniziale mentre passa fra le pale, lascialo uscire a un terzo, ed estrai il <strong>59,3%</strong> dell'energia dell'aria: il massimo che un rotore aperto potrà mai prendere. Le turbine vere arrivano al 45-50%, notevolmente vicino a un tetto teorico. E lavorano solo dentro una finestra: sotto i 3 m/s circa non vale la pena girare, sopra i 25 m/s mettono le pale di taglio alla tempesta e si fermano, perché sopravvivere alla burrasca vale più dell'elettricità che c'è dentro.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🚀</span> La punta di una grande pala offshore viaggia a circa 90 metri al secondo, oltre 300 km/h, mentre il mozzo gira pigramente a circa otto giri al minuto.</li><li><span aria-hidden="true">💡</span> Un solo giro di una turbina offshore da 15 MW produce circa 30 kWh: abbastanza per far funzionare una casa europea per due giorni.</li><li><span aria-hidden="true">📏</span> La potenza scala con l'area spazzata, e l'area scala col quadrato del diametro. Un rotore largo il doppio cattura quattro volte il vento: è l'unico motivo per cui le turbine sono passate da 15 metri di diametro nel 1980 ai 236 di oggi.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>La legge del cubo, il disco attuatore e da dove esce 16/27</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Si parte dall'energia cinetica. Un pacchetto d'aria di massa \(m\) che si muove a \(v\) porta \(\tfrac{1}{2}mv^2\). La massa che arriva ogni secondo attraverso un disco di area \(A\) è \(\dot m = \rho A v\). Moltiplica: la potenza che attraversa quel disco è \(P = \tfrac{1}{2}\rho A v^3\). Il cubo non è una scelta di modello: è che \(v\) compare una volta nell'energia per unità di massa e un'altra volta in quanta massa si presenta.</p>
+<p>Adesso tratta il rotore come un <strong>disco attuatore</strong>: una superficie permeabile che toglie quantità di moto senza curarsi di quante pale lo facciano. Definisci il <strong>fattore di induzione assiale</strong> \(a\) dicendo che il vento è già rallentato a \(v(1-a)\) quando raggiunge il disco. La conservazione della quantità di moto impone allora che la scia lontana vada a \(v(1-2a)\): il disco sta esattamente a metà del rallentamento totale. La spinta è \(T = \dot m\,\Delta v = \rho A v(1-a)\cdot 2av\), e la potenza estratta è quella spinta per la velocità al disco.</p>
+<p>Metti insieme i pezzi e viene \(P = 2\rho A v^3 a(1-a)^2\), che come frazione della potenza del vento dà il <strong>coefficiente di potenza</strong> \(C_p = 4a(1-a)^2\). Questa funzione è nulla ai due estremi e ha una gobba in mezzo, quindi deriva: \(dC_p/da = 4(1-a)(1-3a)\), che si annulla per \(a = 1/3\). Sostituendo si ottiene \(C_p = 16/27 = 0{,}593\). È il <strong>limite di Betz</strong>, e nota che cosa non è servito: nessuna forma di pala, nessuna aerodinamica, nessun materiale. Solo massa e quantità di moto.</p>
+<p>Le macchine vere stanno a \(C_p \approx 0{,}45\text{–}0{,}50\), e il resto se ne va in rotazione della scia, numero finito di pale e resistenza. Vivono anche dentro un inviluppo di controllo. Sotto la velocità di avvio la coppia non basta a vincere le perdite. Fra avvio e potenza nominale il controllore varia la velocità del rotore per tenere il rapporto di velocità periferica \(\lambda = \omega R/v\) vicino al suo ottimo di circa 7, mantenendo \(C_p\) al massimo. Sopra il vento nominale il generatore è al limite, quindi le pale ruotano fuori dal vento e buttano via energia di proposito per tenere la potenza piatta. Sopra la velocità di distacco tutto si mette in bandiera e si ferma.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Potenza del vento</th><td>\(P = \tfrac{1}{2}\rho A v^3\)</td><td class="cmt">ρ ≈ 1,225 kg/m³</td></tr>
+<tr><th scope="row">Area spazzata</th><td>\(A = \dfrac{\pi D^2}{4}\)</td><td class="cmt">quindi P ∝ D²</td></tr>
+<tr><th scope="row">Induzione assiale</th><td>\(a = \dfrac{v_1-v_d}{v_1}\)</td><td class="cmt">scia: v₂ = v₁(1−2a)</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Coefficiente di potenza</th><td>\(C_p = 4a(1-a)^2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Ottimo di Betz</th><td>\(\dfrac{dC_p}{da} = 4(1-a)(1-3a) = 0\)</td><td class="cmt">a = 1/3</td></tr>
+<tr><th scope="row">Limite di Betz</th><td>\(C_{p,\max} = \dfrac{16}{27} \approx 0{,}593\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Velocità periferica</th><td>\(\lambda = \dfrac{\omega R}{v}\)</td><td class="cmt">≈ 7 con tre pale</td></tr>
+<tr><th scope="row">Fattore di capacità</th><td>\(CF = \dfrac{E_{\text{anno}}}{P_{\text{nom}}\times 8760\ \text{h}}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🎯</span> Il limite di Betz è un'affermazione su un disco aperto, non sulla fisica in generale. Metti un condotto attorno al rotore che ci tiri dentro aria in più e puoi battere il 59,3% della potenza riferita all'area del rotore - ma non di quella riferita all'area del condotto, che è il confronto onesto.</li><li><span aria-hidden="true">📊</span> Poiché la potenza va col cubo della velocità, la media del cubo è molto più grande del cubo della media. Un sito con 7 m/s medi ma raffiche rende molto più di un sito con 7 m/s costanti: per questo i progettisti usano una distribuzione di Weibull e non una velocità media.</li><li><span aria-hidden="true">⏱️</span> Il fattore di capacità - energia annua diviso quella che la macchina farebbe a pieno regime tutto l'anno - vale circa il 25-35% a terra e il 45-55% in mare. Misura il vento, non un difetto della turbina.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Teoria della quantità di moto, elementi di pala e la lotta quadrato-cubo che decide la taglia</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Il disco attuatore, detto onestamente</h3>
+<p>La teoria monodimensionale della quantità di moto sostituisce il rotore con un disco permeabile attraverso cui la pressione cade in modo discontinuo mentre la velocità assiale resta continua. Applicando Bernoulli separatamente a monte e a valle del disco - non si può applicare attraverso, perché lì si sta togliendo energia - si ottiene \(\Delta p = \tfrac{1}{2}\rho(v_1^2-v_2^2)\), quindi la spinta \(T = A\Delta p\). Uguagliandola al flusso di quantità di moto \(\dot m (v_1-v_2)\) con \(\dot m = \rho A v_d\) si impone \(v_d = \tfrac{1}{2}(v_1+v_2)\): la velocità al disco è la media aritmetica delle velocità lontane. Da lì segue tutto, compresi \(P = 2\rho A v_1^3 a(1-a)^2\) e l'espansione del tubo di flusso \(A_1 v_1 = A_d v_d = A_2 v_2\) che fa vedere il flusso ingrassare mentre passa.</p>
+<h3><span class="hn">02</span>Che cosa vieta davvero il limite</h3>
+<p>Massimizzando \(C_p = 4a(1-a)^2\) si ottiene \(16/27\) per \(a = 1/3\), e la derivazione stessa perde validità oltre \(a \approx 0{,}4\), dove la scia diventa turbolenta e subentrano correzioni empiriche. Tre precisazioni meritano di essere fatte per bene. La rotazione della scia - la coppia di reazione fa girare la scia - costa un altro qualche per cento, di più a bassi rapporti di velocità periferica: è la correzione di Glauert. Il numero finito di pale lascia sfuggire flusso attorno alle punte, e il fattore di perdita d'estremità di Prandtl ne tiene conto. E il limite è definito rispetto all'<em>area del disco</em>: una turbina con diffusore può superare \(16/27\) della sua area di rotore proprio perché richiama un tubo di flusso più largo del rotore, il che non è una violazione ma un cambio di denominatore.</p>
+<h3><span class="hn">03</span>Dal disco alle pale vere</h3>
+<p>La teoria degli elementi di pala chiude il divario. Dividi la pala in elementi radiali, ognuno un profilo alare che vede un vento relativo composto dal flusso assiale \(v(1-a)\) e da quello rotazionale \(\omega r(1+a')\), dove \(a'\) è il fattore di induzione tangenziale. Ogni elemento produce portanza e resistenza a partire dal suo angolo d'attacco locale, poi si integra per avere spinta e coppia e si itera finché carichi degli elementi e bilancio della quantità di moto non concordano. Il guadagno di progetto è che domina la portanza: i rotori moderni sono macchine a portanza che lavorano a rapporti di velocità periferica vicini a 7, dove la punta della pala viaggia parecchie volte più veloce del vento, ed è per questo che tre pale sottili battono un rotore a vela con decine di pale.</p>
+<h3><span class="hn">04</span>Il controllo, in quattro regioni</h3>
+<p>Sotto la velocità di avvio la coppia aerodinamica non vince le perdite. Nella regione 2 il controllore applica al generatore una coppia \(Q = K\omega^2\) con \(K = \tfrac{1}{2}\rho\pi R^5 C_{p,\max}/\lambda_{\text{opt}}^3\), che - notevolmente - tiene \(\lambda\) al suo ottimo senza mai misurare il vento. Nella regione 2.5 il rotore raggiunge il limite di velocità e \(\lambda\) si allontana. Sopra il vento nominale, regione 3, la macchina produce già tutta la potenza che generatore e cavi possono reggere, quindi il pitch collettivo ruota le pale dentro il vento per scaricare portanza e tenere \(P\) piatta, buttando via di proposito energia per tutto il resto della curva. Sopra la velocità di distacco, tipicamente 25 m/s, il rotore si mette in bandiera e gira a vuoto, perché i carichi che contano sono strutturali e non elettrici.</p>
+<h3><span class="hn">05</span>Perché le turbine continuano a crescere</h3>
+<p>La cattura di energia scala come \(D^2\) mentre una scalatura ingenua della massa delle pale va come \(D^3\): la legge quadrato-cubo, che avrebbe dovuto fermare la crescita decenni fa. Non l'ha fatto, perché il cubo non viene rispettato: longheroni in carbonio, pale snelle ad alto allungamento, stampi segmentati e generatori a presa diretta hanno tenuto l'esponente della massa vicino a 2,3. L'altezza aiuta due volte, perché il profilo di shear \(v(z) = v_r(z/z_r)^\alpha\) con \(\alpha \approx 0{,}14\) su terreno aperto significa che un mozzo più alto sta in aria più veloce e meno turbolenta, e il cubo amplifica quel guadagno. I vincoli che mordono oggi sono la logistica e i carichi alla radice della pala, non l'aerodinamica.</p>
+<h3><span class="hn">06</span>Da una macchina a un parco eolico</h3>
+<p>L'energia annua non è la curva di potenza alla velocità media ma la curva integrata contro la distribuzione del vento, di solito una Weibull con forma \(k \approx 2\): \(E = 8760\int_0^\infty P(v)f(v)\,dv\). Poiché \(P \propto v^3\) sotto la nominale, la varianza vale soldi. Poi metti insieme le macchine e si disturbano a vicenda: ogni scia porta un deficit di velocità che recupera lentamente, e perdite d'array del 5-15% sono normali, motivo per cui la spaziatura è di 7-10 diametri sottovento. Il semplice modello di Jensen, \(v_w = v\left[1-2a/(1+2kx/D)^2\right]\), è ancora alla base dell'ottimizzazione dei layout. Alla fine il vincolo è la rete: una flotta asincrona, accoppiata tramite inverter, non fornisce inerzia naturale, quindi le stesse macchine che fanno gli elettroni a buon mercato rendono più difficile il controllo della frequenza - un problema di contabilità che ora tocca all'intero sistema risolvere.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Velocità al disco</th><td>\(v_d = \tfrac{1}{2}(v_1+v_2)\)</td><td class="cmt">da quantità di moto + Bernoulli</td></tr>
+<tr><th scope="row">Spinta</th><td>\(T = 2\rho A v_1^2 a(1-a)\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Potenza estratta</th><td>\(P = 2\rho A v_1^3 a(1-a)^2\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Coefficiente di potenza</th><td>\(C_p = 4a(1-a)^2\)</td><td class="cmt">max 16/27 per a = 1/3</td></tr>
+<tr><th scope="row">Coefficiente di spinta</th><td>\(C_T = 4a(1-a)\)</td><td class="cmt">max 1 per a = 1/2</td></tr>
+<tr><th scope="row">Tubo di flusso</th><td>\(A_1v_1 = A_dv_d = A_2v_2\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Shear del vento</th><td>\(v(z) = v_r\left(\dfrac{z}{z_r}\right)^{\alpha}\)</td><td class="cmt">α ≈ 0,14 su terreno aperto</td></tr>
+<tr><th scope="row">Producibilità di Weibull</th><td>\(E = 8760\int_0^{\infty} P(v)f(v)\,dv\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Scia di Jensen</th><td>\(v_w = v\left[1-\dfrac{2a}{(1+2kx/D)^2}\right]\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📜</span> Frederick Lanchester era arrivato allo stesso risultato nel 1915 e Nikolai Žukovskij indipendentemente nel 1920, quindi il nome onesto è limite di Lanchester-Betz-Žukovskij. Betz pubblicò semplicemente la derivazione più chiara.</li><li><span aria-hidden="true">🌪️</span> La teoria della quantità di moto cede in silenzio oltre a ≈ 0,4: la scia lontana dovrebbe andare all'indietro. I rotori veri in quel regime entrano nello stato di scia turbolenta, e i progettisti passano a curve di spinta empiriche ricavate da misure.</li><li><span aria-hidden="true">🔩</span> Una pala moderna è una mensola da 100 metri che sopravvive a circa 10⁸ cicli di fatica in vent'anni flettendosi di vari metri in punta. Le pale si certificano contro spettri di fatica, non contro un carico di picco.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Betz%27s_law" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Energia</h2>
+    <ul><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/come-funzionano-i-pannelli-solari/">Come funzionano i pannelli solari</a></li><li><a href="/it/come-funziona-la-pompa-di-calore/">Pompe di calore: più calore di quanto ne paghi</a></li><li><a href="/it/come-funziona-la-rete-elettrica/">La rete elettrica: in equilibrio sul filo del rasoio</a></li><li><a href="/it/come-funziona-un-reattore-nucleare/">Come funziona un reattore nucleare</a></li><li><a href="/it/come-funzionano-le-batterie-di-rete/">Come immagazzinano l'elettricità le batterie di rete</a></li><li><a href="/it/come-si-produce-idrogeno-verde/">Come si produce l'idrogeno verde</a></li><li><a href="/it/dove-va-a-finire-il-calore-di-casa/">Dove va a finire il calore di casa tua</a></li><li><a href="/it/come-si-produce-l-elettricita/">Come si produce davvero l'elettricità</a></li><li><a href="/it/quanta-elettricita-consuma-casa-tua/">Quanta elettricità consuma casa tua</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

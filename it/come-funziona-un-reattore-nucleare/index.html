@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come funziona un reattore nucleare | Lab-in-a-Tab</title>
+<meta name="description" content="Spacca un nucleo di uranio e liberi cinquanta milioni di volte più energia che bruciando un atomo di carbone. La parte difficile non è mai stata…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-funziona-un-reattore-nucleare/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-does-a-nuclear-reactor-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-un-reattore-nucleare/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionne-un-reacteur-nucleaire/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-does-a-nuclear-reactor-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come funziona un reattore nucleare — Spiegato e simulato">
+<meta property="og:description" content="Spacca un nucleo di uranio e liberi cinquanta milioni di volte più energia che bruciando un atomo di carbone. La parte difficile non è mai stata…">
+<meta property="og:url" content="https://labinatab.com/it/come-funziona-un-reattore-nucleare/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come funziona un reattore nucleare — Spiegato e simulato">
+<meta name="twitter:description" content="Spacca un nucleo di uranio e liberi cinquanta milioni di volte più energia che bruciando un atomo di carbone. La parte difficile non è mai stata…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-funziona-un-reattore-nucleare/#article",
+   "headline": "Come funziona un reattore nucleare",
+   "name": "Come funziona un reattore nucleare",
+   "description": "Spacca un nucleo di uranio e liberi cinquanta milioni di volte più energia che bruciando un atomo di carbone. La parte difficile non è mai stata…",
+   "url": "https://labinatab.com/it/come-funziona-un-reattore-nucleare/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-funziona-un-reattore-nucleare/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Reazione a catena",
+    "Barre di controllo",
+    "Criticità"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come funziona un reattore nucleare",
+    "sameAs": "https://en.wikipedia.org/wiki/Nuclear_reactor"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come funziona un reattore nucleare",
+     "item": "https://labinatab.com/it/come-funziona-un-reattore-nucleare/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-does-a-nuclear-reactor-work/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-un-reattore-nucleare/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionne-un-reacteur-nucleaire/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energia</nav>
+  <h1>Come funziona un reattore nucleare</h1>
+  <p class="lead">Spacca un nucleo di uranio e liberi cinquanta milioni di volte più energia che bruciando un atomo di carbone. La parte difficile non è mai stata l'energia: è tenere la reazione a catena esattamente a uno.</p>
+  <div class="chips"><span>Reazione a catena</span><span>Barre di controllo</span><span>Criticità</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"nuclear":{"junior":{"rod":"Quanto sono inserite le barre di controllo","water":"Quanta acqua c'è nel nocciolo","scram":"🛑 Sgancia le barre","keff":"Fissioni provocate da ogni fissione","pw":"Calore prodotto","period":"Tempo per raddoppiare","decay":"Calore residuo","cCore":"il nocciolo, visto in sezione","cFuel":"barrette di uranio","cRod":"barre di boro - mangiano i neutroni","cMod":"acqua - rallenta i neutroni e li rende utili","cFast":"neutrone veloce - troppo rapido per spaccare qualcosa","cSlow":"neutrone rallentato - questo può spaccare un nucleo","cFission":"un nucleo che si spacca","cTrace":"il calore negli ultimi minuti","cNom":"funzionamento normale","cPrompt":"fuga - nessuna barra può fermarla","cScram":"barre sganciate - le scissioni sono finite","cDecay":"ancora caldo: i pezzi rotti continuano a decadere","cSub":"in spegnimento","cCrit":"stabile","cSuper":"in salita"},"student":{"rod":"Inserzione delle barre di controllo","water":"Livello del moderatore","scram":"🛑 SCRAM","keff":"k efficace","pw":"Potenza termica","period":"Periodo del reattore","decay":"Calore di decadimento","cCore":"sezione del nocciolo","cFuel":"barrette di combustibile, UO₂ al 4% di U-235","cRod":"barre di boro, assorbitori","cMod":"moderatore ad acqua - termalizza i neutroni","cFast":"neutrone veloce, ~2 MeV","cSlow":"neutrone termico, 0,025 eV","cFission":"evento di fissione","cTrace":"potenza termica nel tempo","cNom":"potenza nominale","cPrompt":"pronto critico: ρ ≥ β","cScram":"in scram - fissione terminata","cDecay":"calore di decadimento dei prodotti di fissione","cSub":"sottocritico","cCrit":"critico","cSuper":"supercritico"},"scholar":{"rod":"Inserzione delle barre di controllo","water":"Densità del moderatore","scram":"🛑 SCRAM","keff":"k efficace","pw":"Potenza termica","period":"Periodo asintotico","decay":"Calore di decadimento","cCore":"sezione del nocciolo","cFuel":"combustibile: UO₂ a basso arricchimento","cRod":"assorbitori di controllo in B₄C","cMod":"moderatore - rallentamento fino al termico","cFast":"neutrone veloce, ~2 MeV","cSlow":"neutrone termico, 0,025 eV","cFission":"evento di fissione","cTrace":"potenza termica nel tempo","cNom":"potenza nominale","cPrompt":"pronto critico: ρ ≥ β","cScram":"in scram - fissione terminata","cDecay":"calore di decadimento, 0,066 t^-0,2","cSub":"sottocritico","cCrit":"critico","cSuper":"supercritico"}}});</script>
+<section class="sim-embed" data-sim="nuclear" data-color="#4d7c0f" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4d7c0f"><span class="sg-lbl">Prova</span><span>Comincia estraendo lentamente <b>Quanto sono inserite le barre di controllo</b> dal 35% e guarda <b>Fissioni provocate da ogni fissione</b> superare 1,0000 - poi leggi in <b>Tempo per raddoppiare</b> quanto tempo ci mette a raddoppiare. Estrai ancora e guarda quel tempo crollare. Adesso rimettile al 35 e abbassa invece <b>Quanta acqua c'è nel nocciolo</b>: con meno acqua ci sono più punti rossi e meno azzurri, e la reazione si spegne anche se le barre non si sono mosse. Infine porta il reattore a piena potenza e premi il pulsante, poi continua a guardare <b>Calore residuo</b> per un minuto.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4d7c0f"><span class="sg-lbl">Prova</span><span>Regola <b>Inserzione delle barre di controllo</b> finché <b>k efficace</b> non legge il più vicino possibile a 1,0000 e guarda la potenza restare piatta. Poi estrai le barre a piccoli passi leggendo ogni volta <b>Periodo del reattore</b>: nota come qualche centinaio di pcm di reattività ti dia decine di secondi, e come quel margine sparisca avvicinandoti a 650 pcm. Poi rimetti le barre e riduci invece <b>Livello del moderatore</b>, osservando i colori dei neutroni e <b>k efficace</b> che cala. Infine vai a piena potenza, fai scram e guarda <b>Calore di decadimento</b> scendere molto più lentamente di quanto sia scesa la potenza di fissione.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4d7c0f"><span class="sg-lbl">Prova</span><span>Quantifica il margine dei neutroni ritardati. Estrai <b>Inserzione delle barre di controllo</b> finché <b>k efficace</b> non dà \(\rho \approx 100\) pcm e verifica che <b>Periodo asintotico</b> sia dell'ordine del minuto; ripeti a 300 e 600 pcm e conferma che il periodo si accorcia molto più che linearmente al tendere di \(\rho \to \beta\). Poi supera la linea di proposito e guarda l'escursione. A parte, mappa il coefficiente del moderatore: abbassa <b>Densità del moderatore</b> a gradini e registra \(\Delta\rho\), ottenendo segno e ordine di grandezza del coefficiente di vuoto di questo progetto. Infine fai scram da piena potenza e confronta la curva del calore residuo con \(0.066\,t^{-0.2}\) a 10, 60 e 600 secondi.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>In alto: una fetta presa nel mezzo di un reattore. Le sette barre luminose sono l'uranio; le barre nere che scendono in mezzo sono quelle di boro che ingoiano i neutroni. Il velo azzurro è l'acqua, e il suo livello segue il tuo cursore. I punti in movimento sono neutroni: quelli rossi vanno ancora troppo veloci per spaccare qualcosa, quelli azzurri sono stati rallentati dall'acqua e possono farlo. Gli anelli gialli sono nuclei che si spaccano davvero: guarda con che ritmo compaiono. In basso: il calore prodotto, disegnato su una scala schiacciata perché ci stiano sia un sussurro sia un ruggito, con la linea verde del funzionamento normale.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>La cosa sbalorditiva non è che un reattore si possa spegnere. È che si possa tenere fermo.</b> Ogni scissione deve provocarne esattamente un'altra, per sempre, e il numero che lo dice è sullo schermo tutto il tempo. Due cose lo spostano: le barre che mangiano i neutroni di troppo e l'acqua che li rallenta abbastanza da renderli utili - ed è per questo che svuotare l'acqua spegne un reattore occidentale invece di farlo impazzire. Ma guarda che cosa succede dopo aver sganciato le barre. Le scissioni finiscono in circa un secondo, il calore no. I pezzi rotti degli atomi continuano a decadere e riversano ancora circa un quindicesimo della potenza piena, e quel calore residuo va portato via comunque, qualunque altra cosa sia andata storta. È quello, e non un'esplosione, ad aver fuso i reattori di Fukushima.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Sezione del nocciolo con combustibile, assorbitori di boro e un moderatore ad acqua di cui controlli il livello. Il colore dei neutroni codifica l'energia: rosso per i veloci, circa 2 MeV alla nascita, azzurro per quelli termalizzati attorno a 0,025 eV, e solo gli azzurri hanno una sezione d'urto di fissione utile. Il grafico sotto mostra la potenza termica su scala logaritmica, guidata dalla cinetica puntiforme e non dal conteggio dei punti: \(k\) è calcolato da inserzione delle barre e densità del moderatore, e il periodo segue \(T = (\beta-\rho)/(\lambda\rho)\) sotto il pronto critico e \(\Lambda/(\rho-\beta)\) sopra.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Tutto il controllo di un reattore vive nello spazio fra due scale di tempo, e quello spazio è largo lo 0,65%.</b> La vita media dei neutroni pronti è circa 20 microsecondi, quindi un reattore a \(k=1{,}001\) che andasse sui soli neutroni pronti raddoppierebbe la potenza ogni 14 millisecondi. Non lo fa, perché i neutroni ritardati dei frammenti di fissione che decadono arrivano secondi dopo e dominano la risposta per qualunque \(\rho < \beta\). Supera quella linea e il reattore non ne ha più bisogno: il periodo crolla di quattro ordini di grandezza e nessun meccanismo fa in tempo a intervenire. Nota anche il risultato sul moderatore che hai appena misurato: in un nocciolo ad acqua leggera, perdere acqua abbassa \(k\), quindi una perdita di refrigerante spegne da sola la fissione. L'RBMK di Chernobyl era moderato a grafite e raffreddato ad acqua, il che invertiva quel segno e trasformava l'ebollizione in una retroazione positiva.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Un reattore a cinetica puntiforme con un gruppo unico di precursori ritardati, \(\beta = 0{,}0065\), \(\lambda = 0{,}077\ \text{s}^{-1}\), \(\Lambda = 2\times10^{-5}\ \text{s}\). La moltiplicazione è modellata come \(k = k_0(1-0.6\,\text{barre})\left[1-1.1(1-m)^{1.6}\right]\), quindi le barre agiscono sull'utilizzazione termica e la densità del moderatore agisce sul rallentamento e sulla fuga dalle risonanze. Sotto il pronto critico il periodo asintotico è \((\beta-\rho)/(\lambda\rho)\); a partire da lì è \(\Lambda/(\rho-\beta)\). Dopo lo scram la potenza di fissione decade e il calore mostrato è dominato da \(0.066\,P_0 t^{-0.2}\). Il colore dei neutroni è una visualizzazione dello spettro, non un calcolo Monte Carlo di trasporto.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Un reattore è stabile grazie a un'impurità dello 0,65% nei tempi dei neutroni, ed è sicuro grazie al segno di una derivata.</b> La frazione ritardata compra i sei ordini di grandezza fra la vita dei neutroni pronti e i tempi di reazione umani, ed è per questo che la reattività si misura in dollari: un dollaro è esattamente il confine oltre il quale quel regalo viene ritirato. Il secondo punto è il coefficiente del moderatore che hai misurato. Vuoto negativo significa che un nocciolo ad acqua leggera risponde a una perdita di refrigerante spegnendosi; vuoto positivo, come nell'RBMK, significa che risponde accelerando - e il 26 aprile 1986 quel segno, insieme all'avvelenamento da xeno e alle barre con punta di grafite che nell'inserzione aggiungevano reattività, ha prodotto un'escursione pronta critica in circa quattro secondi. Ciò che questo modello omette di proposito è altrettanto istruttivo: nessuna retroazione Doppler, nessuna dinamica dello xeno, nessuna cinetica spaziale. I noccioli veri sono stabilizzati dalla temperatura del combustibile in millisecondi, avvelenati dallo xeno in ore, e possono essere localmente supercritici pur essendo globalmente sottocritici - motivo per cui la cinetica puntiforme è un modello didattico e non uno strumento di licenza.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Un bollitore molto complicato</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Ecco la parte che nessuno ti dice per prima: una centrale nucleare produce elettricità facendo bollire dell'acqua. Il vapore fa girare una turbina, la turbina fa girare un alternatore e l'alternatore fa l'elettricità, esattamente come in una centrale a carbone. L'unica cosa insolita è il bollitore.</p>
+<p>Dentro quel bollitore, atomi di uranio vengono spaccati a metà. Spara un neutrone - una particella piccolissima e neutra - contro un nucleo di uranio-235 e quello oscilla, si allunga e si spezza. I due pezzi schizzano via a velocità enorme e quando si fermano nel metallo circostante tutta quella velocità diventa calore. Una singola scissione libera circa cinquanta milioni di volte più energia che bruciare un singolo atomo di carbone. Una pastiglia di combustibile grande come la punta del tuo dito contiene l'energia di una tonnellata di carbone.</p>
+<p>Ma il vero trucco è che cos'altro esce. Ogni scissione butta fuori anche due o tre neutroni nuovi, e ognuno può spaccare un altro nucleo. Uno diventa tre, tre diventano nove, nove diventano ventisette. È una <strong>reazione a catena</strong>, e lasciata a se stessa raddoppia più volte in una frazione di secondo. Ciò che separa una centrale da un disastro è che il reattore è costruito per stare esattamente a uno: ogni scissione ne provoca precisamente un'altra, per sempre, in modo stabile.</p>
+<p>Per tenerlo lì servono due cose. Le <strong>barre di controllo</strong> di boro scorrono fra il combustibile e ingoiano i neutroni di troppo: spingile dentro e la reazione si spegne, tirale fuori e riprende. E l'acqua non serve solo a bollire. I neutroni escono da una fissione troppo veloci per spaccare qualcos'altro, e rimbalzando sulle molecole d'acqua rallentano fino alla velocità che funziona. Il che significa che l'acqua fa parte della reazione: se l'acqua se ne va, in un reattore occidentale la reazione a catena si ferma da sola. Non è un sistema di sicurezza. È la fisica che lavora al posto tuo.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🪨</span> Un grammo di uranio-235 libera più o meno l'energia di tre tonnellate di carbone. Un singolo elemento di combustibile alto come una persona alimenta all'incirca mille case per un anno.</li><li><span aria-hidden="true">⏱️</span> Circa lo 0,65% dei neutroni esce con qualche secondo di ritardo invece che all'istante. Senza quel minuscolo ritardo la potenza del reattore raddoppierebbe in millisecondi e nessun sistema di controllo al mondo starebbe al passo. I reattori sono governabili grazie a un dettaglio marginale della fisica.</li><li><span aria-hidden="true">🔥</span> La reazione a catena la fermi in un secondo, il calore no. Subito dopo lo spegnimento un reattore produce ancora circa il 7% della potenza piena per puro decadimento radioattivo: è quel calore residuo ad aver fuso i noccioli di Fukushima, giorni dopo che la fissione era cessata.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>k, reattività e il ritardo che rende possibile il controllo</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Tutto si riduce a un numero. Il <strong>fattore di moltiplicazione</strong> \(k\) dice quante fissioni provoca ogni fissione nella generazione successiva. Sotto uno la reazione si spegne: il reattore è <em>sottocritico</em>. Sopra uno cresce esponenzialmente: <em>supercritico</em>. Esattamente uno e la potenza resta costante: <em>critico</em>, che nonostante la parola è lo stato di funzionamento normale, noioso e quotidiano di ogni reattore del pianeta.</p>
+<p>Arrivare a \(k = 1\) è un problema di progetto prima che di controllo. Un neutrone appena nato da una fissione porta circa 2 MeV ed è troppo veloce per spaccare efficacemente un altro nucleo di U-235: a quell'energia la sezione d'urto di fissione è minuscola. Rallentalo a energie termiche, attorno a 0,025 eV, e la sezione d'urto sale di diverse centinaia di volte. A questo serve l'acqua. Ci vogliono all'incirca venti urti contro nuclei di idrogeno per termalizzare un neutrone, e solo allora diventa utile. Togli l'acqua e non perdi solo il raffreddamento: perdi il moderatore, e \(k\) scende sotto uno da solo. Questo <strong>coefficiente di vuoto negativo</strong> è la singola proprietà di sicurezza più importante di un reattore ad acqua leggera, e la sua assenza nel progetto RBMK è il motivo per cui Chernobyl è stata possibile.</p>
+<p>Adesso il ritardo. La maggior parte dei neutroni di fissione compare entro \(10^{-14}\) s e, con una vita media dei neutroni pronti \(\Lambda \approx 2\times10^{-5}\) s, un reattore a \(k = 1{,}001\) guidato dai soli neutroni pronti raddoppierebbe la potenza ogni 14 millisecondi. Nessun meccanismo potrebbe seguirlo. Ma circa il \(\beta = 0{,}65\%\) dei neutroni viene emesso qualche secondo dopo dal decadimento dei frammenti di fissione, e questi <strong>neutroni ritardati</strong> dominano i tempi ogni volta che la reattività resta sotto \(\beta\). Il periodo del reattore diventa di decine di secondi invece che di millisecondi, e un essere umano con una leva può farlo funzionare.</p>
+<p>Il che fissa l'unica linea da non superare mai. Una reattività \(\rho = (k-1)/k\) sotto \(\beta\) significa che comandano ancora i neutroni ritardati e il controllo è comodo. Raggiungi \(\rho = \beta\) e il reattore è <strong>pronto critico</strong>: non ha più bisogno dei ritardati, il periodo crolla ai millisecondi e l'escursione di potenza è finita prima che una barra possa muoversi. È quello il confine, ed è per stargli larghi che esiste ogni sistema di controllo di reattore.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Fattore di moltiplicazione</th><td>\(k = \dfrac{\text{fissioni nella generazione } n+1}{\text{fissioni nella generazione } n}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Reattività</th><td>\(\rho = \dfrac{k-1}{k}\)</td><td class="cmt">spesso in pcm = 10⁻⁵</td></tr>
+<tr><th scope="row">Crescita della potenza</th><td>\(P(t) = P_0 e^{t/T}\)</td><td class="cmt">T = periodo del reattore</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Frazione ritardata</th><td>\(\beta \approx 0.0065\)</td><td class="cmt">0,65% dei neutroni, secondi dopo</td></tr>
+<tr><th scope="row">Periodo stabile</th><td>\(T \approx \dfrac{\beta-\rho}{\lambda\rho}\)</td><td class="cmt">λ ≈ 0,077 s⁻¹</td></tr>
+<tr><th scope="row">Pronto critico</th><td>\(\rho \geq \beta\)</td><td class="cmt">il periodo crolla a Λ/(ρ−β)</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Energia per fissione</th><td>\(\approx 200\ \text{MeV} = 3.2\times10^{-11}\ \text{J}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Calore di decadimento</th><td>\(\dfrac{P}{P_0} \approx 0.066\,t^{-0.2}\)</td><td class="cmt">t in secondi dallo spegnimento</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📏</span> Un neutrone termico ha una sezione d'urto di fissione sull'U-235 di circa 585 barn; uno veloce da 2 MeV circa 1,2 barn. Il moderatore non è un accessorio: senza, l'uranio naturale o poco arricchito semplicemente non sostiene una reazione a catena.</li><li><span aria-hidden="true">⚡</span> Un watt di potenza termica corrisponde a circa 3,1 × 10¹⁰ fissioni al secondo. Un nocciolo da 3 GW ne fa circa 10²⁰ ogni secondo, e tiene il conto entro una frazione di per cento.</li><li><span aria-hidden="true">🌡️</span> Quando il combustibile si scalda, l'allargamento Doppler delle risonanze dell'U-238 assorbe più neutroni e la reattività scende. È un effetto pronto, inevitabile e sempre negativo: agisce in millisecondi, molto prima che un sistema di controllo se ne accorga.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Sei fattori, cinetica puntiforme e le retroazioni che decidono se un progetto perdona</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Da dove vengono i 200 MeV</h3>
+<p>L'energia di legame per nucleone ha il massimo vicino al ferro, attorno a 8,8 MeV, e scende a circa 7,6 MeV all'uranio. Spaccare un nucleo pesante sposta quindi i suoi nucleoni verso una configurazione più legata, e la differenza - circa 0,9 MeV per nucleone su 236 nucleoni - compare come energia cinetica. Circa 168 MeV dei 200 vanno ai due frammenti di fissione, che si fermano entro qualche micrometro da dove sono nati: ecco perché una pastiglia di combustibile si scalda invece di irraggiare via la sua energia. Altri 5 MeV arrivano come neutroni pronti, 7 MeV come raggi gamma pronti e circa 20 MeV come emissione beta e gamma ritardata dai prodotti di fissione: proprio quest'ultima è il calore di decadimento che un reattore spento non può spegnere.</p>
+<h3><span class="hn">02</span>La formula dei sei fattori</h3>
+<p>Per un reattore finito, \(k_{\text{eff}} = \eta f p \varepsilon P_{\text{FNL}} P_{\text{TNL}}\): il fattore di riproduzione \(\eta\) (neutroni prodotti per neutrone termico assorbito nel combustibile), l'utilizzazione termica \(f\) (frazione di assorbimenti termici che avvengono nel combustibile e non nel moderatore, nella guaina o nel veleno di controllo), la probabilità di sfuggire alle risonanze \(p\), il fattore di fissione veloce \(\varepsilon\) e due probabilità di non fuga. Le barre di controllo agiscono su \(f\), la densità del moderatore su \(p\) e sulla fuga, la temperatura del combustibile su \(p\) attraverso il Doppler. È questa scomposizione che permette al progettista di vedere quale manopola fisica muove quale termine, ed è il motivo per cui la stessa variazione di reattività può essere ottenuta con mezzi fisici molto diversi e costanti di tempo molto diverse.</p>
+<h3><span class="hn">03</span>Sezioni d'urto e perché la moderazione non è opzionale</h3>
+<p>La sezione d'urto di fissione dell'U-235 segue approssimativamente una legge \(1/v\) a bassa energia, arrivando a circa 585 barn a 0,025 eV contro circa 1,2 barn a 2 MeV. Fra le due sta la regione delle risonanze, dove l'U-238 ha risonanze di cattura enormi e strette; un neutrone che rallenta attraversandole può essere catturato e perso, ed è ciò che misura \(p\). L'autoschermatura spaziale nelle barrette e la geometria del reticolo non sono quindi dettagli ma il progetto stesso: i reticoli eterogenei esistono proprio perché i neutroni facciano il rallentamento nel moderatore, lontano dalle risonanze dell'U-238, e tornino nel combustibile già termici.</p>
+<h3><span class="hn">04</span>Cinetica puntiforme e il significato della linea del pronto critico</h3>
+<p>Le equazioni della cinetica puntiforme, \(\frac{dP}{dt} = \frac{\rho-\beta}{\Lambda}P + \sum_i \lambda_i C_i\) con \(\frac{dC_i}{dt} = \frac{\beta_i}{\Lambda}P - \lambda_i C_i\), contengono tutta la storia. Per \(\rho \ll \beta\) il termine pronto è negativo e i precursori fanno da volano: il periodo asintotico è fissato da \(\lambda\), decine di secondi, preceduto da un rapido salto pronto \(P \to P_0\beta/(\beta-\rho)\). A \(\rho = \beta\) il termine pronto si annulla, e oltre il reattore è critico sui soli neutroni pronti con periodo \(\Lambda/(\rho-\beta)\), da microsecondi a millisecondi. È per questo che la reattività si misura in dollari, dove un dollaro è \(\beta\): l'unità esiste per rendere impossibile non vedere il confine.</p>
+<h3><span class="hn">05</span>Retroazioni, e Chernobyl come equazione</h3>
+<p>L'allargamento Doppler delle risonanze dell'U-238 è pronto e sempre negativo: combustibile più caldo significa risonanze più larghe, più cattura, meno reattività, e agisce in millisecondi. Il coefficiente del moderatore è più interessante. In un reattore ad acqua leggera l'ebollizione riduce la moderazione, quindi i vuoti riducono \(k\): coefficiente di vuoto negativo, autolimitante. L'RBMK usava grafite come moderatore e l'acqua solo come refrigerante, e poiché lì l'acqua è un assorbitore, l'ebollizione <em>aumentava</em> la reattività. Il 26 aprile 1986 un nocciolo avvelenato da xeno, un punto di lavoro molto sotto la potenza consentita, quasi tutte le barre estratte e barre con la punta di grafite che nell'inserzione <em>aggiungevano</em> reattività si sono combinati in un anello di retroazione positiva andato pronto critico in circa quattro secondi. Ognuno di questi elementi era una proprietà del progetto, non solo degli operatori.</p>
+<h3><span class="hn">06</span>Che cosa viene dopo lo spegnimento</h3>
+<p>Inserisci le barre e la fissione si ferma entro un secondo, ma i prodotti di fissione continuano a decadere: \(P/P_0 \approx 0.066[t^{-0.2}-(t+t_0)^{-0.2}]\), cioè circa il 7% della potenza piena a un secondo, l'1,3% dopo un'ora e lo 0,4% dopo un giorno. Per un nocciolo da 3 GW sono 200 MW subito dopo lo spegnimento - la potenza termica di una piccola centrale - e vanno rimossi comunque, qualunque altra cosa sia guasta. Fukushima Daiichi ha perso la capacità di rimuovere quel calore, non quella di fermare la reazione. Tutto ciò che è successo nella progettazione dei reattori da allora - circolazione passiva, raffreddamento a gravità, noccioli che possono restare a secco senza fondere - è una risposta a quell'unico termine delle equazioni.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Formula dei sei fattori</th><td>\(k_{\text{eff}} = \eta f p \varepsilon P_{\text{FNL}} P_{\text{TNL}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Cinetica puntiforme</th><td>\(\dfrac{dP}{dt} = \dfrac{\rho-\beta}{\Lambda}P + \sum_i\lambda_i C_i\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Precursori</th><td>\(\dfrac{dC_i}{dt} = \dfrac{\beta_i}{\Lambda}P - \lambda_i C_i\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Salto pronto</th><td>\(P \to P_0\,\dfrac{\beta}{\beta-\rho}\)</td><td class="cmt">per un gradino con ρ &lt; β</td></tr>
+<tr><th scope="row">Periodo pronto</th><td>\(T = \dfrac{\Lambda}{\rho-\beta}\)</td><td class="cmt">Λ ≈ 2 × 10⁻⁵ s</td></tr>
+<tr><th scope="row">Reattività in dollari</th><td>\(\$ = \dfrac{\rho}{\beta}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Sezione d'urto termica</th><td>\(\sigma_f \approx 585\ \text{b a }0.025\ \text{eV}\)</td><td class="cmt">1,2 b a 2 MeV</td></tr>
+<tr><th scope="row">Calore di decadimento</th><td>\(\dfrac{P}{P_0} \approx 0.066\left[t^{-0.2}-(t+t_0)^{-0.2}\right]\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🦕</span> A Oklo, in Gabon, un reattore a fissione naturale ha funzionato circa 1,7 miliardi di anni fa, quando l'uranio naturale era ancora al 3% di U-235. Si accendeva e si spegneva a cicli per centinaia di migliaia di anni, moderato dall'acqua di falda che evaporava e tornava.</li><li><span aria-hidden="true">💵</span> La reattività si misura in dollari, dove un dollaro vale β. È forse l'unica unità della fisica inventata apposta perché un numero maggiore di uno risulti inequivocabilmente catastrofico.</li><li><span aria-hidden="true">☠️</span> Lo xeno-135 ha una sezione d'urto di cattura di 2,6 milioni di barn, la più grande conosciuta. Si accumula dopo una riduzione di potenza e può lasciare un reattore incapace di ripartire per un giorno: gli operatori la chiamano buca di xeno.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Nuclear_reactor" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Energia</h2>
+    <ul><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/come-funzionano-i-pannelli-solari/">Come funzionano i pannelli solari</a></li><li><a href="/it/turbine-eoliche-limite-di-betz/">Turbine eoliche e il limite di Betz</a></li><li><a href="/it/come-funziona-la-pompa-di-calore/">Pompe di calore: più calore di quanto ne paghi</a></li><li><a href="/it/come-funziona-la-rete-elettrica/">La rete elettrica: in equilibrio sul filo del rasoio</a></li><li><a href="/it/come-funzionano-le-batterie-di-rete/">Come immagazzinano l'elettricità le batterie di rete</a></li><li><a href="/it/come-si-produce-idrogeno-verde/">Come si produce l'idrogeno verde</a></li><li><a href="/it/dove-va-a-finire-il-calore-di-casa/">Dove va a finire il calore di casa tua</a></li><li><a href="/it/come-si-produce-l-elettricita/">Come si produce davvero l'elettricità</a></li><li><a href="/it/quanta-elettricita-consuma-casa-tua/">Quanta elettricità consuma casa tua</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

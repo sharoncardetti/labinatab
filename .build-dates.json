@@ -1,0 +1,1118 @@
+{
+ "gravity-orbits/": {
+  "hash": "584b2423c749",
+  "date": "2026-09-16"
+ },
+ "projectile-motion/": {
+  "hash": "7c9d755d0ba2",
+  "date": "2026-09-16"
+ },
+ "waves-interference/": {
+  "hash": "6f0ff905b664",
+  "date": "2026-09-16"
+ },
+ "thermodynamics/": {
+  "hash": "d9808ad2d4ce",
+  "date": "2026-09-16"
+ },
+ "standard-model/": {
+  "hash": "55fcc8e4954e",
+  "date": "2026-09-16"
+ },
+ "newtons-laws-of-motion/": {
+  "hash": "5c29245d8819",
+  "date": "2026-09-16"
+ },
+ "ohms-law-circuits/": {
+  "hash": "51a6e6b4ea64",
+  "date": "2026-09-16"
+ },
+ "states-of-matter/": {
+  "hash": "15c469813d8c",
+  "date": "2026-09-16"
+ },
+ "probability-bell-curve/": {
+  "hash": "69e12cf3ea5e",
+  "date": "2026-09-16"
+ },
+ "fractals/": {
+  "hash": "f211e9d3d4f6",
+  "date": "2026-09-16"
+ },
+ "calculus/": {
+  "hash": "d8a53fe6b2a3",
+  "date": "2026-09-16"
+ },
+ "graph-theory/": {
+  "hash": "dbbe5820d2be",
+  "date": "2026-09-16"
+ },
+ "unit-circle-trigonometry/": {
+  "hash": "bd466a383872",
+  "date": "2026-09-16"
+ },
+ "rules-of-life/": {
+  "hash": "3d49ee2e58be",
+  "date": "2026-09-16"
+ },
+ "dna-genetics/": {
+  "hash": "770c2f0dcf00",
+  "date": "2026-09-16"
+ },
+ "evolution/": {
+  "hash": "f9213fe5ff4b",
+  "date": "2026-09-16"
+ },
+ "ecosystems-food-webs/": {
+  "hash": "79a07781e925",
+  "date": "2026-09-16"
+ },
+ "photosynthesis/": {
+  "hash": "f7b5878c7a80",
+  "date": "2026-09-16"
+ },
+ "cell-osmosis-diffusion/": {
+  "hash": "1a774762a488",
+  "date": "2026-09-16"
+ },
+ "mitosis-meiosis/": {
+  "hash": "53cff2823c01",
+  "date": "2026-09-16"
+ },
+ "punnett-squares-genetics/": {
+  "hash": "2af09a29f9ad",
+  "date": "2026-09-16"
+ },
+ "sorting-algorithms/": {
+  "hash": "cc5e98f07f73",
+  "date": "2026-09-16"
+ },
+ "machine-learning/": {
+  "hash": "68d3cb1de45b",
+  "date": "2026-09-16"
+ },
+ "cryptography/": {
+  "hash": "246a58d020d5",
+  "date": "2026-09-16"
+ },
+ "computation-complexity/": {
+  "hash": "f04c116e3fad",
+  "date": "2026-09-16"
+ },
+ "climate-atmosphere/": {
+  "hash": "93ad08b64e20",
+  "date": "2026-09-16"
+ },
+ "plate-tectonics/": {
+  "hash": "e11dee59238e",
+  "date": "2026-09-16"
+ },
+ "ocean-currents/": {
+  "hash": "8a74404d23f8",
+  "date": "2026-09-16"
+ },
+ "volcanology/": {
+  "hash": "ae1fcc3673a0",
+  "date": "2026-09-16"
+ },
+ "why-we-have-seasons/": {
+  "hash": "a6135bba7fe4",
+  "date": "2026-09-16"
+ },
+ "chemical-bonds/": {
+  "hash": "2683681b1fc0",
+  "date": "2026-09-16"
+ },
+ "electrochemistry/": {
+  "hash": "2b42be782f90",
+  "date": "2026-09-16"
+ },
+ "kinetics-equilibrium/": {
+  "hash": "b9c2cd64e5db",
+  "date": "2026-09-16"
+ },
+ "organic-chemistry/": {
+  "hash": "2895ae03ec3a",
+  "date": "2026-09-16"
+ },
+ "acids-bases-ph/": {
+  "hash": "16f76496317d",
+  "date": "2026-09-16"
+ },
+ "periodic-table/": {
+  "hash": "53d023b640cb",
+  "date": "2026-09-16"
+ },
+ "balancing-chemical-equations/": {
+  "hash": "79baf31e82de",
+  "date": "2026-09-16"
+ },
+ "stars-universe/": {
+  "hash": "85704e95acf8",
+  "date": "2026-09-16"
+ },
+ "black-holes/": {
+  "hash": "e45b19a05338",
+  "date": "2026-09-16"
+ },
+ "cosmology-big-bang/": {
+  "hash": "a13e82602a5d",
+  "date": "2026-09-16"
+ },
+ "solar-system/": {
+  "hash": "3b77d6937024",
+  "date": "2026-09-16"
+ },
+ "eclipses/": {
+  "hash": "ce5c869b82ef",
+  "date": "2026-09-16"
+ },
+ "meteor-showers/": {
+  "hash": "2bac40e15050",
+  "date": "2026-09-16"
+ },
+ "why-the-moon-turns-red/": {
+  "hash": "d898f7908604",
+  "date": "2026-09-16"
+ },
+ "northern-lights-aurora/": {
+  "hash": "59e73259c9ee",
+  "date": "2026-09-16"
+ },
+ "comets/": {
+  "hash": "2f1bfbd50a61",
+  "date": "2026-09-16"
+ },
+ "how-we-find-exoplanets/": {
+  "hash": "48dbcecc898f",
+  "date": "2026-09-16"
+ },
+ "brain-neurons/": {
+  "hash": "8e4390292f95",
+  "date": "2026-09-16"
+ },
+ "electric-brain/": {
+  "hash": "ee53b21443ca",
+  "date": "2026-09-16"
+ },
+ "how-memory-works/": {
+  "hash": "a9e211d6c927",
+  "date": "2026-09-16"
+ },
+ "sleep-consciousness/": {
+  "hash": "6dc2137118a3",
+  "date": "2026-09-16"
+ },
+ "optics-light-lenses/": {
+  "hash": "0239f85bfa42",
+  "date": "2026-09-16"
+ },
+ "pendulum-simple-harmonic-motion/": {
+  "hash": "bb317bb8c3b9",
+  "date": "2026-09-16"
+ },
+ "how-planes-fly/": {
+  "hash": "07d74eb0ae90",
+  "date": "2026-09-16"
+ },
+ "gas-laws/": {
+  "hash": "1c7ab65e45da",
+  "date": "2026-09-16"
+ },
+ "moon-phases/": {
+  "hash": "6d61550ebd10",
+  "date": "2026-09-16"
+ },
+ "protein-synthesis/": {
+  "hash": "e57f933c753f",
+  "date": "2026-09-16"
+ },
+ "water-cycle/": {
+  "hash": "53defbed5e6d",
+  "date": "2026-09-16"
+ },
+ "el-nino-la-nina/": {
+  "hash": "3af932bc9a64",
+  "date": "2026-09-16"
+ },
+ "energy-conservation/": {
+  "hash": "aa8f05b33b8f",
+  "date": "2026-09-16"
+ },
+ "series-parallel-circuits/": {
+  "hash": "cfd0d4246ca3",
+  "date": "2026-09-16"
+ },
+ "cellular-respiration/": {
+  "hash": "1ed0d757b724",
+  "date": "2026-09-16"
+ },
+ "immune-system-vaccines/": {
+  "hash": "84cdae30c918",
+  "date": "2026-09-16"
+ },
+ "magnets-electromagnetism/": {
+  "hash": "b812089b1b64",
+  "date": "2026-09-16"
+ },
+ "how-sea-turtles-navigate/": {
+  "hash": "bc3266533c79",
+  "date": "2026-09-16"
+ },
+ "nest-temperature-decides-sex/": {
+  "hash": "70f11408a475",
+  "date": "2026-09-16"
+ },
+ "how-sharks-sense-electricity/": {
+  "hash": "3eb3d89acec9",
+  "date": "2026-09-16"
+ },
+ "how-bees-communicate-waggle-dance/": {
+  "hash": "9859afb1b7cc",
+  "date": "2026-09-16"
+ },
+ "how-bats-use-echolocation/": {
+  "hash": "6e34a46e0752",
+  "date": "2026-09-16"
+ },
+ "how-solar-panels-work/": {
+  "hash": "288f7dc4b6a2",
+  "date": "2026-09-16"
+ },
+ "wind-turbines-betz-limit/": {
+  "hash": "c3eb542cef96",
+  "date": "2026-09-16"
+ },
+ "how-heat-pumps-work/": {
+  "hash": "90173b0237a4",
+  "date": "2026-09-16"
+ },
+ "how-the-power-grid-works/": {
+  "hash": "6d64f256fea2",
+  "date": "2026-09-16"
+ },
+ "how-does-a-nuclear-reactor-work/": {
+  "hash": "d45c7fc60389",
+  "date": "2026-09-16"
+ },
+ "how-grid-batteries-work/": {
+  "hash": "007dff5e32dd",
+  "date": "2026-09-16"
+ },
+ "how-green-hydrogen-is-made/": {
+  "hash": "96a67f9132e6",
+  "date": "2026-09-16"
+ },
+ "how-home-insulation-works/": {
+  "hash": "ebbf20855f0e",
+  "date": "2026-09-16"
+ },
+ "how-electricity-is-generated/": {
+  "hash": "87d97645e59a",
+  "date": "2026-09-16"
+ },
+ "how-much-electricity-appliances-use/": {
+  "hash": "ed4fb5f79dd6",
+  "date": "2026-09-16"
+ },
+ "how-does-the-internet-work/": {
+  "hash": "8a700a439207",
+  "date": "2026-09-16"
+ },
+ "how-does-file-compression-work/": {
+  "hash": "c11280f954b6",
+  "date": "2026-09-16"
+ },
+ "how-does-a-search-engine-work/": {
+  "hash": "3b23bc98ae01",
+  "date": "2026-09-16"
+ },
+ "how-does-caffeine-work/": {
+  "hash": "f6c15908849c",
+  "date": "2026-09-16"
+ },
+ "how-optical-illusions-work/": {
+  "hash": "3fd9d5a5185a",
+  "date": "2026-09-16"
+ },
+ "what-does-dopamine-do/": {
+  "hash": "47a636b5cbeb",
+  "date": "2026-09-16"
+ },
+ "how-do-hurricanes-form/": {
+  "hash": "a0b7b2bc46ac",
+  "date": "2026-09-16"
+ },
+ "how-do-tornadoes-form/": {
+  "hash": "fbe703422efb",
+  "date": "2026-09-16"
+ },
+ "why-is-the-sky-blue/": {
+  "hash": "664654bbafff",
+  "date": "2026-09-16"
+ },
+ "how-fireflies-flash-in-sync/": {
+  "hash": "3baf7a98a3da",
+  "date": "2026-09-16"
+ },
+ "how-do-ants-find-food/": {
+  "hash": "c82c82a5b414",
+  "date": "2026-09-16"
+ },
+ "monty-hall-problem/": {
+  "hash": "0e6a16b1dc79",
+  "date": "2026-09-16"
+ },
+ "it/gravita-orbite/": {
+  "hash": "1399ea647a4e",
+  "date": "2026-09-16"
+ },
+ "it/moto-dei-proiettili/": {
+  "hash": "ac1a9f1b8707",
+  "date": "2026-09-16"
+ },
+ "it/onde-interferenza/": {
+  "hash": "25f9bb0f900f",
+  "date": "2026-09-16"
+ },
+ "it/calore-termodinamica/": {
+  "hash": "6a0d0aa207c1",
+  "date": "2026-09-16"
+ },
+ "it/modello-standard/": {
+  "hash": "a37c54c7a62c",
+  "date": "2026-09-16"
+ },
+ "it/leggi-del-moto-di-newton/": {
+  "hash": "f3cc3847b4a1",
+  "date": "2026-09-16"
+ },
+ "it/legge-di-ohm-circuiti/": {
+  "hash": "0705f99132e7",
+  "date": "2026-09-16"
+ },
+ "it/stati-della-materia/": {
+  "hash": "7a2afad74708",
+  "date": "2026-09-16"
+ },
+ "it/probabilita-curva-a-campana/": {
+  "hash": "bc1060b5e122",
+  "date": "2026-09-16"
+ },
+ "it/frattali-infinito/": {
+  "hash": "7538f370852e",
+  "date": "2026-09-16"
+ },
+ "it/calcolo-cambiamento/": {
+  "hash": "02ac908505bb",
+  "date": "2026-09-16"
+ },
+ "it/teoria-dei-grafi-reti/": {
+  "hash": "92f9e21041e9",
+  "date": "2026-09-16"
+ },
+ "it/trigonometria-cerchio-unitario/": {
+  "hash": "f96285fbb24d",
+  "date": "2026-09-16"
+ },
+ "it/regole-della-vita/": {
+  "hash": "908d600debfb",
+  "date": "2026-09-16"
+ },
+ "it/dna-genetica/": {
+  "hash": "519d7c470858",
+  "date": "2026-09-16"
+ },
+ "it/evoluzione-selezione-naturale/": {
+  "hash": "ae46fae057d2",
+  "date": "2026-09-16"
+ },
+ "it/ecosistemi-reti-alimentari/": {
+  "hash": "543a1b187881",
+  "date": "2026-09-16"
+ },
+ "it/fotosintesi/": {
+  "hash": "93dd3e5752b0",
+  "date": "2026-09-16"
+ },
+ "it/cellula-osmosi-diffusione/": {
+  "hash": "5a673fbb069c",
+  "date": "2026-09-16"
+ },
+ "it/mitosi-meiosi/": {
+  "hash": "fb291b00289a",
+  "date": "2026-09-16"
+ },
+ "it/quadrati-di-punnett-genetica/": {
+  "hash": "7313bd584ec9",
+  "date": "2026-09-16"
+ },
+ "it/algoritmi-di-ordinamento/": {
+  "hash": "1d1c083aafa3",
+  "date": "2026-09-16"
+ },
+ "it/machine-learning-reti-neurali/": {
+  "hash": "6315da8da184",
+  "date": "2026-09-16"
+ },
+ "it/crittografia-sicurezza/": {
+  "hash": "f6fb3e4e4898",
+  "date": "2026-09-16"
+ },
+ "it/computazione-complessita/": {
+  "hash": "f06697916d8d",
+  "date": "2026-09-16"
+ },
+ "it/clima-atmosfera/": {
+  "hash": "fe83cd94f0be",
+  "date": "2026-09-16"
+ },
+ "it/tettonica-a-placche-terremoti/": {
+  "hash": "0b6ad162aaac",
+  "date": "2026-09-16"
+ },
+ "it/oceanografia-correnti-oceaniche/": {
+  "hash": "4fe0ef6660cb",
+  "date": "2026-09-16"
+ },
+ "it/vulcanologia/": {
+  "hash": "0148e834349d",
+  "date": "2026-09-16"
+ },
+ "it/perche-abbiamo-le-stagioni/": {
+  "hash": "b9ca0caddfad",
+  "date": "2026-09-16"
+ },
+ "it/atomi-legami-chimici/": {
+  "hash": "4444d15f9ce7",
+  "date": "2026-09-16"
+ },
+ "it/elettrochimica-batterie/": {
+  "hash": "9cf1d621cc3c",
+  "date": "2026-09-16"
+ },
+ "it/cinetica-equilibrio/": {
+  "hash": "239f25b4f880",
+  "date": "2026-09-16"
+ },
+ "it/chimica-organica-molecole-vita/": {
+  "hash": "c5b54973ee6a",
+  "date": "2026-09-16"
+ },
+ "it/acidi-basi-ph/": {
+  "hash": "40c04b8f971b",
+  "date": "2026-09-16"
+ },
+ "it/tavola-periodica/": {
+  "hash": "efef9559aad6",
+  "date": "2026-09-16"
+ },
+ "it/bilanciare-equazioni-chimiche/": {
+  "hash": "8423127838c1",
+  "date": "2026-09-16"
+ },
+ "it/stelle-universo/": {
+  "hash": "f61d0d49f85b",
+  "date": "2026-09-16"
+ },
+ "it/buchi-neri/": {
+  "hash": "af2b52e579be",
+  "date": "2026-09-16"
+ },
+ "it/cosmologia-big-bang/": {
+  "hash": "e322b39b1b78",
+  "date": "2026-09-16"
+ },
+ "it/sistema-solare/": {
+  "hash": "d2f0c359a448",
+  "date": "2026-09-16"
+ },
+ "it/eclissi/": {
+  "hash": "02dc03d6320d",
+  "date": "2026-09-16"
+ },
+ "it/stelle-cadenti/": {
+  "hash": "64b84c5f9144",
+  "date": "2026-09-16"
+ },
+ "it/perche-la-luna-diventa-rossa/": {
+  "hash": "fc21cbc71730",
+  "date": "2026-09-16"
+ },
+ "it/aurora-boreale/": {
+  "hash": "e4408c0f3959",
+  "date": "2026-09-16"
+ },
+ "it/comete/": {
+  "hash": "159147e5197c",
+  "date": "2026-09-16"
+ },
+ "it/come-troviamo-altri-mondi/": {
+  "hash": "9d785ebaf5a8",
+  "date": "2026-09-16"
+ },
+ "it/cervello-neuroni/": {
+  "hash": "13832dcccf53",
+  "date": "2026-09-16"
+ },
+ "it/cervello-elettrico/": {
+  "hash": "67c8200c3f0b",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-la-memoria/": {
+  "hash": "df9ae47be9e8",
+  "date": "2026-09-16"
+ },
+ "it/sonno-coscienza/": {
+  "hash": "5750a93d5645",
+  "date": "2026-09-16"
+ },
+ "it/ottica-luce-lenti/": {
+  "hash": "8e7919cc3113",
+  "date": "2026-09-16"
+ },
+ "it/pendolo-moto-armonico/": {
+  "hash": "77df3edb8bed",
+  "date": "2026-09-16"
+ },
+ "it/come-volano-gli-aerei/": {
+  "hash": "53b90ef28105",
+  "date": "2026-09-16"
+ },
+ "it/leggi-dei-gas/": {
+  "hash": "30319a937f0b",
+  "date": "2026-09-16"
+ },
+ "it/fasi-lunari/": {
+  "hash": "1b62da827927",
+  "date": "2026-09-16"
+ },
+ "it/sintesi-proteica/": {
+  "hash": "4bfed54a5496",
+  "date": "2026-09-16"
+ },
+ "it/ciclo-dell-acqua/": {
+  "hash": "f185a0297eb9",
+  "date": "2026-09-16"
+ },
+ "it/el-nino-la-nina/": {
+  "hash": "5801e5b31cc9",
+  "date": "2026-09-16"
+ },
+ "it/energia-conservazione/": {
+  "hash": "af830de4d3db",
+  "date": "2026-09-16"
+ },
+ "it/circuiti-serie-parallelo/": {
+  "hash": "a80b55533f71",
+  "date": "2026-09-16"
+ },
+ "it/respirazione-cellulare/": {
+  "hash": "c41a1d9528e0",
+  "date": "2026-09-16"
+ },
+ "it/sistema-immunitario-vaccini/": {
+  "hash": "3043b282db26",
+  "date": "2026-09-16"
+ },
+ "it/magneti-elettromagnetismo/": {
+  "hash": "e62c21f60044",
+  "date": "2026-09-16"
+ },
+ "it/come-si-orientano-le-tartarughe-marine/": {
+  "hash": "f14714b55f3b",
+  "date": "2026-09-16"
+ },
+ "it/temperatura-del-nido-decide-il-sesso/": {
+  "hash": "794af9752029",
+  "date": "2026-09-16"
+ },
+ "it/come-gli-squali-sentono-elettricita/": {
+  "hash": "1df2b9b0009c",
+  "date": "2026-09-16"
+ },
+ "it/come-comunicano-le-api-danza-delle-api/": {
+  "hash": "73dbb2ae975c",
+  "date": "2026-09-16"
+ },
+ "it/come-i-pipistrelli-usano-ecolocalizzazione/": {
+  "hash": "85a4438e886c",
+  "date": "2026-09-16"
+ },
+ "it/come-funzionano-i-pannelli-solari/": {
+  "hash": "9ba4217075c2",
+  "date": "2026-09-16"
+ },
+ "it/turbine-eoliche-limite-di-betz/": {
+  "hash": "2069ea41b9d6",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-la-pompa-di-calore/": {
+  "hash": "c189bc8be1bb",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-la-rete-elettrica/": {
+  "hash": "c7b6ad08eded",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-un-reattore-nucleare/": {
+  "hash": "686639952cff",
+  "date": "2026-09-16"
+ },
+ "it/come-funzionano-le-batterie-di-rete/": {
+  "hash": "749ff1dd0bb0",
+  "date": "2026-09-16"
+ },
+ "it/come-si-produce-idrogeno-verde/": {
+  "hash": "437c61fc871d",
+  "date": "2026-09-16"
+ },
+ "it/dove-va-a-finire-il-calore-di-casa/": {
+  "hash": "f39e1c89f0a1",
+  "date": "2026-09-16"
+ },
+ "it/come-si-produce-l-elettricita/": {
+  "hash": "54db28590cd9",
+  "date": "2026-09-16"
+ },
+ "it/quanta-elettricita-consuma-casa-tua/": {
+  "hash": "e1ec80242a45",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-internet/": {
+  "hash": "fb4a323de1b0",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-la-compressione-dei-file/": {
+  "hash": "2998951dda98",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-un-motore-di-ricerca/": {
+  "hash": "fac17b595b01",
+  "date": "2026-09-16"
+ },
+ "it/come-funziona-la-caffeina/": {
+  "hash": "661303757a34",
+  "date": "2026-09-16"
+ },
+ "it/come-funzionano-le-illusioni-ottiche/": {
+  "hash": "1231e644c367",
+  "date": "2026-09-16"
+ },
+ "it/che-cosa-fa-davvero-la-dopamina/": {
+  "hash": "9148a69c1102",
+  "date": "2026-09-16"
+ },
+ "it/come-si-formano-gli-uragani/": {
+  "hash": "3dc2c31d60a8",
+  "date": "2026-09-16"
+ },
+ "it/come-si-formano-i-tornado/": {
+  "hash": "2f1091d838e8",
+  "date": "2026-09-16"
+ },
+ "it/perche-il-cielo-e-blu/": {
+  "hash": "e1cfed9f9025",
+  "date": "2026-09-16"
+ },
+ "it/come-lampeggiano-insieme-le-lucciole/": {
+  "hash": "31c3c9516a1c",
+  "date": "2026-09-16"
+ },
+ "it/come-trovano-la-strada-le-formiche/": {
+  "hash": "6bdfbc863508",
+  "date": "2026-09-16"
+ },
+ "it/problema-di-monty-hall/": {
+  "hash": "0910c37323bb",
+  "date": "2026-09-16"
+ },
+ "fr/gravite-orbites/": {
+  "hash": "7390e92c50c0",
+  "date": "2026-09-16"
+ },
+ "fr/mouvement-des-projectiles/": {
+  "hash": "112b646b765b",
+  "date": "2026-09-16"
+ },
+ "fr/ondes-interferences/": {
+  "hash": "a5391e152a63",
+  "date": "2026-09-16"
+ },
+ "fr/chaleur-thermodynamique/": {
+  "hash": "f54cb60bea30",
+  "date": "2026-09-16"
+ },
+ "fr/modele-standard/": {
+  "hash": "fb19a138e199",
+  "date": "2026-09-16"
+ },
+ "fr/lois-du-mouvement-de-newton/": {
+  "hash": "767a63ad48a2",
+  "date": "2026-09-16"
+ },
+ "fr/loi-d-ohm-circuits/": {
+  "hash": "2222f0dd6c81",
+  "date": "2026-09-16"
+ },
+ "fr/etats-de-la-matiere/": {
+  "hash": "a6ef9ad886c1",
+  "date": "2026-09-16"
+ },
+ "fr/probabilites-courbe-en-cloche/": {
+  "hash": "c5d4fee95fe3",
+  "date": "2026-09-16"
+ },
+ "fr/fractales-infini/": {
+  "hash": "34a15c1b8ac8",
+  "date": "2026-09-16"
+ },
+ "fr/calcul-changement/": {
+  "hash": "6717e3d02b80",
+  "date": "2026-09-16"
+ },
+ "fr/theorie-des-graphes-reseaux/": {
+  "hash": "d3992d144de2",
+  "date": "2026-09-16"
+ },
+ "fr/trigonometrie-cercle-unite/": {
+  "hash": "86279f38e3e1",
+  "date": "2026-09-16"
+ },
+ "fr/regles-de-la-vie/": {
+  "hash": "b7d805a32bee",
+  "date": "2026-09-16"
+ },
+ "fr/adn-genetique/": {
+  "hash": "50bf0018132a",
+  "date": "2026-09-16"
+ },
+ "fr/evolution-selection-naturelle/": {
+  "hash": "c12297e9f160",
+  "date": "2026-09-16"
+ },
+ "fr/ecosystemes-reseaux-trophiques/": {
+  "hash": "e00bb7dbcf13",
+  "date": "2026-09-16"
+ },
+ "fr/photosynthese/": {
+  "hash": "d782849dc975",
+  "date": "2026-09-16"
+ },
+ "fr/cellule-osmose-diffusion/": {
+  "hash": "3f07e2dcb565",
+  "date": "2026-09-16"
+ },
+ "fr/mitose-meiose/": {
+  "hash": "2c0f6e594c74",
+  "date": "2026-09-16"
+ },
+ "fr/echiquiers-de-punnett-genetique/": {
+  "hash": "04a422411df7",
+  "date": "2026-09-16"
+ },
+ "fr/algorithmes-de-tri/": {
+  "hash": "069527e763a9",
+  "date": "2026-09-16"
+ },
+ "fr/apprentissage-automatique-reseaux-neurones/": {
+  "hash": "e7bc0802d3fe",
+  "date": "2026-09-16"
+ },
+ "fr/cryptographie-securite/": {
+  "hash": "0b402be383d3",
+  "date": "2026-09-16"
+ },
+ "fr/calcul-complexite/": {
+  "hash": "05aab8cbee67",
+  "date": "2026-09-16"
+ },
+ "fr/climat-atmosphere/": {
+  "hash": "58ded16e3821",
+  "date": "2026-09-16"
+ },
+ "fr/tectonique-des-plaques-seismes/": {
+  "hash": "5537f2ca7e4c",
+  "date": "2026-09-16"
+ },
+ "fr/oceanographie-courants-marins/": {
+  "hash": "65e83c170169",
+  "date": "2026-09-16"
+ },
+ "fr/volcanologie/": {
+  "hash": "5f85398bbabe",
+  "date": "2026-09-16"
+ },
+ "fr/pourquoi-nous-avons-des-saisons/": {
+  "hash": "e81a2d6c6a39",
+  "date": "2026-09-16"
+ },
+ "fr/atomes-liaisons-chimiques/": {
+  "hash": "823bf8954c8e",
+  "date": "2026-09-16"
+ },
+ "fr/electrochimie-batteries/": {
+  "hash": "3ffe9a6be927",
+  "date": "2026-09-16"
+ },
+ "fr/cinetique-equilibre/": {
+  "hash": "55d352b7e062",
+  "date": "2026-09-16"
+ },
+ "fr/chimie-organique-molecules-du-vivant/": {
+  "hash": "1e1b0123841d",
+  "date": "2026-09-16"
+ },
+ "fr/acides-bases-ph/": {
+  "hash": "fda2a7475c41",
+  "date": "2026-09-16"
+ },
+ "fr/tableau-periodique/": {
+  "hash": "84615bd68a51",
+  "date": "2026-09-16"
+ },
+ "fr/equilibrer-equations-chimiques/": {
+  "hash": "5a5dca51c9d5",
+  "date": "2026-09-16"
+ },
+ "fr/etoiles-univers/": {
+  "hash": "bd75fe4c9250",
+  "date": "2026-09-16"
+ },
+ "fr/trous-noirs/": {
+  "hash": "110aad5362ee",
+  "date": "2026-09-16"
+ },
+ "fr/cosmologie-big-bang/": {
+  "hash": "7c21bbe39c2f",
+  "date": "2026-09-16"
+ },
+ "fr/systeme-solaire/": {
+  "hash": "64b91e3f59be",
+  "date": "2026-09-16"
+ },
+ "fr/eclipses/": {
+  "hash": "c68524a56275",
+  "date": "2026-09-16"
+ },
+ "fr/etoiles-filantes/": {
+  "hash": "5b67da7fedc8",
+  "date": "2026-09-16"
+ },
+ "fr/pourquoi-la-lune-devient-rouge/": {
+  "hash": "607951f04224",
+  "date": "2026-09-16"
+ },
+ "fr/aurores-boreales/": {
+  "hash": "150f22f6f109",
+  "date": "2026-09-16"
+ },
+ "fr/cometes/": {
+  "hash": "2fe3c463b90a",
+  "date": "2026-09-16"
+ },
+ "fr/comment-trouver-autres-mondes/": {
+  "hash": "cc41961b0928",
+  "date": "2026-09-16"
+ },
+ "fr/cerveau-neurones/": {
+  "hash": "2d7863901ea9",
+  "date": "2026-09-16"
+ },
+ "fr/cerveau-electrique/": {
+  "hash": "02696b554625",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionne-la-memoire/": {
+  "hash": "749ab108d79c",
+  "date": "2026-09-16"
+ },
+ "fr/sommeil-conscience/": {
+  "hash": "3c0de8b9b260",
+  "date": "2026-09-16"
+ },
+ "fr/optique-lumiere-lentilles/": {
+  "hash": "b35a3fa4cac0",
+  "date": "2026-09-16"
+ },
+ "fr/pendule-mouvement-harmonique/": {
+  "hash": "00f6b17d4258",
+  "date": "2026-09-16"
+ },
+ "fr/comment-volent-les-avions/": {
+  "hash": "e792993620f3",
+  "date": "2026-09-16"
+ },
+ "fr/lois-des-gaz/": {
+  "hash": "ac41b37740a6",
+  "date": "2026-09-16"
+ },
+ "fr/phases-de-la-lune/": {
+  "hash": "edba40558d20",
+  "date": "2026-09-16"
+ },
+ "fr/synthese-des-proteines/": {
+  "hash": "b0f76c0db328",
+  "date": "2026-09-16"
+ },
+ "fr/cycle-de-l-eau/": {
+  "hash": "231b3aa3f91b",
+  "date": "2026-09-16"
+ },
+ "fr/el-nino-la-nina/": {
+  "hash": "e7a3df3f43a7",
+  "date": "2026-09-16"
+ },
+ "fr/conservation-de-l-energie/": {
+  "hash": "6836c3d3610a",
+  "date": "2026-09-16"
+ },
+ "fr/circuits-serie-parallele/": {
+  "hash": "019f3e8fbd31",
+  "date": "2026-09-16"
+ },
+ "fr/respiration-cellulaire/": {
+  "hash": "5322ca58d6c3",
+  "date": "2026-09-16"
+ },
+ "fr/systeme-immunitaire-vaccins/": {
+  "hash": "17dfb38cec72",
+  "date": "2026-09-16"
+ },
+ "fr/aimants-electromagnetisme/": {
+  "hash": "6eac4d23c1af",
+  "date": "2026-09-16"
+ },
+ "fr/comment-s-orientent-les-tortues-marines/": {
+  "hash": "8ef847390251",
+  "date": "2026-09-16"
+ },
+ "fr/temperature-du-nid-decide-le-sexe/": {
+  "hash": "9c21b95cbe4e",
+  "date": "2026-09-16"
+ },
+ "fr/comment-les-requins-sentent-electricite/": {
+  "hash": "23b5a09f933f",
+  "date": "2026-09-16"
+ },
+ "fr/comment-communiquent-les-abeilles-danse/": {
+  "hash": "6889e0e025a1",
+  "date": "2026-09-16"
+ },
+ "fr/comment-les-chauves-souris-utilisent-echolocation/": {
+  "hash": "498363dc830b",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionnent-les-panneaux-solaires/": {
+  "hash": "7b8680cf23e2",
+  "date": "2026-09-16"
+ },
+ "fr/eoliennes-limite-de-betz/": {
+  "hash": "776107623c1a",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionne-une-pompe-a-chaleur/": {
+  "hash": "d10c4b70e29c",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionne-le-reseau-electrique/": {
+  "hash": "7655a7686ab1",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionne-un-reacteur-nucleaire/": {
+  "hash": "9811501493aa",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionnent-les-batteries-de-reseau/": {
+  "hash": "00348c8a57ee",
+  "date": "2026-09-16"
+ },
+ "fr/comment-produit-on-l-hydrogene-vert/": {
+  "hash": "0fd0376047ff",
+  "date": "2026-09-16"
+ },
+ "fr/ou-part-la-chaleur-de-votre-maison/": {
+  "hash": "db87d6fe97d9",
+  "date": "2026-09-16"
+ },
+ "fr/comment-produit-on-l-electricite/": {
+  "hash": "902e8a500bce",
+  "date": "2026-09-16"
+ },
+ "fr/combien-d-electricite-consomme-votre-maison/": {
+  "hash": "bad117283b9a",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionne-internet/": {
+  "hash": "dd0db79507d4",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionne-la-compression-de-fichiers/": {
+  "hash": "3104cfae8b23",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionne-un-moteur-de-recherche/": {
+  "hash": "ad40d7da8d57",
+  "date": "2026-09-16"
+ },
+ "fr/comment-agit-la-cafeine/": {
+  "hash": "1fa5865ded82",
+  "date": "2026-09-16"
+ },
+ "fr/comment-fonctionnent-les-illusions-d-optique/": {
+  "hash": "35e0137b1a77",
+  "date": "2026-09-16"
+ },
+ "fr/que-fait-vraiment-la-dopamine/": {
+  "hash": "21861868b964",
+  "date": "2026-09-16"
+ },
+ "fr/comment-se-forment-les-ouragans/": {
+  "hash": "f1decd2dfd9f",
+  "date": "2026-09-16"
+ },
+ "fr/comment-se-forment-les-tornades/": {
+  "hash": "f93efd45b492",
+  "date": "2026-09-16"
+ },
+ "fr/pourquoi-le-ciel-est-bleu/": {
+  "hash": "0f6039c34aae",
+  "date": "2026-09-16"
+ },
+ "fr/comment-les-lucioles-clignotent-ensemble/": {
+  "hash": "0c2acfc84359",
+  "date": "2026-09-16"
+ },
+ "fr/comment-les-fourmis-trouvent-leur-chemin/": {
+  "hash": "daa7d920c061",
+  "date": "2026-09-16"
+ },
+ "fr/probleme-de-monty-hall/": {
+  "hash": "2fdd110b5e34",
+  "date": "2026-09-16"
+ },
+ "it/": {
+  "hash": "f109c3081b9e",
+  "date": "2026-09-16"
+ },
+ "fr/": {
+  "hash": "950cca0e65f1",
+  "date": "2026-09-16"
+ },
+ "": {
+  "hash": "6d333283ec97",
+  "date": "2026-09-16"
+ },
+ "ai/": {
+  "hash": "7ff37e1dc835",
+  "date": "2026-09-01"
+ },
+ "it/ai/": {
+  "hash": "16bbe2ff9b01",
+  "date": "2026-09-01"
+ },
+ "fr/ai/": {
+  "hash": "2fb386a3de94",
+  "date": "2026-09-01"
+ }
+}

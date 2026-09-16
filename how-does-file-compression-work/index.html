@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does File Compression Work? | Lab-in-a-Tab</title>
+<meta name="description" content="A zip file is smaller than what went into it, and nothing was thrown away. The trick is that ordinary data is far more predictable than the way we…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-does-file-compression-work/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-does-file-compression-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-la-compressione-dei-file/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionne-la-compression-de-fichiers/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-does-file-compression-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Does File Compression Work? — Explained &amp; Simulated">
+<meta property="og:description" content="A zip file is smaller than what went into it, and nothing was thrown away. The trick is that ordinary data is far more predictable than the way we…">
+<meta property="og:url" content="https://labinatab.com/how-does-file-compression-work/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Does File Compression Work? — Explained &amp; Simulated">
+<meta name="twitter:description" content="A zip file is smaller than what went into it, and nothing was thrown away. The trick is that ordinary data is far more predictable than the way we…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-does-file-compression-work/#article",
+   "headline": "How Does File Compression Work?",
+   "name": "How Does File Compression Work?",
+   "description": "A zip file is smaller than what went into it, and nothing was thrown away. The trick is that ordinary data is far more predictable than the way we…",
+   "url": "https://labinatab.com/how-does-file-compression-work/",
+   "mainEntityOfPage": "https://labinatab.com/how-does-file-compression-work/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Huffman",
+    "Entropy",
+    "Lossless"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Does File Compression Work?",
+    "sameAs": "https://en.wikipedia.org/wiki/Huffman_coding"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Does File Compression Work?",
+     "item": "https://labinatab.com/how-does-file-compression-work/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-does-file-compression-work/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-la-compressione-dei-file/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionne-la-compression-de-fichiers/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Computer Science</nav>
+  <h1>How Does File Compression Work?</h1>
+  <p class="lead">A zip file is smaller than what went into it, and nothing was thrown away. The trick is that ordinary data is far more predictable than the way we normally write it down.</p>
+  <div class="chips"><span>Huffman</span><span>Entropy</span><span>Lossless</span></div>
+  <section class="sim-embed" data-sim="compression" data-color="#0d9488" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0d9488"><span class="sg-lbl">Try this</span><span>Push <b>How repetitive it is</b> all the way up and watch the second bar shrink as the message becomes more predictable. Then pull it all the way down and see how little there is left to save. Change the text with <b>Try another text</b> and look at which letter ends up with the shortest code - it is always the commonest one.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0d9488"><span class="sg-lbl">Try this</span><span>Sweep <b>Redundancy</b> and watch <b>Compression ratio</b> track the redundancy of the source. Then use <b>Length of the message</b> - a longer message converges closer to the entropy bound, because the fixed cost of an unbalanced tree is amortised. Compare <b>Shortest code</b> across the three texts from <b>Try another text</b>: the shortest codeword always lands on the highest-probability symbol.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0d9488"><span class="sg-lbl">Try this</span><span>Use <b>Source redundancy</b> to move the source distribution from near-uniform to highly skewed and watch <b>Compression ratio</b> follow the entropy rather than anything about the alphabet size. Then hold the distribution and extend <b>Message length</b>: the ratio converges, which is the amortisation of the sub-bit inefficiency. Compare <b>Huffman coded</b> against the entropy you would compute by hand from the letter counts - the gap is always under one bit per symbol.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>At the top, your message with one small square per letter - the brighter a square, the commoner that letter is in this message. In the middle, a tree built by repeatedly gluing together the two rarest letters, which pushes rare letters to the bottom and leaves common ones near the top; the string of ones and zeros under each letter is the code it ended up with. At the bottom, two bars: the plain way, eight bits for every letter, and the clever way.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The saving does not come from throwing anything away. It comes from the fact that letters are not equally common.</b> Give the frequent ones short codes and the rare ones long codes, and because there are so many more of the frequent ones, the total shrinks - with every single letter still there, recoverable exactly. The tree is what makes it safe to do: since every letter sits at the end of a branch, no code can ever be the start of another one, so a reader walking down the tree always knows when a letter has finished. And notice what happens as you take the repetition away: when there is no pattern left, there is nothing to compress, and that is a limit rather than a failure of effort.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Top: the message, one cell per symbol, shaded by frequency. Middle: the Huffman tree, built bottom-up by repeatedly merging the two lowest-weight nodes, with the resulting codeword printed under each leaf. Because every symbol is a leaf, the code is prefix-free and uniquely decodable. Bottom: fixed-length 8-bit coding against the Huffman total, with the ratio between them.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Entropy is the floor, and Huffman gets within one bit of it.</b> The average codeword length can never be less than minus the sum of p log p, and the ideal length for a symbol is minus log of its probability - which is why doubling a symbol's frequency buys exactly one bit off its code. Huffman's greedy merge achieves that within a single bit per symbol, and the remaining gap is exactly the cost of being forced to use whole bits, which is what arithmetic coding removes. Everything else real formats do is modelling: run-length coding, and the back-references of LZ77 that make ZIP and PNG work, are ways of finding more structure to feed into the same idea.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A memoryless source coded with a Huffman code built by the standard greedy merge. The tree is drawn with depth proportional to codeword length, so the visual shape is the code-length distribution; the leaves carry their codewords. The bars compare a fixed 8-bit representation against the Huffman total, whose ratio approaches the entropy ratio as the message lengthens and the code-length quantisation is amortised.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>No compressor shrinks everything, and the proof is a counting argument one line long.</b> There are two to the n strings of length n and fewer than that of shorter length, so any injective map must lengthen some inputs; compression is therefore always a bet on the input distribution, never a property of the algorithm alone. That reframes the whole field as modelling: arithmetic coding separates the coder from the model entirely, after which all remaining gain is predictive, which is why the best text compressors are language models and why compression ratio is a defensible measure of understanding. The theoretical limit for a specific string is the length of the shortest program that prints it - and that quantity is uncomputable, so practical compression is the search for tractable approximations to something no algorithm can find.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Why shorter codes for commoner letters wins</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Normally every letter you store takes the same amount of room - eight bits each, whether it is an <strong>e</strong> or a <strong>q</strong>. That is convenient and it is also wasteful, because those two letters are not equally common. In English, <strong>e</strong> turns up about a hundred times more often than <strong>q</strong>. Giving them the same amount of space is like using the same size box to post a sofa and a postcard.</p>
+<p>So do the obvious thing: give the common letters short codes and the rare ones long codes. Give <strong>e</strong> three bits and let <strong>q</strong> have eleven. You lose a little on every q and save a little on every e, and since there are vastly more e's than q's, the total comes out smaller. Nothing has been thrown away - every letter is still there, exactly as it was.</p>
+<p>There is one problem to solve. If codes have different lengths, how do you know where one stops and the next begins? The answer is to make sure no code is the beginning of another code. If <strong>10</strong> is a whole letter, then no other code may start with 10. A method called Huffman coding builds exactly that, by repeatedly gluing together the two rarest letters and working upwards - which automatically puts the rare ones deep in a tree and the common ones near the top.</p>
+<p>Play with the repetition slider and watch the bars. The more predictable your message, the more there is to save. A page of the same letter compresses to almost nothing. A page of pure randomness compresses to nothing at all, and that turns out to be a deep fact rather than an inconvenience.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔤</span> In English text, the six commonest letters - e t a o i n - make up about 40% of everything written. That imbalance is the entire source of the saving.</li><li><span aria-hidden="true">📼</span> Morse code is a hand-made version of the same idea: E is a single dot, Q is dash-dash-dot-dash. Samuel Morse counted letters in a printer's type case to work out which should be short.</li><li><span aria-hidden="true">🎲</span> A file of genuinely random numbers cannot be compressed at all. If a program claims to shrink any file, it is wrong - there are simply not enough short files to hold all the long ones.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Entropy, prefix codes, and the line between lossless and lossy</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>The quantity being exploited has a name and a number. <strong>Shannon entropy</strong> measures the average information per symbol: \(H = -\sum p_i \log_2 p_i\) bits. For English letters with their real frequencies it is about 4.1 bits per character rather than the 8 you spend storing them naively - and if you account for the fact that <em>q</em> is almost always followed by <em>u</em>, it falls to roughly 1.5 bits per character. Entropy is the floor: no lossless method can average fewer bits per symbol than the source's entropy, and Huffman coding gets within one bit of it.</p>
+<p>Huffman's algorithm is a greedy build from the leaves. Take the two least frequent symbols, merge them into a node whose weight is their sum, put it back in the pool, repeat until one node remains. Reading the tree from the root, a left branch is a 0 and a right branch a 1, and because every symbol is a leaf, no code is a prefix of another - the decoder can walk the tree bit by bit and always knows when it has arrived.</p>
+<p>Real formats layer more tricks on top. <strong>Run-length encoding</strong> replaces repeats with a count. <strong>LZ77</strong>, the heart of ZIP and PNG and gzip, replaces a repeated chunk with a backwards reference - <em>go back 214 bytes and copy 9</em> - which is why text and code compress so well and why a file compressed twice barely shrinks the second time. DEFLATE is simply LZ77 followed by Huffman.</p>
+<p>All of that is <strong>lossless</strong>: the original comes back bit for bit. Photographs and music use <strong>lossy</strong> methods instead, which throw away information the eye or ear does not notice - JPEG transforms each 8×8 block of pixels into frequencies and coarsens the high ones, MP3 discards sounds masked by louder neighbours. That is why a JPEG saved repeatedly degrades and a ZIP never does.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Entropy</th><td>\(H = -\sum_i p_i \log_2 p_i\)</td><td class="cmt">bits per symbol, the hard floor</td></tr>
+<tr><th scope="row">Ideal code length</th><td>\(\ell_i = -\log_2 p_i\)</td><td class="cmt">rarer symbol, longer code</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Huffman bound</th><td>\(H \le \bar{\ell} &lt; H + 1\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Compression ratio</th><td>\(R = \dfrac{\text{original bits}}{\text{coded bits}}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📊</span> Huffman coding is provably optimal among methods that give each symbol a whole number of bits. Arithmetic coding beats it by escaping that constraint and encoding the whole message as a single fractional number.</li><li><span aria-hidden="true">🔁</span> Compressing an already-compressed file usually makes it slightly bigger, because the container adds headers to data that has no redundancy left to remove.</li><li><span aria-hidden="true">🖼️</span> PNG is lossless and JPEG is lossy, which is why screenshots belong in PNG and photographs in JPEG. Saving a screenshot as JPEG produces visible fringes around the text for no saving worth having.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Kolmogorov complexity, the counting argument, and modern compressors</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Why no compressor can shrink everything</h3>
+<p>The proof is a counting argument and it takes one line. There are \(2^n\) strings of length \(n\) but only \(2^n - 1\) strings shorter than \(n\). Any lossless compressor is an injection, so it cannot map every string of length \(n\) to a shorter one - some inputs must grow. Compression is therefore never a property of an algorithm alone; it is a bet on the distribution of inputs. A good compressor is one whose implicit model matches the data it is actually given.</p>
+<h3><span class="hn">02</span>Compression is prediction</h3>
+<p>Arithmetic and range coders sever the link between symbol and whole bits, encoding a message as a single number in \([0,1)\) whose interval is narrowed by each symbol in proportion to its probability. The consequence is that the <em>modelling</em> and the <em>coding</em> become separate problems, and all the remaining gain is in the model. Context mixing compressors such as PAQ run hundreds of predictive models in parallel and blend them with a neural network; the best text compressors today are, functionally, language models. The equivalence runs both ways: a model that predicts the next token well <em>is</em> a compressor, and compression ratio is a legitimate measure of how well a model understands its data.</p>
+<h3><span class="hn">03</span>Kolmogorov complexity</h3>
+<p>The theoretical limit for a particular string is the length of the shortest program that outputs it, \(K(x)\). A string with structure - a billion digits of π - has tiny Kolmogorov complexity despite enormous entropy under any symbol model, because a short program generates it. The catch is that \(K\) is uncomputable: no algorithm can find the shortest program in general, a result that follows from the halting problem. Practical compression is the search for computable approximations to an uncomputable ideal.</p>
+<h3><span class="hn">04</span>What the modern formats actually do</h3>
+<p>Zstandard pairs an LZ77-style matcher with finite state entropy, an implementation of asymmetric numeral systems that reaches arithmetic-coding efficiency at table-lookup speed - a genuine advance, since for thirty years the choice was between fast and small. Brotli ships a 120 kB dictionary of common web strings, so short HTTP responses compress against text they never contained. For images, AV1 intra-frame coding underlies AVIF and beats JPEG by roughly half at equal perceived quality, using directional intra-prediction rather than relying on the transform alone.</p>
+<h3><span class="hn">05</span>Lossy coding as rate-distortion</h3>
+<p>Formally, lossy compression is the rate-distortion problem: minimise bit rate subject to a distortion bound, where distortion is defined by a perceptual model rather than by squared error. JPEG's quantisation matrix is a hand-tuned model of contrast sensitivity - the eye's falling response to high spatial frequencies - and the modern successors replace hand tuning with learnt perceptual metrics. The important conceptual point is that the discarded information is chosen by a model of the observer, which is why a codec tuned for human eyes damages a medical image in ways a radiologist will notice.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Counting bound</th><td>\(|\{x : |x| = n\}| = 2^n &gt; 2^n - 1 = |\{y : |y| &lt; n\}|\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Kolmogorov complexity</th><td>\(K(x) = \min\{|p| : U(p) = x\}\)</td><td class="cmt">uncomputable</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Arithmetic coding</th><td>\(\text{length} \approx \left\lceil -\log_2 \prod_i p(x_i) \right\rceil + 2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Rate-distortion</th><td>\(R(D) = \min_{p(\hat{x}|x):\,\mathbb{E}[d] \le D} I(X;\hat{X})\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">♾️</span> Kolmogorov complexity is uncomputable, and the proof reduces to the halting problem. Berry's paradox - &quot;the smallest number not describable in fewer than twelve words&quot; - is the same idea in English.</li><li><span aria-hidden="true">🧠</span> The Hutter Prize pays for compressing a fixed 1 GB extract of Wikipedia, on the explicit thesis that better compression of text is equivalent to better understanding of it.</li><li><span aria-hidden="true">⚡</span> Asymmetric numeral systems, published in 2009, gave arithmetic-coding compression at Huffman-like speed and is now inside Zstandard, LZFSE and AV1. It is one of the rare genuinely new ideas in a mature field.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Huffman_coding" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Computer Science</h2>
+    <ul><li><a href="/sorting-algorithms/">Sorting Algorithms</a></li><li><a href="/machine-learning/">Machine Learning &amp; Neural Networks</a></li><li><a href="/cryptography/">Cryptography &amp; Security</a></li><li><a href="/computation-complexity/">Computation &amp; Complexity</a></li><li><a href="/how-does-the-internet-work/">How Does the Internet Actually Work?</a></li><li><a href="/how-does-a-search-engine-work/">How Does a Search Engine Decide What to Show You?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

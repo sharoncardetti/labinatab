@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Is Green Hydrogen Made? | Lab-in-a-Tab</title>
+<meta name="description" content="Push electricity through water and it comes apart into hydrogen and oxygen - two bubbles to one, exactly as the formula says. Everything interesting about…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-green-hydrogen-is-made/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-green-hydrogen-is-made/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-si-produce-idrogeno-verde/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-produit-on-l-hydrogene-vert/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-green-hydrogen-is-made/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Is Green Hydrogen Made? — Explained &amp; Simulated">
+<meta property="og:description" content="Push electricity through water and it comes apart into hydrogen and oxygen - two bubbles to one, exactly as the formula says. Everything interesting about…">
+<meta property="og:url" content="https://labinatab.com/how-green-hydrogen-is-made/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Is Green Hydrogen Made? — Explained &amp; Simulated">
+<meta name="twitter:description" content="Push electricity through water and it comes apart into hydrogen and oxygen - two bubbles to one, exactly as the formula says. Everything interesting about…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-green-hydrogen-is-made/#article",
+   "headline": "How Is Green Hydrogen Made?",
+   "name": "How Is Green Hydrogen Made?",
+   "description": "Push electricity through water and it comes apart into hydrogen and oxygen - two bubbles to one, exactly as the formula says. Everything interesting about…",
+   "url": "https://labinatab.com/how-green-hydrogen-is-made/",
+   "mainEntityOfPage": "https://labinatab.com/how-green-hydrogen-is-made/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Electrolysis",
+    "Efficiency",
+    "Fuel cells"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Is Green Hydrogen Made?",
+    "sameAs": "https://en.wikipedia.org/wiki/Electrolysis_of_water"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Is Green Hydrogen Made?",
+     "item": "https://labinatab.com/how-green-hydrogen-is-made/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-green-hydrogen-is-made/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-si-produce-idrogeno-verde/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-produit-on-l-hydrogene-vert/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energy</nav>
+  <h1>How Is Green Hydrogen Made?</h1>
+  <p class="lead">Push electricity through water and it comes apart into hydrogen and oxygen - two bubbles to one, exactly as the formula says. Everything interesting about hydrogen is what that costs you.</p>
+  <div class="chips"><span>Electrolysis</span><span>Efficiency</span><span>Fuel cells</span></div>
+  <section class="sim-embed" data-sim="hydrogen" data-color="#0d9488" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0d9488"><span class="sg-lbl">Try this</span><span>Drag <b>How hard you push the current</b> up and down and watch two things fight each other: the bubbles come faster, so <b>Hydrogen made</b> goes up, but the green part of the voltage bar shrinks and <b>How much of the electricity is kept</b> falls. Find the setting where you think the trade is worth it. Then leave the current alone and move <b>Price of the electricity</b> instead, watching only <b>Cost per kilogram</b> - the electricity price is nearly the whole bill. Finally press the button to switch between sending the hydrogen back through a machine to make electricity again, and simply using the hydrogen itself.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0d9488"><span class="sg-lbl">Try this</span><span>Sweep <b>Current density j</b> from 0.2 to 3 A/cm² and record <b>System efficiency</b> and <b>Hydrogen output</b> at each end: production scales almost linearly with current while efficiency decays, and that trade is the entire capital-versus-energy argument. Check the physics directly - at any setting, \(1.48/V\) should match the green fraction of the voltage bar and, allowing for the balance of plant, <b>System efficiency</b>. Then verify <b>Specific consumption</b> against \(39.4/\eta\), and finally use <b>Electricity price</b> to find the electricity price at which hydrogen costs 2 €/kg.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0d9488"><span class="sg-lbl">Try this</span><span>Locate the cost optimum rather than the efficiency optimum. Note that \(\dot m \propto j\) while \(\mathrm{SEC} \propto V(j)\), so with a capital charge per hour the total cost per kilogram has an interior minimum; estimate where it sits by watching how fast <b>System efficiency (HHV)</b> falls against how fast <b>Hydrogen output</b> rises as you raise <b>Current density j</b>. Then use <b>Electricity price</b> to show that a low electricity price moves that optimum to higher current density. Finally, compare the two end uses and quantify how much of the hydrogen chain's loss is unavoidable thermodynamics and how much is conversion hardware.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Left: a tank of water with two metal rods in it and the current flowing. Bubbles stream off both rods and collect in the two glass tubes above - and the tube on the right, the hydrogen one, always fills exactly twice as fast as the oxygen one, because water is H₂O. Underneath is the voltage, split into the part that is actually making gas and the part that is only making heat. Right: what happens to 100 units of electricity as it goes through each step, with a grey bar at the bottom showing what a battery would have handed back instead.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Every arrow in that chain takes a cut, and by the end you have a third of what you started with.</b> Splitting the water is the good part - about seven units out of ten survive it. It is the squeezing and, above all, turning it back into electricity that finish the job, and the grey bar shows you the comparison that matters: a battery would have returned nearly nine units out of ten. So the honest question about hydrogen is never whether it is clean - it is whether the job could have been done with a wire instead. When the answer is no, because you need an actual molecule to make steel or fertiliser or to fly an aeroplane, hydrogen is superb. When the answer is yes, it usually loses.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Left: an electrolysis cell driven along its polarisation curve, \(V(j) = E_{\text{rev}} + \eta_{\text{act}} + jR\), with the gas volumes in their stoichiometric 2:1 ratio. The bar under the cell splits the applied voltage at the thermoneutral point: the fraction \(1.48/V\) makes hydrogen and everything above it becomes heat, which is why efficiency can be read straight off a voltmeter. Right: the system chain from 100 kWh, applying the stack efficiency, then compression to 700 bar, then a fuel cell - or, with the button, stopping at the molecule.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Efficiency here is not a fudge factor - it is a voltage ratio, and you can watch it.</b> The thermodynamics fixes 1.48 V as the point where the cell neither needs nor produces heat; every millivolt you add beyond that to force the current through is dissipated. Push the current density up and the polarisation curve makes you pay for it, but you also get more kilograms out of the same expensive stack - so the optimum is not maximum efficiency, it is minimum cost per kilogram, and it moves with the price of electricity. Notice the second lesson on the right: the chain multiplies. Three steps at 70%, 90% and 55% leave 35%, and no improvement to any single step rescues it. That is the real reason hydrogen is a poor way to move a car and an excellent way to make ammonia.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A PEM stack of 100 cells at 1000 cm², driven along \(V(j) = 1.23 + b\ln(j/j_0) + jR\) with a Tafel-like activation term dominated by the oxygen evolution reaction and an ohmic term for the membrane. Production follows Faraday exactly, \(\dot n = NI/2F\), so the current sets the kilograms and the voltage sets the price. Efficiency is quoted on the higher heating value, \(\eta = 0.92\times1.48/V\), the prefactor standing in for balance-of-plant losses. The right-hand chain applies compression at 0.90 and a fuel cell at 0.55, or terminates at the molecule.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Read the whole argument off the voltage axis: 1.23 V is thermodynamics, 1.48 V is thermoneutrality, and everything above is kinetics you are paying for.</b> The gap between them is the entropy term, which is why a high-temperature cell fed with waste heat can beat a low-temperature one on electricity alone - it is not better engineering, it is a different split of \(\Delta H\). Above 1.48 V, the overpotential is dominated by oxygen evolution: four electrons, an O-O bond to make, exchange current densities orders of magnitude below the hydrogen side, and an iridium catalyst whose world production is a few tonnes a year. The system-level conclusion follows from the multiplication on the right: a chain of three conversions cannot be rescued by improving one of them, so hydrogen's defensible territory is exactly where no chain of conversions is required - feedstock chemistry, high-temperature industry, and storage measured in months rather than hours.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Splitting water with electricity</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Hydrogen is not something you dig up. There are no hydrogen mines, because on Earth hydrogen is always stuck to something else - usually to oxygen, as water. So if you want hydrogen you have to take it back, and that costs energy. Hydrogen is not a fuel you find. It is a way of <strong>carrying</strong> energy you already had.</p>
+<p>The cleanest way to make it is beautifully simple. Put two metal plates in water, connect a battery, and the water comes apart: bubbles of hydrogen stream off one plate and bubbles of oxygen off the other. And here is the lovely bit - you get exactly twice as much hydrogen as oxygen, because water is H₂O and every molecule has two hydrogens for every one oxygen. You can watch the formula happen in real time, in the size of the two columns of gas.</p>
+<p>Burn that hydrogen later, or run it through a fuel cell, and the only thing that comes out is water again. Nothing else. That is why it is such an attractive idea, and why the word <em>green</em> is doing so much work: hydrogen is only clean if the electricity that split the water was clean. Today about 95% of the world's hydrogen is made from natural gas instead, and that process releases roughly ten kilograms of carbon dioxide for every kilogram of hydrogen.</p>
+<p>The catch is that every step costs you. Start with 100 units of electricity and you get about 70 units stored as hydrogen. Squeeze it into a tank and you lose more. Turn it back into electricity in a fuel cell and you are down to around 35. A battery would have handed back 90. So hydrogen is not the answer to everything - it is the answer to the things a wire and a battery genuinely cannot do: making steel and fertiliser, fuelling ships and planes, and storing energy for a whole windless month rather than for a night.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⚖️</span> Hydrogen holds more energy per kilogram than any other fuel - about three times as much as diesel. It also has the worst energy per litre of anything practical, which is why it has to be squeezed to 700 times atmospheric pressure or chilled to −253 °C.</li><li><span aria-hidden="true">🏭</span> The world already uses about 95 million tonnes of hydrogen a year, almost all of it to make fertiliser and to refine oil. Almost none of it is green - so decarbonising the hydrogen we already use is a bigger job than inventing new uses for it.</li><li><span aria-hidden="true">💧</span> It takes about nine litres of water to make one kilogram of hydrogen. For a country-sized programme that is real but small - roughly what a golf course drinks.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Volts, overpotential and the price of a kilogram</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Splitting water costs a fixed amount of energy: \(\Delta H = 286\ \text{kJ/mol}\) for liquid water, of which \(\Delta G = 237\ \text{kJ/mol}\) must arrive as electrical work and the remaining \(T\Delta S\) can arrive as heat. Divide the free energy by \(nF\) and you get the reversible cell voltage, \(E_{\text{rev}} = 1.23\ \text{V}\). Divide the enthalpy instead and you get the <strong>thermoneutral voltage</strong>, 1.48 V - the point at which the cell needs no heat from outside and produces none.</p>
+<p>That second number is the one that matters, because it turns efficiency into something you can read off a voltmeter: \(\eta = 1.48/V_{\text{cell}}\). Run a cell at 1.8 V and you are at 82% - every volt above 1.48 is heat, not hydrogen. Real systems lose another 5-10% to pumps, drying and power electronics, landing at 65-75%.</p>
+<p>Why not simply run every cell at 1.5 V, then? Because the extra voltage is what drives the current. The <strong>polarisation curve</strong> \(V(j) = E_{\text{rev}} + \eta_{\text{act}} + jR\) rises with current density: activation overpotential, dominated by the sluggish oxygen evolution reaction, plus ohmic loss through the membrane. Push harder and you make more hydrogen from the same expensive stack, but each kilogram costs more electricity. The economic optimum is a trade between capital cost per kilowatt and electricity cost per kilogram, and cheap electricity always pushes you to run harder.</p>
+<p>Production itself is pure Faraday: \(\dot n_{H_2} = I/2F\), two electrons per molecule, no exceptions and no efficiency term - the electrons that arrive make hydrogen. What varies is only the voltage you paid to move them. In practical units, a system at 70% needs about 56 kWh per kilogram, so at 50 €/MWh the electricity alone costs 2.8 € per kilogram, which is why the whole industry is a bet on cheap electricity and high running hours rather than on clever chemistry.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">The reaction</th><td>\(2\mathrm{H_2O} \rightarrow 2\mathrm{H_2} + \mathrm{O_2}\)</td><td class="cmt">two volumes to one</td></tr>
+<tr><th scope="row">Energy needed</th><td>\(\Delta H = 286\ \text{kJ/mol}\)</td><td class="cmt">ΔG = 237 kJ/mol</td></tr>
+<tr><th scope="row">Reversible voltage</th><td>\(E_{\text{rev}} = \dfrac{\Delta G}{nF} = 1.23\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Thermoneutral voltage</th><td>\(V_{tn} = \dfrac{\Delta H}{nF} = 1.48\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Stack efficiency</th><td>\(\eta = \dfrac{1.48}{V_{\text{cell}}}\)</td><td class="cmt">HHV basis</td></tr>
+<tr><th scope="row">Polarisation curve</th><td>\(V(j) = E_{\text{rev}}+\eta_{\text{act}}+jR\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Production rate</th><td>\(\dot n_{H_2} = \dfrac{I}{2F}\)</td><td class="cmt">F = 96485 C/mol</td></tr>
+<tr><th scope="row">Specific consumption</th><td>\(\dfrac{39.4}{\eta}\ \text{kWh/kg}\)</td><td class="cmt">≈ 56 kWh/kg at 70%</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⚡</span> One kilogram of hydrogen holds 33.3 kWh (lower heating value) - roughly the energy in a gallon of petrol, and about what a modern electric car uses in 200 km.</li><li><span aria-hidden="true">🥇</span> The bottleneck is the oxygen side, not the hydrogen side. Oxygen evolution needs four electrons and heavy bond rearrangement, so it carries most of the activation overpotential and demands iridium, one of the rarest metals on Earth.</li><li><span aria-hidden="true">📉</span> Below 1.48 V a cell absorbs heat from its surroundings while it works. Above it, the cell heats itself - which is exactly why industrial stacks need cooling rather than heating.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Overpotentials, the current-density optimum, and where hydrogen actually wins</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Two voltages, and the arithmetic of efficiency claims</h3>
+<p>Water splitting has two characteristic voltages and confusing them is how most public numbers go wrong. \(E_{\text{rev}} = \Delta G/nF = 1.229\ \text{V}\) at standard conditions is the minimum electrical work; the balance \(T\Delta S = 48.6\ \text{kJ/mol}\) may be supplied thermally, which is why a cell operated between 1.23 and 1.48 V cools its surroundings. \(V_{tn} = \Delta H/nF = 1.481\ \text{V}\) is the thermoneutral point. Efficiency quoted against HHV uses 1.48; against LHV it uses 1.25; a vendor may quote either, so a stack that is 82% on one basis is 69% on the other with no physical change whatsoever. High-temperature solid-oxide cells exploit the same thermodynamics honestly: raising \(T\) shifts more of \(\Delta H\) into the entropy term, so with a free heat source they can exceed 90% on electricity alone.</p>
+<h3><span class="hn">02</span>Why the oxygen side is the problem</h3>
+<p>Both electrodes obey Butler-Volmer kinetics, with the Tafel form \(\eta_{\text{act}} = a + b\log j\) at appreciable overpotential. The hydrogen evolution reaction on platinum has an exchange current density near \(10^{-3}\ \text{A/cm}^2\) and is close to reversible; oxygen evolution is four-electron, involves O-O bond formation, and has exchange current densities orders of magnitude lower, so it contributes most of the activation loss. That single fact explains the materials problem: PEM electrolysers need iridium oxide anodes, and world iridium production is measured in single-digit tonnes per year. Alkaline cells avoid iridium at the price of lower current density and worse dynamic response; solid-oxide cells avoid both problems and inherit a materials-degradation one instead.</p>
+<h3><span class="hn">03</span>The current-density optimum</h3>
+<p>Levelised hydrogen cost splits into a capital term that falls with current density and an energy term that rises with it: \(\text{LCOH} \approx \frac{C_{\text{cap}}\,\mathrm{CRF}}{8760\,\mathrm{CF}\,\dot m(j)} + \frac{p_e\,\text{SEC}(j)}{1}\). Since \(\dot m \propto j\) and \(\text{SEC} \propto V(j)\), the optimum sits where the marginal electricity penalty equals the marginal capital saving. Cheap electricity or a low capacity factor pushes the optimum to high \(j\); expensive electricity and cheap stacks push it back down. This is also why the electrolyser's own capacity factor is the hinge of every project: a stack running 2000 hours a year on surplus renewables has four times the capital burden per kilogram of one running 8000, which is the tension at the heart of pairing electrolysis with variable generation.</p>
+<h3><span class="hn">04</span>Everything after the stack</h3>
+<p>Hydrogen's gravimetric advantage - 120 MJ/kg against 43 for diesel - is matched by a volumetric disaster: 0.09 kg/m³ at ambient conditions. Compression to 700 bar costs roughly 10-12% of the fuel's energy, liquefaction 30-35%, and both add capital. Carriers such as ammonia or liquid organic hydrides trade that for conversion losses at both ends. The molecule also leaks through materials that hold methane, embrittles many steels, and - a result only recently quantified - is itself an indirect greenhouse gas, extending methane's lifetime through OH depletion, with a hundred-year GWP now estimated near 11. A leaky hydrogen economy is not a harmless one.</p>
+<h3><span class="hn">05</span>The efficiency ladder, and what survives it</h3>
+<p>Chain efficiency decides the use case, and the comparisons are not close. Electricity to hydrogen to a fuel-cell car: about 0.70 × 0.90 × 0.55 ≈ 35%, against 77% for charging a battery car directly. Hydrogen for domestic heating: 0.70 × 0.90 ≈ 63% against a heat pump delivering 300%. On that arithmetic, hydrogen loses wherever electrons can do the job. What remains is substantial anyway, because some jobs need a molecule rather than a current: ammonia and methanol synthesis, direct reduction of iron ore for steel, refining, aviation and shipping fuels, and seasonal storage where a cheap tank beats an expensive battery even at 35% round trip. The distinction is not ideological; it is whether the alternative is a wire.</p>
+<h3><span class="hn">06</span>What actually determines the cost</h3>
+<p>At today's stack prices, electricity is 60-80% of the cost of green hydrogen, so LCOH is essentially a rearranged electricity price divided by an efficiency, plus a capital term that punishes idle stacks. That is why announced projects cluster where power is cheapest and most constant, why almost every credible cost curve is really a bet on the price of renewable electricity, and why the gap between announced and operating capacity has stayed enormous - the technology is not the constraint. The interesting engineering question for the next decade is not how to reach 85% efficiency but how to build a stack that tolerates being switched on and off with the wind without dying.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Reversible voltage</th><td>\(E_{\text{rev}} = \dfrac{\Delta G}{nF} = 1.229\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Thermoneutral</th><td>\(V_{tn} = \dfrac{\Delta H}{nF} = 1.481\ \text{V}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Cell voltage</th><td>\(V = E_{\text{rev}}+\eta_{\text{act}}+jR+\eta_{\text{conc}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Tafel</th><td>\(\eta_{\text{act}} = a+b\log j\)</td><td class="cmt">OER dominates</td></tr>
+<tr><th scope="row">Efficiency (HHV)</th><td>\(\eta = \dfrac{1.481}{V}\)</td><td class="cmt">LHV basis uses 1.253</td></tr>
+<tr><th scope="row">Faraday production</th><td>\(\dot m = \dfrac{IM}{2F}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Levelised cost</th><td>\(\mathrm{LCOH} = \dfrac{C\,\mathrm{CRF}}{8760\,\mathrm{CF}\,\dot m}+p_e\,\mathrm{SEC}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Round trip</th><td>\(\eta_{el}\,\eta_{comp}\,\eta_{FC} \approx 0.35\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">💎</span> PEM electrolysers use iridium, of which the world produces about 7 tonnes a year - almost all as a by-product of platinum mining. Cutting the loading per megawatt is a genuine bottleneck for scaling, not a detail.</li><li><span aria-hidden="true">🌫️</span> Hydrogen is an indirect greenhouse gas: it consumes the hydroxyl radicals that would otherwise destroy methane. Recent estimates put its 100-year global warming potential near 11, so leakage rates matter to the climate case, not only to the accounts.</li><li><span aria-hidden="true">🔁</span> Round-trip storage at about 35% sounds hopeless next to a battery's 90% - until you notice that the tank costs a few dollars per kilowatt-hour and the battery costs a hundred. For a store cycled twice a year, capital beats efficiency by a mile.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Electrolysis_of_water" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Energy</h2>
+    <ul><li><a href="/energy-conservation/">Energy &amp; Conservation</a></li><li><a href="/how-solar-panels-work/">How Solar Panels Work</a></li><li><a href="/wind-turbines-betz-limit/">Wind Turbines &amp; the Betz Limit</a></li><li><a href="/how-heat-pumps-work/">Heat Pumps: More Heat Than You Pay For</a></li><li><a href="/how-the-power-grid-works/">The Power Grid: Balancing on a Knife Edge</a></li><li><a href="/how-does-a-nuclear-reactor-work/">How Does a Nuclear Reactor Work?</a></li><li><a href="/how-grid-batteries-work/">How Do Grid Batteries Store Electricity?</a></li><li><a href="/how-home-insulation-works/">Where Does the Heat in Your House Go?</a></li><li><a href="/how-electricity-is-generated/">How Is Electricity Actually Made?</a></li><li><a href="/how-much-electricity-appliances-use/">How Much Electricity Does Your Home Use?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

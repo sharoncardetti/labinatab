@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come fanno le formiche a trovare la strada più corta | Lab-in-a-Tab</title>
+<meta name="description" content="Nessuna formica misura niente, e nessuna riesce a vedere l'intero percorso. La colonia converge lo stesso sulla via più corta, e lo fa con una sostanza…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-trovano-la-strada-le-formiche/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-do-ants-find-food/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-trovano-la-strada-le-formiche/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-les-fourmis-trouvent-leur-chemin/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-do-ants-find-food/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come fanno le formiche a trovare la strada più corta — Spiegato e simulato">
+<meta property="og:description" content="Nessuna formica misura niente, e nessuna riesce a vedere l'intero percorso. La colonia converge lo stesso sulla via più corta, e lo fa con una sostanza…">
+<meta property="og:url" content="https://labinatab.com/it/come-trovano-la-strada-le-formiche/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come fanno le formiche a trovare la strada più corta — Spiegato e simulato">
+<meta name="twitter:description" content="Nessuna formica misura niente, e nessuna riesce a vedere l'intero percorso. La colonia converge lo stesso sulla via più corta, e lo fa con una sostanza…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-trovano-la-strada-le-formiche/#article",
+   "headline": "Come fanno le formiche a trovare la strada più corta",
+   "name": "Come fanno le formiche a trovare la strada più corta",
+   "description": "Nessuna formica misura niente, e nessuna riesce a vedere l'intero percorso. La colonia converge lo stesso sulla via più corta, e lo fa con una sostanza…",
+   "url": "https://labinatab.com/it/come-trovano-la-strada-le-formiche/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-trovano-la-strada-le-formiche/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Feromoni",
+    "Stigmergia",
+    "Auto-organizzazione"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come fanno le formiche a trovare la strada più corta",
+    "sameAs": "https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come fanno le formiche a trovare la strada più corta",
+     "item": "https://labinatab.com/it/come-trovano-la-strada-le-formiche/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-do-ants-find-food/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-trovano-la-strada-le-formiche/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-les-fourmis-trouvent-leur-chemin/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Regno animale</nav>
+  <h1>Come fanno le formiche a trovare la strada più corta</h1>
+  <p class="lead">Nessuna formica misura niente, e nessuna riesce a vedere l'intero percorso. La colonia converge lo stesso sulla via più corta, e lo fa con una sostanza che evapora.</p>
+  <div class="chips"><span>Feromoni</span><span>Stigmergia</span><span>Auto-organizzazione</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"ants":{"junior":{"evap":"Quanto in fretta svanisce l'odore","num":"Quante formiche","best":"Percorso più corto trovato","trips":"Viaggi completati","carry":"Che portano cibo","str":"Forza della pista","rock":"Fai cadere una roccia sulla pista","unrock":"Togli la roccia","cTop":"il nido, il cibo e l'odore fra i due","cNest":"nido","cFood":"cibo","cRock":"roccia","cSteps":"passi","cGreen":"le formiche verdi portano cibo a casa, lasciando odore","cWhite":"le formiche pallide cercano ancora, e seguono l'odore più forte"},"student":{"evap":"Ritmo di evaporazione","num":"Dimensione della colonia","best":"Percorso più corto trovato","trips":"Viaggi di andata e ritorno","carry":"Che portano cibo","str":"Feromone di picco","rock":"Metti un ostacolo sulla pista","unrock":"Togli l'ostacolo","cTop":"il nido, il cibo e il feromone fra i due","cNest":"nido","cFood":"cibo","cRock":"ostacolo","cSteps":"passi","cGreen":"formiche cariche verso casa, che depositano feromone","cWhite":"le formiche in cerca seguono il gradiente più forte"},"scholar":{"evap":"Ritmo di evaporazione rho","num":"Dimensione della colonia","best":"Tour più corto trovato","trips":"Tour completati","carry":"Agenti carichi","str":"Feromone di picco","rock":"Inserisci un ostacolo","unrock":"Togli l'ostacolo","cTop":"nido, sorgente e il campo di feromone fra i due","cNest":"nido","cFood":"sorgente","cRock":"ostacolo","cSteps":"passi","cGreen":"agenti carichi che depositano a ritmo Q su L","cWhite":"agenti in cerca che campionano il gradiente"}}});</script>
+<section class="sim-embed" data-sim="ants" data-color="#b45309" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#b45309"><span class="sg-lbl">Prova</span><span>Parti con <b>Quanto in fretta svanisce l'odore</b> molto basso e guarda l'odore accumularsi ovunque finché tutto il terreno non brilla e nessun percorso spicca. Poi alzalo e guarda comparire una linea pulita. Una volta che la linea è stabilita, premi <b>Fai cadere una roccia sulla pista</b> e guarda quanto ci mette la colonia a trovare la via attorno, poi toglila di nuovo.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#b45309"><span class="sg-lbl">Prova</span><span>Metti <b>Ritmo di evaporazione</b> vicino al minimo e guarda il campo saturarsi finché nessun percorso è distinguibile: senza decadimento il sistema non può dimenticare la sua prima ipotesi. Alzalo finché non emerge una pista sola e nota il valore in <b>Percorso più corto trovato</b> che si assesta. Poi usa <b>Metti un ostacolo sulla pista</b> per invalidare il percorso stabilito e guarda <b>Viaggi di andata e ritorno</b> bloccarsi prima che la colonia si riprenda, che è l'adattamento che il decadimento ti compra.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#b45309"><span class="sg-lbl">Prova</span><span>Usa <b>Ritmo di evaporazione rho</b> per portare il sistema attraverso il confine fra regimi: troppo poco decadimento e il campo satura al punto che nessun gradiente sopravvive, troppo e le piste non riescono a stabilirsi prima di svanire. Poi varia <b>Dimensione della colonia</b> per cambiare il ritmo di flusso e cerca la transizione fra una colonia che si impegna su un percorso e una che divide il traffico: è una biforcazione a forcone nelle equazioni di campo medio, ed è una proprietà della densità e non degli agenti.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Vista dall'alto di un pezzo di terreno. Il cerchio arancione è il nido e quello verde è il cibo. Le formiche pallide stanno girando in cerca; quelle verdi hanno trovato il cibo e lo stanno portando a casa, lasciandosi dietro una traccia odorosa. La foschia verde è quella traccia, e svanisce da sola al ritmo che imposti tu.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Il fatto che l'odore svanisca non è un difetto del sistema. È la parte che fa la misura.</b> Una formica su un percorso corto torna a casa in fretta e ripassa spesso a rinfrescare l'odore; una su un percorso lungo ci mette di più, e il suo odore ha più tempo per svanire prima che lei torni. Nessuno ha misurato una distanza, nessuno ha confrontato due percorsi, e nessuna formica riesce a vedere entrambe le estremità della pista. La misura l'ha fatta il tempo, e l'evaporazione l'ha trasformata in un numero che si può annusare. Guarda che cosa succede quando fai cadere la roccia: prima confusione, poi un lento sparpagliarsi, poi una linea nuova. Un sistema senza piano non ha niente da ripianificare: semplicemente smette di essere rinforzato in un modo e comincia a esserlo in un altro. È per questo che è così difficile da rompere e così facile da sottovalutare.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Un campo di feromone su una griglia, con agenti in due stati. Gli agenti in cerca campionano il campo avanti-sinistra, avanti e avanti-destra e girano verso il segnale più forte, con una polarizzazione verso la meta e una componente casuale. Gli agenti carichi puntano al nido depositando feromone a un ritmo inversamente proporzionale al numero di passi del viaggio di andata, quindi i viaggi più brevi depositano di più. Il campo decade moltiplicativamente a ogni passo al ritmo che imposti.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>L'idea organizzatrice è la stigmergia: coordinarsi cambiando l'ambiente condiviso invece di parlarsi.</b> Nessuna formica manda un messaggio, quindi gli agenti non hanno bisogno di identità, di memoria l'uno dell'altro né di sincronizzazione: modificano il mondo, e il mondo modificato cambia quello che farà l'agente successivo. Sopra questo sta una competizione fra due retroazioni: il deposito è autocatalitico, dato che il traffico alza la concentrazione e la concentrazione alza il traffico, mentre l'evaporazione è un semplice decadimento esponenziale. La lunghezza del percorso non entra mai direttamente. Agisce interamente attraverso i tempi, perché un giro più breve viene rinforzato più spesso e il ritmo di decadimento costante converte quella differenza di frequenza in una differenza di concentrazione. Dorigo ha trasformato esattamente questo in ottimizzazione a colonia di formiche, e il suo vantaggio sulla maggior parte delle metaeuristiche si vede sui problemi che cambiano nel tempo: un sistema costruito attorno al dimenticare non si impegna su informazione vecchia.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Un modello stigmergico ad agenti: un campo scalare che decade su una griglia, agenti in cerca che fanno una passeggiata casuale correlata polarizzata dal gradiente, e agenti carichi che depositano a un ritmo Q su lunghezza del percorso nella tratta di ritorno. La regola di deposito rende il rinforzo inversamente proporzionale alla lunghezza del viaggio, e il decadimento moltiplicativo rende la frequenza di rinforzo la variabile operativa: è il meccanismo con cui un sistema privo di metrica recupera una quantità metrica.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Chiamarla ottimizzazione del cammino più corto esagera quello che il meccanismo fa.</b> Ciò che viene rinforzato è quello che viene rinforzato più spesso, e il tempo di viaggio dipende da pendenza, superficie, congestione e pericolo tanto quanto dalla distanza: la colonia ottimizza quindi la percorribilità pesata nel tempo, ed esperimenti con una via lunga e veloce contro una corta e lenta confermano che prende quella veloce. È un risultato più forte dell'inquadramento abituale, perché le formiche non hanno mai avuto accesso alla distanza. Il discendente ingegneristico ha una teoria vera alle spalle: per le varianti con un pavimento di feromone, come MAX-MIN Ant System, si può dimostrare la convergenza all'ottimo, ed è proprio il pavimento a far funzionare la dimostrazione, dato che senza di esso la convergenza prematura può portare a zero la probabilità di una componente e mettere l'ottimo fuori portata. Lo schema di progetto trasferibile è regole locali più un mezzo condiviso modificabile più il dimenticare, e il fattore di sconto nell'apprendimento per rinforzo gioca esattamente il ruolo che qui gioca l'evaporazione.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Una traccia che svanisce, e perché è proprio quello il punto</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Guarda delle formiche che trovano del cibo e nel giro di un'ora c'è una linea scura e ordinata di formiche che ci corrono dritte. Sembra organizzato. Non lo è: nessuna formica ha deciso quel percorso, e nessuna riesce a vederne entrambe le estremità. Quello che è successo davvero è più semplice e molto più strano.</p>
+<p>Una formica che trova del cibo porta una briciola a casa e <strong>sgocciola dietro di sé una traccia odorosa</strong> per tutto il tragitto. Un'altra formica che gira lì vicino sente quell'odore e tende a seguirlo invece di vagare a caso, e se arriva al cibo torna indietro lasciando la sua traccia. Quindi un percorso che viene usato diventa più forte, e un percorso più forte viene usato di più. Questo anello è tutto il meccanismo.</p>
+<p>Ma quello da solo bloccherebbe per sempre il primo percorso trovato. Il motivo per cui la colonia finisce su quello <em>più corto</em> è un dettaglio che sembra un difetto: <strong>l'odore evapora</strong>. Su un percorso corto le formiche completano il giro in fretta e rinfrescano l'odore spesso. Su un percorso lungo l'odore ha più tempo per svanire fra un passaggio e l'altro. La via corta si accumula; quella lunga si disperde.</p>
+<p>Nessuno ha misurato niente. La misura l'ha fatta il tempo, e l'evaporazione l'ha trasformata in un numero. Premi il pulsante per far cadere una roccia sulla pista vincente e guarda la colonia esitare, sbandare, e poi trovare la via attorno - che è l'altro vantaggio di un sistema senza piano: non c'è nessun piano da rompere.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">💨</span> Se l'odore non evaporasse, la colonia resterebbe per sempre incollata al primo percorso trovato. Il dimenticare non è un limite del sistema, è la parte che lo fa funzionare.</li><li><span aria-hidden="true">🧠</span> Una singola formica ha circa 250.000 neuroni e nessuna idea di che cosa stia facendo la colonia. La ricerca del percorso esiste solo a livello di gruppo.</li><li><span aria-hidden="true">🌉</span> Nel classico esperimento del doppio ponte del 1989, formiche argentine a cui venivano offerti due percorsi di lunghezza diversa convergevano su quello corto in pochi minuti - e quando erano della stessa lunghezza ne sceglievano comunque uno, a caso.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Stigmergia, retroazione positiva e ottimizzazione a colonia di formiche</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Il concetto organizzatore è la <strong>stigmergia</strong>: coordinamento attraverso la modifica dell'ambiente condiviso invece che per comunicazione diretta. Nessuna formica manda un messaggio a un'altra formica. Cambia il mondo - deposita una sostanza chimica - e il mondo cambiato cambia quello che farà la formica successiva. Questo disaccoppia del tutto gli agenti: non hanno bisogno di identità, di memoria l'uno dell'altro né di simultaneità.</p>
+<p>La dinamica è una competizione fra due retroazioni. Quella positiva è autocatalitica: il ritmo di deposito su un percorso cresce col traffico che ci passa, e il traffico cresce con la concentrazione, dando un rinforzo esponenziale. Quella negativa è l'evaporazione, un semplice decadimento esponenziale \(\tau \leftarrow (1-\rho)\tau\). La lunghezza del percorso entra solo attraverso i <em>tempi</em>: un percorso più corto ha un giro più breve, quindi viene rinforzato più di frequente, e con l'evaporazione che va a ritmo costante quella differenza di frequenza diventa una differenza di concentrazione.</p>
+<p>L'esperimento del doppio ponte di Deneubourg lo ha reso quantitativo. Le formiche argentine a un bivio scelgono il ramo A con probabilità \(p_A = (k+\tau_A)^n / [(k+\tau_A)^n + (k+\tau_B)^n]\), con \(n \approx 2\). La non linearità conta: con \(n > 1\) un piccolo vantaggio di concentrazione si traduce in un grande vantaggio di probabilità, ed è questo che rompe la simmetria in modo deciso invece di lasciare la colonia divisa.</p>
+<p>Dorigo ha trasformato questo in <strong>ottimizzazione a colonia di formiche</strong>, una metaeuristica in cui formiche artificiali costruiscono soluzioni a problemi combinatori - commesso viaggiatore, instradamento di veicoli, instradamento di rete - scegliendo componenti con probabilità pesata dal feromone e da un'euristica specifica del problema, e poi depositando feromone in proporzione alla qualità della soluzione. È competitiva sui problemi in cui il panorama dei costi cambia nel tempo, proprio perché un sistema con evaporazione dimentica l'informazione vecchia invece di impegnarsi su di essa.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Scelta del ramo</th><td>\(p_A = \dfrac{(k+\tau_A)^n}{(k+\tau_A)^n+(k+\tau_B)^n}\)</td><td class="cmt">n ≈ 2</td></tr>
+<tr><th scope="row">Evaporazione</th><td>\(\tau \leftarrow (1-\rho)\,\tau\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Deposito</th><td>\(\Delta\tau = \dfrac{Q}{L}\)</td><td class="cmt">percorso più corto, più per giro</td></tr>
+<tr><th scope="row">Transizione ACO</th><td>\(p_{ij} = \dfrac{\tau_{ij}^{\alpha}\eta_{ij}^{\beta}}{\sum_{l}\tau_{il}^{\alpha}\eta_{il}^{\beta}}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📊</span> L'esponente di scelta del ramo, circa 2, è ciò che rende decisa la decisione. Con una regola lineare la colonia dividerebbe il traffico invece di impegnarsi sul percorso più corto.</li><li><span aria-hidden="true">🚚</span> L'ottimizzazione a colonia di formiche è usata in instradamento reale di veicoli e di telecomunicazioni, e il suo vantaggio sta nei problemi dinamici, dove l'evaporazione permette al sistema di dimenticare una rotta che ha smesso di essere buona.</li><li><span aria-hidden="true">🔀</span> Le formiche legionarie costruiscono autostrade a tre corsie col traffico in uscita sui lati e le formiche cariche di ritorno al centro, cosa che emerge da semplici regole di svolta e non da un codice della strada.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Rottura di simmetria, prove di convergenza e i limiti dell'analogia</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>La rottura di simmetria come biforcazione</h3>
+<p>Con due rami uguali le equazioni di campo medio hanno un punto fisso simmetrico a feromone pari. La sua stabilità dipende dalla non linearità: per \(n > 1\) lo stato simmetrico perde stabilità sopra una densità critica di traffico in una biforcazione a forcone, e la colonia si impegna su un ramo scelto dalla fluttuazione. Sotto quella densità lo stato simmetrico è stabile e il traffico si divide davvero. Che una colonia scelga o divida non è quindi una proprietà delle formiche ma del ritmo di flusso, il che è verificabile ed è stato confermato.</p>
+<h3><span class="hn">02</span>Che cosa viene davvero ottimizzato</h3>
+<p>Chiamarla ottimizzazione del cammino più corto esagera. Il meccanismo è il rinforzo di ciò che viene rinforzato più spesso, e la lunghezza del percorso è solo una delle cose che influenzano il tempo di percorrenza. Pendenza, superficie, congestione e pericolo entrano allo stesso modo, il che significa che la colonia ottimizza la <em>percorribilità pesata nel tempo</em>, non la distanza. Esperimenti con una via lunga e veloce contro una corta e lenta confermano che la colonia prende quella veloce. È un risultato più forte dell'inquadramento abituale, perché le formiche non hanno mai avuto accesso alla distanza.</p>
+<h3><span class="hn">03</span>Convergenza, e che cosa si può dimostrare</h3>
+<p>Per le varianti ACO con un limite inferiore sul feromone, come MAX-MIN Ant System, si può dimostrare che la probabilità di trovare la soluzione ottima tende a uno al tendere delle iterazioni all'infinito, e che l'algoritmo converge in valore a quella soluzione. È il limite inferiore a far funzionare la dimostrazione: senza un pavimento, la convergenza prematura può portare a zero la probabilità di qualche componente e rendere l'ottimo irraggiungibile. È un raro caso di metaeuristica bioispirata con una vera teoria della convergenza e non solo risultati empirici.</p>
+<h3><span class="hn">04</span>Dove l'analogia si rompe</h3>
+<p>Le colonie reali usano feromoni multipli con volatilità e significati diversi, memoria privata del percorso che può scavalcare del tutto la traccia, corsa in tandem in cui una formica guida fisicamente un'altra, e variabilità individuale nella reattività che tiene una riserva di esploratrici mentre la maggioranza sfrutta. Alcune specie non usano quasi per niente le tracce. Il modello a feromone unico è la caricatura di una strategia di un sottoinsieme di specie, ed è la caricatura a essere stata ingegnerizzata, il che è un esito ragionevole ma non è un'affermazione sulle formiche.</p>
+<h3><span class="hn">05</span>La lezione generale sul calcolo distribuito</h3>
+<p>L'affermazione interessante riguarda il calcolo, non gli insetti. La colonia risolve un problema globale con agenti che non hanno informazione globale, né indirizzi, né sincronizzazione, né garanzie di affidabilità, usando un mezzo condiviso che decade. Il decadimento è l'ingrediente essenziale: limita la memoria, scarta automaticamente l'informazione vecchia e rende il sistema adattivo senza che nessuno decida di adattarsi. Quella combinazione - regole locali, ambiente condiviso modificabile, dimenticanza - è lo schema di progetto, e ricompare nei protocolli di instradamento, nel bilanciamento di carico e nell'apprendimento per rinforzo con sconto, dove il fattore di sconto gioca esattamente il ruolo dell'evaporazione.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Dinamica di campo medio</th><td>\(\dot\tau_A = \phi\,p_A(\tau) \dfrac{Q}{L_A} - \rho\tau_A\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Biforcazione</th><td>\(n&gt;1 \Rightarrow \text{stato simmetrico instabile sopra } \phi_c\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Limite MAX-MIN</th><td>\(\tau_{\min} \le \tau_{ij} \le \tau_{\max}\)</td><td class="cmt">ciò che rende dimostrabile la convergenza</td></tr>
+<tr><th scope="row">Analogia con lo sconto</th><td>\(\tau \leftarrow (1-\rho)\tau \;\longleftrightarrow\; \gamma^{t}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔱</span> Che una colonia si impegni su un ramo o divida il traffico dipende dal ritmo di flusso, attraverso una biforcazione a forcone. Le stesse formiche fanno cose diverse a densità diverse.</li><li><span aria-hidden="true">⏱️</span> Offerta una via lunga e veloce contro una corta e lenta, le colonie prendono quella veloce. Non hanno mai avuto accesso alla distanza, solo al tempo di andata e ritorno.</li><li><span aria-hidden="true">🧾</span> MAX-MIN Ant System ha una vera dimostrazione di convergenza, e funziona perché il feromone ha un pavimento. Senza quel limite inferiore la convergenza prematura può rendere irraggiungibile l'ottimo.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Regno animale</h2>
+    <ul><li><a href="/it/come-si-orientano-le-tartarughe-marine/">Come si orientano le tartarughe marine</a></li><li><a href="/it/temperatura-del-nido-decide-il-sesso/">Come la temperatura del nido decide il sesso</a></li><li><a href="/it/come-gli-squali-sentono-elettricita/">Come gli squali sentono l'elettricità</a></li><li><a href="/it/come-comunicano-le-api-danza-delle-api/">Come le api si dicono dove andare</a></li><li><a href="/it/come-i-pipistrelli-usano-ecolocalizzazione/">Come i pipistrelli vedono con il suono</a></li><li><a href="/it/come-lampeggiano-insieme-le-lucciole/">Come fanno le lucciole a lampeggiare insieme</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

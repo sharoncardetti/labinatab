@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pourquoi le ciel est bleu | Lab-in-a-Tab</title>
+<meta name="description" content="Parce que les petites choses diffusent les ondes courtes bien plus que les longues. La question plus difficile est pourquoi le ciel n'est pas violet, et…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/why-is-the-sky-blue/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/perche-il-cielo-e-blu/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/why-is-the-sky-blue/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Pourquoi le ciel est bleu — Expliqué et simulé">
+<meta property="og:description" content="Parce que les petites choses diffusent les ondes courtes bien plus que les longues. La question plus difficile est pourquoi le ciel n'est pas violet, et…">
+<meta property="og:url" content="https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pourquoi le ciel est bleu — Expliqué et simulé">
+<meta name="twitter:description" content="Parce que les petites choses diffusent les ondes courtes bien plus que les longues. La question plus difficile est pourquoi le ciel n'est pas violet, et…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/#article",
+   "headline": "Pourquoi le ciel est bleu",
+   "name": "Pourquoi le ciel est bleu",
+   "description": "Parce que les petites choses diffusent les ondes courtes bien plus que les longues. La question plus difficile est pourquoi le ciel n'est pas violet, et…",
+   "url": "https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/",
+   "mainEntityOfPage": "https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "Diffusion de Rayleigh",
+    "Longueur d'onde",
+    "Vision des couleurs"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Pourquoi le ciel est bleu",
+    "sameAs": "https://en.wikipedia.org/wiki/Rayleigh_scattering"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Pourquoi le ciel est bleu",
+     "item": "https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/why-is-the-sky-blue/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/perche-il-cielo-e-blu/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/pourquoi-le-ciel-est-bleu/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physique</nav>
+  <h1>Pourquoi le ciel est bleu</h1>
+  <p class="lead">Parce que les petites choses diffusent les ondes courtes bien plus que les longues. La question plus difficile est pourquoi le ciel n'est pas violet, et cette réponse concerne vos yeux plutôt que l'air.</p>
+  <div class="chips"><span>Diffusion de Rayleigh</span><span>Longueur d'onde</span><span>Vision des couleurs</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"skyblue":{"junior":{"alt":"À quelle hauteur est le Soleil","dust":"Poussière et brume","air":"Air traversé","ratio":"Bleu renvoyé contre rouge","sky":"Couleur du ciel","suncol":"Couleur du Soleil","eye":"Pourquoi pas violet ?","hideEye":"Cacher la réponse de l'œil","cComputed":"cette couleur est déduite, pas peinte","cAirmass":"air que la lumière traverse","cSpec":"chaque couleur, et la part qui rebondit","cGot":"la part passée tout droit","cEyeCurve":"ce que votre œil peut réellement voir","cViolet":"le violet rebondit le plus et se voit à peine"},"student":{"alt":"Élévation du Soleil","dust":"Poussière et brume","air":"Masse d'air","ratio":"Bleu diffusé contre rouge","sky":"Couleur du ciel","suncol":"Couleur du Soleil","eye":"Pourquoi pas violet ?","hideEye":"Cacher la réponse de l'œil","cComputed":"cette couleur est calculée, pas peinte","cAirmass":"air que la lumière traverse","cSpec":"chaque longueur d'onde, et la part qui se diffuse","cGot":"la part passée tout droit","cEyeCurve":"ce que votre œil peut réellement voir","cViolet":"le violet se diffuse le plus et se voit à peine"},"scholar":{"alt":"Élévation solaire","dust":"Charge en aérosols","air":"Masse d'air","ratio":"Rapport de diffusion bleu sur rouge","sky":"Chromaticité du ciel","suncol":"Couleur du faisceau direct","eye":"Superposer l'efficacité lumineuse","hideEye":"Retirer la superposition","cComputed":"chromaticité intégrée depuis le spectre","cAirmass":"masse d'air optique relative","cSpec":"radiance spectrale diffusée","cGot":"faisceau direct transmis","cEyeCurve":"efficacité lumineuse photopique","cViolet":"le violet se diffuse le plus et se voit à peine"}}});</script>
+<section class="sim-embed" data-sim="skyblue" data-color="#0284c7" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0284c7"><span class="sg-lbl">Essaie</span><span>Tirez lentement <b>À quelle hauteur est le Soleil</b> jusqu'à l'horizon et voyez deux choses se produire ensemble : les barres du côté bleu s'effondrent et le Soleil devient orange, parce que c'est le même fait vu des deux côtés. Montez ensuite <b>Poussière et brume</b> et regardez le bleu se délaver vers le blanc. Enfin appuyez sur <b>Pourquoi pas violet ?</b> et observez le peu du côté violet que vous êtes équipé pour remarquer.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Essaie</span><span>Balayez <b>Élévation du Soleil</b> et regardez la masse d'air dans <b>Masse d'air</b> passer d'environ 1 au zénith à près de 38 à l'horizon : presque toute la différence entre midi et le coucher tient à ce seul nombre. Montez ensuite <b>Poussière et brume</b> pour passer du régime de Rayleigh vers celui de Mie et regardez <b>Bleu diffusé contre rouge</b> redescendre vers un tandis que la couleur se délave. Enfin utilisez <b>Pourquoi pas violet ?</b> et comparez les barres diffusées à la courbe d'efficacité lumineuse.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Essaie</span><span>Utilisez <b>Élévation solaire</b> pour parcourir toute la plage de masse d'air et regardez la chromaticité du faisceau direct migrer le long d'un lieu quasi corps noir vers le rouge tandis que celle du diffusé reste relativement fixe. Superposez ensuite avec <b>Superposer l'efficacité lumineuse</b> et notez que le pic de la radiance diffusée se situe bien plus vers le violet que le pic de la fonction d'efficacité lumineuse : l'écart entre ces deux courbes est toute la réponse à la question du violet.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le ciel en haut et, en dessous, chaque couleur de la lumière solaire avec une barre montrant quelle part de cette couleur est renvoyée par l'air. La ligne grise en pointillés est ce qui est passé tout droit sans être renvoyé : c'est la lumière que vous voyez en regardant le Soleil lui-même. La couleur du ciel à l'écran n'est pas une couleur choisie : elle est déduite de ces barres.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Les petites choses renvoient les ondes courtes bien plus que les longues, et cette seule règle vous donne le ciel bleu et le coucher rouge.</b> Ce ne sont pas deux phénomènes. Regardez à l'opposé du Soleil et vous voyez la lumière renvoyée, surtout bleue. Regardez le Soleil bas et vous voyez la lumière passée, dont le bleu a été retiré en route. Même air, même règle, direction opposée. Puis vient la question qui piège tout le monde : le violet a une onde encore plus courte que le bleu, alors pourquoi le ciel n'est-il pas violet ? La réponse n'est pas du tout dans l'air - le Soleil fabrique moins de violet au départ, et vos yeux y sont presque aveugles. Appuyez sur le bouton et vous verrez la taille de l'écart. La couleur du ciel est un fait sur l'atmosphère et sur votre rétine, conjointement.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Le panneau supérieur est peint d'une couleur calculée et non choisie : le spectre diffusé est le spectre solaire multiplié par un moins la transmission, intégré contre les fonctions colorimétriques CIE et converti en sRGB. Le panneau inférieur montre ce spectre diffusé barre par barre, le faisceau transmis figurant en pointillés. L'épaisseur optique utilise l'expression standard de Rayleigh plus un terme de brume faiblement dépendant de la longueur d'onde, et la masse d'air suit Kasten et Young.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La puissance quatrième inverse fait tout le travail, et elle découle directement du rayonnement dipolaire.</b> Le champ oscillant induit un dipôle, le dipôle rayonne avec une amplitude proportionnelle à son accélération, l'accélération apporte deux puissances de la fréquence, et l'intensité élève cela au carré, d'où quatre. Le violet à 400 nm contre le rouge à 700 donne un facteur proche de dix. De là découle toute la couleur du ciel, y compris ce que l'on se trompe : la couleur perçue est une intégrale du spectre diffusé contre trois fonctions colorimétriques, et non la longueur d'onde qui se diffuse le plus. C'est pourquoi le ciel est bleu et non violet, et pourquoi la réponse est authentiquement moitié physique et moitié physiologie. La brume compte pour une raison apparentée : des gouttelettes comparables à la longueur d'onde vous placent dans le régime de Mie, où la diffusion est bien moins sélective, d'où des nuages blancs et un ciel humide pâle.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Radiance spectrale calculée à 5 nm de résolution : source solaire de Planck à 5778 K, épaisseur optique de Rayleigh selon l'expression standard avec son terme correctif dépendant de la longueur d'onde, plus un terme d'aérosol de type Angström. Spectres diffusé et transmis sont intégrés contre des ajustements analytiques multi-lobes des fonctions colorimétriques CIE 1931 et convertis par la matrice sRGB avec encodage gamma, si bien que les couleurs de ciel et de Soleil affichées sont la sortie effective du modèle et non des choix esthétiques.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Un gaz parfaitement uniforme ne diffuserait pas du tout latéralement, et c'est la correction que la plupart des explications omettent.</b> Les ondelettes issues de molécules indépendantes interfèrent destructivement dans toutes les directions sauf vers l'avant ; ce qui diffuse réellement, c'est la fluctuation thermodynamique de densité d'un gaz réel, qu'Einstein et Smoluchowski ont exprimée par la compressibilité isotherme et qui se réduit à la formule de Rayleigh pour un gaz parfait. Le ciel est donc bleu parce que l'air est statistiquement granuleux. Deux raffinements supplémentaires méritent d'être retenus. La lumière diffusée est presque complètement polarisée à quatre-vingt-dix degrés du Soleil, et ne reste en deçà de la totalité que parce que les molécules sont anisotropes, et les points neutres où cette polarisation s'annule sont des diagnostics sensibles des aérosols. Et le bleu profond du crépuscule avancé n'est pas du Rayleigh mais une absorption de Chappuis de l'ozone retirant le milieu du spectre sur de longs trajets stratosphériques - l'explication courante est incomplète d'une manière qui n'apparaît qu'à une heure précise.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Les petites choses renvoient le bleu le plus fort</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>La lumière du soleil paraît blanche, mais c'est toutes les couleurs mélangées : on peut le prouver avec un prisme ou une averse. En descendant à travers l'air, cette lumière ne cesse de heurter des molécules d'azote et d'oxygène, et chaque choc en renvoie un peu dans une direction nouvelle. Ce rebond s'appelle la <strong>diffusion</strong>.</p>
+<p>Voici le point crucial : les molécules sont bien plus petites que les ondes de la lumière, et quand c'est le cas elles renvoient <strong>les ondes courtes bien plus fort que les longues</strong>. Pas un peu plus fort : énormément plus fort. La lumière bleue a une longueur d'onde d'environ deux tiers de celle du rouge, et elle est diffusée environ cinq fois plus fortement. Le bleu est donc éparpillé dans tout le ciel tandis que le rouge continue surtout tout droit.</p>
+<p>Cela vous donne les deux moitiés du tableau d'un coup. Regardez à l'opposé du Soleil et vous voyez la lumière diffusée, qui est surtout bleue - un ciel bleu. Regardez le Soleil bas sur l'horizon et vous voyez la lumière passée <em>tout droit</em>, dont le bleu a été retiré en chemin - elle paraît donc orange ou rouge. Un coucher de soleil est un ciel bleu vu de l'autre côté.</p>
+<p>Et maintenant la question qui piège tout le monde. Le violet a une longueur d'onde encore plus courte que le bleu, il est donc diffusé encore plus fort. Pourquoi le ciel n'est-il pas violet ? Deux raisons, et toutes deux concernent le récepteur plutôt que la lumière : le Soleil émet moins de violet que de bleu au départ, et vos yeux sont bien moins sensibles au violet. Appuyez sur le bouton et vous verrez exactement le peu dont vous êtes équipé pour vous en apercevoir.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🔴</span> Sur Mars la poussière est plus grosse que les molécules de l'air, si bien que la diffusion n'est pas sélective en longueur d'onde de la même façon : le ciel de jour est caramel et les couchers de soleil sont bleus. Exactement l'inverse d'ici.</li><li><span aria-hidden="true">🌑</span> Les astronautes voient un ciel noir en plein jour, parce qu'au-dessus de l'atmosphère il ne reste rien pour diffuser. La couleur du ciel est une propriété de l'air, pas de l'espace.</li><li><span aria-hidden="true">👁️</span> Vous avez environ vingt fois moins de cônes sensibles au violet que des autres types, et ils sont presque absents du centre même de votre regard. Le violet est la couleur que vous êtes le moins équipé pour voir.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>La puissance quatrième inverse, l'épaisseur optique et pourquoi les couchers de soleil sont rouges</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Quand une particule est bien plus petite que la longueur d'onde de la lumière qui la frappe, la section efficace de diffusion varie comme \(\sigma \propto 1/\lambda^4\). C'est cet exposant qui fait tout le travail. Le violet à 400 nm contre le rouge à 700 nm donne \((700/400)^4 \approx 9,4\), le violet est donc diffusé presque dix fois plus efficacement. L'origine physique est que le champ électrique oscillant induit un dipôle dans la molécule, le dipôle rayonne avec une amplitude proportionnelle à son accélération, et l'accélération apporte deux puissances de la fréquence dans l'amplitude et donc quatre dans l'intensité.</p>
+<p>La part de lumière qui survit au trajet est gouvernée par l'<strong>épaisseur optique</strong> \(\tau(\lambda)\) et la longueur du chemin. En regardant droit vers le haut vous traversez une masse d'air ; avec le Soleil à l'horizon le chemin est environ 38 fois plus long. La transmission décroît comme \(e^{-\tau m}\), donc une faible épaisseur optique pour le rouge et une forte pour le bleu produisent des taux de survie complètement différents dès que \(m\) devient grand. C'est toute l'explication d'un coucher de soleil : à forte masse d'air, la quasi-totalité du bleu a été diffusée hors du faisceau direct, ne laissant que rouge et orange.</p>
+<p>La couleur que vous percevez est une intégrale, pas une longueur d'onde. Le spectre diffusé est le spectre solaire multiplié par \(1 - e^{-\tau m}\), et pour en tirer une couleur il faut le pondérer par les trois <strong>fonctions colorimétriques</strong> de la vision humaine et convertir les valeurs trichromatiques en une couleur d'écran. La simulation ici fait exactement cela : la couleur du ciel à l'écran est calculée à partir de la physique et non choisie, ce qui explique qu'elle se déplace correctement quand vous abaissez le Soleil.</p>
+<p>La brume change la nature de l'effet. Aérosols et gouttelettes d'eau ont des tailles comparables à la longueur d'onde, ce qui vous place dans le régime de <strong>Mie</strong> où la diffusion dépend bien moins de la longueur d'onde et est fortement dirigée vers l'avant. C'est pourquoi un ciel pollué ou humide est blanchâtre plutôt que bleu profond, pourquoi les nuages sont blancs, et pourquoi le bleu est le plus saturé en altitude par temps sec.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Section efficace</th><td>\(\sigma \propto \dfrac{1}{\lambda^4}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Bleu contre rouge</th><td>\(\left(\dfrac{700}{450}\right)^4 \approx 5.8\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Transmission</th><td>\(T(\lambda) = e^{-\tau(\lambda)\,m}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Masse d'air</th><td>\(m \approx \dfrac{1}{\sin a}\)</td><td class="cmt">environ 38 à l'horizon</td></tr>
+<tr><th scope="row">Couleur perçue</th><td>\(X = \!\int\! E(\lambda)S(\lambda)\bar{x}(\lambda)\,d\lambda\)</td><td class="cmt">et de même Y, Z</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📐</span> Avec le Soleil à l'horizon, la lumière traverse environ 38 fois plus d'air que lorsqu'il est au zénith. Presque toute la différence entre un ciel bleu de midi et un coucher rouge vient de ce seul nombre.</li><li><span aria-hidden="true">☁️</span> Les nuages sont blancs parce que leurs gouttelettes sont grandes devant la longueur d'onde, si bien que toutes les couleurs sont diffusées à peu près également. Même air, taille de particule différente, couleur complètement différente.</li><li><span aria-hidden="true">🕶️</span> La lumière du ciel diffusée est fortement polarisée à 90° du Soleil, ce qui découle directement du diagramme de rayonnement du dipôle. Certains insectes s'y orientent, et un filtre polarisant assombrit exactement cette bande de ciel.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Fluctuations de densité, polarisation et la moitié colorimétrique de la réponse</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Pourquoi un gaz uniforme ne diffuserait pas du tout</h3>
+<p>L'image scolaire de molécules indépendantes diffusant chacune de son côté est un mensonge utile. Dans un milieu parfaitement uniforme, les ondelettes diffusées par des molécules différentes interfèrent destructivement dans toutes les directions sauf vers l'avant, et il n'y aurait aucun ciel bleu. Ce qui diffuse réellement, c'est la <strong>fluctuation</strong> : les variations statistiques de densité d'un gaz à l'équilibre thermique. Einstein et Smoluchowski l'ont établi rigoureusement, exprimant la turbidité en fonction de la compressibilité isotherme, et le résultat se réduit à la formule de Rayleigh pour un gaz parfait. L'énoncé correct est donc que le ciel est bleu parce que l'air est <em>granuleux</em> à l'échelle moléculaire, et que cette granulosité est d'origine thermodynamique.</p>
+<h3><span class="hn">02</span>La fonction de phase complète et la polarisation</h3>
+<p>La distribution angulaire pour une lumière incidente non polarisée est \(\propto (1 + \cos^2\theta)\), symétrique vers l'avant et l'arrière avec un minimum à 90°. À ces mêmes 90° la lumière diffusée est presque complètement polarisée linéairement, car le dipôle ne peut pas rayonner selon son propre axe. L'air réel reste un peu en deçà de la polarisation complète, autour de 94%, parce que les molécules sont anisotropes - le facteur de correction de King en rend compte. La diffusion multiple et la réflexion au sol la réduisent encore, ce qui explique l'existence des points neutres du ciel, Arago et Babinet, et pourquoi leur position est une mesure sensible de la charge en aérosols.</p>
+<h3><span class="hn">03</span>La question du violet, traitée correctement</h3>
+<p>Trois effets se cumulent. Le spectre solaire décroît en dessous de 450 nm et est encore appauvri par l'absorption de Chappuis de l'ozone et l'atténuation stratosphérique. La fonction d'efficacité lumineuse humaine \(V(\lambda)\) vaut environ 0,004 à 420 nm contre 0,038 à 450 nm et 1,0 à 555 nm. Et les cônes S représentent environ 5 à 10% de la population de cônes et sont absents de la fovéa centrale. Intégrer le spectre diffusé réel contre les fonctions colorimétriques donne une chromaticité proche de la frontière bleu-cyan, non violette : la couleur du ciel est donc un fait authentiquement conjoint de physique atmosphérique et de conception des photorécepteurs humains, et un organisme doté d'autres photopigments rapporterait un ciel différent.</p>
+<h3><span class="hn">04</span>L'ozone, et pourquoi le ciel crépusculaire est bleu</h3>
+<p>Près de l'horizon au coucher, le faisceau direct est presque entièrement dépouillé de ses courtes longueurs d'onde, si bien que la théorie de Rayleigh naïve prédit un ciel délavé après le coucher. Le bleu profond du crépuscule avancé vient au contraire de la <strong>bande de Chappuis</strong>, une large absorption de l'ozone entre environ 500 et 700 nm. La lumière parcourant de longs trajets stratosphériques perd ses longueurs d'onde moyennes et longues au profit de l'ozone, et il reste le bleu. Beau cas où l'explication courante est incomplète d'une manière qui n'apparaît qu'à un moment précis de la journée.</p>
+<h3><span class="hn">05</span>Ce que fait la même physique ailleurs</h3>
+<p>La loi en \(1/\lambda^4\) n'est pas une curiosité atmosphérique. Elle fixe le plancher fondamental d'atténuation de la fibre optique : la diffusion de Rayleigh sur les fluctuations de densité figées dans le verre est exactement la raison pour laquelle les télécoms se sont fixées sur 1550 nm, où la perte par diffusion a suffisamment chuté et où l'absorption infrarouge n'a pas encore augmenté. Elle explique aussi le bleu de certaines plumes d'oiseaux et des yeux bleus, où c'est la structure et non un pigment qui produit la couleur, et le rougissement de la lumière des étoiles lointaines par la poussière interstellaire, qui suit une loi de puissance plus douce parce que les grains sont plus gros.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Section efficace</th><td>\(\sigma = \dfrac{8\pi^3(n^2-1)^2}{3N^2\lambda^4}\,F_K\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fonction de phase</th><td>\(p(\theta) \propto 1 + \cos^2\theta\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Einstein-Smoluchowski</th><td>\(\tau = \dfrac{8\pi^3}{3\lambda^4}\,kT\kappa_T\left(\rho\dfrac{\partial\epsilon}{\partial\rho}\right)^{\!2}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Trichromatique</th><td>\(Y = \!\int\! E(\lambda)S(\lambda)\bar{y}(\lambda)\,d\lambda\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Efficacité lumineuse</th><td>\(V(420) \approx 0.004,\quad V(555) = 1\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧊</span> Un gaz parfaitement uniforme ne diffuserait pas du tout la lumière latéralement. Le ciel est bleu à cause de fluctuations thermodynamiques de densité - parce que l'air est statistiquement granuleux.</li><li><span aria-hidden="true">🌫️</span> Le bleu profond du crépuscule avancé n'est pas de la diffusion de Rayleigh mais une absorption de l'ozone dans la bande de Chappuis qui retire le milieu du spectre.</li><li><span aria-hidden="true">🔌</span> La même puissance quatrième inverse fixe le plancher de perte de la fibre optique. Les télécoms utilisent 1550 nm parce que c'est là que la diffusion de Rayleigh a chuté et que l'absorption infrarouge n'a pas encore commencé.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Rayleigh_scattering" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Physique</h2>
+    <ul><li><a href="/fr/gravite-orbites/">Gravité et orbites</a></li><li><a href="/fr/mouvement-des-projectiles/">Le mouvement des projectiles</a></li><li><a href="/fr/ondes-interferences/">Ondes et interférences</a></li><li><a href="/fr/chaleur-thermodynamique/">Chaleur et thermodynamique</a></li><li><a href="/fr/modele-standard/">Le Modèle standard</a></li><li><a href="/fr/lois-du-mouvement-de-newton/">Les lois du mouvement de Newton</a></li><li><a href="/fr/loi-d-ohm-circuits/">Loi d'Ohm et circuits</a></li><li><a href="/fr/etats-de-la-matiere/">Les états de la matière</a></li><li><a href="/fr/optique-lumiere-lentilles/">Optique : lumière, lentilles et réfraction</a></li><li><a href="/fr/pendule-mouvement-harmonique/">Pendules et mouvement harmonique simple</a></li><li><a href="/fr/comment-volent-les-avions/">Comment volent les avions</a></li><li><a href="/fr/circuits-serie-parallele/">Circuits série et parallèle</a></li><li><a href="/fr/aimants-electromagnetisme/">Aimants et électromagnétisme</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

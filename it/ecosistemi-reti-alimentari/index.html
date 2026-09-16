@@ -41,7 +41,7 @@
    "url": "https://labinatab.com/it/ecosistemi-reti-alimentari/",
    "mainEntityOfPage": "https://labinatab.com/it/ecosistemi-reti-alimentari/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-08-26",
+   "dateModified": "2026-09-16",
    "inLanguage": "it",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -99,11 +99,12 @@
 </script>
 <script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js?v=1c1a1887"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
 <style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
 :root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -163,6 +164,8 @@ footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
 .sim-tabs button:hover{color:var(--ink)}
 .sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
 .sim-host{min-height:20px}
 .sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
 .sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
@@ -208,7 +211,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <h1>Ecosistemi e reti alimentari</h1>
   <p class="lead">Rimuovi una specie da una foresta e l'intero sistema può collassare. Ogni essere vivente è connesso in una rete di energia e dipendenza.</p>
   <div class="chips"><span>Reti alimentari</span><span>Energia</span><span>Biodiversità</span></div>
-  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"ecosystem":{"junior":{"growth":"Tasso di crescita piante","pred":"Efficienza predatori","reset":"Reset","plants":"🌿 Piante","herb":"🐇 Erbivori","preds":"🦊 Predatori"},"student":{"growth":"Tasso di crescita piante","pred":"Efficienza predatori","reset":"Reset","plants":"🌿 Piante","herb":"🐇 Erbivori","preds":"🦊 Predatori"},"scholar":{"growth":"Tasso di crescita piante","pred":"Efficienza predatori","reset":"Reset","plants":"🌿 Piante","herb":"🐇 Erbivori","preds":"🦊 Predatori"}}});</script>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"ecosystem":{"junior":{"growth":"Tasso di crescita piante","pred":"Efficienza predatori","reset":"Azzera","plants":"🌿 Piante","herb":"🐇 Erbivori","preds":"🦊 Predatori","cNoHerb":"⚠️ Erbivori estinti - ecosistema al collasso!","cNoPred":"⚠️ Predatori spariti - esplosione degli erbivori!"},"student":{"growth":"Tasso di crescita piante","pred":"Efficienza predatori","reset":"Azzera","plants":"🌿 Piante","herb":"🐇 Erbivori","preds":"🦊 Predatori","cNoHerb":"⚠️ Erbivori estinti - ecosistema al collasso!","cNoPred":"⚠️ Predatori spariti - esplosione degli erbivori!"},"scholar":{"growth":"Tasso di crescita piante","pred":"Efficienza predatori","reset":"Azzera","plants":"🌿 Piante","herb":"🐇 Erbivori","preds":"🦊 Predatori","cNoHerb":"⚠️ Erbivori estinti - ecosistema al collasso!","cNoPred":"⚠️ Predatori spariti - esplosione degli erbivori!"}}});</script>
 <section class="sim-embed" data-sim="ecosystem" data-color="#15803d" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
   <div class="sim-try" data-l="junior" style="border-left-color:#15803d"><span class="sg-lbl">Prova</span><span>Guarda i tre numeri per un po' — non stanno mai fermi. Ora trascina <b>Efficienza predatori</b> fino a 10 e continua a guardare <b>🐇 Erbivori</b> e poi <b>🦊 Predatori</b>.</span></div>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Does a Nuclear Reactor Work? | Lab-in-a-Tab</title>
+<meta name="description" content="Split one uranium nucleus and you release fifty million times more energy than burning one atom of coal. The hard part was never the energy. It was…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-does-a-nuclear-reactor-work/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-does-a-nuclear-reactor-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-un-reattore-nucleare/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionne-un-reacteur-nucleaire/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-does-a-nuclear-reactor-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Does a Nuclear Reactor Work? — Explained &amp; Simulated">
+<meta property="og:description" content="Split one uranium nucleus and you release fifty million times more energy than burning one atom of coal. The hard part was never the energy. It was…">
+<meta property="og:url" content="https://labinatab.com/how-does-a-nuclear-reactor-work/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Does a Nuclear Reactor Work? — Explained &amp; Simulated">
+<meta name="twitter:description" content="Split one uranium nucleus and you release fifty million times more energy than burning one atom of coal. The hard part was never the energy. It was…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-does-a-nuclear-reactor-work/#article",
+   "headline": "How Does a Nuclear Reactor Work?",
+   "name": "How Does a Nuclear Reactor Work?",
+   "description": "Split one uranium nucleus and you release fifty million times more energy than burning one atom of coal. The hard part was never the energy. It was…",
+   "url": "https://labinatab.com/how-does-a-nuclear-reactor-work/",
+   "mainEntityOfPage": "https://labinatab.com/how-does-a-nuclear-reactor-work/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Chain reaction",
+    "Control rods",
+    "Critical"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Does a Nuclear Reactor Work?",
+    "sameAs": "https://en.wikipedia.org/wiki/Nuclear_reactor"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Does a Nuclear Reactor Work?",
+     "item": "https://labinatab.com/how-does-a-nuclear-reactor-work/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-does-a-nuclear-reactor-work/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-un-reattore-nucleare/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionne-un-reacteur-nucleaire/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energy</nav>
+  <h1>How Does a Nuclear Reactor Work?</h1>
+  <p class="lead">Split one uranium nucleus and you release fifty million times more energy than burning one atom of coal. The hard part was never the energy. It was holding the chain reaction at exactly one.</p>
+  <div class="chips"><span>Chain reaction</span><span>Control rods</span><span>Critical</span></div>
+  <section class="sim-embed" data-sim="nuclear" data-color="#4d7c0f" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4d7c0f"><span class="sg-lbl">Try this</span><span>Start by pushing <b>How far the control rods are pushed in</b> slowly out from 35% and watch <b>Fissions caused by each fission</b> climb past 1.0000 - then look at how long <b>Time to double</b> says it takes to double. Push the rods further out and watch that time collapse. Now put them back to 35 and instead pull <b>How much water is in the core</b> down: with less water there are more red dots and fewer blue ones, and the reaction fades even though the rods never moved. Finally, run the reactor at full power and hit the button - then keep watching <b>Leftover heat</b> for a minute afterwards.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4d7c0f"><span class="sg-lbl">Try this</span><span>Set <b>Control rod insertion</b> so that <b>k effective</b> reads as close to 1.0000 as you can and watch the power hold flat. Then withdraw the rods in small steps, reading <b>Reactor period</b> each time - notice how a reactivity of a few hundred pcm gives you tens of seconds, and how that margin vanishes as you approach 650 pcm. Then restore the rods and reduce <b>Moderator level</b> instead, watching the neutron colours change and <b>k effective</b> fall. Finally run at full power and scram, and watch <b>Decay heat</b> decline far more slowly than the fission power did.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4d7c0f"><span class="sg-lbl">Try this</span><span>Quantify the delayed-neutron margin. Withdraw <b>Control rod insertion</b> until <b>k effective</b> gives \(\rho \approx 100\) pcm and check that <b>Asymptotic period</b> is on the order of a minute; repeat at 300 and 600 pcm and confirm the period shortens far faster than linearly as \(\rho \to \beta\). Then cross the line deliberately and watch the excursion. Separately, map the moderator coefficient: step <b>Moderator density</b> down in increments and record \(\Delta\rho\), which gives you the sign and rough magnitude of the void coefficient this design has. Finally scram from full power and check the decay-heat curve against \(0.066\,t^{-0.2}\) at 10, 60 and 600 seconds.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Top: a slice through the middle of a reactor. The seven glowing bars are uranium fuel; the black bars that slide down between them are the boron rods that swallow neutrons. The blue wash is the water, and its level follows your slider. The moving dots are neutrons: red ones are still going too fast to split anything, blue ones have been slowed by the water and can. Yellow rings are nuclei actually splitting - count how fast they appear. Bottom: the heat coming out, drawn on a squashed scale so that both a whisper and a roar fit on the same chart, with the green line marking normal running.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The astonishing thing is not that a reactor can be switched off. It is that it can be held still.</b> Every split has to cause exactly one more split, for ever, and the number that says so is on screen the whole time. Two things push it around: rods that eat spare neutrons, and water that slows the neutrons down enough to be useful - which is why draining the water shuts a Western reactor down instead of setting it off. But look at what happens after you drop the rods. The splitting stops in about a second, and the heat does not. The broken pieces of the atoms keep decaying, still pouring out about a fifteenth of full power, and that leftover heat has to be carried away no matter what else has gone wrong. That, and not an explosion, is what melted the reactors at Fukushima.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Core cross-section with fuel, boron absorbers and a water moderator whose level you control. Neutron colour encodes energy: red for fast, around 2 MeV as born, blue for thermalised at roughly 0.025 eV, and only the blue ones have a useful fission cross-section. The chart below shows thermal power on a logarithmic axis, driven by point kinetics rather than by counting the dots: \(k\) is computed from rod insertion and moderator density, and the period follows \(T = (\beta-\rho)/(\lambda\rho)\) below prompt critical and \(\Lambda/(\rho-\beta)\) above it.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Everything about reactor control lives in the gap between two timescales, and that gap is 0.65% wide.</b> The prompt neutron lifetime is about 20 microseconds, so if a reactor at \(k=1.001\) ran on prompt neutrons alone its power would double every 14 milliseconds. It does not, because the delayed neutrons from decaying fission fragments arrive seconds later and dominate the response for any \(\rho < \beta\). Cross that line and the reactor no longer needs them: the period collapses by four orders of magnitude and no mechanism can intervene. Notice too the moderator result you just measured - in a light-water core, losing water lowers \(k\), so a loss of coolant shuts the fission down by itself. The RBMK at Chernobyl was moderated by graphite and cooled by water, which inverted that sign and turned boiling into a positive feedback.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A point-kinetics reactor with a one-group delayed precursor, \(\beta = 0.0065\), \(\lambda = 0.077\ \text{s}^{-1}\), \(\Lambda = 2\times10^{-5}\ \text{s}\). Multiplication is modelled as \(k = k_0(1-0.6\,\text{rod})\left[1-1.1(1-m)^{1.6}\right]\), so rods act through the thermal utilisation and moderator density acts through slowing-down and resonance escape. Below prompt critical the asymptotic period is \((\beta-\rho)/(\lambda\rho)\); at or above it the period is \(\Lambda/(\rho-\beta)\). After a scram, fission power decays and the displayed heat is dominated by \(0.066\,P_0 t^{-0.2}\). Neutron colour is a visualisation of the spectrum, not a Monte Carlo transport calculation.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>A reactor is stable because of a 0.65% impurity in the neutron timing, and safe because of the sign of a derivative.</b> The delayed fraction buys the six orders of magnitude between the prompt neutron lifetime and human reaction time, which is why reactivity is measured in dollars: one dollar is exactly the boundary where that gift is withdrawn. The second point is the moderator coefficient you measured. Negative void means a light-water core answers a loss of coolant by shutting itself down; positive void, as in the RBMK, means it answers by accelerating - and on 26 April 1986 that sign, combined with xenon poisoning and graphite-tipped rods that added reactivity on insertion, produced a prompt-critical excursion in about four seconds. What this model deliberately omits is just as instructive: no Doppler feedback, no xenon dynamics, no spatial kinetics. Real cores are stabilised by fuel temperature within milliseconds, poisoned by xenon over hours, and can be locally supercritical while globally subcritical - which is why point kinetics is a teaching model and not a licensing tool.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>A very complicated kettle</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Here is the part nobody tells you first: a nuclear power station makes electricity by boiling water. Steam spins a turbine, the turbine spins a generator, and the generator makes the electricity - exactly like a coal plant. The only unusual thing is the kettle.</p>
+<p>Inside that kettle, uranium atoms are being split in half. Fire a neutron - a tiny neutral particle - at a uranium-235 nucleus and it wobbles, stretches and tears apart. The two pieces fly away from each other at enormous speed, and when they crash to a halt in the surrounding metal, all that speed becomes heat. One split releases about fifty million times more energy than burning a single atom of coal. A fuel pellet the size of your fingertip holds as much energy as a tonne of coal.</p>
+<p>But the real trick is what else comes out. Each split also throws out two or three fresh neutrons, and each of those can split another nucleus. One becomes three, three become nine, nine become twenty-seven. That is a <strong>chain reaction</strong>, and left alone it doubles again and again in a fraction of a second. What separates a power station from a disaster is that the reactor is built to sit at exactly one: every split causes precisely one more split, for ever, steadily.</p>
+<p>Keeping it there takes two things. <strong>Control rods</strong> made of boron slide in between the fuel and swallow spare neutrons - push them in and the reaction dies down, pull them out and it picks up. And the water is not just there to boil. Neutrons come out of a fission far too fast to split anything else, and bouncing off water molecules slows them down to the speed where they work. Which means the water is part of the reaction: lose the water and, in a Western reactor, the chain reaction stops on its own. That is not a safety system. It is physics doing the job for you.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🪨</span> One gram of uranium-235 releases about as much energy as three tonnes of coal. A single fuel assembly the size of a person powers roughly a thousand homes for a year.</li><li><span aria-hidden="true">⏱️</span> About 0.65% of the neutrons come out seconds late rather than instantly. Without that tiny delay the reactor's power would double in milliseconds and no control system on Earth could keep up. Reactors are controllable because of a rounding error in the physics.</li><li><span aria-hidden="true">🔥</span> You can stop the chain reaction in a second, but not the heat. Immediately after shutdown a reactor still makes about 7% of its full power from radioactive decay - that leftover heat is what melted the cores at Fukushima, days after the fission had stopped.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>k, reactivity and the delay that makes control possible</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Everything reduces to one number. The <strong>multiplication factor</strong> \(k\) is how many fissions each fission causes in the next generation. Below one and the reaction dies away - the reactor is <em>subcritical</em>. Above one it grows exponentially - <em>supercritical</em>. Exactly one, and the power holds steady: <em>critical</em>, which despite the word is the normal, boring, everyday operating state of every reactor on the planet.</p>
+<p>Reaching \(k = 1\) is a design problem before it is a control problem. A neutron born in fission carries about 2 MeV and is far too fast to split another U-235 nucleus efficiently: the fission cross-section at that energy is tiny. Slow it to thermal energies, around 0.025 eV, and the cross-section rises by a factor of several hundred. That is what the water is for. It takes roughly twenty collisions with hydrogen nuclei to thermalise a neutron, and only then is it useful. Remove the water and you do not just lose cooling, you lose the moderator - and \(k\) falls below one by itself. This <strong>negative void coefficient</strong> is the single most important safety property of a light-water reactor, and its absence in the RBMK design is the reason Chernobyl was possible.</p>
+<p>Now the delay. Most fission neutrons appear within \(10^{-14}\) s, and with a prompt neutron lifetime \(\Lambda \approx 2\times10^{-5}\) s, a reactor at \(k = 1.001\) driven by prompt neutrons alone would double its power every 14 milliseconds. Nothing mechanical could follow that. But about \(\beta = 0.65\%\) of neutrons are emitted seconds later by the decay of fission fragments, and those <strong>delayed neutrons</strong> dominate the timing whenever the reactivity stays below \(\beta\). The reactor period becomes tens of seconds instead of milliseconds, and a human with a lever can run it.</p>
+<p>Which sets the one line you must never cross. Reactivity \(\rho = (k-1)/k\) below \(\beta\) means the delayed neutrons are still in charge, and control is comfortable. Reach \(\rho = \beta\) and the reactor is <strong>prompt critical</strong>: it no longer needs the delayed neutrons at all, the period collapses to milliseconds, and the power excursion is over before any rod can move. That is the boundary, and every reactor control system exists to keep a wide margin from it.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Multiplication factor</th><td>\(k = \dfrac{\text{fissions in generation } n+1}{\text{fissions in generation } n}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Reactivity</th><td>\(\rho = \dfrac{k-1}{k}\)</td><td class="cmt">often quoted in pcm = 10⁻⁵</td></tr>
+<tr><th scope="row">Power growth</th><td>\(P(t) = P_0 e^{t/T}\)</td><td class="cmt">T = reactor period</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Delayed fraction</th><td>\(\beta \approx 0.0065\)</td><td class="cmt">0.65% of neutrons, seconds late</td></tr>
+<tr><th scope="row">Stable period</th><td>\(T \approx \dfrac{\beta-\rho}{\lambda\rho}\)</td><td class="cmt">λ ≈ 0.077 s⁻¹</td></tr>
+<tr><th scope="row">Prompt critical</th><td>\(\rho \geq \beta\)</td><td class="cmt">period collapses to Λ/(ρ−β)</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Energy per fission</th><td>\(\approx 200\ \text{MeV} = 3.2\times10^{-11}\ \text{J}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Decay heat</th><td>\(\dfrac{P}{P_0} \approx 0.066\,t^{-0.2}\)</td><td class="cmt">t in seconds after shutdown</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📏</span> A thermal neutron has a fission cross-section on U-235 of about 585 barns; a 2 MeV fast neutron, about 1.2 barns. The moderator is not an accessory - without it, natural or low-enriched uranium simply cannot sustain a chain reaction.</li><li><span aria-hidden="true">⚡</span> One watt of thermal power is about 3.1 × 10¹⁰ fissions per second. A 3 GW core is running roughly 10²⁰ fissions every second, and holding the count to within a fraction of a per cent.</li><li><span aria-hidden="true">🌡️</span> As fuel heats up, Doppler broadening of the U-238 resonances absorbs more neutrons, so reactivity falls. This feedback is prompt, unavoidable and always negative - it acts within milliseconds, long before any control system notices.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Six factors, point kinetics, and the feedbacks that decide whether a design forgives you</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Where the 200 MeV comes from</h3>
+<p>The binding energy per nucleon peaks near iron at about 8.8 MeV and falls to roughly 7.6 MeV at uranium. Splitting a heavy nucleus therefore moves its nucleons to a more tightly bound configuration, and the difference - about 0.9 MeV per nucleon across 236 nucleons - appears as kinetic energy. Roughly 168 MeV of the 200 goes into the two fission fragments, which stop within micrometres of where they were born, which is exactly why a fuel pellet heats itself rather than radiating its energy away. Another 5 MeV arrives as prompt neutrons, 7 MeV as prompt gammas, and about 20 MeV as delayed beta and gamma emission from fission products - the last of these being the decay heat that a shutdown reactor cannot switch off.</p>
+<h3><span class="hn">02</span>The six-factor formula</h3>
+<p>For a finite reactor, \(k_{\text{eff}} = \eta f p \varepsilon P_{\text{FNL}} P_{\text{TNL}}\): the reproduction factor \(\eta\) (neutrons produced per thermal neutron absorbed in fuel), the thermal utilisation \(f\) (fraction of thermal absorptions occurring in fuel rather than moderator, cladding or control poison), the resonance escape probability \(p\), the fast fission factor \(\varepsilon\), and two non-leakage probabilities. Control rods act on \(f\), moderator density acts on \(p\) and on leakage, fuel temperature acts on \(p\) through Doppler. This decomposition is what lets a designer see which physical knob moves which term, and it is why the same reactivity change can be achieved by very different physical means with very different time constants.</p>
+<h3><span class="hn">03</span>Cross sections and why moderation is not optional</h3>
+<p>The U-235 fission cross-section follows an approximate \(1/v\) law at low energy, reaching about 585 barns at 0.025 eV, against roughly 1.2 barns at 2 MeV. Between these lies the resonance region, where U-238 has enormous, narrow capture resonances; a neutron slowing through them can be captured and lost, which is what \(p\) measures. Spatial self-shielding in the fuel lumps and the geometry of the lattice are therefore not details but the design itself: heterogeneous lattices exist precisely so that neutrons do their slowing down in the moderator, away from the U-238 resonances, and return to the fuel already thermal.</p>
+<h3><span class="hn">04</span>Point kinetics, and the meaning of the prompt-critical line</h3>
+<p>The point kinetics equations, \(\frac{dP}{dt} = \frac{\rho-\beta}{\Lambda}P + \sum_i \lambda_i C_i\) with \(\frac{dC_i}{dt} = \frac{\beta_i}{\Lambda}P - \lambda_i C_i\), contain the whole story. For \(\rho \ll \beta\), the prompt term is negative and the precursors act as a flywheel: the asymptotic period is set by \(\lambda\), tens of seconds, and there is even a fast prompt jump \(P \to P_0\beta/(\beta-\rho)\) before it. At \(\rho = \beta\) the prompt term vanishes, and beyond it the reactor is critical on prompt neutrons alone with period \(\Lambda/(\rho-\beta)\) - microseconds to milliseconds. This is why reactivity is quoted in dollars, one dollar being \(\beta\): the unit exists to make the boundary impossible to overlook.</p>
+<h3><span class="hn">05</span>Feedbacks, and Chernobyl as an equation</h3>
+<p>Doppler broadening of the U-238 resonances is prompt and always negative: hotter fuel means broader resonances, more capture, less reactivity, and it acts in milliseconds. The moderator coefficient is more interesting. In a light-water reactor, boiling reduces moderation, so voids reduce \(k\) - a negative void coefficient, self-limiting. The RBMK used graphite as moderator and water only as coolant, and since water is a neutron absorber there, boiling <em>increased</em> reactivity. On 26 April 1986 a xenon-poisoned core, an operating point far below the permitted power, most control rods withdrawn, and graphite-tipped rods that briefly <em>added</em> reactivity on insertion combined into a positive feedback loop that went prompt critical in about four seconds. Every element of that was a property of the design, not of the operators alone.</p>
+<h3><span class="hn">06</span>What comes after shutdown</h3>
+<p>Insert the rods and fission stops within a second, but the fission products keep decaying: \(P/P_0 \approx 0.066[t^{-0.2}-(t+t_0)^{-0.2}]\), giving about 7% of full power at one second, 1.3% after an hour and 0.4% after a day. For a 3 GW core that is 200 MW immediately after shutdown - the thermal output of a small power station, and it must be removed no matter what else has failed. Fukushima Daiichi lost its ability to remove that heat, not its ability to stop the reaction. Everything that has happened in reactor design since - passive circulation, gravity-fed cooling, cores that can dry out without melting - is an answer to that one term in the equations.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Six-factor formula</th><td>\(k_{\text{eff}} = \eta f p \varepsilon P_{\text{FNL}} P_{\text{TNL}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Point kinetics</th><td>\(\dfrac{dP}{dt} = \dfrac{\rho-\beta}{\Lambda}P + \sum_i\lambda_i C_i\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Precursors</th><td>\(\dfrac{dC_i}{dt} = \dfrac{\beta_i}{\Lambda}P - \lambda_i C_i\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Prompt jump</th><td>\(P \to P_0\,\dfrac{\beta}{\beta-\rho}\)</td><td class="cmt">for a step of ρ &lt; β</td></tr>
+<tr><th scope="row">Prompt period</th><td>\(T = \dfrac{\Lambda}{\rho-\beta}\)</td><td class="cmt">Λ ≈ 2 × 10⁻⁵ s</td></tr>
+<tr><th scope="row">Reactivity in dollars</th><td>\(\$ = \dfrac{\rho}{\beta}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Thermal cross-section</th><td>\(\sigma_f \approx 585\ \text{b at }0.025\ \text{eV}\)</td><td class="cmt">1.2 b at 2 MeV</td></tr>
+<tr><th scope="row">Decay heat</th><td>\(\dfrac{P}{P_0} \approx 0.066\left[t^{-0.2}-(t+t_0)^{-0.2}\right]\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🦕</span> A natural fission reactor ran at Oklo in Gabon about 1.7 billion years ago, when natural uranium was still 3% U-235. It cycled on and off for hundreds of thousands of years, moderated by groundwater that boiled away and returned.</li><li><span aria-hidden="true">💵</span> Reactivity is measured in dollars, where one dollar equals β. It is possibly the only unit in physics invented specifically so that a number greater than one is unmistakably catastrophic.</li><li><span aria-hidden="true">☠️</span> Xenon-135 has a capture cross-section of 2.6 million barns - the largest known. It builds up after a power reduction and can leave a reactor unable to restart for a day, a state operators call a xenon pit.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Nuclear_reactor" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Energy</h2>
+    <ul><li><a href="/energy-conservation/">Energy &amp; Conservation</a></li><li><a href="/how-solar-panels-work/">How Solar Panels Work</a></li><li><a href="/wind-turbines-betz-limit/">Wind Turbines &amp; the Betz Limit</a></li><li><a href="/how-heat-pumps-work/">Heat Pumps: More Heat Than You Pay For</a></li><li><a href="/how-the-power-grid-works/">The Power Grid: Balancing on a Knife Edge</a></li><li><a href="/how-grid-batteries-work/">How Do Grid Batteries Store Electricity?</a></li><li><a href="/how-green-hydrogen-is-made/">How Is Green Hydrogen Made?</a></li><li><a href="/how-home-insulation-works/">Where Does the Heat in Your House Go?</a></li><li><a href="/how-electricity-is-generated/">How Is Electricity Actually Made?</a></li><li><a href="/how-much-electricity-appliances-use/">How Much Electricity Does Your Home Use?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

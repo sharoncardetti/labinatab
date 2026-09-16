@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come funzionano i pannelli solari | Lab-in-a-Tab</title>
+<meta name="description" content="Una lastra di vetro senza parti in movimento, ferma su un tetto, che per trent'anni spinge silenziosamente elettroni in un circuito. Ecco il trucco che…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-funzionano-i-pannelli-solari/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-solar-panels-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funzionano-i-pannelli-solari/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionnent-les-panneaux-solaires/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-solar-panels-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come funzionano i pannelli solari — Spiegato e simulato">
+<meta property="og:description" content="Una lastra di vetro senza parti in movimento, ferma su un tetto, che per trent'anni spinge silenziosamente elettroni in un circuito. Ecco il trucco che…">
+<meta property="og:url" content="https://labinatab.com/it/come-funzionano-i-pannelli-solari/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come funzionano i pannelli solari — Spiegato e simulato">
+<meta name="twitter:description" content="Una lastra di vetro senza parti in movimento, ferma su un tetto, che per trent'anni spinge silenziosamente elettroni in un circuito. Ecco il trucco che…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-funzionano-i-pannelli-solari/#article",
+   "headline": "Come funzionano i pannelli solari",
+   "name": "Come funzionano i pannelli solari",
+   "description": "Una lastra di vetro senza parti in movimento, ferma su un tetto, che per trent'anni spinge silenziosamente elettroni in un circuito. Ecco il trucco che…",
+   "url": "https://labinatab.com/it/come-funzionano-i-pannelli-solari/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-funzionano-i-pannelli-solari/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Fotovoltaico",
+    "Curva I-V",
+    "Rendimento"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come funzionano i pannelli solari",
+    "sameAs": "https://en.wikipedia.org/wiki/Solar_cell"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come funzionano i pannelli solari",
+     "item": "https://labinatab.com/it/come-funzionano-i-pannelli-solari/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-solar-panels-work/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funzionano-i-pannelli-solari/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionnent-les-panneaux-solaires/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energia</nav>
+  <h1>Come funzionano i pannelli solari</h1>
+  <p class="lead">Una lastra di vetro senza parti in movimento, ferma su un tetto, che per trent'anni spinge silenziosamente elettroni in un circuito. Ecco il trucco che sta facendo.</p>
+  <div class="chips"><span>Fotovoltaico</span><span>Curva I-V</span><span>Rendimento</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"solarpv":{"junior":{"sun":"Quanto è alto il Sole","tilt":"Quanto è inclinato il pannello","temp":"Quanto è calda l'aria","mpptOn":"🎯 Insegue il punto migliore","mpptOff":"📌 Bloccato a una tensione","gpoa":"Luce sul pannello","pw":"Potenza adesso","tc":"Temperatura del pannello","eff":"Quanta ne diventa elettricità","cAoi":"quanto arriva di sbieco","cNorm":"direzione in cui guarda","cRays":"raggi che finiscono sul vetro","cSun":"Sole","cCells":"celle di silicio","cIV":"quello che il pannello dà, a ogni tensione","cPow":"potenza del pannello","cMpp":"il punto migliore","cVoc":"a vuoto","cIsc":"in cortocircuito","cNow":"sta lavorando qui","cWaste":"buttata via","cHot":"un pannello caldo perde volt","cSTC":"quello che promette l'etichetta dietro"},"student":{"sun":"Elevazione solare α","tilt":"Inclinazione β","temp":"Temperatura dell'aria","mpptOn":"🎯 Inseguimento MPPT","mpptOff":"📌 Tensione fissa","gpoa":"Irraggiamento sul pannello","pw":"Potenza erogata","tc":"Temperatura di cella","eff":"Rendimento","cAoi":"angolo di incidenza θ","cNorm":"normale al pannello","cRays":"raggi intercettati","cSun":"Sole","cCells":"celle in serie","cIV":"curva I-V","cPow":"potenza P = VI","cMpp":"punto di massima potenza","cVoc":"Voc","cIsc":"Isc","cNow":"punto di lavoro","cWaste":"potenza persa","cHot":"perdita termica","cSTC":"targa in STC"},"scholar":{"sun":"Elevazione solare α","tilt":"Inclinazione del campo β","temp":"Temperatura ambiente Ta","mpptOn":"🎯 Inseguimento MPPT","mpptOff":"📌 Tensione imposta","gpoa":"Irraggiamento sul piano dei moduli","pw":"Potenza in continua","tc":"Temperatura di cella Tc","eff":"Rendimento di conversione","cAoi":"angolo di incidenza θ","cNorm":"normale al campo","cRays":"raggi intercettati","cSun":"Sole","cCells":"celle in serie","cIV":"caratteristica I-V","cPow":"P = VI","cMpp":"punto di massima potenza","cVoc":"Voc","cIsc":"Isc","cNow":"punto di lavoro","cWaste":"potenza rinunciata","cHot":"perdita termica γΔT","cSTC":"targa STC"}}});</script>
+<section class="sim-embed" data-sim="solarpv" data-color="#f59e0b" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#f59e0b"><span class="sg-lbl">Prova</span><span>Lascia il Sole dov'è e trascina lentamente <b>Quanto è inclinato il pannello</b> da piatto a in piedi, guardando due cose: quanti raggi colpiscono il vetro e <b>Potenza adesso</b>. Trova l'inclinazione che li prende tutti. Poi porta <b>Quanto è alto il Sole</b> giù verso l'orizzonte e prova a recuperare la potenza inclinando di nuovo. Adesso spingi <b>Quanto è calda l'aria</b> al massimo e guarda <b>Potenza adesso</b> scendere anche se della luce non è cambiato niente. Infine premi il pulsante finché non dice <b>📌 Bloccato a una tensione</b> e osserva che fine fa il punto verde.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#f59e0b"><span class="sg-lbl">Prova</span><span>Fissa <b>Elevazione solare α</b> a 30° e trova l'inclinazione che rende \(\theta = 0\); verifica che è \(\beta = 60^\circ\), non 30°. Poi leggi <b>Irraggiamento sul pannello</b> a \(\theta = 0\) e di nuovo a \(\theta = 60^\circ\), e confronta il rapporto con \(\cos 60^\circ = 0{,}5\). Adesso tieni fermo tutto e spazza <b>Temperatura dell'aria</b> da −5 a 40 °C guardando <b>Temperatura di cella</b>, <b>Potenza erogata</b> e l'estremo Voc della curva: stima il coefficiente in %/°C. Infine passa a <b>📌 Tensione fissa</b> e rispazza <b>Elevazione solare α</b>, osservando quanto lascia per strada il punto bloccato a 24 V.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#f59e0b"><span class="sg-lbl">Prova</span><span>Metti alla prova tre affermazioni, con i numeri. Primo, che \(I_{sc}\propto G\) mentre \(V_{oc}\propto\ln G\): muovi <b>Elevazione solare α</b> fino a dimezzare circa <b>Irraggiamento sul piano dei moduli</b> e controlla le due intercette contro quelle leggi. Secondo, che \(dV_{oc}/dT \approx -2{,}2\ \text{mV/K}\) per cella: spazza <b>Temperatura ambiente Ta</b> su tutto il campo, leggi l'intercetta Voc ai due estremi e dividi per 60 celle e per la variazione di <b>Temperatura di cella Tc</b>. Terzo, che la perdita dovuta a un punto di lavoro bloccato non è una percentuale fissa: passa a <b>📌 Tensione imposta</b> e osserva la potenza persa al variare di <b>Irraggiamento sul piano dei moduli</b>, poi spiega perché il punto bloccato si comporta molto peggio a bassa irradianza.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>In alto: il Sole sta da qualche parte sull'arco tratteggiato, e le linee gialle sono la sua luce che cade parallela - siccome il Sole è lontanissimo, ogni raggio arriva puntando nella stessa direzione. La lastra scura sul palo è il pannello. La linea bianca tratteggiata che ne esce è la direzione in cui sta guardando; l'arco ambra fra quella linea e la luce è quanto la sta mancando. I raggi che finiscono sul vetro sono disegnati luminosi, quelli che gli passano accanto sono sbiaditi e finiscono a terra. I puntini azzurri lungo il cavo sono l'elettricità che se ne va. In basso: quello che il pannello può dare a ogni tensione possibile - blu la corrente, ambra la potenza - con il punto ambra sul meglio che può fare e il punto verde su dove sta lavorando davvero.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Due nemici, e sono completamente diversi. Uno è geometria, l'altro è calore.</b> Punta il pannello dritto verso il Sole e ogni raggio del fascio finisce sul vetro. Inclinalo e lo stesso fascio si spalma su un'area più grande, quindi ne arrivano meno: è esattamente il motivo per cui un Sole basso d'inverno rende molto meno, ed è per questo che i pannelli si inclinano. Il calore è più subdolo: la luce non è cambiata affatto, ma il silicio caldo perde tensione, e un tetto a 60 °C costa in silenzio circa un settimo della produzione. E quel punto verde conta più di quanto sembri: un pannello non ha una sola uscita, ne ha un'intera curva, e stare alla tensione sbagliata butta via watt veri per niente.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Pannello superiore: un modello di cielo sereno con il Sole a elevazione \(\alpha\) e il modulo inclinato di \(\beta\), quindi l'angolo di incidenza è \(\theta = |90^\circ - \alpha - \beta|\) e \(\cos\theta = \sin(\alpha+\beta)\). I raggi paralleli sono il fascio stesso: la frazione che intercetta l'apertura è la legge del coseno resa contabile. <b>Irraggiamento sul pannello</b> somma la componente diretta, quella diffusa dal cielo e quella riflessa dal suolo. Pannello inferiore: la curva I-V del modulo in blu e il prodotto \(VI\) in ambra, ridisegnati a ogni fotogramma da un modello a un diodo con resistenza serie, per un modulo da 2 m² e 440 W con 60 celle. Punto ambra = punto di massima potenza, punto verde = dove il sistema sta davvero lavorando, linea ambra tratteggiata = la targa stampata dietro il modulo.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>La corrente segue la luce, la tensione segue la temperatura, e la potenza che tieni dipende da dove scegli di stare sulla curva.</b> \(I_{sc}\) insegue l'irraggiamento quasi esattamente - dimezza la luce e dimezzi la corrente - mentre \(V_{oc}\) si muove solo come \(\ln G\), ed è per questo che un pannello nella foschia segna ancora una bella tensione ma non consegna nulla. La temperatura lavora nell'altro verso ed è più pesante di quanto si creda: circa \(-0{,}35\%\) di potenza per grado, quindi un modulo a 60 °C ha già perso circa il 12% prima di ogni perdita nei cavi. Nota anche che il rapporto fra <b>Irraggiamento sul pannello</b> e il coseno non è esatto: la luce diffusa del cielo e il riflesso del suolo tengono in vita un pannello mal orientato, che è precisamente il motivo per cui i tetti piani commerciali non sono il disastro che la sola legge del coseno prevederebbe.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Irraggiamento diretto dal modello di massa d'aria di Meinel, \(\text{DNI} = 1361\cdot 0{,}7^{(1/\sin\alpha)^{0,678}}\), proiettato sul piano dei moduli tramite \(\cos\theta = \sin(\alpha+\beta)\), con diffusa isotropa pesata \((1+\cos\beta)/2\) e riflessione al suolo con albedo 0,2 pesata \((1-\cos\beta)/2\). Temperatura del modulo dal modello NOCT \(T_c = T_a + \frac{45-20}{800}G\). La curva è generata parametricamente nella tensione di giunzione da \(I = I_{sc}\left[1-e^{(V_j-V_{oc})/V_t}\right]\), \(V = V_j - IR_s\), con \(V_t = N_s nkT/q\), \(V_{oc}(G,T) = V_{oc}^{STC} + \beta_V\Delta T + V_t\ln(G/G_0)\) e \(R_s = 0{,}18\ \Omega\): il fattore di riempimento che vedi è guadagnato, non assunto.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Ogni derating di un calcolo di producibilità vero è qui visibile come un fatto geometrico o termodinamico, non come un coefficiente di comodo.</b> La legge del coseno fissa la risorsa; il modello NOCT trasforma quella risorsa in una temperatura di cella che poi se la mangia, ed è per questo che il picco di potenza di un impianto fisso in clima caldo arriva prima del mezzogiorno solare e non a mezzogiorno. Il caso a tensione bloccata è istruttivo: poiché \(V_{mp}\) cala con la temperatura e sale debolmente con l'irradianza, una tensione di lavoro fissa sbaglia in una direzione diversa a ogni ora, e la perdita è peggiore a bassa luce, dove il ginocchio della curva è più molle. Due limiti onesti di questo modello: assume un cielo isotropo, quindi sottostima l'aureola circumsolare nelle giornate foschive, e ignora la riflettanza del vetro dipendente dall'angolo, che toglie un altro 2-3% di producibilità annua ad alta incidenza ed è il motivo per cui esistono le correzioni IAM.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Entra luce, esce elettricità</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Un pannello solare non ha parti in movimento. Non gira niente, non brucia niente, nessuno spinge niente. Lo metti al sole ed esce elettricità dal cavo dietro - e continua a farlo per trent'anni mentre tu te ne dimentichi completamente. È la macchina più strana che hai in casa.</p>
+<p>Il trucco avviene dentro una fetta di silicio più sottile di un'unghia. La luce non arriva come un flusso continuo: arriva a pacchetti, chiamati <strong>fotoni</strong>. Quando un fotone finisce dentro il silicio può strappare un elettrone dal suo atomo, come una palla da biliardo che ne colpisce un'altra e la manda via. Adesso c'è un elettrone libero e un posto vuoto dov'era prima. Lasciati soli, i due girerebbero un po' e tornerebbero insieme, e non succederebbe assolutamente niente di utile.</p>
+<p>Per questo la cella è costruita con un senso unico dentro. La parte alta della fetta è trattata con un'impurità e quella bassa con un'altra, e dove le due si incontrano compare da solo un campo elettrico. Ogni elettrone liberato vicino a quel confine viene spinto verso l'alto - sempre verso l'alto, mai indietro. Milioni di elettroni si accumulano sulle dita metalliche che vedi stampate sulla faccia anteriore, escono lungo il cavo, attraversano il frigorifero e le lampade e rientrano dal fondo della cella. Quel giro è la corrente.</p>
+<p>Due cose decidono quanta ne ottieni. La prima è quanta luce arriva: il sole pieno di mezzogiorno porta circa <strong>1000 watt su ogni metro quadrato</strong>, quindi un pannello di due metri quadrati sta dentro a circa 2000 watt di sole e ne restituisce circa 400. Il resto diventa calore. La seconda è l'angolo. La luce che colpisce il vetro di sbieco si spalma più sottile, esattamente come la tua ombra si allunga e si sfilaccia la sera. Punta il pannello dritto verso il Sole e raccogli tutto; inclinalo di quarantacinque gradi e un terzo è sparito. Questo unico fatto risolve quasi tutte le discussioni su come si monta un tetto.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔇</span> Niente combustibile, niente parti in movimento, niente manutenzione. I pannelli installati negli anni Novanta oggi erogano tipicamente ancora oltre l'80% della potenza iniziale.</li><li><span aria-hidden="true">🔥</span> Il caldo è il nemico. Un pannello su un tetto rovente può arrivare a 65 °C, e ogni grado sopra i 25 gli costa circa lo 0,35% di produzione. Il tempo dei sogni di un pannello è freddo, limpido e luminoso: non caldo.</li><li><span aria-hidden="true">🌍</span> Il Sole scarica sulla Terra circa 170 milioni di gigawatt. Tutta l'umanità ne usa circa 20 terawatt, ottomila volte meno. Non è mai mancata la luce: mancava il silicio a buon mercato, e quel prezzo è sceso di circa il 99,9% dal 1976.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>La curva I-V, e l'unico punto che conta davvero</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Una cella solare non è una batteria, e non è nemmeno un generatore di corrente costante. Quello che ti dà dipende da quanto forte tiri. Cortocircuita i morsetti e ottieni tutta la <strong>corrente di cortocircuito</strong> \(I_{sc}\) a zero volt, cioè potenza zero. Lasciali aperti e misuri tutta la <strong>tensione a vuoto</strong> \(V_{oc}\) a corrente zero: di nuovo potenza zero. Fra questi due estremi inutili corre una curva, e su di essa sta esattamente un punto in cui il prodotto \(P = VI\) è il più grande possibile: il <strong>punto di massima potenza</strong>.</p>
+<p>I due estremi della curva rispondono alla luce in modo completamente diverso. La corrente è in pratica un conteggio di fotoni, quindi raddoppiando l'irraggiamento liberi il doppio degli elettroni: \(I_{sc}\) è quasi esattamente proporzionale a \(G\). La tensione se ne accorge appena, perché cresce solo col logaritmo della luce, \(V_{oc} = nV_T\ln(I_{ph}/I_0 + 1)\). Una cella a un decimo del sole pieno ha perso il 90% della corrente e forse il 12% della tensione. Ecco perché un pannello sotto un cielo coperto segna ancora quasi tutta la tensione sul multimetro mentre non produce quasi nulla.</p>
+<p>La temperatura fa il contrario, ed è il fatto che sorprende tutti. Il caldo non aiuta un pannello: lo danneggia. Man mano che il silicio si scalda, la corrente di saturazione inversa \(I_0\) sale ripidamente e trascina giù \(V_{oc}\), a circa \(-0{,}3\%\) per grado. La corrente sale di circa \(+0{,}05\%\) per grado, molto meno di quanto servirebbe a compensare. Il risultato netto è vicino a \(-0{,}35\%\) di potenza per grado sopra i 25 °C a cui i pannelli sono dichiarati: un modulo che cuoce a 65 °C su un tetto d'agosto ha già ceduto circa un settimo della produzione prima ancora di collegare un cavo.</p>
+<p>Il che significa che il punto di lavoro va inseguito, di continuo. È tutto il mestiere dello stadio <strong>MPPT</strong> dentro ogni inverter moderno: sposta la tensione su e giù qualche volta al secondo, guarda da che parte è andata la potenza e riporta il pannello sul picco mentre sole, nuvole e temperatura lo spostano. Un impianto che ne è privo - un pannello collegato dritto a una batteria, per dire - resta inchiodato vicino alla tensione della batteria e butta via regolarmente un quarto del raccolto.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Potenza dalla luce</th><td>\(P = G\,A\,\eta\)</td><td class="cmt">G in W/m², A in m²</td></tr>
+<tr><th scope="row">Corrente di cortocircuito</th><td>\(I_{sc} \propto G\)</td><td class="cmt">un conteggio di fotoni</td></tr>
+<tr><th scope="row">Tensione a vuoto</th><td>\(V_{oc} = nV_T\ln\!\left(\dfrac{I_{ph}}{I_0}+1\right)\)</td><td class="cmt">solo logaritmica in G</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Punto di massima potenza</th><td>\(P_{mpp} = V_{mp}I_{mp}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fattore di riempimento</th><td>\(FF = \dfrac{P_{mpp}}{V_{oc}I_{sc}}\)</td><td class="cmt">≈ 0,80 per il silicio</td></tr>
+<tr><th scope="row">Rendimento</th><td>\(\eta = \dfrac{P_{mpp}}{G\,A}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Perdita per temperatura</th><td>\(P(T) = P_{STC}\left[1+\gamma(T-25)\right]\)</td><td class="cmt">γ ≈ −0,35 %/°C</td></tr>
+<tr><th scope="row">Legge del coseno</th><td>\(G_{\perp} = G\cos\theta\)</td><td class="cmt">θ = angolo di incidenza</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📐</span> Il fattore di riempimento misura quanto la curva è squadrata: il punto migliore diviso Voc per Isc. Un buon modulo al silicio arriva a circa 0,80, ed è la resistenza di quelle dita metalliche stampate a impedirgli di salire ancora.</li><li><span aria-hidden="true">❄️</span> I minuti migliori dell'anno per un pannello sono spesso d'inverno: freddo, cielo limpido, sole basso e luce che rimbalza sulla neve. In quelle condizioni un modulo può superare per un istante la potenza di targa.</li><li><span aria-hidden="true">🔌</span> Una cella di silicio fa solo circa 0,65 V, quindi le celle si collegano in serie: un modulo da 60 celle sta vicino a 40 V a vuoto. Il guaio è che una stringa in serie va alla velocità della cella peggiore, ed è esattamente per questo che esistono i diodi di bypass.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Il modello a un diodo, il tetto di Shockley-Queisser e ciò che un tetto vero restituisce</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Un fotodiodo nel quarto quadrante</h3>
+<p>Una cella solare è una giunzione pn di grande area fatta lavorare esattamente dove non dovrebbe: illuminata, con la fotocorrente che scorre contro la corrente diretta del diodo, così il punto di lavoro finisce nel quarto quadrante del piano I-V - tensione positiva, corrente negativa - che è la firma di un dispositivo che eroga potenza invece di assorbirla. Per convenzione si cambia segno e si disegna il primo quadrante. L'assorbimento crea coppie elettrone-lacuna in tutto il wafer; il campo interno separa quelle che raggiungono la giunzione prima di ricombinarsi; e tutto il problema ingegneristico è tenere la lunghezza di diffusione dei portatori minoritari ben più lunga della strada che devono percorrere per arrivarci.</p>
+<h3><span class="hn">02</span>Il modello a un diodo</h3>
+<p>Quasi tutto ciò che un modulo fa sul campo è catturato da \(I = I_{ph} - I_0\left[\exp\frac{q(V+IR_s)}{nkT}-1\right] - \frac{V+IR_s}{R_{sh}}\). Nota che è implicita in \(I\): ecco perché le schede tecniche danno punti e non funzioni, e perché estrarre i parametri è un fit e non un'algebra. La resistenza serie \(R_s\) - dita, bus bar, saldature, contatti - arrotonda il ginocchio e mangia fattore di riempimento. La resistenza di shunt \(R_{sh}\), da perdite di bordo e difetti attraverso la giunzione, inclina il tratto piatto della curva ed è ciò che domina le perdite a bassa luce, quando resta poca fotocorrente da perdere. Il fattore di idealità \(n\) sta vicino a 1 quando domina la diffusione nelle regioni quasi neutre e scivola verso 2 quando prende il sopravvento la ricombinazione nella zona di svuotamento.</p>
+<h3><span class="hn">03</span>Da dove viene il tetto</h3>
+<p>L'argomento di Shockley e Queisser del 1961 è uno dei grandi pezzi di fisica-come-contabilità. Assumi un solo gap, un Sole di corpo nero e la ricombinazione radiativa come unica perdita inevitabile. I fotoni sotto \(E_g\) passano dritti e sono persi del tutto; quelli sopra vengono assorbiti, ma tutto ciò che eccede \(E_g\) si termalizza in calore in pochi picosecondi. Le due perdite tirano in direzioni opposte al variare di \(E_g\), quindi esiste un ottimo: circa 1,34 eV, che vale il 33,7% sotto un sole. Il gap del silicio, 1,12 eV, dà 33,2%, e poiché quel gap è indiretto l'assorbimento è così debole che serve una cella spessa circa 150 µm con una superficie testurizzata che intrappoli la luce per catturare il rosso dello spettro. Il record di laboratorio per una cella singola al silicio è oggi 27,3% - circa l'82% del suo stesso tetto termodinamico - mentre i moduli commerciali escono al 21-23%.</p>
+<h3><span class="hn">04</span>La temperatura, derivata e non misurata</h3>
+<p>Il coefficiente di temperatura non è un fattore empirico di comodo. Derivando la condizione di circuito aperto si ottiene \(\frac{dV_{oc}}{dT} = \frac{V_{oc}-E_g/q-\gamma kT/q}{T}\), che per il silicio vicino a 300 K vale circa \(-2{,}2\ \text{mV/K}\) per cella, cioè circa \(-0{,}3\%/\text{K}\). Sotto c'è \(I_0 \propto n_i^2 \propto T^3e^{-E_g/kT}\): la corrente di buio è la cella che compete con se stessa, e cresce in modo esplosivo con la temperatura. La corrente di cortocircuito sale, di +0,04 - +0,06 %/K, perché un gap più caldo è un gap leggermente più stretto e qualche fotone rosso in più diventa assorbibile, ma la perdita di tensione vince comodamente. La temperatura del modulo si stima di solito con \(T_c = T_a + \frac{\text{NOCT}-20}{800}G\), un modello lineare grezzo che regge sorprendentemente bene alla prova dei fatti.</p>
+<h3><span class="hn">05</span>Mismatch, ovvero perché conta una foglia</h3>
+<p>Le celle in serie condividono la stessa corrente, quindi una stringa va al passo del suo membro peggiore. Ombreggia una cella su sessanta al 30% del sole pieno e la corrente della stringa collassa verso quella cella - e per di più la cella ombreggiata è ora polarizzata inversamente dalle altre cinquantanove e dissipa la loro potenza come calore in un quadratino di silicio. È un hot spot, ed è così che i primi moduli ogni tanto prendevano fuoco. I diodi di bypass, uno ogni ventina di celle, offrono alla corrente una deviazione: perdi un terzo del modulo invece di tutto. La stessa aritmetica spiega perché l'elettronica a livello di modulo - ottimizzatori e microinverter - vende così bene sui tetti complicati, e perché le celle tagliate a metà cablate come due metà in parallelo sono diventate lo standard industriale.</p>
+<h3><span class="hn">06</span>Dalla scheda tecnica al contatore</h3>
+<p>La potenza di targa è dichiarata in STC: 1000 W/m², 25 °C, AM1.5G - una combinazione che un tetto vero non vede praticamente mai. Sul campo conta la producibilità annua, \(E = P_{STC}\times H_{poa}\times PR\), dove \(H_{poa}\) è l'irraggiamento sul piano dei moduli in kWh/m² all'anno diviso 1 kW/m², e il performance ratio \(PR\) assorbe temperatura, sporcamento, mismatch, cavi, rendimento dell'inverter e fermi. Un tetto europeo fatto bene sta a 0,80-0,85. Milano rende circa 1250 kWh per kWp installato all'anno all'inclinazione ottimale e Roma circa 1550 - numeri che si leggono in una banca dati validata come PVGIS, non si stimano. La frontiera è la tandem: una cella di perovskite sopra il silicio divide lo spettro fra due gap, aggira del tutto il tetto della giunzione singola e in laboratorio ha già superato il 34%.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Modello a un diodo</th><td>\(I = I_{ph}-I_0\!\left[e^{\frac{q(V+IR_s)}{nkT}}-1\right]-\dfrac{V+IR_s}{R_{sh}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Tensione termica</th><td>\(V_T = \dfrac{kT}{q} \approx 25{,}7\ \text{mV}\)</td><td class="cmt">a 25 °C</td></tr>
+<tr><th scope="row">Tensione a vuoto</th><td>\(V_{oc} = nV_T\ln\!\left(\dfrac{I_{ph}}{I_0}+1\right)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Coefficiente di tensione</th><td>\(\dfrac{dV_{oc}}{dT} = \dfrac{V_{oc}-E_g/q-\gamma kT/q}{T}\)</td><td class="cmt">≈ −2,2 mV/K per cella</td></tr>
+<tr><th scope="row">Corrente di buio</th><td>\(I_0 \propto n_i^2 \propto T^3e^{-E_g/kT}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Temperatura di cella</th><td>\(T_c = T_a + \dfrac{\text{NOCT}-20}{800}\,G\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Shockley-Queisser</th><td>\(\eta_{\max} \approx 33{,}7\%\)</td><td class="cmt">un gap, 1,34 eV, un sole</td></tr>
+<tr><th scope="row">Producibilità annua</th><td>\(E = P_{STC}\,H_{poa}\,PR\)</td><td class="cmt">PR ≈ 0,80–0,85</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📉</span> Il prezzo dei moduli segue la legge di Swanson da cinque decenni: circa il 20% in meno a ogni raddoppio della produzione cumulata. Da circa 100 dollari per watt nel 1976 a meno di 0,15 oggi, uno dei cali di costo più ripidi mai registrati per un bene manufatto.</li><li><span aria-hidden="true">🪞</span> Il limite di Shockley-Queisser vincola le celle a giunzione singola, non le celle solari in generale. Dividi lo spettro fra più gap e il tetto si alza: una cella a concentrazione a sei giunzioni ha raggiunto il 47,6%.</li><li><span aria-hidden="true">🌨️</span> I moduli bifacciali sopra ghiaia chiara o neve raccolgono un 5-20% in più dalla faccia posteriore - e poiché quella luce è diffusa e il modulo è staccato dal tetto, lavorano anche più freschi, il che ricompra in silenzio parte della penalità termica.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Solar_cell" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Energia</h2>
+    <ul><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/turbine-eoliche-limite-di-betz/">Turbine eoliche e il limite di Betz</a></li><li><a href="/it/come-funziona-la-pompa-di-calore/">Pompe di calore: più calore di quanto ne paghi</a></li><li><a href="/it/come-funziona-la-rete-elettrica/">La rete elettrica: in equilibrio sul filo del rasoio</a></li><li><a href="/it/come-funziona-un-reattore-nucleare/">Come funziona un reattore nucleare</a></li><li><a href="/it/come-funzionano-le-batterie-di-rete/">Come immagazzinano l'elettricità le batterie di rete</a></li><li><a href="/it/come-si-produce-idrogeno-verde/">Come si produce l'idrogeno verde</a></li><li><a href="/it/dove-va-a-finire-il-calore-di-casa/">Dove va a finire il calore di casa tua</a></li><li><a href="/it/come-si-produce-l-elettricita/">Come si produce davvero l'elettricità</a></li><li><a href="/it/quanta-elettricita-consuma-casa-tua/">Quanta elettricità consuma casa tua</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

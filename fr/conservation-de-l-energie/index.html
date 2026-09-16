@@ -41,7 +41,7 @@
    "url": "https://labinatab.com/fr/conservation-de-l-energie/",
    "mainEntityOfPage": "https://labinatab.com/fr/conservation-de-l-energie/",
    "datePublished": "2026-03-23",
-   "dateModified": "2026-08-26",
+   "dateModified": "2026-09-16",
    "inLanguage": "fr",
    "isAccessibleForFree": true,
    "isFamilyFriendly": true,
@@ -99,11 +99,12 @@
 </script>
 <script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
-<script defer src="/sim-engine.js?v=1c1a1887"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
 <style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
 :root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -163,6 +164,8 @@ footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
 .sim-tabs button:hover{color:var(--ink)}
 .sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
 .sim-host{min-height:20px}
 .sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
 .sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
@@ -204,11 +207,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/energy-conservation/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/energia-conservazione/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/conservation-de-l-energie/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
 </header>
 <main>
-  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Physique</nav>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Énergie</nav>
   <h1>La conservation de l'énergie</h1>
   <p class="lead">L'énergie ne peut ni être créée ni détruite — seulement transformée d'une forme à l'autre. Un pendule échange hauteur contre vitesse, à jamais, gardant le même total.</p>
   <div class="chips"><span>Énergie cinétique</span><span>Énergie potentielle</span><span>Conservation</span></div>
-  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"energy":{"junior":{"drop":"Hauteur de chute","fric":"Frottement","ke":"Énergie de mouvement","pe":"Énergie de hauteur","tot":"Total"},"student":{"drop":"Hauteur initiale (h)","fric":"Frottement","ke":"Cinétique (KE)","pe":"Potentielle (PE)","tot":"Énergie totale"},"scholar":{"drop":"Hauteur initiale (h)","fric":"Frottement","ke":"Cinétique (KE)","pe":"Potentielle (PE)","tot":"Énergie totale"}}});</script>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"energy":{"junior":{"drop":"Hauteur de chute","fric":"Frottement","ke":"Énergie de mouvement","pe":"Énergie de hauteur","tot":"Total","cHeat":"chaleur","cChart":"énergie au cours du temps","cLost":"perdu en chaleur"},"student":{"drop":"Hauteur initiale (h)","fric":"Frottement","ke":"Cinétique (KE)","pe":"Potentielle (PE)","tot":"Énergie totale","cHeat":"chaleur","cChart":"énergie au cours du temps","cLost":"perdu en chaleur"},"scholar":{"drop":"Hauteur initiale (h)","fric":"Frottement","ke":"Cinétique (KE)","pe":"Potentielle (PE)","tot":"Énergie totale","cHeat":"chaleur","cChart":"énergie au cours du temps","cLost":"perdu en chaleur"}}});</script>
 <section class="sim-embed" data-sim="energy" data-color="#d97706" aria-label="Interactive simulation">
   <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
   <div class="sim-try" data-l="junior" style="border-left-color:#d97706"><span class="sg-lbl">Essaie</span><span>Mets <b>Frottement</b> à 0 et laisse tomber la bille. Les barres continuent-elles de s'échanger pour toujours ? Maintenant ajoute un peu de <b>Frottement</b> et regarde ce qui arrive au <b>Total</b>.</span></div>
@@ -278,8 +281,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <p><a href="https://en.wikipedia.org/wiki/Conservation_of_energy" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
   </div>
   <nav class="related" aria-label="Related topics">
-    <h2>Plus en Physique</h2>
-    <ul><li><a href="/fr/gravite-orbites/">Gravité et orbites</a></li><li><a href="/fr/mouvement-des-projectiles/">Le mouvement des projectiles</a></li><li><a href="/fr/ondes-interferences/">Ondes et interférences</a></li><li><a href="/fr/chaleur-thermodynamique/">Chaleur et thermodynamique</a></li><li><a href="/fr/modele-standard/">Le Modèle standard</a></li><li><a href="/fr/lois-du-mouvement-de-newton/">Les lois du mouvement de Newton</a></li><li><a href="/fr/loi-d-ohm-circuits/">Loi d'Ohm et circuits</a></li><li><a href="/fr/etats-de-la-matiere/">Les états de la matière</a></li><li><a href="/fr/optique-lumiere-lentilles/">Optique : lumière, lentilles et réfraction</a></li><li><a href="/fr/pendule-mouvement-harmonique/">Pendules et mouvement harmonique simple</a></li><li><a href="/fr/comment-volent-les-avions/">Comment volent les avions</a></li><li><a href="/fr/circuits-serie-parallele/">Circuits série et parallèle</a></li><li><a href="/fr/aimants-electromagnetisme/">Aimants et électromagnétisme</a></li></ul>
+    <h2>Plus en Énergie</h2>
+    <ul><li><a href="/fr/comment-fonctionnent-les-panneaux-solaires/">Comment fonctionnent les panneaux solaires</a></li><li><a href="/fr/eoliennes-limite-de-betz/">Éoliennes et limite de Betz</a></li><li><a href="/fr/comment-fonctionne-une-pompe-a-chaleur/">Pompes à chaleur : plus de chaleur que tu n'en paies</a></li><li><a href="/fr/comment-fonctionne-le-reseau-electrique/">Le réseau électrique : en équilibre sur le fil</a></li><li><a href="/fr/comment-fonctionne-un-reacteur-nucleaire/">Comment fonctionne un réacteur nucléaire</a></li><li><a href="/fr/comment-fonctionnent-les-batteries-de-reseau/">Comment les batteries de réseau stockent l'électricité</a></li><li><a href="/fr/comment-produit-on-l-hydrogene-vert/">Comment produit-on l'hydrogène vert</a></li><li><a href="/fr/ou-part-la-chaleur-de-votre-maison/">Où part la chaleur de votre maison</a></li><li><a href="/fr/comment-produit-on-l-electricite/">Comment produit-on vraiment l'électricité</a></li><li><a href="/fr/combien-d-electricite-consomme-votre-maison/">Combien d'électricité consomme votre maison</a></li></ul>
   </nav>
 </main>
 <footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>

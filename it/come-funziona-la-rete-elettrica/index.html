@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La rete elettrica: in equilibrio sul filo del rasoio | Lab-in-a-Tab</title>
+<meta name="description" content="Ogni secondo di ogni giorno, la produzione deve essere esattamente uguale al consumo di un intero continente. La differenza nessuno può immagazzinarla. La…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-funziona-la-rete-elettrica/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-the-power-grid-works/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-la-rete-elettrica/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionne-le-reseau-electrique/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-the-power-grid-works/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="La rete elettrica: in equilibrio sul filo del rasoio — Spiegato e simulato">
+<meta property="og:description" content="Ogni secondo di ogni giorno, la produzione deve essere esattamente uguale al consumo di un intero continente. La differenza nessuno può immagazzinarla. La…">
+<meta property="og:url" content="https://labinatab.com/it/come-funziona-la-rete-elettrica/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La rete elettrica: in equilibrio sul filo del rasoio — Spiegato e simulato">
+<meta name="twitter:description" content="Ogni secondo di ogni giorno, la produzione deve essere esattamente uguale al consumo di un intero continente. La differenza nessuno può immagazzinarla. La…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-funziona-la-rete-elettrica/#article",
+   "headline": "La rete elettrica: in equilibrio sul filo del rasoio",
+   "name": "La rete elettrica: in equilibrio sul filo del rasoio",
+   "description": "Ogni secondo di ogni giorno, la produzione deve essere esattamente uguale al consumo di un intero continente. La differenza nessuno può immagazzinarla. La…",
+   "url": "https://labinatab.com/it/come-funziona-la-rete-elettrica/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-funziona-la-rete-elettrica/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "50 Hz",
+    "Inerzia",
+    "Curva ad anatra"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "La rete elettrica: in equilibrio sul filo del rasoio",
+    "sameAs": "https://en.wikipedia.org/wiki/Electrical_grid"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "La rete elettrica: in equilibrio sul filo del rasoio",
+     "item": "https://labinatab.com/it/come-funziona-la-rete-elettrica/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-the-power-grid-works/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-la-rete-elettrica/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionne-le-reseau-electrique/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energia</nav>
+  <h1>La rete elettrica: in equilibrio sul filo del rasoio</h1>
+  <p class="lead">Ogni secondo di ogni giorno, la produzione deve essere esattamente uguale al consumo di un intero continente. La differenza nessuno può immagazzinarla. La frequenza è come si capisce se sta funzionando.</p>
+  <div class="chips"><span>50 Hz</span><span>Inerzia</span><span>Curva ad anatra</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"grid":{"junior":{"solar":"Quanto solare è installato","wind":"Quanto eolico è installato","batt":"Quanto sono grandi le batterie","trip":"⚡ Fai saltare una centrale","freq":"Il battito","share":"Fatto da vento e sole","gas":"Gas che tappa il buco","soc":"Carica nelle batterie","cDay":"una giornata, da mezzanotte a mezzanotte","cDem":"quello che il paese sta usando","cBase":"impianti sempre accesi","cWind":"eolico","cSolar":"solare","cGas":"gas, tappa quel che resta","cBatt":"batterie che restituiscono","cCurt":"buttata via - non c'era dove metterla","cFreq":"il battito, secondo per secondo","cBand":"al sicuro","cRoCoF":"quanto in fretta si muove","cSpin":"l'acciaio che gira nella rete","cTrip":"è appena saltata una centrale","cShed":"la rete sta staccando dei clienti","cNow":"adesso","cDuck":"la curva ad anatra"},"student":{"solar":"Potenza solare installata","wind":"Potenza eolica installata","batt":"Potenza delle batterie","trip":"⚡ Fai saltare 2 GW","freq":"Frequenza","share":"Quota rinnovabile","gas":"Gas dispacciabile","soc":"Stato di carica","cDay":"pila di dispacciamento su 24 ore","cDem":"domanda","cBase":"base obbligata","cWind":"eolico","cSolar":"solare","cGas":"gas, insegue il carico residuo","cBatt":"scarica delle batterie","cCurt":"tagliata","cFreq":"frequenza di sistema","cBand":"banda di contenimento","cRoCoF":"RoCoF","cSpin":"inerzia di sistema","cTrip":"perdita di generazione","cShed":"distacco del carico per minima frequenza","cNow":"adesso","cDuck":"carico residuo - la curva ad anatra"},"scholar":{"solar":"Potenza solare installata","wind":"Potenza eolica installata","batt":"Potenza dell'accumulo","trip":"⚡ Fai saltare 2 GW","freq":"Frequenza di sistema","share":"Quota non sincrona","gas":"Potenza dispacciabile","soc":"Stato di carica","cDay":"pila di dispacciamento su 24 ore","cDem":"domanda","cBase":"base obbligata","cWind":"eolico","cSolar":"solare","cGas":"dispacciabile, insegue il carico residuo","cBatt":"scarica dell'accumulo","cCurt":"tagliata","cFreq":"frequenza di sistema","cBand":"banda di contenimento","cRoCoF":"RoCoF","cSpin":"inerzia aggregata H","cTrip":"perdita di immissione","cShed":"distacco del carico per minima frequenza","cNow":"adesso","cDuck":"carico residuo - la curva ad anatra"}}});</script>
+<section class="sim-embed" data-sim="grid" data-color="#4338ca" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#4338ca"><span class="sg-lbl">Prova</span><span>Prima guarda scorrere una giornata intera: ci vuole circa un minuto. Poi porta <b>Quanto solare è installato</b> al massimo e osserva che cosa succede a metà giornata: quella foschia rosso pallido è energia sprecata. Adesso alza <b>Quanto sono grandi le batterie</b> e guarda la foschia rimpicciolirsi mentre le batterie la raccolgono e la restituiscono di sera. Infine premi il pulsante per far saltare una grande centrale e tieni gli occhi sul numero in basso a sinistra. Rifallo con <b>Quanto sono grandi le batterie</b> a zero, poi con <b>Quanto sono grandi le batterie</b> al massimo, e confronta quanto scende il battito.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#4338ca"><span class="sg-lbl">Prova</span><span>Fai scorrere una giornata con le impostazioni di partenza e guarda come <b>Gas dispacciabile</b> rispecchia il carico residuo tratteggiato. Adesso porta <b>Potenza solare installata</b> al massimo: trova la pancia di mezzogiorno, la fetta tagliata sopra la pila e la rampa serale che al parco a gas viene chiesta. Poi prova le dinamiche di frequenza: con <b>Potenza delle batterie</b> a zero fai saltare una centrale e annota sia la pendenza iniziale sia il punto più basso raggiunto; ripeti con <b>Potenza delle batterie</b> al massimo e confronta. Infine metti <b>Potenza solare installata</b> e <b>Potenza eolica installata</b> alti e fai saltare la centrale a mezzogiorno, quando la quota non sincrona è al suo massimo.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#4338ca"><span class="sg-lbl">Prova</span><span>Misura invece di guardare. Fai saltare 1,5 GW con <b>Potenza eolica installata</b> e <b>Potenza solare installata</b> a zero, leggi il RoCoF iniziale e verificalo contro \(f_0\Delta P/(2HS)\) con \(H = 6\) s. Ripeti a mezzogiorno con entrambi al massimo, dove \(H\) è sceso vicino a 2 s, e conferma che la pendenza circa triplica. Poi separa i due meccanismi che fissano il nadir: tieni costante l'inerzia e varia solo <b>Potenza dell'accumulo</b>, che cambia la velocità di risposta e non l'energia accumulata. Infine spingi il sistema fino al distacco del carico facendo saltare la centrale con <b>Potenza dell'accumulo</b> a zero in un'ora ad alta quota rinnovabile, e osserva che cosa recupera la frequenza.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>In alto: un'intera giornata di elettricità di un paese, da mezzanotte a mezzanotte, con le bande colorate impilate a mostrare da dove arriva la potenza - grigio per gli impianti che non si spengono mai, ambra per il solare, verde acqua per l'eolico, rosa per il gas, viola per le batterie che restituiscono quello che hanno immagazzinato. La linea bianca è quello che il paese sta davvero usando, e la foschia rosso pallido sopra la pila è energia pulita che nessuno è riuscito a usare, buttata via. La linea gialla tratteggiata è quello che resta al gas dopo che vento e sole hanno fatto la loro parte. La riga bianca verticale è il momento che stai guardando. In basso: il battito della rete, secondo per secondo, con una fascia verde che mostra dove dovrebbe stare e la rotellina che gira alla velocità a cui sta andando la rete.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Nei cavi non c'è niente immagazzinato, quindi la frequenza è quella che dice la verità: scende nell'istante in cui il paese prende più di quanto gli viene dato.</b> Quando una centrale cade, l'energia che manca esce dritta dalle macchine rotanti, che rallentano - e lo vedono tutti, ovunque, subito. Le batterie aiutano due volte. Raccolgono l'abbuffata di mezzogiorno che altrimenti si sprecherebbe, e siccome reagiscono in una frazione di secondo prendono la frequenza prima che scenda tanto. Nota anche la forma che hai creato con tanto solare: una pancia grossa a mezzogiorno e una salita spaventosa all'ora di cena. È quella salita, non la quantità totale di energia, la cosa più difficile di tutto il sistema.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Pannello superiore: una pila di dispacciamento su 24 ore. Base obbligata, poi solare, eolico, gas e accumulo sono impilati per coprire la curva bianca della domanda, con un ordine di merito semplice: prima le rinnovabili variabili, l'accumulo che carica sul surplus e scarica nel picco serale, il gas che prende quel che resta con un limite di rampa. La linea tratteggiata è il carico residuo, domanda meno eolico e solare, cioè quello che il parco dispacciabile deve davvero inseguire. Pannello inferiore: la frequenza di sistema integrata dal vivo dall'equazione del moto \(\frac{df}{dt}=\frac{f_0\Delta P}{2HS}\), comprese risposta proporzionale di statismo, autoregolazione del carico e risposta rapida delle batterie. L'inerzia efficace cala al crescere della quota non sincrona.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Lo stesso evento produce un'escursione di frequenza diversa a seconda di quando capita, perché sono l'inerzia e non l'energia a fissare i primi due secondi.</b> Il RoCoF dipende da \(H\) e dalla taglia della perdita, e \(H\) cala man mano che eolico e solare collegati tramite inverter spiazzano le macchine rotanti: quindi lo stesso identico guasto è molto più violento a mezzogiorno di sole che alle tre di notte. A salvarlo è la velocità della risposta più che la sua entità: l'inverter di una batteria reagisce in millisecondi, ben prima che il regolatore di una turbina si sia mosso, ed è esattamente per questo che oggi l'accumulo guadagna più dalla regolazione di frequenza che dall'arbitraggio di energia. E nota la seconda lezione nel pannello in alto: aggiungere solare non riduce semplicemente il lavoro del parco, lo rimodella, svuotando il centro della giornata e irripidendo la rampa serale finché la velocità di rampa - non la potenza installata, non l'energia - diventa il vincolo che morde.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Un modello di sistema ridotto. La pila è un dispacciamento per ordine di merito su una giornata a 96 passi, con l'accumulo che carica su residuo negativo e scarica nel picco serale, soggetto a limiti di potenza ed energia; il taglio è ciò che né l'accumulo né il minimo tecnico riescono ad assorbire. Il ciclo di frequenza integra \(\frac{df}{dt}=\frac{f_0\Delta P}{2H S}\) con \(S = 70\) GVA, inerzia aggregata scalata come \(H = 2+4(1-\text{quota})\) per rappresentare lo spiazzamento degli impianti sincroni, statismo proporzionale da 4 GW/Hz, autoregolazione del carico di circa 1,2 %/Hz, potenza dispacciabile limitata in rampa, risposta rapida in frequenza delle batterie proporzionale alla potenza installata e distacco del carico per minima frequenza armato a 49,0 Hz.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>L'inerzia compra tempo e la riserva compra energia, e il nadir lo decide se la seconda arriva prima che finisca la prima.</b> La pendenza iniziale è pura fisica - nessun regolatore agisce prima che le macchine abbiano già cominciato a rallentare - quindi man mano che gli impianti sincroni vanno in pensione l'intero problema del contenimento della frequenza si sposta dal volume di riserva alla velocità di riserva. È tutta qui la ragion d'essere della risposta rapida in frequenza, ed è per questo che i codici di rete sono passati dal prescrivere MW di riserva al prescrivere consegna entro centinaia di millisecondi. Due semplificazioni oneste di questo modello: è a nodo singolo, quindi non mostra nessuna delle oscillazioni interarea o dei vincoli di trasmissione che decidono gli eventi veri, e lo statismo è una legge proporzionale liscia invece delle bande morte e delle non linearità dei regolatori reali. Quello che invece cattura è l'accoppiamento più importante: un mezzogiorno più verde è una macchina più leggera e più nervosa, e il rimedio non è più energia ma mani più veloci.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Una macchina grande come un continente, in equilibrio ogni secondo</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Ecco il fatto che governa tutto il resto: l'elettricità che stai usando adesso è stata prodotta una frazione di secondo fa. Non c'è un magazzino pieno di elettricità, non c'è un serbatoio dietro il muro. Da qualche parte una turbina sta girando un pochino più forte perché tu hai acceso una luce. Produzione e consumo devono coincidere in ogni istante, su un intero continente, per sempre.</p>
+<p>A rendere possibile tutto questo è un battito condiviso. Quasi tutti i grandi generatori sono macchine rotanti, e girano tutti all'unisono, cinquanta volte al secondo in Europa. Quel numero - la <strong>frequenza</strong> - è il tabellone. Se all'improvviso il paese consuma più di quanto si produce, l'energia in più deve venire da qualche parte, e viene dalle macchine rotanti stesse: rallentano di un pelo e la frequenza scende. Se se ne produce troppa, accelerano. Nessuno deve misurare la domanda: la frequenza lo dice ovunque, nello stesso istante.</p>
+<p>Quell'acciaio che gira è anche l'ammortizzatore. In ogni momento migliaia di tonnellate di turbine e alternatori stanno ruotando, e la loro inerzia è ciò che impedisce alla frequenza di crollare nel primo mezzo secondo dopo un guasto, abbastanza a lungo perché altri impianti spingano di più. Gli ingegneri di rete la chiamano <strong>inerzia</strong>, e ci pensano parecchio, perché i parchi eolici e fotovoltaici si collegano tramite elettronica e non tramite grandi masse rotanti: una rete molto verde è una rete più nervosa, se qualcosa non sostituisce quella stabilità.</p>
+<p>Poi c'è la forma della giornata. La domanda sale quando la gente si sveglia, cala nel pomeriggio e fa il picco la sera, quando tutti tornano a casa e cucinano al buio. Il solare fa il contrario: inonda il mezzogiorno e sparisce proprio mentre arriva il picco. Disegna la differenza e ottieni una curva con la pancia grossa e il collo ripido - la <strong>curva ad anatra</strong> - e quel collo, una rampa enorme in un paio d'ore, è la cosa più difficile di tutto il sistema. Le batterie sono così utili perché possono ingoiare il surplus di mezzogiorno e restituirlo tre ore dopo, esattamente quando il collo dell'anatra diventa verticale.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🕐</span> I vecchi orologi collegati alla rete contano i cicli, quindi i gestori tengono di proposito la media di lungo periodo esattamente a 50 Hz. Nel 2018 una disputa politica nei Balcani lasciò la rete europea leggermente sotto-alimentata per settimane, e gli orologi di mezzo continente rimasero indietro di sei minuti.</li><li><span aria-hidden="true">⚡</span> Il 9 agosto 2019 un fulmine mise fuori servizio due generatori in Gran Bretagna nel giro di pochi secondi. La frequenza scese così in fretta che le protezioni automatiche tolsero la corrente a un milione di utenti per salvare il resto della rete. Dal fulmine al blackout passò meno di un minuto e mezzo.</li><li><span aria-hidden="true">🌍</span> Dal Portogallo alla Turchia, l'Europa continentale funziona come un'unica macchina sincrona. Ogni grande generatore gira al passo con tutti gli altri: il più grande oggetto coordinato con precisione che gli esseri umani abbiano mai costruito.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>L'equazione del moto, la regolazione primaria e la forma del carico residuo</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Si parte dal bilancio. Poiché nella rete non c'è accumulo significativo, l'uguaglianza istantanea \(\sum P_{\text{gen}} = \sum P_{\text{load}} + P_{\text{perdite}}\) deve valere esattamente. Uno squilibrio ha un solo posto dove andare: l'energia cinetica delle macchine sincrone, \(E = \tfrac{1}{2}J\omega^2\). Da lì l'<strong>equazione del moto</strong> nella forma più utile, \(\frac{df}{dt} = \frac{f_0\,\Delta P}{2HS}\), dove \(S\) è la potenza nominale in rotazione e \(H\) - la costante di inerzia, in secondi - dice per quanto tempo quell'energia immagazzinata potrebbe alimentare il sistema a piena potenza. Valori tipici per una centrale termica sono 4-6 secondi.</p>
+<p>Mettici i numeri. Perdi 1 GW su un sistema da 70 GVA con \(H = 5\ \text{s}\) e la velocità iniziale di variazione della frequenza è circa \(0{,}07\ \text{Hz/s}\): abbastanza lenta perché le riserve arrivino. Dimezza l'inerzia perché metà del parco è ora eolico e fotovoltaico collegato tramite inverter, e lo stesso evento precipita al doppio della velocità. Ecco perché il <strong>RoCoF</strong> è diventato un vincolo di pianificazione a sé: sono i relè di protezione e i limiti delle macchine, non il bilancio energetico, a stabilire quanto in fretta la frequenza possa muoversi.</p>
+<p>La risposta arriva a strati. La <strong>regolazione primaria</strong> è proporzionale: ogni unità che partecipa cambia potenza in proporzione all'errore di frequenza secondo il proprio statismo, tipicamente il 4-5%, e arriva in pochi secondi. Essendo proporzionale ferma la caduta ma lascia uno scarto permanente. La <strong>regolazione secondaria</strong>, il controllo automatico della generazione, integra via quell'errore in qualche minuto e riporta la frequenza esattamente a 50 Hz. La riserva <strong>terziaria</strong>, dispacciata a mano o dal mercato, ricostituisce le riserve stesse perché il sistema sia pronto all'evento successivo.</p>
+<p>Il problema giornaliero è diverso da quello secondo per secondo. Sottrai eolico e fotovoltaico alla domanda e ottieni il <strong>carico residuo</strong>, quello che il parco dispacciabile deve davvero produrre. Aggiungi abbastanza fotovoltaico e la pancia di mezzogiorno sprofonda mentre il picco serale resta dov'è, quindi la rampa fra i due si fa più ripida: la California ha bisogno regolarmente di oltre 13 GW di rampa in tre ore. Se la pancia scende sotto il minimo tecnico degli impianti che non si possono spegnere, il surplus viene <strong>tagliato</strong>: energia vera buttata via perché nulla può assorbirla. L'accumulo attacca entrambe le metà del problema, e le batterie hanno un asso in più: un inverter risponde in decine di millisecondi, più in fretta di qualunque turbina, ed è per questo che oggi vendono la regolazione di frequenza come prodotto più prezioso.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Vincolo di bilancio</th><td>\(\sum P_{\text{gen}} = \sum P_{\text{load}}\)</td><td class="cmt">in ogni istante</td></tr>
+<tr><th scope="row">Energia cinetica accumulata</th><td>\(E = \tfrac{1}{2}J\omega^2\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Equazione del moto</th><td>\(\dfrac{df}{dt} = \dfrac{f_0\,\Delta P}{2HS}\)</td><td class="cmt">H in secondi</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Statismo</th><td>\(\Delta P = -\dfrac{1}{R}\,\dfrac{\Delta f}{f_0}\)</td><td class="cmt">R ≈ 4–5 %</td></tr>
+<tr><th scope="row">Carico residuo</th><td>\(P_{\text{net}} = P_{\text{load}}-P_{\text{eolico}}-P_{\text{solare}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Autoregolazione del carico</th><td>\(P_{\text{load}}(f) \approx P_0\left[1+D\,\Delta f\right]\)</td><td class="cmt">D ≈ 1–2 %/Hz</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Energia della batteria</th><td>\(E = P\times t\)</td><td class="cmt">100 MW / 200 MWh = 2 h</td></tr>
+<tr><th scope="row">Limite di RoCoF</th><td>\(\left|\dfrac{df}{dt}\right| &lt; 1\ \text{Hz/s}\)</td><td class="cmt">un vincolo di protezione</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🎚️</span> Uno statismo del 4% significa che una variazione di frequenza del 4% muoverebbe l'unità su tutto il suo campo di potenza. A 50 Hz sono 2 Hz per l'escursione completa, quindi un calo di 0,2 Hz richiama circa il 10% della potenza della macchina: automaticamente, senza che nessuno mandi un segnale.</li><li><span aria-hidden="true">🔋</span> Le batterie di rete si dichiarano con potenza ed energia separate: un sistema da 100 MW / 200 MWh eroga la potenza massima per due ore. Per la regolazione di frequenza conta la potenza; per spostare il solare alla sera conta l'energia.</li><li><span aria-hidden="true">📈</span> I prezzi negativi dell'elettricità sono il segnale di taglio tradotto in mercato. Quando il sole è alto, il vento soffia e la domanda è bassa, i produttori pagano per continuare a produrre invece di fermarsi: il che ti dice che il vincolo fisico è reale.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>La frequenza come variabile di stato, la gerarchia delle riserve e che cosa cambia con gli inverter</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Perché la frequenza è l'osservabile</h3>
+<p>In un sistema sincrono in corrente alternata la frequenza elettrica di ogni generatore è legata rigidamente alla velocità dell'albero dal numero di poli, e tutte le macchine sono agganciate a un angolo elettrico comune dalla rete stessa. Questo rende la frequenza di sistema un'unica variabile di stato osservabile ovunque che riassume l'intero bilancio di potenza: una fortuna sbalorditiva per chi fa controllo, perché l'errore aggregato viene diffuso dappertutto alla velocità della rete senza bisogno di alcuna telemetria. Differenze locali di angolo esistono e trasportano potenza: \(P_{ij} \approx \frac{V_iV_j}{X_{ij}}\sin(\delta_i-\delta_j)\), ed è per questo che un grande disturbo si manifesta come oscillazione interarea prima di assestarsi su una frequenza comune.</p>
+<h3><span class="hn">02</span>L'equazione del moto e ciò che vincola</h3>
+<p>Per il sistema aggregato, \(\frac{2H}{f_0}\frac{df}{dt} = P_m - P_e\) in per unit, quindi il RoCoF immediatamente dopo una perdita è fissato dalla sola inerzia: nessun regolatore, per quanto veloce, cambia i primi istanti. Quel che segue è una gara fra la frequenza che scende e la riserva che arriva, e la grandezza che conta nell'esercizio è il <strong>nadir</strong>, il punto più basso raggiunto, perché il distacco automatico del carico per minima frequenza è armato a soglie fisse, tipicamente a partire da circa 49,0 Hz. Il nadir dipende dall'inerzia, dal volume di riserva e, in modo determinante, dalla <em>velocità</em> della riserva: una riserva lenta che alla fine consegna il doppio può comunque lasciare che il nadir superi la taratura di un relè. È esattamente il prodotto che vendono le batterie.</p>
+<h3><span class="hn">03</span>La gerarchia del controllo</h3>
+<p>La risposta primaria è un controllo proporzionale decentralizzato con statismo voluto, \(\Delta P = -\Delta f/(R f_0)\). Un controllo proporzionale non può riportare il set point: scambia un errore permanente con la stabilità e con la ripartizione automatica del carico fra le unità in proporzione alla loro taglia, che è esattamente il comportamento che vuoi quando nessuno sta coordinando. La regolazione secondaria aggiunge l'azione integrale per area di controllo, portando a zero l'errore d'area \(ACE = \Delta P_{\text{tie}} + B\Delta f\) affinché ogni area pulisca il proprio squilibrio invece di appoggiarsi ai vicini. La riserva terziaria ricostruisce poi la capacità consumata. È la separazione delle scale temporali - secondi, minuti, decine di minuti - a impedire agli strati di litigare fra loro.</p>
+<h3><span class="hn">04</span>Il carico residuo, e perché l'anatra è il vero problema</h3>
+<p>Le rinnovabili variabili vanno trattate come carico negativo, quindi il parco dispacciabile vede \(P_{\text{net}}\). Il fotovoltaico in particolare rimodella quella curva più di quanto la riduca: svuota il centro della giornata lasciando intatto il picco serale, così la rampa richiesta a tutto il resto cresce assai più in fretta dell'energia spiazzata. I vincoli che mordono diventano il minimo tecnico degli impianti obbligati, la capacità di rampa in MW/min e i tempi di avviamento, nessuno dei quali compare in una contabilità solo energetica di quanta elettricità rinnovabile è stata prodotta. Tagli e prezzi negativi sono il modo in cui il mercato mette un prezzo a un'impossibilità fisica, e arrivano molto prima che la quota rinnovabile annua sembri impressionante.</p>
+<h3><span class="hn">05</span>Che cosa cambia con gli inverter</h3>
+<p>Eolico e fotovoltaico si collegano tramite elettronica di potenza con energia cinetica accumulata trascurabile, e gli inverter grid-following convenzionali hanno bisogno di una forma d'onda di tensione stabile a cui agganciarsi: misurano l'angolo della rete invece di imporlo. Al crescere della loro quota peggiorano due cose insieme: l'inerzia di sistema, quindi il RoCoF, e la robustezza della sorgente di tensione su cui tutti si stanno appoggiando. Le contromisure sono ormai ben capite: inerzia sintetica e risposta rapida in frequenza da batterie ed eolico, compensatori sincroni per inerzia vera e potenza di cortocircuito, e soprattutto inverter <strong>grid-forming</strong> che impongono un angolo di tensione invece di seguirlo. L'Irlanda limita la penetrazione istantanea di generazione non sincrona esattamente per questo, alzando il tetto solo man mano che le mitigazioni si dimostrano affidabili.</p>
+<h3><span class="hn">06</span>Accumulo, flessibilità e il costo della variabilità</h3>
+<p>L'accumulo non è un prodotto solo. La regolazione di frequenza vuole potenza e velocità e quasi nessuna energia; spostare il solare vuole qualche ora di energia; le calme di vento di più giorni vogliono settimane di energia a un costo per kWh che le batterie non possono avvicinare, ed è lì che rientrano idrogeno, pompaggio e interconnessioni. Il modo giusto di vedere l'insieme è che la generazione variabile abbassa il costo dell'energia e alza il valore della flessibilità - e quella flessibilità si può comprare dall'accumulo, dalla rete di trasmissione, dalla risposta della domanda, o tenendo fermi alcuni impianti dispacciabili per qualche decina di ore all'anno. Quale vinca è una questione economica con sotto un vincolo fisico durissimo: in ogni istante, il bilancio deve comunque essere esatto.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Equazione del moto</th><td>\(\dfrac{2H}{f_0}\dfrac{df}{dt} = P_m-P_e\)</td><td class="cmt">in per unit</td></tr>
+<tr><th scope="row">RoCoF iniziale</th><td>\(\left.\dfrac{df}{dt}\right|_{0} = \dfrac{f_0\Delta P}{2HS}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Energia accumulata</th><td>\(E_{\text{kin}} = H\cdot S\)</td><td class="cmt">H = secondi a piena potenza</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Risposta di statismo</th><td>\(\Delta P = -\dfrac{\Delta f}{R\,f_0}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Errore di area</th><td>\(ACE = \Delta P_{\text{tie}}+B\,\Delta f\)</td><td class="cmt">portato a zero dalla secondaria</td></tr>
+<tr><th scope="row">Transito di potenza</th><td>\(P_{ij} = \dfrac{V_iV_j}{X_{ij}}\sin(\delta_i-\delta_j)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Carico residuo</th><td>\(P_{\text{net}} = P_L-P_{\text{FRNP}}\)</td><td class="cmt">la curva ad anatra</td></tr>
+<tr><th scope="row">Fabbisogno di rampa</th><td>\(\dfrac{dP_{\text{net}}}{dt}\)</td><td class="cmt">MW/min, il vincolo che morde</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🧊</span> Alcune reti installano ormai compensatori sincroni: grandi alternatori senza alcun motore primo, che girano a vuoto solo per fornire inerzia e potenza di cortocircuito. Diverse centrali a carbone dismesse sono state convertite a questo ruolo, tenendo la macchina e togliendo la caldaia.</li><li><span aria-hidden="true">🇮🇪</span> L'Irlanda limita la penetrazione non sincrona di sistema - la quota istantanea da eolico, solare e importazioni - a un tetto definito, alzato passo dopo passo man mano che inverter grid-forming e risposta rapida in frequenza si dimostrano affidabili. È l'esempio più chiaro al mondo di inerzia trattata come vincolo esplicito di esercizio.</li><li><span aria-hidden="true">⏱️</span> Una batteria eroga tutta la sua risposta in frequenza in meno di 200 millisecondi; una turbina a gas ci mette decine di secondi. Poiché il nadir di frequenza arriva entro una decina di secondi, quella differenza di velocità vale più di una grande quantità di riserva lenta.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Electrical_grid" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Energia</h2>
+    <ul><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/come-funzionano-i-pannelli-solari/">Come funzionano i pannelli solari</a></li><li><a href="/it/turbine-eoliche-limite-di-betz/">Turbine eoliche e il limite di Betz</a></li><li><a href="/it/come-funziona-la-pompa-di-calore/">Pompe di calore: più calore di quanto ne paghi</a></li><li><a href="/it/come-funziona-un-reattore-nucleare/">Come funziona un reattore nucleare</a></li><li><a href="/it/come-funzionano-le-batterie-di-rete/">Come immagazzinano l'elettricità le batterie di rete</a></li><li><a href="/it/come-si-produce-idrogeno-verde/">Come si produce l'idrogeno verde</a></li><li><a href="/it/dove-va-a-finire-il-calore-di-casa/">Dove va a finire il calore di casa tua</a></li><li><a href="/it/come-si-produce-l-elettricita/">Come si produce davvero l'elettricità</a></li><li><a href="/it/quanta-elettricita-consuma-casa-tua/">Quanta elettricità consuma casa tua</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

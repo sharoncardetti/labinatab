@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where Does the Heat in Your House Go? | Lab-in-a-Tab</title>
+<meta name="description" content="Your heating is not warming your house. It is replacing, watt for watt, the heat that is leaving through the roof, the walls, the windows and the gaps.…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-home-insulation-works/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-home-insulation-works/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/dove-va-a-finire-il-calore-di-casa/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/ou-part-la-chaleur-de-votre-maison/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-home-insulation-works/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Where Does the Heat in Your House Go? — Explained &amp; Simulated">
+<meta property="og:description" content="Your heating is not warming your house. It is replacing, watt for watt, the heat that is leaving through the roof, the walls, the windows and the gaps.…">
+<meta property="og:url" content="https://labinatab.com/how-home-insulation-works/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Where Does the Heat in Your House Go? — Explained &amp; Simulated">
+<meta name="twitter:description" content="Your heating is not warming your house. It is replacing, watt for watt, the heat that is leaving through the roof, the walls, the windows and the gaps.…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-home-insulation-works/#article",
+   "headline": "Where Does the Heat in Your House Go?",
+   "name": "Where Does the Heat in Your House Go?",
+   "description": "Your heating is not warming your house. It is replacing, watt for watt, the heat that is leaving through the roof, the walls, the windows and the gaps.…",
+   "url": "https://labinatab.com/how-home-insulation-works/",
+   "mainEntityOfPage": "https://labinatab.com/how-home-insulation-works/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "U-values",
+    "Heat loss",
+    "Retrofit"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Where Does the Heat in Your House Go?",
+    "sameAs": "https://en.wikipedia.org/wiki/Building_insulation"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Where Does the Heat in Your House Go?",
+     "item": "https://labinatab.com/how-home-insulation-works/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-home-insulation-works/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/dove-va-a-finire-il-calore-di-casa/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/ou-part-la-chaleur-de-votre-maison/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energy</nav>
+  <h1>Where Does the Heat in Your House Go?</h1>
+  <p class="lead">Your heating is not warming your house. It is replacing, watt for watt, the heat that is leaving through the roof, the walls, the windows and the gaps. Here is the bill, itemised.</p>
+  <div class="chips"><span>U-values</span><span>Heat loss</span><span>Retrofit</span></div>
+  <section class="sim-embed" data-sim="insulation" data-color="#c2410c" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#c2410c"><span class="sg-lbl">Try this</span><span>Look first at which river is the fattest, before you touch anything. Then drag <b>Thickness of insulation</b> from 0 to 5 cm and watch <b>Heat leaking out right now</b> drop - and now go from 5 to 25 cm and see how much less that second helping buys you. Put the insulation at 12 cm, then work on <b>How draughty it is</b>: pull it down from 1.6 to 0.4 and watch the green river shrink. Finally change <b>Panes of glass in the windows</b> from 1 to 3 panes and decide, from <b>Heating bill a year</b>, whether new windows or a sealed letterbox was the better euro.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#c2410c"><span class="sg-lbl">Try this</span><span>Confirm the hyperbolic law first: read the wall figure at <b>Insulation thickness</b> = 0, 5, 10 and 20 cm and check that the improvements go roughly 1.7 → 0.45 → 0.29 → 0.16 W/m²K, so the marginal benefit collapses. Then compare interventions on equal terms - find how many centimetres of wall insulation buy the same reduction in <b>Heat loss</b> as moving <b>Glazing</b> from 1 to 3, and as halving <b>Air changes per hour</b>. Finally, watch <b>Largest term</b> change hands as you improve each element, and note the peak load figure: it is what sizes the heat pump.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#c2410c"><span class="sg-lbl">Try this</span><span>Use the model to locate the optimum rather than the maximum. Compute the marginal saving per centimetre of <b>Insulation thickness d</b> as you sweep it, and identify where the curve flattens; that knee, not the highest achievable value, is where cost-optimal design sits. Then quantify the three interventions in W/K per euro of plausible cost. Finally, examine the model's own limits: estimate what a 15% thermal bridging allowance would do to a well-insulated case compared with an uninsulated one, and note that <b>Annual heat demand</b> ignores solar and internal gains worth 15-25% in a real dwelling.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A warm house on a cold night: twenty degrees in, zero out. Each coloured river is heat leaving by one route, and its thickness <em>is</em> how much goes that way - red over the roof, orange through the walls, blue through the windows, green out through the gaps, violet down into the ground. The big number is what a year of that heat costs. Add insulation and the house puts on a coat: every river thins, and the fattest one changes hands.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Every part of the house leaks, and the biggest one is almost never the part you were about to spend money on.</b> Windows feel cold, so they get blamed, but there is far more wall than window - and in an old house the draughts alone can be a quarter of the whole bill and cost nearly nothing to fix. Watch what happens with the first slider, too: going from nothing to five centimetres is transformative, and going from five to twenty-five barely moves the number. That is not a flaw, it is the shape of the maths - heat has to cross the thickness you have already added, so each extra layer matters less than the one before. Insulate the worst thing first, stop when the next centimetre stops paying, and remember the last line: the cheapest kilowatt-hour of the year is the one your house never needed.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A steady-state model of a detached house: 110 m² of wall, 75 m² each of roof and floor, 18 m² of glazing and 300 m³ of volume, at \(\Delta T = 20\ \text{K}\). Each element contributes \(U_iA_i\) and the air leakage contributes \(0.33\,nV\), so the total loss coefficient \(H\) in W/K sets both the instantaneous load \(H\Delta T\) and the annual demand \(24H\,\mathrm{DD}/1000\) at 2500 degree-days. Wall and roof U-values follow \(U = 1/(R_{si}+d/\lambda+R_{se})\) with \(\lambda = 0.035\) W/mK; glazing steps between 5.0, 2.7 and 0.8 W/m²K. Annual cost assumes gas at 0.10 €/kWh in a 90% boiler.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Retrofit is a sequence, not a shopping list, because every improvement promotes the next weakest term.</b> Start with a solid-walled house and the fabric dominates; insulate it and the air leakage becomes the largest single line; seal that and the windows and the floor take over. The arithmetic that drives it is \(U = 1/(R_{si}+d/\lambda+R_{se})\): thickness sits in the denominator, so the first few centimetres remove most of the loss and the rest are increasingly ceremonial. Notice also the number the industry cares about most - peak load. Halving \(H\) does not only halve the bill, it halves the kilowatts the heating system must deliver on the coldest day, which is what makes a modestly sized heat pump possible at all. Insulation is the cheapest way to buy a smaller machine.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>One-dimensional steady-state envelope model: \(H = \sum U_iA_i + 0.33\,nV\), with \(U = 1/(R_{si}+d/\lambda+R_{se})\), \(R_{si}=0.13\), \(R_{se}\) folded into the constant, \(\lambda = 0.035\) W/mK, and roof thickness scaled at 1.5× the wall for the same slider. Glazing is stepped through single, double-argon and triple low-e. Demand is degree-day based at 2500 Kd with no solar or internal gains, and no thermal bridging term - both omissions matter, and in opposite directions.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The two omissions in this model are exactly the two things that make measured retrofits disappoint.</b> First, thermal bridges: as plane elements improve, junctions do not, so a \(\psi\)-value allowance that is negligible at \(U = 1.7\) becomes a fifth of the total at \(U = 0.2\) - the deeper the retrofit, the larger the fraction of the loss that a one-dimensional calculation cannot see. Second, occupancy: predicted savings assume the house was already heated to 20 °C, and under-heated homes take a large share of the improvement as comfort instead of cash, which is the rebound effect and is worth 10-30%. Both are reasons to measure rather than to model, and neither changes the ranking the bar chart gives you. The genuinely useful invariant is that \(H\) sets everything - annual energy, peak load, plant size, and the temperature at which the heating can run - so it is the single number worth designing against.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>A bucket with holes in it</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Think of a warm house as a bucket with holes in the bottom. The heating is the tap. When the water level holds steady it does not mean the bucket is full and finished - it means the tap is pouring in exactly as fast as the holes are letting it out. Turn the tap off and the level drops. That is your house in winter, and every euro you spend on heating is buying water for a leaking bucket.</p>
+<p>Heat always moves from warm to cold, and it never gets tired. On a January night your living room is twenty degrees warmer than the garden, so heat pours out through everything: the roof, the walls, the windows, the floor, and the gaps around the letterbox. The four surfaces leak by <strong>conduction</strong> - heat crawling through solid material - and the gaps leak by simply throwing your warm air outside and pulling cold air in.</p>
+<p>Insulation does something cleverer than you might think. It does not block heat with sheer bulk. Still air is one of the best insulators there is, and every insulating material - mineral wool, foam, feathers in a duvet, the fur on an animal - is really a way of holding air still so it cannot carry heat away. Mineral wool is about 95% air. You are not installing a barrier; you are installing trapped air.</p>
+<p>Where should the first hundred euros go? Almost always the roof, because heat rises and lofts are easy to reach - then the draughts, which cost almost nothing to seal. Windows feel cold and get blamed first, but a single pane loses roughly five times as much per square metre as an insulated wall, and there is far less window than wall. The simulation puts real numbers on all of it, so you can stop guessing and look.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🪶</span> A duvet, a jumper and a loft full of mineral wool all work identically: they hold a thick layer of air still. The material barely matters - what matters is that the air inside it cannot circulate.</li><li><span aria-hidden="true">📉</span> The first ten centimetres of loft insulation cut heat loss through the roof by about 80%. The next ten cut it by another 8%. Insulation has sharply diminishing returns, which is why there is a sensible thickness and then a silly one.</li><li><span aria-hidden="true">💨</span> In a typical older house, a fifth to a third of the heat loss is simply air escaping through gaps. Sealing draughts is the cheapest energy saving available to almost anyone.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>U-values, degree-days and where the watts actually go</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Every element of a building is described by a single number: its <strong>U-value</strong>, in watts per square metre per kelvin of temperature difference. Multiply by area and by the inside-outside difference and you have watts: \(Q = \sum U_i A_i \Delta T\). A solid brick wall is about 1.7 W/m²K, the same wall with 15 cm of mineral wool about 0.2, a single-glazed window 5.0, and modern triple glazing 0.8. Those numbers are the whole argument, and they are all measured the same way.</p>
+<p>The U-value is the reciprocal of the total thermal resistance, \(U = 1/\left(R_{si}+\sum d_i/\lambda_i+R_{se}\right)\), where \(\lambda\) is conductivity and \(d\) is thickness. That form explains the most important practical fact about insulation: because thickness appears in the denominator, the returns are hyperbolic. Going from 0 to 10 cm on a wall takes it from 1.7 to about 0.29 W/m²K. Going from 10 to 20 cm takes it to 0.16. The first centimetres are transformative and the last ones are almost pointless.</p>
+<p>Then there is the loss that has no U-value at all. Ventilation and infiltration carry heat out with the air itself: \(Q_v = 0.33\,n\,V\,\Delta T\), with \(n\) the air changes per hour and \(V\) the volume, the 0.33 being the heat capacity of air in convenient units. An old house at one and a half air changes an hour loses as much through its gaps as through its walls. You cannot seal a house completely - people need fresh air - which is why airtight buildings pair sealing with mechanical ventilation and heat recovery.</p>
+<p>Annual energy comes from <strong>degree-days</strong>. Sum the temperature difference over the heating season - about 2500 kelvin-days for northern Italy or southern England - and \(E = \sum UA \times 24 \times \text{DD}/1000\) gives kilowatt-hours per year. The same sum also gives the peak load that sizes the boiler or heat pump, and that is the number that turns insulation into a bargain: halve the heat loss and you can install a heat pump half the size, which changes the capital cost as well as the running cost.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Fabric heat loss</th><td>\(Q = \sum U_i A_i \Delta T\)</td><td class="cmt">watts</td></tr>
+<tr><th scope="row">U-value</th><td>\(U = \dfrac{1}{R_{si}+\sum d_i/\lambda_i+R_{se}}\)</td><td class="cmt">W/m²K</td></tr>
+<tr><th scope="row">Insulation resistance</th><td>\(R = \dfrac{d}{\lambda}\)</td><td class="cmt">λ ≈ 0.035 W/mK for wool</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Ventilation loss</th><td>\(Q_v = 0.33\,n\,V\,\Delta T\)</td><td class="cmt">n = air changes per hour</td></tr>
+<tr><th scope="row">Total loss coefficient</th><td>\(H = \sum U_iA_i + 0.33nV\)</td><td class="cmt">W/K</td></tr>
+<tr><th scope="row">Annual energy</th><td>\(E = \dfrac{H \times 24 \times \mathrm{DD}}{1000}\)</td><td class="cmt">kWh per year</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Peak load</th><td>\(P = H\,\Delta T_{\text{design}}\)</td><td class="cmt">sizes the heat pump</td></tr>
+<tr><th scope="row">Typical values</th><td>\(U_{\text{brick}}\approx1.7,\ U_{3\text{-glaze}}\approx0.8\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🌉</span> Thermal bridges - balcony slabs, window reveals, steel lintels - can add 10-30% to a well-insulated building's heat loss, because they short-circuit the insulation. They are accounted for separately with linear ψ-values, in W/mK rather than W/m²K.</li><li><span aria-hidden="true">💦</span> Insulation changes where surfaces sit relative to the dew point. Insulate badly - inside the wall, without a vapour control layer - and you can move condensation into the structure, which is how well-meant retrofits grow mould.</li><li><span aria-hidden="true">🔁</span> Mechanical ventilation with heat recovery reclaims 80-90% of the heat in outgoing air. It only makes sense once the building is airtight; in a leaky house the air simply goes around it.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Three transport mechanisms, the bridges nobody draws, and why the savings never quite arrive</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>What a U-value hides</h3>
+<p>A U-value is a steady-state, one-dimensional lump that quietly contains all three heat transport mechanisms. Inside the insulation, conduction through the solid matrix and through the trapped air run in parallel with radiation between fibres and with any convection the pore structure permits; the measured \(\lambda\) of mineral wool, around 0.035 W/mK, is the sum of all of them and is why performance degrades if the material is compressed or wetted. The surface resistances \(R_{si} \approx 0.13\) and \(R_{se} \approx 0.04\) m²K/W are themselves combined convection and radiation coefficients, which is why an exposed windy wall performs slightly differently from a sheltered one, and why radiant barriers help in some assemblies and do nothing in others.</p>
+<h3><span class="hn">02</span>Glazing, where the physics is most visible</h3>
+<p>A single pane is not a good insulator because glass conducts well and a single sheet has no cavity: \(U \approx 5.7\). Add a second pane and the gas gap does the work, with an optimum around 16 mm - narrower and conduction dominates, wider and convection cells start up inside the cavity. Fill it with argon instead of air to cut conduction, and coat one surface with a low-emissivity layer to cut the radiative term, which alone is worth roughly a third of the remaining loss. Triple glazing at \(U = 0.8\) is not three times better than double at 2.7 by being thicker; it is better because there are two cavities and two coatings. Meanwhile the frame, which nobody photographs, is often the worst part of the window.</p>
+<h3><span class="hn">03</span>Thermal bridges and the gap between calculation and reality</h3>
+<p>One-dimensional U-values assume the wall is a wall everywhere. Real buildings have junctions, balconies, lintels and fixings where the insulation is interrupted, and heat takes the short cut. These are handled with linear transmittance \(\psi\) in W/mK and point transmittance \(\chi\), determined by two- and three-dimensional numerical modelling. In a poorly insulated building they are a rounding error; in a well insulated one they can be a fifth of the total, because as the plane elements improve, the junctions do not. This is the general shape of deep retrofit: every improvement promotes the next weakest term to being the dominant one.</p>
+<h3><span class="hn">04</span>Air, and the awkward trade with health</h3>
+<p>Infiltration heat loss \(Q_v = \rho c_p \dot V \Delta T\), with the familiar 0.33 W/m³K constant folding in air's density and specific heat, is driven by wind pressure and stack effect, so it is neither constant nor controllable in a leaky building. Airtightness testing quotes \(q_{50}\) or \(n_{50}\) at 50 Pa, and modern standards demand values a leaky house would fail by a factor of ten. But a sealed house without deliberate ventilation accumulates moisture, CO₂ and volatile organics, so the standard answer is mechanical ventilation with heat recovery, recovering 80-90% of the outgoing heat. The order of operations matters: seal first, then ventilate deliberately - the reverse produces mould.</p>
+<h3><span class="hn">05</span>Steady state is a convenient lie</h3>
+<p>All of the above assumes equilibrium. Real buildings are dynamic: thermal mass stores heat and shifts loads in time, described by admittance, decrement factor and time lag, which is why a heavy masonry building stays cool through a hot afternoon and a lightweight one does not. Solar gains through south-facing glass can supply a serious fraction of winter heating and a serious cooling problem in summer, so the same window is an asset in January and a liability in July - hence external shading, which works, versus internal blinds, which mostly do not. Dynamic simulation exists because the annual sum of a steady-state model can be right while every hour in it is wrong.</p>
+<h3><span class="hn">06</span>Why measured savings are smaller than modelled ones</h3>
+<p>The energy performance gap is well documented and has several honest causes. Predicted savings assume the house was heated to 20 °C before the retrofit, and cold houses are frequently under-heated, so occupants take part of the improvement as comfort rather than as money - the rebound effect, typically 10-30% for heating. Workmanship gaps, thermal bridging not modelled, and airtightness worse than specified account for more. None of this argues against insulating; it argues for measuring, and for the one line that survives every version of this analysis: the cheapest kilowatt-hour is the one the building never needed.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Total resistance</th><td>\(R_{\text{tot}} = R_{si}+\sum\dfrac{d_i}{\lambda_i}+R_{se}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">U-value</th><td>\(U = \dfrac{1}{R_{\text{tot}}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">With thermal bridges</th><td>\(H = \sum U_iA_i+\sum\psi_j\ell_j+\sum\chi_k\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Ventilation loss</th><td>\(Q_v = \rho c_p\dot V\Delta T \approx 0.33\,nV\Delta T\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">With heat recovery</th><td>\(Q_v \to (1-\eta_{\text{hr}})\,0.33\,nV\Delta T\)</td><td class="cmt">η ≈ 0.85</td></tr>
+<tr><th scope="row">Annual demand</th><td>\(E = \dfrac{24\,H\,\mathrm{DD}}{1000}-Q_{\text{gains}}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Decrement factor</th><td>\(f = \dfrac{\Delta T_{\text{in}}}{\Delta T_{\text{out}}}\)</td><td class="cmt">dynamic response of mass</td></tr>
+<tr><th scope="row">Rebound</th><td>\(S_{\text{actual}} = (1-r)S_{\text{modelled}}\)</td><td class="cmt">r ≈ 0.1–0.3</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🪟</span> The optimum cavity in double glazing is about 16 mm. Below that, conduction across the gas dominates; above it, a convection loop starts inside the cavity and the U-value gets worse again.</li><li><span aria-hidden="true">🧊</span> Low-emissivity coatings are a few atoms thick and cut the radiative heat transfer across a glazing cavity by around two thirds. They are the single largest improvement in windows since the second pane.</li><li><span aria-hidden="true">📊</span> Degree-days let you compare buildings across climates: multiply the loss coefficient in W/K by 24 and by the local degree-day total to get annual kWh. It is crude, ignores solar and internal gains, and is still one of the most useful estimates in the business.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Building_insulation" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Energy</h2>
+    <ul><li><a href="/energy-conservation/">Energy &amp; Conservation</a></li><li><a href="/how-solar-panels-work/">How Solar Panels Work</a></li><li><a href="/wind-turbines-betz-limit/">Wind Turbines &amp; the Betz Limit</a></li><li><a href="/how-heat-pumps-work/">Heat Pumps: More Heat Than You Pay For</a></li><li><a href="/how-the-power-grid-works/">The Power Grid: Balancing on a Knife Edge</a></li><li><a href="/how-does-a-nuclear-reactor-work/">How Does a Nuclear Reactor Work?</a></li><li><a href="/how-grid-batteries-work/">How Do Grid Batteries Store Electricity?</a></li><li><a href="/how-green-hydrogen-is-made/">How Is Green Hydrogen Made?</a></li><li><a href="/how-electricity-is-generated/">How Is Electricity Actually Made?</a></li><li><a href="/how-much-electricity-appliances-use/">How Much Electricity Does Your Home Use?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

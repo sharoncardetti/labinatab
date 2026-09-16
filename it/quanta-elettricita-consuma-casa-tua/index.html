@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quanta elettricità consuma casa tua | Lab-in-a-Tab</title>
+<meta name="description" content="Il bollitore sembra costosissimo e il router sembra gratis. Sono sbagliate entrambe le intuizioni, e l'aritmetica che le risolve richiede dieci secondi…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-much-electricity-appliances-use/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/combien-d-electricite-consomme-votre-maison/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-much-electricity-appliances-use/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Quanta elettricità consuma casa tua — Spiegato e simulato">
+<meta property="og:description" content="Il bollitore sembra costosissimo e il router sembra gratis. Sono sbagliate entrambe le intuizioni, e l'aritmetica che le risolve richiede dieci secondi…">
+<meta property="og:url" content="https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Quanta elettricità consuma casa tua — Spiegato e simulato">
+<meta name="twitter:description" content="Il bollitore sembra costosissimo e il router sembra gratis. Sono sbagliate entrambe le intuizioni, e l'aritmetica che le risolve richiede dieci secondi…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/#article",
+   "headline": "Quanta elettricità consuma casa tua",
+   "name": "Quanta elettricità consuma casa tua",
+   "description": "Il bollitore sembra costosissimo e il router sembra gratis. Sono sbagliate entrambe le intuizioni, e l'aritmetica che le risolve richiede dieci secondi…",
+   "url": "https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/",
+   "mainEntityOfPage": "https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Kilowattora",
+    "Elettrodomestici",
+    "Bollette"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Quanta elettricità consuma casa tua",
+    "sameAs": "https://en.wikipedia.org/wiki/Kilowatt-hour"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Quanta elettricità consuma casa tua",
+     "item": "https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-much-electricity-appliances-use/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/combien-d-electricite-consomme-votre-maison/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energia</nav>
+  <h1>Quanta elettricità consuma casa tua</h1>
+  <p class="lead">Il bollitore sembra costosissimo e il router sembra gratis. Sono sbagliate entrambe le intuizioni, e l'aritmetica che le risolve richiede dieci secondi, una volta che sai dove guardare.</p>
+  <div class="chips"><span>Kilowattora</span><span>Elettrodomestici</span><span>Bollette</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"kwh":{"junior":{"ppl":"Persone in casa","ev":"Chilometri al giorno in auto elettrica","ac":"Ore al giorno di aria condizionata","day":"Consumo in un giorno","year":"Consumo in un anno","cost":"Costo in un anno","top":"Chi consuma di più","aFridge":"frigorifero e congelatore","aStand":"cose lasciate in standby","aWater":"scaldare l'acqua","aCook":"forno e piano cottura","aWash":"lavatrice","aDish":"lavastoviglie","aTV":"TV e computer","aLight":"luci","aAC":"aria condizionata","aEV":"auto elettrica","cRank":"un anno di elettricità, dal più grande","cEqT":"un kilowattora è più o meno","cEqA":"10 tazze di tè","cEqB":"un'ora di forno","cEqC":"6 km in auto elettrica","cEqD":"quattro giorni di lampadina LED"},"student":{"ppl":"Occupanti","ev":"Chilometri al giorno in elettrico","ac":"Ore di condizionamento al giorno","day":"Consumo giornaliero","year":"Consumo annuo","cost":"Costo annuo","top":"Carico maggiore","aFridge":"frigorifero e congelatore","aStand":"standby e sempre accesi","aWater":"acqua calda elettrica","aCook":"forno e piano cottura","aWash":"lavatrice","aDish":"lavastoviglie","aTV":"TV e informatica","aLight":"illuminazione","aAC":"aria condizionata","aEV":"veicolo elettrico","cRank":"consumo annuo per uso finale","cEqT":"un kilowattora è all'incirca","cEqA":"10 tazze di tè","cEqB":"un'ora di forno","cEqC":"6 km in auto elettrica","cEqD":"quattro giorni di lampadina LED"},"scholar":{"ppl":"Occupanti","ev":"Chilometri al giorno in elettrico","ac":"Ore di raffrescamento al giorno","day":"Consumo giornaliero","year":"Consumo annuo","cost":"Costo annuo","top":"Carico maggiore","aFridge":"refrigerazione","aStand":"standby e sempre accesi","aWater":"acqua calda elettrica","aCook":"cottura","aWash":"lavaggio biancheria","aDish":"lavastoviglie","aTV":"elettronica di consumo","aLight":"illuminazione","aAC":"raffrescamento","aEV":"veicolo elettrico","cRank":"consumo annuo per uso finale","cEqT":"un kilowattora è all'incirca","cEqA":"10 tazze di tè","cEqB":"un'ora di forno","cEqC":"6 km in auto elettrica","cEqD":"quattro giorni di lampadina LED"}}});</script>
+<section class="sim-embed" data-sim="kwh" data-color="#9333ea" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#9333ea"><span class="sg-lbl">Prova</span><span>Comincia da <b>Persone in casa</b> e guarda quali barre crescono: quelle che crescono sono le cose che le persone usano davvero, quelle che restano ferme sono le macchine che vanno che tu ci sia o no. Poi aggiungi un <b>Chilometri al giorno in auto elettrica</b> da 40 km al giorno e guarda dove si piazza in classifica. Infine alza <b>Ore al giorno di aria condizionata</b> e guarda <b>Costo in un anno</b> salire, poi ricava dalle barre quale singolo cambiamento farebbe risparmiare di più.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#9333ea"><span class="sg-lbl">Prova</span><span>Metti alla prova l'intuizione sul ciclo di lavoro. Nota che il frigorifero è un apparecchio da circa 100 W e supera comunque quasi tutto ciò che azioni attivamente, e ricava dal suo valore annuo la frazione di tempo in cui gira davvero. Poi trova l'incrocio: quanti chilometri al giorno servono perché l'auto superi tutto il resto messo insieme? Infine metti <b>Ore di condizionamento al giorno</b> a zero e <b>Chilometri al giorno in elettrico</b> a zero e leggi <b>Consumo annuo</b>: è una famiglia senza riscaldamento elettrico e senza auto, e dovrebbe stare nella fascia 2000-3500 kWh riportata dalla maggior parte delle statistiche europee.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#9333ea"><span class="sg-lbl">Prova</span><span>Usa il modello per mettere in luce i suoi stessi limiti. Prima ricava il carico di base: somma le voci che non dipendono da alcun cursore, dividi per 8760 e nota quale frazione del totale rappresenta un assorbimento permanente di qualche centinaio di watt. Poi costruisci il caso elettrificato - <b>Chilometri al giorno in elettrico</b> a 40 km/giorno più una pompa di calore mentale da 4 MWh - e stima il picco simultaneo, che le barre non possono mostrare: una colonnina da 7 kW più una pompa di calore da 5 kW più la cottura superano già un contratto domestico comune da 6 kW. Infine considera quali due di questi usi finali potrebbero essere spostati nel tempo senza che nessuno se ne accorga.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Una barra per ogni cosa che consuma elettricità in casa, ordinate con la più grande in cima e misurate in kilowattora all'anno. Il numero grande è il totale annuo e quello verde accanto è quanto costa a 28 centesimi a unità. Sotto le barre ci sono quattro cose che valgono all'incirca un kilowattora ciascuna, per farti sentire la dimensione dell'unità in cui è misurato tutto.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Ti costano le cose che producono calore e quelle che non si spengono mai, e nessuna delle due è quella che noti.</b> Al frigorifero non pensa nessuno, e va 8760 ore all'anno. Al bollitore pensano tutti, e va dieci minuti al giorno. Guarda dove sta l'acqua calda in classifica: scaldare l'acqua richiede una quantità di energia sorprendente, ed è per questo che una doccia costa più di una serata di televisione. E guarda che cosa fa un'auto elettrica quando la aggiungi: non è un piccolo extra, è più o meno una seconda famiglia. Vale la pena saperlo prima di comprarne una, perché la risposta di solito resta sì, ma il risparmio non si vede nella bolletta della luce.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Un modello annuo per uso finale: ogni voce è \(E = P\,t\,\delta\) sommata su un anno, con il numero di occupanti che scala i carichi manovrati dalle persone e lascia fissi quelli sempre accesi. L'aria condizionata è modellata a 1,8 kW su una stagione di cento giorni, e il veicolo a 0,18 kWh per chilometro. Le barre sono ordinate per energia annua, con la quota sul totale a destra, e il costo usa 0,28 €/kWh.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Ordina per energia e la risposta è sempre: prima il calore, poi ciò che è sempre acceso, poi tutto ciò che usi consapevolmente.</b> Quell'ordine è una conseguenza diretta di \(E = Pt\): una potenza grande per pochi minuti perde contro una potenza modesta per un anno, e nessuna quantità di interruttori spenti lo cambia ora che l'illuminazione è scesa a pochi punti percentuali del totale. Il modello rende concreta anche l'aritmetica dell'elettrificazione: aggiungere un'auto da 40 km al giorno aggiunge circa 2.600 kWh, più o meno raddoppiando una casa tipica, e una pompa di calore ne aggiungerebbe altrettanti. Ecco perché la domanda interessante per una casa moderna non è il totale annuo ma il picco - il contatore e l'allaccio, non la bolletta - e perché il controllore che decide <em>quando</em> quei carichi funzionano vale ormai più di un altro elettrodomestico efficiente.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Un modello annuo statico per uso finale con scalatura sugli occupanti, ore stagionali di raffrescamento e un termine veicolo a 0,18 kWh/km, ordinato per contributo. Produce deliberatamente solo energia annua: qui non c'è alcun profilo di carico, nessun fattore di contemporaneità e nessuna struttura tariffaria, che sono precisamente le grandezze a cui tiene chi pianifica la rete. Il costo è 0,28 €/kWh piatti, in luogo di una tariffa che nella realtà ha componenti di tempo e di potenza.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>L'energia annua è la variabile sbagliata per quasi tutte le decisioni che contano oggi, e questo grafico è un buon modo per capire perché.</b> Le barre ordinano correttamente gli usi finali e non dicono nulla del problema della rete, che è la contemporaneità: cento case sono servite da un trasformatore dimensionato ben sotto la somma dei loro picchi, ipotesi che regge perché le attività umane sono solo debolmente correlate - e che salta quando l'auto di tutti comincia a caricare alle sei e mezza. Ne seguono due conseguenze. Spostare un carico nel tempo vale più che ridurlo, per euro speso, una volta incassate le riduzioni facili; e la conversazione sull'energia domestica sta migrando dall'elettrodomestico al controllore. L'unico numero qui che merita ancora la tua attenzione così com'è è il carico di base: qualunque cosa segni il contatore alle tre di notte, moltiplicata per 8760, è comprata e mai usata.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Che cos'è davvero un kilowattora</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>La tua bolletta è scritta in <strong>kilowattora</strong>, e il nome ti dice esattamente che cosa sono: mille watt che funzionano per un'ora. Un bollitore da 2000 W consuma un kilowattora in mezz'ora. Una lampada da 10 W ha bisogno di cento ore per consumarne uno. È tutta qui l'idea: l'energia è potenza moltiplicata per tempo, e contano entrambe le metà.</p>
+<p>Ed è per questo che l'intuizione sbaglia così tanto. Il bollitore sembra enormemente costoso perché è rumoroso e caldo e la potenza la senti. Ma lo tieni acceso quattro minuti. Il frigorifero è silenzioso e insignificante e non ci pensi mai, e funziona per ottomilasettecentosessanta ore all'anno. Nell'arco di un anno vince comodamente l'elettrodomestico noioso. La regola per riconoscere i grossi è semplice: tutto ciò che produce calore, e tutto ciò che non si spegne mai.</p>
+<p>Poi ci sono i due nuovi arrivati che schiacciano tutto il resto. Scaldare l'acqua elettricamente costa caro perché l'acqua è sorprendentemente difficile da scaldare. E ricaricare un'auto elettrica consuma circa 0,18 kilowattora per ogni chilometro, quindi quaranta chilometri al giorno fanno circa sette kilowattora al giorno, più di quanto un piccolo appartamento consumi per tutto il resto messo insieme. Un'auto elettrica non si aggiunge alla bolletta della luce: la raddoppia più o meno, togliendo però una bolletta del carburante che era ancora più grande.</p>
+<p>Gioca con i cursori e guarda quale barra è la più lunga. Poi vai a cercare il tuo numero: è stampato sulla bolletta, esattamente in queste unità. Una casa europea tipica consuma fra i due e i quattromila kilowattora all'anno senza riscaldamento elettrico, e due o tre volte tanto con.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🔌</span> Le cose lasciate in standby - il router, la TV, i caricabatterie, l'orologio del microonde - aggiungono di solito 150-300 kWh all'anno. È un elettrodomestico che non usi mai, acceso in permanenza.</li><li><span aria-hidden="true">☕</span> Bollire un bollitore pieno costa circa 0,15 kWh. Con la stessa energia potresti tenere accesa una lampadina LED moderna per due giorni interi: la differenza sta tutta nel fatto che scaldare le cose richiede molto e illuminarle pochissimo.</li><li><span aria-hidden="true">🚗</span> Un'auto elettrica che fa 15.000 km all'anno consuma circa 2.700 kWh, più o meno quanto un'intera famiglia consuma per tutto il resto. Resta molto più economica al chilometro della benzina, ma è un'aggiunta seria al contatore.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Potenza per tempo, ciclo di lavoro e dove si nascondono le sorprese</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>L'unica formula che serve è \(E = P\,t\), con la potenza in kilowatt e il tempo in ore. Tutto il resto è contabilità. Ciò che rende controintuitivi i consumi reali è il <strong>ciclo di lavoro</strong>: la frazione di tempo in cui un apparecchio assorbe davvero la sua potenza nominale. Un frigorifero è dichiarato attorno ai 100 W ma il compressore gira forse un terzo del tempo, quindi consuma come un apparecchio da 35 W, in continuo, per un anno: 300 kWh. Un bollitore da 2 kW usato quattro volte al giorno per quattro minuti fa 0,53 kWh al giorno, cioè 195 kWh all'anno. Due apparecchi che sembrano diversi cento volte stanno in realtà entro un fattore due.</p>
+<p>Ordina una casa per energia annua e la classifica è quasi sempre la stessa: prima ciò che produce calore, poi ciò che non si spegne mai, poi tutto il resto. Acqua calda elettrica, riscaldamento elettrico, asciugatrici, forni e lavastoviglie occupano i primi posti perché convertono elettricità in temperatura. L'illuminazione, un tempo il carico dominante, è crollata a un errore di arrotondamento: un LED fa il lavoro di una incandescenza da 60 W con 8 W, quindi una bolletta di illuminazione del 2005 è scesa di circa l'85%.</p>
+<p>Poi c'è la differenza fra energia e potenza, ed è lì che ci si fa fregare. La bolletta annua è energia; il tuo contatore, l'allaccio e la fascia tariffaria sono potenza. Una colonnina da 7 kW, uno scaldabagno istantaneo da 9 kW e un forno da 3 kW insieme superano il tipico contratto domestico italiano da 6 kW, e il contatore semplicemente stacca. L'elettrificazione non è quindi solo una questione di kilowattora: è la questione se il cavo che entra in casa sia abbastanza grosso per i kilowatt simultanei.</p>
+<p>Infine, misura invece di indovinare. Un misuratore da presa costa pochi euro e un contatore intelligente registra il tuo profilo a intervalli di un quarto d'ora. I due numeri da conoscere sono il totale annuo, dalla bolletta, e il tuo <em>carico di base</em>: la potenza che la casa assorbe alle tre di notte. Quel secondo numero, moltiplicato per 8760, è ciò che paghi per assolutamente niente.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Energia</th><td>\(E = P\,t\)</td><td class="cmt">kW × ore = kWh</td></tr>
+<tr><th scope="row">Con ciclo di lavoro</th><td>\(E = P\,t\,\delta\)</td><td class="cmt">δ = frazione di tempo acceso</td></tr>
+<tr><th scope="row">Totale annuo</th><td>\(E_{\text{anno}} = \sum_i P_i t_i \times 365\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Carico di base</th><td>\(E_{\text{base}} = P_{3\text{:00}}\times 8760\)</td><td class="cmt">il costo di ciò che resta acceso</td></tr>
+<tr><th scope="row">Auto elettrica</th><td>\(E = 0.18\ \text{kWh/km}\times d\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Scaldare l'acqua</th><td>\(E = \dfrac{mc\Delta T}{3.6\times10^6}\ \text{kWh}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Costo</th><td>\(\text{€} = E \times p\)</td><td class="cmt">p ≈ 0,25–0,30 €/kWh</td></tr>
+<tr><th scope="row">Limite di potenza</th><td>\(\sum P_{\text{simultanea}} &lt; P_{\text{contratto}}\)</td><td class="cmt">il contatore, non la bolletta</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">⏱️</span> Il ciclo di lavoro è il motivo per cui le targhe ingannano. Un frigo da 100 W che gira il 35% del tempo consuma in un anno più di un bollitore da 2000 W acceso quattro volte al giorno, perché 8760 ore battono 100 ore con largo margine.</li><li><span aria-hidden="true">💡</span> Sostituire tutte le lampadine a incandescenza di una casa con LED fa risparmiare circa 300-400 kWh all'anno. È stata la vittoria di efficienza più economica degli ultimi vent'anni, ed è ormai quasi del tutto incassata.</li><li><span aria-hidden="true">🔥</span> Il riscaldamento elettrico a resistenza è efficiente al 100% ed è comunque il modo più caro di scaldare qualsiasi cosa, perché una pompa di calore consegna tre o quattro unità di calore con la stessa unità di elettricità. Efficienza e costo sono domande diverse.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Profili di carico, contemporaneità e che cosa fa alla rete elettrificare una casa</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>Unità, e la confusione che generano</h3>
+<p>Un kilowatt è una velocità e un kilowattora è una quantità, e quasi ogni discussione pubblica sull'energia contiene almeno un punto in cui i due sono stati scambiati. La distinzione conta perché il sistema elettrico li tariffa separatamente: l'energia con la tariffa, la potenza con il costo di allaccio, la taglia del contatore e, sempre di più, i mercati della capacità. Un'altra trappola è l'energia <em>finale</em> contro quella <em>primaria</em>: 1 kWh consegnato a una presa rappresentava circa 2,5 kWh di combustibile in un sistema termico, ed è per questo che le statistiche nazionali in energia primaria fanno sembrare peggiore l'elettrificazione, e perché quelle stesse statistiche vanno maneggiate con cura man mano che la generazione si decarbonizza.</p>
+<h3><span class="hn">02</span>Profili di carico e fattore di contemporaneità</h3>
+<p>Il consumo annuo di una famiglia non dice quasi nulla al distributore; glielo dice la forma. La domanda domestica ha una spalla mattutina e un picco serale netto, e ciò che dimensiona il trasformatore di zona non è la somma dei picchi ma il <strong>fattore di contemporaneità</strong>: la probabilità che molte case facciano picco insieme. Per un centinaio di abitazioni, dopo la diversificazione, il carico di progetto per casa è una frazione del massimo di ciascuna. Ecco perché la rete di distribuzione ha retto per decenni apparecchi ben più grandi di quanto il cavo potrebbe servire simultaneamente, e perché l'arrivo di carichi correlati nel tempo - tutti che attaccano l'auto alle 18:30 - è un problema davvero diverso dall'arrivo di più energia.</p>
+<h3><span class="hn">03</span>La coda di ciò che resta sempre acceso</h3>
+<p>Alla fine degli anni Novanta lo standby fu stimato al 5-10% dell'elettricità residenziale nei paesi sviluppati, il che portò al regolamento europeo da 1 W e ai suoi equivalenti altrove. I dispositivi moderni sono molto migliori presi uno a uno, ma sono molti di più, e gli apparati di rete sempre accesi hanno in parte sostituito i vecchi carichi vampiro. La diagnosi non è cambiata ed è splendidamente semplice: leggi il contatore alle tre di notte. Qualunque cosa segni è un carico permanente, e moltiplicarlo per 8760 di solito produce un numero scomodo.</p>
+<h3><span class="hn">04</span>Che cosa fa davvero l'elettrificazione</h3>
+<p>Una casa europea tipica senza riscaldamento elettrico consuma 2-4 MWh all'anno. Aggiungi una pompa di calore e ne guadagna 3-6; aggiungi un'auto elettrica e altri 2-3. La famiglia più o meno triplica la sua elettricità mentre la sua energia primaria totale cala, perché una pompa di calore moltiplica e una trasmissione elettrica converte all'85% contro il 25% di un motore a benzina. Ma il picco cresce più in fretta dell'energia: una colonnina da 7 kW e una pompa di calore da 5 kW accanto al carico di cottura esistente spingono la domanda simultanea oltre molti limiti di fornitura attuali. La transizione energetica, a livello di una singola casa, è soprattutto una storia sulla sezione di un cavo e sull'orario di due carichi.</p>
+<h3><span class="hn">05</span>Adesso l'orario vale soldi</h3>
+<p>Le tariffe a fasce, e sempre più quelle agganciate al prezzo orario all'ingrosso, fanno sì che un kilowattora non abbia più un prezzo unico. Spostare la ricarica dell'auto alle ore piccole può dimezzarne il costo, e lo stesso spostamento vale ancora di più per la rete che per il cliente, perché toglie dal picco un carico correlato. Ecco perché la tecnologia residenziale interessante non è più l'elettrodomestico ma il controllore: la cosa che decide quando l'auto carica e quando il serbatoio si riscalda. L'automazione conta perché il comportamento umano è un pessimo meccanismo di risposta alla domanda: le persone rispondono una volta e poi smettono di farci caso.</p>
+<h3><span class="hn">06</span>Misurare ciò che non si vede</h3>
+<p>I contatori intelligenti registrano il consumo aggregato con risoluzione di un quarto d'ora o migliore, e il <strong>monitoraggio non intrusivo dei carichi</strong> tenta di scomporre quel segnale unico nei singoli apparecchi in base alle loro firme di commutazione: il gradino di potenza attiva e reattiva quando parte un compressore, la rampa caratteristica di un bollitore. Funziona bene per i carichi grandi e distintivi e male per quelli piccoli e sovrapposti, e solleva ovvie questioni di privacy, perché una traccia di consumo a grana fine rivela quando una casa è occupata, sveglia e ai fornelli. Il riassunto onesto è che la maggior parte delle famiglie può individuare l'80% del proprio consumo con quattro numeri - riscaldamento, acqua calda, auto e carico di base sempre acceso - e che il dettaglio restante raramente vale la strumentazione.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Energia</th><td>\(E = \int P\,dt \approx \sum_i P_i t_i\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fattore di contemporaneità</th><td>\(F_c = \dfrac{P_{\text{gruppo,max}}}{\sum_i P_{i,\max}}\)</td><td class="cmt">ben sotto 1</td></tr>
+<tr><th scope="row">Carico di base</th><td>\(E_{\text{base}} = P_{\min}\times 8760\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Energia primaria</th><td>\(E_{\text{prim}} = \dfrac{E_{\text{finale}}}{\eta_{\text{gen}}}\)</td><td class="cmt">≈ 2,5× per il termico</td></tr>
+<tr><th scope="row">Guadagno con pompa di calore</th><td>\(E_{\text{elet}} = \dfrac{Q_{\text{calore}}}{\mathrm{SCOP}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Domanda dell'auto elettrica</th><td>\(E = c\,d\)</td><td class="cmt">c ≈ 0,18 kWh/km</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Costo a fasce</th><td>\(\text{€} = \sum_t p_t E_t\)</td><td class="cmt">l'orario, non solo la quantità</td></tr>
+<tr><th scope="row">Limite di fornitura</th><td>\(\max_t \sum_i P_i(t) &lt; P_{\text{contratto}}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📊</span> Il fattore di contemporaneità è il motivo per cui una strada di case capaci ognuna di assorbire 15 kW è servita da un trasformatore dimensionato per una frazione di quel totale. Carichi correlati come la ricarica delle auto erodono esattamente quell'ipotesi.</li><li><span aria-hidden="true">🕵️</span> Una traccia di consumo a un quarto d'ora basta a dedurre quando una famiglia si sveglia, esce, torna e dorme. Le regole sulla protezione dei dati dei contatori intelligenti esistono perché il contatore è, involontariamente, un sensore di presenza.</li><li><span aria-hidden="true">♻️</span> Elettrificare una casa alza il suo consumo elettrico e abbassa il suo consumo energetico totale, perché le pompe di calore moltiplicano e i motori elettrici non buttano via due terzi del combustibile in calore. Confrontare le bollette elettriche prima e dopo misura quindi la cosa sbagliata.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Kilowatt-hour" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Energia</h2>
+    <ul><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/come-funzionano-i-pannelli-solari/">Come funzionano i pannelli solari</a></li><li><a href="/it/turbine-eoliche-limite-di-betz/">Turbine eoliche e il limite di Betz</a></li><li><a href="/it/come-funziona-la-pompa-di-calore/">Pompe di calore: più calore di quanto ne paghi</a></li><li><a href="/it/come-funziona-la-rete-elettrica/">La rete elettrica: in equilibrio sul filo del rasoio</a></li><li><a href="/it/come-funziona-un-reattore-nucleare/">Come funziona un reattore nucleare</a></li><li><a href="/it/come-funzionano-le-batterie-di-rete/">Come immagazzinano l'elettricità le batterie di rete</a></li><li><a href="/it/come-si-produce-idrogeno-verde/">Come si produce l'idrogeno verde</a></li><li><a href="/it/dove-va-a-finire-il-calore-di-casa/">Dove va a finire il calore di casa tua</a></li><li><a href="/it/come-si-produce-l-elettricita/">Come si produce davvero l'elettricità</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

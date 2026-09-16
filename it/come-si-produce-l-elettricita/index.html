@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Come si produce davvero l'elettricità | Lab-in-a-Tab</title>
+<meta name="description" content="Quasi tutta si ottiene facendo girare un magnete dentro una bobina. Carbone, gas, nucleare, idroelettrico ed eolico differiscono solo per che cosa usano…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/it/come-si-produce-l-elettricita/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-electricity-is-generated/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-si-produce-l-elettricita/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-produit-on-l-electricite/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-electricity-is-generated/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Come si produce davvero l'elettricità — Spiegato e simulato">
+<meta property="og:description" content="Quasi tutta si ottiene facendo girare un magnete dentro una bobina. Carbone, gas, nucleare, idroelettrico ed eolico differiscono solo per che cosa usano…">
+<meta property="og:url" content="https://labinatab.com/it/come-si-produce-l-elettricita/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come si produce davvero l'elettricità — Spiegato e simulato">
+<meta name="twitter:description" content="Quasi tutta si ottiene facendo girare un magnete dentro una bobina. Carbone, gas, nucleare, idroelettrico ed eolico differiscono solo per che cosa usano…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/it/come-si-produce-l-elettricita/#article",
+   "headline": "Come si produce davvero l'elettricità",
+   "name": "Come si produce davvero l'elettricità",
+   "description": "Quasi tutta si ottiene facendo girare un magnete dentro una bobina. Carbone, gas, nucleare, idroelettrico ed eolico differiscono solo per che cosa usano…",
+   "url": "https://labinatab.com/it/come-si-produce-l-elettricita/",
+   "mainEntityOfPage": "https://labinatab.com/it/come-si-produce-l-elettricita/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "it",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Base",
+    "Studente",
+    "Esperto"
+   ],
+   "teaches": [
+    "Faraday",
+    "Turbine",
+    "Rendimento"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Come si produce davvero l'elettricità",
+    "sameAs": "https://en.wikipedia.org/wiki/Electricity_generation"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Come si produce davvero l'elettricità",
+     "item": "https://labinatab.com/it/come-si-produce-l-elettricita/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-electricity-is-generated/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-si-produce-l-elettricita/" hreflang="it" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-produit-on-l-electricite/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energia</nav>
+  <h1>Come si produce davvero l'elettricità</h1>
+  <p class="lead">Quasi tutta si ottiene facendo girare un magnete dentro una bobina. Carbone, gas, nucleare, idroelettrico ed eolico differiscono solo per che cosa usano per far girare quel magnete - e per quanta energia sopravvive al viaggio.</p>
+  <div class="chips"><span>Faraday</span><span>Turbine</span><span>Rendimento</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"generator":{"junior":{"rpm":"Quanto veloce gira il magnete","th":"Quanto è caldo il vapore","tc":"Quanto è fredda l'acqua di raffreddamento","eff":"Combustibile che diventa elettricità","carn":"Il massimo che la fisica permette","freq":"Battiti al secondo","pw":"Elettricità prodotta","cGen":"un magnete che gira dentro una bobina","cWave":"la spinta sugli elettroni, istante per istante","cGrid":"la rete vuole esattamente 50 - cioè 3000 giri al minuto","cBoil":"caldaia - il fuoco, o il reattore","cTurb":"turbina","cCond":"l'acqua fredda porta via il calore avanzato","cFuel":"combustibile in ingresso","cElec":"elettricità in uscita","cWaste":"acqua tiepida e vapore - sprecati","cSpin":"giri al minuto"},"student":{"rpm":"Velocità di rotazione","th":"Temperatura del vapore","tc":"Temperatura al condensatore","eff":"Rendimento termico","carn":"Tetto di Carnot","freq":"Frequenza","pw":"Potenza elettrica","cGen":"alternatore sincrono","cWave":"forza elettromotrice indotta","cGrid":"50 Hz richiedono 3000 rpm su due poli","cBoil":"caldaia","cTurb":"turbina","cCond":"condensatore","cFuel":"combustibile in ingresso","cElec":"elettricità in uscita","cWaste":"calore ceduto","cSpin":"rpm"},"scholar":{"rpm":"Velocità di rotazione n","th":"Temperatura del vapore vivo Th","tc":"Temperatura al condensatore Tc","eff":"Rendimento termico","carn":"Limite di Carnot","freq":"Frequenza","pw":"Potenza elettrica","cGen":"macchina sincrona","cWave":"forza elettromotrice indotta, N dΦ/dt","cGrid":"f = pn/120","cBoil":"adduzione di calore","cTurb":"turbina","cCond":"cessione di calore","cFuel":"combustibile in ingresso","cElec":"elettricità in uscita","cWaste":"calore ceduto","cSpin":"rpm"}}});</script>
+<section class="sim-embed" data-sim="generator" data-color="#0369a1" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Base</button><button type="button" data-l="student">🔬 Studente</button><button type="button" data-l="scholar">🎓 Esperto</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0369a1"><span class="sg-lbl">Prova</span><span>Comincia con <b>Quanto veloce gira il magnete</b> e guarda l'onda: a 3000 giri al minuto il contatore segna 50, che è esattamente ciò che la rete vuole - spostalo da una parte o dall'altra e vedi quanto in fretta va storto. Poi lascia stare la velocità e alza <b>Quanto è caldo il vapore</b> da 600 verso 1500 °C, guardando <b>Combustibile che diventa elettricità</b> salire. Adesso prova l'altro estremo: porta <b>Quanto è fredda l'acqua di raffreddamento</b> da 30 °C a 10 e vedi che raffreddare il lato freddo aiuta anche. Infine guarda la barra gialla e leggi quanti megawatt su mille stai davvero tenendo.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0369a1"><span class="sg-lbl">Prova</span><span>Verifica prima la legge della macchina: metti <b>Velocità di rotazione</b> a 3000 e controlla che <b>Frequenza</b> legga 50,0, poi a 3600 e controlla 60,0. Nota che cambia anche l'ampiezza, non solo la frequenza, e ragiona sul perché un alternatore vero debba quindi tenere la velocità costante e controllare la tensione in un altro modo. Poi esplora la termodinamica: alza <b>Temperatura del vapore</b> da 300 a 1500 °C guardando insieme <b>Tetto di Carnot</b> e <b>Rendimento termico</b>; dopo tieni ferma la temperatura del vapore e spazza invece <b>Temperatura al condensatore</b>. Confronta quanti gradi a ciascun estremo comprano lo stesso guadagno di rendimento.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0369a1"><span class="sg-lbl">Prova</span><span>Quantifica l'asimmetria dell'espressione di Carnot. Fissa l'estremo freddo e registra <b>Limite di Carnot</b> mentre <b>Temperatura del vapore vivo Th</b> avanza a passi di 100 °C; poi fissa l'estremo caldo e fai lo stesso con <b>Temperatura al condensatore Tc</b>, e confronta \(\partial\eta/\partial T_h\) con \(\partial\eta/\partial T_c\) alle condizioni tipiche di esercizio. Poi porta <b>Temperatura del vapore vivo Th</b> a 1500 °C e considera che cosa implica il risultato per una turbina a gas: nessun fluido di lavoro tollera quella temperatura come vapore, quindi la macchina reale sovrappone un ciclo Brayton a uno Rankine e arriva a \(\eta_{gt}+\eta_{st}(1-\eta_{gt})\). Infine usa <b>Velocità di rotazione n</b> per verificare che il modello non può separare frequenza e ampiezza della tensione.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A sinistra: un magnete che gira dentro un anello di rame, che è tutto il segreto della produzione di elettricità. Sotto c'è quello che quella rotazione fa agli elettroni del filo: un'onda, spinta prima in un verso e poi nell'altro, una volta per giro. Fallo girare più veloce e l'onda diventa insieme più alta e più fitta. A destra: la macchina che fa girare. Il fuoco scalda l'acqua fino a farla vapore, il vapore spinge la turbina e l'acqua fredda all'altro capo lo ricondensa perché possa ricominciare. Le due barre in basso sono la contabilità onesta: quanto del combustibile è diventato elettricità e quanto se n'è semplicemente andato come acqua tiepida.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Qui niente crea elettricità dal nulla: il magnete si limita a spingere elettroni che erano già nel filo, e può farlo solo finché continua a muoversi.</b> Ecco perché una centrale è in realtà una macchina per far girare un albero, e perché carbone, gas, nucleare e idroelettrico sono varianti di una sola idea. La parte dolorosa è la contabilità. Anche un impianto eccellente butta via più di metà del combustibile come acqua tiepida, non per cattiva ingegneria ma perché una macchina termica non può fare meglio: quanto tieni dipende dal divario fra l'estremo caldo e quello freddo. Rendere il vapore più caldo è la leva grossa, ed è esattamente per questo che le centrali migliori portano il gas a temperature che fonderebbero il metallo in cui scorre, e lo raffreddano con trucchi ingegnosi.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>A sinistra: una macchina sincrona a due poli. La posizione del rotore fissa il flusso concatenato, quindi la forza elettromotrice indotta segue \(\mathcal{E} = N\Phi_0\omega\sin\omega t\): la traccia cresce in ampiezza e in frequenza insieme, perché entrambe vengono da \(\omega\). La lettura della frequenza applica \(f = p\,n/120\). A destra: il ciclo termico che fornisce la coppia all'albero, con temperatura del vapore vivo e del condensatore come le imposti tu. La barra gialla divide 1000 MW di combustibile fra elettricità e calore ceduto; la barra verde sotto confronta l'impianto con il suo stesso tetto di Carnot \(1 - T_c/T_h\), assumendo un rendimento pari al 65% di quel limite.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Dieci gradi all'estremo freddo valgono circa trenta a quello caldo, e questa asimmetria governa tutto il settore.</b> Esce direttamente da \(1 - T_c/T_h\): la temperatura fredda sta al numeratore del termine che viene sottratto, quindi ha proporzionalmente più leva - ed è per questo che il vuoto al condensatore viene sorvegliato in modo ossessivo, che le centrali costiere rendono più di quelle interne, e che la potenza cala durante un'ondata di calore esattamente quando la domanda fa il picco. L'altra lezione è a sinistra. Frequenza e ampiezza scalano entrambe con la rotazione, quindi un alternatore non può controllarle indipendentemente: la rete inchioda la velocità, e la tensione si regola con la corrente di eccitazione del rotore. Tutto il comportamento di una centrale discende da questi due fatti e da nient'altro.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Cosa stai vedendo</span>Una macchina sincrona a due poli con \(\mathcal{E} = -N\,d\Phi/dt\) rappresentata direttamente, quindi ampiezza e frequenza seguono entrambe \(\omega\) e la lettura applica \(f = p\,n/120\); il rotore è disegnato a un cinquantesimo della velocità reale. A destra, una macchina termica fra le temperature che imposti, con il limite di Carnot \(1 - T_c/T_h\) e un impianto che ne raggiunge un 65% fisso: un sostituto di tutto l'apparato Rankine di surriscaldamento, risurriscaldamento e preriscaldo rigenerativo, che esiste proprio per alzare la temperatura media di adduzione del calore verso il picco.</div><details class="sg-notice"><summary>Cosa notare</summary><div class="sg-body"><b>Il rendimento di una centrale termica non è una tecnologia, è un rapporto di temperature: quindi ogni progresso nella generazione elettrica è stato metallurgia travestita.</b> Vapore supercritico a 600 °C, palette monocristalline in gas a 1500 °C, rivestimenti a barriera termica e raffreddamento a film esistono tutti per alzare \(T_h\) contro materiali che preferirebbero di no. Sul lato elettrico, lo stesso quadro spiega perché la rete è stata costruita attorno alle macchine sincrone: una sola massa rotante fornisce insieme energia, inerzia, potenza di cortocircuito e la forma d'onda di tensione a cui tutto il resto si sincronizza. Sostituiscila con un inverter e quei quattro servizi si separano, tre vanno ricreati deliberatamente, e l'aritmetica della rete cambia anche se i kilowattora sembrano identici. È quella, più che il numero del rendimento, la transizione davvero in corso.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Far girare un magnete: il resto sono dettagli</h2>
+  <p class="lvl-note">Livello Base — linguaggio semplice, senza matematica</p>
+  <p>Quasi ogni kilowattora che hai usato in vita tua è stato prodotto allo stesso modo: facendo girare un magnete dentro una bobina di filo. Tutto qui. Un magnete che passa vicino a un filo spinge gli elettroni di quel filo, e se il magnete continua a girare gli elettroni continuano a essere spinti, prima in un verso e poi nell'altro, cinquanta volte al secondo. Quell'andirivieni è la corrente alternata dei tuoi muri.</p>
+<p>Tutto ciò su cui la gente discute - carbone, gas, nucleare, idroelettrico, eolico - è solo un modo diverso di far girare lo stesso albero. L'acqua che cade da una diga spinge una ruota. Il vento spinge delle pale. E carbone, gas e nucleare fanno una cosa curiosamente antiquata: fanno bollire dell'acqua. Il vapore corre dentro una turbina, la turbina fa girare il magnete e il magnete fa l'elettricità vera e propria. Circa quattro quinti dell'elettricità mondiale viene dal far girare qualcosa, e l'eccezione è il pannello solare, che non ha parti in movimento.</p>
+<p>Adesso la parte scomoda. Quando bruci un combustibile per fare vapore non puoi trasformare tutto quel calore in movimento. La natura si prende una commissione, e quanto è grande dipende da quanto è caldo il tuo vapore rispetto all'estremo freddo dove il vapore viene ricondensato. Una buona centrale moderna converte circa il 40% del combustibile in elettricità; un ciclo combinato a gas, che in realtà sono due motori impilati, arriva attorno al 60%. Il resto se ne va come acqua tiepida e come il pennacchio bianco sopra la torre di raffreddamento, che non è fumo ma vapore acqueo.</p>
+<p>Un'ultima cosa che vale la pena sapere. La velocità di rotazione fissa la frequenza dell'elettricità: 3000 giri al minuto danno esattamente i 50 hertz su cui va l'Europa. Ogni grande alternatore della rete gira all'unisono a quella velocità, tutto il giorno, tutti i giorni: ed è per questo che rallentarli anche solo un po' è un evento così serio.</p>
+  
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">☁️</span> Il pennacchio bianco che esce dalla torre di raffreddamento di una centrale è vapore acqueo che condensa, non fumo. Lo scarico vero esce da un camino sottile lì accanto, e di solito è invisibile.</li><li><span aria-hidden="true">⚖️</span> Il rotore di un grande turboalternatore pesa circa 200 tonnellate e gira a 3000 giri al minuto: il bordo si muove a circa 500 km/h. Deve essere bilanciato entro una frazione di millimetro.</li><li><span aria-hidden="true">🔁</span> Carbone, gas, nucleare, geotermico, biomasse e solare a concentrazione finiscono per fare la stessa cosa: bollire acqua per far girare una turbina. Le differenze stanno tutte nel modo in cui l'acqua si scalda.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Legge di Faraday, velocità di sincronismo e la tassa di Carnot</h2>
+  <p class="lvl-note">Livello Studente — le equazioni principali</p>
+  <p>Tutta la faccenda poggia su un'equazione. La legge di induzione di Faraday dice che la tensione indotta in una bobina è \(\mathcal{E} = -N\,d\Phi/dt\): non il campo magnetico, ma la sua <em>velocità di variazione</em>. Fai girare un magnete a pulsazione \(\omega\) dentro una bobina e il flusso varia come \(\Phi = \Phi_0\cos\omega t\), quindi la forza elettromotrice indotta è \(\mathcal{E} = N\Phi_0\omega\sin\omega t\): un'onda sinusoidale la cui ampiezza cresce con la velocità e la cui frequenza <em>è</em> la velocità. La corrente alternata non è una scelta di progetto: è ciò che una macchina rotante produce naturalmente.</p>
+<p>Questo lega la rotazione alla frequenza di rete in modo esatto. Per una macchina con \(p\) poli, \(f = pn/120\) con \(n\) in giri al minuto, quindi un turboalternatore a due poli deve girare a 3000 rpm per i 50 Hz e a 3600 per i 60 Hz. Le macchine idroelettriche, che girano lentamente, usano semplicemente molti poli. Una volta sincronizzato, un alternatore non può derivare: una coppia in più sull'albero non lo accelera, ma fa avanzare l'angolo del rotore rispetto alla rete e spinge fuori più potenza.</p>
+<p>L'altra metà della storia è termodinamica. Una centrale termica è una macchina termica, quindi il secondo principio la limita a \(\eta_{\text{Carnot}} = 1 - T_c/T_h\) in kelvin. Vapore a 600 °C che scarica in un fiume a 30 °C dà un tetto di circa il 65%; i cicli Rankine reali ne ottengono circa due terzi, quindi il 40-45%. L'estremo freddo conta quanto quello caldo, ed è per questo che il rendimento di una centrale cala durante un'ondata di calore e perché ogni impianto serio sta accanto a un fiume, al mare o a una torre di raffreddamento.</p>
+<p>Il modo per superare il tetto è alzare \(T_h\), e le turbine a gas lo fanno in modo spettacolare: combustione a 1400-1600 °C, ben oltre ciò che le tubazioni del vapore possono sopportare. Così un ciclo combinato fa girare prima una turbina a gas e poi usa i suoi scarichi a 600 °C per produrre vapore per un secondo ciclo convenzionale sotto: due motori in serie, vicini al 60%. È la macchina termica più efficiente mai messa in servizio commerciale.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Induzione di Faraday</th><td>\(\mathcal{E} = -N\dfrac{d\Phi}{dt}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Macchina rotante</th><td>\(\mathcal{E} = N\Phi_0\omega\sin\omega t\)</td><td class="cmt">ampiezza ∝ velocità</td></tr>
+<tr><th scope="row">Velocità di sincronismo</th><td>\(f = \dfrac{p\,n}{120}\)</td><td class="cmt">2 poli, 3000 rpm → 50 Hz</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Tetto di Carnot</th><td>\(\eta_{\max} = 1-\dfrac{T_c}{T_h}\)</td><td class="cmt">in kelvin</td></tr>
+<tr><th scope="row">Impianto reale</th><td>\(\eta \approx 0.65\,\eta_{\max}\)</td><td class="cmt">40–45% a vapore</td></tr>
+<tr><th scope="row">Ciclo combinato</th><td>\(\eta = \eta_{gt}+\eta_{st}(1-\eta_{gt})\)</td><td class="cmt">≈ 60%</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Consumo specifico</th><td>\(\mathrm{HR} = \dfrac{3600}{\eta}\ \text{kJ/kWh}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Calore scartato</th><td>\(Q_c = Q_h(1-\eta)\)</td><td class="cmt">il pennacchio che si vede</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">📐</span> Poiché la forza elettromotrice indotta dipende dalla velocità di variazione del flusso, la tensione di un alternatore cresce con la velocità. Le macchine di rete tengono quindi la velocità costante e controllano la tensione con la corrente di eccitazione del rotore.</li><li><span aria-hidden="true">🌡️</span> Un grado in più nell'acqua di raffreddamento costa a una centrale a vapore circa lo 0,1-0,3% di potenza. Impianti francesi e tedeschi hanno dovuto ridurre la produzione durante le ondate di calore esattamente per questo.</li><li><span aria-hidden="true">🔧</span> Il consumo specifico, l'unità di efficienza del settore, è l'energia di combustibile necessaria per unità di elettricità. 3600 kJ/kWh sarebbe il 100%; una buona centrale a carbone sta attorno a 8600 kJ/kWh, cioè il 42%.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>La macchina sincrona, il ciclo Rankine e che cosa sparisce quando smette di girare</h2>
+  <p class="lvl-note">Livello Esperto — profondità matematica completa</p>
+  <h3><span class="hn">01</span>La macchina sincrona come oscillatore accoppiato</h3>
+<p>Un alternatore sincrono non immette potenza in rete girando più in fretta: non può, perché è la rete a tenerne la velocità. Ciò che cambia è l'<strong>angolo di coppia</strong> \(\delta\) fra il campo del rotore e il campo rotante di statore, e la potenza elettrica trasferita segue \(P = \frac{EV}{X_s}\sin\delta\). Applica più coppia meccanica e \(\delta\) avanza finché la potenza elettrica non pareggia; la macchina è una molla, non un acceleratore. La stessa espressione fissa il limite di stabilità a \(\delta = 90^\circ\), oltre il quale più coppia produce meno potenza e la macchina perde il passo. La potenza reattiva si controlla indipendentemente attraverso l'eccitazione del rotore, ed è per questo che la stessa macchina può sostenere la tensione di rete mentre eroga una potenza attiva fissata.</p>
+<h3><span class="hn">02</span>Il ciclo Rankine, e perché esiste ogni suo affinamento</h3>
+<p>Le centrali a vapore usano Rankine invece di Carnot perché condensare fino al liquido prima di pompare non costa quasi nulla, mentre comprimere un vapore costa moltissimo. Ogni affinamento successivo attacca lo stesso rapporto: il surriscaldamento alza la temperatura media di adduzione del calore e mantiene asciutto lo scarico della turbina; il risurriscaldamento rimanda il vapore in caldaia a metà espansione per lo stesso motivo; il preriscaldo rigenerativo dell'acqua di alimento spilla vapore per scaldare l'acqua, alzando la temperatura media a cui entra il calore. Gli impianti supercritici e ultrasupercritici superano il punto critico a 374 °C e 221 bar, dove non esiste alcun confine di fase, arrivando a 600-620 °C e a circa il 45% di rendimento, limitati ormai dalla metallurgia e non dalla termodinamica.</p>
+<h3><span class="hn">03</span>Perché l'estremo freddo non è un dettaglio</h3>
+<p>\(\eta_{\text{Carnot}} = 1 - T_c/T_h\) è asimmetrica in un modo che l'intuizione non è: abbassare la temperatura del condensatore di 10 K aiuta all'incirca quanto alzare quella della caldaia di 30, perché \(T_c\) sta al numeratore della frazione che viene sottratta. Ecco perché il vuoto al condensatore è oggetto di manutenzione ossessiva, perché il raffreddamento a mare aperto vale un paio di punti di rendimento rispetto a una torre, e perché la potenza cala d'estate proprio mentre la domanda di condizionamento raggiunge il picco: una coincidenza con conseguenze reali per la rete.</p>
+<h3><span class="hn">04</span>Impilare i cicli</h3>
+<p>Il ciclo combinato esiste perché nessun fluido di lavoro copre bene da 1500 °C a 30 °C. Una turbina a gas prende la parte alta, espandendo i prodotti di combustione da circa 1500 °C - possibile solo con palette monocristalline, raffreddamento interno ad aria e rivestimenti a barriera termica - e scarica attorno a 600 °C, che è un'ottima sorgente per un ciclo a vapore sottostante. Il rendimento composito \(\eta = \eta_{gt} + \eta_{st}(1-\eta_{gt})\) arriva al 62-64% nelle macchine migliori. La stessa logica guida la cogenerazione nella direzione opposta: se il calore scartato ti serve per edifici o industria, l'utilizzo totale del combustibile può superare l'85%, al prezzo di una resa elettrica un po' più bassa.</p>
+<h3><span class="hn">05</span>Che cos'altro forniva quella massa rotante</h3>
+<p>Un alternatore rotante fornisce diversi servizi contemporaneamente, e solo uno compare in fattura. Fornisce energia; fornisce inerzia, perché la sua energia cinetica si oppone alle variazioni di frequenza; fornisce corrente di cortocircuito, che è ciò di cui le protezioni hanno bisogno per rilevare ed eliminare i guasti; e fornisce una forma d'onda di tensione a cui il resto dell'apparato può sincronizzarsi. Sostituiscilo con un inverter e mantieni il primo, devi sintetizzare il secondo, perdi gran parte del terzo e devi decidere deliberatamente se l'inverter segue la forma d'onda della rete o la impone. Il controllo grid-forming è la risposta, e la sua diffusione è la storia tecnica silenziosa di questo decennio.</p>
+<h3><span class="hn">06</span>Che cosa è cambiato davvero</h3>
+<p>Per un secolo produrre elettricità ha significato una macchina termica, e l'ingegneria interessante era termodinamica. Eolico e solare hanno rotto lo schema: uno è un'estrazione meccanica diretta senza alcun ciclo termico, l'altro converte fotoni in portatori senza ciclo, senza fluido di lavoro e senza tetto di Carnot - ed è per questo che un pannello al 22% non deve vergognarsi davanti a una turbina a gas al 60%: i due numeri dividono per denominatori completamente diversi, uno gratuito e uno comprato. Ciò che resta vero è l'aritmetica di sistema: l'elettricità va prodotta nell'istante in cui viene usata, a frequenza fissa, e la macchina che lo fa deve essere in grado di tenere quella frequenza. Il sostituto della turbina deve fare lo stesso lavoro, che qualcosa giri o no.</p>
+  <div class="formulas"><h3>Formule chiave</h3><table><tr><th scope="row">Forza elettromotrice indotta</th><td>\(\mathcal{E} = -N\dfrac{d\Phi}{dt}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Angolo di potenza</th><td>\(P = \dfrac{EV}{X_s}\sin\delta\)</td><td class="cmt">stabile fino a δ = 90°</td></tr>
+<tr><th scope="row">Velocità di sincronismo</th><td>\(n = \dfrac{120f}{p}\)</td><td class="cmt">giri al minuto</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Limite di Carnot</th><td>\(\eta_{\max} = 1-\dfrac{T_c}{T_h}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Rendimento Rankine</th><td>\(\eta = \dfrac{w_{\text{turb}}-w_{\text{pompa}}}{q_{\text{in}}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Ciclo combinato</th><td>\(\eta = \eta_{gt}+\eta_{st}(1-\eta_{gt})\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Inerzia accumulata</th><td>\(E = \tfrac{1}{2}J\omega^2 = H\,S\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Calore ceduto</th><td>\(Q_c = Q_h - W\)</td><td class="cmt">il pennacchio della torre</td></tr></table></div>
+  <div class="facts"><h3>Da sapere</h3><ul><li><span aria-hidden="true">🌀</span> Le palette di una turbina a gas lavorano in un gas più caldo del punto di fusione della lega di cui sono fatte. Sopravvivono perché sono monocristalli con aria di raffreddamento che trasuda da centinaia di fori praticati al laser e un rivestimento ceramico a barriera termica.</li><li><span aria-hidden="true">🧊</span> Il raffreddamento a mare aperto può valere due punti di rendimento rispetto a una torre, solo perché \(T_c\) è di un paio di gradi più basso. È anche il motivo per cui tanti grandi impianti sono sulla costa.</li><li><span aria-hidden="true">📉</span> Confrontare i rendimenti fra tecnologie è quasi privo di senso: il 22% di un pannello divide per la luce gratuita che ci è caduta sopra, il 60% di una centrale a gas divide per combustibile comprato. Solo il secondo compare in una fattura.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Fonti</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Electricity_generation" target="_blank" rel="noopener">Articolo completo su Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Altro in Energia</h2>
+    <ul><li><a href="/it/energia-conservazione/">Energia e conservazione</a></li><li><a href="/it/come-funzionano-i-pannelli-solari/">Come funzionano i pannelli solari</a></li><li><a href="/it/turbine-eoliche-limite-di-betz/">Turbine eoliche e il limite di Betz</a></li><li><a href="/it/come-funziona-la-pompa-di-calore/">Pompe di calore: più calore di quanto ne paghi</a></li><li><a href="/it/come-funziona-la-rete-elettrica/">La rete elettrica: in equilibrio sul filo del rasoio</a></li><li><a href="/it/come-funziona-un-reattore-nucleare/">Come funziona un reattore nucleare</a></li><li><a href="/it/come-funzionano-le-batterie-di-rete/">Come immagazzinano l'elettricità le batterie di rete</a></li><li><a href="/it/come-si-produce-idrogeno-verde/">Come si produce l'idrogeno verde</a></li><li><a href="/it/dove-va-a-finire-il-calore-di-casa/">Dove va a finire il calore di casa tua</a></li><li><a href="/it/quanta-elettricita-consuma-casa-tua/">Quanta elettricità consuma casa tua</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Tutti gli esperimenti</a>
+<span class="ai-notice">Le spiegazioni di questo sito sono redatte con l'aiuto di IA generativa. <a href="/it/ai/">Come usiamo l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

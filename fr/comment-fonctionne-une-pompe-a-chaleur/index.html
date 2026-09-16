@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pompes à chaleur : plus de chaleur que tu n'en paies | Lab-in-a-Tab</title>
+<meta name="description" content="Tu mets une unité d'électricité, il en sort trois ou quatre de chaleur. Cela ressemble à de la triche, et la raison pour laquelle ce n'en est pas fait…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-heat-pumps-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funziona-la-pompa-di-calore/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-heat-pumps-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="Pompes à chaleur : plus de chaleur que tu n'en paies — Expliqué et simulé">
+<meta property="og:description" content="Tu mets une unité d'électricité, il en sort trois ou quatre de chaleur. Cela ressemble à de la triche, et la raison pour laquelle ce n'en est pas fait…">
+<meta property="og:url" content="https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pompes à chaleur : plus de chaleur que tu n'en paies — Expliqué et simulé">
+<meta name="twitter:description" content="Tu mets une unité d'électricité, il en sort trois ou quatre de chaleur. Cela ressemble à de la triche, et la raison pour laquelle ce n'en est pas fait…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/#article",
+   "headline": "Pompes à chaleur : plus de chaleur que tu n'en paies",
+   "name": "Pompes à chaleur : plus de chaleur que tu n'en paies",
+   "description": "Tu mets une unité d'électricité, il en sort trois ou quatre de chaleur. Cela ressemble à de la triche, et la raison pour laquelle ce n'en est pas fait…",
+   "url": "https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/",
+   "mainEntityOfPage": "https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "fr",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Débutant",
+    "Élève",
+    "Expert"
+   ],
+   "teaches": [
+    "COP",
+    "Carnot",
+    "Cycle frigorifique"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "Pompes à chaleur : plus de chaleur que tu n'en paies",
+    "sameAs": "https://en.wikipedia.org/wiki/Heat_pump"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Pompes à chaleur : plus de chaleur que tu n'en paies",
+     "item": "https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-heat-pumps-work/" hreflang="en"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funziona-la-pompa-di-calore/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionne-une-pompe-a-chaleur/" hreflang="fr" aria-current="true"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Énergie</nav>
+  <h1>Pompes à chaleur : plus de chaleur que tu n'en paies</h1>
+  <p class="lead">Tu mets une unité d'électricité, il en sort trois ou quatre de chaleur. Cela ressemble à de la triche, et la raison pour laquelle ce n'en est pas fait toute l'histoire.</p>
+  <div class="chips"><span>COP</span><span>Carnot</span><span>Cycle frigorifique</span></div>
+  <script>window.SIM_LABELS_OVERRIDE=Object.assign(window.SIM_LABELS_OVERRIDE||{},{"heatpump":{"junior":{"tout":"Froid qu'il fait dehors","tflow":"Température exigée de l'eau","qdem":"Chaleur dont la maison a besoin","cop":"Chaleur par unité d'électricité","pel":"Électricité que tu paies","qfree":"Chaleur prise dehors","carnot":"Le maximum permis par la physique","cEvap":"batterie extérieure - ici le liquide bout","cComp":"compresseur - la compression que tu paies","cCond":"batterie intérieure - le gaz redevient liquide","cValve":"buse - la pression chute et tout se glace","cQc":"chaleur tirée de l'air froid","cW":"électricité en entrée","cQh":"chaleur dans la maison","cCarnot":"le maximum permis par la physique","cReal":"ce qu'obtient une vraie machine","cRes":"un simple radiateur électrique","cNow":"maintenant","cFrost":"givre sur la batterie extérieure","cOut":"dehors","cIn":"dans la maison","cLift":"la montée"},"student":{"tout":"Température de l'air extérieur","tflow":"Température de départ","qdem":"Besoin de chaleur","cop":"COP","pel":"Puissance électrique absorbée","qfree":"Chaleur prise à l'extérieur","carnot":"Plafond de Carnot","cEvap":"évaporateur - le fluide bout à basse pression","cComp":"compresseur - travail fourni","cCond":"condenseur - le fluide se condense","cValve":"détendeur - détente isenthalpique","cQc":"Qc de la source","cW":"W électrique","cQh":"Qh vers la maison","cCarnot":"COP de Carnot","cReal":"COP réel","cRes":"chauffage par résistance, COP = 1","cNow":"point de fonctionnement","cFrost":"bande de dégivrage","cOut":"air extérieur","cIn":"intérieur","cLift":"écart de température"},"scholar":{"tout":"Température de source","tflow":"Température de départ au puits","qdem":"Charge thermique","cop":"COP","pel":"Travail du compresseur","qfree":"Chaleur de source Qc","carnot":"Plafond de Carnot","cEvap":"évaporateur - ébullition isobare et surchauffe","cComp":"compresseur - quasi isentropique","cCond":"condenseur - désurchauffe et condensation","cValve":"détente - h3 = h4","cQc":"Qc de la source","cW":"W électrique","cQh":"Qh vers le puits","cCarnot":"COP de Carnot","cReal":"COP réel","cRes":"chauffage par résistance, COP = 1","cNow":"point de fonctionnement","cFrost":"bande de dégivrage","cOut":"côté source","cIn":"côté puits","cLift":"écart de température"}}});</script>
+<section class="sim-embed" data-sim="heatpump" data-color="#be123c" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Débutant</button><button type="button" data-l="student">🔬 Élève</button><button type="button" data-l="scholar">🎓 Expert</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#be123c"><span class="sg-lbl">Essaie</span><span>Mets <b>Température exigée de l'eau</b> à 55, comme de vieux radiateurs, et note le chiffre de <b>Électricité que tu paies</b>. Descends maintenant à 35, comme si tu avais un plancher chauffant, et relis <b>Électricité que tu paies</b> : même chaleur, facture bien plus petite. Remets ensuite <b>Température exigée de l'eau</b> à 45 et fais glisser <b>Froid qu'il fait dehors</b> d'un doux 15 °C jusqu'à −20 °C, en regardant le point rose descendre le long de sa courbe et les flèches bleues s'amincir. Enfin change <b>Chaleur dont la maison a besoin</b> et regarde quelles flèches grandissent.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#be123c"><span class="sg-lbl">Essaie</span><span>Vérifie d'abord la comptabilité : lis <b>Puissance électrique absorbée</b> et <b>Chaleur prise à l'extérieur</b> et confirme qu'ils s'additionnent en <b>Besoin de chaleur</b>. Mesure ensuite directement la dépendance à l'écart : garde <b>Température de l'air extérieur</b> à 2 °C et déplace <b>Température de départ</b> de 30 à 60, en voyant <b>COP</b> chuter de près de moitié. Fais l'inverse avec <b>Température de départ</b> à 45 et <b>Température de l'air extérieur</b> balayé de 15 à −20. À chaque extrémité, divise <b>COP</b> par <b>Plafond de Carnot</b> et convaincs-toi que le rapport reste proche de 0,45. Enfin cherche la petite marche où la courbe rose sort de la bande grisée.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#be123c"><span class="sg-lbl">Essaie</span><span>Éprouve la structure de second principe. Garde <b>Température de départ au puits</b> et balaie <b>Température de source</b> : le rapport entre <b>COP</b> et <b>Plafond de Carnot</b> doit rester plat, ce qui te dit que les pertes se mettent à l'échelle de l'idéal au lieu de s'y ajouter comme une constante. Trouve ensuite des couples de réglages à écart identique mais températures absolues différentes et confirme que le plafond est presque le même, puisque \(\mathrm{COP_C}=T_h/\Delta T\) ne bouge que par le numérateur. Enfin, mesure ce que coûtent les écarts d'approche : compare <b>Plafond de Carnot</b> à l'écran avec \(T_h/(T_h-T_c)\) calculé à partir des valeurs brutes des curseurs, et explique la différence.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>La bande brune au milieu est le mur de la maison : froid et bleu dehors, chaud et jaune dedans. La boucle de tuyaux le traverse, et les points colorés sont le liquide qui tourne en rond - bleu là où il est glacé, rouge là où la compression l'a rendu chaud. Les flèches bleues à gauche sont la chaleur puisée dans l'air froid ; l'unique flèche jaune en haut est l'électricité que tu paies, qui entre dans le compresseur ; les flèches rouges à droite sont la chaleur qui se déverse dans la maison. La petite barre en dessous montre le marché que tu fais : une part d'électricité, le reste remonté du dehors gratuitement. Le graphique du bas montre comment ce marché évolue avec la météo : rose ce que tu obtiens, ambre le maximum permis par la physique.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Tu n'achètes pas de la chaleur. Tu achètes la montée.</b> L'électricité ne devient pas ta chaleur : elle ne fait que porter de la chaleur vers le haut, du froid extérieur au chaud intérieur, et plus la colline est haute plus le portage coûte. Voilà pourquoi les deux curseurs qui comptent sont la température extérieure, que tu ne peux pas changer, et la température qu'exigent tes émetteurs, que tu peux changer. Fais passer l'eau de 55 °C à 35 °C et la même maison, par la même météo et avec la même machine, te coûtera bien moins cher à chauffer, parce que tu as raccourci la montée. Et note le plancher du graphique : un simple radiateur électrique est à 1, et même par la nuit la plus froide la pompe reste confortablement au-dessus.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>À gauche du mur se trouve la source, à droite le puits. La boucle est un cycle à compression de vapeur : le fluide bout dans la batterie extérieure à basse pression, est comprimé à haute pression et haute température, se condense dans la batterie intérieure en cédant sa chaleur latente, puis chute à travers le détendeur pour redevenir glacé. L'épaisseur des flèches suit les flux d'énergie, avec \(Q_h = Q_c + W\) respecté exactement. La barre empilée sépare la chaleur livrée entre la part payée et la part remontée du dehors. Panneau inférieur : <b>COP</b> en fonction de la température extérieure à la température de départ choisie, avec le plafond ambre de Carnot \(T_h/(T_h-T_c)\), la ligne grise à 1 du chauffage par résistance, et une bande grisée où le givre impose des dégivrages.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>Une seule grandeur compte vraiment, et ce n'est pas la température extérieure seule : c'est l'écart.</b> L'expression de Carnot a \(T_h-T_c\) au dénominateur, donc n'importe quel couple de températures de même écart donne le même plafond : c'est pourquoi un hiver doux et humide avec des radiateurs à 55 °C peut être pire qu'une gelée avec un plancher chauffant. Le rapport obstinément constant d'environ 0,45 entre courbe réelle et courbe idéale n'est pas non plus un hasard : il est dominé par les écarts d'approche des deux échangeurs, qui ajoutent 8 à 10 K d'écart supplémentaire que le cycle doit gravir et que tu ne vois jamais sur un thermomètre. Et cette bande grisée est le détail honnête et désagréable : près de zéro en air humide, la batterie extérieure se couvre de glace et la machine doit dépenser une partie de sa production à la faire fondre.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">Ce que tu vois</span>Un cycle à compression de vapeur dessiné dans sa disposition physique plutôt que sur un diagramme p-h : évaporation isobare avec surchauffe côté source, compression quasi isentropique, désurchauffe et condensation côté puits, détente isenthalpique de retour. Le modèle applique des écarts d'approche fixes de 5 K à la source et 3 K au puits, si bien que l'écart interne dépasse toujours l'écart apparent, puis suppose un rendement de second principe constant de 0,45 avec une pénalité de 10 % dans la bande de givre. Panneau inférieur : le COP obtenu en fonction de la température de source, face au plafond de Carnot \(T_h/(T_h-T_c)\) et à la ligne COP = 1 qu'une résistance ne peut pas battre.</div><details class="sg-notice"><summary>À remarquer</summary><div class="sg-body"><b>La pompe à chaleur est une machine exergétique, et tout ce qu'elle perd, elle le perd dans des écarts de température qu'elle n'avait pas besoin de créer.</b> La moitié de l'écart à Carnot se joue dans les échangeurs, où des écarts d'approche finis obligent le fluide à bouillir plusieurs kelvins sous la source et à condenser plusieurs kelvins au-dessus du puits : le cycle gravit une colline plus haute que le bâtiment. Le reste, c'est l'irréversibilité du compresseur et le détendeur, isenthalpique par choix parce qu'une turbine de détente se rentabilise rarement à l'échelle domestique. Deux conséquences comptent plus que le matériel. D'abord le dimensionnement : <b>COP</b> est au plus bas exactement quand <b>Charge thermique</b> est au plus haut, donc l'appel électrique aux conditions de base dépasse largement la moyenne saisonnière - le réseau voit la coïncidence, pas la moyenne. Ensuite la flexibilité : un bâtiment a des heures d'inertie thermique, cette même charge peut donc être déplacée dans le temps, ce qui fait d'un parc de pompes à chaleur l'une des ressources pilotables les plus précieuses d'un réseau décarboné.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Déplacer la chaleur au lieu de la fabriquer</h2>
+  <p class="lvl-note">Niveau Débutant — langage simple, sans maths</p>
+  <p>Un radiateur électrique est une machine parfaite, et c'est précisément son problème. Chaque joule d'électricité que tu lui donnes devient un joule de chaleur dans la pièce - un pour un, et impossible de faire mieux, car on ne peut pas obtenir plus que tout. Pourtant une pompe à chaleur, nourrie du même joule, en délivre trois ou quatre dans la maison. On dirait quelque chose pour rien.</p>
+<p>Ce n'en est pas, parce que la pompe à chaleur ne <em>fabrique</em> pas de chaleur. Elle la <strong>déplace</strong> : elle transporte dans ton salon une chaleur qui existe déjà dehors, comme le frigo transporte la chaleur hors du bac à légumes pour la larguer derrière le meuble. Une pompe à chaleur est un frigo tourné dans l'autre sens, avec ta maison dans le rôle de la partie qui se réchauffe.</p>
+<p>L'objection évidente, c'est qu'il fait froid dehors. Mais le froid n'est froid que par rapport à nous. L'air à −5 °C est tout de même 268 degrés au-dessus du zéro absolu et il grouille de molécules qui s'agitent : il y a dedans une quantité colossale de chaleur. Il suffit d'avoir quelque chose d'encore plus froid pour l'absorber - et c'est là qu'est l'astuce. Dans les tuyaux circule un liquide qui bout vers −25 °C. Pour ce liquide, une nuit de gel est un bain chaud, alors il bout, et bouillir est sa façon d'avaler de la chaleur.</p>
+<p>Ensuite la machine tourne en rond. La vapeur froide est comprimée, et comprimer un gaz le réchauffe : touche le corps d'une pompe à vélo après avoir gonflé un pneu. Devenue chaude, elle traverse un serpentin à l'intérieur, cède sa chaleur à la pièce et redevient liquide. Enfin elle est giclée à travers une buse minuscule, la pression s'effondre, la température plonge, et elle repart dehors pour recommencer. La seule électricité que tu paies, c'est la compression. Et voici la conclusion pratique : plus l'écart est petit entre le froid du dehors et la température que tu exiges dedans, moins il faut comprimer. Alimenter un plancher chauffant à 35 °C coûte nettement moins cher qu'alimenter de vieux radiateurs à 55 °C - c'est pourquoi installer une pompe à chaleur est en réalité une discussion sur tes tuyaux, pas sur le boîtier dehors.</p>
+  
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">🧊</span> Ton réfrigérateur est une pompe à chaleur. Passe la main derrière et tu sens la chaleur qu'il a tirée de tes aliments : une pompe à chaleur de maison est la même machine, plombée dans l'autre sens.</li><li><span aria-hidden="true">🌡️</span> Même à −20 °C, l'air contient encore environ 93 % de l'énergie thermique qu'il a à +20 °C, mesurée depuis le zéro absolu. L'air froid n'est pas vide de chaleur : il est seulement moins peuplé qu'on ne le voudrait.</li><li><span aria-hidden="true">🇳🇴</span> La Norvège, l'un des pays les plus froids d'Europe, a le taux d'équipement en pompes à chaleur le plus élevé du monde, bien plus d'une pour deux foyers. La technologie n'est pas vaincue par l'hiver ; elle est seulement mise à contribution davantage.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>COP, écart de température, et pourquoi 400 % n'est pas une violation</h2>
+  <p class="lvl-note">Niveau Élève — les équations essentielles</p>
+  <p>Le nombre qui compte est le <strong>coefficient de performance</strong>, \(\mathrm{COP} = Q_h/W\) : chaleur délivrée divisée par électricité consommée. Une bonne machine air-eau alimentant un plancher chauffant tourne entre 4 et 5. On ne l'appelle pas un rendement volontairement, car un rendement compare une sortie à une entrée de même nature, et ici les deux diffèrent. L'énergie est conservée exactement : \(Q_h = Q_c + W\). Quatre unités arrivent dans la pièce, une venait de la prise, trois ont été tirées du froid extérieur. Rien n'a été créé.</p>
+<p>Ce qui limite, c'est le second principe. La chaleur ne remonte pas la pente toute seule, donc la déplacer du froid vers le chaud coûte du travail, et plus la pente est raide plus cela coûte. Fais tourner le cycle de Carnot à l'envers et tu obtiens le plafond : \(\mathrm{COP}_{\max} = \frac{T_h}{T_h-T_c}\), les deux températures en kelvins. Tout se joue sur ce dénominateur, l'<strong>écart de température</strong>. Fournir de l'eau à 35 °C à partir d'un air à 7 °C, c'est 28 K d'écart et un COP idéal proche de 11. La fournir à 55 °C à partir de −7 °C, c'est 62 K et un COP idéal proche de 5,3. Même machine, moins de la moitié des performances, par pure géométrie sur l'axe des températures.</p>
+<p>Les machines réelles atteignent environ 40 à 50 % de la valeur de Carnot, car les échangeurs ont besoin d'un écart de température pour faire passer la chaleur, les compresseurs ne sont pas isentropiques, et le détendeur détruit du travail exprès. Ce facteur est remarquablement stable, si bien qu'on peut prédire une fiche technique à partir de la seule thermodynamique : à A7/W35 attends-toi à un COP proche de 4,5, à A−7/W55 plutôt 2,2. Entre 0 et 5 °C en air humide s'ajoute une contrariété : l'humidité gèle sur la batterie extérieure et la machine doit périodiquement tourner à l'envers pour la faire fondre, ce qui coûte peut-être 10 % dans cette plage.</p>
+<p>D'où tout le cahier des charges d'une maison prête pour la pompe à chaleur. Abaisse la température de départ - radiateurs plus grands, ou plancher chauffant - et le COP monte gratuitement. Et la comparaison avec le gaz n'est même pas serrée : une chaudière à condensation délivre environ 0,9 unité de chaleur par unité de gaz, tandis qu'une pompe à chaleur à COP 3,5 alimentée par une électricité produite dans une turbine à gaz à 50 % en délivre tout de même 1,75. Sur un réseau comportant la moindre part de renouvelable, il n'y a pas match.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Coefficient de performance</th><td>\(\mathrm{COP} = \dfrac{Q_h}{W}\)</td><td class="cmt">chaleur par unité électrique</td></tr>
+<tr><th scope="row">Bilan énergétique</th><td>\(Q_h = Q_c + W\)</td><td class="cmt">rien n'est créé</td></tr>
+<tr><th scope="row">Plafond de Carnot</th><td>\(\mathrm{COP}_{\max} = \dfrac{T_h}{T_h-T_c}\)</td><td class="cmt">en kelvins, toujours</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Écart de température</th><td>\(\Delta T = T_h-T_c\)</td><td class="cmt">la seule chose qui compte vraiment</td></tr>
+<tr><th scope="row">Machine réelle</th><td>\(\mathrm{COP} = \eta_{II}\,\mathrm{COP}_{\max}\)</td><td class="cmt">η ≈ 0,45</td></tr>
+<tr><th scope="row">Radiateur électrique</th><td>\(\mathrm{COP} = 1\)</td><td class="cmt">le plafond quand on fabrique la chaleur</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Facteur saisonnier</th><td>\(\mathrm{SCOP} = \dfrac{\sum Q_h}{\sum W}\)</td><td class="cmt">sur toute la saison</td></tr>
+<tr><th scope="row">Face au gaz</th><td>\(\eta_{\text{gaz}}\times\mathrm{COP} \gg \eta_{\text{chaudière}}\)</td><td class="cmt">0,5 × 3,5 contre 0,9</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">⚖️</span> Le COP est un rapport entre chaleur déplacée et travail payé, pas un rendement : des valeurs supérieures à 1 ne cassent rien. La vraie mesure d'efficacité est le rendement de second principe, COP divisé par COP de Carnot, et celui-là plafonne modestement à 0,4-0,5.</li><li><span aria-hidden="true">❄️</span> Les pires conditions ne sont pas les plus froides. Autour de 0 à 5 °C en air humide, l'eau gèle sur la batterie extérieure et la machine passe une partie de son temps à dégivrer. À −15 °C l'air est trop sec pour former beaucoup de givre.</li><li><span aria-hidden="true">🚿</span> L'eau chaude sanitaire est la partie ingrate. Le chauffage veut 35 °C, mais un ballon doit atteindre 55-60 °C contre la légionelle, et cet écart à lui seul peut diviser le COP par deux : c'est pourquoi le ballon est en général chauffé par un cycle séparé et moins efficace.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Le cycle inversé, où part la fraction de Carnot et la question du fluide frigorigène</h2>
+  <p class="lvl-note">Niveau Expert — profondeur mathématique complète</p>
+  <h3><span class="hn">01</span>Pourquoi il faut du travail</h3>
+<p>L'énoncé de Clausius du second principe est exactement le cahier des charges : aucun processus ne peut avoir pour <em>seul</em> résultat le transfert de chaleur d'un corps froid vers un corps chaud. Le mot qui travaille est <em>seul</em>. Transfère de la chaleur vers le haut et quelque chose d'autre doit changer ; dans une pompe à chaleur, ce quelque chose est le travail d'arbre payé au compresseur, qui ressort du système comme partie de la chaleur rejetée à l'intérieur. La comptabilité entropique rend cela exact : rejeter \(Q_h\) à \(T_h\) en absorbant \(Q_c\) à \(T_c\) exige \(Q_h/T_h \geq Q_c/T_c\), et en combinant avec \(Q_h = Q_c + W\) on obtient le plafond directement, sans aucun détail de cycle.</p>
+<h3><span class="hn">02</span>Le plafond, et le cycle qui le poursuit</h3>
+<p>Un cycle de Carnot inversé entre deux sources donne \(\mathrm{COP} = T_h/(T_h-T_c)\), qui diverge quand l'écart tend vers zéro - énoncé correct et un peu contre-intuitif : déplacer de la chaleur sans écart de température est gratuit. Aucune machine réelle n'utilise ce cycle, car comprimer un mélange diphasique est mécaniquement hostile. On emploie plutôt le cycle à compression de vapeur, qui longe la cloche de saturation : évaporation isobare avec quelques kelvins de surchauffe, compression quasi isentropique jusqu'à la pression de condensation, désurchauffe et condensation isobares, puis détente isenthalpique vers la pression d'évaporation. Sur le diagramme p-h, \(\mathrm{COP} = (h_2-h_3)/(h_2-h_1)\), un rapport de distances horizontales qui se lit à la règle.</p>
+<h3><span class="hn">03</span>Où part la moitié manquante</h3>
+<p>Le rendement de second principe \(\eta_{II} = \mathrm{COP}/\mathrm{COP}_{\text{Carnot}}\) vaut 0,40-0,50 pour du bon matériel, et les pertes sont bien ordonnées. Les deux échangeurs exigent des écarts d'approche finis - typiquement 5 à 10 K - donc l'écart interne du cycle est toujours plus grand que celui entre la pièce et l'air extérieur, ce qui explique déjà une bonne part de l'écart. Le rendement isentropique du compresseur vaut 0,65-0,80. Le détendeur est délibérément irréversible : détendre le liquide dans une turbine récupérerait quelques pour cent, mais le matériel coûte plus qu'il ne rapporte, sauf en grande installation. Viennent ensuite les pertes de cyclage, les dégivrages, les auxiliaires ventilateurs et pompes, et les pertes de charge, chacun avec sa part.</p>
+<h3><span class="hn">04</span>Le givre, et le pire jour de l'année</h3>
+<p>L'évaporateur d'une machine sur air travaille quelques kelvins sous l'ambiance : dès que l'extérieur est vers 0-7 °C et humide, la batterie est sous le point de rosée et sous zéro, l'eau se condense puis gèle sur les ailettes, étranglant le débit d'air et l'échange. Le remède est un dégivrage par inversion de cycle - la machine devient brièvement un climatiseur et fait fondre sa propre glace avec de la chaleur prise à la maison - au prix de 5 à 12 % de la production saisonnière en climat maritime. Note la gêne que cela crée pour le dimensionnement : le COP chute précisément quand la demande culmine, si bien que l'appel électrique aux conditions de base est bien pire que ne le suggère la moyenne saisonnière, et les planificateurs se soucient de cette coïncidence bien plus que du SCOP.</p>
+<h3><span class="hn">05</span>La question du fluide frigorigène</h3>
+<p>Le fluide de travail doit avoir sa courbe de saturation au bon endroit, une grande chaleur latente, une stabilité chimique, des températures de refoulement tolérables - et désormais un faible pouvoir de réchauffement global, puisqu'il en fuit toujours un peu. L'industrie est passée du R22 (destructeur d'ozone, interdit) au R410A (PRG 2088) puis au R32 (675), et arrive au propane R290 (PRG 3, mais inflammable, d'où limites de charge et pose extérieure) et au CO2 transcritique R744, dont le refroidisseur de gaz à température glissante convient aux hautes températures de départ et à l'eau chaude sanitaire. C'est un domaine d'ingénierie inhabituel, où c'est la réglementation environnementale et non la thermodynamique qui fixe le cap.</p>
+<h3><span class="hn">06</span>Ce que cela fait au système</h3>
+<p>Électrifier la chaleur déplace une énorme demande saisonnière des canalisations de gaz vers les câbles. Un million de pompes à chaleur pendant une vague de froid, c'est une charge massive, corrélée à la météo et simultanée, qui arrive exactement quand le solaire produit le moins : la question marginale n'est donc jamais la moyenne annuelle mais la pointe hivernale coïncidente. C'est aussi l'opportunité, car un bâtiment a de l'inertie thermique : avec un ballon tampon ou simplement la masse de la maison, une pompe à chaleur est l'une des charges les plus flexibles du réseau, capable de se décaler de plusieurs heures sans que personne ne le remarque. La pompe à chaleur n'est pas seulement une chaudière moins chère : c'est un actif de flexibilité qui, accessoirement, te tient chaud.</p>
+  <div class="formulas"><h3>Formules clés</h3><table><tr><th scope="row">Contrainte entropique</th><td>\(\dfrac{Q_h}{T_h} \geq \dfrac{Q_c}{T_c}\)</td><td class="cmt">donne le plafond directement</td></tr>
+<tr><th scope="row">COP de Carnot</th><td>\(\mathrm{COP}_{\text{C}} = \dfrac{T_h}{T_h-T_c}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Rendement de 2e principe</th><td>\(\eta_{II} = \dfrac{\mathrm{COP}}{\mathrm{COP}_{\text{C}}}\)</td><td class="cmt">0,40–0,50 en pratique</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">COP du cycle</th><td>\(\mathrm{COP} = \dfrac{h_2-h_3}{h_2-h_1}\)</td><td class="cmt">depuis le diagramme p-h</td></tr>
+<tr><th scope="row">Rendement isentropique</th><td>\(\eta_s = \dfrac{h_{2s}-h_1}{h_2-h_1}\)</td><td class="cmt">0,65–0,80</td></tr>
+<tr><th scope="row">Détente</th><td>\(h_3 = h_4\)</td><td class="cmt">isenthalpique, irréversible</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Facteur saisonnier</th><td>\(\mathrm{SCOP} = \dfrac{\int Q_h\,dt}{\int W\,dt}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Énergie primaire</th><td>\(\eta_{\text{réseau}}\times\mathrm{COP}\)</td><td class="cmt">la comparaison honnête à la chaudière</td></tr></table></div>
+  <div class="facts"><h3>Bon à savoir</h3><ul><li><span aria-hidden="true">📐</span> Comme le COP dépend de l'écart et non de la température absolue, une machine géothermique gagne surtout par une source plus chaude et plus stable : 8-12 °C de sol au lieu de −5 °C d'air, c'est 15 K d'écart en moins les pires jours.</li><li><span aria-hidden="true">💨</span> Le détendeur est un gaspillage de travail assumé : la détente est isenthalpique et non isentropique. La remplacer par une turbine récupère quelques pour cent, et c'est justement ce que font parfois les grandes installations industrielles.</li><li><span aria-hidden="true">📉</span> Baisser la température de départ compte plus que n'importe quelle amélioration de matériel : passer de 55 °C à 35 °C relève typiquement le COP saisonnier de 50 à 70 %, au prix d'émetteurs plus grands plutôt que d'une meilleure machine.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Heat_pump" target="_blank" rel="noopener">Article complet sur Wikipédia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>Plus en Énergie</h2>
+    <ul><li><a href="/fr/conservation-de-l-energie/">La conservation de l'énergie</a></li><li><a href="/fr/comment-fonctionnent-les-panneaux-solaires/">Comment fonctionnent les panneaux solaires</a></li><li><a href="/fr/eoliennes-limite-de-betz/">Éoliennes et limite de Betz</a></li><li><a href="/fr/comment-fonctionne-le-reseau-electrique/">Le réseau électrique : en équilibre sur le fil</a></li><li><a href="/fr/comment-fonctionne-un-reacteur-nucleaire/">Comment fonctionne un réacteur nucléaire</a></li><li><a href="/fr/comment-fonctionnent-les-batteries-de-reseau/">Comment les batteries de réseau stockent l'électricité</a></li><li><a href="/fr/comment-produit-on-l-hydrogene-vert/">Comment produit-on l'hydrogène vert</a></li><li><a href="/fr/ou-part-la-chaleur-de-votre-maison/">Où part la chaleur de votre maison</a></li><li><a href="/fr/comment-produit-on-l-electricite/">Comment produit-on vraiment l'électricité</a></li><li><a href="/fr/combien-d-electricite-consomme-votre-maison/">Combien d'électricité consomme votre maison</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">Toutes les expériences</a>
+<span class="ai-notice">Les explications de ce site sont rédigées avec l'aide d'une IA générative. <a href="/fr/ai/">Comment nous utilisons l'IA</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

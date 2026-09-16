@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Much Electricity Does Your Home Use? | Lab-in-a-Tab</title>
+<meta name="description" content="The kettle feels expensive and the router feels free. Both intuitions are wrong, and the arithmetic that settles it takes about ten seconds once you know…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-much-electricity-appliances-use/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-much-electricity-appliances-use/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/combien-d-electricite-consomme-votre-maison/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-much-electricity-appliances-use/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Much Electricity Does Your Home Use? — Explained &amp; Simulated">
+<meta property="og:description" content="The kettle feels expensive and the router feels free. Both intuitions are wrong, and the arithmetic that settles it takes about ten seconds once you know…">
+<meta property="og:url" content="https://labinatab.com/how-much-electricity-appliances-use/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Much Electricity Does Your Home Use? — Explained &amp; Simulated">
+<meta name="twitter:description" content="The kettle feels expensive and the router feels free. Both intuitions are wrong, and the arithmetic that settles it takes about ten seconds once you know…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-much-electricity-appliances-use/#article",
+   "headline": "How Much Electricity Does Your Home Use?",
+   "name": "How Much Electricity Does Your Home Use?",
+   "description": "The kettle feels expensive and the router feels free. Both intuitions are wrong, and the arithmetic that settles it takes about ten seconds once you know…",
+   "url": "https://labinatab.com/how-much-electricity-appliances-use/",
+   "mainEntityOfPage": "https://labinatab.com/how-much-electricity-appliances-use/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Kilowatt-hours",
+    "Appliances",
+    "Bills"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Much Electricity Does Your Home Use?",
+    "sameAs": "https://en.wikipedia.org/wiki/Kilowatt-hour"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Much Electricity Does Your Home Use?",
+     "item": "https://labinatab.com/how-much-electricity-appliances-use/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-much-electricity-appliances-use/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/quanta-elettricita-consuma-casa-tua/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/combien-d-electricite-consomme-votre-maison/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energy</nav>
+  <h1>How Much Electricity Does Your Home Use?</h1>
+  <p class="lead">The kettle feels expensive and the router feels free. Both intuitions are wrong, and the arithmetic that settles it takes about ten seconds once you know where to look.</p>
+  <div class="chips"><span>Kilowatt-hours</span><span>Appliances</span><span>Bills</span></div>
+  <section class="sim-embed" data-sim="kwh" data-color="#9333ea" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#9333ea"><span class="sg-lbl">Try this</span><span>Start with <b>People in the house</b> and watch which bars grow - the ones that grow are the ones people actually use, and the ones that stay put are the machines that run whether you are there or not. Then add an <b>Kilometres a day by electric car</b> of 40 km a day and see where it lands in the ranking. Finally push <b>Hours a day of air conditioning</b> up and watch <b>Cost in a year</b> climb, then work out from the bars which single change would save the most money.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#9333ea"><span class="sg-lbl">Try this</span><span>Test the duty-cycle intuition. Note that the fridge is a roughly 100 W appliance and still outranks most of the things you actively operate, and work out its implied running fraction from its annual figure. Then find the crossover: how many EV kilometres a day does it take for the car to overtake everything else combined? Finally, set <b>Air-conditioning hours per day</b> to zero and <b>EV kilometres per day</b> to zero and read <b>Annual consumption</b> - that is a household with no electric heating and no car, and it should sit in the 2000-3500 kWh range that most European statistics report.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#9333ea"><span class="sg-lbl">Try this</span><span>Use the model to expose its own limits. First, derive the baseload: sum the items that do not depend on any slider, divide by 8760, and note what fraction of the total a permanent draw of a few hundred watts represents. Then construct the electrified case - <b>EV kilometres per day</b> at 40 km/day plus a mental heat pump at 4 MWh - and estimate the simultaneous peak, which the bars cannot show: a 7 kW charger plus a 5 kW heat pump plus cooking already exceeds a common 6 kW domestic supply. Finally, consider which two of these end uses could be shifted in time without anyone noticing.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>One bar for each thing that uses electricity in a house, sorted with the biggest at the top and measured in kilowatt-hours per year. The big number is the yearly total and the green one beside it is what that costs at 28 cents a unit. Underneath the bars are four things that all take about one kilowatt-hour, so you can get a feel for the size of the unit everything is measured in.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The things that cost you are the ones that make heat and the ones that never switch off - and neither of them is the thing you notice.</b> Nobody thinks about the fridge, and it runs 8760 hours a year. Everybody thinks about the kettle, and it runs for about ten minutes a day. Look at where hot water sits in the ranking: warming water takes a startling amount of energy, which is why a shower costs more than an evening of television. And look at what an electric car does when you add one - it is not a small extra, it is roughly a second household. That is worth knowing before you install one, because the answer is usually still yes, but the electricity bill is not where the saving shows up.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A per-end-use annual model: each item is \(E = P\,t\,\delta\) summed over a year, with occupancy scaling the loads people operate and leaving the always-on ones fixed. Air conditioning is modelled at 1.8 kW over a hundred-day season, and the vehicle at 0.18 kWh per kilometre. Bars are sorted by annual energy, with the share of the total on the right, and the cost uses 0.28 €/kWh.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Rank by energy and the answer is always heat first, always-on second, and everything you consciously use third.</b> That ordering is a direct consequence of \(E = Pt\) - a large power for minutes loses to a modest power for a year, and no amount of switching off a lamp changes it now that lighting has fallen to a few per cent of the total. The model also makes the electrification arithmetic concrete: adding a car at 40 km a day adds around 2,600 kWh, roughly doubling a typical home, and a heat pump would add as much again. That is why the interesting question for a modern house is not the annual total but the peak - the fuse and the connection, not the bill - and why the controller that decides <em>when</em> those loads run is now worth more than another efficient appliance.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A static per-end-use annual model with occupancy scaling, seasonal cooling hours and a vehicle term at 0.18 kWh/km, sorted by contribution. It deliberately produces only annual energy: there is no load profile here, no coincidence factor and no tariff structure, which are precisely the quantities a network planner cares about. Cost is a flat 0.28 €/kWh, standing in for a tariff that in reality has time and capacity components.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Annual energy is the wrong variable for almost every decision that now matters, and this chart is a good way to see why.</b> The bars rank end uses correctly and tell you nothing about the network's problem, which is coincidence: a hundred homes are served by a transformer sized well below the sum of their peaks, an assumption that holds because human activities are only loosely correlated - and that fails when everybody's car begins charging at half past six. Two consequences follow. Shifting load in time is worth more than reducing it, per euro, once the reduction has already claimed the cheap wins; and the residential energy conversation is migrating from the appliance to the controller. The one number here that still deserves your attention unchanged is the baseload: whatever the meter reads at three in the morning, multiplied by 8760, is bought and never used.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>What a kilowatt-hour actually is</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Your electricity bill is written in <strong>kilowatt-hours</strong>, and the name tells you exactly what one is: a thousand watts, running for one hour. A 2000 W kettle uses one kilowatt-hour in half an hour. A 10 W lamp needs a hundred hours to use the same. That is the whole idea - energy is power multiplied by time, and both halves count.</p>
+<p>Which is why intuition gets it so wrong. The kettle feels enormously expensive because it is loud and hot and you can feel the power. But you run it for four minutes. The fridge is quiet and unremarkable and you never think about it, and it runs for eight thousand seven hundred and sixty hours a year. Over a year the boring appliance wins comfortably. The rule for spotting the big ones is simple: anything that makes heat, and anything that never switches off.</p>
+<p>Then there are the two newcomers that dwarf everything else. Heating water electrically is expensive because water is remarkably hard to warm up. And charging an electric car uses roughly 0.18 kilowatt-hours for every kilometre - so forty kilometres a day is about seven kilowatt-hours a day, which is more than a small flat uses for everything else put together. An electric car does not add to your electricity bill; it roughly doubles it, while removing a fuel bill that was bigger still.</p>
+<p>Play with the sliders and watch which bar is longest. Then go and find your own number: it is printed on your bill, in exactly these units. A typical European home uses somewhere between two and four thousand kilowatt-hours a year without electric heating, and two or three times that with it.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔌</span> Things left on standby - the router, the TV, the chargers, the microwave clock - typically add 150 to 300 kWh a year. That is a small appliance you never use, running permanently.</li><li><span aria-hidden="true">☕</span> Boiling a full kettle costs about 0.15 kWh. You could run a modern LED bulb for two full days on the same energy - the difference is entirely that heating things takes a lot, and lighting them takes very little.</li><li><span aria-hidden="true">🚗</span> An electric car doing 15,000 km a year uses about 2,700 kWh - roughly what an entire household uses for everything else. It is still far cheaper per kilometre than petrol, but it is a serious addition to the meter.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Power times time, duty cycle, and where the surprises hide</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>The only formula you need is \(E = P\,t\), with power in kilowatts and time in hours. Everything else is bookkeeping. What makes real consumption counter-intuitive is <strong>duty cycle</strong>: the fraction of the time a device actually draws its rated power. A fridge is rated around 100 W but its compressor runs perhaps a third of the time, so it consumes like a 35 W device - continuously, for a year, which is 300 kWh. A 2 kW kettle used four times a day for four minutes is 0.53 kWh a day, or 195 kWh a year. Two appliances that feel a hundred times different are in fact within a factor of two.</p>
+<p>Sort a house by annual energy and the ranking is almost always the same: whatever makes heat, then whatever never turns off, then everything else. Electric water heating, electric space heating, tumble dryers, ovens and dishwashers occupy the top because they are converting electricity into temperature. Lighting, once the dominant residential load, has collapsed to a rounding error - an LED does the job of a 60 W incandescent for 8 W, so a 2005 lighting bill has fallen by about 85%.</p>
+<p>Then there is the difference between energy and power, which is where people get caught out. Your annual bill is energy; your fuse, your connection and your tariff band are power. A 7 kW car charger, a 9 kW electric shower and a 3 kW oven together exceed a typical Italian 6 kW domestic supply, and the meter simply trips. Electrification is therefore not only a question of kilowatt-hours - it is a question of whether the wire into the building is thick enough for the simultaneous kilowatts.</p>
+<p>Finally, measure rather than guess. A plug-in meter costs a few euros, and a smart meter records your half-hourly profile. The two numbers worth knowing are your annual total, from the bill, and your <em>baseload</em> - the power the house draws at three in the morning. That second number, multiplied by 8760, is what you are paying for nothing at all.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Energy</th><td>\(E = P\,t\)</td><td class="cmt">kW × hours = kWh</td></tr>
+<tr><th scope="row">With duty cycle</th><td>\(E = P\,t\,\delta\)</td><td class="cmt">δ = fraction of time running</td></tr>
+<tr><th scope="row">Annual total</th><td>\(E_{\text{yr}} = \sum_i P_i t_i \times 365\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Baseload</th><td>\(E_{\text{base}} = P_{3\text{am}}\times 8760\)</td><td class="cmt">the always-on cost</td></tr>
+<tr><th scope="row">Electric car</th><td>\(E = 0.18\ \text{kWh/km}\times d\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Heating water</th><td>\(E = \dfrac{mc\Delta T}{3.6\times10^6}\ \text{kWh}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Cost</th><td>\(\text{€} = E \times p\)</td><td class="cmt">p ≈ 0.25–0.30 €/kWh</td></tr>
+<tr><th scope="row">Peak power limit</th><td>\(\sum P_{\text{simultaneous}} &lt; P_{\text{supply}}\)</td><td class="cmt">the fuse, not the bill</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">⏱️</span> Duty cycle is why nameplate ratings mislead. A 100 W fridge running 35% of the time uses more per year than a 2000 W kettle boiled four times a day, because 8760 hours beats 100 hours by a wide margin.</li><li><span aria-hidden="true">💡</span> Replacing every incandescent bulb in a house with LEDs saves around 300-400 kWh a year. It was the single cheapest efficiency win of the last two decades, and it is now almost entirely used up.</li><li><span aria-hidden="true">🔥</span> Electric resistance heating is 100% efficient and still the most expensive way to heat anything, because a heat pump delivers three or four units of heat for the same unit of electricity. Efficiency and cost are different questions.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Load profiles, coincidence, and what electrifying a house does to the network</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>Units, and the confusion they cause</h3>
+<p>A kilowatt is a rate and a kilowatt-hour is a quantity, and almost every public argument about energy contains at least one place where the two have been swapped. The distinction matters because the electricity system prices them separately: energy through the tariff, power through the connection charge, the fuse rating and, increasingly, capacity markets. A further trap is <em>final</em> versus <em>primary</em> energy: 1 kWh delivered to a socket represented roughly 2.5 kWh of fuel in a thermal system, which is why national statistics that count primary energy make electrification look worse than it is, and why the same statistics now need care as generation decarbonises.</p>
+<h3><span class="hn">02</span>Load profiles and the coincidence factor</h3>
+<p>A household's annual consumption tells the network operator almost nothing; the shape does. Domestic demand has a morning shoulder and a sharp evening peak, and what sizes the local transformer is not the sum of the peaks but the <strong>coincidence factor</strong> - the probability that many homes peak together. For a hundred dwellings, after diversity, the design load per home is a fraction of each home's own maximum. This is why the distribution network has coped for decades with appliances far larger than the wire could serve simultaneously, and why the arrival of loads that are correlated in time - everyone plugging in a car at 18:30 - is a genuinely different problem from the arrival of more energy.</p>
+<h3><span class="hn">03</span>The always-on tail</h3>
+<p>Standby power was estimated in the late 1990s at 5-10% of residential electricity in developed countries, which prompted the EU's 1 W standby regulation and its equivalents elsewhere. Modern devices are much better individually, but there are far more of them, and always-on network equipment has partly replaced the old vampire loads. The diagnostic is unchanged and beautifully simple: read the meter at three in the morning. Whatever it shows is a permanent load, and multiplying by 8760 usually produces an uncomfortable number.</p>
+<h3><span class="hn">04</span>What electrification actually does</h3>
+<p>A typical European home without electric heating uses 2-4 MWh a year. Add a heat pump and it gains 3-6 MWh; add an electric car and another 2-3 MWh. The household roughly triples its electricity while its total primary energy falls, because a heat pump multiplies and an electric drivetrain converts at 85% against a petrol engine's 25%. But the peak grows faster than the energy: a 7 kW charger and a 5 kW heat pump alongside the existing cooking load push the simultaneous demand past many existing supply limits. The energy transition, at the level of a single house, is mostly a story about the size of one cable and the timing of two loads.</p>
+<h3><span class="hn">05</span>Timing is now worth money</h3>
+<p>Time-of-use tariffs, and increasingly hourly wholesale-linked ones, mean a kilowatt-hour is no longer a single price. Shifting an EV charge to the small hours can halve its cost, and the same shift is worth even more to the network than to the customer, because it moves a correlated load off the peak. This is why the interesting residential technology is no longer the appliance but the controller - the thing that decides when the car charges and when the tank reheats. Automation matters because human behaviour is a poor demand-response mechanism: people respond once, then stop paying attention.</p>
+<h3><span class="hn">06</span>Measuring what you cannot see</h3>
+<p>Smart meters record aggregate consumption at half-hourly or finer resolution, and <strong>non-intrusive load monitoring</strong> attempts to decompose that single signal into individual appliances by their switching signatures - the step change in real and reactive power when a compressor starts, the characteristic ramp of a kettle. It works well for large, distinctive loads and poorly for small overlapping ones, and it raises obvious privacy questions, since a fine-grained consumption trace reveals when a home is occupied, awake and cooking. The honest summary is that most households can identify 80% of their consumption from four numbers - heating, hot water, the car, and the always-on baseload - and that the remaining detail is rarely worth the instrumentation.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Energy</th><td>\(E = \int P\,dt \approx \sum_i P_i t_i\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Coincidence factor</th><td>\(F_c = \dfrac{P_{\text{group,max}}}{\sum_i P_{i,\max}}\)</td><td class="cmt">well below 1</td></tr>
+<tr><th scope="row">Baseload</th><td>\(E_{\text{base}} = P_{\min}\times 8760\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Primary energy</th><td>\(E_{\text{prim}} = \dfrac{E_{\text{final}}}{\eta_{\text{gen}}}\)</td><td class="cmt">≈ 2.5× for thermal plant</td></tr>
+<tr><th scope="row">Heat pump gain</th><td>\(E_{\text{elec}} = \dfrac{Q_{\text{heat}}}{\mathrm{SCOP}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">EV demand</th><td>\(E = c\,d\)</td><td class="cmt">c ≈ 0.18 kWh/km</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Time-of-use cost</th><td>\(\text{€} = \sum_t p_t E_t\)</td><td class="cmt">timing, not only quantity</td></tr>
+<tr><th scope="row">Supply limit</th><td>\(\max_t \sum_i P_i(t) &lt; P_{\text{supply}}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📊</span> The coincidence factor is why a street of houses each capable of drawing 15 kW is served by a transformer sized for a fraction of that. Correlated loads such as EV charging erode exactly that assumption.</li><li><span aria-hidden="true">🕵️</span> A half-hourly consumption trace is enough to infer when a household wakes, leaves, returns and sleeps. Smart-meter data protection rules exist because the meter is, inadvertently, an occupancy sensor.</li><li><span aria-hidden="true">♻️</span> Electrifying a home raises its electricity use and lowers its total energy use, because heat pumps multiply and electric motors do not waste two thirds of their fuel as heat. Comparing electricity bills before and after therefore measures the wrong thing.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Kilowatt-hour" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Energy</h2>
+    <ul><li><a href="/energy-conservation/">Energy &amp; Conservation</a></li><li><a href="/how-solar-panels-work/">How Solar Panels Work</a></li><li><a href="/wind-turbines-betz-limit/">Wind Turbines &amp; the Betz Limit</a></li><li><a href="/how-heat-pumps-work/">Heat Pumps: More Heat Than You Pay For</a></li><li><a href="/how-the-power-grid-works/">The Power Grid: Balancing on a Knife Edge</a></li><li><a href="/how-does-a-nuclear-reactor-work/">How Does a Nuclear Reactor Work?</a></li><li><a href="/how-grid-batteries-work/">How Do Grid Batteries Store Electricity?</a></li><li><a href="/how-green-hydrogen-is-made/">How Is Green Hydrogen Made?</a></li><li><a href="/how-home-insulation-works/">Where Does the Heat in Your House Go?</a></li><li><a href="/how-electricity-is-generated/">How Is Electricity Actually Made?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

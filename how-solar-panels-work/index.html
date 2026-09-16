@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Solar Panels Work | Lab-in-a-Tab</title>
+<meta name="description" content="A sheet of glass with no moving parts, sitting still on a roof, quietly pushing electrons around a circuit for thirty years. Here is the trick it is…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/how-solar-panels-work/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/how-solar-panels-work/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/come-funzionano-i-pannelli-solari/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/comment-fonctionnent-les-panneaux-solaires/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/how-solar-panels-work/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="How Solar Panels Work — Explained &amp; Simulated">
+<meta property="og:description" content="A sheet of glass with no moving parts, sitting still on a roof, quietly pushing electrons around a circuit for thirty years. Here is the trick it is…">
+<meta property="og:url" content="https://labinatab.com/how-solar-panels-work/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Solar Panels Work — Explained &amp; Simulated">
+<meta name="twitter:description" content="A sheet of glass with no moving parts, sitting still on a roof, quietly pushing electrons around a circuit for thirty years. Here is the trick it is…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/how-solar-panels-work/#article",
+   "headline": "How Solar Panels Work",
+   "name": "How Solar Panels Work",
+   "description": "A sheet of glass with no moving parts, sitting still on a roof, quietly pushing electrons around a circuit for thirty years. Here is the trick it is…",
+   "url": "https://labinatab.com/how-solar-panels-work/",
+   "mainEntityOfPage": "https://labinatab.com/how-solar-panels-work/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Photovoltaics",
+    "I-V curve",
+    "Efficiency"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "How Solar Panels Work",
+    "sameAs": "https://en.wikipedia.org/wiki/Solar_cell"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "How Solar Panels Work",
+     "item": "https://labinatab.com/how-solar-panels-work/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/how-solar-panels-work/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/come-funzionano-i-pannelli-solari/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/comment-fonctionnent-les-panneaux-solaires/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Energy</nav>
+  <h1>How Solar Panels Work</h1>
+  <p class="lead">A sheet of glass with no moving parts, sitting still on a roof, quietly pushing electrons around a circuit for thirty years. Here is the trick it is playing.</p>
+  <div class="chips"><span>Photovoltaics</span><span>I-V curve</span><span>Efficiency</span></div>
+  <section class="sim-embed" data-sim="solarpv" data-color="#f59e0b" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#f59e0b"><span class="sg-lbl">Try this</span><span>Leave the Sun where it is and drag <b>How much the panel leans</b> slowly from flat to upright, watching two things: how many rays hit the glass, and <b>Power right now</b>. Find the tilt that catches every single ray. Then drag <b>How high the Sun is</b> down towards the horizon and try to rescue the power by tilting again. Now push <b>How warm the air is</b> all the way up and watch <b>Power right now</b> fall even though nothing about the light changed. Finally press the button so it says <b>📌 Stuck at one voltage</b>, and see what happens to the green dot.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#f59e0b"><span class="sg-lbl">Try this</span><span>Fix <b>Sun elevation α</b> at 30° and find the tilt that makes \(\theta = 0\); check it is \(\beta = 60^\circ\), not 30°. Then read <b>Irradiance on the panel</b> at \(\theta = 0\) and again at \(\theta = 60^\circ\), and compare the ratio with \(\cos 60^\circ = 0.5\). Next, hold everything and sweep <b>Air temperature</b> from −5 to 40 °C, watching <b>Cell temperature</b>, <b>Power output</b> and the Voc end of the curve - estimate the coefficient in %/°C. Finally switch to <b>📌 Fixed voltage</b> and sweep <b>Sun elevation α</b> again, watching how much the clamped 24 V point leaves behind.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#f59e0b"><span class="sg-lbl">Try this</span><span>Test three claims quantitatively. First, that \(I_{sc}\propto G\) while \(V_{oc}\propto\ln G\): move <b>Solar elevation α</b> to cut <b>Plane-of-array irradiance</b> roughly in half and check the two intercepts against those laws. Second, that \(dV_{oc}/dT \approx -2.2\ \text{mV/K}\) per cell: sweep <b>Ambient temperature Ta</b> across its full range, read the Voc intercept at both ends and divide by 60 cells and by the change in <b>Cell temperature Tc</b>. Third, that the loss from a clamped operating point is not a fixed percentage: switch to <b>📌 Clamped voltage</b> and watch the forgone power as <b>Plane-of-array irradiance</b> changes, then explain why the clamped point behaves so much worse at low irradiance.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Top half: the Sun sits somewhere on the dashed arc, and the yellow lines are its light falling in parallel - because the Sun is so far away, every ray arrives pointing the same way. The dark blue slab on the pole is the panel. The white dashed line sticking out of it is the direction it is looking; the amber arc between that line and the sunlight is how badly it is missing. Rays that land on the glass are drawn bright, rays that sail past it are faint and end up on the ground. The blue dots running along the wire are the electricity leaving. Bottom half: what the panel can give at every possible voltage - blue for current, amber for power - with the amber dot marking the best it can do and the green dot showing where it is actually working.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Two enemies, and they are completely different. One is geometry, the other is heat.</b> Point the panel straight at the Sun and every ray in the beam lands on the glass. Tilt it away and the same beam is smeared over a bigger area, so fewer rays hit - which is exactly why a low winter Sun gives so much less, and why panels are tilted up in the first place. Heat is sneakier: the light has not changed at all, but hot silicon loses voltage, and a roof at 60 °C quietly costs about a seventh of the output. And that green dot matters more than it looks: a panel does not have one output, it has a whole curve of them, and sitting at the wrong voltage throws away real watts for nothing.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Upper panel: a clear-sky beam model with the Sun at elevation \(\alpha\) and the module at tilt \(\beta\), so the angle of incidence is \(\theta = |90^\circ - \alpha - \beta|\) and \(\cos\theta = \sin(\alpha+\beta)\). The parallel rays are the beam itself: the fraction that intercepts the aperture is the cosine law made countable. <b>Irradiance on the panel</b> adds the beam, the sky-diffuse and the ground-reflected components. Lower panel: the module I-V curve in blue and the power product \(VI\) in amber, redrawn every frame from a one-diode model with series resistance, for a 2 m², 440 W module of 60 cells. Amber dot = the maximum power point, green dot = where the system is actually operating, dashed amber line = the rating printed on the back of the module.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Current follows the light, voltage follows the temperature, and the power you keep depends on where you choose to sit on the curve.</b> \(I_{sc}\) tracks irradiance almost exactly - halve the light and you halve the current - while \(V_{oc}\) moves only as \(\ln G\), which is why a panel in gloom still reads a healthy voltage but delivers nothing. Temperature works the other way and is bigger than most people expect: about \(-0.35\%\) of power per degree, so a module at 60 °C has already lost around 12% before any wiring loss. Notice too that the ratio of <b>Irradiance on the panel</b> to the cosine is not exact - diffuse light from the sky and reflection off the ground keep a badly angled panel alive, which is precisely why flat commercial roofs are not the disaster the cosine law alone predicts.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Beam irradiance from the Meinel air-mass model, \(\text{DNI} = 1361\cdot 0.7^{(1/\sin\alpha)^{0.678}}\), projected onto the array through \(\cos\theta = \sin(\alpha+\beta)\), with isotropic sky diffuse weighted by \((1+\cos\beta)/2\) and ground reflection at albedo 0.2 weighted by \((1-\cos\beta)/2\). Module temperature from the NOCT model \(T_c = T_a + \frac{45-20}{800}G\). The curve is generated parametrically in junction voltage from \(I = I_{sc}\left[1-e^{(V_j-V_{oc})/V_t}\right]\), \(V = V_j - IR_s\), with \(V_t = N_s nkT/q\), \(V_{oc}(G,T) = V_{oc}^{STC} + \beta_V\Delta T + V_t\ln(G/G_0)\) and \(R_s = 0.18\ \Omega\) - so the fill factor you see is earned, not assumed.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Every derating in a real yield calculation is visible here as a geometric or thermodynamic fact, not a fudge factor.</b> The cosine law sets the resource; the NOCT model turns that resource into a cell temperature that then eats it, which is why the peak power of a fixed array in a hot climate arrives before solar noon rather than at it. The clamped-voltage case is instructive: because \(V_{mp}\) falls with temperature and rises weakly with irradiance, a fixed operating voltage is wrong in a different direction at every hour, and the loss is worst at low light where the curve's knee is softest. Two honest limits of this model - it assumes an isotropic sky, so it under-reads circumsolar brightening on hazy days, and it ignores the angle-dependent reflectance of the glass, which removes a further 2-3% of annual yield at high incidence and is the reason real IAM corrections exist.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Sunlight in, electricity out</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>A solar panel has no moving parts. Nothing spins, nothing burns, nothing is pushed. You put it in the sun and electricity comes out of the wire at the back - and it keeps doing that for three decades while you ignore it completely. It is the strangest machine on the house.</p>
+<p>The trick happens inside a wafer of silicon thinner than a fingernail. Light does not arrive as a smooth stream; it arrives in tiny packets called <strong>photons</strong>. When a photon lands in the silicon it can knock an electron loose from its atom, the way one snooker ball knocks another off its spot. Now there is a loose electron and an empty space where it used to sit. Left alone, the two would wander about and settle back together, and nothing useful would happen at all.</p>
+<p>So the cell is built with a one-way street inside it. The top of the wafer is treated with one impurity and the bottom with another, and where the two meet an electric field appears all by itself. Any electron freed near that boundary gets shoved upward - always upward, never back. Millions of them pile up on the metal fingers you can see printed across the front, push out along the wire, run through your fridge and your lights, and come back in at the bottom of the cell. That circulation is the current.</p>
+<p>Two things decide how much of it you get. The first is how much light lands: full midday sun delivers about <strong>1000 watts on every square metre</strong>, so a two-square-metre panel stands in roughly 2000 watts of sunshine and hands back about 400 of them. The rest turns into heat. The second is the angle. Light striking the glass at a slant spreads itself thinner, exactly the way your shadow stretches long and weak in the evening. Point the panel straight at the sun and you collect all of it; tilt it forty-five degrees away and a third is gone. That one fact settles most arguments about how to mount a roof.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🔇</span> No fuel, no moving parts, nothing to service. Panels installed in the 1990s are typically still delivering over 80% of their original power today.</li><li><span aria-hidden="true">🔥</span> Heat is the enemy. A panel on a hot roof can reach 65 °C, and every degree above 25 costs it about 0.35% of its output. A panel's dream weather is cold, bright and clear - not hot.</li><li><span aria-hidden="true">🌍</span> The Sun drops about 170 million gigawatts on the Earth. All of humanity uses roughly 20 terawatts - some 8000 times less. The shortage was never sunlight; it was cheap silicon, and that price has fallen about 99.9% since 1976.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>The I-V curve, and the single point on it worth having</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>A solar cell is not a battery, and it is not a fixed current source either. What it gives you depends on how hard you pull. Short the terminals together and you draw the full <strong>short-circuit current</strong> \(I_{sc}\) at zero volts - which is zero power. Leave them open and you measure the full <strong>open-circuit voltage</strong> \(V_{oc}\) at zero current - also zero power. Between those two useless extremes runs a curve, and on it sits exactly one point where the product \(P = VI\) is as large as it can be: the <strong>maximum power point</strong>.</p>
+<p>The two ends of that curve answer to sunlight in completely different ways. Current is essentially a photon count, so double the irradiance and you free twice as many electrons: \(I_{sc}\) is very nearly proportional to \(G\). Voltage hardly notices, because it climbs only with the logarithm of the light, \(V_{oc} = nV_T\ln(I_{ph}/I_0 + 1)\). A cell in one tenth of full sun has lost 90% of its current and maybe 12% of its voltage. That is why a panel under heavy overcast still shows an almost full reading on a multimeter while producing next to nothing.</p>
+<p>Temperature runs the other way, and it is the fact that surprises everyone. Warmth does not help a solar panel; it hurts. As silicon heats, the reverse saturation current \(I_0\) climbs steeply and drags \(V_{oc}\) down with it, at roughly \(-0.3\%\) per degree. The current creeps up by about \(+0.05\%\) per degree, nowhere near enough to compensate. The net is close to \(-0.35\%\) of power per degree above the 25 °C at which panels are rated - so a module baking at 65 °C on an August roof has already given up about a seventh of its output before a single wire is connected.</p>
+<p>Which means the operating point has to be hunted, continuously. That is the whole job of the <strong>MPPT</strong> stage inside every modern inverter: it nudges the voltage up and down a few times a second, watches which way the power moved, and walks the panel back onto the peak as sun, cloud and temperature shove it around. A system without one - a panel wired straight onto a battery, say - is pinned near the battery's voltage and routinely throws away a quarter of the harvest.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Power from sunlight</th><td>\(P = G\,A\,\eta\)</td><td class="cmt">G in W/m², A in m²</td></tr>
+<tr><th scope="row">Short-circuit current</th><td>\(I_{sc} \propto G\)</td><td class="cmt">a photon count</td></tr>
+<tr><th scope="row">Open-circuit voltage</th><td>\(V_{oc} = nV_T\ln\!\left(\dfrac{I_{ph}}{I_0}+1\right)\)</td><td class="cmt">only logarithmic in G</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Maximum power point</th><td>\(P_{mpp} = V_{mp}I_{mp}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Fill factor</th><td>\(FF = \dfrac{P_{mpp}}{V_{oc}I_{sc}}\)</td><td class="cmt">≈ 0.80 for silicon</td></tr>
+<tr><th scope="row">Efficiency</th><td>\(\eta = \dfrac{P_{mpp}}{G\,A}\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Temperature derate</th><td>\(P(T) = P_{STC}\left[1+\gamma(T-25)\right]\)</td><td class="cmt">γ ≈ −0.35 %/°C</td></tr>
+<tr><th scope="row">Cosine law</th><td>\(G_{\perp} = G\cos\theta\)</td><td class="cmt">θ = angle of incidence</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📐</span> Fill factor measures how square the curve is: the best point divided by Voc times Isc. Good silicon modules reach about 0.80, and it is resistance in those printed metal fingers that stops them going higher.</li><li><span aria-hidden="true">❄️</span> A panel's best minutes of the year are often in winter: cold, clear, low sun, with light bouncing off snow. Under those conditions a module can briefly exceed its nameplate rating.</li><li><span aria-hidden="true">🔌</span> One silicon cell makes only about 0.65 V, so cells are wired in series - a 60-cell module sits near 40 V open-circuit. The catch is that a series string runs at the speed of its worst cell, which is exactly why bypass diodes exist.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>The one-diode model, the Shockley-Queisser ceiling, and what a real roof gives back</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>A photodiode in the fourth quadrant</h3>
+<p>A solar cell is a large-area pn junction operated exactly where it has no business being: illuminated, with the photocurrent running against the diode's own forward current, so the working point sits in the fourth quadrant of the I-V plane - positive voltage, negative current - which is the signature of a device delivering power instead of absorbing it. By convention we flip the sign and draw the first quadrant. Absorption creates electron-hole pairs throughout the wafer; the built-in field separates the ones that reach the junction before they recombine; and the entire engineering problem is keeping the minority-carrier diffusion length comfortably longer than the distance a carrier must travel to get there.</p>
+<h3><span class="hn">02</span>The one-diode model</h3>
+<p>Nearly everything a module does in the field is captured by \(I = I_{ph} - I_0\left[\exp\frac{q(V+IR_s)}{nkT}-1\right] - \frac{V+IR_s}{R_{sh}}\). Note that it is implicit in \(I\) - which is why datasheets quote points rather than functions, and why extracting parameters is a fit rather than an algebra. Series resistance \(R_s\) - fingers, busbars, solder, contacts - rounds off the knee and eats fill factor. Shunt resistance \(R_{sh}\), from edge leakage and defects across the junction, tilts the flat portion of the curve and is what dominates the losses at low light, when there is little photocurrent left to lose. The ideality factor \(n\) sits near 1 when diffusion in the quasi-neutral regions dominates, and drifts toward 2 when depletion-region recombination takes over.</p>
+<h3><span class="hn">03</span>Where the ceiling comes from</h3>
+<p>Shockley and Queisser's 1961 argument is one of the great pieces of physics-as-accounting. Assume a single band gap, a black-body Sun, and radiative recombination as the only unavoidable loss. Photons below \(E_g\) pass straight through and are lost completely; photons above it are absorbed, but everything beyond \(E_g\) thermalises into heat within picoseconds. Those two losses pull in opposite directions as \(E_g\) varies, so there is an optimum: about 1.34 eV, worth 33.7% under one sun. Silicon's 1.12 eV gap gives 33.2%, and because that gap is indirect, absorption is weak enough that a cell needs roughly 150 µm of thickness plus a textured, light-trapping surface to catch the red end of the spectrum at all. The laboratory record for a single silicon cell now stands at 27.3% - about 82% of its own thermodynamic ceiling - while commercial modules ship at 21-23%.</p>
+<h3><span class="hn">04</span>Temperature, derived rather than measured</h3>
+<p>The temperature coefficient is not an empirical fudge factor. Differentiating the open-circuit condition gives \(\frac{dV_{oc}}{dT} = \frac{V_{oc}-E_g/q-\gamma kT/q}{T}\), which for silicon near 300 K lands around \(-2.2\ \text{mV/K}\) per cell, or about \(-0.3\%/\text{K}\). The physics underneath is \(I_0 \propto n_i^2 \propto T^3e^{-E_g/kT}\): the dark current is the cell competing against itself, and it grows explosively with temperature. Short-circuit current does rise, by +0.04 to +0.06 %/K, because a warmer gap is a slightly narrower gap and a few more red photons become absorbable - but the voltage loss wins comfortably. Module temperature itself is usually estimated from \(T_c = T_a + \frac{\text{NOCT}-20}{800}G\), a crude linear model that survives contact with the real world surprisingly well.</p>
+<h3><span class="hn">05</span>Mismatch, or why one leaf matters</h3>
+<p>Cells in series share a common current, so a string performs at the pace of its worst member. Shade one cell in sixty down to 30% of full sun and the string current collapses toward that cell's - and worse, the shaded cell is now reverse-biased by the other fifty-nine and dissipates their power as heat in one small square of silicon. That is a hot spot, and it is how early modules occasionally caught fire. Bypass diodes, one per twenty-odd cells, offer the current a detour: you lose a third of the module rather than all of it. The same arithmetic explains why module-level electronics - optimisers and microinverters - sell so well on complicated roofs, and why half-cut cells wired as two parallel halves became the industry default.</p>
+<h3><span class="hn">06</span>From datasheet to electricity meter</h3>
+<p>Nameplate power is quoted at STC: 1000 W/m², 25 °C, AM1.5G - a combination a real roof essentially never sees. What matters in the field is annual yield, \(E = P_{STC}\times H_{poa}\times PR\), where \(H_{poa}\) is plane-of-array insolation in kWh/m² per year divided by 1 kW/m², and the performance ratio \(PR\) absorbs temperature, soiling, mismatch, cabling, inverter efficiency and downtime. A well-built European rooftop lands at 0.80-0.85. Milan returns roughly 1250 kWh per installed kWp per year at optimum tilt and Rome about 1550 - numbers you look up in a validated irradiance database such as PVGIS rather than estimate. The frontier is the tandem: a perovskite top cell over silicon splits the spectrum between two gaps, sidesteps the single-junction ceiling entirely, and has already passed 34% in the laboratory.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">One-diode model</th><td>\(I = I_{ph}-I_0\!\left[e^{\frac{q(V+IR_s)}{nkT}}-1\right]-\dfrac{V+IR_s}{R_{sh}}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Thermal voltage</th><td>\(V_T = \dfrac{kT}{q} \approx 25.7\ \text{mV}\)</td><td class="cmt">at 25 °C</td></tr>
+<tr><th scope="row">Open-circuit voltage</th><td>\(V_{oc} = nV_T\ln\!\left(\dfrac{I_{ph}}{I_0}+1\right)\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Voltage coefficient</th><td>\(\dfrac{dV_{oc}}{dT} = \dfrac{V_{oc}-E_g/q-\gamma kT/q}{T}\)</td><td class="cmt">≈ −2.2 mV/K per cell</td></tr>
+<tr><th scope="row">Dark current</th><td>\(I_0 \propto n_i^2 \propto T^3e^{-E_g/kT}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Cell temperature</th><td>\(T_c = T_a + \dfrac{\text{NOCT}-20}{800}\,G\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Shockley-Queisser</th><td>\(\eta_{\max} \approx 33.7\%\)</td><td class="cmt">one gap, 1.34 eV, one sun</td></tr>
+<tr><th scope="row">Annual yield</th><td>\(E = P_{STC}\,H_{poa}\,PR\)</td><td class="cmt">PR ≈ 0.80–0.85</td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">📉</span> Module prices have obeyed Swanson's law for five decades - about 20% cheaper for every doubling of cumulative production. From roughly $100 per watt in 1976 to under $0.15 today, one of the steepest sustained cost declines ever recorded for a manufactured good.</li><li><span aria-hidden="true">🪞</span> The Shockley-Queisser limit constrains single-junction cells, not solar cells. Split the spectrum across several band gaps and the ceiling rises: a six-junction concentrator cell has reached 47.6%.</li><li><span aria-hidden="true">🌨️</span> Bifacial modules over pale gravel or snow collect 5-20% extra through the back face - and because that light is diffuse and the module sits off the roof, they also run cooler, which quietly buys back some of the temperature penalty.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Solar_cell" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Energy</h2>
+    <ul><li><a href="/energy-conservation/">Energy &amp; Conservation</a></li><li><a href="/wind-turbines-betz-limit/">Wind Turbines &amp; the Betz Limit</a></li><li><a href="/how-heat-pumps-work/">Heat Pumps: More Heat Than You Pay For</a></li><li><a href="/how-the-power-grid-works/">The Power Grid: Balancing on a Knife Edge</a></li><li><a href="/how-does-a-nuclear-reactor-work/">How Does a Nuclear Reactor Work?</a></li><li><a href="/how-grid-batteries-work/">How Do Grid Batteries Store Electricity?</a></li><li><a href="/how-green-hydrogen-is-made/">How Is Green Hydrogen Made?</a></li><li><a href="/how-home-insulation-works/">Where Does the Heat in Your House Go?</a></li><li><a href="/how-electricity-is-generated/">How Is Electricity Actually Made?</a></li><li><a href="/how-much-electricity-appliances-use/">How Much Electricity Does Your Home Use?</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is the Monty Hall Problem? | Lab-in-a-Tab</title>
+<meta name="description" content="Switching doors doubles your chance of winning. Thousands of people with mathematics degrees have written in to say that is wrong. Run it ten thousand…">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://labinatab.com/monty-hall-problem/">
+<link rel="alternate" hreflang="en" href="https://labinatab.com/monty-hall-problem/">
+<link rel="alternate" hreflang="it" href="https://labinatab.com/it/problema-di-monty-hall/">
+<link rel="alternate" hreflang="fr" href="https://labinatab.com/fr/probleme-de-monty-hall/">
+<link rel="alternate" hreflang="x-default" href="https://labinatab.com/monty-hall-problem/">
+<link rel="icon" type="image/png" href="/logo_radiant_infinity.png">
+<meta name="theme-color" content="#ff6b35" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14120e" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lab-in-a-Tab">
+<meta property="og:title" content="What Is the Monty Hall Problem? — Explained &amp; Simulated">
+<meta property="og:description" content="Switching doors doubles your chance of winning. Thousands of people with mathematics degrees have written in to say that is wrong. Run it ten thousand…">
+<meta property="og:url" content="https://labinatab.com/monty-hall-problem/">
+<meta property="og:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Is the Monty Hall Problem? — Explained &amp; Simulated">
+<meta name="twitter:description" content="Switching doors doubles your chance of winning. Thousands of people with mathematics degrees have written in to say that is wrong. Run it ten thousand…">
+<meta name="twitter:image" content="https://labinatab.com/logo_radiant_infinity.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://labinatab.com/monty-hall-problem/#article",
+   "headline": "What Is the Monty Hall Problem?",
+   "name": "What Is the Monty Hall Problem?",
+   "description": "Switching doors doubles your chance of winning. Thousands of people with mathematics degrees have written in to say that is wrong. Run it ten thousand…",
+   "url": "https://labinatab.com/monty-hall-problem/",
+   "mainEntityOfPage": "https://labinatab.com/monty-hall-problem/",
+   "datePublished": "2026-03-23",
+   "dateModified": "2026-09-16",
+   "inLanguage": "en",
+   "isAccessibleForFree": true,
+   "isFamilyFriendly": true,
+   "learningResourceType": "Interactive explanation with simulation",
+   "educationalLevel": [
+    "Junior",
+    "Student",
+    "Scholar"
+   ],
+   "teaches": [
+    "Probability",
+    "Conditional",
+    "Bayes"
+   ],
+   "about": {
+    "@type": "Thing",
+    "name": "What Is the Monty Hall Problem?",
+    "sameAs": "https://en.wikipedia.org/wiki/Monty_Hall_problem"
+   },
+   "image": "https://labinatab.com/logo_radiant_infinity.png",
+   "author": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/"
+   },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Lab-in-a-Tab",
+    "url": "https://labinatab.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "url": "https://labinatab.com/logo_radiant_infinity.png"
+    }
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Lab-in-a-Tab",
+     "item": "https://labinatab.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "What Is the Monty Hall Problem?",
+     "item": "https://labinatab.com/monty-hall-problem/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script defer src="/sim-engine.js?v=d5fafeca"></script>
+<style>:root{--bg:#fdf8f0;--surface:#fff;--white:#fff;--code-bg:rgba(0,0,0,.07);--ink:#1a1207;--ink2:#4a3f2f;--ink3:#8a7a60;--border:rgba(0,0,0,.08);--logo-ink:#123c8a;--accent:#d0541a;color-scheme:light}
+:root[data-theme=dark]{--bg:#14120e;--surface:#211d17;--white:#211d17;--code-bg:rgba(255,255,255,.10);--ink:#f5efe4;--ink2:#cdc3b2;--ink3:#9a8f7c;--border:rgba(255,255,255,.11);--logo-ink:#e9c46b;--accent:#ff8a5c;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+body{font-family:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--border);padding:.7rem clamp(1rem,4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:1.15rem;text-decoration:none;color:var(--ink)}
+.brand i{width:32px;height:24px;background:var(--logo-ink);-webkit-mask:url(/logo_mark.png) center/contain no-repeat;mask:url(/logo_mark.png) center/contain no-repeat}
+.hdr-actions{display:flex;align-items:center;gap:.5rem}
+.tbtn{border:1.5px solid var(--border);background:var(--surface);color:var(--ink2);border-radius:50px;min-width:34px;height:34px;padding:0 .5rem;cursor:pointer;font-size:.95rem;line-height:1}
+.langsel{position:relative}
+.langbtn{width:auto;min-width:34px;padding:0 9px;font-size:.82rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+.flag{width:22px;height:auto;border-radius:2px;display:inline-block;vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+.langmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:.3rem;min-width:150px;box-shadow:0 10px 28px rgba(0,0,0,.20);z-index:30;display:flex;flex-direction:column;gap:2px}
+.langmenu a{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--ink2)}
+.langmenu a:hover{background:var(--bg);color:var(--ink)}
+.langmenu a[aria-current=true]{color:var(--ink);background:var(--bg)}
+main{max-width:760px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem) 4rem}
+.crumb{font-size:.8rem;color:var(--ink3);font-weight:700;padding:1.2rem 0 .4rem}
+.crumb a{color:var(--ink3)}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.15;margin:.2rem 0 .6rem}
+.lead{font-size:1.12rem;color:var(--ink2);font-weight:600;margin-bottom:1.3rem}
+.cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;border-radius:50px;padding:.7rem 1.3rem;font-size:.92rem}
+.chips{display:flex;gap:.4rem;flex-wrap:wrap;margin:1.1rem 0 0}
+.chips span{background:var(--surface);border:1px solid var(--border);border-radius:50px;padding:2px 10px;font-size:.72rem;font-weight:800;color:var(--ink3)}
+section.lvl{margin-top:2.6rem;border-top:1px solid var(--border);padding-top:1.6rem}
+section.lvl>h2{font-family:Georgia,serif;font-size:1.55rem;line-height:1.25;margin-bottom:.15rem}
+.lvl-note{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:1rem}
+h3{font-family:Georgia,serif;font-size:1.1rem;margin:1.6rem 0 .5rem}
+.hn{opacity:.45;margin-right:.4rem;font-size:.8em}
+p{margin-bottom:.9rem;color:var(--ink2)}
+strong,em{color:var(--ink)}
+ul,ol{margin:.4rem 0 1rem 1.3rem;color:var(--ink2)}
+li{margin-bottom:.35rem}
+.mk{font-family:ui-monospace,'Courier New',monospace;background:rgba(125,125,125,.15);padding:1px 5px;border-radius:4px;font-size:.88em}
+.facts,.formulas{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.2rem;margin:1.4rem 0}
+.facts h3,.formulas h3{margin-top:0}
+.facts ul{list-style:none;margin-left:0}
+.facts li{margin-bottom:.6rem;font-size:.9rem}
+.formulas{overflow-x:auto}
+.formulas table{border-collapse:collapse;width:100%;font-size:.9rem}
+.formulas th{text-align:left;font-weight:800;color:var(--ink2);padding:.4rem .9rem .4rem 0;white-space:nowrap;vertical-align:top}
+.formulas td{padding:.4rem 0;vertical-align:top}
+.formulas .cmt{color:var(--ink3);font-size:.78rem;font-style:italic;padding-left:.9rem}
+.formulas tr.sep td{border-top:1px solid var(--border);padding:0;height:6px}
+.related{margin-top:3rem;border-top:1px solid var(--border);padding-top:1.4rem}
+.related h2{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:.8rem}
+.related ul{list-style:none;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:.7rem .9rem;text-decoration:none;font-weight:700;font-size:.88rem}
+.sources{margin-top:2rem;font-size:.85rem;color:var(--ink3)}
+footer{border-top:1px solid var(--border);padding:1.6rem clamp(1rem,4vw,2rem);text-align:center;font-size:.8rem;color:var(--ink3)}
+footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1.6}
+[hidden]{display:none!important}
+.sim-embed{margin:1.6rem 0 2rem;padding:1.2rem;border:1px solid var(--border);border-radius:16px;background:var(--surface)}
+.sim-tabs{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
+.sim-tabs button:hover{color:var(--ink)}
+.sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
+.sim-host{min-height:20px}
+.sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
+.sim-canvas-wrap{background:#f0f0eb;border:1.5px solid var(--border);border-radius:12px 12px 0 0;overflow:hidden;line-height:0}
+.sim-canvas-wrap canvas{display:block}
+.sim-controls{background:var(--white);border:1.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:.8rem 1rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cbtn{border:1.5px solid var(--border);background:var(--white);color:var(--ink2);border-radius:8px;padding:6px 13px;font-family:'Nunito',sans-serif;font-size:.8rem;font-weight:800;cursor:pointer;transition:.18s;flex-shrink:0;line-height:1}
+.cbtn:hover{border-color:var(--ink)}
+.cbtn.pri{color:#fff;border-color:transparent}
+.rng-wrap{display:flex;flex-direction:column;gap:2px;flex:1;min-width:110px}
+.rng-top{display:flex;justify-content:space-between;margin-bottom:2px}
+.rng-lbl{font-size:.72rem;font-weight:800;color:var(--ink3)}
+.rng-v{font-size:.72rem;font-weight:800}
+input[type=range]{-webkit-appearance:none;height:5px;border-radius:3px;background:rgba(0,0,0,.1);outline:none;cursor:pointer;width:100%}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2.5px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.sim-pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem}
+.spill{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.77rem;font-weight:800;color:var(--ink2)}
+.spill b{color:var(--ink)}
+.sim-hint{font-size:.78rem;font-weight:800;color:var(--ink3);margin-bottom:.6rem}
+.sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.7rem}
+.sim-try .sg-lbl{flex-shrink:0;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
+.sim-try b{color:var(--ink)}
+.sim-guide{margin-top:.75rem}
+.sg-legend{font-size:.85rem;font-weight:600;color:var(--ink2);line-height:1.7;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:.75rem .9rem}
+.sg-legend .sg-lbl{display:block;font-size:.68rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);margin-bottom:.3rem}
+.sg-legend b{color:var(--ink)}
+.sg-notice{margin-top:.55rem;border:1.5px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+.sg-notice>summary{cursor:pointer;list-style:none;padding:.7rem .9rem;font-size:.8rem;font-weight:900;letter-spacing:.03em;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.sg-notice>summary::-webkit-details-marker{display:none}
+.sg-notice>summary::before{content:'▸';font-size:.9rem;transition:transform .2s}
+.sg-notice[open]>summary::before{transform:rotate(90deg)}
+.sg-notice>summary:hover{color:var(--ink)}
+.sg-body{padding:0 .9rem .85rem;font-size:.87rem;font-weight:600;color:var(--ink2);line-height:1.75}
+.sg-body b{color:var(--ink)}
+:root[data-theme=dark] input[type=range]{background:rgba(255,255,255,.15)}</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/"><i aria-hidden="true"></i> Lab-in-a-Tab</a>
+  <div class="hdr-actions"><div class="langsel"><button class="tbtn langbtn" id="lb" aria-haspopup="true" aria-expanded="false" aria-label="Language"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg></button><div class="langmenu" id="lm" hidden><a href="https://labinatab.com/monty-hall-problem/" hreflang="en" aria-current="true"><svg class="flag" viewBox="7.5 0 45 30" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#c8102e" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#c8102e"/><rect y="12" width="60" height="6" fill="#c8102e"/></svg> English</a><a href="https://labinatab.com/it/problema-di-monty-hall/" hreflang="it"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#009246"/><rect x="2" width="1" height="2" fill="#ce2b37"/></svg> Italiano</a><a href="https://labinatab.com/fr/probleme-de-monty-hall/" hreflang="fr"><svg class="flag" viewBox="0 0 3 2" aria-hidden="true"><rect width="3" height="2" fill="#fff"/><rect width="1" height="2" fill="#0055a4"/><rect x="2" width="1" height="2" fill="#ef4135"/></svg> Français</a></div></div><button class="tbtn" id="t" aria-label="Toggle dark mode">🌙</button></div>
+</header>
+<main>
+  <nav class="crumb" aria-label="Breadcrumb"><a href="/">Lab-in-a-Tab</a> › Mathematics</nav>
+  <h1>What Is the Monty Hall Problem?</h1>
+  <p class="lead">Switching doors doubles your chance of winning. Thousands of people with mathematics degrees have written in to say that is wrong. Run it ten thousand times and watch.</p>
+  <div class="chips"><span>Probability</span><span>Conditional</span><span>Bayes</span></div>
+  <section class="sim-embed" data-sim="montyhall" data-color="#0284c7" aria-label="Interactive simulation">
+  <div class="sim-tabs" role="group" aria-label="Simulation difficulty level"><button type="button" data-l="junior" class="on">🌱 Junior</button><button type="button" data-l="student">🔬 Student</button><button type="button" data-l="scholar">🎓 Scholar</button></div>
+  <div class="sim-try" data-l="junior" style="border-left-color:#0284c7"><span class="sg-lbl">Try this</span><span>Press <b>Play 2000 games</b> once and watch the two lines jump apart and settle - a couple of thousand games is enough to make the answer undeniable. Then press <b>Start over</b> and drag <b>How many doors</b> up to ten before running again, because at ten doors the reasoning becomes obvious in a way it never quite does at three. Finally set <b>Games per second</b> low and watch individual games go by.</span></div>
+<div class="sim-try" data-l="student" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Try this</span><span>Run <b>Play 2000 games</b> and watch the empirical frequencies converge on the dashed lines at a rate that goes as one over the square root of the sample. Then move <b>Number of doors</b> and confirm the general result rather than the special case - the advantage of switching grows towards certainty as doors are added. Compare <b>Wins by staying</b> against <b>Theory says</b> and note that staying tracks the prior exactly, because nothing in the host's action is evidence about your own door.</span></div>
+<div class="sim-try" data-l="scholar" hidden style="border-left-color:#0284c7"><span class="sg-lbl">Try this</span><span>Use <b>Trials per second</b> and <b>Run 2000 trials</b> together to build a large sample, then read the residual gap between <b>Empirical P(win | stay)</b> and its analytic value as an estimate of Monte Carlo error - it should shrink as one over the square root of <b>Trials</b>. Vary <b>Doors n</b> to trace the advantage as a function of n and note that the three-door case is the hardest to believe precisely because two-thirds is the smallest the advantage ever gets.</span></div>
+  <div class="sim-host"></div>
+  <div class="sim-guide" data-l="junior"><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>The doors from the last game that was played, with your pick outlined in blue and the door you could switch to outlined in green. Underneath, two lines: the red one is how often staying has won so far, the green one how often changing door has won, both updating as games pile up. The dashed lines are where the mathematics says each one has to end up.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>Your first door was a one in three guess, and nothing that happened afterwards changed that.</b> The host was always going to be able to open a goat door, whatever you picked, so watching him do it tells you nothing about your own door. It tells you a great deal about the other one. The two doors you did not pick held two chances in three between them, and they still do - except that one of them has been eliminated for you, so the whole two thirds now sits behind the single door left standing. That is why switching wins twice as often. If it still feels wrong, use ten doors: you pick one, the host carefully avoids one specific door eight times in a row, and suddenly the question answers itself. It is the same situation, only now the arithmetic is loud enough to hear.</div></details></div>
+<div class="sim-guide" data-l="student" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>Each game is simulated honestly: the prize is placed uniformly, your pick is uniform and independent, and the host opens losing doors only, never yours and never the prize, choosing uniformly when he has a choice. Both strategies are evaluated on every game, so the two curves come from the same sample rather than from two separate runs. The dashed lines mark the analytic values, one over n and n minus one over n.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The asymmetry lives in the likelihoods, not the priors, and that is the whole content of the problem.</b> With your pick on door 1, the probability the host opens door 3 is one half if the car is behind your door, because he has a free choice, and exactly one if the car is behind door 2, because he is forced. His action is therefore twice as probable under the hypothesis that the car is elsewhere, and Bayes converts that likelihood ratio directly into two-thirds for switching. The detail that makes this worth more than a puzzle is what happens when the protocol changes. If the host does not know where the car is and opens at random, then conditional on his having happened to reveal a goat the odds really are even and switching gains nothing. The observed event is identical in both stories. Only the process that generated it differs, and the information content follows the process.</div></details></div>
+<div class="sim-guide" data-l="scholar" hidden><div class="sg-legend"><span class="sg-lbl">What you're seeing</span>A direct Monte Carlo of the standard protocol with both strategies scored on each realisation, so the two frequency estimates are perfectly negatively correlated and the difference converges faster than either curve alone. The host is uniform over permissible doors, which is the assumption that makes the classic answer well defined; the dashed analytic lines are one over n and n minus one over n.</div><details class="sg-notice"><summary>What to notice</summary><div class="sg-body"><b>The problem is underdetermined until the host's protocol is fixed, and the answer genuinely moves with it.</b> Under the standard rules, switching wins two-thirds of the time. Under a host who slips and opens a door at random which happens to be a goat, the posterior is one half. Under a lazy host who always opens the lowest permissible door, the answer depends on which door he opened and can be one half or one. The observed data are identical in all three; only the sampling mechanism differs. Two things follow. If the host opens door three with probability q when free to choose, staying wins with probability q over q plus one, so switching weakly dominates for every possible host policy and the contestant's minimax strategy is to switch - while the host's minimax is to choose uniformly, which retroactively justifies the conventional assumption. And the general lesson transfers: likelihoods depend on the data-generating mechanism rather than on the data, which is the same structure as selection bias in trials and as the difference between data missing at random and missing not at random.</div></details></div>
+</section>
+  
+<section class="lvl" id="junior">
+  <h2>Why switching wins twice as often</h2>
+  <p class="lvl-note">Junior level — plain language, no maths</p>
+  <p>Three doors. A car behind one, a goat behind each of the others. You pick a door. The host - who knows where the car is - opens one of the two you did not pick, always revealing a goat. Now you may keep your door or switch to the remaining one. Should you?</p>
+<p>You should switch, and it wins twice as often. Almost nobody believes this the first time, and the reason is worth understanding: it feels like two doors are left, so it feels like fifty-fifty. But the two doors are not equivalent, because one of them was <em>protected</em>.</p>
+<p>Think about your first pick. You had a one in three chance of being right, and that has not changed - the host opening a goat door tells you nothing about your own door, because he was always going to be able to open a goat door whatever you chose. So your door is still one in three. The other two doors together were two in three, and they still are - except now all of that is concentrated behind the single door left standing.</p>
+<p>If that still does not land, use the slider to make it ten doors. Pick one, and the host opens eight goats, leaving yours and one other. Now the feeling matches the mathematics: your door was a one in ten guess, and the host has just carefully avoided one specific door eight times in a row. Then run ten thousand games and watch the two lines separate.</p>
+  
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">✉️</span> When Marilyn vos Savant gave the correct answer in 1990, she received around 10,000 letters telling her she was wrong, including about 1,000 from people with PhDs.</li><li><span aria-hidden="true">🔟</span> With ten doors, switching wins 90% of the time. The mechanism is identical to the three-door version - it is only easier to feel.</li><li><span aria-hidden="true">🎲</span> Paul Erdős, one of the most prolific mathematicians of the century, refused to accept the answer until he was shown a computer simulation.</li></ul></div>
+</section>
+
+<section class="lvl" id="student">
+  <h2>Conditional probability, and why the host's knowledge is the whole problem</h2>
+  <p class="lvl-note">Student level — the core equations</p>
+  <p>Label the doors 1, 2, 3, say you pick door 1, and let \(C_i\) be the event that the car is behind door \(i\), each with prior \(1/3\). Let \(H_3\) be the event that the host opens door 3. The likelihoods are what carry the argument: \(P(H_3|C_1) = 1/2\), because with the car behind your door the host may open either remaining door; \(P(H_3|C_2) = 1\), because he is forced; \(P(H_3|C_3) = 0\), because he never reveals the car.</p>
+<p>Bayes then gives \(P(C_1|H_3) = \frac{(1/3)(1/2)}{(1/3)(1/2)+(1/3)(1)} = 1/3\) and \(P(C_2|H_3) = 2/3\). The asymmetry comes entirely from the likelihoods, not the priors - the host's action is twice as probable under the hypothesis that the car is behind the other door, so the evidence favours switching by a factor of two.</p>
+<p>Everything hinges on the host's constraints, and the puzzle is famously ambiguous when they are left unstated. If the host does not know where the car is and opens a door at random, then conditional on his having happened to reveal a goat, the odds really are even and switching gains nothing. The identical observed event - a goat behind an opened door - carries different information depending on the process that produced it. This is the most valuable lesson in the problem and the one usually skipped.</p>
+<p>The generalisation is clean. With \(n\) doors, one car, you pick one and the host opens \(n-2\) goat doors, switching wins with probability \(\frac{n-1}{n}\). At \(n = 3\) that is the familiar \(2/3\); at \(n = 100\) it is \(99\%\), which is the version to reach for when someone is not persuaded. In every case your original door keeps its prior of \(1/n\), and the entire remaining \(\frac{n-1}{n}\) is funnelled onto one door.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Prior</th><td>\(P(C_i) = \tfrac{1}{3}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Likelihoods</th><td>\(P(H_3|C_1)=\tfrac12,\; P(H_3|C_2)=1,\; P(H_3|C_3)=0\)</td><td class="cmt"></td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Posterior, stay</th><td>\(P(C_1|H_3) = \tfrac{1}{3}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Posterior, switch</th><td>\(P(C_2|H_3) = \tfrac{2}{3}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">With n doors</th><td>\(P(\text{switch wins}) = \dfrac{n-1}{n}\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🎭</span> If the host chooses at random and happens to reveal a goat, switching gains nothing. Same visible outcome, different generating process, different information.</li><li><span aria-hidden="true">📬</span> The problem is equivalent to Bertrand's box paradox from 1889 and to the three prisoners problem from 1959. It is repeatedly rediscovered because the intuition fails reliably.</li><li><span aria-hidden="true">🧮</span> The general answer is (n−1)/n. The three-door case is the hardest to feel precisely because 2/3 is the smallest the advantage ever gets.</li></ul></div>
+</section>
+
+<section class="lvl" id="scholar">
+  <h2>Protocol dependence, the Monty Fall variants, and why the intuition fails</h2>
+  <p class="lvl-note">Scholar level — full mathematical depth</p>
+  <h3><span class="hn">01</span>The problem is underdetermined until the protocol is fixed</h3>
+<p>The classic statement does not specify the host's rules, and the answer genuinely depends on them. Under the standard protocol - the host always opens a door, always a goat, never yours, and chooses uniformly when he has a choice - switching wins with probability \(2/3\). Under <em>Monty Fall</em>, where the host slips and opens a door at random which happens to be a goat, the posterior is \(1/2\) and switching is worthless. Under <em>Monty Crawl</em>, where a lazy host always opens the lowest-numbered permissible door, the answer depends on which door he opened: sometimes \(1/2\), sometimes \(1\). The observed data are identical in all three; only the sampling mechanism differs.</p>
+<h3><span class="hn">02</span>Non-uniform host choice, and the game-theoretic version</h3>
+<p>Suppose the host, when free to choose, opens door 3 with probability \(q\). Then \(P(C_1|H_3) = \frac{q}{q+1}\), ranging from \(0\) to \(1/2\) as \(q\) runs from 0 to 1. Switching is therefore <em>never</em> worse than staying and is strictly better unless \(q = 1\), so it weakly dominates for every host policy. Treating it as a zero-sum game against an adversarial host, the contestant's minimax strategy is to switch, guaranteeing \(2/3\), and the host's minimax is \(q = 1/2\) - the uniform rule is the host's optimal play, which is a satisfying justification for the conventional assumption.</p>
+<h3><span class="hn">03</span>Why the intuition fails, experimentally</h3>
+<p>The dominant account is the <em>equiprobability bias</em>: when the outcome space has been reduced to two, people default to assigning equal probabilities regardless of the process that produced the reduction. A second factor is a <em>number-of-cases</em> heuristic, counting states rather than weighting them. The finding that makes it more than a curiosity is that the error persists under repeated play with feedback - people do not reliably learn to switch even after dozens of trials, which is unusual for a task with immediate outcome information, and suggests the failure is representational rather than a matter of insufficient evidence.</p>
+<h3><span class="hn">04</span>Pigeons, and what that implies</h3>
+<p>Herbranson and Schroeder trained pigeons on the problem with food rewards. Within about thirty sessions the pigeons converged on switching at rates above 90%; humans in the comparable condition stayed near 60% and improved slowly. The interpretation is that pigeons are behaving as pure empirical maximisers, matching their choices to observed reward frequencies, while humans deploy a causal model of the situation and their model is wrong. Having a theory is normally an advantage, and here it is precisely what does the damage.</p>
+<h3><span class="hn">05</span>The general principle worth extracting</h3>
+<p>The transferable lesson is that likelihoods depend on the data-generating mechanism, not on the data. This is the same structure as selection bias in trials, as the difference between missing-at-random and missing-not-at-random data, and as the boy-or-girl paradox where the answer depends on how the information was obtained. Monty Hall survives as a teaching example because it is the shortest problem in which the observation is fixed, the answer moves, and the only thing that changed is how the observation came to be made.</p>
+  <div class="formulas"><h3>Key Formulas</h3><table><tr><th scope="row">Bayes</th><td>\(P(C_i|H_3) = \dfrac{P(H_3|C_i)P(C_i)}{\sum_j P(H_3|C_j)P(C_j)}\)</td><td class="cmt"></td></tr>
+<tr><th scope="row">Biased host</th><td>\(P(C_1|H_3) = \dfrac{q}{q+1}\)</td><td class="cmt">q = host preference for door 3</td></tr>
+<tr class="sep"><td colspan="3"></td></tr>
+<tr><th scope="row">Monty Fall</th><td>\(P(C_1|H_3,\text{random}) = \tfrac{1}{2}\)</td><td class="cmt">same data, no information</td></tr>
+<tr><th scope="row">Minimax</th><td>\(\text{switch guarantees } \tfrac{2}{3};\quad q^{*}=\tfrac12\)</td><td class="cmt"></td></tr></table></div>
+  <div class="facts"><h3>Things worth knowing</h3><ul><li><span aria-hidden="true">🕊️</span> Pigeons learn to switch within about thirty sessions and reach over 90%. Humans given the same feedback stay near 60%, apparently because they have a causal model and it is wrong.</li><li><span aria-hidden="true">🎚️</span> If the host prefers door 3 with probability q, staying wins with probability q/(q+1). Switching weakly dominates for every possible host policy.</li><li><span aria-hidden="true">♟️</span> Treated as a zero-sum game, the contestant's minimax strategy is to switch and the host's is to choose uniformly - which is exactly the assumption the classic version makes.</li></ul></div>
+</section>
+  <div class="sources">
+    <h3>Sources</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Monty_Hall_problem" target="_blank" rel="noopener">Full article on Wikipedia ↗</a></p>
+  </div>
+  <nav class="related" aria-label="Related topics">
+    <h2>More in Mathematics</h2>
+    <ul><li><a href="/probability-bell-curve/">Probability &amp; The Bell Curve</a></li><li><a href="/fractals/">Fractals &amp; Infinity</a></li><li><a href="/calculus/">Calculus &amp; Change</a></li><li><a href="/graph-theory/">Graph Theory &amp; Networks</a></li><li><a href="/unit-circle-trigonometry/">Trigonometry &amp; The Unit Circle</a></li></ul>
+  </nav>
+</main>
+<footer>© <span id="y">2026</span> Lab-in-a-Tab · <a href="/">All experiments</a>
+<span class="ai-notice">Explanations on this site are written with the help of generative AI. <a href="/ai/">How we use AI</a></span></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var r=document.documentElement,b=document.getElementById('t');
+var i=function(){b.textContent=r.getAttribute('data-theme')==='dark'?'☀️':'🌙';};i();
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme')!=='dark';
+r.setAttribute('data-theme',d?'dark':'light');try{localStorage.setItem('theme',d?'dark':'light');}catch(e){}i();});})();
+(function(){var lb=document.getElementById('lb'),lm=document.getElementById('lm');if(!lb)return;
+lb.addEventListener('click',function(e){e.stopPropagation();var h=lm.hasAttribute('hidden');
+if(h){lm.removeAttribute('hidden');lb.setAttribute('aria-expanded','true');}else{lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',function(){lm.setAttribute('hidden','');lb.setAttribute('aria-expanded','false');});})();
+window.addEventListener('load',function(){
+  if(window.renderMathInElement) renderMathInElement(document.querySelector('main'),{
+    delimiters:[{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
+    throwOnError:false});
+});
+(function(){
+  var sec=document.querySelector('.sim-embed'); if(!sec) return;
+  var host=sec.querySelector('.sim-host'), level='junior';
+  function render(){
+    if(typeof buildSim!=='function'){ window.addEventListener('load',render,{once:true}); return; }
+    if(typeof stopSims==='function')stopSims(); host.innerHTML='';
+    buildSim(sec.dataset.sim,host,sec.dataset.color,level);
+  }
+  function setLevel(l){ level=l;
+    sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.l===l);});
+    sec.querySelectorAll('.sim-try,.sim-guide').forEach(function(el){el.hidden=(el.dataset.l!==l);});
+    render(); }
+  sec.querySelectorAll('.sim-tabs button').forEach(function(b){b.addEventListener('click',function(){setLevel(b.dataset.l);});});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){render();io.disconnect();}});},{rootMargin:'250px'});
+    io.observe(sec);
+  } else { render(); }
+})();
+</script>
+</body>
+</html>

@@ -14,6 +14,23 @@ const TODAY = new Date().toISOString().slice(0, 10);
 const PUBLISHED = '2026-03-23';
 const src = fs.readFileSync('index.html', 'utf8');
 
+// Stable page dates. A page keeps the date it already had unless its content really
+// changed; only then does it get today's. The hash is taken while the date is still a
+// placeholder, so the stamp can never feed back into the hash that decides it.
+// Google demotes lastmod it learns is unreliable, and "everything changed today" on
+// every build is exactly that signal.
+const DATE_MARK = '@@BUILD_DATE@@';
+const prevDates = fs.existsSync('.build-dates.json')
+  ? JSON.parse(fs.readFileSync('.build-dates.json', 'utf8')) : {};
+const dates = {};
+function stamp(url, html) {
+  const hash = crypto.createHash('sha1').update(html).digest('hex').slice(0, 12);
+  const prev = prevDates[url];
+  const date = prev && prev.hash === hash ? prev.date : TODAY;
+  dates[url] = { hash, date };
+  return html.replaceAll(DATE_MARK, date);
+}
+
 function extract(startMarker, endMarker) {
   const a = src.indexOf(startMarker);
   const b = src.indexOf(endMarker, a);
@@ -69,7 +86,7 @@ function resolveTopic(s, lang) {
       formula: o.formula || base.formula,
     };
   }
-  return { ...s, title: ov.title || s.title, teaser: ov.teaser || s.teaser, chips: ov.chips || s.chips, lvls };
+  return { ...s, title: ov.title || s.title, seoTitle: ov.seoTitle || s.seoTitle, teaser: ov.teaser || s.teaser, chips: ov.chips || s.chips, lvls };
 }
 
 // Precompute, for each topic id, the languages it exists in (for hreflang + switcher).
@@ -108,7 +125,7 @@ function simCss() {
 }
 const ENGINE = [
   decl('SIM_LABELS'), decl('SIMS'),
-  ...['simLabels', 'newEl', 'mkCanvas', 'mkCtrl', 'mkPills', 'pill', 'mkBtn', 'mkRange',
+  ...['simLabels', 'simLocale', 'newEl', 'mkCanvas', 'mkCtrl', 'mkPills', 'pill', 'mkBtn', 'mkRange',
     'getSimWidth', 'stopSims', 'buildSim',
     'simOrbit', 'simProjectile', 'simNewton', 'simCircuit', 'simStates', 'simTrig', 'simSeasons', 'simBalance', 'simPunnett',
     'simWaves', 'simThermo', 'simParticles', 'simGalton', 'simFractal',
@@ -117,7 +134,11 @@ const ENGINE = [
     'simSorting', 'simML', 'simCrypto', 'simComplexity', 'simClimate', 'simTectonics',
     'simOcean', 'simVolcano', 'simChem', 'simElectrochem', 'simKinetics', 'simOrganic', 'simAcids', 'simPeriodic',
     'simAstro', 'simBlackholes', 'simCosmology', 'simSolarSystem', 'simEclipse', 'simMeteors', 'simBloodMoon', 'simAurora', 'simComet', 'simFlight', 'simExoplanets', 'simElNino', 'simNeuro', 'simNeuron',
-    'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein', 'simWater', 'simEnergy', 'simSeriesParallel', 'simRespiration', 'simImmunity', 'simMagnets', 'simTurtles', 'simNestSex', 'simSharks', 'simBees', 'simBats'].map(decl),
+    'simMemory', 'simSleep', 'simOptics', 'simPendulum', 'simGas', 'simMoon', 'simProtein', 'simWater', 'simEnergy', 'simSeriesParallel', 'simRespiration', 'simImmunity', 'simMagnets', 'simTurtles', 'simNestSex', 'simSharks', 'simBees', 'simBats', 'simSolarPV', 'simWind', 'simHeatPump', 'simGrid', 'simNuclear', 'simStorage', 'simHydrogen', 'simInsulation', 'simGenerator', 'simKwh',
+    'simInternet', 'simCompress', 'simSearch',
+    'simCaffeine', 'simIllusion', 'simDopamine',
+    'simHurricane', 'simTornado', 'simSky',
+    'simFireflies', 'simAnts', 'simMonty'].map(decl),
 ].join('\n\n');
 
 // Cache-buster: browsers hold on to sim-engine.js, so an engine change has to
@@ -236,6 +257,8 @@ footer .ai-notice{display:block;margin-top:.55rem;font-size:.75rem;line-height:1
 .sim-tabs button{border:1.5px solid var(--border);background:var(--bg);color:var(--ink2);border-radius:50px;padding:6px 14px;font-family:inherit;font-weight:800;font-size:.8rem;cursor:pointer;transition:.15s}
 .sim-tabs button:hover{color:var(--ink)}
 .sim-tabs button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* ponytail: 20px non prenota il canvas (250-540px, noto solo a runtime): shift possibile.
+   Se il CLS qui diventa misurabile, estrarre H per sim da sim-engine.js al build. */
 .sim-host{min-height:20px}
 .sim-embed .sim-try{display:flex;gap:.55rem;align-items:baseline;font-size:.9rem;font-weight:600;color:var(--ink2);line-height:1.6;background:var(--bg);border:1.5px solid var(--border);border-left-width:4px;border-radius:10px;padding:.75rem .9rem;margin-bottom:.85rem}
 ${simCss()}`.trim();
@@ -285,7 +308,7 @@ function page(T, lang, alts) {
         '@type': ['Article', 'LearningResource'],
         '@id': url + '#article',
         headline: T.title, name: T.title, description: desc, url, mainEntityOfPage: url,
-        datePublished: PUBLISHED, dateModified: TODAY, inLanguage: lang.htmlLang,
+        datePublished: PUBLISHED, dateModified: DATE_MARK, inLanguage: lang.htmlLang,
         isAccessibleForFree: true, isFamilyFriendly: true,
         learningResourceType: 'Interactive explanation with simulation',
         educationalLevel: LEVEL_KEYS.map(k => ui.levels[k].label),
@@ -310,7 +333,7 @@ function page(T, lang, alts) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${esc(T.title)} | Lab-in-a-Tab</title>
+<title>${esc(T.seoTitle || T.title)} | Lab-in-a-Tab</title>
 <meta name="description" content="${esc(desc)}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="${url}">
@@ -334,6 +357,7 @@ ${JSON.stringify(ld, null, 1)}
 </script>
 <script>(function(){try{var s=localStorage.getItem('theme');var d=s?s==='dark':matchMedia('(prefers-color-scheme:dark)').matches;document.documentElement.setAttribute('data-theme',d?'dark':'light');}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -404,7 +428,7 @@ window.addEventListener('load',function(){
 
 // ── full localized SPA clones (/it/, /fr/) ────────────────────────────────
 // The English SPA (index.html) verbatim, with only the data blocks swapped:
-//   UI (all chrome) · S (all 47 topics, translated where available, English
+//   UI (all chrome) · S (every topic, translated where available, English
 //   fallback) · SLUG (localized article paths) · SIM_GUIDE + SIM_LABELS.
 // Every language is therefore the same app; only the words differ.
 const localizedS = lang => S.map(s => (hasTopic(lang, s.id) ? resolveTopic(s, lang) : s));
@@ -458,7 +482,7 @@ function buildSPAClone(lang) {
   }).join('');
   html = swapBlock(html, '<ul class="all-topics" id="all-topics">', '</ul>', `<ul class="all-topics" id="all-topics">${footerLinks}</ul>`);
   fs.mkdirSync(lang.prefix, { recursive: true });
-  fs.writeFileSync(path.join(lang.prefix, 'index.html'), html, 'utf8');
+  fs.writeFileSync(path.join(lang.prefix, 'index.html'), stamp(lang.prefix, html), 'utf8');
 }
 
 // Shared sim engine.
@@ -475,7 +499,7 @@ for (const lang of LANGS) {
     const T = resolveTopic(s, lang);
     const dir = lang.prefix + slugForLang(s, lang);
     fs.mkdirSync(dir, { recursive: true });
-    const html = page(T, lang, altsByTopic[s.id]);
+    const html = stamp(dir + '/', page(T, lang, altsByTopic[s.id]));
     fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
     built.push({ slug: dir, id: s.id, lang: lang.code, title: T.title, words: plain(html).split(/\s+/).length });
     n++;
@@ -501,10 +525,6 @@ fs.writeFileSync('.build-pages.json', JSON.stringify(built, null, 1));
 
 // sitemap.xml — every localized page plus the English home.
 const urls = ['', 'ai/', ...hubs, ...hubs.map(h => h + 'ai/'), ...built.map(b => b.slug + '/')];
-fs.writeFileSync('sitemap.xml',
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  urls.map(u => `  <url>\n    <loc>${ORIGIN}/${u}</loc>\n    <lastmod>${TODAY}</lastmod>\n  </url>`).join('\n') +
-  `\n</urlset>\n`, 'utf8');
 
 fs.writeFileSync('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/sitemap.xml\n`, 'utf8');
 
@@ -529,8 +549,17 @@ fs.writeFileSync('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${ORIGIN}/si
   const ldRe = /(<script type="application\/ld\+json" id="itemlist">)[\s\S]*?(<\/script>)/;
   if (!ulRe.test(home) || !ldRe.test(home)) throw new Error('index.html patch markers not found (all-topics / itemlist)');
   home = home.replace(ulRe, `$1${links}$2`).replace(ldRe, `$1\n${JSON.stringify(itemList, null, 1)}\n$2`);
-  fs.writeFileSync('index.html', home, 'utf8');
+  fs.writeFileSync('index.html', stamp('', home), 'utf8');
 }
+
+// Sitemap last: every URL now carries the date of its own last real change.
+// The /ai/ pages are hand-written, not generated here, so hash them off disk.
+for (const u of urls) if (!dates[u]) stamp(u, fs.readFileSync(u + 'index.html', 'utf8'));
+fs.writeFileSync('sitemap.xml',
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+  urls.map(u => `  <url>\n    <loc>${ORIGIN}/${u}</loc>\n    <lastmod>${dates[u].date}</lastmod>\n  </url>`).join('\n') +
+  `\n</urlset>\n`, 'utf8');
+fs.writeFileSync('.build-dates.json', JSON.stringify(dates, null, 1));
 
 console.log(`built ${n} pages (${LANGS.map(l => l.code + ':' + built.filter(b => b.lang === l.code).length).join(' ')})${removed ? `, removed ${removed} stale` : ''}`);
 // A topic whose sim id does not match its guide/labels key silently degrades to a
